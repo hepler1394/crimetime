@@ -1,0 +1,402 @@
+:root {
+    --cts-black: #000000;
+    --cts-dark-gray: #121212;
+    --cts-medium-gray: #1e1e1e;
+    --cts-light-gray: #333333;
+    --cts-red: #ff0000;
+    --cts-white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--cts-black);
+    color: var(--cts-white);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--cts-black);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--cts-red);
+}
+
+.nav-container {
+    background-color: var(--cts-black);
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.nav-menu li {
+    margin: 0 1rem;
+}
+
+.nav-menu a {
+    color: var(--cts-white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+    display: inline-block;
+}
+
+.nav-menu a:hover {
+    color: var(--cts-red);
+}
+
+/* Crime Scene Tape */
+.crime-scene-tape {
+    background: repeating-linear-gradient(45deg, var(--cts-black), var(--cts-black) 10px, var(--cts-red) 10px, var(--cts-red) 20px);
+    height: 30px;
+    width: 100%;
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.crime-scene-tape::before {
+    content: "DO NOT CROSS • CRIME SCENE • DO NOT CROSS • CRIME SCENE • DO NOT CROSS";
+    position: absolute;
+    color: var(--cts-black);
+    font-weight: bold;
+    font-size: 1rem;
+    white-space: nowrap;
+    animation: scroll-text 20s linear infinite;
+    text-transform: uppercase;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@keyframes scroll-text {
+    0% {
+        transform: translateX(100%) translateY(-50%);
+    }
+    100% {
+        transform: translateX(-100%) translateY(-50%);
+    }
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--cts-red);
+    color: var(--cts-white);
+}
+
+.btn-primary:hover {
+    background-color: #cc0000;
+}
+
+.btn-secondary {
+    background-color: var(--cts-light-gray);
+    color: var(--cts-white);
+}
+
+.btn-secondary:hover {
+    background-color: #444444;
+}
+
+/* Episode Cards */
+.episode-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.episode-card {
+    background-color: var(--cts-medium-gray);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.episode-card:hover {
+    transform: translateY(-5px);
+}
+
+.episode-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.episode-content {
+    padding: 1.5rem;
+}
+
+.episode-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--cts-white);
+}
+
+.episode-date {
+    color: #aaa;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.episode-description {
+    margin-bottom: 1.5rem;
+    color: #ddd;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--cts-dark-gray);
+    padding: 4rem 0 2rem;
+    margin-top: 5rem;
+    border-top: 1px solid var(--cts-red);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-logo {
+    width: 150px;
+    margin-bottom: 1rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.footer-social a {
+    color: var(--cts-white);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: var(--cts-red);
+}
+
+.footer-heading {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--cts-white);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--cts-red);
+}
+
+.footer-newsletter input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 3px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--cts-light-gray);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--cts-black);
+    padding: 5rem 0;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--cts-white);
+}
+
+.hero h1 span {
+    color: var(--cts-red);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #ddd;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Latest Episode Section */
+.latest-episode {
+    padding: 4rem 0;
+    background-color: var(--cts-medium-gray);
+}
+
+.latest-episode-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.latest-episode-image {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.latest-episode-info h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--cts-white);
+}
+
+.latest-episode-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--cts-red);
+}
+
+.latest-episode-info .episode-date {
+    margin-bottom: 1.5rem;
+}
+
+.latest-episode-info .episode-description {
+    margin-bottom: 2rem;
+}
+
+/* Audio Player */
+.audio-player {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.audio-player audio {
+    width: 100%;
+}
+
+/* Animations */
+.slide-in-left {
+    animation: slide-in-left 1s ease-out;
+}
+
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fade-in 1.5s ease-out;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-menu li {
+        margin: 0.5rem 0;
+    }
+    
+    .latest-episode-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--cts-black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--cts-red);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #cc0000;
+}
