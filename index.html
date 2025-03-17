@@ -38,167 +38,46 @@
         </div>
     </header>
     
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1><h1>Crime<span class="text-red">Time</span>Snacks</h1><span>•</span> A True Crime Podcast</h1>
-                <p>Exploring the facts, theories, and evidence surrounding unsolved cases</p>
-                <div class="hero-buttons">
-                    <a href="#latest-episode" class="btn btn-primary">Listen to Latest Episode</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Crime Scene Tape -->
-    <div class="crime-scene-tape"></div>
-    
-    <!-- Latest Episode Section -->
-    <section id="latest-episode" class="container">
-        <h2 class="slide-in-left" style="text-align: center; margin-bottom: 2rem;">Latest Episode</h2>
-        
-        <div class="episode-card" style="max-width: 800px; margin: 0 auto;">
-            <img src="images/roomates.jpg" alt="Bryan Kohberger Idaho Murders Case" class="episode-image" style="height: 300px;">
-            <div class="episode-content">
-                <h3 class="episode-title">Murders in Moscow: The Bryan Kohberger Case</h3>
-                <p class="episode-date">March 16, 2025</p>
-                <p class="episode-description">In this gripping episode of <span style="color: white;">Crime</span> <span style="color: var(--cts-red);">Time</span> <span style="color: white;">Snacks</span>, we delve into the harrowing case of the Idaho student murders that rocked the nation in November 2022. Four University of Idaho students - Kaylee Goncalves, Madison Mogen, Xana Kernodle, and Ethan Chapin - were brutally stabbed to death in their off-campus home. We explore the investigation that led to the arrest of Bryan Kohberger and the latest developments including the recently released 911 call audio.</p>
-                
-                <!-- Audio Player -->
-                <div class="audio-player">
-                    <audio controls>
-                        <source src="audio/moscow-murders.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                
-                <a href="episodes/murders-in-moscow.html" class="btn btn-primary">Read More</a>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Crime Scene Tape -->
-    <div class="crime-scene-tape"></div>
-    
-    <!-- Recent Episodes Section -->
+    <!-- Episodes Section -->
     <section class="container">
-        <h2 class="slide-in-left" style="text-align: center; margin-bottom: 2rem;">Recent Episodes</h2>
+        <h2 class="slide-in-left" style="text-align: center;">All Episodes</h2>
+        <p style="text-align: center;">Browse all episodes of CrimeTimeSnacks, where we explore unsolved cases, murders, and mysteries with detailed analysis and compelling storytelling.</p>
         
-        <div class="episode-grid">
-            <!-- Episode 1 -->
-            <div class="episode-card">
-                <img src="images/idaho-victims.jpg" alt="Murders in Moscow Episode" class="episode-image">
-                <div class="episode-content">
-                    <h3 class="episode-title">Murders in Moscow</h3>
-                    <p class="episode-date">March 16, 2025</p>
-                    <p class="episode-description">In this gripping episode of Crime Time Snacks, we delve into the harrowing case of the Idaho student murders that rocked the nation.</p>
-                    <a href="episodes/murders-in-moscow.html" class="btn btn-primary">Listen Now</a>
-                </div>
-            </div>
-            
-            <!-- Episode 2 -->
-            <div class="episode-card">
-                <img src="images/murder-house.jpg" alt="The Menendez Brothers Episode" class="episode-image">
-                <div class="episode-content">
-                    <h3 class="episode-title">ERIK AND LYLE: The Menendez Brothers</h3>
-                    <p class="episode-date">February 28, 2025</p>
-                    <p class="episode-description">The Menendez brothers, Lyle and Erik, have been in prison for over 35 years. They were convicted in 1996 for the 1989 murders of their parents.</p>
-                    <a href="episodes/menendez-brothers.html" class="btn btn-primary">Listen Now</a>
-                </div>
-            </div>
-            
-            <!-- Episode 3 -->
-            <div class="episode-card">
-                <img src="images/jonbenet-ramsey-trailer.jpg" alt="JonBenét Ramsey Episode" class="episode-image">
-                <div class="episode-content">
-                    <h3 class="episode-title">JonBenét Ramsey | The Facts 96-22 |Part 1</h3>
-                    <p class="episode-date">February 15, 2025</p>
-                    <p class="episode-description">JonBenét Patricia Ramsey was murdered. That is the only certain thing about this case after 26 years. Their is key evidence in this case as well as more theories than their are people involved.</p>
-                    <a href="episodes/jonbenet-ramsey-part-1.html" class="btn btn-primary">Listen Now</a>
-                </div>
-            </div>
+        <!-- Search Bar -->
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <input type="text" id="episodeSearch" placeholder="Search episodes..." style="padding: 0.8rem; width: 70%; max-width: 500px;">
+            <button onclick="searchEpisodes()" class="btn btn-primary">Search</button>
         </div>
         
-        <div style="text-align: center; margin-top: 2rem;">
-            <a href="episodes.html" class="btn btn-secondary">View All Episodes</a>
+        <div id="episodesList">
+            <!-- Episodes will be dynamically displayed here -->
         </div>
-    </section>
-    
-    <!-- About Section -->
-    <section class="container" style="margin-top: 5rem;">
-        <h2 class="slide-in-left" style="text-align: center; margin-bottom: 2rem;">About CrimeTimeSnacks</h2>
-        
-        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <p style="margin-bottom: 2rem;">CrimeTimeSnacks is a true crime podcast that delves into a variety of unsolved cases, exploring the facts, theories, and evidence surrounding each mystery. The podcast aims to provide listeners with a comprehensive understanding of these cases, encouraging them to engage with the content and form their own conclusions.</p>
-            
-            <p style="margin-bottom: 2rem;">Hosted by Cory, each episode is meticulously researched to bring you the most accurate information about some of the most intriguing criminal cases in history.</p>
-            
-            <a href="about.html" class="btn btn-secondary">Learn More About Us</a>
-        </div>
-    </section>
-    
-    <!-- Newsletter Section -->
-    <section class="container" style="margin-top: 5rem; background-color: var(--cts-dark-gray); padding: 3rem; border-radius: 5px;">
-        <h2 class="slide-in-left" style="text-align: center;">Join Our Newsletter</h2>
-        <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem auto;">Subscribe to our newsletter to get notified about new episodes, exclusive content, and updates from CrimeTimeSnacks.</p>
-        <form style="max-width: 500px; margin: 0 auto;">
-            <div style="display: flex; gap: 1rem;">
-                <input type="email" placeholder="Your Email Address" style="flex-grow: 1; padding: 0.8rem; border: none; border-radius: 3px;">
-                <button type="submit" class="btn btn-primary" style="white-space: nowrap;">Subscribe</button>
-            </div>
-        </form>
     </section>
     
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div>
-                    <img src="images/logo.png" alt="CrimeTimeSnacks Logo" class="footer-logo">
-                    <p>A true crime podcast exploring unsolved cases and mysteries with detailed analysis and compelling storytelling.</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-spotify"></i></a>
-                        <a href="https://podcasts.apple.com/gb/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400"><i class="fab fa-apple"></i></a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3 class="footer-heading">Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="episodes.html">Episodes</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="listen.html">Listen</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="footer-heading">Listen On</h3>
-                    <ul class="footer-links">
-                        <li><a href="https://podcasts.apple.com/gb/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400">Apple Podcasts</a></li>
-                        <li><a href="#">Spotify</a></li>
-                        <li><a href="#">Stitcher</a></li>
-                        <li><a href="#">iHeartRadio</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-newsletter">
-                    <h3 class="footer-heading">Newsletter</h3>
-                    <p>Subscribe for the latest episodes and updates.</p>
-                    <input type="email" placeholder="Your Email Address">
-                    <button class="btn btn-primary" style="width: 100%;">Subscribe</button>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
                 <p>&copy; 2025 CrimeTimeSnacks. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function searchEpisodes() {
+            let input = document.getElementById('episodeSearch').value.toLowerCase();
+            let episodes = document.querySelectorAll('.episode-card');
+            
+            episodes.forEach(episode => {
+                let title = episode.querySelector('.episode-title').innerText.toLowerCase();
+                if (title.includes(input)) {
+                    episode.style.display = "block";
+                } else {
+                    episode.style.display = "none";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
