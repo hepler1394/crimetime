@@ -77,18 +77,16 @@ header {
     overflow: hidden;
 }
 
-.crime-scene-tape::before {
-    content: "DO NOT CROSS • CRIME SCENE • DO NOT CROSS • CRIME SCENE • DO NOT CROSS";
+.crime-scene-tape .scrolling-text {
     position: absolute;
-    color: var(--cts-black);
+    top: 50%;
+    transform: translateY(-50%);
     font-weight: bold;
     font-size: 1rem;
     white-space: nowrap;
-    animation: scroll-text 20s linear infinite;
     text-transform: uppercase;
-    width: 100%;
-    top: 50%;
-    transform: translateY(-50%);
+    animation: scroll-text 20s linear infinite;
+    color: var(--cts-black);
 }
 
 @keyframes scroll-text {
@@ -399,4 +397,12 @@ header {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #cc0000;
+}
+
+/* Utility text color classes */
+.text-red {
+    color: var(--cts-red);
+}
+.text-white {
+    color: var(--cts-white);
 }
