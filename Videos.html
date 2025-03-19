@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos | CrimeTimeSnacks</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Updated styles for video grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjust min width as needed */
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+        .video-card {
+            background-color: var(--cts-medium-gray);
+            border-radius: 5px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        }
+        .video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .video-content {
+            padding: 1.5rem;
+        }
+        .video-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--cts-white);
+        }
+        .video-description {
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="container">
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="episodes.html">Episodes</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="listen.html">Listen</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="videos.html">Videos</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="container">
+        <h2 style="text-align: center; margin-bottom: 2rem;">Watch CrimeTimeSnacks Videos</h2>
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://youtu.be/BBUF4lUFCsE" 
+                            class="video" 
+                            title="Video Title 1" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">Video Title 1</h3>
+                    <p class="video-description">Short description of video 1.</p>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/your_video_id_2" 
+                            class="video" 
+                            title="Video Title 2" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">Video Title 2</h3>
+                    <p class="video-description">Short description of video 2.</p>
+                </div>
+            </div>
+
+            </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <img src="images/logo.png" alt="CrimeTimeSnacks Logo" class="footer-logo">
+                    <p>A true crime podcast exploring unsolved cases and mysteries with detailed analysis and compelling storytelling.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-spotify"></i></a>
+                        <a href="https://podcasts.apple.com/gb/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400"><i class="fab fa-apple"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="episodes.html">Episodes</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="listen.html">Listen</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Listen On</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://podcasts.apple.com/gb/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400">Apple Podcasts</a></li>
+                        <li><a href="#">Spotify</a></li>
+                        <li><a href="#">Stitcher</a></li>
+                        <li><a href="#">iHeartRadio</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3 class="footer-heading">Newsletter</h3>
+                    <p>Subscribe for the latest episodes and updates.</p>
+                    <input type="email" placeholder="Your Email Address">
+                    <button class="btn btn-primary" style="width: 100%;">Subscribe</button>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 CrimeTimeSnacks. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
