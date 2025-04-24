@@ -23,19 +23,35 @@
 <body>
     <!-- Header & Navigation -->
     <header>
-        <div class="nav-container">
-            <div class="container">
-                <nav>
-                    <ul class="nav-menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="episodes.html">Episodes</a></li>
-		        <li><a href="videos.html">Videos</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="listen.html">Listen</a></li>
-			<li><a href="merch.html">Merch</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
+        <div class="nav-container container">
+            <div class="logo-container">
+                <img src="images/logo.png" alt="CrimeTimeSnacks Logo" height="40">
+            </div>
+            <button id="mobile-menu-btn" class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="episodes.html"><i class="fas fa-microphone"></i> Episodes</a></li>
+                    <li><a href="videos.html"><i class="fas fa-video"></i> Videos</a></li>
+                    <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="merch.html"><i class="fas fa-tshirt"></i> Merch</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+            <div class="utility-nav">
+                <button id="search-toggle"><i class="fas fa-search"></i></button>
+                <button id="dark-mode-toggle"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+        
+        <!-- Search Bar (Hidden by default) -->
+        <div id="search-bar" class="container" style="display: none; padding: 1rem 0;">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search episodes, cases, or keywords...">
+                <button onclick="searchEpisodes()"><i class="fas fa-search"></i></button>
             </div>
         </div>
     </header>
@@ -44,11 +60,22 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1><h1>Crime<span class="text-red">Time</span>Snacks</h1><span>•</span> A True Crime Podcast</h1>
+                <h1>Crime<span class="text-red">Time</span>Snacks<span>•</span> A True Crime Podcast</h1>
                 <p>Exploring the facts, theories, and evidence surrounding unsolved cases</p>
                 <div class="hero-buttons">
-                    <a href="#latest-episode" class="btn btn-primary">Listen to Latest Episode</a>
+                    <a href="#latest-episode" class="btn btn-primary"><i class="fas fa-headphones"></i> Listen to Latest Episode</a>
+                    <a href="#categories" class="btn btn-secondary"><i class="fas fa-tags"></i> Browse Categories</a>
                 </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Continue Listening Section (Shows only if there's saved progress) -->
+    <section id="continue-listening" class="container" style="margin-top: 3rem; display: none;">
+        <div class="continue-listening">
+            <h2><i class="fas fa-history"></i> Continue Listening</h2>
+            <div id="continue-listening-content">
+                <!-- Content will be populated by JavaScript -->
             </div>
         </div>
     </section>
@@ -56,26 +83,70 @@
     <!-- Crime Scene Tape -->
     <div class="crime-scene-tape"></div>
     
+    <!-- Categories Section -->
+    <section id="categories" class="container">
+        <h2 class="slide-in-left animate-on-scroll" style="text-align: center; margin-bottom: 2rem;">Browse by Category</h2>
+        
+        <div class="category-filters" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+            <button class="category-btn active" data-category="all">All Cases</button>
+            <button class="category-btn" data-category="murder">Murder</button>
+            <button class="category-btn" data-category="unsolved">Unsolved</button>
+            <button class="category-btn" data-category="serial-killer">Serial Killers</button>
+            <button class="category-btn" data-category="famous">Famous Cases</button>
+            <button class="category-btn" data-category="recent">Recent</button>
+        </div>
+    </section>
+    
     <!-- Latest Episode Section -->
     <section id="latest-episode" class="container">
-        <h2 class="slide-in-left" style="text-align: center; margin-bottom: 2rem;">Latest Episode</h2>
+        <h2 class="slide-in-left animate-on-scroll" style="text-align: center; margin-bottom: 2rem;">Latest Episode</h2>
         
         <div class="episode-card" style="max-width: 800px; margin: 0 auto;">
-            <img src="images/viral.jpg" alt="Bryan Kohberger Idaho Murders Case" class="episode-image" style="height: 300px;">
+            <img src="images/moscow-murders.jpg" alt="Bryan Kohberger Idaho Murders Case" class="episode-image" style="height: 300px;">
             <div class="episode-content">
+                <div class="episode-badges" style="margin-bottom: 0.5rem;">
+                    <span class="episode-badge">Murder</span>
+                    <span class="episode-badge">Recent</span>
+                </div>
                 <h3 class="episode-title">Murders in Moscow: The Bryan Kohberger Case</h3>
-                <p class="episode-date">March 16, 2025</p>
+                <p class="episode-date"><i class="far fa-calendar-alt"></i> March 16, 2025</p>
                 <p class="episode-description">In this gripping episode of <span style="color: white;">Crime</span> <span style="color: var(--cts-red);">Time</span> <span style="color: white;">Snacks</span>, we delve into the harrowing case of the Idaho student murders that rocked the nation in November 2022. Four University of Idaho students - Kaylee Goncalves, Madison Mogen, Xana Kernodle, and Ethan Chapin - were brutally stabbed to death in their off-campus home. We explore the investigation that led to the arrest of Bryan Kohberger and the latest developments including the recently released 911 call audio.</p>
                 
-                <!-- Audio Player -->
-                <div class="audio-player">
-                    <audio controls>
+                <!-- Custom Audio Player -->
+                <div class="custom-audio-player">
+                    <audio id="latest-episode-audio">
                         <source src="audio/moscow-murders.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
+                    <div class="player-controls">
+                        <button class="play-btn"><i class="fas fa-play"></i></button>
+                        <button class="pause-btn"><i class="fas fa-pause"></i></button>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                    <div class="time-display">
+                        <span class="current-time">0:00</span>
+                        <span class="duration">0:00</span>
+                    </div>
+                    <div class="player-options">
+                        <button class="speed-btn">1x</button>
+                        <div class="volume-control">
+                            <i class="fas fa-volume-up volume-icon"></i>
+                            <div class="volume-slider">
+                                <div class="volume-level"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <a href="episodes/murders-in-moscow.html" class="btn btn-primary">Read More</a>
+                <div class="episode-actions" style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                    <a href="episodes/murders-in-moscow.html" class="btn btn-primary">Read More</a>
+                    <div class="social-share">
+                        <button class="share-btn"><i class="fas fa-share-alt"></i></button>
+                        <button class="like-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -85,39 +156,66 @@
     
     <!-- Recent Episodes Section -->
     <section class="container">
-        <h2 class="slide-in-left" style="text-align: center; margin-bottom: 2rem;">Recent Episodes</h2>
+        <h2 class="slide-in-left animate-on-scroll" style="text-align: center; margin-bottom: 2rem;">Recent Episodes</h2>
         
         <div class="episode-grid">
             <!-- Episode 1 -->
-            <div class="episode-card">
-                <img src="images/idaho-victims.jpg" alt="Murders in Moscow Episode" class="episode-image">
+            <div class="episode-card" data-categories="murder,recent">
+                <img src="images/moscow-murders.jpg" alt="Murders in Moscow Episode" class="episode-image">
                 <div class="episode-content">
+                    <div class="episode-badges">
+                        <span class="episode-badge">Murder</span>
+                        <span class="episode-badge">Recent</span>
+                    </div>
                     <h3 class="episode-title">Murders in Moscow</h3>
-                    <p class="episode-date">March 16, 2025</p>
+                    <p class="episode-date"><i class="far fa-calendar-alt"></i> March 16, 2025</p>
                     <p class="episode-description">In this gripping episode of Crime Time Snacks, we delve into the harrowing case of the Idaho student murders that rocked the nation.</p>
-                    <a href="episodes/murders-in-moscow.html" class="btn btn-primary">Listen Now</a>
+                    <div class="episode-actions">
+                        <a href="episodes/murders-in-moscow.html" class="btn btn-primary">Listen Now</a>
+                        <div class="episode-stats">
+                            <span><i class="far fa-clock"></i> 45:12</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             
             <!-- Episode 2 -->
-            <div class="episode-card">
-                <img src="images/murder-house.jpg" alt="The Menendez Brothers Episode" class="episode-image">
+            <div class="episode-card" data-categories="murder,famous">
+                <img src="images/menendez-brothers.jpg" alt="The Menendez Brothers Episode" class="episode-image">
                 <div class="episode-content">
+                    <div class="episode-badges">
+                        <span class="episode-badge">Murder</span>
+                        <span class="episode-badge">Famous</span>
+                    </div>
                     <h3 class="episode-title">ERIK AND LYLE: The Menendez Brothers</h3>
-                    <p class="episode-date">February 28, 2025</p>
+                    <p class="episode-date"><i class="far fa-calendar-alt"></i> February 28, 2025</p>
                     <p class="episode-description">The Menendez brothers, Lyle and Erik, have been in prison for over 35 years. They were convicted in 1996 for the 1989 murders of their parents.</p>
-                    <a href="episodes/menendez-brothers.html" class="btn btn-primary">Listen Now</a>
+                    <div class="episode-actions">
+                        <a href="episodes/menendez-brothers.html" class="btn btn-primary">Listen Now</a>
+                        <div class="episode-stats">
+                            <span><i class="far fa-clock"></i> 52:38</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             
             <!-- Episode 3 -->
-            <div class="episode-card">
-                <img src="images/jonbenet-ramsey-trailer.jpg" alt="JonBenét Ramsey Episode" class="episode-image">
+            <div class="episode-card" data-categories="unsolved,famous">
+                <img src="images/jonbenet-ramsey.jpg" alt="JonBenét Ramsey Episode" class="episode-image">
                 <div class="episode-content">
+                    <div class="episode-badges">
+                        <span class="episode-badge">Unsolved</span>
+                        <span class="episode-badge">Famous</span>
+                    </div>
                     <h3 class="episode-title">JonBenét Ramsey | The Facts 96-22 |Part 1</h3>
-                    <p class="episode-date">February 15, 2025</p>
+                    <p class="episode-date"><i class="far fa-calendar-alt"></i> February 15, 2025</p>
                     <p class="episode-description">JonBenét Patricia Ramsey was murdered. That is the only certain thing about this case after 26 years. Their is key evidence in this case as well as more theories than their are people involved.</p>
-                    <a href="episodes/jonbenet-ramsey-part-1.html" class="btn btn-primary">Listen Now</a>
+                    <div class="episode-actions">
+                        <a href="episodes/jonbenet-ramsey-part-1.html" class="btn btn-primary">Listen Now</a>
+                        <div class="episode-stats">
+                            <span><i class="far fa-clock"></i> 38:45</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -127,9 +225,35 @@
         </div>
     </section>
     
+    <!-- AI Blog Preview Section -->
+    <section class="container" style="margin-top: 5rem;">
+        <h2 class="slide-in-left animate-on-scroll" style="text-align: center; margin-bottom: 2rem;">Latest from the Crime Blog</h2>
+        
+        <div class="blog-grid">
+            <!-- Blog posts will be dynamically generated with AI -->
+            <div class="blog-card">
+                <img src="images/blog-placeholder.jpg" alt="Blog Post" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-tags">
+                        <span class="blog-tag">Breaking News</span>
+                        <span class="blog-tag">Court Case</span>
+                    </div>
+                    <h3 class="blog-title">Loading latest true crime news...</h3>
+                    <p class="blog-date"><i class="far fa-calendar-alt"></i> <span class="ai-date">Loading date...</span></p>
+                    <p class="blog-excerpt">AI-powered content is being generated. This section will automatically update with the latest true crime news and cases.</p>
+                    <a href="blog.html" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="blog.html" class="btn btn-secondary">View All Blog Posts</a>
+        </div>
+    </section>
+    
     <!-- About Section -->
     <section class="container" style="margin-top: 5rem;">
-        <h2 class="slide-in-left" style="text-align: center; margin-bottom: 2rem;">About CrimeTimeSnacks</h2>
+        <h2 class="slide-in-left animate-on-scroll" style="text-align: center; margin-bottom: 2rem;">About CrimeTimeSnacks</h2>
         
         <div style="max-width: 800px; margin: 0 auto; text-align: center;">
             <p style="margin-bottom: 2rem;">CrimeTimeSnacks is a true crime podcast that delves into a variety of unsolved cases, exploring the facts, theories, and evidence surrounding each mystery. The podcast aims to provide listeners with a comprehensive understanding of these cases, encouraging them to engage with the content and form their own conclusions.</p>
@@ -140,13 +264,52 @@
         </div>
     </section>
     
+    <!-- AI Features Section -->
+    <section class="container ai-features">
+        <h2 class="slide-in-left animate-on-scroll" style="text-align: center; margin-bottom: 2rem;">AI-Powered Features</h2>
+        
+        <div class="ai-features-grid">
+            <div class="ai-feature-card animate-on-scroll">
+                <div class="ai-feature-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3 class="ai-feature-title">Smart Recommendations</h3>
+                <p class="ai-feature-description">Our AI analyzes your listening habits to suggest episodes you'll love based on your interests and preferences.</p>
+            </div>
+            
+            <div class="ai-feature-card animate-on-scroll">
+                <div class="ai-feature-icon">
+                    <i class="fas fa-newspaper"></i>
+                </div>
+                <h3 class="ai-feature-title">Auto-Updated Blog</h3>
+                <p class="ai-feature-description">Stay informed with our AI-curated blog that automatically updates with the latest true crime news and developments.</p>
+            </div>
+            
+            <div class="ai-feature-card animate-on-scroll">
+                <div class="ai-feature-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3 class="ai-feature-title">Smart Search</h3>
+                <p class="ai-feature-description">Find exactly what you're looking for with our intelligent search that understands context and related terms.</p>
+            </div>
+            
+            <div class="ai-feature-card animate-on-scroll">
+                <div class="ai-feature-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h3 class="ai-feature-title">Case Summaries</h3>
+                <p class="ai-feature-description">Get AI-generated summaries of complex cases to quickly understand the key facts and developments.</p>
+            </div>
+        </div>
+    </section>
+    
     <!-- Newsletter Section -->
-    <section class="container" style="margin-top: 5rem; background-color: var(--cts-dark-gray); padding: 3rem; border-radius: 5px;">
-        <h2 class="slide-in-left" style="text-align: center;">Join Our Newsletter</h2>
+    <section class="container" style="margin-top: 5rem; background-color: var(--cts-dark-gray); padding: 3rem; border-radius: 8px;">
+        <h2 class="slide-in-left animate-on-scroll" style="text-align: center;">Join Our Newsletter</h2>
         <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem auto;">Subscribe to our newsletter to get notified about new episodes, exclusive content, and updates from CrimeTimeSnacks.</p>
         <form style="max-width: 500px; margin: 0 auto;">
             <div style="display: flex; gap: 1rem;">
-                <input type="email" placeholder="Your Email Address" style="flex-grow: 1; padding: 0.8rem; border: none; border-radius: 3px;">
+                <input type="email" placeholder="Your Email Address" style="flex-grow: 1; padding: 0.8rem; border: none; border-radius: 8px;">
                 <button type="submit" class="btn btn-primary" style="white-space: nowrap;">Subscribe</button>
             </div>
         </form>
@@ -171,21 +334,23 @@
                 <div>
                     <h3 class="footer-heading">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="episodes.html">Episodes</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="listen.html">Listen</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="episodes.html"><i class="fas fa-chevron-right"></i> Episodes</a></li>
+                        <li><a href="videos.html"><i class="fas fa-chevron-right"></i> Videos</a></li>
+                        <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h3 class="footer-heading">Listen On</h3>
                     <ul class="footer-links">
-                        <li><a href="https://podcasts.apple.com/gb/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400">Apple Podcasts</a></li>
-                        <li><a href="#">Spotify</a></li>
-                        <li><a href="#">Stitcher</a></li>
-                        <li><a href="#">iHeartRadio</a></li>
+                        <li><a href="https://podcasts.apple.com/gb/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400"><i class="fab fa-apple"></i> Apple Podcasts</a></li>
+                        <li><a href="#"><i class="fab fa-spotify"></i> Spotify</a></li>
+                        <li><a href="#"><i class="fab fa-google"></i> Google Podcasts</a></li>
+                        <li><a href="#"><i class="fas fa-podcast"></i> Stitcher</a></li>
+                        <li><a href="#"><i class="fas fa-broadcast-tower"></i> iHeartRadio</a></li>
                     </ul>
                 </div>
                 
@@ -202,5 +367,129 @@
             </div>
         </div>
     </footer>
+    
+    <!-- Mini Player (Hidden by default) -->
+    <div id="mini-player" class="mini-player">
+        <div class="mini-player-progress"></div>
+        <img id="mini-player-image" src="" alt="Episode" class="mini-player-image">
+        <div class="mini-player-info">
+            <h4 id="mini-player-title" class="mini-player-title"></h4>
+            <div id="mini-player-time" class="mini-player-time"></div>
+        </div>
+        <div class="mini-player-controls">
+            <button id="mini-player-prev" class="mini-player-btn"><i class="fas fa-step-backward"></i></button>
+            <button id="mini-player-play" class="mini-player-btn"><i class="fas fa-play"></i></button>
+            <button id="mini-player-pause" class="mini-player-btn" style="display: none;"><i class="fas fa-pause"></i></button>
+            <button id="mini-player-next" class="mini-player-btn"><i class="fas fa-step-forward"></i></button>
+            <button id="mini-player-close" class="mini-player-btn"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    
+    <!-- Category Filtering Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Category filtering
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const episodeCards = document.querySelectorAll('.episode-card');
+            
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // Update active button
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter episodes
+                    episodeCards.forEach(card => {
+                        if (category === 'all') {
+                            card.style.display = 'block';
+                        } else {
+                            const cardCategories = card.getAttribute('data-categories');
+                            if (cardCategories && cardCategories.includes(category)) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+            
+            // Search toggle
+            const searchToggle = document.getElementById('search-toggle');
+            const searchBar = document.getElementById('search-bar');
+            
+            if (searchToggle && searchBar) {
+                searchToggle.addEventListener('click', function() {
+                    searchBar.style.display = searchBar.style.display === 'none' ? 'block' : 'none';
+                    if (searchBar.style.display === 'block') {
+                        document.getElementById('search-input').focus();
+                    }
+                });
+            }
+            
+            // Check for continue listening
+            const continueListeningSection = document.getElementById('continue-listening');
+            const continueListeningContent = document.getElementById('continue-listening-content');
+            
+            if (continueListeningSection && continueListeningContent) {
+                const episodes = JSON.parse(localStorage.getItem('episodeProgress') || '{}');
+                const episodeKeys = Object.keys(episodes);
+                
+                if (episodeKeys.length > 0) {
+                    continueListeningSection.style.display = 'block';
+                    
+                    // Get the most recent episode
+                    let mostRecentEpisode = null;
+                    let mostRecentTimestamp = 0;
+                    
+                    episodeKeys.forEach(key => {
+                        if (episodes[key].timestamp > mostRecentTimestamp) {
+                            mostRecentEpisode = {
+                                key: key,
+                                ...episodes[key]
+                            };
+                            mostRecentTimestamp = episodes[key].timestamp;
+                        }
+                    });
+                    
+                    if (mostRecentEpisode) {
+                        // Get episode details
+                        const episodeName = mostRecentEpisode.key.replace('.mp3', '').replace('.m4a', '').replace(/-/g, ' ');
+                        const formattedName = episodeName.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+                        const progressPercent = (mostRecentEpisode.time / 100) * 100; // Assuming 100 minutes max
+                        
+                        // Create continue card
+                        continueListeningContent.innerHTML = `
+                            <div class="continue-card">
+                                <img src="images/${episodeName}.jpg" onerror="this.src='images/logo.png'" class="continue-image">
+                                <div class="continue-info">
+                                    <h3 class="continue-title">${formattedName}</h3>
+                                    <div class="continue-progress">
+                                        <div class="continue-progress-bar" style="width: ${progressPercent}%"></div>
+                                    </div>
+                                    <div class="continue-actions">
+                                        <span class="continue-time">${formatTime(mostRecentEpisode.time)} remaining</span>
+                                        <a href="episodes/${episodeName}.html" class="btn btn-primary btn-sm">Resume</a>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                }
+            }
+        });
+        
+        // Helper function to format time
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = Math.floor(seconds % 60);
+            return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+        }
+    </script>
 </body>
 </html>
