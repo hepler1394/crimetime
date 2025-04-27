@@ -1,58 +1,16 @@
-# CrimeTimeSnacks Website Upgrade Todo
+# Website Update Tasks
 
-## Analysis
-- [x] Analyze current website structure
-- [x] Identify file organization issues
-- [x] Review CSS and styling
-- [x] Check responsive design implementation
-- [x] Identify opportunities for AI integration
+## Completed Tasks
+- [x] Extract website files from the provided zip
+- [x] Analyze current design to understand the black, red, and white color scheme
+- [x] Identify button functionality issues (gray category buttons not working when clicked)
+- [x] Fix button functionality in category-ai.js to work with existing buttons
+- [x] Integrate Brave Search API with the provided key (BSAl1hctJZNjBLbVh-ibu7Etcx8EaJH)
+- [x] Integrate Gemini API with the provided key (AIzaSyClI8VW8G6_RdGQuse5dAUxHtefVke1qjc)
 
-## Design Improvements
-- [ ] Create proper directory structure
-- [ ] Fix file path references
-- [ ] Enhance responsive design while maintaining color scheme
-- [ ] Improve navigation for mobile devices
-- [ ] Add modern animations and transitions
-- [ ] Create consistent episode page templates
-
-## AI-Powered Category System
-- [ ] Implement functional category filtering
-- [ ] Create dynamic category tags for episodes
-- [ ] Add AI-based content classification
-- [ ] Develop intuitive category navigation
-- [ ] Ensure mobile-friendly category interface
-
-## AI Blog Implementation
-- [ ] Create AI blog section for true crime news
-- [ ] Design blog layout matching site theme
-- [ ] Set up structure for Law and Crime content integration
-- [ ] Implement easy content addition system
-- [ ] Prepare for future automation
-
-## AI Features Implementation
-- [ ] Set up Gemini API integration
-- [ ] Create content recommendation system
-- [ ] Implement AI-powered search functionality
-- [ ] Add episode transcript generation
-- [ ] Create case facts summarization feature
-
-## Audio Player Enhancement
-- [x] Design custom audio player with theme matching
-- [x] Add playback speed controls
-- [x] Implement progress saving functionality
-- [x] Add chapter markers for episodes
-- [x] Create mini-player for scrolling
-
-## Content Organization
-- [x] Categorize episodes by case type
-- [x] Add tagging system
-- [x] Create related episodes section
-- [x] Implement "continue listening" feature
-- [x] Add episode ratings and comments
-
-## Deployment
-- [ ] Test website locally
-- [ ] Deploy to hosting platform
-- [ ] Package files for download
-- [ ] Create documentation for future updates
-- [ ] Verify all links and resources work correctly
+## Remaining Tasks
+- [ ] Test website functionality to ensure all changes work properly
+- [ ] Update HTML files to include the new JavaScript files
+- [ ] Test the search functionality with Brave Search API
+- [ ] Test the AI features with Gemini API
+- [ ] Deploy the updated website

@@ -9,13 +9,15 @@ class GeminiAI {
     
     async init() {
         try {
-            // Load environment variables
-            const env = await this.loadEnvVariables();
-            this.apiKey = env.GEMINI_API_KEY;
+            // Set the API key directly
+            this.apiKey = 'AIzaSyClI8VW8G6_RdGQuse5dAUxHtefVke1qjc';
             
             if (!this.apiKey) {
                 console.warn('Gemini API key not found. Using mock data for AI features.');
                 this.useMockData = true;
+            } else {
+                console.log('Gemini API initialized successfully');
+                this.useMockData = false;
             }
             
             this.isInitialized = true;
