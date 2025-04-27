@@ -196,40 +196,26 @@ class CategoryAI {
         // Process all episode elements
         this.processEpisodeElements();
         
-        // Set up category buttons
+        // Set up category buttons - use existing buttons instead of recreating them
         const categoryContainer = document.querySelector('.category-filters');
         if (!categoryContainer) return;
         
-        // Clear existing buttons
-        categoryContainer.innerHTML = '';
-        
-        // Add "All Cases" button
-        const allButton = document.createElement('button');
-        allButton.className = 'category-btn active';
-        allButton.setAttribute('data-category', 'all');
-        allButton.textContent = 'All Cases';
-        categoryContainer.appendChild(allButton);
-        
-        // Add buttons for each category
-        this.categories.forEach(category => {
-            const button = document.createElement('button');
-            button.className = 'category-btn';
-            button.setAttribute('data-category', category);
-            button.textContent = this.formatCategoryName(category);
-            categoryContainer.appendChild(button);
-        });
-        
-        // Add event listeners
+        // Add event listeners to existing buttons
         const categoryBtns = document.querySelectorAll('.category-btn');
         const episodeCards = document.querySelectorAll('.episode-card');
         
         categoryBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const category = btn.getAttribute('data-category');
+            // Remove any existing event listeners first to avoid duplicates
+            const newBtn = btn.cloneNode(true);
+            btn.parentNode.replaceChild(newBtn, btn);
+            
+            // Add the click event listener
+            newBtn.addEventListener('click', () => {
+                const category = newBtn.getAttribute('data-category');
                 
                 // Update active button
                 categoryBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
+                newBtn.classList.add('active');
                 
                 // Filter episodes
                 episodeCards.forEach(card => {
