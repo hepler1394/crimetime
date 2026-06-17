@@ -26,10 +26,11 @@ const abs = (site, path) =>
   /^https?:\/\//.test(path) ? path : `${site.replace(/\/$/, "")}${path}`;
 
 function item(p, ep) {
-  const link = abs(p.siteUrl, ep.page);
+  const link = ep.link || abs(p.siteUrl, `/episodes/${ep.slug}.html`);
   const audio = abs(p.siteUrl, ep.audio);
   const img = abs(p.siteUrl, ep.image);
-  const pub = new Date(`${ep.date}T12:00:00Z`).toUTCString();
+  const pub = ep.pubDate || new Date(`${ep.date}T12:00:00Z`).toUTCString();
+  const dur = ep.duration ? `\n      <itunes:duration>${esc(ep.duration)}</itunes:duration>` : "";
   return `    <item>
       <title>${esc(ep.title)}</title>
       <link>${esc(link)}</link>
@@ -37,8 +38,8 @@ function item(p, ep) {
       <pubDate>${pub}</pubDate>
       <description>${esc(ep.description)}</description>
       <itunes:summary>${esc(ep.description)}</itunes:summary>
-      <itunes:author>${esc(p.author)}</itunes:author>
-      <enclosure url="${esc(audio)}" length="${ep.audioBytes ?? 0}" type="${esc(ep.audioMime ?? "audio/mpeg")}" />
+      <itunes:author>${esc(p.author)}</itunes:author>${dur}
+      <enclosure url="${esc(audio)}" length="${ep.audioBytes ?? 0}" type="${esc(ep.audioType ?? ep.audioMime ?? "audio/mpeg")}" />
       <itunes:image href="${esc(img)}" />
       <itunes:explicit>${ep.explicit ? "true" : "false"}</itunes:explicit>
     </item>`;
