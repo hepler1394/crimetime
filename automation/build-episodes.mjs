@@ -163,6 +163,100 @@ ${footer(p)}
 `;
 }
 
+// ---- Homepage "Latest Episode" + "Recent Episodes" (real feed) ----
+const trunc = (s, n) => (s.length > n ? s.slice(0, n).replace(/\s+\S*$/, "") + "…" : s);
+
+function homeRecentCard(p, ep) {
+  return `                <div class="episode-card" data-categories="true-crime">
+                    <img src="${esc(ep.image)}" alt="${esc(ep.title)}" class="episode-image" loading="lazy">
+                    <div class="episode-content">
+                        <div class="episode-badges">
+                            <span class="episode-badge">True Crime</span>
+                            ${ep.duration ? `<span class="episode-badge">${esc(fmtDur(ep.duration))}</span>` : ""}
+                        </div>
+                        <h3 class="episode-title">${esc(ep.title)}</h3>
+                        <p class="episode-date"><i class="far fa-calendar-alt"></i> ${esc(fmtDate(ep.date))}</p>
+                        <p class="episode-description">${esc(trunc(ep.description, 150))}</p>
+                        <div class="episode-actions">
+                            <a href="episodes.html" class="btn btn-primary">Listen Now</a>
+                            <div class="episode-stats"><span><i class="far fa-clock"></i> ${esc(fmtDur(ep.duration))}</span></div>
+                        </div>
+                    </div>
+                </div>`;
+}
+
+function homeBlock({ podcast: p, episodes }) {
+  const sorted = [...episodes].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+  const latest = sorted[0];
+  const recent = sorted.slice(1, 4);
+  return `    <!-- HOME-EPISODES:START (auto-filled by automation/build-episodes.mjs) -->
+    <!-- Latest Episode Section -->
+    <section id="latest-episode" class="container">
+        <h2 class="slide-in-left animate-on-scroll" style="text-align: center; margin-bottom: 2rem;">Latest Episode</h2>
+        <article class="episode-card" style="max-width: 820px; margin: 0 auto;">
+            <img src="${esc(latest.image)}" alt="${esc(latest.title)}" class="episode-image" style="height:auto;aspect-ratio:1/1;object-fit:cover;max-height:380px;">
+            <div class="episode-content">
+                <div class="episode-badges" style="margin-bottom: 0.5rem;">
+                    <span class="episode-badge">True Crime</span>
+                    ${latest.duration ? `<span class="episode-badge">${esc(fmtDur(latest.duration))}</span>` : ""}
+                </div>
+                <h3 class="episode-title">${esc(latest.title)}</h3>
+                <p class="episode-date"><i class="far fa-calendar-alt"></i> ${esc(fmtDate(latest.date))}</p>
+                <p class="episode-description">${esc(latest.description)}</p>
+                <audio controls preload="none" style="width:100%;margin:1rem 0;">
+                    <source src="${esc(latest.audio)}" type="${esc(latest.audioType)}">
+                    Your browser does not support the audio element.
+                </audio>
+                <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+                    <a href="${latest.link || p.spotifyUrl}" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-spotify"></i> Listen on Spotify</a>
+                    <a href="${APPLE}" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-apple"></i> Apple Podcasts</a>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- Crime Scene Tape -->
+    <div class="crime-scene-tape"></div>
+
+    <!-- Recent Episodes Section -->
+    <section class="container">
+        <h2 class="slide-in-left animate-on-scroll" style="text-align: center; margin-bottom: 2rem;">Recent Episodes</h2>
+        <div class="episode-grid">
+${recent.map((ep) => homeRecentCard(p, ep)).join("\n")}
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="episodes.html" class="btn btn-secondary">View All Episodes</a>
+        </div>
+    </section>
+    <!-- HOME-EPISODES:END -->`;
+}
+
+async function updateHome(data) {
+  const indexPath = join(ROOT, "index.html");
+  let html;
+  try { html = await readFile(indexPath, "utf8"); } catch { return false; }
+  const block = homeBlock(data);
+  const START = "<!-- HOME-EPISODES:START (auto-filled by automation/build-episodes.mjs) -->";
+  const END = "<!-- HOME-EPISODES:END -->";
+  const i = html.indexOf(START);
+  const j = html.indexOf(END);
+  if (i !== -1 && j !== -1) {
+    // Replace existing marker region (preserve indentation before START).
+    const lineStart = html.lastIndexOf("\n", i) + 1;
+    html = html.slice(0, lineStart) + block + html.slice(j + END.length);
+  } else {
+    // One-time migration: replace the hand-written sections between these anchors.
+    const a = html.indexOf("<!-- Latest Episode Section -->");
+    const b = html.indexOf("<!-- AI Blog Preview Section -->");
+    if (a === -1 || b === -1) return false;
+    const lineStart = html.lastIndexOf("\n", a) + 1;
+    html = html.slice(0, lineStart) + block + "\n\n    " + html.slice(b);
+  }
+  await writeFile(indexPath, html, "utf8");
+  return true;
+}
+
 const data = JSON.parse(await readFile(join(__dirname, "episodes.json"), "utf8"));
 await writeFile(join(ROOT, "episodes.html"), page(data), "utf8");
-console.log(`episodes.html generated: ${data.episodes.length} episodes.`);
+const home = await updateHome(data);
+console.log(`episodes.html generated: ${data.episodes.length} episodes.` + (home ? " Homepage episodes refreshed." : " (home markers not found)"));
