@@ -21,8 +21,9 @@ const htmlIn = async (dir) =>
 
 async function collect() {
   const urls = [];
+  const rootSkip = new Set(["editor.html", "404.html"]); // not public content
   for (const f of await htmlIn(ROOT)) {
-    if (f === "editor.html") continue; // internal tool, not public content
+    if (rootSkip.has(f)) continue;
     urls.push("/" + f);
   }
   for (const f of await htmlIn(join(ROOT, "blog-posts"))) {

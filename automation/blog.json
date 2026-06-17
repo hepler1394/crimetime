@@ -67,6 +67,70 @@
         "The method has closed cases that sat untouched for decades, but it also raises real questions about privacy and consent that courts and lawmakers are still working through.",
         "For listeners, the takeaway is simple: the science behind these cases is moving quickly, and understanding it makes the headlines easier to read with a clear eye."
       ]
+    },
+    {
+      "slug": "jonbenet-ramsey-why-the-case-stays-open",
+      "title": "JonBenét Ramsey: Why the Case Stays Open",
+      "date": "2026-01-08",
+      "category": "analysis",
+      "categoryLabel": "Analysis",
+      "image": "images/jonbenet-ramsey.jpg",
+      "author": "Cory",
+      "featured": false,
+      "excerpt": "Nearly thirty years on, the 1996 killing of six-year-old JonBenét Ramsey is still unsolved. A look at why, and what modern DNA testing might still offer.",
+      "body": [
+        "JonBenét Ramsey was found dead in her family's Boulder, Colorado home the day after Christmas in 1996. Nearly three decades later, no one has been charged, and the case remains officially open.",
+        "Much of the renewed hope rests on DNA. The samples collected at the time were limited by the technology of the era, and there has been a sustained push to apply newer testing methods that simply did not exist when the case began.",
+        "The Ramsey case is also a study in how early media coverage can set a public narrative long before the evidence is settled. Our aim is to keep those two things apart."
+      ]
+    },
+    {
+      "slug": "watts-family-reading-the-warning-signs",
+      "title": "The Watts Family Case: Reading the Warning Signs",
+      "date": "2025-11-14",
+      "category": "analysis",
+      "categoryLabel": "Analysis",
+      "image": "images/watts-family-murders.jpg",
+      "author": "Cory",
+      "featured": false,
+      "excerpt": "The 2018 Watts family killings unsettled people partly because of how ordinary the family appeared. A measured look at the timeline and the confession.",
+      "body": [
+        "In August 2018, Shanann Watts and her two young daughters went missing from their home in Frederick, Colorado. Within days, her husband, Chris Watts, confessed to the killings.",
+        "What stayed with the public was the contrast between the family's online image and what investigators described. Home footage and social media had shown an apparently happy household.",
+        "Cases like this raise hard questions about how little outsiders can really see, and why retrospective warning signs always look clearer in hindsight than they did at the time."
+      ]
+    },
+    {
+      "slug": "courtney-clenney-the-case-explained",
+      "title": "Courtney Clenney: The Case Explained",
+      "date": "2025-10-02",
+      "category": "court",
+      "categoryLabel": "Court",
+      "image": "images/clenney-bail.jpg",
+      "author": "Cory",
+      "featured": false,
+      "excerpt": "A case that turns on a single, contested question the court will have to weigh. Here is the framework, without taking sides before a verdict.",
+      "body": [
+        "The case against Courtney Clenney centers on the death of her boyfriend and the competing accounts of what happened. As with any pending matter, she is presumed innocent unless and until proven otherwise.",
+        "Much of the legal argument is expected to turn on the question of self-defense, and on how the available evidence is interpreted by each side. Those are questions for a court, not for public opinion.",
+        "We lay out the timeline and the issues in dispute, and leave the conclusions where they belong: with the people who hear all of the evidence."
+      ]
+    },
+    {
+      "slug": "bryan-kohberger-from-arrest-to-courtroom",
+      "title": "Bryan Kohberger: From Arrest to Courtroom",
+      "date": "2025-09-20",
+      "category": "court",
+      "categoryLabel": "Court",
+      "image": "images/bryan-kohberger.jpg",
+      "author": "Cory",
+      "featured": false,
+      "excerpt": "The path from a late-night arrest to the courtroom in the University of Idaho murders case, and the evidence that drew the most attention.",
+      "body": [
+        "The investigation into the November 2022 killings of four University of Idaho students led, weeks later, to the arrest of Bryan Kohberger. The gap between the crime and the arrest was filled with public speculation.",
+        "Two threads drew the most attention: the digital and forensic evidence investigators said tied a suspect to the scene, and the careful, slow work of building a case that would hold up in court.",
+        "However one views the case, it is a useful example of how modern investigations move, and of why the public timeline and the legal timeline are rarely the same."
+      ]
     }
   ]
 }

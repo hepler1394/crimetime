@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
 const here = dirname(fileURLToPath(import.meta.url));
-for (const script of ["build-feed.mjs", "build-blog.mjs", "build-sitemap.mjs"]) {
+for (const script of ["build-feed.mjs", "build-blog.mjs", "build-meta.mjs", "build-sitemap.mjs"]) {
   const r = spawnSync(process.execPath, [join(here, script)], { stdio: "inherit" });
   if (r.status !== 0) process.exit(r.status ?? 1);
 }
