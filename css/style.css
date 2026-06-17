@@ -1422,7 +1422,7 @@ body.light-mode ::-webkit-scrollbar-thumb {
     width: 82%;
     max-width: 440px;
     height: auto;
-    margin-top: -6%;
+    margin-top: 2rem;
     filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.6));
 }
 @media (max-width: 900px) {
