@@ -1395,7 +1395,6 @@ body.light-mode ::-webkit-scrollbar-thumb {
     z-index: 2;
     margin: 0 -2%;
     transform: translateY(-14px);
-    animation: hero-phone-float 6s ease-in-out infinite;
 }
 
 @keyframes hero-phone-float {
