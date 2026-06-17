@@ -1412,3 +1412,19 @@ body.light-mode ::-webkit-scrollbar-thumb {
 @media (prefers-reduced-motion: reduce) {
     .hero-phone--center { animation: none; }
 }
+
+/* Hero iPad — sits below the phone trio (mirrors the promo composition).
+   On black, the render background is seamless. */
+.hero-visual {
+    flex-direction: column;
+}
+.hero-ipad {
+    width: 82%;
+    max-width: 440px;
+    height: auto;
+    margin-top: -6%;
+    filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.6));
+}
+@media (max-width: 900px) {
+    .hero-ipad { max-width: 360px; }
+}
