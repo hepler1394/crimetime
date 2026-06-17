@@ -10,8 +10,11 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const SITE = "https://crimetime.vercel.app";
 
-// Orphaned duplicate copies that live under /episodes/ (not canonical pages).
-const EPISODE_DUPES = new Set([
+// Canonical site pages live at the root. The episode DETAIL pages are canonical
+// under /episodes/. Everything else under /episodes/ (and the root copies of the
+// case pages) are orphaned duplicates with broken paths — keep them out of the
+// sitemap so search engines don't index broken pages.
+const CANONICAL_ROOT = new Set([
   "index.html", "about.html", "blog.html", "contact.html",
   "episodes.html", "merch.html", "videos.html", "listen.html",
 ]);
@@ -19,18 +22,24 @@ const EPISODE_DUPES = new Set([
 const htmlIn = async (dir) =>
   (await readdir(dir)).filter((f) => f.endsWith(".html"));
 
+// Internal tools and superseded/duplicate files to keep out of the sitemap.
+const EXCLUDE = new Set([
+  "editor.html",
+  "courtney clenney.html", // space-named duplicate of courtney-clenney.html
+  "wilmington-dmv-blog.html", // superseded by wilmington-dmv-what-we-know.html
+]);
+
 async function collect() {
   const urls = [];
-  const rootSkip = new Set(["editor.html", "404.html"]); // not public content
   for (const f of await htmlIn(ROOT)) {
-    if (rootSkip.has(f)) continue;
-    urls.push("/" + f);
+    if (CANONICAL_ROOT.has(f) && !EXCLUDE.has(f)) urls.push("/" + f);
   }
   for (const f of await htmlIn(join(ROOT, "blog-posts"))) {
-    urls.push("/blog-posts/" + f);
+    if (!EXCLUDE.has(f)) urls.push("/blog-posts/" + f);
   }
+  // Only episode detail pages under /episodes/, not the duplicate site pages.
   for (const f of await htmlIn(join(ROOT, "episodes"))) {
-    if (!EPISODE_DUPES.has(f)) urls.push("/episodes/" + f);
+    if (!CANONICAL_ROOT.has(f) && !EXCLUDE.has(f)) urls.push("/episodes/" + f);
   }
   // index.html collapses to "/"
   return [...new Set(urls.map((u) => (u === "/index.html" ? "/" : u)))].sort();
