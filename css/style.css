@@ -1379,7 +1379,6 @@ body.light-mode ::-webkit-scrollbar-thumb {
 
 .hero-phone {
     height: auto;
-    filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.65));
     will-change: transform;
 }
 
@@ -1396,7 +1395,6 @@ body.light-mode ::-webkit-scrollbar-thumb {
     z-index: 2;
     margin: 0 -2%;
     transform: translateY(-14px);
-    filter: drop-shadow(0 28px 45px rgba(255, 0, 0, 0.18)) drop-shadow(0 18px 30px rgba(0, 0, 0, 0.6));
     animation: hero-phone-float 6s ease-in-out infinite;
 }
 
@@ -1423,7 +1421,6 @@ body.light-mode ::-webkit-scrollbar-thumb {
     max-width: 440px;
     height: auto;
     margin-top: 2rem;
-    filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.6));
 }
 @media (max-width: 900px) {
     .hero-ipad { max-width: 360px; }
