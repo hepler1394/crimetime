@@ -33,7 +33,7 @@ const fmtDate = (iso) =>
   });
 
 const SITE = "https://crimetime.vercel.app";
-const head = (title, desc, path = "/", image = "/images/logo.png") => `<head>
+const head = (title, desc, path = "/", image = "/images/logo.png", extra = "") => `<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${esc(title)}</title>
@@ -52,11 +52,13 @@ const head = (title, desc, path = "/", image = "/images/logo.png") => `<head>
     <meta name="twitter:image" content="${SITE}${image}">
     <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Podcast" href="/feed.xml">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/images/logo.png">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="${FONTS}" rel="stylesheet">
     <link rel="stylesheet" href="${FA}">
-    <link rel="stylesheet" href="${CSS}">
+    <link rel="stylesheet" href="${CSS}">${extra}
 </head>`;
 
 const header = (active) => `    <header>
@@ -230,11 +232,30 @@ ${footer()}
 `;
 }
 
+function articleLd(p) {
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    headline: p.title,
+    description: p.excerpt,
+    image: `${SITE}/${p.image}`,
+    datePublished: p.date,
+    author: { "@type": "Person", name: p.author },
+    publisher: {
+      "@type": "Organization",
+      name: "CrimeTimeSnacks",
+      logo: { "@type": "ImageObject", url: `${SITE}/images/logo.png` },
+    },
+    mainEntityOfPage: `${SITE}${postUrl(p)}`,
+  };
+  return `\n    <script type="application/ld+json">\n${JSON.stringify(ld, null, 2)}\n    </script>`;
+}
+
 function postPage(p) {
   const paras = p.body.map((t) => `        <p>${esc(t)}</p>`).join("\n");
   return `<!DOCTYPE html>
 <html lang="en">
-${head(`${p.title} | CrimeTimeSnacks Blog`, p.excerpt, postUrl(p), `/${p.image}`)}
+${head(`${p.title} | CrimeTimeSnacks Blog`, p.excerpt, postUrl(p), `/${p.image}`, articleLd(p))}
 <body>
 ${header("blog")}
 
