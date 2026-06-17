@@ -130,7 +130,7 @@ const postUrl = (p) => `/blog-posts/${p.slug}.html`;
 
 function card(p) {
   return `                <div class="blog-card" data-category="${esc(p.category)}">
-                    <a href="${postUrl(p)}"><img src="/${esc(p.image)}" alt="${esc(p.title)}" class="blog-image"></a>
+                    <a href="${postUrl(p)}"><img src="/${esc(p.image)}" alt="${esc(p.title)}" class="blog-image" loading="lazy"></a>
                     <div class="blog-content">
                         <div class="blog-tags"><span class="blog-tag">${esc(p.categoryLabel)}</span></div>
                         <h3 class="blog-title"><a href="${postUrl(p)}" style="color:inherit;text-decoration:none;">${esc(p.title)}</a></h3>
@@ -266,7 +266,7 @@ ${footer()}
 function previewCard(p) {
   const url = `blog-posts/${p.slug}.html`;
   return `            <div class="blog-card">
-                <a href="${url}"><img src="${esc(p.image)}" alt="${esc(p.title)}" class="blog-image"></a>
+                <a href="${url}"><img src="${esc(p.image)}" alt="${esc(p.title)}" class="blog-image" loading="lazy"></a>
                 <div class="blog-content">
                     <div class="blog-tags"><span class="blog-tag">${esc(p.categoryLabel)}</span></div>
                     <h3 class="blog-title">${esc(p.title)}</h3>

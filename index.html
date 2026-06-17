@@ -23,9 +23,25 @@
     <!-- Podcast RSS feed -->
     <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Podcast" href="/feed.xml">
 
-    <!-- Favicon -->
+    <!-- Favicon & app icons -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
+    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Structured data for search engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PodcastSeries",
+      "name": "CrimeTimeSnacks",
+      "description": "A true crime podcast exploring unsolved cases, murders, and mysteries with detailed analysis and compelling storytelling.",
+      "url": "https://crimetime.vercel.app/",
+      "image": "https://crimetime.vercel.app/images/logo.png",
+      "author": { "@type": "Person", "name": "Cory" },
+      "webFeed": "https://crimetime.vercel.app/feed.xml"
+    }
+    </script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -284,7 +300,7 @@
         <div class="blog-grid">
             <!-- BLOG-PREVIEW:START (auto-filled by automation/build-blog.mjs) -->
             <div class="blog-card">
-                <a href="blog-posts/jonbenet-ramsey-why-the-case-stays-open.html"><img src="images/jonbenet-ramsey.jpg" alt="JonBenét Ramsey: Why the Case Stays Open" class="blog-image"></a>
+                <a href="blog-posts/jonbenet-ramsey-why-the-case-stays-open.html"><img src="images/jonbenet-ramsey.jpg" alt="JonBenét Ramsey: Why the Case Stays Open" class="blog-image" loading="lazy"></a>
                 <div class="blog-content">
                     <div class="blog-tags"><span class="blog-tag">Analysis</span></div>
                     <h3 class="blog-title">JonBenét Ramsey: Why the Case Stays Open</h3>
@@ -294,7 +310,7 @@
                 </div>
             </div>
             <div class="blog-card">
-                <a href="blog-posts/wilmington-dmv-what-we-know.html"><img src="images/wilmington-dmv.jpg" alt="Wilmington DMV: What We Know So Far" class="blog-image"></a>
+                <a href="blog-posts/wilmington-dmv-what-we-know.html"><img src="images/wilmington-dmv.jpg" alt="Wilmington DMV: What We Know So Far" class="blog-image" loading="lazy"></a>
                 <div class="blog-content">
                     <div class="blog-tags"><span class="blog-tag">Breaking</span></div>
                     <h3 class="blog-title">Wilmington DMV: What We Know So Far</h3>
@@ -304,7 +320,7 @@
                 </div>
             </div>
             <div class="blog-card">
-                <a href="blog-posts/watts-family-reading-the-warning-signs.html"><img src="images/watts-family-murders.jpg" alt="The Watts Family Case: Reading the Warning Signs" class="blog-image"></a>
+                <a href="blog-posts/watts-family-reading-the-warning-signs.html"><img src="images/watts-family-murders.jpg" alt="The Watts Family Case: Reading the Warning Signs" class="blog-image" loading="lazy"></a>
                 <div class="blog-content">
                     <div class="blog-tags"><span class="blog-tag">Analysis</span></div>
                     <h3 class="blog-title">The Watts Family Case: Reading the Warning Signs</h3>

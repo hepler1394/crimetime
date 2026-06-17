@@ -1,0 +1,12 @@
+{
+  "name": "CrimeTimeSnacks",
+  "short_name": "CrimeTime",
+  "description": "A true crime podcast exploring unsolved cases, murders, and mysteries.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    { "src": "/images/logo.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
