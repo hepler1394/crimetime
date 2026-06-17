@@ -1363,3 +1363,52 @@ body.light-mode ::-webkit-scrollbar-thumb {
     .hero-render { animation: none; }
     * { scroll-behavior: auto !important; }
 }
+
+/* ============================================================
+   Hero phone trio — the three real promo renders, cropped to
+   individual phones and floated on the black hero (seamless,
+   since the render background and the hero are both pure black).
+   ============================================================ */
+.hero-phones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 0.25rem;
+}
+
+.hero-phone {
+    height: auto;
+    filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.65));
+    will-change: transform;
+}
+
+.hero-phone--side {
+    width: 31%;
+    opacity: 0.96;
+}
+
+.hero-phone--left { transform: translateY(16px); }
+.hero-phone--right { transform: translateY(16px); }
+
+.hero-phone--center {
+    width: 37%;
+    z-index: 2;
+    margin: 0 -2%;
+    transform: translateY(-14px);
+    filter: drop-shadow(0 28px 45px rgba(255, 0, 0, 0.18)) drop-shadow(0 18px 30px rgba(0, 0, 0, 0.6));
+    animation: hero-phone-float 6s ease-in-out infinite;
+}
+
+@keyframes hero-phone-float {
+    0%, 100% { transform: translateY(-14px); }
+    50% { transform: translateY(-26px); }
+}
+
+@media (max-width: 900px) {
+    .hero-phones { max-width: 460px; margin: 0 auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-phone--center { animation: none; }
+}

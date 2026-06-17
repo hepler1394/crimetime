@@ -51,7 +51,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css?v=2026a">
+    <link rel="stylesheet" href="css/style.css?v=2026b">
     
     <!-- Preload JavaScript files -->
     <link rel="preload" href="js/main.js" as="script">
@@ -111,9 +111,11 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <img src="images/renders.png" alt="CrimeTimeSnacks on Apple Podcasts and Spotify"
-                     class="hero-render"
-                     onerror="this.onerror=null;this.src='images/logo.png';this.classList.add('hero-render--fallback');">
+                <div class="hero-phones">
+                    <img src="images/phone-left.png" alt="CrimeTimeSnacks on Apple Podcasts" class="hero-phone hero-phone--side hero-phone--left" loading="eager">
+                    <img src="images/phone-center.png" alt="An episode of CrimeTimeSnacks playing on Spotify" class="hero-phone hero-phone--center" loading="eager">
+                    <img src="images/phone-right.png" alt="The CrimeTimeSnacks show page on Spotify" class="hero-phone hero-phone--side hero-phone--right" loading="eager">
+                </div>
             </div>
         </div>
     </section>
