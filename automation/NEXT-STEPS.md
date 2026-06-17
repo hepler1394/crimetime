@@ -27,6 +27,17 @@ look. No emojis, no AI slop, no robotic copy, AI kept discreet.
    `itunes:new-feed-url`, then resubmit to Apple/Spotify so subscribers keep
    their history. Deliberate step — verify before flipping.
 
+## Known cleanup (low priority, not blocking, left for a human call)
+- **Orphaned duplicate pages.** The canonical episode pages live in `/episodes/`
+  (every live link points there). The root-level case pages
+  (`menendez-brothers.html`, `jonbenet-ramsey-part-1.html`, etc.) and the
+  `/episodes/` copies of site pages (`episodes/about.html`, etc.) are unlinked
+  duplicates with broken relative paths. Not indexed (excluded from sitemap),
+  but they could be deleted. Verify nothing external links to them first.
+- **Merch placeholders.** `merch.html` references placeholder product images
+  (`t-shirt-placeholder.png`, etc.) that were never added.
+- Run `node automation/check-links.mjs` any time to re-audit broken local refs.
+
 ## How to add content now
 Edit `automation/blog.json` or `automation/episodes.json`, then:
 
