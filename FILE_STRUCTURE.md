@@ -86,7 +86,7 @@ You can safely delete the following files from the original site as they've been
 1. Copy `.env.example` to `.env`
 2. Add your Gemini API key to the `.env` file:
 ```
-GEMINI_API_KEY=AIzaSyClI8VW8G6_RdGQuse5dAUxHtefVke1qjc
+GEMINI_API_KEY=[REDACTED_GEMINI_KEY_ROTATE_IT]
 ```
 3. Add `.env` to your `.gitignore` file to prevent committing your API key
 

@@ -1,0 +1,57 @@
+{
+  "podcast": {
+    "title": "CrimeTimeSnacks • A True Crime Podcast",
+    "subtitle": "Exploring unsolved cases, murders, and mysteries.",
+    "description": "CrimeTimeSnacks is a true crime podcast exploring unsolved cases, murders, and mysteries with detailed analysis and compelling storytelling. Hosted by Cory.",
+    "siteUrl": "https://crimetime.vercel.app",
+    "author": "Cory",
+    "ownerName": "Cory",
+    "ownerEmail": "coryh2014@gmail.com",
+    "language": "en-us",
+    "category": "True Crime",
+    "image": "https://crimetime.vercel.app/images/logo.png",
+    "explicit": false,
+    "appleId": "1655384400"
+  },
+  "episodes": [
+    {
+      "guid": "crimetimesnacks-wilmington-dmv",
+      "title": "A Hero at the Wilmington DMV: The Heroism of Corporal Matthew Snook",
+      "slug": "wilmington-dmv",
+      "page": "/episodes/wilmington-dmv.html",
+      "date": "2025-12-26",
+      "description": "The tragic and heroic events that unfolded at the Wilmington DMV on December 23, 2025, and the ultimate sacrifice of Corporal Matthew Snook, a Delaware State Police officer whose heroism saved lives.",
+      "audio": "/audio/wilmington-dmv.wav",
+      "audioBytes": 4540844,
+      "audioMime": "audio/wav",
+      "image": "/images/wilmington-dmv.jpg",
+      "explicit": false
+    },
+    {
+      "guid": "crimetimesnacks-murders-in-moscow",
+      "title": "Murders in Moscow",
+      "slug": "murders-in-moscow",
+      "page": "/episodes/murders-in-moscow.html",
+      "date": "2025-03-16",
+      "description": "The Idaho student murders that rocked the nation — the victims, the investigation, and the arrest of Bryan Kohberger.",
+      "audio": "/audio/moscow-murders.mp3",
+      "audioBytes": 28079084,
+      "audioMime": "audio/mpeg",
+      "image": "/images/moscow-murders.jpg",
+      "explicit": false
+    },
+    {
+      "guid": "crimetimesnacks-menendez-brothers",
+      "title": "Erik and Lyle: The Menendez Brothers",
+      "slug": "menendez-brothers",
+      "page": "/episodes/menendez-brothers.html",
+      "date": "2025-02-28",
+      "description": "Convicted in 1996 for the 1989 murders of their parents, Lyle and Erik Menendez have been in prison for over 35 years. We revisit the case.",
+      "audio": "/audio/menendez-brothers.m4a",
+      "audioBytes": 19064399,
+      "audioMime": "audio/x-m4a",
+      "image": "/images/menendez-brothers.jpg",
+      "explicit": false
+    }
+  ]
+}

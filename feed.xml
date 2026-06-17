@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>CrimeTimeSnacks • A True Crime Podcast</title>
+    <link>https://crimetime.vercel.app/</link>
+    <language>en-us</language>
+    <copyright>&#169; 2026 Cory</copyright>
+    <description>CrimeTimeSnacks is a true crime podcast exploring unsolved cases, murders, and mysteries with detailed analysis and compelling storytelling. Hosted by Cory.</description>
+    <itunes:subtitle>Exploring unsolved cases, murders, and mysteries.</itunes:subtitle>
+    <itunes:author>Cory</itunes:author>
+    <itunes:summary>CrimeTimeSnacks is a true crime podcast exploring unsolved cases, murders, and mysteries with detailed analysis and compelling storytelling. Hosted by Cory.</itunes:summary>
+    <itunes:type>episodic</itunes:type>
+    <itunes:owner>
+      <itunes:name>Cory</itunes:name>
+      <itunes:email>coryh2014@gmail.com</itunes:email>
+    </itunes:owner>
+    <itunes:image href="https://crimetime.vercel.app/images/logo.png" />
+    <itunes:category text="True Crime" />
+    <itunes:explicit>false</itunes:explicit>
+    <item>
+      <title>A Hero at the Wilmington DMV: The Heroism of Corporal Matthew Snook</title>
+      <link>https://crimetime.vercel.app/episodes/wilmington-dmv.html</link>
+      <guid isPermaLink="false">crimetimesnacks-wilmington-dmv</guid>
+      <pubDate>Fri, 26 Dec 2025 12:00:00 GMT</pubDate>
+      <description>The tragic and heroic events that unfolded at the Wilmington DMV on December 23, 2025, and the ultimate sacrifice of Corporal Matthew Snook, a Delaware State Police officer whose heroism saved lives.</description>
+      <itunes:summary>The tragic and heroic events that unfolded at the Wilmington DMV on December 23, 2025, and the ultimate sacrifice of Corporal Matthew Snook, a Delaware State Police officer whose heroism saved lives.</itunes:summary>
+      <itunes:author>Cory</itunes:author>
+      <enclosure url="https://crimetime.vercel.app/audio/wilmington-dmv.wav" length="4540844" type="audio/wav" />
+      <itunes:image href="https://crimetime.vercel.app/images/wilmington-dmv.jpg" />
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>Murders in Moscow</title>
+      <link>https://crimetime.vercel.app/episodes/murders-in-moscow.html</link>
+      <guid isPermaLink="false">crimetimesnacks-murders-in-moscow</guid>
+      <pubDate>Sun, 16 Mar 2025 12:00:00 GMT</pubDate>
+      <description>The Idaho student murders that rocked the nation — the victims, the investigation, and the arrest of Bryan Kohberger.</description>
+      <itunes:summary>The Idaho student murders that rocked the nation — the victims, the investigation, and the arrest of Bryan Kohberger.</itunes:summary>
+      <itunes:author>Cory</itunes:author>
+      <enclosure url="https://crimetime.vercel.app/audio/moscow-murders.mp3" length="28079084" type="audio/mpeg" />
+      <itunes:image href="https://crimetime.vercel.app/images/moscow-murders.jpg" />
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>Erik and Lyle: The Menendez Brothers</title>
+      <link>https://crimetime.vercel.app/episodes/menendez-brothers.html</link>
+      <guid isPermaLink="false">crimetimesnacks-menendez-brothers</guid>
+      <pubDate>Fri, 28 Feb 2025 12:00:00 GMT</pubDate>
+      <description>Convicted in 1996 for the 1989 murders of their parents, Lyle and Erik Menendez have been in prison for over 35 years. We revisit the case.</description>
+      <itunes:summary>Convicted in 1996 for the 1989 murders of their parents, Lyle and Erik Menendez have been in prison for over 35 years. We revisit the case.</itunes:summary>
+      <itunes:author>Cory</itunes:author>
+      <enclosure url="https://crimetime.vercel.app/audio/menendez-brothers.m4a" length="19064399" type="audio/x-m4a" />
+      <itunes:image href="https://crimetime.vercel.app/images/menendez-brothers.jpg" />
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+  </channel>
+</rss>

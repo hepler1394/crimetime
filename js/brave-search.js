@@ -1,7 +1,8 @@
 // Brave Search API Integration for CrimeTimeSnacks
 
-// Brave Search API key
-const BRAVE_SEARCH_API_KEY = 'BSAl1hctJZNjBLbVh-ibu7Etcx8EaJH';
+// Key removed: never hardcode API keys in client JS (they are public).
+// This key was exposed and MUST be rotated. Use a server-side endpoint instead.
+const BRAVE_SEARCH_API_KEY = '';
 const BRAVE_SEARCH_API_URL = 'https://api.search.brave.com/res/v1/web/search';
 
 // Function to search using Brave Search API

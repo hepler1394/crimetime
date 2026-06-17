@@ -5,7 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrimeTimeSnacks • A True Crime Podcast | Exploring Unsolved Cases</title>
     <meta name="description" content="CrimeTimeSnacks is a true crime podcast exploring unsolved cases, murders, and mysteries with detailed analysis and compelling storytelling.">
-    
+    <link rel="canonical" href="https://crimetime.vercel.app/">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CrimeTimeSnacks">
+    <meta property="og:title" content="CrimeTimeSnacks • A True Crime Podcast">
+    <meta property="og:description" content="Exploring the facts, theories, and evidence surrounding unsolved cases — without the sensationalism.">
+    <meta property="og:url" content="https://crimetime.vercel.app/">
+    <meta property="og:image" content="https://crimetime.vercel.app/images/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CrimeTimeSnacks • A True Crime Podcast">
+    <meta name="twitter:description" content="Exploring the facts, theories, and evidence surrounding unsolved cases — without the sensationalism.">
+    <meta name="twitter:image" content="https://crimetime.vercel.app/images/logo.png">
+
+    <!-- Podcast RSS feed -->
+    <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Podcast" href="/feed.xml">
+
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     
@@ -18,13 +35,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=2026a">
     
     <!-- Preload JavaScript files -->
     <link rel="preload" href="js/main.js" as="script">
     <link rel="preload" href="js/category-ai.js" as="script">
-    <link rel="preload" href="js/brave-search.js" as="script">
-    <link rel="preload" href="js/gemini-ai.js" as="script">
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -64,14 +79,25 @@
     
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
+        <div class="container hero-flex">
             <div class="hero-content">
-                <h1>Crime<span class="text-red">Time</span>Snacks<span>•</span> A True Crime Podcast</h1>
-                <p>Exploring the facts, theories, and evidence surrounding unsolved cases</p>
+                <p class="hero-eyebrow">True Crime, Examined</p>
+                <h1>Crime<span class="text-red">Time</span>Snacks<span class="hero-dot">•</span> A True Crime Podcast</h1>
+                <p>Exploring the facts, theories, and evidence surrounding unsolved cases &mdash; without the sensationalism.</p>
                 <div class="hero-buttons">
                     <a href="#latest-episode" class="btn btn-primary"><i class="fas fa-headphones"></i> Listen to Latest Episode</a>
                     <a href="#categories" class="btn btn-secondary"><i class="fas fa-tags"></i> Browse Categories</a>
                 </div>
+                <div class="hero-platforms">
+                    <span>Listen on</span>
+                    <a href="https://podcasts.apple.com/gb/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" aria-label="Apple Podcasts"><i class="fab fa-apple"></i></a>
+                    <a href="#" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <img src="images/renders.png" alt="CrimeTimeSnacks on Apple Podcasts and Spotify"
+                     class="hero-render"
+                     onerror="this.onerror=null;this.src='images/logo.png';this.classList.add('hero-render--fallback');">
             </div>
         </div>
     </section>
@@ -256,20 +282,38 @@
         <h2 class="slide-in-left animate-on-scroll" style="text-align: center; margin-bottom: 2rem;">Latest from the Crime Blog</h2>
         
         <div class="blog-grid">
-            <!-- Blog posts will be dynamically generated with AI -->
+            <!-- BLOG-PREVIEW:START (auto-filled by automation/build-blog.mjs) -->
             <div class="blog-card">
-                <img src="images/blog-placeholder.jpg" alt="Blog Post" class="blog-image">
+                <a href="blog-posts/wilmington-dmv-what-we-know.html"><img src="images/wilmington-dmv.jpg" alt="Wilmington DMV: What We Know So Far" class="blog-image"></a>
                 <div class="blog-content">
-                    <div class="blog-tags">
-                        <span class="blog-tag">Breaking News</span>
-                        <span class="blog-tag">Court Case</span>
-                    </div>
-                    <h3 class="blog-title">Loading latest true crime news...</h3>
-                    <p class="blog-date"><i class="far fa-calendar-alt"></i> <span class="ai-date">Loading date...</span></p>
-                    <p class="blog-excerpt">AI-powered content is being generated. This section will automatically update with the latest true crime news and cases.</p>
-                    <a href="blog.html" class="btn btn-primary">Read More</a>
+                    <div class="blog-tags"><span class="blog-tag">Breaking</span></div>
+                    <h3 class="blog-title">Wilmington DMV: What We Know So Far</h3>
+                    <p class="blog-date"><i class="far fa-calendar-alt"></i> December 26, 2025</p>
+                    <p class="blog-excerpt">Separating the verified facts from the speculation that filled the first hours after the December 23 incident at the Wilmington DMV.</p>
+                    <a href="blog-posts/wilmington-dmv-what-we-know.html" class="btn btn-primary">Read More</a>
                 </div>
             </div>
+            <div class="blog-card">
+                <a href="blog-posts/menendez-brothers-resentencing-explained.html"><img src="images/menendez-brothers.jpg" alt="The Menendez Resentencing, Explained" class="blog-image"></a>
+                <div class="blog-content">
+                    <div class="blog-tags"><span class="blog-tag">Court</span></div>
+                    <h3 class="blog-title">The Menendez Resentencing, Explained</h3>
+                    <p class="blog-date"><i class="far fa-calendar-alt"></i> March 2, 2025</p>
+                    <p class="blog-excerpt">More than three decades after their conviction, the legal path that has put Lyle and Erik Menendez back in the headlines.</p>
+                    <a href="blog-posts/menendez-brothers-resentencing-explained.html" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <a href="blog-posts/delphi-case-from-bridge-guy-to-trial.html"><img src="images/delphi-murders.jpg" alt="Delphi: From 'Bridge Guy' to Trial" class="blog-image"></a>
+                <div class="blog-content">
+                    <div class="blog-tags"><span class="blog-tag">Investigation</span></div>
+                    <h3 class="blog-title">Delphi: From 'Bridge Guy' to Trial</h3>
+                    <p class="blog-date"><i class="far fa-calendar-alt"></i> February 10, 2025</p>
+                    <p class="blog-excerpt">How a few seconds of audio and a grainy image kept the Abigail Williams and Liberty German case alive for years.</p>
+                    <a href="blog-posts/delphi-case-from-bridge-guy-to-trial.html" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+            <!-- BLOG-PREVIEW:END -->
         </div>
         
         <div style="text-align: center; margin-top: 2rem;">
@@ -287,45 +331,6 @@
             <p style="margin-bottom: 2rem;">Hosted by Cory, each episode is meticulously researched to bring you the most accurate information about some of the most intriguing criminal cases in history.</p>
             
             <a href="about.html" class="btn btn-secondary">Learn More About Us</a>
-        </div>
-    </section>
-    
-    <!-- AI Features Section -->
-    <section class="container ai-features">
-        <h2 class="slide-in-left animate-on-scroll" style="text-align: center; margin-bottom: 2rem;">AI-Powered Features</h2>
-        
-        <div class="ai-features-grid">
-            <div class="ai-feature-card animate-on-scroll">
-                <div class="ai-feature-icon">
-                    <i class="fas fa-robot"></i>
-                </div>
-                <h3 class="ai-feature-title">Smart Recommendations</h3>
-                <p class="ai-feature-description">Our AI analyzes your listening habits to suggest episodes you'll love based on your interests and preferences.</p>
-            </div>
-            
-            <div class="ai-feature-card animate-on-scroll">
-                <div class="ai-feature-icon">
-                    <i class="fas fa-newspaper"></i>
-                </div>
-                <h3 class="ai-feature-title">Auto-Updated Blog</h3>
-                <p class="ai-feature-description">Stay informed with our AI-curated blog that automatically updates with the latest true crime news and developments.</p>
-            </div>
-            
-            <div class="ai-feature-card animate-on-scroll">
-                <div class="ai-feature-icon">
-                    <i class="fas fa-search"></i>
-                </div>
-                <h3 class="ai-feature-title">Smart Search</h3>
-                <p class="ai-feature-description">Find exactly what you're looking for with our intelligent search that understands context and related terms.</p>
-            </div>
-            
-            <div class="ai-feature-card animate-on-scroll">
-                <div class="ai-feature-icon">
-                    <i class="fas fa-file-alt"></i>
-                </div>
-                <h3 class="ai-feature-title">Case Summaries</h3>
-                <p class="ai-feature-description">Get AI-generated summaries of complex cases to quickly understand the key facts and developments.</p>
-            </div>
         </div>
     </section>
     
@@ -374,8 +379,6 @@
                     <ul class="footer-links">
                         <li><a href="https://podcasts.apple.com/gb/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400"><i class="fab fa-apple"></i> Apple Podcasts</a></li>
                         <li><a href="#"><i class="fab fa-spotify"></i> Spotify</a></li>
-                        <li><a href="#"><i class="fab fa-google"></i> Google Podcasts</a></li>
-                        <li><a href="#"><i class="fas fa-podcast"></i> Stitcher</a></li>
                         <li><a href="#"><i class="fas fa-broadcast-tower"></i> iHeartRadio</a></li>
                     </ul>
                 </div>
@@ -389,7 +392,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 CrimeTimeSnacks. All Rights Reserved.</p>
+                <p>&copy; 2026 CrimeTimeSnacks. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -410,9 +413,6 @@
             <button id="mini-player-close" class="mini-player-btn"><i class="fas fa-times"></i></button>
         </div>
     </div>
-    
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
     
     <!-- Category Filtering Script -->
     <script>
@@ -521,7 +521,5 @@
     <!-- Custom JS -->
     <script src="js/main.js"></script>
     <script src="js/category-ai.js"></script>
-    <script src="js/brave-search.js"></script>
-    <script src="js/gemini-ai.js"></script>
 </body>
 </html>

@@ -5,8 +5,8 @@
 - [x] Analyze current design to understand the black, red, and white color scheme
 - [x] Identify button functionality issues (gray category buttons not working when clicked)
 - [x] Fix button functionality in category-ai.js to work with existing buttons
-- [x] Integrate Brave Search API with the provided key (BSAl1hctJZNjBLbVh-ibu7Etcx8EaJH)
-- [x] Integrate Gemini API with the provided key (AIzaSyClI8VW8G6_RdGQuse5dAUxHtefVke1qjc)
+- [x] Integrate Brave Search API with the provided key ([REDACTED_BRAVE_KEY_ROTATE_IT])
+- [x] Integrate Gemini API with the provided key ([REDACTED_GEMINI_KEY_ROTATE_IT])
 
 ## Remaining Tasks
 - [ ] Test website functionality to ensure all changes work properly

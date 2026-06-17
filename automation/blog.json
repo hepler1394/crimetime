@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "siteUrl": "https://crimetime.vercel.app",
+    "author": "Cory"
+  },
+  "posts": [
+    {
+      "slug": "wilmington-dmv-what-we-know",
+      "title": "Wilmington DMV: What We Know So Far",
+      "date": "2025-12-26",
+      "category": "breaking",
+      "categoryLabel": "Breaking",
+      "image": "images/wilmington-dmv.jpg",
+      "author": "Cory",
+      "featured": true,
+      "excerpt": "Separating the verified facts from the speculation that filled the first hours after the December 23 incident at the Wilmington DMV.",
+      "body": [
+        "In the hours after the December 23, 2025 incident at the Wilmington DMV, the story moved faster than the facts. This post collects what has actually been confirmed and sets aside the rest until it can be verified.",
+        "At the center of the account is Corporal Matthew Snook, a Delaware State Police officer. By the official statement, his actions in the final moments saved the lives of others present. Investigators have asked for patience as they piece together a complete timeline.",
+        "We will update this post as verified details are released, rather than chasing every early claim. Our full episode walks through the timeline in depth."
+      ]
+    },
+    {
+      "slug": "menendez-brothers-resentencing-explained",
+      "title": "The Menendez Resentencing, Explained",
+      "date": "2025-03-02",
+      "category": "court",
+      "categoryLabel": "Court",
+      "image": "images/menendez-brothers.jpg",
+      "author": "Cory",
+      "featured": false,
+      "excerpt": "More than three decades after their conviction, the legal path that has put Lyle and Erik Menendez back in the headlines.",
+      "body": [
+        "Lyle and Erik Menendez were convicted in 1996 for the 1989 killings of their parents. After more than thirty-five years in prison, renewed attention has reopened questions about whether they should remain there.",
+        "The current conversation centers on resentencing and the new claims and evidence that the defense has raised. Each step is a distinct legal process with its own standard, and it is worth understanding them separately rather than as a single event.",
+        "Whatever one concludes about the case, the proceedings are a reminder of how the same set of facts can support very different stories, and how the law revisits them decades later."
+      ]
+    },
+    {
+      "slug": "delphi-case-from-bridge-guy-to-trial",
+      "title": "Delphi: From 'Bridge Guy' to Trial",
+      "date": "2025-02-10",
+      "category": "investigation",
+      "categoryLabel": "Investigation",
+      "image": "images/delphi-murders.jpg",
+      "author": "Cory",
+      "featured": false,
+      "excerpt": "How a few seconds of audio and a grainy image kept the Abigail Williams and Liberty German case alive for years.",
+      "body": [
+        "On February 14, 2017, Abigail Williams and Liberty German were found near the Monon High Bridge Trail in Delphi, Indiana. For years, the most widely circulated evidence was a short clip of audio and a grainy image recorded on Libby's phone.",
+        "That fragment did something rare: it kept a difficult case in the public eye long after the early leads went cold. The phrase 'bridge guy' became shorthand for a suspect no one could yet name.",
+        "The eventual arrest and the road to trial show how modern cases can hinge on a single piece of recovered digital evidence, and on the years of patient work that follow it."
+      ]
+    },
+    {
+      "slug": "genetic-genealogy-changing-cold-cases",
+      "title": "How Genetic Genealogy Is Changing Cold Cases",
+      "date": "2025-01-20",
+      "category": "analysis",
+      "categoryLabel": "Analysis",
+      "image": "images/idaho-victims.jpg",
+      "author": "Cory",
+      "featured": false,
+      "excerpt": "The technique that helped identify a suspect in the Idaho student murders is reshaping how long-dormant cases get solved.",
+      "body": [
+        "Investigative genetic genealogy pairs DNA evidence with public ancestry databases to build out family trees and narrow a field of suspects. It is the same broad approach that drew attention in the Idaho student murders investigation.",
+        "The method has closed cases that sat untouched for decades, but it also raises real questions about privacy and consent that courts and lawmakers are still working through.",
+        "For listeners, the takeaway is simple: the science behind these cases is moving quickly, and understanding it makes the headlines easier to read with a clear eye."
+      ]
+    }
+  ]
+}

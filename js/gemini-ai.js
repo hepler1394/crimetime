@@ -9,8 +9,9 @@ class GeminiAI {
     
     async init() {
         try {
-            // Set the API key directly
-            this.apiKey = 'AIzaSyClI8VW8G6_RdGQuse5dAUxHtefVke1qjc';
+            // Key removed: never hardcode API keys in client JS (they are public).
+            // This key was exposed and MUST be rotated. Use a server-side endpoint instead.
+            this.apiKey = '';
             
             if (!this.apiKey) {
                 console.warn('Gemini API key not found. Using mock data for AI features.');
