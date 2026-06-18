@@ -32,7 +32,8 @@ const directAudio = (u) => {
   return m ? decodeURIComponent(m[1]) : u.split("?")[0];
 };
 const slugify = (s) =>
-  s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60);
+  s.normalize("NFD").replace(/[̀-ͯ]/g, "") // strip accents: é -> e
+   .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60);
 
 const res = await fetch(FEED_URL);
 const xml = await res.text();

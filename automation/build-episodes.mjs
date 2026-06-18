@@ -2,7 +2,7 @@
 // Generates episodes.html from episodes.json (the real imported feed).
 // Run: node automation/build-episodes.mjs
 
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
@@ -85,15 +85,17 @@ const footer = (p) => `    <footer class="footer">
         </div>
     </footer>`;
 
+const epUrl = (ep) => `/episodes/${ep.slug}.html`;
+
 function card(p, ep) {
   return `            <article class="episode-card" style="max-width:860px;margin:0 auto 2.5rem;">
-                <img src="${esc(ep.image)}" alt="${esc(ep.title)}" class="episode-image" loading="lazy" style="height:auto;aspect-ratio:1/1;object-fit:cover;">
+                <a href="${epUrl(ep)}"><img src="${esc(ep.image)}" alt="${esc(ep.title)}" class="episode-image" loading="lazy" style="height:auto;aspect-ratio:1/1;object-fit:cover;"></a>
                 <div class="episode-content">
                     <div class="episode-badges" style="margin-bottom:0.5rem;">
                         <span class="episode-badge">True Crime</span>
                         ${ep.duration ? `<span class="episode-badge">${esc(fmtDur(ep.duration))}</span>` : ""}
                     </div>
-                    <h3 class="episode-title">${esc(ep.title)}</h3>
+                    <h3 class="episode-title"><a href="${epUrl(ep)}" style="color:inherit;text-decoration:none;">${esc(ep.title)}</a></h3>
                     <p class="episode-date"><i class="far fa-calendar-alt"></i> ${esc(fmtDate(ep.date))}</p>
                     <p class="episode-description">${esc(ep.description)}</p>
                     <audio controls preload="none" style="width:100%;margin:1rem 0;">
@@ -163,6 +165,87 @@ ${footer(p)}
 `;
 }
 
+function episodeLd(p, ep) {
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "PodcastEpisode",
+    name: ep.title,
+    datePublished: ep.date,
+    description: ep.excerpt || ep.description,
+    associatedMedia: { "@type": "MediaObject", contentUrl: ep.audio },
+    partOfSeries: { "@type": "PodcastSeries", name: "CrimeTimeSnacks", url: `${p.siteUrl}/` },
+    url: `${p.siteUrl}${epUrl(ep)}`,
+  };
+  return `<script type="application/ld+json">\n${JSON.stringify(ld, null, 2)}\n    </script>`;
+}
+
+function episodePage(p, ep) {
+  const desc = (ep.excerpt || ep.description || "").slice(0, 200);
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${esc(ep.title)} | CrimeTimeSnacks</title>
+    <meta name="description" content="${esc(desc)}">
+    <link rel="canonical" href="${p.siteUrl}${epUrl(ep)}">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="CrimeTimeSnacks">
+    <meta property="og:title" content="${esc(ep.title)}">
+    <meta property="og:description" content="${esc(desc)}">
+    <meta property="og:url" content="${p.siteUrl}${epUrl(ep)}">
+    <meta property="og:image" content="${esc(ep.image)}">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Podcast" href="/feed.xml">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/images/logo.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="${FONTS}" rel="stylesheet">
+    <link rel="stylesheet" href="${FA}">
+    <link rel="stylesheet" href="${CSS}">
+    ${episodeLd(p, ep)}
+</head>
+<body>
+${header("episodes")}
+
+    <section class="episode-header">
+        <div class="container">
+            <div class="episode-badges" style="justify-content:center;display:flex;margin-bottom:0.75rem;">
+                <span class="episode-badge">True Crime</span>
+                ${ep.duration ? `<span class="episode-badge">${esc(fmtDur(ep.duration))}</span>` : ""}
+            </div>
+            <h1 class="episode-title" style="color:var(--cts-white);text-align:center;">${esc(ep.title)}</h1>
+            <p class="episode-date" style="justify-content:center;"><i class="far fa-calendar-alt"></i> ${esc(fmtDate(ep.date))} &nbsp;&middot;&nbsp; ${esc(p.author)}</p>
+        </div>
+    </section>
+
+    <main class="container" style="max-width:780px;margin:2.5rem auto;">
+        <img src="${esc(ep.image)}" alt="${esc(ep.title)}" style="width:100%;max-width:460px;display:block;margin:0 auto 2rem;border-radius:8px;box-shadow:var(--cts-box-shadow);">
+        <audio controls preload="none" style="width:100%;margin:0 0 1.5rem;">
+            <source src="${esc(ep.audio)}" type="${esc(ep.audioType)}">
+            Your browser does not support the audio element.
+        </audio>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:2rem;">
+            <a href="${ep.link || p.spotifyUrl}" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-spotify"></i> Listen on Spotify</a>
+            <a href="${APPLE}" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-apple"></i> Apple Podcasts</a>
+        </div>
+        <p style="color:#ddd;line-height:1.8;">${esc(ep.description)}</p>
+        <div style="margin-top:2.5rem;">
+            <a href="/episodes.html" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> All Episodes</a>
+        </div>
+    </main>
+
+${footer(p)}
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
+`;
+}
+
 // ---- Homepage "Latest Episode" + "Recent Episodes" (real feed) ----
 const trunc = (s, n) => (s.length > n ? s.slice(0, n).replace(/\s+\S*$/, "") + "…" : s);
 
@@ -178,7 +261,7 @@ function homeRecentCard(p, ep) {
                         <p class="episode-date"><i class="far fa-calendar-alt"></i> ${esc(fmtDate(ep.date))}</p>
                         <p class="episode-description">${esc(trunc(ep.description, 150))}</p>
                         <div class="episode-actions">
-                            <a href="episodes.html" class="btn btn-primary">Listen Now</a>
+                            <a href="${epUrl(ep)}" class="btn btn-primary">Listen Now</a>
                             <div class="episode-stats"><span><i class="far fa-clock"></i> ${esc(fmtDur(ep.duration))}</span></div>
                         </div>
                     </div>
@@ -258,5 +341,12 @@ async function updateHome(data) {
 
 const data = JSON.parse(await readFile(join(__dirname, "episodes.json"), "utf8"));
 await writeFile(join(ROOT, "episodes.html"), page(data), "utf8");
+await mkdir(join(ROOT, "episodes"), { recursive: true });
+for (const ep of data.episodes) {
+  await writeFile(join(ROOT, "episodes", `${ep.slug}.html`), episodePage(data.podcast, ep), "utf8");
+}
 const home = await updateHome(data);
-console.log(`episodes.html generated: ${data.episodes.length} episodes.` + (home ? " Homepage episodes refreshed." : " (home markers not found)"));
+console.log(
+  `episodes.html + ${data.episodes.length} episode pages generated.` +
+    (home ? " Homepage episodes refreshed." : " (home markers not found)")
+);

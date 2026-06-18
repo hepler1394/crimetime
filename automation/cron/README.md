@@ -25,11 +25,13 @@ schtasks /create /tn "CTS Daily Post" /sc DAILY /st 09:00 ^
   /tr "powershell -NoProfile -ExecutionPolicy Bypass -File D:\dev\github\crimetime\automation\cron\cts-daily.ps1"
 ```
 
-Refresh episodes from the live podcast feed daily (optional):
+- **`cts-feedsync.ps1`** — pulls new episodes from your live podcast feed,
+  rebuilds, and publishes only if something changed. Run it after you release an
+  episode (or daily).
 
 ```
 schtasks /create /tn "CTS Feed Sync" /sc DAILY /st 08:00 ^
-  /tr "powershell -NoProfile -ExecutionPolicy Bypass -Command "cd D:\dev\github\crimetime; node automation/import-feed.mjs; node automation/build-all.mjs; git commit -am 'Sync episodes from feed'; git push""
+  /tr "powershell -NoProfile -ExecutionPolicy Bypass -File D:\dev\github\crimetime\automation\cron\cts-feedsync.ps1"
 ```
 
 Remove a job: `schtasks /delete /tn "CTS Daily Post" /f`
