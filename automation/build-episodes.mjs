@@ -50,8 +50,6 @@ const footer = (p) => `    <footer class="footer">
                     <img src="/images/logo.png" alt="CrimeTimeSnacks Logo" class="footer-logo">
                     <p>A true crime podcast exploring unsolved cases and mysteries with detailed analysis and compelling storytelling.</p>
                     <div class="footer-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="${p.spotifyUrl}"><i class="fab fa-spotify"></i></a>
                         <a href="${APPLE}"><i class="fab fa-apple"></i></a>
                     </div>
