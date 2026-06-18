@@ -36,11 +36,15 @@ look. No emojis, no AI slop, no robotic copy, AI kept discreet.
   but they could be deleted. Verify nothing external links to them first.
 - **Merch placeholders.** `merch.html` references placeholder product images
   (`t-shirt-placeholder.png`, etc.) that were never added.
-- **Forms need a backend.** The contact form and all newsletter signups don't
-  submit anywhere yet. Pick a no-backend service (Formspree/Web3Forms) or a real
-  contact email, then wire the `<form action=...>`. Cory's personal Gmail was
-  intentionally NOT exposed. Fake `@crimetimesnack.com` emails were removed.
-- iHeartRadio footer links are still `#` (no URL known).
+- **Forms need a backend (2-min fix).** The contact form + newsletter signups
+  don't submit yet. Best privacy-safe option: sign up free at web3forms.com (your
+  email stays on their side, NOT in the page). It gives an access key UUID; paste
+  it and add `action="https://api.web3forms.com/submit"` +
+  `<input type="hidden" name="access_key" value="UUID">` to each form. Tell Claude
+  the key and it'll wire all forms. Gmail intentionally not exposed; fake
+  `@crimetimesnack.com` emails removed.
+- All dead `#` placeholder links removed (social/iHeart/Amazon). Add real social
+  URLs when you have handles.
 - Run `node automation/check-links.mjs` any time to re-audit broken local refs.
 
 ## How to add content now
