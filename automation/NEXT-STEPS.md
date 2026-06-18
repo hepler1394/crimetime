@@ -36,6 +36,11 @@ look. No emojis, no AI slop, no robotic copy, AI kept discreet.
   but they could be deleted. Verify nothing external links to them first.
 - **Merch placeholders.** `merch.html` references placeholder product images
   (`t-shirt-placeholder.png`, etc.) that were never added.
+- **Forms need a backend.** The contact form and all newsletter signups don't
+  submit anywhere yet. Pick a no-backend service (Formspree/Web3Forms) or a real
+  contact email, then wire the `<form action=...>`. Cory's personal Gmail was
+  intentionally NOT exposed. Fake `@crimetimesnack.com` emails were removed.
+- iHeartRadio footer links are still `#` (no URL known).
 - Run `node automation/check-links.mjs` any time to re-audit broken local refs.
 
 ## How to add content now
