@@ -84,11 +84,20 @@ export async function chat(system, user, cfg) {
   for (const name of cfg.order) {
     try {
       if (name === "local") {
+        // Auto-detect the loaded model so any model in LM Studio just works.
+        let model = cfg.local.model;
+        if (!model || model === "local-model") {
+          try {
+            const m = await fetch(`${cfg.local.baseUrl}/models`, { signal: timeout(4000) });
+            const j = await m.json();
+            model = j.data?.[0]?.id || model;
+          } catch { /* server down -> falls through to cloud */ }
+        }
         const text = await openAiCompatible(
-          { baseUrl: cfg.local.baseUrl, apiKey: "", model: cfg.local.model },
+          { baseUrl: cfg.local.baseUrl, apiKey: "", model },
           system, user, 60000
         );
-        if (text.trim()) return { text, provider: "local (LM Studio)" };
+        if (text.trim()) return { text, provider: `local (${model})` };
       } else if (name === "deepseek" && cfg.deepseek.apiKey) {
         return { text: await openAiCompatible(cfg.deepseek, system, user, 60000), provider: "deepseek" };
       } else if (name === "anthropic" && cfg.anthropic.apiKey) {
