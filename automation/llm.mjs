@@ -1,0 +1,104 @@
+// Local-first LLM helper. Tries your local LM Studio model first (free), then
+// falls back to cloud providers (Deepseek → Claude → OpenAI) using keys from
+// automation/config.json (gitignored) or env vars. NO keys are ever hardcoded.
+//
+// Gemini is intentionally NOT supported here — that key was compromised.
+
+import { readFile } from "node:fs/promises";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+export async function loadConfig() {
+  let cfg = {};
+  try {
+    cfg = JSON.parse(await readFile(join(__dirname, "config.json"), "utf8"));
+  } catch {
+    /* no config.json — fall back to env only */
+  }
+  const e = process.env;
+  cfg.order = cfg.order || ["local", "deepseek", "anthropic", "openai"];
+  cfg.local = cfg.local || {};
+  cfg.local.baseUrl = e.LLM_BASE_URL || cfg.local.baseUrl || "http://localhost:1234/v1";
+  cfg.local.model = e.LLM_MODEL || cfg.local.model || "local-model";
+  cfg.deepseek = cfg.deepseek || {};
+  cfg.deepseek.apiKey = e.DEEPSEEK_API_KEY || cfg.deepseek.apiKey || "";
+  cfg.deepseek.baseUrl = cfg.deepseek.baseUrl || "https://api.deepseek.com/v1";
+  cfg.deepseek.model = cfg.deepseek.model || "deepseek-chat";
+  cfg.anthropic = cfg.anthropic || {};
+  cfg.anthropic.apiKey = e.ANTHROPIC_API_KEY || cfg.anthropic.apiKey || "";
+  cfg.anthropic.model = cfg.anthropic.model || "claude-sonnet-4-6";
+  cfg.openai = cfg.openai || {};
+  cfg.openai.apiKey = e.OPENAI_API_KEY || cfg.openai.apiKey || "";
+  cfg.openai.baseUrl = cfg.openai.baseUrl || "https://api.openai.com/v1";
+  cfg.openai.model = cfg.openai.model || "gpt-4o-mini";
+  cfg.brave = cfg.brave || {};
+  cfg.brave.apiKey = e.BRAVE_API_KEY || cfg.brave.apiKey || "";
+  return cfg;
+}
+
+const timeout = (ms) => {
+  const c = new AbortController();
+  setTimeout(() => c.abort(), ms);
+  return c.signal;
+};
+
+async function openAiCompatible({ baseUrl, apiKey, model }, system, user, ms) {
+  const res = await fetch(`${baseUrl}/chat/completions`, {
+    method: "POST",
+    signal: timeout(ms),
+    headers: { "Content-Type": "application/json", ...(apiKey ? { Authorization: `Bearer ${apiKey}` } : {}) },
+    body: JSON.stringify({
+      model,
+      messages: [{ role: "system", content: system }, { role: "user", content: user }],
+      temperature: 0.7,
+      stream: false,
+    }),
+  });
+  if (!res.ok) throw new Error(`${res.status} ${await res.text().catch(() => "")}`.slice(0, 200));
+  const data = await res.json();
+  return data.choices?.[0]?.message?.content ?? "";
+}
+
+async function anthropic({ apiKey, model }, system, user, ms) {
+  const res = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    signal: timeout(ms),
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": apiKey,
+      "anthropic-version": "2023-06-01",
+    },
+    body: JSON.stringify({ model, max_tokens: 2000, system, messages: [{ role: "user", content: user }] }),
+  });
+  if (!res.ok) throw new Error(`${res.status} ${await res.text().catch(() => "")}`.slice(0, 200));
+  const data = await res.json();
+  return data.content?.[0]?.text ?? "";
+}
+
+// Returns { text, provider } using the first provider that works, in config order.
+export async function chat(system, user, cfg) {
+  cfg = cfg || (await loadConfig());
+  const errors = [];
+  for (const name of cfg.order) {
+    try {
+      if (name === "local") {
+        const text = await openAiCompatible(
+          { baseUrl: cfg.local.baseUrl, apiKey: "", model: cfg.local.model },
+          system, user, 60000
+        );
+        if (text.trim()) return { text, provider: "local (LM Studio)" };
+      } else if (name === "deepseek" && cfg.deepseek.apiKey) {
+        return { text: await openAiCompatible(cfg.deepseek, system, user, 60000), provider: "deepseek" };
+      } else if (name === "anthropic" && cfg.anthropic.apiKey) {
+        return { text: await anthropic(cfg.anthropic, system, user, 60000), provider: "anthropic" };
+      } else if (name === "openai" && cfg.openai.apiKey) {
+        return { text: await openAiCompatible(cfg.openai, system, user, 60000), provider: "openai" };
+      }
+    } catch (err) {
+      errors.push(`${name}: ${err.message}`);
+    }
+  }
+  throw new Error(`No LLM provider succeeded. Tried: ${cfg.order.join(", ")}.\n${errors.join("\n")}`);
+}

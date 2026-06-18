@@ -30,3 +30,15 @@ Thumbs.db
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# --- Secrets / API keys — NEVER commit these ---
+.env
+.env.*
+automation/config.json
+automation/secrets.json
+**/secrets.json
+*.local.json
+secrets/
+
+# cron logs
+automation/cron/cron.log
