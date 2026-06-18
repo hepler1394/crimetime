@@ -36,18 +36,24 @@
 <body>
     <!-- Header & Navigation -->
     <header>
-        <div class="nav-container">
-            <div class="container">
-                <nav>
-                    <ul class="nav-menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="episodes.html">Episodes</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="listen.html">Listen</a></li>
-			<li><a href="merch.html">Merch</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
+        <div class="nav-container container">
+            <div class="logo-container">
+                <a href="index.html"><img src="images/logo.png" alt="CrimeTimeSnacks Logo" height="40"></a>
+            </div>
+            <button id="mobile-menu-btn" class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="episodes.html" class="active"><i class="fas fa-microphone"></i> Episodes</a></li>
+                    <li><a href="videos.html"><i class="fas fa-video"></i> Videos</a></li>
+                    <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="merch.html"><i class="fas fa-tshirt"></i> Merch</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+            <div class="utility-nav">
+                <button id="dark-mode-toggle"><i class="fas fa-moon"></i></button>
             </div>
         </div>
     </header>
@@ -251,5 +257,6 @@
             </div>
         </div>
     </footer>
+    <script src="js/main.js"></script>
 </body>
 </html>
