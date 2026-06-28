@@ -51,6 +51,7 @@ const head = (title, desc, path = "/", image = "/images/logo.png", extra = "") =
     <meta name="twitter:description" content="${esc(desc)}">
     <meta name="twitter:image" content="${SITE}${image}">
     <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Podcast" href="/feed.xml">
+    <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Blog" href="/blog-feed.xml">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/images/logo.png">
     <link rel="manifest" href="/site.webmanifest">

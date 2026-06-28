@@ -1,0 +1,18 @@
+{
+  "name": "crimetimesnacks-automation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Static-site content automation for CrimeTimeSnacks (key-free, local-first).",
+  "scripts": {
+    "weekly": "node automation/weekly-update.mjs --commit --push",
+    "update": "node automation/weekly-update.mjs",
+    "build": "node automation/build-all.mjs",
+    "feed": "node automation/import-feed.mjs",
+    "videos": "node automation/import-youtube.mjs && node automation/build-videos.mjs",
+    "merch": "node automation/gen-merch.mjs && node automation/build-merch.mjs",
+    "blog": "node automation/ai-write.mjs --auto",
+    "qa": "node automation/check-links.mjs",
+    "test": "node automation/test-build.mjs"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "_README": "Editorial backlog for the auto-blog. ai-write.mjs --auto picks the first topic here that hasn't been published yet (matched by slug), so posts follow a planned calendar instead of repeating. Add your own topics any time. Keep them factual and evergreen — no inventing case details.",
+  "topics": [
+    { "topic": "How forensic genealogy cracks cold cases", "category": "analysis" },
+    { "topic": "Chain of custody: why solid evidence still gets thrown out", "category": "court" },
+    { "topic": "Why eyewitness testimony is less reliable than people think", "category": "analysis" },
+    { "topic": "How cold case units decide which files to reopen", "category": "investigation" },
+    { "topic": "Understanding DNA familial searching", "category": "analysis" },
+    { "topic": "Wrongful convictions and the work of the Innocence Project", "category": "court" },
+    { "topic": "What reasonable doubt actually means in a courtroom", "category": "court" },
+    { "topic": "The history of fingerprint evidence", "category": "analysis" },
+    { "topic": "How the FBI's ViCAP database links violent crimes", "category": "investigation" },
+    { "topic": "Why some cases stay cold for decades", "category": "analysis" },
+    { "topic": "How digital forensics changed modern investigations", "category": "analysis" },
+    { "topic": "The role of the public and tip lines in solving crimes", "category": "investigation" },
+    { "topic": "Forensic odontology: solving cases with dental records", "category": "investigation" },
+    { "topic": "How behavioral profilers build a sketch of an offender", "category": "analysis" },
+    { "topic": "Understanding the criminal appeals process", "category": "court" },
+    { "topic": "The evolution of crime scene photography", "category": "analysis" },
+    { "topic": "How podcasts have helped reopen cold cases", "category": "analysis" },
+    { "topic": "Bloodstain pattern analysis, explained", "category": "investigation" },
+    { "topic": "How true crime fans can help cases responsibly", "category": "analysis" },
+    { "topic": "What a medical examiner determines and what they don't", "category": "analysis" }
+  ]
+}

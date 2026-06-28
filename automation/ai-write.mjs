@@ -28,16 +28,43 @@ const AUTO_TOPICS = [
 const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60);
 const stripFence = (s) => s.replace(/^```(?:json)?\s*/i, "").replace(/\s*```\s*$/i, "").trim();
 
+// Editorial calendar: pick the first topics.json entry not yet published
+// (matched by the sourceTopic stored on each post), so posts follow a plan.
+async function pickFromCalendar() {
+  try {
+    const [topicsRaw, blogRaw] = await Promise.all([
+      readFile(join(__dirname, "topics.json"), "utf8"),
+      readFile(join(__dirname, "blog.json"), "utf8"),
+    ]);
+    const list = JSON.parse(topicsRaw).topics || [];
+    const used = new Set(JSON.parse(blogRaw).posts.map((p) => p.sourceTopic).filter(Boolean));
+    for (const item of list) {
+      if (!used.has(item.topic)) {
+        return [item.topic, CATEGORIES[item.category] ? item.category : "analysis"];
+      }
+    }
+  } catch { /* no calendar — fall through */ }
+  return null;
+}
+
 const args = process.argv.slice(2);
 const commit = args.includes("--commit");
 const auto = args.includes("--auto");
 const rest = args.filter((a) => !a.startsWith("--"));
 let topic = rest[0];
 let category = rest[1] && CATEGORIES[rest[1]] ? rest[1] : null;
+let sourceTopic = null;
 if (auto || !topic) {
-  const [t, c] = AUTO_TOPICS[Math.floor(Math.random() * AUTO_TOPICS.length)];
-  topic = topic || t;
-  category = category || c;
+  const cal = await pickFromCalendar();
+  if (cal) {
+    sourceTopic = cal[0];
+    topic = topic || cal[0];
+    category = category || cal[1];
+  } else {
+    const [t, c] = AUTO_TOPICS[Math.floor(Math.random() * AUTO_TOPICS.length)];
+    topic = topic || t;
+    category = category || c;
+  }
 }
 category = category || "analysis";
 
@@ -85,6 +112,7 @@ const post = {
   featured: false,
   excerpt: (obj.excerpt || obj.body[0]).trim().slice(0, 200),
   body: obj.body.map((s) => String(s).trim()).filter(Boolean),
+  sourceTopic,
 };
 
 blog.posts.unshift(post);

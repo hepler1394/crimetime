@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CrimeTimeSnacks Blog</title>
+    <link>https://crimetime.vercel.app/blog.html</link>
+    <atom:link href="https://crimetime.vercel.app/blog-feed.xml" rel="self" type="application/rss+xml"/>
+    <description>True crime case updates, analysis, and the stories behind the headlines.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Jun 2026 03:43:21 GMT</lastBuildDate>
+    <item>
+      <title>JonBenét Ramsey: Why the Case Stays Open</title>
+      <link>https://crimetime.vercel.app/blog-posts/jonbenet-ramsey-why-the-case-stays-open.html</link>
+      <guid isPermaLink="true">https://crimetime.vercel.app/blog-posts/jonbenet-ramsey-why-the-case-stays-open.html</guid>
+      <category>Analysis</category>
+      <pubDate>Thu, 08 Jan 2026 12:00:00 GMT</pubDate>
+      <description>Nearly thirty years on, the 1996 killing of six-year-old JonBenét Ramsey is still unsolved. A look at why, and what modern DNA testing might still offer.</description>
+    </item>
+    <item>
+      <title>Wilmington DMV: What We Know So Far</title>
+      <link>https://crimetime.vercel.app/blog-posts/wilmington-dmv-what-we-know.html</link>
+      <guid isPermaLink="true">https://crimetime.vercel.app/blog-posts/wilmington-dmv-what-we-know.html</guid>
+      <category>Breaking</category>
+      <pubDate>Fri, 26 Dec 2025 12:00:00 GMT</pubDate>
+      <description>Separating the verified facts from the speculation that filled the first hours after the December 23 incident at the Wilmington DMV.</description>
+    </item>
+    <item>
+      <title>The Watts Family Case: Reading the Warning Signs</title>
+      <link>https://crimetime.vercel.app/blog-posts/watts-family-reading-the-warning-signs.html</link>
+      <guid isPermaLink="true">https://crimetime.vercel.app/blog-posts/watts-family-reading-the-warning-signs.html</guid>
+      <category>Analysis</category>
+      <pubDate>Fri, 14 Nov 2025 12:00:00 GMT</pubDate>
+      <description>The 2018 Watts family killings unsettled people partly because of how ordinary the family appeared. A measured look at the timeline and the confession.</description>
+    </item>
+    <item>
+      <title>Courtney Clenney: The Case Explained</title>
+      <link>https://crimetime.vercel.app/blog-posts/courtney-clenney-the-case-explained.html</link>
+      <guid isPermaLink="true">https://crimetime.vercel.app/blog-posts/courtney-clenney-the-case-explained.html</guid>
+      <category>Court</category>
+      <pubDate>Thu, 02 Oct 2025 12:00:00 GMT</pubDate>
+      <description>A case that turns on a single, contested question the court will have to weigh. Here is the framework, without taking sides before a verdict.</description>
+    </item>
+    <item>
+      <title>Bryan Kohberger: From Arrest to Courtroom</title>
+      <link>https://crimetime.vercel.app/blog-posts/bryan-kohberger-from-arrest-to-courtroom.html</link>
+      <guid isPermaLink="true">https://crimetime.vercel.app/blog-posts/bryan-kohberger-from-arrest-to-courtroom.html</guid>
+      <category>Court</category>
+      <pubDate>Sat, 20 Sep 2025 12:00:00 GMT</pubDate>
+      <description>The path from a late-night arrest to the courtroom in the University of Idaho murders case, and the evidence that drew the most attention.</description>
+    </item>
+    <item>
+      <title>The Menendez Resentencing, Explained</title>
+      <link>https://crimetime.vercel.app/blog-posts/menendez-brothers-resentencing-explained.html</link>
+      <guid isPermaLink="true">https://crimetime.vercel.app/blog-posts/menendez-brothers-resentencing-explained.html</guid>
+      <category>Court</category>
+      <pubDate>Sun, 02 Mar 2025 12:00:00 GMT</pubDate>
+      <description>More than three decades after their conviction, the legal path that has put Lyle and Erik Menendez back in the headlines.</description>
+    </item>
+    <item>
+      <title>Delphi: From 'Bridge Guy' to Trial</title>
+      <link>https://crimetime.vercel.app/blog-posts/delphi-case-from-bridge-guy-to-trial.html</link>
+      <guid isPermaLink="true">https://crimetime.vercel.app/blog-posts/delphi-case-from-bridge-guy-to-trial.html</guid>
+      <category>Investigation</category>
+      <pubDate>Mon, 10 Feb 2025 12:00:00 GMT</pubDate>
+      <description>How a few seconds of audio and a grainy image kept the Abigail Williams and Liberty German case alive for years.</description>
+    </item>
+    <item>
+      <title>How Genetic Genealogy Is Changing Cold Cases</title>
+      <link>https://crimetime.vercel.app/blog-posts/genetic-genealogy-changing-cold-cases.html</link>
+      <guid isPermaLink="true">https://crimetime.vercel.app/blog-posts/genetic-genealogy-changing-cold-cases.html</guid>
+      <category>Analysis</category>
+      <pubDate>Mon, 20 Jan 2025 12:00:00 GMT</pubDate>
+      <description>The technique that helped identify a suspect in the Idaho student murders is reshaping how long-dormant cases get solved.</description>
+    </item>
+  </channel>
+</rss>
