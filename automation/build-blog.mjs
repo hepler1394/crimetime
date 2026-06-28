@@ -32,6 +32,12 @@ const fmtDate = (iso) =>
     timeZone: "UTC",
   });
 
+// Estimated reading time (~200 wpm), minimum 1 minute.
+const readingTime = (p) => {
+  const words = (p.body || []).join(" ").trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(words / 200));
+};
+
 const SITE = "https://crimetime.vercel.app";
 const head = (title, desc, path = "/", image = "/images/logo.png", extra = "") => `<head>
     <meta charset="UTF-8">
@@ -158,9 +164,22 @@ function featured(p) {
 function blogPage(posts) {
   const feat = posts.find((p) => p.featured) || posts[0];
   const rest = posts.filter((p) => p !== feat);
+  const blogLd = `\n    <script type="application/ld+json">\n${JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "CrimeTimeSnacks Blog",
+    url: `${SITE}/blog.html`,
+    blogPost: posts.slice(0, 20).map((p) => ({
+      "@type": "BlogPosting",
+      headline: p.title,
+      datePublished: p.date,
+      url: `${SITE}${postUrl(p)}`,
+      author: { "@type": "Person", name: p.author },
+    })),
+  }, null, 2)}\n    </script>`;
   return `<!DOCTYPE html>
 <html lang="en">
-${head("Crime Blog | CrimeTimeSnacks", "The latest true crime news, case updates, and analysis from CrimeTimeSnacks.", "/blog.html")}
+${head("Crime Blog | CrimeTimeSnacks", "The latest true crime news, case updates, and analysis from CrimeTimeSnacks.", "/blog.html", "/images/logo.png", blogLd)}
 <body>
 ${header("blog")}
 
@@ -262,7 +281,7 @@ ${header("blog")}
         <div class="container">
             <div class="blog-tags" style="justify-content:center;display:flex;margin-bottom:0.75rem;"><span class="blog-tag">${esc(p.categoryLabel)}</span></div>
             <h1 class="episode-title" style="color:var(--cts-white);">${esc(p.title)}</h1>
-            <p class="episode-date" style="justify-content:center;"><i class="far fa-calendar-alt"></i> ${fmtDate(p.date)} &nbsp;&middot;&nbsp; ${esc(p.author)}</p>
+            <p class="episode-date" style="justify-content:center;"><i class="far fa-calendar-alt"></i> ${fmtDate(p.date)} &nbsp;&middot;&nbsp; ${esc(p.author)} &nbsp;&middot;&nbsp; ${readingTime(p)} min read</p>
         </div>
     </section>
 
