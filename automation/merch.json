@@ -1,9 +1,45 @@
 {
   "meta": {
     "intro": "Designs straight from the studio — new drops are added automatically. Every design is an original CrimeTimeSnacks print on a black tee, hoodie, or sticker. The store runs on print-on-demand, so everything ships made-to-order.",
-    "updated": "2026-06-28T03:44:13.096Z"
+    "updated": "2026-06-28T05:15:26.030Z"
   },
   "designs": [
+    {
+      "slug": "never-closed",
+      "slogan": "Never Closed",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "template": 3,
+      "svg": "images/merch/never-closed.svg",
+      "created": "2026-06-28"
+    },
+    {
+      "slug": "mind-the-details",
+      "slogan": "Mind The Details",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "template": 2,
+      "svg": "images/merch/mind-the-details.svg",
+      "created": "2026-06-28"
+    },
+    {
+      "slug": "motive-means-opportunity",
+      "slogan": "Motive Means Opportunity",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "30",
+      "template": 5,
+      "svg": "images/merch/motive-means-opportunity.svg",
+      "created": "2026-06-28"
+    },
+    {
+      "slug": "check-the-alibi",
+      "slogan": "Check The Alibi",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "template": 1,
+      "svg": "images/merch/check-the-alibi.svg",
+      "created": "2026-06-28"
+    },
     {
       "slug": "stay-curious",
       "slogan": "Stay Curious",

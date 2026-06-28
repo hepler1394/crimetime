@@ -169,6 +169,10 @@ export const SLOGAN_POOL = [
   { slogan: "Cold Case / Club", price: "28", template: 2 },
   { slogan: "Question / Everything", price: "28", template: 5 },
   { slogan: "Stay Curious", price: "28", template: 4 },
+  { slogan: "Check The / Alibi", price: "28", template: 1 },
+  { slogan: "Motive / Means / Opportunity", price: "30", template: 5 },
+  { slogan: "Mind The / Details", price: "28", template: 2 },
+  { slogan: "Never / Closed", price: "28", template: 3 },
 ];
 
 export const slugify = (s) =>

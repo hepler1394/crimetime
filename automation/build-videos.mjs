@@ -295,7 +295,7 @@ await writeFile(join(ROOT, "videos.html"), page, "utf8");
 // Homepage "Watch" region — prefers Shorts, falls back to full videos.
 function homeShort(v) {
   return `                <a class="home-short" href="https://www.youtube.com/shorts/${esc(v.id)}" target="_blank" rel="noopener" title="${esc(v.title)}">
-                    <img src="https://i.ytimg.com/vi/${esc(v.id)}/hqdefault.jpg" alt="${esc(v.title)}" loading="lazy">
+                    <img src="https://i.ytimg.com/vi/${esc(v.id)}/hqdefault.jpg" alt="${esc(v.title)}" loading="lazy" decoding="async">
                     <span class="home-short-play"><i class="fas fa-play"></i></span>
                 </a>`;
 }

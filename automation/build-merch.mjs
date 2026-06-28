@@ -51,7 +51,7 @@ const merchLd = designs.length
 
 function card(d) {
   return `            <div class="merch-item">
-                <img src="${esc(d.svg)}" alt="${esc(d.slogan)} — CrimeTimeSnacks design" class="merch-image" loading="lazy" style="background:#0a0a0a;border-radius:6px;border:1px solid #2a2a2a;">
+                <img src="${esc(d.svg)}" alt="${esc(d.slogan)} — CrimeTimeSnacks design" class="merch-image" loading="lazy" decoding="async" width="280" height="260" style="background:#0a0a0a;border-radius:6px;border:1px solid #2a2a2a;">
                 <h3 style="margin:0.25rem 0;color:var(--cts-white);">${esc(d.slogan)}</h3>
                 <div style="display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:center;margin:0.75rem 0;">
                     <span class="episode-badge">Tee</span>

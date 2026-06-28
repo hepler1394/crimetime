@@ -19,7 +19,26 @@ let changed = 0;
 for (const f of (await readdir(ROOT)).filter((x) => x.endsWith(".html"))) {
   if (SKIP.has(f)) continue;
   let html = await readFile(join(ROOT, f), "utf8");
-  if (html.includes('property="og:title"')) continue; // already done (e.g. index.html)
+  if (html.includes('property="og:title"')) {
+    // Already has OG — just back-fill image alt tags if they're missing.
+    let touched = false;
+    if (html.includes('property="og:image"') && !html.includes('property="og:image:alt"')) {
+      html = html.replace(
+        /(<meta\s+property="og:image"\s+content="[^"]*">)/i,
+        `$1\n    <meta property="og:image:alt" content="CrimeTimeSnacks logo">`
+      );
+      touched = true;
+    }
+    if (html.includes('name="twitter:image"') && !html.includes('name="twitter:image:alt"')) {
+      html = html.replace(
+        /(<meta\s+name="twitter:image"\s+content="[^"]*">)/i,
+        `$1\n    <meta name="twitter:image:alt" content="CrimeTimeSnacks logo">`
+      );
+      touched = true;
+    }
+    if (touched) { await writeFile(join(ROOT, f), html, "utf8"); changed++; }
+    continue;
+  }
 
   const title = (html.match(/<title>([\s\S]*?)<\/title>/i) || [])[1] || "CrimeTimeSnacks";
   const desc =
@@ -38,10 +57,12 @@ for (const f of (await readdir(ROOT)).filter((x) => x.endsWith(".html"))) {
     <meta property="og:description" content="${d}">
     <meta property="og:url" content="${SITE}${encodeURI(path)}">
     <meta property="og:image" content="${SITE}/images/logo.png">
+    <meta property="og:image:alt" content="CrimeTimeSnacks logo">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${t}">
     <meta name="twitter:description" content="${d}">
     <meta name="twitter:image" content="${SITE}/images/logo.png">
+    <meta name="twitter:image:alt" content="CrimeTimeSnacks logo">
     <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Podcast" href="/feed.xml">`;
 
   html = html.replace(/<\/title>/i, `</title>${block}`);

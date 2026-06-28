@@ -20,6 +20,16 @@
     { "topic": "How podcasts have helped reopen cold cases", "category": "analysis" },
     { "topic": "Bloodstain pattern analysis, explained", "category": "investigation" },
     { "topic": "How true crime fans can help cases responsibly", "category": "analysis" },
-    { "topic": "What a medical examiner determines and what they don't", "category": "analysis" }
+    { "topic": "What a medical examiner determines and what they don't", "category": "analysis" },
+    { "topic": "How polygraph results are used and why courts distrust them", "category": "court" },
+    { "topic": "The role of a grand jury, explained", "category": "court" },
+    { "topic": "How investigators reconstruct a timeline of events", "category": "investigation" },
+    { "topic": "Why false confessions happen", "category": "analysis" },
+    { "topic": "How trace evidence like fibers and soil solves cases", "category": "investigation" },
+    { "topic": "The difference between a person of interest and a suspect", "category": "analysis" },
+    { "topic": "How DNA was first used to solve a crime", "category": "analysis" },
+    { "topic": "What happens at a preliminary hearing", "category": "court" },
+    { "topic": "How missing persons cases are prioritized and worked", "category": "investigation" },
+    { "topic": "The science behind time of death estimates", "category": "analysis" }
   ]
 }
