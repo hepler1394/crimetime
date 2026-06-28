@@ -22,7 +22,12 @@ const hash = (s) => {
 // Stack the slogan's words as bold lines, sized to fit, last word in red.
 function slogan(lines, { cx = 500, cy = 500, max = 760, color = WHITE, accent = RED } = {}) {
   const longest = Math.max(...lines.map((l) => l.length));
-  const size = Math.max(46, Math.min(150, Math.floor(max * 1.85 / longest)));
+  const n = lines.length;
+  let size = Math.max(46, Math.min(150, Math.floor(max * 1.85 / longest)));
+  // Clamp by vertical room so the centered block always stays inside the
+  // 1000-tall canvas (fixes tall 3-line slogans clipping off the bottom).
+  const budget = 2 * Math.min(cy - 60, 970 - cy);
+  size = Math.max(40, Math.min(size, Math.floor(budget / (n * 1.12))));
   const lineH = size * 1.05;
   const startY = cy - (lineH * (lines.length - 1)) / 2 + size * 0.34;
   return lines
