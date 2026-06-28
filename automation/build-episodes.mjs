@@ -110,6 +110,27 @@ function card(p, ep) {
 
 function page({ podcast: p, episodes }) {
   const sorted = [...episodes].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+  const itemsLd = `\n    <script type="application/ld+json">\n${JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: sorted.map((ep, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "PodcastEpisode",
+        name: ep.title,
+        url: `${p.siteUrl}/episodes/${ep.slug}.html`,
+        datePublished: ep.date,
+      },
+    })),
+  }, null, 2)}\n    </script>\n    <script type="application/ld+json">\n${JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${p.siteUrl}/` },
+      { "@type": "ListItem", position: 2, name: "Episodes", item: `${p.siteUrl}/episodes.html` },
+    ],
+  })}\n    </script>`;
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -134,7 +155,7 @@ function page({ podcast: p, episodes }) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="${FONTS}" rel="stylesheet">
     <link rel="stylesheet" href="${FA}">
-    <link rel="stylesheet" href="${CSS}">
+    <link rel="stylesheet" href="${CSS}">${itemsLd}
 </head>
 <body>
 ${header("episodes")}
