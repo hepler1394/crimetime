@@ -1,0 +1,79 @@
+#!/usr/bin/env node
+// THE ONE BUTTON. Refreshes everything and rebuilds the site:
+//   1. Pull latest podcast episodes (Anchor RSS)        [network]
+//   2. Pull latest YouTube uploads + Shorts (YT RSS)    [network]
+//   3. Write one fresh, slop-free blog post             [local LLM first]
+//   4. Add one new merch design                         [local LLM, offline-safe]
+//   5. Rebuild the whole site (feed, episodes, blog, videos, merch, meta, sitemap)
+//   6. QA internal links
+//   7. (optional) commit + push -> Vercel auto-deploys
+//
+// Run:
+//   node automation/weekly-update.mjs                 build only (no git)
+//   node automation/weekly-update.mjs --commit        commit locally
+//   node automation/weekly-update.mjs --commit --push publish (auto-deploys)
+//
+// Network/LLM steps are best-effort: if one fails (offline, LLM down), it logs a
+// warning and the rebuild still runs from the JSON already on disk.
+
+import { spawnSync } from "node:child_process";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
+
+const here = dirname(fileURLToPath(import.meta.url));
+const ROOT = join(here, "..");
+const args = process.argv.slice(2);
+const doCommit = args.includes("--commit");
+const doPush = args.includes("--push");
+
+const run = (script, scriptArgs = [], { required = false } = {}) => {
+  const label = `${script} ${scriptArgs.join(" ")}`.trim();
+  console.log(`\n=== ${label} ===`);
+  const r = spawnSync(process.execPath, [join(here, script), ...scriptArgs], { stdio: "inherit", cwd: ROOT });
+  if (r.status !== 0) {
+    if (required) { console.error(`FAILED (required): ${label}`); process.exit(r.status ?? 1); }
+    console.warn(`WARN: ${label} failed (status ${r.status}) — continuing.`);
+    return false;
+  }
+  return true;
+};
+
+const git = (gitArgs) => {
+  console.log(`\n=== git ${gitArgs.join(" ")} ===`);
+  return spawnSync("git", gitArgs, { stdio: "inherit", cwd: ROOT }).status === 0;
+};
+
+console.log("CrimeTimeSnacks weekly update —", new Date().toISOString());
+
+// 1-2: refresh sources (best-effort; need network)
+run("import-feed.mjs");        // podcast episodes
+run("import-youtube.mjs");     // youtube videos + shorts
+
+// 3: fresh blog post (best-effort; needs an LLM — local first)
+run("ai-write.mjs", ["--auto"]);
+
+// 4: new merch design (best-effort LLM, falls back to the offline pool)
+run("gen-merch.mjs", ["--ai", "1"]);
+
+// 5: rebuild everything from the updated JSON (REQUIRED — must succeed)
+run("build-all.mjs", [], { required: true });
+
+// 6: QA
+run("check-links.mjs");
+
+// 7: publish
+if (doCommit) {
+  git(["add", "-A"]);
+  const stamp = new Date().toISOString().slice(0, 10);
+  const committed = git(["commit", "-m", `Weekly auto-update (${stamp}): episodes, videos, blog, merch`]);
+  if (committed && doPush) {
+    git(["push"]);
+    console.log("\nPushed. Vercel will auto-deploy crimetime.vercel.app.");
+  } else if (committed) {
+    console.log("\nCommitted locally. Run `git push` (or re-run with --push) to publish.");
+  } else {
+    console.log("\nNothing to commit (no changes this run).");
+  }
+}
+
+console.log("\nWeekly update complete.");

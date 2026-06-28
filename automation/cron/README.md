@@ -15,6 +15,19 @@ when needed. No API keys live in any script — they come from
 
 ## Jobs
 
+- **`cts-weekly.ps1`** — THE ONE BUTTON, scheduled. Refreshes podcast episodes +
+  YouTube videos/Shorts, writes a fresh blog post, adds a merch design, rebuilds
+  the entire site, then commits + pushes (Vercel auto-deploys). This is the
+  "press a button and my whole website updates" job — set it weekly and forget it.
+
+```
+schtasks /create /tn "CTS Weekly Update" /sc WEEKLY /d SUN /st 07:00 ^
+  /tr "powershell -NoProfile -ExecutionPolicy Bypass -File D:\dev\github\crimetime\automation\cron\cts-weekly.ps1"
+```
+
+  Run it by hand any time (the literal "button"):
+  `node automation/weekly-update.mjs --commit --push`
+
 - **`cts-daily.ps1`** — generates one new blog post and publishes it (commit +
   push). Pair with the daily feed refresh below if you want episodes synced too.
 

@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "intro": "Designs straight from the studio — new drops are added automatically. Every design is an original CrimeTimeSnacks print on a black tee, hoodie, or sticker. The store runs on print-on-demand, so everything ships made-to-order.",
+    "updated": "2026-06-28T03:25:46.433Z"
+  },
+  "designs": [
+    {
+      "slug": "read-the-case-files",
+      "slogan": "Read The Case Files",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "30",
+      "svg": "images/merch/read-the-case-files.svg",
+      "created": "2026-06-28"
+    },
+    {
+      "slug": "snacks-cold-cases",
+      "slogan": "Snacks & Cold Cases",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "30",
+      "svg": "images/merch/snacks-cold-cases.svg",
+      "created": "2026-06-28"
+    },
+    {
+      "slug": "case-still-open",
+      "slogan": "Case Still Open",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "svg": "images/merch/case-still-open.svg",
+      "created": "2026-06-28"
+    },
+    {
+      "slug": "the-evidence-speaks",
+      "slogan": "The Evidence Speaks",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "30",
+      "svg": "images/merch/the-evidence-speaks.svg",
+      "created": "2026-06-28"
+    },
+    {
+      "slug": "lock-the-doors",
+      "slogan": "Lock The Doors",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "svg": "images/merch/lock-the-doors.svg",
+      "created": "2026-06-28"
+    },
+    {
+      "slug": "trust-your-gut",
+      "slogan": "Trust Your Gut",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "svg": "images/merch/trust-your-gut.svg",
+      "created": "2026-06-28"
+    },
+    {
+      "slug": "true-crime-o-clock",
+      "slogan": "True Crime O'Clock",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "svg": "images/merch/true-crime-o-clock.svg",
+      "created": "2026-06-28"
+    },
+    {
+      "slug": "stay-suspicious",
+      "slogan": "Stay Suspicious",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "svg": "images/merch/stay-suspicious.svg",
+      "created": "2026-06-28"
+    }
+  ]
+}

@@ -1,63 +1,82 @@
-<!DOCTYPE html>
+#!/usr/bin/env node
+// Generates merch.html from merch.json — a real gallery of the generated SVG
+// designs. Matches the existing CrimeTimeSnacks design. Honest CTA (no fake
+// checkout): each design is downloadable and the store opens on print-on-demand.
+// Run: node automation/build-merch.mjs
+
+import { readFile, writeFile } from "node:fs/promises";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const ROOT = join(__dirname, "..");
+const SITE = "https://crimetime.vercel.app";
+
+const esc = (s) =>
+  String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+let merch;
+try {
+  merch = JSON.parse(await readFile(join(__dirname, "merch.json"), "utf8"));
+} catch {
+  console.log("No merch.json yet — run `node automation/gen-merch.mjs` first. Skipping.");
+  process.exit(0);
+}
+const designs = merch.designs || [];
+
+function card(d) {
+  return `            <div class="merch-item">
+                <img src="${esc(d.svg)}" alt="${esc(d.slogan)} — CrimeTimeSnacks design" class="merch-image" loading="lazy" style="background:#0a0a0a;border-radius:6px;border:1px solid #2a2a2a;">
+                <h3 style="margin:0.25rem 0;color:var(--cts-white);">${esc(d.slogan)}</h3>
+                <div style="display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:center;margin:0.75rem 0;">
+                    <span class="episode-badge">Tee</span>
+                    <span class="episode-badge">Hoodie</span>
+                    <span class="episode-badge">Sticker</span>
+                </div>
+                <p style="color:#bbb;margin:0.25rem 0 1rem;">from $${esc(d.price)}</p>
+                <div class="customize-options" style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;">
+                    <a href="${esc(d.svg)}" download class="btn btn-secondary"><i class="fas fa-download"></i> Design</a>
+                    <a href="#notify" onclick="var i=document.querySelector('.footer-newsletter input');if(i){i.focus();i.scrollIntoView({behavior:'smooth',block:'center'});}return false;" class="btn btn-primary"><i class="fas fa-bell"></i> Notify</a>
+                </div>
+            </div>`;
+}
+
+const page = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Videos | CrimeTimeSnacks</title>
-    <meta name="description" content="Watch CrimeTimeSnacks true crime videos — episode breakdowns, case deep-dives, and visual explorations of unsolved cases, murders, and mysteries.">
-    <link rel="canonical" href="https://crimetime.vercel.app/videos.html">
+    <title>Merchandise | CrimeTimeSnacks</title>
+    <meta name="description" content="Shop CrimeTimeSnacks merch — original true crime tee, hoodie, and sticker designs for fans who follow our deep-dives into unsolved cases.">
+    <link rel="canonical" href="${SITE}/merch.html">
     <meta name="theme-color" content="#0a0a0a">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="CrimeTimeSnacks">
-    <meta property="og:title" content="Videos | CrimeTimeSnacks">
+    <meta property="og:title" content="Merchandise | CrimeTimeSnacks">
     <meta property="og:description" content="A true crime podcast exploring unsolved cases, murders, and mysteries.">
-    <meta property="og:url" content="https://crimetime.vercel.app/videos.html">
-    <meta property="og:image" content="https://crimetime.vercel.app/images/logo.png">
+    <meta property="og:url" content="${SITE}/merch.html">
+    <meta property="og:image" content="${SITE}/images/logo.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Videos | CrimeTimeSnacks">
+    <meta name="twitter:title" content="Merchandise | CrimeTimeSnacks">
     <meta name="twitter:description" content="A true crime podcast exploring unsolved cases, murders, and mysteries.">
-    <meta name="twitter:image" content="https://crimetime.vercel.app/images/logo.png">
+    <meta name="twitter:image" content="${SITE}/images/logo.png">
     <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Podcast" href="/feed.xml">
-    <link rel="stylesheet" href="css/style.css?v=2026f">
-    <style>
-        /* Updated styles for video grid */
-        .video-grid {
+    <link rel="stylesheet" href="css/style.css?v=2026f"> <style>
+        .merch-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            justify-content: center;
             gap: 2rem;
             padding: 2rem 0;
         }
-        .video-card {
+        .merch-item {
             background-color: var(--cts-medium-gray);
             border-radius: 5px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
+            padding: 1.5rem;
+            text-align: center;
         }
-        .video-card:hover { transform: translateY(-5px); }
-        .video-container { position: relative; width: 100%; padding-bottom: 56.25%; }
-        .video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-        .video-content { padding: 1.5rem; }
-        .video-title { font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--cts-white); }
-        .video-description { color: #ddd; }
-        /* Shorts rail (9:16 vertical) */
-        .shorts-rail {
-            display: flex;
-            gap: 1.25rem;
-            overflow-x: auto;
-            padding: 1rem 0 1.5rem;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-        }
-        .short-card { flex: 0 0 auto; width: 230px; scroll-snap-align: start; }
-        .short-container {
-            position: relative; width: 100%; padding-bottom: 177.78%;
-            border-radius: 8px; overflow: hidden; background: #000;
-        }
-        .short { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-        .short-title {
-            margin-top: 0.6rem; color: var(--cts-white); font-size: 0.95rem;
-            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
-        }
+        .merch-image { width: 100%; height: 260px; object-fit: contain; margin-bottom: 1rem; }
+        .customize-options { margin-top: 1rem; }
     </style>
 </head>
 <body>
@@ -72,10 +91,10 @@
                 <ul class="nav-menu">
                     <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="episodes.html"><i class="fas fa-microphone"></i> Episodes</a></li>
-                    <li><a href="videos.html" class="active"><i class="fas fa-video"></i> Videos</a></li>
+                    <li><a href="videos.html"><i class="fas fa-video"></i> Videos</a></li>
                     <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
                     <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
-                    <li><a href="merch.html"><i class="fas fa-tshirt"></i> Merch</a></li>
+                    <li><a href="merch.html" class="active"><i class="fas fa-tshirt"></i> Merch</a></li>
                     <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </nav>
@@ -86,25 +105,12 @@
     </header>
 
     <section class="container">
-        <h1 style="text-align: center; margin-bottom: 2rem;">Watch CrimeTimeSnacks Videos</h1>
-        <div class="video-grid">
-            <div class="video-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/BBUF4lUFCsE"
-                            class="video"
-                            title="Welcome to the Murder Capital of America"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            loading="lazy"
-                            allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="video-content">
-                    <h3 class="video-title">Welcome to the Murder Capital of America</h3>
-                    <p class="video-description">Baton Rouge, Louisiana — a closer look at the cases and the numbers behind the headlines.</p>
-                </div>
-            </div>
+        <h1 style="text-align: center; margin-bottom: 0.5rem;">CrimeTimeSnacks Merch</h1>
+        <p style="text-align: center; max-width: 640px; margin: 0 auto 2.5rem auto; color: #bbb;">${esc(merch.meta?.intro || "Original true crime designs. New drops added automatically.")}</p>
+        <div class="merch-container">
+${designs.map(card).join("\n")}
         </div>
+        <p style="text-align:center;color:#888;margin-top:2.5rem;">Store opening soon on print-on-demand &mdash; tap Notify on any design to get first access.</p>
     </section>
 
     <footer class="footer">
@@ -147,10 +153,14 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 CrimeTimeSnacks. All Rights Reserved.</p>
+                <p>&copy; ${new Date().getFullYear()} CrimeTimeSnacks. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
     <script src="js/main.js"></script>
 </body>
 </html>
+`;
+
+await writeFile(join(ROOT, "merch.html"), page, "utf8");
+console.log(`merch.html generated: ${designs.length} designs.`);

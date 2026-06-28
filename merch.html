@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merchandise | CrimeTimeSnacks</title>
-    <meta name="description" content="Shop CrimeTimeSnacks merch — apparel and gear for true crime fans who follow our deep-dives into unsolved cases, murders, and mysteries.">
+    <meta name="description" content="Shop CrimeTimeSnacks merch — original true crime tee, hoodie, and sticker designs for fans who follow our deep-dives into unsolved cases.">
     <link rel="canonical" href="https://crimetime.vercel.app/merch.html">
     <meta name="theme-color" content="#0a0a0a">
     <meta property="og:type" content="website">
@@ -19,10 +19,9 @@
     <meta name="twitter:image" content="https://crimetime.vercel.app/images/logo.png">
     <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Podcast" href="/feed.xml">
     <link rel="stylesheet" href="css/style.css?v=2026f"> <style>
-        /* Add any specific styles for the merch page here */
         .merch-container {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             justify-content: center;
             gap: 2rem;
             padding: 2rem 0;
@@ -32,17 +31,9 @@
             border-radius: 5px;
             padding: 1.5rem;
             text-align: center;
-            width: 300px;
         }
-        .merch-image {
-            width: 100%;
-            height: 200px;
-            object-fit: contain;
-            margin-bottom: 1rem;
-        }
-        .customize-options {
-            margin-top: 1rem;
-        }
+        .merch-image { width: 100%; height: 260px; object-fit: contain; margin-bottom: 1rem; }
+        .customize-options { margin-top: 1rem; }
     </style>
 </head>
 <body>
@@ -72,19 +63,122 @@
 
     <section class="container">
         <h1 style="text-align: center; margin-bottom: 0.5rem;">CrimeTimeSnacks Merch</h1>
-        <p style="text-align: center; max-width: 620px; margin: 0 auto 2.5rem auto; color: #bbb;">Official tees, hoodies, hats, and stickers are on the way. The store will run on print-on-demand, so everything ships made-to-order. Sign up for the newsletter and you'll be first in line when it opens.</p>
-        <div style="max-width: 520px; margin: 0 auto; background-color: var(--cts-medium-gray); border-radius: 8px; padding: 2.5rem; text-align: center;">
-            <img src="images/logo.png" alt="CrimeTimeSnacks design" style="max-width: 240px; width: 100%; border-radius: 6px; border: 3px solid var(--cts-red);">
-            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin: 1.5rem 0;">
-                <span class="episode-badge">T-Shirts</span>
-                <span class="episode-badge">Hoodies</span>
-                <span class="episode-badge">Hats</span>
-                <span class="episode-badge">Mugs</span>
-                <span class="episode-badge">Stickers</span>
+        <p style="text-align: center; max-width: 640px; margin: 0 auto 2.5rem auto; color: #bbb;">Designs straight from the studio — new drops are added automatically. Every design is an original CrimeTimeSnacks print on a black tee, hoodie, or sticker. The store runs on print-on-demand, so everything ships made-to-order.</p>
+        <div class="merch-container">
+            <div class="merch-item">
+                <img src="images/merch/read-the-case-files.svg" alt="Read The Case Files — CrimeTimeSnacks design" class="merch-image" loading="lazy" style="background:#0a0a0a;border-radius:6px;border:1px solid #2a2a2a;">
+                <h3 style="margin:0.25rem 0;color:var(--cts-white);">Read The Case Files</h3>
+                <div style="display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:center;margin:0.75rem 0;">
+                    <span class="episode-badge">Tee</span>
+                    <span class="episode-badge">Hoodie</span>
+                    <span class="episode-badge">Sticker</span>
+                </div>
+                <p style="color:#bbb;margin:0.25rem 0 1rem;">from $30</p>
+                <div class="customize-options" style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;">
+                    <a href="images/merch/read-the-case-files.svg" download class="btn btn-secondary"><i class="fas fa-download"></i> Design</a>
+                    <a href="#notify" onclick="var i=document.querySelector('.footer-newsletter input');if(i){i.focus();i.scrollIntoView({behavior:'smooth',block:'center'});}return false;" class="btn btn-primary"><i class="fas fa-bell"></i> Notify</a>
+                </div>
             </div>
-            <p style="color: #bbb; margin-bottom: 1.25rem;">Store opening soon.</p>
-            <a href="#notify" onclick="var i=document.querySelector('.footer-newsletter input');if(i){i.focus();i.scrollIntoView({behavior:'smooth',block:'center'});}return false;" class="btn btn-primary"><i class="fas fa-bell"></i> Notify Me</a>
+            <div class="merch-item">
+                <img src="images/merch/snacks-cold-cases.svg" alt="Snacks &amp; Cold Cases — CrimeTimeSnacks design" class="merch-image" loading="lazy" style="background:#0a0a0a;border-radius:6px;border:1px solid #2a2a2a;">
+                <h3 style="margin:0.25rem 0;color:var(--cts-white);">Snacks &amp; Cold Cases</h3>
+                <div style="display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:center;margin:0.75rem 0;">
+                    <span class="episode-badge">Tee</span>
+                    <span class="episode-badge">Hoodie</span>
+                    <span class="episode-badge">Sticker</span>
+                </div>
+                <p style="color:#bbb;margin:0.25rem 0 1rem;">from $30</p>
+                <div class="customize-options" style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;">
+                    <a href="images/merch/snacks-cold-cases.svg" download class="btn btn-secondary"><i class="fas fa-download"></i> Design</a>
+                    <a href="#notify" onclick="var i=document.querySelector('.footer-newsletter input');if(i){i.focus();i.scrollIntoView({behavior:'smooth',block:'center'});}return false;" class="btn btn-primary"><i class="fas fa-bell"></i> Notify</a>
+                </div>
+            </div>
+            <div class="merch-item">
+                <img src="images/merch/case-still-open.svg" alt="Case Still Open — CrimeTimeSnacks design" class="merch-image" loading="lazy" style="background:#0a0a0a;border-radius:6px;border:1px solid #2a2a2a;">
+                <h3 style="margin:0.25rem 0;color:var(--cts-white);">Case Still Open</h3>
+                <div style="display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:center;margin:0.75rem 0;">
+                    <span class="episode-badge">Tee</span>
+                    <span class="episode-badge">Hoodie</span>
+                    <span class="episode-badge">Sticker</span>
+                </div>
+                <p style="color:#bbb;margin:0.25rem 0 1rem;">from $28</p>
+                <div class="customize-options" style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;">
+                    <a href="images/merch/case-still-open.svg" download class="btn btn-secondary"><i class="fas fa-download"></i> Design</a>
+                    <a href="#notify" onclick="var i=document.querySelector('.footer-newsletter input');if(i){i.focus();i.scrollIntoView({behavior:'smooth',block:'center'});}return false;" class="btn btn-primary"><i class="fas fa-bell"></i> Notify</a>
+                </div>
+            </div>
+            <div class="merch-item">
+                <img src="images/merch/the-evidence-speaks.svg" alt="The Evidence Speaks — CrimeTimeSnacks design" class="merch-image" loading="lazy" style="background:#0a0a0a;border-radius:6px;border:1px solid #2a2a2a;">
+                <h3 style="margin:0.25rem 0;color:var(--cts-white);">The Evidence Speaks</h3>
+                <div style="display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:center;margin:0.75rem 0;">
+                    <span class="episode-badge">Tee</span>
+                    <span class="episode-badge">Hoodie</span>
+                    <span class="episode-badge">Sticker</span>
+                </div>
+                <p style="color:#bbb;margin:0.25rem 0 1rem;">from $30</p>
+                <div class="customize-options" style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;">
+                    <a href="images/merch/the-evidence-speaks.svg" download class="btn btn-secondary"><i class="fas fa-download"></i> Design</a>
+                    <a href="#notify" onclick="var i=document.querySelector('.footer-newsletter input');if(i){i.focus();i.scrollIntoView({behavior:'smooth',block:'center'});}return false;" class="btn btn-primary"><i class="fas fa-bell"></i> Notify</a>
+                </div>
+            </div>
+            <div class="merch-item">
+                <img src="images/merch/lock-the-doors.svg" alt="Lock The Doors — CrimeTimeSnacks design" class="merch-image" loading="lazy" style="background:#0a0a0a;border-radius:6px;border:1px solid #2a2a2a;">
+                <h3 style="margin:0.25rem 0;color:var(--cts-white);">Lock The Doors</h3>
+                <div style="display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:center;margin:0.75rem 0;">
+                    <span class="episode-badge">Tee</span>
+                    <span class="episode-badge">Hoodie</span>
+                    <span class="episode-badge">Sticker</span>
+                </div>
+                <p style="color:#bbb;margin:0.25rem 0 1rem;">from $28</p>
+                <div class="customize-options" style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;">
+                    <a href="images/merch/lock-the-doors.svg" download class="btn btn-secondary"><i class="fas fa-download"></i> Design</a>
+                    <a href="#notify" onclick="var i=document.querySelector('.footer-newsletter input');if(i){i.focus();i.scrollIntoView({behavior:'smooth',block:'center'});}return false;" class="btn btn-primary"><i class="fas fa-bell"></i> Notify</a>
+                </div>
+            </div>
+            <div class="merch-item">
+                <img src="images/merch/trust-your-gut.svg" alt="Trust Your Gut — CrimeTimeSnacks design" class="merch-image" loading="lazy" style="background:#0a0a0a;border-radius:6px;border:1px solid #2a2a2a;">
+                <h3 style="margin:0.25rem 0;color:var(--cts-white);">Trust Your Gut</h3>
+                <div style="display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:center;margin:0.75rem 0;">
+                    <span class="episode-badge">Tee</span>
+                    <span class="episode-badge">Hoodie</span>
+                    <span class="episode-badge">Sticker</span>
+                </div>
+                <p style="color:#bbb;margin:0.25rem 0 1rem;">from $28</p>
+                <div class="customize-options" style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;">
+                    <a href="images/merch/trust-your-gut.svg" download class="btn btn-secondary"><i class="fas fa-download"></i> Design</a>
+                    <a href="#notify" onclick="var i=document.querySelector('.footer-newsletter input');if(i){i.focus();i.scrollIntoView({behavior:'smooth',block:'center'});}return false;" class="btn btn-primary"><i class="fas fa-bell"></i> Notify</a>
+                </div>
+            </div>
+            <div class="merch-item">
+                <img src="images/merch/true-crime-o-clock.svg" alt="True Crime O'Clock — CrimeTimeSnacks design" class="merch-image" loading="lazy" style="background:#0a0a0a;border-radius:6px;border:1px solid #2a2a2a;">
+                <h3 style="margin:0.25rem 0;color:var(--cts-white);">True Crime O'Clock</h3>
+                <div style="display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:center;margin:0.75rem 0;">
+                    <span class="episode-badge">Tee</span>
+                    <span class="episode-badge">Hoodie</span>
+                    <span class="episode-badge">Sticker</span>
+                </div>
+                <p style="color:#bbb;margin:0.25rem 0 1rem;">from $28</p>
+                <div class="customize-options" style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;">
+                    <a href="images/merch/true-crime-o-clock.svg" download class="btn btn-secondary"><i class="fas fa-download"></i> Design</a>
+                    <a href="#notify" onclick="var i=document.querySelector('.footer-newsletter input');if(i){i.focus();i.scrollIntoView({behavior:'smooth',block:'center'});}return false;" class="btn btn-primary"><i class="fas fa-bell"></i> Notify</a>
+                </div>
+            </div>
+            <div class="merch-item">
+                <img src="images/merch/stay-suspicious.svg" alt="Stay Suspicious — CrimeTimeSnacks design" class="merch-image" loading="lazy" style="background:#0a0a0a;border-radius:6px;border:1px solid #2a2a2a;">
+                <h3 style="margin:0.25rem 0;color:var(--cts-white);">Stay Suspicious</h3>
+                <div style="display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:center;margin:0.75rem 0;">
+                    <span class="episode-badge">Tee</span>
+                    <span class="episode-badge">Hoodie</span>
+                    <span class="episode-badge">Sticker</span>
+                </div>
+                <p style="color:#bbb;margin:0.25rem 0 1rem;">from $28</p>
+                <div class="customize-options" style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;">
+                    <a href="images/merch/stay-suspicious.svg" download class="btn btn-secondary"><i class="fas fa-download"></i> Design</a>
+                    <a href="#notify" onclick="var i=document.querySelector('.footer-newsletter input');if(i){i.focus();i.scrollIntoView({behavior:'smooth',block:'center'});}return false;" class="btn btn-primary"><i class="fas fa-bell"></i> Notify</a>
+                </div>
+            </div>
         </div>
+        <p style="text-align:center;color:#888;margin-top:2.5rem;">Store opening soon on print-on-demand &mdash; tap Notify on any design to get first access.</p>
     </section>
 
     <footer class="footer">
@@ -98,7 +192,7 @@
                         <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400"><i class="fab fa-apple"></i></a>
                     </div>
                 </div>
-                
+
                 <div>
                     <h3 class="footer-heading">Quick Links</h3>
                     <ul class="footer-links">
@@ -109,7 +203,7 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h3 class="footer-heading">Listen On</h3>
                     <ul class="footer-links">
@@ -117,7 +211,7 @@
                         <li><a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ">Spotify</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-newsletter">
                     <h3 class="footer-heading">Newsletter</h3>
                     <p>Subscribe for the latest episodes and updates.</p>
@@ -125,7 +219,7 @@
                     <button class="btn btn-primary" style="width: 100%;">Subscribe</button>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>&copy; 2026 CrimeTimeSnacks. All Rights Reserved.</p>
             </div>

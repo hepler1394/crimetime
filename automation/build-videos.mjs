@@ -1,22 +1,93 @@
-<!DOCTYPE html>
+#!/usr/bin/env node
+// Generates videos.html from videos.json and refreshes the homepage "Watch"
+// region (between <!-- HOME-VIDEOS:START --> / <!-- HOME-VIDEOS:END -->).
+// Matches the existing CrimeTimeSnacks design. No keys, no client-side AI.
+// Run: node automation/build-videos.mjs
+
+import { readFile, writeFile } from "node:fs/promises";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const ROOT = join(__dirname, "..");
+const SITE = "https://crimetime.vercel.app";
+
+const esc = (s) =>
+  String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+const data = JSON.parse(await readFile(join(__dirname, "videos.json"), "utf8"));
+const all = data.videos || [];
+const longs = all.filter((v) => !v.short);
+const shorts = all.filter((v) => v.short);
+
+function videoCard(v) {
+  return `            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/${esc(v.id)}"
+                            class="video"
+                            title="${esc(v.title)}"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            loading="lazy"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">${esc(v.title)}</h3>
+                    <p class="video-description">${esc(v.description || "")}</p>
+                </div>
+            </div>`;
+}
+
+function shortCard(v) {
+  return `            <div class="short-card">
+                <div class="short-container">
+                    <iframe src="https://www.youtube.com/embed/${esc(v.id)}"
+                            class="short"
+                            title="${esc(v.title)}"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            loading="lazy"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <p class="short-title">${esc(v.title)}</p>
+            </div>`;
+}
+
+const shortsSection = shorts.length
+  ? `
+    <div class="crime-scene-tape"></div>
+
+    <section class="container">
+        <h2 style="text-align: center; margin-bottom: 0.5rem;">Shorts</h2>
+        <p style="text-align:center;color:#bbb;margin-bottom:1.5rem;">Quick case clips &mdash; swipe through.</p>
+        <div class="shorts-rail">
+${shorts.map(shortCard).join("\n")}
+        </div>
+    </section>
+`
+  : "";
+
+const page = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Videos | CrimeTimeSnacks</title>
-    <meta name="description" content="Watch CrimeTimeSnacks true crime videos — episode breakdowns, case deep-dives, and visual explorations of unsolved cases, murders, and mysteries.">
-    <link rel="canonical" href="https://crimetime.vercel.app/videos.html">
+    <meta name="description" content="${esc(data.meta.description)}">
+    <link rel="canonical" href="${SITE}/videos.html">
     <meta name="theme-color" content="#0a0a0a">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="CrimeTimeSnacks">
     <meta property="og:title" content="Videos | CrimeTimeSnacks">
     <meta property="og:description" content="A true crime podcast exploring unsolved cases, murders, and mysteries.">
-    <meta property="og:url" content="https://crimetime.vercel.app/videos.html">
-    <meta property="og:image" content="https://crimetime.vercel.app/images/logo.png">
+    <meta property="og:url" content="${SITE}/videos.html">
+    <meta property="og:image" content="${SITE}/images/logo.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Videos | CrimeTimeSnacks">
     <meta name="twitter:description" content="A true crime podcast exploring unsolved cases, murders, and mysteries.">
-    <meta name="twitter:image" content="https://crimetime.vercel.app/images/logo.png">
+    <meta name="twitter:image" content="${SITE}/images/logo.png">
     <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Podcast" href="/feed.xml">
     <link rel="stylesheet" href="css/style.css?v=2026f">
     <style>
@@ -86,27 +157,12 @@
     </header>
 
     <section class="container">
-        <h1 style="text-align: center; margin-bottom: 2rem;">Watch CrimeTimeSnacks Videos</h1>
+        <h1 style="text-align: center; margin-bottom: 2rem;">${esc(data.meta.title)}</h1>
         <div class="video-grid">
-            <div class="video-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/BBUF4lUFCsE"
-                            class="video"
-                            title="Welcome to the Murder Capital of America"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            loading="lazy"
-                            allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="video-content">
-                    <h3 class="video-title">Welcome to the Murder Capital of America</h3>
-                    <p class="video-description">Baton Rouge, Louisiana — a closer look at the cases and the numbers behind the headlines.</p>
-                </div>
-            </div>
+${longs.map(videoCard).join("\n")}
         </div>
     </section>
-
+${shortsSection}
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -147,10 +203,57 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 CrimeTimeSnacks. All Rights Reserved.</p>
+                <p>&copy; ${new Date().getFullYear()} CrimeTimeSnacks. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
     <script src="js/main.js"></script>
 </body>
 </html>
+`;
+
+await writeFile(join(ROOT, "videos.html"), page, "utf8");
+
+// Homepage "Watch" region (optional — only if markers exist in index.html).
+function homeCard(v) {
+  return `                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/${esc(v.id)}" class="video" title="${esc(v.title)}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">${esc(v.title)}</h3>
+                    </div>
+                </div>`;
+}
+
+async function updateHomeWatch() {
+  const indexPath = join(ROOT, "index.html");
+  let html;
+  try { html = await readFile(indexPath, "utf8"); } catch { return false; }
+  const start = "<!-- HOME-VIDEOS:START (auto-filled by automation/build-videos.mjs) -->";
+  const end = "<!-- HOME-VIDEOS:END -->";
+  const i = html.indexOf(start);
+  const j = html.indexOf(end);
+  if (i === -1 || j === -1) return false;
+  const picks = longs.slice(0, 3);
+  const block = `
+    <section class="container" style="margin-top: 4rem;">
+        <h2 class="slide-in-left animate-on-scroll" style="text-align: center; margin-bottom: 2rem;">Watch on YouTube</h2>
+        <div class="video-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
+${picks.map(homeCard).join("\n")}
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="videos.html" class="btn btn-secondary">Watch More Videos</a>
+        </div>
+    </section>
+    `;
+  const next = html.slice(0, i + start.length) + block + html.slice(j);
+  await writeFile(indexPath, next, "utf8");
+  return true;
+}
+
+const home = await updateHomeWatch();
+console.log(
+  `videos.html generated: ${longs.length} videos, ${shorts.length} shorts.` +
+  (home ? " Homepage Watch region refreshed." : " (no HOME-VIDEOS markers on homepage — skipped)")
+);

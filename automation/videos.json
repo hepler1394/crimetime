@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "Watch CrimeTimeSnacks Videos",
+    "description": "Watch CrimeTimeSnacks true crime videos — episode breakdowns, case deep-dives, and visual explorations of unsolved cases, murders, and mysteries.",
+    "note": "Source of truth for videos.html. Entries with \"curated\": true are kept by the importer and never overwritten. Everything else is filled automatically by import-youtube.mjs from your YouTube channel RSS feed (set youtube.handle or youtube.channelId in automation/config.json).",
+    "updated": "2026-06-28T03:25:46.514Z"
+  },
+  "videos": [
+    {
+      "id": "BBUF4lUFCsE",
+      "title": "Welcome to the Murder Capital of America",
+      "description": "Baton Rouge, Louisiana — a closer look at the cases and the numbers behind the headlines.",
+      "published": "2025-01-01",
+      "short": false,
+      "curated": true,
+      "thumb": "https://i.ytimg.com/vi/BBUF4lUFCsE/hqdefault.jpg"
+    }
+  ]
+}
