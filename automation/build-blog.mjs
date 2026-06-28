@@ -123,7 +123,7 @@ const footer = () => `    <footer class="footer">
                 <div class="footer-newsletter">
                     <h3 class="footer-heading">Newsletter</h3>
                     <p>Subscribe for the latest episodes and updates.</p>
-                    <input type="email" placeholder="Your Email Address">
+                    <input type="email" placeholder="Your Email Address" aria-label="Email address">
                     <button class="btn btn-primary" style="width: 100%;">Subscribe</button>
                 </div>
             </div>
@@ -223,7 +223,7 @@ ${rest.map(card).join("\n")}
         <p style="text-align:center;max-width:600px;margin:0 auto 2rem auto;">Subscribe to receive the latest case updates and exclusive content.</p>
         <form style="max-width:500px;margin:0 auto;" onsubmit="return false;">
             <div style="display:flex;gap:1rem;">
-                <input type="email" placeholder="Your Email Address" style="flex-grow:1;padding:0.8rem;border:none;border-radius:8px;">
+                <input type="email" placeholder="Your Email Address" aria-label="Email address" style="flex-grow:1;padding:0.8rem;border:none;border-radius:8px;">
                 <button type="submit" class="btn btn-primary" style="white-space:nowrap;">Subscribe</button>
             </div>
         </form>
@@ -271,9 +271,10 @@ function articleLd(p) {
 
 function postPage(p) {
   const paras = p.body.map((t) => `        <p>${esc(t)}</p>`).join("\n");
+  const articleMeta = `\n    <meta property="article:published_time" content="${p.date}">\n    <meta property="article:author" content="${esc(p.author)}">\n    <meta name="author" content="${esc(p.author)}">`;
   return `<!DOCTYPE html>
 <html lang="en">
-${head(`${p.title} | CrimeTimeSnacks Blog`, p.excerpt, postUrl(p), `/${p.image}`, articleLd(p))}
+${head(`${p.title} | CrimeTimeSnacks Blog`, p.excerpt, postUrl(p), `/${p.image}`, articleMeta + articleLd(p))}
 <body>
 ${header("blog")}
 
@@ -286,7 +287,7 @@ ${header("blog")}
     </section>
 
     <main class="container" style="max-width:760px;margin:3rem auto;">
-        <img src="/${esc(p.image)}" alt="${esc(p.title)}" style="width:100%;border-radius:8px;margin-bottom:2rem;box-shadow:var(--cts-box-shadow);">
+        <img src="/${esc(p.image)}" alt="${esc(p.title)}" decoding="async" style="width:100%;border-radius:8px;margin-bottom:2rem;box-shadow:var(--cts-box-shadow);">
 ${paras}
         <div style="margin-top:2.5rem;">
             <a href="/blog.html" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> All Posts</a>
