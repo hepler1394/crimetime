@@ -1,9 +1,45 @@
 {
   "meta": {
     "intro": "Designs straight from the studio — new drops are added automatically. Every design is an original CrimeTimeSnacks print on a black tee, hoodie, or sticker. The store runs on print-on-demand, so everything ships made-to-order.",
-    "updated": "2026-06-28T03:33:46.754Z"
+    "updated": "2026-06-28T03:44:13.096Z"
   },
   "designs": [
+    {
+      "slug": "stay-curious",
+      "slogan": "Stay Curious",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "template": 4,
+      "svg": "images/merch/stay-curious.svg",
+      "created": "2026-06-28"
+    },
+    {
+      "slug": "question-everything",
+      "slogan": "Question Everything",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "template": 5,
+      "svg": "images/merch/question-everything.svg",
+      "created": "2026-06-28"
+    },
+    {
+      "slug": "cold-case-club",
+      "slogan": "Cold Case Club",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "template": 2,
+      "svg": "images/merch/cold-case-club.svg",
+      "created": "2026-06-28"
+    },
+    {
+      "slug": "follow-the-evidence",
+      "slogan": "Follow The Evidence",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "30",
+      "template": 5,
+      "svg": "images/merch/follow-the-evidence.svg",
+      "created": "2026-06-28"
+    },
     {
       "slug": "read-the-case-files",
       "slogan": "Read The Case Files",

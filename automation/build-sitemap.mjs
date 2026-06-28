@@ -47,11 +47,20 @@ async function collect() {
 
 const urls = await collect();
 const today = new Date().toISOString().slice(0, 10);
+
+// Priority + change frequency hints by page type.
+function hints(u) {
+  if (u === "/") return { p: "1.0", c: "weekly" };
+  if (["/blog.html", "/episodes.html", "/videos.html"].includes(u)) return { p: "0.8", c: "weekly" };
+  if (u.startsWith("/blog-posts/") || u.startsWith("/episodes/")) return { p: "0.7", c: "monthly" };
+  return { p: "0.6", c: "monthly" };
+}
+
 const body = urls
-  .map(
-    (u) =>
-      `  <url>\n    <loc>${SITE}${encodeURI(u)}</loc>\n    <lastmod>${today}</lastmod>\n  </url>`
-  )
+  .map((u) => {
+    const { p, c } = hints(u);
+    return `  <url>\n    <loc>${SITE}${encodeURI(u)}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${c}</changefreq>\n    <priority>${p}</priority>\n  </url>`;
+  })
   .join("\n");
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

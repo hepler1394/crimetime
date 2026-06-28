@@ -113,7 +113,32 @@ ${wordmark(150)}
 ${slogan(lines, { cy: 540, max: 360, color: RED, accent: WHITE })}`;
 }
 
-const TEMPLATES = [tplPoliceTape, tplEvidenceTag, tplFingerprint, tplCaseFile, tplChalkOutline];
+function tplRedacted(lines) {
+  // Redacted case document: text lines as bars, some blacked/red out, a stamp.
+  const widths = [560, 620, 500, 600, 540, 590, 520];
+  let body = "";
+  let y = 470;
+  for (let i = 0; i < widths.length; i++) {
+    body += `\n      <rect x="220" y="${y}" width="${widths[i]}" height="14" rx="3" fill="${GREY}" opacity="0.55"/>`;
+    // redact a couple of lines
+    if (i === 1) body += `\n      <rect x="300" y="${y - 4}" width="240" height="22" fill="${INK}" stroke="${WHITE}" stroke-width="1.5"/>`;
+    if (i === 4) body += `\n      <rect x="420" y="${y - 4}" width="200" height="22" fill="${RED}"/>`;
+    y += 42;
+  }
+  return `
+    <g>
+      <rect x="190" y="180" width="620" height="640" rx="10" fill="none" stroke="${WHITE}" stroke-width="8"/>
+${slogan(lines, { cx: 500, cy: 320, max: 520 })}
+      <rect x="220" y="392" width="560" height="4" fill="${RED}"/>${body}
+      <g transform="rotate(-13 660 760)">
+        <rect x="520" y="715" width="280" height="78" fill="none" stroke="${RED}" stroke-width="6"/>
+        <text x="660" y="770" font-family="'Montserrat',Arial,sans-serif" font-weight="900" font-size="40" letter-spacing="4" fill="${RED}" text-anchor="middle">CLASSIFIED</text>
+      </g>
+    </g>
+${wordmark(880, GREY)}`;
+}
+
+const TEMPLATES = [tplPoliceTape, tplEvidenceTag, tplFingerprint, tplCaseFile, tplChalkOutline, tplRedacted];
 
 export function designSvg(sloganText, { tagline = "CRIMETIMESNACKS", template } = {}) {
   const lines = sloganText.includes(" / ")
@@ -140,6 +165,10 @@ export const SLOGAN_POOL = [
   { slogan: "Case Still Open", price: "28", template: 1 },
   { slogan: "Snacks & / Cold Cases", price: "30", template: 0 },
   { slogan: "Read The / Case Files", price: "30", template: 3 },
+  { slogan: "Follow The / Evidence", price: "30", template: 5 },
+  { slogan: "Cold Case / Club", price: "28", template: 2 },
+  { slogan: "Question / Everything", price: "28", template: 5 },
+  { slogan: "Stay Curious", price: "28", template: 4 },
 ];
 
 export const slugify = (s) =>

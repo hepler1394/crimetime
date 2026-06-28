@@ -122,6 +122,9 @@ const page = `<!DOCTYPE html>
     <meta name="twitter:description" content="A true crime podcast exploring unsolved cases, murders, and mysteries.">
     <meta name="twitter:image" content="${SITE}/images/logo.png">
     <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Podcast" href="/feed.xml">${videoLd}
+    <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"${SITE}/"},{"@type":"ListItem","position":2,"name":"Videos","item":"${SITE}/videos.html"}]}
+    </script>
     <link rel="stylesheet" href="css/style.css?v=2026f">
     <style>
         .video-grid {
