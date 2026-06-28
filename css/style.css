@@ -3,7 +3,7 @@
     --cts-dark-gray: #121212;
     --cts-medium-gray: #1e1e1e;
     --cts-light-gray: #333333;
-    --cts-red: #ff0000;
+    --cts-red: #e00000;
     --cts-white: #ffffff;
     --cts-transition: all 0.3s ease;
     --cts-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -23,6 +23,10 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     transition: var(--cts-transition);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
 }
 
 .container {
