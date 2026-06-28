@@ -72,12 +72,13 @@ async function main() {
     const slug = slugify(item.slogan.replace(/\s*\/\s*/g, " "));
     if (have.has(slug)) continue;
     const svgRel = `images/merch/${slug}.svg`;
-    await writeFile(join(ROOT, svgRel), designSvg(item.slogan, { tagline: item.tagline }), "utf8");
+    await writeFile(join(ROOT, svgRel), designSvg(item.slogan, { template: item.template }), "utf8");
     merch.designs.unshift({
       slug,
       slogan: item.slogan.replace(/\s*\/\s*/g, " "),
       tagline: item.tagline || "CRIMETIMESNACKS",
       price: item.price || "28",
+      template: item.template ?? null,
       svg: svgRel,
       created: new Date().toISOString().slice(0, 10),
     });
@@ -88,7 +89,7 @@ async function main() {
   // Make sure every design actually has its SVG on disk (regenerate if missing).
   for (const d of merch.designs) {
     try { await readFile(join(ROOT, d.svg)); }
-    catch { await writeFile(join(ROOT, d.svg), designSvg(d.slogan, { tagline: d.tagline }), "utf8"); }
+    catch { await writeFile(join(ROOT, d.svg), designSvg(d.slogan, { template: d.template ?? undefined }), "utf8"); }
   }
 
   merch.meta.updated = new Date().toISOString();

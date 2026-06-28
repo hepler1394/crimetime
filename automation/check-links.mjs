@@ -24,14 +24,22 @@ function walk(dir) {
 const re =
   /(?:src|href)="([^"#?:]+\.(?:png|jpg|jpeg|webp|gif|svg|ico|css|js|xml|webmanifest|html))(?:\?[^"]*)?"/gi;
 
+// Strip <script>/<style> blocks so JS template literals (e.g. src="images/
+// ${name}.jpg") aren't mistaken for broken links.
+const stripCode = (html) =>
+  html
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, "");
+
 const missing = new Map();
 for (const f of walk(ROOT)) {
-  const html = fs.readFileSync(f, "utf8");
+  const html = stripCode(fs.readFileSync(f, "utf8"));
   const dir = path.dirname(f);
   let m;
   while ((m = re.exec(html))) {
     const ref = m[1];
     if (ref.startsWith("http") || ref.startsWith("//")) continue;
+    if (ref.includes("${")) continue; // unresolved template literal
     const target = ref.startsWith("/")
       ? path.join(ROOT, ref)
       : path.join(dir, ref);

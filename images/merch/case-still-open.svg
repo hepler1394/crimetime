@@ -1,12 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000" role="img" aria-label="Case Still Open design">
-  <!-- transparent background: prints on dark garments -->
-  <g>
-    <rect x="180" y="150" width="640" height="8" fill="#e11d2a"/>
-    <text x="500" y="138" font-family="'Montserrat',Arial,sans-serif" font-weight="700" font-size="34" letter-spacing="14" fill="#f5f5f5" text-anchor="middle">CRIMETIMESNACKS</text>
-    <text x="500" y="360" font-family="'Montserrat','Arial Black',Impact,sans-serif" font-weight="900" font-size="180" letter-spacing="2" fill="#f5f5f5" text-anchor="middle">CASE</text>
-    <text x="500" y="547" font-family="'Montserrat','Arial Black',Impact,sans-serif" font-weight="900" font-size="180" letter-spacing="2" fill="#f5f5f5" text-anchor="middle">STILL</text>
-    <text x="500" y="734" font-family="'Montserrat','Arial Black',Impact,sans-serif" font-weight="900" font-size="180" letter-spacing="2" fill="#e11d2a" text-anchor="middle">OPEN</text>
-    <rect x="320" y="815" width="360" height="6" fill="#e11d2a"/>
-    <text x="500" y="900" font-family="'Montserrat',Arial,sans-serif" font-weight="600" font-size="26" letter-spacing="8" fill="#9a9a9a" text-anchor="middle">TRUE CRIME PODCAST</text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000" role="img" aria-label="Case Still Open CrimeTimeSnacks design">
+  <!-- transparent background: prints on dark garments. template #1 -->
+
+    <g>
+      <line x1="500" y1="70" x2="500" y2="190" stroke="#f5f5f5" stroke-width="5"/>
+      <circle cx="500" cy="60" r="14" fill="none" stroke="#f5f5f5" stroke-width="6"/>
+      <rect x="180" y="190" width="640" height="640" rx="26" fill="none" stroke="#f5f5f5" stroke-width="8"/>
+      <circle cx="500" cy="250" r="20" fill="none" stroke="#f5f5f5" stroke-width="7"/>
+      <rect x="210" y="300" width="580" height="74" fill="#e11d2a"/>
+      <text x="500" y="352" font-family="'Montserrat',Arial,sans-serif" font-weight="800" font-size="44" letter-spacing="10" fill="#f5f5f5" text-anchor="middle">EVIDENCE</text>
+    <text x="500" y="434" font-family="'Montserrat','Arial Black',Impact,sans-serif" font-weight="900" font-size="150" letter-spacing="1.5" fill="#f5f5f5" text-anchor="middle">CASE</text>
+    <text x="500" y="591" font-family="'Montserrat','Arial Black',Impact,sans-serif" font-weight="900" font-size="150" letter-spacing="1.5" fill="#f5f5f5" text-anchor="middle">STILL</text>
+    <text x="500" y="749" font-family="'Montserrat','Arial Black',Impact,sans-serif" font-weight="900" font-size="150" letter-spacing="1.5" fill="#e11d2a" text-anchor="middle">OPEN</text>
+      <text x="500" y="780" font-family="'Roboto',monospace,Arial" font-weight="500" font-size="26" letter-spacing="6" fill="#9a9a9a" text-anchor="middle">CASE NO. CTS-001</text>
+    </g>
 </svg>

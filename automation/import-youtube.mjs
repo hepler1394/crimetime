@@ -103,6 +103,10 @@ async function main() {
     return;
   }
   console.log(`Channel: ${channelId}`);
+  data.meta.channelId = channelId;
+  data.meta.channelUrl = cfg.handle
+    ? `https://www.youtube.com/${cfg.handle.startsWith("@") ? cfg.handle : "@" + cfg.handle}`
+    : `https://www.youtube.com/channel/${channelId}`;
 
   const feed = await fetchFeed(`https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`);
   console.log(`Feed returned ${feed.length} videos.`);

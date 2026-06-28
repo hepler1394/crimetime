@@ -24,6 +24,31 @@ try {
 }
 const designs = merch.designs || [];
 
+// Product / ItemList structured data.
+const merchLd = designs.length
+  ? `\n    <script type="application/ld+json">\n${JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      itemListElement: designs.map((d, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        item: {
+          "@type": "Product",
+          name: `${d.slogan} — CrimeTimeSnacks`,
+          image: `${SITE}/${d.svg}`,
+          brand: { "@type": "Brand", name: "CrimeTimeSnacks" },
+          category: "Apparel",
+          offers: {
+            "@type": "Offer",
+            price: d.price,
+            priceCurrency: "USD",
+            availability: "https://schema.org/PreOrder",
+          },
+        },
+      })),
+    }, null, 2)}\n    </script>`
+  : "";
+
 function card(d) {
   return `            <div class="merch-item">
                 <img src="${esc(d.svg)}" alt="${esc(d.slogan)} — CrimeTimeSnacks design" class="merch-image" loading="lazy" style="background:#0a0a0a;border-radius:6px;border:1px solid #2a2a2a;">
@@ -61,6 +86,9 @@ const page = `<!DOCTYPE html>
     <meta name="twitter:description" content="A true crime podcast exploring unsolved cases, murders, and mysteries.">
     <meta name="twitter:image" content="${SITE}/images/logo.png">
     <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Podcast" href="/feed.xml">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="manifest" href="site.webmanifest">${merchLd}
     <link rel="stylesheet" href="css/style.css?v=2026f"> <style>
         .merch-container {
             display: grid;
@@ -86,7 +114,7 @@ const page = `<!DOCTYPE html>
             <div class="logo-container">
                 <a href="index.html"><img src="images/logo.png" alt="CrimeTimeSnacks Logo" height="40"></a>
             </div>
-            <button id="mobile-menu-btn" class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu"><i class="fas fa-bars"></i></button>
             <nav>
                 <ul class="nav-menu">
                     <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
@@ -99,7 +127,7 @@ const page = `<!DOCTYPE html>
                 </ul>
             </nav>
             <div class="utility-nav">
-                <button id="dark-mode-toggle"><i class="fas fa-moon"></i></button>
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
             </div>
         </div>
     </header>
