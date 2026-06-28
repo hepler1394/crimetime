@@ -131,13 +131,29 @@ No API keys ever touch the browser. All AI runs server-side, local-first.
 node automation/weekly-update.mjs --commit --push   # THE button (full refresh + publish)
 node automation/import-youtube.mjs                  # refresh Videos from your channel
 node automation/import-feed.mjs                     # refresh Episodes from your podcast
-node automation/ai-write.mjs --auto                 # write one blog post
+node automation/ai-write.mjs --auto                 # write next blog post from the calendar
 node automation/ai-write.mjs "The Delphi case" investigation
 node automation/gen-merch.mjs                       # ensure base merch designs exist
 node automation/gen-merch.mjs --ai 3                # add 3 AI-written merch slogans
 node automation/build-all.mjs                       # rebuild every page from JSON
 node automation/check-links.mjs                     # QA internal links
+node automation/test-build.mjs                      # CI-style smoke test (build + assert)
 ```
+
+Or via npm: `npm run weekly` · `npm run build` · `npm run videos` · `npm run merch`
+· `npm run blog` · `npm run qa` · `npm test`.
+
+### Editorial calendar
+`automation/topics.json` is the blog backlog. `ai-write.mjs --auto` publishes the
+next unused topic (tracked per post), so the auto-blog follows a plan instead of
+repeating. Add your own topics any time.
+
+### Run it in the cloud instead of your PC (optional)
+`.github/workflows/weekly.yml` runs the same pipeline weekly on GitHub's servers
+(schedule + manual dispatch, no push trigger so it can't loop). Add a
+`DEEPSEEK_API_KEY` or `ANTHROPIC_API_KEY` repo secret to enable the AI steps in
+CI, and a `YT_HANDLE` secret to auto-pull videos. Without secrets it still
+refreshes feeds, rebuilds, and pushes.
 
 ## Merch designs
 

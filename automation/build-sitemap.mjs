@@ -2,13 +2,26 @@
 // Generates sitemap.xml (and robots.txt) from the HTML pages on disk.
 // Run: node automation/build-sitemap.mjs
 
-import { readdir, writeFile, stat } from "node:fs/promises";
+import { readdir, writeFile, readFile, stat } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const SITE = "https://crimetime.vercel.app";
+
+// Map content URLs to their real publish date for accurate <lastmod>.
+const dateBySlug = {};
+async function loadDates(file, prefix) {
+  try {
+    const data = JSON.parse(await readFile(join(__dirname, file), "utf8"));
+    for (const item of data.posts || data.episodes || []) {
+      if (item.slug && item.date) dateBySlug[`${prefix}${item.slug}.html`] = item.date;
+    }
+  } catch { /* optional */ }
+}
+await loadDates("blog.json", "/blog-posts/");
+await loadDates("episodes.json", "/episodes/");
 
 // Canonical site pages live at the root. The episode DETAIL pages are canonical
 // under /episodes/. Everything else under /episodes/ (and the root copies of the
@@ -59,7 +72,8 @@ function hints(u) {
 const body = urls
   .map((u) => {
     const { p, c } = hints(u);
-    return `  <url>\n    <loc>${SITE}${encodeURI(u)}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${c}</changefreq>\n    <priority>${p}</priority>\n  </url>`;
+    const lastmod = dateBySlug[u] || today;
+    return `  <url>\n    <loc>${SITE}${encodeURI(u)}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${c}</changefreq>\n    <priority>${p}</priority>\n  </url>`;
   })
   .join("\n");
 

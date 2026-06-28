@@ -1,0 +1,10 @@
+/* TEAM */
+Creator: Cory
+Site: CrimeTimeSnacks — A True Crime Podcast
+Contact: https://crimetime.vercel.app/contact.html
+
+/* SITE */
+Last update: 2026/06
+Language: English
+Standards: HTML5, CSS3
+Components: Static site, key-free automated content pipeline (podcast, YouTube, blog, merch)

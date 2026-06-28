@@ -1,0 +1,46 @@
+name: Weekly site update
+
+# Cloud alternative to the Windows scheduled task. Runs the content pipeline on
+# GitHub's servers so the site refreshes even when your PC is off.
+#
+# Notes:
+# - Uses ONLY schedule + manual dispatch (no push trigger) so it can't loop.
+# - The local LM Studio model isn't reachable in CI, so set a cloud LLM secret
+#   (DEEPSEEK_API_KEY or ANTHROPIC_API_KEY) in repo Settings > Secrets to enable
+#   the AI blog/merch steps. Without it, those steps are skipped and the job
+#   still refreshes feeds, rebuilds, and pushes.
+# - Set youtube.handle via the YT_HANDLE secret to auto-pull videos in CI.
+
+on:
+  schedule:
+    - cron: "0 12 * * 0" # Sundays 12:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Run weekly update
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          YT_HANDLE: ${{ secrets.YT_HANDLE }}
+        run: node automation/weekly-update.mjs
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "Weekly auto-update (CI)"
+            git push
+          fi
