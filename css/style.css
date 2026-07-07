@@ -719,13 +719,15 @@ header {
     }
 }
 
-.animate-on-scroll {
+/* Only hide pre-animation content when JS is running (html.js set by main.js),
+   so headings can never be stuck invisible if a script fails to load. */
+html.js .animate-on-scroll {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.animate-on-scroll.animated {
+html.js .animate-on-scroll.animated {
     opacity: 1;
     transform: translateY(0);
 }

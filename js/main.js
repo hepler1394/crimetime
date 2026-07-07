@@ -1,5 +1,8 @@
 // Main JavaScript for CrimeTimeSnacks Website
 
+// Mark JS as available ASAP so CSS can safely hide pre-animation content.
+document.documentElement.classList.add('js');
+
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Navigation Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');

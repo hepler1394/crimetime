@@ -96,7 +96,7 @@ const page = `<!DOCTYPE html>
     <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"${SITE}/"},{"@type":"ListItem","position":2,"name":"Merch","item":"${SITE}/merch.html"}]}
     </script>
-    <link rel="stylesheet" href="css/style.css?v=2026g"> <style>
+    <link rel="stylesheet" href="css/style.css?v=2026h"> <style>
         .merch-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
