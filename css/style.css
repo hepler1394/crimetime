@@ -1428,3 +1428,131 @@ body.light-mode ::-webkit-scrollbar-thumb {
 @media (max-width: 900px) {
     .hero-ipad { max-width: 360px; }
 }
+
+/* ============================================================
+   2026-07 audit — desktop polish + mobile hardening (additive)
+   ============================================================ */
+
+/* [D] Smooth in-page scrolling (anchor links) */
+html { scroll-behavior: smooth; }
+
+/* [D] Skip-to-content link for keyboard users */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 1000;
+    background: var(--cts-red);
+    color: var(--cts-white);
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 0 var(--cts-border-radius) var(--cts-border-radius);
+    text-decoration: none;
+    font-weight: 700;
+}
+.skip-link:focus {
+    left: 1rem;
+}
+
+/* [D] Visible keyboard focus everywhere (without hurting mouse users) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+.category-btn:focus-visible {
+    outline: 3px solid var(--cts-red);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* [D] Balanced heading wrap — no orphan words on wide screens */
+h1, h2, h3 {
+    text-wrap: balance;
+}
+
+/* [D] Sticky-header anchor offset so #latest-episode isn't hidden under the nav */
+section[id] {
+    scroll-margin-top: 90px;
+}
+
+/* [D] Sharper card focus for keyboard navigation of episode/blog grids */
+.episode-card:focus-within,
+.blog-card:focus-within {
+    outline: 2px solid var(--cts-red);
+    outline-offset: 2px;
+}
+
+/* [M] Kill iOS tap flash + double-tap zoom delay on interactive elements */
+a, button, .btn, .category-btn {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+/* [M] Inputs at 16px minimum so iOS Safari doesn't auto-zoom on focus */
+input, select, textarea {
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    /* [M] background-attachment: fixed is janky/broken on mobile Safari */
+    .hero {
+        background-attachment: scroll;
+    }
+
+    /* [M] Mobile menu height uses dvh so the iOS URL bar doesn't cover links */
+    .nav-menu {
+        height: calc(100dvh - 70px);
+    }
+
+    /* [M] 44px minimum touch targets (Apple HIG) for header + player controls */
+    .utility-nav button,
+    .mobile-menu-btn,
+    .mini-player-btn {
+        min-width: 44px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0.25rem;
+    }
+    .category-btn {
+        min-height: 44px;
+        padding: 0.6rem 1.1rem;
+    }
+
+    /* [M] Episode card actions wrap instead of squeezing on narrow screens */
+    .episode-actions {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    /* [M] Fluid typography — headings scale with the viewport */
+    .hero h1, .hero-flex h1 { font-size: clamp(1.9rem, 7vw, 2.5rem); }
+    h2 { font-size: clamp(1.4rem, 5.5vw, 2rem); }
+
+    /* [M] Crime-scene tape text sized down so it doesn't clip */
+    .crime-scene-tape::before { font-size: 0.8rem; }
+}
+
+@media (max-width: 576px) {
+    /* [M] Newsletter form stacks vertically instead of crushing the input */
+    form > div[style*="display: flex"] {
+        flex-direction: column;
+    }
+    form > div[style*="display: flex"] .btn {
+        width: 100%;
+    }
+
+    /* [M] Hero device renders scale down; shorter first screen on phones */
+    .hero { padding: 3.5rem 0; }
+    .hero-phones { max-width: 320px; }
+    .hero-ipad { display: none; }
+}
+
+/* [M] Respect the iPhone notch / home-indicator safe areas */
+.mini-player {
+    padding-bottom: calc(0.8rem + env(safe-area-inset-bottom));
+    padding-left: calc(0.8rem + env(safe-area-inset-left));
+    padding-right: calc(0.8rem + env(safe-area-inset-right));
+}
+.footer {
+    padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+}

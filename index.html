@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>CrimeTimeSnacks • A True Crime Podcast | Exploring Unsolved Cases</title>
     <meta name="description" content="CrimeTimeSnacks is a true crime podcast exploring unsolved cases, murders, and mysteries with detailed analysis and compelling storytelling.">
+    <meta name="author" content="Cory">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://crimetime.vercel.app/">
     <meta name="theme-color" content="#0a0a0a">
 
@@ -74,16 +76,17 @@
     <link rel="preload" href="js/category-ai.js" as="script">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Header & Navigation -->
     <header>
         <div class="nav-container container">
             <div class="logo-container">
                 <img src="images/logo.png" alt="CrimeTimeSnacks Logo" height="40">
             </div>
-            <button id="mobile-menu-btn" class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
+            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
-            <nav>
+            <nav id="primary-nav" aria-label="Primary">
                 <ul class="nav-menu">
                     <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="episodes.html"><i class="fas fa-microphone"></i> Episodes</a></li>
@@ -96,19 +99,19 @@
             </nav>
             <div class="utility-nav">
                 <button id="search-toggle" aria-label="Search"><i class="fas fa-search"></i></button>
-                <button id="dark-mode-toggle"><i class="fas fa-moon"></i></button>
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon" aria-hidden="true"></i></button>
             </div>
         </div>
         
         <!-- Search Bar (Hidden by default) -->
         <div id="search-bar" class="container" style="display: none; padding: 1rem 0;">
-            <div class="search-container">
-                <input type="text" id="search-input" placeholder="Search episodes, cases, or keywords...">
-                <button onclick="searchEpisodes()"><i class="fas fa-search"></i></button>
+            <div class="search-container" role="search">
+                <input type="search" id="search-input" aria-label="Search episodes" placeholder="Search episodes, cases, or keywords..." onkeydown="if(event.key==='Enter')searchEpisodes()">
+                <button onclick="searchEpisodes()" aria-label="Submit search"><i class="fas fa-search" aria-hidden="true"></i></button>
             </div>
         </div>
     </header>
-    
+    <main id="main-content">
     <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-flex">
@@ -129,7 +132,7 @@
             <div class="hero-visual">
                 <div class="hero-phones">
                     <img src="images/phone-left.png?v=2" alt="CrimeTimeSnacks on Apple Podcasts" class="hero-phone hero-phone--side hero-phone--left" loading="eager">
-                    <img src="images/phone-center.png?v=3" alt="An episode of CrimeTimeSnacks playing on Spotify" class="hero-phone hero-phone--center" loading="eager">
+                    <img src="images/phone-center.png?v=3" alt="An episode of CrimeTimeSnacks playing on Spotify" class="hero-phone hero-phone--center" loading="eager" fetchpriority="high" decoding="async">
                     <img src="images/phone-right.png?v=2" alt="The CrimeTimeSnacks show page on Spotify" class="hero-phone hero-phone--side hero-phone--right" loading="eager">
                 </div>
                 <img src="images/ipad.png?v=2" alt="CrimeTimeSnacks on Apple Podcasts, shown on iPad" class="hero-ipad" loading="eager"
@@ -334,12 +337,12 @@
         <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem auto;">Subscribe to our newsletter to get notified about new episodes, exclusive content, and updates from CrimeTimeSnacks.</p>
         <form style="max-width: 500px; margin: 0 auto;">
             <div style="display: flex; gap: 1rem;">
-                <input type="email" placeholder="Your Email Address" style="flex-grow: 1; padding: 0.8rem; border: none; border-radius: 8px;">
+                <input type="email" inputmode="email" autocomplete="email" required aria-label="Email address" placeholder="Your Email Address" style="flex-grow: 1; padding: 0.8rem; border: none; border-radius: 8px;">
                 <button type="submit" class="btn btn-primary" style="white-space: nowrap;">Subscribe</button>
             </div>
         </form>
     </section>
-    
+    </main>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -376,7 +379,7 @@
                 <div class="footer-newsletter">
                     <h3 class="footer-heading">Newsletter</h3>
                     <p>Subscribe for the latest episodes and updates.</p>
-                    <input type="email" placeholder="Your Email Address">
+                    <input type="email" inputmode="email" autocomplete="email" aria-label="Email address" placeholder="Your Email Address">
                     <button class="btn btn-primary" style="width: 100%;">Subscribe</button>
                 </div>
             </div>
@@ -435,6 +438,16 @@
                 });
             });
             
+            // Keep the mobile menu button's aria-expanded state in sync
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            if (menuBtn) {
+                menuBtn.addEventListener('click', function() {
+                    const open = document.querySelector('.nav-menu')?.classList.contains('active');
+                    this.setAttribute('aria-expanded', open ? 'true' : 'false');
+                    this.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+                });
+            }
+
             // Search toggle
             const searchToggle = document.getElementById('search-toggle');
             const searchBar = document.getElementById('search-bar');
