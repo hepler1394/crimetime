@@ -88,9 +88,9 @@ ${shorts.map(shortCard).join("\n")}
 
 const fullSection = longs.length
   ? `
-    <div class="crime-scene-tape"></div>
+    <div class="crime-scene-tape" aria-hidden="true"></div>
 
-    <section class="container format-full">
+    <section id="main-content" class="container format-full">
         <h2 style="text-align: center; margin-bottom: 1.5rem;">Full Videos</h2>
         <div class="video-grid">
 ${longs.map(videoCard).join("\n")}
@@ -103,8 +103,9 @@ const page = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Shorts &amp; Videos | CrimeTimeSnacks</title>
+    <meta name="author" content="Cory">
     <meta name="description" content="${esc(data.meta.description)}">
     <link rel="canonical" href="${SITE}/videos.html">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -189,15 +190,15 @@ const page = `<!DOCTYPE html>
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
         <!-- Header & Navigation -->
     <header>
         <div class="nav-container container">
             <div class="logo-container">
                 <a href="index.html"><img src="images/logo.png" alt="CrimeTimeSnacks Logo" height="40"></a>
             </div>
-            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu"><i class="fas fa-bars"></i></button>
-            <nav>
-                <ul class="nav-menu">
+            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><i class="fas fa-bars" aria-hidden="true"></i></button>
+            <nav id="primary-nav" aria-label="Primary"> <ul class="nav-menu">
                     <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="episodes.html"><i class="fas fa-microphone"></i> Episodes</a></li>
                     <li><a href="videos.html" class="active"><i class="fas fa-video"></i> Videos</a></li>

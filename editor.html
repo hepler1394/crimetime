@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Live HTML Editor</title>
+    <meta name="author" content="Cory">
     <style>
         body { font-family: Arial, sans-serif; padding: 20px; }
         textarea { width: 100%; height: 80vh; font-family: monospace; }
@@ -11,6 +12,7 @@
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <h2>Live HTML Editor</h2>
     <textarea id="htmlContent"></textarea>
     <button onclick="saveChanges()">Save</button>

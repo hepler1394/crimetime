@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>ERIK AND LYLE: The Menendez Brothers | CrimeTimeSnacks</title>
+    <meta name="author" content="Cory">
     <meta name="description" content="The Menendez brothers, Lyle and Erik, have been in prison for over 35 years. They were convicted in 1996 for the 1989 murders of their parents and sentenced to life in prison without the possibility o">
     <link rel="canonical" href="https://crimetime.vercel.app/episodes/erik-and-lyle-the-menendez-brothers.html">
     <meta name="theme-color" content="#0a0a0a">
@@ -44,14 +45,14 @@
     </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <div class="nav-container container">
             <div class="logo-container">
                 <a href="/index.html"><img src="/images/logo.png" alt="CrimeTimeSnacks Logo" height="40"></a>
             </div>
-            <button id="mobile-menu-btn" class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
-            <nav>
-                <ul class="nav-menu">
+            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><i class="fas fa-bars" aria-hidden="true"></i></button>
+            <nav id="primary-nav" aria-label="Primary"> <ul class="nav-menu">
                     <li><a href="/index.html"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="/episodes.html" class="active"><i class="fas fa-microphone"></i> Episodes</a></li>
                     <li><a href="/videos.html"><i class="fas fa-video"></i> Videos</a></li>
@@ -62,7 +63,7 @@
                 </ul>
             </nav>
             <div class="utility-nav">
-                <button id="dark-mode-toggle"><i class="fas fa-moon"></i></button>
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon" aria-hidden="true"></i></button>
             </div>
         </div>
     </header>

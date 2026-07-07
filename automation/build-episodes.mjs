@@ -25,9 +25,8 @@ const header = (active) => `    <header>
             <div class="logo-container">
                 <a href="/index.html"><img src="/images/logo.png" alt="CrimeTimeSnacks Logo" height="40"></a>
             </div>
-            <button id="mobile-menu-btn" class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
-            <nav>
-                <ul class="nav-menu">
+            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><i class="fas fa-bars" aria-hidden="true"></i></button>
+            <nav id="primary-nav" aria-label="Primary"> <ul class="nav-menu">
                     <li><a href="/index.html"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="/episodes.html"${active === "episodes" ? ' class="active"' : ""}><i class="fas fa-microphone"></i> Episodes</a></li>
                     <li><a href="/videos.html"><i class="fas fa-video"></i> Videos</a></li>
@@ -38,7 +37,7 @@ const header = (active) => `    <header>
                 </ul>
             </nav>
             <div class="utility-nav">
-                <button id="dark-mode-toggle"><i class="fas fa-moon"></i></button>
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon" aria-hidden="true"></i></button>
             </div>
         </div>
     </header>`;
@@ -135,8 +134,9 @@ function page({ podcast: p, episodes }) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Episodes | CrimeTimeSnacks • A True Crime Podcast</title>
+    <meta name="author" content="Cory">
     <meta name="description" content="Every episode of CrimeTimeSnacks — true crime cases explored in detail. Listen here, on Spotify, or on Apple Podcasts.">
     <link rel="canonical" href="${p.siteUrl}/episodes.html">
     <meta name="theme-color" content="#0a0a0a">
@@ -158,9 +158,10 @@ function page({ podcast: p, episodes }) {
     <link rel="stylesheet" href="${CSS}">${itemsLd}
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 ${header("episodes")}
 
-    <section class="hero" style="padding: 5rem 0;">
+    <section id="main-content" class="hero" style="padding: 5rem 0;">
         <div class="container">
             <div class="hero-content" style="text-align:center;">
                 <p class="hero-eyebrow" style="text-align:center;">${esc(episodes.length)} Episodes</p>
@@ -170,7 +171,7 @@ ${header("episodes")}
         </div>
     </section>
 
-    <div class="crime-scene-tape"></div>
+    <div class="crime-scene-tape" aria-hidden="true"></div>
 
     <section class="container" style="padding-top:3rem;">
 ${sorted.map((ep) => card(p, ep)).join("\n")}
@@ -204,8 +205,9 @@ function episodePage(p, ep) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>${esc(ep.title)} | CrimeTimeSnacks</title>
+    <meta name="author" content="Cory">
     <meta name="description" content="${esc(desc)}">
     <link rel="canonical" href="${p.siteUrl}${epUrl(ep)}">
     <meta name="theme-color" content="#0a0a0a">
@@ -228,6 +230,7 @@ function episodePage(p, ep) {
     ${episodeLd(p, ep)}
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 ${header("episodes")}
 
     <section class="episode-header">
@@ -318,7 +321,7 @@ function homeBlock({ podcast: p, episodes }) {
     </section>
 
     <!-- Crime Scene Tape -->
-    <div class="crime-scene-tape"></div>
+    <div class="crime-scene-tape" aria-hidden="true"></div>
 
     <!-- Recent Episodes Section -->
     <section class="container">

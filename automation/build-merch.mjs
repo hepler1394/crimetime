@@ -70,8 +70,9 @@ const page = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Merchandise | CrimeTimeSnacks</title>
+    <meta name="author" content="Cory">
     <meta name="description" content="Shop CrimeTimeSnacks merch — original true crime tee, hoodie, and sticker designs for fans who follow our deep-dives into unsolved cases.">
     <link rel="canonical" href="${SITE}/merch.html">
     <meta name="theme-color" content="#0a0a0a">
@@ -115,15 +116,15 @@ const page = `<!DOCTYPE html>
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
         <!-- Header & Navigation -->
     <header>
         <div class="nav-container container">
             <div class="logo-container">
                 <a href="index.html"><img src="images/logo.png" alt="CrimeTimeSnacks Logo" height="40"></a>
             </div>
-            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu"><i class="fas fa-bars"></i></button>
-            <nav>
-                <ul class="nav-menu">
+            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><i class="fas fa-bars" aria-hidden="true"></i></button>
+            <nav id="primary-nav" aria-label="Primary"> <ul class="nav-menu">
                     <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="episodes.html"><i class="fas fa-microphone"></i> Episodes</a></li>
                     <li><a href="videos.html"><i class="fas fa-video"></i> Videos</a></li>
@@ -139,7 +140,7 @@ const page = `<!DOCTYPE html>
         </div>
     </header>
 
-    <section class="container">
+    <section id="main-content" class="container">
         <h1 style="text-align: center; margin-bottom: 0.5rem;">CrimeTimeSnacks Merch</h1>
         <p style="text-align: center; max-width: 640px; margin: 0 auto 2.5rem auto; color: #bbb;">${esc(merch.meta?.intro || "Original true crime designs. New drops added automatically.")}</p>
         <div class="merch-container">

@@ -36,16 +36,15 @@ const header = (active) => `    <!-- Header & Navigation -->
             <div class="logo-container">
                 <a href="index.html"><img src="images/logo.png" alt="CrimeTimeSnacks Logo" height="40"></a>
             </div>
-            <button id="mobile-menu-btn" class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
-            <nav>
-                <ul class="nav-menu">
+            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><i class="fas fa-bars" aria-hidden="true"></i></button>
+            <nav id="primary-nav" aria-label="Primary"> <ul class="nav-menu">
 ${NAV.map(([href, key, icon, label]) =>
   `                    <li><a href="${href}"${key === active ? ' class="active"' : ""}><i class="fas ${icon}"></i> ${label}</a></li>`
 ).join("\n")}
                 </ul>
             </nav>
             <div class="utility-nav">
-                <button id="dark-mode-toggle"><i class="fas fa-moon"></i></button>
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon" aria-hidden="true"></i></button>
             </div>
         </div>
     </header>`;

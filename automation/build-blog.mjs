@@ -41,9 +41,10 @@ const readingTime = (p) => {
 const SITE = "https://crimetime.vercel.app";
 const head = (title, desc, path = "/", image = "/images/logo.png", extra = "") => `<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>${esc(title)}</title>
     <meta name="description" content="${esc(desc)}">
+    <meta name="author" content="Cory">
     <link rel="canonical" href="${SITE}${path}">
     <meta name="theme-color" content="#0a0a0a">
     <meta property="og:type" content="article">
@@ -73,9 +74,8 @@ const header = (active) => `    <header>
             <div class="logo-container">
                 <a href="/index.html"><img src="/images/logo.png" alt="CrimeTimeSnacks Logo" height="40"></a>
             </div>
-            <button id="mobile-menu-btn" class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
-            <nav>
-                <ul class="nav-menu">
+            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><i class="fas fa-bars" aria-hidden="true"></i></button>
+            <nav id="primary-nav" aria-label="Primary"> <ul class="nav-menu">
                     <li><a href="/index.html"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="/episodes.html"><i class="fas fa-microphone"></i> Episodes</a></li>
                     <li><a href="/videos.html"><i class="fas fa-video"></i> Videos</a></li>
@@ -86,7 +86,7 @@ const header = (active) => `    <header>
                 </ul>
             </nav>
             <div class="utility-nav">
-                <button id="dark-mode-toggle"><i class="fas fa-moon"></i></button>
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon" aria-hidden="true"></i></button>
             </div>
         </div>
     </header>`;
@@ -181,9 +181,10 @@ function blogPage(posts) {
 <html lang="en">
 ${head("Crime Blog | CrimeTimeSnacks", "The latest true crime news, case updates, and analysis from CrimeTimeSnacks.", "/blog.html", "/images/logo.png", blogLd)}
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 ${header("blog")}
 
-    <section class="hero" style="padding: 5rem 0;">
+    <section id="main-content" class="hero" style="padding: 5rem 0;">
         <div class="container">
             <div class="hero-content" style="text-align:center;">
                 <h1>Crime<span class="text-red">Time</span>Snacks Blog</h1>
@@ -192,7 +193,7 @@ ${header("blog")}
         </div>
     </section>
 
-    <div class="crime-scene-tape"></div>
+    <div class="crime-scene-tape" aria-hidden="true"></div>
 
     <section class="container">
         <div class="category-filters" style="display:flex;justify-content:center;flex-wrap:wrap;gap:1rem;margin-bottom:2rem;">
@@ -209,7 +210,7 @@ ${header("blog")}
 ${featured(feat)}
     </section>
 
-    <div class="crime-scene-tape"></div>
+    <div class="crime-scene-tape" aria-hidden="true"></div>
 
     <section class="container">
         <h2 style="text-align:center;margin-bottom:2rem;">Latest Posts</h2>
@@ -276,6 +277,7 @@ function postPage(p) {
 <html lang="en">
 ${head(`${p.title} | CrimeTimeSnacks Blog`, p.excerpt, postUrl(p), `/${p.image}`, articleMeta + articleLd(p))}
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 ${header("blog")}
 
     <section class="episode-header">

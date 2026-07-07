@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Listen | CrimeTimeSnacks True Crime Podcast</title>
+    <meta name="author" content="Cory">
     <link rel="canonical" href="https://crimetime.vercel.app/listen.html">
     <meta name="theme-color" content="#0a0a0a">
     <meta property="og:type" content="website">
@@ -36,14 +37,15 @@
     <link rel="stylesheet" href="css/style.css?v=2026h">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Header & Navigation -->
     <header>
         <div class="nav-container container">
             <div class="logo-container">
                 <a href="index.html"><img src="images/logo.png" alt="CrimeTimeSnacks Logo" height="40"></a>
             </div>
-            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu"><i class="fas fa-bars"></i></button>
-            <nav>
+            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><i class="fas fa-bars" aria-hidden="true"></i></button>
+            <nav id="primary-nav" aria-label="Primary">
                 <ul class="nav-menu">
                     <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="episodes.html" class="active"><i class="fas fa-microphone"></i> Episodes</a></li>
@@ -61,7 +63,7 @@
     </header>
     
     <!-- Page Header -->
-    <section class="episode-header">
+    <section id="main-content" class="episode-header">
         <div class="container">
             <h1 class="episode-title" style="color: red;">Listen to <span style="color: white;">CrimeTimeSnacks</span></h1>
             <p style="text-align: center; max-width: 800px; margin: 0 auto;">Subscribe to our podcast on your favorite platform and never miss an episode.</p>
