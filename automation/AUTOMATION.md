@@ -140,7 +140,7 @@ node automation/check-links.mjs                     # QA internal links
 node automation/test-build.mjs                      # CI-style smoke test (build + assert)
 ```
 
-Or via npm: `npm run weekly` · `npm run build` · `npm run videos` · `npm run merch`
+Or via npm: `npm run weekly` · `npm run build:all` · `npm run videos` · `npm run merch`
 · `npm run blog` · `npm run qa` · `npm test`.
 
 ### Editorial calendar

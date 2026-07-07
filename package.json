@@ -7,7 +7,7 @@
   "scripts": {
     "weekly": "node automation/weekly-update.mjs --commit --push",
     "update": "node automation/weekly-update.mjs",
-    "build": "node automation/build-all.mjs",
+    "build:all": "node automation/build-all.mjs",
     "feed": "node automation/import-feed.mjs",
     "videos": "node automation/import-youtube.mjs && node automation/build-videos.mjs",
     "merch": "node automation/gen-merch.mjs && node automation/build-merch.mjs",
