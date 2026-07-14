@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Enhanced Audio Player
     initializeCustomAudioPlayers();
+    initializeNativeAudioExperience();
     
     // Animate elements on scroll
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
@@ -226,4 +227,186 @@ function searchEpisodes() {
             card.style.display = 'none';
         }
     });
+}
+
+// Native podcast audio: one active episode, accurate progress, and a persistent mini player.
+function initializeNativeAudioExperience() {
+    const audios = Array.from(document.querySelectorAll('audio'));
+    if (!audios.length) {
+        renderContinueListening();
+        return;
+    }
+
+    const player = document.getElementById('mini-player');
+    const playerImage = document.getElementById('mini-player-image');
+    const playerTitle = document.getElementById('mini-player-title');
+    const playerTime = document.getElementById('mini-player-time');
+    const playerProgress = player && player.querySelector('.mini-player-progress');
+    const playButton = document.getElementById('mini-player-play');
+    const pauseButton = document.getElementById('mini-player-pause');
+    const rewindButton = document.getElementById('mini-player-prev');
+    const forwardButton = document.getElementById('mini-player-next');
+    const speedButton = document.getElementById('mini-player-speed');
+    const closeButton = document.getElementById('mini-player-close');
+    let activeAudio = null;
+    let lastSavedSecond = -1;
+
+    function sourceFor(audio) {
+        return audio.currentSrc || audio.querySelector('source')?.src || audio.src;
+    }
+
+    function metadataFor(audio) {
+        const card = audio.closest('.episode-card, article, .episode-detail, main');
+        const title = card?.querySelector('.episode-title, h1, h2, h3')?.textContent?.trim() || document.title.split('•')[0].trim();
+        const image = card?.querySelector('img')?.src || new URL('images/logo.png', window.location.href).href;
+        const episodeLink = card?.querySelector('a[href*="episodes/"]')?.href || window.location.href;
+        return { title, image, href: episodeLink, src: sourceFor(audio) };
+    }
+
+    function readProgress() {
+        try { return JSON.parse(localStorage.getItem('episodeProgressV2') || '{}'); }
+        catch { return {}; }
+    }
+
+    function writeProgress(audio, completed) {
+        const src = sourceFor(audio);
+        if (!src || !Number.isFinite(audio.duration)) return;
+        const records = readProgress();
+        if (completed) {
+            delete records[src];
+        } else {
+            records[src] = {
+                ...metadataFor(audio),
+                time: audio.currentTime,
+                duration: audio.duration,
+                timestamp: Date.now(),
+            };
+        }
+        localStorage.setItem('episodeProgressV2', JSON.stringify(records));
+        renderContinueListening();
+    }
+
+    function syncPlayer(audio) {
+        if (!player) return;
+        const meta = metadataFor(audio);
+        const duration = Number.isFinite(audio.duration) ? audio.duration : 0;
+        const percent = duration ? Math.min(100, (audio.currentTime / duration) * 100) : 0;
+        player.classList.add('active');
+        player.setAttribute('aria-hidden', 'false');
+        if (playerImage) playerImage.src = meta.image;
+        if (playerTitle) playerTitle.textContent = meta.title;
+        if (playerTime) playerTime.textContent = `${formatTime(audio.currentTime)} / ${formatTime(duration)}`;
+        if (playerProgress) playerProgress.style.width = `${percent}%`;
+        if (playButton) playButton.style.display = audio.paused ? 'inline-flex' : 'none';
+        if (pauseButton) pauseButton.style.display = audio.paused ? 'none' : 'inline-flex';
+        if (speedButton) speedButton.textContent = `${audio.playbackRate}×`;
+    }
+
+    audios.forEach(audio => {
+        audio.addEventListener('loadedmetadata', () => {
+            const saved = readProgress()[sourceFor(audio)];
+            if (saved && saved.time > 5 && saved.time < audio.duration - 10) audio.currentTime = saved.time;
+        });
+        audio.addEventListener('play', () => {
+            audios.forEach(other => { if (other !== audio && !other.paused) other.pause(); });
+            activeAudio = audio;
+            syncPlayer(audio);
+        });
+        audio.addEventListener('pause', () => {
+            if (audio.currentTime > 1 && audio.currentTime < audio.duration - 2) writeProgress(audio, false);
+            if (activeAudio === audio) syncPlayer(audio);
+        });
+        audio.addEventListener('timeupdate', () => {
+            if (activeAudio === audio) syncPlayer(audio);
+            const second = Math.floor(audio.currentTime);
+            if (second !== lastSavedSecond && second > 0 && second % 5 === 0) {
+                lastSavedSecond = second;
+                writeProgress(audio, false);
+            }
+        });
+        audio.addEventListener('ended', () => {
+            writeProgress(audio, true);
+            if (player) player.classList.remove('active');
+        });
+    });
+
+    playButton?.addEventListener('click', () => activeAudio?.play());
+    pauseButton?.addEventListener('click', () => activeAudio?.pause());
+    rewindButton?.addEventListener('click', () => {
+        if (!activeAudio) return;
+        activeAudio.currentTime = Math.max(0, activeAudio.currentTime - 15);
+        syncPlayer(activeAudio);
+    });
+    forwardButton?.addEventListener('click', () => {
+        if (!activeAudio) return;
+        activeAudio.currentTime = Math.min(activeAudio.duration || Infinity, activeAudio.currentTime + 30);
+        syncPlayer(activeAudio);
+    });
+    speedButton?.addEventListener('click', () => {
+        if (!activeAudio) return;
+        const speeds = [1, 1.25, 1.5, 1.75, 2];
+        const current = speeds.indexOf(activeAudio.playbackRate);
+        activeAudio.playbackRate = speeds[(current + 1) % speeds.length];
+        syncPlayer(activeAudio);
+    });
+    closeButton?.addEventListener('click', () => {
+        activeAudio?.pause();
+        player?.classList.remove('active');
+        player?.setAttribute('aria-hidden', 'true');
+    });
+
+    renderContinueListening();
+}
+
+function renderContinueListening() {
+    const section = document.getElementById('continue-listening');
+    const content = document.getElementById('continue-listening-content');
+    if (!section || !content) return;
+    let records = {};
+    try { records = JSON.parse(localStorage.getItem('episodeProgressV2') || '{}'); } catch {}
+    const latest = Object.values(records)
+        .filter(item => item && item.duration > 0 && item.time > 5 && item.time < item.duration - 10)
+        .sort((a, b) => b.timestamp - a.timestamp)[0];
+    if (!latest) {
+        section.style.display = 'none';
+        content.replaceChildren();
+        return;
+    }
+
+    section.style.display = 'block';
+    const card = document.createElement('div');
+    card.className = 'continue-card';
+    const image = document.createElement('img');
+    image.className = 'continue-image';
+    image.src = latest.image || 'images/logo.png';
+    image.alt = '';
+    const info = document.createElement('div');
+    info.className = 'continue-info';
+    const title = document.createElement('h3');
+    title.className = 'continue-title';
+    title.textContent = latest.title || 'Continue episode';
+    const progress = document.createElement('div');
+    progress.className = 'continue-progress';
+    progress.setAttribute('role', 'progressbar');
+    const percent = Math.round((latest.time / latest.duration) * 100);
+    progress.setAttribute('aria-valuenow', String(percent));
+    progress.setAttribute('aria-valuemin', '0');
+    progress.setAttribute('aria-valuemax', '100');
+    const bar = document.createElement('div');
+    bar.className = 'continue-progress-bar';
+    bar.style.width = `${percent}%`;
+    progress.appendChild(bar);
+    const actions = document.createElement('div');
+    actions.className = 'continue-actions';
+    const time = document.createElement('span');
+    time.className = 'continue-time';
+    time.textContent = `${formatTime(latest.time)} of ${formatTime(latest.duration)} listened`;
+    const resume = document.createElement('a');
+    resume.className = 'btn btn-primary btn-sm';
+    resume.href = latest.href || 'episodes.html';
+    resume.textContent = 'Resume episode';
+    actions.append(time, resume);
+    info.append(title, progress, actions);
+    card.append(image, info);
+    content.replaceChildren(card);
 }
