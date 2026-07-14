@@ -963,20 +963,24 @@ html.js .animate-on-scroll.animated {
 /* Mini Player */
 .mini-player {
     position: fixed;
-    bottom: -80px;
-    left: 0;
-    width: 100%;
-    background-color: var(--cts-dark-gray);
-    padding: 0.8rem;
+    bottom: -130px;
+    left: 50%;
+    width: min(920px, calc(100% - 32px));
+    transform: translateX(-50%);
+    background: rgba(21, 21, 21, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 0.75rem;
     display: flex;
     align-items: center;
     z-index: 999;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
-    transition: bottom 0.3s ease;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
+    transition: bottom 0.32s cubic-bezier(.2,.8,.2,1);
+    backdrop-filter: blur(18px);
 }
 
 .mini-player.active {
-    bottom: 0;
+    bottom: 18px;
 }
 
 .mini-player-image {
@@ -1014,6 +1018,8 @@ html.js .animate-on-scroll.animated {
     margin: 0 0.5rem;
     transition: var(--cts-transition);
 }
+.mini-player-speed { min-width: 42px; font-size: 0.78rem; font-weight: 700; }
+.mini-skip { font-size: 0.55rem; margin-left: 2px; font-weight: 700; }
 
 .mini-player-btn:hover {
     color: var(--cts-red);
@@ -1026,6 +1032,7 @@ html.js .animate-on-scroll.animated {
     height: 3px;
     background-color: var(--cts-red);
     width: 0;
+    border-radius: 14px 14px 0 0;
 }
 
 /* Continue Listening Section */
@@ -1060,6 +1067,26 @@ html.js .animate-on-scroll.animated {
 .continue-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 640px) {
+    .mini-player {
+        width: 100%;
+        left: 0;
+        transform: none;
+        border-radius: 14px 14px 0 0;
+        border-left: 0;
+        border-right: 0;
+    }
+    .mini-player.active { bottom: 0; }
+    .mini-player-image { width: 42px; height: 42px; margin-right: 0.65rem; }
+    .mini-player-title { max-width: 31vw; font-size: 0.82rem; }
+    .mini-player-time { font-size: 0.7rem; }
+    .mini-player-controls { margin-left: auto; }
+    .mini-player-btn { margin: 0 0.1rem; }
+    .mini-player-speed, #mini-player-prev { display: none; }
+    .continue-card { align-items: flex-start; }
+    .continue-actions { align-items: flex-start; flex-direction: column; gap: 0.7rem; }
 }
 
 .continue-image {

@@ -391,7 +391,7 @@
     </footer>
     
     <!-- Mini Player (Hidden by default) -->
-    <div id="mini-player" class="mini-player">
+    <div id="mini-player" class="mini-player" aria-hidden="true" aria-label="Episode player">
         <div class="mini-player-progress"></div>
         <img id="mini-player-image" alt="Episode" class="mini-player-image">
         <div class="mini-player-info">
@@ -399,11 +399,12 @@
             <div id="mini-player-time" class="mini-player-time"></div>
         </div>
         <div class="mini-player-controls">
-            <button id="mini-player-prev" class="mini-player-btn"><i class="fas fa-step-backward"></i></button>
-            <button id="mini-player-play" class="mini-player-btn"><i class="fas fa-play"></i></button>
-            <button id="mini-player-pause" class="mini-player-btn" style="display: none;"><i class="fas fa-pause"></i></button>
-            <button id="mini-player-next" class="mini-player-btn"><i class="fas fa-step-forward"></i></button>
-            <button id="mini-player-close" class="mini-player-btn"><i class="fas fa-times"></i></button>
+            <button id="mini-player-prev" class="mini-player-btn" aria-label="Back 15 seconds"><i class="fas fa-rotate-left" aria-hidden="true"></i><span class="mini-skip">15</span></button>
+            <button id="mini-player-play" class="mini-player-btn" aria-label="Play"><i class="fas fa-play" aria-hidden="true"></i></button>
+            <button id="mini-player-pause" class="mini-player-btn" style="display: none;" aria-label="Pause"><i class="fas fa-pause" aria-hidden="true"></i></button>
+            <button id="mini-player-next" class="mini-player-btn" aria-label="Forward 30 seconds"><i class="fas fa-rotate-right" aria-hidden="true"></i><span class="mini-skip">30</span></button>
+            <button id="mini-player-speed" class="mini-player-btn mini-player-speed" aria-label="Change playback speed">1×</button>
+            <button id="mini-player-close" class="mini-player-btn" aria-label="Close player"><i class="fas fa-times" aria-hidden="true"></i></button>
         </div>
     </div>
     
