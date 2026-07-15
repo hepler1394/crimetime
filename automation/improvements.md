@@ -468,4 +468,12 @@ with an [auto] tag — the counter on Mission Control reads this file.
 410. Glossary term written: "Wrongful Conviction" (Courts & Law)
 411. Glossary term written: "False Confession" (Courts & Law)
 
-<!-- running total: 411 shipped -->
+## Batch 2b · Sitemap Repair
+
+412. Sitemap bug fixed: live.html, quiz.html and glossary.html were invisible to search engines (allowlist gap)
+413. Live board sitemap hint: changefreq daily
+414. Quiz page sitemap hint: weekly / 0.8 priority
+415. Glossary sitemap hint added
+416. Sitemap grew from 22 to 25 indexed URLs
+
+<!-- running total: 416 shipped -->

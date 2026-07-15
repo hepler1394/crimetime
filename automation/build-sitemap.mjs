@@ -30,6 +30,7 @@ await loadDates("episodes.json", "/episodes/");
 const CANONICAL_ROOT = new Set([
   "index.html", "about.html", "blog.html", "contact.html",
   "episodes.html", "merch.html", "videos.html", "listen.html",
+  "live.html", "quiz.html", "glossary.html",
 ]);
 
 const htmlIn = async (dir) =>
@@ -64,7 +65,9 @@ const today = new Date().toISOString().slice(0, 10);
 // Priority + change frequency hints by page type.
 function hints(u) {
   if (u === "/") return { p: "1.0", c: "weekly" };
-  if (["/blog.html", "/episodes.html", "/videos.html"].includes(u)) return { p: "0.8", c: "weekly" };
+  if (u === "/live.html") return { p: "0.8", c: "daily" };
+  if (["/blog.html", "/episodes.html", "/videos.html", "/quiz.html"].includes(u)) return { p: "0.8", c: "weekly" };
+  if (u === "/glossary.html") return { p: "0.7", c: "monthly" };
   if (u.startsWith("/blog-posts/") || u.startsWith("/episodes/")) return { p: "0.7", c: "monthly" };
   return { p: "0.6", c: "monthly" };
 }
