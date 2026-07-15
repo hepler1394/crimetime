@@ -83,8 +83,10 @@ header {
     font-size: 1.1rem;
     text-transform: uppercase;
     transition: var(--cts-transition);
-    padding: 0.5rem 0;
-    display: inline-block;
+    padding: 0.75rem 0;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
     position: relative;
 }
 
@@ -388,6 +390,7 @@ header {
     transition: var(--cts-transition);
     display: flex;
     align-items: center;
+    min-height: 44px;
 }
 
 .footer-links a i {
@@ -435,7 +438,7 @@ header {
     text-align: center;
     position: relative;
     overflow: hidden;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/hero-bg.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
