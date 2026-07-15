@@ -43,22 +43,26 @@ const git = (gitArgs) => {
   return spawnSync("git", gitArgs, { stdio: "inherit", cwd: ROOT }).status === 0;
 };
 
-console.log("CrimeTimeSnacks weekly update —", new Date().toISOString());
+console.log("CrimeTimeSnacks content update —", new Date().toISOString());
 
-// 1-2: refresh sources (best-effort; need network)
+// 1-3: refresh sources (best-effort; need network)
 run("import-feed.mjs");        // podcast episodes
 run("import-youtube.mjs");     // youtube videos + shorts
+run("import-fbi.mjs");         // live case board (FBI public data)
 
-// 3: fresh blog post (best-effort; needs an LLM — local first)
+// 4: fresh blog post (best-effort; needs an LLM — local first)
 run("ai-write.mjs", ["--auto"]);
 
-// 4: new merch design (best-effort LLM, falls back to the offline pool)
+// 5: new merch design (best-effort LLM, falls back to the offline pool)
 run("gen-merch.mjs", ["--ai", "1"]);
 
-// 5: rebuild everything from the updated JSON (REQUIRED — must succeed)
+// 6: new quiz in Cory's voice (best-effort LLM)
+run("gen-quiz.mjs");
+
+// 7: rebuild everything from the updated JSON (REQUIRED — must succeed)
 run("build-all.mjs", [], { required: true });
 
-// 6: QA
+// 8: QA
 run("check-links.mjs");
 
 // 7: publish

@@ -1,5 +1,9 @@
 # CrimeTimeSnacks — Full Automation Guide
 
+> 2026-07 update: the site now runs TWICE A WEEK (Tue + Fri) in Cory's voice
+> (see `voice.md`), with a live FBI case board, auto-quizzes, and a shared
+> design shell (`shell.mjs`). Dashboard: /dashboard.html. Cron: cron/README.md.
+
 This is the "press one button and my whole website updates" system. It runs on
 the static site you already have, costs ~$0 to run (local LLM first), and keeps
 zero API keys in anything that ships to the browser.
@@ -16,11 +20,13 @@ That single command does all of this, in order:
 
 1. **Podcast** — pulls your latest episodes from the live feed (`import-feed.mjs`).
 2. **YouTube** — pulls your latest uploads + Shorts (`import-youtube.mjs`).
-3. **Blog** — writes one fresh, slop-free true-crime post (`ai-write.mjs --auto`).
-4. **Merch** — drops one new print-ready design (`gen-merch.mjs --ai`).
-5. **Rebuild** — regenerates every page from the JSON (`build-all.mjs`).
-6. **QA** — checks internal links (`check-links.mjs`).
-7. **Publish** — commits and pushes. Vercel auto-deploys `crimetime.vercel.app`.
+3. **Live board** — refreshes FBI Most Wanted + missing persons (`import-fbi.mjs`).
+4. **Blog** — writes one fresh post in Cory's voice (`ai-write.mjs --auto`).
+5. **Merch** — drops one new print-ready design (`gen-merch.mjs --ai`).
+6. **Quiz** — writes a new 5-question case quiz (`gen-quiz.mjs`).
+7. **Rebuild** — regenerates every page from the JSON (`build-all.mjs`).
+8. **QA** — checks internal links (`check-links.mjs`).
+9. **Publish** — commits and pushes. Vercel auto-deploys `crimetime.vercel.app`.
 
 Network/LLM steps are best-effort: if you're offline or the LLM is down, that
 step is skipped and the site still rebuilds from what's on disk. Nothing breaks.
@@ -32,12 +38,17 @@ step is skipped and the site still rebuilds from what's on disk. Nothing breaks.
 Register the scheduled job once (Windows, per-user, no admin):
 
 ```
-schtasks /create /tn "CTS Weekly Update" /sc WEEKLY /d SUN /st 07:00 ^
-  /tr "powershell -NoProfile -ExecutionPolicy Bypass -File D:\dev\github\crimetime\automation\cron\cts-weekly.ps1"
+schtasks /create /tn "CTS Content Tue" /sc WEEKLY /d TUE /st 09:00 ^
+  /tr "powershell -NoProfile -ExecutionPolicy Bypass -File D:\dev\github\crimetime\automation\cron\cts-content.ps1"
+
+schtasks /create /tn "CTS Content Fri" /sc WEEKLY /d FRI /st 09:00 ^
+  /tr "powershell -NoProfile -ExecutionPolicy Bypass -File D:\dev\github\crimetime\automation\cron\cts-content.ps1"
 ```
 
-That's it. Every Sunday at 7am the site refreshes itself and redeploys.
-Remove it later with: `schtasks /delete /tn "CTS Weekly Update" /f`
+That's it. Every Tuesday and Friday at 9am the site writes, rebuilds, and
+redeploys itself — in your voice. (GitHub Actions runs the same pipeline in the
+cloud Tue/Fri + a feed sync every 6 hours, so it works even with the PC off.)
+Remove later with: `schtasks /delete /tn "CTS Content Tue" /f` (and Fri)
 
 Logs land in `automation/cron/cron.log`.
 

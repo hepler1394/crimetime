@@ -3,15 +3,19 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Static-site content automation for CrimeTimeSnacks (key-free, local-first).",
+  "description": "Static-site content automation for CrimeTimeSnacks (key-free, local-first). Runs itself Tue + Fri in Cory's voice.",
   "scripts": {
+    "content": "node automation/weekly-update.mjs --commit --push",
     "weekly": "node automation/weekly-update.mjs --commit --push",
     "update": "node automation/weekly-update.mjs",
     "build:all": "node automation/build-all.mjs",
     "feed": "node automation/import-feed.mjs",
+    "fbi": "node automation/import-fbi.mjs",
     "videos": "node automation/import-youtube.mjs && node automation/build-videos.mjs",
     "merch": "node automation/gen-merch.mjs && node automation/build-merch.mjs",
     "blog": "node automation/ai-write.mjs --auto",
+    "quiz": "node automation/gen-quiz.mjs",
+    "status": "node automation/build-status.mjs",
     "qa": "node automation/check-links.mjs",
     "test": "node automation/test-build.mjs"
   }

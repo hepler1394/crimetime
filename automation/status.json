@@ -1,0 +1,53 @@
+{
+  "generated": "2026-07-15T22:35:26.861Z",
+  "schedule": {
+    "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
+    "content": [
+      "TUE 09:00",
+      "FRI 09:00"
+    ],
+    "sync": "Every 6 hours"
+  },
+  "counts": {
+    "episodes": 6,
+    "posts": 8,
+    "merchDesigns": 16,
+    "merchCollection": 3,
+    "quizzes": 3,
+    "quizQuestions": 15,
+    "fbiCases": 150,
+    "videos": 1,
+    "topicsQueued": 30,
+    "topicsTotal": 30
+  },
+  "latest": {
+    "episode": {
+      "title": "Murders in Moscow",
+      "date": "2025-03-16"
+    },
+    "post": {
+      "title": "JonBenét Ramsey: Why the Case Stays Open",
+      "date": "2026-01-08"
+    },
+    "quiz": {
+      "title": "The Watts Case File",
+      "created": "2026-07-15"
+    }
+  },
+  "freshness": {
+    "episodesJson": "2026-06-18T00:21:09.114Z",
+    "blogJson": "2026-06-17T03:47:42.443Z",
+    "merchJson": "2026-07-12T13:19:08.521Z",
+    "quizzesJson": "2026-07-15T00:00:00.000Z",
+    "fbiJson": "2026-07-15T22:35:07.039Z",
+    "css": "2026-07-15T22:30:22.693Z"
+  },
+  "nextTopics": [
+    "How forensic genealogy cracks cold cases",
+    "Chain of custody: why solid evidence still gets thrown out",
+    "Why eyewitness testimony is less reliable than people think",
+    "How cold case units decide which files to reopen",
+    "Understanding DNA familial searching",
+    "Wrongful convictions and the work of the Innocence Project"
+  ]
+}

@@ -4,32 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Shorts &amp; Videos | CrimeTimeSnacks</title>
+    <meta name="description" content="Quick true-crime clips and full case breakdowns from CrimeTimeSnacks on YouTube.">
     <meta name="author" content="Cory">
-    <meta name="description" content="Watch CrimeTimeSnacks true crime videos — episode breakdowns, case deep-dives, and visual explorations of unsolved cases, murders, and mysteries.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://crimetime.vercel.app/videos.html">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="images/logo.png">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="preconnect" href="https://www.youtube.com">
-    <link rel="preconnect" href="https://i.ytimg.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <meta name="theme-color" content="#0a0a0a">
+    <meta name="theme-color" content="#050505">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="CrimeTimeSnacks">
     <meta property="og:title" content="Shorts &amp; Videos | CrimeTimeSnacks">
-    <meta property="og:description" content="A true crime podcast exploring unsolved cases, murders, and mysteries.">
+    <meta property="og:description" content="Quick true-crime clips and full case breakdowns from CrimeTimeSnacks on YouTube.">
     <meta property="og:url" content="https://crimetime.vercel.app/videos.html">
     <meta property="og:image" content="https://crimetime.vercel.app/images/logo.png">
-    <meta property="og:image:alt" content="CrimeTimeSnacks logo">
+    <meta property="og:image:alt" content="CrimeTimeSnacks — A True Crime Podcast">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Shorts &amp; Videos | CrimeTimeSnacks">
-    <meta name="twitter:description" content="A true crime podcast exploring unsolved cases, murders, and mysteries.">
+    <meta name="twitter:description" content="Quick true-crime clips and full case breakdowns from CrimeTimeSnacks on YouTube.">
     <meta name="twitter:image" content="https://crimetime.vercel.app/images/logo.png">
     <meta name="twitter:image:alt" content="CrimeTimeSnacks logo">
     <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Podcast" href="/feed.xml">
+    <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Blog" href="/blog-feed.xml">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/images/logo.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=2026r">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -51,114 +52,98 @@
   ]
 }
     </script>
-    <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://crimetime.vercel.app/"},{"@type":"ListItem","position":2,"name":"Videos","item":"https://crimetime.vercel.app/videos.html"}]}
-    </script>
-    <link rel="stylesheet" href="css/style.css?v=2026h">
     <style>
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            padding: 1rem 0 2rem;
-        }
-        .video-card {
-            background-color: var(--cts-medium-gray);
-            border-radius: 5px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-        .video-card:hover { transform: translateY(-5px); }
-        .video-container { position: relative; width: 100%; padding-bottom: 56.25%; }
-        .video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-        .video-content { padding: 1.5rem; }
-        .video-title { font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--cts-white); }
-        .video-description { color: #ddd; }
-        /* Shorts rail (9:16 vertical) */
-        .shorts-rail {
-            display: flex;
-            gap: 1.25rem;
-            overflow-x: auto;
-            padding: 1rem 0 1.5rem;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-        }
         .short-card { flex: 0 0 auto; width: 240px; scroll-snap-align: start; }
         .short-container {
             position: relative; width: 100%; padding-bottom: 177.78%;
-            border-radius: 10px; overflow: hidden; background: #000;
-            border: 1px solid #2a2a2a;
+            border-radius: 14px; overflow: hidden; background: #000;
+            border: 1px solid var(--cts-line-strong);
+            transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
         }
-        .short { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .short-card:hover .short-container { transform: translateY(-5px); border-color: rgba(229,9,20,0.55); box-shadow: var(--shadow-red); }
+        .short { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
         .short-title {
-            margin-top: 0.6rem; color: var(--cts-white); font-size: 0.95rem;
+            margin-top: 0.6rem; color: var(--cts-white); font-size: 0.92rem; font-weight: 600;
             display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
         }
+        .shorts-rail {
+            display: flex; gap: 1.25rem; overflow-x: auto; padding: 1rem 0 1.5rem;
+            scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+        }
         .shorts-empty {
-            text-align: center; color: #aaa; background: var(--cts-medium-gray);
-            border-radius: 10px; padding: 3rem 2rem; max-width: 620px; margin: 0 auto;
+            text-align: center; color: var(--cts-muted); background: linear-gradient(180deg, var(--cts-panel), var(--cts-ink));
+            border: 1px solid var(--cts-line); border-radius: 14px; padding: 3rem 2rem; max-width: 620px; margin: 0 auto;
         }
         .shorts-empty i { color: var(--cts-red); font-size: 2rem; margin-bottom: 0.75rem; }
-        .format-filters {
-            display: flex; justify-content: center; flex-wrap: wrap;
-            gap: 0.75rem; margin: 0.5rem 0 1.5rem;
-        }
-        .format-btn {
-            background: var(--cts-medium-gray); color: var(--cts-white);
-            border: 1px solid #333; border-radius: 999px; padding: 0.5rem 1.25rem;
-            cursor: pointer; font-weight: 600;
-        }
-        .format-btn.active { background: var(--cts-red); border-color: var(--cts-red); }
+        .format-filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.7rem; margin: 0.5rem 0 1.5rem; }
     </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-        <!-- Header & Navigation -->
     <header>
         <div class="nav-container container">
             <div class="logo-container">
-                <a href="index.html"><img src="images/logo.png" alt="CrimeTimeSnacks Logo" height="40"></a>
+                <a href="/index.html" aria-label="CrimeTimeSnacks home">
+                    <img src="/images/logo.png" alt="CrimeTimeSnacks Logo" height="42" width="42">
+                    <span class="logo-word">Crime<em>Time</em>Snacks<span class="logo-sub">A True Crime Podcast</span></span>
+                </a>
             </div>
             <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><i class="fas fa-bars" aria-hidden="true"></i></button>
-            <nav id="primary-nav" aria-label="Primary"> <ul class="nav-menu">
-                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="episodes.html"><i class="fas fa-microphone"></i> Episodes</a></li>
-                    <li><a href="videos.html" class="active"><i class="fas fa-video"></i> Videos</a></li>
-                    <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
-                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
-                    <li><a href="merch.html"><i class="fas fa-tshirt"></i> Merch</a></li>
-                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <nav id="primary-nav" aria-label="Primary">
+                <ul class="nav-menu">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/episodes.html">Episodes</a></li>
+                    <li><a href="/videos.html" class="active">Videos</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/live.html">Live</a></li>
+                    <li><a href="/quiz.html">Quizzes</a></li>
+                    <li><a href="/merch.html">Merch</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
                 </ul>
             </nav>
             <div class="utility-nav">
-                <button id="dark-mode-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+                <a class="nav-cta" href="/listen.html"><i class="fas fa-headphones" aria-hidden="true"></i> Listen</a>
             </div>
         </div>
     </header>
+    <main id="main-content">
+    <section class="page-hero">
+        <div class="container">
+            <p class="eyebrow" style="justify-content:center;">On Camera</p>
+            <h1 class="page-title">Shorts &amp; <span class="text-red">Videos</span></h1>
+            <p>Quick true-crime clips and full case breakdowns.</p>
+        </div>
+    </section>
 
     <section class="container">
-        <h1 style="text-align: center; margin-bottom: 0.5rem;">Shorts &amp; Videos</h1>
-        <p style="text-align: center; color:#bbb; max-width:620px; margin:0 auto 1.5rem;">Quick true-crime clips and full case breakdowns.</p>
         <div class="format-filters">
-            <button class="format-btn active" data-filter="all">All</button>
-            <button class="format-btn" data-filter="shorts">Shorts</button>
-            <button class="format-btn" data-filter="full">Full Videos</button>
+            <button class="category-btn format-btn active" data-filter="all">All</button>
+            <button class="category-btn format-btn" data-filter="shorts">Shorts</button>
+            <button class="category-btn format-btn" data-filter="full">Full Videos</button>
         </div>
     </section>
 
     <section class="container format-shorts">
-        <h2 style="text-align: center; margin-bottom: 0.25rem;">Shorts</h2>
-        <p style="text-align:center;color:#bbb;margin-bottom:1.25rem;">Swipe through the latest clips.</p>
+        <div class="section-head">
+            <span class="file-no">Vertical</span>
+            <h2>Shorts</h2>
+            <span class="rule" aria-hidden="true"></span>
+        </div>
         <div class="shorts-empty">
-            <i class="fas fa-bolt"></i>
+            <i class="fas fa-bolt" aria-hidden="true"></i>
             <p>Shorts drop here automatically. New vertical clips appear the moment they're posted to the channel.</p>
         </div>
     </section>
 
     <div class="crime-scene-tape" aria-hidden="true"></div>
 
-    <section id="main-content" class="container format-full">
-        <h2 style="text-align: center; margin-bottom: 1.5rem;">Full Videos</h2>
+    <section class="container format-full">
+        <div class="section-head">
+            <span class="file-no">Full Length</span>
+            <h2>Case Breakdowns</h2>
+            <span class="rule" aria-hidden="true"></span>
+        </div>
         <div class="video-grid">
             <div class="video-card" data-format="full">
                 <div class="video-container">
@@ -173,57 +158,64 @@
                 </div>
                 <div class="video-content">
                     <h3 class="video-title">Welcome to the Murder Capital of America</h3>
-                    <p class="video-description">Baton Rouge, Louisiana — a closer look at the cases and the numbers behind the headlines.</p>
+                    <p class="video-description" style="color:var(--cts-muted);font-size:0.9rem;">Baton Rouge, Louisiana — a closer look at the cases and the numbers behind the headlines.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    </main>
+
     <footer class="footer">
+        <span class="footer-watermark" aria-hidden="true">SNACKS</span>
         <div class="container">
             <div class="footer-content">
                 <div>
-                    <img src="images/logo.png" alt="CrimeTimeSnacks Logo" class="footer-logo">
-                    <p>A true crime podcast exploring unsolved cases and mysteries with detailed analysis and compelling storytelling.</p>
+                    <img src="/images/logo.png" alt="CrimeTimeSnacks Logo" class="footer-logo">
+                    <p>A true crime podcast exploring unsolved cases and mysteries with detailed analysis and compelling storytelling. Researched, written, and hosted by Cory.</p>
                     <div class="footer-social">
-                        <a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
-                        <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" aria-label="Apple Podcasts"><i class="fab fa-apple"></i></a>
+                        <a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" aria-label="Spotify" target="_blank" rel="noopener"><i class="fab fa-spotify" aria-hidden="true"></i></a>
+                        <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" aria-label="Apple Podcasts" target="_blank" rel="noopener"><i class="fab fa-apple" aria-hidden="true"></i></a>
+                        <a href="/feed.xml" aria-label="RSS feed"><i class="fas fa-rss" aria-hidden="true"></i></a>
+                        <a href="mailto:crimetimesnacks@gmail.com" aria-label="Email CrimeTimeSnacks"><i class="fas fa-envelope" aria-hidden="true"></i></a>
                     </div>
                 </div>
-
                 <div>
-                    <h3 class="footer-heading">Quick Links</h3>
+                    <h3 class="footer-heading">Case Files</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="episodes.html">Episodes</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="listen.html">Listen</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="/episodes.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Episodes</a></li>
+                        <li><a href="/videos.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Videos</a></li>
+                        <li><a href="/blog.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Crime Blog</a></li>
+                        <li><a href="/live.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Live Cases</a></li>
+                        <li><a href="/quiz.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Quizzes</a></li>
                     </ul>
                 </div>
-
                 <div>
-                    <h3 class="footer-heading">Listen On</h3>
+                    <h3 class="footer-heading">The Show</h3>
                     <ul class="footer-links">
-                        <li><a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400">Apple Podcasts</a></li>
-                        <li><a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ">Spotify</a></li>
+                        <li><a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener"><i class="fab fa-apple" aria-hidden="true"></i> Apple Podcasts</a></li>
+                        <li><a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" target="_blank" rel="noopener"><i class="fab fa-spotify" aria-hidden="true"></i> Spotify</a></li>
+                        <li><a href="/merch.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Merch</a></li>
+                        <li><a href="/about.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> About</a></li>
+                        <li><a href="mailto:crimetimesnacks@gmail.com?subject=Case%20suggestion%20for%20CrimeTimeSnacks"><i class="fas fa-folder-plus" aria-hidden="true"></i> Suggest a Case</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-newsletter">
-                    <h3 class="footer-heading">Newsletter</h3>
-                    <p>Subscribe for the latest episodes and updates.</p>
-                    <input type="email" placeholder="Your Email Address" aria-label="Email address">
-                    <button class="btn btn-primary" style="width: 100%;">Subscribe</button>
+                    <h3 class="footer-heading">The Case File</h3>
+                    <p>One bite-size case brief and every new episode — twice a week, no spam.</p>
+                    <input type="email" inputmode="email" autocomplete="email" aria-label="Email address" placeholder="Your email address">
+                    <button class="btn btn-primary" style="width: 100%;">Get the Case File</button>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p>&copy; 2026 CrimeTimeSnacks. All Rights Reserved.</p>
+                <p>&copy; 2026 CrimeTimeSnacks. All Rights Reserved. Made with respect for victims and their families.</p>
+                <span class="crisis">If you have information about an unsolved case, contact your local authorities or <a href="https://tips.fbi.gov" target="_blank" rel="noopener" style="color:inherit;">tips.fbi.gov</a>.</span>
             </div>
         </div>
     </footer>
-    <script src="js/main.js"></script>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/effects.js"></script>
     <script>
       (function () {
         var btns = document.querySelectorAll('.format-btn');

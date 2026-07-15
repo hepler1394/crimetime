@@ -1,166 +1,53 @@
 #!/usr/bin/env node
-// Generates the blog from blog.json: a static blog.html (featured + grid) and
-// one page per post under /blog-posts/. No client-side AI, no exposed keys.
-//
-// Automated workflow: add a post object to blog.json (eventually written by the
-// AI pipeline / Hermes), run `node automation/build-blog.mjs`, deploy. Matches
-// the existing CrimeTimeSnacks design exactly.
+// Generates blog.html + blog-posts/*.html from blog.json and refreshes the
+// homepage BLOG-PREVIEW region. Uses the shared 2026 shell (shell.mjs).
+// Run: node automation/build-blog.mjs
 
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { SITE, esc, head, header, footer, tape, scripts } from "./shell.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
-const CSS = "/css/style.css?v=2026h";
-const FA = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css";
-const FONTS =
-  "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap";
-
-const esc = (s) =>
-  String(s)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
 
 const fmtDate = (iso) =>
-  new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    timeZone: "UTC",
-  });
-
-// Estimated reading time (~200 wpm), minimum 1 minute.
-const readingTime = (p) => {
-  const words = (p.body || []).join(" ").trim().split(/\s+/).filter(Boolean).length;
-  return Math.max(1, Math.round(words / 200));
-};
-
-const SITE = "https://crimetime.vercel.app";
-const head = (title, desc, path = "/", image = "/images/logo.png", extra = "") => `<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>${esc(title)}</title>
-    <meta name="description" content="${esc(desc)}">
-    <meta name="author" content="Cory">
-    <link rel="canonical" href="${SITE}${path}">
-    <meta name="theme-color" content="#0a0a0a">
-    <meta property="og:type" content="article">
-    <meta property="og:site_name" content="CrimeTimeSnacks">
-    <meta property="og:title" content="${esc(title)}">
-    <meta property="og:description" content="${esc(desc)}">
-    <meta property="og:url" content="${SITE}${path}">
-    <meta property="og:image" content="${SITE}${image}">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="${esc(title)}">
-    <meta name="twitter:description" content="${esc(desc)}">
-    <meta name="twitter:image" content="${SITE}${image}">
-    <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Podcast" href="/feed.xml">
-    <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Blog" href="/blog-feed.xml">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/images/logo.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="${FONTS}" rel="stylesheet">
-    <link rel="stylesheet" href="${FA}">
-    <link rel="stylesheet" href="${CSS}">${extra}
-</head>`;
-
-const header = (active) => `    <header>
-        <div class="nav-container container">
-            <div class="logo-container">
-                <a href="/index.html"><img src="/images/logo.png" alt="CrimeTimeSnacks Logo" height="40"></a>
-            </div>
-            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><i class="fas fa-bars" aria-hidden="true"></i></button>
-            <nav id="primary-nav" aria-label="Primary"> <ul class="nav-menu">
-                    <li><a href="/index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="/episodes.html"><i class="fas fa-microphone"></i> Episodes</a></li>
-                    <li><a href="/videos.html"><i class="fas fa-video"></i> Videos</a></li>
-                    <li><a href="/blog.html"${active === "blog" ? ' class="active"' : ""}><i class="fas fa-newspaper"></i> Blog</a></li>
-                    <li><a href="/about.html"><i class="fas fa-info-circle"></i> About</a></li>
-                    <li><a href="/merch.html"><i class="fas fa-tshirt"></i> Merch</a></li>
-                    <li><a href="/contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-                </ul>
-            </nav>
-            <div class="utility-nav">
-                <button id="dark-mode-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon" aria-hidden="true"></i></button>
-            </div>
-        </div>
-    </header>`;
-
-const footer = () => `    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <img src="/images/logo.png" alt="CrimeTimeSnacks Logo" class="footer-logo">
-                    <p>A true crime podcast exploring unsolved cases and mysteries with detailed analysis and compelling storytelling.</p>
-                    <div class="footer-social">
-                        <a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
-                        <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" aria-label="Apple Podcasts"><i class="fab fa-apple"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="footer-heading">Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="/index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="/episodes.html"><i class="fas fa-chevron-right"></i> Episodes</a></li>
-                        <li><a href="/blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
-                        <li><a href="/about.html"><i class="fas fa-chevron-right"></i> About</a></li>
-                        <li><a href="/contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="footer-heading">Listen On</h3>
-                    <ul class="footer-links">
-                        <li><a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400"><i class="fab fa-apple"></i> Apple Podcasts</a></li>
-                        <li><a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ"><i class="fab fa-spotify"></i> Spotify</a></li>
-                        <li><a href="/feed.xml"><i class="fas fa-rss"></i> RSS Feed</a></li>
-                    </ul>
-                </div>
-                <div class="footer-newsletter">
-                    <h3 class="footer-heading">Newsletter</h3>
-                    <p>Subscribe for the latest episodes and updates.</p>
-                    <input type="email" placeholder="Your Email Address" aria-label="Email address">
-                    <button class="btn btn-primary" style="width: 100%;">Subscribe</button>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; ${new Date().getFullYear()} CrimeTimeSnacks. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>`;
-
+  iso ? new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }) : "";
 const postUrl = (p) => `/blog-posts/${p.slug}.html`;
+const img = (p) => (p.image.startsWith("/") ? p.image : `/${p.image}`);
+const readingTime = (p) =>
+  Math.max(1, Math.round(p.body.join(" ").split(/\s+/).length / 220));
 
+/* ------------------------------------------------------------------ cards */
 function card(p) {
   return `                <div class="blog-card" data-category="${esc(p.category)}">
-                    <a href="${postUrl(p)}"><img src="/${esc(p.image)}" alt="${esc(p.title)}" class="blog-image" loading="lazy"></a>
+                    <a href="${postUrl(p)}"><img src="${esc(img(p))}" alt="${esc(p.title)}" class="blog-image" loading="lazy"></a>
                     <div class="blog-content">
-                        <div class="blog-tags"><span class="blog-tag">${esc(p.categoryLabel)}</span></div>
+                        <div class="blog-tags"><span class="blog-tag">${esc(p.categoryLabel)}</span><span class="blog-tag">${readingTime(p)} min read</span></div>
                         <h3 class="blog-title"><a href="${postUrl(p)}" style="color:inherit;text-decoration:none;">${esc(p.title)}</a></h3>
-                        <p class="blog-date"><i class="far fa-calendar-alt"></i> ${fmtDate(p.date)}</p>
+                        <p class="blog-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> ${fmtDate(p.date)}</p>
                         <p class="blog-excerpt">${esc(p.excerpt)}</p>
-                        <a href="${postUrl(p)}" class="btn btn-primary">Read More</a>
+                        <div><a href="${postUrl(p)}" class="btn btn-primary btn-sm">Read More</a></div>
                     </div>
                 </div>`;
 }
 
 function featured(p) {
-  return `        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;background-color:var(--cts-medium-gray);border-radius:8px;overflow:hidden;box-shadow:var(--cts-box-shadow);">
-            <img src="/${esc(p.image)}" alt="${esc(p.title)}" style="width:100%;height:100%;min-height:320px;object-fit:cover;">
-            <div style="padding:2rem;">
-                <div class="blog-tags"><span class="blog-tag">${esc(p.categoryLabel)}</span></div>
-                <h3 style="font-size:2rem;margin:0.5rem 0;"><a href="${postUrl(p)}" style="color:var(--cts-white);text-decoration:none;">${esc(p.title)}</a></h3>
-                <p class="blog-date"><i class="far fa-calendar-alt"></i> ${fmtDate(p.date)}</p>
-                <p style="color:#ddd;margin:1rem 0 1.5rem;">${esc(p.excerpt)}</p>
-                <a href="${postUrl(p)}" class="btn btn-primary">Read Full Post</a>
+  return `        <article class="spotlight">
+            <div class="spotlight-media">
+                <img src="${esc(img(p))}" alt="${esc(p.title)}" loading="lazy">
             </div>
-        </div>`;
+            <div class="spotlight-body">
+                <div class="blog-tags"><span class="blog-tag">${esc(p.categoryLabel)}</span><span class="blog-tag">${readingTime(p)} min read</span></div>
+                <h3><a href="${postUrl(p)}" style="color:inherit;text-decoration:none;">${esc(p.title)}</a></h3>
+                <p class="blog-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> ${fmtDate(p.date)}</p>
+                <p class="episode-description">${esc(p.excerpt)}</p>
+                <div><a href="${postUrl(p)}" class="btn btn-primary">Read Full Post</a></div>
+            </div>
+        </article>`;
 }
 
+/* -------------------------------------------------------------- blog.html */
 function blogPage(posts) {
   const feat = posts.find((p) => p.featured) || posts[0];
   const rest = posts.filter((p) => p !== feat);
@@ -177,26 +64,28 @@ function blogPage(posts) {
       author: { "@type": "Person", name: p.author },
     })),
   }, null, 2)}\n    </script>`;
-  return `<!DOCTYPE html>
-<html lang="en">
-${head("Crime Blog | CrimeTimeSnacks", "The latest true crime news, case updates, and analysis from CrimeTimeSnacks.", "/blog.html", "/images/logo.png", blogLd)}
-<body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-${header("blog")}
 
-    <section id="main-content" class="hero" style="padding: 5rem 0;">
+  return `${head({
+    title: "Crime Blog | CrimeTimeSnacks",
+    description: "The latest true crime news, case updates, and analysis from CrimeTimeSnacks.",
+    canonicalPath: "/blog.html",
+    extraHead: blogLd,
+  })}
+<body>
+${header("blog")}
+    <main id="main-content">
+    <section class="page-hero">
         <div class="container">
-            <div class="hero-content" style="text-align:center;">
-                <h1>Crime<span class="text-red">Time</span>Snacks Blog</h1>
-                <p>Case updates, analysis, and the stories behind the headlines</p>
-            </div>
+            <p class="eyebrow" style="justify-content:center;">Case Updates &middot; Analysis &middot; The Details</p>
+            <h1 class="page-title">The Crime <span class="text-red">Blog</span></h1>
+            <p>Case updates, analysis, and the stories behind the headlines &mdash; written in-house, checked against sources.</p>
         </div>
     </section>
 
-    <div class="crime-scene-tape" aria-hidden="true"></div>
+${tape()}
 
     <section class="container">
-        <div class="category-filters" style="display:flex;justify-content:center;flex-wrap:wrap;gap:1rem;margin-bottom:2rem;">
+        <div class="category-filters" style="display:flex;justify-content:center;flex-wrap:wrap;gap:0.7rem;margin-bottom:2rem;">
             <button class="category-btn active" data-category="all">All Posts</button>
             <button class="category-btn" data-category="breaking">Breaking</button>
             <button class="category-btn" data-category="court">Court</button>
@@ -206,42 +95,50 @@ ${header("blog")}
     </section>
 
     <section class="container">
-        <h2 style="text-align:center;margin-bottom:2rem;">Featured Post</h2>
+        <div class="section-head">
+            <span class="file-no">Pinned</span>
+            <h2>Featured Post</h2>
+            <span class="rule" aria-hidden="true"></span>
+        </div>
 ${featured(feat)}
     </section>
 
-    <div class="crime-scene-tape" aria-hidden="true"></div>
-
-    <section class="container">
-        <h2 style="text-align:center;margin-bottom:2rem;">Latest Posts</h2>
+    <section class="container" style="margin-top:3.4rem;">
+        <div class="section-head">
+            <span class="file-no">Archive</span>
+            <h2>Latest Posts</h2>
+            <span class="rule" aria-hidden="true"></span>
+        </div>
         <div class="blog-grid" id="blog-posts">
 ${rest.map(card).join("\n")}
         </div>
     </section>
 
-    <section class="container" style="margin-top:5rem;background-color:var(--cts-dark-gray);padding:3rem;border-radius:8px;">
-        <h2 style="text-align:center;">Get Crime Updates in Your Inbox</h2>
-        <p style="text-align:center;max-width:600px;margin:0 auto 2rem auto;">Subscribe to receive the latest case updates and exclusive content.</p>
-        <form style="max-width:500px;margin:0 auto;" onsubmit="return false;">
-            <div style="display:flex;gap:1rem;">
-                <input type="email" placeholder="Your Email Address" aria-label="Email address" style="flex-grow:1;padding:0.8rem;border:none;border-radius:8px;">
-                <button type="submit" class="btn btn-primary" style="white-space:nowrap;">Subscribe</button>
-            </div>
-        </form>
+    <section class="container" style="margin-top:4.4rem;">
+        <div class="newsletter-block">
+            <p class="eyebrow">The Case File</p>
+            <h2>Get Case Updates in Your Inbox</h2>
+            <p style="color:var(--cts-muted);max-width:52ch;margin-top:0.8rem;">New posts, new episodes, and the live board &mdash; twice a week, no spam.</p>
+            <form class="newsletter-form" onsubmit="return false;">
+                <input type="email" inputmode="email" autocomplete="email" placeholder="Your email address" aria-label="Email address">
+                <button type="submit" class="btn btn-primary" style="white-space:nowrap;">Get the Case File</button>
+            </form>
+        </div>
     </section>
+    </main>
 
 ${footer()}
 
-    <script src="/js/main.js"></script>
+${scripts()}
     <script>
-      // Static category filtering (replaces the old client-side AI blog script).
+      // Static category filtering.
       document.querySelectorAll('.category-btn').forEach(function (btn) {
         btn.addEventListener('click', function () {
           var cat = this.getAttribute('data-category');
           document.querySelectorAll('.category-btn').forEach(function (b) { b.classList.remove('active'); });
           this.classList.add('active');
           document.querySelectorAll('.blog-card').forEach(function (c) {
-            c.style.display = (cat === 'all' || c.getAttribute('data-category') === cat) ? 'flex' : 'none';
+            c.style.display = (cat === 'all' || c.getAttribute('data-category') === cat) ? '' : 'none';
           });
         });
       });
@@ -251,13 +148,14 @@ ${footer()}
 `;
 }
 
+/* -------------------------------------------------------------- post pages */
 function articleLd(p) {
   const ld = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
     headline: p.title,
     description: p.excerpt,
-    image: `${SITE}/${p.image}`,
+    image: `${SITE}${img(p)}`,
     datePublished: p.date,
     author: { "@type": "Person", name: p.author },
     publisher: {
@@ -270,57 +168,71 @@ function articleLd(p) {
   return `\n    <script type="application/ld+json">\n${JSON.stringify(ld, null, 2)}\n    </script>`;
 }
 
-function postPage(p) {
-  const paras = p.body.map((t) => `        <p>${esc(t)}</p>`).join("\n");
-  const articleMeta = `\n    <meta property="article:published_time" content="${p.date}">\n    <meta property="article:author" content="${esc(p.author)}">\n    <meta name="author" content="${esc(p.author)}">`;
-  return `<!DOCTYPE html>
-<html lang="en">
-${head(`${p.title} | CrimeTimeSnacks Blog`, p.excerpt, postUrl(p), `/${p.image}`, articleMeta + articleLd(p))}
+function postPage(p, posts) {
+  const paras = p.body.map((t) => `        <p style="color:var(--cts-muted);line-height:1.9;font-size:1.03rem;margin-bottom:1.3rem;">${esc(t)}</p>`).join("\n");
+  const articleMeta = `\n    <meta property="article:published_time" content="${p.date}">\n    <meta property="article:author" content="${esc(p.author)}">`;
+  const more = posts.filter((x) => x.slug !== p.slug).slice(0, 3);
+  return `${head({
+    title: `${p.title} | CrimeTimeSnacks Blog`,
+    description: p.excerpt,
+    canonicalPath: postUrl(p),
+    ogImage: `${SITE}${img(p)}`,
+    ogType: "article",
+    extraHead: articleMeta + articleLd(p),
+  })}
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
 ${header("blog")}
-
+    <main id="main-content">
     <section class="episode-header">
         <div class="container">
-            <div class="blog-tags" style="justify-content:center;display:flex;margin-bottom:0.75rem;"><span class="blog-tag">${esc(p.categoryLabel)}</span></div>
-            <h1 class="episode-title" style="color:var(--cts-white);">${esc(p.title)}</h1>
-            <p class="episode-date" style="justify-content:center;"><i class="far fa-calendar-alt"></i> ${fmtDate(p.date)} &nbsp;&middot;&nbsp; ${esc(p.author)} &nbsp;&middot;&nbsp; ${readingTime(p)} min read</p>
+            <div class="blog-tags" style="justify-content:center;display:flex;margin-bottom:0.9rem;"><span class="blog-tag">${esc(p.categoryLabel)}</span><span class="blog-tag">${readingTime(p)} min read</span></div>
+            <h1>${esc(p.title)}</h1>
+            <p class="episode-date" style="justify-content:center;margin-top:0.7rem;"><i class="far fa-calendar-alt" aria-hidden="true"></i> ${fmtDate(p.date)} &nbsp;&middot;&nbsp; ${esc(p.author)}</p>
         </div>
     </section>
 
-    <main class="container" style="max-width:760px;margin:3rem auto;">
-        <img src="/${esc(p.image)}" alt="${esc(p.title)}" decoding="async" style="width:100%;border-radius:8px;margin-bottom:2rem;box-shadow:var(--cts-box-shadow);">
+    <div class="container" style="max-width:780px;margin:3rem auto;">
+        <img src="${esc(img(p))}" alt="${esc(p.title)}" decoding="async" style="width:100%;border-radius:16px;margin-bottom:2.2rem;border:1px solid var(--cts-line-strong);box-shadow:var(--shadow-2);">
 ${paras}
         <div style="margin-top:2.5rem;">
-            <a href="/blog.html" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> All Posts</a>
+            <a href="/blog.html" class="btn btn-secondary"><i class="fas fa-arrow-left" aria-hidden="true"></i> All Posts</a>
         </div>
+    </div>
+
+    <section class="container" style="margin-top:3rem;">
+        <div class="section-head">
+            <span class="file-no">Related</span>
+            <h2>Keep Reading</h2>
+            <span class="rule" aria-hidden="true"></span>
+        </div>
+        <div class="blog-grid" style="margin-top:1rem;">
+${more.map(card).join("\n")}
+        </div>
+    </section>
     </main>
 
 ${footer()}
 
-    <script src="/js/main.js"></script>
+${scripts()}
 </body>
 </html>
 `;
 }
 
-// Homepage preview card uses relative paths (index.html lives at the root).
+/* ------------------------------------------------------- homepage preview */
 function previewCard(p) {
-  const url = `blog-posts/${p.slug}.html`;
   return `            <div class="blog-card">
-                <a href="${url}"><img src="${esc(p.image)}" alt="${esc(p.title)}" class="blog-image" loading="lazy"></a>
+                <a href="${postUrl(p)}"><img src="${esc(img(p))}" alt="${esc(p.title)}" class="blog-image" loading="lazy"></a>
                 <div class="blog-content">
                     <div class="blog-tags"><span class="blog-tag">${esc(p.categoryLabel)}</span></div>
                     <h3 class="blog-title">${esc(p.title)}</h3>
-                    <p class="blog-date"><i class="far fa-calendar-alt"></i> ${fmtDate(p.date)}</p>
+                    <p class="blog-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> ${fmtDate(p.date)}</p>
                     <p class="blog-excerpt">${esc(p.excerpt)}</p>
-                    <a href="${url}" class="btn btn-primary">Read More</a>
+                    <div><a href="${postUrl(p)}" class="btn btn-primary btn-sm">Read More</a></div>
                 </div>
             </div>`;
 }
 
-// Refresh the homepage "Latest from the Crime Blog" region between markers,
-// leaving the rest of index.html untouched.
 async function updateHomePreview(posts) {
   const indexPath = join(ROOT, "index.html");
   let html;
@@ -347,7 +259,7 @@ const posts = [...data.posts].sort((a, b) => b.date.localeCompare(a.date));
 await writeFile(join(ROOT, "blog.html"), blogPage(posts), "utf8");
 await mkdir(join(ROOT, "blog-posts"), { recursive: true });
 for (const p of posts) {
-  await writeFile(join(ROOT, "blog-posts", `${p.slug}.html`), postPage(p), "utf8");
+  await writeFile(join(ROOT, "blog-posts", `${p.slug}.html`), postPage(p, posts), "utf8");
 }
 const homeUpdated = await updateHomePreview(posts);
 console.log(

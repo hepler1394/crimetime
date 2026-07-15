@@ -3,221 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Contact | CrimeTimeSnacks True Crime Podcast</title>
+    <title>Contact | CrimeTimeSnacks</title>
+    <meta name="description" content="Questions, case suggestions, feedback, or business inquiries — get in touch with CrimeTimeSnacks.">
     <meta name="author" content="Cory">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://crimetime.vercel.app/contact.html">
-    <meta name="theme-color" content="#0a0a0a">
+    <meta name="theme-color" content="#050505">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="CrimeTimeSnacks">
-    <meta property="og:title" content="Contact | CrimeTimeSnacks True Crime Podcast">
-    <meta property="og:description" content="Get in touch with the CrimeTimeSnacks podcast team. Submit case suggestions, feedback, or business inquiries.">
+    <meta property="og:title" content="Contact | CrimeTimeSnacks">
+    <meta property="og:description" content="Questions, case suggestions, feedback, or business inquiries — get in touch with CrimeTimeSnacks.">
     <meta property="og:url" content="https://crimetime.vercel.app/contact.html">
     <meta property="og:image" content="https://crimetime.vercel.app/images/logo.png">
-    <meta property="og:image:alt" content="CrimeTimeSnacks logo">
+    <meta property="og:image:alt" content="CrimeTimeSnacks — A True Crime Podcast">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Contact | CrimeTimeSnacks True Crime Podcast">
-    <meta name="twitter:description" content="Get in touch with the CrimeTimeSnacks podcast team. Submit case suggestions, feedback, or business inquiries.">
+    <meta name="twitter:title" content="Contact | CrimeTimeSnacks">
+    <meta name="twitter:description" content="Questions, case suggestions, feedback, or business inquiries — get in touch with CrimeTimeSnacks.">
     <meta name="twitter:image" content="https://crimetime.vercel.app/images/logo.png">
     <meta name="twitter:image:alt" content="CrimeTimeSnacks logo">
     <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Podcast" href="/feed.xml">
-    <meta name="description" content="Get in touch with the CrimeTimeSnacks podcast team. Submit case suggestions, feedback, or business inquiries.">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
-    <!-- Google Fonts -->
+    <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Blog" href="/blog-feed.xml">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/images/logo.png">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css?v=2026h">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=2026r">
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <!-- Header & Navigation -->
     <header>
         <div class="nav-container container">
             <div class="logo-container">
-                <a href="index.html"><img src="images/logo.png" alt="CrimeTimeSnacks Logo" height="40"></a>
+                <a href="/index.html" aria-label="CrimeTimeSnacks home">
+                    <img src="/images/logo.png" alt="CrimeTimeSnacks Logo" height="42" width="42">
+                    <span class="logo-word">Crime<em>Time</em>Snacks<span class="logo-sub">A True Crime Podcast</span></span>
+                </a>
             </div>
             <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><i class="fas fa-bars" aria-hidden="true"></i></button>
             <nav id="primary-nav" aria-label="Primary">
                 <ul class="nav-menu">
-                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="episodes.html"><i class="fas fa-microphone"></i> Episodes</a></li>
-                    <li><a href="videos.html"><i class="fas fa-video"></i> Videos</a></li>
-                    <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
-                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
-                    <li><a href="merch.html"><i class="fas fa-tshirt"></i> Merch</a></li>
-                    <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/episodes.html">Episodes</a></li>
+                    <li><a href="/videos.html">Videos</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/live.html">Live</a></li>
+                    <li><a href="/quiz.html">Quizzes</a></li>
+                    <li><a href="/merch.html">Merch</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html" class="active">Contact</a></li>
                 </ul>
             </nav>
             <div class="utility-nav">
-                <button id="dark-mode-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+                <a class="nav-cta" href="/listen.html"><i class="fas fa-headphones" aria-hidden="true"></i> Listen</a>
             </div>
         </div>
     </header>
-    
-    <!-- Page Header -->
-    <section id="main-content" class="episode-header">
+    <main id="main-content">
+    <section class="page-hero">
         <div class="container">
-            <h1 class="episode-title" style="color: red;">Contact <span style="color: white;">Us</span></h1>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto;">Have a question, suggestion, or just want to say hello? We'd love to hear from you!</p>
+            <p class="eyebrow" style="justify-content:center;">Open Line</p>
+            <h1 class="page-title">Contact <span class="text-red">Us</span></h1>
+            <p>Have a question, a case suggestion, or just want to say hello? We'd love to hear from you.</p>
         </div>
     </section>
-    
-    <!-- Main Content -->
-    <main class="container">
-        <!-- Contact Form -->
-        <section style="margin-bottom: 5rem;">
-            <div style="display: flex; flex-wrap: wrap; gap: 3rem;">
-                <div style="flex: 1; min-width: 300px;">
-                    <h2>Get In Touch</h2>
-                    <p>We welcome your feedback, case suggestions, and questions. Fill out the form and we'll get back to you as soon as possible.</p>
-                    
-                    <div style="margin-top: 2rem;">
-                        <h3>Connect With Us</h3>
-                        <div style="margin-top: 1rem;">
-                            <p><i class="fab fa-spotify" style="color: var(--cts-red); margin-right: 0.5rem;"></i> <a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" target="_blank" rel="noopener" style="color:inherit;">Listen on Spotify</a></p>
-                            <p><i class="fab fa-apple" style="color: var(--cts-red); margin-right: 0.5rem;"></i> <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener" style="color:inherit;">Apple Podcasts</a></p>
+
+    <div class="crime-scene-tape" aria-hidden="true"></div>
+
+    <section class="container" style="margin-top:1rem;">
+        <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:2.4rem;align-items:start;" class="contact-grid">
+            <div class="panel" style="padding:2rem;">
+                <div class="section-head" style="margin-bottom:1.4rem;">
+                    <span class="file-no">Direct</span>
+                    <h2 style="font-size:1.8rem;">Get in Touch</h2>
+                </div>
+                <p style="color:var(--cts-muted);margin-bottom:1.4rem;">We welcome your feedback, case suggestions, and questions. Email is the fastest way to reach the desk.</p>
+                <div style="display:flex;flex-direction:column;gap:0.8rem;">
+                    <a class="platform-pill" href="mailto:crimetimesnacks@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> crimetimesnacks@gmail.com</a>
+                    <a class="platform-pill" href="mailto:crimetimesnacks@gmail.com?subject=Case%20suggestion%20for%20CrimeTimeSnacks"><i class="fas fa-folder-plus" aria-hidden="true"></i> Suggest a Case</a>
+                    <a class="platform-pill" href="mailto:crimetimesnacks@gmail.com?subject=Business%20%2F%20sponsorship%20inquiry"><i class="fas fa-handshake" aria-hidden="true"></i> Business &amp; Sponsorship</a>
+                    <a class="platform-pill" href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" target="_blank" rel="noopener"><i class="fab fa-spotify" aria-hidden="true"></i> Listen on Spotify</a>
+                    <a class="platform-pill" href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener"><i class="fab fa-apple" aria-hidden="true"></i> Apple Podcasts</a>
+                </div>
+            </div>
+            <div class="panel" style="padding:2rem;">
+                <div class="section-head" style="margin-bottom:1.4rem;">
+                    <span class="file-no">Message</span>
+                    <h2 style="font-size:1.8rem;">Send a Message</h2>
+                </div>
+                <form id="contact-form">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;" class="cf-row">
+                        <div>
+                            <label for="cf-name" style="display:block;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--cts-faint);margin-bottom:0.4rem;">Name</label>
+                            <input id="cf-name" name="name" type="text" required style="width:100%;padding:0.85rem 1.1rem;border:1px solid var(--cts-line-strong);border-radius:12px;background:rgba(0,0,0,0.4);color:var(--cts-white);">
                         </div>
-                        
-                        <div class="footer-social" style="margin-top: 2rem;">
-                            <a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
-                            <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" aria-label="Apple Podcasts"><i class="fab fa-apple"></i></a>
+                        <div>
+                            <label for="cf-email" style="display:block;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--cts-faint);margin-bottom:0.4rem;">Email</label>
+                            <input id="cf-email" name="email" type="email" required style="width:100%;padding:0.85rem 1.1rem;border:1px solid var(--cts-line-strong);border-radius:12px;background:rgba(0,0,0,0.4);color:var(--cts-white);">
                         </div>
                     </div>
-                </div>
-                
-                <div style="flex: 2; min-width: 300px;">
-                    <form style="background-color: var(--cts-dark-gray); padding: 2rem; border-radius: 5px;">
-                        <div style="margin-bottom: 1.5rem;">
-                            <label for="name" style="display: block; margin-bottom: 0.5rem;">Name</label>
-                            <input type="text" id="name" style="width: 100%; padding: 0.8rem; border: none; border-radius: 3px;">
-                        </div>
-                        
-                        <div style="margin-bottom: 1.5rem;">
-                            <label for="email" style="display: block; margin-bottom: 0.5rem;">Email</label>
-                            <input type="email" id="email" style="width: 100%; padding: 0.8rem; border: none; border-radius: 3px;">
-                        </div>
-                        
-                        <div style="margin-bottom: 1.5rem;">
-                            <label for="subject" style="display: block; margin-bottom: 0.5rem;">Subject</label>
-                            <select id="subject" style="width: 100%; padding: 0.8rem; border: none; border-radius: 3px;">
-                                <option value="general">General Inquiry</option>
-                                <option value="case">Case Suggestion</option>
-                                <option value="feedback">Feedback</option>
-                                <option value="business">Business/Sponsorship</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        
-                        <div style="margin-bottom: 1.5rem;">
-                            <label for="message" style="display: block; margin-bottom: 0.5rem;">Message</label>
-                            <textarea id="message" rows="6" style="width: 100%; padding: 0.8rem; border: none; border-radius: 3px;"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-                    </form>
-                </div>
+                    <div style="margin-top:1rem;">
+                        <label for="cf-subject" style="display:block;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--cts-faint);margin-bottom:0.4rem;">Subject</label>
+                        <select id="cf-subject" style="width:100%;padding:0.85rem 1.1rem;border:1px solid var(--cts-line-strong);border-radius:12px;background:rgba(0,0,0,0.4);color:var(--cts-white);">
+                            <option>General Inquiry</option>
+                            <option>Case Suggestion</option>
+                            <option>Feedback</option>
+                            <option>Business / Sponsorship</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div style="margin-top:1rem;">
+                        <label for="cf-message" style="display:block;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--cts-faint);margin-bottom:0.4rem;">Message</label>
+                        <textarea id="cf-message" rows="6" required style="width:100%;padding:0.85rem 1.1rem;border:1px solid var(--cts-line-strong);border-radius:12px;background:rgba(0,0,0,0.4);color:var(--cts-white);resize:vertical;"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="margin-top:1.4rem;"><i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message</button>
+                    <p style="color:var(--cts-faint);font-size:0.78rem;margin-top:0.9rem;">Opens your mail app with the message pre-filled &mdash; nothing is stored on this site.</p>
+                </form>
             </div>
-        </section>
-        
-        <!-- Case Submission -->
-        <section style="margin-bottom: 5rem;">
-            <div class="crime-tape">
-                <div class="container">
-                    DO NOT CROSS • CRIME SCENE • DO NOT CROSS • CRIME SCENE • DO NOT CROSS
-                </div>
-            </div>
-            
+        </div>
+        <style>@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr !important; } .cf-row { grid-template-columns: 1fr !important; } }</style>
+    </section>
+
+    <div class="crime-scene-tape crime-scene-tape--reverse" aria-hidden="true"></div>
+
+    <section class="container" style="margin-top:1rem;">
+        <div class="section-head">
+            <span class="file-no">Tips</span>
             <h2>Suggest a Case</h2>
-            <p>Do you have a case you'd like us to cover on CrimeTimeSnacks? We're always looking for interesting and compelling stories to share with our listeners.</p>
-            
-            <div style="background-color: var(--cts-dark-gray); padding: 2rem; border-radius: 5px; margin-top: 2rem;">
-                <h3>Case Submission Guidelines</h3>
-                <ul style="margin-top: 1rem; padding-left: 1.5rem;">
-                    <li>Provide as much detail about the case as possible</li>
-                    <li>Include links to reputable sources if available</li>
-                    <li>Let us know why you think this case would be interesting for our listeners</li>
-                    <li>Mention if you have a personal connection to the case</li>
-                </ul>
-                
-                <p style="margin-top: 1.5rem;">You can submit case suggestions using the contact form above using the form above. Include sources and why the case matters.</p>
-            </div>
-        </section>
-        
-        <!-- FAQ Section -->
-        <section style="margin-bottom: 5rem;">
-            <h2>Frequently Asked Questions</h2>
-            
-            <div style="background-color: var(--cts-dark-gray); padding: 2rem; border-radius: 5px; margin-bottom: 1.5rem;">
-                <h3>How long does it take to get a response?</h3>
-                <p>We aim to respond to all inquiries within 3-5 business days. Due to the volume of messages we receive, it may sometimes take longer, but we do read every message.</p>
-            </div>
-            
-            <div style="background-color: var(--cts-dark-gray); padding: 2rem; border-radius: 5px; margin-bottom: 1.5rem;">
-                <h3>Can I request an interview or collaboration?</h3>
-                <p>Yes! We're open to interviews and collaborations with other podcasters, content creators, and experts in relevant fields. Please use the contact form and select "Business/Sponsorship" as the subject.</p>
-            </div>
-            
-            <div style="background-color: var(--cts-dark-gray); padding: 2rem; border-radius: 5px; margin-bottom: 1.5rem;">
-                <h3>Do you accept sponsorships or advertising?</h3>
-                <p>Yes, we are open to sponsorships and advertising opportunities that align with our podcast's values and would be of interest to our listeners. Please contact us for more information.</p>
-            </div>
-        </section>
+            <span class="rule" aria-hidden="true"></span>
+        </div>
+        <p class="section-sub">We're always looking for compelling cases. When you write in, include what makes the case interesting, roughly when and where it happened, and any solid sources &mdash; news coverage, court records, documentaries. Cases with unusual evidence, open questions, or under-covered victims get priority.</p>
+    </section>
     </main>
-    
-    <!-- Footer -->
+
     <footer class="footer">
+        <span class="footer-watermark" aria-hidden="true">SNACKS</span>
         <div class="container">
             <div class="footer-content">
                 <div>
-                    <img src="images/logo.png" alt="CrimeTimeSnacks Logo" class="footer-logo">
-                    <p>A true crime podcast exploring unsolved cases and mysteries with detailed analysis and compelling storytelling.</p>
+                    <img src="/images/logo.png" alt="CrimeTimeSnacks Logo" class="footer-logo">
+                    <p>A true crime podcast exploring unsolved cases and mysteries with detailed analysis and compelling storytelling. Researched, written, and hosted by Cory.</p>
                     <div class="footer-social">
-                        <a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
-                        <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" aria-label="Apple Podcasts"><i class="fab fa-apple"></i></a>
+                        <a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" aria-label="Spotify" target="_blank" rel="noopener"><i class="fab fa-spotify" aria-hidden="true"></i></a>
+                        <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" aria-label="Apple Podcasts" target="_blank" rel="noopener"><i class="fab fa-apple" aria-hidden="true"></i></a>
+                        <a href="/feed.xml" aria-label="RSS feed"><i class="fas fa-rss" aria-hidden="true"></i></a>
+                        <a href="mailto:crimetimesnacks@gmail.com" aria-label="Email CrimeTimeSnacks"><i class="fas fa-envelope" aria-hidden="true"></i></a>
                     </div>
                 </div>
-                
                 <div>
-                    <h3 class="footer-heading">Quick Links</h3>
+                    <h3 class="footer-heading">Case Files</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="episodes.html">Episodes</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="listen.html">Listen</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="/episodes.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Episodes</a></li>
+                        <li><a href="/videos.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Videos</a></li>
+                        <li><a href="/blog.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Crime Blog</a></li>
+                        <li><a href="/live.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Live Cases</a></li>
+                        <li><a href="/quiz.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Quizzes</a></li>
                     </ul>
                 </div>
-                
                 <div>
-                    <h3 class="footer-heading">Listen On</h3>
+                    <h3 class="footer-heading">The Show</h3>
                     <ul class="footer-links">
-                        <li><a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400">Apple Podcasts</a></li>
-                        <li><a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ">Spotify</a></li>
-                        <!-- Google Podcasts removed as requested by user -->
+                        <li><a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener"><i class="fab fa-apple" aria-hidden="true"></i> Apple Podcasts</a></li>
+                        <li><a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" target="_blank" rel="noopener"><i class="fab fa-spotify" aria-hidden="true"></i> Spotify</a></li>
+                        <li><a href="/merch.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Merch</a></li>
+                        <li><a href="/about.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> About</a></li>
+                        <li><a href="mailto:crimetimesnacks@gmail.com?subject=Case%20suggestion%20for%20CrimeTimeSnacks"><i class="fas fa-folder-plus" aria-hidden="true"></i> Suggest a Case</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-newsletter">
-                    <h3 class="footer-heading">Newsletter</h3>
-                    <p>Subscribe for the latest episodes and updates.</p>
-                    <input type="email" placeholder="Your Email Address">
-                    <button class="btn btn-primary" style="width: 100%;">Subscribe</button>
+                    <h3 class="footer-heading">The Case File</h3>
+                    <p>One bite-size case brief and every new episode — twice a week, no spam.</p>
+                    <input type="email" inputmode="email" autocomplete="email" aria-label="Email address" placeholder="Your email address">
+                    <button class="btn btn-primary" style="width: 100%;">Get the Case File</button>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2026 CrimeTimeSnacks. All Rights Reserved.</p>
+                <p>&copy; 2026 CrimeTimeSnacks. All Rights Reserved. Made with respect for victims and their families.</p>
+                <span class="crisis">If you have information about an unsolved case, contact your local authorities or <a href="https://tips.fbi.gov" target="_blank" rel="noopener" style="color:inherit;">tips.fbi.gov</a>.</span>
             </div>
         </div>
     </footer>
-    <script src="js/main.js"></script>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/effects.js"></script>
+    <script>
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = document.getElementById('cf-name').value;
+        var email = document.getElementById('cf-email').value;
+        var subject = document.getElementById('cf-subject').value;
+        var msg = document.getElementById('cf-message').value;
+        var body = msg + '\n\n— ' + name + ' (' + email + ')';
+        window.location.href = 'mailto:crimetimesnacks@gmail.com?subject=' + encodeURIComponent('[CTS] ' + subject) + '&body=' + encodeURIComponent(body);
+    });
+    </script>
 </body>
 </html>

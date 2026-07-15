@@ -68,10 +68,17 @@ if (auto || !topic) {
 }
 category = category || "analysis";
 
-const SYSTEM = `You write for CrimeTimeSnacks, a true crime podcast website. House style is STRICT:
+// Cory's voice profile (automation/voice.md) drives every generated word, so the
+// auto-blog sounds like the host — not a content farm.
+let VOICE = "";
+try { VOICE = await readFile(join(__dirname, "voice.md"), "utf8"); } catch { /* optional */ }
+
+const SYSTEM = `You write blog posts for CrimeTimeSnacks, a true crime podcast website.
+${VOICE ? `Follow this voice guide exactly:\n\n${VOICE}\n` : ""}
+House style is STRICT:
 - Measured, factual, respectful of victims. No sensationalism.
 - NO emojis. No "in this article". No AI-sounding filler. No invented quotes, statistics, or sources.
-- Plain, clear American English. 3 short paragraphs.
+- Plain, clear American English. 3 short paragraphs, written in Cory's first-person voice.
 - If you are unsure of a fact, stay general rather than stating something that might be wrong.
 Output ONLY valid minified JSON, no markdown, with this exact shape:
 {"title": string, "excerpt": string (max ~160 chars), "body": [string, string, string]}`;

@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>CrimeTimeSnacks • A True Crime Podcast | Exploring Unsolved Cases</title>
-    <meta name="description" content="CrimeTimeSnacks is a true crime podcast exploring unsolved cases, murders, and mysteries with detailed analysis and compelling storytelling.">
+    <title>CrimeTimeSnacks • A True Crime Podcast | Snack-Sized Cases, Fully Examined</title>
+    <meta name="description" content="CrimeTimeSnacks is a true crime podcast exploring unsolved cases, murders, and mysteries — snack-sized episodes, fully researched, zero sensationalism. New drops twice a week.">
     <meta name="author" content="Cory">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://crimetime.vercel.app/">
-    <meta name="theme-color" content="#0a0a0a">
+    <meta name="theme-color" content="#050505">
 
     <!-- Open Graph / social sharing -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="CrimeTimeSnacks">
     <meta property="og:title" content="CrimeTimeSnacks • A True Crime Podcast">
-    <meta property="og:description" content="Exploring the facts, theories, and evidence surrounding unsolved cases — without the sensationalism.">
+    <meta property="og:description" content="Snack-sized true crime, fully examined. The facts, theories, and evidence behind the cases — without the sensationalism. New drops twice a week.">
     <meta property="og:url" content="https://crimetime.vercel.app/">
     <meta property="og:image" content="https://crimetime.vercel.app/images/logo.png">
     <meta property="og:image:alt" content="CrimeTimeSnacks logo">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="CrimeTimeSnacks • A True Crime Podcast">
-    <meta name="twitter:description" content="Exploring the facts, theories, and evidence surrounding unsolved cases — without the sensationalism.">
+    <meta name="twitter:description" content="Snack-sized true crime, fully examined. New drops twice a week.">
     <meta name="twitter:image" content="https://crimetime.vercel.app/images/logo.png">
     <meta name="twitter:image:alt" content="CrimeTimeSnacks logo">
 
@@ -29,9 +29,9 @@
     <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Blog" href="/blog-feed.xml">
 
     <!-- Favicon & app icons -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="images/logo.png">
-    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/images/logo.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <!-- Structured data for search engines -->
     <script type="application/ld+json">
@@ -60,20 +60,17 @@
     }
     </script>
 
-    <!-- Google Fonts -->
+    <!-- Fonts & icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css?v=2026h">
-    
-    <!-- Preload JavaScript files -->
-    <link rel="preload" href="js/main.js" as="script">
-    <link rel="preload" href="js/category-ai.js" as="script">
+    <link rel="stylesheet" href="/css/style.css?v=2026r">
+
+    <!-- Hero renders load first -->
+    <link rel="preload" href="/images/phone-center.png?v=3" as="image">
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -81,33 +78,27 @@
     <header>
         <div class="nav-container container">
             <div class="logo-container">
-                <img src="images/logo.png" alt="CrimeTimeSnacks Logo" height="40">
+                <a href="/index.html" aria-label="CrimeTimeSnacks home">
+                    <img src="/images/logo.png" alt="CrimeTimeSnacks Logo" height="42" width="42">
+                    <span class="logo-word">Crime<em>Time</em>Snacks<span class="logo-sub">A True Crime Podcast</span></span>
+                </a>
             </div>
-            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
-                <i class="fas fa-bars" aria-hidden="true"></i>
-            </button>
+            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><i class="fas fa-bars" aria-hidden="true"></i></button>
             <nav id="primary-nav" aria-label="Primary">
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="episodes.html"><i class="fas fa-microphone"></i> Episodes</a></li>
-                    <li><a href="videos.html"><i class="fas fa-video"></i> Videos</a></li>
-                    <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
-                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
-                    <li><a href="merch.html"><i class="fas fa-tshirt"></i> Merch</a></li>
-                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="/index.html" class="active">Home</a></li>
+                    <li><a href="/episodes.html">Episodes</a></li>
+                    <li><a href="/videos.html">Videos</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/live.html">Live</a></li>
+                    <li><a href="/quiz.html">Quizzes</a></li>
+                    <li><a href="/merch.html">Merch</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
                 </ul>
             </nav>
             <div class="utility-nav">
-                <button id="search-toggle" aria-label="Search"><i class="fas fa-search"></i></button>
-                <button id="dark-mode-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon" aria-hidden="true"></i></button>
-            </div>
-        </div>
-        
-        <!-- Search Bar (Hidden by default) -->
-        <div id="search-bar" class="container" style="display: none; padding: 1rem 0;">
-            <div class="search-container" role="search">
-                <input type="search" id="search-input" aria-label="Search episodes" placeholder="Search episodes, cases, or keywords..." onkeydown="if(event.key==='Enter')searchEpisodes()">
-                <button onclick="searchEpisodes()" aria-label="Submit search"><i class="fas fa-search" aria-hidden="true"></i></button>
+                <a class="nav-cta" href="/listen.html"><i class="fas fa-headphones" aria-hidden="true"></i> Listen</a>
             </div>
         </div>
     </header>
@@ -116,49 +107,71 @@
     <section class="hero">
         <div class="container hero-flex">
             <div class="hero-content">
-                <p class="hero-eyebrow">True Crime, Examined</p>
-                <h1>Crime<span class="text-red">Time</span>Snacks<span class="hero-dot">•</span> A True Crime Podcast</h1>
-                <p>Exploring the facts, theories, and evidence surrounding unsolved cases &mdash; without the sensationalism.</p>
+                <p class="hero-eyebrow"><span class="live-dot" aria-hidden="true"></span> A True Crime Podcast &middot; New Drops Twice a Week</p>
+                <h1>True Crime,<br><span class="rotator" data-rotate='["Snack-Sized.","Examined.","Unfiltered.","Obsessive."]'>Snack-Sized.</span></h1>
+                <p class="hero-sub">The facts, theories, and evidence behind unsolved cases and infamous crimes &mdash; researched, written, and hosted by Cory. No sensationalism. No filler. Just the case.</p>
                 <div class="hero-buttons">
-                    <a href="#latest-episode" class="btn btn-primary"><i class="fas fa-headphones"></i> Listen to Latest Episode</a>
-                    <a href="#categories" class="btn btn-secondary"><i class="fas fa-tags"></i> Browse Categories</a>
+                    <a href="#latest-episode" class="btn btn-primary"><i class="fas fa-play" aria-hidden="true"></i> Play the Latest Case</a>
+                    <a href="/episodes.html" class="btn btn-secondary"><i class="fas fa-folder-open" aria-hidden="true"></i> Open the Case Files</a>
                 </div>
                 <div class="hero-platforms">
                     <span>Listen on</span>
-                    <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" aria-label="Apple Podcasts"><i class="fab fa-apple"></i></a>
-                    <a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+                    <a class="platform-pill" href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener"><i class="fab fa-apple" aria-hidden="true"></i> Apple Podcasts</a>
+                    <a class="platform-pill" href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" target="_blank" rel="noopener"><i class="fab fa-spotify" aria-hidden="true"></i> Spotify</a>
+                    <a class="platform-pill" href="/videos.html"><i class="fab fa-youtube" aria-hidden="true"></i> YouTube</a>
+                    <a class="platform-pill" href="/feed.xml"><i class="fas fa-rss" aria-hidden="true"></i> RSS</a>
                 </div>
+                <!-- HOME-STATS:START (auto-filled by automation/build-episodes.mjs) -->
+                <div class="stat-row">
+                    <div class="stat"><div class="stat-num"><span data-count="6">0</span><em>+</em></div><div class="stat-label">Cases Covered</div></div>
+                    <div class="stat"><div class="stat-num"><span data-count="6">0</span></div><div class="stat-label">Episodes</div></div>
+                    <div class="stat"><div class="stat-num">5.0<em>★</em></div><div class="stat-label">Listener Rated</div></div>
+                    <div class="stat"><div class="stat-num">2<em>×</em>/wk</div><div class="stat-label">New Drops</div></div>
+                </div>
+                <!-- HOME-STATS:END -->
             </div>
             <div class="hero-visual">
                 <div class="hero-phones">
-                    <img src="images/phone-left.png?v=2" alt="CrimeTimeSnacks on Apple Podcasts" class="hero-phone hero-phone--side hero-phone--left" loading="eager">
-                    <img src="images/phone-center.png?v=3" alt="An episode of CrimeTimeSnacks playing on Spotify" class="hero-phone hero-phone--center" loading="eager" fetchpriority="high" decoding="async">
-                    <img src="images/phone-right.png?v=2" alt="The CrimeTimeSnacks show page on Spotify" class="hero-phone hero-phone--side hero-phone--right" loading="eager">
+                    <img src="/images/phone-left.png?v=2" alt="CrimeTimeSnacks on Apple Podcasts" class="hero-phone hero-phone--side hero-phone--left" loading="eager">
+                    <img src="/images/phone-center.png?v=3" alt="An episode of CrimeTimeSnacks playing on Spotify" class="hero-phone hero-phone--center" loading="eager" fetchpriority="high" decoding="async">
+                    <img src="/images/phone-right.png?v=2" alt="The CrimeTimeSnacks show page on Spotify" class="hero-phone hero-phone--side hero-phone--right" loading="eager">
                 </div>
-                <img src="images/ipad.png?v=2" alt="CrimeTimeSnacks on Apple Podcasts, shown on iPad" class="hero-ipad" loading="eager"
+                <img src="/images/ipad.png?v=2" alt="CrimeTimeSnacks on Apple Podcasts, shown on iPad" class="hero-ipad" loading="eager"
                      onerror="this.style.display='none';">
             </div>
         </div>
     </section>
-    
-    <!-- Continue Listening Section (Shows only if there's saved progress) -->
-    <section id="continue-listening" class="container" style="margin-top: 3rem; display: none;">
-        <div class="continue-listening">
-            <h2><i class="fas fa-history"></i> Continue Listening</h2>
-            <div id="continue-listening-content">
-                <!-- Content will be populated by JavaScript -->
+
+    <!-- Proof strip -->
+    <div class="proof-strip" aria-hidden="true">
+        <div class="marquee">
+            <div class="marquee-track">
+                <span class="marquee-item"><span class="stars">★★★★★</span> Listener-rated on Spotify</span>
+                <span class="marquee-item"><i class="fab fa-apple"></i> Apple Podcasts &middot; Spotify &middot; Everywhere</span>
+                <span class="marquee-item"><i class="fas fa-microphone"></i> Researched, written &amp; hosted by Cory</span>
+                <span class="marquee-item"><i class="fas fa-stopwatch"></i> Snack-sized cases &middot; 10&ndash;25 min</span>
+                <span class="marquee-item"><i class="fas fa-bolt"></i> New drops twice a week</span>
+                <span class="marquee-item"><i class="fas fa-scale-balanced"></i> Facts first &middot; zero sensationalism</span>
             </div>
         </div>
+    </div>
+
+    <!-- Continue Listening Section (shows only if there's saved progress) -->
+    <section id="continue-listening" class="container" style="margin-top: 3rem; display: none;">
+        <div class="continue-listening">
+            <h2><i class="fas fa-history" aria-hidden="true"></i> Continue Listening</h2>
+            <div id="continue-listening-content"></div>
+        </div>
     </section>
-    
-    <!-- Crime Scene Tape -->
-    <div class="crime-scene-tape" aria-hidden="true"></div>
-    
+
     <!-- Categories Section -->
-    <section id="categories" class="container">
-        <h2 class="slide-in-left animate-on-scroll" style="text-align: center; margin-bottom: 2rem;">Browse by Category</h2>
-        
-        <div class="category-filters" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+    <section id="categories" class="container" style="margin-top: 4.2rem;">
+        <div class="section-head">
+            <span class="file-no">File 01</span>
+            <h2>Browse the Case Files</h2>
+            <span class="rule" aria-hidden="true"></span>
+        </div>
+        <div class="category-filters" style="display: flex; flex-wrap: wrap; gap: 0.7rem; margin-bottom: 1rem;">
             <button class="category-btn active" data-category="all">All Cases</button>
             <button class="category-btn" data-category="murder">Murder</button>
             <button class="category-btn" data-category="unsolved">Unsolved</button>
@@ -167,28 +180,33 @@
             <button class="category-btn" data-category="recent">Recent</button>
         </div>
     </section>
-    
+
     <!-- HOME-EPISODES:START (auto-filled by automation/build-episodes.mjs) -->
     <!-- Latest Episode Section -->
-    <section id="latest-episode" class="container">
-        <h2 class="slide-in-left animate-on-scroll" style="text-align: center; margin-bottom: 2rem;">Latest Episode</h2>
-        <article class="episode-card" style="max-width: 820px; margin: 0 auto;">
-            <img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731822271588-25bfd78792249.jpg" alt="Murders in Moscow" class="episode-image" style="height:auto;aspect-ratio:1/1;object-fit:cover;max-height:380px;">
-            <div class="episode-content">
-                <div class="episode-badges" style="margin-bottom: 0.5rem;">
+    <section id="latest-episode" class="container" style="margin-top:1.5rem;">
+        <div class="section-head">
+            <span class="file-no">File 02</span>
+            <h2>Latest Episode</h2>
+            <span class="rule" aria-hidden="true"></span>
+        </div>
+        <article class="spotlight">
+            <div class="spotlight-media">
+                <img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731822271588-25bfd78792249.jpg" alt="Murders in Moscow" loading="lazy">
+            </div>
+            <div class="spotlight-body">
+                <div class="episode-badges">
                     <span class="episode-badge">True Crime</span>
-                    <span class="episode-badge">11:41</span>
+                    <span class="episode-badge"><i class="far fa-clock" aria-hidden="true"></i> 11:41</span>
                 </div>
-                <h3 class="episode-title">Murders in Moscow</h3>
-                <p class="episode-date"><i class="far fa-calendar-alt"></i> March 16, 2025</p>
+                <h3>Murders in Moscow</h3>
+                <p class="episode-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> March 16, 2025</p>
                 <p class="episode-description">In this gripping episode of Crime Time Snacks , we delve into the harrowing case of the Idaho student murders that rocked the nation. On November 13, 2022, four University of Idaho students — Ethan Chapin, Madison Mogen, Xana Kernodle, and Kaylee Goncalves — were tragically murdered in their off-campus rental home in Moscow, Idaho. This episode unpacks the chilling events, the ongoing investigation, and the complexities surrounding the case.</p>
-                <audio controls preload="none" style="width:100%;margin:1rem 0;">
+                <audio preload="none" controls>
                     <source src="https://d3ctxlq1ktw2nl.cloudfront.net/staging/2025-2-16/db747518-c453-7022-a137-b84015e84d02.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
                 </audio>
                 <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-                    <a href="https://podcasters.spotify.com/pod/show/cory-hepler/episodes/Murders-in-Moscow-e2r36cp" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-spotify"></i> Listen on Spotify</a>
-                    <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-apple"></i> Apple Podcasts</a>
+                    <a href="https://podcasters.spotify.com/pod/show/cory-hepler/episodes/Murders-in-Moscow-e2r36cp" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-spotify" aria-hidden="true"></i> Listen on Spotify</a>
+                    <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-apple" aria-hidden="true"></i> Apple Podcasts</a>
                 </div>
             </div>
         </article>
@@ -199,68 +217,79 @@
 
     <!-- Recent Episodes Section -->
     <section class="container">
-        <h2 class="slide-in-left animate-on-scroll" style="text-align: center; margin-bottom: 2rem;">Recent Episodes</h2>
+        <div class="section-head">
+            <span class="file-no">File 03</span>
+            <h2>Recent Episodes</h2>
+            <span class="rule" aria-hidden="true"></span>
+        </div>
         <div class="episode-grid">
                 <div class="episode-card" data-categories="true-crime">
-                    <img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731832918663-8a0f0ee9c4129.jpg" alt="Watts Family Murders" class="episode-image" loading="lazy">
+                    <a href="/episodes/watts-family-murders.html" aria-label="Watts Family Murders"><img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731832918663-8a0f0ee9c4129.jpg" alt="Watts Family Murders" class="episode-image" loading="lazy"></a>
                     <div class="episode-content">
                         <div class="episode-badges">
                             <span class="episode-badge">True Crime</span>
-                            <span class="episode-badge">21:42</span>
+                            <span class="episode-badge"><i class="far fa-clock" aria-hidden="true"></i> 21:42</span>
                         </div>
                         <h3 class="episode-title">Watts Family Murders</h3>
-                        <p class="episode-date"><i class="far fa-calendar-alt"></i> November 17, 2024</p>
+                        <p class="episode-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> November 17, 2024</p>
                         <p class="episode-description">The Watts family murders occurred in August 2018 in Frederick, Colorado. Chris Watts, the father, killed his pregnant wife, Shanann, and their two…</p>
                         <div class="episode-actions">
-                            <a href="/episodes/watts-family-murders.html" class="btn btn-primary">Listen Now</a>
-                            <div class="episode-stats"><span><i class="far fa-clock"></i> 21:42</span></div>
+                            <a href="/episodes/watts-family-murders.html" class="btn btn-primary btn-sm">Listen Now</a>
+                            <div class="episode-stats"><span><i class="far fa-clock" aria-hidden="true"></i> 21:42</span></div>
                         </div>
                     </div>
                 </div>
                 <div class="episode-card" data-categories="true-crime">
-                    <img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731821846921-7a3bca7a5b61d.jpg" alt="ERIK AND LYLE: The Menendez Brothers" class="episode-image" loading="lazy">
+                    <a href="/episodes/erik-and-lyle-the-menendez-brothers.html" aria-label="ERIK AND LYLE: The Menendez Brothers"><img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731821846921-7a3bca7a5b61d.jpg" alt="ERIK AND LYLE: The Menendez Brothers" class="episode-image" loading="lazy"></a>
                     <div class="episode-content">
                         <div class="episode-badges">
                             <span class="episode-badge">True Crime</span>
-                            <span class="episode-badge">19:38</span>
+                            <span class="episode-badge"><i class="far fa-clock" aria-hidden="true"></i> 19:38</span>
                         </div>
                         <h3 class="episode-title">ERIK AND LYLE: The Menendez Brothers</h3>
-                        <p class="episode-date"><i class="far fa-calendar-alt"></i> November 17, 2024</p>
+                        <p class="episode-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> November 17, 2024</p>
                         <p class="episode-description">The Menendez brothers, Lyle and Erik, have been in prison for over 35 years. They were convicted in 1996 for the 1989 murders of their parents and…</p>
                         <div class="episode-actions">
-                            <a href="/episodes/erik-and-lyle-the-menendez-brothers.html" class="btn btn-primary">Listen Now</a>
-                            <div class="episode-stats"><span><i class="far fa-clock"></i> 19:38</span></div>
+                            <a href="/episodes/erik-and-lyle-the-menendez-brothers.html" class="btn btn-primary btn-sm">Listen Now</a>
+                            <div class="episode-stats"><span><i class="far fa-clock" aria-hidden="true"></i> 19:38</span></div>
                         </div>
                     </div>
                 </div>
                 <div class="episode-card" data-categories="true-crime">
-                    <img src="https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/19116320/19116320-1668968108733-9f40ee8db375b.jpg" alt="JonBenét Ramsey | The Facts 96-22 |Part 1" class="episode-image" loading="lazy">
+                    <a href="/episodes/jonbenet-ramsey-the-facts-96-22-part-1.html" aria-label="JonBenét Ramsey | The Facts 96-22 |Part 1"><img src="https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/19116320/19116320-1668968108733-9f40ee8db375b.jpg" alt="JonBenét Ramsey | The Facts 96-22 |Part 1" class="episode-image" loading="lazy"></a>
                     <div class="episode-content">
                         <div class="episode-badges">
                             <span class="episode-badge">True Crime</span>
-                            <span class="episode-badge">15:44</span>
+                            <span class="episode-badge"><i class="far fa-clock" aria-hidden="true"></i> 15:44</span>
                         </div>
                         <h3 class="episode-title">JonBenét Ramsey | The Facts 96-22 |Part 1</h3>
-                        <p class="episode-date"><i class="far fa-calendar-alt"></i> November 20, 2022</p>
+                        <p class="episode-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> November 20, 2022</p>
                         <p class="episode-description">JonBenét Patricia Ramsey was murdered. That is the only certain thing about this case after 26 years. Their is key evidence in this case as well as…</p>
                         <div class="episode-actions">
-                            <a href="/episodes/jonbenet-ramsey-the-facts-96-22-part-1.html" class="btn btn-primary">Listen Now</a>
-                            <div class="episode-stats"><span><i class="far fa-clock"></i> 15:44</span></div>
+                            <a href="/episodes/jonbenet-ramsey-the-facts-96-22-part-1.html" class="btn btn-primary btn-sm">Listen Now</a>
+                            <div class="episode-stats"><span><i class="far fa-clock" aria-hidden="true"></i> 15:44</span></div>
                         </div>
                     </div>
                 </div>
         </div>
         <div style="text-align: center; margin-top: 2rem;">
-            <a href="episodes.html" class="btn btn-secondary">View All Episodes</a>
+            <a href="/episodes.html" class="btn btn-secondary">View All Episodes</a>
         </div>
     </section>
     <!-- HOME-EPISODES:END -->
 
-    <!-- HOME-VIDEOS:START (auto-filled by automation/build-videos.mjs) -->
-    <section class="container" style="margin-top: 4rem;">
-        <h2 class="slide-in-left animate-on-scroll" style="text-align: center; margin-bottom: 1.5rem;">Watch on YouTube</h2>
+    <!-- Crime Scene Tape -->
+    <div class="crime-scene-tape" aria-hidden="true"></div>
 
-        <div class="video-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
+    <!-- HOME-VIDEOS:START (auto-filled by automation/build-videos.mjs) -->
+    <section class="container" style="margin-top: 1rem;">
+        <div class="section-head">
+            <span class="file-no">On Camera</span>
+            <h2>Watch on YouTube</h2>
+            <span class="rule" aria-hidden="true"></span>
+        </div>
+
+        <div class="video-grid">
                 <div class="video-card">
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/BBUF4lUFCsE" class="video" title="Welcome to the Murder Capital of America" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy" allowfullscreen></iframe>
@@ -269,128 +298,171 @@
                 </div>
         </div>
         <div style="text-align: center; margin-top: 1.5rem;">
-            <a href="videos.html" class="btn btn-secondary">Watch More</a>
+            <a href="/videos.html" class="btn btn-secondary">Watch More</a>
         </div>
     </section>
     <!-- HOME-VIDEOS:END -->
 
+    <!-- Live case feed teaser -->
+    <section class="container" style="margin-top: 4.6rem; position: relative;">
+        <span class="bgword" style="top:-1.2rem;" aria-hidden="true">EVIDENCE</span>
+        <div class="section-head">
+            <span class="file-no">File 04</span>
+            <h2>Live Case Feed</h2>
+            <span class="rule" aria-hidden="true"></span>
+            <span class="live-updated"><span class="live-dot" aria-hidden="true"></span> FBI data, refreshed automatically</span>
+        </div>
+        <p class="section-sub">Straight from the FBI's public Wanted and Missing Persons feeds &mdash; the cases that are open right now, while you're listening.</p>
+        <div id="home-live" class="live-grid">
+            <div class="skeleton" aria-hidden="true"></div>
+            <div class="skeleton" aria-hidden="true"></div>
+            <div class="skeleton" aria-hidden="true"></div>
+            <div class="skeleton" aria-hidden="true"></div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="/live.html" class="btn btn-secondary"><i class="fas fa-satellite-dish" aria-hidden="true"></i> Open the Live Board</a>
+        </div>
+    </section>
+
+    <!-- Crime Scene Tape -->
+    <div class="crime-scene-tape crime-scene-tape--reverse" aria-hidden="true"></div>
+
     <!-- AI Blog Preview Section -->
-    <section class="container" style="margin-top: 5rem;">
-        <h2 class="slide-in-left animate-on-scroll" style="text-align: center; margin-bottom: 2rem;">Latest from the Crime Blog</h2>
-        
+    <section class="container" style="margin-top: 4.6rem;">
+        <div class="section-head">
+            <span class="file-no">File 05</span>
+            <h2>Latest from the Crime Blog</h2>
+            <span class="rule" aria-hidden="true"></span>
+        </div>
         <div class="blog-grid">
             <!-- BLOG-PREVIEW:START (auto-filled by automation/build-blog.mjs) -->
             <div class="blog-card">
-                <a href="blog-posts/jonbenet-ramsey-why-the-case-stays-open.html"><img src="images/jonbenet-ramsey.jpg" alt="JonBenét Ramsey: Why the Case Stays Open" class="blog-image" loading="lazy"></a>
+                <a href="/blog-posts/jonbenet-ramsey-why-the-case-stays-open.html"><img src="/images/jonbenet-ramsey.jpg" alt="JonBenét Ramsey: Why the Case Stays Open" class="blog-image" loading="lazy"></a>
                 <div class="blog-content">
                     <div class="blog-tags"><span class="blog-tag">Analysis</span></div>
                     <h3 class="blog-title">JonBenét Ramsey: Why the Case Stays Open</h3>
-                    <p class="blog-date"><i class="far fa-calendar-alt"></i> January 8, 2026</p>
+                    <p class="blog-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> January 8, 2026</p>
                     <p class="blog-excerpt">Nearly thirty years on, the 1996 killing of six-year-old JonBenét Ramsey is still unsolved. A look at why, and what modern DNA testing might still offer.</p>
-                    <a href="blog-posts/jonbenet-ramsey-why-the-case-stays-open.html" class="btn btn-primary">Read More</a>
+                    <div><a href="/blog-posts/jonbenet-ramsey-why-the-case-stays-open.html" class="btn btn-primary btn-sm">Read More</a></div>
                 </div>
             </div>
             <div class="blog-card">
-                <a href="blog-posts/wilmington-dmv-what-we-know.html"><img src="images/wilmington-dmv.jpg" alt="Wilmington DMV: What We Know So Far" class="blog-image" loading="lazy"></a>
+                <a href="/blog-posts/wilmington-dmv-what-we-know.html"><img src="/images/wilmington-dmv.jpg" alt="Wilmington DMV: What We Know So Far" class="blog-image" loading="lazy"></a>
                 <div class="blog-content">
                     <div class="blog-tags"><span class="blog-tag">Breaking</span></div>
                     <h3 class="blog-title">Wilmington DMV: What We Know So Far</h3>
-                    <p class="blog-date"><i class="far fa-calendar-alt"></i> December 26, 2025</p>
+                    <p class="blog-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> December 26, 2025</p>
                     <p class="blog-excerpt">Separating the verified facts from the speculation that filled the first hours after the December 23 incident at the Wilmington DMV.</p>
-                    <a href="blog-posts/wilmington-dmv-what-we-know.html" class="btn btn-primary">Read More</a>
+                    <div><a href="/blog-posts/wilmington-dmv-what-we-know.html" class="btn btn-primary btn-sm">Read More</a></div>
                 </div>
             </div>
             <div class="blog-card">
-                <a href="blog-posts/watts-family-reading-the-warning-signs.html"><img src="images/watts-family-murders.jpg" alt="The Watts Family Case: Reading the Warning Signs" class="blog-image" loading="lazy"></a>
+                <a href="/blog-posts/watts-family-reading-the-warning-signs.html"><img src="/images/watts-family-murders.jpg" alt="The Watts Family Case: Reading the Warning Signs" class="blog-image" loading="lazy"></a>
                 <div class="blog-content">
                     <div class="blog-tags"><span class="blog-tag">Analysis</span></div>
                     <h3 class="blog-title">The Watts Family Case: Reading the Warning Signs</h3>
-                    <p class="blog-date"><i class="far fa-calendar-alt"></i> November 14, 2025</p>
+                    <p class="blog-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> November 14, 2025</p>
                     <p class="blog-excerpt">The 2018 Watts family killings unsettled people partly because of how ordinary the family appeared. A measured look at the timeline and the confession.</p>
-                    <a href="blog-posts/watts-family-reading-the-warning-signs.html" class="btn btn-primary">Read More</a>
+                    <div><a href="/blog-posts/watts-family-reading-the-warning-signs.html" class="btn btn-primary btn-sm">Read More</a></div>
                 </div>
             </div>
             <!-- BLOG-PREVIEW:END -->
         </div>
-        
         <div style="text-align: center; margin-top: 2rem;">
-            <a href="blog.html" class="btn btn-secondary">View All Blog Posts</a>
+            <a href="/blog.html" class="btn btn-secondary">Read the Blog</a>
         </div>
     </section>
-    
-    <!-- About Section -->
-    <section class="container" style="margin-top: 5rem;">
-        <h2 class="slide-in-left animate-on-scroll" style="text-align: center; margin-bottom: 2rem;">About CrimeTimeSnacks</h2>
-        
-        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <p style="margin-bottom: 2rem;">CrimeTimeSnacks is a true crime podcast that delves into a variety of unsolved cases, exploring the facts, theories, and evidence surrounding each mystery. The podcast aims to provide listeners with a comprehensive understanding of these cases, encouraging them to engage with the content and form their own conclusions.</p>
-            
-            <p style="margin-bottom: 2rem;">Hosted by Cory, each episode is meticulously researched to bring you the most accurate information about some of the most intriguing criminal cases in history.</p>
-            
-            <a href="about.html" class="btn btn-secondary">Learn More About Us</a>
-        </div>
-    </section>
-    
-    <!-- Newsletter Section -->
-    <section class="container" style="margin-top: 5rem; background-color: var(--cts-dark-gray); padding: 3rem; border-radius: 8px;">
-        <h2 class="slide-in-left animate-on-scroll" style="text-align: center;">Join Our Newsletter</h2>
-        <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem auto;">Subscribe to our newsletter to get notified about new episodes, exclusive content, and updates from CrimeTimeSnacks.</p>
-        <form style="max-width: 500px; margin: 0 auto;">
-            <div style="display: flex; gap: 1rem;">
-                <input type="email" inputmode="email" autocomplete="email" required aria-label="Email address" placeholder="Your Email Address" style="flex-grow: 1; padding: 0.8rem; border: none; border-radius: 8px;">
-                <button type="submit" class="btn btn-primary" style="white-space: nowrap;">Subscribe</button>
+
+    <!-- Quiz teaser -->
+    <section class="container" style="margin-top: 4.6rem;">
+        <div class="newsletter-block" style="text-align:center;">
+            <p class="eyebrow" style="justify-content:center;">Interrogation Room</p>
+            <h2>Think You Know Your Cases?</h2>
+            <p style="color:var(--cts-muted);max-width:56ch;margin:0.8rem auto 0;">Weekly true-crime quizzes built from the episodes &mdash; timelines, evidence, and the details most people miss. No stakes. Except your pride.</p>
+            <div style="display:flex;gap:0.9rem;justify-content:center;margin-top:1.6rem;flex-wrap:wrap;">
+                <a href="/quiz.html" class="btn btn-primary"><i class="fas fa-fingerprint" aria-hidden="true"></i> Take the Quiz</a>
             </div>
-        </form>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="container" style="margin-top: 4.6rem;">
+        <div class="section-head">
+            <span class="file-no">File 06</span>
+            <h2>About CrimeTimeSnacks</h2>
+            <span class="rule" aria-hidden="true"></span>
+        </div>
+        <div style="max-width: 760px;">
+            <p style="margin-bottom: 1.4rem; color: var(--cts-muted);">CrimeTimeSnacks is a true crime podcast that delves into a variety of unsolved cases, exploring the facts, theories, and evidence surrounding each mystery. The podcast aims to provide listeners with a comprehensive understanding of these cases, encouraging them to engage with the content and form their own conclusions.</p>
+            <p style="margin-bottom: 2rem; color: var(--cts-muted);">Hosted by Cory, each episode is meticulously researched to bring you the most accurate information about some of the most intriguing criminal cases in history.</p>
+            <a href="/about.html" class="btn btn-secondary">Meet Your Host</a>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="container" style="margin-top: 4.6rem;">
+        <div class="newsletter-block">
+            <p class="eyebrow">The Case File</p>
+            <h2>One Case Brief.<br>Twice a Week.</h2>
+            <p style="color:var(--cts-muted);max-width:52ch;margin-top:0.8rem;">New episodes, one bite-size case brief, and what's new on the live board &mdash; straight to your inbox. No spam, ever.</p>
+            <form class="newsletter-form">
+                <input type="email" inputmode="email" autocomplete="email" required aria-label="Email address" placeholder="Your email address">
+                <button type="submit" class="btn btn-primary" style="white-space: nowrap;">Get the Case File</button>
+            </form>
+        </div>
     </section>
     </main>
+
     <!-- Footer -->
     <footer class="footer">
+        <span class="footer-watermark" aria-hidden="true">SNACKS</span>
         <div class="container">
             <div class="footer-content">
                 <div>
-                    <img src="images/logo.png" alt="CrimeTimeSnacks Logo" class="footer-logo">
-                    <p>A true crime podcast exploring unsolved cases and mysteries with detailed analysis and compelling storytelling.</p>
+                    <img src="/images/logo.png" alt="CrimeTimeSnacks Logo" class="footer-logo">
+                    <p>A true crime podcast exploring unsolved cases and mysteries with detailed analysis and compelling storytelling. Researched, written, and hosted by Cory.</p>
                     <div class="footer-social">
-                        <a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
-                        <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" aria-label="Apple Podcasts"><i class="fab fa-apple"></i></a>
+                        <a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" aria-label="Spotify" target="_blank" rel="noopener"><i class="fab fa-spotify" aria-hidden="true"></i></a>
+                        <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" aria-label="Apple Podcasts" target="_blank" rel="noopener"><i class="fab fa-apple" aria-hidden="true"></i></a>
+                        <a href="/feed.xml" aria-label="RSS feed"><i class="fas fa-rss" aria-hidden="true"></i></a>
+                        <a href="mailto:crimetimesnacks@gmail.com" aria-label="Email CrimeTimeSnacks"><i class="fas fa-envelope" aria-hidden="true"></i></a>
                     </div>
                 </div>
-                
                 <div>
-                    <h3 class="footer-heading">Quick Links</h3>
+                    <h3 class="footer-heading">Case Files</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="episodes.html"><i class="fas fa-chevron-right"></i> Episodes</a></li>
-                        <li><a href="videos.html"><i class="fas fa-chevron-right"></i> Videos</a></li>
-                        <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
-                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="/episodes.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Episodes</a></li>
+                        <li><a href="/videos.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Videos</a></li>
+                        <li><a href="/blog.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Crime Blog</a></li>
+                        <li><a href="/live.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Live Cases</a></li>
+                        <li><a href="/quiz.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Quizzes</a></li>
                     </ul>
                 </div>
-                
                 <div>
-                    <h3 class="footer-heading">Listen On</h3>
+                    <h3 class="footer-heading">The Show</h3>
                     <ul class="footer-links">
-                        <li><a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400"><i class="fab fa-apple"></i> Apple Podcasts</a></li>
-                        <li><a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ"><i class="fab fa-spotify"></i> Spotify</a></li>
+                        <li><a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener"><i class="fab fa-apple" aria-hidden="true"></i> Apple Podcasts</a></li>
+                        <li><a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" target="_blank" rel="noopener"><i class="fab fa-spotify" aria-hidden="true"></i> Spotify</a></li>
+                        <li><a href="/merch.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Merch</a></li>
+                        <li><a href="/about.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> About</a></li>
+                        <li><a href="mailto:crimetimesnacks@gmail.com?subject=Case%20suggestion%20for%20CrimeTimeSnacks"><i class="fas fa-folder-plus" aria-hidden="true"></i> Suggest a Case</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-newsletter">
-                    <h3 class="footer-heading">Newsletter</h3>
-                    <p>Subscribe for the latest episodes and updates.</p>
-                    <input type="email" inputmode="email" autocomplete="email" aria-label="Email address" placeholder="Your Email Address">
-                    <button class="btn btn-primary" style="width: 100%;">Subscribe</button>
+                    <h3 class="footer-heading">The Case File</h3>
+                    <p>One bite-size case brief and every new episode — twice a week, no spam.</p>
+                    <input type="email" inputmode="email" autocomplete="email" aria-label="Email address" placeholder="Your email address">
+                    <button class="btn btn-primary" style="width: 100%;">Get the Case File</button>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2026 CrimeTimeSnacks. All Rights Reserved.</p>
+                <p>&copy; 2026 CrimeTimeSnacks. All Rights Reserved. Made with respect for victims and their families.</p>
+                <span class="crisis">If you have information about an unsolved case, contact your local authorities or <a href="https://tips.fbi.gov" target="_blank" rel="noopener" style="color:inherit;">tips.fbi.gov</a>.</span>
             </div>
         </div>
     </footer>
-    
-    <!-- Mini Player (Hidden by default) -->
+
+    <!-- Mini Player (hidden by default) -->
     <div id="mini-player" class="mini-player" aria-hidden="true" aria-label="Episode player">
         <div class="mini-player-progress"></div>
         <img id="mini-player-image" alt="Episode" class="mini-player-image">
@@ -407,39 +479,30 @@
             <button id="mini-player-close" class="mini-player-btn" aria-label="Close player"><i class="fas fa-times" aria-hidden="true"></i></button>
         </div>
     </div>
-    
-    <!-- Category Filtering Script -->
+
+    <!-- Category filtering + live teaser -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Category filtering
             const categoryBtns = document.querySelectorAll('.category-btn');
-            const episodeCards = document.querySelectorAll('.episode-card');
-            
+
             categoryBtns.forEach(btn => {
                 btn.addEventListener('click', function() {
                     const category = this.getAttribute('data-category');
-                    
-                    // Update active button
                     categoryBtns.forEach(b => b.classList.remove('active'));
                     this.classList.add('active');
-                    
-                    // Filter episodes
-                    episodeCards.forEach(card => {
+                    document.querySelectorAll('.episode-card').forEach(card => {
                         if (category === 'all') {
-                            card.style.display = 'block';
+                            card.style.display = '';
                         } else {
                             const cardCategories = card.getAttribute('data-categories');
-                            if (cardCategories && cardCategories.includes(category)) {
-                                card.style.display = 'block';
-                            } else {
-                                card.style.display = 'none';
-                            }
+                            card.style.display = (cardCategories && cardCategories.includes(category)) ? '' : 'none';
                         }
                     });
                 });
             });
-            
-            // Keep the mobile menu button's aria-expanded state in sync
+
+            // Mobile menu aria state
             const menuBtn = document.getElementById('mobile-menu-btn');
             if (menuBtn) {
                 menuBtn.addEventListener('click', function() {
@@ -449,54 +512,50 @@
                 });
             }
 
-            // Search toggle
-            const searchToggle = document.getElementById('search-toggle');
-            const searchBar = document.getElementById('search-bar');
-            
-            if (searchToggle && searchBar) {
-                searchToggle.addEventListener('click', function() {
-                    searchBar.style.display = searchBar.style.display === 'none' ? 'block' : 'none';
-                    if (searchBar.style.display === 'block') {
-                        document.getElementById('search-input').focus();
-                    }
-                });
+            // Live case teaser — 4 newest entries from the baked FBI snapshot
+            const holder = document.getElementById('home-live');
+            if (holder) {
+                fetch('/automation/fbi.json').then(r => r.ok ? r.json() : Promise.reject()).then(data => {
+                    const items = (data.items || []).slice(0, 4);
+                    if (!items.length) { holder.closest('section').style.display = 'none'; return; }
+                    holder.innerHTML = items.map(it => {
+                        const chip = it.kind === 'missing'
+                            ? '<span class="w-chip w-chip--missing">Missing</span>'
+                            : (it.kind === 'victim' ? '<span class="w-chip w-chip--victim">Seeking Info</span>' : '<span class="w-chip w-chip--wanted">Wanted</span>');
+                        return '<a class="wanted-card" href="' + (it.url || '/live.html') + '" target="_blank" rel="noopener">' +
+                            '<img class="wanted-photo" loading="lazy" src="' + (it.image || '/images/logo.png') + '" alt="' + (it.title || 'FBI case') + '">' +
+                            '<div class="wanted-body">' + chip +
+                            '<div class="wanted-name">' + (it.title || '') + '</div>' +
+                            '<div class="wanted-meta">' + (it.office || 'FBI') + '</div>' +
+                            (it.reward ? '<div class="wanted-reward">' + it.reward + '</div>' : '') +
+                            '</div></a>';
+                    }).join('');
+                }).catch(() => { holder.closest('section').style.display = 'none'; });
             }
-            
-            // Check for continue listening
+
+            // Continue listening (saved progress)
             const continueListeningSection = document.getElementById('continue-listening');
             const continueListeningContent = document.getElementById('continue-listening-content');
-            
             if (continueListeningSection && continueListeningContent) {
                 const episodes = JSON.parse(localStorage.getItem('episodeProgress') || '{}');
                 const episodeKeys = Object.keys(episodes);
-                
                 if (episodeKeys.length > 0) {
                     continueListeningSection.style.display = 'block';
-                    
-                    // Get the most recent episode
                     let mostRecentEpisode = null;
                     let mostRecentTimestamp = 0;
-                    
                     episodeKeys.forEach(key => {
                         if (episodes[key].timestamp > mostRecentTimestamp) {
-                            mostRecentEpisode = {
-                                key: key,
-                                ...episodes[key]
-                            };
+                            mostRecentEpisode = { key: key, ...episodes[key] };
                             mostRecentTimestamp = episodes[key].timestamp;
                         }
                     });
-                    
                     if (mostRecentEpisode) {
-                        // Get episode details
                         const episodeName = mostRecentEpisode.key.replace('.mp3', '').replace('.m4a', '').replace(/-/g, ' ');
                         const formattedName = episodeName.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-                        const progressPercent = (mostRecentEpisode.time / 100) * 100; // Assuming 100 minutes max
-                        
-                        // Create continue card
+                        const progressPercent = (mostRecentEpisode.time / 100) * 100;
                         continueListeningContent.innerHTML = `
                             <div class="continue-card">
-                                <img src="images/${episodeName}.jpg" onerror="this.src='images/logo.png'" class="continue-image">
+                                <img src="/images/${episodeName}.jpg" onerror="this.src='/images/logo.png'" class="continue-image" alt="">
                                 <div class="continue-info">
                                     <h3 class="continue-title">${formattedName}</h3>
                                     <div class="continue-progress">
@@ -504,7 +563,7 @@
                                     </div>
                                     <div class="continue-actions">
                                         <span class="continue-time">${formatTime(mostRecentEpisode.time)} remaining</span>
-                                        <a href="episodes/${episodeName}.html" class="btn btn-primary btn-sm">Resume</a>
+                                        <a href="/episodes/${episodeName}.html" class="btn btn-primary btn-sm">Resume</a>
                                     </div>
                                 </div>
                             </div>
@@ -513,17 +572,17 @@
                 }
             }
         });
-        
-        // Helper function to format time
+
         function formatTime(seconds) {
             const minutes = Math.floor(seconds / 60);
             const remainingSeconds = Math.floor(seconds % 60);
             return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
         }
     </script>
-    
+
     <!-- Custom JS -->
-    <script src="js/main.js"></script>
-    <script src="js/category-ai.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/effects.js"></script>
+    <script src="/js/category-ai.js"></script>
 </body>
 </html>
