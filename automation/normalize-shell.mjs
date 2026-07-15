@@ -1,53 +1,26 @@
 #!/usr/bin/env node
-// One-time-ish normalizer: gives the hand-written root pages the same header as
-// the rest of the site (logo, full nav, working mobile menu + dark mode) and
-// ensures main.js is loaded. Idempotent — safe to re-run.
+// One-time-ish normalizer: gives the hand-written root pages the same 2026
+// header as the generated pages (shared shell), and ensures main.js/effects.js
+// are loaded. Idempotent — safe to re-run.
 // Run: node automation/normalize-shell.mjs
 
 import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { header } from "./shell.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 
 // page file -> active nav key
 const PAGES = {
+  "index.html": "home",
   "about.html": "about",
   "contact.html": "contact",
-  "listen.html": "episodes",
-  "merch.html": "merch",
-  "videos.html": "videos",
+  "listen.html": "home",
+  "live.html": "live",
+  "404.html": "",
 };
-
-const NAV = [
-  ["index.html", "home", "fa-home", "Home"],
-  ["episodes.html", "episodes", "fa-microphone", "Episodes"],
-  ["videos.html", "videos", "fa-video", "Videos"],
-  ["blog.html", "blog", "fa-newspaper", "Blog"],
-  ["about.html", "about", "fa-info-circle", "About"],
-  ["merch.html", "merch", "fa-tshirt", "Merch"],
-  ["contact.html", "contact", "fa-envelope", "Contact"],
-];
-
-const header = (active) => `    <!-- Header & Navigation -->
-    <header>
-        <div class="nav-container container">
-            <div class="logo-container">
-                <a href="index.html"><img src="images/logo.png" alt="CrimeTimeSnacks Logo" height="40"></a>
-            </div>
-            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><i class="fas fa-bars" aria-hidden="true"></i></button>
-            <nav id="primary-nav" aria-label="Primary"> <ul class="nav-menu">
-${NAV.map(([href, key, icon, label]) =>
-  `                    <li><a href="${href}"${key === active ? ' class="active"' : ""}><i class="fas ${icon}"></i> ${label}</a></li>`
-).join("\n")}
-                </ul>
-            </nav>
-            <div class="utility-nav">
-                <button id="dark-mode-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon" aria-hidden="true"></i></button>
-            </div>
-        </div>
-    </header>`;
 
 let changed = 0;
 for (const [file, active] of Object.entries(PAGES)) {
@@ -55,15 +28,24 @@ for (const [file, active] of Object.entries(PAGES)) {
   let html;
   try { html = await readFile(path, "utf8"); } catch { continue; }
 
-  const newHtml = html
-    .replace(/[ \t]*<!-- Header & Navigation -->\s*<header>[\s\S]*?<\/header>/, header(active))
-    .replace(/<header>[\s\S]*?<\/header>/, (m) => (m.includes("nav-container container") ? m : header(active)));
-
-  let out = newHtml;
-  // Ensure main.js is loaded (mobile menu + dark mode depend on it).
-  if (!/src="js\/main\.js"/.test(out)) {
-    out = out.replace(/<\/body>/i, '    <script src="js/main.js"></script>\n</body>');
+  // Replace skip-link + header with the canonical shell header.
+  const canonical = header(active);
+  let out = html.replace(
+    /[ \t]*<a href="#main-content" class="skip-link">[\s\S]*?<\/header>/,
+    canonical
+  );
+  if (out === html) {
+    out = html.replace(/<header>[\s\S]*?<\/header>/, canonical.replace(/^[\s\S]*?<header>/, "<header>"));
   }
+
+  // Ensure the script pair is loaded.
+  if (!/src="\/?js\/main\.js"/.test(out)) {
+    out = out.replace(/<\/body>/i, '    <script src="/js/main.js"></script>\n</body>');
+  }
+  if (!/src="\/?js\/effects\.js"/.test(out)) {
+    out = out.replace(/<\/body>/i, '    <script src="/js/effects.js"></script>\n</body>');
+  }
+
   if (out !== html) { await writeFile(path, out, "utf8"); changed++; console.log(`normalized ${file}`); }
 }
 console.log(`Done. ${changed} page(s) updated.`);

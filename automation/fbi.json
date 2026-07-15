@@ -1,0 +1,2282 @@
+{
+  "meta": {
+    "source": "FBI Wanted API (api.fbi.gov) — public data",
+    "totalOnFile": 1206,
+    "baked": 150,
+    "updated": "2026-07-15T22:35:07.039Z"
+  },
+  "items": [
+    {
+      "uid": "11f73d916ebf4a6aa5c9b464623e86b6",
+      "title": "ALTON MESTETH",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/alton-mesteth/@@images/image/large",
+      "office": "Minneapolis",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the individual(s) responsible for the death of Alton Mesteth.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/alton-mesteth",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country"
+      ],
+      "publication": "2026-07-14T07:44:00"
+    },
+    {
+      "uid": "cfde8833515d4906b01fc5f269f59e83",
+      "title": "CARLOS ALBERTO PAEZ PEREDA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/carlos-alberto-paez-pereda/@@images/image/large",
+      "office": "Sandiego",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/carlos-alberto-paez-pereda",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-07-06T14:13:00"
+    },
+    {
+      "uid": "4984047ee7ec42eeb3c92a9cb9261565",
+      "title": "NITISH KAUSHAL",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/nitish-kaushal/@@images/image/large",
+      "office": "Losangeles",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/nitish-kaushal",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN ESCAPE RISK",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-07-13T10:17:00"
+    },
+    {
+      "uid": "cdb8134918884264bee2a5c1296c3750",
+      "title": "PATRICK CARLOW, SR.",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/patrick-carlow-sr/@@images/image/large",
+      "office": "Minneapolis",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the individual(s) responsible for the death of Patrick Carlow, Sr.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/patrick-carlow-sr",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country",
+        "Pine Ridge"
+      ],
+      "publication": "2024-10-01T12:12:00"
+    },
+    {
+      "uid": "c4edcb95f655818fc436cec4826fd85f",
+      "title": "RONALD OWEN HARD HEART",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/ronald-owen-hard-heart/@@images/image/large",
+      "office": "Minneapolis",
+      "reward": "Reward up to $50,000 for information leading to the arrest and conviction of the person or persons responsible for the murders of Wilson Edison Black Elk, Jr. and Ronald Owen Hard Heart.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/ronald-owen-hard-heart",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country",
+        "Pine Ridge"
+      ],
+      "publication": "2010-09-15T11:05:00"
+    },
+    {
+      "uid": "fbe2ac6171f1c41e7aeae919d89ab3c7",
+      "title": "WILSON EDISON BLACK ELK, JR.",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/wilson-edison-black-elk-jr/@@images/image/large",
+      "office": "Minneapolis",
+      "reward": "Reward up to $50,000 for information leading to the arrest and conviction of the person or persons responsible for the murders of Wilson Edison Black Elk, Jr. and Ronald Owen Hard Heart.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/wilson-edison-black-elk-jr",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country",
+        "Pine Ridge"
+      ],
+      "publication": "2010-09-15T11:05:00"
+    },
+    {
+      "uid": "72aed64ec0e640f696d9e7d97cc56d80",
+      "title": "FAHAD MOHAMED NUR",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/fahad-mohamed-nur/@@images/image/large",
+      "office": "Minneapolis",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Fahad Mohamed Nur.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/fahad-mohamed-nur",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2026-06-10T10:43:00"
+    },
+    {
+      "uid": "d196e0d48ec64f2abb2ff1b28f2bf160",
+      "title": "INFANT DEATH - MICHIGAN",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/infant-death---michigan/@@images/image/large",
+      "office": "Detroit",
+      "reward": "Reward up to $15,000 for information leading to the identification, arrest, and conviction of the individual or individuals involved in the death of the infant.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/infant-death---michigan",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-07-10T12:46:00"
+    },
+    {
+      "uid": "085642e78cd1e548cb98ff21b0648b55",
+      "title": "EDGARDO LUIS PEREZ",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/murders/edgardo-luis-perez/@@images/image/large",
+      "office": "Detroit",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/murders/edgardo-luis-perez",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Violent Crime - Murders"
+      ],
+      "publication": "2011-06-02T11:25:00"
+    },
+    {
+      "uid": "a70bd3607d824eacb19f296bdfac4a1b",
+      "title": "ROSA MARIE CAMACHO",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/rosa-marie-camacho/@@images/image/large",
+      "office": "Newhaven",
+      "reward": "Reward up to $50,000 for information leading to the recovery of Rosa Marie Camacho and/or the arrest and prosecution of the individual(s) responsible for her disappearance.",
+      "url": "https://www.fbi.gov/wanted/kidnap/rosa-marie-camacho",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2026-03-17T09:56:00"
+    },
+    {
+      "uid": "07909fc7290c4a34a289eda0354528ab",
+      "title": "JOSE GUADALUPE LOPEZ NUNEZ",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/murders/jose-guadalupe-lopez-nunez/@@images/image/large",
+      "office": "Sacramento",
+      "reward": "Reward up to $5,000 for information leading to the arrest of Jose Guadalupe Lopez Nunez.",
+      "url": "https://www.fbi.gov/wanted/murders/jose-guadalupe-lopez-nunez",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Violent Crime - Murders"
+      ],
+      "publication": "2021-06-21T09:35:00"
+    },
+    {
+      "uid": "651a75350dfd472a9282eaa230190670",
+      "title": "ALEJANDRO T. PENA LAM",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cac/alejandro-t-pena-lam/@@images/image/large",
+      "office": "Tampa",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cac/alejandro-t-pena-lam",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
+      "subjects": [
+        "Crimes Against Children"
+      ],
+      "publication": "2026-05-18T10:21:00"
+    },
+    {
+      "uid": "3992cf07e26848bab7fd7b6bb58f60a2",
+      "title": "ALBERTO PEREZ-ELIAS",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/additional/alberto-perez-elias/@@images/image/large",
+      "office": "Tampa",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/additional/alberto-perez-elias",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Additional Violent Crimes",
+        "Case of the Week"
+      ],
+      "publication": "2026-07-01T13:48:00"
+    },
+    {
+      "uid": "039685727e5a438abfd601b17e41e5ca",
+      "title": "SATINDERJEET SINGH",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/satinderjeet-singh/@@images/image/large",
+      "office": "Losangeles, Sacramento",
+      "reward": "Reward up to $50,000 for information leading to the arrest of Satinderjeet Singh.",
+      "url": "https://www.fbi.gov/wanted/cei/satinderjeet-singh",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN ESCAPE RISK",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-07-06T08:18:00"
+    },
+    {
+      "uid": "afe37027b23046a6a96f8e42d57d1362",
+      "title": "JOSEPH MATOS",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/murders/joseph-matos/@@images/image/large",
+      "office": "Chicago",
+      "reward": "Reward up to $50,000 for information leading to the arrest and conviction of Joseph Matos. Additional reward money may be available.",
+      "url": "https://www.fbi.gov/wanted/murders/joseph-matos",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Violent Crime - Murders"
+      ],
+      "publication": "2024-06-25T15:30:00"
+    },
+    {
+      "uid": "79538f13-5340-4c9d-b40f-19a311817d85",
+      "title": "THAYNE ALAN SMIKA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/murders/thayne-alan-smika/@@images/image/large",
+      "office": "Denver",
+      "reward": "Reward up to $10,000 for information leading to the arrest and conviction of Thayne Alan Smika.",
+      "url": "https://www.fbi.gov/wanted/murders/thayne-alan-smika",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Violent Crime - Murders"
+      ],
+      "publication": "2014-07-09T07:00:00"
+    },
+    {
+      "uid": "cb829c4b9cdd4c7aa63e855ca92b2812",
+      "title": "EMYLEE THAI",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/emylee-thai/@@images/image/large",
+      "office": "Houston",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Emylee Thai.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/emylee-thai",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED A FLIGHT RISK",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2026-06-18T08:22:00"
+    },
+    {
+      "uid": "a81ed57d9ae641b793c292902a3800ec",
+      "title": "FRONTA LONTRELL MILLER",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/fronta-lontrell-miller/@@images/image/large",
+      "office": "Minneapolis",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/fronta-lontrell-miller",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-06-30T09:35:00"
+    },
+    {
+      "uid": "166eeac0bc2b18d4e96b5c9885ac2e11",
+      "title": "CRYSTAL ANN TYMICH",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/crystal-ann-tymich/@@images/image/large",
+      "office": "Losangeles",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/kidnap/crystal-ann-tymich",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2010-09-10T09:20:00"
+    },
+    {
+      "uid": "000a9f420e7e4df3baf95b0c4c6c6bd9",
+      "title": "KHALID AHMED SATARY",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/khalid-ahmed-satary/@@images/image/large",
+      "office": "Miami, Neworleans",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Khalid Ahmed Satary.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/khalid-ahmed-satary",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2023-01-04T13:18:00"
+    },
+    {
+      "uid": "ef3577c1462a4c10a8db81a3914a273e",
+      "title": "OSCAR SANCHEZ-MUNOZ",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/oscar-sanchez-munoz/@@images/image/large",
+      "office": "Kansascity",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of Oscar Sanchez-Munoz.",
+      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/oscar-sanchez-munoz",
+      "status": "deceased",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Law Enforcement Assistance"
+      ],
+      "publication": "2026-06-18T17:19:00"
+    },
+    {
+      "uid": "8ea9b414cf214221b79db8e749106db3",
+      "title": "COMMERCIAL AIRCRAFT LASER INCIDENTS",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/commercial-aircraft-laser-incidents-2/@@images/image/large",
+      "office": "Seattle",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/seeking-info/commercial-aircraft-laser-incidents-2",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-06-23T08:07:00"
+    },
+    {
+      "uid": "b4e68960e1c347a18285a548b42baf2a",
+      "title": "SHOOTINGS IN DILLON, SOUTH CAROLINA",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/shootings-in-dillon-south-carolina/@@images/image/large",
+      "office": "Columbia",
+      "reward": "Reward up to $10,000 for information leading to the indictment, arrest, and conviction of those involved in the shootings.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/shootings-in-dillon-south-carolina",
+      "status": "na",
+      "warning": "SUSPECTS SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-06-26T08:47:00"
+    },
+    {
+      "uid": "556eae4bcdde9edfb12193a62d7b7057",
+      "title": "UNKNOWN SUSPECT  -  JOHN DOE 5",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/ecap/unknown-suspect-5/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/ecap/unknown-suspect-5",
+      "status": "resolved",
+      "warning": "",
+      "subjects": [
+        "ECAP"
+      ],
+      "publication": "2012-06-27T11:00:00"
+    },
+    {
+      "uid": "6b928b0ee94f4605b9546fa0ae0fe4c6",
+      "title": "JANE DOE - DESERT CENTER, CALIFORNIA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/vicap/unidentified-persons/jane-doe---desert-center-california/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/unidentified-persons/jane-doe---desert-center-california",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Unidentified Persons"
+      ],
+      "publication": "2026-06-25T13:31:00"
+    },
+    {
+      "uid": "d27eea10-9fa4-4f8a-93f0-21449e0f944e",
+      "title": "SARA NICOLE GRAHAM",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/sara-graham/@@images/image/large",
+      "office": "Charlotte",
+      "reward": "Reward up to $5,000 for information leading to the location of Sara Nicole Graham's body.",
+      "url": "https://www.fbi.gov/wanted/kidnap/sara-graham",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Indian Country",
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2015-03-06T07:00:00"
+    },
+    {
+      "uid": "84586a26a7224fda8094cf451a29fc0b",
+      "title": "JOSE ANGEL FRIAS - ALBUQUERQUE, NEW MEXICO",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/jose-angel-frias---albuquerque-new-mexico/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/jose-angel-frias---albuquerque-new-mexico",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Missing Persons"
+      ],
+      "publication": "2026-06-25T10:17:00"
+    },
+    {
+      "uid": "f93e5b48c4dd4369848dc8f104cd8ac8",
+      "title": "GARY LUELLEN",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/additional/gary-luellen/@@images/image/large",
+      "office": "Chicago",
+      "reward": "Reward up to $10,000 for information leading to the arrest of Gary Luellen.",
+      "url": "https://www.fbi.gov/wanted/additional/gary-luellen",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN ESCAPE RISK",
+      "subjects": [
+        "Additional Violent Crimes"
+      ],
+      "publication": "2024-09-06T12:26:00"
+    },
+    {
+      "uid": "56ebce0db8b5486c9a3923484fbd55c9",
+      "title": "HOLLIS C. VANLEER, JR.",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/hollis-c-vanleer-jr/@@images/image/large",
+      "office": "Kansascity",
+      "reward": "Reward up to $5,000 for information leading to the arrest of Hollis C. Vanleer, Jr.",
+      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/hollis-c-vanleer-jr",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Law Enforcement Assistance"
+      ],
+      "publication": "2026-06-10T13:10:00"
+    },
+    {
+      "uid": "728fb58961164a6d95fdee463fbd2540",
+      "title": "LOGAN WARRIOR GOINGS",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/logan-warrior-goings/@@images/image/large",
+      "office": "Minneapolis",
+      "reward": "Reward up to $50,000 for information leading to the arrest and conviction of those responsible for the death of Logan Warrior Goings.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/logan-warrior-goings",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country"
+      ],
+      "publication": "2026-06-08T12:16:00"
+    },
+    {
+      "uid": "41b9ba902de54bd589b9e14c8b42bbb0",
+      "title": "HERBERT LEON KIMBLE",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/herbert-leon-kimble/@@images/image/large",
+      "office": "Columbia",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Herbert Leon Kimble.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/herbert-leon-kimble",
+      "status": "captured",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2026-06-01T11:37:00"
+    },
+    {
+      "uid": "7d54d3dc154843ddaae748d03fb8f375",
+      "title": "VICTOR EDUARDO MORALES ZELAYA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/victor-eduardo-morales-zelaya/@@images/image/large",
+      "office": "Houston",
+      "reward": "The United States Department of State's Transnational Organized Crime Rewards Program is offering a reward of up to $5,000,000 for information leading to the arrest and/or conviction of Victor Eduardo Morales Zelaya.",
+      "url": "https://www.fbi.gov/wanted/cei/victor-eduardo-morales-zelaya",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-06-15T11:09:00"
+    },
+    {
+      "uid": "d078deee25ea4b9aa6f4ac4a681e2f65",
+      "title": "YULAN ADONAY ARCHAGA CARIAS",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/topten/yulan-adonay-archaga-carias/@@images/image/large",
+      "office": "Houston",
+      "reward": "The United States Government is offering a reward of up to $10,000,000 for information leading to the arrest and/or conviction of Yulan Adonay Archaga Carias.",
+      "url": "https://www.fbi.gov/wanted/topten/yulan-adonay-archaga-carias",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND EXTREMELY DANGEROUS",
+      "subjects": [
+        "Ten Most Wanted Fugitives"
+      ],
+      "publication": "2021-10-20T07:20:00"
+    },
+    {
+      "uid": "9456ffa8-08fa-49fa-a811-e7c895014963",
+      "title": "ROBERT GARRETT STEWART, JR.",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/robert-garrett-stewart-jr/@@images/image/large",
+      "office": "Billings",
+      "reward": "Reward up to $10,000 for information that leads to the resolution of this case.",
+      "url": "https://www.fbi.gov/wanted/kidnap/robert-garrett-stewart-jr",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons",
+        "Indian Country"
+      ],
+      "publication": "2016-02-04T07:00:00"
+    },
+    {
+      "uid": "525c64c8a82940e3aaae18c532cc3019",
+      "title": "SA'WADE BIRDINGROUND",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/sawade-birdinground/@@images/image/large",
+      "office": "Billings",
+      "reward": "Reward up to $15,000 for information leading to the recovery of Sa'Wade Birdinground.",
+      "url": "https://www.fbi.gov/wanted/kidnap/sawade-birdinground",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons",
+        "Indian Country"
+      ],
+      "publication": "2024-10-22T11:00:00"
+    },
+    {
+      "uid": "c3e0262b3b8c4daaaba9f3399884944f",
+      "title": "LAMAR T. BROWNING",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/lamar-t-browning/@@images/image/large",
+      "office": "Indianapolis",
+      "reward": "Reward up to $10,000 for information leading to the arrest of Lamar T. Browning.",
+      "url": "https://www.fbi.gov/wanted/cei/lamar-t-browning",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-06-09T15:51:00"
+    },
+    {
+      "uid": "9adc7219d3ea4d5c8b76a65cfca045e1",
+      "title": "SHOOTING OF MINOR VICTIM",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/shooting-of-minor-victim/@@images/image/large",
+      "office": "Dallas",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the individuals involved in this shooting.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/shooting-of-minor-victim",
+      "status": "na",
+      "warning": "SUSPECTS SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-06-15T08:23:00"
+    },
+    {
+      "uid": "a418b52def5d49feb7a72066788e3119",
+      "title": "SAID ABDULLAHI EREG",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/said-abdullahi-ereg/@@images/image/large",
+      "office": "Minneapolis",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Said Abdullahi Ereg.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/said-abdullahi-ereg",
+      "status": "surrendered",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2026-06-03T09:54:00"
+    },
+    {
+      "uid": "2fd9cbe842c64f2ba7a63aeee2978e21",
+      "title": "SHELBIE LYNN DWYER",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/shelbie-lynn-dwyer/@@images/image/large",
+      "office": "Seattle",
+      "reward": "Reward up to $20,000 for information leading to the recovery of Shelbie Lynn Dwyer.",
+      "url": "https://www.fbi.gov/wanted/kidnap/shelbie-lynn-dwyer",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2023-12-01T10:19:00"
+    },
+    {
+      "uid": "6d45f47a2ccf4d36aaf7de7d201715e4",
+      "title": "SALLY TULLOS - AUSTIN, TEXAS",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/sally-tullos---austin-texas/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/sally-tullos---austin-texas",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Homicides and Sexual Assaults"
+      ],
+      "publication": "2026-06-10T10:12:00"
+    },
+    {
+      "uid": "82bcacf074974ee1879fa227815cd13c",
+      "title": "JULIEANNE BALDUEZA DIMITRION",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/julieanne-baldueza-dimitrion/@@images/image/large",
+      "office": "Honolulu",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Julieanne Baldueza Dimitrion.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/julieanne-baldueza-dimitrion",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2010-10-29T16:10:00"
+    },
+    {
+      "uid": "27f6739b638b437192b1bb4fdb0426d3",
+      "title": "JOHN MICHAEL DIMITRION",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/john-michael-dimitrion/@@images/image/large",
+      "office": "Honolulu",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of John Michael Dimitrion.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/john-michael-dimitrion",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2010-10-29T16:10:00"
+    },
+    {
+      "uid": "164f161ed09445dc83d64bae7daba524",
+      "title": "MICHAEL LEWIS MILES, JR. AND LISHAWN KNOTT",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/michael-lewis-miles-and-lishawn-knott/vancemiles.jpg/@@images/image/large",
+      "office": "Charlotte",
+      "reward": "reward up to $15,000 each for information leading to the location and capture of Michael Lewis Miles, Jr. and Lishawn Knott.",
+      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/michael-lewis-miles-and-lishawn-knott",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Law Enforcement Assistance"
+      ],
+      "publication": "2026-06-03T19:44:00"
+    },
+    {
+      "uid": "ff91fb2cc2594920ab8409261951e3d7",
+      "title": "NAVY YARD ASSAULT",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/navy-yard-assault/@@images/image/large",
+      "office": "Washingtondc",
+      "reward": "Reward up to $5,000 for information leading to the identification, arrest, and conviction of the unknown individual.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/navy-yard-assault",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-05-19T14:37:00"
+    },
+    {
+      "uid": "018bb42836e046179c77d8fd0ccea555",
+      "title": "RAYMOND LAWRENCE GONZALES",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/raymond-lawrence-gonzales/@@images/image/large",
+      "office": "Albuquerque",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/raymond-lawrence-gonzales",
+      "status": "na",
+      "warning": "IS KNOWN TO HAVE VIOLENT TENDENCIES",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-05-27T07:55:00"
+    },
+    {
+      "uid": "4ee774e868264535863c0d6d52fb7c18",
+      "title": "RODNEY DEAN ALLEN",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/rodney-allen/@@images/image/large",
+      "office": "Saltlakecity",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Rodney Dean Allen.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/rodney-allen",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2018-01-09T12:24:00"
+    },
+    {
+      "uid": "a3f97e0c1a0844ada418669872d0dd55",
+      "title": "CHRISTOPHER YOUNG",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/additional/christopher-young/@@images/image/large",
+      "office": "Philadelphia",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/additional/christopher-young",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN ESCAPE RISK",
+      "subjects": [
+        "Additional Violent Crimes"
+      ],
+      "publication": "2026-05-13T13:17:00"
+    },
+    {
+      "uid": "650c7a28eb26846598ea425244513814",
+      "title": "STEVEN EUGENE CLIFFORD",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/additional/steven-eugene-clifford/@@images/image/large",
+      "office": "Sacramento",
+      "reward": "Reward up to $10,000 for information leading to the apprehension and conviction of Steven Eugene Clifford.",
+      "url": "https://www.fbi.gov/wanted/additional/steven-eugene-clifford",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Additional Violent Crimes"
+      ],
+      "publication": "2010-08-31T04:55:00"
+    },
+    {
+      "uid": "15529f5e35374063b38ba56984e73f77",
+      "title": "CHRISTOPHER W. BURNS",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/christopher-w-burns/@@images/image/large",
+      "office": "Atlanta",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Christopher W. Burns.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/christopher-w-burns",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2020-12-09T09:56:00"
+    },
+    {
+      "uid": "614d1c1b76924007a092c1b22cc923d8",
+      "title": "SHAARE TEFILA SYNAGOGUE VANDALISM",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/shaare-tefila-synagogue-vandalism/@@images/image/large",
+      "office": "Baltimore",
+      "reward": "Reward up to $4,000 for information leading to the identification, arrest, or conviction of the individual(s) responsible for the vandalism.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/shaare-tefila-synagogue-vandalism",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-05-07T10:02:00"
+    },
+    {
+      "uid": "614d1c1b76924007a092c1b22cc923d8",
+      "title": "SHAARE TEFILA SYNAGOGUE VANDALISM",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/shaare-tefila-synagogue-vandalism/@@images/image/large",
+      "office": "Baltimore",
+      "reward": "Reward up to $4,000 for information leading to the identification, arrest, or conviction of the individual(s) responsible for the vandalism.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/shaare-tefila-synagogue-vandalism",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-05-07T10:02:00"
+    },
+    {
+      "uid": "2a19f6cd74ad405f81af8f79fda32aed",
+      "title": "MICHAEL LIZASO MARASIGAN",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/michael-lizaso-marasigan/@@images/image/large",
+      "office": "Honolulu",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Michael Lizaso Marasigan.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/michael-lizaso-marasigan",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2026-01-12T14:02:00"
+    },
+    {
+      "uid": "9627161690684c62ada3daa4dee61645",
+      "title": "ELAINE ANGENE ESCOE",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/elaine-angene-escoe/@@images/image/large",
+      "office": "Miami",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Elaine Angene Escoe.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/elaine-angene-escoe",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED A FLIGHT RISK",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2025-09-02T10:30:00"
+    },
+    {
+      "uid": "0917f41cd1cb4429bb6bfbc9ed0902cf",
+      "title": "MICHAEL TIMOTHY PUCKETT",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/michael-timothy-puckett/@@images/image/large",
+      "office": "Richmond",
+      "reward": "Reward up to $50,000 for information leading to the location and capture of Michael Timothy Puckett.",
+      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/michael-timothy-puckett",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Law Enforcement Assistance"
+      ],
+      "publication": "2026-05-31T10:03:00"
+    },
+    {
+      "uid": "4ff6d3cd2681485c812169495867e088",
+      "title": "ARTHUR LEE COFIELD",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/arthur-lee-cofield/@@images/image/large",
+      "office": "Atlanta",
+      "reward": "Reward up to $10,000 for information leading to the arrest of Arthur Lee Cofield.",
+      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/arthur-lee-cofield",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Law Enforcement Assistance"
+      ],
+      "publication": "2026-05-29T13:45:00"
+    },
+    {
+      "uid": "d99179c57542474fa21de4cd5d589b6a",
+      "title": "LEOBARDO PENA GUTIERREZ",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/leobardo-pena-gutierrez/@@images/image/large",
+      "office": "Billings, Saltlakecity",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/leobardo-pena-gutierrez",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-05-11T08:51:00"
+    },
+    {
+      "uid": "57cb7d60cd5643eebb6ce8f7b285917d",
+      "title": "MONICA ELFRIEDE WITT",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/counterintelligence/monica-elfriede-witt/@@images/image/large",
+      "office": "Washingtondc",
+      "reward": "Reward up to $200,000 for information leading to the arrest and conviction of Monica Witt.",
+      "url": "https://www.fbi.gov/wanted/counterintelligence/monica-elfriede-witt",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED AN INTERNATIONAL FLIGHT RISK",
+      "subjects": [
+        "Counterintelligence",
+        "Iran"
+      ],
+      "publication": "2014-03-24T07:00:00"
+    },
+    {
+      "uid": "7d7e51ca02504387be5e7ee0cadb11ce",
+      "title": "JENNIFER LIN",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/jennifer-lin/@@images/image/large",
+      "office": "Sanfrancisco",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/seeking-info/jennifer-lin",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2017-05-23T09:25:00"
+    },
+    {
+      "uid": "c5a312f71a3d4a8995888bbc9b279236",
+      "title": "ROBINSON ANDRES CAMACHO-RODRIGUEZ",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/additional/robinson-andres-camacho-rodriguez/@@images/image/large",
+      "office": "Portland",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/additional/robinson-andres-camacho-rodriguez",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
+      "subjects": [
+        "Additional Violent Crimes"
+      ],
+      "publication": "2026-05-15T08:00:00"
+    },
+    {
+      "uid": "8e6090152d6640929912f934a8611f5b",
+      "title": "JHON ALEXANDER QUINTERO-CADENA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/additional/jhon-alexander-quintero-cadena/@@images/image/large",
+      "office": "Portland",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/additional/jhon-alexander-quintero-cadena",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
+      "subjects": [
+        "Additional Violent Crimes"
+      ],
+      "publication": "2026-05-15T10:15:00"
+    },
+    {
+      "uid": "a7878502656446b8bc479b6347f0fe09",
+      "title": "JESSON QUINTERO",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/additional/jesson-quintero/@@images/image/large",
+      "office": "Portland",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/additional/jesson-quintero",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
+      "subjects": [
+        "Additional Violent Crimes"
+      ],
+      "publication": "2026-05-15T08:47:00"
+    },
+    {
+      "uid": "5b941f892c8744b89fccb4a234fa3c6e",
+      "title": "CAMRON LEE",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/murders/camron-lee/@@images/image/large",
+      "office": "Sacramento",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of Camron Lee.",
+      "url": "https://www.fbi.gov/wanted/murders/camron-lee",
+      "status": "captured",
+      "warning": "",
+      "subjects": [
+        "Violent Crime - Murders"
+      ],
+      "publication": "2025-12-01T13:02:00"
+    },
+    {
+      "uid": "f2f247224152479483519098b56ade7f",
+      "title": "BOB TANG",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/murders/bob-tang/@@images/image/large",
+      "office": "Sanfrancisco",
+      "reward": "Reward up to $10,000 for information leading directly to the arrest of Bob Tang.",
+      "url": "https://www.fbi.gov/wanted/murders/bob-tang",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Violent Crime - Murders"
+      ],
+      "publication": "2020-03-26T08:29:00"
+    },
+    {
+      "uid": "341de1cfaa774a158f1ea78815e76d30",
+      "title": "VANESSA O'ROURKE",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/wcc/vanessa-orourke/@@images/image/large",
+      "office": "Philadelphia",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/wcc/vanessa-orourke",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "White-Collar Crime"
+      ],
+      "publication": "2020-10-13T08:16:00"
+    },
+    {
+      "uid": "1e95dff036d440b1a0a8fd25649ccfa7",
+      "title": "NAZEER HAMEED",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/murders/nazeer-hameed/@@images/image/large",
+      "office": "Newark",
+      "reward": "Reward up to $50,000 for information leading to the arrest and/or conviction of Nazeer Hameed.",
+      "url": "https://www.fbi.gov/wanted/murders/nazeer-hameed",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Violent Crime - Murders"
+      ],
+      "publication": "2025-11-24T08:52:00"
+    },
+    {
+      "uid": "3ada77dd2c484422a89c9cf66cc0071f",
+      "title": "JEMARLO TISDALE AND RUFUS WITCHER",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/jemarlo-tisdale-and-rufus-witcher/rhninemiletisdale.jpg/@@images/image/large",
+      "office": "Richmond",
+      "reward": "Reward up to $10,000 for information leading to the arrest and conviction of the individual(s) responsible for the murders of Jemarlo Tisdale and Rufus Witcher.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/jemarlo-tisdale-and-rufus-witcher",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-05-11T10:52:00"
+    },
+    {
+      "uid": "8047423326854f4082604c1111320665",
+      "title": "JANE DOE - MEDFORD, NEW YORK",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/vicap/unidentified-persons/jane-doe---medford-new-york/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/unidentified-persons/jane-doe---medford-new-york",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Unidentified Persons"
+      ],
+      "publication": "2026-05-11T09:42:00"
+    },
+    {
+      "uid": "2e3067a9450449cb80b783a64a43f78f",
+      "title": "ROLAND PLAINFEATHER",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/roland-plainfeather/@@images/image/large",
+      "office": "Billings",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/kidnap/roland-plainfeather",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons",
+        "Indian Country"
+      ],
+      "publication": "2026-04-29T10:32:00"
+    },
+    {
+      "uid": "b8d1ffebc82a4a76b915c338a1a0c4cc",
+      "title": "RICKY VARGAS",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/murders/ricky-vargas/@@images/image/large",
+      "office": "Newark",
+      "reward": "Reward up to $15,000 for information leading to the arrest and conviction of Ricky Vargas.",
+      "url": "https://www.fbi.gov/wanted/murders/ricky-vargas",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Violent Crime - Murders"
+      ],
+      "publication": "2025-02-24T08:47:00"
+    },
+    {
+      "uid": "a248e9c538cc4e5ba9ccd272bd9224c9",
+      "title": "UNKNOWN INDIVIDUAL - JOHN DOE 47",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/ecap/unknown-individual---john-doe-47/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/ecap/unknown-individual---john-doe-47",
+      "status": "captured",
+      "warning": "",
+      "subjects": [
+        "Endangered Child Alert Program"
+      ],
+      "publication": "2023-08-23T07:33:00"
+    },
+    {
+      "uid": "abb46d2140d64a47a1749190c25a86e9",
+      "title": "CIVIL UNREST - OREGON",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/civil-unrest-oregon-4/@@images/image/large",
+      "office": "Portland",
+      "reward": "Reward up to $5,000 for information leading to the arrest and conviction of the individuals involved in the vandalism and/or destruction of government property in Eugene, Oregon.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/civil-unrest-oregon-4",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-02-10T09:58:00"
+    },
+    {
+      "uid": "2a91872811564867b38693c76737b39a",
+      "title": "T'KHIRA MONIQUE BROWLEY",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/tkhira-monique-browley/@@images/image/large",
+      "office": "Richmond",
+      "reward": "Reward up to $20,000 for information leading to the arrest and conviction of the individual(s) responsible for the homicide of T'Khira Monique Browley.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/tkhira-monique-browley",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-04-23T09:39:00"
+    },
+    {
+      "uid": "a57a97cbdf654169a6fd617d07d9b6e3",
+      "title": "MAYUSHI BHAGAT",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/mayushi-bhagat/@@images/image/large",
+      "office": "Newark",
+      "reward": "Reward up to $10,000 for information leading to the location or recovery of the missing person, Mayushi Bhagat, and the identification, arrest, and conviction of the person(s) responsible.",
+      "url": "https://www.fbi.gov/wanted/kidnap/mayushi-bhagat",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2022-07-15T08:17:00"
+    },
+    {
+      "uid": "1d6a877c08ff4c1ca28f408dc6e76a27",
+      "title": "TRACY MCMATH - MANNHEIM, GERMANY",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/tracy-mcmath---mannheim-germany/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/tracy-mcmath---mannheim-germany",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Homicides and Sexual Assaults"
+      ],
+      "publication": "2026-04-30T10:05:00"
+    },
+    {
+      "uid": "63317cf0ccc44bb8a3f4bf834e2231f9",
+      "title": "RODOLFO MANTILLA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/rodolfo-mantilla/@@images/image/large",
+      "office": "Miami",
+      "reward": "Reward up to $30,000 for information leading to the arrest and conviction of Rodolfo Mantilla.",
+      "url": "https://www.fbi.gov/wanted/cei/rodolfo-mantilla",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2024-07-16T09:06:00"
+    },
+    {
+      "uid": "11f93b91a98e43de828a9f6be58a8390",
+      "title": "ALIZA SPENCER",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/aliza-spencer/@@images/image/large",
+      "office": "Albany",
+      "reward": "Reward up to $50,000 for information leading to the identification, arrest, and conviction of the individual(s) responsible for the murder of Aliza Spencer.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/aliza-spencer",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-02-12T14:04:00"
+    },
+    {
+      "uid": "6b803fbe042e44de8b72bbec85e181d0",
+      "title": "ISIAH JENIFER",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/isiah-jenifer/@@images/image/large",
+      "office": "Philadelphia",
+      "reward": "Reward up to $5,000 for information leading to the arrest and conviction of the individual(s) involved in the disappearance of Isiah Jenifer.",
+      "url": "https://www.fbi.gov/wanted/kidnap/isiah-jenifer",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2026-04-20T10:56:00"
+    },
+    {
+      "uid": "04d4aee30d154f21ae53948f4be7b52b",
+      "title": "CASINO ROBBERY - NEW MEXICO",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/casino-robbery---new-mexico/@@images/image/large",
+      "office": "Albuquerque",
+      "reward": "Reward up to $5,000 for information leading to the arrest and conviction of the unknown suspect responsible for the casino robbery.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/casino-robbery---new-mexico",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-04-21T08:05:00"
+    },
+    {
+      "uid": "6d4795c3c203428bb48ed1f0ce2477c3",
+      "title": "RAMIL VENTURA PALAFOX",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/wcc/ramil-ventura-palafox/@@images/image/large",
+      "office": "Washingtondc",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/wcc/ramil-ventura-palafox",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
+      "subjects": [
+        "White-Collar Crime"
+      ],
+      "publication": "2026-04-13T10:45:00"
+    },
+    {
+      "uid": "f05cba69aa3244b6ad1b57d232cd5160",
+      "title": "KASHAWN NICOLA ROPER",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/topten/kashawn-nicola-roper/@@images/image/large",
+      "office": "Kansascity",
+      "reward": "Reward up to $1,000,000 for information leading directly to the arrest of KaShawn Nicola Roper.",
+      "url": "https://www.fbi.gov/wanted/topten/kashawn-nicola-roper",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Ten Most Wanted Fugitives"
+      ],
+      "publication": "2021-03-10T12:37:00"
+    },
+    {
+      "uid": "1f79104a765c4111a04987ef2adcd034",
+      "title": "AUSTIN JAN SY YATCO",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cac/austin-jan-sy-yatco/@@images/image/large",
+      "office": "Dallas, Newyork",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of Austin Jan Sy Yatco.",
+      "url": "https://www.fbi.gov/wanted/cac/austin-jan-sy-yatco",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Crimes Against Children"
+      ],
+      "publication": "2026-03-30T10:35:00"
+    },
+    {
+      "uid": "738a3cd3276d4de1b02ec23ebec19fce",
+      "title": "ABEL ELIAS ACOSTA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/murders/abel-elias-acosta/@@images/image/large",
+      "office": "Dallas",
+      "reward": "Reward up to $50,000 for information leading to the arrest and conviction of Abel Elias Acosta.",
+      "url": "https://www.fbi.gov/wanted/murders/abel-elias-acosta",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Violent Crime - Murders"
+      ],
+      "publication": "2026-02-25T16:10:00"
+    },
+    {
+      "uid": "6297a38924874e6b8f4b38d7aa74d860",
+      "title": "ALFRED RAYMOND MURRAY - DECEASED HOMICIDE OFFENDER",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/alfred-raymond-murray---deceased-homicide-offender/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/alfred-raymond-murray---deceased-homicide-offender",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Homicides and Sexual Assaults"
+      ],
+      "publication": "2026-04-10T12:53:00"
+    },
+    {
+      "uid": "d9266683013b4bc681a239ee9db46a58",
+      "title": "JERRY WHALEY - STANTON, MISSOURI",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/jerry-whaley---stanton-missouri/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/jerry-whaley---stanton-missouri",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Missing Persons"
+      ],
+      "publication": "2026-04-10T12:42:00"
+    },
+    {
+      "uid": "9ec6b210780643858e7ab470d8b28c72",
+      "title": "UNKNOWN BANK ROBBER - WISCONSIN",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/unknown-bank-robber---wisconsin/@@images/image/large",
+      "office": "Milwaukee",
+      "reward": "Reward up to $5,000 for information leading to the arrest and conviction of the unknown suspect involved in this robbery.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/unknown-bank-robber---wisconsin",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-04-06T11:41:00"
+    },
+    {
+      "uid": "1fa52fde689c4a56bb186e68f2648aaa",
+      "title": "SALLI MARIE THOMAS - WAYNESBORO, VIRGINIA",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/salli-marie-thomas-waynesboro-virginia/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/salli-marie-thomas-waynesboro-virginia",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Missing Persons"
+      ],
+      "publication": "2026-04-10T09:46:00"
+    },
+    {
+      "uid": "4760d61850d74f4091a8c6e9b22b087a",
+      "title": "JAKODI KESHONE WILSON",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/jakodi-keshone-wilson/@@images/image/large",
+      "office": "Tampa",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/jakodi-keshone-wilson",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-04-07T12:39:00"
+    },
+    {
+      "uid": "604061113b0742898784103e18451b3d",
+      "title": "CIVIL UNREST - OREGON",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/civil-unrest-oregon-3/@@images/image/large",
+      "office": "Portland",
+      "reward": "Reward up to $5,000 for information leading to the arrest and conviction of the individuals involved in the vandalism and/or destruction of government property in Eugene, Oregon.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/civil-unrest-oregon-3",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-02-10T09:58:00"
+    },
+    {
+      "uid": "de6fe82fedf64b38b0a1bb97accd80bf",
+      "title": "CIVIL UNREST - OREGON",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/civil-unrest-oregon-2/@@images/image/large",
+      "office": "Portland",
+      "reward": "Reward up to $5,000 for information leading to the arrest and conviction of the individuals involved in the vandalism and/or destruction of government property in Eugene, Oregon.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/civil-unrest-oregon-2",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-02-10T09:58:00"
+    },
+    {
+      "uid": "8c55bfed9a074d218bfa33aa42ae3667",
+      "title": "ANA MARIA HENAO KNEZEVIC",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/ana-maria-henao-knezevic/@@images/image/large",
+      "office": "Miami",
+      "reward": "Reward up to $25,000 USD for information leading to the location of the human remains of Ana Maria Henao Knezevic.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/ana-maria-henao-knezevic",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-01-06T10:56:00"
+    },
+    {
+      "uid": "3655754556789142b13969b940b93c2b",
+      "title": "AMY LYNN BRADLEY",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/amy-lynn-bradley/@@images/image/large",
+      "office": "Washingtondc",
+      "reward": "Reward up to $100,000 for information leading to the recovery of Amy Lynn Bradley and information that leads to the identification, arrest, and conviction of the person(s) responsible for her disappearance.",
+      "url": "https://www.fbi.gov/wanted/kidnap/amy-lynn-bradley",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2010-09-13T15:25:00"
+    },
+    {
+      "uid": "9b1a6571e02e4755b1bb2ce94f71b0b6",
+      "title": "MIGUEL OLIVERAS",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/miguel-oliveras/@@images/image/large",
+      "office": "Boston",
+      "reward": "Reward up to $25,000 for information leading to the recovery of Miguel Oliveras.",
+      "url": "https://www.fbi.gov/wanted/kidnap/miguel-oliveras",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2025-03-13T08:48:00"
+    },
+    {
+      "uid": "8b8e74f63b9e47d0829bcb261be85dd2",
+      "title": "SEAN SUOJANEN - HOMICIDE SUSPECT - PORT RICHEY, FLORIDA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/sean-suojanen---homicide-suspect---port-richey-florida/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/sean-suojanen---homicide-suspect---port-richey-florida",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Homicides and Sexual Assaults"
+      ],
+      "publication": "2026-03-31T13:40:00"
+    },
+    {
+      "uid": "de83f4acce0a4acf919724ec390ea230",
+      "title": "NAI PING HOU",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/nai-ping-hou/@@images/image/large",
+      "office": "Losangeles",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/kidnap/nai-ping-hou",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2026-03-31T09:39:00"
+    },
+    {
+      "uid": "85b1593861154d7884e0fc1fcc2582e7",
+      "title": "WILFREDO PUJOLS-SEPULVEDA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/wilfredo-pujols-sepulveda/@@images/image/large",
+      "office": "Sanjuan",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/wilfredo-pujols-sepulveda",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-03-20T13:46:00"
+    },
+    {
+      "uid": "e7a26977f1fe4686839699a3e152a84b",
+      "title": "TRUNG DUC LU",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/topten/trung-duc-lu/@@images/image/large",
+      "office": "Philadelphia",
+      "reward": "Reward up to $1,000,000 for information leading directly to the arrest of Trung Duc Lu.",
+      "url": "https://www.fbi.gov/wanted/topten/trung-duc-lu",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN INTERNATIONAL FLIGHT RISK",
+      "subjects": [
+        "Ten Most Wanted Fugitives"
+      ],
+      "publication": "2020-04-29T12:04:00"
+    },
+    {
+      "uid": "0a814ebbc8ef4e84b3de586a49e8e243",
+      "title": "COLLEEN ELIZABETH PERRIS - PLANTATION, FLORIDA",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/colleen-elizabeth-perris---plantation-florida/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/colleen-elizabeth-perris---plantation-florida",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Missing Persons"
+      ],
+      "publication": "2026-03-26T08:41:00"
+    },
+    {
+      "uid": "0f2d43190700454e9ad82e7209bbaf1b",
+      "title": "NICOLE ELIZABETH MCCARTNEY - HARRISBURG, PENNSYLVANIA",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/nicole-elizabeth-mccartney---harrisburg-pennsylvania/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/nicole-elizabeth-mccartney---harrisburg-pennsylvania",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Missing Persons"
+      ],
+      "publication": "2026-01-22T08:15:00"
+    },
+    {
+      "uid": "8b2461d815d5493886832689c2ef538d",
+      "title": "DONALD STEVEN LANG",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/donald-steven-lang/@@images/image/large",
+      "office": "Honolulu, Saltlakecity",
+      "reward": "Reward up to $5,000 for information leading to the arrest of Donald Steven Lang.",
+      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/donald-steven-lang",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
+      "subjects": [
+        "Law Enforcement Assistance"
+      ],
+      "publication": "2026-02-09T10:58:00"
+    },
+    {
+      "uid": "2caa95f3b2b34cbda7d70dac99d95b9a",
+      "title": "KUSH KOHOLE BERNSTEIN",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/kush-kohole-bernstein/@@images/image/large",
+      "office": "Honolulu",
+      "reward": "Reward up to $10,000 for information leading to the safe recovery of Abigail, Kush, or Koa Bernstein.",
+      "url": "https://www.fbi.gov/wanted/kidnap/kush-kohole-bernstein",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2024-07-01T10:02:00"
+    },
+    {
+      "uid": "36715efc74c94930a5cc5e30d52ab0f8",
+      "title": "KOA KAI BERNSTEIN",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/koa-kai-bernstein/@@images/image/large",
+      "office": "Honolulu",
+      "reward": "Reward up to $10,000 for information leading to the safe recovery of Abigail, Kush, or Koa Bernstein.",
+      "url": "https://www.fbi.gov/wanted/kidnap/koa-kai-bernstein",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2024-06-28T14:49:00"
+    },
+    {
+      "uid": "a219b9f0500740f3908e853a7761ca1b",
+      "title": "ABIGAIL BERNSTEIN",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/abigail-bernstein/@@images/image/large",
+      "office": "Honolulu",
+      "reward": "Reward up to $10,000 for information leading to the safe recovery of Abigail, Kush, or Koa Bernstein.",
+      "url": "https://www.fbi.gov/wanted/kidnap/abigail-bernstein",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2024-06-28T12:24:00"
+    },
+    {
+      "uid": "e6efbadb6b39486b9a0071a233a175fd",
+      "title": "SANDRA BURT CARRERA - ARLINGTON, VIRGINIA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/sandra-burt-carrera---arlington-virginia/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/sandra-burt-carrera---arlington-virginia",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Homicides and Sexual Assaults"
+      ],
+      "publication": "2026-03-23T07:33:00"
+    },
+    {
+      "uid": "5da32b94b6e14977a2bf41b06b65ce37",
+      "title": "JEREMIAH JAKE",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/jeremiah-jake/@@images/image/large",
+      "office": "Denver",
+      "reward": "Reward up to $10,000 for information leading to the arrest of the individual(s) responsible for the death of Jeremiah Jake.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/jeremiah-jake",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country"
+      ],
+      "publication": "2026-02-03T10:00:00"
+    },
+    {
+      "uid": "dd2b306281994ec5a5ff4703dd69120d",
+      "title": "DALTON MESARCHIK",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/dalton-mesarchik/@@images/image/large",
+      "office": "Chicago",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/seeking-info/dalton-mesarchik",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2023-03-22T12:52:00"
+    },
+    {
+      "uid": "b166d627e11149aa82c02d1533e3b650",
+      "title": "JESUS DE LA CRUZ - LYNN, MASSACHUSETTS",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/jesus-de-la-cruz---lynn-massachusetts/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/jesus-de-la-cruz---lynn-massachusetts",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Missing Persons"
+      ],
+      "publication": "2021-09-28T10:00:00"
+    },
+    {
+      "uid": "b953c05b852a4b719c0a152ef8a73ffd",
+      "title": "BORIS YAKOVLEVICH LIVSHITS",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/counterintelligence/boris-yakovlevich-livshits/@@images/image/large",
+      "office": "Newyork",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/counterintelligence/boris-yakovlevich-livshits",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Counterintelligence"
+      ],
+      "publication": "2022-12-01T12:17:00"
+    },
+    {
+      "uid": "55b4a8a4053a4816befef81fe2b0c514",
+      "title": "KENNETH EARL FOX - HOMESTEAD, FLORIDA",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/kenneth-earl-fox---homestead-florida/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/kenneth-earl-fox---homestead-florida",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Missing Persons"
+      ],
+      "publication": "2025-01-30T12:04:00"
+    },
+    {
+      "uid": "2f6130f0d1e54944881aafed83a8622a",
+      "title": "DOUBLE MURDER",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/double-murder/unsub1.png/@@images/image/large",
+      "office": "Stlouis",
+      "reward": "Reward up to $10,000 for information leading to the identification and arrest of the individuals responsible for the murders of Marshun White and Marcus Price.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/double-murder",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2024-12-30T12:40:00"
+    },
+    {
+      "uid": "4f5f62ea98c34547a11f12fd12e040ca",
+      "title": "IDA DEAN (RICHARDSON) ANDERSON - ANN ARBOR, MICHIGAN",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/ida-dean-richardson-anderson---ann-arbor-michigan/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/ida-dean-richardson-anderson---ann-arbor-michigan",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Missing Persons"
+      ],
+      "publication": "2024-04-29T13:46:00"
+    },
+    {
+      "uid": "1584feee758e4cd39136171ef1c007f9",
+      "title": "BRYAN MATTHEW MCGEHRIN - TANEYTOWN, MARYLAND",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/bryan-matthew-mcgehrin---taneytown-maryland/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/bryan-matthew-mcgehrin---taneytown-maryland",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Missing Persons"
+      ],
+      "publication": "2022-03-21T07:35:00"
+    },
+    {
+      "uid": "677908658a25476ab841613784ad291f",
+      "title": "AMIT PATEL",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/amit-patel/@@images/image/large",
+      "office": "Atlanta",
+      "reward": "Reward up to $20,000 for information leading to the arrest and conviction of the two unknown suspects responsible for the homicide of Amit Patel.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/amit-patel",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2025-01-14T14:13:00"
+    },
+    {
+      "uid": "7d60ad83779047dd95914d0d1bf79e11",
+      "title": "JOHN DOE - WATERLOO TOWNSHIP, MICHIGAN",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/vicap/unidentified-persons/john-doe---waterloo-township-michigan/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/unidentified-persons/john-doe---waterloo-township-michigan",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Unidentified Persons"
+      ],
+      "publication": "2021-02-23T11:33:00"
+    },
+    {
+      "uid": "b241a3d5007b4abcba4a085ea95831a1",
+      "title": "MITCHELL TODD HEIN - INDIO, CALIFORNIA",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/mitchell-todd-hein/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/mitchell-todd-hein",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Missing Persons"
+      ],
+      "publication": "2020-12-10T13:40:00"
+    },
+    {
+      "uid": "fca89f1133a74259b4a0f944cd238343",
+      "title": "ELSIE ELDORA LUSCIER",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/elsie-eldora-luscier/@@images/image/large",
+      "office": "Seattle",
+      "reward": "Reward up to $5,000 for information leading to the recovery of Elsie Eldora Luscier and the conviction of those responsible for her disappearance.",
+      "url": "https://www.fbi.gov/wanted/kidnap/elsie-eldora-luscier",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons",
+        "Indian Country"
+      ],
+      "publication": "2023-08-25T08:05:00"
+    },
+    {
+      "uid": "8774527c934e485297718c705533307a",
+      "title": "RANDY STEWART DORAN - NEW ORLEANS, LOUISIANA",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/randy-stewart-doran---new-orleans-louisiana/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/randy-stewart-doran---new-orleans-louisiana",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Missing Persons"
+      ],
+      "publication": "2021-06-24T08:53:00"
+    },
+    {
+      "uid": "8f378ff4ce7e428ca3d0cc0720a0cdf7",
+      "title": "ZAHRA SHIKDER",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/zahra-shikder/@@images/image/large",
+      "office": "Washingtondc",
+      "reward": "The Rewards For Justice Program, United States Department of State, is offering a reward of up to $5 million for information leading to location, recovery, and return of  Zahra and Yusuf Shikder.",
+      "url": "https://www.fbi.gov/wanted/kidnap/zahra-shikder",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2024-07-09T11:10:00"
+    },
+    {
+      "uid": "b4db60d7ed14449cb73ba39564ef9e19",
+      "title": "JAMES S. RULAND - NORTH FOND du LAC, WISCONSIN",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/james-s-ruland---north-fond-du-lac-wisconsin/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/james-s-ruland---north-fond-du-lac-wisconsin",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Missing Persons"
+      ],
+      "publication": "2021-02-23T08:02:00"
+    },
+    {
+      "uid": "950e62ff80cf4fe1b476db427d2711a3",
+      "title": "ISIAH TERRELL BILLY",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/isiah-terrell-billy/@@images/image/large",
+      "office": "Albuquerque",
+      "reward": "Reward up to $10,000 for information leading to the identification, arrest, and conviction of the individual(s) responsible for the death of Isiah Terrell Billy.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/isiah-terrell-billy",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country",
+        "Navajo"
+      ],
+      "publication": "2021-03-03T13:33:00"
+    },
+    {
+      "uid": "8c54fdf42de844cfa1b735e8f4470548",
+      "title": "BERKELEY, MISSOURI - MISSING INDIVIDUALS",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/berkeley-missouri---missing-individuals/@@images/image/large",
+      "office": "Stlouis",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/kidnap/berkeley-missouri---missing-individuals",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2024-01-17T14:01:00"
+    },
+    {
+      "uid": "023ab3979cb94f62a491635623bd4ed6",
+      "title": "ROSCOE MCMILLAN",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/wcc/roscoe-mcmillan/@@images/image/large",
+      "office": "Atlanta",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/wcc/roscoe-mcmillan",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "White-Collar Crime"
+      ],
+      "publication": "2024-11-08T12:42:00"
+    },
+    {
+      "uid": "cd626d1aedfd4acc816a1a3a418b1472",
+      "title": "EDWIN ERNESTO CEDILLOS-RODRIGUEZ",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/edwin-ernesto-cedillos-rodriguez/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/edwin-ernesto-cedillos-rodriguez",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2022-10-03T09:05:00"
+    },
+    {
+      "uid": "4e1704f560464ec6a57a56c60f53bebc",
+      "title": "CRYSTAL ROGERS",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/crystal-rogers-1/@@images/image/large",
+      "office": "Louisville",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/seeking-info/crystal-rogers-1",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2020-08-03T06:19:00"
+    },
+    {
+      "uid": "5fa689c890b446f9958181d77e665767",
+      "title": "BALLOT BOX FIRES",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/ballot-box-fires/@@images/image/large",
+      "office": "Portland, Seattle",
+      "reward": "Reward up to $25,000 for information leading to the identification, arrest, and conviction of the suspect responsible for these crimes.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/ballot-box-fires",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2024-11-06T13:32:00"
+    },
+    {
+      "uid": "91e9976624e54d9594d580e09f16ab16",
+      "title": "BRANDON LEE WAGONER",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/brandon-lee-wagoner/@@images/image/large",
+      "office": "Charlotte",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/seeking-info/brandon-lee-wagoner",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2023-09-20T10:03:00"
+    },
+    {
+      "uid": "712c3469993e4eb8ad706b65082b37ef",
+      "title": "SALOME FLORES APODACA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/salome-flores-apodaca/@@images/image/large",
+      "office": "Washingtondc",
+      "reward": "Reward up to $35,000 for information leading directly to the arrest of Salome Flores Apodaca.",
+      "url": "https://www.fbi.gov/wanted/cei/salome-flores-apodaca",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN INTERNATIONAL FLIGHT RISK",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2019-03-05T07:18:00"
+    },
+    {
+      "uid": "5205142b7d724a36978265e00c88b309",
+      "title": "KEVIN BRAME",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/kevin-brame/@@images/image/large",
+      "office": "Cincinnati",
+      "reward": "Reward up to $15,000 for information leading to the arrest of a suspect or suspects involved in the murder of Dayton Police Officer Kevin Brame.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/kevin-brame",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2023-12-20T08:56:00"
+    },
+    {
+      "uid": "184d54e196b1438984c2764878b91160",
+      "title": "ADAN A. SAUCEDO-AVILA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cac/adan-a-saucedo-avila/@@images/image/large",
+      "office": "Albuquerque",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cac/adan-a-saucedo-avila",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Crimes Against Children"
+      ],
+      "publication": "2024-09-16T08:04:00"
+    },
+    {
+      "uid": "71346df216744cb9a9a22934867c3d9b",
+      "title": "TRIPLE SHOOTING INVESTIGATION",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/triple-shooting-investigation/@@images/image/large",
+      "office": "Milwaukee",
+      "reward": "Reward up to $10,000 for information leading to the identification, arrest, and conviction of the individual(s) who committed this shooting.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/triple-shooting-investigation",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2024-09-18T10:20:00"
+    },
+    {
+      "uid": "66802fe008634da18d76070e809e2271",
+      "title": "CARMEN CHARGER",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/carmen-charger/@@images/image/large",
+      "office": "Minneapolis",
+      "reward": "Reward up to $10,000 for information that leads to an arrest and conviction in this case.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/carmen-charger",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country"
+      ],
+      "publication": "2020-04-17T08:26:00"
+    },
+    {
+      "uid": "952a0f45262b4a3a80f3d7839dda45fd",
+      "title": "SHAYAN KAZEMI",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/shayan-kazemi-1/@@images/image/large",
+      "office": "Washingtondc",
+      "reward": "The United States Government is offering a reward of up to $200,000 for information leading directly to the safe location, recovery, and return of Shayan Kazemi.",
+      "url": "https://www.fbi.gov/wanted/kidnap/shayan-kazemi-1",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2012-11-06T07:00:00"
+    },
+    {
+      "uid": "ac609431eee449b1815c5b8b8ac3414f",
+      "title": "ALEXANDER STUART JAMES - BRIDGE CITY, TEXAS",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/alexander-stuart-james---bridge-city-texas/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/alexander-stuart-james---bridge-city-texas",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Missing Persons"
+      ],
+      "publication": "2024-03-28T11:40:00"
+    },
+    {
+      "uid": "32eeba50d906400786c23ed38133fd04",
+      "title": "APT 41 GROUP",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cyber/apt-41-group/@@images/image/large",
+      "office": "Washingtondc",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cyber/apt-41-group",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Cyber's Most Wanted",
+        "China Threat"
+      ],
+      "publication": "2020-09-03T09:18:00"
+    },
+    {
+      "uid": "582c659c2bf64eaf86e2591dbd951598",
+      "title": "DIANA LEE PECKHAM - BARODA, MICHIGAN",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/diana-lee-peckham---baroda-michigan/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/diana-lee-peckham---baroda-michigan",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Missing Persons"
+      ],
+      "publication": "2025-02-04T07:48:00"
+    },
+    {
+      "uid": "84c85e5e75394bdb9b27579fe69d1e49",
+      "title": "VASILE SAVA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/vasile-sava/@@images/image/large",
+      "office": "Kansascity",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/vasile-sava",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2024-12-09T14:12:00"
+    },
+    {
+      "uid": "7e2490248a2746ccb011d7d11abea5a9",
+      "title": "MUJTABA RAZA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cyber/mujtaba-raza/@@images/image/large",
+      "office": "Newark",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cyber/mujtaba-raza",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Cyber's Most Wanted"
+      ],
+      "publication": "2021-03-15T07:47:00"
+    },
+    {
+      "uid": "b31c9d2939e94444813f909c6f867631",
+      "title": "JANE DOE - PACIFICA, CALIFORNIA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/vicap/unidentified-persons/jane-doe---pacifica-california/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/unidentified-persons/jane-doe---pacifica-california",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Unidentified Persons"
+      ],
+      "publication": "2024-12-16T07:05:00"
+    },
+    {
+      "uid": "6bc39f5fe60a404899acd3ea41999ec1",
+      "title": "PATRICK SCOTT, JR.",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/patrick-scott-jr/@@images/image/large",
+      "office": "Sanfrancisco",
+      "reward": "Reward up to $20,000 for information leading to the arrest of the individual(s) responsible for the death of Patrick Scott, Jr.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/patrick-scott-jr",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2018-07-02T10:33:00"
+    },
+    {
+      "uid": "ed0db933b9154f6c8b67b67db42a7f77",
+      "title": "HOU XUEXIN",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/counterintelligence/hou-xuexin/@@images/image/large",
+      "office": "Newyork",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/counterintelligence/hou-xuexin",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Counterintelligence",
+        "China Threat"
+      ],
+      "publication": "2022-10-18T15:37:00"
+    },
+    {
+      "uid": "35864dde9dbe4d058f9e372a6ea04b4f",
+      "title": "CHEN CHENGHUA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/counterintelligence/chen-chenghua/@@images/image/large",
+      "office": "Newyork",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/counterintelligence/chen-chenghua",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Counterintelligence",
+        "China Threat"
+      ],
+      "publication": "2022-10-18T18:44:00"
+    },
+    {
+      "uid": "421f5461e4b34c82a6930bd1ebb0d792",
+      "title": "ALEJANDRO CAO DE BENOS",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/counterintelligence/alejandro-cao-de-benos/@@images/image/large",
+      "office": "Newyork",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/counterintelligence/alejandro-cao-de-benos",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED AN INTERNATIONAL FLIGHT RISK",
+      "subjects": [
+        "Counterintelligence"
+      ],
+      "publication": "2022-04-27T11:22:00"
+    },
+    {
+      "uid": "ee49f8c2eb074823a21bcff82df137d9",
+      "title": "JANE DOE - ASTORIA, NEW YORK",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/vicap/unidentified-persons/jane-doe---astoria-new-york/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/unidentified-persons/jane-doe---astoria-new-york",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Unidentified Persons"
+      ],
+      "publication": "2024-03-05T09:56:00"
+    },
+    {
+      "uid": "c9444d9fc13f47de89f25b1a17249021",
+      "title": "SERGEY ALEKSANDROVICH MORGACHEV",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cyber/sergey-aleksandrovich-morgachev/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cyber/sergey-aleksandrovich-morgachev",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS, AN INTERNATIONAL FLIGHT RISK, AND AN ESCAPE RISK",
+      "subjects": [
+        "Cyber's Most Wanted"
+      ],
+      "publication": "2018-09-04T10:10:00"
+    },
+    {
+      "uid": "ba916f70bdcd4ee8872b6e6f76643be1",
+      "title": "VOLODYMYR DUBINSKY",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/wcc/volodymyr-dubinsky/@@images/image/large",
+      "office": "Sacramento",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/wcc/volodymyr-dubinsky",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "White-Collar Crime"
+      ],
+      "publication": "2018-10-22T10:50:00"
+    },
+    {
+      "uid": "1ef7b9c988984e4aa6d87a8557fbbf1f",
+      "title": "TAN WEE BENG",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/counterintelligence/tan-wee-beng/@@images/image/large",
+      "office": "Newyork",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/counterintelligence/tan-wee-beng",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Counterintelligence"
+      ],
+      "publication": "2018-10-23T09:19:00"
+    },
+    {
+      "uid": "b5e7d23089834cf79709b9042400ca8e",
+      "title": "UNIDENTIFIED INDIVIDUAL - FLAGSTAFF, ARIZONA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/unidentified-individual---flagstaff-arizona/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/unidentified-individual---flagstaff-arizona",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Homicides and Sexual Assaults"
+      ],
+      "publication": "2019-10-10T08:22:00"
+    },
+    {
+      "uid": "af76ee10172041afb8478b32c33812e3",
+      "title": "JOHN DOE - RICHMOND, VIRGINIA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/vicap/unidentified-persons/john-doe---richmond-virginia/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/unidentified-persons/john-doe---richmond-virginia",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Unidentified Persons"
+      ],
+      "publication": "2026-03-13T07:37:00"
+    },
+    {
+      "uid": "5a57f941293242e5b02b1d6069f19f8c",
+      "title": "CARNELL E. SLEDGE AND KATHERINE C. BROWN",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/carnell-e-sledge-and-katherine-c-brown/jpeg-carnell.jpg/@@images/image/large",
+      "office": "Cleveland",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the person(s) responsible for the deaths of Carnell E. Sledge and Katherine C. Brown. Additional reward money may be available.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/carnell-e-sledge-and-katherine-c-brown",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2019-10-09T08:38:00"
+    },
+    {
+      "uid": "02f7c486369846c2abb89d941bf621c1",
+      "title": "ANGELA MCKENNETT JOHNSON - DENVER, COLORADO",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/angela-mckennett-johnson---denver-colorado/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/angela-mckennett-johnson---denver-colorado",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Homicides and Sexual Assaults"
+      ],
+      "publication": "2026-03-03T09:32:00"
+    },
+    {
+      "uid": "e745257f911142f49fbf7970573785d2",
+      "title": "TRACEY KIRKPATRICK",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/tracey-kirkpatrick/@@images/image/large",
+      "office": "Baltimore",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/seeking-info/tracey-kirkpatrick",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-03-09T09:55:00"
+    }
+  ]
+}

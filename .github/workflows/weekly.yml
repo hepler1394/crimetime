@@ -1,19 +1,19 @@
-name: Weekly site update
+name: Content update (Tue + Fri)
 
-# Cloud alternative to the Windows scheduled task. Runs the content pipeline on
-# GitHub's servers so the site refreshes even when your PC is off.
+# Cloud twin of the Windows scheduled task. Runs the full content pipeline on
+# GitHub's servers so the site refreshes even when Cory's PC is off.
 #
 # Notes:
-# - Uses ONLY schedule + manual dispatch (no push trigger) so it can't loop.
+# - Schedule + manual dispatch only (no push trigger) so it can't loop.
 # - The local LM Studio model isn't reachable in CI, so set a cloud LLM secret
 #   (DEEPSEEK_API_KEY or ANTHROPIC_API_KEY) in repo Settings > Secrets to enable
-#   the AI blog/merch steps. Without it, those steps are skipped and the job
-#   still refreshes feeds, rebuilds, and pushes.
+#   the AI blog/merch/quiz steps. Without it, those steps are skipped and the
+#   job still refreshes feeds, rebuilds, and pushes.
 # - Set youtube.handle via the YT_HANDLE secret to auto-pull videos in CI.
 
 on:
   schedule:
-    - cron: "0 12 * * 0" # Sundays 12:00 UTC
+    - cron: "0 14 * * 2,5" # Tuesdays + Fridays 14:00 UTC (~9am Central)
   workflow_dispatch: {}
 
 permissions:
@@ -27,7 +27,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - name: Run weekly update
+      - name: Run content update
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -41,6 +41,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes."
           else
-            git commit -m "Weekly auto-update (CI)"
+            git commit -m "Content update (CI): episodes, blog, merch, quiz, live board"
             git push
           fi

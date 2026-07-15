@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>True Crime Quizzes | CrimeTimeSnacks</title>
+    <meta name="description" content="Interactive true crime quizzes from CrimeTimeSnacks — case timelines, evidence, and detective skills. Think you know your cases?">
+    <meta name="author" content="Cory">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://crimetime.vercel.app/quiz.html">
+    <meta name="theme-color" content="#050505">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CrimeTimeSnacks">
+    <meta property="og:title" content="True Crime Quizzes | CrimeTimeSnacks">
+    <meta property="og:description" content="Interactive true crime quizzes from CrimeTimeSnacks — case timelines, evidence, and detective skills. Think you know your cases?">
+    <meta property="og:url" content="https://crimetime.vercel.app/quiz.html">
+    <meta property="og:image" content="https://crimetime.vercel.app/images/logo.png">
+    <meta property="og:image:alt" content="CrimeTimeSnacks — A True Crime Podcast">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="True Crime Quizzes | CrimeTimeSnacks">
+    <meta name="twitter:description" content="Interactive true crime quizzes from CrimeTimeSnacks — case timelines, evidence, and detective skills. Think you know your cases?">
+    <meta name="twitter:image" content="https://crimetime.vercel.app/images/logo.png">
+    <meta name="twitter:image:alt" content="CrimeTimeSnacks logo">
+    <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Podcast" href="/feed.xml">
+    <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Blog" href="/blog-feed.xml">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/images/logo.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=2026r">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header>
+        <div class="nav-container container">
+            <div class="logo-container">
+                <a href="/index.html" aria-label="CrimeTimeSnacks home">
+                    <img src="/images/logo.png" alt="CrimeTimeSnacks Logo" height="42" width="42">
+                    <span class="logo-word">Crime<em>Time</em>Snacks<span class="logo-sub">A True Crime Podcast</span></span>
+                </a>
+            </div>
+            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><i class="fas fa-bars" aria-hidden="true"></i></button>
+            <nav id="primary-nav" aria-label="Primary">
+                <ul class="nav-menu">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/episodes.html">Episodes</a></li>
+                    <li><a href="/videos.html">Videos</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/live.html">Live</a></li>
+                    <li><a href="/quiz.html" class="active">Quizzes</a></li>
+                    <li><a href="/merch.html">Merch</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="utility-nav">
+                <a class="nav-cta" href="/listen.html"><i class="fas fa-headphones" aria-hidden="true"></i> Listen</a>
+            </div>
+        </div>
+    </header>
+    <main id="main-content">
+    <section class="page-hero">
+        <div class="container">
+            <p class="eyebrow" style="justify-content:center;">Interrogation Room</p>
+            <h1 class="page-title">Think You Know <span class="text-red">Your Cases?</span></h1>
+            <p>Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.</p>
+        </div>
+    </section>
+
+    <div class="crime-scene-tape" aria-hidden="true"></div>
+
+    <section class="container" style="max-width:1000px;">
+        <div id="quiz-picker" class="quiz-picker">
+            <button class="quiz-pick episode-card" data-quiz="0" style="text-align:left;cursor:pointer;border:1px solid var(--cts-line);background:linear-gradient(180deg,var(--cts-panel),var(--cts-ink));">
+                <div class="episode-content">
+                    <div class="episode-badges"><span class="episode-badge">Episode Case</span><span class="episode-badge">5 Questions</span></div>
+                    <h3 class="episode-title">The Watts Case File</h3>
+                    <p class="episode-description">Five questions on the 2018 Watts family case — the timeline, the interview, and the evidence. Covered in our Watts Family Murders episode.</p>
+                    <div class="episode-actions"><span class="btn btn-primary btn-sm">Start <i class="fas fa-arrow-right" aria-hidden="true"></i></span></div>
+                </div>
+            </button>
+            <button class="quiz-pick episode-card" data-quiz="1" style="text-align:left;cursor:pointer;border:1px solid var(--cts-line);background:linear-gradient(180deg,var(--cts-panel),var(--cts-ink));">
+                <div class="episode-content">
+                    <div class="episode-badges"><span class="episode-badge">Episode Case</span><span class="episode-badge">5 Questions</span></div>
+                    <h3 class="episode-title">JonBenét: Just the Facts</h3>
+                    <p class="episode-description">The 1996 Boulder case is buried in myth. Five questions on what's actually documented — from our JonBenét Ramsey episodes.</p>
+                    <div class="episode-actions"><span class="btn btn-primary btn-sm">Start <i class="fas fa-arrow-right" aria-hidden="true"></i></span></div>
+                </div>
+            </button>
+            <button class="quiz-pick episode-card" data-quiz="2" style="text-align:left;cursor:pointer;border:1px solid var(--cts-line);background:linear-gradient(180deg,var(--cts-panel),var(--cts-ink));">
+                <div class="episode-content">
+                    <div class="episode-badges"><span class="episode-badge">Detective Skills</span><span class="episode-badge">5 Questions</span></div>
+                    <h3 class="episode-title">Cold Case IQ</h3>
+                    <p class="episode-description">Evidence, forensics, and investigation fundamentals — how much detective do you actually have in you?</p>
+                    <div class="episode-actions"><span class="btn btn-primary btn-sm">Start <i class="fas fa-arrow-right" aria-hidden="true"></i></span></div>
+                </div>
+            </button>
+        </div>
+
+        <div id="quiz-stage" class="quiz-shell" style="display:none;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+                <button id="quiz-back" class="btn btn-secondary btn-sm"><i class="fas fa-arrow-left" aria-hidden="true"></i> All Quizzes</button>
+                <span id="quiz-counter" class="live-updated"></span>
+            </div>
+            <div class="quiz-progress"><div id="quiz-progress-fill" class="quiz-progress-fill"></div></div>
+            <div id="quiz-card" class="quiz-card"></div>
+        </div>
+    </section>
+    </main>
+
+    <footer class="footer">
+        <span class="footer-watermark" aria-hidden="true">SNACKS</span>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <img src="/images/logo.png" alt="CrimeTimeSnacks Logo" class="footer-logo">
+                    <p>A true crime podcast exploring unsolved cases and mysteries with detailed analysis and compelling storytelling. Researched, written, and hosted by Cory.</p>
+                    <div class="footer-social">
+                        <a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" aria-label="Spotify" target="_blank" rel="noopener"><i class="fab fa-spotify" aria-hidden="true"></i></a>
+                        <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" aria-label="Apple Podcasts" target="_blank" rel="noopener"><i class="fab fa-apple" aria-hidden="true"></i></a>
+                        <a href="/feed.xml" aria-label="RSS feed"><i class="fas fa-rss" aria-hidden="true"></i></a>
+                        <a href="mailto:crimetimesnacks@gmail.com" aria-label="Email CrimeTimeSnacks"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Case Files</h3>
+                    <ul class="footer-links">
+                        <li><a href="/episodes.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Episodes</a></li>
+                        <li><a href="/videos.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Videos</a></li>
+                        <li><a href="/blog.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Crime Blog</a></li>
+                        <li><a href="/live.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Live Cases</a></li>
+                        <li><a href="/quiz.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Quizzes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-heading">The Show</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener"><i class="fab fa-apple" aria-hidden="true"></i> Apple Podcasts</a></li>
+                        <li><a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" target="_blank" rel="noopener"><i class="fab fa-spotify" aria-hidden="true"></i> Spotify</a></li>
+                        <li><a href="/merch.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Merch</a></li>
+                        <li><a href="/about.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> About</a></li>
+                        <li><a href="mailto:crimetimesnacks@gmail.com?subject=Case%20suggestion%20for%20CrimeTimeSnacks"><i class="fas fa-folder-plus" aria-hidden="true"></i> Suggest a Case</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3 class="footer-heading">The Case File</h3>
+                    <p>One bite-size case brief and every new episode — twice a week, no spam.</p>
+                    <input type="email" inputmode="email" autocomplete="email" aria-label="Email address" placeholder="Your email address">
+                    <button class="btn btn-primary" style="width: 100%;">Get the Case File</button>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CrimeTimeSnacks. All Rights Reserved. Made with respect for victims and their families.</p>
+                <span class="crisis">If you have information about an unsolved case, contact your local authorities or <a href="https://tips.fbi.gov" target="_blank" rel="noopener" style="color:inherit;">tips.fbi.gov</a>.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/effects.js"></script>
+    <script id="quiz-data" type="application/json">[{"slug":"watts-case-file","title":"The Watts Case File","tag":"Episode Case","description":"Five questions on the 2018 Watts family case — the timeline, the interview, and the evidence. Covered in our Watts Family Murders episode.","created":"2026-07-15","questions":[{"q":"The Watts family murders took place in August 2018 in which Colorado town?","options":["Boulder","Frederick","Greeley","Fort Collins"],"answer":1,"explain":"The family lived in Frederick, Colorado — a small town north of Denver in Weld County."},{"q":"What happened during Chris Watts' August 15 police interview?","options":["He refused to speak without a lawyer","He failed a polygraph, then confessed","He passed a polygraph","He named another suspect"],"answer":1,"explain":"Watts failed a polygraph examination and, confronted with the results, began confessing shortly after."},{"q":"Where were the bodies of Shanann and the girls recovered?","options":["A remote oil work site","The family home","A nearby reservoir","A storage unit"],"answer":0,"explain":"They were recovered at an oil site where Watts had worked — Shanann in a shallow grave, the girls in oil tanks."},{"q":"What sentence did Chris Watts receive after pleading guilty?","options":["The death penalty","25 years to life","Multiple life sentences without parole","40 years per count"],"answer":2,"explain":"In November 2018 he received multiple consecutive life sentences without the possibility of parole; prosecutors took death off the table as part of the plea."},{"q":"What made the case unravel so quickly for Watts?","options":["A neighbor's doorbell camera","His own TV interviews and inconsistencies","An anonymous tip","Cell tower data alone"],"answer":1,"explain":"His on-camera pleas and shifting story drew immediate suspicion — investigators noted the inconsistencies within days, alongside neighbor surveillance footage."}]},{"slug":"jonbenet-the-facts","title":"JonBenét: Just the Facts","tag":"Episode Case","description":"The 1996 Boulder case is buried in myth. Five questions on what's actually documented — from our JonBenét Ramsey episodes.","created":"2026-07-15","questions":[{"q":"In what city and year was JonBenét Ramsey found dead in her family home?","options":["Denver, 1997","Boulder, 1996","Colorado Springs, 1995","Aspen, 1996"],"answer":1,"explain":"She was found on December 26, 1996, in the family's home in Boulder, Colorado."},{"q":"What was discovered in the home before her body was found?","options":["A broken window only","A two-and-a-half page ransom note","A recorded phone threat","Nothing unusual"],"answer":1,"explain":"An unusually long handwritten ransom note — about two and a half pages — was found on the kitchen staircase."},{"q":"The ransom note demanded $118,000. Why is that number significant?","options":["It matched John Ramsey's recent bonus","It was the home's value","It was random","It matched a life-insurance policy"],"answer":0,"explain":"The amount closely matched a bonus John Ramsey had received that year — one of the case's strangest details."},{"q":"Where in the house was JonBenét found?","options":["The garage","Her bedroom","A basement room","The attic"],"answer":2,"explain":"Her father found her in a small basement room during a walkthrough of the house hours after police arrived."},{"q":"What is the official status of the case today?","options":["Closed — solved in 2003","Open and unsolved","Closed — ruled accidental","Sealed by court order"],"answer":1,"explain":"Nearly three decades on, the case remains open and unsolved, with periodic new rounds of DNA testing."}]},{"slug":"cold-case-iq","title":"Cold Case IQ","tag":"Detective Skills","description":"Evidence, forensics, and investigation fundamentals — how much detective do you actually have in you?","created":"2026-07-15","questions":[{"q":"Locard's exchange principle — the foundation of forensic science — says what?","options":["The simplest explanation is usually right","Every contact leaves a trace","Witnesses forget 50% in 24 hours","Follow the money"],"answer":1,"explain":"Edmond Locard's principle: a perpetrator brings something to a crime scene and leaves with something from it. Every contact leaves a trace."},{"q":"Forensic genetic genealogy — the technique behind the Golden State Killer arrest — matches crime-scene DNA against what?","options":["The FBI's CODIS database only","Hospital records","Public genealogy databases","Ancestry test kits directly"],"answer":2,"explain":"Investigators upload crime-scene DNA profiles to public genealogy databases like GEDmatch and build family trees toward a suspect."},{"q":"Why do investigators talk about the 'first 48 hours'?","options":["Legal deadline to charge a suspect","Evidence and memories degrade fast — solve odds drop sharply after","Autopsies must happen within 48 hours","It's just a TV invention"],"answer":1,"explain":"Physical evidence, witness memory, and digital trails are freshest early — the odds of clearance drop significantly once the first days pass."},{"q":"In the 2017 Delphi case, what crucial evidence did victim Libby German leave investigators?","options":["A written note","Video and audio of the suspect on her phone","A 911 call","Fingerprints on the bridge"],"answer":1,"explain":"Libby recorded video and audio of the man on the Monon High Bridge — evidence investigators called unprecedented, captured by the victim herself."},{"q":"What is NamUs?","options":["The FBI's fingerprint system","A national database for missing and unidentified persons","A DNA sequencing company","The US Marshals' fugitive list"],"answer":1,"explain":"The National Missing and Unidentified Persons System — a public national database that helps connect missing persons cases with unidentified remains."}]}]</script>
+    <script>
+    (function () {
+        'use strict';
+        var quizzes = JSON.parse(document.getElementById('quiz-data').textContent);
+        var picker = document.getElementById('quiz-picker');
+        var stage = document.getElementById('quiz-stage');
+        var card = document.getElementById('quiz-card');
+        var counter = document.getElementById('quiz-counter');
+        var fill = document.getElementById('quiz-progress-fill');
+        var current = null, qi = 0, score = 0, locked = false;
+
+        function esc(s) {
+            return String(s || '').replace(/[&<>"]/g, function (c) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+            });
+        }
+
+        function show(el) { el.style.display = ''; }
+        function hide(el) { el.style.display = 'none'; }
+
+        function start(i) {
+            current = quizzes[i];
+            qi = 0; score = 0;
+            hide(picker); show(stage);
+            stage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            renderQ();
+        }
+
+        function renderQ() {
+            locked = false;
+            var q = current.questions[qi];
+            counter.textContent = 'Question ' + (qi + 1) + ' of ' + current.questions.length;
+            fill.style.width = ((qi) / current.questions.length * 100) + '%';
+            var keys = ['A', 'B', 'C', 'D', 'E'];
+            card.innerHTML =
+                '<div class="quiz-q">' + esc(q.q) + '</div>' +
+                '<div class="quiz-opts">' + q.options.map(function (opt, oi) {
+                    return '<button class="quiz-opt" data-oi="' + oi + '"><span class="key">' + keys[oi] + '</span> ' + esc(opt) + '</button>';
+                }).join('') + '</div>' +
+                '<div id="quiz-next-row" style="margin-top:1.4rem;display:none;text-align:right;">' +
+                '<button id="quiz-next" class="btn btn-primary btn-sm">' + (qi + 1 === current.questions.length ? 'See My Score' : 'Next Question') + ' <i class="fas fa-arrow-right" aria-hidden="true"></i></button></div>';
+
+            card.querySelectorAll('.quiz-opt').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    if (locked) return;
+                    locked = true;
+                    var oi = parseInt(btn.getAttribute('data-oi'), 10);
+                    var right = current.questions[qi].answer;
+                    card.querySelectorAll('.quiz-opt').forEach(function (b, bi) {
+                        b.disabled = true;
+                        if (bi === right) b.classList.add('correct');
+                    });
+                    if (oi === right) { score++; } else { btn.classList.add('wrong'); }
+                    var ex = document.createElement('div');
+                    ex.className = 'quiz-explain';
+                    ex.innerHTML = '<strong>' + (oi === right ? 'Correct. ' : 'Not quite. ') + '</strong>' + esc(current.questions[qi].explain);
+                    card.appendChild(ex);
+                    document.getElementById('quiz-next-row').style.display = '';
+                    document.getElementById('quiz-next').addEventListener('click', nextQ);
+                });
+            });
+        }
+
+        function verdict(pct) {
+            if (pct === 100) return 'Lead Detective. You RUN this case board.';
+            if (pct >= 80) return 'Detective. The details don\'t get past you.';
+            if (pct >= 60) return 'Investigator. Solid instincts — re-listen and go again.';
+            if (pct >= 40) return 'Beat Cop. You know the headlines, not the case file.';
+            return 'Civilian. Perfect excuse to binge the back catalog.';
+        }
+
+        function nextQ() {
+            qi++;
+            if (qi < current.questions.length) { renderQ(); return; }
+            fill.style.width = '100%';
+            var pct = Math.round(score / current.questions.length * 100);
+            var shareText = 'I scored ' + score + '/' + current.questions.length + ' on the ' + current.title + ' quiz from @CrimeTimeSnacks — think you can beat me? ' + 'https://crimetime.vercel.app/quiz.html';
+            counter.textContent = 'Case closed';
+            card.innerHTML =
+                '<div class="quiz-score">' +
+                '<p class="eyebrow" style="justify-content:center;">' + esc(current.title) + '</p>' +
+                '<div class="big">' + score + '/' + current.questions.length + '</div>' +
+                '<p style="margin-top:0.8rem;font-weight:700;font-size:1.15rem;">' + verdict(pct) + '</p>' +
+                '<div style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.6rem;">' +
+                '<button id="quiz-share" class="btn btn-primary btn-sm"><i class="fas fa-share-nodes" aria-hidden="true"></i> Copy My Result</button>' +
+                '<button id="quiz-retry" class="btn btn-secondary btn-sm"><i class="fas fa-rotate-right" aria-hidden="true"></i> Retry</button>' +
+                '<a href="/episodes.html" class="btn btn-secondary btn-sm"><i class="fas fa-headphones" aria-hidden="true"></i> Binge the Cases</a>' +
+                '</div></div>';
+            document.getElementById('quiz-retry').addEventListener('click', function () { qi = 0; score = 0; renderQ(); });
+            document.getElementById('quiz-share').addEventListener('click', function () {
+                var btn = this;
+                var done = function () { btn.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i> Copied'; };
+                if (navigator.clipboard) { navigator.clipboard.writeText(shareText).then(done, done); } else { done(); }
+            });
+        }
+
+        picker.querySelectorAll('.quiz-pick').forEach(function (btn) {
+            btn.addEventListener('click', function () { start(parseInt(btn.getAttribute('data-quiz'), 10)); });
+        });
+        document.getElementById('quiz-back').addEventListener('click', function () {
+            hide(stage); show(picker);
+            picker.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    })();
+    </script>
+</body>
+</html>

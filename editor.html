@@ -2,43 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Live HTML Editor</title>
-    <meta name="author" content="Cory">
-    <style>
-        body { font-family: Arial, sans-serif; padding: 20px; }
-        textarea { width: 100%; height: 80vh; font-family: monospace; }
-        button { padding: 10px 20px; margin-top: 10px; cursor: pointer; }
-    </style>
+    <meta http-equiv="refresh" content="0; url=/dashboard.html">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Moved — Mission Control</title>
+    <link rel="canonical" href="https://crimetime.vercel.app/dashboard.html">
 </head>
-<body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <h2>Live HTML Editor</h2>
-    <textarea id="htmlContent"></textarea>
-    <button onclick="saveChanges()">Save</button>
-
-    <script>
-        async function loadHTML() {
-            const response = await fetch('/load');
-            document.getElementById('htmlContent').value = await response.text();
-        }
-
-        async function saveChanges() {
-            const content = document.getElementById('htmlContent').value;
-            const response = await fetch('/save', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ content })
-            });
-
-            if (response.ok) {
-                alert('File saved successfully!');
-            } else {
-                alert('Error saving file.');
-            }
-        }
-
-        loadHTML();
-    </script>
+<body style="background:#050505;color:#f7f7f8;font-family:system-ui;display:grid;place-items:center;min-height:100vh;">
+    <p>The editor moved to <a href="/dashboard.html" style="color:#ff2b33;">Mission Control</a>.</p>
 </body>
 </html>

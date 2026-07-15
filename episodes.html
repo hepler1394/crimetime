@@ -4,27 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Episodes | CrimeTimeSnacks • A True Crime Podcast</title>
-    <meta name="author" content="Cory">
     <meta name="description" content="Every episode of CrimeTimeSnacks — true crime cases explored in detail. Listen here, on Spotify, or on Apple Podcasts.">
+    <meta name="author" content="Cory">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://crimetime.vercel.app/episodes.html">
-    <meta name="theme-color" content="#0a0a0a">
+    <meta name="theme-color" content="#050505">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="CrimeTimeSnacks">
-    <meta property="og:title" content="Episodes | CrimeTimeSnacks">
-    <meta property="og:description" content="Every episode of CrimeTimeSnacks — true crime cases explored in detail.">
+    <meta property="og:title" content="Episodes | CrimeTimeSnacks • A True Crime Podcast">
+    <meta property="og:description" content="Every episode of CrimeTimeSnacks — true crime cases explored in detail. Listen here, on Spotify, or on Apple Podcasts.">
     <meta property="og:url" content="https://crimetime.vercel.app/episodes.html">
     <meta property="og:image" content="https://crimetime.vercel.app/images/logo.png">
-    <meta property="og:image:alt" content="CrimeTimeSnacks logo">
+    <meta property="og:image:alt" content="CrimeTimeSnacks — A True Crime Podcast">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Episodes | CrimeTimeSnacks • A True Crime Podcast">
+    <meta name="twitter:description" content="Every episode of CrimeTimeSnacks — true crime cases explored in detail. Listen here, on Spotify, or on Apple Podcasts.">
+    <meta name="twitter:image" content="https://crimetime.vercel.app/images/logo.png">
+    <meta name="twitter:image:alt" content="CrimeTimeSnacks logo">
     <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Podcast" href="/feed.xml">
+    <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Blog" href="/blog-feed.xml">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/images/logo.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/style.css?v=2026h">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=2026r">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -102,200 +108,228 @@
     <header>
         <div class="nav-container container">
             <div class="logo-container">
-                <a href="/index.html"><img src="/images/logo.png" alt="CrimeTimeSnacks Logo" height="40"></a>
+                <a href="/index.html" aria-label="CrimeTimeSnacks home">
+                    <img src="/images/logo.png" alt="CrimeTimeSnacks Logo" height="42" width="42">
+                    <span class="logo-word">Crime<em>Time</em>Snacks<span class="logo-sub">A True Crime Podcast</span></span>
+                </a>
             </div>
             <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><i class="fas fa-bars" aria-hidden="true"></i></button>
-            <nav id="primary-nav" aria-label="Primary"> <ul class="nav-menu">
-                    <li><a href="/index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="/episodes.html" class="active"><i class="fas fa-microphone"></i> Episodes</a></li>
-                    <li><a href="/videos.html"><i class="fas fa-video"></i> Videos</a></li>
-                    <li><a href="/blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
-                    <li><a href="/about.html"><i class="fas fa-info-circle"></i> About</a></li>
-                    <li><a href="/merch.html"><i class="fas fa-tshirt"></i> Merch</a></li>
-                    <li><a href="/contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <nav id="primary-nav" aria-label="Primary">
+                <ul class="nav-menu">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/episodes.html" class="active">Episodes</a></li>
+                    <li><a href="/videos.html">Videos</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/live.html">Live</a></li>
+                    <li><a href="/quiz.html">Quizzes</a></li>
+                    <li><a href="/merch.html">Merch</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
                 </ul>
             </nav>
             <div class="utility-nav">
-                <button id="dark-mode-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon" aria-hidden="true"></i></button>
+                <a class="nav-cta" href="/listen.html"><i class="fas fa-headphones" aria-hidden="true"></i> Listen</a>
             </div>
         </div>
     </header>
-
-    <section id="main-content" class="hero" style="padding: 5rem 0;">
+    <main id="main-content">
+    <section class="page-hero">
         <div class="container">
-            <div class="hero-content" style="text-align:center;">
-                <p class="hero-eyebrow" style="text-align:center;">6 Episodes</p>
-                <h1>Crime<span class="text-red">Time</span>Snacks Episodes</h1>
-                <p>Every case, explored in detail. Listen below, or on your favorite app.</p>
-            </div>
+            <p class="eyebrow" style="justify-content:center;">6 Episodes on File</p>
+            <h1 class="page-title">The Case <span class="text-red">Files</span></h1>
+            <p>Every case, explored in detail. Press play right here, or take it to your favorite app.</p>
         </div>
     </section>
 
     <div class="crime-scene-tape" aria-hidden="true"></div>
 
-    <section class="container" style="padding-top:3rem;">
-            <article class="episode-card" style="max-width:860px;margin:0 auto 2.5rem;">
-                <a href="/episodes/murders-in-moscow.html"><img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731822271588-25bfd78792249.jpg" alt="Murders in Moscow" class="episode-image" loading="lazy" style="height:auto;aspect-ratio:1/1;object-fit:cover;"></a>
-                <div class="episode-content">
-                    <div class="episode-badges" style="margin-bottom:0.5rem;">
-                        <span class="episode-badge">True Crime</span>
-                        <span class="episode-badge">11:41</span>
+    <section class="container" style="padding-top:1rem;">
+        <div class="episode-grid">
+                <article class="episode-card" data-categories="true-crime">
+                    <a href="/episodes/murders-in-moscow.html" aria-label="Murders in Moscow"><img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731822271588-25bfd78792249.jpg" alt="Murders in Moscow" class="episode-image" loading="lazy"></a>
+                    <div class="episode-content">
+                        <div class="episode-badges">
+                            <span class="episode-badge">True Crime</span>
+                            <span class="episode-badge"><i class="far fa-clock" aria-hidden="true"></i> 11:41</span>
+                        </div>
+                        <h3 class="episode-title"><a href="/episodes/murders-in-moscow.html" style="color:inherit;text-decoration:none;">Murders in Moscow</a></h3>
+                        <p class="episode-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> March 16, 2025</p>
+                        <p class="episode-description">In this gripping episode of Crime Time Snacks , we delve into the harrowing case of the Idaho student murders that rocked the nation. On November 13, 2022, four University of Idaho students — Ethan Chapin, Madison…</p>
+                        <audio preload="none" controls>
+                            <source src="https://d3ctxlq1ktw2nl.cloudfront.net/staging/2025-2-16/db747518-c453-7022-a137-b84015e84d02.mp3" type="audio/mpeg">
+                        </audio>
+                        <div class="episode-actions">
+                            <a href="/episodes/murders-in-moscow.html" class="btn btn-primary btn-sm">Open Case</a>
+                            <div class="episode-stats">
+                                <a href="https://podcasters.spotify.com/pod/show/cory-hepler/episodes/Murders-in-Moscow-e2r36cp" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;"><i class="fab fa-spotify" aria-hidden="true"></i> Spotify</a>
+                                <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;"><i class="fab fa-apple" aria-hidden="true"></i> Apple</a>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="episode-title"><a href="/episodes/murders-in-moscow.html" style="color:inherit;text-decoration:none;">Murders in Moscow</a></h3>
-                    <p class="episode-date"><i class="far fa-calendar-alt"></i> March 16, 2025</p>
-                    <p class="episode-description">In this gripping episode of Crime Time Snacks , we delve into the harrowing case of the Idaho student murders that rocked the nation. On November 13, 2022, four University of Idaho students — Ethan Chapin, Madison Mogen, Xana Kernodle, and Kaylee Goncalves — were tragically murdered in their off-campus rental home in Moscow, Idaho. This episode unpacks the chilling events, the ongoing investigation, and the complexities surrounding the case.</p>
-                    <audio controls preload="none" style="width:100%;margin:1rem 0;">
-                        <source src="https://d3ctxlq1ktw2nl.cloudfront.net/staging/2025-2-16/db747518-c453-7022-a137-b84015e84d02.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-                        <a href="https://podcasters.spotify.com/pod/show/cory-hepler/episodes/Murders-in-Moscow-e2r36cp" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-spotify"></i> Listen on Spotify</a>
-                        <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-apple"></i> Apple Podcasts</a>
+                </article>
+                <article class="episode-card" data-categories="true-crime">
+                    <a href="/episodes/watts-family-murders.html" aria-label="Watts Family Murders"><img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731832918663-8a0f0ee9c4129.jpg" alt="Watts Family Murders" class="episode-image" loading="lazy"></a>
+                    <div class="episode-content">
+                        <div class="episode-badges">
+                            <span class="episode-badge">True Crime</span>
+                            <span class="episode-badge"><i class="far fa-clock" aria-hidden="true"></i> 21:42</span>
+                        </div>
+                        <h3 class="episode-title"><a href="/episodes/watts-family-murders.html" style="color:inherit;text-decoration:none;">Watts Family Murders</a></h3>
+                        <p class="episode-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> November 17, 2024</p>
+                        <p class="episode-description">The Watts family murders occurred in August 2018 in Frederick, Colorado. Chris Watts, the father, killed his pregnant wife, Shanann, and their two young daughters, Bella and Celeste. The crime gained significant media…</p>
+                        <audio preload="none" controls>
+                            <source src="https://d3ctxlq1ktw2nl.cloudfront.net/staging/2024-10-17/389955425-44100-2-6648bd101d1cc.m4a" type="audio/x-m4a">
+                        </audio>
+                        <div class="episode-actions">
+                            <a href="/episodes/watts-family-murders.html" class="btn btn-primary btn-sm">Open Case</a>
+                            <div class="episode-stats">
+                                <a href="https://podcasters.spotify.com/pod/show/cory-hepler/episodes/Watts-Family-Murders-e2r3hl1" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;"><i class="fab fa-spotify" aria-hidden="true"></i> Spotify</a>
+                                <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;"><i class="fab fa-apple" aria-hidden="true"></i> Apple</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </article>
-            <article class="episode-card" style="max-width:860px;margin:0 auto 2.5rem;">
-                <a href="/episodes/watts-family-murders.html"><img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731832918663-8a0f0ee9c4129.jpg" alt="Watts Family Murders" class="episode-image" loading="lazy" style="height:auto;aspect-ratio:1/1;object-fit:cover;"></a>
-                <div class="episode-content">
-                    <div class="episode-badges" style="margin-bottom:0.5rem;">
-                        <span class="episode-badge">True Crime</span>
-                        <span class="episode-badge">21:42</span>
+                </article>
+                <article class="episode-card" data-categories="true-crime">
+                    <a href="/episodes/erik-and-lyle-the-menendez-brothers.html" aria-label="ERIK AND LYLE: The Menendez Brothers"><img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731821846921-7a3bca7a5b61d.jpg" alt="ERIK AND LYLE: The Menendez Brothers" class="episode-image" loading="lazy"></a>
+                    <div class="episode-content">
+                        <div class="episode-badges">
+                            <span class="episode-badge">True Crime</span>
+                            <span class="episode-badge"><i class="far fa-clock" aria-hidden="true"></i> 19:38</span>
+                        </div>
+                        <h3 class="episode-title"><a href="/episodes/erik-and-lyle-the-menendez-brothers.html" style="color:inherit;text-decoration:none;">ERIK AND LYLE: The Menendez Brothers</a></h3>
+                        <p class="episode-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> November 17, 2024</p>
+                        <p class="episode-description">The Menendez brothers, Lyle and Erik, have been in prison for over 35 years. They were convicted in 1996 for the 1989 murders of their parents and sentenced to life in prison without the possibility of parole. This is…</p>
+                        <audio preload="none" controls>
+                            <source src="https://d3ctxlq1ktw2nl.cloudfront.net/staging/2024-10-17/389951995-44100-2-69460dbc489c7.m4a" type="audio/x-m4a">
+                        </audio>
+                        <div class="episode-actions">
+                            <a href="/episodes/erik-and-lyle-the-menendez-brothers.html" class="btn btn-primary btn-sm">Open Case</a>
+                            <div class="episode-stats">
+                                <a href="https://podcasters.spotify.com/pod/show/cory-hepler/episodes/ERIK-AND-LYLE-The-Menendez-Brothers-e2r3eo8" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;"><i class="fab fa-spotify" aria-hidden="true"></i> Spotify</a>
+                                <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;"><i class="fab fa-apple" aria-hidden="true"></i> Apple</a>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="episode-title"><a href="/episodes/watts-family-murders.html" style="color:inherit;text-decoration:none;">Watts Family Murders</a></h3>
-                    <p class="episode-date"><i class="far fa-calendar-alt"></i> November 17, 2024</p>
-                    <p class="episode-description">The Watts family murders occurred in August 2018 in Frederick, Colorado. Chris Watts, the father, killed his pregnant wife, Shanann, and their two young daughters, Bella and Celeste. The crime gained significant media attention due to its horrific nature and the subsequent investigation. Watts initially denied involvement but later confessed to the murders. He was sentenced to life in prison without the possibility of parole. The case continues to be a source of fascination and discussion for true crime enthusiasts.</p>
-                    <audio controls preload="none" style="width:100%;margin:1rem 0;">
-                        <source src="https://d3ctxlq1ktw2nl.cloudfront.net/staging/2024-10-17/389955425-44100-2-6648bd101d1cc.m4a" type="audio/x-m4a">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-                        <a href="https://podcasters.spotify.com/pod/show/cory-hepler/episodes/Watts-Family-Murders-e2r3hl1" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-spotify"></i> Listen on Spotify</a>
-                        <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-apple"></i> Apple Podcasts</a>
+                </article>
+                <article class="episode-card" data-categories="true-crime">
+                    <a href="/episodes/jonbenet-ramsey-the-facts-96-22-part-1.html" aria-label="JonBenét Ramsey | The Facts 96-22 |Part 1"><img src="https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/19116320/19116320-1668968108733-9f40ee8db375b.jpg" alt="JonBenét Ramsey | The Facts 96-22 |Part 1" class="episode-image" loading="lazy"></a>
+                    <div class="episode-content">
+                        <div class="episode-badges">
+                            <span class="episode-badge">True Crime</span>
+                            <span class="episode-badge"><i class="far fa-clock" aria-hidden="true"></i> 15:44</span>
+                        </div>
+                        <h3 class="episode-title"><a href="/episodes/jonbenet-ramsey-the-facts-96-22-part-1.html" style="color:inherit;text-decoration:none;">JonBenét Ramsey | The Facts 96-22 |Part 1</a></h3>
+                        <p class="episode-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> November 20, 2022</p>
+                        <p class="episode-description">JonBenét Patricia Ramsey was murdered. That is the only certain thing about this case after 26 years. Their is key evidence in this case as well as more theories than their are people involved. I took weeks of research…</p>
+                        <audio preload="none" controls>
+                            <source src="https://d3ctxlq1ktw2nl.cloudfront.net/production/exports/7289c700/60937454/8286a6188df9541ddbe83717ce9fcdcf.m4a" type="audio/x-m4a">
+                        </audio>
+                        <div class="episode-actions">
+                            <a href="/episodes/jonbenet-ramsey-the-facts-96-22-part-1.html" class="btn btn-primary btn-sm">Open Case</a>
+                            <div class="episode-stats">
+                                <a href="https://podcasters.spotify.com/pod/show/cory-hepler/episodes/JonBent-Ramsey--The-Facts-96-22-Part-1-e1r25pe" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;"><i class="fab fa-spotify" aria-hidden="true"></i> Spotify</a>
+                                <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;"><i class="fab fa-apple" aria-hidden="true"></i> Apple</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </article>
-            <article class="episode-card" style="max-width:860px;margin:0 auto 2.5rem;">
-                <a href="/episodes/erik-and-lyle-the-menendez-brothers.html"><img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731821846921-7a3bca7a5b61d.jpg" alt="ERIK AND LYLE: The Menendez Brothers" class="episode-image" loading="lazy" style="height:auto;aspect-ratio:1/1;object-fit:cover;"></a>
-                <div class="episode-content">
-                    <div class="episode-badges" style="margin-bottom:0.5rem;">
-                        <span class="episode-badge">True Crime</span>
-                        <span class="episode-badge">19:38</span>
+                </article>
+                <article class="episode-card" data-categories="true-crime">
+                    <a href="/episodes/jonbenet-ramsey-americas-child-beauty-queen.html" aria-label="JonBenét Ramsey Americas Child Beauty Queen"><img src="https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/19116320/19116320-1668802938397-afbcf18474af5.jpg" alt="JonBenét Ramsey Americas Child Beauty Queen" class="episode-image" loading="lazy"></a>
+                    <div class="episode-content">
+                        <div class="episode-badges">
+                            <span class="episode-badge">True Crime</span>
+                            <span class="episode-badge"><i class="far fa-clock" aria-hidden="true"></i> 00:57</span>
+                        </div>
+                        <h3 class="episode-title"><a href="/episodes/jonbenet-ramsey-americas-child-beauty-queen.html" style="color:inherit;text-decoration:none;">JonBenét Ramsey Americas Child Beauty Queen</a></h3>
+                        <p class="episode-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> November 18, 2022</p>
+                        <p class="episode-description">In Boulder Colorado Just a day after Christmas in 1996, JonBenét Ramsey a six-year child pageant star of the late 90's, was found dead in her basement. She was beaten and strangled. Hours after her parents, John and…</p>
+                        <audio preload="none" controls>
+                            <source src="https://d3ctxlq1ktw2nl.cloudfront.net/staging/2022-10-18/431c6811-62f8-a46a-8fbc-485ac90d7306.mp3" type="audio/mpeg">
+                        </audio>
+                        <div class="episode-actions">
+                            <a href="/episodes/jonbenet-ramsey-americas-child-beauty-queen.html" class="btn btn-primary btn-sm">Open Case</a>
+                            <div class="episode-stats">
+                                <a href="https://podcasters.spotify.com/pod/show/cory-hepler/episodes/JonBent-Ramsey-Americas-Child-Beauty-Queen-e1r021i" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;"><i class="fab fa-spotify" aria-hidden="true"></i> Spotify</a>
+                                <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;"><i class="fab fa-apple" aria-hidden="true"></i> Apple</a>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="episode-title"><a href="/episodes/erik-and-lyle-the-menendez-brothers.html" style="color:inherit;text-decoration:none;">ERIK AND LYLE: The Menendez Brothers</a></h3>
-                    <p class="episode-date"><i class="far fa-calendar-alt"></i> November 17, 2024</p>
-                    <p class="episode-description">The Menendez brothers, Lyle and Erik, have been in prison for over 35 years. They were convicted in 1996 for the 1989 murders of their parents and sentenced to life in prison without the possibility of parole. This is their story.</p>
-                    <audio controls preload="none" style="width:100%;margin:1rem 0;">
-                        <source src="https://d3ctxlq1ktw2nl.cloudfront.net/staging/2024-10-17/389951995-44100-2-69460dbc489c7.m4a" type="audio/x-m4a">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-                        <a href="https://podcasters.spotify.com/pod/show/cory-hepler/episodes/ERIK-AND-LYLE-The-Menendez-Brothers-e2r3eo8" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-spotify"></i> Listen on Spotify</a>
-                        <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-apple"></i> Apple Podcasts</a>
+                </article>
+                <article class="episode-card" data-categories="true-crime">
+                    <a href="/episodes/crimetimesnacks-the-delphi-murder-case-2017.html" aria-label="CrimeTimeSnacks: The Delphi Murder Case 2017"><img src="https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/19116320/19116320-1668756728911-46682c3a84737.jpg" alt="CrimeTimeSnacks: The Delphi Murder Case 2017" class="episode-image" loading="lazy"></a>
+                    <div class="episode-content">
+                        <div class="episode-badges">
+                            <span class="episode-badge">True Crime</span>
+                            <span class="episode-badge"><i class="far fa-clock" aria-hidden="true"></i> 09:25</span>
+                        </div>
+                        <h3 class="episode-title"><a href="/episodes/crimetimesnacks-the-delphi-murder-case-2017.html" style="color:inherit;text-decoration:none;">CrimeTimeSnacks: The Delphi Murder Case 2017</a></h3>
+                        <p class="episode-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> November 18, 2022</p>
+                        <p class="episode-description">On February 14, 2017, the bodies of Abigail Williams (June 23, 2003 – February 13, 2017) and Liberty German (December 27, 2002 – February 13, 2017) were discovered near the Monon High Bridge Trail. The case has had no…</p>
+                        <audio preload="none" controls>
+                            <source src="https://d3ctxlq1ktw2nl.cloudfront.net/staging/2022-10-18/297850056-44100-2-fd08101ddc883.m4a" type="audio/x-m4a">
+                        </audio>
+                        <div class="episode-actions">
+                            <a href="/episodes/crimetimesnacks-the-delphi-murder-case-2017.html" class="btn btn-primary btn-sm">Open Case</a>
+                            <div class="episode-stats">
+                                <a href="https://podcasters.spotify.com/pod/show/cory-hepler/episodes/CrimeTimeSnacks-The-Delphi-Murder-Case-2017-e1qv004" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;"><i class="fab fa-spotify" aria-hidden="true"></i> Spotify</a>
+                                <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;"><i class="fab fa-apple" aria-hidden="true"></i> Apple</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </article>
-            <article class="episode-card" style="max-width:860px;margin:0 auto 2.5rem;">
-                <a href="/episodes/jonbenet-ramsey-the-facts-96-22-part-1.html"><img src="https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/19116320/19116320-1668968108733-9f40ee8db375b.jpg" alt="JonBenét Ramsey | The Facts 96-22 |Part 1" class="episode-image" loading="lazy" style="height:auto;aspect-ratio:1/1;object-fit:cover;"></a>
-                <div class="episode-content">
-                    <div class="episode-badges" style="margin-bottom:0.5rem;">
-                        <span class="episode-badge">True Crime</span>
-                        <span class="episode-badge">15:44</span>
-                    </div>
-                    <h3 class="episode-title"><a href="/episodes/jonbenet-ramsey-the-facts-96-22-part-1.html" style="color:inherit;text-decoration:none;">JonBenét Ramsey | The Facts 96-22 |Part 1</a></h3>
-                    <p class="episode-date"><i class="far fa-calendar-alt"></i> November 20, 2022</p>
-                    <p class="episode-description">JonBenét Patricia Ramsey was murdered. That is the only certain thing about this case after 26 years. Their is key evidence in this case as well as more theories than their are people involved. I took weeks of research and broke it down into a 2 part segment where I go over all the facts known to the case today as well as some key suspects. I try to stay away from the theories that have little to know factual basis. Listen to the facts of the case and make your own opinion. Visit CrimeTimeSnacks.com to stay even more involved and join an ever growing True Crime Community. -@CrimeTimeSnacks</p>
-                    <audio controls preload="none" style="width:100%;margin:1rem 0;">
-                        <source src="https://d3ctxlq1ktw2nl.cloudfront.net/production/exports/7289c700/60937454/8286a6188df9541ddbe83717ce9fcdcf.m4a" type="audio/x-m4a">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-                        <a href="https://podcasters.spotify.com/pod/show/cory-hepler/episodes/JonBent-Ramsey--The-Facts-96-22-Part-1-e1r25pe" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-spotify"></i> Listen on Spotify</a>
-                        <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-apple"></i> Apple Podcasts</a>
-                    </div>
-                </div>
-            </article>
-            <article class="episode-card" style="max-width:860px;margin:0 auto 2.5rem;">
-                <a href="/episodes/jonbenet-ramsey-americas-child-beauty-queen.html"><img src="https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/19116320/19116320-1668802938397-afbcf18474af5.jpg" alt="JonBenét Ramsey Americas Child Beauty Queen" class="episode-image" loading="lazy" style="height:auto;aspect-ratio:1/1;object-fit:cover;"></a>
-                <div class="episode-content">
-                    <div class="episode-badges" style="margin-bottom:0.5rem;">
-                        <span class="episode-badge">True Crime</span>
-                        <span class="episode-badge">00:57</span>
-                    </div>
-                    <h3 class="episode-title"><a href="/episodes/jonbenet-ramsey-americas-child-beauty-queen.html" style="color:inherit;text-decoration:none;">JonBenét Ramsey Americas Child Beauty Queen</a></h3>
-                    <p class="episode-date"><i class="far fa-calendar-alt"></i> November 18, 2022</p>
-                    <p class="episode-description">In Boulder Colorado Just a day after Christmas in 1996, JonBenét Ramsey a six-year child pageant star of the late 90's, was found dead in her basement. She was beaten and strangled. Hours after her parents, John and Patsy, reported her missing. Hours before, her mom had found a ransom note sitting on a staircase in the house. There have never been any arrests or named suspects in this case, even 26 years later. Tune in September 20th for a 2 part special where we go back to Christmas 1996 and relook at all the facts in this case.</p>
-                    <audio controls preload="none" style="width:100%;margin:1rem 0;">
-                        <source src="https://d3ctxlq1ktw2nl.cloudfront.net/staging/2022-10-18/431c6811-62f8-a46a-8fbc-485ac90d7306.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-                        <a href="https://podcasters.spotify.com/pod/show/cory-hepler/episodes/JonBent-Ramsey-Americas-Child-Beauty-Queen-e1r021i" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-spotify"></i> Listen on Spotify</a>
-                        <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-apple"></i> Apple Podcasts</a>
-                    </div>
-                </div>
-            </article>
-            <article class="episode-card" style="max-width:860px;margin:0 auto 2.5rem;">
-                <a href="/episodes/crimetimesnacks-the-delphi-murder-case-2017.html"><img src="https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/19116320/19116320-1668756728911-46682c3a84737.jpg" alt="CrimeTimeSnacks: The Delphi Murder Case 2017" class="episode-image" loading="lazy" style="height:auto;aspect-ratio:1/1;object-fit:cover;"></a>
-                <div class="episode-content">
-                    <div class="episode-badges" style="margin-bottom:0.5rem;">
-                        <span class="episode-badge">True Crime</span>
-                        <span class="episode-badge">09:25</span>
-                    </div>
-                    <h3 class="episode-title"><a href="/episodes/crimetimesnacks-the-delphi-murder-case-2017.html" style="color:inherit;text-decoration:none;">CrimeTimeSnacks: The Delphi Murder Case 2017</a></h3>
-                    <p class="episode-date"><i class="far fa-calendar-alt"></i> November 18, 2022</p>
-                    <p class="episode-description">On February 14, 2017, the bodies of Abigail Williams (June 23, 2003 – February 13, 2017) and Liberty German (December 27, 2002 – February 13, 2017) were discovered near the Monon High Bridge Trail. The case has had no prominent suspects until recently. On October 28th police announced they had made an arrest in the case. A 50 year old Delphi Resident was arrested and charged with two felony counts of murder. Listen while we dive into the case starting over 5 years ago in on a beautiful hiking trail.</p>
-                    <audio controls preload="none" style="width:100%;margin:1rem 0;">
-                        <source src="https://d3ctxlq1ktw2nl.cloudfront.net/staging/2022-10-18/297850056-44100-2-fd08101ddc883.m4a" type="audio/x-m4a">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-                        <a href="https://podcasters.spotify.com/pod/show/cory-hepler/episodes/CrimeTimeSnacks-The-Delphi-Murder-Case-2017-e1qv004" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-spotify"></i> Listen on Spotify</a>
-                        <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-apple"></i> Apple Podcasts</a>
-                    </div>
-                </div>
-            </article>
+                </article>
+        </div>
     </section>
+    </main>
 
     <footer class="footer">
+        <span class="footer-watermark" aria-hidden="true">SNACKS</span>
         <div class="container">
             <div class="footer-content">
                 <div>
                     <img src="/images/logo.png" alt="CrimeTimeSnacks Logo" class="footer-logo">
-                    <p>A true crime podcast exploring unsolved cases and mysteries with detailed analysis and compelling storytelling.</p>
+                    <p>A true crime podcast exploring unsolved cases and mysteries with detailed analysis and compelling storytelling. Researched, written, and hosted by Cory.</p>
                     <div class="footer-social">
-                        <a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
-                        <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" aria-label="Apple Podcasts"><i class="fab fa-apple"></i></a>
+                        <a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" aria-label="Spotify" target="_blank" rel="noopener"><i class="fab fa-spotify" aria-hidden="true"></i></a>
+                        <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" aria-label="Apple Podcasts" target="_blank" rel="noopener"><i class="fab fa-apple" aria-hidden="true"></i></a>
+                        <a href="/feed.xml" aria-label="RSS feed"><i class="fas fa-rss" aria-hidden="true"></i></a>
+                        <a href="mailto:crimetimesnacks@gmail.com" aria-label="Email CrimeTimeSnacks"><i class="fas fa-envelope" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div>
-                    <h3 class="footer-heading">Quick Links</h3>
+                    <h3 class="footer-heading">Case Files</h3>
                     <ul class="footer-links">
-                        <li><a href="/index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="/episodes.html"><i class="fas fa-chevron-right"></i> Episodes</a></li>
-                        <li><a href="/blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
-                        <li><a href="/about.html"><i class="fas fa-chevron-right"></i> About</a></li>
-                        <li><a href="/contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="/episodes.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Episodes</a></li>
+                        <li><a href="/videos.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Videos</a></li>
+                        <li><a href="/blog.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Crime Blog</a></li>
+                        <li><a href="/live.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Live Cases</a></li>
+                        <li><a href="/quiz.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Quizzes</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="footer-heading">Listen On</h3>
+                    <h3 class="footer-heading">The Show</h3>
                     <ul class="footer-links">
-                        <li><a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400"><i class="fab fa-apple"></i> Apple Podcasts</a></li>
-                        <li><a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ"><i class="fab fa-spotify"></i> Spotify</a></li>
-                        <li><a href="/feed.xml"><i class="fas fa-rss"></i> RSS Feed</a></li>
+                        <li><a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener"><i class="fab fa-apple" aria-hidden="true"></i> Apple Podcasts</a></li>
+                        <li><a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" target="_blank" rel="noopener"><i class="fab fa-spotify" aria-hidden="true"></i> Spotify</a></li>
+                        <li><a href="/merch.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Merch</a></li>
+                        <li><a href="/about.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> About</a></li>
+                        <li><a href="mailto:crimetimesnacks@gmail.com?subject=Case%20suggestion%20for%20CrimeTimeSnacks"><i class="fas fa-folder-plus" aria-hidden="true"></i> Suggest a Case</a></li>
                     </ul>
                 </div>
                 <div class="footer-newsletter">
-                    <h3 class="footer-heading">Newsletter</h3>
-                    <p>Subscribe for the latest episodes and updates.</p>
-                    <input type="email" placeholder="Your Email Address">
-                    <button class="btn btn-primary" style="width: 100%;">Subscribe</button>
+                    <h3 class="footer-heading">The Case File</h3>
+                    <p>One bite-size case brief and every new episode — twice a week, no spam.</p>
+                    <input type="email" inputmode="email" autocomplete="email" aria-label="Email address" placeholder="Your email address">
+                    <button class="btn btn-primary" style="width: 100%;">Get the Case File</button>
                 </div>
             </div>
-            <div class="footer-bottom"><p>&copy; 2026 CrimeTimeSnacks. All Rights Reserved.</p></div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CrimeTimeSnacks. All Rights Reserved. Made with respect for victims and their families.</p>
+                <span class="crisis">If you have information about an unsolved case, contact your local authorities or <a href="https://tips.fbi.gov" target="_blank" rel="noopener" style="color:inherit;">tips.fbi.gov</a>.</span>
+            </div>
         </div>
     </footer>
 
     <script src="/js/main.js"></script>
+    <script src="/js/effects.js"></script>
 </body>
 </html>

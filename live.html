@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Live Cases | CrimeTimeSnacks — FBI Most Wanted & Missing Persons</title>
+    <meta name="description" content="The CrimeTimeSnacks live case board — the FBI's Most Wanted, missing persons, and seeking-information cases, pulled from the FBI's public data and refreshed automatically.">
+    <meta name="author" content="Cory">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://crimetime.vercel.app/live.html">
+    <meta name="theme-color" content="#050505">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CrimeTimeSnacks">
+    <meta property="og:title" content="Live Cases | CrimeTimeSnacks">
+    <meta property="og:description" content="FBI Most Wanted, missing persons, and seeking-information cases — live on the CrimeTimeSnacks case board.">
+    <meta property="og:url" content="https://crimetime.vercel.app/live.html">
+    <meta property="og:image" content="https://crimetime.vercel.app/images/logo.png">
+    <meta property="og:image:alt" content="CrimeTimeSnacks logo">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Podcast" href="/feed.xml">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/images/logo.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=2026r">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header>
+        <div class="nav-container container">
+            <div class="logo-container">
+                <a href="/index.html" aria-label="CrimeTimeSnacks home">
+                    <img src="/images/logo.png" alt="CrimeTimeSnacks Logo" height="42" width="42">
+                    <span class="logo-word">Crime<em>Time</em>Snacks<span class="logo-sub">A True Crime Podcast</span></span>
+                </a>
+            </div>
+            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><i class="fas fa-bars" aria-hidden="true"></i></button>
+            <nav id="primary-nav" aria-label="Primary">
+                <ul class="nav-menu">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/episodes.html">Episodes</a></li>
+                    <li><a href="/videos.html">Videos</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/live.html" class="active">Live</a></li>
+                    <li><a href="/quiz.html">Quizzes</a></li>
+                    <li><a href="/merch.html">Merch</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="utility-nav">
+                <a class="nav-cta" href="/listen.html"><i class="fas fa-headphones" aria-hidden="true"></i> Listen</a>
+            </div>
+        </div>
+    </header>
+    <main id="main-content">
+    <section class="page-hero">
+        <div class="container">
+            <p class="eyebrow" style="justify-content:center;"><span class="live-dot" aria-hidden="true"></span> Live FBI Data</p>
+            <h1 class="page-title">The Live <span class="text-red">Case Board</span></h1>
+            <p>The cases that are open right now — the FBI's Most Wanted, missing persons, and seeking-information files, straight from the Bureau's public data feed.</p>
+        </div>
+    </section>
+
+    <div class="crime-scene-tape" aria-hidden="true"></div>
+
+    <section class="container" style="padding-top:0.5rem;">
+        <div class="live-toolbar">
+            <div class="live-tabs" role="tablist" aria-label="Case type">
+                <button class="category-btn active" data-kind="all">All Cases</button>
+                <button class="category-btn" data-kind="wanted">Most Wanted</button>
+                <button class="category-btn" data-kind="missing">Missing</button>
+                <button class="category-btn" data-kind="victim">Seeking Info</button>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+                <div class="search-container" style="margin:0;max-width:280px;">
+                    <input type="search" id="live-search" aria-label="Search cases" placeholder="Search names, offices...">
+                    <button aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></button>
+                </div>
+                <span class="live-updated"><span class="live-dot" aria-hidden="true"></span> <span id="live-stamp">Loading&hellip;</span></span>
+            </div>
+        </div>
+
+        <div id="live-board" class="live-grid" aria-live="polite">
+            <div class="skeleton" aria-hidden="true"></div>
+            <div class="skeleton" aria-hidden="true"></div>
+            <div class="skeleton" aria-hidden="true"></div>
+            <div class="skeleton" aria-hidden="true"></div>
+            <div class="skeleton" aria-hidden="true"></div>
+            <div class="skeleton" aria-hidden="true"></div>
+            <div class="skeleton" aria-hidden="true"></div>
+            <div class="skeleton" aria-hidden="true"></div>
+        </div>
+
+        <div style="text-align:center;margin-top:2.2rem;">
+            <button id="live-more" class="btn btn-secondary" style="display:none;">Show More Cases</button>
+        </div>
+
+        <p class="live-disclaimer"><i class="fas fa-circle-info" aria-hidden="true"></i> All case data and photos come directly from the FBI's public Wanted API and belong to the FBI. Individuals listed as wanted are presumed innocent until proven guilty in a court of law. If you have information about any case shown here, do not act on your own &mdash; contact the FBI at <a href="https://tips.fbi.gov" target="_blank" rel="noopener" style="color:var(--cts-tape);">tips.fbi.gov</a> or call 1-800-CALL-FBI.</p>
+    </section>
+    </main>
+
+    <footer class="footer">
+        <span class="footer-watermark" aria-hidden="true">SNACKS</span>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <img src="/images/logo.png" alt="CrimeTimeSnacks Logo" class="footer-logo">
+                    <p>A true crime podcast exploring unsolved cases and mysteries with detailed analysis and compelling storytelling. Researched, written, and hosted by Cory.</p>
+                    <div class="footer-social">
+                        <a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" aria-label="Spotify" target="_blank" rel="noopener"><i class="fab fa-spotify" aria-hidden="true"></i></a>
+                        <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" aria-label="Apple Podcasts" target="_blank" rel="noopener"><i class="fab fa-apple" aria-hidden="true"></i></a>
+                        <a href="/feed.xml" aria-label="RSS feed"><i class="fas fa-rss" aria-hidden="true"></i></a>
+                        <a href="mailto:crimetimesnacks@gmail.com" aria-label="Email CrimeTimeSnacks"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Case Files</h3>
+                    <ul class="footer-links">
+                        <li><a href="/episodes.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Episodes</a></li>
+                        <li><a href="/videos.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Videos</a></li>
+                        <li><a href="/blog.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Crime Blog</a></li>
+                        <li><a href="/live.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Live Cases</a></li>
+                        <li><a href="/quiz.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Quizzes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-heading">The Show</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener"><i class="fab fa-apple" aria-hidden="true"></i> Apple Podcasts</a></li>
+                        <li><a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" target="_blank" rel="noopener"><i class="fab fa-spotify" aria-hidden="true"></i> Spotify</a></li>
+                        <li><a href="/merch.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Merch</a></li>
+                        <li><a href="/about.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> About</a></li>
+                        <li><a href="mailto:crimetimesnacks@gmail.com?subject=Case%20suggestion%20for%20CrimeTimeSnacks"><i class="fas fa-folder-plus" aria-hidden="true"></i> Suggest a Case</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3 class="footer-heading">The Case File</h3>
+                    <p>One bite-size case brief and every new episode — twice a week, no spam.</p>
+                    <input type="email" inputmode="email" autocomplete="email" aria-label="Email address" placeholder="Your email address">
+                    <button class="btn btn-primary" style="width: 100%;">Get the Case File</button>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CrimeTimeSnacks. All Rights Reserved. Made with respect for victims and their families.</p>
+                <span class="crisis">If you have information about an unsolved case, contact your local authorities or <a href="https://tips.fbi.gov" target="_blank" rel="noopener" style="color:inherit;">tips.fbi.gov</a>.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    (function () {
+        'use strict';
+        var API = 'https://api.fbi.gov/wanted/v1/list';
+        var BAKED = '/automation/fbi.json';
+        var board = document.getElementById('live-board');
+        var stamp = document.getElementById('live-stamp');
+        var moreBtn = document.getElementById('live-more');
+        var searchBox = document.getElementById('live-search');
+        var items = [];
+        var kind = 'all';
+        var query = '';
+        var shown = 24;
+
+        function esc(s) {
+            return String(s || '').replace(/[&<>"]/g, function (c) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+            });
+        }
+
+        function classify(item) {
+            var poster = (item.poster_classification || '').toLowerCase();
+            var person = (item.person_classification || '').toLowerCase();
+            var subjects = (item.subjects || []).join(' ').toLowerCase();
+            if (poster.indexOf('missing') > -1 || subjects.indexOf('missing') > -1 || subjects.indexOf('kidnap') > -1) return 'missing';
+            if (poster.indexOf('information') > -1 || person.indexOf('victim') > -1 || subjects.indexOf('victim') > -1 || subjects.indexOf('seeking information') > -1) return 'victim';
+            return 'wanted';
+        }
+
+        function slimLive(item) {
+            var img = (item.images || [])[0] || {};
+            return {
+                title: item.title || '',
+                kind: classify(item),
+                image: img.large || img.original || img.thumb || '',
+                office: (item.field_offices || []).join(', ') || 'FBI',
+                reward: item.reward_text || '',
+                url: item.url || ''
+            };
+        }
+
+        function chip(k) {
+            if (k === 'missing') return '<span class="w-chip w-chip--missing">Missing</span>';
+            if (k === 'victim') return '<span class="w-chip w-chip--victim">Seeking Info</span>';
+            return '<span class="w-chip w-chip--wanted">Wanted</span>';
+        }
+
+        function render() {
+            var filtered = items.filter(function (it) {
+                if (kind !== 'all' && it.kind !== kind) return false;
+                if (query && (it.title + ' ' + it.office).toLowerCase().indexOf(query) === -1) return false;
+                return true;
+            });
+            var slice = filtered.slice(0, shown);
+            if (!slice.length) {
+                board.innerHTML = '<p style="grid-column:1/-1;color:var(--cts-muted);text-align:center;padding:3rem 0;">No cases match. Try another filter.</p>';
+                moreBtn.style.display = 'none';
+                return;
+            }
+            board.innerHTML = slice.map(function (it) {
+                return '<a class="wanted-card" href="' + esc(it.url || 'https://www.fbi.gov/wanted') + '" target="_blank" rel="noopener">' +
+                    '<img class="wanted-photo" loading="lazy" src="' + esc(it.image || '/images/logo.png') + '" alt="' + esc(it.title) + '" onerror="this.src=\'/images/logo.png\'">' +
+                    '<div class="wanted-body">' + chip(it.kind) +
+                    '<div class="wanted-name">' + esc(it.title) + '</div>' +
+                    '<div class="wanted-meta"><i class="fas fa-location-dot" aria-hidden="true"></i> ' + esc(it.office) + '</div>' +
+                    (it.reward ? '<div class="wanted-reward"><i class="fas fa-sack-dollar" aria-hidden="true"></i> ' + esc(String(it.reward).slice(0, 90)) + '</div>' : '') +
+                    '</div></a>';
+            }).join('');
+            moreBtn.style.display = filtered.length > shown ? '' : 'none';
+        }
+
+        function setStamp(text) { if (stamp) stamp.textContent = text; }
+
+        function loadBaked() {
+            return fetch(BAKED).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (data) {
+                items = data.items || [];
+                if (items.length) {
+                    render();
+                    setStamp('Snapshot: ' + new Date(data.meta.updated).toLocaleDateString());
+                }
+                return items.length;
+            }).catch(function () { return 0; });
+        }
+
+        function loadLive() {
+            var pages = [1, 2, 3];
+            return Promise.all(pages.map(function (p) {
+                return fetch(API + '?pageSize=50&page=' + p + '&sort_on=modified&sort_order=desc')
+                    .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+                    .then(function (d) { return d.items || []; })
+                    .catch(function () { return []; });
+            })).then(function (chunks) {
+                var live = [].concat.apply([], chunks).map(slimLive);
+                if (live.length) {
+                    items = live;
+                    render();
+                    setStamp('Live · updated ' + new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }));
+                }
+                return live.length;
+            });
+        }
+
+        document.querySelectorAll('.live-tabs .category-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.live-tabs .category-btn').forEach(function (b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                kind = btn.getAttribute('data-kind');
+                shown = 24;
+                render();
+            });
+        });
+
+        if (searchBox) {
+            searchBox.addEventListener('input', function () {
+                query = searchBox.value.trim().toLowerCase();
+                shown = 24;
+                render();
+            });
+        }
+
+        moreBtn.addEventListener('click', function () { shown += 24; render(); });
+
+        loadBaked().then(function (had) {
+            return loadLive().then(function (gotLive) {
+                if (!had && !gotLive) {
+                    board.innerHTML = '<p style="grid-column:1/-1;color:var(--cts-muted);text-align:center;padding:3rem 0;">The live board is warming up — case data will appear after the next site update. In the meantime, the FBI’s full list is at <a href="https://www.fbi.gov/wanted" target="_blank" rel="noopener" style="color:var(--cts-tape);">fbi.gov/wanted</a>.</p>';
+                    setStamp('Feed offline');
+                }
+            });
+        });
+
+        // quiet refresh every 10 minutes
+        setInterval(loadLive, 10 * 60 * 1000);
+    })();
+    </script>
+    <script src="/js/main.js"></script>
+    <script src="/js/effects.js"></script>
+</body>
+</html>

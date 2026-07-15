@@ -1,6 +1,6 @@
 {
   "meta": {
-    "intro": "Designs straight from the studio — new drops are added automatically. Every design is an original CrimeTimeSnacks print on a black tee, hoodie, or sticker. The store runs on print-on-demand, so everything ships made-to-order.",
+    "intro": "Original CrimeTimeSnacks prints, straight from the studio \u2014 new designs drop automatically. Every file is real, print-ready art you can grab now; the print-on-demand store opens soon.",
     "updated": "2026-07-12T13:19:08.521Z"
   },
   "designs": [
@@ -147,6 +147,35 @@
       "template": 0,
       "svg": "images/merch/stay-suspicious.svg",
       "created": "2026-06-28"
+    }
+  ],
+  "collection": [
+    {
+      "slug": "logo-tee",
+      "name": "The Logo Tee Print",
+      "kind": "Tee / Hoodie",
+      "file": "images/merch/logo-tee.png",
+      "preview": "images/merch/logo-tee-web.png",
+      "price": "30",
+      "blurb": "The official cover art, framed in red with the wordmark bar. Print-ready for a black tee or hoodie."
+    },
+    {
+      "slug": "logo-sticker",
+      "name": "Die-Cut Logo Sticker",
+      "kind": "Sticker",
+      "file": "images/merch/logo-sticker.png",
+      "preview": "images/merch/logo-sticker-web.png",
+      "price": "5",
+      "blurb": "Thick white die-cut border, rounded corners. Laptop, water bottle, case file \u2014 it goes where you go."
+    },
+    {
+      "slug": "logo-classic",
+      "name": "The Cover Art Print",
+      "kind": "Poster / Canvas",
+      "file": "images/merch/logo-classic.png",
+      "preview": "images/merch/logo-classic-web.jpg",
+      "price": "22",
+      "blurb": "The CrimeTimeSnacks cover art as a clean square print. Mic, snacks, and all."
     }
   ]
 }
