@@ -1,0 +1,56 @@
+{
+ "slug": "jonbenet-ramsey-americas-child-beauty-queen",
+ "title": "JonBen\u00e9t Ramsey Americas Child Beauty Queen",
+ "language": "en",
+ "duration": 57.3,
+ "model": "faster-whisper small (int8)",
+ "generated": "2026-07-15",
+ "note": "Auto-transcribed; may contain minor errors.",
+ "segments": [
+  {
+   "start": 10.0,
+   "end": 26.2,
+   "text": "We're fine on them now, we were kidnapped and no one's left any of our..."
+  },
+  {
+   "start": 26.2,
+   "end": 31.2,
+   "text": "The tragic story of John Benet Ramsey is probably one of the most publicly known, unsolved murder"
+  },
+  {
+   "start": 31.2,
+   "end": 33.8,
+   "text": "cases in the United States today."
+  },
+  {
+   "start": 33.8,
+   "end": 38.0,
+   "text": "This story has more conspiracy theories than the moon landing, but no more main suspects"
+  },
+  {
+   "start": 38.0,
+   "end": 40.1,
+   "text": "than the Kennedy assassination."
+  },
+  {
+   "start": 40.1,
+   "end": 43.6,
+   "text": "Well I took the time to break down all the facts of the case and bring you all the"
+  },
+  {
+   "start": 43.6,
+   "end": 48.0,
+   "text": "latest updates, including the most recent one just this year."
+  },
+  {
+   "start": 48.0,
+   "end": 52.9,
+   "text": "The moon in Sunday November 20th for a two-part special on the murder of John"
+  },
+  {
+   "start": 52.9,
+   "end": 53.9,
+   "text": "Benet Ramsey."
+  }
+ ]
+}

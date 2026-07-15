@@ -410,6 +410,39 @@
         });
     }
 
+    /* --------------------------- transcript seek + ?t= deep links */
+    function initTranscript() {
+        var audio = document.querySelector('audio');
+        document.querySelectorAll('.transcript-para[data-t]').forEach(function (p) {
+            p.addEventListener('click', function () {
+                if (!audio) return;
+                audio.currentTime = parseInt(p.getAttribute('data-t'), 10) || 0;
+                audio.play();
+                document.querySelectorAll('.transcript-para.playing').forEach(function (x) { x.classList.remove('playing'); });
+                p.classList.add('playing');
+            });
+        });
+        // ?t=SECONDS deep link (from search results) — open transcript, seek, play
+        var t = new URLSearchParams(location.search).get('t');
+        if (t !== null && audio) {
+            var secs = parseInt(t, 10) || 0;
+            var details = document.getElementById('transcript');
+            if (details) details.open = true;
+            var target = null;
+            document.querySelectorAll('.transcript-para[data-t]').forEach(function (p) {
+                if (parseInt(p.getAttribute('data-t'), 10) <= secs) target = p;
+            });
+            var seek = function () { audio.currentTime = secs; };
+            audio.addEventListener('loadedmetadata', seek, { once: true });
+            seek();
+            audio.play().catch(function () { /* autoplay blocked — user presses play, position is set */ });
+            if (target) {
+                target.classList.add('playing');
+                setTimeout(function () { target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' }); }, 400);
+            }
+        }
+    }
+
     /* -------------------------------------------------------------- kickoff */
     function init() {
         initAtmosphere();
@@ -428,6 +461,7 @@
         initMediaSession();
         initSlashSearch();
         initExternalLinks();
+        initTranscript();
     }
 
     if (document.readyState === 'loading') {

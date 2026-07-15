@@ -1,0 +1,601 @@
+{
+ "slug": "murders-in-moscow",
+ "title": "Murders in Moscow",
+ "language": "en",
+ "duration": 701.9,
+ "model": "faster-whisper small (int8)",
+ "generated": "2026-07-15",
+ "note": "Auto-transcribed; may contain minor errors.",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 4.2,
+   "text": "What's up guys thanks for tuning in to Crime Time Snacks, the true crime podcast."
+  },
+  {
+   "start": 4.2,
+   "end": 9.0,
+   "text": "The case we're diving into today is the case of Brian Coburger and the Idaho College Murders."
+  },
+  {
+   "start": 9.6,
+   "end": 16.0,
+   "text": "This case shocked the nation in November 2022 when four University of Idaho students were"
+  },
+  {
+   "start": 16.0,
+   "end": 21.2,
+   "text": "brutally stabbed to death in their off-campus home. The case has continued to develop,"
+  },
+  {
+   "start": 21.2,
+   "end": 26.8,
+   "text": "with the most recent update being the release of the 911 call audio that was made when the"
+  },
+  {
+   "start": 26.8,
+   "end": 31.8,
+   "text": "bodies were discovered. This episode is going to walk you through the entire timeline of this"
+  },
+  {
+   "start": 31.8,
+   "end": 37.9,
+   "text": "horrific case from the night of the murders all the way to the newest developments including that 911"
+  },
+  {
+   "start": 37.9,
+   "end": 44.5,
+   "text": "call. We'll cover the victims, the investigation, the arrest of Brian Coburger and where the case"
+  },
+  {
+   "start": 44.5,
+   "end": 51.8,
+   "text": "stands today as it heads toward trial. So let's get into it. Our story begins in Moscow, Idaho,"
+  },
+  {
+   "start": 51.8,
+   "end": 58.8,
+   "text": "a small college town that's home to the University of Idaho. On the night of November 12th 2022,"
+  },
+  {
+   "start": 58.8,
+   "end": 63.3,
+   "text": "four students were enjoying their Saturday night like many college students do."
+  },
+  {
+   "start": 63.9,
+   "end": 70.2,
+   "text": "Kaylee and Madison, both 21 years old, spent the evening at a local bar called the Corner Club."
+  },
+  {
+   "start": 70.8,
+   "end": 77.7,
+   "text": "They were there between 10 p.m. and 1 30 a.m. and then headed to a food truck at around 1 40 a.m."
+  },
+  {
+   "start": 77.7,
+   "end": 83.8,
+   "text": "before returning to their off-campus home. Meanwhile, Ethan 20 and his girlfriend, Zana Cronodal,"
+  },
+  {
+   "start": 83.8,
+   "end": 88.7,
+   "text": "20, attended a party at the Sigma Chi Fraternity House between 8 and 9 p.m."
+  },
+  {
+   "start": 89.3,
+   "end": 95.0,
+   "text": "They returned to the girls off-campus residence at around 1 45 a.m. Zana was a roommate of"
+  },
+  {
+   "start": 95.0,
+   "end": 100.2,
+   "text": "Kaylee and Madison while Ethan was staying over that night. The house also had two other roommates"
+  },
+  {
+   "start": 100.2,
+   "end": 105.5,
+   "text": "who remarkably were not attacked and reportedly slept through the entire incident. This detail"
+  },
+  {
+   "start": 105.5,
+   "end": 112.0,
+   "text": "would later become crucial to the investigation. According to the Leyta County Coroner's Office,"
+  },
+  {
+   "start": 112.0,
+   "end": 115.7,
+   "text": "the four victims were likely asleep when they were attacked with a large knife."
+  },
+  {
+   "start": 116.2,
+   "end": 121.6,
+   "text": "Some had defensive wounds indicating they woke up during the attack and tried to fight off"
+  },
+  {
+   "start": 121.6,
+   "end": 128.3,
+   "text": "their attacker. Investigators believe the homicides occurred between 4 a.m. and 4 25 a.m."
+  },
+  {
+   "start": 128.9,
+   "end": 137.8,
+   "text": "The next morning, on Sunday, November 13, 2022, at 11.58 a.m., police received a 911 call"
+  },
+  {
+   "start": 137.8,
+   "end": 142.4,
+   "text": "reporting an unconscious person at the residence. The call came from one of the"
+  },
+  {
+   "start": 142.4,
+   "end": 150.1,
+   "text": "surviving roommates' phones. In the recently released 911 call audio from March 2025,"
+  },
+  {
+   "start": 150.1,
+   "end": 155.3,
+   "text": "we can hear the confusion and distress as the callers realized something was terribly wrong."
+  },
+  {
+   "start": 156.0,
+   "end": 159.4,
+   "text": "A woman called 911 sounding very upset saying,"
+  },
+  {
+   "start": 159.4,
+   "end": 164.1,
+   "text": "something happened in our house. She was crying while giving the address and then another woman"
+  },
+  {
+   "start": 164.1,
+   "end": 169.2,
+   "text": "took the phone. The second woman told the dispatcher, one of the roommates who's passed out"
+  },
+  {
+   "start": 169.2,
+   "end": 174.1,
+   "text": "and she was drunk last night and she's not waking up. She also mentioned and they saw some"
+  },
+  {
+   "start": 174.1,
+   "end": 179.2,
+   "text": "man in their house last night. When police arrived at the scene, they discovered the four"
+  },
+  {
+   "start": 179.2,
+   "end": 184.1,
+   "text": "students dead on the second and third floors of the home. They had been brutally stabbed to"
+  },
+  {
+   "start": 184.1,
+   "end": 188.8,
+   "text": "death. The Moscow Police Department quickly issued a statement saying an edged weapon,"
+  },
+  {
+   "start": 188.8,
+   "end": 193.7,
+   "text": "such as a knife, was used in the killings, though no murder weapon was found at the scene."
+  },
+  {
+   "start": 194.5,
+   "end": 201.4,
+   "text": "On November 16, three days after the murders, Moscow Police Chief James Fry held a press conference"
+  },
+  {
+   "start": 201.4,
+   "end": 205.8,
+   "text": "stating that the killings were a targeted attack. However, he admitted,"
+  },
+  {
+   "start": 205.8,
+   "end": 210.2,
+   "text": "we do not have a suspect at this time and that individual is still out there."
+  },
+  {
+   "start": 210.3,
+   "end": 215.8,
+   "text": "This statement sent shockwaves through the community. A quadruple homicide in a small"
+  },
+  {
+   "start": 215.8,
+   "end": 221.0,
+   "text": "college town with no suspect in custody created widespread fear and anxiety."
+  },
+  {
+   "start": 221.0,
+   "end": 225.8,
+   "text": "As the investigation progressed, police began to piece together the victim's final movements."
+  },
+  {
+   "start": 225.8,
+   "end": 230.8,
+   "text": "They released an aerial map showing the times and locations where the victims were on the"
+  },
+  {
+   "start": 230.8,
+   "end": 235.9,
+   "text": "night of November 12th and in the early hours of November 13, investigators cleared"
+  },
+  {
+   "start": 235.9,
+   "end": 241.0,
+   "text": "several individuals from suspicion early on. They announced they did not believe the driver"
+  },
+  {
+   "start": 241.0,
+   "end": 246.0,
+   "text": "who brought Kaylee and Madison home was involved. They also stated that the surviving roommates"
+  },
+  {
+   "start": 246.0,
+   "end": 250.4,
+   "text": "and friends visiting the house at the time of the murders were not considered suspects."
+  },
+  {
+   "start": 250.4,
+   "end": 255.2,
+   "text": "There were rumors that one of the victims, Kaylee, had a stalker. Investigators looked"
+  },
+  {
+   "start": 255.2,
+   "end": 261.0,
+   "text": "extensively into this possibility but were unable to verify or identify any stalker."
+  },
+  {
+   "start": 261.0,
+   "end": 267.4,
+   "text": "By November 25th, investigators had collected 113 pieces of physical evidence and sent it to the"
+  },
+  {
+   "start": 267.4,
+   "end": 274.2,
+   "text": "Idaho State Police Crime Lab. Idaho Governor Brad Little directed up to $1 million in funds for the"
+  },
+  {
+   "start": 274.2,
+   "end": 280.1,
+   "text": "ongoing investigation, showing the state's commitment to solving this case. On November 30th,"
+  },
+  {
+   "start": 280.1,
+   "end": 284.6,
+   "text": "the University of Idaho held a vigil in honor of the murdered students."
+  },
+  {
+   "start": 284.6,
+   "end": 289.1,
+   "text": "Stacey Chapin, the mother of victim Ethan Chapin, told those who gathered the most"
+  },
+  {
+   "start": 289.1,
+   "end": 294.1,
+   "text": "important message that we have for you and your families is to spend as much time as possible"
+  },
+  {
+   "start": 294.1,
+   "end": 301.0,
+   "text": "with those people. On December 7th, 2022, police announced they were interested in speaking with"
+  },
+  {
+   "start": 301.0,
+   "end": 308.5,
+   "text": "the driver of a white 2011 to 2013 Hyundai Elantra that was spotted near the crime scene at the"
+  },
+  {
+   "start": 308.5,
+   "end": 316.0,
+   "text": "time of the murders. The search was later expanded to include Elantras from 2011 to 2016."
+  },
+  {
+   "start": 316.1,
+   "end": 321.7,
+   "text": "What's interesting is that on December 15th, the troopers' body cam captured a white Hyundai Elantra"
+  },
+  {
+   "start": 321.7,
+   "end": 327.3,
+   "text": "being stopped twice in Indiana for driving violations. The driver was 28-year-old Brian"
+  },
+  {
+   "start": 327.3,
+   "end": 331.8,
+   "text": "Coburger, who was accompanied by his father. They were driving home from Washington State"
+  },
+  {
+   "start": 331.8,
+   "end": 337.2,
+   "text": "University for winter break to the family's home in Pennsylvania. At this point, Coburger"
+  },
+  {
+   "start": 337.2,
+   "end": 343.1,
+   "text": "wasn't publicly identified as a suspect, but this traffic stop would later become a significant"
+  },
+  {
+   "start": 343.1,
+   "end": 350.6,
+   "text": "piece of the timeline. On December 30th, 2022, police announced Brian Coburger's arrest in Albright"
+  },
+  {
+   "start": 350.6,
+   "end": 356.0,
+   "text": "ville, Pennsylvania for the murders of the University of Idaho students. He was charged with"
+  },
+  {
+   "start": 356.0,
+   "end": 362.3,
+   "text": "burglary and four counts of first-degree murder. Coburger was a PhD student at Washington State"
+  },
+  {
+   "start": 362.3,
+   "end": 367.0,
+   "text": "University, which is located roughly eight miles from the murder scene in Moscow, Idaho."
+  },
+  {
+   "start": 367.5,
+   "end": 372.0,
+   "text": "Law enforcement said they were able to use forensic analysis to connect Coburger to the"
+  },
+  {
+   "start": 372.0,
+   "end": 379.8,
+   "text": "crime scene. On January 3rd, 2023, Coburger appeared at an extradition hearing in Pennsylvania,"
+  },
+  {
+   "start": 379.8,
+   "end": 385.8,
+   "text": "where he waived his extradition to Moscow, Idaho. The next day, he was brought to Idaho,"
+  },
+  {
+   "start": 385.8,
+   "end": 390.9,
+   "text": "and the judge issued a gag order which prohibited officials and others involved in the case from"
+  },
+  {
+   "start": 390.9,
+   "end": 399.0,
+   "text": "speaking about it. On January 5th, 2023, public officials released an affidavit in the case"
+  },
+  {
+   "start": 399.0,
+   "end": 405.0,
+   "text": "against Brian Coburger. The findings were significant. A witness claimed she saw a figure of"
+  },
+  {
+   "start": 405.0,
+   "end": 411.4,
+   "text": "5'10 or taller, male, not very muscular, dressed in black clothing in a mask on the night of the"
+  },
+  {
+   "start": 411.4,
+   "end": 416.9,
+   "text": "murders. She said the masked figure walked toward the black sliding glass door, and she locked"
+  },
+  {
+   "start": 416.9,
+   "end": 422.8,
+   "text": "herself in her room. DNA found on the button snap of a leather knife sheath at the crime scene"
+  },
+  {
+   "start": 422.8,
+   "end": 429.2,
+   "text": "appeared to be a strong match with DNA found in the trash at the Coburger family residence in"
+  },
+  {
+   "start": 429.2,
+   "end": 435.2,
+   "text": "Albrightville, Pennsylvania. Investigators checked the movements of Coburger's phone and found it"
+  },
+  {
+   "start": 435.2,
+   "end": 442.4,
+   "text": "stopped reporting a signal at 2.47 a.m. and appeared to turn back on at 4.48 a.m. This means"
+  },
+  {
+   "start": 442.4,
+   "end": 447.9,
+   "text": "the phone may have been in an area without cell coverage or the phone was turned off during the"
+  },
+  {
+   "start": 447.9,
+   "end": 454.7,
+   "text": "time of the murders. Another interesting detail that came to light on May 5th, 2023 was that Coburger"
+  },
+  {
+   "start": 454.7,
+   "end": 461.0,
+   "text": "had been pulled over by campus police at Washington State University for allegedly running a red light"
+  },
+  {
+   "start": 461.0,
+   "end": 468.3,
+   "text": "about a month before the killings on October 14th, 2022. The officer eventually let him go with a"
+  },
+  {
+   "start": 468.3,
+   "end": 476.3,
+   "text": "warning. On May 17th, 2023, a grand jury indicted Brian Coburger on four counts of first degree"
+  },
+  {
+   "start": 476.3,
+   "end": 481.8,
+   "text": "murder and felony burglary for his alleged involvement in the killings. At his arraignment on"
+  },
+  {
+   "start": 481.8,
+   "end": 489.6,
+   "text": "May 22nd, 2023, a judge entered a not guilty plea on Coburger's behalf after Coburger did not respond"
+  },
+  {
+   "start": 489.6,
+   "end": 497.4,
+   "text": "in court when the judge asked him how he pleaded to the charges. On June 21st, 2023, court documents"
+  },
+  {
+   "start": 497.4,
+   "end": 504.6,
+   "text": "revealed that a DNA sample taken from Brian Coburger showed a near exact match to the DNA"
+  },
+  {
+   "start": 504.6,
+   "end": 510.6,
+   "text": "found on a knife sheath at the scene of the quadruple murder. DNA found on the sheath was initially"
+  },
+  {
+   "start": 510.6,
+   "end": 515.8,
+   "text": "compared to DNA from trash recovered outside the Coburger family home in Pennsylvania."
+  },
+  {
+   "start": 515.8,
+   "end": 520.5,
+   "text": "A cheek swab taken from Coburger allowed for another more direct DNA comparison."
+  },
+  {
+   "start": 521.0,
+   "end": 528.2,
+   "text": "On June 26th, 2023, prosecutors announced they would pursue the death penalty for Brian Coburger"
+  },
+  {
+   "start": 528.7,
+   "end": 536.3,
+   "text": "convicted. On August 3rd, 2023, Coburger's defense team claimed he was going for a routine drive when"
+  },
+  {
+   "start": 536.3,
+   "end": 542.2,
+   "text": "the killings took place. In court filings, his attorney stated, Mr. Coburger has long had a habit"
+  },
+  {
+   "start": 542.2,
+   "end": 547.3,
+   "text": "of going for drives alone, and that he did so on the night and morning of the brutal killings."
+  },
+  {
+   "start": 547.3,
+   "end": 551.7,
+   "text": "They claimed witnesses may be able to testify he wasn't at the scene of the crime."
+  },
+  {
+   "start": 551.8,
+   "end": 559.7,
+   "text": "On August 18th, 2023, at a court hearing, Coburger's defense questioned the validity of DNA found on a"
+  },
+  {
+   "start": 559.7,
+   "end": 564.5,
+   "text": "knife sheath at the crime scene that authorities alleged connected him to the four murders."
+  },
+  {
+   "start": 565.0,
+   "end": 570.5,
+   "text": "Defense attorneys demanded more information from prosecutors about the DNA, but prosecutors"
+  },
+  {
+   "start": 570.5,
+   "end": 577.0,
+   "text": "countered that they had handed over what they had. On August 23rd, 2023, it was announced"
+  },
+  {
+   "start": 577.0,
+   "end": 583.9,
+   "text": "that Coburger's trial would not happen as scheduled on October 2nd. Coburger waved his right"
+  },
+  {
+   "start": 583.9,
+   "end": 591.4,
+   "text": "to a speedy trial during an appearance in Lattacounty Court. On June 27th, 2024, a district"
+  },
+  {
+   "start": 591.4,
+   "end": 599.4,
+   "text": "court judge set a June 2025 start date for Brian Coburger's criminal trial. Both the defense"
+  },
+  {
+   "start": 599.4,
+   "end": 605.0,
+   "text": "and prosecuting attorneys agreed to the court's proposed trial schedule. The judge anticipated"
+  },
+  {
+   "start": 605.0,
+   "end": 610.6,
+   "text": "the trial would last three months, accounting for two weeks of jury selection, eight weeks of the"
+  },
+  {
+   "start": 610.6,
+   "end": 616.3,
+   "text": "trial itself, and another two weeks for the verdict, sentencing, and anything else remaining."
+  },
+  {
+   "start": 617.0,
+   "end": 623.9,
+   "text": "However, on October 10th, 2024, the trial date was delayed until August 11th, 2025,"
+  },
+  {
+   "start": 623.9,
+   "end": 630.2,
+   "text": "according to a scheduling order issued by the state of Idaho. Most recently, on November 19th,"
+  },
+  {
+   "start": 630.2,
+   "end": 636.5,
+   "text": "2024, Coburger's defense team had sought to remove the death penalty as a possible punishment"
+  },
+  {
+   "start": 636.5,
+   "end": 641.8,
+   "text": "should he be convicted. But Ada County Judge Stephen Hippler denied their motions in his ruling."
+  },
+  {
+   "start": 641.8,
+   "end": 647.2,
+   "text": "The prosecution has said it intends to seek the death penalty if Coburger is convicted."
+  },
+  {
+   "start": 647.2,
+   "end": 654.4,
+   "text": "And just this month, in March 2025, the audio of the 911 call made on the day of the murders"
+  },
+  {
+   "start": 654.4,
+   "end": 660.4,
+   "text": "was released, giving us new insight into those chaotic first moments when the bodies were discovered."
+  },
+  {
+   "start": 661.0,
+   "end": 666.6,
+   "text": "This case has captivated the nation not only because of its brutality, but also because of the"
+  },
+  {
+   "start": 666.6,
+   "end": 672.3,
+   "text": "seemingly random nature of the attack and the methodical investigation that led to Coburger's"
+  },
+  {
+   "start": 672.3,
+   "end": 677.6,
+   "text": "arrest. As we wait for the trial to begin, many questions remain. What was the motive?"
+  },
+  {
+   "start": 678.2,
+   "end": 684.2,
+   "text": "Why were these four students targeted? And will the evidence be enough to convict Brian Coburger?"
+  },
+  {
+   "start": 685.0,
+   "end": 691.2,
+   "text": "We'll continue to follow this case and provide updates as new information becomes available."
+  },
+  {
+   "start": 691.2,
+   "end": 695.8,
+   "text": "Thanks for tuning in to this episode of Crime Time Snacks. If you found this informative,"
+  },
+  {
+   "start": 695.8,
+   "end": 701.8,
+   "text": "please subscribe and share with others who might be interested. Until next time, stay safe and stay informed."
+  }
+ ]
+}

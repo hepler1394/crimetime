@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Contact | CrimeTimeSnacks</title>
-    <meta name="description" content="Questions, case suggestions, feedback, or business inquiries — get in touch with CrimeTimeSnacks.">
+    <title>Search | CrimeTimeSnacks</title>
+    <meta name="description" content="Search everything CrimeTimeSnacks — episodes, full transcripts (jump to the exact second), blog posts, quizzes, and the glossary.">
     <meta name="author" content="Cory">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <link rel="canonical" href="https://crimetime.vercel.app/contact.html">
+    <link rel="canonical" href="https://crimetime.vercel.app/search.html">
     <meta name="theme-color" content="#050505">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="CrimeTimeSnacks">
-    <meta property="og:title" content="Contact | CrimeTimeSnacks">
-    <meta property="og:description" content="Questions, case suggestions, feedback, or business inquiries — get in touch with CrimeTimeSnacks.">
-    <meta property="og:url" content="https://crimetime.vercel.app/contact.html">
+    <meta property="og:title" content="Search | CrimeTimeSnacks">
+    <meta property="og:description" content="Search everything CrimeTimeSnacks — episodes, full transcripts (jump to the exact second), blog posts, quizzes, and the glossary.">
+    <meta property="og:url" content="https://crimetime.vercel.app/search.html">
     <meta property="og:image" content="https://crimetime.vercel.app/images/logo.png">
     <meta property="og:image:alt" content="CrimeTimeSnacks — A True Crime Podcast">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Contact | CrimeTimeSnacks">
-    <meta name="twitter:description" content="Questions, case suggestions, feedback, or business inquiries — get in touch with CrimeTimeSnacks.">
+    <meta name="twitter:title" content="Search | CrimeTimeSnacks">
+    <meta name="twitter:description" content="Search everything CrimeTimeSnacks — episodes, full transcripts (jump to the exact second), blog posts, quizzes, and the glossary.">
     <meta name="twitter:image" content="https://crimetime.vercel.app/images/logo.png">
     <meta name="twitter:image:alt" content="CrimeTimeSnacks logo">
     <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Podcast" href="/feed.xml">
@@ -34,6 +34,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css?v=2026r">
+    <style>
+        .result { display:block; text-decoration:none; color:inherit; padding:1.1rem 1.3rem; border:1px solid var(--cts-line); border-radius: var(--radius-sm); background: linear-gradient(180deg, var(--cts-panel), var(--cts-ink)); margin-bottom: 0.8rem; transition: var(--cts-transition); }
+        .result:hover { border-color: rgba(229,9,20,0.55); transform: translateX(4px); }
+        .result .kind { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 4px; margin-right: 0.6rem; }
+        .kind--episode { background: rgba(229,9,20,0.15); color: #ff9096; border: 1px solid rgba(229,9,20,0.4); }
+        .kind--transcript { background: rgba(29,185,84,0.12); color: #6fdf9b; border: 1px solid rgba(29,185,84,0.35); }
+        .kind--post { background: rgba(255,255,255,0.06); color: #cfcfd6; border: 1px solid var(--cts-line-strong); }
+        .kind--quiz { background: rgba(244,194,13,0.1); color: #ffd75e; border: 1px solid rgba(244,194,13,0.35); }
+        .kind--term { background: rgba(120,120,255,0.1); color: #b9b9ff; border: 1px solid rgba(120,120,255,0.3); }
+        .result h3 { display: inline; font-size: 1.02rem; }
+        .result p { color: var(--cts-muted); font-size: 0.88rem; margin-top: 0.5rem; }
+        .result mark { background: rgba(229,9,20,0.3); color: #fff; border-radius: 3px; padding: 0 2px; }
+        .result .ts { color: var(--cts-tape); font-size: 0.76rem; font-weight: 700; }
+    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -56,7 +70,7 @@
                     <li><a href="/quiz.html">Quizzes</a></li>
                     <li><a href="/merch.html">Merch</a></li>
                     <li><a href="/about.html">About</a></li>
-                    <li><a href="/contact.html" class="active">Contact</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
                 </ul>
             </nav>
             <div class="utility-nav">
@@ -68,77 +82,21 @@
     <main id="main-content">
     <section class="page-hero">
         <div class="container">
-            <p class="eyebrow" style="justify-content:center;">Open Line</p>
-            <h1 class="page-title">Contact <span class="text-red">Us</span></h1>
-            <p>Have a question, a case suggestion, or just want to say hello? We'd love to hear from you.</p>
+            <p class="eyebrow" style="justify-content:center;">Every Word On File</p>
+            <h1 class="page-title">Search the <span class="text-red">Archive</span></h1>
+            <p>Episodes, full transcripts, blog posts, quizzes, and the glossary — including what was actually said on the mic, down to the second.</p>
+            <div class="search-container" style="margin-top:2rem;">
+                <input type="search" id="site-search" aria-label="Search the site" placeholder="Try a name, a case, a phrase you heard... ( / )" autofocus>
+                <button aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></button>
+            </div>
         </div>
     </section>
 
     <div class="crime-scene-tape" aria-hidden="true"></div>
 
-    <section class="container" style="margin-top:1rem;">
-        <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:2.4rem;align-items:start;" class="contact-grid">
-            <div class="panel" style="padding:2rem;">
-                <div class="section-head" style="margin-bottom:1.4rem;">
-                    <span class="file-no">Direct</span>
-                    <h2 style="font-size:1.8rem;">Get in Touch</h2>
-                </div>
-                <p style="color:var(--cts-muted);margin-bottom:1.4rem;">We welcome your feedback, case suggestions, and questions. Email is the fastest way to reach the desk.</p>
-                <div style="display:flex;flex-direction:column;gap:0.8rem;">
-                    <a class="platform-pill" href="mailto:crimetimesnacks@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> crimetimesnacks@gmail.com</a>
-                    <a class="platform-pill" href="mailto:crimetimesnacks@gmail.com?subject=Case%20suggestion%20for%20CrimeTimeSnacks"><i class="fas fa-folder-plus" aria-hidden="true"></i> Suggest a Case</a>
-                    <a class="platform-pill" href="mailto:crimetimesnacks@gmail.com?subject=Business%20%2F%20sponsorship%20inquiry"><i class="fas fa-handshake" aria-hidden="true"></i> Business &amp; Sponsorship</a>
-                    <a class="platform-pill" href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" target="_blank" rel="noopener"><i class="fab fa-spotify" aria-hidden="true"></i> Listen on Spotify</a>
-                    <a class="platform-pill" href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener"><i class="fab fa-apple" aria-hidden="true"></i> Apple Podcasts</a>
-                </div>
-            </div>
-            <div class="panel" style="padding:2rem;">
-                <div class="section-head" style="margin-bottom:1.4rem;">
-                    <span class="file-no">Message</span>
-                    <h2 style="font-size:1.8rem;">Send a Message</h2>
-                </div>
-                <form id="contact-form">
-                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;" class="cf-row">
-                        <div>
-                            <label for="cf-name" style="display:block;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--cts-faint);margin-bottom:0.4rem;">Name</label>
-                            <input id="cf-name" name="name" type="text" required style="width:100%;padding:0.85rem 1.1rem;border:1px solid var(--cts-line-strong);border-radius:12px;background:rgba(0,0,0,0.4);color:var(--cts-white);">
-                        </div>
-                        <div>
-                            <label for="cf-email" style="display:block;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--cts-faint);margin-bottom:0.4rem;">Email</label>
-                            <input id="cf-email" name="email" type="email" required style="width:100%;padding:0.85rem 1.1rem;border:1px solid var(--cts-line-strong);border-radius:12px;background:rgba(0,0,0,0.4);color:var(--cts-white);">
-                        </div>
-                    </div>
-                    <div style="margin-top:1rem;">
-                        <label for="cf-subject" style="display:block;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--cts-faint);margin-bottom:0.4rem;">Subject</label>
-                        <select id="cf-subject" style="width:100%;padding:0.85rem 1.1rem;border:1px solid var(--cts-line-strong);border-radius:12px;background:rgba(0,0,0,0.4);color:var(--cts-white);">
-                            <option>General Inquiry</option>
-                            <option>Case Suggestion</option>
-                            <option>Feedback</option>
-                            <option>Business / Sponsorship</option>
-                            <option>Other</option>
-                        </select>
-                    </div>
-                    <div style="margin-top:1rem;">
-                        <label for="cf-message" style="display:block;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--cts-faint);margin-bottom:0.4rem;">Message</label>
-                        <textarea id="cf-message" rows="6" required style="width:100%;padding:0.85rem 1.1rem;border:1px solid var(--cts-line-strong);border-radius:12px;background:rgba(0,0,0,0.4);color:var(--cts-white);resize:vertical;"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="margin-top:1.4rem;"><i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message</button>
-                    <p style="color:var(--cts-faint);font-size:0.78rem;margin-top:0.9rem;">Opens your mail app with the message pre-filled &mdash; nothing is stored on this site.</p>
-                </form>
-            </div>
-        </div>
-        <style>@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr !important; } .cf-row { grid-template-columns: 1fr !important; } }</style>
-    </section>
-
-    <div class="crime-scene-tape crime-scene-tape--reverse" aria-hidden="true"></div>
-
-    <section class="container" style="margin-top:1rem;">
-        <div class="section-head">
-            <span class="file-no">Tips</span>
-            <h2>Suggest a Case</h2>
-            <span class="rule" aria-hidden="true"></span>
-        </div>
-        <p class="section-sub">We're always looking for compelling cases. When you write in, include what makes the case interesting, roughly when and where it happened, and any solid sources &mdash; news coverage, court records, documentaries. Cases with unusual evidence, open questions, or under-covered victims get priority.</p>
+    <section class="container" style="max-width:860px;">
+        <p id="search-stats" class="kbd-hint" style="margin-bottom:1.2rem;"></p>
+        <div id="search-results" aria-live="polite"></div>
     </section>
     </main>
 
@@ -194,15 +152,64 @@
     <script src="/js/main.js"></script>
     <script src="/js/effects.js"></script>
     <script>
-    document.getElementById('contact-form').addEventListener('submit', function (e) {
-        e.preventDefault();
-        var name = document.getElementById('cf-name').value;
-        var email = document.getElementById('cf-email').value;
-        var subject = document.getElementById('cf-subject').value;
-        var msg = document.getElementById('cf-message').value;
-        var body = msg + '\n\n— ' + name + ' (' + email + ')';
-        window.location.href = 'mailto:crimetimesnacks@gmail.com?subject=' + encodeURIComponent('[CTS] ' + subject) + '&body=' + encodeURIComponent(body);
-    });
+    (function () {
+        var box = document.getElementById('site-search');
+        var out = document.getElementById('search-results');
+        var stats = document.getElementById('search-stats');
+        var docs = null;
+        var KINDS = { episode: 'Episode', transcript: 'Said on the show', post: 'Blog', quiz: 'Quiz', term: 'Glossary' };
+
+        function esc(s) { return String(s || '').replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+        function fmtTs(t) { var m = Math.floor(t / 60), s = t % 60; return m + ':' + (s < 10 ? '0' : '') + s; }
+
+        function load() {
+            if (docs) return Promise.resolve(docs);
+            return fetch('/automation/search-index.json').then(function (r) { return r.json(); }).then(function (d) { docs = d.docs || []; return docs; });
+        }
+
+        function highlight(text, terms) {
+            var t = esc(text);
+            terms.forEach(function (w) {
+                if (w.length < 3) return;
+                t = t.replace(new RegExp('(' + w.replace(/[.*+?^$()\[\]{}|]/g, '') + ')', 'ig'), '<mark>$1</mark>');
+            });
+            return t;
+        }
+
+        function search(q) {
+            var terms = q.toLowerCase().split(/\s+/).filter(Boolean);
+            if (!terms.length) { out.innerHTML = ''; stats.textContent = ''; return; }
+            load().then(function (ds) {
+                var scored = [];
+                ds.forEach(function (d) {
+                    var hay = (d.title + ' ' + d.text).toLowerCase();
+                    var score = 0;
+                    terms.forEach(function (w) {
+                        if (d.title.toLowerCase().indexOf(w) > -1) score += 5;
+                        var idx = -1, hits = 0;
+                        while ((idx = hay.indexOf(w, idx + 1)) > -1 && hits < 6) { score += 1; hits++; }
+                    });
+                    if (score > 0) scored.push([score, d]);
+                });
+                scored.sort(function (a, b) { return b[0] - a[0]; });
+                var top = scored.slice(0, 40);
+                stats.textContent = scored.length + ' result' + (scored.length === 1 ? '' : 's') + (scored.length > 40 ? ' — showing top 40' : '');
+                out.innerHTML = top.map(function (x) {
+                    var d = x[1];
+                    return '<a class="result" href="' + d.url + '">' +
+                        '<span class="kind kind--' + d.k + '">' + KINDS[d.k] + '</span>' +
+                        '<h3>' + esc(d.title) + '</h3>' +
+                        (d.ts !== undefined ? ' <span class="ts"><i class="fas fa-play" aria-hidden="true"></i> ' + fmtTs(d.ts) + '</span>' : '') +
+                        '<p>' + highlight(d.text.slice(0, 260), terms) + '&hellip;</p></a>';
+                }).join('') || '<p style="color:var(--cts-muted);text-align:center;padding:2rem 0;">Nothing on file for that. Try fewer words.</p>';
+            });
+        }
+
+        var t;
+        box.addEventListener('input', function () { clearTimeout(t); t = setTimeout(function () { search(box.value.trim()); }, 160); });
+        var params = new URLSearchParams(location.search);
+        if (params.get('q')) { box.value = params.get('q'); search(box.value); }
+    })();
     </script>
 </body>
 </html>

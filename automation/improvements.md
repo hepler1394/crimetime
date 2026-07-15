@@ -476,4 +476,24 @@ with an [auto] tag — the counter on Mission Control reads this file.
 415. Glossary sitemap hint added
 416. Sitemap grew from 22 to 25 indexed URLs
 
-<!-- running total: 416 shipped -->
+## Batch 3 · Transcripts & The Search Archive
+
+417. transcribe.py NEW: local Whisper transcriber (reads the feed, downloads audio, $0, no API)
+418. faster-whisper installed and running on the studio PC
+419. build-search.mjs NEW: site-wide search index builder
+420. search.html NEW: full-archive search page with type badges and highlighting
+421. Search deep links: transcript hits jump the player to the exact second (?t=)
+422. Transcript sections on episode pages (tap any line to seek the player)
+423. Transcript paragraphs auto-grouped by silence gaps
+424. Now-playing highlight follows transcript clicks
+425. Search icon added to the header on every page
+426. Transcript styling (timestamps, hover states, playing state)
+427. Search index covers episodes, transcripts, posts, quizzes, glossary
+428. Episode transcribed: "CrimeTimeSnacks: The Delphi Murder Case 2017" (98 segments, 565s)
+429. Episode transcribed: "ERIK AND LYLE: The Menendez Brothers" (505 segments, 1178s)
+430. Episode transcribed: "JonBenét Ramsey Americas Child Beauty Queen" (9 segments, 57s)
+431. Episode transcribed: "JonBenét Ramsey | The Facts 96-22 |Part 1" (157 segments, 944s)
+432. Episode transcribed: "Murders in Moscow" (118 segments, 701s)
+433. Episode transcribed: "Watts Family Murders" (437 segments, 1302s)
+
+<!-- running total: 433 shipped -->

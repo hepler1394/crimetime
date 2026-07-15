@@ -1882,3 +1882,51 @@ html.js .animate-on-scroll.animated { opacity: 1; transform: translateY(0); }
     body { background: #fff; color: #000; }
     a { color: #000; text-decoration: underline; }
 }
+
+/* ---- transcripts ---- */
+.transcript {
+    margin: 2rem 0 0.5rem;
+    border: 1px solid var(--cts-line);
+    border-radius: var(--radius);
+    background: linear-gradient(180deg, var(--cts-panel), var(--cts-ink));
+    padding: 0;
+    overflow: hidden;
+}
+.transcript summary {
+    cursor: pointer;
+    padding: 1.1rem 1.4rem;
+    font-weight: 700;
+    color: var(--cts-white);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    transition: var(--cts-transition);
+}
+.transcript summary::-webkit-details-marker { display: none; }
+.transcript summary:hover { color: var(--cts-red-hot); }
+.transcript summary i { color: var(--cts-red); }
+.transcript[open] summary { border-bottom: 1px solid var(--cts-line); }
+.transcript > p { margin: 0 1.4rem; }
+.transcript-para {
+    padding: 0.55rem 1.4rem;
+    color: var(--cts-muted);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    cursor: pointer;
+    border-left: 2px solid transparent;
+    transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
+    margin: 0 !important;
+}
+.transcript-para:hover { background: rgba(229, 9, 20, 0.05); border-left-color: var(--cts-red); }
+.transcript-para.playing { background: rgba(229, 9, 20, 0.08); border-left-color: var(--cts-red-hot); }
+.transcript-ts {
+    color: var(--cts-tape);
+    font-size: 0.72rem;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    margin-right: 0.5rem;
+    user-select: none;
+}
+.transcript > p:last-of-type { padding-bottom: 1.2rem; }

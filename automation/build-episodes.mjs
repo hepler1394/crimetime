@@ -9,6 +9,47 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { SITE, APPLE, esc, head, header, footer, tape, scripts } from "./shell.mjs";
 
+// Transcript for a slug (automation/transcripts/<slug>.json), if it exists.
+async function loadTranscript(slug) {
+  try {
+    return JSON.parse(await readFile(join(dirname(fileURLToPath(import.meta.url)), "transcripts", `${slug}.json`), "utf8"));
+  } catch { return null; }
+}
+
+const fmtTs = (t) => {
+  const m = Math.floor(t / 60), s = Math.floor(t % 60);
+  return `${m}:${s < 10 ? "0" : ""}${s}`;
+};
+
+// Group Whisper segments into readable paragraphs (silence gap or length break).
+function transcriptParas(segments) {
+  const paras = [];
+  let buf = [], start = segments[0]?.start || 0, lastEnd = segments[0]?.start || 0;
+  const flush = () => {
+    if (buf.length) paras.push({ start, text: buf.join(" ") });
+    buf = [];
+  };
+  for (const s of segments) {
+    if (buf.length && (s.start - lastEnd > 2.5 || buf.join(" ").length > 480)) flush();
+    if (!buf.length) start = s.start;
+    buf.push(s.text);
+    lastEnd = s.end;
+  }
+  flush();
+  return paras;
+}
+
+function transcriptBlock(t) {
+  if (!t?.segments?.length) return "";
+  const paras = transcriptParas(t.segments);
+  return `
+        <details class="transcript" id="transcript">
+            <summary><i class="fas fa-file-lines" aria-hidden="true"></i> Read the full transcript <span class="kbd-hint">(${paras.length} sections &middot; tap any line to jump the player there)</span></summary>
+            <p class="kbd-hint" style="margin:0.8rem 0 1rem;">${esc(t.note || "Auto-transcribed; may contain minor errors.")}</p>
+${paras.map((p) => `            <p class="transcript-para" data-t="${Math.floor(p.start)}"><span class="transcript-ts">${fmtTs(p.start)}</span> ${esc(p.text)}</p>`).join("\n")}
+        </details>`;
+}
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 
@@ -199,7 +240,7 @@ function relatedCard(ep) {
                 </a>`;
 }
 
-function episodePage(p, ep, sorted) {
+function episodePage(p, ep, sorted, transcript) {
   const desc = (ep.excerpt || ep.description || "").slice(0, 200);
   const idx = sorted.findIndex((e) => e.slug === ep.slug);
   const prev = sorted[idx + 1]; // older
@@ -238,6 +279,7 @@ ${header("episodes")}
             <a href="${APPLE}" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-apple" aria-hidden="true"></i> Apple Podcasts</a>
         </div>
         <p style="color:var(--cts-muted);line-height:1.85;font-size:1.02rem;">${esc(ep.description)}</p>
+${transcriptBlock(transcript)}
 ${shareRow(`${SITE}${epUrl(ep)}`, `${ep.title} — CrimeTimeSnacks`)}
         <div style="display:flex;justify-content:space-between;gap:0.8rem;flex-wrap:wrap;margin-top:2.6rem;">
             ${prev ? `<a href="${epUrl(prev)}" class="btn btn-secondary btn-sm"><i class="fas fa-arrow-left" aria-hidden="true"></i> ${esc(trunc(prev.title, 26))}</a>` : "<span></span>"}
@@ -390,11 +432,14 @@ const data = JSON.parse(await readFile(join(__dirname, "episodes.json"), "utf8")
 const sorted = [...data.episodes].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
 await writeFile(join(ROOT, "episodes.html"), page(data), "utf8");
 await mkdir(join(ROOT, "episodes"), { recursive: true });
+let transcribed = 0;
 for (const ep of data.episodes) {
-  await writeFile(join(ROOT, "episodes", `${ep.slug}.html`), episodePage(data.podcast, ep, sorted), "utf8");
+  const transcript = await loadTranscript(ep.slug);
+  if (transcript) transcribed++;
+  await writeFile(join(ROOT, "episodes", `${ep.slug}.html`), episodePage(data.podcast, ep, sorted, transcript), "utf8");
 }
 const home = await updateHome(data);
 console.log(
-  `episodes.html + ${data.episodes.length} episode pages generated.` +
+  `episodes.html + ${data.episodes.length} episode pages generated (${transcribed} with transcripts).` +
     (home ? " Homepage episodes + stats refreshed." : " (home markers not found)")
 );

@@ -90,6 +90,7 @@ ${NAV.map(([href, key, label]) => `                    <li><a href="${href}"${ke
                 </ul>
             </nav>
             <div class="utility-nav">
+                <a href="/search.html" aria-label="Search the site" style="color:var(--cts-muted);font-size:1.05rem;padding:0.6rem;display:inline-flex;"><i class="fas fa-magnifying-glass" aria-hidden="true"></i></a>
                 <a class="nav-cta" href="/listen.html"><i class="fas fa-headphones" aria-hidden="true"></i> Listen</a>
             </div>
         </div>
