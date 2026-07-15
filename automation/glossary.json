@@ -1,0 +1,319 @@
+{
+  "meta": {
+    "intro": "The vocabulary of the case file \u2014 forensics, investigation, and the courtroom, explained the way we use them on the show. Straight definitions, zero mystique.",
+    "updated": "2026-07-15T23:30:00.000Z"
+  },
+  "sections": [
+    {
+      "title": "Forensics & Evidence",
+      "terms": [
+        {
+          "term": "Locard's Exchange Principle",
+          "def": "The foundation of forensic science: every contact between two objects leaves a trace. A perpetrator brings something to a scene and takes something away."
+        },
+        {
+          "term": "Chain of Custody",
+          "def": "The documented, unbroken record of who handled a piece of evidence, when, and why. A gap can get the evidence excluded at trial."
+        },
+        {
+          "term": "Touch DNA",
+          "def": "Skin cells transferred by handling an object. Powerful but controversial \u2014 a few cells can travel on a handshake and land where their owner never was."
+        },
+        {
+          "term": "CODIS",
+          "def": "The FBI's Combined DNA Index System, linking DNA profiles across local, state, and national databases."
+        },
+        {
+          "term": "Forensic Genetic Genealogy",
+          "def": "Identifying suspects by matching crime-scene DNA to distant relatives in public genealogy databases, then building the family tree inward."
+        },
+        {
+          "term": "Mitochondrial DNA",
+          "def": "DNA inherited only through the maternal line. Survives in degraded remains where nuclear DNA doesn't \u2014 common in cold case identifications."
+        },
+        {
+          "term": "DNA Phenotyping",
+          "def": "Predicting physical traits \u2014 ancestry, eye color, hair color \u2014 from DNA alone, often used to generate suspect composites."
+        },
+        {
+          "term": "Latent Print",
+          "def": "A fingerprint invisible to the naked eye, developed with powder, chemicals, or light sources."
+        },
+        {
+          "term": "Ballistics",
+          "def": "The analysis of firearms, ammunition, and toolmarks \u2014 matching a bullet or casing to the weapon that fired it."
+        },
+        {
+          "term": "Gunshot Residue (GSR)",
+          "def": "Microscopic particles expelled when a firearm is discharged. Presence suggests proximity to a shooting; absence proves little."
+        },
+        {
+          "term": "Luminol",
+          "def": "A chemical that fluoresces on contact with the iron in hemoglobin, revealing cleaned or invisible bloodstains. It points \u2014 it doesn't prove."
+        },
+        {
+          "term": "Bloodstain Pattern Analysis",
+          "def": "Reading the size, shape, and distribution of bloodstains to reconstruct events. Admissible but heavily contested science."
+        },
+        {
+          "term": "Autopsy",
+          "def": "The medical examination of a body after death to establish cause and manner of death."
+        },
+        {
+          "term": "Cause of Death",
+          "def": "The specific injury or disease that ended a life \u2014 for example, asphyxiation or a gunshot wound."
+        },
+        {
+          "term": "Manner of Death",
+          "def": "The classification of how the cause arose: natural, accident, suicide, homicide, or undetermined."
+        },
+        {
+          "term": "Rigor Mortis",
+          "def": "Post-mortem muscle stiffening, beginning within hours and fully set around twelve \u2014 one of several clocks used to estimate time of death."
+        },
+        {
+          "term": "Livor Mortis",
+          "def": "The settling of blood after death, staining the lowest parts of the body. Fixed lividity can show a body was moved."
+        },
+        {
+          "term": "Forensic Entomology",
+          "def": "Using insect evidence \u2014 species and life stage \u2014 to estimate how long a body has been where it was found."
+        },
+        {
+          "term": "Forensic Odontology",
+          "def": "Dental identification of remains, and the now-discredited practice of bite mark matching."
+        },
+        {
+          "term": "Isotope Analysis",
+          "def": "Chemistry that reads bones, teeth, and hair to reconstruct where a person lived and what they ate \u2014 a tool for identifying unknown remains."
+        },
+        {
+          "term": "Trace Evidence",
+          "def": "Small transferred materials \u2014 fibers, hair, paint, glass, soil \u2014 that link people, places, and objects."
+        },
+        {
+          "term": "Exemplar",
+          "def": "A known sample \u2014 handwriting, DNA, prints \u2014 collected from a person for comparison against evidence."
+        },
+        {
+          "term": "Cold Hit",
+          "def": "A database match that identifies a suspect with no prior connection to the investigation."
+        }
+      ]
+    },
+    {
+      "title": "Investigation",
+      "terms": [
+        {
+          "term": "Person of Interest",
+          "def": "Someone investigators want to talk to. Not an accusation \u2014 a step below suspect."
+        },
+        {
+          "term": "Suspect",
+          "def": "A person investigators believe may have committed the crime, based on evidence."
+        },
+        {
+          "term": "Modus Operandi (M.O.)",
+          "def": "An offender's method of committing crime \u2014 learned behavior that can evolve over time."
+        },
+        {
+          "term": "Signature",
+          "def": "What an offender does beyond what's necessary to commit the crime \u2014 the psychological fingerprint that stays constant while an M.O. changes."
+        },
+        {
+          "term": "Staging",
+          "def": "Deliberately altering a crime scene to mislead investigators \u2014 making a homicide look like a burglary gone wrong, for instance."
+        },
+        {
+          "term": "Victimology",
+          "def": "The study of the victim \u2014 routines, relationships, risk factors \u2014 to understand why they were targeted and by whom."
+        },
+        {
+          "term": "Canvass",
+          "def": "Systematic door-to-door interviews around a crime scene, hunting for witnesses and cameras."
+        },
+        {
+          "term": "BOLO",
+          "def": "'Be on the lookout' \u2014 an alert to law enforcement describing a person or vehicle of interest."
+        },
+        {
+          "term": "AMBER Alert",
+          "def": "The public emergency alert for abducted children in credible, imminent danger \u2014 named for Amber Hagerman."
+        },
+        {
+          "term": "NamUs",
+          "def": "The National Missing and Unidentified Persons System \u2014 the public database that matches missing persons cases to unidentified remains."
+        },
+        {
+          "term": "ViCAP",
+          "def": "The FBI's Violent Criminal Apprehension Program, linking violent crimes across jurisdictions by behavioral and physical details."
+        },
+        {
+          "term": "Profiling",
+          "def": "Inferring offender characteristics from crime scene behavior. A lead-generating tool, not evidence."
+        },
+        {
+          "term": "The First 48",
+          "def": "The investigative truism that solve rates drop sharply after the first two days \u2014 evidence degrades, memories fade, trails cool."
+        },
+        {
+          "term": "Cold Case",
+          "def": "An unsolved case no longer under active investigation, kept open pending new leads or technology."
+        },
+        {
+          "term": "Exhumation",
+          "def": "The court-ordered removal of buried remains for new examination."
+        },
+        {
+          "term": "Jurisdiction",
+          "def": "Which agency owns a case \u2014 a frequent source of friction and, in serial cases, missed connections."
+        },
+        {
+          "term": "Task Force",
+          "def": "A multi-agency team assembled for one investigation, pooling jurisdiction and resources."
+        },
+        {
+          "term": "Tip Line",
+          "def": "The public's channel into an investigation. High noise, occasionally the whole case."
+        },
+        {
+          "term": "Geofence Warrant",
+          "def": "A court order for data on every device inside an area during a time window \u2014 powerful and constitutionally contested."
+        },
+        {
+          "term": "Cell Tower Ping",
+          "def": "A phone's contact with a tower, placing it in a general area \u2014 not a precise location, whatever TV says."
+        }
+      ]
+    },
+    {
+      "title": "Courts & Law",
+      "terms": [
+        {
+          "term": "Probable Cause",
+          "def": "The legal threshold for arrests and warrants: enough facts for a reasonable person to believe a crime occurred."
+        },
+        {
+          "term": "Miranda Rights",
+          "def": "The warnings required before custodial interrogation \u2014 silence and counsel. Unwarned statements risk suppression."
+        },
+        {
+          "term": "Indictment",
+          "def": "A grand jury's formal accusation, moving a case toward trial."
+        },
+        {
+          "term": "Grand Jury",
+          "def": "Citizens who review the prosecution's evidence in secret and decide whether charges proceed. They indict; they don't convict."
+        },
+        {
+          "term": "Arraignment",
+          "def": "The first court appearance: charges read, plea entered, bail argued."
+        },
+        {
+          "term": "Plea Bargain",
+          "def": "Resolving a case by agreement \u2014 a plea in exchange for reduced charges or sentence. How most criminal cases actually end."
+        },
+        {
+          "term": "Alford Plea",
+          "def": "A guilty plea in which the defendant maintains innocence while conceding the evidence would convict."
+        },
+        {
+          "term": "No Contest (Nolo Contendere)",
+          "def": "Accepting conviction without admitting guilt \u2014 often to limit exposure in a civil suit."
+        },
+        {
+          "term": "Beyond a Reasonable Doubt",
+          "def": "The criminal standard of proof \u2014 the highest in the legal system."
+        },
+        {
+          "term": "Circumstantial Evidence",
+          "def": "Evidence requiring an inference \u2014 fully legitimate, routinely conviction-grade, and routinely misunderstood."
+        },
+        {
+          "term": "Direct Evidence",
+          "def": "Evidence that proves a fact without inference \u2014 an eyewitness, a confession, a recording."
+        },
+        {
+          "term": "Hearsay",
+          "def": "An out-of-court statement offered for its truth. Generally inadmissible, with a long list of exceptions."
+        },
+        {
+          "term": "Exculpatory Evidence",
+          "def": "Evidence favorable to the defendant. Prosecutors must disclose it \u2014 that's Brady."
+        },
+        {
+          "term": "Brady Violation",
+          "def": "The state's failure to turn over exculpatory evidence \u2014 grounds for reversal."
+        },
+        {
+          "term": "Double Jeopardy",
+          "def": "The constitutional bar on retrying an acquitted defendant for the same offense."
+        },
+        {
+          "term": "Statute of Limitations",
+          "def": "The deadline for filing charges. Murder almost never has one."
+        },
+        {
+          "term": "Change of Venue",
+          "def": "Moving a trial when local publicity makes a fair jury impossible."
+        },
+        {
+          "term": "Voir Dire",
+          "def": "Jury selection \u2014 the questioning that surfaces bias before a juror is seated."
+        },
+        {
+          "term": "Sequestration",
+          "def": "Isolating a jury from outside information during trial or deliberation."
+        },
+        {
+          "term": "Hung Jury",
+          "def": "A jury that cannot reach unanimity, ending in mistrial. The state may retry."
+        },
+        {
+          "term": "Mistrial",
+          "def": "A trial terminated without verdict \u2014 for a hung jury, misconduct, or prejudicial error."
+        },
+        {
+          "term": "Acquittal",
+          "def": "A not-guilty verdict. Not a declaration of innocence \u2014 a finding that proof fell short."
+        },
+        {
+          "term": "Exoneration",
+          "def": "The formal clearing of a convicted person, often years later, by new evidence."
+        },
+        {
+          "term": "Habeas Corpus",
+          "def": "The post-conviction challenge to unlawful detention \u2014 the vehicle for many innocence claims."
+        },
+        {
+          "term": "Life Without Parole (LWOP)",
+          "def": "A life sentence with no possibility of release \u2014 in practice, the alternative to capital punishment."
+        },
+        {
+          "term": "Insanity Defense",
+          "def": "The claim that mental disease prevented understanding the act or its wrongfulness. Rarely raised, more rarely successful."
+        },
+        {
+          "term": "Competency to Stand Trial",
+          "def": "Whether a defendant can understand proceedings and assist counsel now \u2014 a different question from insanity at the time of the offense."
+        },
+        {
+          "term": "Extradition",
+          "def": "The formal transfer of a suspect between states or countries \u2014 and why some fugitives choose their refuge carefully."
+        },
+        {
+          "term": "Jailhouse Informant",
+          "def": "An incarcerated witness trading testimony for benefit. A leading cause of wrongful convictions."
+        },
+        {
+          "term": "Wrongful Conviction",
+          "def": "A conviction of the innocent \u2014 driven by misidentification, false confession, flawed forensics, and misconduct."
+        },
+        {
+          "term": "False Confession",
+          "def": "An innocent person's admission of guilt \u2014 produced by coercion, exhaustion, youth, or suggestion. It happens far more than intuition allows."
+        }
+      ]
+    }
+  ]
+}
