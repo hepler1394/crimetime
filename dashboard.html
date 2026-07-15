@@ -28,6 +28,9 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <meta name="format-detection" content="telephone=no">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css?v=2026r">
@@ -83,6 +86,7 @@
                     <div><div class="dash-num" id="v-merch">–</div><div class="stat-label">Merch Designs</div></div>
                     <div><div class="dash-num" id="v-fbi">–</div><div class="stat-label">Live Cases</div></div>
                     <div><div class="dash-num" id="v-videos">–</div><div class="stat-label">Videos</div></div>
+                    <div><div class="dash-num" id="v-improve">–</div><div class="stat-label">Improvements</div></div>
                 </div>
             </div>
             <div class="dash-panel">
@@ -222,6 +226,7 @@
             el('v-merch').textContent = s.counts.merchDesigns + s.counts.merchCollection;
             el('v-fbi').textContent = s.counts.fbiCases;
             el('v-videos').textContent = s.counts.videos;
+            if (s.improvementsShipped !== undefined) el('v-improve').textContent = s.improvementsShipped;
             if (s.latest.episode) el('v-lastep').textContent = s.latest.episode.title.slice(0, 34) + ' · ' + fmtDate(s.latest.episode.date);
             if (s.latest.post) el('v-lastpost').textContent = s.latest.post.title.slice(0, 34) + ' · ' + fmtDate(s.latest.post.date);
             if (s.latest.quiz) el('v-lastquiz').textContent = s.latest.quiz.title.slice(0, 34) + ' · ' + fmtDate(s.latest.quiz.created);

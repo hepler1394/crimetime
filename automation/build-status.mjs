@@ -30,8 +30,15 @@ const latestPost = [...posts].sort((a, b) => (b.date || "").localeCompare(a.date
 const usedTopics = new Set(posts.map((p) => p.sourceTopic).filter(Boolean));
 const topicList = topics?.topics || [];
 
+let improvements = 0;
+try {
+  const led = await readFile(join(__dirname, "improvements.md"), "utf8");
+  improvements = (led.match(/^\d+\./gm) || []).length;
+} catch { /* no ledger yet */ }
+
 const status = {
   generated: new Date().toISOString(),
+  improvementsShipped: improvements,
   schedule: {
     cadence: "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
     content: ["TUE 09:00", "FRI 09:00"],

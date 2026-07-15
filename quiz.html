@@ -28,9 +28,111 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <meta name="format-detection" content="telephone=no">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css?v=2026r">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "CrimeTimeSnacks True Crime Quizzes",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Quiz",
+        "name": "The Watts Case File",
+        "about": "Five questions on the 2018 Watts family case — the timeline, the interview, and the evidence. Covered in our Watts Family Murders episode.",
+        "url": "https://crimetime.vercel.app/quiz.html"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Quiz",
+        "name": "JonBenét: Just the Facts",
+        "about": "The 1996 Boulder case is buried in myth. Five questions on what's actually documented — from our JonBenét Ramsey episodes.",
+        "url": "https://crimetime.vercel.app/quiz.html"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Quiz",
+        "name": "Cold Case IQ",
+        "about": "Evidence, forensics, and investigation fundamentals — how much detective do you actually have in you?",
+        "url": "https://crimetime.vercel.app/quiz.html"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "Quiz",
+        "name": "The Menendez File",
+        "about": "Beverly Hills, 1989 — five questions on the case from our Erik and Lyle episode. The record is stranger than the retellings.",
+        "url": "https://crimetime.vercel.app/quiz.html"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "Quiz",
+        "name": "Delphi: The Evidence",
+        "about": "The 2017 Monon High Bridge case, from our Delphi episode — what the recording, the round, and the timeline actually established.",
+        "url": "https://crimetime.vercel.app/quiz.html"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "Quiz",
+        "name": "Infamous & Unsolved",
+        "about": "Five cases, zero convictions. How well do you know the files that never closed?",
+        "url": "https://crimetime.vercel.app/quiz.html"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "item": {
+        "@type": "Quiz",
+        "name": "Forensics 101",
+        "about": "The lab fundamentals — what the acronyms, patterns, and timelines actually mean when a case hits the bench.",
+        "url": "https://crimetime.vercel.app/quiz.html"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "item": {
+        "@type": "Quiz",
+        "name": "Caught by Technology",
+        "about": "Five endings written by metadata, databases, and one very bad computer decision.",
+        "url": "https://crimetime.vercel.app/quiz.html"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "item": {
+        "@type": "Quiz",
+        "name": "True Crime History",
+        "about": "Before podcasts, there were headlines. Five questions from the cases that built the genre.",
+        "url": "https://crimetime.vercel.app/quiz.html"
+      }
+    }
+  ]
+}
+    </script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -50,7 +152,7 @@
                     <li><a href="/videos.html">Videos</a></li>
                     <li><a href="/blog.html">Blog</a></li>
                     <li><a href="/live.html">Live</a></li>
-                    <li><a href="/quiz.html" class="active">Quizzes</a></li>
+                    <li><a href="/quiz.html" class="active" aria-current="page">Quizzes</a></li>
                     <li><a href="/merch.html">Merch</a></li>
                     <li><a href="/about.html">About</a></li>
                     <li><a href="/contact.html">Contact</a></li>
@@ -74,28 +176,76 @@
 
     <section class="container" style="max-width:1000px;">
         <div id="quiz-picker" class="quiz-picker">
-            <button class="quiz-pick episode-card" data-quiz="0" style="text-align:left;cursor:pointer;border:1px solid var(--cts-line);background:linear-gradient(180deg,var(--cts-panel),var(--cts-ink));">
+            <button class="quiz-pick episode-card" data-quiz="0" data-slug="watts-case-file" style="text-align:left;cursor:pointer;border:1px solid var(--cts-line);background:linear-gradient(180deg,var(--cts-panel),var(--cts-ink));">
                 <div class="episode-content">
                     <div class="episode-badges"><span class="episode-badge">Episode Case</span><span class="episode-badge">5 Questions</span></div>
                     <h3 class="episode-title">The Watts Case File</h3>
                     <p class="episode-description">Five questions on the 2018 Watts family case — the timeline, the interview, and the evidence. Covered in our Watts Family Murders episode.</p>
-                    <div class="episode-actions"><span class="btn btn-primary btn-sm">Start <i class="fas fa-arrow-right" aria-hidden="true"></i></span></div>
+                    <div class="episode-actions"><span class="btn btn-primary btn-sm">Start <i class="fas fa-arrow-right" aria-hidden="true"></i></span><span class="best-score" data-best="watts-case-file" style="display:none;"></span></div>
                 </div>
             </button>
-            <button class="quiz-pick episode-card" data-quiz="1" style="text-align:left;cursor:pointer;border:1px solid var(--cts-line);background:linear-gradient(180deg,var(--cts-panel),var(--cts-ink));">
+            <button class="quiz-pick episode-card" data-quiz="1" data-slug="jonbenet-the-facts" style="text-align:left;cursor:pointer;border:1px solid var(--cts-line);background:linear-gradient(180deg,var(--cts-panel),var(--cts-ink));">
                 <div class="episode-content">
                     <div class="episode-badges"><span class="episode-badge">Episode Case</span><span class="episode-badge">5 Questions</span></div>
                     <h3 class="episode-title">JonBenét: Just the Facts</h3>
                     <p class="episode-description">The 1996 Boulder case is buried in myth. Five questions on what's actually documented — from our JonBenét Ramsey episodes.</p>
-                    <div class="episode-actions"><span class="btn btn-primary btn-sm">Start <i class="fas fa-arrow-right" aria-hidden="true"></i></span></div>
+                    <div class="episode-actions"><span class="btn btn-primary btn-sm">Start <i class="fas fa-arrow-right" aria-hidden="true"></i></span><span class="best-score" data-best="jonbenet-the-facts" style="display:none;"></span></div>
                 </div>
             </button>
-            <button class="quiz-pick episode-card" data-quiz="2" style="text-align:left;cursor:pointer;border:1px solid var(--cts-line);background:linear-gradient(180deg,var(--cts-panel),var(--cts-ink));">
+            <button class="quiz-pick episode-card" data-quiz="2" data-slug="cold-case-iq" style="text-align:left;cursor:pointer;border:1px solid var(--cts-line);background:linear-gradient(180deg,var(--cts-panel),var(--cts-ink));">
                 <div class="episode-content">
                     <div class="episode-badges"><span class="episode-badge">Detective Skills</span><span class="episode-badge">5 Questions</span></div>
                     <h3 class="episode-title">Cold Case IQ</h3>
                     <p class="episode-description">Evidence, forensics, and investigation fundamentals — how much detective do you actually have in you?</p>
-                    <div class="episode-actions"><span class="btn btn-primary btn-sm">Start <i class="fas fa-arrow-right" aria-hidden="true"></i></span></div>
+                    <div class="episode-actions"><span class="btn btn-primary btn-sm">Start <i class="fas fa-arrow-right" aria-hidden="true"></i></span><span class="best-score" data-best="cold-case-iq" style="display:none;"></span></div>
+                </div>
+            </button>
+            <button class="quiz-pick episode-card" data-quiz="3" data-slug="menendez-file" style="text-align:left;cursor:pointer;border:1px solid var(--cts-line);background:linear-gradient(180deg,var(--cts-panel),var(--cts-ink));">
+                <div class="episode-content">
+                    <div class="episode-badges"><span class="episode-badge">Episode Case</span><span class="episode-badge">5 Questions</span></div>
+                    <h3 class="episode-title">The Menendez File</h3>
+                    <p class="episode-description">Beverly Hills, 1989 — five questions on the case from our Erik and Lyle episode. The record is stranger than the retellings.</p>
+                    <div class="episode-actions"><span class="btn btn-primary btn-sm">Start <i class="fas fa-arrow-right" aria-hidden="true"></i></span><span class="best-score" data-best="menendez-file" style="display:none;"></span></div>
+                </div>
+            </button>
+            <button class="quiz-pick episode-card" data-quiz="4" data-slug="delphi-the-evidence" style="text-align:left;cursor:pointer;border:1px solid var(--cts-line);background:linear-gradient(180deg,var(--cts-panel),var(--cts-ink));">
+                <div class="episode-content">
+                    <div class="episode-badges"><span class="episode-badge">Episode Case</span><span class="episode-badge">5 Questions</span></div>
+                    <h3 class="episode-title">Delphi: The Evidence</h3>
+                    <p class="episode-description">The 2017 Monon High Bridge case, from our Delphi episode — what the recording, the round, and the timeline actually established.</p>
+                    <div class="episode-actions"><span class="btn btn-primary btn-sm">Start <i class="fas fa-arrow-right" aria-hidden="true"></i></span><span class="best-score" data-best="delphi-the-evidence" style="display:none;"></span></div>
+                </div>
+            </button>
+            <button class="quiz-pick episode-card" data-quiz="5" data-slug="infamous-unsolved" style="text-align:left;cursor:pointer;border:1px solid var(--cts-line);background:linear-gradient(180deg,var(--cts-panel),var(--cts-ink));">
+                <div class="episode-content">
+                    <div class="episode-badges"><span class="episode-badge">Cold Cases</span><span class="episode-badge">5 Questions</span></div>
+                    <h3 class="episode-title">Infamous &amp; Unsolved</h3>
+                    <p class="episode-description">Five cases, zero convictions. How well do you know the files that never closed?</p>
+                    <div class="episode-actions"><span class="btn btn-primary btn-sm">Start <i class="fas fa-arrow-right" aria-hidden="true"></i></span><span class="best-score" data-best="infamous-unsolved" style="display:none;"></span></div>
+                </div>
+            </button>
+            <button class="quiz-pick episode-card" data-quiz="6" data-slug="forensics-101" style="text-align:left;cursor:pointer;border:1px solid var(--cts-line);background:linear-gradient(180deg,var(--cts-panel),var(--cts-ink));">
+                <div class="episode-content">
+                    <div class="episode-badges"><span class="episode-badge">Detective Skills</span><span class="episode-badge">5 Questions</span></div>
+                    <h3 class="episode-title">Forensics 101</h3>
+                    <p class="episode-description">The lab fundamentals — what the acronyms, patterns, and timelines actually mean when a case hits the bench.</p>
+                    <div class="episode-actions"><span class="btn btn-primary btn-sm">Start <i class="fas fa-arrow-right" aria-hidden="true"></i></span><span class="best-score" data-best="forensics-101" style="display:none;"></span></div>
+                </div>
+            </button>
+            <button class="quiz-pick episode-card" data-quiz="7" data-slug="caught-by-technology" style="text-align:left;cursor:pointer;border:1px solid var(--cts-line);background:linear-gradient(180deg,var(--cts-panel),var(--cts-ink));">
+                <div class="episode-content">
+                    <div class="episode-badges"><span class="episode-badge">Detective Skills</span><span class="episode-badge">5 Questions</span></div>
+                    <h3 class="episode-title">Caught by Technology</h3>
+                    <p class="episode-description">Five endings written by metadata, databases, and one very bad computer decision.</p>
+                    <div class="episode-actions"><span class="btn btn-primary btn-sm">Start <i class="fas fa-arrow-right" aria-hidden="true"></i></span><span class="best-score" data-best="caught-by-technology" style="display:none;"></span></div>
+                </div>
+            </button>
+            <button class="quiz-pick episode-card" data-quiz="8" data-slug="true-crime-history" style="text-align:left;cursor:pointer;border:1px solid var(--cts-line);background:linear-gradient(180deg,var(--cts-panel),var(--cts-ink));">
+                <div class="episode-content">
+                    <div class="episode-badges"><span class="episode-badge">The Archives</span><span class="episode-badge">5 Questions</span></div>
+                    <h3 class="episode-title">True Crime History</h3>
+                    <p class="episode-description">Before podcasts, there were headlines. Five questions from the cases that built the genre.</p>
+                    <div class="episode-actions"><span class="btn btn-primary btn-sm">Start <i class="fas fa-arrow-right" aria-hidden="true"></i></span><span class="best-score" data-best="true-crime-history" style="display:none;"></span></div>
                 </div>
             </button>
         </div>
@@ -161,7 +311,7 @@
 
     <script src="/js/main.js"></script>
     <script src="/js/effects.js"></script>
-    <script id="quiz-data" type="application/json">[{"slug":"watts-case-file","title":"The Watts Case File","tag":"Episode Case","description":"Five questions on the 2018 Watts family case — the timeline, the interview, and the evidence. Covered in our Watts Family Murders episode.","created":"2026-07-15","questions":[{"q":"The Watts family murders took place in August 2018 in which Colorado town?","options":["Boulder","Frederick","Greeley","Fort Collins"],"answer":1,"explain":"The family lived in Frederick, Colorado — a small town north of Denver in Weld County."},{"q":"What happened during Chris Watts' August 15 police interview?","options":["He refused to speak without a lawyer","He failed a polygraph, then confessed","He passed a polygraph","He named another suspect"],"answer":1,"explain":"Watts failed a polygraph examination and, confronted with the results, began confessing shortly after."},{"q":"Where were the bodies of Shanann and the girls recovered?","options":["A remote oil work site","The family home","A nearby reservoir","A storage unit"],"answer":0,"explain":"They were recovered at an oil site where Watts had worked — Shanann in a shallow grave, the girls in oil tanks."},{"q":"What sentence did Chris Watts receive after pleading guilty?","options":["The death penalty","25 years to life","Multiple life sentences without parole","40 years per count"],"answer":2,"explain":"In November 2018 he received multiple consecutive life sentences without the possibility of parole; prosecutors took death off the table as part of the plea."},{"q":"What made the case unravel so quickly for Watts?","options":["A neighbor's doorbell camera","His own TV interviews and inconsistencies","An anonymous tip","Cell tower data alone"],"answer":1,"explain":"His on-camera pleas and shifting story drew immediate suspicion — investigators noted the inconsistencies within days, alongside neighbor surveillance footage."}]},{"slug":"jonbenet-the-facts","title":"JonBenét: Just the Facts","tag":"Episode Case","description":"The 1996 Boulder case is buried in myth. Five questions on what's actually documented — from our JonBenét Ramsey episodes.","created":"2026-07-15","questions":[{"q":"In what city and year was JonBenét Ramsey found dead in her family home?","options":["Denver, 1997","Boulder, 1996","Colorado Springs, 1995","Aspen, 1996"],"answer":1,"explain":"She was found on December 26, 1996, in the family's home in Boulder, Colorado."},{"q":"What was discovered in the home before her body was found?","options":["A broken window only","A two-and-a-half page ransom note","A recorded phone threat","Nothing unusual"],"answer":1,"explain":"An unusually long handwritten ransom note — about two and a half pages — was found on the kitchen staircase."},{"q":"The ransom note demanded $118,000. Why is that number significant?","options":["It matched John Ramsey's recent bonus","It was the home's value","It was random","It matched a life-insurance policy"],"answer":0,"explain":"The amount closely matched a bonus John Ramsey had received that year — one of the case's strangest details."},{"q":"Where in the house was JonBenét found?","options":["The garage","Her bedroom","A basement room","The attic"],"answer":2,"explain":"Her father found her in a small basement room during a walkthrough of the house hours after police arrived."},{"q":"What is the official status of the case today?","options":["Closed — solved in 2003","Open and unsolved","Closed — ruled accidental","Sealed by court order"],"answer":1,"explain":"Nearly three decades on, the case remains open and unsolved, with periodic new rounds of DNA testing."}]},{"slug":"cold-case-iq","title":"Cold Case IQ","tag":"Detective Skills","description":"Evidence, forensics, and investigation fundamentals — how much detective do you actually have in you?","created":"2026-07-15","questions":[{"q":"Locard's exchange principle — the foundation of forensic science — says what?","options":["The simplest explanation is usually right","Every contact leaves a trace","Witnesses forget 50% in 24 hours","Follow the money"],"answer":1,"explain":"Edmond Locard's principle: a perpetrator brings something to a crime scene and leaves with something from it. Every contact leaves a trace."},{"q":"Forensic genetic genealogy — the technique behind the Golden State Killer arrest — matches crime-scene DNA against what?","options":["The FBI's CODIS database only","Hospital records","Public genealogy databases","Ancestry test kits directly"],"answer":2,"explain":"Investigators upload crime-scene DNA profiles to public genealogy databases like GEDmatch and build family trees toward a suspect."},{"q":"Why do investigators talk about the 'first 48 hours'?","options":["Legal deadline to charge a suspect","Evidence and memories degrade fast — solve odds drop sharply after","Autopsies must happen within 48 hours","It's just a TV invention"],"answer":1,"explain":"Physical evidence, witness memory, and digital trails are freshest early — the odds of clearance drop significantly once the first days pass."},{"q":"In the 2017 Delphi case, what crucial evidence did victim Libby German leave investigators?","options":["A written note","Video and audio of the suspect on her phone","A 911 call","Fingerprints on the bridge"],"answer":1,"explain":"Libby recorded video and audio of the man on the Monon High Bridge — evidence investigators called unprecedented, captured by the victim herself."},{"q":"What is NamUs?","options":["The FBI's fingerprint system","A national database for missing and unidentified persons","A DNA sequencing company","The US Marshals' fugitive list"],"answer":1,"explain":"The National Missing and Unidentified Persons System — a public national database that helps connect missing persons cases with unidentified remains."}]}]</script>
+    <script id="quiz-data" type="application/json">[{"slug":"watts-case-file","title":"The Watts Case File","tag":"Episode Case","description":"Five questions on the 2018 Watts family case — the timeline, the interview, and the evidence. Covered in our Watts Family Murders episode.","created":"2026-07-15","questions":[{"q":"The Watts family murders took place in August 2018 in which Colorado town?","options":["Boulder","Frederick","Greeley","Fort Collins"],"answer":1,"explain":"The family lived in Frederick, Colorado — a small town north of Denver in Weld County."},{"q":"What happened during Chris Watts' August 15 police interview?","options":["He refused to speak without a lawyer","He failed a polygraph, then confessed","He passed a polygraph","He named another suspect"],"answer":1,"explain":"Watts failed a polygraph examination and, confronted with the results, began confessing shortly after."},{"q":"Where were the bodies of Shanann and the girls recovered?","options":["A remote oil work site","The family home","A nearby reservoir","A storage unit"],"answer":0,"explain":"They were recovered at an oil site where Watts had worked — Shanann in a shallow grave, the girls in oil tanks."},{"q":"What sentence did Chris Watts receive after pleading guilty?","options":["The death penalty","25 years to life","Multiple life sentences without parole","40 years per count"],"answer":2,"explain":"In November 2018 he received multiple consecutive life sentences without the possibility of parole; prosecutors took death off the table as part of the plea."},{"q":"What made the case unravel so quickly for Watts?","options":["A neighbor's doorbell camera","His own TV interviews and inconsistencies","An anonymous tip","Cell tower data alone"],"answer":1,"explain":"His on-camera pleas and shifting story drew immediate suspicion — investigators noted the inconsistencies within days, alongside neighbor surveillance footage."}]},{"slug":"jonbenet-the-facts","title":"JonBenét: Just the Facts","tag":"Episode Case","description":"The 1996 Boulder case is buried in myth. Five questions on what's actually documented — from our JonBenét Ramsey episodes.","created":"2026-07-15","questions":[{"q":"In what city and year was JonBenét Ramsey found dead in her family home?","options":["Denver, 1997","Boulder, 1996","Colorado Springs, 1995","Aspen, 1996"],"answer":1,"explain":"She was found on December 26, 1996, in the family's home in Boulder, Colorado."},{"q":"What was discovered in the home before her body was found?","options":["A broken window only","A two-and-a-half page ransom note","A recorded phone threat","Nothing unusual"],"answer":1,"explain":"An unusually long handwritten ransom note — about two and a half pages — was found on the kitchen staircase."},{"q":"The ransom note demanded $118,000. Why is that number significant?","options":["It matched John Ramsey's recent bonus","It was the home's value","It was random","It matched a life-insurance policy"],"answer":0,"explain":"The amount closely matched a bonus John Ramsey had received that year — one of the case's strangest details."},{"q":"Where in the house was JonBenét found?","options":["The garage","Her bedroom","A basement room","The attic"],"answer":2,"explain":"Her father found her in a small basement room during a walkthrough of the house hours after police arrived."},{"q":"What is the official status of the case today?","options":["Closed — solved in 2003","Open and unsolved","Closed — ruled accidental","Sealed by court order"],"answer":1,"explain":"Nearly three decades on, the case remains open and unsolved, with periodic new rounds of DNA testing."}]},{"slug":"cold-case-iq","title":"Cold Case IQ","tag":"Detective Skills","description":"Evidence, forensics, and investigation fundamentals — how much detective do you actually have in you?","created":"2026-07-15","questions":[{"q":"Locard's exchange principle — the foundation of forensic science — says what?","options":["The simplest explanation is usually right","Every contact leaves a trace","Witnesses forget 50% in 24 hours","Follow the money"],"answer":1,"explain":"Edmond Locard's principle: a perpetrator brings something to a crime scene and leaves with something from it. Every contact leaves a trace."},{"q":"Forensic genetic genealogy — the technique behind the Golden State Killer arrest — matches crime-scene DNA against what?","options":["The FBI's CODIS database only","Hospital records","Public genealogy databases","Ancestry test kits directly"],"answer":2,"explain":"Investigators upload crime-scene DNA profiles to public genealogy databases like GEDmatch and build family trees toward a suspect."},{"q":"Why do investigators talk about the 'first 48 hours'?","options":["Legal deadline to charge a suspect","Evidence and memories degrade fast — solve odds drop sharply after","Autopsies must happen within 48 hours","It's just a TV invention"],"answer":1,"explain":"Physical evidence, witness memory, and digital trails are freshest early — the odds of clearance drop significantly once the first days pass."},{"q":"In the 2017 Delphi case, what crucial evidence did victim Libby German leave investigators?","options":["A written note","Video and audio of the suspect on her phone","A 911 call","Fingerprints on the bridge"],"answer":1,"explain":"Libby recorded video and audio of the man on the Monon High Bridge — evidence investigators called unprecedented, captured by the victim herself."},{"q":"What is NamUs?","options":["The FBI's fingerprint system","A national database for missing and unidentified persons","A DNA sequencing company","The US Marshals' fugitive list"],"answer":1,"explain":"The National Missing and Unidentified Persons System — a public national database that helps connect missing persons cases with unidentified remains."}]},{"slug":"menendez-file","title":"The Menendez File","tag":"Episode Case","description":"Beverly Hills, 1989 — five questions on the case from our Erik and Lyle episode. The record is stranger than the retellings.","created":"2026-07-15","questions":[{"q":"Where were Jose and Kitty Menendez killed in August 1989?","options":["Their Beverly Hills home","A Malibu beach house","Jose's office","A hotel suite"],"answer":0,"explain":"Both were shot in the den of the family's Beverly Hills mansion on Elm Drive — a house later sold, and avoided, by buyers who knew the file."},{"q":"How did investigators first tie the brothers to a confession?","options":["A neighbor's tip","Tapes from their psychologist","A pawned shotgun","Erik's diary"],"answer":1,"explain":"Sessions with psychologist Dr. Jerome Oziel were recorded — the fight over those tapes went all the way to the California Supreme Court."},{"q":"What happened at the brothers' first trials in 1993-94?","options":["Both convicted of murder one","Both acquitted","Two hung juries","Charges were dismissed"],"answer":2,"explain":"Each brother had his own jury. Both deadlocked — jurors split largely along lines of how they read the abuse testimony."},{"q":"The 1996 retrial ended with what sentence?","options":["Death","Life without parole","25 to life","Life with parole after 30 years"],"answer":1,"explain":"Convicted of first-degree murder with special circumstances, both received life without the possibility of parole."},{"q":"Where did the brothers buy the shotguns?","options":["Beverly Hills","Las Vegas","San Diego","Tijuana"],"answer":2,"explain":"They drove south and bought the shotguns at a Big 5 in San Diego, using a borrowed ID — a detail the prosecution leaned on for premeditation."}]},{"slug":"delphi-the-evidence","title":"Delphi: The Evidence","tag":"Episode Case","description":"The 2017 Monon High Bridge case, from our Delphi episode — what the recording, the round, and the timeline actually established.","created":"2026-07-15","questions":[{"q":"What did Libby German capture on her phone that investigators called unprecedented?","options":["A photo of a license plate","Video and audio of the suspect","A text describing him","A voicemail"],"answer":1,"explain":"Libby recorded the man on the bridge — the 'down the hill' audio and the Bridge Guy image came from her phone. Investigators credited her as the case's key witness."},{"q":"What physical evidence at the scene was linked to Richard Allen?","options":["A glove","An unspent round","A boot print","A cigarette"],"answer":1,"explain":"An unspent .40-caliber round found between the girls was determined by examiners to have cycled through Allen's pistol."},{"q":"When was Richard Allen arrested?","options":["February 2017","October 2022","March 2020","January 2023"],"answer":1,"explain":"Five and a half years after the murders — October 2022. He had lived and worked in Delphi the entire time."},{"q":"Where did Allen work in Delphi?","options":["A hardware store","The local CVS","A gas station","The school district"],"answer":1,"explain":"He worked at the CVS in town — and had even processed photos for the community, a detail that unsettled Delphi when it surfaced."},{"q":"What was the outcome of Allen's 2024 trial?","options":["Hung jury","Acquitted","Convicted on all counts","Mistrial declared"],"answer":2,"explain":"In November 2024 a jury convicted him on all counts; he was sentenced to 130 years."}]},{"slug":"infamous-unsolved","title":"Infamous & Unsolved","tag":"Cold Cases","description":"Five cases, zero convictions. How well do you know the files that never closed?","created":"2026-07-15","questions":[{"q":"D.B. Cooper hijacked a Boeing 727 in 1971 and vanished with how much?","options":["$50,000","$100,000","$200,000","$1 million"],"answer":2,"explain":"$200,000 in twenties. In 1980 a boy found $5,800 of it decaying on the Columbia River shore — the case's only confirmed physical lead."},{"q":"Which Zodiac cipher was finally cracked in 2020?","options":["The 408","The 340","The 13-character","The 32-character"],"answer":1,"explain":"A trio of amateur codebreakers solved the 340 after 51 years. It contained no identifying information — just taunts."},{"q":"The Black Dahlia was the press name for which victim?","options":["Georgette Bauerdorf","Elizabeth Short","Jean Spangler","Barbara Payton"],"answer":1,"explain":"Elizabeth Short, found in Leimert Park, Los Angeles in January 1947. The case file remains open with LAPD."},{"q":"What was stolen in the 1990 Isabella Stewart Gardner Museum heist?","options":["Gold bullion","13 artworks including a Vermeer","The museum's endowment bonds","A dinosaur skeleton"],"answer":1,"explain":"Two men dressed as police took 13 works, including Vermeer's The Concert. The empty frames still hang in the galleries."},{"q":"Jack the Ripper's murders took place in which London district?","options":["Soho","Whitechapel","Camden","Brixton"],"answer":1,"explain":"Whitechapel, autumn 1888. More than a century of suspects later, no attribution has ever held up to scrutiny."}]},{"slug":"forensics-101","title":"Forensics 101","tag":"Detective Skills","description":"The lab fundamentals — what the acronyms, patterns, and timelines actually mean when a case hits the bench.","created":"2026-07-15","questions":[{"q":"CODIS, the FBI's DNA system, stands for what?","options":["Combined DNA Index System","Criminal Offender DNA Identification Service","Central Offense Data Information Store","Coordinated DNA Investigation System"],"answer":0,"explain":"The Combined DNA Index System links local, state, and national DNA profiles — a hit can connect crimes decades and states apart."},{"q":"Which fingerprint pattern is the most common?","options":["Whorls","Arches","Loops","Composites"],"answer":2,"explain":"Loops appear in roughly 60-65 percent of prints; arches are the rarest of the three basic patterns."},{"q":"Rigor mortis is typically fully developed about how long after death?","options":["1 hour","12 hours","48 hours","5 days"],"answer":1,"explain":"Onset begins within a few hours and full rigor lands around the 12-hour mark, then passes — one of several clocks examiners read together."},{"q":"Mitochondrial DNA traces which line of inheritance?","options":["Paternal","Maternal","Both equally","Neither — it's random"],"answer":1,"explain":"mtDNA passes from mother to child, which is why it's used on degraded remains and maternal-line identifications."},{"q":"'Chain of custody' refers to what?","options":["Prisoner transport rules","The documented handling of evidence","The order of witnesses at trial","Handcuff procedure"],"answer":1,"explain":"Every transfer of evidence gets logged. One undocumented gap and a defense attorney can get the whole exhibit tossed."}]},{"slug":"caught-by-technology","title":"Caught by Technology","tag":"Detective Skills","description":"Five endings written by metadata, databases, and one very bad computer decision.","created":"2026-07-15","questions":[{"q":"What finally identified BTK in 2005?","options":["A DNA hit from CODIS","Metadata on a floppy disk he mailed","A traffic stop","A deathbed tip"],"answer":1,"explain":"Dennis Rader asked police if a floppy disk could be traced. They said no. The deleted file's metadata pointed to his church — and to 'Dennis'."},{"q":"The Golden State Killer was identified in 2018 using what?","options":["A prison DNA sweep","Genetic genealogy on a public database","Fingerprints from a cold file","Facial recognition"],"answer":1,"explain":"Investigators built family trees from a crime-scene profile uploaded to GEDmatch, then narrowed to Joseph James DeAngelo and confirmed with discarded DNA."},{"q":"The 'Grim Sleeper' case in LA broke open thanks to what technique?","options":["A familial DNA search","Cell tower triangulation","Ballistics AI","A podcast tip"],"answer":0,"explain":"A familial search flagged a close relative's profile; that led to Lonnie Franklin Jr., confirmed by DNA lifted from a slice of pizza."},{"q":"Silk Road founder Ross Ulbricht was arrested in a library because...","options":["He confessed online","Agents needed his laptop open and unlocked","A librarian recognized him","His VPN failed"],"answer":1,"explain":"The FBI staged a distraction and grabbed the laptop mid-session — encryption never got the chance to lock."},{"q":"Before his arrest, the Golden State Killer was known by which combined moniker?","options":["EAR/ONS","BTK/GSK","NIGHTSTALKER II","The Visalia Cat"],"answer":0,"explain":"East Area Rapist / Original Night Stalker — two crime waves only conclusively linked by DNA in 2001, years before the name Golden State Killer stuck."}]},{"slug":"true-crime-history","title":"True Crime History","tag":"The Archives","description":"Before podcasts, there were headlines. Five questions from the cases that built the genre.","created":"2026-07-15","questions":[{"q":"Bruno Hauptmann was convicted in the Lindbergh kidnapping partly through...","options":["An eyewitness lineup","Marked gold certificate ransom bills","A confession","Fingerprints on the ladder"],"answer":1,"explain":"The ransom was paid in soon-to-be-recalled gold certificates. Spending them is what put Hauptmann on the map — along with wood evidence matching his attic."},{"q":"What finally convicted Al Capone in 1931?","options":["The St. Valentine's Day Massacre","Bootlegging charges","Tax evasion","Witness testimony from his outfit"],"answer":2,"explain":"Eleven years for tax evasion. The murders were never successfully pinned on him — the ledgers were."},{"q":"The 1962 Alcatraz escapees left the island on...","options":["A stolen patrol boat","A raft made of raincoats","Driftwood planks","They swam unaided"],"answer":1,"explain":"Frank Morris and the Anglin brothers built a raft and life vests from prison raincoats. The FBI closed its file in 1979; the Marshals' file is still open."},{"q":"Who saved Leopold and Loeb from the death penalty in 1924?","options":["A hung jury","Clarence Darrow's 12-hour plea","An insanity verdict","A governor's pardon"],"answer":1,"explain":"Darrow had them plead guilty and argued against death itself for two days straight. The judge gave life plus 99 years."},{"q":"H.H. Holmes operated during which Chicago event?","options":["The Great Fire","The 1893 World's Fair","Prohibition's first year","The 1919 World Series"],"answer":1,"explain":"His 'Murder Castle' hotel ran during the 1893 World's Columbian Exposition. He confessed to 27 murders, though the true count is still debated."}]}]</script>
     <script>
     (function () {
         'use strict';
@@ -225,6 +375,40 @@
             });
         }
 
+        // Keyboard: A-D or 1-4 answers, Enter/Space advances.
+        document.addEventListener('keydown', function (e) {
+            if (!current || /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) return;
+            var k = e.key.toLowerCase();
+            var idx = ['a','b','c','d'].indexOf(k);
+            if (idx === -1 && /^[1-4]$/.test(k)) idx = parseInt(k, 10) - 1;
+            if (idx > -1 && !locked) {
+                var btn = card.querySelectorAll('.quiz-opt')[idx];
+                if (btn) { btn.click(); e.preventDefault(); }
+                return;
+            }
+            if ((e.key === 'Enter' || e.key === ' ') && locked) {
+                var next = document.getElementById('quiz-next');
+                if (next) { next.click(); e.preventDefault(); }
+            }
+        });
+
+        function bestKey() { try { return JSON.parse(localStorage.getItem('ctsQuizBest') || '{}'); } catch (e) { return {}; } }
+        function saveBest(slug, pct) {
+            try {
+                var b = bestKey();
+                if (!(slug in b) || pct > b[slug]) { b[slug] = pct; localStorage.setItem('ctsQuizBest', JSON.stringify(b)); return true; }
+            } catch (e) { /* private mode */ }
+            return false;
+        }
+        function paintBest() {
+            var b = bestKey();
+            document.querySelectorAll('[data-best]').forEach(function (chip) {
+                var slug = chip.getAttribute('data-best');
+                if (slug in b) { chip.style.display = ''; chip.innerHTML = '<i class="fas fa-trophy" aria-hidden="true"></i> Best ' + b[slug] + '%'; }
+            });
+        }
+        paintBest();
+
         function verdict(pct) {
             if (pct === 100) return 'Lead Detective. You RUN this case board.';
             if (pct >= 80) return 'Detective. The details don\'t get past you.';
@@ -238,6 +422,8 @@
             if (qi < current.questions.length) { renderQ(); return; }
             fill.style.width = '100%';
             var pct = Math.round(score / current.questions.length * 100);
+            var newBest = saveBest(current.slug, pct);
+            paintBest();
             var shareText = 'I scored ' + score + '/' + current.questions.length + ' on the ' + current.title + ' quiz from @CrimeTimeSnacks — think you can beat me? ' + 'https://crimetime.vercel.app/quiz.html';
             counter.textContent = 'Case closed';
             card.innerHTML =
@@ -245,6 +431,7 @@
                 '<p class="eyebrow" style="justify-content:center;">' + esc(current.title) + '</p>' +
                 '<div class="big">' + score + '/' + current.questions.length + '</div>' +
                 '<p style="margin-top:0.8rem;font-weight:700;font-size:1.15rem;">' + verdict(pct) + '</p>' +
+                (newBest ? '<p style="margin-top:0.5rem;"><span class="best-score"><i class="fas fa-trophy" aria-hidden="true"></i> New personal best</span></p>' : '') +
                 '<div style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.6rem;">' +
                 '<button id="quiz-share" class="btn btn-primary btn-sm"><i class="fas fa-share-nodes" aria-hidden="true"></i> Copy My Result</button>' +
                 '<button id="quiz-retry" class="btn btn-secondary btn-sm"><i class="fas fa-rotate-right" aria-hidden="true"></i> Retry</button>' +

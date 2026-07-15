@@ -1,10 +1,13 @@
 /* TEAM */
-Creator: Cory
-Site: CrimeTimeSnacks — A True Crime Podcast
-Contact: https://crimetime.vercel.app/contact.html
+Host, Researcher, Writer, Editor: Cory
+Contact: crimetimesnacks@gmail.com
+Location: United States
 
 /* SITE */
-Last update: 2026/06
-Language: English
-Standards: HTML5, CSS3
-Components: Static site, key-free automated content pipeline (podcast, YouTube, blog, merch)
+Standards: HTML5, CSS3, ES5+, JSON-LD, RSS 2.0, PWA
+Stack: Static HTML on Vercel, Node.js automation, local-first AI in Cory's voice
+Last major relaunch: 2026-07-15
+Doctrine: Facts first. No sensationalism. Respect for victims and their families.
+
+/* THANKS */
+Every listener who pressed play, suggested a case, or left a review.

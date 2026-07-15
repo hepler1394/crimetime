@@ -28,6 +28,9 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <meta name="format-detection" content="telephone=no">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css?v=2026r">
@@ -117,7 +120,7 @@
             <nav id="primary-nav" aria-label="Primary">
                 <ul class="nav-menu">
                     <li><a href="/index.html">Home</a></li>
-                    <li><a href="/episodes.html" class="active">Episodes</a></li>
+                    <li><a href="/episodes.html" class="active" aria-current="page">Episodes</a></li>
                     <li><a href="/videos.html">Videos</a></li>
                     <li><a href="/blog.html">Blog</a></li>
                     <li><a href="/live.html">Live</a></li>
@@ -144,9 +147,24 @@
     <div class="crime-scene-tape" aria-hidden="true"></div>
 
     <section class="container" style="padding-top:1rem;">
-        <div class="episode-grid">
-                <article class="episode-card" data-categories="true-crime">
-                    <a href="/episodes/murders-in-moscow.html" aria-label="Murders in Moscow"><img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731822271588-25bfd78792249.jpg" alt="Murders in Moscow" class="episode-image" loading="lazy"></a>
+        <div class="episodes-toolbar">
+            <div class="search-container" style="margin:0;max-width:340px;flex:1;">
+                <input type="search" id="episode-search" aria-label="Search episodes" placeholder="Search cases... ( / )">
+                <button aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></button>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.8rem;">
+                <label for="episode-sort" class="kbd-hint">Sort</label>
+                <select id="episode-sort" aria-label="Sort episodes">
+                    <option value="new">Newest first</option>
+                    <option value="old">Oldest first</option>
+                    <option value="long">Longest</option>
+                    <option value="short">Shortest</option>
+                </select>
+            </div>
+        </div>
+        <div class="episode-grid" id="episode-grid">
+                <article class="episode-card" data-categories="true-crime" data-date="2025-03-16" data-seconds="701">
+                    <a href="/episodes/murders-in-moscow.html" aria-label="Murders in Moscow"><img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731822271588-25bfd78792249.jpg" alt="Cover art: Murders in Moscow" class="episode-image" loading="lazy" decoding="async" width="600" height="600"></a>
                     <div class="episode-content">
                         <div class="episode-badges">
                             <span class="episode-badge">True Crime</span>
@@ -167,8 +185,8 @@
                         </div>
                     </div>
                 </article>
-                <article class="episode-card" data-categories="true-crime">
-                    <a href="/episodes/watts-family-murders.html" aria-label="Watts Family Murders"><img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731832918663-8a0f0ee9c4129.jpg" alt="Watts Family Murders" class="episode-image" loading="lazy"></a>
+                <article class="episode-card" data-categories="true-crime" data-date="2024-11-17" data-seconds="1302">
+                    <a href="/episodes/watts-family-murders.html" aria-label="Watts Family Murders"><img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731832918663-8a0f0ee9c4129.jpg" alt="Cover art: Watts Family Murders" class="episode-image" loading="lazy" decoding="async" width="600" height="600"></a>
                     <div class="episode-content">
                         <div class="episode-badges">
                             <span class="episode-badge">True Crime</span>
@@ -189,8 +207,8 @@
                         </div>
                     </div>
                 </article>
-                <article class="episode-card" data-categories="true-crime">
-                    <a href="/episodes/erik-and-lyle-the-menendez-brothers.html" aria-label="ERIK AND LYLE: The Menendez Brothers"><img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731821846921-7a3bca7a5b61d.jpg" alt="ERIK AND LYLE: The Menendez Brothers" class="episode-image" loading="lazy"></a>
+                <article class="episode-card" data-categories="true-crime" data-date="2024-11-17" data-seconds="1178">
+                    <a href="/episodes/erik-and-lyle-the-menendez-brothers.html" aria-label="ERIK AND LYLE: The Menendez Brothers"><img src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731821846921-7a3bca7a5b61d.jpg" alt="Cover art: ERIK AND LYLE: The Menendez Brothers" class="episode-image" loading="lazy" decoding="async" width="600" height="600"></a>
                     <div class="episode-content">
                         <div class="episode-badges">
                             <span class="episode-badge">True Crime</span>
@@ -211,8 +229,8 @@
                         </div>
                     </div>
                 </article>
-                <article class="episode-card" data-categories="true-crime">
-                    <a href="/episodes/jonbenet-ramsey-the-facts-96-22-part-1.html" aria-label="JonBenét Ramsey | The Facts 96-22 |Part 1"><img src="https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/19116320/19116320-1668968108733-9f40ee8db375b.jpg" alt="JonBenét Ramsey | The Facts 96-22 |Part 1" class="episode-image" loading="lazy"></a>
+                <article class="episode-card" data-categories="true-crime" data-date="2022-11-20" data-seconds="944">
+                    <a href="/episodes/jonbenet-ramsey-the-facts-96-22-part-1.html" aria-label="JonBenét Ramsey | The Facts 96-22 |Part 1"><img src="https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/19116320/19116320-1668968108733-9f40ee8db375b.jpg" alt="Cover art: JonBenét Ramsey | The Facts 96-22 |Part 1" class="episode-image" loading="lazy" decoding="async" width="600" height="600"></a>
                     <div class="episode-content">
                         <div class="episode-badges">
                             <span class="episode-badge">True Crime</span>
@@ -233,8 +251,8 @@
                         </div>
                     </div>
                 </article>
-                <article class="episode-card" data-categories="true-crime">
-                    <a href="/episodes/jonbenet-ramsey-americas-child-beauty-queen.html" aria-label="JonBenét Ramsey Americas Child Beauty Queen"><img src="https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/19116320/19116320-1668802938397-afbcf18474af5.jpg" alt="JonBenét Ramsey Americas Child Beauty Queen" class="episode-image" loading="lazy"></a>
+                <article class="episode-card" data-categories="true-crime" data-date="2022-11-18" data-seconds="57">
+                    <a href="/episodes/jonbenet-ramsey-americas-child-beauty-queen.html" aria-label="JonBenét Ramsey Americas Child Beauty Queen"><img src="https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/19116320/19116320-1668802938397-afbcf18474af5.jpg" alt="Cover art: JonBenét Ramsey Americas Child Beauty Queen" class="episode-image" loading="lazy" decoding="async" width="600" height="600"></a>
                     <div class="episode-content">
                         <div class="episode-badges">
                             <span class="episode-badge">True Crime</span>
@@ -255,8 +273,8 @@
                         </div>
                     </div>
                 </article>
-                <article class="episode-card" data-categories="true-crime">
-                    <a href="/episodes/crimetimesnacks-the-delphi-murder-case-2017.html" aria-label="CrimeTimeSnacks: The Delphi Murder Case 2017"><img src="https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/19116320/19116320-1668756728911-46682c3a84737.jpg" alt="CrimeTimeSnacks: The Delphi Murder Case 2017" class="episode-image" loading="lazy"></a>
+                <article class="episode-card" data-categories="true-crime" data-date="2022-11-18" data-seconds="565">
+                    <a href="/episodes/crimetimesnacks-the-delphi-murder-case-2017.html" aria-label="CrimeTimeSnacks: The Delphi Murder Case 2017"><img src="https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/19116320/19116320-1668756728911-46682c3a84737.jpg" alt="Cover art: CrimeTimeSnacks: The Delphi Murder Case 2017" class="episode-image" loading="lazy" decoding="async" width="600" height="600"></a>
                     <div class="episode-content">
                         <div class="episode-badges">
                             <span class="episode-badge">True Crime</span>
@@ -278,6 +296,7 @@
                     </div>
                 </article>
         </div>
+        <p id="episode-empty" style="display:none;color:var(--cts-muted);text-align:center;padding:2.5rem 0;">No cases match that search.</p>
     </section>
     </main>
 
@@ -331,5 +350,35 @@
 
     <script src="/js/main.js"></script>
     <script src="/js/effects.js"></script>
+    <script>
+    (function () {
+        var grid = document.getElementById('episode-grid');
+        var cards = Array.prototype.slice.call(grid.querySelectorAll('.episode-card'));
+        var box = document.getElementById('episode-search');
+        var sort = document.getElementById('episode-sort');
+        var empty = document.getElementById('episode-empty');
+        function apply() {
+            var q = (box.value || '').toLowerCase();
+            var mode = sort.value;
+            var visible = 0;
+            cards.sort(function (a, b) {
+                var da = a.getAttribute('data-date') || '', db = b.getAttribute('data-date') || '';
+                var sa = parseInt(a.getAttribute('data-seconds') || '0', 10), sb = parseInt(b.getAttribute('data-seconds') || '0', 10);
+                if (mode === 'old') return da.localeCompare(db);
+                if (mode === 'long') return sb - sa;
+                if (mode === 'short') return sa - sb;
+                return db.localeCompare(da);
+            }).forEach(function (c) {
+                grid.appendChild(c);
+                var hit = !q || c.textContent.toLowerCase().indexOf(q) > -1;
+                c.style.display = hit ? '' : 'none';
+                if (hit) visible++;
+            });
+            empty.style.display = visible ? 'none' : '';
+        }
+        box.addEventListener('input', apply);
+        sort.addEventListener('change', apply);
+    })();
+    </script>
 </body>
 </html>

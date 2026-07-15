@@ -316,6 +316,100 @@
         });
     }
 
+    /* ------------------------------------------------------ service worker */
+    function initSW() {
+        if (!('serviceWorker' in navigator)) return;
+        if (location.protocol !== 'https:' && location.hostname !== 'localhost') return;
+        window.addEventListener('load', function () {
+            navigator.serviceWorker.register('/sw.js').catch(function () { /* non-fatal */ });
+        });
+    }
+
+    /* -------------------------------------------------------- back to top */
+    function initBackToTop() {
+        var btn = document.createElement('button');
+        btn.className = 'back-to-top';
+        btn.setAttribute('aria-label', 'Back to top');
+        btn.innerHTML = '<i class="fas fa-arrow-up" aria-hidden="true"></i>';
+        document.body.appendChild(btn);
+        btn.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+        });
+        var ticking = false;
+        window.addEventListener('scroll', function () {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(function () {
+                btn.classList.toggle('visible', window.scrollY > 900);
+                ticking = false;
+            });
+        }, { passive: true });
+    }
+
+    /* --------------------------------------- reading progress (detail pages) */
+    function initReadingProgress() {
+        var path = location.pathname;
+        if (path.indexOf('/blog-posts/') === -1 && path.indexOf('/episodes/') === -1) return;
+        var bar = document.createElement('div');
+        bar.className = 'read-progress';
+        bar.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(bar);
+        var ticking = false;
+        var paint = function () {
+            var doc = document.documentElement;
+            var max = doc.scrollHeight - window.innerHeight;
+            bar.style.width = (max > 0 ? Math.min(window.scrollY / max, 1) * 100 : 0) + '%';
+            ticking = false;
+        };
+        window.addEventListener('scroll', function () {
+            if (!ticking) { ticking = true; requestAnimationFrame(paint); }
+        }, { passive: true });
+        paint();
+    }
+
+    /* ----------------------------- Media Session (lock-screen player controls) */
+    function initMediaSession() {
+        if (!('mediaSession' in navigator)) return;
+        document.querySelectorAll('audio').forEach(function (audio) {
+            audio.addEventListener('play', function () {
+                var title = document.querySelector('.episode-header h1, .spotlight-body h3, h1');
+                var img = document.querySelector('.episode-header ~ * img, .spotlight-media img');
+                try {
+                    navigator.mediaSession.metadata = new MediaMetadata({
+                        title: (title ? title.textContent.trim() : 'CrimeTimeSnacks'),
+                        artist: 'CrimeTimeSnacks — A True Crime Podcast',
+                        artwork: [{ src: (img ? img.src : '/images/logo.png'), sizes: '512x512', type: 'image/png' }]
+                    });
+                    navigator.mediaSession.setActionHandler('play', function () { audio.play(); });
+                    navigator.mediaSession.setActionHandler('pause', function () { audio.pause(); });
+                    navigator.mediaSession.setActionHandler('seekbackward', function () { audio.currentTime = Math.max(0, audio.currentTime - 15); });
+                    navigator.mediaSession.setActionHandler('seekforward', function () { audio.currentTime += 30; });
+                } catch (e) { /* older browsers */ }
+            });
+        });
+    }
+
+    /* ------------------------------------------- "/" focuses the page search */
+    function initSlashSearch() {
+        var box = document.getElementById('live-search') || document.getElementById('episode-search') || document.getElementById('search-input');
+        if (!box) return;
+        document.addEventListener('keydown', function (e) {
+            if (e.key === '/' && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) {
+                e.preventDefault();
+                box.focus();
+            }
+        });
+    }
+
+    /* ------------------------- safety net: external links get rel protection */
+    function initExternalLinks() {
+        document.querySelectorAll('a[target="_blank"]').forEach(function (a) {
+            var rel = (a.getAttribute('rel') || '').split(/\s+/);
+            if (rel.indexOf('noopener') === -1) rel.push('noopener');
+            a.setAttribute('rel', rel.join(' ').trim());
+        });
+    }
+
     /* -------------------------------------------------------------- kickoff */
     function init() {
         initAtmosphere();
@@ -328,6 +422,12 @@
         initMarquee();
         initPlayers();
         initCopy();
+        initSW();
+        initBackToTop();
+        initReadingProgress();
+        initMediaSession();
+        initSlashSearch();
+        initExternalLinks();
     }
 
     if (document.readyState === 'loading') {

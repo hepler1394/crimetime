@@ -1,12 +1,24 @@
 {
-  "name": "CrimeTimeSnacks",
-  "short_name": "CrimeTime",
-  "description": "A true crime podcast exploring unsolved cases, murders, and mysteries.",
-  "start_url": "/",
+  "name": "CrimeTimeSnacks — A True Crime Podcast",
+  "short_name": "CrimeTimeSnacks",
+  "description": "Snack-sized true crime, fully examined. Episodes, the live FBI case board, quizzes, and the crime blog.",
+  "id": "/",
+  "start_url": "/?source=pwa",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#0a0a0a",
-  "theme_color": "#0a0a0a",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "orientation": "portrait-primary",
+  "categories": ["entertainment", "news", "podcasts"],
   "icons": [
-    { "src": "/images/logo.png", "sizes": "512x512", "type": "image/png" }
+    { "src": "/images/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/images/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/images/icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/images/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Latest Episodes", "url": "/episodes.html", "icons": [{ "src": "/images/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Live Case Board", "url": "/live.html", "icons": [{ "src": "/images/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Quizzes", "url": "/quiz.html", "icons": [{ "src": "/images/icon-192.png", "sizes": "192x192" }] }
   ]
 }

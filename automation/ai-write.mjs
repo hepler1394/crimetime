@@ -125,6 +125,10 @@ const post = {
 blog.posts.unshift(post);
 await writeFile(blogPath, JSON.stringify(blog, null, 2) + "\n", "utf8");
 console.log(`Added post: ${post.title} (${slug})`);
+try {
+  const { logImprovement } = await import("./ledger.mjs");
+  await logImprovement(`Published blog post in Cory's voice: "${post.title}"`);
+} catch { /* ledger optional */ }
 
 // Rebuild the site from the updated source.
 const r = spawnSync(process.execPath, [join(__dirname, "build-all.mjs")], { stdio: "inherit", cwd: ROOT });

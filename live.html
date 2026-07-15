@@ -23,6 +23,9 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <meta name="format-detection" content="telephone=no">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css?v=2026r">
@@ -44,7 +47,7 @@
                     <li><a href="/episodes.html">Episodes</a></li>
                     <li><a href="/videos.html">Videos</a></li>
                     <li><a href="/blog.html">Blog</a></li>
-                    <li><a href="/live.html" class="active">Live</a></li>
+                    <li><a href="/live.html" class="active" aria-current="page">Live</a></li>
                     <li><a href="/quiz.html">Quizzes</a></li>
                     <li><a href="/merch.html">Merch</a></li>
                     <li><a href="/about.html">About</a></li>
@@ -77,10 +80,15 @@
             </div>
             <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
                 <div class="search-container" style="margin:0;max-width:280px;">
-                    <input type="search" id="live-search" aria-label="Search cases" placeholder="Search names, offices...">
+                    <input type="search" id="live-search" aria-label="Search cases" placeholder="Search names, offices... ( / )">
                     <button aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></button>
                 </div>
-                <span class="live-updated"><span class="live-dot" aria-hidden="true"></span> <span id="live-stamp">Loading&hellip;</span></span>
+                <select id="live-sort" aria-label="Sort cases" style="background:var(--cts-panel);border:1px solid var(--cts-line-strong);color:var(--cts-white);border-radius:999px;padding:0.6rem 1.1rem;font-size:0.85rem;cursor:pointer;">
+                    <option value="recent">Recently updated</option>
+                    <option value="reward">Reward first</option>
+                    <option value="az">A to Z</option>
+                </select>
+                <span class="live-updated"><span id="live-count" style="color:var(--cts-muted);font-weight:700;"></span>&nbsp;<span class="live-dot" aria-hidden="true"></span> <span id="live-stamp">Loading&hellip;</span></span>
             </div>
         </div>
 
@@ -198,12 +206,20 @@
             return '<span class="w-chip w-chip--wanted">Wanted</span>';
         }
 
+        var sortMode = 'recent';
         function render() {
             var filtered = items.filter(function (it) {
                 if (kind !== 'all' && it.kind !== kind) return false;
                 if (query && (it.title + ' ' + it.office).toLowerCase().indexOf(query) === -1) return false;
                 return true;
             });
+            if (sortMode === 'reward') {
+                filtered = filtered.slice().sort(function (a, b) { return (b.reward ? 1 : 0) - (a.reward ? 1 : 0); });
+            } else if (sortMode === 'az') {
+                filtered = filtered.slice().sort(function (a, b) { return (a.title || '').localeCompare(b.title || ''); });
+            }
+            var countEl = document.getElementById('live-count');
+            if (countEl) countEl.textContent = filtered.length + ' cases';
             var slice = filtered.slice(0, shown);
             if (!slice.length) {
                 board.innerHTML = '<p style="grid-column:1/-1;color:var(--cts-muted);text-align:center;padding:3rem 0;">No cases match. Try another filter.</p>';
@@ -272,6 +288,9 @@
         }
 
         moreBtn.addEventListener('click', function () { shown += 24; render(); });
+
+        var sortSel = document.getElementById('live-sort');
+        if (sortSel) sortSel.addEventListener('change', function () { sortMode = sortSel.value; shown = 24; render(); });
 
         loadBaked().then(function (had) {
             return loadLive().then(function (gotLive) {

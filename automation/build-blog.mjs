@@ -21,7 +21,7 @@ const readingTime = (p) =>
 /* ------------------------------------------------------------------ cards */
 function card(p) {
   return `                <div class="blog-card" data-category="${esc(p.category)}">
-                    <a href="${postUrl(p)}"><img src="${esc(img(p))}" alt="${esc(p.title)}" class="blog-image" loading="lazy"></a>
+                    <a href="${postUrl(p)}"><img src="${esc(img(p))}" alt="${esc(p.title)}" class="blog-image" loading="lazy" decoding="async" width="640" height="360"></a>
                     <div class="blog-content">
                         <div class="blog-tags"><span class="blog-tag">${esc(p.categoryLabel)}</span><span class="blog-tag">${readingTime(p)} min read</span></div>
                         <h3 class="blog-title"><a href="${postUrl(p)}" style="color:inherit;text-decoration:none;">${esc(p.title)}</a></h3>
@@ -165,7 +165,26 @@ function articleLd(p) {
     },
     mainEntityOfPage: `${SITE}${postUrl(p)}`,
   };
-  return `\n    <script type="application/ld+json">\n${JSON.stringify(ld, null, 2)}\n    </script>`;
+  const crumbs = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE}/blog.html` },
+      { "@type": "ListItem", position: 3, name: p.title, item: `${SITE}${postUrl(p)}` },
+    ],
+  };
+  return `\n    <script type="application/ld+json">\n${JSON.stringify(ld, null, 2)}\n    </script>\n    <script type="application/ld+json">\n${JSON.stringify(crumbs)}\n    </script>`;
+}
+
+function shareRow(url, title) {
+  return `        <div class="share-row">
+            <span class="label">Share this post</span>
+            <button class="share-btn" data-copy="${esc(url)}"><i class="fas fa-link" aria-hidden="true"></i> Copy Link</button>
+            <a class="share-btn" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}" target="_blank" rel="noopener"><i class="fab fa-x-twitter" aria-hidden="true"></i> Post</a>
+            <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}" target="_blank" rel="noopener"><i class="fab fa-facebook-f" aria-hidden="true"></i> Share</a>
+            <a class="share-btn" href="mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(url)}"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a>
+        </div>`;
 }
 
 function postPage(p, posts) {
@@ -194,6 +213,7 @@ ${header("blog")}
     <div class="container" style="max-width:780px;margin:3rem auto;">
         <img src="${esc(img(p))}" alt="${esc(p.title)}" decoding="async" style="width:100%;border-radius:16px;margin-bottom:2.2rem;border:1px solid var(--cts-line-strong);box-shadow:var(--shadow-2);">
 ${paras}
+${shareRow(`${SITE}${postUrl(p)}`, `${p.title} — CrimeTimeSnacks`)}
         <div style="margin-top:2.5rem;">
             <a href="/blog.html" class="btn btn-secondary"><i class="fas fa-arrow-left" aria-hidden="true"></i> All Posts</a>
         </div>

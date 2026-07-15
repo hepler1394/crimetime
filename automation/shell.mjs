@@ -63,6 +63,9 @@ export function head(opts = {}) {
     <link rel="manifest" href="/site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <meta name="format-detection" content="telephone=no">
     <link href="${FONTS}" rel="stylesheet">
     <link rel="stylesheet" href="${FA}">
     <link rel="stylesheet" href="${CSS}">${opts.extraHead || ""}
@@ -83,7 +86,7 @@ export function header(active = "") {
             <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><i class="fas fa-bars" aria-hidden="true"></i></button>
             <nav id="primary-nav" aria-label="Primary">
                 <ul class="nav-menu">
-${NAV.map(([href, key, label]) => `                    <li><a href="${href}"${key === active ? ' class="active"' : ""}>${label}</a></li>`).join("\n")}
+${NAV.map(([href, key, label]) => `                    <li><a href="${href}"${key === active ? ' class="active" aria-current="page"' : ""}>${label}</a></li>`).join("\n")}
                 </ul>
             </nav>
             <div class="utility-nav">

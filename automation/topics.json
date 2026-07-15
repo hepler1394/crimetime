@@ -1,35 +1,509 @@
 {
-  "_README": "Editorial backlog for the auto-blog. ai-write.mjs --auto picks the first topic here that hasn't been published yet (matched by slug), so posts follow a planned calendar instead of repeating. Add your own topics any time. Keep them factual and evergreen — no inventing case details.",
+  "_README": "Editorial backlog for the auto-blog. ai-write.mjs --auto picks the first topic here that hasn't been published yet (matched by slug), so posts follow a planned calendar instead of repeating. Add your own topics any time. Keep them factual and evergreen \u2014 no inventing case details.",
   "topics": [
-    { "topic": "How forensic genealogy cracks cold cases", "category": "analysis" },
-    { "topic": "Chain of custody: why solid evidence still gets thrown out", "category": "court" },
-    { "topic": "Why eyewitness testimony is less reliable than people think", "category": "analysis" },
-    { "topic": "How cold case units decide which files to reopen", "category": "investigation" },
-    { "topic": "Understanding DNA familial searching", "category": "analysis" },
-    { "topic": "Wrongful convictions and the work of the Innocence Project", "category": "court" },
-    { "topic": "What reasonable doubt actually means in a courtroom", "category": "court" },
-    { "topic": "The history of fingerprint evidence", "category": "analysis" },
-    { "topic": "How the FBI's ViCAP database links violent crimes", "category": "investigation" },
-    { "topic": "Why some cases stay cold for decades", "category": "analysis" },
-    { "topic": "How digital forensics changed modern investigations", "category": "analysis" },
-    { "topic": "The role of the public and tip lines in solving crimes", "category": "investigation" },
-    { "topic": "Forensic odontology: solving cases with dental records", "category": "investigation" },
-    { "topic": "How behavioral profilers build a sketch of an offender", "category": "analysis" },
-    { "topic": "Understanding the criminal appeals process", "category": "court" },
-    { "topic": "The evolution of crime scene photography", "category": "analysis" },
-    { "topic": "How podcasts have helped reopen cold cases", "category": "analysis" },
-    { "topic": "Bloodstain pattern analysis, explained", "category": "investigation" },
-    { "topic": "How true crime fans can help cases responsibly", "category": "analysis" },
-    { "topic": "What a medical examiner determines and what they don't", "category": "analysis" },
-    { "topic": "How polygraph results are used and why courts distrust them", "category": "court" },
-    { "topic": "The role of a grand jury, explained", "category": "court" },
-    { "topic": "How investigators reconstruct a timeline of events", "category": "investigation" },
-    { "topic": "Why false confessions happen", "category": "analysis" },
-    { "topic": "How trace evidence like fibers and soil solves cases", "category": "investigation" },
-    { "topic": "The difference between a person of interest and a suspect", "category": "analysis" },
-    { "topic": "How DNA was first used to solve a crime", "category": "analysis" },
-    { "topic": "What happens at a preliminary hearing", "category": "court" },
-    { "topic": "How missing persons cases are prioritized and worked", "category": "investigation" },
-    { "topic": "The science behind time of death estimates", "category": "analysis" }
+    {
+      "topic": "How forensic genealogy cracks cold cases",
+      "category": "analysis"
+    },
+    {
+      "topic": "Chain of custody: why solid evidence still gets thrown out",
+      "category": "court"
+    },
+    {
+      "topic": "Why eyewitness testimony is less reliable than people think",
+      "category": "analysis"
+    },
+    {
+      "topic": "How cold case units decide which files to reopen",
+      "category": "investigation"
+    },
+    {
+      "topic": "Understanding DNA familial searching",
+      "category": "analysis"
+    },
+    {
+      "topic": "Wrongful convictions and the work of the Innocence Project",
+      "category": "court"
+    },
+    {
+      "topic": "What reasonable doubt actually means in a courtroom",
+      "category": "court"
+    },
+    {
+      "topic": "The history of fingerprint evidence",
+      "category": "analysis"
+    },
+    {
+      "topic": "How the FBI's ViCAP database links violent crimes",
+      "category": "investigation"
+    },
+    {
+      "topic": "Why some cases stay cold for decades",
+      "category": "analysis"
+    },
+    {
+      "topic": "How digital forensics changed modern investigations",
+      "category": "analysis"
+    },
+    {
+      "topic": "The role of the public and tip lines in solving crimes",
+      "category": "investigation"
+    },
+    {
+      "topic": "Forensic odontology: solving cases with dental records",
+      "category": "investigation"
+    },
+    {
+      "topic": "How behavioral profilers build a sketch of an offender",
+      "category": "analysis"
+    },
+    {
+      "topic": "Understanding the criminal appeals process",
+      "category": "court"
+    },
+    {
+      "topic": "The evolution of crime scene photography",
+      "category": "analysis"
+    },
+    {
+      "topic": "How podcasts have helped reopen cold cases",
+      "category": "analysis"
+    },
+    {
+      "topic": "Bloodstain pattern analysis, explained",
+      "category": "investigation"
+    },
+    {
+      "topic": "How true crime fans can help cases responsibly",
+      "category": "analysis"
+    },
+    {
+      "topic": "What a medical examiner determines and what they don't",
+      "category": "analysis"
+    },
+    {
+      "topic": "How polygraph results are used and why courts distrust them",
+      "category": "court"
+    },
+    {
+      "topic": "The role of a grand jury, explained",
+      "category": "court"
+    },
+    {
+      "topic": "How investigators reconstruct a timeline of events",
+      "category": "investigation"
+    },
+    {
+      "topic": "Why false confessions happen",
+      "category": "analysis"
+    },
+    {
+      "topic": "How trace evidence like fibers and soil solves cases",
+      "category": "investigation"
+    },
+    {
+      "topic": "The difference between a person of interest and a suspect",
+      "category": "analysis"
+    },
+    {
+      "topic": "How DNA was first used to solve a crime",
+      "category": "analysis"
+    },
+    {
+      "topic": "What happens at a preliminary hearing",
+      "category": "court"
+    },
+    {
+      "topic": "How missing persons cases are prioritized and worked",
+      "category": "investigation"
+    },
+    {
+      "topic": "The science behind time of death estimates",
+      "category": "analysis"
+    },
+    {
+      "topic": "The Long Island Serial Killer: where the case stands",
+      "category": "investigation"
+    },
+    {
+      "topic": "The anatomy of a ransom note: what linguists look for",
+      "category": "analysis"
+    },
+    {
+      "topic": "Luminol and its limits: what crime shows get wrong",
+      "category": "analysis"
+    },
+    {
+      "topic": "The 911 call: how investigators analyze the first minutes",
+      "category": "investigation"
+    },
+    {
+      "topic": "False confessions: why innocent people say they did it",
+      "category": "analysis"
+    },
+    {
+      "topic": "The Golden State Killer arrest, and what changed after",
+      "category": "court"
+    },
+    {
+      "topic": "DNA phenotyping: building a face from a sample",
+      "category": "analysis"
+    },
+    {
+      "topic": "Cadaver dogs: how reliable are they really",
+      "category": "analysis"
+    },
+    {
+      "topic": "The polygraph problem: why it isn't admissible",
+      "category": "analysis"
+    },
+    {
+      "topic": "Cell tower pings: what location data can and can't prove",
+      "category": "analysis"
+    },
+    {
+      "topic": "Geofence warrants: the courtroom fight over your phone",
+      "category": "court"
+    },
+    {
+      "topic": "How the FBI's ViCAP links crimes across state lines",
+      "category": "investigation"
+    },
+    {
+      "topic": "The first 48 hours: why speed decides cases",
+      "category": "investigation"
+    },
+    {
+      "topic": "Touch DNA: breakthrough or contamination machine",
+      "category": "analysis"
+    },
+    {
+      "topic": "Blood spatter analysis on trial",
+      "category": "court"
+    },
+    {
+      "topic": "Bite mark evidence: the forensic method that fell apart",
+      "category": "analysis"
+    },
+    {
+      "topic": "The rise and fall of hair microscopy in court",
+      "category": "court"
+    },
+    {
+      "topic": "How unidentified remains finally get names",
+      "category": "investigation"
+    },
+    {
+      "topic": "Doe Network and the volunteers who solve cold cases",
+      "category": "investigation"
+    },
+    {
+      "topic": "What a medical examiner actually does",
+      "category": "analysis"
+    },
+    {
+      "topic": "Cause, manner, mechanism: reading a death certificate",
+      "category": "analysis"
+    },
+    {
+      "topic": "Staged crime scenes: the tells investigators look for",
+      "category": "investigation"
+    },
+    {
+      "topic": "Insurance money as motive: the paper trail",
+      "category": "investigation"
+    },
+    {
+      "topic": "The missing white woman syndrome problem",
+      "category": "analysis"
+    },
+    {
+      "topic": "Why some missing persons cases never make the news",
+      "category": "analysis"
+    },
+    {
+      "topic": "AMBER Alerts: what triggers one and what doesn't",
+      "category": "analysis"
+    },
+    {
+      "topic": "How NamUs matches the missing with the unidentified",
+      "category": "analysis"
+    },
+    {
+      "topic": "Serial killers and the long-haul trucking corridor theory",
+      "category": "investigation"
+    },
+    {
+      "topic": "The highway of tears: decades of unanswered cases",
+      "category": "investigation"
+    },
+    {
+      "topic": "Profiling: useful tool or courtroom theater",
+      "category": "analysis"
+    },
+    {
+      "topic": "BTK and the floppy disk that ended a 30-year hunt",
+      "category": "investigation"
+    },
+    {
+      "topic": "The Unabomber manifesto and forensic linguistics",
+      "category": "analysis"
+    },
+    {
+      "topic": "Zodiac's ciphers: which were solved and how",
+      "category": "analysis"
+    },
+    {
+      "topic": "Cold case playing cards in prisons: do they work",
+      "category": "analysis"
+    },
+    {
+      "topic": "Jailhouse informants: the incentive problem",
+      "category": "court"
+    },
+    {
+      "topic": "Wrongful convictions: the most common causes",
+      "category": "court"
+    },
+    {
+      "topic": "The Innocence Project's playbook, case by case",
+      "category": "court"
+    },
+    {
+      "topic": "Compensation after exoneration: state by state",
+      "category": "court"
+    },
+    {
+      "topic": "Double jeopardy: what it actually protects",
+      "category": "court"
+    },
+    {
+      "topic": "Statutes of limitations on murder: the exceptions",
+      "category": "court"
+    },
+    {
+      "topic": "Extradition: why some suspects never come back",
+      "category": "court"
+    },
+    {
+      "topic": "Interpol red notices explained",
+      "category": "analysis"
+    },
+    {
+      "topic": "How fugitives actually get caught decades later",
+      "category": "investigation"
+    },
+    {
+      "topic": "The US Marshals' 15 Most Wanted vs the FBI's Ten",
+      "category": "analysis"
+    },
+    {
+      "topic": "What a grand jury really does",
+      "category": "court"
+    },
+    {
+      "topic": "Plea deals: why most cases never see trial",
+      "category": "court"
+    },
+    {
+      "topic": "The Alford plea: guilty but not admitting it",
+      "category": "court"
+    },
+    {
+      "topic": "Competency vs insanity: two different questions",
+      "category": "court"
+    },
+    {
+      "topic": "The M'Naghten rule: how insanity defenses work",
+      "category": "court"
+    },
+    {
+      "topic": "Life without parole vs the death penalty: the real numbers",
+      "category": "analysis"
+    },
+    {
+      "topic": "Parole hearings: what boards actually weigh",
+      "category": "court"
+    },
+    {
+      "topic": "Victim impact statements: the day the family speaks",
+      "category": "court"
+    },
+    {
+      "topic": "Son of Sam laws: profiting from crime",
+      "category": "court"
+    },
+    {
+      "topic": "True crime and ethics: where's the line",
+      "category": "analysis"
+    },
+    {
+      "topic": "How podcasts have actually helped solve cases",
+      "category": "analysis"
+    },
+    {
+      "topic": "Websleuths and armchair detectives: help or harm",
+      "category": "analysis"
+    },
+    {
+      "topic": "The Delphi case: how a phone recording changed everything",
+      "category": "investigation"
+    },
+    {
+      "topic": "The Idaho four: the timeline that mattered",
+      "category": "investigation"
+    },
+    {
+      "topic": "The Watts case: what the discovery documents showed",
+      "category": "investigation"
+    },
+    {
+      "topic": "JonBenet Ramsey: the DNA testing timeline",
+      "category": "investigation"
+    },
+    {
+      "topic": "The Menendez brothers: three decades of legal turns",
+      "category": "court"
+    },
+    {
+      "topic": "D.B. Cooper: the hijacking that stays unsolved",
+      "category": "investigation"
+    },
+    {
+      "topic": "The Somerton Man: solved after 74 years",
+      "category": "investigation"
+    },
+    {
+      "topic": "The Isdal Woman: Norway's coldest case",
+      "category": "investigation"
+    },
+    {
+      "topic": "Jack the Ripper: why every 'solution' falls apart",
+      "category": "analysis"
+    },
+    {
+      "topic": "The Black Dahlia: the file that never closes",
+      "category": "investigation"
+    },
+    {
+      "topic": "The Boy in the Box: Philadelphia's 65-year mystery",
+      "category": "investigation"
+    },
+    {
+      "topic": "America's unidentified: 40,000 sets of remains",
+      "category": "analysis"
+    },
+    {
+      "topic": "The Green River Task Force: 20 years of grind",
+      "category": "investigation"
+    },
+    {
+      "topic": "The Grim Sleeper and the DNA family search that found him",
+      "category": "investigation"
+    },
+    {
+      "topic": "Familial DNA searches: the rules state by state",
+      "category": "court"
+    },
+    {
+      "topic": "The Ramsey ransom note vs the Lindbergh note",
+      "category": "analysis"
+    },
+    {
+      "topic": "Lindbergh: the trial of the century, re-examined",
+      "category": "court"
+    },
+    {
+      "topic": "Alcatraz escapees: the evidence either way",
+      "category": "analysis"
+    },
+    {
+      "topic": "The Gardner Museum heist: the empty frames",
+      "category": "investigation"
+    },
+    {
+      "topic": "Art theft: why masterpieces are useless to thieves",
+      "category": "analysis"
+    },
+    {
+      "topic": "Cryptocurrency and modern ransom cases",
+      "category": "analysis"
+    },
+    {
+      "topic": "Romance scams that turned violent",
+      "category": "investigation"
+    },
+    {
+      "topic": "Catfishing cases that reached the courts",
+      "category": "court"
+    },
+    {
+      "topic": "The dark side of true crime tourism",
+      "category": "analysis"
+    },
+    {
+      "topic": "Murder houses: what happens to the address",
+      "category": "analysis"
+    },
+    {
+      "topic": "Crime scene cleanup: the industry nobody talks about",
+      "category": "analysis"
+    },
+    {
+      "topic": "Cold case DNA backlogs: the rape kit problem",
+      "category": "analysis"
+    },
+    {
+      "topic": "Genetic privacy vs solving murders: the debate",
+      "category": "analysis"
+    },
+    {
+      "topic": "GEDmatch opt-ins: how the rules changed",
+      "category": "analysis"
+    },
+    {
+      "topic": "Forensic entomology: what insects tell investigators",
+      "category": "analysis"
+    },
+    {
+      "topic": "Forensic botany: the seeds that convicted a killer",
+      "category": "analysis"
+    },
+    {
+      "topic": "Isotope analysis: reading a life from bones",
+      "category": "analysis"
+    },
+    {
+      "topic": "Facial reconstruction: art meets anatomy",
+      "category": "analysis"
+    },
+    {
+      "topic": "Age progression images: how they're made",
+      "category": "analysis"
+    },
+    {
+      "topic": "Handwriting analysis: science or skill",
+      "category": "analysis"
+    },
+    {
+      "topic": "Ballistics matching under the microscope",
+      "category": "analysis"
+    },
+    {
+      "topic": "Shaken baby syndrome: the contested diagnosis",
+      "category": "court"
+    },
+    {
+      "topic": "Arson science: the fires that weren't crimes",
+      "category": "court"
+    },
+    {
+      "topic": "The Cameron Todd Willingham case",
+      "category": "court"
+    },
+    {
+      "topic": "What 'reasonable doubt' actually means",
+      "category": "analysis"
+    }
   ]
 }

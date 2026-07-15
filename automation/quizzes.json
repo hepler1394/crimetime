@@ -1,82 +1,132 @@
 {
   "meta": {
-    "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-07-15T00:00:00.000Z"
+    "intro": "Built from the cases covered on the show \u2014 timelines, evidence, and the details most people miss. New quizzes drop automatically.",
+    "updated": "2026-07-15T23:00:00.000Z"
   },
   "quizzes": [
     {
       "slug": "watts-case-file",
       "title": "The Watts Case File",
       "tag": "Episode Case",
-      "description": "Five questions on the 2018 Watts family case — the timeline, the interview, and the evidence. Covered in our Watts Family Murders episode.",
+      "description": "Five questions on the 2018 Watts family case \u2014 the timeline, the interview, and the evidence. Covered in our Watts Family Murders episode.",
       "created": "2026-07-15",
       "questions": [
         {
           "q": "The Watts family murders took place in August 2018 in which Colorado town?",
-          "options": ["Boulder", "Frederick", "Greeley", "Fort Collins"],
+          "options": [
+            "Boulder",
+            "Frederick",
+            "Greeley",
+            "Fort Collins"
+          ],
           "answer": 1,
-          "explain": "The family lived in Frederick, Colorado — a small town north of Denver in Weld County."
+          "explain": "The family lived in Frederick, Colorado \u2014 a small town north of Denver in Weld County."
         },
         {
           "q": "What happened during Chris Watts' August 15 police interview?",
-          "options": ["He refused to speak without a lawyer", "He failed a polygraph, then confessed", "He passed a polygraph", "He named another suspect"],
+          "options": [
+            "He refused to speak without a lawyer",
+            "He failed a polygraph, then confessed",
+            "He passed a polygraph",
+            "He named another suspect"
+          ],
           "answer": 1,
           "explain": "Watts failed a polygraph examination and, confronted with the results, began confessing shortly after."
         },
         {
           "q": "Where were the bodies of Shanann and the girls recovered?",
-          "options": ["A remote oil work site", "The family home", "A nearby reservoir", "A storage unit"],
+          "options": [
+            "A remote oil work site",
+            "The family home",
+            "A nearby reservoir",
+            "A storage unit"
+          ],
           "answer": 0,
-          "explain": "They were recovered at an oil site where Watts had worked — Shanann in a shallow grave, the girls in oil tanks."
+          "explain": "They were recovered at an oil site where Watts had worked \u2014 Shanann in a shallow grave, the girls in oil tanks."
         },
         {
           "q": "What sentence did Chris Watts receive after pleading guilty?",
-          "options": ["The death penalty", "25 years to life", "Multiple life sentences without parole", "40 years per count"],
+          "options": [
+            "The death penalty",
+            "25 years to life",
+            "Multiple life sentences without parole",
+            "40 years per count"
+          ],
           "answer": 2,
           "explain": "In November 2018 he received multiple consecutive life sentences without the possibility of parole; prosecutors took death off the table as part of the plea."
         },
         {
           "q": "What made the case unravel so quickly for Watts?",
-          "options": ["A neighbor's doorbell camera", "His own TV interviews and inconsistencies", "An anonymous tip", "Cell tower data alone"],
+          "options": [
+            "A neighbor's doorbell camera",
+            "His own TV interviews and inconsistencies",
+            "An anonymous tip",
+            "Cell tower data alone"
+          ],
           "answer": 1,
-          "explain": "His on-camera pleas and shifting story drew immediate suspicion — investigators noted the inconsistencies within days, alongside neighbor surveillance footage."
+          "explain": "His on-camera pleas and shifting story drew immediate suspicion \u2014 investigators noted the inconsistencies within days, alongside neighbor surveillance footage."
         }
       ]
     },
     {
       "slug": "jonbenet-the-facts",
-      "title": "JonBenét: Just the Facts",
+      "title": "JonBen\u00e9t: Just the Facts",
       "tag": "Episode Case",
-      "description": "The 1996 Boulder case is buried in myth. Five questions on what's actually documented — from our JonBenét Ramsey episodes.",
+      "description": "The 1996 Boulder case is buried in myth. Five questions on what's actually documented \u2014 from our JonBen\u00e9t Ramsey episodes.",
       "created": "2026-07-15",
       "questions": [
         {
-          "q": "In what city and year was JonBenét Ramsey found dead in her family home?",
-          "options": ["Denver, 1997", "Boulder, 1996", "Colorado Springs, 1995", "Aspen, 1996"],
+          "q": "In what city and year was JonBen\u00e9t Ramsey found dead in her family home?",
+          "options": [
+            "Denver, 1997",
+            "Boulder, 1996",
+            "Colorado Springs, 1995",
+            "Aspen, 1996"
+          ],
           "answer": 1,
           "explain": "She was found on December 26, 1996, in the family's home in Boulder, Colorado."
         },
         {
           "q": "What was discovered in the home before her body was found?",
-          "options": ["A broken window only", "A two-and-a-half page ransom note", "A recorded phone threat", "Nothing unusual"],
+          "options": [
+            "A broken window only",
+            "A two-and-a-half page ransom note",
+            "A recorded phone threat",
+            "Nothing unusual"
+          ],
           "answer": 1,
-          "explain": "An unusually long handwritten ransom note — about two and a half pages — was found on the kitchen staircase."
+          "explain": "An unusually long handwritten ransom note \u2014 about two and a half pages \u2014 was found on the kitchen staircase."
         },
         {
           "q": "The ransom note demanded $118,000. Why is that number significant?",
-          "options": ["It matched John Ramsey's recent bonus", "It was the home's value", "It was random", "It matched a life-insurance policy"],
+          "options": [
+            "It matched John Ramsey's recent bonus",
+            "It was the home's value",
+            "It was random",
+            "It matched a life-insurance policy"
+          ],
           "answer": 0,
-          "explain": "The amount closely matched a bonus John Ramsey had received that year — one of the case's strangest details."
+          "explain": "The amount closely matched a bonus John Ramsey had received that year \u2014 one of the case's strangest details."
         },
         {
-          "q": "Where in the house was JonBenét found?",
-          "options": ["The garage", "Her bedroom", "A basement room", "The attic"],
+          "q": "Where in the house was JonBen\u00e9t found?",
+          "options": [
+            "The garage",
+            "Her bedroom",
+            "A basement room",
+            "The attic"
+          ],
           "answer": 2,
           "explain": "Her father found her in a small basement room during a walkthrough of the house hours after police arrived."
         },
         {
           "q": "What is the official status of the case today?",
-          "options": ["Closed — solved in 2003", "Open and unsolved", "Closed — ruled accidental", "Sealed by court order"],
+          "options": [
+            "Closed \u2014 solved in 2003",
+            "Open and unsolved",
+            "Closed \u2014 ruled accidental",
+            "Sealed by court order"
+          ],
           "answer": 1,
           "explain": "Nearly three decades on, the case remains open and unsolved, with periodic new rounds of DNA testing."
         }
@@ -86,38 +136,447 @@
       "slug": "cold-case-iq",
       "title": "Cold Case IQ",
       "tag": "Detective Skills",
-      "description": "Evidence, forensics, and investigation fundamentals — how much detective do you actually have in you?",
+      "description": "Evidence, forensics, and investigation fundamentals \u2014 how much detective do you actually have in you?",
       "created": "2026-07-15",
       "questions": [
         {
-          "q": "Locard's exchange principle — the foundation of forensic science — says what?",
-          "options": ["The simplest explanation is usually right", "Every contact leaves a trace", "Witnesses forget 50% in 24 hours", "Follow the money"],
+          "q": "Locard's exchange principle \u2014 the foundation of forensic science \u2014 says what?",
+          "options": [
+            "The simplest explanation is usually right",
+            "Every contact leaves a trace",
+            "Witnesses forget 50% in 24 hours",
+            "Follow the money"
+          ],
           "answer": 1,
           "explain": "Edmond Locard's principle: a perpetrator brings something to a crime scene and leaves with something from it. Every contact leaves a trace."
         },
         {
-          "q": "Forensic genetic genealogy — the technique behind the Golden State Killer arrest — matches crime-scene DNA against what?",
-          "options": ["The FBI's CODIS database only", "Hospital records", "Public genealogy databases", "Ancestry test kits directly"],
+          "q": "Forensic genetic genealogy \u2014 the technique behind the Golden State Killer arrest \u2014 matches crime-scene DNA against what?",
+          "options": [
+            "The FBI's CODIS database only",
+            "Hospital records",
+            "Public genealogy databases",
+            "Ancestry test kits directly"
+          ],
           "answer": 2,
           "explain": "Investigators upload crime-scene DNA profiles to public genealogy databases like GEDmatch and build family trees toward a suspect."
         },
         {
           "q": "Why do investigators talk about the 'first 48 hours'?",
-          "options": ["Legal deadline to charge a suspect", "Evidence and memories degrade fast — solve odds drop sharply after", "Autopsies must happen within 48 hours", "It's just a TV invention"],
+          "options": [
+            "Legal deadline to charge a suspect",
+            "Evidence and memories degrade fast \u2014 solve odds drop sharply after",
+            "Autopsies must happen within 48 hours",
+            "It's just a TV invention"
+          ],
           "answer": 1,
-          "explain": "Physical evidence, witness memory, and digital trails are freshest early — the odds of clearance drop significantly once the first days pass."
+          "explain": "Physical evidence, witness memory, and digital trails are freshest early \u2014 the odds of clearance drop significantly once the first days pass."
         },
         {
           "q": "In the 2017 Delphi case, what crucial evidence did victim Libby German leave investigators?",
-          "options": ["A written note", "Video and audio of the suspect on her phone", "A 911 call", "Fingerprints on the bridge"],
+          "options": [
+            "A written note",
+            "Video and audio of the suspect on her phone",
+            "A 911 call",
+            "Fingerprints on the bridge"
+          ],
           "answer": 1,
-          "explain": "Libby recorded video and audio of the man on the Monon High Bridge — evidence investigators called unprecedented, captured by the victim herself."
+          "explain": "Libby recorded video and audio of the man on the Monon High Bridge \u2014 evidence investigators called unprecedented, captured by the victim herself."
         },
         {
           "q": "What is NamUs?",
-          "options": ["The FBI's fingerprint system", "A national database for missing and unidentified persons", "A DNA sequencing company", "The US Marshals' fugitive list"],
+          "options": [
+            "The FBI's fingerprint system",
+            "A national database for missing and unidentified persons",
+            "A DNA sequencing company",
+            "The US Marshals' fugitive list"
+          ],
           "answer": 1,
-          "explain": "The National Missing and Unidentified Persons System — a public national database that helps connect missing persons cases with unidentified remains."
+          "explain": "The National Missing and Unidentified Persons System \u2014 a public national database that helps connect missing persons cases with unidentified remains."
+        }
+      ]
+    },
+    {
+      "slug": "menendez-file",
+      "title": "The Menendez File",
+      "tag": "Episode Case",
+      "description": "Beverly Hills, 1989 \u2014 five questions on the case from our Erik and Lyle episode. The record is stranger than the retellings.",
+      "created": "2026-07-15",
+      "questions": [
+        {
+          "q": "Where were Jose and Kitty Menendez killed in August 1989?",
+          "options": [
+            "Their Beverly Hills home",
+            "A Malibu beach house",
+            "Jose's office",
+            "A hotel suite"
+          ],
+          "answer": 0,
+          "explain": "Both were shot in the den of the family's Beverly Hills mansion on Elm Drive \u2014 a house later sold, and avoided, by buyers who knew the file."
+        },
+        {
+          "q": "How did investigators first tie the brothers to a confession?",
+          "options": [
+            "A neighbor's tip",
+            "Tapes from their psychologist",
+            "A pawned shotgun",
+            "Erik's diary"
+          ],
+          "answer": 1,
+          "explain": "Sessions with psychologist Dr. Jerome Oziel were recorded \u2014 the fight over those tapes went all the way to the California Supreme Court."
+        },
+        {
+          "q": "What happened at the brothers' first trials in 1993-94?",
+          "options": [
+            "Both convicted of murder one",
+            "Both acquitted",
+            "Two hung juries",
+            "Charges were dismissed"
+          ],
+          "answer": 2,
+          "explain": "Each brother had his own jury. Both deadlocked \u2014 jurors split largely along lines of how they read the abuse testimony."
+        },
+        {
+          "q": "The 1996 retrial ended with what sentence?",
+          "options": [
+            "Death",
+            "Life without parole",
+            "25 to life",
+            "Life with parole after 30 years"
+          ],
+          "answer": 1,
+          "explain": "Convicted of first-degree murder with special circumstances, both received life without the possibility of parole."
+        },
+        {
+          "q": "Where did the brothers buy the shotguns?",
+          "options": [
+            "Beverly Hills",
+            "Las Vegas",
+            "San Diego",
+            "Tijuana"
+          ],
+          "answer": 2,
+          "explain": "They drove south and bought the shotguns at a Big 5 in San Diego, using a borrowed ID \u2014 a detail the prosecution leaned on for premeditation."
+        }
+      ]
+    },
+    {
+      "slug": "delphi-the-evidence",
+      "title": "Delphi: The Evidence",
+      "tag": "Episode Case",
+      "description": "The 2017 Monon High Bridge case, from our Delphi episode \u2014 what the recording, the round, and the timeline actually established.",
+      "created": "2026-07-15",
+      "questions": [
+        {
+          "q": "What did Libby German capture on her phone that investigators called unprecedented?",
+          "options": [
+            "A photo of a license plate",
+            "Video and audio of the suspect",
+            "A text describing him",
+            "A voicemail"
+          ],
+          "answer": 1,
+          "explain": "Libby recorded the man on the bridge \u2014 the 'down the hill' audio and the Bridge Guy image came from her phone. Investigators credited her as the case's key witness."
+        },
+        {
+          "q": "What physical evidence at the scene was linked to Richard Allen?",
+          "options": [
+            "A glove",
+            "An unspent round",
+            "A boot print",
+            "A cigarette"
+          ],
+          "answer": 1,
+          "explain": "An unspent .40-caliber round found between the girls was determined by examiners to have cycled through Allen's pistol."
+        },
+        {
+          "q": "When was Richard Allen arrested?",
+          "options": [
+            "February 2017",
+            "October 2022",
+            "March 2020",
+            "January 2023"
+          ],
+          "answer": 1,
+          "explain": "Five and a half years after the murders \u2014 October 2022. He had lived and worked in Delphi the entire time."
+        },
+        {
+          "q": "Where did Allen work in Delphi?",
+          "options": [
+            "A hardware store",
+            "The local CVS",
+            "A gas station",
+            "The school district"
+          ],
+          "answer": 1,
+          "explain": "He worked at the CVS in town \u2014 and had even processed photos for the community, a detail that unsettled Delphi when it surfaced."
+        },
+        {
+          "q": "What was the outcome of Allen's 2024 trial?",
+          "options": [
+            "Hung jury",
+            "Acquitted",
+            "Convicted on all counts",
+            "Mistrial declared"
+          ],
+          "answer": 2,
+          "explain": "In November 2024 a jury convicted him on all counts; he was sentenced to 130 years."
+        }
+      ]
+    },
+    {
+      "slug": "infamous-unsolved",
+      "title": "Infamous & Unsolved",
+      "tag": "Cold Cases",
+      "description": "Five cases, zero convictions. How well do you know the files that never closed?",
+      "created": "2026-07-15",
+      "questions": [
+        {
+          "q": "D.B. Cooper hijacked a Boeing 727 in 1971 and vanished with how much?",
+          "options": [
+            "$50,000",
+            "$100,000",
+            "$200,000",
+            "$1 million"
+          ],
+          "answer": 2,
+          "explain": "$200,000 in twenties. In 1980 a boy found $5,800 of it decaying on the Columbia River shore \u2014 the case's only confirmed physical lead."
+        },
+        {
+          "q": "Which Zodiac cipher was finally cracked in 2020?",
+          "options": [
+            "The 408",
+            "The 340",
+            "The 13-character",
+            "The 32-character"
+          ],
+          "answer": 1,
+          "explain": "A trio of amateur codebreakers solved the 340 after 51 years. It contained no identifying information \u2014 just taunts."
+        },
+        {
+          "q": "The Black Dahlia was the press name for which victim?",
+          "options": [
+            "Georgette Bauerdorf",
+            "Elizabeth Short",
+            "Jean Spangler",
+            "Barbara Payton"
+          ],
+          "answer": 1,
+          "explain": "Elizabeth Short, found in Leimert Park, Los Angeles in January 1947. The case file remains open with LAPD."
+        },
+        {
+          "q": "What was stolen in the 1990 Isabella Stewart Gardner Museum heist?",
+          "options": [
+            "Gold bullion",
+            "13 artworks including a Vermeer",
+            "The museum's endowment bonds",
+            "A dinosaur skeleton"
+          ],
+          "answer": 1,
+          "explain": "Two men dressed as police took 13 works, including Vermeer's The Concert. The empty frames still hang in the galleries."
+        },
+        {
+          "q": "Jack the Ripper's murders took place in which London district?",
+          "options": [
+            "Soho",
+            "Whitechapel",
+            "Camden",
+            "Brixton"
+          ],
+          "answer": 1,
+          "explain": "Whitechapel, autumn 1888. More than a century of suspects later, no attribution has ever held up to scrutiny."
+        }
+      ]
+    },
+    {
+      "slug": "forensics-101",
+      "title": "Forensics 101",
+      "tag": "Detective Skills",
+      "description": "The lab fundamentals \u2014 what the acronyms, patterns, and timelines actually mean when a case hits the bench.",
+      "created": "2026-07-15",
+      "questions": [
+        {
+          "q": "CODIS, the FBI's DNA system, stands for what?",
+          "options": [
+            "Combined DNA Index System",
+            "Criminal Offender DNA Identification Service",
+            "Central Offense Data Information Store",
+            "Coordinated DNA Investigation System"
+          ],
+          "answer": 0,
+          "explain": "The Combined DNA Index System links local, state, and national DNA profiles \u2014 a hit can connect crimes decades and states apart."
+        },
+        {
+          "q": "Which fingerprint pattern is the most common?",
+          "options": [
+            "Whorls",
+            "Arches",
+            "Loops",
+            "Composites"
+          ],
+          "answer": 2,
+          "explain": "Loops appear in roughly 60-65 percent of prints; arches are the rarest of the three basic patterns."
+        },
+        {
+          "q": "Rigor mortis is typically fully developed about how long after death?",
+          "options": [
+            "1 hour",
+            "12 hours",
+            "48 hours",
+            "5 days"
+          ],
+          "answer": 1,
+          "explain": "Onset begins within a few hours and full rigor lands around the 12-hour mark, then passes \u2014 one of several clocks examiners read together."
+        },
+        {
+          "q": "Mitochondrial DNA traces which line of inheritance?",
+          "options": [
+            "Paternal",
+            "Maternal",
+            "Both equally",
+            "Neither \u2014 it's random"
+          ],
+          "answer": 1,
+          "explain": "mtDNA passes from mother to child, which is why it's used on degraded remains and maternal-line identifications."
+        },
+        {
+          "q": "'Chain of custody' refers to what?",
+          "options": [
+            "Prisoner transport rules",
+            "The documented handling of evidence",
+            "The order of witnesses at trial",
+            "Handcuff procedure"
+          ],
+          "answer": 1,
+          "explain": "Every transfer of evidence gets logged. One undocumented gap and a defense attorney can get the whole exhibit tossed."
+        }
+      ]
+    },
+    {
+      "slug": "caught-by-technology",
+      "title": "Caught by Technology",
+      "tag": "Detective Skills",
+      "description": "Five endings written by metadata, databases, and one very bad computer decision.",
+      "created": "2026-07-15",
+      "questions": [
+        {
+          "q": "What finally identified BTK in 2005?",
+          "options": [
+            "A DNA hit from CODIS",
+            "Metadata on a floppy disk he mailed",
+            "A traffic stop",
+            "A deathbed tip"
+          ],
+          "answer": 1,
+          "explain": "Dennis Rader asked police if a floppy disk could be traced. They said no. The deleted file's metadata pointed to his church \u2014 and to 'Dennis'."
+        },
+        {
+          "q": "The Golden State Killer was identified in 2018 using what?",
+          "options": [
+            "A prison DNA sweep",
+            "Genetic genealogy on a public database",
+            "Fingerprints from a cold file",
+            "Facial recognition"
+          ],
+          "answer": 1,
+          "explain": "Investigators built family trees from a crime-scene profile uploaded to GEDmatch, then narrowed to Joseph James DeAngelo and confirmed with discarded DNA."
+        },
+        {
+          "q": "The 'Grim Sleeper' case in LA broke open thanks to what technique?",
+          "options": [
+            "A familial DNA search",
+            "Cell tower triangulation",
+            "Ballistics AI",
+            "A podcast tip"
+          ],
+          "answer": 0,
+          "explain": "A familial search flagged a close relative's profile; that led to Lonnie Franklin Jr., confirmed by DNA lifted from a slice of pizza."
+        },
+        {
+          "q": "Silk Road founder Ross Ulbricht was arrested in a library because...",
+          "options": [
+            "He confessed online",
+            "Agents needed his laptop open and unlocked",
+            "A librarian recognized him",
+            "His VPN failed"
+          ],
+          "answer": 1,
+          "explain": "The FBI staged a distraction and grabbed the laptop mid-session \u2014 encryption never got the chance to lock."
+        },
+        {
+          "q": "Before his arrest, the Golden State Killer was known by which combined moniker?",
+          "options": [
+            "EAR/ONS",
+            "BTK/GSK",
+            "NIGHTSTALKER II",
+            "The Visalia Cat"
+          ],
+          "answer": 0,
+          "explain": "East Area Rapist / Original Night Stalker \u2014 two crime waves only conclusively linked by DNA in 2001, years before the name Golden State Killer stuck."
+        }
+      ]
+    },
+    {
+      "slug": "true-crime-history",
+      "title": "True Crime History",
+      "tag": "The Archives",
+      "description": "Before podcasts, there were headlines. Five questions from the cases that built the genre.",
+      "created": "2026-07-15",
+      "questions": [
+        {
+          "q": "Bruno Hauptmann was convicted in the Lindbergh kidnapping partly through...",
+          "options": [
+            "An eyewitness lineup",
+            "Marked gold certificate ransom bills",
+            "A confession",
+            "Fingerprints on the ladder"
+          ],
+          "answer": 1,
+          "explain": "The ransom was paid in soon-to-be-recalled gold certificates. Spending them is what put Hauptmann on the map \u2014 along with wood evidence matching his attic."
+        },
+        {
+          "q": "What finally convicted Al Capone in 1931?",
+          "options": [
+            "The St. Valentine's Day Massacre",
+            "Bootlegging charges",
+            "Tax evasion",
+            "Witness testimony from his outfit"
+          ],
+          "answer": 2,
+          "explain": "Eleven years for tax evasion. The murders were never successfully pinned on him \u2014 the ledgers were."
+        },
+        {
+          "q": "The 1962 Alcatraz escapees left the island on...",
+          "options": [
+            "A stolen patrol boat",
+            "A raft made of raincoats",
+            "Driftwood planks",
+            "They swam unaided"
+          ],
+          "answer": 1,
+          "explain": "Frank Morris and the Anglin brothers built a raft and life vests from prison raincoats. The FBI closed its file in 1979; the Marshals' file is still open."
+        },
+        {
+          "q": "Who saved Leopold and Loeb from the death penalty in 1924?",
+          "options": [
+            "A hung jury",
+            "Clarence Darrow's 12-hour plea",
+            "An insanity verdict",
+            "A governor's pardon"
+          ],
+          "answer": 1,
+          "explain": "Darrow had them plead guilty and argued against death itself for two days straight. The judge gave life plus 99 years."
+        },
+        {
+          "q": "H.H. Holmes operated during which Chicago event?",
+          "options": [
+            "The Great Fire",
+            "The 1893 World's Fair",
+            "Prohibition's first year",
+            "The 1919 World Series"
+          ],
+          "answer": 1,
+          "explain": "His 'Murder Castle' hotel ran during the 1893 World's Columbian Exposition. He confessed to 27 murders, though the true count is still debated."
         }
       ]
     }

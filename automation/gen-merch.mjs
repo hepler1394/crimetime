@@ -11,7 +11,7 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { designSvg, SLOGAN_POOL, slugify } from "./merch-design.mjs";
+import { designSvg, SLOGAN_POOL, SLOGAN_RESERVE, slugify } from "./merch-design.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -62,7 +62,11 @@ async function main() {
   let incoming;
   if (ai) {
     incoming = await aiSlogans(aiCount);
-    if (!incoming.length) incoming = SLOGAN_POOL.filter((s) => !have.has(slugify(s.slogan))).slice(0, aiCount);
+    if (!incoming.length) {
+      // LLM offline: pull from the curated reserve so scheduled drops never stall.
+      const fresh = [...SLOGAN_RESERVE, ...SLOGAN_POOL].filter((s) => !have.has(slugify(s.slogan)));
+      incoming = fresh.slice(0, aiCount);
+    }
   } else {
     incoming = SLOGAN_POOL; // ensure the whole pool exists (idempotent)
   }
@@ -92,6 +96,12 @@ async function main() {
     catch { await writeFile(join(ROOT, d.svg), designSvg(d.slogan, { template: d.template ?? undefined }), "utf8"); }
   }
 
+  if (added > 0) {
+    try {
+      const { logImprovement } = await import("./ledger.mjs");
+      await logImprovement(`Dropped ${added} new merch design${added > 1 ? "s" : ""} into the vault`);
+    } catch { /* ledger optional */ }
+  }
   merch.meta.updated = new Date().toISOString();
   await writeFile(MERCH, JSON.stringify(merch, null, 2) + "\n", "utf8");
   console.log(`merch.json: ${merch.designs.length} designs (${added} new this run). SVGs in images/merch/.`);

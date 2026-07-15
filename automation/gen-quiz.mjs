@@ -99,6 +99,10 @@ data.meta = data.meta || {};
 data.meta.updated = new Date().toISOString();
 await writeFile(path, JSON.stringify(data, null, 2) + "\n", "utf8");
 console.log(`Added quiz: ${obj.title} (${slug})`);
+try {
+  const { logImprovement } = await import("./ledger.mjs");
+  await logImprovement(`Published new quiz: "${obj.title}" (${obj.questions.length} questions)`);
+} catch { /* ledger optional */ }
 
 const r = spawnSync(process.execPath, [join(__dirname, "build-quiz.mjs")], { stdio: "inherit", cwd: ROOT });
 process.exit(r.status ?? 0);

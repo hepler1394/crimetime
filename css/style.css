@@ -1786,3 +1786,99 @@ html.js .animate-on-scroll.animated { opacity: 1; transform: translateY(0); }
     .cts-grain, .cts-atmosphere::before, .cts-atmosphere::after { display: none; }
     html.js .animate-on-scroll { opacity: 1; transform: none; }
 }
+
+/* ============================================================
+   Batch upgrades — back-to-top, reading progress, share row,
+   episodes toolbar, quiz best-score chip, live board extras
+   ============================================================ */
+.back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 88px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid var(--cts-line-strong);
+    background: rgba(14, 14, 16, 0.9);
+    color: var(--cts-white);
+    cursor: pointer;
+    z-index: 998;
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), border-color 0.3s var(--ease);
+    backdrop-filter: blur(12px);
+}
+
+.back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.back-to-top:hover { border-color: var(--cts-red); color: var(--cts-red-hot); box-shadow: var(--shadow-red); }
+
+.read-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--cts-red-deep), var(--cts-red-hot));
+    box-shadow: 0 0 12px rgba(229, 9, 20, 0.7);
+    z-index: 1001;
+    pointer-events: none;
+}
+
+.share-row { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin: 1.6rem 0 0; }
+.share-row .label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.22em; color: var(--cts-faint); font-weight: 700; }
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--cts-line-strong);
+    color: var(--cts-muted);
+    border-radius: 999px;
+    padding: 0.45rem 0.95rem;
+    font-size: 0.76rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--cts-transition);
+}
+.share-btn:hover { color: var(--cts-white); border-color: var(--cts-red); transform: translateY(-2px); }
+
+.episodes-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.6rem; }
+.episodes-toolbar select {
+    background: var(--cts-panel);
+    border: 1px solid var(--cts-line-strong);
+    color: var(--cts-white);
+    border-radius: 999px;
+    padding: 0.6rem 1.1rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.best-score {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cts-tape);
+    border: 1px solid rgba(244, 194, 13, 0.4);
+    background: rgba(244, 194, 13, 0.08);
+    border-radius: 999px;
+    padding: 0.25rem 0.7rem;
+}
+
+.kbd-hint { color: var(--cts-faint); font-size: 0.72rem; }
+.kbd-hint kbd { background: var(--cts-panel-2); border: 1px solid var(--cts-line-strong); border-radius: 5px; padding: 0.08rem 0.42rem; font-family: inherit; }
+
+@media (max-width: 640px) {
+    .back-to-top { right: 12px; bottom: 76px; width: 42px; height: 42px; }
+}
+
+@media print {
+    header, footer, .mini-player, .back-to-top, .crime-scene-tape, .cts-grain, .cts-atmosphere, .newsletter-block, .btn { display: none !important; }
+    body { background: #fff; color: #000; }
+    a { color: #000; text-decoration: underline; }
+}

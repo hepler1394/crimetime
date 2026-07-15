@@ -15,20 +15,32 @@ const data = JSON.parse(await readFile(join(__dirname, "quizzes.json"), "utf8"))
 const quizzes = data.quizzes || [];
 
 function pickerCard(q, i) {
-  return `            <button class="quiz-pick episode-card" data-quiz="${i}" style="text-align:left;cursor:pointer;border:1px solid var(--cts-line);background:linear-gradient(180deg,var(--cts-panel),var(--cts-ink));">
+  return `            <button class="quiz-pick episode-card" data-quiz="${i}" data-slug="${esc(q.slug)}" style="text-align:left;cursor:pointer;border:1px solid var(--cts-line);background:linear-gradient(180deg,var(--cts-panel),var(--cts-ink));">
                 <div class="episode-content">
                     <div class="episode-badges"><span class="episode-badge">${esc(q.tag)}</span><span class="episode-badge">${q.questions.length} Questions</span></div>
                     <h3 class="episode-title">${esc(q.title)}</h3>
                     <p class="episode-description">${esc(q.description)}</p>
-                    <div class="episode-actions"><span class="btn btn-primary btn-sm">Start <i class="fas fa-arrow-right" aria-hidden="true"></i></span></div>
+                    <div class="episode-actions"><span class="btn btn-primary btn-sm">Start <i class="fas fa-arrow-right" aria-hidden="true"></i></span><span class="best-score" data-best="${esc(q.slug)}" style="display:none;"></span></div>
                 </div>
             </button>`;
 }
+
+const quizLd = `\n    <script type="application/ld+json">\n${JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "CrimeTimeSnacks True Crime Quizzes",
+  itemListElement: quizzes.map((q, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    item: { "@type": "Quiz", name: q.title, about: q.description, url: `${SITE}/quiz.html` },
+  })),
+}, null, 2)}\n    </script>`;
 
 const page = `${head({
   title: "True Crime Quizzes | CrimeTimeSnacks",
   description: "Interactive true crime quizzes from CrimeTimeSnacks — case timelines, evidence, and detective skills. Think you know your cases?",
   canonicalPath: "/quiz.html",
+  extraHead: quizLd,
 })}
 <body>
 ${header("quiz")}
@@ -126,6 +138,40 @@ ${scripts()}
             });
         }
 
+        // Keyboard: A-D or 1-4 answers, Enter/Space advances.
+        document.addEventListener('keydown', function (e) {
+            if (!current || /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) return;
+            var k = e.key.toLowerCase();
+            var idx = ['a','b','c','d'].indexOf(k);
+            if (idx === -1 && /^[1-4]$/.test(k)) idx = parseInt(k, 10) - 1;
+            if (idx > -1 && !locked) {
+                var btn = card.querySelectorAll('.quiz-opt')[idx];
+                if (btn) { btn.click(); e.preventDefault(); }
+                return;
+            }
+            if ((e.key === 'Enter' || e.key === ' ') && locked) {
+                var next = document.getElementById('quiz-next');
+                if (next) { next.click(); e.preventDefault(); }
+            }
+        });
+
+        function bestKey() { try { return JSON.parse(localStorage.getItem('ctsQuizBest') || '{}'); } catch (e) { return {}; } }
+        function saveBest(slug, pct) {
+            try {
+                var b = bestKey();
+                if (!(slug in b) || pct > b[slug]) { b[slug] = pct; localStorage.setItem('ctsQuizBest', JSON.stringify(b)); return true; }
+            } catch (e) { /* private mode */ }
+            return false;
+        }
+        function paintBest() {
+            var b = bestKey();
+            document.querySelectorAll('[data-best]').forEach(function (chip) {
+                var slug = chip.getAttribute('data-best');
+                if (slug in b) { chip.style.display = ''; chip.innerHTML = '<i class="fas fa-trophy" aria-hidden="true"></i> Best ' + b[slug] + '%'; }
+            });
+        }
+        paintBest();
+
         function verdict(pct) {
             if (pct === 100) return 'Lead Detective. You RUN this case board.';
             if (pct >= 80) return 'Detective. The details don\\'t get past you.';
@@ -139,6 +185,8 @@ ${scripts()}
             if (qi < current.questions.length) { renderQ(); return; }
             fill.style.width = '100%';
             var pct = Math.round(score / current.questions.length * 100);
+            var newBest = saveBest(current.slug, pct);
+            paintBest();
             var shareText = 'I scored ' + score + '/' + current.questions.length + ' on the ' + current.title + ' quiz from @CrimeTimeSnacks — think you can beat me? ' + '${SITE}/quiz.html';
             counter.textContent = 'Case closed';
             card.innerHTML =
@@ -146,6 +194,7 @@ ${scripts()}
                 '<p class="eyebrow" style="justify-content:center;">' + esc(current.title) + '</p>' +
                 '<div class="big">' + score + '/' + current.questions.length + '</div>' +
                 '<p style="margin-top:0.8rem;font-weight:700;font-size:1.15rem;">' + verdict(pct) + '</p>' +
+                (newBest ? '<p style="margin-top:0.5rem;"><span class="best-score"><i class="fas fa-trophy" aria-hidden="true"></i> New personal best</span></p>' : '') +
                 '<div style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.6rem;">' +
                 '<button id="quiz-share" class="btn btn-primary btn-sm"><i class="fas fa-share-nodes" aria-hidden="true"></i> Copy My Result</button>' +
                 '<button id="quiz-retry" class="btn btn-secondary btn-sm"><i class="fas fa-rotate-right" aria-hidden="true"></i> Retry</button>' +
