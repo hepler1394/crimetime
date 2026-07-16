@@ -3,9 +3,24 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1206,
     "baked": 150,
-    "updated": "2026-07-15T22:57:59.512Z"
+    "updated": "2026-07-16T03:42:20.335Z"
   },
   "items": [
+    {
+      "uid": "1582e7db343a44508dd4e52490c1b80d",
+      "title": "UNKNOWN BANK ROBBER - ALABAMA",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/unknown-bank-robber---alabama/@@images/image/large",
+      "office": "Birmingham",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/seeking-info/unknown-bank-robber---alabama",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-07-14T12:42:00"
+    },
     {
       "uid": "11f73d916ebf4a6aa5c9b464623e86b6",
       "title": "ALTON MESTETH",
@@ -752,21 +767,6 @@
         "Most Wanted Fraudster"
       ],
       "publication": "2020-12-09T09:56:00"
-    },
-    {
-      "uid": "614d1c1b76924007a092c1b22cc923d8",
-      "title": "SHAARE TEFILA SYNAGOGUE VANDALISM",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/shaare-tefila-synagogue-vandalism/@@images/image/large",
-      "office": "Baltimore",
-      "reward": "Reward up to $4,000 for information leading to the identification, arrest, or conviction of the individual(s) responsible for the vandalism.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/shaare-tefila-synagogue-vandalism",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2026-05-07T10:02:00"
     },
     {
       "uid": "614d1c1b76924007a092c1b22cc923d8",
