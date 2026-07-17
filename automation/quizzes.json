@@ -1,14 +1,79 @@
 {
   "meta": {
-    "intro": "Built from the cases covered on the show \u2014 timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-07-15T23:00:00.000Z"
+    "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
+    "updated": "2026-07-17T14:02:39.093Z"
   },
   "quizzes": [
+    {
+      "slug": "the-moscow-student-murders",
+      "title": "The Moscow Student Murders",
+      "tag": "Cold Case Files",
+      "description": "You've heard the headlines. Here's what the case file actually shows. Four students, one house, one night. Let's see what you know.",
+      "created": "2026-07-17",
+      "sourceTopic": "Murders in Moscow",
+      "questions": [
+        {
+          "q": "On what date were the four University of Idaho students killed in Moscow, Idaho?",
+          "options": [
+            "October 31, 2022",
+            "November 13, 2022",
+            "December 2, 2022",
+            "November 19, 2022"
+          ],
+          "answer": 1,
+          "explain": "The killings happened in the early morning hours of November 13, 2022. That date matters because it shapes the entire timeline investigators had to reconstruct — phone data, witness accounts, and surveillance footage all anchor to that night."
+        },
+        {
+          "q": "What weapon did investigators say was used in the killings, according to the probable cause affidavit?",
+          "options": [
+            "A firearm",
+            "A blunt object",
+            "A fixed-blade knife",
+            "A hatchet"
+          ],
+          "answer": 2,
+          "explain": "The affidavit specifies a fixed-blade knife. That detail drove a major part of the investigation — investigators publicly asked the public for information about Ka-Bar-style knives, and a sheath recovered at the scene became critical physical evidence."
+        },
+        {
+          "q": "How many of the six housemates were NOT killed that night?",
+          "options": [
+            "One",
+            "Two",
+            "Three",
+            "Four"
+          ],
+          "answer": 1,
+          "explain": "Two other roommates were in the house that night and survived. According to the affidavit, one of them briefly encountered a figure described as a masked man before retreating to her room. Their accounts were central to the early investigation."
+        },
+        {
+          "q": "Bryan Kohberger, the man charged with the murders, was a graduate student studying what subject at Washington State University?",
+          "options": [
+            "Psychology",
+            "Criminology",
+            "Forensic Science",
+            "Sociology"
+          ],
+          "answer": 1,
+          "explain": "Kohberger was a Ph.D. student in criminology at WSU, located in Pullman, Washington — roughly ten miles from the victims' house in Moscow, Idaho. That proximity became one of the earliest focal points once investigators identified him as a suspect."
+        },
+        {
+          "q": "Where was Kohberger arrested in late December 2022?",
+          "options": [
+            "Seattle, Washington",
+            "Moscow, Idaho",
+            "Allentown, Pennsylvania",
+            "Pullman, Washington"
+          ],
+          "answer": 2,
+          "explain": "Kohberger was arrested at his parents' home in Allentown, Pennsylvania, where he had traveled over the holiday break. The arrest came after weeks of investigation that included cell phone data, DNA from the knife sheath, and vehicle surveillance footage."
+        }
+      ]
+    },
     {
       "slug": "watts-case-file",
       "title": "The Watts Case File",
       "tag": "Episode Case",
-      "description": "Five questions on the 2018 Watts family case \u2014 the timeline, the interview, and the evidence. Covered in our Watts Family Murders episode.",
+      "description": "Five questions on the 2018 Watts family case — the timeline, the interview, and the evidence. Covered in our Watts Family Murders episode.",
       "created": "2026-07-15",
       "questions": [
         {
@@ -20,7 +85,7 @@
             "Fort Collins"
           ],
           "answer": 1,
-          "explain": "The family lived in Frederick, Colorado \u2014 a small town north of Denver in Weld County."
+          "explain": "The family lived in Frederick, Colorado — a small town north of Denver in Weld County."
         },
         {
           "q": "What happened during Chris Watts' August 15 police interview?",
@@ -42,7 +107,7 @@
             "A storage unit"
           ],
           "answer": 0,
-          "explain": "They were recovered at an oil site where Watts had worked \u2014 Shanann in a shallow grave, the girls in oil tanks."
+          "explain": "They were recovered at an oil site where Watts had worked — Shanann in a shallow grave, the girls in oil tanks."
         },
         {
           "q": "What sentence did Chris Watts receive after pleading guilty?",
@@ -64,19 +129,19 @@
             "Cell tower data alone"
           ],
           "answer": 1,
-          "explain": "His on-camera pleas and shifting story drew immediate suspicion \u2014 investigators noted the inconsistencies within days, alongside neighbor surveillance footage."
+          "explain": "His on-camera pleas and shifting story drew immediate suspicion — investigators noted the inconsistencies within days, alongside neighbor surveillance footage."
         }
       ]
     },
     {
       "slug": "jonbenet-the-facts",
-      "title": "JonBen\u00e9t: Just the Facts",
+      "title": "JonBenét: Just the Facts",
       "tag": "Episode Case",
-      "description": "The 1996 Boulder case is buried in myth. Five questions on what's actually documented \u2014 from our JonBen\u00e9t Ramsey episodes.",
+      "description": "The 1996 Boulder case is buried in myth. Five questions on what's actually documented — from our JonBenét Ramsey episodes.",
       "created": "2026-07-15",
       "questions": [
         {
-          "q": "In what city and year was JonBen\u00e9t Ramsey found dead in her family home?",
+          "q": "In what city and year was JonBenét Ramsey found dead in her family home?",
           "options": [
             "Denver, 1997",
             "Boulder, 1996",
@@ -95,7 +160,7 @@
             "Nothing unusual"
           ],
           "answer": 1,
-          "explain": "An unusually long handwritten ransom note \u2014 about two and a half pages \u2014 was found on the kitchen staircase."
+          "explain": "An unusually long handwritten ransom note — about two and a half pages — was found on the kitchen staircase."
         },
         {
           "q": "The ransom note demanded $118,000. Why is that number significant?",
@@ -106,10 +171,10 @@
             "It matched a life-insurance policy"
           ],
           "answer": 0,
-          "explain": "The amount closely matched a bonus John Ramsey had received that year \u2014 one of the case's strangest details."
+          "explain": "The amount closely matched a bonus John Ramsey had received that year — one of the case's strangest details."
         },
         {
-          "q": "Where in the house was JonBen\u00e9t found?",
+          "q": "Where in the house was JonBenét found?",
           "options": [
             "The garage",
             "Her bedroom",
@@ -122,9 +187,9 @@
         {
           "q": "What is the official status of the case today?",
           "options": [
-            "Closed \u2014 solved in 2003",
+            "Closed — solved in 2003",
             "Open and unsolved",
-            "Closed \u2014 ruled accidental",
+            "Closed — ruled accidental",
             "Sealed by court order"
           ],
           "answer": 1,
@@ -136,11 +201,11 @@
       "slug": "cold-case-iq",
       "title": "Cold Case IQ",
       "tag": "Detective Skills",
-      "description": "Evidence, forensics, and investigation fundamentals \u2014 how much detective do you actually have in you?",
+      "description": "Evidence, forensics, and investigation fundamentals — how much detective do you actually have in you?",
       "created": "2026-07-15",
       "questions": [
         {
-          "q": "Locard's exchange principle \u2014 the foundation of forensic science \u2014 says what?",
+          "q": "Locard's exchange principle — the foundation of forensic science — says what?",
           "options": [
             "The simplest explanation is usually right",
             "Every contact leaves a trace",
@@ -151,7 +216,7 @@
           "explain": "Edmond Locard's principle: a perpetrator brings something to a crime scene and leaves with something from it. Every contact leaves a trace."
         },
         {
-          "q": "Forensic genetic genealogy \u2014 the technique behind the Golden State Killer arrest \u2014 matches crime-scene DNA against what?",
+          "q": "Forensic genetic genealogy — the technique behind the Golden State Killer arrest — matches crime-scene DNA against what?",
           "options": [
             "The FBI's CODIS database only",
             "Hospital records",
@@ -165,12 +230,12 @@
           "q": "Why do investigators talk about the 'first 48 hours'?",
           "options": [
             "Legal deadline to charge a suspect",
-            "Evidence and memories degrade fast \u2014 solve odds drop sharply after",
+            "Evidence and memories degrade fast — solve odds drop sharply after",
             "Autopsies must happen within 48 hours",
             "It's just a TV invention"
           ],
           "answer": 1,
-          "explain": "Physical evidence, witness memory, and digital trails are freshest early \u2014 the odds of clearance drop significantly once the first days pass."
+          "explain": "Physical evidence, witness memory, and digital trails are freshest early — the odds of clearance drop significantly once the first days pass."
         },
         {
           "q": "In the 2017 Delphi case, what crucial evidence did victim Libby German leave investigators?",
@@ -181,7 +246,7 @@
             "Fingerprints on the bridge"
           ],
           "answer": 1,
-          "explain": "Libby recorded video and audio of the man on the Monon High Bridge \u2014 evidence investigators called unprecedented, captured by the victim herself."
+          "explain": "Libby recorded video and audio of the man on the Monon High Bridge — evidence investigators called unprecedented, captured by the victim herself."
         },
         {
           "q": "What is NamUs?",
@@ -192,7 +257,7 @@
             "The US Marshals' fugitive list"
           ],
           "answer": 1,
-          "explain": "The National Missing and Unidentified Persons System \u2014 a public national database that helps connect missing persons cases with unidentified remains."
+          "explain": "The National Missing and Unidentified Persons System — a public national database that helps connect missing persons cases with unidentified remains."
         }
       ]
     },
@@ -200,7 +265,7 @@
       "slug": "menendez-file",
       "title": "The Menendez File",
       "tag": "Episode Case",
-      "description": "Beverly Hills, 1989 \u2014 five questions on the case from our Erik and Lyle episode. The record is stranger than the retellings.",
+      "description": "Beverly Hills, 1989 — five questions on the case from our Erik and Lyle episode. The record is stranger than the retellings.",
       "created": "2026-07-15",
       "questions": [
         {
@@ -212,7 +277,7 @@
             "A hotel suite"
           ],
           "answer": 0,
-          "explain": "Both were shot in the den of the family's Beverly Hills mansion on Elm Drive \u2014 a house later sold, and avoided, by buyers who knew the file."
+          "explain": "Both were shot in the den of the family's Beverly Hills mansion on Elm Drive — a house later sold, and avoided, by buyers who knew the file."
         },
         {
           "q": "How did investigators first tie the brothers to a confession?",
@@ -223,7 +288,7 @@
             "Erik's diary"
           ],
           "answer": 1,
-          "explain": "Sessions with psychologist Dr. Jerome Oziel were recorded \u2014 the fight over those tapes went all the way to the California Supreme Court."
+          "explain": "Sessions with psychologist Dr. Jerome Oziel were recorded — the fight over those tapes went all the way to the California Supreme Court."
         },
         {
           "q": "What happened at the brothers' first trials in 1993-94?",
@@ -234,7 +299,7 @@
             "Charges were dismissed"
           ],
           "answer": 2,
-          "explain": "Each brother had his own jury. Both deadlocked \u2014 jurors split largely along lines of how they read the abuse testimony."
+          "explain": "Each brother had his own jury. Both deadlocked — jurors split largely along lines of how they read the abuse testimony."
         },
         {
           "q": "The 1996 retrial ended with what sentence?",
@@ -256,7 +321,7 @@
             "Tijuana"
           ],
           "answer": 2,
-          "explain": "They drove south and bought the shotguns at a Big 5 in San Diego, using a borrowed ID \u2014 a detail the prosecution leaned on for premeditation."
+          "explain": "They drove south and bought the shotguns at a Big 5 in San Diego, using a borrowed ID — a detail the prosecution leaned on for premeditation."
         }
       ]
     },
@@ -264,7 +329,7 @@
       "slug": "delphi-the-evidence",
       "title": "Delphi: The Evidence",
       "tag": "Episode Case",
-      "description": "The 2017 Monon High Bridge case, from our Delphi episode \u2014 what the recording, the round, and the timeline actually established.",
+      "description": "The 2017 Monon High Bridge case, from our Delphi episode — what the recording, the round, and the timeline actually established.",
       "created": "2026-07-15",
       "questions": [
         {
@@ -276,7 +341,7 @@
             "A voicemail"
           ],
           "answer": 1,
-          "explain": "Libby recorded the man on the bridge \u2014 the 'down the hill' audio and the Bridge Guy image came from her phone. Investigators credited her as the case's key witness."
+          "explain": "Libby recorded the man on the bridge — the 'down the hill' audio and the Bridge Guy image came from her phone. Investigators credited her as the case's key witness."
         },
         {
           "q": "What physical evidence at the scene was linked to Richard Allen?",
@@ -298,7 +363,7 @@
             "January 2023"
           ],
           "answer": 1,
-          "explain": "Five and a half years after the murders \u2014 October 2022. He had lived and worked in Delphi the entire time."
+          "explain": "Five and a half years after the murders — October 2022. He had lived and worked in Delphi the entire time."
         },
         {
           "q": "Where did Allen work in Delphi?",
@@ -309,7 +374,7 @@
             "The school district"
           ],
           "answer": 1,
-          "explain": "He worked at the CVS in town \u2014 and had even processed photos for the community, a detail that unsettled Delphi when it surfaced."
+          "explain": "He worked at the CVS in town — and had even processed photos for the community, a detail that unsettled Delphi when it surfaced."
         },
         {
           "q": "What was the outcome of Allen's 2024 trial?",
@@ -340,7 +405,7 @@
             "$1 million"
           ],
           "answer": 2,
-          "explain": "$200,000 in twenties. In 1980 a boy found $5,800 of it decaying on the Columbia River shore \u2014 the case's only confirmed physical lead."
+          "explain": "$200,000 in twenties. In 1980 a boy found $5,800 of it decaying on the Columbia River shore — the case's only confirmed physical lead."
         },
         {
           "q": "Which Zodiac cipher was finally cracked in 2020?",
@@ -351,7 +416,7 @@
             "The 32-character"
           ],
           "answer": 1,
-          "explain": "A trio of amateur codebreakers solved the 340 after 51 years. It contained no identifying information \u2014 just taunts."
+          "explain": "A trio of amateur codebreakers solved the 340 after 51 years. It contained no identifying information — just taunts."
         },
         {
           "q": "The Black Dahlia was the press name for which victim?",
@@ -392,7 +457,7 @@
       "slug": "forensics-101",
       "title": "Forensics 101",
       "tag": "Detective Skills",
-      "description": "The lab fundamentals \u2014 what the acronyms, patterns, and timelines actually mean when a case hits the bench.",
+      "description": "The lab fundamentals — what the acronyms, patterns, and timelines actually mean when a case hits the bench.",
       "created": "2026-07-15",
       "questions": [
         {
@@ -404,7 +469,7 @@
             "Coordinated DNA Investigation System"
           ],
           "answer": 0,
-          "explain": "The Combined DNA Index System links local, state, and national DNA profiles \u2014 a hit can connect crimes decades and states apart."
+          "explain": "The Combined DNA Index System links local, state, and national DNA profiles — a hit can connect crimes decades and states apart."
         },
         {
           "q": "Which fingerprint pattern is the most common?",
@@ -426,7 +491,7 @@
             "5 days"
           ],
           "answer": 1,
-          "explain": "Onset begins within a few hours and full rigor lands around the 12-hour mark, then passes \u2014 one of several clocks examiners read together."
+          "explain": "Onset begins within a few hours and full rigor lands around the 12-hour mark, then passes — one of several clocks examiners read together."
         },
         {
           "q": "Mitochondrial DNA traces which line of inheritance?",
@@ -434,7 +499,7 @@
             "Paternal",
             "Maternal",
             "Both equally",
-            "Neither \u2014 it's random"
+            "Neither — it's random"
           ],
           "answer": 1,
           "explain": "mtDNA passes from mother to child, which is why it's used on degraded remains and maternal-line identifications."
@@ -468,7 +533,7 @@
             "A deathbed tip"
           ],
           "answer": 1,
-          "explain": "Dennis Rader asked police if a floppy disk could be traced. They said no. The deleted file's metadata pointed to his church \u2014 and to 'Dennis'."
+          "explain": "Dennis Rader asked police if a floppy disk could be traced. They said no. The deleted file's metadata pointed to his church — and to 'Dennis'."
         },
         {
           "q": "The Golden State Killer was identified in 2018 using what?",
@@ -501,7 +566,7 @@
             "His VPN failed"
           ],
           "answer": 1,
-          "explain": "The FBI staged a distraction and grabbed the laptop mid-session \u2014 encryption never got the chance to lock."
+          "explain": "The FBI staged a distraction and grabbed the laptop mid-session — encryption never got the chance to lock."
         },
         {
           "q": "Before his arrest, the Golden State Killer was known by which combined moniker?",
@@ -512,7 +577,7 @@
             "The Visalia Cat"
           ],
           "answer": 0,
-          "explain": "East Area Rapist / Original Night Stalker \u2014 two crime waves only conclusively linked by DNA in 2001, years before the name Golden State Killer stuck."
+          "explain": "East Area Rapist / Original Night Stalker — two crime waves only conclusively linked by DNA in 2001, years before the name Golden State Killer stuck."
         }
       ]
     },
@@ -532,7 +597,7 @@
             "Fingerprints on the ladder"
           ],
           "answer": 1,
-          "explain": "The ransom was paid in soon-to-be-recalled gold certificates. Spending them is what put Hauptmann on the map \u2014 along with wood evidence matching his attic."
+          "explain": "The ransom was paid in soon-to-be-recalled gold certificates. Spending them is what put Hauptmann on the map — along with wood evidence matching his attic."
         },
         {
           "q": "What finally convicted Al Capone in 1931?",
@@ -543,7 +608,7 @@
             "Witness testimony from his outfit"
           ],
           "answer": 2,
-          "explain": "Eleven years for tax evasion. The murders were never successfully pinned on him \u2014 the ledgers were."
+          "explain": "Eleven years for tax evasion. The murders were never successfully pinned on him — the ledgers were."
         },
         {
           "q": "The 1962 Alcatraz escapees left the island on...",

@@ -497,3 +497,6 @@ with an [auto] tag — the counter on Mission Control reads this file.
 433. Episode transcribed: "Watts Family Murders" (437 segments, 1302s)
 
 <!-- running total: 433 shipped -->
+434. [auto 2026-07-17] Published blog post in Cory's voice: "How Forensic Genealogy Is Reopening Cases the System Had Written Off"
+435. [auto 2026-07-17] Dropped 1 new merch design into the vault
+436. [auto 2026-07-17] Published new quiz: "The Moscow Student Murders" (5 questions)

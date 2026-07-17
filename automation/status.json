@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-17T13:00:25.965Z",
-  "improvementsShipped": 433,
+  "generated": "2026-07-17T14:02:40.139Z",
+  "improvementsShipped": 436,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
     "content": [
@@ -11,14 +11,14 @@
   },
   "counts": {
     "episodes": 6,
-    "posts": 8,
-    "merchDesigns": 16,
+    "posts": 9,
+    "merchDesigns": 17,
     "merchCollection": 3,
-    "quizzes": 9,
-    "quizQuestions": 45,
+    "quizzes": 10,
+    "quizQuestions": 50,
     "fbiCases": 150,
     "videos": 1,
-    "topicsQueued": 126,
+    "topicsQueued": 125,
     "topicsTotal": 126
   },
   "latest": {
@@ -27,28 +27,28 @@
       "date": "2025-03-16"
     },
     "post": {
-      "title": "JonBenét Ramsey: Why the Case Stays Open",
-      "date": "2026-01-08"
+      "title": "How Forensic Genealogy Is Reopening Cases the System Had Written Off",
+      "date": "2026-07-17"
     },
     "quiz": {
-      "title": "The Watts Case File",
-      "created": "2026-07-15"
+      "title": "The Moscow Student Murders",
+      "created": "2026-07-17"
     }
   },
   "freshness": {
-    "episodesJson": "2026-07-17T13:00:03.077Z",
-    "blogJson": "2026-06-17T03:47:42.443Z",
-    "merchJson": "2026-07-12T13:19:08.521Z",
-    "quizzesJson": "2026-07-15T23:00:00.000Z",
-    "fbiJson": "2026-07-17T13:00:04.081Z",
+    "episodesJson": "2026-07-17T14:00:01.638Z",
+    "blogJson": "2026-07-17T14:00:37.159Z",
+    "merchJson": "2026-07-17T14:01:27.604Z",
+    "quizzesJson": "2026-07-17T14:02:39.093Z",
+    "fbiJson": "2026-07-17T14:00:04.456Z",
     "css": "2026-07-15T23:13:26.319Z"
   },
   "nextTopics": [
-    "How forensic genealogy cracks cold cases",
     "Chain of custody: why solid evidence still gets thrown out",
     "Why eyewitness testimony is less reliable than people think",
     "How cold case units decide which files to reopen",
     "Understanding DNA familial searching",
-    "Wrongful convictions and the work of the Innocence Project"
+    "Wrongful convictions and the work of the Innocence Project",
+    "What reasonable doubt actually means in a courtroom"
   ]
 }

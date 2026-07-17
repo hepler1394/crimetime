@@ -1,9 +1,18 @@
 {
   "meta": {
-    "intro": "Original CrimeTimeSnacks prints, straight from the studio \u2014 new designs drop automatically. Every file is real, print-ready art you can grab now; the print-on-demand store opens soon.",
-    "updated": "2026-07-12T13:19:08.521Z"
+    "intro": "Original CrimeTimeSnacks prints, straight from the studio — new designs drop automatically. Every file is real, print-ready art you can grab now; the print-on-demand store opens soon.",
+    "updated": "2026-07-17T14:01:27.604Z"
   },
   "designs": [
+    {
+      "slug": "trust-no-alibi",
+      "slogan": "Trust No Alibi",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "template": null,
+      "svg": "images/merch/trust-no-alibi.svg",
+      "created": "2026-07-17"
+    },
     {
       "slug": "never-closed",
       "slogan": "Never Closed",
@@ -166,7 +175,7 @@
       "file": "images/merch/logo-sticker.png",
       "preview": "images/merch/logo-sticker-web.png",
       "price": "5",
-      "blurb": "Thick white die-cut border, rounded corners. Laptop, water bottle, case file \u2014 it goes where you go."
+      "blurb": "Thick white die-cut border, rounded corners. Laptop, water bottle, case file — it goes where you go."
     },
     {
       "slug": "logo-classic",

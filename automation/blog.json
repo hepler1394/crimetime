@@ -5,6 +5,23 @@
   },
   "posts": [
     {
+      "slug": "how-forensic-genealogy-is-reopening-cases-the-system-had-wri",
+      "title": "How Forensic Genealogy Is Reopening Cases the System Had Written Off",
+      "date": "2026-07-17",
+      "category": "analysis",
+      "categoryLabel": "Analysis",
+      "image": "images/logo.png",
+      "author": "Cory",
+      "featured": false,
+      "excerpt": "A DNA sample that sat in an evidence freezer for decades can now build a family tree. Here's what the record shows.",
+      "body": [
+        "The detail that stops me every time I go back through the case files: investigators already had the killer's DNA. They just had no name to attach to it. For years — sometimes decades — that profile sat in a database with nowhere to go. Forensic genealogy changed that equation entirely. Instead of waiting for a direct match, analysts upload the unknown DNA to public genealogy databases and start building out family trees from distant relatives. Cousins. Second cousins. People who submitted a cheek swab to find out where their grandparents came from.",
+        "What the evidence actually shows is a process that's methodical, not magic. Once analysts identify a cluster of relatives, they work the tree forward through generations and cross-reference with age, geography, and other details from the case file. They're narrowing a pool of candidates down to one. The Golden State Killer investigation — which became the most publicly documented use of this method — confirmed how powerful it can be when traditional investigative work runs alongside the genealogy. The DNA got them to a family. The follow-up work got them to a suspect.",
+        "The technique is gripping precisely because it's unglamorous. It's spreadsheets and census records and death certificates, not a lab scene from a TV procedural. There are real debates worth following here — around privacy, around the use of consumer databases, around what consent means when a relative's DNA implicates you. Those questions don't have clean answers yet. Read the case files on both sides. Form your own conclusion."
+      ],
+      "sourceTopic": "How forensic genealogy cracks cold cases"
+    },
+    {
       "slug": "wilmington-dmv-what-we-know",
       "title": "Wilmington DMV: What We Know So Far",
       "date": "2025-12-26",
