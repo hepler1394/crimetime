@@ -3,9 +3,54 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1206,
     "baked": 150,
-    "updated": "2026-07-16T19:36:14.433Z"
+    "updated": "2026-07-17T03:42:05.218Z"
   },
   "items": [
+    {
+      "uid": "4984047ee7ec42eeb3c92a9cb9261565",
+      "title": "NITISH KAUSHAL",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/nitish-kaushal/@@images/image/large",
+      "office": "Losangeles",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/nitish-kaushal",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN ESCAPE RISK",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-07-13T10:17:00"
+    },
+    {
+      "uid": "039685727e5a438abfd601b17e41e5ca",
+      "title": "SATINDERJEET SINGH",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/satinderjeet-singh/@@images/image/large",
+      "office": "Losangeles, Sacramento",
+      "reward": "Reward up to $50,000 for information leading to the arrest of Satinderjeet Singh.",
+      "url": "https://www.fbi.gov/wanted/cei/satinderjeet-singh",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN ESCAPE RISK",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-07-06T08:18:00"
+    },
+    {
+      "uid": "a81ed57d9ae641b793c292902a3800ec",
+      "title": "FRONTA LONTRELL MILLER",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/fronta-lontrell-miller/@@images/image/large",
+      "office": "Minneapolis",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/fronta-lontrell-miller",
+      "status": "captured",
+      "warning": "",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-06-30T09:35:00"
+    },
     {
       "uid": "1582e7db343a44508dd4e52490c1b80d",
       "title": "UNKNOWN BANK ROBBER - ALABAMA",
@@ -51,21 +96,6 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2026-07-06T14:13:00"
-    },
-    {
-      "uid": "4984047ee7ec42eeb3c92a9cb9261565",
-      "title": "NITISH KAUSHAL",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/nitish-kaushal/@@images/image/large",
-      "office": "Losangeles",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cei/nitish-kaushal",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN ESCAPE RISK",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-07-13T10:17:00"
     },
     {
       "uid": "cdb8134918884264bee2a5c1296c3750",
@@ -225,21 +255,6 @@
       "publication": "2026-07-01T13:48:00"
     },
     {
-      "uid": "039685727e5a438abfd601b17e41e5ca",
-      "title": "SATINDERJEET SINGH",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/satinderjeet-singh/@@images/image/large",
-      "office": "Losangeles, Sacramento",
-      "reward": "Reward up to $50,000 for information leading to the arrest of Satinderjeet Singh.",
-      "url": "https://www.fbi.gov/wanted/cei/satinderjeet-singh",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN ESCAPE RISK",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-07-06T08:18:00"
-    },
-    {
       "uid": "afe37027b23046a6a96f8e42d57d1362",
       "title": "JOSEPH MATOS",
       "kind": "wanted",
@@ -283,21 +298,6 @@
         "Most Wanted Fraudster"
       ],
       "publication": "2026-06-18T08:22:00"
-    },
-    {
-      "uid": "a81ed57d9ae641b793c292902a3800ec",
-      "title": "FRONTA LONTRELL MILLER",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/fronta-lontrell-miller/@@images/image/large",
-      "office": "Minneapolis",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cei/fronta-lontrell-miller",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-06-30T09:35:00"
     },
     {
       "uid": "166eeac0bc2b18d4e96b5c9885ac2e11",
