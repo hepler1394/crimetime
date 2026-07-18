@@ -3,9 +3,24 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1206,
     "baked": 150,
-    "updated": "2026-07-17T19:35:52.394Z"
+    "updated": "2026-07-18T03:37:30.663Z"
   },
   "items": [
+    {
+      "uid": "1582e7db343a44508dd4e52490c1b80d",
+      "title": "UNKNOWN BANK ROBBER - ALABAMA",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/unknown-bank-robber---alabama/@@images/image/large",
+      "office": "Birmingham",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/seeking-info/unknown-bank-robber---alabama",
+      "status": "captured",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-07-14T12:42:00"
+    },
     {
       "uid": "e63638197b2a4a8499e2bae569be603d",
       "title": "RAJAH ADRIANA MCQUEEN",
@@ -65,21 +80,6 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2026-06-30T09:35:00"
-    },
-    {
-      "uid": "1582e7db343a44508dd4e52490c1b80d",
-      "title": "UNKNOWN BANK ROBBER - ALABAMA",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/unknown-bank-robber---alabama/@@images/image/large",
-      "office": "Birmingham",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/seeking-info/unknown-bank-robber---alabama",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2026-07-14T12:42:00"
     },
     {
       "uid": "11f73d916ebf4a6aa5c9b464623e86b6",
