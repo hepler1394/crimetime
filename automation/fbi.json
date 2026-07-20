@@ -3,9 +3,24 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1206,
     "baked": 150,
-    "updated": "2026-07-19T13:00:04.676Z"
+    "updated": "2026-07-20T13:00:04.836Z"
   },
   "items": [
+    {
+      "uid": "cb829c4b9cdd4c7aa63e855ca92b2812",
+      "title": "EMYLEE THAI",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/emylee-thai/@@images/image/large",
+      "office": "Houston",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Emylee Thai.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/emylee-thai",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED A FLIGHT RISK",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2026-06-18T08:22:00"
+    },
     {
       "uid": "1582e7db343a44508dd4e52490c1b80d",
       "title": "UNKNOWN BANK ROBBER - ALABAMA",
@@ -298,21 +313,6 @@
         "Violent Crime - Murders"
       ],
       "publication": "2014-07-09T07:00:00"
-    },
-    {
-      "uid": "cb829c4b9cdd4c7aa63e855ca92b2812",
-      "title": "EMYLEE THAI",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/emylee-thai/@@images/image/large",
-      "office": "Houston",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Emylee Thai.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/emylee-thai",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED A FLIGHT RISK",
-      "subjects": [
-        "Most Wanted Fraudster"
-      ],
-      "publication": "2026-06-18T08:22:00"
     },
     {
       "uid": "166eeac0bc2b18d4e96b5c9885ac2e11",
