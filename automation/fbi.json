@@ -1,11 +1,41 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1206,
+    "totalOnFile": 1210,
     "baked": 150,
-    "updated": "2026-07-20T14:35:28.378Z"
+    "updated": "2026-07-20T19:59:08.480Z"
   },
   "items": [
+    {
+      "uid": "039685727e5a438abfd601b17e41e5ca",
+      "title": "SATINDERJEET SINGH",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/satinderjeet-singh/@@images/image/large",
+      "office": "FBI",
+      "reward": "Reward up to $50,000 for information leading to the arrest of Satinderjeet Singh.",
+      "url": "https://www.fbi.gov/wanted/cei/satinderjeet-singh",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN ESCAPE RISK",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-07-06T08:18:00"
+    },
+    {
+      "uid": "12b0a5aa363c4167a9b2327f3d328d32",
+      "title": "ADRIAN DEON GOLDEN-RODRIGUEZ - HOMICIDE SUSPECT - HOLIDAY, FLORIDA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/adrian-deon-golden-rodriguez---homicide-suspect---holiday-florida/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/adrian-deon-golden-rodriguez---homicide-suspect---holiday-florida",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Homicides and Sexual Assaults"
+      ],
+      "publication": "2026-07-20T10:39:00"
+    },
     {
       "uid": "cb829c4b9cdd4c7aa63e855ca92b2812",
       "title": "EMYLEE THAI",
@@ -65,21 +95,6 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2026-07-13T10:17:00"
-    },
-    {
-      "uid": "039685727e5a438abfd601b17e41e5ca",
-      "title": "SATINDERJEET SINGH",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/satinderjeet-singh/@@images/image/large",
-      "office": "Losangeles, Sacramento",
-      "reward": "Reward up to $50,000 for information leading to the arrest of Satinderjeet Singh.",
-      "url": "https://www.fbi.gov/wanted/cei/satinderjeet-singh",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN ESCAPE RISK",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-07-06T08:18:00"
     },
     {
       "uid": "a81ed57d9ae641b793c292902a3800ec",
@@ -707,6 +722,51 @@
         "Seeking Information"
       ],
       "publication": "2026-05-19T14:37:00"
+    },
+    {
+      "uid": "018bb42836e046179c77d8fd0ccea555",
+      "title": "RAYMOND LAWRENCE GONZALES",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/raymond-lawrence-gonzales/@@images/image/large",
+      "office": "Albuquerque",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/raymond-lawrence-gonzales",
+      "status": "na",
+      "warning": "IS KNOWN TO HAVE VIOLENT TENDENCIES",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-05-27T07:55:00"
+    },
+    {
+      "uid": "4ee774e868264535863c0d6d52fb7c18",
+      "title": "RODNEY DEAN ALLEN",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/rodney-allen/@@images/image/large",
+      "office": "Saltlakecity",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Rodney Dean Allen.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/rodney-allen",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2018-01-09T12:24:00"
+    },
+    {
+      "uid": "a3f97e0c1a0844ada418669872d0dd55",
+      "title": "CHRISTOPHER YOUNG",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/additional/christopher-young/@@images/image/large",
+      "office": "Philadelphia",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/additional/christopher-young",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN ESCAPE RISK",
+      "subjects": [
+        "Additional Violent Crimes"
+      ],
+      "publication": "2026-05-13T13:17:00"
     },
     {
       "uid": "018bb42836e046179c77d8fd0ccea555",
@@ -2217,66 +2277,6 @@
         "Counterintelligence"
       ],
       "publication": "2018-10-23T09:19:00"
-    },
-    {
-      "uid": "b5e7d23089834cf79709b9042400ca8e",
-      "title": "UNIDENTIFIED INDIVIDUAL - FLAGSTAFF, ARIZONA",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/unidentified-individual---flagstaff-arizona/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/unidentified-individual---flagstaff-arizona",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Homicides and Sexual Assaults"
-      ],
-      "publication": "2019-10-10T08:22:00"
-    },
-    {
-      "uid": "af76ee10172041afb8478b32c33812e3",
-      "title": "JOHN DOE - RICHMOND, VIRGINIA",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/vicap/unidentified-persons/john-doe---richmond-virginia/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/unidentified-persons/john-doe---richmond-virginia",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Unidentified Persons"
-      ],
-      "publication": "2026-03-13T07:37:00"
-    },
-    {
-      "uid": "5a57f941293242e5b02b1d6069f19f8c",
-      "title": "CARNELL E. SLEDGE AND KATHERINE C. BROWN",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/carnell-e-sledge-and-katherine-c-brown/jpeg-carnell.jpg/@@images/image/large",
-      "office": "Cleveland",
-      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the person(s) responsible for the deaths of Carnell E. Sledge and Katherine C. Brown. Additional reward money may be available.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/carnell-e-sledge-and-katherine-c-brown",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2019-10-09T08:38:00"
-    },
-    {
-      "uid": "02f7c486369846c2abb89d941bf621c1",
-      "title": "ANGELA MCKENNETT JOHNSON - DENVER, COLORADO",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/angela-mckennett-johnson---denver-colorado/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/angela-mckennett-johnson---denver-colorado",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Homicides and Sexual Assaults"
-      ],
-      "publication": "2026-03-03T09:32:00"
     }
   ]
 }
