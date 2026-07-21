@@ -3,9 +3,39 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1210,
     "baked": 150,
-    "updated": "2026-07-20T19:59:08.480Z"
+    "updated": "2026-07-21T03:50:45.044Z"
   },
   "items": [
+    {
+      "uid": "2be9ee7b46594e648c8bb06c4b7bf36e",
+      "title": "MILDRED \"MILLY\" NICKLES",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/mildred-milly-nickles/@@images/image/large",
+      "office": "Baltimore",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/kidnap/mildred-milly-nickles",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2026-07-20T09:55:00"
+    },
+    {
+      "uid": "45c00e77c43249f3b9d2e5901553eeac",
+      "title": "SHAQUANNA “KITA” RUTHERFORD",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/shaquanna-kita-rutherford/@@images/image/large",
+      "office": "Baltimore",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/kidnap/shaquanna-kita-rutherford",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2026-07-20T10:09:00"
+    },
     {
       "uid": "039685727e5a438abfd601b17e41e5ca",
       "title": "SATINDERJEET SINGH",
@@ -20,6 +50,21 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2026-07-06T08:18:00"
+    },
+    {
+      "uid": "3e4de9e5b7f5477387031321fe8a6470",
+      "title": "HARMANVEER SINGH",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/harmanveer-singh/@@images/image/large",
+      "office": "Losangeles",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/harmanveer-singh",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-07-20T11:04:00"
     },
     {
       "uid": "12b0a5aa363c4167a9b2327f3d328d32",
@@ -722,51 +767,6 @@
         "Seeking Information"
       ],
       "publication": "2026-05-19T14:37:00"
-    },
-    {
-      "uid": "018bb42836e046179c77d8fd0ccea555",
-      "title": "RAYMOND LAWRENCE GONZALES",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/raymond-lawrence-gonzales/@@images/image/large",
-      "office": "Albuquerque",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cei/raymond-lawrence-gonzales",
-      "status": "na",
-      "warning": "IS KNOWN TO HAVE VIOLENT TENDENCIES",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-05-27T07:55:00"
-    },
-    {
-      "uid": "4ee774e868264535863c0d6d52fb7c18",
-      "title": "RODNEY DEAN ALLEN",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/rodney-allen/@@images/image/large",
-      "office": "Saltlakecity",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Rodney Dean Allen.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/rodney-allen",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Most Wanted Fraudster"
-      ],
-      "publication": "2018-01-09T12:24:00"
-    },
-    {
-      "uid": "a3f97e0c1a0844ada418669872d0dd55",
-      "title": "CHRISTOPHER YOUNG",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/additional/christopher-young/@@images/image/large",
-      "office": "Philadelphia",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/additional/christopher-young",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN ESCAPE RISK",
-      "subjects": [
-        "Additional Violent Crimes"
-      ],
-      "publication": "2026-05-13T13:17:00"
     },
     {
       "uid": "018bb42836e046179c77d8fd0ccea555",
