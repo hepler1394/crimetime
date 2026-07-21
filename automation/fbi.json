@@ -3,9 +3,24 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1210,
     "baked": 150,
-    "updated": "2026-07-21T15:45:47.366Z"
+    "updated": "2026-07-21T19:55:24.718Z"
   },
   "items": [
+    {
+      "uid": "000a9f420e7e4df3baf95b0c4c6c6bd9",
+      "title": "KHALID AHMED SATARY",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/khalid-ahmed-satary/@@images/image/large",
+      "office": "Miami, Neworleans",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Khalid Ahmed Satary.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/khalid-ahmed-satary",
+      "status": "captured",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2023-01-04T13:18:00"
+    },
     {
       "uid": "2be9ee7b46594e648c8bb06c4b7bf36e",
       "title": "MILDRED \"MILLY\" NICKLES",
@@ -388,21 +403,6 @@
         "Kidnappings and Missing Persons"
       ],
       "publication": "2010-09-10T09:20:00"
-    },
-    {
-      "uid": "000a9f420e7e4df3baf95b0c4c6c6bd9",
-      "title": "KHALID AHMED SATARY",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/khalid-ahmed-satary/@@images/image/large",
-      "office": "Miami, Neworleans",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Khalid Ahmed Satary.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/khalid-ahmed-satary",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Most Wanted Fraudster"
-      ],
-      "publication": "2023-01-04T13:18:00"
     },
     {
       "uid": "ef3577c1462a4c10a8db81a3914a273e",
