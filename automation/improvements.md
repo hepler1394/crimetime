@@ -498,3 +498,4 @@ with an [auto] tag — the counter on Mission Control reads this file.
 
 <!-- running total: 433 shipped -->
 434. [auto 2026-07-17] Dropped 1 new merch design into the vault
+435. [auto 2026-07-21] Dropped 1 new merch design into the vault

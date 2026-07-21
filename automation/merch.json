@@ -1,9 +1,18 @@
 {
   "meta": {
     "intro": "Original CrimeTimeSnacks prints, straight from the studio — new designs drop automatically. Every file is real, print-ready art you can grab now; the print-on-demand store opens soon.",
-    "updated": "2026-07-17T15:15:51.403Z"
+    "updated": "2026-07-21T15:46:07.440Z"
   },
   "designs": [
+    {
+      "slug": "exhibit-a",
+      "slogan": "Exhibit A",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "template": null,
+      "svg": "images/merch/exhibit-a.svg",
+      "created": "2026-07-21"
+    },
     {
       "slug": "allegedly",
       "slogan": "Allegedly",
