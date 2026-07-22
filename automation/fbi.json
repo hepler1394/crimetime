@@ -3,9 +3,24 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1210,
     "baked": 150,
-    "updated": "2026-07-21T19:55:24.718Z"
+    "updated": "2026-07-22T03:51:21.171Z"
   },
   "items": [
+    {
+      "uid": "3e4de9e5b7f5477387031321fe8a6470",
+      "title": "HARMANVEER SINGH",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/harmanveer-singh/@@images/image/large",
+      "office": "Losangeles",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/harmanveer-singh",
+      "status": "captured",
+      "warning": "",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-07-20T11:04:00"
+    },
     {
       "uid": "000a9f420e7e4df3baf95b0c4c6c6bd9",
       "title": "KHALID AHMED SATARY",
@@ -65,21 +80,6 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2026-07-06T08:18:00"
-    },
-    {
-      "uid": "3e4de9e5b7f5477387031321fe8a6470",
-      "title": "HARMANVEER SINGH",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/harmanveer-singh/@@images/image/large",
-      "office": "Losangeles",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cei/harmanveer-singh",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-07-20T11:04:00"
     },
     {
       "uid": "12b0a5aa363c4167a9b2327f3d328d32",
