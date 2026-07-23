@@ -3,9 +3,40 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1210,
     "baked": 150,
-    "updated": "2026-07-23T08:47:11.926Z"
+    "updated": "2026-07-23T14:36:41.608Z"
   },
   "items": [
+    {
+      "uid": "3992cf07e26848bab7fd7b6bb58f60a2",
+      "title": "ALBERTO PEREZ-ELIAS",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/additional/alberto-perez-elias/@@images/image/large",
+      "office": "Tampa",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/additional/alberto-perez-elias",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Additional Violent Crimes"
+      ],
+      "publication": "2026-07-01T13:48:00"
+    },
+    {
+      "uid": "3bd6151398a84bde8b7b4af3474ef5c3",
+      "title": "TRIPLE HOMICIDE - DELAWARE",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/triple-homicide---delaware/@@images/image/large",
+      "office": "Baltimore",
+      "reward": "Reward up to $5,000 for information leading to the arrest and conviction of the individuals involved in these shootings.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/triple-homicide---delaware",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Case of the Week"
+      ],
+      "publication": "2026-06-17T08:05:00"
+    },
     {
       "uid": "3e4de9e5b7f5477387031321fe8a6470",
       "title": "HARMANVEER SINGH",
@@ -342,22 +373,6 @@
         "Crimes Against Children"
       ],
       "publication": "2026-05-18T10:21:00"
-    },
-    {
-      "uid": "3992cf07e26848bab7fd7b6bb58f60a2",
-      "title": "ALBERTO PEREZ-ELIAS",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/additional/alberto-perez-elias/@@images/image/large",
-      "office": "Tampa",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/additional/alberto-perez-elias",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Additional Violent Crimes",
-        "Case of the Week"
-      ],
-      "publication": "2026-07-01T13:48:00"
     },
     {
       "uid": "afe37027b23046a6a96f8e42d57d1362",
@@ -752,21 +767,6 @@
         "Law Enforcement Assistance"
       ],
       "publication": "2026-06-03T19:44:00"
-    },
-    {
-      "uid": "ff91fb2cc2594920ab8409261951e3d7",
-      "title": "NAVY YARD ASSAULT",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/navy-yard-assault/@@images/image/large",
-      "office": "Washingtondc",
-      "reward": "Reward up to $5,000 for information leading to the identification, arrest, and conviction of the unknown individual.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/navy-yard-assault",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2026-05-19T14:37:00"
     },
     {
       "uid": "018bb42836e046179c77d8fd0ccea555",
