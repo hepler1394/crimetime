@@ -1,11 +1,72 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1210,
+    "totalOnFile": 1213,
     "baked": 150,
-    "updated": "2026-07-23T13:00:07.898Z"
+    "updated": "2026-07-24T13:00:11.309Z"
   },
   "items": [
+    {
+      "uid": "6432636baed2441c9a4c0ae9b4bc4323",
+      "title": "CARLOS ANDRES RENDON-BERMUDEZ",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/wcc/carlos-andres-rendon-bermudez/@@images/image/large",
+      "office": "Sanjuan",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/wcc/carlos-andres-rendon-bermudez",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
+      "subjects": [
+        "White-Collar Crime"
+      ],
+      "publication": "2026-07-23T10:57:00"
+    },
+    {
+      "uid": "d05d89f612304a3bb5eaf575fb7964fe",
+      "title": "HENRIETTA ILENE MARSHALL - WACO, TEXAS",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/henrietta-ilene-marshall---waco-texas/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/henrietta-ilene-marshall---waco-texas",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Missing Persons"
+      ],
+      "publication": "2026-07-23T12:01:00"
+    },
+    {
+      "uid": "3992cf07e26848bab7fd7b6bb58f60a2",
+      "title": "ALBERTO PEREZ-ELIAS",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/additional/alberto-perez-elias/@@images/image/large",
+      "office": "Tampa",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/additional/alberto-perez-elias",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Additional Violent Crimes"
+      ],
+      "publication": "2026-07-01T13:48:00"
+    },
+    {
+      "uid": "3bd6151398a84bde8b7b4af3474ef5c3",
+      "title": "TRIPLE HOMICIDE - DELAWARE",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/triple-homicide---delaware/@@images/image/large",
+      "office": "Baltimore",
+      "reward": "Reward up to $5,000 for information leading to the arrest and conviction of the individuals involved in these shootings.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/triple-homicide---delaware",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Case of the Week"
+      ],
+      "publication": "2026-06-17T08:05:00"
+    },
     {
       "uid": "3e4de9e5b7f5477387031321fe8a6470",
       "title": "HARMANVEER SINGH",
@@ -342,22 +403,6 @@
         "Crimes Against Children"
       ],
       "publication": "2026-05-18T10:21:00"
-    },
-    {
-      "uid": "3992cf07e26848bab7fd7b6bb58f60a2",
-      "title": "ALBERTO PEREZ-ELIAS",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/additional/alberto-perez-elias/@@images/image/large",
-      "office": "Tampa",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/additional/alberto-perez-elias",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Additional Violent Crimes",
-        "Case of the Week"
-      ],
-      "publication": "2026-07-01T13:48:00"
     },
     {
       "uid": "afe37027b23046a6a96f8e42d57d1362",
@@ -2232,51 +2277,6 @@
         "ViCAP Unidentified Persons"
       ],
       "publication": "2024-03-05T09:56:00"
-    },
-    {
-      "uid": "c9444d9fc13f47de89f25b1a17249021",
-      "title": "SERGEY ALEKSANDROVICH MORGACHEV",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cyber/sergey-aleksandrovich-morgachev/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cyber/sergey-aleksandrovich-morgachev",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS, AN INTERNATIONAL FLIGHT RISK, AND AN ESCAPE RISK",
-      "subjects": [
-        "Cyber's Most Wanted"
-      ],
-      "publication": "2018-09-04T10:10:00"
-    },
-    {
-      "uid": "ba916f70bdcd4ee8872b6e6f76643be1",
-      "title": "VOLODYMYR DUBINSKY",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/wcc/volodymyr-dubinsky/@@images/image/large",
-      "office": "Sacramento",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/wcc/volodymyr-dubinsky",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "White-Collar Crime"
-      ],
-      "publication": "2018-10-22T10:50:00"
-    },
-    {
-      "uid": "1ef7b9c988984e4aa6d87a8557fbbf1f",
-      "title": "TAN WEE BENG",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/counterintelligence/tan-wee-beng/@@images/image/large",
-      "office": "Newyork",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/counterintelligence/tan-wee-beng",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Counterintelligence"
-      ],
-      "publication": "2018-10-23T09:19:00"
     }
   ]
 }
