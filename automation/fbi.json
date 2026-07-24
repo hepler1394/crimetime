@@ -1,11 +1,26 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1212,
+    "totalOnFile": 1213,
     "baked": 150,
-    "updated": "2026-07-23T19:49:17.825Z"
+    "updated": "2026-07-24T03:48:15.307Z"
   },
   "items": [
+    {
+      "uid": "6432636baed2441c9a4c0ae9b4bc4323",
+      "title": "CARLOS ANDRES RENDON-BERMUDEZ",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/wcc/carlos-andres-rendon-bermudez/@@images/image/large",
+      "office": "Sanjuan",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/wcc/carlos-andres-rendon-bermudez",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
+      "subjects": [
+        "White-Collar Crime"
+      ],
+      "publication": "2026-07-23T10:57:00"
+    },
     {
       "uid": "d05d89f612304a3bb5eaf575fb7964fe",
       "title": "HENRIETTA ILENE MARSHALL - WACO, TEXAS",
@@ -2262,21 +2277,6 @@
         "ViCAP Unidentified Persons"
       ],
       "publication": "2024-03-05T09:56:00"
-    },
-    {
-      "uid": "c9444d9fc13f47de89f25b1a17249021",
-      "title": "SERGEY ALEKSANDROVICH MORGACHEV",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cyber/sergey-aleksandrovich-morgachev/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cyber/sergey-aleksandrovich-morgachev",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS, AN INTERNATIONAL FLIGHT RISK, AND AN ESCAPE RISK",
-      "subjects": [
-        "Cyber's Most Wanted"
-      ],
-      "publication": "2018-09-04T10:10:00"
     }
   ]
 }
