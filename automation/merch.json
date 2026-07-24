@@ -1,9 +1,18 @@
 {
   "meta": {
     "intro": "Original CrimeTimeSnacks prints, straight from the studio — new designs drop automatically. Every file is real, print-ready art you can grab now; the print-on-demand store opens soon.",
-    "updated": "2026-07-21T15:46:07.440Z"
+    "updated": "2026-07-24T15:26:54.747Z"
   },
   "designs": [
+    {
+      "slug": "cold-case-energy",
+      "slogan": "Cold Case Energy",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "template": null,
+      "svg": "images/merch/cold-case-energy.svg",
+      "created": "2026-07-24"
+    },
     {
       "slug": "exhibit-a",
       "slogan": "Exhibit A",
