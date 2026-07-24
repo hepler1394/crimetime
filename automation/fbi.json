@@ -1,9 +1,9 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1213,
+    "totalOnFile": 1214,
     "baked": 150,
-    "updated": "2026-07-24T15:26:34.642Z"
+    "updated": "2026-07-24T19:50:11.544Z"
   },
   "items": [
     {
@@ -66,6 +66,21 @@
         "Case of the Week"
       ],
       "publication": "2026-06-17T08:05:00"
+    },
+    {
+      "uid": "7b33028e22a94609927835f1475d99d3",
+      "title": "DEVARIAE MONTREL CONLEY",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/devariae-montrel-conley/@@images/image/large",
+      "office": "Seattle",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/devariae-montrel-conley",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Law Enforcement Assistance"
+      ],
+      "publication": "2026-07-16T12:20:00"
     },
     {
       "uid": "3e4de9e5b7f5477387031321fe8a6470",
@@ -2262,21 +2277,6 @@
         "Counterintelligence"
       ],
       "publication": "2022-04-27T11:22:00"
-    },
-    {
-      "uid": "ee49f8c2eb074823a21bcff82df137d9",
-      "title": "JANE DOE - ASTORIA, NEW YORK",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/vicap/unidentified-persons/jane-doe---astoria-new-york/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/unidentified-persons/jane-doe---astoria-new-york",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Unidentified Persons"
-      ],
-      "publication": "2024-03-05T09:56:00"
     }
   ]
 }
