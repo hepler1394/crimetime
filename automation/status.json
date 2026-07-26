@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-26T14:02:11.347Z",
+  "generated": "2026-07-26T19:38:58.081Z",
   "improvementsShipped": 436,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
@@ -36,12 +36,12 @@
     }
   },
   "freshness": {
-    "episodesJson": "2026-07-26T14:01:50.329Z",
-    "blogJson": "2026-07-26T14:01:45.383Z",
+    "episodesJson": "2026-07-26T19:38:36.923Z",
+    "blogJson": "2026-07-26T19:38:31.826Z",
     "merchJson": "2026-07-24T15:26:54.747Z",
     "quizzesJson": "2026-07-15T23:00:00.000Z",
-    "fbiJson": "2026-07-26T14:01:50.916Z",
-    "css": "2026-07-26T14:01:45.388Z"
+    "fbiJson": "2026-07-26T19:38:37.774Z",
+    "css": "2026-07-26T19:38:31.831Z"
   },
   "nextTopics": [
     "How forensic genealogy cracks cold cases",
