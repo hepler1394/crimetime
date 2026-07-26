@@ -3,9 +3,24 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1214,
     "baked": 150,
-    "updated": "2026-07-25T13:00:06.970Z"
+    "updated": "2026-07-26T13:00:06.575Z"
   },
   "items": [
+    {
+      "uid": "9627161690684c62ada3daa4dee61645",
+      "title": "ELAINE ANGENE ESCOE",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/elaine-angene-escoe/@@images/image/large",
+      "office": "Miami",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Elaine Angene Escoe.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/elaine-angene-escoe",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED A FLIGHT RISK",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2025-09-02T10:30:00"
+    },
     {
       "uid": "6432636baed2441c9a4c0ae9b4bc4323",
       "title": "CARLOS ANDRES RENDON-BERMUDEZ",
@@ -932,21 +947,6 @@
         "Most Wanted Fraudster"
       ],
       "publication": "2026-01-12T14:02:00"
-    },
-    {
-      "uid": "9627161690684c62ada3daa4dee61645",
-      "title": "ELAINE ANGENE ESCOE",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/elaine-angene-escoe/@@images/image/large",
-      "office": "Miami",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Elaine Angene Escoe.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/elaine-angene-escoe",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED A FLIGHT RISK",
-      "subjects": [
-        "Most Wanted Fraudster"
-      ],
-      "publication": "2025-09-02T10:30:00"
     },
     {
       "uid": "0917f41cd1cb4429bb6bfbc9ed0902cf",
