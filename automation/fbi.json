@@ -1,9 +1,9 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1214,
+    "totalOnFile": 1215,
     "baked": 150,
-    "updated": "2026-07-27T15:17:39.910Z"
+    "updated": "2026-07-27T19:58:14.991Z"
   },
   "items": [
     {
@@ -752,6 +752,21 @@
         "Most Wanted Fraudster"
       ],
       "publication": "2026-06-03T09:54:00"
+    },
+    {
+      "uid": "2fd9cbe842c64f2ba7a63aeee2978e21",
+      "title": "SHELBIE LYNN DWYER",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/shelbie-lynn-dwyer/@@images/image/large",
+      "office": "Seattle",
+      "reward": "Reward up to $20,000 for information leading to the recovery of Shelbie Lynn Dwyer.",
+      "url": "https://www.fbi.gov/wanted/kidnap/shelbie-lynn-dwyer",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2023-12-01T10:19:00"
     },
     {
       "uid": "2fd9cbe842c64f2ba7a63aeee2978e21",
@@ -2262,21 +2277,6 @@
         "China Threat"
       ],
       "publication": "2022-10-18T18:44:00"
-    },
-    {
-      "uid": "421f5461e4b34c82a6930bd1ebb0d792",
-      "title": "ALEJANDRO CAO DE BENOS",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/counterintelligence/alejandro-cao-de-benos/@@images/image/large",
-      "office": "Newyork",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/counterintelligence/alejandro-cao-de-benos",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED AN INTERNATIONAL FLIGHT RISK",
-      "subjects": [
-        "Counterintelligence"
-      ],
-      "publication": "2022-04-27T11:22:00"
     }
   ]
 }
