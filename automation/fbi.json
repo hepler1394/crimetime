@@ -1,9 +1,9 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1216,
+    "totalOnFile": 1217,
     "baked": 150,
-    "updated": "2026-07-28T09:08:49.809Z"
+    "updated": "2026-07-28T14:42:49.560Z"
   },
   "items": [
     {
@@ -14,12 +14,27 @@
       "office": "Atlanta",
       "reward": "Reward up to $10,000 for information leading to the arrest of Pablo Zuriel Miranda.",
       "url": "https://www.fbi.gov/wanted/additional/pablo-zuriel-miranda",
-      "status": "na",
+      "status": "captured",
       "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
       "subjects": [
         "Additional Violent Crimes"
       ],
       "publication": "2026-07-27T17:09:00"
+    },
+    {
+      "uid": "e3ce303ad18044b891071936e58b0ba2",
+      "title": "AMRITPAL SINGH",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/amritpal-singh/@@images/image/large",
+      "office": "Losangeles",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/amritpal-singh",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-07-27T12:58:00"
     },
     {
       "uid": "3de0e2579cbb4847a84b9210a4d1c001",
@@ -2260,22 +2275,6 @@
         "Seeking Information"
       ],
       "publication": "2018-07-02T10:33:00"
-    },
-    {
-      "uid": "ed0db933b9154f6c8b67b67db42a7f77",
-      "title": "HOU XUEXIN",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/counterintelligence/hou-xuexin/@@images/image/large",
-      "office": "Newyork",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/counterintelligence/hou-xuexin",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Counterintelligence",
-        "China Threat"
-      ],
-      "publication": "2022-10-18T15:37:00"
     }
   ]
 }
