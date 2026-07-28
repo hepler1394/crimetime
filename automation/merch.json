@@ -1,9 +1,18 @@
 {
   "meta": {
     "intro": "Original CrimeTimeSnacks prints, straight from the studio — new designs drop automatically. Every file is real, print-ready art you can grab now; the print-on-demand store opens soon.",
-    "updated": "2026-07-24T15:26:54.747Z"
+    "updated": "2026-07-28T16:06:20.254Z"
   },
   "designs": [
+    {
+      "slug": "burden-of-proof",
+      "slogan": "Burden Of Proof",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "30",
+      "template": null,
+      "svg": "images/merch/burden-of-proof.svg",
+      "created": "2026-07-28"
+    },
     {
       "slug": "cold-case-energy",
       "slogan": "Cold Case Energy",
