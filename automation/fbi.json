@@ -1,25 +1,40 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1215,
+    "totalOnFile": 1216,
     "baked": 150,
-    "updated": "2026-07-27T19:58:14.991Z"
+    "updated": "2026-07-28T03:41:13.425Z"
   },
   "items": [
     {
-      "uid": "9627161690684c62ada3daa4dee61645",
-      "title": "ELAINE ANGENE ESCOE",
+      "uid": "bbf2d6b0a4e24fbfb98de2749d8696fc",
+      "title": "PABLO ZURIEL MIRANDA",
       "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/elaine-angene-escoe/@@images/image/large",
-      "office": "Miami",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Elaine Angene Escoe.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/elaine-angene-escoe",
-      "status": "captured",
-      "warning": "SHOULD BE CONSIDERED A FLIGHT RISK",
+      "image": "https://www.fbi.gov/wanted/additional/pablo-zuriel-miranda/@@images/image/large",
+      "office": "Atlanta",
+      "reward": "Reward up to $10,000 for information leading to the arrest of Pablo Zuriel Miranda.",
+      "url": "https://www.fbi.gov/wanted/additional/pablo-zuriel-miranda",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
       "subjects": [
-        "Most Wanted Fraudster"
+        "Additional Violent Crimes"
       ],
-      "publication": "2025-09-02T10:30:00"
+      "publication": "2026-07-27T17:09:00"
+    },
+    {
+      "uid": "3de0e2579cbb4847a84b9210a4d1c001",
+      "title": "WALTER A. MOSIER - SENECA, MISSOURI",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/walter-a-mosier---seneca-missouri/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/walter-a-mosier---seneca-missouri",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Missing Persons"
+      ],
+      "publication": "2026-07-27T11:54:00"
     },
     {
       "uid": "6432636baed2441c9a4c0ae9b4bc4323",
@@ -35,6 +50,21 @@
         "White-Collar Crime"
       ],
       "publication": "2026-07-23T10:57:00"
+    },
+    {
+      "uid": "9627161690684c62ada3daa4dee61645",
+      "title": "ELAINE ANGENE ESCOE",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/elaine-angene-escoe/@@images/image/large",
+      "office": "Miami",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Elaine Angene Escoe.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/elaine-angene-escoe",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED A FLIGHT RISK",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2025-09-02T10:30:00"
     },
     {
       "uid": "d05d89f612304a3bb5eaf575fb7964fe",
@@ -752,21 +782,6 @@
         "Most Wanted Fraudster"
       ],
       "publication": "2026-06-03T09:54:00"
-    },
-    {
-      "uid": "2fd9cbe842c64f2ba7a63aeee2978e21",
-      "title": "SHELBIE LYNN DWYER",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/shelbie-lynn-dwyer/@@images/image/large",
-      "office": "Seattle",
-      "reward": "Reward up to $20,000 for information leading to the recovery of Shelbie Lynn Dwyer.",
-      "url": "https://www.fbi.gov/wanted/kidnap/shelbie-lynn-dwyer",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons"
-      ],
-      "publication": "2023-12-01T10:19:00"
     },
     {
       "uid": "2fd9cbe842c64f2ba7a63aeee2978e21",
@@ -2261,22 +2276,6 @@
         "China Threat"
       ],
       "publication": "2022-10-18T15:37:00"
-    },
-    {
-      "uid": "35864dde9dbe4d058f9e372a6ea04b4f",
-      "title": "CHEN CHENGHUA",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/counterintelligence/chen-chenghua/@@images/image/large",
-      "office": "Newyork",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/counterintelligence/chen-chenghua",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Counterintelligence",
-        "China Threat"
-      ],
-      "publication": "2022-10-18T18:44:00"
     }
   ]
 }
