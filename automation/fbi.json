@@ -1,9 +1,9 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1216,
+    "totalOnFile": 1217,
     "baked": 150,
-    "updated": "2026-07-28T13:00:06.020Z"
+    "updated": "2026-07-28T14:00:05.176Z"
   },
   "items": [
     {
@@ -752,6 +752,21 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2026-06-09T15:51:00"
+    },
+    {
+      "uid": "9adc7219d3ea4d5c8b76a65cfca045e1",
+      "title": "SHOOTING OF MINOR VICTIM",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/shooting-of-minor-victim/@@images/image/large",
+      "office": "Dallas",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the individuals involved in this shooting.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/shooting-of-minor-victim",
+      "status": "na",
+      "warning": "SUSPECTS SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-06-15T08:23:00"
     },
     {
       "uid": "9adc7219d3ea4d5c8b76a65cfca045e1",
@@ -2260,22 +2275,6 @@
         "Seeking Information"
       ],
       "publication": "2018-07-02T10:33:00"
-    },
-    {
-      "uid": "ed0db933b9154f6c8b67b67db42a7f77",
-      "title": "HOU XUEXIN",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/counterintelligence/hou-xuexin/@@images/image/large",
-      "office": "Newyork",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/counterintelligence/hou-xuexin",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Counterintelligence",
-        "China Threat"
-      ],
-      "publication": "2022-10-18T15:37:00"
     }
   ]
 }

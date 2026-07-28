@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-28T13:00:26.754Z",
-  "improvementsShipped": 436,
+  "generated": "2026-07-28T14:02:45.272Z",
+  "improvementsShipped": 438,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
     "content": [
@@ -11,14 +11,14 @@
   },
   "counts": {
     "episodes": 6,
-    "posts": 9,
+    "posts": 10,
     "merchDesigns": 17,
     "merchCollection": 3,
-    "quizzes": 10,
-    "quizQuestions": 50,
+    "quizzes": 11,
+    "quizQuestions": 55,
     "fbiCases": 150,
     "videos": 1,
-    "topicsQueued": 125,
+    "topicsQueued": 124,
     "topicsTotal": 126
   },
   "latest": {
@@ -27,28 +27,28 @@
       "date": "2025-03-16"
     },
     "post": {
-      "title": "How Forensic Genealogy Is Reopening Cases the System Had Written Off",
-      "date": "2026-07-17"
+      "title": "Why Solid Evidence Gets Thrown Out of Court",
+      "date": "2026-07-28"
     },
     "quiz": {
-      "title": "The Moscow Student Murders",
-      "created": "2026-07-17"
+      "title": "The Watts Case: What You Really Know",
+      "created": "2026-07-28"
     }
   },
   "freshness": {
-    "episodesJson": "2026-07-28T13:00:04.006Z",
-    "blogJson": "2026-07-17T14:00:37.159Z",
-    "merchJson": "2026-07-17T14:01:27.604Z",
-    "quizzesJson": "2026-07-17T14:02:39.093Z",
-    "fbiJson": "2026-07-28T13:00:06.020Z",
+    "episodesJson": "2026-07-28T14:00:02.739Z",
+    "blogJson": "2026-07-28T14:00:35.282Z",
+    "merchJson": "2026-07-28T14:01:27.485Z",
+    "quizzesJson": "2026-07-28T14:02:43.786Z",
+    "fbiJson": "2026-07-28T14:00:05.176Z",
     "css": "2026-07-15T23:13:26.319Z"
   },
   "nextTopics": [
-    "Chain of custody: why solid evidence still gets thrown out",
     "Why eyewitness testimony is less reliable than people think",
     "How cold case units decide which files to reopen",
     "Understanding DNA familial searching",
     "Wrongful convictions and the work of the Innocence Project",
-    "What reasonable doubt actually means in a courtroom"
+    "What reasonable doubt actually means in a courtroom",
+    "The history of fingerprint evidence"
   ]
 }

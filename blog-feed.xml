@@ -6,7 +6,15 @@
     <atom:link href="https://crimetime.vercel.app/blog-feed.xml" rel="self" type="application/rss+xml"/>
     <description>True crime case updates, analysis, and the stories behind the headlines.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Jul 2026 13:00:26 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jul 2026 14:02:44 GMT</lastBuildDate>
+    <item>
+      <title>Why Solid Evidence Gets Thrown Out of Court</title>
+      <link>https://crimetime.vercel.app/blog-posts/why-solid-evidence-gets-thrown-out-of-court.html</link>
+      <guid isPermaLink="true">https://crimetime.vercel.app/blog-posts/why-solid-evidence-gets-thrown-out-of-court.html</guid>
+      <category>Court</category>
+      <pubDate>Tue, 28 Jul 2026 12:00:00 GMT</pubDate>
+      <description>The evidence looked airtight. Then a judge tossed it. Here's what chain of custody actually means for a case.</description>
+    </item>
     <item>
       <title>How Forensic Genealogy Is Reopening Cases the System Had Written Off</title>
       <link>https://crimetime.vercel.app/blog-posts/how-forensic-genealogy-is-reopening-cases-the-system-had-wri.html</link>

@@ -5,6 +5,23 @@
   },
   "posts": [
     {
+      "slug": "why-solid-evidence-gets-thrown-out-of-court",
+      "title": "Why Solid Evidence Gets Thrown Out of Court",
+      "date": "2026-07-28",
+      "category": "court",
+      "categoryLabel": "Court",
+      "image": "images/logo.png",
+      "author": "Cory",
+      "featured": false,
+      "excerpt": "The evidence looked airtight. Then a judge tossed it. Here's what chain of custody actually means for a case.",
+      "body": [
+        "The fingerprint matched. The DNA came back positive. And then the defense filed a motion, and the judge threw the whole thing out. I've gone back through case files where that exact sequence played out, and every time it comes down to the same issue: not whether the evidence was real, but whether the court could prove it stayed uncontaminated from the crime scene to the evidence locker to the lab to the courtroom.",
+        "What the record shows, case after case, is that chain of custody is a documented paper trail — every person who touched a piece of evidence, when they touched it, and what condition it was in. A gap anywhere in that chain gives the defense a legitimate argument that the sample could have been tampered with, mislabeled, or mixed with something else. Judges don't throw evidence out because they think it's fake. They throw it out because the system couldn't prove it wasn't compromised. That's a meaningful distinction, and it matters more than most headlines let on.",
+        "Where it stands as a legal standard: courts have ruled consistently that the integrity of the process protects defendants and the prosecution equally. A conviction built on poorly handled evidence is a conviction that falls apart on appeal. So when you hear that a case collapsed over 'a paperwork issue,' that's usually what you're actually looking at. Read the motions. Form your own conclusion."
+      ],
+      "sourceTopic": "Chain of custody: why solid evidence still gets thrown out"
+    },
+    {
       "slug": "how-forensic-genealogy-is-reopening-cases-the-system-had-wri",
       "title": "How Forensic Genealogy Is Reopening Cases the System Had Written Off",
       "date": "2026-07-17",

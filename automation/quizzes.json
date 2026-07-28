@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-07-17T14:02:39.093Z"
+    "updated": "2026-07-28T14:02:43.786Z"
   },
   "quizzes": [
+    {
+      "slug": "the-watts-case-what-you-really-know",
+      "title": "The Watts Case: What You Really Know",
+      "tag": "Case File",
+      "description": "You've heard the headline version. Let's see how well you know what the evidence actually shows in the Watts family murders.",
+      "created": "2026-07-28",
+      "sourceTopic": "Watts Family Murders",
+      "questions": [
+        {
+          "q": "What was Chris Watts's occupation at the time of the murders in August 2018?",
+          "options": [
+            "Police officer",
+            "Oil and gas field operator",
+            "Long-haul truck driver",
+            "Construction foreman"
+          ],
+          "answer": 1,
+          "explain": "Watts worked for Anadarko Petroleum as an operator. That job gave him access to the oil site in Weld County, Colorado — which became central to where investigators found Shanann, Bella, and Celeste."
+        },
+        {
+          "q": "How did Shanann Watts's friend first raise the alarm on August 13, 2018?",
+          "options": [
+            "She called 911 after finding the front door open",
+            "She contacted police after Shanann missed a scheduled flight",
+            "She called a neighbor when Shanann didn't answer repeated texts and calls after returning home",
+            "She reported Shanann missing at her workplace"
+          ],
+          "answer": 2,
+          "explain": "Shanann had just returned from a work trip. Her friend Nickole Atkinson drove to the house, got no answer at the door, and contacted police directly. That welfare check set the whole investigation in motion within hours."
+        },
+        {
+          "q": "Chris Watts initially gave a televised interview before his arrest. What did he claim in that appearance?",
+          "options": [
+            "He said he had no knowledge of where his family was",
+            "He said Shanann had driven away with the girls after an argument",
+            "He said he suspected a stranger had entered the home",
+            "He refused to speak on camera"
+          ],
+          "answer": 1,
+          "explain": "In that interview, Watts told a local news crew that he last saw Shanann leaving the house with the children after a heated conversation. Investigators were already reviewing surveillance footage and phone data that contradicted that account."
+        },
+        {
+          "q": "Where were the remains of Bella and Celeste Watts discovered?",
+          "options": [
+            "In shallow graves on a neighbor's property",
+            "Submerged in oil tanks at an Anadarko work site",
+            "Buried in a field near the family home",
+            "In the bed of Chris Watts's work truck"
+          ],
+          "answer": 1,
+          "explain": "This is the detail that never leaves you once you read the case file. The girls were found in crude oil tanks at the Cervi 319 work site — a location Watts had visited that same morning, which investigators confirmed through his company GPS records."
+        },
+        {
+          "q": "Chris Watts initially faced trial but ultimately pleaded guilty. What sentence did he receive?",
+          "options": [
+            "Death penalty after a jury trial",
+            "Three consecutive life sentences without the possibility of parole",
+            "Life with the possibility of parole after 25 years",
+            "Two life sentences plus 48 years"
+          ],
+          "answer": 1,
+          "explain": "By pleading guilty in November 2018, Watts avoided the death penalty. The plea deal was accepted in part at the request of Shanann's family, who wanted to be spared a trial. He is serving five consecutive life terms — three for the murders, plus additional counts."
+        }
+      ]
+    },
     {
       "slug": "the-moscow-student-murders",
       "title": "The Moscow Student Murders",
