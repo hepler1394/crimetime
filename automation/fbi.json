@@ -3,9 +3,41 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1217,
     "baked": 150,
-    "updated": "2026-07-28T16:06:00.107Z"
+    "updated": "2026-07-28T19:55:26.814Z"
   },
   "items": [
+    {
+      "uid": "714d720712d940389b85fd1535031e0c",
+      "title": "MONA RENEE VALLO",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/mona-renee-vallo/@@images/image/large",
+      "office": "Albuquerque",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the person or persons responsible for the death of Mona Renee Vallo.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/mona-renee-vallo",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country"
+      ],
+      "publication": "2022-04-04T09:47:00"
+    },
+    {
+      "uid": "04d4aee30d154f21ae53948f4be7b52b",
+      "title": "CASINO ROBBERY - NEW MEXICO",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/casino-robbery---new-mexico/@@images/image/large",
+      "office": "Albuquerque",
+      "reward": "Reward up to $5,000 for information leading to the arrest and conviction of the unknown suspect responsible for the casino robbery.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/casino-robbery---new-mexico",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country"
+      ],
+      "publication": "2026-04-21T08:05:00"
+    },
     {
       "uid": "bbf2d6b0a4e24fbfb98de2749d8696fc",
       "title": "PABLO ZURIEL MIRANDA",
@@ -1356,21 +1388,6 @@
       "publication": "2026-04-20T10:56:00"
     },
     {
-      "uid": "04d4aee30d154f21ae53948f4be7b52b",
-      "title": "CASINO ROBBERY - NEW MEXICO",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/casino-robbery---new-mexico/@@images/image/large",
-      "office": "Albuquerque",
-      "reward": "Reward up to $5,000 for information leading to the arrest and conviction of the unknown suspect responsible for the casino robbery.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/casino-robbery---new-mexico",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2026-04-21T08:05:00"
-    },
-    {
       "uid": "6d4795c3c203428bb48ed1f0ce2477c3",
       "title": "RAMIL VENTURA PALAFOX",
       "kind": "wanted",
@@ -2260,21 +2277,6 @@
         "ViCAP Unidentified Persons"
       ],
       "publication": "2024-12-16T07:05:00"
-    },
-    {
-      "uid": "6bc39f5fe60a404899acd3ea41999ec1",
-      "title": "PATRICK SCOTT, JR.",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/patrick-scott-jr/@@images/image/large",
-      "office": "Sanfrancisco",
-      "reward": "Reward up to $20,000 for information leading to the arrest of the individual(s) responsible for the death of Patrick Scott, Jr.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/patrick-scott-jr",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2018-07-02T10:33:00"
     }
   ]
 }
