@@ -3,9 +3,24 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1217,
     "baked": 150,
-    "updated": "2026-07-28T19:55:26.814Z"
+    "updated": "2026-07-29T03:44:30.251Z"
   },
   "items": [
+    {
+      "uid": "039685727e5a438abfd601b17e41e5ca",
+      "title": "SATINDERJEET SINGH",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/satinderjeet-singh/@@images/image/large",
+      "office": "FBI",
+      "reward": "Reward up to $50,000 for information leading to the arrest of Satinderjeet Singh.",
+      "url": "https://www.fbi.gov/wanted/cei/satinderjeet-singh",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN ESCAPE RISK",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-07-06T08:18:00"
+    },
     {
       "uid": "714d720712d940389b85fd1535031e0c",
       "title": "MONA RENEE VALLO",
@@ -233,21 +248,6 @@
         "Kidnappings and Missing Persons"
       ],
       "publication": "2026-07-20T10:09:00"
-    },
-    {
-      "uid": "039685727e5a438abfd601b17e41e5ca",
-      "title": "SATINDERJEET SINGH",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/satinderjeet-singh/@@images/image/large",
-      "office": "FBI",
-      "reward": "Reward up to $50,000 for information leading to the arrest of Satinderjeet Singh.",
-      "url": "https://www.fbi.gov/wanted/cei/satinderjeet-singh",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN ESCAPE RISK",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-07-06T08:18:00"
     },
     {
       "uid": "12b0a5aa363c4167a9b2327f3d328d32",
