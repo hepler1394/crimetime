@@ -1,9 +1,9 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1217,
+    "totalOnFile": 1218,
     "baked": 150,
-    "updated": "2026-07-29T14:33:53.482Z"
+    "updated": "2026-07-29T19:47:50.913Z"
   },
   "items": [
     {
@@ -752,6 +752,22 @@
         "Ten Most Wanted Fugitives"
       ],
       "publication": "2021-10-20T07:20:00"
+    },
+    {
+      "uid": "9456ffa8-08fa-49fa-a811-e7c895014963",
+      "title": "ROBERT GARRETT STEWART, JR.",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/robert-garrett-stewart-jr/@@images/image/large",
+      "office": "Billings",
+      "reward": "Reward up to $10,000 for information that leads to the resolution of this case.",
+      "url": "https://www.fbi.gov/wanted/kidnap/robert-garrett-stewart-jr",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons",
+        "Indian Country"
+      ],
+      "publication": "2016-02-04T07:00:00"
     },
     {
       "uid": "9456ffa8-08fa-49fa-a811-e7c895014963",
@@ -2262,21 +2278,6 @@
         "Cyber's Most Wanted"
       ],
       "publication": "2021-03-15T07:47:00"
-    },
-    {
-      "uid": "b31c9d2939e94444813f909c6f867631",
-      "title": "JANE DOE - PACIFICA, CALIFORNIA",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/vicap/unidentified-persons/jane-doe---pacifica-california/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/unidentified-persons/jane-doe---pacifica-california",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Unidentified Persons"
-      ],
-      "publication": "2024-12-16T07:05:00"
     }
   ]
 }
