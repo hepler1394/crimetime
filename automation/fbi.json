@@ -1,11 +1,26 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1218,
+    "totalOnFile": 1219,
     "baked": 150,
-    "updated": "2026-07-30T14:36:24.577Z"
+    "updated": "2026-07-30T19:55:41.445Z"
   },
   "items": [
+    {
+      "uid": "b4ba813f6a2048cf8008726178dbb40e",
+      "title": "GURPREET SINGH",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/gurpreet-singh/@@images/image/large",
+      "office": "Losangeles",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/gurpreet-singh",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-07-30T08:43:00"
+    },
     {
       "uid": "3bd6151398a84bde8b7b4af3474ef5c3",
       "title": "TRIPLE HOMICIDE - DELAWARE",
@@ -2262,21 +2277,6 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2024-12-09T14:12:00"
-    },
-    {
-      "uid": "7e2490248a2746ccb011d7d11abea5a9",
-      "title": "MUJTABA RAZA",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cyber/mujtaba-raza/@@images/image/large",
-      "office": "Newark",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cyber/mujtaba-raza",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Cyber's Most Wanted"
-      ],
-      "publication": "2021-03-15T07:47:00"
     }
   ]
 }
