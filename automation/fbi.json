@@ -1,9 +1,9 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1217,
+    "totalOnFile": 1218,
     "baked": 150,
-    "updated": "2026-07-29T13:00:07.065Z"
+    "updated": "2026-07-30T13:00:06.588Z"
   },
   "items": [
     {
@@ -11,7 +11,7 @@
       "title": "SATINDERJEET SINGH",
       "kind": "wanted",
       "image": "https://www.fbi.gov/wanted/cei/satinderjeet-singh/@@images/image/large",
-      "office": "FBI",
+      "office": "Losangeles",
       "reward": "Reward up to $50,000 for information leading to the arrest of Satinderjeet Singh.",
       "url": "https://www.fbi.gov/wanted/cei/satinderjeet-singh",
       "status": "na",
@@ -338,6 +338,21 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2026-06-30T09:35:00"
+    },
+    {
+      "uid": "3dbb2a1b320d4d819d80830869f5945f",
+      "title": "KINGSTON CAMPBELL",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/kingston-campbell/@@images/image/large",
+      "office": "Richmond",
+      "reward": "Reward up to $30,000 for information leading to the arrest and conviction of the individual(s) responsible for the death of Kingston Campbell.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/kingston-campbell",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-07-16T11:30:00"
     },
     {
       "uid": "11f73d916ebf4a6aa5c9b464623e86b6",
@@ -2262,21 +2277,6 @@
         "Cyber's Most Wanted"
       ],
       "publication": "2021-03-15T07:47:00"
-    },
-    {
-      "uid": "b31c9d2939e94444813f909c6f867631",
-      "title": "JANE DOE - PACIFICA, CALIFORNIA",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/vicap/unidentified-persons/jane-doe---pacifica-california/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/unidentified-persons/jane-doe---pacifica-california",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Unidentified Persons"
-      ],
-      "publication": "2024-12-16T07:05:00"
     }
   ]
 }
