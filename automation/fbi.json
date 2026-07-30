@@ -3,7 +3,7 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1218,
     "baked": 150,
-    "updated": "2026-07-29T19:47:50.913Z"
+    "updated": "2026-07-30T03:34:31.565Z"
   },
   "items": [
     {
@@ -11,7 +11,7 @@
       "title": "SATINDERJEET SINGH",
       "kind": "wanted",
       "image": "https://www.fbi.gov/wanted/cei/satinderjeet-singh/@@images/image/large",
-      "office": "FBI",
+      "office": "Losangeles",
       "reward": "Reward up to $50,000 for information leading to the arrest of Satinderjeet Singh.",
       "url": "https://www.fbi.gov/wanted/cei/satinderjeet-singh",
       "status": "na",
@@ -338,6 +338,21 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2026-06-30T09:35:00"
+    },
+    {
+      "uid": "3dbb2a1b320d4d819d80830869f5945f",
+      "title": "KINGSTON CAMPBELL",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/kingston-campbell/@@images/image/large",
+      "office": "Richmond",
+      "reward": "Reward up to $30,000 for information leading to the arrest and conviction of the individual(s) responsible for the death of Kingston Campbell.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/kingston-campbell",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-07-16T11:30:00"
     },
     {
       "uid": "11f73d916ebf4a6aa5c9b464623e86b6",
@@ -752,22 +767,6 @@
         "Ten Most Wanted Fugitives"
       ],
       "publication": "2021-10-20T07:20:00"
-    },
-    {
-      "uid": "9456ffa8-08fa-49fa-a811-e7c895014963",
-      "title": "ROBERT GARRETT STEWART, JR.",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/robert-garrett-stewart-jr/@@images/image/large",
-      "office": "Billings",
-      "reward": "Reward up to $10,000 for information that leads to the resolution of this case.",
-      "url": "https://www.fbi.gov/wanted/kidnap/robert-garrett-stewart-jr",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons",
-        "Indian Country"
-      ],
-      "publication": "2016-02-04T07:00:00"
     },
     {
       "uid": "9456ffa8-08fa-49fa-a811-e7c895014963",
