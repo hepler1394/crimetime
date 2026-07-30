@@ -3,9 +3,40 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1218,
     "baked": 150,
-    "updated": "2026-07-30T09:06:47.346Z"
+    "updated": "2026-07-30T14:36:24.577Z"
   },
   "items": [
+    {
+      "uid": "3bd6151398a84bde8b7b4af3474ef5c3",
+      "title": "TRIPLE HOMICIDE - DELAWARE",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/triple-homicide---delaware/@@images/image/large",
+      "office": "Baltimore",
+      "reward": "Reward up to $5,000 for information leading to the arrest and conviction of the individuals involved in these shootings.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/triple-homicide---delaware",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-06-17T08:05:00"
+    },
+    {
+      "uid": "6432636baed2441c9a4c0ae9b4bc4323",
+      "title": "CARLOS ANDRES RENDON-BERMUDEZ",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/wcc/carlos-andres-rendon-bermudez/@@images/image/large",
+      "office": "Sanjuan",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/wcc/carlos-andres-rendon-bermudez",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
+      "subjects": [
+        "White-Collar Crime",
+        "Case of the Week"
+      ],
+      "publication": "2026-07-23T10:57:00"
+    },
     {
       "uid": "039685727e5a438abfd601b17e41e5ca",
       "title": "SATINDERJEET SINGH",
@@ -99,21 +130,6 @@
       "publication": "2026-07-27T11:54:00"
     },
     {
-      "uid": "6432636baed2441c9a4c0ae9b4bc4323",
-      "title": "CARLOS ANDRES RENDON-BERMUDEZ",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/wcc/carlos-andres-rendon-bermudez/@@images/image/large",
-      "office": "Sanjuan",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/wcc/carlos-andres-rendon-bermudez",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
-      "subjects": [
-        "White-Collar Crime"
-      ],
-      "publication": "2026-07-23T10:57:00"
-    },
-    {
       "uid": "9627161690684c62ada3daa4dee61645",
       "title": "ELAINE ANGENE ESCOE",
       "kind": "wanted",
@@ -157,22 +173,6 @@
         "Additional Violent Crimes"
       ],
       "publication": "2026-07-01T13:48:00"
-    },
-    {
-      "uid": "3bd6151398a84bde8b7b4af3474ef5c3",
-      "title": "TRIPLE HOMICIDE - DELAWARE",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/triple-homicide---delaware/@@images/image/large",
-      "office": "Baltimore",
-      "reward": "Reward up to $5,000 for information leading to the arrest and conviction of the individuals involved in these shootings.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/triple-homicide---delaware",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information",
-        "Case of the Week"
-      ],
-      "publication": "2026-06-17T08:05:00"
     },
     {
       "uid": "7b33028e22a94609927835f1475d99d3",
