@@ -1,9 +1,18 @@
 {
   "meta": {
     "intro": "Original CrimeTimeSnacks prints, straight from the studio — new designs drop automatically. Every file is real, print-ready art you can grab now; the print-on-demand store opens soon.",
-    "updated": "2026-07-28T16:06:20.254Z"
+    "updated": "2026-07-31T16:02:27.622Z"
   },
   "designs": [
+    {
+      "slug": "armchair-detective",
+      "slogan": "Armchair Detective",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "template": null,
+      "svg": "images/merch/armchair-detective.svg",
+      "created": "2026-07-31"
+    },
     {
       "slug": "burden-of-proof",
       "slogan": "Burden Of Proof",
