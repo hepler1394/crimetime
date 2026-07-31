@@ -1,11 +1,57 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1218,
+    "totalOnFile": 1219,
     "baked": 150,
-    "updated": "2026-07-30T13:00:06.588Z"
+    "updated": "2026-07-31T13:00:03.091Z"
   },
   "items": [
+    {
+      "uid": "b4ba813f6a2048cf8008726178dbb40e",
+      "title": "GURPREET SINGH",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/gurpreet-singh/@@images/image/large",
+      "office": "Losangeles",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/gurpreet-singh",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-07-30T08:43:00"
+    },
+    {
+      "uid": "3bd6151398a84bde8b7b4af3474ef5c3",
+      "title": "TRIPLE HOMICIDE - DELAWARE",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/triple-homicide---delaware/@@images/image/large",
+      "office": "Baltimore",
+      "reward": "Reward up to $5,000 for information leading to the arrest and conviction of the individuals involved in these shootings.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/triple-homicide---delaware",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-06-17T08:05:00"
+    },
+    {
+      "uid": "6432636baed2441c9a4c0ae9b4bc4323",
+      "title": "CARLOS ANDRES RENDON-BERMUDEZ",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/wcc/carlos-andres-rendon-bermudez/@@images/image/large",
+      "office": "Sanjuan",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/wcc/carlos-andres-rendon-bermudez",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
+      "subjects": [
+        "White-Collar Crime",
+        "Case of the Week"
+      ],
+      "publication": "2026-07-23T10:57:00"
+    },
     {
       "uid": "039685727e5a438abfd601b17e41e5ca",
       "title": "SATINDERJEET SINGH",
@@ -99,21 +145,6 @@
       "publication": "2026-07-27T11:54:00"
     },
     {
-      "uid": "6432636baed2441c9a4c0ae9b4bc4323",
-      "title": "CARLOS ANDRES RENDON-BERMUDEZ",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/wcc/carlos-andres-rendon-bermudez/@@images/image/large",
-      "office": "Sanjuan",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/wcc/carlos-andres-rendon-bermudez",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
-      "subjects": [
-        "White-Collar Crime"
-      ],
-      "publication": "2026-07-23T10:57:00"
-    },
-    {
       "uid": "9627161690684c62ada3daa4dee61645",
       "title": "ELAINE ANGENE ESCOE",
       "kind": "wanted",
@@ -157,22 +188,6 @@
         "Additional Violent Crimes"
       ],
       "publication": "2026-07-01T13:48:00"
-    },
-    {
-      "uid": "3bd6151398a84bde8b7b4af3474ef5c3",
-      "title": "TRIPLE HOMICIDE - DELAWARE",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/triple-homicide---delaware/@@images/image/large",
-      "office": "Baltimore",
-      "reward": "Reward up to $5,000 for information leading to the arrest and conviction of the individuals involved in these shootings.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/triple-homicide---delaware",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information",
-        "Case of the Week"
-      ],
-      "publication": "2026-06-17T08:05:00"
     },
     {
       "uid": "7b33028e22a94609927835f1475d99d3",
@@ -2262,21 +2277,6 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2024-12-09T14:12:00"
-    },
-    {
-      "uid": "7e2490248a2746ccb011d7d11abea5a9",
-      "title": "MUJTABA RAZA",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cyber/mujtaba-raza/@@images/image/large",
-      "office": "Newark",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cyber/mujtaba-raza",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Cyber's Most Wanted"
-      ],
-      "publication": "2021-03-15T07:47:00"
     }
   ]
 }
