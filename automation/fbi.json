@@ -1,9 +1,9 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1220,
+    "totalOnFile": 1221,
     "baked": 150,
-    "updated": "2026-08-04T09:13:07.547Z"
+    "updated": "2026-08-04T14:43:13.040Z"
   },
   "items": [
     {
@@ -541,6 +541,21 @@
         "Kidnappings and Missing Persons"
       ],
       "publication": "2026-03-17T09:56:00"
+    },
+    {
+      "uid": "c5103e3333a545cd9596c4a065d5a40d",
+      "title": "MARGARET HADDICAN-MCENROE",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/margaret-haddican-mcenroe/@@images/image/large",
+      "office": "Newark",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of those involved in the disappearance of Margaret Haddican-McEnroe.",
+      "url": "https://www.fbi.gov/wanted/kidnap/margaret-haddican-mcenroe",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2026-06-09T10:27:00"
     },
     {
       "uid": "07909fc7290c4a34a289eda0354528ab",
@@ -2262,22 +2277,6 @@
         "ViCAP Missing Persons"
       ],
       "publication": "2024-03-28T11:40:00"
-    },
-    {
-      "uid": "32eeba50d906400786c23ed38133fd04",
-      "title": "APT 41 GROUP",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cyber/apt-41-group/@@images/image/large",
-      "office": "Washingtondc",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cyber/apt-41-group",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Cyber's Most Wanted",
-        "China Threat"
-      ],
-      "publication": "2020-09-03T09:18:00"
     }
   ]
 }
