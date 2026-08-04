@@ -1,11 +1,26 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1221,
+    "totalOnFile": 1220,
     "baked": 150,
-    "updated": "2026-08-04T16:13:19.197Z"
+    "updated": "2026-08-04T20:02:30.375Z"
   },
   "items": [
+    {
+      "uid": "a9c83daab608499a95ee547a51d55231",
+      "title": "ONITA ROSTAS",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/onita-rostas/@@images/image/large",
+      "office": "Kansascity",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/onita-rostas",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2024-12-09T14:39:00"
+    },
     {
       "uid": "526a99e838eb48b581bde31de9130dbd",
       "title": "KHADIJAH ROSE BRITTON",
@@ -2262,21 +2277,6 @@
         "Kidnappings and Missing Persons"
       ],
       "publication": "2012-11-06T07:00:00"
-    },
-    {
-      "uid": "ac609431eee449b1815c5b8b8ac3414f",
-      "title": "ALEXANDER STUART JAMES - BRIDGE CITY, TEXAS",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/alexander-stuart-james---bridge-city-texas/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/alexander-stuart-james---bridge-city-texas",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Missing Persons"
-      ],
-      "publication": "2024-03-28T11:40:00"
     }
   ]
 }
