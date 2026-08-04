@@ -5,6 +5,23 @@
   },
   "posts": [
     {
+      "slug": "what-you-saw-and-what-happened-are-not-the-same-thing",
+      "title": "What You Saw and What Happened Are Not the Same Thing",
+      "date": "2026-08-04",
+      "category": "analysis",
+      "categoryLabel": "Analysis",
+      "image": "images/logo.png",
+      "author": "Cory",
+      "featured": false,
+      "excerpt": "Eyewitness testimony feels like the gold standard in court. The case file shows it's one of the most fragile kinds of evidence we have.",
+      "body": [
+        "The witness took the stand, looked the jury in the eye, and said she was certain. That kind of certainty is hard to argue with in a courtroom. Here's what the record actually shows: certainty and accuracy are two completely different things, and the human memory doesn't work the way most people assume it does.",
+        "Memory isn't a recording. It's reconstructive — your brain fills gaps every time you retrieve a moment, and outside information can quietly rewrite what you think you saw. Researchers who've studied wrongful convictions consistently find eyewitness misidentification listed among the leading contributing factors. It shows up in case after case: a confident witness, a clean identification, and then DNA or documentary evidence that points somewhere else entirely. The lineup procedure, the lighting, the stress of the original event, the time elapsed — all of it shapes what a witness believes they remember. None of that uncertainty tends to make it into closing arguments.",
+        "I've gone back through the case files on several episodes where eyewitness accounts were treated as airtight. In almost every one, the details shifted between the initial report and trial testimony — sometimes in small ways, sometimes in ways that should have changed everything. That's not about dishonesty. It's about how memory actually works. Read the studies. Read the file. Form your own conclusion."
+      ],
+      "sourceTopic": "Why eyewitness testimony is less reliable than people think"
+    },
+    {
       "slug": "why-solid-evidence-gets-thrown-out-of-court",
       "title": "Why Solid Evidence Gets Thrown Out of Court",
       "date": "2026-07-28",

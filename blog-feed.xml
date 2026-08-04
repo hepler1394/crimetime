@@ -6,7 +6,15 @@
     <atom:link href="https://crimetime.vercel.app/blog-feed.xml" rel="self" type="application/rss+xml"/>
     <description>True crime case updates, analysis, and the stories behind the headlines.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Aug 2026 13:00:27 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 14:02:42 GMT</lastBuildDate>
+    <item>
+      <title>What You Saw and What Happened Are Not the Same Thing</title>
+      <link>https://crimetime.vercel.app/blog-posts/what-you-saw-and-what-happened-are-not-the-same-thing.html</link>
+      <guid isPermaLink="true">https://crimetime.vercel.app/blog-posts/what-you-saw-and-what-happened-are-not-the-same-thing.html</guid>
+      <category>Analysis</category>
+      <pubDate>Tue, 04 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Eyewitness testimony feels like the gold standard in court. The case file shows it's one of the most fragile kinds of evidence we have.</description>
+    </item>
     <item>
       <title>Why Solid Evidence Gets Thrown Out of Court</title>
       <link>https://crimetime.vercel.app/blog-posts/why-solid-evidence-gets-thrown-out-of-court.html</link>

@@ -61,6 +61,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://crimetime.vercel.app/blog-posts/what-you-saw-and-what-happened-are-not-the-same-thing.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://crimetime.vercel.app/blog-posts/why-solid-evidence-gets-thrown-out-of-court.html</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>

@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-04T13:00:28.344Z",
-  "improvementsShipped": 438,
+  "generated": "2026-08-04T14:02:43.433Z",
+  "improvementsShipped": 441,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
     "content": [
@@ -11,14 +11,14 @@
   },
   "counts": {
     "episodes": 6,
-    "posts": 10,
-    "merchDesigns": 17,
+    "posts": 11,
+    "merchDesigns": 18,
     "merchCollection": 3,
-    "quizzes": 11,
-    "quizQuestions": 55,
+    "quizzes": 12,
+    "quizQuestions": 60,
     "fbiCases": 150,
     "videos": 1,
-    "topicsQueued": 124,
+    "topicsQueued": 123,
     "topicsTotal": 126
   },
   "latest": {
@@ -27,28 +27,28 @@
       "date": "2025-03-16"
     },
     "post": {
-      "title": "Why Solid Evidence Gets Thrown Out of Court",
-      "date": "2026-07-28"
+      "title": "What You Saw and What Happened Are Not the Same Thing",
+      "date": "2026-08-04"
     },
     "quiz": {
-      "title": "The Watts Case: What You Really Know",
-      "created": "2026-07-28"
+      "title": "The Menendez Brothers: Know the Case",
+      "created": "2026-08-04"
     }
   },
   "freshness": {
-    "episodesJson": "2026-08-04T13:00:03.946Z",
-    "blogJson": "2026-07-28T14:00:35.282Z",
-    "merchJson": "2026-07-28T14:01:27.485Z",
-    "quizzesJson": "2026-07-28T14:02:43.786Z",
-    "fbiJson": "2026-08-04T13:00:06.465Z",
+    "episodesJson": "2026-08-04T14:00:02.454Z",
+    "blogJson": "2026-08-04T14:00:36.487Z",
+    "merchJson": "2026-08-04T14:01:27.393Z",
+    "quizzesJson": "2026-08-04T14:02:41.944Z",
+    "fbiJson": "2026-08-04T14:00:05.145Z",
     "css": "2026-07-15T23:13:26.319Z"
   },
   "nextTopics": [
-    "Why eyewitness testimony is less reliable than people think",
     "How cold case units decide which files to reopen",
     "Understanding DNA familial searching",
     "Wrongful convictions and the work of the Innocence Project",
     "What reasonable doubt actually means in a courtroom",
-    "The history of fingerprint evidence"
+    "The history of fingerprint evidence",
+    "How the FBI's ViCAP database links violent crimes"
   ]
 }

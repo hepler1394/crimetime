@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-07-28T14:02:43.786Z"
+    "updated": "2026-08-04T14:02:41.944Z"
   },
   "quizzes": [
+    {
+      "slug": "the-menendez-brothers-know-the-case",
+      "title": "The Menendez Brothers: Know the Case",
+      "tag": "True Crime Classic",
+      "description": "You've heard the headlines. But how well do you actually know what the case file shows? Five questions. Let's find out.",
+      "created": "2026-08-04",
+      "sourceTopic": "ERIK AND LYLE: The Menendez Brothers",
+      "questions": [
+        {
+          "q": "On what date were Jose and Kitty Menendez killed in their Beverly Hills home?",
+          "options": [
+            "August 20, 1989",
+            "October 14, 1989",
+            "June 5, 1990",
+            "December 31, 1988"
+          ],
+          "answer": 0,
+          "explain": "August 20, 1989. The brothers were home that night. The physical evidence at the scene was extensive, and it took investigators a while to focus on Erik and Lyle — initially detectives couldn't rule out an organized crime connection given Jose's entertainment industry dealings."
+        },
+        {
+          "q": "What was Jose Menendez's profession at the time of his death?",
+          "options": [
+            "Film director",
+            "Real estate developer",
+            "CEO of LIVE Entertainment",
+            "Criminal defense attorney"
+          ],
+          "answer": 2,
+          "explain": "Jose was the CEO of LIVE Entertainment, a major home video distribution company. That business background is part of why early investigators briefly considered a professional hit. The case file shows he'd climbed fast in the entertainment industry — that detail gets lost in coverage focused on the sons."
+        },
+        {
+          "q": "How did investigators first zero in on Erik and Lyle as suspects?",
+          "options": [
+            "A neighbor reported seeing them leave the house",
+            "Erik confessed to his therapist, Dr. L. Jerome Oziel",
+            "Lyle made incriminating statements to police",
+            "Phone records placed them near the scene"
+          ],
+          "answer": 1,
+          "explain": "Erik told his therapist, Dr. L. Jerome Oziel, about the killings. Oziel's receptionist Judalon Smyth later contacted police after her own falling-out with Oziel. That tip is what broke the case open. The admissibility of those therapy sessions became a major legal fight before the trials even began."
+        },
+        {
+          "q": "How many trials did the Menendez brothers face before their final convictions?",
+          "options": [
+            "One trial, one conviction",
+            "Two separate trials, then a retrial after hung juries",
+            "A single joint trial ending in conviction",
+            "Three separate proceedings"
+          ],
+          "answer": 1,
+          "explain": "The first trials — held separately for each brother in 1993 and 1994 — both ended in hung juries. Jurors deadlocked largely over the abuse defense. A second set of trials in 1995 and 1996, this time tried jointly and with limits on certain testimony, resulted in first-degree murder convictions for both."
+        },
+        {
+          "q": "To what sentence were both Erik and Lyle Menendez ultimately sentenced?",
+          "options": [
+            "Death penalty",
+            "Life in prison with the possibility of parole",
+            "25 years to life",
+            "Life in prison without the possibility of parole"
+          ],
+          "answer": 3,
+          "explain": "Both brothers were sentenced to life without the possibility of parole. The prosecution successfully argued premeditation — the brothers had purchased shotguns days before the killings. That firearms purchase is one of the most documented and consequential facts in the case file."
+        }
+      ]
+    },
     {
       "slug": "the-watts-case-what-you-really-know",
       "title": "The Watts Case: What You Really Know",

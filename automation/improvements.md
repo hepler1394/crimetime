@@ -502,3 +502,6 @@ with an [auto] tag — the counter on Mission Control reads this file.
 436. [auto 2026-07-17] Published new quiz: "The Moscow Student Murders" (5 questions)
 437. [auto 2026-07-28] Published blog post in Cory's voice: "Why Solid Evidence Gets Thrown Out of Court"
 438. [auto 2026-07-28] Published new quiz: "The Watts Case: What You Really Know" (5 questions)
+439. [auto 2026-08-04] Published blog post in Cory's voice: "What You Saw and What Happened Are Not the Same Thing"
+440. [auto 2026-08-04] Dropped 1 new merch design into the vault
+441. [auto 2026-08-04] Published new quiz: "The Menendez Brothers: Know the Case" (5 questions)
