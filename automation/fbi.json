@@ -1,9 +1,9 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1219,
+    "totalOnFile": 1220,
     "baked": 150,
-    "updated": "2026-08-03T20:01:54.149Z"
+    "updated": "2026-08-04T03:42:46.185Z"
   },
   "items": [
     {
@@ -21,6 +21,21 @@
         "Indian Country"
       ],
       "publication": "2021-02-02T07:09:00"
+    },
+    {
+      "uid": "1faa04855c12465f88961677a65a7dec",
+      "title": "GAS STATION SHOOTING - CHICAGO, ILLINOIS",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/gas-station-shooting---chicago-illinois/@@images/image/large",
+      "office": "Chicago",
+      "reward": "Reward up to $10,000 for information leading to the identification of the unknown suspects.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/gas-station-shooting---chicago-illinois",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-07-31T10:05:00"
     },
     {
       "uid": "b4ba813f6a2048cf8008726178dbb40e",
@@ -1524,6 +1539,21 @@
       "publication": "2026-04-10T12:42:00"
     },
     {
+      "uid": "9ec6b210780643858e7ab470d8b28c72",
+      "title": "UNKNOWN BANK ROBBER - WISCONSIN",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/unknown-bank-robber---wisconsin/@@images/image/large",
+      "office": "Milwaukee",
+      "reward": "Reward up to $5,000 for information leading to the arrest and conviction of the unknown suspect involved in this robbery.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/unknown-bank-robber---wisconsin",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-04-06T11:41:00"
+    },
+    {
       "uid": "1fa52fde689c4a56bb186e68f2648aaa",
       "title": "SALLI MARIE THOMAS - WAYNESBORO, VIRGINIA",
       "kind": "missing",
@@ -2248,36 +2278,6 @@
         "China Threat"
       ],
       "publication": "2020-09-03T09:18:00"
-    },
-    {
-      "uid": "582c659c2bf64eaf86e2591dbd951598",
-      "title": "DIANA LEE PECKHAM - BARODA, MICHIGAN",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/diana-lee-peckham---baroda-michigan/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/diana-lee-peckham---baroda-michigan",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Missing Persons"
-      ],
-      "publication": "2025-02-04T07:48:00"
-    },
-    {
-      "uid": "84c85e5e75394bdb9b27579fe69d1e49",
-      "title": "VASILE SAVA",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/vasile-sava/@@images/image/large",
-      "office": "Kansascity",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cei/vasile-sava",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2024-12-09T14:12:00"
     }
   ]
 }
