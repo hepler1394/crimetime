@@ -1,11 +1,42 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1220,
+    "totalOnFile": 1221,
     "baked": 150,
-    "updated": "2026-08-05T13:00:04.388Z"
+    "updated": "2026-08-06T13:00:08.446Z"
   },
   "items": [
+    {
+      "uid": "6432636baed2441c9a4c0ae9b4bc4323",
+      "title": "CARLOS ANDRES RENDON-BERMUDEZ",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/wcc/carlos-andres-rendon-bermudez/@@images/image/large",
+      "office": "Sanjuan",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/wcc/carlos-andres-rendon-bermudez",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
+      "subjects": [
+        "White-Collar Crime"
+      ],
+      "publication": "2026-07-23T10:57:00"
+    },
+    {
+      "uid": "cbcf79b08004491e9f395edc6a8ef823",
+      "title": "AMBERLY MENDOZA",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/amberly-mendoza/@@images/image/large",
+      "office": "Phoenix",
+      "reward": "Reward up to $30,000 for information leading to the arrest and conviction of the individual(s) involved in the death of Amberly Mendoza.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/amberly-mendoza",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Case of the Week"
+      ],
+      "publication": "2026-01-22T11:43:00"
+    },
     {
       "uid": "a9c83daab608499a95ee547a51d55231",
       "title": "ONITA ROSTAS",
@@ -81,22 +112,6 @@
         "Seeking Information"
       ],
       "publication": "2026-06-17T08:05:00"
-    },
-    {
-      "uid": "6432636baed2441c9a4c0ae9b4bc4323",
-      "title": "CARLOS ANDRES RENDON-BERMUDEZ",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/wcc/carlos-andres-rendon-bermudez/@@images/image/large",
-      "office": "Sanjuan",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/wcc/carlos-andres-rendon-bermudez",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
-      "subjects": [
-        "White-Collar Crime",
-        "Case of the Week"
-      ],
-      "publication": "2026-07-23T10:57:00"
     },
     {
       "uid": "039685727e5a438abfd601b17e41e5ca",
@@ -2262,21 +2277,6 @@
         "Indian Country"
       ],
       "publication": "2020-04-17T08:26:00"
-    },
-    {
-      "uid": "952a0f45262b4a3a80f3d7839dda45fd",
-      "title": "SHAYAN KAZEMI",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/shayan-kazemi-1/@@images/image/large",
-      "office": "Washingtondc",
-      "reward": "The United States Government is offering a reward of up to $200,000 for information leading directly to the safe location, recovery, and return of Shayan Kazemi.",
-      "url": "https://www.fbi.gov/wanted/kidnap/shayan-kazemi-1",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons"
-      ],
-      "publication": "2012-11-06T07:00:00"
     }
   ]
 }
