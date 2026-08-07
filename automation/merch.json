@@ -1,9 +1,18 @@
 {
   "meta": {
     "intro": "Original CrimeTimeSnacks prints, straight from the studio — new designs drop automatically. Every file is real, print-ready art you can grab now; the print-on-demand store opens soon.",
-    "updated": "2026-08-04T16:13:39.340Z"
+    "updated": "2026-08-07T14:55:28.771Z"
   },
   "designs": [
+    {
+      "slug": "person-of-interest",
+      "slogan": "Person Of Interest",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "template": null,
+      "svg": "images/merch/person-of-interest.svg",
+      "created": "2026-08-07"
+    },
     {
       "slug": "due-process",
       "slogan": "Due Process",
