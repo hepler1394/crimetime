@@ -3,7 +3,7 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1221,
     "baked": 150,
-    "updated": "2026-08-07T07:45:41.587Z"
+    "updated": "2026-08-07T13:42:34.169Z"
   },
   "items": [
     {
@@ -1524,6 +1524,36 @@
       "publication": "2021-03-10T12:37:00"
     },
     {
+      "uid": "6d4795c3c203428bb48ed1f0ce2477c3",
+      "title": "RAMIL VENTURA PALAFOX",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/wcc/ramil-ventura-palafox/@@images/image/large",
+      "office": "Washingtondc",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/wcc/ramil-ventura-palafox",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
+      "subjects": [
+        "White-Collar Crime"
+      ],
+      "publication": "2026-04-13T10:45:00"
+    },
+    {
+      "uid": "f05cba69aa3244b6ad1b57d232cd5160",
+      "title": "KASHAWN NICOLA ROPER",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/topten/kashawn-nicola-roper/@@images/image/large",
+      "office": "Kansascity",
+      "reward": "Reward up to $1,000,000 for information leading directly to the arrest of KaShawn Nicola Roper.",
+      "url": "https://www.fbi.gov/wanted/topten/kashawn-nicola-roper",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Ten Most Wanted Fugitives"
+      ],
+      "publication": "2021-03-10T12:37:00"
+    },
+    {
       "uid": "1f79104a765c4111a04987ef2adcd034",
       "title": "AUSTIN JAN SY YATCO",
       "kind": "wanted",
@@ -2246,37 +2276,6 @@
         "Crimes Against Children"
       ],
       "publication": "2024-09-16T08:04:00"
-    },
-    {
-      "uid": "71346df216744cb9a9a22934867c3d9b",
-      "title": "TRIPLE SHOOTING INVESTIGATION",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/triple-shooting-investigation/@@images/image/large",
-      "office": "Milwaukee",
-      "reward": "Reward up to $10,000 for information leading to the identification, arrest, and conviction of the individual(s) who committed this shooting.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/triple-shooting-investigation",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2024-09-18T10:20:00"
-    },
-    {
-      "uid": "66802fe008634da18d76070e809e2271",
-      "title": "CARMEN CHARGER",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/carmen-charger/@@images/image/large",
-      "office": "Minneapolis",
-      "reward": "Reward up to $10,000 for information that leads to an arrest and conviction in this case.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/carmen-charger",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information",
-        "Indian Country"
-      ],
-      "publication": "2020-04-17T08:26:00"
     }
   ]
 }
