@@ -3,9 +3,39 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1221,
     "baked": 150,
-    "updated": "2026-08-07T13:00:03.385Z"
+    "updated": "2026-08-08T13:00:04.095Z"
   },
   "items": [
+    {
+      "uid": "0460b4c07ded49749b0057832068ff23",
+      "title": "CARLOS ANDRES RIVERA VARELA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/carlos-andres-rivera-varela/@@images/image/large",
+      "office": "Newyork",
+      "reward": "The United States Department of State’s Transnational Organized Crime Rewards Program is offering a reward of up to $10 million for information leading to the arrest and/or conviction of Carlos Andres Rivera Varela.",
+      "url": "https://www.fbi.gov/wanted/cei/carlos-andres-rivera-varela",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND EXTREMELY DANGEROUS",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2025-11-06T09:56:00"
+    },
+    {
+      "uid": "10d62a2c73a2441ab02eaf0d5ad88c63",
+      "title": "JULIO CESAR MONTERO PINZON",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/julio-cesar-montero-pinzon/@@images/image/large",
+      "office": "Newyork",
+      "reward": "The United States Department of State’s Transnational Organized Crime Rewards Program is offering a reward of up to $10 million for information leading to the arrest and/or conviction of Julio Cesar Montero Pinzon.",
+      "url": "https://www.fbi.gov/wanted/cei/julio-cesar-montero-pinzon",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND EXTREMELY DANGEROUS",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2025-11-06T10:24:00"
+    },
     {
       "uid": "6432636baed2441c9a4c0ae9b4bc4323",
       "title": "CARLOS ANDRES RENDON-BERMUDEZ",
@@ -2246,37 +2276,6 @@
         "Crimes Against Children"
       ],
       "publication": "2024-09-16T08:04:00"
-    },
-    {
-      "uid": "71346df216744cb9a9a22934867c3d9b",
-      "title": "TRIPLE SHOOTING INVESTIGATION",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/triple-shooting-investigation/@@images/image/large",
-      "office": "Milwaukee",
-      "reward": "Reward up to $10,000 for information leading to the identification, arrest, and conviction of the individual(s) who committed this shooting.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/triple-shooting-investigation",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2024-09-18T10:20:00"
-    },
-    {
-      "uid": "66802fe008634da18d76070e809e2271",
-      "title": "CARMEN CHARGER",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/carmen-charger/@@images/image/large",
-      "office": "Minneapolis",
-      "reward": "Reward up to $10,000 for information that leads to an arrest and conviction in this case.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/carmen-charger",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information",
-        "Indian Country"
-      ],
-      "publication": "2020-04-17T08:26:00"
     }
   ]
 }
