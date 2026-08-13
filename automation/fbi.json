@@ -1,11 +1,118 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1221,
+    "totalOnFile": 1226,
     "baked": 150,
-    "updated": "2026-08-10T13:00:17.509Z"
+    "updated": "2026-08-13T13:00:04.429Z"
   },
   "items": [
+    {
+      "uid": "cbcf79b08004491e9f395edc6a8ef823",
+      "title": "AMBERLY MENDOZA",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/amberly-mendoza/@@images/image/large",
+      "office": "Phoenix",
+      "reward": "Reward up to $30,000 for information leading to the arrest and conviction of the individual(s) involved in the death of Amberly Mendoza.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/amberly-mendoza",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-01-22T11:43:00"
+    },
+    {
+      "uid": "2f842fd0b2cf4449806ab4c68813e563",
+      "title": "GREGORY HENDERSON, JR.",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/topten/gregory-henderson-jr/@@images/image/large",
+      "office": "Indianapolis",
+      "reward": "Reward up to $1,000,000 for information leading to the arrest of Gregory Henderson, Jr.",
+      "url": "https://www.fbi.gov/wanted/topten/gregory-henderson-jr",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Ten Most Wanted Fugitives",
+        "Case of the Week"
+      ],
+      "publication": "2026-07-14T10:03:00"
+    },
+    {
+      "uid": "9520d2075f0347aaae5aa86b01546d0f",
+      "title": "HECTOR VICENTE PAGUADA PAGUADA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/murders/hector-vicente-paguada-paguada/@@images/image/large",
+      "office": "Dallas",
+      "reward": "Reward up to $50,000 for information leading to the arrest and conviction of Hector Vicente Paguada Paguada.",
+      "url": "https://www.fbi.gov/wanted/murders/hector-vicente-paguada-paguada",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Violent Crime - Murders"
+      ],
+      "publication": "2026-07-27T10:56:00"
+    },
+    {
+      "uid": "e142f8a3a1af4525819897aaf1abe5b3",
+      "title": "MURDERS IN ROSWELL, NEW MEXICO",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/murders-in-roswell-new-mexico/roswellhoffmann.jpg/@@images/image/large",
+      "office": "Albuquerque",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/seeking-info/murders-in-roswell-new-mexico",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-08-11T07:51:00"
+    },
+    {
+      "uid": "2995d2f2225945088aa35c11995a95f9",
+      "title": "BANK ROBBERY - CLARKSVILLE, VIRGINIA",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/bank-robbery---clarksville-virginia/@@images/image/large",
+      "office": "Richmond",
+      "reward": "Reward up to $3,000 for information leading to the identification and arrest of the individual(s) involved in this bank robbery.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/bank-robbery---clarksville-virginia",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-08-10T12:19:00"
+    },
+    {
+      "uid": "b210d07f70a744f69e03b225b9935be2",
+      "title": "CHARLENE GAGNON - MANCHESTER, NEW HAMPSHIRE",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/charlene-gagnon---manchester-new-hampshire/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/charlene-gagnon---manchester-new-hampshire",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Missing Persons"
+      ],
+      "publication": "2026-08-10T10:25:00"
+    },
+    {
+      "uid": "729f26ab001d42b9b7fabba9dfb376a9",
+      "title": "DEATH INVESTIGATIONS - NORTH CAROLINA",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/death-investigations-north-carolina/lumbertonbennett.jpg/@@images/image/large",
+      "office": "Charlotte",
+      "reward": "Reward up to $75,000 for information leading to the discovery and apprehension of the person(s) responsible for the deaths of these women.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/death-investigations-north-carolina",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country"
+      ],
+      "publication": "2023-04-17T07:24:00"
+    },
     {
       "uid": "0460b4c07ded49749b0057832068ff23",
       "title": "CARLOS ANDRES RIVERA VARELA",
@@ -50,22 +157,6 @@
         "White-Collar Crime"
       ],
       "publication": "2026-07-23T10:57:00"
-    },
-    {
-      "uid": "cbcf79b08004491e9f395edc6a8ef823",
-      "title": "AMBERLY MENDOZA",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/amberly-mendoza/@@images/image/large",
-      "office": "Phoenix",
-      "reward": "Reward up to $30,000 for information leading to the arrest and conviction of the individual(s) involved in the death of Amberly Mendoza.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/amberly-mendoza",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information",
-        "Case of the Week"
-      ],
-      "publication": "2026-01-22T11:43:00"
     },
     {
       "uid": "a9c83daab608499a95ee547a51d55231",
@@ -2186,96 +2277,6 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2022-10-03T09:05:00"
-    },
-    {
-      "uid": "4e1704f560464ec6a57a56c60f53bebc",
-      "title": "CRYSTAL ROGERS",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/crystal-rogers-1/@@images/image/large",
-      "office": "Louisville",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/seeking-info/crystal-rogers-1",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2020-08-03T06:19:00"
-    },
-    {
-      "uid": "5fa689c890b446f9958181d77e665767",
-      "title": "BALLOT BOX FIRES",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/ballot-box-fires/@@images/image/large",
-      "office": "Portland, Seattle",
-      "reward": "Reward up to $25,000 for information leading to the identification, arrest, and conviction of the suspect responsible for these crimes.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/ballot-box-fires",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2024-11-06T13:32:00"
-    },
-    {
-      "uid": "91e9976624e54d9594d580e09f16ab16",
-      "title": "BRANDON LEE WAGONER",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/brandon-lee-wagoner/@@images/image/large",
-      "office": "Charlotte",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/seeking-info/brandon-lee-wagoner",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2023-09-20T10:03:00"
-    },
-    {
-      "uid": "712c3469993e4eb8ad706b65082b37ef",
-      "title": "SALOME FLORES APODACA",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/salome-flores-apodaca/@@images/image/large",
-      "office": "Washingtondc",
-      "reward": "Reward up to $35,000 for information leading directly to the arrest of Salome Flores Apodaca.",
-      "url": "https://www.fbi.gov/wanted/cei/salome-flores-apodaca",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN INTERNATIONAL FLIGHT RISK",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2019-03-05T07:18:00"
-    },
-    {
-      "uid": "5205142b7d724a36978265e00c88b309",
-      "title": "KEVIN BRAME",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/kevin-brame/@@images/image/large",
-      "office": "Cincinnati",
-      "reward": "Reward up to $15,000 for information leading to the arrest of a suspect or suspects involved in the murder of Dayton Police Officer Kevin Brame.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/kevin-brame",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2023-12-20T08:56:00"
-    },
-    {
-      "uid": "184d54e196b1438984c2764878b91160",
-      "title": "ADAN A. SAUCEDO-AVILA",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cac/adan-a-saucedo-avila/@@images/image/large",
-      "office": "Albuquerque",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cac/adan-a-saucedo-avila",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Crimes Against Children"
-      ],
-      "publication": "2024-09-16T08:04:00"
     }
   ]
 }
