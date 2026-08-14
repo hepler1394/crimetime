@@ -6,7 +6,15 @@
     <atom:link href="https://crimetime.vercel.app/blog-feed.xml" rel="self" type="application/rss+xml"/>
     <description>True crime case updates, analysis, and the stories behind the headlines.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Aug 2026 13:00:24 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2026 14:04:47 GMT</lastBuildDate>
+    <item>
+      <title>What Actually Gets a Cold Case Reopened</title>
+      <link>https://crimetime.vercel.app/blog-posts/what-actually-gets-a-cold-case-reopened.html</link>
+      <guid isPermaLink="true">https://crimetime.vercel.app/blog-posts/what-actually-gets-a-cold-case-reopened.html</guid>
+      <category>Investigation</category>
+      <pubDate>Fri, 14 Aug 2026 12:00:00 GMT</pubDate>
+      <description>It's not a tip line call or a true crime podcast. The decision to reopen a case comes down to something much more specific.</description>
+    </item>
     <item>
       <title>What You Saw and What Happened Are Not the Same Thing</title>
       <link>https://crimetime.vercel.app/blog-posts/what-you-saw-and-what-happened-are-not-the-same-thing.html</link>

@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-08-04T14:02:41.944Z"
+    "updated": "2026-08-14T14:04:46.223Z"
   },
   "quizzes": [
+    {
+      "slug": "jonben-t-ramsey-the-case-file",
+      "title": "JonBenét Ramsey: The Case File",
+      "tag": "Cold Case",
+      "description": "You know the headlines. Let's see how well you know what the record actually shows. Five questions. Snack-sized. No hype.",
+      "created": "2026-08-14",
+      "sourceTopic": "JonBenét Ramsey | The Facts 96-22 |Part 1",
+      "questions": [
+        {
+          "q": "On what date was JonBenét Ramsey reported missing by her parents?",
+          "options": [
+            "December 25, 1996",
+            "December 26, 1996",
+            "December 27, 1996",
+            "January 1, 1997"
+          ],
+          "answer": 1,
+          "explain": "Patsy Ramsey called 911 on the morning of December 26, 1996 — the day after Christmas. That timing matters, because it shapes everything about how the scene was handled in those critical first hours."
+        },
+        {
+          "q": "Where was JonBenét's body ultimately found?",
+          "options": [
+            "A neighbor's basement",
+            "The family's wine cellar in their own home",
+            "A park near the family's Boulder home",
+            "The garage of the Ramsey residence"
+          ],
+          "answer": 1,
+          "explain": "Her body was found in the wine cellar — a small, seldom-used room in the basement of the family's Boulder, Colorado home. It was discovered roughly seven hours after Patsy's 911 call, by John Ramsey himself."
+        },
+        {
+          "q": "In what city did the Ramsey family live at the time of JonBenét's death?",
+          "options": [
+            "Denver, Colorado",
+            "Aspen, Colorado",
+            "Boulder, Colorado",
+            "Colorado Springs, Colorado"
+          ],
+          "answer": 2,
+          "explain": "The family lived in Boulder, and the Boulder Police Department took the lead on the investigation. The handling of that investigation — particularly in the early hours — has been scrutinized and debated for decades."
+        },
+        {
+          "q": "What document found at the scene became a central piece of evidence in the investigation?",
+          "options": [
+            "A torn page from JonBenét's diary",
+            "A handwritten ransom note",
+            "A typed letter addressed to John Ramsey's employer",
+            "A printed list found in the basement"
+          ],
+          "answer": 1,
+          "explain": "A handwritten ransom note — unusually long at roughly two and a half pages — was found on the back staircase. The note's length, language, and the ransom amount it demanded have all been analyzed extensively. No confirmed match to a known suspect's handwriting has ever been publicly established."
+        },
+        {
+          "q": "What was JonBenét known for participating in that brought her significant public attention?",
+          "options": [
+            "Youth gymnastics competitions",
+            "Child beauty pageants",
+            "A local television commercial campaign",
+            "Elementary school spelling competitions"
+          ],
+          "answer": 1,
+          "explain": "JonBenét competed in child beauty pageants, and pageant footage became widely circulated after her death. It's worth noting that coverage of that footage drove much of the early media frenzy — often at the expense of focusing on what the evidence actually shows."
+        }
+      ]
+    },
     {
       "slug": "the-menendez-brothers-know-the-case",
       "title": "The Menendez Brothers: Know the Case",

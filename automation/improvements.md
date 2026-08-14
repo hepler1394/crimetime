@@ -505,3 +505,6 @@ with an [auto] tag — the counter on Mission Control reads this file.
 439. [auto 2026-08-04] Published blog post in Cory's voice: "What You Saw and What Happened Are Not the Same Thing"
 440. [auto 2026-08-04] Dropped 1 new merch design into the vault
 441. [auto 2026-08-04] Published new quiz: "The Menendez Brothers: Know the Case" (5 questions)
+442. [auto 2026-08-14] Published blog post in Cory's voice: "What Actually Gets a Cold Case Reopened"
+443. [auto 2026-08-14] Dropped 1 new merch design into the vault
+444. [auto 2026-08-14] Published new quiz: "JonBenét Ramsey: The Case File" (5 questions)

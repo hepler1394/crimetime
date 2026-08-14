@@ -5,6 +5,23 @@
   },
   "posts": [
     {
+      "slug": "what-actually-gets-a-cold-case-reopened",
+      "title": "What Actually Gets a Cold Case Reopened",
+      "date": "2026-08-14",
+      "category": "investigation",
+      "categoryLabel": "Investigation",
+      "image": "images/logo.png",
+      "author": "Cory",
+      "featured": false,
+      "excerpt": "It's not a tip line call or a true crime podcast. The decision to reopen a case comes down to something much more specific.",
+      "body": [
+        "The detail that stops a cold case detective cold isn't usually a dramatic confession. More often it's a lab report from fifteen years ago that was written before a particular DNA technology existed. That's the starting point — not a hunch, not public pressure. A concrete reason to believe the evidence can tell us something it couldn't before.",
+        "I've gone back through how several cold case units describe their triage process, and the framework is more structured than most people expect. Detectives weigh whether biological evidence was collected and still exists, whether a potential suspect profile can now be run against an expanded database, and whether key witnesses are still alive and locatable. Some units score cases on a point system. Others rely on a senior investigator making a judgment call against a backlog that can number in the hundreds. What the record consistently shows is that resource limits drive the calendar as much as anything else. A strong case with testable evidence can sit untouched for years simply because the unit is understaffed.",
+        "Where it stands right now is complicated. Advances in genetic genealogy have genuinely changed what cold case units think is solvable — cases that had zero viable leads a decade ago are back in active rotation. But access to those tools isn't uniform, and not every jurisdiction has a dedicated cold case unit at all. If you want to understand why one case gets attention and another stays on the shelf, the answer is usually found in the evidence log and the department budget, not the headlines. Read the file. Form your own conclusion."
+      ],
+      "sourceTopic": "How cold case units decide which files to reopen"
+    },
+    {
       "slug": "what-you-saw-and-what-happened-are-not-the-same-thing",
       "title": "What You Saw and What Happened Are Not the Same Thing",
       "date": "2026-08-04",
