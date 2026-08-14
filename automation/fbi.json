@@ -3,9 +3,25 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1229,
     "baked": 150,
-    "updated": "2026-08-13T19:28:58.597Z"
+    "updated": "2026-08-14T03:01:37.222Z"
   },
   "items": [
+    {
+      "uid": "c81529798b1c4c78b6185d7c4397d74a",
+      "title": "DARREN ANTHONY ROBINSON",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/darren-anthony-robinson/@@images/image/large",
+      "office": "Detroit",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Darren Anthony Robinson.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/darren-anthony-robinson",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster",
+        "Case of the Week"
+      ],
+      "publication": "2024-01-16T07:54:00"
+    },
     {
       "uid": "ffc971d4a49048bd891663a295da570f",
       "title": "JIMMY DOLLISON - GARNETT, KANSAS",
@@ -35,22 +51,6 @@
         "Ten Most Wanted Fugitives"
       ],
       "publication": "2026-07-14T10:03:00"
-    },
-    {
-      "uid": "c81529798b1c4c78b6185d7c4397d74a",
-      "title": "DARREN ANTHONY ROBINSON",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/darren-anthony-robinson/@@images/image/large",
-      "office": "Detroit",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Darren Anthony Robinson.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/darren-anthony-robinson",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Most Wanted Fraudster",
-        "Case of the Week"
-      ],
-      "publication": "2024-01-16T07:54:00"
     },
     {
       "uid": "cbcf79b08004491e9f395edc6a8ef823",
