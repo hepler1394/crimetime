@@ -3,9 +3,57 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1229,
     "baked": 150,
-    "updated": "2026-08-14T14:00:02.414Z"
+    "updated": "2026-08-15T13:00:04.063Z"
   },
   "items": [
+    {
+      "uid": "2f842fd0b2cf4449806ab4c68813e563",
+      "title": "GREGORY HENDERSON, JR.",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/topten/gregory-henderson-jr/@@images/image/large",
+      "office": "Indianapolis",
+      "reward": "Reward up to $1,000,000 for information leading to the arrest of Gregory Henderson, Jr.",
+      "url": "https://www.fbi.gov/wanted/topten/gregory-henderson-jr",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Ten Most Wanted Fugitives"
+      ],
+      "publication": "2026-07-14T10:03:00"
+    },
+    {
+      "uid": "60a95a13a258419981877b5e638c6545",
+      "title": "MARY JOHNSON (DAVIS)",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/mary-johnson-davis/@@images/image/large",
+      "office": "Seattle",
+      "reward": "Reward up to $25,000 for information leading to the identification, arrest, and conviction of person(s) responsible for the death of Mary Johnson (Davis).",
+      "url": "https://www.fbi.gov/wanted/seeking-info/mary-johnson-davis",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Indian Country",
+        "Seeking Information"
+      ],
+      "publication": "2021-09-14T06:37:00"
+    },
+    {
+      "uid": "5342f633-76b9-4b46-bed9-32599702b86d",
+      "title": "ANTHONETTE CHRISTINE CAYEDITO",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/anthonette-christine-cayedito/@@images/image/large",
+      "office": "Albuquerque",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the subject(s) related to the disappearance of Anthonette Cayedito.",
+      "url": "https://www.fbi.gov/wanted/kidnap/anthonette-christine-cayedito",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons",
+        "Indian Country",
+        "Navajo"
+      ],
+      "publication": "2014-07-01T07:00:00"
+    },
     {
       "uid": "c81529798b1c4c78b6185d7c4397d74a",
       "title": "DARREN ANTHONY ROBINSON",
@@ -36,21 +84,6 @@
         "ViCAP Homicides and Sexual Assaults"
       ],
       "publication": "2026-08-13T11:26:00"
-    },
-    {
-      "uid": "2f842fd0b2cf4449806ab4c68813e563",
-      "title": "GREGORY HENDERSON, JR.",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/topten/gregory-henderson-jr/@@images/image/large",
-      "office": "Indianapolis",
-      "reward": "Reward up to $1,000,000 for information leading to the arrest of Gregory Henderson, Jr.",
-      "url": "https://www.fbi.gov/wanted/topten/gregory-henderson-jr",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Ten Most Wanted Fugitives"
-      ],
-      "publication": "2026-07-14T10:03:00"
     },
     {
       "uid": "cbcf79b08004491e9f395edc6a8ef823",
@@ -2245,38 +2278,6 @@
         "Kidnappings and Missing Persons"
       ],
       "publication": "2024-07-09T11:10:00"
-    },
-    {
-      "uid": "b4db60d7ed14449cb73ba39564ef9e19",
-      "title": "JAMES S. RULAND - NORTH FOND du LAC, WISCONSIN",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/james-s-ruland---north-fond-du-lac-wisconsin/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/james-s-ruland---north-fond-du-lac-wisconsin",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Missing Persons"
-      ],
-      "publication": "2021-02-23T08:02:00"
-    },
-    {
-      "uid": "950e62ff80cf4fe1b476db427d2711a3",
-      "title": "ISIAH TERRELL BILLY",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/isiah-terrell-billy/@@images/image/large",
-      "office": "Albuquerque",
-      "reward": "Reward up to $10,000 for information leading to the identification, arrest, and conviction of the individual(s) responsible for the death of Isiah Terrell Billy.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/isiah-terrell-billy",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information",
-        "Indian Country",
-        "Navajo"
-      ],
-      "publication": "2021-03-03T13:33:00"
     }
   ]
 }
