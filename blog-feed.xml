@@ -6,7 +6,15 @@
     <atom:link href="https://crimetime.vercel.app/blog-feed.xml" rel="self" type="application/rss+xml"/>
     <description>True crime case updates, analysis, and the stories behind the headlines.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Aug 2026 13:00:26 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2026 14:04:46 GMT</lastBuildDate>
+    <item>
+      <title>How Familial DNA Searching Actually Works</title>
+      <link>https://crimetime.vercel.app/blog-posts/how-familial-dna-searching-actually-works.html</link>
+      <guid isPermaLink="true">https://crimetime.vercel.app/blog-posts/how-familial-dna-searching-actually-works.html</guid>
+      <category>Analysis</category>
+      <pubDate>Tue, 18 Aug 2026 12:00:00 GMT</pubDate>
+      <description>It's not magic. It's probability, patience, and a whole lot of investigative follow-up. Let's unpack what the case file really shows.</description>
+    </item>
     <item>
       <title>What Actually Gets a Cold Case Reopened</title>
       <link>https://crimetime.vercel.app/blog-posts/what-actually-gets-a-cold-case-reopened.html</link>

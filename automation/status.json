@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-18T13:00:27.275Z",
-  "improvementsShipped": 444,
+  "generated": "2026-08-18T14:04:46.837Z",
+  "improvementsShipped": 447,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
     "content": [
@@ -11,14 +11,14 @@
   },
   "counts": {
     "episodes": 6,
-    "posts": 12,
-    "merchDesigns": 19,
+    "posts": 13,
+    "merchDesigns": 20,
     "merchCollection": 3,
-    "quizzes": 13,
-    "quizQuestions": 65,
+    "quizzes": 14,
+    "quizQuestions": 70,
     "fbiCases": 150,
     "videos": 1,
-    "topicsQueued": 122,
+    "topicsQueued": 121,
     "topicsTotal": 126
   },
   "latest": {
@@ -27,28 +27,28 @@
       "date": "2025-03-16"
     },
     "post": {
-      "title": "What Actually Gets a Cold Case Reopened",
-      "date": "2026-08-14"
+      "title": "How Familial DNA Searching Actually Works",
+      "date": "2026-08-18"
     },
     "quiz": {
-      "title": "JonBenét Ramsey: The Case File",
-      "created": "2026-08-14"
+      "title": "The JonBenét Ramsey Case File",
+      "created": "2026-08-18"
     }
   },
   "freshness": {
-    "episodesJson": "2026-08-18T13:00:03.761Z",
-    "blogJson": "2026-08-14T14:01:33.622Z",
-    "merchJson": "2026-08-14T14:03:17.313Z",
-    "quizzesJson": "2026-08-14T14:04:46.223Z",
-    "fbiJson": "2026-08-18T13:00:06.689Z",
+    "episodesJson": "2026-08-18T14:00:02.305Z",
+    "blogJson": "2026-08-18T14:01:36.375Z",
+    "merchJson": "2026-08-18T14:03:12.285Z",
+    "quizzesJson": "2026-08-18T14:04:44.906Z",
+    "fbiJson": "2026-08-18T14:00:05.805Z",
     "css": "2026-07-15T23:13:26.319Z"
   },
   "nextTopics": [
-    "Understanding DNA familial searching",
     "Wrongful convictions and the work of the Innocence Project",
     "What reasonable doubt actually means in a courtroom",
     "The history of fingerprint evidence",
     "How the FBI's ViCAP database links violent crimes",
-    "Why some cases stay cold for decades"
+    "Why some cases stay cold for decades",
+    "How digital forensics changed modern investigations"
   ]
 }

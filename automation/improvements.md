@@ -508,3 +508,6 @@ with an [auto] tag — the counter on Mission Control reads this file.
 442. [auto 2026-08-14] Published blog post in Cory's voice: "What Actually Gets a Cold Case Reopened"
 443. [auto 2026-08-14] Dropped 1 new merch design into the vault
 444. [auto 2026-08-14] Published new quiz: "JonBenét Ramsey: The Case File" (5 questions)
+445. [auto 2026-08-18] Published blog post in Cory's voice: "How Familial DNA Searching Actually Works"
+446. [auto 2026-08-18] Dropped 1 new merch design into the vault
+447. [auto 2026-08-18] Published new quiz: "The JonBenét Ramsey Case File" (5 questions)

@@ -1,9 +1,18 @@
 {
   "meta": {
     "intro": "Original CrimeTimeSnacks prints, straight from the studio — new designs drop automatically. Every file is real, print-ready art you can grab now; the print-on-demand store opens soon.",
-    "updated": "2026-08-14T14:03:17.313Z"
+    "updated": "2026-08-18T14:03:12.285Z"
   },
   "designs": [
+    {
+      "slug": "shadows-speak",
+      "slogan": "Shadows Speak",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "template": null,
+      "svg": "images/merch/shadows-speak.svg",
+      "created": "2026-08-18"
+    },
     {
       "slug": "cold-case-whispers",
       "slogan": "Cold Case Whispers",

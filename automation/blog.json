@@ -5,6 +5,23 @@
   },
   "posts": [
     {
+      "slug": "how-familial-dna-searching-actually-works",
+      "title": "How Familial DNA Searching Actually Works",
+      "date": "2026-08-18",
+      "category": "analysis",
+      "categoryLabel": "Analysis",
+      "image": "images/logo.png",
+      "author": "Cory",
+      "featured": false,
+      "excerpt": "It's not magic. It's probability, patience, and a whole lot of investigative follow-up. Let's unpack what the case file really shows.",
+      "body": [
+        "The detail that stops most people cold: investigators can identify a suspect they never had a sample from — just by finding a partial genetic match to a relative already in the database. That's the core of familial DNA searching, and it's worth understanding exactly how it works before drawing conclusions about it.",
+        "What the evidence actually shows is a two-step process. First, a crime-scene DNA profile is run against a forensic database. If no direct match comes back, analysts look for near-matches — profiles that share enough genetic markers to suggest a close biological relative. From there, detectives use traditional investigative work: genealogy records, age, sex, geography. The DNA narrows a population. Investigators do the rest. The method gained wide public attention through cases where conventional leads had gone cold for years, and a familial hit gave detectives a new thread to pull.",
+        "Where it stands: the technique is powerful, but it isn't available everywhere. Some states permit it, some prohibit it, and the rules around which databases can be searched vary significantly. Consumer genealogy databases operate under separate policies entirely. If you want to go deeper, the case files on individual investigations that used this method are some of the most detailed records of how modern forensic work actually gets done. Read them. Form your own conclusion."
+      ],
+      "sourceTopic": "Understanding DNA familial searching"
+    },
+    {
       "slug": "what-actually-gets-a-cold-case-reopened",
       "title": "What Actually Gets a Cold Case Reopened",
       "date": "2026-08-14",

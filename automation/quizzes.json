@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-08-14T14:04:46.223Z"
+    "updated": "2026-08-18T14:04:44.906Z"
   },
   "quizzes": [
+    {
+      "slug": "the-jonben-t-ramsey-case-file",
+      "title": "The JonBenét Ramsey Case File",
+      "tag": "Cold Case",
+      "description": "You've heard the headline version. Here's what the case file actually shows — snack-sized, documented, and harder than you think.",
+      "created": "2026-08-18",
+      "sourceTopic": "JonBenét Ramsey Americas Child Beauty Queen",
+      "questions": [
+        {
+          "q": "On what date was JonBenét Ramsey reported missing by her mother, Patsy Ramsey?",
+          "options": [
+            "December 25, 1996",
+            "December 26, 1996",
+            "December 27, 1996",
+            "January 1, 1997"
+          ],
+          "answer": 1,
+          "explain": "Patsy called 911 on the morning of December 26, 1996 — the day after Christmas. That timing, and what happened inside the house that morning, has been central to every theory investigators have examined."
+        },
+        {
+          "q": "Where was JonBenét's body found on the day she was reported missing?",
+          "options": [
+            "A neighbor's backyard",
+            "The basement of the family home",
+            "A crawl space beneath the back porch",
+            "Her bedroom closet"
+          ],
+          "answer": 1,
+          "explain": "Her father, John Ramsey, found her body in the basement wine cellar of the family's Boulder, Colorado home that same afternoon. The fact that the house had not been thoroughly searched earlier that day became a lasting point of criticism against the initial police response."
+        },
+        {
+          "q": "How old was JonBenét Ramsey at the time of her death?",
+          "options": [
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "answer": 1,
+          "explain": "JonBenét was six years old. Born on August 6, 1990, she had turned six just months before her death in December 1996. Her age and her participation in child pageants became defining — and heavily debated — parts of the media narrative around the case."
+        },
+        {
+          "q": "What city's police department led the original investigation into JonBenét's death?",
+          "options": [
+            "Denver Police Department",
+            "Jefferson County Sheriff's Office",
+            "Boulder Police Department",
+            "Colorado Bureau of Investigation"
+          ],
+          "answer": 2,
+          "explain": "The Boulder Police Department took the lead, and their handling of the early hours of the investigation drew significant criticism — including the fact that the crime scene was not immediately secured and that family members were allowed to move freely through the home before it was processed."
+        },
+        {
+          "q": "A lengthy ransom note was found inside the Ramsey home. Roughly how long was it?",
+          "options": [
+            "One paragraph",
+            "Half a page",
+            "Two and a half pages",
+            "Five pages"
+          ],
+          "answer": 2,
+          "explain": "The note ran approximately two and a half pages — an unusual length for a ransom demand. Investigators noted it was written on a notepad found inside the home, using a pen also found there. That detail has been one of the most examined pieces of physical evidence in the case file."
+        }
+      ]
+    },
     {
       "slug": "jonben-t-ramsey-the-case-file",
       "title": "JonBenét Ramsey: The Case File",
