@@ -3,9 +3,24 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1230,
     "baked": 150,
-    "updated": "2026-08-18T19:00:03.273Z"
+    "updated": "2026-08-19T01:55:41.671Z"
   },
   "items": [
+    {
+      "uid": "7d54d3dc154843ddaae748d03fb8f375",
+      "title": "VICTOR EDUARDO MORALES ZELAYA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/victor-eduardo-morales-zelaya/@@images/image/large",
+      "office": "Houston",
+      "reward": "The United States Department of State's Transnational Organized Crime Rewards Program is offering a reward of up to $5,000,000 for information leading to the arrest and/or conviction of Victor Eduardo Morales Zelaya.",
+      "url": "https://www.fbi.gov/wanted/cei/victor-eduardo-morales-zelaya",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-06-15T11:09:00"
+    },
     {
       "uid": "b4ba813f6a2048cf8008726178dbb40e",
       "title": "GURPREET SINGH",
@@ -1087,21 +1102,6 @@
         "Most Wanted Fraudster"
       ],
       "publication": "2026-06-01T11:37:00"
-    },
-    {
-      "uid": "7d54d3dc154843ddaae748d03fb8f375",
-      "title": "VICTOR EDUARDO MORALES ZELAYA",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/victor-eduardo-morales-zelaya/@@images/image/large",
-      "office": "Houston",
-      "reward": "The United States Department of State's Transnational Organized Crime Rewards Program is offering a reward of up to $5,000,000 for information leading to the arrest and/or conviction of Victor Eduardo Morales Zelaya.",
-      "url": "https://www.fbi.gov/wanted/cei/victor-eduardo-morales-zelaya",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-06-15T11:09:00"
     },
     {
       "uid": "d078deee25ea4b9aa6f4ac4a681e2f65",
