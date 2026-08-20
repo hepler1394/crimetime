@@ -1,11 +1,117 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1229,
+    "totalOnFile": 1230,
     "baked": 150,
-    "updated": "2026-08-18T14:00:05.805Z"
+    "updated": "2026-08-20T13:00:04.187Z"
   },
   "items": [
+    {
+      "uid": "7d54d3dc154843ddaae748d03fb8f375",
+      "title": "VICTOR EDUARDO MORALES ZELAYA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/victor-eduardo-morales-zelaya/@@images/image/large",
+      "office": "Houston",
+      "reward": "The United States Department of State's Transnational Organized Crime Rewards Program is offering a reward of up to $5,000,000 for information leading to the arrest and/or conviction of Victor Eduardo Morales Zelaya.",
+      "url": "https://www.fbi.gov/wanted/cei/victor-eduardo-morales-zelaya",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-06-15T11:09:00"
+    },
+    {
+      "uid": "b4ba813f6a2048cf8008726178dbb40e",
+      "title": "GURPREET SINGH",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/gurpreet-singh/@@images/image/large",
+      "office": "Losangeles",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/gurpreet-singh",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-07-30T08:43:00"
+    },
+    {
+      "uid": "c81529798b1c4c78b6185d7c4397d74a",
+      "title": "DARREN ANTHONY ROBINSON",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/darren-anthony-robinson/@@images/image/large",
+      "office": "Detroit",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Darren Anthony Robinson.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/darren-anthony-robinson",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster",
+        "Case of the Week"
+      ],
+      "publication": "2024-01-16T07:54:00"
+    },
+    {
+      "uid": "2a19f6cd74ad405f81af8f79fda32aed",
+      "title": "MICHAEL LIZASO MARASIGAN",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/michael-lizaso-marasigan/@@images/image/large",
+      "office": "Honolulu",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Michael Lizaso Marasigan.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/michael-lizaso-marasigan",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2026-01-12T14:02:00"
+    },
+    {
+      "uid": "27f6739b638b437192b1bb4fdb0426d3",
+      "title": "JOHN MICHAEL DIMITRION",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/john-michael-dimitrion/@@images/image/large",
+      "office": "Honolulu",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of John Michael Dimitrion.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/john-michael-dimitrion",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2010-10-29T16:10:00"
+    },
+    {
+      "uid": "82bcacf074974ee1879fa227815cd13c",
+      "title": "JULIEANNE BALDUEZA DIMITRION",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/julieanne-baldueza-dimitrion/@@images/image/large",
+      "office": "Honolulu",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Julieanne Baldueza Dimitrion.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/julieanne-baldueza-dimitrion",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2010-10-29T16:10:00"
+    },
+    {
+      "uid": "9df57290586540c0b70a411c754a4fda",
+      "title": "MAJOR SINGH",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/major-singh/@@images/image/large",
+      "office": "Losangeles",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/major-singh",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-08-18T09:38:00"
+    },
     {
       "uid": "2f842fd0b2cf4449806ab4c68813e563",
       "title": "GREGORY HENDERSON, JR.",
@@ -53,22 +159,6 @@
         "Navajo"
       ],
       "publication": "2014-07-01T07:00:00"
-    },
-    {
-      "uid": "c81529798b1c4c78b6185d7c4397d74a",
-      "title": "DARREN ANTHONY ROBINSON",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/darren-anthony-robinson/@@images/image/large",
-      "office": "Detroit",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Darren Anthony Robinson.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/darren-anthony-robinson",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Most Wanted Fraudster",
-        "Case of the Week"
-      ],
-      "publication": "2024-01-16T07:54:00"
     },
     {
       "uid": "ffc971d4a49048bd891663a295da570f",
@@ -281,21 +371,6 @@
         "Seeking Information"
       ],
       "publication": "2026-07-31T10:05:00"
-    },
-    {
-      "uid": "b4ba813f6a2048cf8008726178dbb40e",
-      "title": "GURPREET SINGH",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/gurpreet-singh/@@images/image/large",
-      "office": "Losangeles",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cei/gurpreet-singh",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-07-30T08:43:00"
     },
     {
       "uid": "3bd6151398a84bde8b7b4af3474ef5c3",
@@ -1029,21 +1104,6 @@
       "publication": "2026-06-01T11:37:00"
     },
     {
-      "uid": "7d54d3dc154843ddaae748d03fb8f375",
-      "title": "VICTOR EDUARDO MORALES ZELAYA",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/victor-eduardo-morales-zelaya/@@images/image/large",
-      "office": "Houston",
-      "reward": "The United States Department of State's Transnational Organized Crime Rewards Program is offering a reward of up to $5,000,000 for information leading to the arrest and/or conviction of Victor Eduardo Morales Zelaya.",
-      "url": "https://www.fbi.gov/wanted/cei/victor-eduardo-morales-zelaya",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-06-15T11:09:00"
-    },
-    {
       "uid": "d078deee25ea4b9aa6f4ac4a681e2f65",
       "title": "YULAN ADONAY ARCHAGA CARIAS",
       "kind": "wanted",
@@ -1166,36 +1226,6 @@
       "publication": "2026-06-10T10:12:00"
     },
     {
-      "uid": "82bcacf074974ee1879fa227815cd13c",
-      "title": "JULIEANNE BALDUEZA DIMITRION",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/julieanne-baldueza-dimitrion/@@images/image/large",
-      "office": "Honolulu",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Julieanne Baldueza Dimitrion.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/julieanne-baldueza-dimitrion",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Most Wanted Fraudster"
-      ],
-      "publication": "2010-10-29T16:10:00"
-    },
-    {
-      "uid": "27f6739b638b437192b1bb4fdb0426d3",
-      "title": "JOHN MICHAEL DIMITRION",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/john-michael-dimitrion/@@images/image/large",
-      "office": "Honolulu",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of John Michael Dimitrion.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/john-michael-dimitrion",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Most Wanted Fraudster"
-      ],
-      "publication": "2010-10-29T16:10:00"
-    },
-    {
       "uid": "164f161ed09445dc83d64bae7daba524",
       "title": "MICHAEL LEWIS MILES, JR. AND LISHAWN KNOTT",
       "kind": "wanted",
@@ -1314,21 +1344,6 @@
         "Seeking Information"
       ],
       "publication": "2026-05-07T10:02:00"
-    },
-    {
-      "uid": "2a19f6cd74ad405f81af8f79fda32aed",
-      "title": "MICHAEL LIZASO MARASIGAN",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/michael-lizaso-marasigan/@@images/image/large",
-      "office": "Honolulu",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Michael Lizaso Marasigan.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/michael-lizaso-marasigan",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
-      "subjects": [
-        "Most Wanted Fraudster"
-      ],
-      "publication": "2026-01-12T14:02:00"
     },
     {
       "uid": "0917f41cd1cb4429bb6bfbc9ed0902cf",
@@ -2263,21 +2278,6 @@
         "ViCAP Missing Persons"
       ],
       "publication": "2021-06-24T08:53:00"
-    },
-    {
-      "uid": "8f378ff4ce7e428ca3d0cc0720a0cdf7",
-      "title": "ZAHRA SHIKDER",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/zahra-shikder/@@images/image/large",
-      "office": "Washingtondc",
-      "reward": "The Rewards For Justice Program, United States Department of State, is offering a reward of up to $5 million for information leading to location, recovery, and return of  Zahra and Yusuf Shikder.",
-      "url": "https://www.fbi.gov/wanted/kidnap/zahra-shikder",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons"
-      ],
-      "publication": "2024-07-09T11:10:00"
     }
   ]
 }
