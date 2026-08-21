@@ -3,7 +3,7 @@
     "title": "Watch CrimeTimeSnacks Videos",
     "description": "Watch CrimeTimeSnacks true crime videos — episode breakdowns, case deep-dives, and visual explorations of unsolved cases, murders, and mysteries.",
     "note": "Source of truth for videos.html. Entries with \"curated\": true are kept by the importer and never overwritten. Everything else is filled automatically by import-youtube.mjs from your YouTube channel RSS feed (set youtube.handle or youtube.channelId in automation/config.json).",
-    "updated": "2026-08-18T14:35:15.114Z"
+    "updated": "2026-08-21T14:36:59.099Z"
   },
   "videos": [
     {
