@@ -1,11 +1,27 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1230,
+    "totalOnFile": 1231,
     "baked": 150,
-    "updated": "2026-08-20T13:00:04.187Z"
+    "updated": "2026-08-21T13:00:04.102Z"
   },
   "items": [
+    {
+      "uid": "273dda04e33d4c01ae85a0973889bf55",
+      "title": "RAE ELAINE TOURTILLOTT",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/rae-elaine-tourtillot/@@images/image/large",
+      "office": "Milwaukee",
+      "reward": "Reward up to $50,000 for information leading to the identification, arrest, or conviction of the person(s) responsible for the death of Rae Elaine Tourtillott.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/rae-elaine-tourtillot",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Indian Country",
+        "Seeking Information"
+      ],
+      "publication": "2019-04-17T09:38:00"
+    },
     {
       "uid": "7d54d3dc154843ddaae748d03fb8f375",
       "title": "VICTOR EDUARDO MORALES ZELAYA",
@@ -20,6 +36,21 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2026-06-15T11:09:00"
+    },
+    {
+      "uid": "c72a8bf66e414d52917bf211fd5089ac",
+      "title": "NO NAME GIVEN KAMAL",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/no-name-given-kamal/@@images/image/large",
+      "office": "Losangeles",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/no-name-given-kamal",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-08-18T10:47:00"
     },
     {
       "uid": "b4ba813f6a2048cf8008726178dbb40e",
@@ -2247,37 +2278,6 @@
         "ViCAP Missing Persons"
       ],
       "publication": "2020-12-10T13:40:00"
-    },
-    {
-      "uid": "fca89f1133a74259b4a0f944cd238343",
-      "title": "ELSIE ELDORA LUSCIER",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/elsie-eldora-luscier/@@images/image/large",
-      "office": "Seattle",
-      "reward": "Reward up to $5,000 for information leading to the recovery of Elsie Eldora Luscier and the conviction of those responsible for her disappearance.",
-      "url": "https://www.fbi.gov/wanted/kidnap/elsie-eldora-luscier",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons",
-        "Indian Country"
-      ],
-      "publication": "2023-08-25T08:05:00"
-    },
-    {
-      "uid": "8774527c934e485297718c705533307a",
-      "title": "RANDY STEWART DORAN - NEW ORLEANS, LOUISIANA",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/randy-stewart-doran---new-orleans-louisiana/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/randy-stewart-doran---new-orleans-louisiana",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Missing Persons"
-      ],
-      "publication": "2021-06-24T08:53:00"
     }
   ]
 }
