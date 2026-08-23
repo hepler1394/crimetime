@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-22T13:00:29.566Z",
+  "generated": "2026-08-23T13:00:28.262Z",
   "improvementsShipped": 447,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
@@ -36,11 +36,11 @@
     }
   },
   "freshness": {
-    "episodesJson": "2026-08-22T13:00:04.827Z",
+    "episodesJson": "2026-08-23T13:00:04.076Z",
     "blogJson": "2026-08-18T14:01:36.375Z",
     "merchJson": "2026-08-18T14:03:12.285Z",
     "quizzesJson": "2026-08-18T14:04:44.906Z",
-    "fbiJson": "2026-08-22T13:00:06.790Z",
+    "fbiJson": "2026-08-23T13:00:06.238Z",
     "css": "2026-07-15T23:13:26.319Z"
   },
   "nextTopics": [
