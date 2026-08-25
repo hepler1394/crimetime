@@ -3,9 +3,39 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1233,
     "baked": 150,
-    "updated": "2026-08-25T14:47:55.903Z"
+    "updated": "2026-08-25T19:01:44.312Z"
   },
   "items": [
+    {
+      "uid": "95c9abca38a44575ae75ac8267463b43",
+      "title": "REY E. GRABATO, II",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/rey-e-grabato-ii/@@images/image/large",
+      "office": "Newark",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Rey E. Grabato, II.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/rey-e-grabato-ii",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2026-08-06T09:48:00"
+    },
+    {
+      "uid": "9df57290586540c0b70a411c754a4fda",
+      "title": "MAJOR SINGH",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/major-singh/@@images/image/large",
+      "office": "Losangeles",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/major-singh",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-08-18T09:38:00"
+    },
     {
       "uid": "2caa95f3b2b34cbda7d70dac99d95b9a",
       "title": "KUSH KOHOLE BERNSTEIN",
@@ -252,21 +282,6 @@
       "publication": "2010-10-29T16:10:00"
     },
     {
-      "uid": "9df57290586540c0b70a411c754a4fda",
-      "title": "MAJOR SINGH",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/major-singh/@@images/image/large",
-      "office": "Losangeles",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cei/major-singh",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-08-18T09:38:00"
-    },
-    {
       "uid": "2f842fd0b2cf4449806ab4c68813e563",
       "title": "GREGORY HENDERSON, JR.",
       "kind": "wanted",
@@ -403,21 +418,6 @@
         "ViCAP Missing Persons"
       ],
       "publication": "2026-08-10T10:25:00"
-    },
-    {
-      "uid": "95c9abca38a44575ae75ac8267463b43",
-      "title": "REY E. GRABATO, II",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/rey-e-grabato-ii/@@images/image/large",
-      "office": "Newark",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Rey E. Grabato, II.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/rey-e-grabato-ii",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Most Wanted Fraudster"
-      ],
-      "publication": "2026-08-06T09:48:00"
     },
     {
       "uid": "729f26ab001d42b9b7fabba9dfb376a9",
@@ -752,6 +752,21 @@
         "Kidnappings and Missing Persons"
       ],
       "publication": "2026-07-20T10:09:00"
+    },
+    {
+      "uid": "12b0a5aa363c4167a9b2327f3d328d32",
+      "title": "ADRIAN DEON GOLDEN-RODRIGUEZ - HOMICIDE SUSPECT - HOLIDAY, FLORIDA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/adrian-deon-golden-rodriguez---homicide-suspect---holiday-florida/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/adrian-deon-golden-rodriguez---homicide-suspect---holiday-florida",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Homicides and Sexual Assaults"
+      ],
+      "publication": "2026-07-20T10:39:00"
     },
     {
       "uid": "12b0a5aa363c4167a9b2327f3d328d32",
@@ -1287,22 +1302,6 @@
         "Indian Country"
       ],
       "publication": "2016-02-04T07:00:00"
-    },
-    {
-      "uid": "525c64c8a82940e3aaae18c532cc3019",
-      "title": "SA'WADE BIRDINGROUND",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/sawade-birdinground/@@images/image/large",
-      "office": "Billings",
-      "reward": "Reward up to $15,000 for information leading to the recovery of Sa'Wade Birdinground.",
-      "url": "https://www.fbi.gov/wanted/kidnap/sawade-birdinground",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons",
-        "Indian Country"
-      ],
-      "publication": "2024-10-22T11:00:00"
     },
     {
       "uid": "c3e0262b3b8c4daaaba9f3399884944f",
