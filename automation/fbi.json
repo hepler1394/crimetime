@@ -1,11 +1,71 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1232,
+    "totalOnFile": 1233,
     "baked": 150,
-    "updated": "2026-08-24T19:04:13.173Z"
+    "updated": "2026-08-25T01:55:23.337Z"
   },
   "items": [
+    {
+      "uid": "2caa95f3b2b34cbda7d70dac99d95b9a",
+      "title": "KUSH KOHOLE BERNSTEIN",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/kush-kohole-bernstein/@@images/image/large",
+      "office": "Honolulu",
+      "reward": "Reward up to $10,000 for information leading to the safe recovery of Abigail, Kush, or Koa Bernstein.",
+      "url": "https://www.fbi.gov/wanted/kidnap/kush-kohole-bernstein",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2024-07-01T10:02:00"
+    },
+    {
+      "uid": "a219b9f0500740f3908e853a7761ca1b",
+      "title": "ABIGAIL BERNSTEIN",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/abigail-bernstein/@@images/image/large",
+      "office": "Honolulu",
+      "reward": "Reward up to $10,000 for information leading to the safe recovery of Abigail, Kush, or Koa Bernstein.",
+      "url": "https://www.fbi.gov/wanted/kidnap/abigail-bernstein",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2024-06-28T12:24:00"
+    },
+    {
+      "uid": "36715efc74c94930a5cc5e30d52ab0f8",
+      "title": "KOA KAI BERNSTEIN",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/koa-kai-bernstein/@@images/image/large",
+      "office": "Honolulu",
+      "reward": "Reward up to $10,000 for information leading to the safe recovery of Abigail, Kush, or Koa Bernstein.",
+      "url": "https://www.fbi.gov/wanted/kidnap/koa-kai-bernstein",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2024-06-28T14:49:00"
+    },
+    {
+      "uid": "8b2461d815d5493886832689c2ef538d",
+      "title": "DONALD STEVEN LANG",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/donald-steven-lang/@@images/image/large",
+      "office": "Honolulu, Saltlakecity",
+      "reward": "Reward up to $5,000 for information leading to the arrest of Donald Steven Lang.",
+      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/donald-steven-lang",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
+      "subjects": [
+        "Law Enforcement Assistance"
+      ],
+      "publication": "2026-02-09T10:58:00"
+    },
     {
       "uid": "7d2223d182384ef9a7869fe105fc470d",
       "title": "DURWIN MERRILL DAVIS",
@@ -1531,6 +1591,21 @@
       "publication": "2026-05-15T08:00:00"
     },
     {
+      "uid": "8e6090152d6640929912f934a8611f5b",
+      "title": "JHON ALEXANDER QUINTERO-CADENA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/additional/jhon-alexander-quintero-cadena/@@images/image/large",
+      "office": "Portland",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/additional/jhon-alexander-quintero-cadena",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
+      "subjects": [
+        "Additional Violent Crimes"
+      ],
+      "publication": "2026-05-15T10:15:00"
+    },
+    {
       "uid": "a7878502656446b8bc479b6347f0fe09",
       "title": "JESSON QUINTERO",
       "kind": "wanted",
@@ -2087,66 +2162,6 @@
       "publication": "2026-01-22T08:15:00"
     },
     {
-      "uid": "8b2461d815d5493886832689c2ef538d",
-      "title": "DONALD STEVEN LANG",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/donald-steven-lang/@@images/image/large",
-      "office": "Honolulu, Saltlakecity",
-      "reward": "Reward up to $5,000 for information leading to the arrest of Donald Steven Lang.",
-      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/donald-steven-lang",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
-      "subjects": [
-        "Law Enforcement Assistance"
-      ],
-      "publication": "2026-02-09T10:58:00"
-    },
-    {
-      "uid": "2caa95f3b2b34cbda7d70dac99d95b9a",
-      "title": "KUSH KOHOLE BERNSTEIN",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/kush-kohole-bernstein/@@images/image/large",
-      "office": "Honolulu",
-      "reward": "Reward up to $10,000 for information leading to the safe recovery of Abigail, Kush, or Koa Bernstein.",
-      "url": "https://www.fbi.gov/wanted/kidnap/kush-kohole-bernstein",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons"
-      ],
-      "publication": "2024-07-01T10:02:00"
-    },
-    {
-      "uid": "36715efc74c94930a5cc5e30d52ab0f8",
-      "title": "KOA KAI BERNSTEIN",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/koa-kai-bernstein/@@images/image/large",
-      "office": "Honolulu",
-      "reward": "Reward up to $10,000 for information leading to the safe recovery of Abigail, Kush, or Koa Bernstein.",
-      "url": "https://www.fbi.gov/wanted/kidnap/koa-kai-bernstein",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons"
-      ],
-      "publication": "2024-06-28T14:49:00"
-    },
-    {
-      "uid": "a219b9f0500740f3908e853a7761ca1b",
-      "title": "ABIGAIL BERNSTEIN",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/abigail-bernstein/@@images/image/large",
-      "office": "Honolulu",
-      "reward": "Reward up to $10,000 for information leading to the safe recovery of Abigail, Kush, or Koa Bernstein.",
-      "url": "https://www.fbi.gov/wanted/kidnap/abigail-bernstein",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons"
-      ],
-      "publication": "2024-06-28T12:24:00"
-    },
-    {
       "uid": "e6efbadb6b39486b9a0071a233a175fd",
       "title": "SANDRA BURT CARRERA - ARLINGTON, VIRGINIA",
       "kind": "wanted",
@@ -2266,21 +2281,6 @@
         "ViCAP Missing Persons"
       ],
       "publication": "2024-04-29T13:46:00"
-    },
-    {
-      "uid": "1584feee758e4cd39136171ef1c007f9",
-      "title": "BRYAN MATTHEW MCGEHRIN - TANEYTOWN, MARYLAND",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/bryan-matthew-mcgehrin---taneytown-maryland/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/bryan-matthew-mcgehrin---taneytown-maryland",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Missing Persons"
-      ],
-      "publication": "2022-03-21T07:35:00"
     }
   ]
 }
