@@ -1,9 +1,18 @@
 {
   "meta": {
     "intro": "Original CrimeTimeSnacks prints, straight from the studio — new designs drop automatically. Every file is real, print-ready art you can grab now; the print-on-demand store opens soon.",
-    "updated": "2026-08-21T14:37:19.998Z"
+    "updated": "2026-08-25T14:48:16.047Z"
   },
   "designs": [
+    {
+      "slug": "under-oath",
+      "slogan": "Under Oath",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "template": null,
+      "svg": "images/merch/under-oath.svg",
+      "created": "2026-08-25"
+    },
     {
       "slug": "plead-the-fifth",
       "slogan": "Plead The Fifth",
