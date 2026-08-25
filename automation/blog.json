@@ -5,6 +5,23 @@
   },
   "posts": [
     {
+      "slug": "when-the-case-file-gets-it-wrong",
+      "title": "When the Case File Gets It Wrong",
+      "date": "2026-08-25",
+      "category": "court",
+      "categoryLabel": "Court",
+      "image": "images/logo.png",
+      "author": "Cory",
+      "featured": false,
+      "excerpt": "The Innocence Project has helped exonerate more than 200 people convicted of serious crimes. Here's what the record shows about how it happens.",
+      "body": [
+        "The detail that stops me every time I go back through these cases: some of the people the Innocence Project has helped free had already served decades in prison before the evidence was properly examined. Not years. Decades. For crimes the DNA record later showed they did not commit.",
+        "What the evidence actually shows, across hundreds of reviewed convictions, is a pattern of the same contributing factors — eyewitness misidentification, invalidated forensic testimony, informant testimony, and inadequate legal representation. The Innocence Project, founded in 1992 by attorneys Barry Scheck and Peter Neufeld, built its model around post-conviction DNA testing precisely because DNA doesn't negotiate. It either places someone at a scene or it doesn't. The organization has also pushed for systemic reforms — recorded interrogations, updated eyewitness identification procedures — because exonerating one person doesn't fix the conditions that produced the wrongful conviction in the first place.",
+        "Where it stands: the work is ongoing. Hundreds of cases are in review at any given time, and not every case has biological evidence available to test. Some wrongful convictions may never be provable under current law. If you want to go deeper, the case file is public. The Innocence Project publishes its exoneration records and the contributing causes for each one. Read the file. Form your own conclusion."
+      ],
+      "sourceTopic": "Wrongful convictions and the work of the Innocence Project"
+    },
+    {
       "slug": "how-familial-dna-searching-actually-works",
       "title": "How Familial DNA Searching Actually Works",
       "date": "2026-08-18",

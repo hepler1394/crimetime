@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-08-18T14:04:44.906Z"
+    "updated": "2026-08-25T14:04:39.635Z"
   },
   "quizzes": [
+    {
+      "slug": "the-delphi-murders-what-you-know",
+      "title": "The Delphi Murders: What You Know",
+      "tag": "Cold Case Quiz",
+      "description": "Two girls. A hiking trail. A voice on a phone. I went back through the case file — let's see how well you know what the record actually shows.",
+      "created": "2026-08-25",
+      "sourceTopic": "CrimeTimeSnacks: The Delphi Murder Case 2017",
+      "questions": [
+        {
+          "q": "What were the names of the two victims murdered near the Monon High Bridge in February 2017?",
+          "options": [
+            "Abby Williams and Libby German",
+            "Katie Williams and Libby Monroe",
+            "Abby Monroe and Katie German",
+            "Libby Williams and Abby Monroe"
+          ],
+          "answer": 0,
+          "explain": "Abigail 'Abby' Williams and Liberty 'Libby' German were both 13 years old. That detail matters — their youth, and the fact that they were known to each other, shaped how investigators framed the early search."
+        },
+        {
+          "q": "What was the approximate date the two girls went missing on the Delphi historic trails?",
+          "options": [
+            "February 13, 2017",
+            "March 2, 2017",
+            "January 28, 2017",
+            "February 13, 2016"
+          ],
+          "answer": 0,
+          "explain": "February 13, 2017 is the documented date. The girls were dropped off at the trailhead and were reported missing that same afternoon. Getting the date right matters because it anchors every piece of the timeline investigators built afterward."
+        },
+        {
+          "q": "Libby German recorded audio and video of a suspect on her phone. What phrase did investigators release publicly from that recording?",
+          "options": [
+            "'Down the hill'",
+            "'Follow the trail'",
+            "'Come with me'",
+            "'Stay right there'"
+          ],
+          "answer": 0,
+          "explain": "'Down the hill' — two words, plainly stated — became one of the most studied pieces of audio in recent true-crime history. Investigators released it hoping someone would recognize the voice. What the full recording contained beyond what was released publicly remained part of the protected case file for years."
+        },
+        {
+          "q": "Richard Allen, a pharmacist from Delphi, was arrested and charged in connection with the murders in what year?",
+          "options": [
+            "2022",
+            "2019",
+            "2021",
+            "2024"
+          ],
+          "answer": 0,
+          "explain": "Richard Allen was arrested in October 2022 — more than five years after the murders. He was charged with two counts of murder. The arrest closed a long chapter of public speculation. He has pleaded not guilty, and the legal proceedings have continued from there."
+        },
+        {
+          "q": "The Monon High Bridge where the girls were last seen is located near which small Indiana city?",
+          "options": [
+            "Delphi",
+            "Lafayette",
+            "Monticello",
+            "Logansport"
+          ],
+          "answer": 0,
+          "explain": "Delphi, Indiana — Carroll County. The trail system there was a local recreational area, which is part of why the case hit the community so hard. The bridge itself became central to the investigation because it was the last confirmed location caught on Libby's phone."
+        }
+      ]
+    },
     {
       "slug": "the-jonben-t-ramsey-case-file",
       "title": "The JonBenét Ramsey Case File",

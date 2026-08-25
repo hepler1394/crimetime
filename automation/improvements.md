@@ -511,3 +511,5 @@ with an [auto] tag — the counter on Mission Control reads this file.
 445. [auto 2026-08-18] Published blog post in Cory's voice: "How Familial DNA Searching Actually Works"
 446. [auto 2026-08-18] Dropped 1 new merch design into the vault
 447. [auto 2026-08-18] Published new quiz: "The JonBenét Ramsey Case File" (5 questions)
+448. [auto 2026-08-25] Published blog post in Cory's voice: "When the Case File Gets It Wrong"
+449. [auto 2026-08-25] Published new quiz: "The Delphi Murders: What You Know" (5 questions)

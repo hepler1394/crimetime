@@ -6,7 +6,15 @@
     <atom:link href="https://crimetime.vercel.app/blog-feed.xml" rel="self" type="application/rss+xml"/>
     <description>True crime case updates, analysis, and the stories behind the headlines.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Aug 2026 13:00:24 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 14:04:40 GMT</lastBuildDate>
+    <item>
+      <title>When the Case File Gets It Wrong</title>
+      <link>https://crimetime.vercel.app/blog-posts/when-the-case-file-gets-it-wrong.html</link>
+      <guid isPermaLink="true">https://crimetime.vercel.app/blog-posts/when-the-case-file-gets-it-wrong.html</guid>
+      <category>Court</category>
+      <pubDate>Tue, 25 Aug 2026 12:00:00 GMT</pubDate>
+      <description>The Innocence Project has helped exonerate more than 200 people convicted of serious crimes. Here's what the record shows about how it happens.</description>
+    </item>
     <item>
       <title>How Familial DNA Searching Actually Works</title>
       <link>https://crimetime.vercel.app/blog-posts/how-familial-dna-searching-actually-works.html</link>

@@ -1,11 +1,134 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1231,
+    "totalOnFile": 1233,
     "baked": 150,
-    "updated": "2026-08-24T13:00:04.395Z"
+    "updated": "2026-08-25T14:00:02.958Z"
   },
   "items": [
+    {
+      "uid": "2caa95f3b2b34cbda7d70dac99d95b9a",
+      "title": "KUSH KOHOLE BERNSTEIN",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/kush-kohole-bernstein/@@images/image/large",
+      "office": "Honolulu",
+      "reward": "Reward up to $10,000 for information leading to the safe recovery of Abigail, Kush, or Koa Bernstein.",
+      "url": "https://www.fbi.gov/wanted/kidnap/kush-kohole-bernstein",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2024-07-01T10:02:00"
+    },
+    {
+      "uid": "a219b9f0500740f3908e853a7761ca1b",
+      "title": "ABIGAIL BERNSTEIN",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/abigail-bernstein/@@images/image/large",
+      "office": "Honolulu",
+      "reward": "Reward up to $10,000 for information leading to the safe recovery of Abigail, Kush, or Koa Bernstein.",
+      "url": "https://www.fbi.gov/wanted/kidnap/abigail-bernstein",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2024-06-28T12:24:00"
+    },
+    {
+      "uid": "36715efc74c94930a5cc5e30d52ab0f8",
+      "title": "KOA KAI BERNSTEIN",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/koa-kai-bernstein/@@images/image/large",
+      "office": "Honolulu",
+      "reward": "Reward up to $10,000 for information leading to the safe recovery of Abigail, Kush, or Koa Bernstein.",
+      "url": "https://www.fbi.gov/wanted/kidnap/koa-kai-bernstein",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2024-06-28T14:49:00"
+    },
+    {
+      "uid": "8b2461d815d5493886832689c2ef538d",
+      "title": "DONALD STEVEN LANG",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/donald-steven-lang/@@images/image/large",
+      "office": "Honolulu, Saltlakecity",
+      "reward": "Reward up to $5,000 for information leading to the arrest of Donald Steven Lang.",
+      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/donald-steven-lang",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
+      "subjects": [
+        "Law Enforcement Assistance"
+      ],
+      "publication": "2026-02-09T10:58:00"
+    },
+    {
+      "uid": "7d2223d182384ef9a7869fe105fc470d",
+      "title": "DURWIN MERRILL DAVIS",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/durwin-merrill-davis/@@images/image/large",
+      "office": "Albuquerque",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the person or persons responsible for the death of Durwin Merrill Davis.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/durwin-merrill-davis",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country",
+        "Navajo"
+      ],
+      "publication": "2017-12-19T08:57:00"
+    },
+    {
+      "uid": "c81529798b1c4c78b6185d7c4397d74a",
+      "title": "DARREN ANTHONY ROBINSON",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/darren-anthony-robinson/@@images/image/large",
+      "office": "Detroit",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Darren Anthony Robinson.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/darren-anthony-robinson",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2024-01-16T07:54:00"
+    },
+    {
+      "uid": "1afeda646c61d24ce1cfb323c75a9c9e",
+      "title": "TAMMY J. ZYWICKI",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/tammy-j.-zywicki/@@images/image/large",
+      "office": "Chicago",
+      "reward": "Reward up to $50,000 for information leading to the identification of the individual or individuals responsible for this crime.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/tammy-j.-zywicki",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Case of the Week"
+      ],
+      "publication": "2010-09-15T15:05:00"
+    },
+    {
+      "uid": "50c96101b3b64ec5b43074536babb5a8",
+      "title": "TRIPLE HOMICIDE AND ARSON",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/triple-homicide-investigation---cypress-texas/@@images/image/large",
+      "office": "Houston",
+      "reward": "Reward up to $50,000 for information leading to the identification and arrest of the unknown suspects responsible for the homicides of Kelly Masciarelli, Kolin Foster, and Cameryn Richard, and the arson of the residence where they were killed.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/triple-homicide-investigation---cypress-texas",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2025-01-30T12:43:00"
+    },
     {
       "uid": "273dda04e33d4c01ae85a0973889bf55",
       "title": "RAE ELAINE TOURTILLOTT",
@@ -21,6 +144,22 @@
         "Seeking Information"
       ],
       "publication": "2019-04-17T09:38:00"
+    },
+    {
+      "uid": "77987590855f4daf914c219bb82f98e9",
+      "title": "JON NICHOLAS PATNAUDE",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/jon-nicholas-patnaude/@@images/image/large",
+      "office": "Minneapolis",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of those responsible for the death of Jon Nicholas Patnaude.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/jon-nicholas-patnaude",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country"
+      ],
+      "publication": "2026-04-21T10:40:00"
     },
     {
       "uid": "7d54d3dc154843ddaae748d03fb8f375",
@@ -66,22 +205,6 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2026-07-30T08:43:00"
-    },
-    {
-      "uid": "c81529798b1c4c78b6185d7c4397d74a",
-      "title": "DARREN ANTHONY ROBINSON",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/darren-anthony-robinson/@@images/image/large",
-      "office": "Detroit",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Darren Anthony Robinson.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/darren-anthony-robinson",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Most Wanted Fraudster",
-        "Case of the Week"
-      ],
-      "publication": "2024-01-16T07:54:00"
     },
     {
       "uid": "2a19f6cd74ad405f81af8f79fda32aed",
@@ -2039,66 +2162,6 @@
       "publication": "2026-01-22T08:15:00"
     },
     {
-      "uid": "8b2461d815d5493886832689c2ef538d",
-      "title": "DONALD STEVEN LANG",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/donald-steven-lang/@@images/image/large",
-      "office": "Honolulu, Saltlakecity",
-      "reward": "Reward up to $5,000 for information leading to the arrest of Donald Steven Lang.",
-      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/donald-steven-lang",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
-      "subjects": [
-        "Law Enforcement Assistance"
-      ],
-      "publication": "2026-02-09T10:58:00"
-    },
-    {
-      "uid": "2caa95f3b2b34cbda7d70dac99d95b9a",
-      "title": "KUSH KOHOLE BERNSTEIN",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/kush-kohole-bernstein/@@images/image/large",
-      "office": "Honolulu",
-      "reward": "Reward up to $10,000 for information leading to the safe recovery of Abigail, Kush, or Koa Bernstein.",
-      "url": "https://www.fbi.gov/wanted/kidnap/kush-kohole-bernstein",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons"
-      ],
-      "publication": "2024-07-01T10:02:00"
-    },
-    {
-      "uid": "36715efc74c94930a5cc5e30d52ab0f8",
-      "title": "KOA KAI BERNSTEIN",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/koa-kai-bernstein/@@images/image/large",
-      "office": "Honolulu",
-      "reward": "Reward up to $10,000 for information leading to the safe recovery of Abigail, Kush, or Koa Bernstein.",
-      "url": "https://www.fbi.gov/wanted/kidnap/koa-kai-bernstein",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons"
-      ],
-      "publication": "2024-06-28T14:49:00"
-    },
-    {
-      "uid": "a219b9f0500740f3908e853a7761ca1b",
-      "title": "ABIGAIL BERNSTEIN",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/abigail-bernstein/@@images/image/large",
-      "office": "Honolulu",
-      "reward": "Reward up to $10,000 for information leading to the safe recovery of Abigail, Kush, or Koa Bernstein.",
-      "url": "https://www.fbi.gov/wanted/kidnap/abigail-bernstein",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons"
-      ],
-      "publication": "2024-06-28T12:24:00"
-    },
-    {
       "uid": "e6efbadb6b39486b9a0071a233a175fd",
       "title": "SANDRA BURT CARRERA - ARLINGTON, VIRGINIA",
       "kind": "wanted",
@@ -2218,66 +2281,6 @@
         "ViCAP Missing Persons"
       ],
       "publication": "2024-04-29T13:46:00"
-    },
-    {
-      "uid": "1584feee758e4cd39136171ef1c007f9",
-      "title": "BRYAN MATTHEW MCGEHRIN - TANEYTOWN, MARYLAND",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/bryan-matthew-mcgehrin---taneytown-maryland/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/bryan-matthew-mcgehrin---taneytown-maryland",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Missing Persons"
-      ],
-      "publication": "2022-03-21T07:35:00"
-    },
-    {
-      "uid": "677908658a25476ab841613784ad291f",
-      "title": "AMIT PATEL",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/amit-patel/@@images/image/large",
-      "office": "Atlanta",
-      "reward": "Reward up to $20,000 for information leading to the arrest and conviction of the two unknown suspects responsible for the homicide of Amit Patel.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/amit-patel",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2025-01-14T14:13:00"
-    },
-    {
-      "uid": "7d60ad83779047dd95914d0d1bf79e11",
-      "title": "JOHN DOE - WATERLOO TOWNSHIP, MICHIGAN",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/vicap/unidentified-persons/john-doe---waterloo-township-michigan/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/unidentified-persons/john-doe---waterloo-township-michigan",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Unidentified Persons"
-      ],
-      "publication": "2021-02-23T11:33:00"
-    },
-    {
-      "uid": "b241a3d5007b4abcba4a085ea95831a1",
-      "title": "MITCHELL TODD HEIN - INDIO, CALIFORNIA",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/mitchell-todd-hein/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/mitchell-todd-hein",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Missing Persons"
-      ],
-      "publication": "2020-12-10T13:40:00"
     }
   ]
 }
