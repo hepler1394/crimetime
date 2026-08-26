@@ -3,9 +3,40 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1233,
     "baked": 150,
-    "updated": "2026-08-25T19:01:44.312Z"
+    "updated": "2026-08-26T02:01:06.546Z"
   },
   "items": [
+    {
+      "uid": "8b2461d815d5493886832689c2ef538d",
+      "title": "DONALD STEVEN LANG",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/donald-steven-lang/@@images/image/large",
+      "office": "Honolulu, Saltlakecity",
+      "reward": "Reward up to $5,000 for information leading to the arrest of Donald Steven Lang.",
+      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/donald-steven-lang",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
+      "subjects": [
+        "Law Enforcement Assistance"
+      ],
+      "publication": "2026-02-09T10:58:00"
+    },
+    {
+      "uid": "525c64c8a82940e3aaae18c532cc3019",
+      "title": "SA'WADE BIRDINGROUND",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/sawade-birdinground/@@images/image/large",
+      "office": "Billings",
+      "reward": "Reward up to $25,000 for information leading to the recovery of Sa'Wade Birdinground.",
+      "url": "https://www.fbi.gov/wanted/kidnap/sawade-birdinground",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons",
+        "Indian Country"
+      ],
+      "publication": "2024-10-22T11:00:00"
+    },
     {
       "uid": "95c9abca38a44575ae75ac8267463b43",
       "title": "REY E. GRABATO, II",
@@ -80,21 +111,6 @@
         "Kidnappings and Missing Persons"
       ],
       "publication": "2024-06-28T14:49:00"
-    },
-    {
-      "uid": "8b2461d815d5493886832689c2ef538d",
-      "title": "DONALD STEVEN LANG",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/donald-steven-lang/@@images/image/large",
-      "office": "Honolulu, Saltlakecity",
-      "reward": "Reward up to $5,000 for information leading to the arrest of Donald Steven Lang.",
-      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/donald-steven-lang",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
-      "subjects": [
-        "Law Enforcement Assistance"
-      ],
-      "publication": "2026-02-09T10:58:00"
     },
     {
       "uid": "7d2223d182384ef9a7869fe105fc470d",
@@ -752,21 +768,6 @@
         "Kidnappings and Missing Persons"
       ],
       "publication": "2026-07-20T10:09:00"
-    },
-    {
-      "uid": "12b0a5aa363c4167a9b2327f3d328d32",
-      "title": "ADRIAN DEON GOLDEN-RODRIGUEZ - HOMICIDE SUSPECT - HOLIDAY, FLORIDA",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/adrian-deon-golden-rodriguez---homicide-suspect---holiday-florida/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/adrian-deon-golden-rodriguez---homicide-suspect---holiday-florida",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Homicides and Sexual Assaults"
-      ],
-      "publication": "2026-07-20T10:39:00"
     },
     {
       "uid": "12b0a5aa363c4167a9b2327f3d328d32",
