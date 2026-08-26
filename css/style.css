@@ -588,7 +588,14 @@ header::after {
     will-change: transform;
 }
 
-.hero-phone { height: auto; will-change: transform; filter: drop-shadow(0 30px 44px rgba(0, 0, 0, 0.65)); }
+.hero-phone {
+    height: auto;
+    will-change: transform;
+    /* The source mockups include a solid black matte. Screen blending lets the
+       page backdrop show through that matte without affecting their layout. */
+    mix-blend-mode: screen;
+    filter: drop-shadow(0 30px 44px rgba(0, 0, 0, 0.65));
+}
 
 .hero-phone--side { width: 31%; opacity: 0.97; }
 .hero-phone--left { transform: translateY(16px) rotate(-1.2deg); }
@@ -615,6 +622,7 @@ header::after {
     margin-top: 2rem;
     position: relative;
     z-index: 1;
+    mix-blend-mode: screen;
     filter: drop-shadow(0 26px 40px rgba(0, 0, 0, 0.6));
 }
 
