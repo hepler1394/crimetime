@@ -3,9 +3,138 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1233,
     "baked": 150,
-    "updated": "2026-08-26T13:25:48.459Z"
+    "updated": "2026-08-26T20:10:58.477Z"
   },
   "items": [
+    {
+      "uid": "459fcd662ee849fe9df91f59de93f83f",
+      "title": "DAVID RUSSELL, JR.",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/david-russell-jr/@@images/image/large",
+      "office": "Albuquerque",
+      "reward": "Reward up to $25,000 for information leading to the identification, arrest, and conviction of the individual(s) responsible for the death of David Russell, Jr.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/david-russell-jr",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country"
+      ],
+      "publication": "2021-03-11T08:02:00"
+    },
+    {
+      "uid": "04d4aee30d154f21ae53948f4be7b52b",
+      "title": "CASINO ROBBERY - NEW MEXICO",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/casino-robbery---new-mexico/@@images/image/large",
+      "office": "Albuquerque",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the unknown suspect responsible for the casino robbery.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/casino-robbery---new-mexico",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country"
+      ],
+      "publication": "2026-04-21T08:05:00"
+    },
+    {
+      "uid": "950e62ff80cf4fe1b476db427d2711a3",
+      "title": "ISIAH TERRELL BILLY",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/isiah-terrell-billy/@@images/image/large",
+      "office": "Albuquerque",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the individual(s) responsible for the death of Isiah Terrell Billy.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/isiah-terrell-billy",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country",
+        "Navajo"
+      ],
+      "publication": "2021-03-03T13:33:00"
+    },
+    {
+      "uid": "c4861ebb78d84826ad0caacf91c0908b",
+      "title": "TIFFANY DEANNA BENALLIE",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/tiffany-deanna-benallie/@@images/image/large",
+      "office": "Albuquerque",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the individual(s) responsible for the death of Tiffany Deanna Benallie.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/tiffany-deanna-benallie",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2024-07-16T07:08:00"
+    },
+    {
+      "uid": "d845d5679b8c493ca4ae583e1eee2c34",
+      "title": "MICHAEL BARNEY SR.",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/michael-barney-sr/@@images/image/large",
+      "office": "Albuquerque",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the person or persons responsible for the death of Michael Barney Sr.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/michael-barney-sr",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Indian Country",
+        "Seeking Information"
+      ],
+      "publication": "2021-08-03T15:06:00"
+    },
+    {
+      "uid": "4c60ddafa619433f81b9e964eca57cef",
+      "title": "LAVERDA SORRELL",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/laverda-sorrell/@@images/image/large",
+      "office": "Albuquerque",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the person(s) responsible for the disappearance of Laverda Sorrell.",
+      "url": "https://www.fbi.gov/wanted/kidnap/laverda-sorrell",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons",
+        "Indian Country",
+        "Navajo"
+      ],
+      "publication": "2019-08-06T10:04:00"
+    },
+    {
+      "uid": "5342f633-76b9-4b46-bed9-32599702b86d",
+      "title": "ANTHONETTE CHRISTINE CAYEDITO",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/anthonette-christine-cayedito/@@images/image/large",
+      "office": "Albuquerque",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the subject(s) related to the disappearance of Anthonette Cayedito.",
+      "url": "https://www.fbi.gov/wanted/kidnap/anthonette-christine-cayedito",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons",
+        "Indian Country",
+        "Navajo"
+      ],
+      "publication": "2014-07-01T07:00:00"
+    },
+    {
+      "uid": "38f36a4016aa45a0a21c0c11fcbcd1ed",
+      "title": "KEVIN AND CEDRIC KIND",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/kevin-and-cedric-kind/@@images/image/large",
+      "office": "Atlanta",
+      "reward": "Reward up to $5,000 for information leading to the arrest and conviction of the person(s) responsible for the deaths of Kevin and Cedric Kind.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/kevin-and-cedric-kind",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2022-10-05T12:41:00"
+    },
     {
       "uid": "8b2461d815d5493886832689c2ef538d",
       "title": "DONALD STEVEN LANG",
@@ -329,23 +458,6 @@
       "publication": "2021-09-14T06:37:00"
     },
     {
-      "uid": "5342f633-76b9-4b46-bed9-32599702b86d",
-      "title": "ANTHONETTE CHRISTINE CAYEDITO",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/anthonette-christine-cayedito/@@images/image/large",
-      "office": "Albuquerque",
-      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the subject(s) related to the disappearance of Anthonette Cayedito.",
-      "url": "https://www.fbi.gov/wanted/kidnap/anthonette-christine-cayedito",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons",
-        "Indian Country",
-        "Navajo"
-      ],
-      "publication": "2014-07-01T07:00:00"
-    },
-    {
       "uid": "ffc971d4a49048bd891663a295da570f",
       "title": "JIMMY DOLLISON - GARNETT, KANSAS",
       "kind": "wanted",
@@ -587,22 +699,6 @@
         "Indian Country"
       ],
       "publication": "2022-04-04T09:47:00"
-    },
-    {
-      "uid": "04d4aee30d154f21ae53948f4be7b52b",
-      "title": "CASINO ROBBERY - NEW MEXICO",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/casino-robbery---new-mexico/@@images/image/large",
-      "office": "Albuquerque",
-      "reward": "Reward up to $5,000 for information leading to the arrest and conviction of the unknown suspect responsible for the casino robbery.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/casino-robbery---new-mexico",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information",
-        "Indian Country"
-      ],
-      "publication": "2026-04-21T08:05:00"
     },
     {
       "uid": "bbf2d6b0a4e24fbfb98de2749d8696fc",
@@ -2191,96 +2287,6 @@
         "Indian Country"
       ],
       "publication": "2026-02-03T10:00:00"
-    },
-    {
-      "uid": "dd2b306281994ec5a5ff4703dd69120d",
-      "title": "DALTON MESARCHIK",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/dalton-mesarchik/@@images/image/large",
-      "office": "Chicago",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/seeking-info/dalton-mesarchik",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2023-03-22T12:52:00"
-    },
-    {
-      "uid": "b166d627e11149aa82c02d1533e3b650",
-      "title": "JESUS DE LA CRUZ - LYNN, MASSACHUSETTS",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/jesus-de-la-cruz---lynn-massachusetts/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/jesus-de-la-cruz---lynn-massachusetts",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Missing Persons"
-      ],
-      "publication": "2021-09-28T10:00:00"
-    },
-    {
-      "uid": "b953c05b852a4b719c0a152ef8a73ffd",
-      "title": "BORIS YAKOVLEVICH LIVSHITS",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/counterintelligence/boris-yakovlevich-livshits/@@images/image/large",
-      "office": "Newyork",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/counterintelligence/boris-yakovlevich-livshits",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Counterintelligence"
-      ],
-      "publication": "2022-12-01T12:17:00"
-    },
-    {
-      "uid": "55b4a8a4053a4816befef81fe2b0c514",
-      "title": "KENNETH EARL FOX - HOMESTEAD, FLORIDA",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/kenneth-earl-fox---homestead-florida/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/kenneth-earl-fox---homestead-florida",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Missing Persons"
-      ],
-      "publication": "2025-01-30T12:04:00"
-    },
-    {
-      "uid": "2f6130f0d1e54944881aafed83a8622a",
-      "title": "DOUBLE MURDER",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/double-murder/unsub1.png/@@images/image/large",
-      "office": "Stlouis",
-      "reward": "Reward up to $10,000 for information leading to the identification and arrest of the individuals responsible for the murders of Marshun White and Marcus Price.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/double-murder",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2024-12-30T12:40:00"
-    },
-    {
-      "uid": "4f5f62ea98c34547a11f12fd12e040ca",
-      "title": "IDA DEAN (RICHARDSON) ANDERSON - ANN ARBOR, MICHIGAN",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/ida-dean-richardson-anderson---ann-arbor-michigan/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/ida-dean-richardson-anderson---ann-arbor-michigan",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Missing Persons"
-      ],
-      "publication": "2024-04-29T13:46:00"
     }
   ]
 }
