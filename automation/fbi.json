@@ -1,11 +1,26 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1233,
+    "totalOnFile": 1234,
     "baked": 150,
-    "updated": "2026-08-27T09:57:14.157Z"
+    "updated": "2026-08-27T22:24:33.010Z"
   },
   "items": [
+    {
+      "uid": "fcce63ed6b9e49d98f88a4a4dbd502c4",
+      "title": "ZE'KEVIOUS ZENARD PERRY",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/zekevious-zenard-perry/@@images/image/large",
+      "office": "Atlanta",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/zekevious-zenard-perry",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Law Enforcement Assistance"
+      ],
+      "publication": "2026-08-26T11:38:00"
+    },
     {
       "uid": "459fcd662ee849fe9df91f59de93f83f",
       "title": "DAVID RUSSELL, JR.",
@@ -2271,22 +2286,6 @@
         "ViCAP Homicides and Sexual Assaults"
       ],
       "publication": "2026-03-23T07:33:00"
-    },
-    {
-      "uid": "5da32b94b6e14977a2bf41b06b65ce37",
-      "title": "JEREMIAH JAKE",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/jeremiah-jake/@@images/image/large",
-      "office": "Denver",
-      "reward": "Reward up to $10,000 for information leading to the arrest of the individual(s) responsible for the death of Jeremiah Jake.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/jeremiah-jake",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information",
-        "Indian Country"
-      ],
-      "publication": "2026-02-03T10:00:00"
     }
   ]
 }
