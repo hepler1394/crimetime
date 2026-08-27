@@ -1,9 +1,36 @@
 {
   "meta": {
     "intro": "Original CrimeTimeSnacks prints, straight from the studio — new designs drop automatically. Every file is real, print-ready art you can grab now; the print-on-demand store opens soon.",
-    "updated": "2026-08-25T14:03:18.616Z"
+    "updated": "2026-08-25T14:48:16.047Z"
   },
   "designs": [
+    {
+      "slug": "under-oath",
+      "slogan": "Under Oath",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "template": null,
+      "svg": "images/merch/under-oath.svg",
+      "created": "2026-08-25"
+    },
+    {
+      "slug": "plead-the-fifth",
+      "slogan": "Plead The Fifth",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "template": null,
+      "svg": "images/merch/plead-the-fifth.svg",
+      "created": "2026-08-21"
+    },
+    {
+      "slug": "verdict-pending",
+      "slogan": "Verdict Pending",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "template": null,
+      "svg": "images/merch/verdict-pending.svg",
+      "created": "2026-08-18"
+    },
     {
       "slug": "shadows-speak",
       "slogan": "Shadows Speak",
@@ -12,6 +39,15 @@
       "template": null,
       "svg": "images/merch/shadows-speak.svg",
       "created": "2026-08-18"
+    },
+    {
+      "slug": "the-jury-s-out",
+      "slogan": "The Jury's Out",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "template": null,
+      "svg": "images/merch/the-jury-s-out.svg",
+      "created": "2026-08-14"
     },
     {
       "slug": "cold-case-whispers",
@@ -23,6 +59,33 @@
       "created": "2026-08-14"
     },
     {
+      "slug": "beyond-reasonable-doubt",
+      "slogan": "Beyond Reasonable Doubt",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "30",
+      "template": null,
+      "svg": "images/merch/beyond-reasonable-doubt.svg",
+      "created": "2026-08-11"
+    },
+    {
+      "slug": "person-of-interest",
+      "slogan": "Person Of Interest",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "template": null,
+      "svg": "images/merch/person-of-interest.svg",
+      "created": "2026-08-07"
+    },
+    {
+      "slug": "due-process",
+      "slogan": "Due Process",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "template": null,
+      "svg": "images/merch/due-process.svg",
+      "created": "2026-08-04"
+    },
+    {
       "slug": "trust-nobody-verify",
       "slogan": "Trust Nobody, Verify",
       "tagline": "CRIMETIMESNACKS",
@@ -30,6 +93,51 @@
       "template": null,
       "svg": "images/merch/trust-nobody-verify.svg",
       "created": "2026-08-04"
+    },
+    {
+      "slug": "armchair-detective",
+      "slogan": "Armchair Detective",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "template": null,
+      "svg": "images/merch/armchair-detective.svg",
+      "created": "2026-07-31"
+    },
+    {
+      "slug": "burden-of-proof",
+      "slogan": "Burden Of Proof",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "30",
+      "template": null,
+      "svg": "images/merch/burden-of-proof.svg",
+      "created": "2026-07-28"
+    },
+    {
+      "slug": "cold-case-energy",
+      "slogan": "Cold Case Energy",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "template": null,
+      "svg": "images/merch/cold-case-energy.svg",
+      "created": "2026-07-24"
+    },
+    {
+      "slug": "exhibit-a",
+      "slogan": "Exhibit A",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "template": null,
+      "svg": "images/merch/exhibit-a.svg",
+      "created": "2026-07-21"
+    },
+    {
+      "slug": "allegedly",
+      "slogan": "Allegedly",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "template": null,
+      "svg": "images/merch/allegedly.svg",
+      "created": "2026-07-17"
     },
     {
       "slug": "trust-no-alibi",
@@ -183,35 +291,6 @@
       "template": 0,
       "svg": "images/merch/stay-suspicious.svg",
       "created": "2026-06-28"
-    }
-  ],
-  "collection": [
-    {
-      "slug": "logo-tee",
-      "name": "The Logo Tee Print",
-      "kind": "Tee / Hoodie",
-      "file": "images/merch/logo-tee.png",
-      "preview": "images/merch/logo-tee-web.png",
-      "price": "30",
-      "blurb": "The official cover art, framed in red with the wordmark bar. Print-ready for a black tee or hoodie."
-    },
-    {
-      "slug": "logo-sticker",
-      "name": "Die-Cut Logo Sticker",
-      "kind": "Sticker",
-      "file": "images/merch/logo-sticker.png",
-      "preview": "images/merch/logo-sticker-web.png",
-      "price": "5",
-      "blurb": "Thick white die-cut border, rounded corners. Laptop, water bottle, case file — it goes where you go."
-    },
-    {
-      "slug": "logo-classic",
-      "name": "The Cover Art Print",
-      "kind": "Poster / Canvas",
-      "file": "images/merch/logo-classic.png",
-      "preview": "images/merch/logo-classic-web.jpg",
-      "price": "22",
-      "blurb": "The CrimeTimeSnacks cover art as a clean square print. Mic, snacks, and all."
     }
   ]
 }

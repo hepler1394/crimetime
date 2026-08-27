@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-26T13:00:26.841Z",
-  "improvementsShipped": 449,
+  "generated": "2026-08-27T00:19:02.141Z",
+  "improvementsShipped": 461,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
     "content": [
@@ -12,8 +12,8 @@
   "counts": {
     "episodes": 6,
     "posts": 14,
-    "merchDesigns": 20,
-    "merchCollection": 3,
+    "merchDesigns": 32,
+    "merchCollection": 0,
     "quizzes": 15,
     "quizQuestions": 75,
     "fbiCases": 150,
@@ -38,9 +38,9 @@
   "freshness": {
     "episodesJson": "2026-08-26T13:00:04.891Z",
     "blogJson": "2026-08-25T14:01:32.824Z",
-    "merchJson": "2026-08-25T14:03:18.616Z",
+    "merchJson": "2026-08-25T14:48:16.047Z",
     "quizzesJson": "2026-08-25T14:04:39.635Z",
-    "fbiJson": "2026-08-26T13:00:05.850Z",
+    "fbiJson": "2026-08-26T20:10:58.477Z",
     "css": "2026-08-26T05:08:11.786Z"
   },
   "nextTopics": [

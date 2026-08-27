@@ -500,16 +500,28 @@ with an [auto] tag — the counter on Mission Control reads this file.
 434. [auto 2026-07-17] Published blog post in Cory's voice: "How Forensic Genealogy Is Reopening Cases the System Had Written Off"
 435. [auto 2026-07-17] Dropped 1 new merch design into the vault
 436. [auto 2026-07-17] Published new quiz: "The Moscow Student Murders" (5 questions)
-437. [auto 2026-07-28] Published blog post in Cory's voice: "Why Solid Evidence Gets Thrown Out of Court"
-438. [auto 2026-07-28] Published new quiz: "The Watts Case: What You Really Know" (5 questions)
-439. [auto 2026-08-04] Published blog post in Cory's voice: "What You Saw and What Happened Are Not the Same Thing"
-440. [auto 2026-08-04] Dropped 1 new merch design into the vault
-441. [auto 2026-08-04] Published new quiz: "The Menendez Brothers: Know the Case" (5 questions)
-442. [auto 2026-08-14] Published blog post in Cory's voice: "What Actually Gets a Cold Case Reopened"
-443. [auto 2026-08-14] Dropped 1 new merch design into the vault
-444. [auto 2026-08-14] Published new quiz: "JonBenét Ramsey: The Case File" (5 questions)
-445. [auto 2026-08-18] Published blog post in Cory's voice: "How Familial DNA Searching Actually Works"
-446. [auto 2026-08-18] Dropped 1 new merch design into the vault
-447. [auto 2026-08-18] Published new quiz: "The JonBenét Ramsey Case File" (5 questions)
-448. [auto 2026-08-25] Published blog post in Cory's voice: "When the Case File Gets It Wrong"
-449. [auto 2026-08-25] Published new quiz: "The Delphi Murders: What You Know" (5 questions)
+437. [auto 2026-07-17] Dropped 1 new merch design into the vault
+438. [auto 2026-07-21] Dropped 1 new merch design into the vault
+439. [auto 2026-07-24] Dropped 1 new merch design into the vault
+440. [auto 2026-07-28] Published blog post in Cory's voice: "Why Solid Evidence Gets Thrown Out of Court"
+441. [auto 2026-07-28] Published new quiz: "The Watts Case: What You Really Know" (5 questions)
+442. [auto 2026-07-28] Dropped 1 new merch design into the vault
+443. [auto 2026-07-31] Dropped 1 new merch design into the vault
+444. [auto 2026-08-04] Published blog post in Cory's voice: "What You Saw and What Happened Are Not the Same Thing"
+445. [auto 2026-08-04] Dropped 1 new merch design into the vault
+446. [auto 2026-08-04] Published new quiz: "The Menendez Brothers: Know the Case" (5 questions)
+447. [auto 2026-08-04] Dropped 1 new merch design into the vault
+448. [auto 2026-08-07] Dropped 1 new merch design into the vault
+449. [auto 2026-08-11] Dropped 1 new merch design into the vault
+450. [auto 2026-08-14] Published blog post in Cory's voice: "What Actually Gets a Cold Case Reopened"
+451. [auto 2026-08-14] Dropped 1 new merch design into the vault
+452. [auto 2026-08-14] Published new quiz: "JonBenét Ramsey: The Case File" (5 questions)
+453. [auto 2026-08-14] Dropped 1 new merch design into the vault
+454. [auto 2026-08-18] Published blog post in Cory's voice: "How Familial DNA Searching Actually Works"
+455. [auto 2026-08-18] Dropped 1 new merch design into the vault
+456. [auto 2026-08-18] Published new quiz: "The JonBenét Ramsey Case File" (5 questions)
+457. [auto 2026-08-18] Dropped 1 new merch design into the vault
+458. [auto 2026-08-21] Dropped 1 new merch design into the vault
+459. [auto 2026-08-25] Published blog post in Cory's voice: "When the Case File Gets It Wrong"
+460. [auto 2026-08-25] Published new quiz: "The Delphi Murders: What You Know" (5 questions)
+461. [auto 2026-08-25] Dropped 1 new merch design into the vault
