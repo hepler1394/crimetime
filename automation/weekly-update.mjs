@@ -45,6 +45,14 @@ const git = (gitArgs) => {
 
 console.log("CrimeTimeSnacks content update —", new Date().toISOString());
 
+// 0: start from the latest published state. The CI feed sync
+// (.github/workflows/sync.yml) pushes every 6 hours, so building on a stale
+// tree regenerates the whole site from old JSON and reverts its work.
+if (doPush && !git(["pull", "--rebase", "--autostash"])) {
+  console.error("\nABORTED: could not sync with origin. Fix the tree, then re-run.");
+  process.exit(1);
+}
+
 // 1-3: refresh sources (best-effort; need network)
 run("import-feed.mjs");        // podcast episodes
 run("import-youtube.mjs");     // youtube videos + shorts
@@ -71,7 +79,13 @@ if (doCommit) {
   const stamp = new Date().toISOString().slice(0, 10);
   const committed = git(["commit", "-m", `Weekly auto-update (${stamp}): episodes, videos, blog, merch`]);
   if (committed && doPush) {
-    git(["push"]);
+    // Rebase onto anything CI pushed while this run was building. Without this
+    // the push is rejected and the commit strands here forever.
+    if (!git(["pull", "--rebase", "--autostash"]) || !git(["push"])) {
+      console.error("\nPUBLISH FAILED: could not rebase onto origin or push.");
+      console.error("The commit is safe locally — resolve, then run: git push");
+      process.exit(1);
+    }
     console.log("\nPushed. Vercel will auto-deploy crimetime.vercel.app.");
   } else if (committed) {
     console.log("\nCommitted locally. Run `git push` (or re-run with --push) to publish.");

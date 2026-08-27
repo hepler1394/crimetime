@@ -12,8 +12,25 @@ name: Content update (Tue + Fri)
 # - Set youtube.handle via the YT_HANDLE secret to auto-pull videos in CI.
 
 on:
-  schedule:
-    - cron: "0 14 * * 2,5" # Tuesdays + Fridays 14:00 UTC (~9am Central)
+  # SCHEDULE DISABLED 2026-08-26 — this ran Tue+Fri alongside the Windows task
+  # "CTS Content Tue/Fri", and both pushed to main. Because no cloud LLM secret
+  # is set, the AI blog/quiz steps here were always skipped, so this job only
+  # ever added merch designs — duplicating the local run's merch drop while
+  # contributing none of the writing. Six weeks of that split main in two
+  # (12 CI-only designs vs 6 local-only blog posts) until the merge on
+  # 2026-08-26.
+  #
+  # The Windows task now owns the content run: it reaches LM Studio locally, so
+  # it is the only side that can actually write posts and quizzes.
+  #
+  # Run this manually (Actions > Run workflow) when Cory's PC is off, or
+  # re-enable the schedule below ONLY after unregistering the Windows tasks:
+  #   schtasks /delete /tn "CTS Content Tue" /f
+  #   schtasks /delete /tn "CTS Content Fri" /f
+  # Exactly one scheduler may own this job.
+  #
+  # schedule:
+  #   - cron: "0 14 * * 2,5" # Tuesdays + Fridays 14:00 UTC (~9am Central)
   workflow_dispatch: {}
 
 permissions:
