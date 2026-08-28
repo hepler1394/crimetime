@@ -1,11 +1,27 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1234,
+    "totalOnFile": 1235,
     "baked": 150,
-    "updated": "2026-08-28T11:30:18.998Z"
+    "updated": "2026-08-28T22:26:58.547Z"
   },
   "items": [
+    {
+      "uid": "5c53990e4e3e4d758eea28c51c1f1cd9",
+      "title": "ATTEMPTED ROBBERY - ROUTE 66 TRAVEL CENTER",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/attempted-robbery---route-66-travel-center/@@images/image/large",
+      "office": "Albuquerque",
+      "reward": "Reward up to $25,000 for information leading to the identification, arrest, and conviction of the individual(s) involved in this attempted robbery.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/attempted-robbery---route-66-travel-center",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country"
+      ],
+      "publication": "2026-08-27T13:40:00"
+    },
     {
       "uid": "fcce63ed6b9e49d98f88a4a4dbd502c4",
       "title": "ZE'KEVIOUS ZENARD PERRY",
@@ -2271,21 +2287,6 @@
         "ViCAP Missing Persons"
       ],
       "publication": "2026-01-22T08:15:00"
-    },
-    {
-      "uid": "e6efbadb6b39486b9a0071a233a175fd",
-      "title": "SANDRA BURT CARRERA - ARLINGTON, VIRGINIA",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/sandra-burt-carrera---arlington-virginia/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/sandra-burt-carrera---arlington-virginia",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Homicides and Sexual Assaults"
-      ],
-      "publication": "2026-03-23T07:33:00"
     }
   ]
 }
