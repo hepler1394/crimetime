@@ -1,11 +1,26 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1235,
+    "totalOnFile": 1236,
     "baked": 150,
-    "updated": "2026-09-02T11:26:33.384Z"
+    "updated": "2026-09-02T16:40:01.697Z"
   },
   "items": [
+    {
+      "uid": "c72a8bf66e414d52917bf211fd5089ac",
+      "title": "NO NAME GIVEN KAMAL",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/no-name-given-kamal/@@images/image/large",
+      "office": "Losangeles",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/no-name-given-kamal",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-08-18T10:47:00"
+    },
     {
       "uid": "5c53990e4e3e4d758eea28c51c1f1cd9",
       "title": "ATTEMPTED ROBBERY - ROUTE 66 TRAVEL CENTER",
@@ -383,21 +398,6 @@
       "publication": "2026-06-15T11:09:00"
     },
     {
-      "uid": "c72a8bf66e414d52917bf211fd5089ac",
-      "title": "NO NAME GIVEN KAMAL",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/no-name-given-kamal/@@images/image/large",
-      "office": "Losangeles",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cei/no-name-given-kamal",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-08-18T10:47:00"
-    },
-    {
       "uid": "b4ba813f6a2048cf8008726178dbb40e",
       "title": "GURPREET SINGH",
       "kind": "wanted",
@@ -487,6 +487,21 @@
         "Seeking Information"
       ],
       "publication": "2021-09-14T06:37:00"
+    },
+    {
+      "uid": "b1b38bae7e1a4411b1bce5455ee18641",
+      "title": "ETERNAL LIFE HARVEST CENTER ARSON",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/eternal-life-harvest-center-arson/@@images/image/large",
+      "office": "Nashville",
+      "reward": "Reward up to $2,500 for information leading to the identification, arrest, and conviction of the individual responsible for the arson.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/eternal-life-harvest-center-arson",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-08-13T11:36:00"
     },
     {
       "uid": "ffc971d4a49048bd891663a295da570f",
@@ -2272,21 +2287,6 @@
         "ViCAP Missing Persons"
       ],
       "publication": "2026-03-26T08:41:00"
-    },
-    {
-      "uid": "0f2d43190700454e9ad82e7209bbaf1b",
-      "title": "NICOLE ELIZABETH MCCARTNEY - HARRISBURG, PENNSYLVANIA",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/nicole-elizabeth-mccartney---harrisburg-pennsylvania/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/nicole-elizabeth-mccartney---harrisburg-pennsylvania",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Missing Persons"
-      ],
-      "publication": "2026-01-22T08:15:00"
     }
   ]
 }
