@@ -1,11 +1,57 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1238,
+    "totalOnFile": 1240,
     "baked": 150,
-    "updated": "2026-09-03T16:30:53.394Z"
+    "updated": "2026-09-03T21:06:43.812Z"
   },
   "items": [
+    {
+      "uid": "7b7d282549b443428c21f26a2529934b",
+      "title": "MANJIT SINGH BEDI",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/manjit-singh-bedi/@@images/image/large",
+      "office": "Seattle",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Manjit Singh Bedi.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/manjit-singh-bedi",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2026-08-25T11:06:00"
+    },
+    {
+      "uid": "1afeda646c61d24ce1cfb323c75a9c9e",
+      "title": "TAMMY J. ZYWICKI",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/tammy-j.-zywicki/@@images/image/large",
+      "office": "Chicago",
+      "reward": "Reward up to $50,000 for information leading to the identification of the individual or individuals responsible for this crime.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/tammy-j.-zywicki",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2010-09-15T15:05:00"
+    },
+    {
+      "uid": "62dba83f492e470182712dfb20fc4439",
+      "title": "BERNHARD EUGEN FRITSCH",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/bernhard-eugen-fritsch/@@images/image/large",
+      "office": "Losangeles",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Bernhard Eugen Fritsch.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/bernhard-eugen-fritsch",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster",
+        "Case of the Week"
+      ],
+      "publication": "2026-08-25T07:53:00"
+    },
     {
       "uid": "1fa3616fd66143d3bc9961310de0a6e6",
       "title": "ANGEL BEACH",
@@ -395,22 +441,6 @@
         "Most Wanted Fraudster"
       ],
       "publication": "2024-01-16T07:54:00"
-    },
-    {
-      "uid": "1afeda646c61d24ce1cfb323c75a9c9e",
-      "title": "TAMMY J. ZYWICKI",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/tammy-j.-zywicki/@@images/image/large",
-      "office": "Chicago",
-      "reward": "Reward up to $50,000 for information leading to the identification of the individual or individuals responsible for this crime.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/tammy-j.-zywicki",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information",
-        "Case of the Week"
-      ],
-      "publication": "2010-09-15T15:05:00"
     },
     {
       "uid": "50c96101b3b64ec5b43074536babb5a8",
@@ -2258,36 +2288,6 @@
         "Kidnappings and Missing Persons"
       ],
       "publication": "2010-09-13T15:25:00"
-    },
-    {
-      "uid": "9b1a6571e02e4755b1bb2ce94f71b0b6",
-      "title": "MIGUEL OLIVERAS",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/miguel-oliveras/@@images/image/large",
-      "office": "Boston",
-      "reward": "Reward up to $25,000 for information leading to the recovery of Miguel Oliveras.",
-      "url": "https://www.fbi.gov/wanted/kidnap/miguel-oliveras",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons"
-      ],
-      "publication": "2025-03-13T08:48:00"
-    },
-    {
-      "uid": "8b8e74f63b9e47d0829bcb261be85dd2",
-      "title": "SEAN SUOJANEN - HOMICIDE SUSPECT - PORT RICHEY, FLORIDA",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/sean-suojanen---homicide-suspect---port-richey-florida/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/sean-suojanen---homicide-suspect---port-richey-florida",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Homicides and Sexual Assaults"
-      ],
-      "publication": "2026-03-31T13:40:00"
     }
   ]
 }
