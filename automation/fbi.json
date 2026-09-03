@@ -1,11 +1,43 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1237,
+    "totalOnFile": 1238,
     "baked": 150,
-    "updated": "2026-09-03T11:23:03.505Z"
+    "updated": "2026-09-03T16:30:53.394Z"
   },
   "items": [
+    {
+      "uid": "1fa3616fd66143d3bc9961310de0a6e6",
+      "title": "ANGEL BEACH",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/angel-beach/@@images/image/large",
+      "office": "Oklahomacity",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the individual(s) responsible for the death of Angel Beach.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/angel-beach",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country"
+      ],
+      "publication": "2024-07-02T09:58:00"
+    },
+    {
+      "uid": "9456ffa8-08fa-49fa-a811-e7c895014963",
+      "title": "ROBERT GARRETT STEWART, JR.",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/robert-garrett-stewart-jr/@@images/image/large",
+      "office": "Billings",
+      "reward": "Reward up to $25,000 for information that leads to the resolution of this case.",
+      "url": "https://www.fbi.gov/wanted/kidnap/robert-garrett-stewart-jr",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons",
+        "Indian Country"
+      ],
+      "publication": "2016-02-04T07:00:00"
+    },
     {
       "uid": "62c1223838c7432dac7333877515bf80",
       "title": "WASHINGTON PARK MASS SHOOTING",
@@ -241,6 +273,21 @@
         "Indian Country"
       ],
       "publication": "2024-10-22T11:00:00"
+    },
+    {
+      "uid": "2454ac0e87944565ab67e9d12f5a6132",
+      "title": "ONUR SIMSEK",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/onur-simsek/@@images/image/large",
+      "office": "Tampa",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Onur Simsek.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/onur-simsek",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2026-08-25T09:34:00"
     },
     {
       "uid": "95c9abca38a44575ae75ac8267463b43",
@@ -1461,22 +1508,6 @@
       "publication": "2021-10-20T07:20:00"
     },
     {
-      "uid": "9456ffa8-08fa-49fa-a811-e7c895014963",
-      "title": "ROBERT GARRETT STEWART, JR.",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/robert-garrett-stewart-jr/@@images/image/large",
-      "office": "Billings",
-      "reward": "Reward up to $10,000 for information that leads to the resolution of this case.",
-      "url": "https://www.fbi.gov/wanted/kidnap/robert-garrett-stewart-jr",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons",
-        "Indian Country"
-      ],
-      "publication": "2016-02-04T07:00:00"
-    },
-    {
       "uid": "c3e0262b3b8c4daaaba9f3399884944f",
       "title": "LAMAR T. BROWNING",
       "kind": "wanted",
@@ -2257,36 +2288,6 @@
         "ViCAP Homicides and Sexual Assaults"
       ],
       "publication": "2026-03-31T13:40:00"
-    },
-    {
-      "uid": "de83f4acce0a4acf919724ec390ea230",
-      "title": "NAI PING HOU",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/nai-ping-hou/@@images/image/large",
-      "office": "Losangeles",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/kidnap/nai-ping-hou",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons"
-      ],
-      "publication": "2026-03-31T09:39:00"
-    },
-    {
-      "uid": "85b1593861154d7884e0fc1fcc2582e7",
-      "title": "WILFREDO PUJOLS-SEPULVEDA",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/wilfredo-pujols-sepulveda/@@images/image/large",
-      "office": "Sanjuan",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cei/wilfredo-pujols-sepulveda",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-03-20T13:46:00"
     }
   ]
 }
