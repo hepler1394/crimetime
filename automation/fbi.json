@@ -1,11 +1,57 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1236,
+    "totalOnFile": 1237,
     "baked": 150,
-    "updated": "2026-09-02T21:07:08.445Z"
+    "updated": "2026-09-03T04:39:11.729Z"
   },
   "items": [
+    {
+      "uid": "62c1223838c7432dac7333877515bf80",
+      "title": "WASHINGTON PARK MASS SHOOTING",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/washington-park-mass-shooting/@@images/image/large",
+      "office": "Chicago",
+      "reward": "Reward up to $10,000 for information that leads to the arrest and indictment of those responsible for the Washington Park shooting.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/washington-park-mass-shooting",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-09-02T17:49:00"
+    },
+    {
+      "uid": "d845d5679b8c493ca4ae583e1eee2c34",
+      "title": "MICHAEL BARNEY SR.",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/michael-barney-sr/@@images/image/large",
+      "office": "Albuquerque",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the person or persons responsible for the death of Michael Barney Sr.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/michael-barney-sr",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Indian Country",
+        "Seeking Information"
+      ],
+      "publication": "2021-08-03T15:06:00"
+    },
+    {
+      "uid": "3a3ec6ff4ecd1c5aac9a7f2380eccd47",
+      "title": "THOMAS CRANE WALES",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/thomas-crane-wales/@@images/image/large",
+      "office": "Seattle",
+      "reward": "The United States Department of Justice is offering a reward of up to $2,000,000 for information leading to the arrest and conviction of the person or persons responsible for the murder of AUSA Thomas Crane Wales.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/thomas-crane-wales",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2010-09-21T19:40:00"
+    },
     {
       "uid": "c72a8bf66e414d52917bf211fd5089ac",
       "title": "NO NAME GIVEN KAMAL",
@@ -115,22 +161,6 @@
         "Seeking Information"
       ],
       "publication": "2024-07-16T07:08:00"
-    },
-    {
-      "uid": "d845d5679b8c493ca4ae583e1eee2c34",
-      "title": "MICHAEL BARNEY SR.",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/michael-barney-sr/@@images/image/large",
-      "office": "Albuquerque",
-      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the person or persons responsible for the death of Michael Barney Sr.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/michael-barney-sr",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Indian Country",
-        "Seeking Information"
-      ],
-      "publication": "2021-08-03T15:06:00"
     },
     {
       "uid": "4c60ddafa619433f81b9e964eca57cef",
@@ -2257,36 +2287,6 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2026-03-20T13:46:00"
-    },
-    {
-      "uid": "e7a26977f1fe4686839699a3e152a84b",
-      "title": "TRUNG DUC LU",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/topten/trung-duc-lu/@@images/image/large",
-      "office": "Philadelphia",
-      "reward": "Reward up to $1,000,000 for information leading directly to the arrest of Trung Duc Lu.",
-      "url": "https://www.fbi.gov/wanted/topten/trung-duc-lu",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN INTERNATIONAL FLIGHT RISK",
-      "subjects": [
-        "Ten Most Wanted Fugitives"
-      ],
-      "publication": "2020-04-29T12:04:00"
-    },
-    {
-      "uid": "0a814ebbc8ef4e84b3de586a49e8e243",
-      "title": "COLLEEN ELIZABETH PERRIS - PLANTATION, FLORIDA",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/colleen-elizabeth-perris---plantation-florida/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/colleen-elizabeth-perris---plantation-florida",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Missing Persons"
-      ],
-      "publication": "2026-03-26T08:41:00"
     }
   ]
 }
