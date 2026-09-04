@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-03T21:07:04.132Z",
+  "generated": "2026-09-04T04:41:40.590Z",
   "improvementsShipped": 461,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
@@ -36,12 +36,12 @@
     }
   },
   "freshness": {
-    "episodesJson": "2026-09-03T21:06:42.885Z",
-    "blogJson": "2026-09-03T21:06:38.197Z",
+    "episodesJson": "2026-09-04T04:41:19.632Z",
+    "blogJson": "2026-09-04T04:41:14.323Z",
     "merchJson": "2026-08-25T14:48:16.047Z",
     "quizzesJson": "2026-08-25T14:04:39.635Z",
-    "fbiJson": "2026-09-03T21:06:43.812Z",
-    "css": "2026-09-03T21:06:38.202Z"
+    "fbiJson": "2026-09-04T04:41:20.097Z",
+    "css": "2026-09-04T04:41:14.328Z"
   },
   "nextTopics": [
     "What reasonable doubt actually means in a courtroom",
