@@ -1,8 +1,10 @@
-// Local-first LLM helper. Tries your local LM Studio model first (free), then
-// falls back to cloud providers (Deepseek → Claude → OpenAI) using keys from
-// automation/config.json (gitignored) or env vars. NO keys are ever hardcoded.
-//
-// Gemini is intentionally NOT supported here — that key was compromised.
+// LLM helper. Provider order comes from automation/config.json (gitignored) or
+// the defaults below: Gemini Flash first (cents per episode, follows the JSON
+// contract, 1M context), then DeepSeek, then Claude/OpenAI if keyed, and the
+// local LM Studio model last as the free offline fallback. Keys come from
+// config.json or env vars (GEMINI_API_KEY, DEEPSEEK_API_KEY, ...). NO keys are
+// ever hardcoded. The Gemini key that leaked in 2026 was rotated; the one in
+// use must never be written into a repo file.
 
 import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
@@ -18,7 +20,12 @@ export async function loadConfig() {
     /* no config.json — fall back to env only */
   }
   const e = process.env;
-  cfg.order = cfg.order || ["local", "deepseek", "anthropic", "openai"];
+  cfg.order = cfg.order || ["gemini", "deepseek", "anthropic", "openai", "local"];
+  cfg.gemini = cfg.gemini || {};
+  cfg.gemini.apiKey = e.GEMINI_API_KEY || cfg.gemini.apiKey || "";
+  // Gemini speaks the OpenAI chat-completions dialect at this endpoint.
+  cfg.gemini.baseUrl = cfg.gemini.baseUrl || "https://generativelanguage.googleapis.com/v1beta/openai";
+  cfg.gemini.model = e.GEMINI_MODEL || cfg.gemini.model || "gemini-3.8-flash";
   cfg.local = cfg.local || {};
   cfg.local.baseUrl = e.LLM_BASE_URL || cfg.local.baseUrl || "http://localhost:1234/v1";
   cfg.local.model = e.LLM_MODEL || cfg.local.model || "local-model";
@@ -120,6 +127,10 @@ export async function chat(system, user, cfg) {
         );
         if (text.trim()) return { text, provider: `local (${model})` };
         errors.push(`local (${model}): returned empty text (context overflow? check the loaded context length in LM Studio)`);
+      } else if (name === "gemini" && cfg.gemini.apiKey) {
+        const text = await openAiCompatible(cfg.gemini, system, user, cfg.timeoutMs || 120000);
+        if (text.trim()) return { text, provider: `gemini (${cfg.gemini.model})` };
+        errors.push("gemini: returned empty text");
       } else if (name === "deepseek" && cfg.deepseek.apiKey) {
         return { text: await openAiCompatible(cfg.deepseek, system, user, cfg.timeoutMs || 60000), provider: "deepseek" };
       } else if (name === "anthropic" && cfg.anthropic.apiKey) {

@@ -1,10 +1,16 @@
 {
   "_README": "Copy this file to automation/config.json (which is gitignored) and fill in your keys. NEVER commit real keys. Env vars override these: LLM_BASE_URL, LLM_MODEL, DEEPSEEK_API_KEY, ANTHROPIC_API_KEY, OPENAI_API_KEY, BRAVE_API_KEY.",
-  "order": ["local", "deepseek", "anthropic", "openai"],
+  "order": [
+    "gemini",
+    "deepseek",
+    "anthropic",
+    "openai",
+    "local"
+  ],
   "local": {
     "baseUrl": "http://localhost:1234/v1",
     "model": "qwen3.6-27b",
-    "note": "LM Studio (OpenAI-compatible). Free. Load a model in LM Studio first. Used first to save money."
+    "note": "Free LM Studio. Last in line now: the offline fallback when no cloud key answers."
   },
   "deepseek": {
     "apiKey": "",
@@ -22,13 +28,19 @@
   },
   "brave": {
     "apiKey": "",
-    "note": "Brave Search API — used server-side only for research, never in the browser."
+    "note": "Brave Search API \u2014 used server-side only for research, never in the browser."
   },
   "youtube": {
     "handle": "@YourChannel",
     "channelId": "",
     "shortsPlaylistId": "",
     "maxVideos": 24,
-    "note": "Set handle OR channelId (no API key needed — uses the public RSS feed). shortsPlaylistId is optional; videos in it render in the Shorts rail. import-youtube.mjs pulls your uploads into videos.json automatically."
+    "note": "Set handle OR channelId (no API key needed \u2014 uses the public RSS feed). shortsPlaylistId is optional; videos in it render in the Shorts rail. import-youtube.mjs pulls your uploads into videos.json automatically."
+  },
+  "gemini": {
+    "apiKey": "",
+    "baseUrl": "https://generativelanguage.googleapis.com/v1beta/openai",
+    "model": "gemini-3.8-flash",
+    "note": "Key comes from the GEMINI_API_KEY environment variable; leave apiKey empty here. Cents per twenty-minute episode."
   }
 }

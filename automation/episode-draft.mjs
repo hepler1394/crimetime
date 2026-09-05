@@ -36,7 +36,6 @@ const minutes = Math.max(1, Math.min(60, parseFloat(opt("--minutes", "20")) || 2
 const asJson = flag("--json");
 const WPM = 160;                 // the cloned voice reads briskly
 const CHAPTER_WORDS = 420;       // one model answer, comfortably inside the context
-const CHUNK_BUDGET = 4600;       // chars of research per chapter call
 const LLM_TIMEOUT = 30 * 60 * 1000;
 
 const slugify = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60);
@@ -68,6 +67,10 @@ async function pickCase() {
 const kase = await pickCase();
 const voice = await readFile(join(__dirname, "voice.md"), "utf8").catch(() => "");
 const cfg = { ...(await loadConfig()), timeoutMs: LLM_TIMEOUT };
+// How much research each chapter call may carry. A cloud model (Gemini, DeepSeek)
+// has a huge context, so it gets far more of the notes; the local 8k model gets a slice.
+const cloudFirst = cfg.order[0] !== "local" && !!cfg[cfg.order[0]]?.apiKey;
+const CHUNK_BUDGET = cloudFirst ? 16000 : 4600;
 
 /* ---------------------------------------------------------- the notes */
 const researchFull = await readFile(join(__dirname, "studio", "research", kase.slug, "research.md"), "utf8").catch(() => "");
@@ -101,7 +104,7 @@ function retrieve(query, budget = CHUNK_BUDGET, always = []) {
   return picked.sort((a, b) => a - b).map((i) => `### ${chunks[i].heading}\n${chunks[i].text}`).join("\n\n");
 }
 const leadIdx = chunks.findIndex((c) => /: Lead$/.test(c.heading));
-const overview = chunks.slice(0, Math.max(1, leadIdx + 1)).concat(chunks.slice(leadIdx + 1, leadIdx + 4)).map((c) => `### ${c.heading}\n${c.text}`).join("\n\n").slice(0, 6500);
+const overview = chunks.slice(0, Math.max(1, leadIdx + 1)).concat(chunks.slice(leadIdx + 1, leadIdx + 4)).map((c) => `### ${c.heading}\n${c.text}`).join("\n\n").slice(0, cloudFirst ? 20000 : 6500);
 
 /* ------------------------------------------------------- llm helpers */
 async function ask(system, user, label) {
