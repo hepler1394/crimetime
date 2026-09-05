@@ -28,7 +28,7 @@ const asJson = args.includes("--json");
 const out = (o) => { if (asJson) console.log(JSON.stringify(o)); else console.log(o.message || JSON.stringify(o)); };
 const die = (step, message) => { out({ ok: false, step, message }); process.exit(2); };
 const slugify = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60);
-const UA = "CrimeTimeSnacksStudio/1.0 (crimetime.vercel.app; coryh2014@gmail.com)";
+const UA = "CrimeTimeSnacksStudio/1.0 (www.crimetimesnacks.com; coryh2014@gmail.com)";
 const get = async (url, ms = 20000) => { const c = new AbortController(); setTimeout(() => c.abort(), ms); const r = await fetch(url, { signal: c.signal, headers: { "User-Agent": UA, Accept: "application/json, text/html" } }); if (!r.ok) throw new Error(`${r.status} ${url}`); return r; };
 const strip = (h) => h.replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/\s+/g, " ").trim();
 

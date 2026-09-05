@@ -9,7 +9,7 @@ import { dirname, join } from "node:path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
-const SITE = "https://crimetime.vercel.app";
+const SITE = "https://www.crimetimesnacks.com";
 const SKIP = new Set(["editor.html"]); // internal tool
 
 const esc = (s) =>

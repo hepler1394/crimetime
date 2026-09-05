@@ -2,7 +2,7 @@
 // header, footer, tape divider and script tags used by every generated page.
 // The 2026 redesign lives here: change it once, run build-all, whole site updates.
 
-export const SITE = "https://crimetime.vercel.app";
+export const SITE = "https://www.crimetimesnacks.com";
 export const APPLE = "https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400";
 export const SPOTIFY = "https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ";
 export const EMAIL = "crimetimesnacks@gmail.com";

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Generates a valid Apple/Spotify-spec podcast RSS feed from episodes.json.
 // Run:  node automation/build-feed.mjs
-// Output: feed.xml at the site root (served at https://crimetime.vercel.app/feed.xml).
+// Output: feed.xml at the site root (served at https://www.crimetimesnacks.com/feed.xml).
 //
 // This is the foundation for automated publishing: add an episode to
 // episodes.json (eventually via the AI pipeline), re-run this, deploy, and the

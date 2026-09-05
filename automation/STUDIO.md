@@ -111,7 +111,7 @@ in Spotify for Podcasters (the post-publish panel has the file path and copy
 buttons for title and notes).
 
 The one-time fix: in Spotify for Podcasters, Settings, Distribution, "Redirect
-to another host", enter `https://crimetime.vercel.app/feed.xml`; in Apple
+to another host", enter `https://www.crimetimesnacks.com/feed.xml`; in Apple
 Podcasts Connect, change the feed URL to the same. After that Publish is the
 only step, everywhere.
 

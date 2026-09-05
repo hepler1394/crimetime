@@ -13,7 +13,7 @@
 // search, sitemap and status.
 //
 // Spotify/Apple: they poll the Anchor feed, not this site's feed.xml. Until the
-// show is re-pointed at https://crimetime.vercel.app/feed.xml, upload the same
+// show is re-pointed at https://www.crimetimesnacks.com/feed.xml, upload the same
 // MP3 + show notes in Spotify for Podcasters (the studio prints them ready).
 
 import { readFile, writeFile, copyFile, mkdir, stat } from "node:fs/promises";
@@ -100,7 +100,7 @@ await logImprovement(`Published podcast episode from the studio: "${ep.title}" (
 ep.status = "published";
 ep.publishedAt = new Date().toISOString();
 ep.publishDate = date;
-ep.pageUrl = `https://crimetime.vercel.app/episodes/${slug}.html`;
+ep.pageUrl = `https://www.crimetimesnacks.com/episodes/${slug}.html`;
 await writeFile(epPath, JSON.stringify(ep, null, 2) + "\n", "utf8");
 
 let pushed = false, gitNote = "";

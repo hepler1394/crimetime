@@ -3,7 +3,7 @@
     "title": "CrimeTimeSnacks • A True Crime Podcast",
     "subtitle": "Exploring unsolved cases, murders, and mysteries.",
     "description": "Crime Time Snacks is a true crime podcast that delves into a variety of unsolved cases, exploring the facts, theories, and evidence surrounding each mystery. The podcast aims to provide listeners with a comprehensive understanding of these cases, encouraging them to engage with the content and form their own conclusions.",
-    "siteUrl": "https://crimetime.vercel.app",
+    "siteUrl": "https://www.crimetimesnacks.com",
     "author": "Cory",
     "ownerName": "Cory",
     "ownerEmail": "coryh2014@gmail.com",
@@ -14,7 +14,7 @@
     "appleId": "1655384400",
     "spotifyUrl": "https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ",
     "imageOriginal": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/19116320/19116320-1731820058907-101cb7e64472f.jpg",
-    "feedUrl": "https://crimetime.vercel.app/feed.xml"
+    "feedUrl": "https://www.crimetimesnacks.com/feed.xml"
   },
   "episodes": [
     {

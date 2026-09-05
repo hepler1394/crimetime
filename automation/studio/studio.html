@@ -403,7 +403,7 @@ function renderEditor() {
       <div>
         ${pub ? `<div class="field"><label class="f">Where it is</label><ul class="targets">
             <li><span class="st ok"></span><div>Site page and feed.xml<small>${esc(ep.pageUrl)}</small></div><a class="btn sm" href="${esc(ep.pageUrl)}" target="_blank" rel="noopener">Open</a></li>
-            <li><span class="st manual"></span><div>Spotify and Apple<small>They still read the old Anchor feed. Upload audio/${esc(ep.slug)}.mp3 with the title and notes below, or re-point the show at crimetime.vercel.app/feed.xml once and this step disappears.</small></div><a class="btn sm" href="https://podcasters.spotify.com/pod/dashboard/episode/wizard" target="_blank" rel="noopener">Spotify</a></li>
+            <li><span class="st manual"></span><div>Spotify and Apple<small>They still read the old Anchor feed. Upload audio/${esc(ep.slug)}.mp3 with the title and notes below, or re-point the show at www.crimetimesnacks.com/feed.xml once and this step disappears.</small></div><a class="btn sm" href="https://podcasters.spotify.com/pod/dashboard/episode/wizard" target="_blank" rel="noopener">Spotify</a></li>
             <li><span class="st ${done.social ? "manual" : ""}"></span><div>Instagram @crimetimesnacks<small>reel.mp4 first, card.jpg second, caption.txt for both. Set 9:16 on the reel.</small></div><button class="btn sm" id="btn-folder2">Files</button></li>
           </ul><div class="copy"><button class="btn sm" data-copy="title">Copy title</button><button class="btn sm" data-copy="description">Copy show notes</button><button class="btn sm" data-copy="instagramCaption">Copy caption</button></div></div>` : ""}
 
@@ -529,7 +529,7 @@ async function runStage(kind) {
   if (kind === "draft-again") { if (!confirm("Rewrite the script from scratch? The current folder is kept; a new one is created.")) return; return startJob("new", { topic: ep.caseTitle || ep.title, minutes: ep.targetMinutes || 2 }); }
   if (kind === "research") return startJob("research", { id: ep.id });
   if (kind === "voice") { const v = voiceSettings(); return startJob("voice", { id: ep.id, engine: v.engine, voice: v.name, rate: v.rate, pitch: v.pitch, exaggeration: v.exaggeration, cfg: v.cfg, noMusic: !$("#v-music").checked }); }
-  if (kind === "publish") { if (!confirm(`Publish "${ep.title}" to the site and push? This goes public on crimetime.vercel.app and in feed.xml.`)) return; return startJob("publish", { id: ep.id, push: true, date: ep.publishDate || undefined }); }
+  if (kind === "publish") { if (!confirm(`Publish "${ep.title}" to the site and push? This goes public on www.crimetimesnacks.com and in feed.xml.`)) return; return startJob("publish", { id: ep.id, push: true, date: ep.publishDate || undefined }); }
   if (kind === "publish-local") return startJob("publish", { id: ep.id, push: false, date: ep.publishDate || undefined });
   startJob(kind, { id: ep.id });
 }

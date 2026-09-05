@@ -8,7 +8,7 @@ import { dirname, join } from "node:path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
-const SITE = "https://crimetime.vercel.app";
+const SITE = "https://www.crimetimesnacks.com";
 
 // Map content URLs to their real publish date for accurate <lastmod>.
 const dateBySlug = {};

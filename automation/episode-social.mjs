@@ -51,7 +51,7 @@ if (r.status !== 0) die("ffmpeg", (r.stderr || "").trim().slice(-800));
 const caption = [
   (ep.instagramCaption || `${ep.title}.\n\n${ep.hook || ""}`).trim(),
   "",
-  `Full episode: crimetime.vercel.app/episodes/${ep.slug}.html`,
+  `Full episode: www.crimetimesnacks.com/episodes/${ep.slug}.html`,
   "Also on Spotify and Apple Podcasts.",
 ].join("\n");
 await writeFile(join(dir, "caption.txt"), caption + "\n", "utf8");

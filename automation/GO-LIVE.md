@@ -32,7 +32,7 @@ node automation/ai-write.mjs --auto --commit
 git push
 ```
 
-Check crimetime.vercel.app/blog — the new post should appear after Vercel deploys.
+Check www.crimetimesnacks.com/blog — the new post should appear after Vercel deploys.
 
 ## Step 3 — schedule it (Windows Task Scheduler, no admin)
 

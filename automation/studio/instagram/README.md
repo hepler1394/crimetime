@@ -35,7 +35,7 @@ from the personal and builder accounts.
   ```
 
 - **Links** (the link field holds up to five, phone only):
-  1. `https://crimetime.vercel.app`
+  1. `https://www.crimetimesnacks.com`
   2. `https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ`
   3. `https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400`
 

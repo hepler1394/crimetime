@@ -86,7 +86,7 @@ if (doCommit) {
       console.error("The commit is safe locally — resolve, then run: git push");
       process.exit(1);
     }
-    console.log("\nPushed. Vercel will auto-deploy crimetime.vercel.app.");
+    console.log("\nPushed. Vercel will auto-deploy www.crimetimesnacks.com.");
   } else if (committed) {
     console.log("\nCommitted locally. Run `git push` (or re-run with --push) to publish.");
   } else {

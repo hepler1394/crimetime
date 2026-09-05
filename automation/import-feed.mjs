@@ -47,7 +47,7 @@ if (selfHosted) {
   const legacy = JSON.parse(await readFile(join(__dirname, "legacy-episodes.json"), "utf8"));
   const studio = await loadStudioEpisodes();
   const merged = mergeEpisodes(legacy.episodes || [], studio);
-  const podcast = { ...legacy.podcast, siteUrl: "https://crimetime.vercel.app", feedUrl: "https://crimetime.vercel.app/feed.xml" };
+  const podcast = { ...legacy.podcast, siteUrl: "https://www.crimetimesnacks.com", feedUrl: "https://www.crimetimesnacks.com/feed.xml" };
   await writeFile(join(__dirname, "episodes.json"), JSON.stringify({ podcast, episodes: merged }, null, 2) + "\n", "utf8");
   console.log(`Self-hosted feed: ${legacy.episodes.length} legacy + ${merged.length - legacy.episodes.length} studio episodes (Anchor not consulted).`);
   merged.forEach((e, i) => console.log(`  ${i + 1}. [${e.date}] ${e.title} (${e.duration})${e.source === "studio" ? "  [studio]" : ""}`));
@@ -62,7 +62,7 @@ const podcast = {
   title: tag(channel, "title") || "CrimeTimeSnacks • A True Crime Podcast",
   subtitle: stripHtml(tag(channel, "itunes:subtitle")) || "Exploring unsolved cases, murders, and mysteries.",
   description: stripHtml(tag(channel, "description")),
-  siteUrl: "https://crimetime.vercel.app",
+  siteUrl: "https://www.crimetimesnacks.com",
   author: tag(channel, "itunes:author") || "Cory",
   ownerName: tag(channel, "itunes:name") || "Cory",
   ownerEmail: "coryh2014@gmail.com",

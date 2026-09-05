@@ -31,7 +31,7 @@ That single command does all of this, in order:
 6. **Quiz** — writes a new 5-question case quiz (`gen-quiz.mjs`).
 7. **Rebuild** — regenerates every page from the JSON (`build-all.mjs`).
 8. **QA** — checks internal links (`check-links.mjs`).
-9. **Publish** — commits and pushes. Vercel auto-deploys `crimetime.vercel.app`.
+9. **Publish** — commits and pushes. Vercel auto-deploys `www.crimetimesnacks.com`.
 
 Network/LLM steps are best-effort: if you're offline or the LLM is down, that
 step is skipped and the site still rebuilds from what's on disk. Nothing breaks.
