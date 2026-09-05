@@ -70,7 +70,7 @@ const researchFull = await readFile(join(__dirname, "studio", "research", kase.s
 // still lands in the draft folder for Cory.
 const RESEARCH_CAP = parseInt(process.env.RESEARCH_CAP || "5200", 10);
 const research = researchFull.length > RESEARCH_CAP ? researchFull.slice(0, RESEARCH_CAP).replace(/\s+\S*$/, "") + "\n\n[notes trimmed for the model; full notes in research.md]" : researchFull;
-const words = Math.round(minutes * 150);
+const words = Math.round(minutes * 160); // the cloned voice reads briskly; 160 wpm lands on the target length
 
 const SYSTEM = `You write the spoken script for CrimeTimeSnacks, a true crime podcast. One host, Cory, talking to the listener. Follow this voice guide exactly:
 
@@ -127,6 +127,17 @@ try {
 
 // Pass 2, only when the model overshot: cut to length. Small local models run long.
 const wc = (arr) => arr.join(" ").split(/\s+/).filter(Boolean).length;
+if (wc(ep.script) < words * 0.8 && research) {
+  // Too short (small models undershoot as often as they overshoot): add
+  // documented detail from the notes, nothing else.
+  try {
+    const { text: more } = await chat(
+      `You are the show's editor. This spoken true-crime script is ${wc(ep.script)} words; it must be about ${words}. Extend it using ONLY facts from the RESEARCH NOTES: add timeline detail, places, what investigators did, what the record shows. Keep the opener sentence first and the closing hand-off line as the LAST line. Same voice: short sentences, contractions, no filler, no teaser. Output ONLY a JSON array of paragraph strings.`,
+      `RESEARCH NOTES:\n${research}\n\nSCRIPT:\n${JSON.stringify(ep.script)}`, { ...(await loadConfig()), timeoutMs: 20 * 60 * 1000 });
+    const arr = JSON.parse(stripFence(more));
+    if (Array.isArray(arr) && arr.length >= 3 && wc(arr) > wc(ep.script)) ep.script = arr.map(String);
+  } catch { /* keep the short one; the studio shows the word count */ }
+}
 if (wc(ep.script) > words * 1.25) {
   try {
     const { text: cut } = await chat(
