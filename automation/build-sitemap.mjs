@@ -30,7 +30,7 @@ await loadDates("episodes.json", "/episodes/");
 const CANONICAL_ROOT = new Set([
   "index.html", "about.html", "blog.html", "contact.html",
   "episodes.html", "merch.html", "videos.html", "listen.html",
-  "live.html", "quiz.html", "glossary.html",
+  "live.html", "quiz.html", "glossary.html", "cases.html",
 ]);
 
 const htmlIn = async (dir) =>
@@ -51,6 +51,8 @@ async function collect() {
   for (const f of await htmlIn(join(ROOT, "blog-posts"))) {
     if (!EXCLUDE.has(f)) urls.push("/blog-posts/" + f);
   }
+  // Case pages people can follow.
+  try { for (const f of await htmlIn(join(ROOT, "cases"))) urls.push("/cases/" + f); } catch { /* none yet */ }
   // Only episode detail pages under /episodes/, not the duplicate site pages.
   for (const f of await htmlIn(join(ROOT, "episodes"))) {
     if (!CANONICAL_ROOT.has(f) && !EXCLUDE.has(f)) urls.push("/episodes/" + f);

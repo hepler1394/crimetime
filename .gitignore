@@ -49,3 +49,9 @@ automation/cron/cron.log.old
 automation/studio/.venv/
 automation/studio/models/
 automation/studio/research/
+
+.vercel
+.env*
+automation/.env.community
+studio-shell/node_modules/
+studio-shell/profile/

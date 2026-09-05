@@ -145,5 +145,11 @@
       "destination": "https://www.crimetimesnacks.com/$1",
       "permanent": true
     }
+  ],
+  "crons": [
+    {
+      "path": "/api/community/digest",
+      "schedule": "0 14 * * 0"
+    }
   ]
 }

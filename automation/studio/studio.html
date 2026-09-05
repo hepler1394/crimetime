@@ -189,6 +189,14 @@
   .side .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px}
   .side b{color:var(--white);font-weight:500}
 
+  .queue{list-style:none;margin:0;padding:0 18px 14px}
+  .queue li{border:1px solid var(--line);border-radius:4px;padding:10px 12px;margin-bottom:8px;background:var(--ink)}
+  .queue .c{font:500 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--tape);margin-bottom:5px}
+  .queue b{display:block;font-weight:600;font-size:13px;line-height:1.35}
+  .queue p{margin:4px 0 6px;font-size:12px;color:var(--muted);line-height:1.5}
+  .queue a{font:11px var(--mono);color:var(--faint)}
+  .queue .act{display:flex;gap:6px;margin-top:8px}
+  .queue input.t{padding:6px 8px;font-size:12px;margin-top:6px}
   .toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--panel-2);border:1px solid var(--line-2);border-radius:4px;padding:10px 14px 10px 30px;font-size:13px;max-width:min(680px,90vw);box-shadow:0 12px 40px rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .2s}
   .toast::before{content:"";position:absolute;left:12px;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:var(--ok)}
   .toast.show{opacity:1}
@@ -241,6 +249,10 @@
 
     <h2 class="k">Theme music <button class="lk" data-open="music">open folder</button></h2>
     <div class="side" id="musicbox"></div>
+
+    <h2 class="k">Community <button class="lk" data-op="watch" title="Look for new developments in every case now">check cases</button></h2>
+    <div class="side" id="community"></div>
+    <ul class="queue" id="queue"></ul>
 
     <h2 class="k">Scheduled jobs</h2>
     <div class="tasks" id="tasks"></div>
@@ -567,8 +579,22 @@ $("#backlog").addEventListener("click", (e) => { const b = e.target.closest("[da
 document.querySelectorAll(".ops [data-op]").forEach((b) => b.addEventListener("click", () => { if ((b.dataset.op === "content") && !confirm("Run the full content pipeline and push to main?")) return; if (b.dataset.op === "weekly" && !confirm("Run the whole weekly episode job now? Research, script, voice, art, reel. Takes a while.")) return; startJob(b.dataset.op, {}); }));
 document.querySelectorAll("[data-open]").forEach((b) => b.addEventListener("click", () => api("/api/open", { method: "POST", body: JSON.stringify({ what: b.dataset.open }) })));
 window.addEventListener("beforeunload", (e) => { if (state.dirty || state.rec) { e.preventDefault(); e.returnValue = ""; } });
-loadHealth();
-setInterval(() => { if (!state.job || state.job.done) loadHealth(); }, 90000);
+async function loadQueue() {
+  try {
+    const q = await api("/api/community/pending");
+    $("#community").innerHTML = q.error ? `<div>Community database unreachable: ${esc(q.error)}</div>` : `<div><b>${q.members}</b> confirmed member${q.members === 1 ? "" : "s"} · <b>${q.cases}</b> cases · <b>${q.pending.length}</b> update${q.pending.length === 1 ? "" : "s"} waiting for your yes or no.</div><div class="row"><button class="btn sm" data-op="synccases" title="Push cases.json and episodes into the cases table">Sync cases</button><a class="btn sm ghost" href="https://www.crimetimesnacks.com/cases.html" target="_blank" rel="noopener">Cases page</a></div>`;
+    $("#queue").innerHTML = (q.pending || []).map((u) => `<li data-id="${u.id}"><div class="c">${esc(u.caseTitle)} · ${esc(u.happened_on)} · ${esc(u.source)}</div><b>${esc(u.title)}</b>${u.summary ? `<p>${esc(u.summary)}</p>` : ""}${u.url ? `<a href="${esc(u.url)}" target="_blank" rel="noopener">${esc(u.url.slice(0, 70))}</a>` : ""}<div class="act"><button class="btn sm red" data-review="approved">Approve</button><button class="btn sm ghost" data-review="rejected">Reject</button></div></li>`).join("");
+    document.querySelectorAll("#queue [data-review]").forEach((b) => b.addEventListener("click", async () => {
+      const li = b.closest("li"); b.disabled = true;
+      try { await api("/api/community/review", { method: "POST", body: JSON.stringify({ id: li.dataset.id, status: b.dataset.review }) }); li.remove(); toast(b.dataset.review === "approved" ? "Approved. It appears on the case page at the next build and in the next digest." : "Rejected."); }
+      catch (e) { toast(e.message, true); b.disabled = false; }
+    }));
+    document.querySelectorAll("#community [data-op]").forEach((b) => b.addEventListener("click", () => startJob(b.dataset.op, {})));
+  } catch (e) { $("#community").innerHTML = `<div>${esc(e.message)}</div>`; }
+}
+document.querySelectorAll("h2.k [data-op]").forEach((b) => b.addEventListener("click", () => startJob(b.dataset.op, {})));
+loadHealth(); loadQueue();
+setInterval(() => { if (!state.job || state.job.done) { loadHealth(); loadQueue(); } }, 90000);
 </script>
 </body>
 </html>

@@ -1,0 +1,13 @@
+{
+  "name": "cts-studio-shell",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Desktop shell for the CrimeTimeSnacks studio and the Instagram studio: the studio UI plus a real browser pane (Instagram, Grok Imagine, research) with a persistent signed-in profile.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^42.0.0"
+  }
+}

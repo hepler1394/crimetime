@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CrimeTimeSnacks Studio</title>
+<style>
+  :root{--ink:#050505;--panel:#0c0c0e;--panel-2:#111114;--line:rgba(255,255,255,.08);--line-2:rgba(255,255,255,.16);--red:#e50914;--hot:#ff2b33;--tape:#f4c20d;--white:#f7f7f8;--muted:#a3a3ad;--faint:#6b6b74;--ok:#4fbf7a;
+    --display:"Bebas Neue",Impact,sans-serif;--mono:"IBM Plex Mono",Consolas,monospace;--body:Inter,"Segoe UI",system-ui,sans-serif}
+  *{box-sizing:border-box}
+  html,body{margin:0;height:92px;overflow:hidden;background:var(--panel);color:var(--white);font:12.5px/1.4 var(--body);-webkit-font-smoothing:antialiased;user-select:none}
+  :focus-visible{outline:2px solid var(--tape);outline-offset:1px}
+  .row1{display:flex;align-items:center;gap:8px;height:44px;padding:0 10px;border-bottom:1px solid var(--line)}
+  .brand{font-family:var(--display);font-size:20px;letter-spacing:.03em;line-height:1;margin-right:6px}
+  .brand em{color:var(--red);font-style:normal}
+  .ws{display:flex;border:1px solid var(--line-2);border-radius:4px;overflow:hidden}
+  .ws button{background:none;border:0;color:var(--muted);padding:6px 12px;cursor:pointer;font:500 12px var(--body)}
+  .ws button.on{background:var(--red);color:#fff}
+  .tabs{display:flex;gap:4px;flex:1;min-width:0;overflow:hidden;align-items:center}
+  .tab{display:flex;align-items:center;gap:6px;max-width:220px;min-width:90px;height:30px;padding:0 8px 0 10px;border:1px solid var(--line);border-radius:4px;background:var(--ink);color:var(--muted);cursor:pointer;flex:1}
+  .tab.on{background:var(--panel-2);color:var(--white);border-color:var(--line-2)}
+  .tab .t{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px}
+  .tab .x{border:0;background:none;color:var(--faint);cursor:pointer;font-size:14px;line-height:1;padding:0 2px}
+  .tab .x:hover{color:var(--hot)}
+  .tab .ld{width:6px;height:6px;border-radius:50%;background:var(--tape);flex-shrink:0}
+  .btn{background:var(--panel-2);border:1px solid var(--line-2);border-radius:4px;color:var(--white);padding:6px 10px;cursor:pointer;font:500 12px var(--body);white-space:nowrap}
+  .btn:hover{border-color:rgba(255,255,255,.35)}
+  .btn.red{background:var(--red);border-color:var(--red);color:#fff}
+  .btn:disabled{opacity:.4;cursor:default}
+  .row2{display:flex;align-items:center;gap:6px;height:47px;padding:0 10px}
+  .nav button{background:none;border:1px solid transparent;border-radius:4px;color:var(--muted);width:28px;height:28px;cursor:pointer;font-size:14px}
+  .nav button:hover:not(:disabled){background:var(--panel-2);color:var(--white)}
+  .nav button:disabled{opacity:.3;cursor:default}
+  .url{flex:1;display:flex;align-items:center;background:var(--ink);border:1px solid var(--line-2);border-radius:4px;height:30px;padding:0 10px;min-width:200px}
+  .url input{flex:1;background:none;border:0;color:var(--white);font:12.5px var(--mono);outline:none}
+  .url input::placeholder{color:var(--faint)}
+  .marks{display:flex;gap:4px;overflow:hidden}
+  .marks button{background:none;border:1px solid var(--line);border-radius:4px;color:var(--muted);padding:5px 8px;cursor:pointer;font:500 11px var(--body);white-space:nowrap}
+  .marks button:hover{color:var(--white);border-color:var(--line-2)}
+  .marks button.ig{color:#e8b4c4}.marks button.grok{color:#cfe3ff}
+  select.t{background:var(--ink);border:1px solid var(--line-2);border-radius:4px;color:var(--white);padding:5px 8px;font:12px var(--body);max-width:260px}
+  label.k{font:500 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+  .gen{position:fixed;right:10px;top:92px;width:380px;background:var(--panel);border:1px solid var(--line-2);border-top:0;border-radius:0 0 6px 6px;padding:12px;box-shadow:0 20px 50px rgba(0,0,0,.6);display:none;z-index:9}
+  .gen.show{display:block}
+  .gen textarea{width:100%;min-height:74px;background:var(--ink);border:1px solid var(--line);border-radius:4px;color:var(--white);padding:8px;font:12.5px var(--body);resize:vertical}
+  .gen .r{display:flex;gap:6px;align-items:center;margin-top:8px;flex-wrap:wrap}
+  .gen .hint{font:11px/1.5 var(--mono);color:var(--faint);margin-top:8px}
+  .gen .hint b{color:var(--tape);font-weight:500}
+  .toast{position:fixed;left:10px;bottom:8px;background:var(--panel-2);border:1px solid var(--line-2);border-radius:4px;padding:7px 10px 7px 26px;font-size:12px;opacity:0;transition:opacity .2s;pointer-events:none;max-width:70vw}
+  .toast::before{content:"";position:absolute;left:10px;top:50%;width:7px;height:7px;margin-top:-3px;border-radius:50%;background:var(--ok)}
+  .toast.bad::before{background:var(--hot)}
+  .toast.show{opacity:1}
+</style>
+</head>
+<body>
+<div class="row1">
+  <div class="brand">Crime<em>Time</em>Snacks</div>
+  <div class="ws"><button id="ws-ct" class="on">Studio</button><button id="ws-ig">Instagram</button></div>
+  <div class="tabs" id="tabs"></div>
+  <button class="btn" id="newtab" title="New browser tab">+ Tab</button>
+  <button class="btn" id="gen-toggle" title="Generate an image or clip into the current episode">Generate</button>
+</div>
+<div class="row2">
+  <div class="nav"><button id="home" title="Back to the studio">&#8962;</button><button id="back" title="Back">&#8249;</button><button id="fwd" title="Forward">&#8250;</button><button id="reload" title="Reload">&#8635;</button></div>
+  <div class="url"><input id="url" placeholder="Search or enter address" spellcheck="false"></div>
+  <div class="marks">
+    <button class="ig" data-url="https://www.instagram.com/">Instagram</button>
+    <button class="ig" data-url="https://www.instagram.com/create/select/">New post</button>
+    <button class="grok" data-url="https://grok.com/imagine">Grok Imagine</button>
+    <button data-url="https://www.fbi.gov/wanted">FBI Wanted</button>
+    <button data-url="https://www.courtlistener.com/">CourtListener</button>
+    <button data-url="https://en.wikipedia.org/">Wikipedia</button>
+    <button data-url="https://thezodiacarchive.com/">Zodiac Archive</button>
+  </div>
+  <label class="k" for="target">Episode</label><select class="t" id="target"><option value="">latest</option></select>
+</div>
+<div class="gen" id="gen">
+  <label class="k">Generate into the selected episode</label>
+  <textarea id="gen-prompt" placeholder="A rain-soaked Sacramento street at night, 1977, one porch light, film still"></textarea>
+  <div class="r">
+    <select class="t" id="gen-kind"><option value="image">Image, Gemini Flash Image (cents)</option><option value="image-pro">Image, Gemini 3 Pro Image (more detail)</option><option value="video">Video 8 s, Veo 3.1 fast (paid, about a dollar)</option><option value="grok">Grok Imagine (opens grok.com, your SuperGrok quota)</option></select>
+    <select class="t" id="gen-ref"><option value="">no reference</option></select>
+  </div>
+  <div class="r"><button class="btn red" id="gen-go">Generate</button><span id="gen-state" style="font:11px var(--mono);color:var(--muted)"></span></div>
+  <div class="hint">Files land in the episode's project folder and show up in the studio. <b>Grok</b> has no API on your plan: generate on grok.com in the tab that opens, then right-click the result and choose <b>Save image to episode</b>.</div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+let st = { tabs: [], active: null, workspace: "crimetime", target: null };
+let toastT;
+function toast(msg, bad) { const t = $("#toast"); t.textContent = msg; t.className = `toast show${bad ? " bad" : ""}`; clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("show"), bad ? 7000 : 3500); }
+window.shell.onToast(({ msg, bad }) => toast(msg, bad));
+window.shell.onTabs((d) => { st = d; render(); });
+
+function render() {
+  $("#ws-ct").classList.toggle("on", st.workspace === "crimetime"); $("#ws-ig").classList.toggle("on", st.workspace === "instagram");
+  $("#tabs").innerHTML = st.tabs.map((t) => `<div class="tab ${t.id === st.active ? "on" : ""}" data-id="${t.id}" title="${esc(t.url)}">${t.loading ? '<span class="ld"></span>' : ""}<span class="t">${esc(t.title || t.url)}</span><button class="x" data-close="${t.id}" title="Close">&times;</button></div>`).join("");
+  const a = st.tabs.find((t) => t.id === st.active);
+  if (document.activeElement !== $("#url")) $("#url").value = a ? a.url : "";
+  $("#back").disabled = !a || !a.canBack; $("#fwd").disabled = !a || !a.canFwd;
+  $("#home").style.color = a ? "" : "var(--tape)";
+  if (st.target && $("#target").value !== st.target && [...$("#target").options].some((o) => o.value === st.target)) $("#target").value = st.target;
+}
+$("#tabs").addEventListener("click", (e) => { const x = e.target.closest("[data-close]"); if (x) return window.shell.send("closeTab", { id: x.dataset.close }); const t = e.target.closest("[data-id]"); if (t) window.shell.send("activate", { id: t.dataset.id }); });
+$("#newtab").addEventListener("click", () => window.shell.send("newTab", { url: "https://duckduckgo.com/" }));
+$("#home").addEventListener("click", () => window.shell.send("home"));
+$("#back").addEventListener("click", () => window.shell.send("back"));
+$("#fwd").addEventListener("click", () => window.shell.send("forward"));
+$("#reload").addEventListener("click", () => window.shell.send("reload"));
+$("#url").addEventListener("keydown", (e) => { if (e.key === "Enter") window.shell.send("navigate", { url: $("#url").value }); if (e.key === "Escape") $("#url").blur(); });
+$("#ws-ct").addEventListener("click", () => window.shell.send("workspace", { name: "crimetime" }));
+$("#ws-ig").addEventListener("click", () => window.shell.send("workspace", { name: "instagram" }));
+document.querySelectorAll(".marks [data-url]").forEach((b) => b.addEventListener("click", () => window.shell.send("newTab", { url: b.dataset.url })));
+
+async function loadDrafts() {
+  const list = await window.shell.send("drafts");
+  const sel = $("#target"); const cur = sel.value;
+  sel.innerHTML = `<option value="">latest</option>` + (Array.isArray(list) ? list : []).map((d) => `<option value="${esc(d.id)}">${esc(d.title)} (${esc(d.status)})</option>`).join("");
+  if ([...sel.options].some((o) => o.value === cur)) sel.value = cur;
+  const files = Array.isArray(list) && list.length ? Object.values((list.find((d) => d.id === (sel.value || list[0].id)) || list[0]).files || {}) : [];
+  $("#gen-ref").innerHTML = `<option value="">no reference</option>` + files.filter((f) => /\.(jpe?g|png)$/i.test(f)).map((f) => `<option>${esc(f)}</option>`).join("");
+}
+$("#target").addEventListener("change", () => { window.shell.send("setTarget", { id: $("#target").value || null }); loadDrafts(); });
+$("#gen-toggle").addEventListener("click", () => { $("#gen").classList.toggle("show"); if ($("#gen").classList.contains("show")) { loadDrafts(); $("#gen-prompt").focus(); } });
+$("#gen-go").addEventListener("click", async () => {
+  const kind = $("#gen-kind").value, prompt = $("#gen-prompt").value.trim();
+  if (kind === "grok") { window.shell.send("newTab", { url: "https://grok.com/imagine" }); if (prompt) { await navigator.clipboard.writeText(prompt); toast("Prompt copied. Paste it into Grok Imagine, then right-click the result to save it to the episode."); } return; }
+  if (!prompt) { toast("Write a prompt first.", true); return; }
+  $("#gen-go").disabled = true; $("#gen-state").textContent = kind === "video" ? "rendering video, a minute or two" : "rendering";
+  try {
+    const job = await window.shell.send("generate", { draft: $("#target").value || null, prompt, kind: kind === "video" ? "video" : "image", model: kind === "image-pro" ? "gemini-3-pro-image" : undefined, ref: $("#gen-ref").value || undefined });
+    if (!job || job.error) throw new Error(job?.error || "could not start");
+    let j; do { await new Promise((r) => setTimeout(r, 1500)); j = await window.shell.send("job", { id: job.id }); } while (j && !j.done);
+    const res = j?.result;
+    if (j?.code === 0 && res?.ok) { toast(res.message); $("#gen-state").textContent = "done"; window.shell.send("reload"); }
+    else throw new Error(res?.message || `exit ${j?.code}`);
+  } catch (e) { toast(e.message, true); $("#gen-state").textContent = "failed"; }
+  $("#gen-go").disabled = false;
+});
+document.addEventListener("keydown", (e) => { if (e.ctrlKey && e.key.toLowerCase() === "l") { e.preventDefault(); $("#url").focus(); $("#url").select(); } if (e.ctrlKey && e.key.toLowerCase() === "t") { e.preventDefault(); $("#newtab").click(); } });
+loadDrafts(); setInterval(loadDrafts, 60000);
+</script>
+</body>
+</html>

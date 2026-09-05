@@ -14,6 +14,9 @@ import { readFile, writeFile, readdir, stat, rm, mkdir, access, unlink } from "n
 import { spawn, spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { dirname, join, extname, normalize, basename } from "node:path";
+import { loadEnv } from "../community/env.mjs";
+import { sb } from "../community/lib.js";
+await loadEnv();
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const AUTO = join(HERE, "..");
@@ -53,6 +56,9 @@ const ACTIONS = {
   qa:       () => ["check-links.mjs"],
   avatar:   () => ["episode-art.mjs", "--avatar", "--json"],
   weekly:   (a) => ["episode-weekly.mjs", ...(a.engine ? ["--engine", a.engine] : [])],
+  watch:    (a) => ["case-watch.mjs", ...(a.case ? ["--case", a.case] : []), "--json"],
+  generate: (a) => ["gen-image.mjs", "--draft", a.id, "--prompt", String(a.prompt || ""), ...(a.kind === "video" ? ["--video", "--seconds", String(a.seconds || 8)] : []), ...(a.model ? ["--model", a.model] : []), ...(a.ref ? ["--ref", a.ref] : []), "--json"],
+  synccases:() => ["community/sync-cases.mjs", "--json"],
 };
 function startJob(action, a) {
   const argv = ACTIONS[action](a);
@@ -277,6 +283,36 @@ const server = createServer(async (req, res) => {
         return json(res, 200, { ok: true, name, size, converted, path: join(dir, converted || name) });
       }
       return json(res, 404, { error: "unknown draft route" });
+    }
+
+    /* community: case update review queue */
+    if (p === "/api/community/pending") {
+      try {
+        const rows = await sb("cts_case_updates?select=id,case_slug,happened_on,title,summary,url,source,status,created_at&status=eq.pending&order=created_at.desc&limit=100");
+        const cases = Object.fromEntries((await sb("cts_cases?select=slug,title")).map((c) => [c.slug, c.title]));
+        const members = (await sb("cts_members?select=id&confirmed_at=not.is.null&unsubscribed_at=is.null"))?.length ?? 0;
+        return json(res, 200, { pending: rows.map((r) => ({ ...r, caseTitle: cases[r.case_slug] || r.case_slug })), members, cases: Object.keys(cases).length });
+      } catch (e) { return json(res, 200, { pending: [], error: e.message }); }
+    }
+    if (p === "/api/community/review" && req.method === "POST") {
+      const body = await readBody(req);
+      const id = parseInt(body.id, 10); const status = body.status;
+      if (!Number.isFinite(id) || !["approved", "rejected", "pending"].includes(status)) return json(res, 400, { error: "id + status" });
+      const patch = { status, approved_at: status === "approved" ? new Date().toISOString() : null };
+      if (typeof body.title === "string" && body.title.trim()) patch.title = body.title.trim().slice(0, 200);
+      if (typeof body.summary === "string") patch.summary = body.summary.trim().slice(0, 600);
+      if (typeof body.happened_on === "string" && /^\d{4}-\d{2}-\d{2}$/.test(body.happened_on)) patch.happened_on = body.happened_on;
+      try { await sb(`cts_case_updates?id=eq.${id}`, { method: "PATCH", body: patch, prefer: "return=minimal" }); return json(res, 200, { ok: true }); }
+      catch (e) { return json(res, 500, { error: e.message }); }
+    }
+    if (p === "/api/community/add" && req.method === "POST") {
+      // Cory adds an update by hand: approved straight away.
+      const body = await readBody(req);
+      if (!safeId(body.case) || !body.title) return json(res, 400, { error: "case + title" });
+      try {
+        await sb("cts_case_updates", { method: "POST", body: { case_slug: body.case, title: String(body.title).slice(0, 200), summary: String(body.summary || "").slice(0, 600), url: String(body.url || "").slice(0, 500), source: String(body.source || "").slice(0, 80), happened_on: /^\d{4}-\d{2}-\d{2}$/.test(body.happened_on || "") ? body.happened_on : new Date().toISOString().slice(0, 10), status: "approved", found_by: "cory", approved_at: new Date().toISOString() }, prefer: "return=minimal" });
+        return json(res, 200, { ok: true });
+      } catch (e) { return json(res, 500, { error: e.message }); }
     }
 
     if (p === "/api/run" && req.method === "POST") {

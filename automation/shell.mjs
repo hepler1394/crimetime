@@ -16,6 +16,7 @@ export const esc = (s) =>
 const NAV = [
   ["/index.html", "home", "Home"],
   ["/episodes.html", "episodes", "Episodes"],
+  ["/cases.html", "cases", "Cases"],
   ["/videos.html", "videos", "Videos"],
   ["/blog.html", "blog", "Blog"],
   ["/live.html", "live", "Live"],
