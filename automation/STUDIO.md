@@ -1,82 +1,129 @@
 # The Podcast Studio
 
-The studio is the local control room for putting out an episode a week without
-touching HTML, RSS, or ffmpeg by hand. It lives in `automation/studio/` and runs
-only on this PC (it drives LM Studio, edge-tts, ffmpeg and git), so it is never
-deployed.
+The studio is the local control room for putting out a two-minute episode a
+week without touching Audacity, HTML, RSS, or ffmpeg by hand. It lives in
+`automation/studio/` and runs only on this PC (it drives LM Studio, Chatterbox,
+edge-tts, ffmpeg and git), so it is never deployed.
 
 ```
 npm run studio          ->  http://127.0.0.1:4177
 ```
 
-## The pipeline, one button per stage
+## One episode, start to finish
+
+1. **New.** Type a case or leave the box empty for the next one in the backlog,
+   press New. The studio researches it (Wikipedia plus recent coverage) and the
+   local model writes a two-minute script in the show's voice, cut to length by a
+   second pass and checked line by line against the research notes by a third.
+2. **Read it.** Fix anything in the script box. The fact list on the right marks
+   every claim the notes do not support; tick each one after you confirm it.
+3. **Voice.** Press Make voice. Default is your cloned voice (Chatterbox, free,
+   on this CPU: about half an hour for two minutes). Or press Record and read the
+   script yourself; long pauses are trimmed, noise reduced, and the theme is
+   mixed in either way. Or drop in a file you recorded elsewhere.
+4. **Art, Instagram.** One button each: 3000 square cover, 1080x1350 card,
+   1080x1920 reel still, then a 45-second audiogram reel and caption.
+5. **Publish.** The big button. Site page, feed.xml, transcript, search, commit,
+   push. Vercel deploys. It stays locked until voice and art exist and every
+   fact is ticked.
+
+After publishing the episode panel shows where it is: the site and feed are
+done; Spotify and Apple need one of the two things in "Two feeds" below;
+Instagram assets are in the folder with the caption.
+
+## The pipeline scripts
 
 | Stage | Script | What it makes |
 |---|---|---|
-| 1 Script | `episode-draft.mjs` | `episode.json`: title, hook, show notes, the spoken script as paragraphs, a **facts-to-verify** list, an Instagram caption. Local LM Studio model first (streamed, think mode off), cloud fallback. Voice rules from `voice.md`. |
-| 2 Voice | `episode-voice.mjs` | `episode.mp3` (128k mono, -16 LUFS, half-second head room) and `transcript.json` timed from the TTS word boundaries. Or `--from <file>` to master a recording Cory made instead. |
-| 3 Art | `episode-art.mjs` | `cover.jpg` 3000 square, `card.jpg` 1080x1350, `reel.jpg` 1080x1920. Rendered from `studio/templates/art.html` with Playwright (borrowed from ig-studio). |
-| 4 Instagram | `episode-social.mjs` | `reel.mp4` 45-second audiogram with a live waveform, -14 LUFS, plus `caption.txt`. |
-| 5 Publish | `episode-publish.mjs` | MP3 to `/audio`, art to `/images/episodes`, transcript to `automation/transcripts`, entry in `studio-episodes.json`, then `build-all`, link check, commit, `--push`. |
+| 0 Research | `episode-research.mjs` | `research.md` + `research.json`: Wikipedia extract and recent coverage, no keys. |
+| 1 Script | `episode-draft.mjs` | `episode.json`: title, hook, show notes, spoken paragraphs, fact list, caption. Three LLM passes: write, cut to length, check claims against the notes. |
+| both | `episode-new.mjs` | Research then script, what the New button and the weekly job run. |
+| 2 Voice | `episode-voice.mjs` | `episode.mp3` (-16 LUFS, theme mixed), `voice.wav` (dry), `transcript.json`. Engines: `clone` (Chatterbox + `voice/cory-reference.wav`), `edge` (edge-tts), or `--from <file>` for a recording. |
+| theme | `episode-music.mjs` | Intro (9 s) and outro (6 s) beds. Your `studio/music/intro.mp3` and `outro.mp3` if present, else an original synthesized theme. |
+| 3 Art | `episode-art.mjs` | `cover.jpg`, `card.jpg`, `reel.jpg` from `studio/templates/art.html` via Playwright (borrowed from ig-studio). |
+| 4 Instagram | `episode-social.mjs` | `reel.mp4` audiogram (-14 LUFS) and `caption.txt`. |
+| 5 Publish | `episode-publish.mjs` | MP3 to `/audio`, art to `/images/episodes`, transcript to `automation/transcripts`, entry in `studio-episodes.json`, `build-all`, link check, commit, `--push`. |
+| weekly | `episode-weekly.mjs` | Research, script, voice, art, Instagram for the next case; Telegram note; no publish. |
 
-Drafts live in `automation/studio/drafts/<date>-<slug>/` (gitignored: the
-renders are large and the published copies are what ship).
+Every script takes `--json` and prints one JSON object as its last line, which
+is what the studio server reads. Drafts live in `automation/studio/drafts/<date>-<slug>/`
+(gitignored; the published copies are what ship). The folder is the project:
+script, research notes, takes, renders, all in one place, "Open folder" opens it.
 
-Every script takes `--json` and prints one JSON object as its last line; the
-studio server reads that. They also run fine on their own:
+## Voice clone
+
+Chatterbox (Resemble AI, MIT) runs in `automation/studio/.venv` (Python 3.11,
+CPU torch). The reference is `automation/studio/voice/cory-reference.wav`, an
+18-second cut from the Moscow episode intro. Replace it from the studio's Voice
+panel with any clean 10 to 20 second clip. Two knobs per episode: exaggeration
+(calm to dramatic) and cfg (deliberate to quick). Cory's verdict on the first
+test, 2026-09-05: "sounds just like me."
+
+Speed on this PC (Ryzen 5 5500, AMD GPU so no CUDA): about 15 seconds of compute
+per second of audio. Fine for the Monday job. For a quick preview use edge-tts.
+
+Rebuild the venv if it is ever lost:
 
 ```
-node automation/episode-draft.mjs --auto --minutes 10
-node automation/episode-voice.mjs 2026-09-08-the-golden-state-killer
-node automation/episode-art.mjs   2026-09-08-the-golden-state-killer
-node automation/episode-social.mjs 2026-09-08-the-golden-state-killer
-node automation/episode-publish.mjs 2026-09-08-the-golden-state-killer --push
+cd automation/studio
+py -3.11 -m venv .venv
+.venv\Scripts\python -m pip install chatterbox-tts --extra-index-url https://download.pytorch.org/whl/cpu
 ```
 
-## Why publishing stays a click
+## Theme music
 
-The script is written by a model. It is told to use only well-documented facts
-and to list every specific claim it used, and the studio locks Publish until each
-item on that list is ticked. An AI-voiced episode about a real crime goes out
-under Cory's name; the ten minutes it takes to read the fact list is the whole
-editorial process, and it is not automated on purpose.
+Nothing to download or license. `episode-music.mjs` synthesizes an intro and
+outro from ffmpeg expressions (sub drone, clock ticks, a slow kick, a riser),
+identical every episode. The voice starts five seconds into the intro while the
+bed fades under it; the outro fades in over the last second of speech.
 
-## Weekly, hands-off up to that click
+To use your own track instead, drop `intro.mp3` (and optionally `outro.mp3`)
+into `automation/studio/music/` or upload them from the Theme panel. They are
+trimmed to length, faded, and level-matched automatically.
 
-`cron/cts-episode.ps1` runs `episode-weekly.mjs` every Monday at 08:00
-(Windows task "CTS Episode Draft"): next case from `cases.json`, script, voice,
-art, Instagram kit, then a Telegram message to Cory through the Hermes bridge
-saying the episode is ready to review. Open the studio, read the script, tick
-the facts, press Publish + push. Tuesday's content run and the 6-hour CI sync
-pick it up from there.
+## Recording in the studio
 
-To trust it unattended, change the task action to add `-AutoPublish`. Not
-recommended until a few weeks of drafts have come back clean.
+The Record button uses the browser microphone (Chrome asks once). Takes are
+saved into the episode folder as `take-<timestamp>.webm` plus a `.wav` twin,
+then mastered: leading silence and pauses over 1.2 s cut to half a second,
+70 Hz high-pass, light noise reduction, gentle compression, theme, -16 LUFS.
+Dropped files (wav, mp3, m4a) go through the same chain. `--no-trim` keeps every
+pause.
 
-## Two feeds, for now
+## Why Publish is a click and not a schedule
 
-The site's own `feed.xml` is a complete, valid podcast feed and carries every
-episode the studio publishes. Spotify and Apple, however, still poll the old
-Anchor feed, so a studio episode reaches them only when its MP3 is also uploaded
-in Spotify for Podcasters (the studio shows the file paths and copy buttons for
-title and show notes after publishing).
+The script is written by a 14B model running on a CPU. It writes long, invents
+detail, and pads endings; the editor and fact-check passes catch most of it,
+and the fact list makes the rest a five-minute read. An AI-voiced episode about a
+real crime under Cory's name is not something to ship unread. The Monday task
+does everything up to that read; `-AutoPublish` on the task action removes the
+gate, and is not recommended.
 
-The clean fix is a one-time move: in Spotify for Podcasters, redirect the show to
-`https://crimetime.vercel.app/feed.xml`, and in Apple Podcasts Connect change the
-feed URL to the same. After that, publishing in the studio is the only step.
-`import-feed.mjs` keeps merging whatever the Anchor feed still returns, so
-nothing is lost either way.
+A DeepSeek key in `automation/config.json` would raise script quality a lot for
+about a cent per episode; the pipeline already falls back to it when set.
+
+## Two feeds
+
+`feed.xml` on the site is a complete podcast feed and carries every studio
+episode the moment it is published. Spotify and Apple still poll the old Anchor
+feed, so today a studio episode reaches them only when its MP3 is also uploaded
+in Spotify for Podcasters (the post-publish panel has the file path and copy
+buttons for title and notes).
+
+The one-time fix: in Spotify for Podcasters, Settings, Distribution, "Redirect
+to another host", enter `https://crimetime.vercel.app/feed.xml`; in Apple
+Podcasts Connect, change the feed URL to the same. After that Publish is the
+only step, everywhere.
+
+## Weekly, hands-off up to the click
+
+`cron/cts-episode.ps1` runs `episode-weekly.mjs` every Monday at 08:00 (task
+"CTS Episode Draft"): research, script, cloned voice, art, Instagram kit, then
+a Telegram message through the Hermes bridge saying it is ready. Open the
+studio, read, tick, Publish.
 
 ## Adding cases
 
-`automation/cases.json` is the backlog: slug, title, angle, years. The weekly
-job takes the first case with no draft and no episode. Keep it to cases with a
-public court record or sustained major-outlet coverage; the model is only as
-factual as the record it is asked about.
-
-## Voice
-
-Default is `en-US-AndrewNeural` at rate -3% and pitch -2Hz, which reads closest
-to a podcast host among the free Microsoft voices. Change it per draft in the
-studio, or set `voice` in `episode.json`. Cory's own recordings go through the
-same mastering with `--from`.
+`automation/cases.json` is the backlog: slug, title, angle, years. Keep it to
+cases with a public court record or sustained major-outlet coverage; the
+research step can only ground what it can find.

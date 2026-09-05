@@ -20,6 +20,7 @@
   button,input,textarea,select{font:inherit;color:inherit}
   :focus-visible{outline:2px solid var(--tape);outline-offset:2px}
   ::selection{background:var(--red);color:#fff}
+  [hidden]{display:none!important}
 
   .top{display:flex;align-items:center;gap:20px;padding:0 20px;height:56px;border-bottom:1px solid var(--line);background:var(--panel)}
   .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:26px;letter-spacing:.03em;line-height:1}
@@ -38,9 +39,10 @@
   .right{border-left:1px solid var(--line);background:var(--panel)}
   .main{padding:28px 32px 60px;min-width:0}
 
-  h2.k{font:500 11px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin:0;padding:18px 18px 10px}
+  h2.k{font:500 11px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin:0;padding:18px 18px 10px;display:flex;justify-content:space-between;align-items:center}
+  h2.k .lk{color:var(--muted);text-transform:none;letter-spacing:0;font-weight:400;cursor:pointer;background:none;border:0;padding:0;font-size:11px}
+  h2.k .lk:hover{color:var(--white)}
   .list{list-style:none;margin:0;padding:0 8px 8px}
-  .list li{margin:0}
   .draft{display:block;width:100%;text-align:left;background:none;border:1px solid transparent;border-radius:4px;padding:9px 10px;cursor:pointer}
   .draft:hover{background:var(--panel-2)}
   .draft[aria-current="true"]{background:var(--panel-2);border-color:var(--line-2)}
@@ -58,29 +60,34 @@
   .new{margin:0 16px 8px;display:grid;grid-template-columns:1fr auto;gap:6px}
   .new input{background:var(--ink);border:1px solid var(--line-2);border-radius:4px;padding:8px 10px;min-width:0}
   .new input::placeholder{color:var(--faint)}
+  .newopts{margin:0 16px 10px;display:flex;gap:10px;align-items:center;font:11px var(--mono);color:var(--muted)}
+  .newopts input{width:44px;background:var(--ink);border:1px solid var(--line);border-radius:3px;padding:3px 6px;text-align:center}
 
-  .btn{background:var(--panel-2);border:1px solid var(--line-2);border-radius:4px;padding:8px 14px;cursor:pointer;font-weight:500;font-size:13px;transition:background .15s,border-color .15s}
+  .btn{background:var(--panel-2);border:1px solid var(--line-2);border-radius:4px;padding:8px 14px;cursor:pointer;font-weight:500;font-size:13px;transition:background .15s,border-color .15s;text-decoration:none;display:inline-block}
   .btn:hover:not(:disabled){border-color:rgba(255,255,255,.35)}
   .btn:disabled{opacity:.4;cursor:not-allowed}
   .btn.red{background:var(--red);border-color:var(--red);color:#fff}
   .btn.red:hover:not(:disabled){background:var(--hot);border-color:var(--hot)}
   .btn.ghost{background:none}
   .btn.sm{padding:5px 10px;font-size:12px}
+  .btn.big{font:normal 22px/1 var(--display);letter-spacing:.04em;padding:14px 26px}
+  .btn.rec{border-color:var(--hot);color:var(--hot)}
+  .btn.rec.on{background:var(--hot);color:#fff;animation:pulse 1.2s ease-in-out infinite}
+  @keyframes pulse{50%{box-shadow:0 0 0 6px rgba(255,43,51,.18)}}
+  @media (prefers-reduced-motion:reduce){.btn.rec.on{animation:none}}
 
-  /* empty state */
   .empty{max-width:560px;margin:60px auto;text-align:center}
   .empty h1{font:normal 64px/1 var(--display);margin:0 0 10px;letter-spacing:.01em}
   .empty p{color:var(--muted);margin:0 0 22px}
 
-  /* editor */
   .head{display:flex;align-items:flex-start;gap:24px;margin-bottom:18px}
   .head h1{font:normal clamp(40px,5vw,72px)/.95 var(--display);margin:0;letter-spacing:.01em;text-wrap:balance}
   .head .meta{font:12px/1.8 var(--mono);color:var(--muted);margin-top:8px}
   .head .meta b{color:var(--white);font-weight:500}
   .head .tools{margin-left:auto;display:flex;gap:8px;flex-shrink:0;padding-top:8px}
 
-  .stages{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:0 0 26px;background:var(--panel)}
-  .stage{padding:14px 16px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:6px;min-height:104px;position:relative}
+  .stages{display:grid;grid-template-columns:repeat(6,1fr);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:0 0 22px;background:var(--panel)}
+  .stage{padding:12px 14px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:5px;min-height:112px;position:relative}
   .stage:last-child{border-right:0}
   .stage .n{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
   .stage .t{font:normal 22px/1 var(--display);letter-spacing:.02em}
@@ -92,15 +99,25 @@
   @keyframes tape{to{background-position:28px 0}}
   @media (prefers-reduced-motion:reduce){.stage.running::after{animation:none}}
   .stage .act{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
-  @media (max-width:1000px){.stages{grid-template-columns:repeat(2,1fr)} .stage{border-bottom:1px solid var(--line)}}
+  @media (max-width:1100px){.stages{grid-template-columns:repeat(3,1fr)} .stage{border-bottom:1px solid var(--line)}}
 
-  .grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,1fr);gap:28px}
+  .publishbar{display:flex;align-items:center;gap:16px;border:1px solid var(--line);border-radius:6px;padding:14px 18px;margin-bottom:26px;background:linear-gradient(90deg,rgba(229,9,20,.08),transparent 60%)}
+  .publishbar .why{font:12px/1.5 var(--mono);color:var(--muted);flex:1}
+  .publishbar .why b{color:var(--white);font-weight:500}
+  .targets{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
+  .targets li{display:grid;grid-template-columns:22px 1fr auto;gap:10px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line);font-size:13px}
+  .targets li:last-child{border-bottom:0}
+  .targets .st{width:10px;height:10px;border-radius:50%;background:var(--faint);justify-self:center}
+  .targets .st.ok{background:var(--ok)} .targets .st.manual{background:var(--tape)}
+  .targets small{display:block;color:var(--muted);font-size:12px}
+
+  .grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,1fr);gap:28px}
   @media (max-width:1000px){.grid{grid-template-columns:1fr}}
   label.f{display:block;font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 8px}
   .field{margin-bottom:22px}
-  input.t,textarea.t{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:10px 12px;line-height:1.55;resize:vertical}
-  input.t:hover,textarea.t:hover{border-color:var(--line-2)}
-  textarea.script{min-height:520px;font-size:15px;line-height:1.7;font-family:Georgia,"Times New Roman",serif;color:#e8e8ea}
+  input.t,textarea.t,select.t{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:10px 12px;line-height:1.55;resize:vertical}
+  input.t:hover,textarea.t:hover,select.t:hover{border-color:var(--line-2)}
+  textarea.script{min-height:380px;font-size:15px;line-height:1.7;font-family:Georgia,"Times New Roman",serif;color:#e8e8ea}
   .hint{font:12px/1.6 var(--mono);color:var(--faint);margin-top:6px}
   .savebar{display:flex;align-items:center;gap:10px;position:sticky;bottom:0;background:linear-gradient(180deg,transparent,var(--ink) 30%);padding:18px 0 4px;margin-top:-10px}
   .savebar .s{font:12px var(--mono);color:var(--muted)}
@@ -110,6 +127,8 @@
   .facts li:last-child{border-bottom:0}
   .facts input{margin-top:3px;accent-color:var(--red);flex-shrink:0}
   .facts li.checked span{color:var(--faint);text-decoration:line-through}
+  .facts li.unsupported span{color:#f3c6c9}
+  .facts li.unsupported span::before{content:"NOT IN NOTES  ";font:500 10px var(--mono);letter-spacing:.1em;color:var(--hot)}
   .facts .none{color:var(--faint);font-style:italic}
 
   .preview{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--panel)}
@@ -120,13 +139,37 @@
   audio{width:100%;margin-top:10px;filter:invert(1) hue-rotate(180deg) saturate(.7)}
   video{width:100%;display:block;background:#000;max-height:420px}
 
-  .voicebox{display:grid;grid-template-columns:1fr 84px 84px;gap:8px}
-  select.t{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:9px 10px}
+  .voicebox{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .voicebox .full{grid-column:1/-1}
+  .opt{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted)}
+  .opt input[type=checkbox]{accent-color:var(--red)}
+  .rng{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;font:11px var(--mono);color:var(--muted)}
+  .rng input{accent-color:var(--red)}
+
+  .recbox{border:1px solid var(--line);border-radius:6px;padding:12px;background:var(--panel);display:flex;flex-direction:column;gap:10px}
+  .recrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .recrow .time{font:500 18px var(--mono);min-width:60px}
+  .meter{height:6px;background:var(--panel-2);border-radius:3px;overflow:hidden}
+  .meter i{display:block;height:100%;width:100%;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .08s}
+  .drop{border:1px dashed var(--line-2);border-radius:4px;padding:10px;font-size:12px;color:var(--muted);text-align:center;cursor:pointer}
+  .drop:hover,.drop.over{border-color:var(--tape);color:var(--white)}
+  .drop input{display:none}
+
+  .files{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:4px;background:var(--panel);font:12px/1.6 var(--mono)}
+  .files li{display:grid;grid-template-columns:1fr auto auto;gap:10px;padding:6px 10px;border-bottom:1px solid var(--line);align-items:center}
+  .files li:last-child{border-bottom:0}
+  .files a{color:var(--white);text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .files a:hover{text-decoration:underline}
+  .files .sz{color:var(--faint)}
+  .files button{background:none;border:0;color:var(--faint);cursor:pointer;padding:0 4px}
+  .files button:hover{color:var(--hot)}
 
   pre.notes{margin:0;white-space:pre-wrap;font:13px/1.55 var(--body);color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:12px}
+  details.re{border:1px solid var(--line);border-radius:4px;background:var(--panel)}
+  details.re summary{padding:9px 12px;cursor:pointer;font-size:13px;color:var(--muted)}
+  details.re pre{margin:0;padding:0 12px 12px;white-space:pre-wrap;font:12px/1.6 var(--body);color:var(--muted);max-height:360px;overflow:auto}
   .copy{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
 
-  /* right column */
   dl.kv{margin:0;padding:0 18px 14px;display:grid;grid-template-columns:auto 1fr;gap:5px 14px;font:12px/1.6 var(--mono)}
   dl.kv dt{color:var(--faint)} dl.kv dd{margin:0;color:var(--white);overflow-wrap:anywhere}
   dl.kv dd.bad{color:var(--hot)} dl.kv dd.ok{color:var(--ok)} dl.kv dd.warn{color:var(--tape)}
@@ -142,6 +185,9 @@
   .cron{padding:0 18px 18px;font:11px/1.7 var(--mono);color:var(--muted)}
   .cron div{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .cron .e{color:var(--hot)} .cron .o{color:var(--ok)}
+  .side{padding:0 18px 18px;font-size:12.5px;color:var(--muted)}
+  .side .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px}
+  .side b{color:var(--white);font-weight:500}
 
   .toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--panel-2);border:1px solid var(--line-2);border-radius:4px;padding:10px 14px 10px 30px;font-size:13px;max-width:min(680px,90vw);box-shadow:0 12px 40px rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .2s}
   .toast::before{content:"";position:absolute;left:12px;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:var(--ok)}
@@ -158,6 +204,7 @@
   <div class="brand"><img src="/site/images/logo.png" alt="">Crime<em>Time</em>Snacks<small>Studio</small></div>
   <div class="signals" id="signals" aria-live="polite">
     <span class="sig"><span class="dot" id="sig-lm"></span>LM Studio</span>
+    <span class="sig"><span class="dot" id="sig-voice"></span>Voice clone</span>
     <span class="sig"><span class="dot" id="sig-git"></span>Git</span>
     <span class="sig"><span class="dot" id="sig-tasks"></span>Schedules</span>
   </div>
@@ -165,11 +212,12 @@
 
 <div class="wrap">
   <aside class="left">
-    <h2 class="k">Drafts</h2>
+    <h2 class="k">Episodes</h2>
     <div class="new">
-      <input id="topic" placeholder="Case or topic, or leave blank for next in backlog" aria-label="Topic for a new episode draft">
-      <button class="btn red" id="btn-new" title="Write a new script with the local model">Draft</button>
+      <input id="topic" placeholder="Case, or blank for next in backlog" aria-label="Case for a new episode">
+      <button class="btn red" id="btn-new" title="Research the case, then write the script with the local model">New</button>
     </div>
+    <div class="newopts"><label>Length <input id="minutes" value="2" aria-label="Target minutes"> min</label><span>research, then script</span></div>
     <ul class="list" id="drafts"><li class="skeleton"></li><li class="skeleton"></li></ul>
     <h2 class="k">Backlog <span id="backlog-count" style="color:var(--muted)"></span></h2>
     <ul class="backlog" id="backlog"></ul>
@@ -177,9 +225,9 @@
 
   <main class="main" id="main">
     <div class="empty" id="empty" hidden>
-      <h1>No drafts yet</h1>
-      <p>Pick a case from the backlog on the left, or type one in and press Draft. The local model writes the script in the show's voice, and the rest is one button per stage.</p>
-      <button class="btn red" id="btn-first">Draft the next case</button>
+      <h1>No episodes in progress</h1>
+      <p>Pick a case from the backlog, or type one in and press New. The studio researches it, writes a two-minute script in the show's voice, and the rest is one button per stage until Publish.</p>
+      <button class="btn red" id="btn-first">Start the next case</button>
     </div>
     <div id="editor" hidden></div>
   </main>
@@ -187,6 +235,13 @@
   <aside class="right">
     <h2 class="k">Health</h2>
     <dl class="kv" id="kv"><dt>loading</dt><dd>…</dd></dl>
+
+    <h2 class="k">Voice <button class="lk" data-open="voice">open folder</button></h2>
+    <div class="side" id="voicebox"></div>
+
+    <h2 class="k">Theme music <button class="lk" data-open="music">open folder</button></h2>
+    <div class="side" id="musicbox"></div>
+
     <h2 class="k">Scheduled jobs</h2>
     <div class="tasks" id="tasks"></div>
     <h2 class="k">Last runs</h2>
@@ -198,6 +253,7 @@
       <button class="btn sm" data-op="build" title="Rebuild every page from JSON">Rebuild site</button>
       <button class="btn sm" data-op="qa" title="Check internal links">Link check</button>
       <button class="btn sm" data-op="content" title="The Tue/Fri content run: post, quiz, merch, then push">Content run + push</button>
+      <button class="btn sm" data-op="weekly" title="Run the Monday episode job now: research, script, voice, art, reel">Weekly episode job</button>
     </div>
     <div class="jobhead"><span id="jobtitle">Job output</span><span id="jobstate"></span></div>
     <pre class="log" id="log"></pre>
@@ -210,39 +266,51 @@ const $ = (s, r = document) => r.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const fmtAgo = (iso) => { if (!iso) return "never"; const m = Math.round((Date.now() - new Date(iso)) / 60000); if (m < 1) return "just now"; if (m < 60) return `${m} min ago`; const h = Math.round(m / 60); if (h < 48) return `${h} h ago`; return `${Math.round(h / 24)} d ago`; };
 const fmtWhen = (iso) => { if (!iso || iso.startsWith("0001")) return "none"; const d = new Date(iso); return d.toLocaleString("en-US", { weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }); };
-const state = { health: null, drafts: [], current: null, ep: null, job: null, dirty: false };
+const fmtSize = (b) => b > 1048576 ? `${(b / 1048576).toFixed(1)} MB` : `${Math.max(1, Math.round(b / 1024))} KB`;
+const state = { health: null, drafts: [], current: null, ep: null, job: null, dirty: false, rec: null };
 const VOICES = ["en-US-AndrewNeural", "en-US-BrianNeural", "en-US-ChristopherNeural", "en-US-EricNeural", "en-US-GuyNeural", "en-US-AndrewMultilingualNeural"];
 
 let toastT;
 function toast(msg, bad) { const t = $("#toast"); t.textContent = msg; t.className = `toast show${bad ? " bad" : ""}`; clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("show"), bad ? 7000 : 3500); }
 async function api(path, opts) { const r = await fetch(path, { headers: { "Content-Type": "application/json" }, ...opts }); const j = await r.json().catch(() => ({})); if (!r.ok) throw new Error(j.error || r.statusText); return j; }
+async function upload(path, blob) { const r = await fetch(path, { method: "POST", body: blob }); const j = await r.json().catch(() => ({})); if (!r.ok) throw new Error(j.error || r.statusText); return j; }
 
 /* ------------------------------------------------------------ health */
 async function loadHealth() {
   try { state.health = await api("/api/health"); } catch (e) { toast(`Health check failed: ${e.message}`, true); return; }
   const h = state.health;
   $("#sig-lm").className = `dot ${h.lmStudio.up ? "ok" : "bad"}`;
-  $("#sig-git").className = `dot ${h.git.behind ? "warn" : h.git.ahead ? "warn" : "ok"}`;
+  $("#sig-voice").className = `dot ${h.voice.cloneReady ? "ok" : "warn"}`;
+  $("#sig-git").className = `dot ${h.git.behind || h.git.ahead ? "warn" : "ok"}`;
   const enabled = h.tasks.filter((t) => t.state === "Ready" || t.state === "Running");
-  const failed = h.tasks.filter((t) => t.result && t.result !== 0 && t.result !== 267009 && t.result !== 267011);
-  $("#sig-tasks").className = `dot ${failed.length ? "bad" : enabled.length ? "ok" : "warn"}`;
+  const bad = (t) => t.result && t.result !== 0 && t.result !== 267009 && t.result !== 267011;
+  $("#sig-tasks").className = `dot ${h.tasks.some(bad) ? "bad" : enabled.length ? "ok" : "warn"}`;
 
   $("#kv").innerHTML = `
-    <dt>model</dt><dd class="${h.lmStudio.up ? "" : "bad"}">${h.lmStudio.up ? esc(h.lmStudio.models[0] || "loaded") + (h.lmStudio.models.length > 1 ? ` +${h.lmStudio.models.length - 1}` : "") : "LM Studio server is off. Start it (Developer tab) or the draft step falls back to cloud keys."}</dd>
+    <dt>model</dt><dd class="${h.lmStudio.up ? "" : "bad"}">${h.lmStudio.up ? esc(h.lmStudio.models[0] || "loaded") + (h.lmStudio.models.length > 1 ? ` +${h.lmStudio.models.length - 1}` : "") : "LM Studio server is off. Start it (Developer tab) or the script step falls back to cloud keys."}</dd>
     <dt>git</dt><dd class="${h.git.behind ? "warn" : ""}">${h.git.ahead ? `${h.git.ahead} to push` : "nothing to push"}${h.git.behind ? `, ${h.git.behind} behind origin` : ""}${h.git.dirty ? `, ${h.git.dirty} changed files` : ""}</dd>
     <dt>ci sync</dt><dd>${fmtAgo(h.git.lastCi.at)}</dd>
     <dt>content</dt><dd>${h.git.lastContent.at ? fmtAgo(h.git.lastContent.at) : "no content commit found"}</dd>
     <dt>tools</dt><dd class="${h.tools.edgeTts && h.tools.ffmpeg ? "" : "bad"}">${h.tools.edgeTts ? "edge-tts" : "edge-tts MISSING"}, ${h.tools.ffmpeg ? "ffmpeg" : "ffmpeg MISSING"}</dd>
     <dt>site</dt><dd>${h.status.counts ? `${h.status.counts.episodes} episodes, ${h.status.counts.posts} posts, ${h.status.counts.quizzes} quizzes` : "status.json missing"}</dd>`;
 
+  $("#voicebox").innerHTML = h.voice.cloneReady
+    ? `<div><b>Cory's voice</b> is the default. Cloned from <span class="mono">voice/cory-reference.wav</span> with Chatterbox on this PC (about 15 seconds of compute per second of audio; a two-minute episode takes around half an hour).</div><audio controls preload="none" src="/api/voice/file?name=cory-reference.wav"></audio><div class="row"><label class="drop" style="flex:1">Replace the reference clip (10 to 20 s of clean talking)<input type="file" id="ref-file" accept="audio/*"></label></div>`
+    : `<div>${h.voice.reference ? "Reference clip found, but the Chatterbox venv is missing." : "No reference clip yet."} Falling back to edge-tts (Andrew). ${h.voice.reference ? "See STUDIO.md, Voice clone." : "Drop a clean 10 to 20 second clip of Cory talking:"}</div><div class="row"><label class="drop" style="flex:1">Upload reference clip<input type="file" id="ref-file" accept="audio/*"></label></div>`;
+  $("#ref-file")?.addEventListener("change", async (e) => { const f = e.target.files[0]; if (!f) return; try { await upload("/api/voice/reference", f); toast("Reference voice replaced."); loadHealth(); } catch (er) { toast(er.message, true); } });
+
+  $("#musicbox").innerHTML = `<div>${h.music.source === "cory" ? `<b>Your tracks:</b> ${esc(h.music.files.join(", "))}. Trimmed to 9 s intro / 6 s outro, faded under the voice.` : `<b>Synthesized theme</b> (original, owned). Drop your own intro.mp3 / outro.mp3 to replace it.`}</div>
+    ${h.music.rendered ? `<audio controls preload="none" src="/api/music/file?name=intro"></audio>` : `<div class="row"><button class="btn sm" data-op="music">Render theme</button></div>`}
+    <div class="row"><label class="drop" style="flex:1">Intro track<input type="file" data-music="intro" accept="audio/*"></label><label class="drop" style="flex:1">Outro track<input type="file" data-music="outro" accept="audio/*"></label>${h.music.source === "cory" ? `<button class="btn sm ghost" id="music-reset">Back to synth</button>` : ""}</div>`;
+  document.querySelectorAll("[data-music]").forEach((inp) => inp.addEventListener("change", async (e) => { const f = e.target.files[0]; if (!f) return; const ext = (f.name.split(".").pop() || "mp3").toLowerCase(); try { await upload(`/api/music/upload?kind=${inp.dataset.music}&ext=${ext}`, f); toast(`${inp.dataset.music} track saved. Rendering.`); startJob("music", {}); } catch (er) { toast(er.message, true); } }));
+  $("#music-reset")?.addEventListener("click", async () => { await api("/api/music/reset", { method: "POST" }); startJob("music", {}); });
+  document.querySelectorAll("#musicbox [data-op]").forEach((b) => b.addEventListener("click", () => startJob(b.dataset.op, {})));
+
   $("#tasks").innerHTML = h.tasks.length ? h.tasks.map((t) => {
     const on = t.state === "Ready" || t.state === "Running";
-    const bad = t.result && t.result !== 0 && t.result !== 267009 && t.result !== 267011;
-    return `<div class="${on ? "" : "off"}"><span><b>${esc(t.name.replace(/^CTS /, ""))}</b> ${on ? "" : "(disabled)"}</span><span>${on ? `next ${fmtWhen(t.next)}` : "CI owns it"}${bad ? ` <span style="color:var(--hot)">exit ${t.result}</span>` : ""}</span></div>`;
+    return `<div class="${on ? "" : "off"}"><span><b>${esc(t.name.replace(/^CTS /, ""))}</b> ${on ? "" : "(disabled)"}</span><span>${on ? `next ${fmtWhen(t.next)}` : "CI owns it"}${bad(t) ? ` <span style="color:var(--hot)">exit ${t.result}</span>` : ""}</span></div>`;
   }).join("") : `<div class="off">No CTS tasks registered on this PC.</div>`;
-
   $("#cron").innerHTML = h.cronTail.length ? h.cronTail.map((l) => `<div class="${/ERROR/.test(l) ? "e" : /OK|PUBLISHED|DONE/.test(l) ? "o" : ""}" title="${esc(l)}">${esc(l.replace(/T(\d\d:\d\d):\d\d[^\s]*/, " $1"))}</div>`).join("") : `<div>cron.log is empty (rotated 2026-09-05; the next scheduled run writes here).</div>`;
-
   $("#backlog").innerHTML = h.backlog.map((c) => `<li class="${c.used ? "used" : ""}"><button ${c.used ? "disabled" : ""} data-case="${esc(c.slug)}" title="${esc(c.angle)}">${esc(c.title)}</button><small>${esc(c.year || "")}</small></li>`).join("");
   $("#backlog-count").textContent = `${h.backlog.filter((c) => !c.used).length} left`;
   state.drafts = h.drafts;
@@ -251,65 +319,71 @@ async function loadHealth() {
 
 function renderDrafts() {
   const ul = $("#drafts");
-  if (!state.drafts.length) { ul.innerHTML = `<li style="padding:6px 10px;color:var(--faint);font-size:12.5px">Nothing drafted yet.</li>`; }
+  if (!state.drafts.length) ul.innerHTML = `<li style="padding:6px 10px;color:var(--faint);font-size:12.5px">Nothing in progress.</li>`;
   else ul.innerHTML = state.drafts.map((d) => `<li><button class="draft" data-id="${esc(d.id)}" aria-current="${d.id === state.current}"><b>${esc(d.title)}</b><span>${esc(d.created?.slice(0, 10) || "")} · ${d.duration ? esc(d.duration.replace(/^00:/, "")) : `${d.scriptWords || 0} words`} <span class="pill ${esc(d.status)}">${esc(d.status)}</span></span></button></li>`).join("");
   const hasDrafts = state.drafts.length > 0;
   $("#empty").hidden = hasDrafts || !!state.current;
   if (!state.current && hasDrafts) openDraft(state.drafts[0].id);
-  if (!hasDrafts) { $("#editor").hidden = true; }
+  if (!hasDrafts) $("#editor").hidden = true;
 }
 
 /* ------------------------------------------------------------ editor */
 async function openDraft(id) {
-  if (state.dirty && !confirm("Discard unsaved script edits?")) return;
-  state.dirty = false;
-  state.current = id;
+  if (state.dirty && !confirm("Discard unsaved edits?")) return;
+  state.dirty = false; state.current = id;
   try { state.ep = await api(`/api/draft/${id}`); } catch (e) { toast(e.message, true); return; }
-  renderDrafts();
-  renderEditor();
+  renderDrafts(); renderEditor();
 }
-
 function stageState(ep) {
   const f = ep.files || {};
-  const done = { script: !!ep.script?.length, voice: !!f.audio, art: !!f.cover, social: !!f.reel, publish: ep.status === "published" };
-  const order = ["script", "voice", "art", "social", "publish"];
-  const next = order.find((k) => !done[k]) || null;
-  return { done, next };
+  const done = { research: !!f.research || !!ep.researched, script: !!ep.script?.length, voice: !!f.audio, art: !!f.cover, social: !!f.reel, publish: ep.status === "published" };
+  const order = ["research", "script", "voice", "art", "social", "publish"];
+  return { done, next: order.find((k) => !done[k]) || null };
 }
-
 function renderEditor() {
   const ep = state.ep; if (!ep) return;
+  const h = state.health || { voice: {}, music: {} };
   const { done, next } = stageState(ep);
   const runningFor = (state.job && !state.job.done && state.job.draft === ep.id) ? state.job.action : null;
   const pub = ep.status === "published";
   const facts = ep.factsToVerify || []; const checked = ep.factsChecked || [];
   const unchecked = facts.filter((_, i) => !checked[i]).length;
+  const unsupported = facts.filter((f) => /^UNSUPPORTED:/.test(f)).length;
+  const canPublish = done.voice && done.art && unchecked === 0 && !runningFor && !pub;
   const f = (k) => `/api/draft/${ep.id}/file?name=${encodeURIComponent(ep.files[k])}&v=${encodeURIComponent(ep.edited || ep.created)}`;
-  const stage = (key, n, t, d, acts) => `<div class="stage ${done[key] ? "done" : ""} ${next === key && !runningFor ? "next" : ""} ${runningFor === key ? "running" : ""}"><span class="n">${n}</span><span class="t">${t}</span><span class="d">${d}</span><div class="act">${acts}</div></div>`;
+  const stage = (key, n, t, d, acts) => `<div class="stage ${done[key] ? "done" : ""} ${next === key && !runningFor ? "next" : ""} ${runningFor === key || (runningFor === "new" && key === "script") ? "running" : ""}"><span class="n">${n}</span><span class="t">${t}</span><span class="d">${d}</span><div class="act">${acts}</div></div>`;
   const dis = (cond) => (cond || runningFor || pub ? "disabled" : "");
+  const engine = ep.voice?.engine || h.voice.defaultEngine || "edge";
+  const recordings = (ep.fileList || []).filter((x) => /\.(wav|mp3|m4a|webm|ogg|flac)$/i.test(x.name) && !/^(episode\.mp3|voice\.wav)$/.test(x.name));
 
-  $("#empty").hidden = true;
-  $("#editor").hidden = false;
+  $("#empty").hidden = true; $("#editor").hidden = false;
   $("#editor").innerHTML = `
     <div class="head">
       <div>
         <h1>${esc(ep.title)}</h1>
-        <div class="meta">${esc(ep.caseTitle || "")}${ep.caseTitle && ep.caseTitle !== ep.title ? " · " : ""}<b>${ep.scriptWords || 0} words</b> · about ${Math.round((ep.scriptWords || 0) / 150)} min · written by ${esc(ep.provider || "?")}${ep.duration ? ` · audio <b>${esc(ep.duration.replace(/^00:/, ""))}</b>` : ""}${ep.voiceUsed ? ` · ${esc(ep.voiceUsed)}` : ""}${pub ? ` · <b style="color:var(--ok)">published ${esc(ep.publishDate)}</b>` : ""}</div>
+        <div class="meta">${esc(ep.caseTitle || "")}${ep.caseTitle && ep.caseTitle !== ep.title ? " · " : ""}<b>${ep.scriptWords || 0} words</b> · about ${Math.max(1, Math.round((ep.scriptWords || 0) / 150))} min · ${esc(ep.provider || "?")}${ep.duration ? ` · audio <b>${esc(ep.duration.replace(/^00:/, ""))}</b>` : ""}${ep.voiceUsed ? ` · ${esc(ep.voiceUsed)}` : ""}${pub ? ` · <b style="color:var(--ok)">published ${esc(ep.publishDate)}</b>` : ""}</div>
       </div>
       <div class="tools">
         <button class="btn ghost sm" id="btn-folder">Open folder</button>
-        ${pub ? `<a class="btn sm" href="${esc(ep.pageUrl)}" target="_blank" rel="noopener">View page</a>` : `<button class="btn ghost sm" id="btn-delete" ${runningFor ? "disabled" : ""}>Delete draft</button>`}
+        ${pub ? `<a class="btn sm" href="${esc(ep.pageUrl)}" target="_blank" rel="noopener">View page</a>` : `<button class="btn ghost sm" id="btn-delete" ${runningFor ? "disabled" : ""}>Delete</button>`}
       </div>
     </div>
 
-    ${pub ? "" : `<div class="warnbox" ${unchecked ? "" : "hidden"}><b>${unchecked} claim${unchecked === 1 ? "" : "s"} still unchecked.</b> The model lists every specific fact it used. Confirm each one against the record before this airs under the show's name. Publish stays locked until the list is clear.</div>`}
+    ${pub ? "" : `<div class="publishbar">
+      <button class="btn red big" id="btn-publish" ${canPublish ? "" : "disabled"} title="${canPublish ? "Site page, feed.xml, transcript, search, commit and push" : "Finish voice and art, and clear the fact list"}">Publish</button>
+      <div class="why">${canPublish ? `Ready. Publishes to the site and <b>feed.xml</b>, pushes to main, Vercel deploys. Then the Spotify step below.` : [!done.voice && "voice not made", !done.art && "art not rendered", unchecked > 0 && `<b>${unchecked}</b> fact${unchecked === 1 ? "" : "s"} unchecked${unsupported ? ` (<b>${unsupported}</b> not in the research notes)` : ""}`].filter(Boolean).join(" · ")}</div>
+      <button class="btn sm ghost" data-run="publish-local" ${canPublish ? "" : "disabled"} title="Commit without pushing">Commit only</button>
+    </div>`}
+
+    ${unsupported && !pub ? `<div class="warnbox"><b>${unsupported} line${unsupported === 1 ? "" : "s"} the research notes do not support.</b> The fact-checker pass flagged them in the list on the right. Fix the script or confirm each from a real source before ticking it.</div>` : ""}
 
     <div class="stages">
-      ${stage("script", "1", "Script", `${ep.scriptWords || 0} words in the show's voice. Edit below, save, then voice it.`, `<button class="btn sm" data-run="draft-again" ${dis(false)}>Rewrite</button>`)}
-      ${stage("voice", "2", "Voice", done.voice ? `${esc(ep.duration?.replace(/^00:/, "") || "")}, mastered to -16 LUFS.` : "Synthesize with edge-tts, or master a recording you made.", `<button class="btn sm ${next === "voice" ? "red" : ""}" data-run="voice" ${dis(!done.script)}>${done.voice ? "Re-voice" : "Generate voice"}</button><button class="btn sm ghost" data-run="voice-from" ${dis(!done.script)} title="Use your own recording">From file</button>`)}
-      ${stage("art", "3", "Art", "Cover 3000 square, feed card, reel still. Black, red, tape.", `<button class="btn sm ${next === "art" ? "red" : ""}" data-run="art" ${dis(!done.script)}>${done.art ? "Re-render" : "Render art"}</button>`)}
-      ${stage("social", "4", "Instagram", "45s audiogram reel plus caption. Card is the feed post.", `<button class="btn sm ${next === "social" ? "red" : ""}" data-run="social" ${dis(!done.voice || !done.art)}>${done.social ? "Re-cut reel" : "Build kit"}</button>`)}
-      ${stage("publish", "5", "Publish", pub ? "Live on the site and in feed.xml." : "Site page, feed.xml, transcript, search. Commit and push.", pub ? "" : `<button class="btn sm ${next === "publish" ? "red" : ""}" data-run="publish" ${dis(!done.voice || !done.art || unchecked > 0)} title="${unchecked ? "Check every fact first" : "Publish and push"}">Publish + push</button><button class="btn sm ghost" data-run="publish-local" ${dis(!done.voice || !done.art || unchecked > 0)} title="Commit without pushing">Commit only</button>`)}
+      ${stage("research", "0", "Research", done.research ? "Wikipedia plus recent coverage, saved in the folder." : "Wikipedia plus recent coverage. Grounds the script.", `<button class="btn sm" data-run="research" ${dis(false)}>${done.research ? "Refresh" : "Research"}</button>`)}
+      ${stage("script", "1", "Script", `${ep.scriptWords || 0} words. Edit below, save, then voice it.`, `<button class="btn sm" data-run="draft-again" ${dis(false)}>Rewrite</button>`)}
+      ${stage("voice", "2", "Voice", done.voice ? `${esc(ep.duration?.replace(/^00:/, "") || "")}, theme mixed, -16 LUFS.` : engine === "clone" ? "Your cloned voice, or record it yourself." : "edge-tts, or record it yourself.", `<button class="btn sm ${next === "voice" ? "red" : ""}" data-run="voice" ${dis(!done.script)}>${done.voice ? "Re-voice" : "Make voice"}</button>`)}
+      ${stage("art", "3", "Art", "Cover 3000 square, feed card, reel still.", `<button class="btn sm ${next === "art" ? "red" : ""}" data-run="art" ${dis(!done.script)}>${done.art ? "Re-render" : "Render"}</button>`)}
+      ${stage("social", "4", "Instagram", "45 s audiogram reel plus caption.", `<button class="btn sm ${next === "social" ? "red" : ""}" data-run="social" ${dis(!done.voice || !done.art)}>${done.social ? "Re-cut" : "Build kit"}</button>`)}
+      ${stage("publish", "5", "Publish", pub ? "Live on the site and in feed.xml." : "Site, feed.xml, transcript, search, push.", "")}
     </div>
 
     <div class="grid">
@@ -318,71 +392,146 @@ function renderEditor() {
         <div class="field"><label class="f" for="f-hook">Hook (one line, used on the art)</label><input class="t" id="f-hook" value="${esc(ep.hook)}" ${pub ? "disabled" : ""}></div>
         <div class="field"><label class="f" for="f-script">Script, one paragraph per block</label>
           <textarea class="t script" id="f-script" spellcheck="true" ${pub ? "disabled" : ""}>${esc((ep.script || []).join("\n\n"))}</textarea>
-          <div class="hint">Saving a changed script resets voice and art, since they were built from the old words.</div>
+          <div class="hint">Saving a changed script resets voice and art, since they were built from the old words. Two minutes is about 300 words.</div>
         </div>
-        <div class="field"><label class="f" for="f-desc">Show notes</label><textarea class="t" id="f-desc" rows="6" ${pub ? "disabled" : ""}>${esc(ep.description)}</textarea></div>
-        <div class="field"><label class="f" for="f-cap">Instagram caption</label><textarea class="t" id="f-cap" rows="5" ${pub ? "disabled" : ""}>${esc(ep.instagramCaption)}</textarea></div>
+        <div class="field"><label class="f" for="f-desc">Show notes</label><textarea class="t" id="f-desc" rows="5" ${pub ? "disabled" : ""}>${esc(ep.description)}</textarea></div>
+        <div class="field"><label class="f" for="f-cap">Instagram caption</label><textarea class="t" id="f-cap" rows="4" ${pub ? "disabled" : ""}>${esc(ep.instagramCaption)}</textarea></div>
+        ${done.research ? `<div class="field"><label class="f">Research notes</label><details class="re"><summary>Open the notes the script was written from</summary><pre id="research-pre">loading…</pre></details></div>` : ""}
         ${pub ? "" : `<div class="savebar"><button class="btn red" id="btn-save" disabled>Save</button><span class="s" id="savestate">No unsaved changes</span></div>`}
       </div>
 
       <div>
-        <div class="field"><label class="f">Facts to verify</label>
-          <ul class="facts" id="facts">${facts.length ? facts.map((t, i) => `<li class="${checked[i] ? "checked" : ""}"><input type="checkbox" data-fact="${i}" ${checked[i] ? "checked" : ""} ${pub ? "disabled" : ""} aria-label="Verified"><span>${esc(t)}</span></li>`).join("") : `<li class="none">The model listed no specific claims. Read the script anyway.</li>`}</ul>
+        ${pub ? `<div class="field"><label class="f">Where it is</label><ul class="targets">
+            <li><span class="st ok"></span><div>Site page and feed.xml<small>${esc(ep.pageUrl)}</small></div><a class="btn sm" href="${esc(ep.pageUrl)}" target="_blank" rel="noopener">Open</a></li>
+            <li><span class="st manual"></span><div>Spotify and Apple<small>They still read the old Anchor feed. Upload audio/${esc(ep.slug)}.mp3 with the title and notes below, or re-point the show at crimetime.vercel.app/feed.xml once and this step disappears.</small></div><a class="btn sm" href="https://podcasters.spotify.com/pod/dashboard/episode/wizard" target="_blank" rel="noopener">Spotify</a></li>
+            <li><span class="st ${done.social ? "manual" : ""}"></span><div>Instagram @crimetimesnacks<small>reel.mp4 first, card.jpg second, caption.txt for both. Set 9:16 on the reel.</small></div><button class="btn sm" id="btn-folder2">Files</button></li>
+          </ul><div class="copy"><button class="btn sm" data-copy="title">Copy title</button><button class="btn sm" data-copy="description">Copy show notes</button><button class="btn sm" data-copy="instagramCaption">Copy caption</button></div></div>` : ""}
+
+        <div class="field"><label class="f">Facts to verify${ep.factCheck ? ` · ${ep.factCheck.checked} checked against notes` : ""}</label>
+          <ul class="facts" id="facts">${facts.length ? facts.map((t, i) => `<li class="${checked[i] ? "checked" : ""} ${/^UNSUPPORTED:/.test(t) ? "unsupported" : ""}"><input type="checkbox" data-fact="${i}" ${checked[i] ? "checked" : ""} ${pub ? "disabled" : ""} aria-label="Verified"><span>${esc(t.replace(/^UNSUPPORTED:\s*/, ""))}</span></li>`).join("") : `<li class="none">No specific claims listed. Read the script anyway.</li>`}</ul>
         </div>
 
-        <div class="field"><label class="f">Voice</label>
+        ${pub ? "" : `<div class="field"><label class="f">Voice</label>
           <div class="voicebox">
-            <select class="t" id="v-name" ${pub ? "disabled" : ""}>${VOICES.map((v) => `<option ${ep.voice?.name === v ? "selected" : ""}>${v}</option>`).join("")}</select>
-            <input class="t" id="v-rate" value="${esc(ep.voice?.rate || "-3%")}" aria-label="Rate" title="Rate, e.g. -3%" ${pub ? "disabled" : ""}>
-            <input class="t" id="v-pitch" value="${esc(ep.voice?.pitch || "-2Hz")}" aria-label="Pitch" title="Pitch, e.g. -2Hz" ${pub ? "disabled" : ""}>
+            <select class="t full" id="v-engine">${h.voice.cloneReady ? `<option value="clone" ${engine === "clone" ? "selected" : ""}>Cory (cloned, Chatterbox, slow)</option>` : ""}<option value="edge" ${engine === "edge" ? "selected" : ""}>edge-tts (free, fast)</option></select>
+            <div id="v-clone" ${engine === "clone" ? "" : "hidden"} class="full">
+              <div class="rng"><span>calm</span><input type="range" id="v-exag" min="0.25" max="0.75" step="0.05" value="${ep.voice?.exaggeration ?? 0.45}"><span>dramatic</span></div>
+              <div class="rng"><span>deliberate</span><input type="range" id="v-cfg" min="0.3" max="0.7" step="0.05" value="${ep.voice?.cfg ?? 0.5}"><span>quick</span></div>
+            </div>
+            <div id="v-edge" ${engine === "edge" ? "" : "hidden"} class="full" style="display:grid;grid-template-columns:1fr 80px 80px;gap:8px">
+              <select class="t" id="v-name">${VOICES.map((v) => `<option ${ep.voice?.name === v ? "selected" : ""}>${v}</option>`).join("")}</select>
+              <input class="t" id="v-rate" value="${esc(ep.voice?.rate || "-3%")}" aria-label="Rate" title="Rate, e.g. -3%">
+              <input class="t" id="v-pitch" value="${esc(ep.voice?.pitch || "-2Hz")}" aria-label="Pitch" title="Pitch, e.g. -2Hz">
+            </div>
+            <label class="opt full"><input type="checkbox" id="v-music" ${ep.music === false ? "" : "checked"}> Mix the theme in (intro 9 s, outro 6 s)</label>
           </div>
-          ${done.voice ? `<audio controls preload="metadata" src="${f("audio")}"></audio>` : `<div class="hint">Andrew is the warmest of the free US voices. Slightly slower and lower reads closer to a podcast host.</div>`}
+          ${done.voice ? `<audio controls preload="metadata" src="${f("audio")}"></audio>` : ""}
         </div>
+
+        <div class="field"><label class="f">Or record it yourself</label>
+          <div class="recbox">
+            <div class="recrow"><button class="btn rec" id="btn-rec">Record</button><span class="time" id="rec-time">0:00</span><span style="font-size:12px;color:var(--muted)">Reads the script above. Long pauses are trimmed, noise reduced, then the theme is mixed in.</span></div>
+            <div class="meter"><i id="rec-meter"></i></div>
+            <label class="drop" id="drop">Or drop a recording here (wav, mp3, m4a)<input type="file" id="rec-file" accept="audio/*"></label>
+            ${recordings.length ? `<div class="hint">In this folder: ${recordings.map((r) => `<button class="btn sm ghost" data-use="${esc(r.name)}" title="Master this file as the episode voice">${esc(r.name)}</button>`).join(" ")}</div>` : ""}
+          </div>
+        </div>`}
 
         ${done.art ? `<div class="field"><label class="f">Art</label><div class="preview"><img src="${f("cover")}" alt="Episode cover"><div class="row"><img src="${f("card")}" alt="Feed card"><img src="${f("reelStill")}" alt="Reel still"></div><div class="cap"><span>cover 3000 · card 1080x1350 · reel 1080x1920</span><span>jpg</span></div></div></div>` : ""}
         ${done.social ? `<div class="field"><label class="f">Reel</label><div class="preview"><video controls preload="metadata" src="${f("reel")}"></video><div class="cap"><span>${ep.social?.clipSeconds || 45}s audiogram, -14 LUFS</span><span>mp4</span></div></div></div>` : ""}
 
-        ${pub ? `<div class="field"><label class="f">Spotify for Podcasters upload</label><pre class="notes">Until the show is re-pointed at crimetime.vercel.app/feed.xml, Spotify and Apple only see episodes uploaded to Spotify for Podcasters. Upload:\n\naudio/${esc(ep.slug)}.mp3\nimages/episodes/${esc(ep.slug)}.jpg\n\nTitle and show notes are in the copy buttons.</pre><div class="copy"><button class="btn sm" data-copy="title">Copy title</button><button class="btn sm" data-copy="description">Copy show notes</button><button class="btn sm" data-copy="instagramCaption">Copy caption</button><a class="btn sm" href="https://podcasters.spotify.com/pod/dashboard/episode/wizard" target="_blank" rel="noopener">Open Spotify upload</a></div></div>` : ""}
+        <div class="field"><label class="f">Project folder</label>
+          <ul class="files">${(ep.fileList || []).map((x) => `<li><a href="/api/draft/${ep.id}/file?name=${encodeURIComponent(x.name)}" target="_blank" rel="noopener">${esc(x.name)}</a><span class="sz">${fmtSize(x.size)}</span>${/^(episode\.json)$/.test(x.name) || pub ? "<span></span>" : `<button data-del="${esc(x.name)}" title="Delete">x</button>`}</li>`).join("") || `<li><span class="sz">empty</span></li>`}</ul>
+          ${pub ? "" : `<label class="drop" id="drop-asset" style="margin-top:8px">Add a file to this episode's folder<input type="file" id="asset-file"></label>`}
+        </div>
       </div>
     </div>`;
 
   // wire
-  const dirtyOn = ["#f-title", "#f-hook", "#f-script", "#f-desc", "#f-cap", "#v-name", "#v-rate", "#v-pitch"];
-  dirtyOn.forEach((s) => $(s)?.addEventListener("input", () => { state.dirty = true; const b = $("#btn-save"); if (b) { b.disabled = false; $("#savestate").textContent = "Unsaved changes"; } }));
+  ["#f-title", "#f-hook", "#f-script", "#f-desc", "#f-cap", "#v-name", "#v-rate", "#v-pitch", "#v-exag", "#v-cfg"].forEach((s) => $(s)?.addEventListener("input", markDirty));
+  $("#v-engine")?.addEventListener("change", () => { const e = $("#v-engine").value; $("#v-clone").hidden = e !== "clone"; $("#v-edge").hidden = e !== "edge"; markDirty(); });
   $("#btn-save")?.addEventListener("click", saveDraft);
+  $("#btn-publish")?.addEventListener("click", () => runStage("publish"));
   $("#btn-folder").addEventListener("click", () => api("/api/open", { method: "POST", body: JSON.stringify({ id: ep.id }) }).catch((e) => toast(e.message, true)));
-  $("#btn-delete")?.addEventListener("click", async () => { if (!confirm(`Delete draft "${ep.title}"? Files in its folder are removed.`)) return; try { await api(`/api/draft/${ep.id}`, { method: "DELETE" }); state.current = null; state.ep = null; toast("Draft deleted."); await loadHealth(); if (!state.drafts.length) { $("#editor").hidden = true; $("#empty").hidden = false; } } catch (e) { toast(e.message, true); } });
+  $("#btn-folder2")?.addEventListener("click", () => api("/api/open", { method: "POST", body: JSON.stringify({ id: ep.id }) }));
+  $("#btn-delete")?.addEventListener("click", async () => { if (!confirm(`Delete "${ep.title}" and its folder?`)) return; try { await api(`/api/draft/${ep.id}`, { method: "DELETE" }); state.current = null; state.ep = null; toast("Deleted."); await loadHealth(); if (!state.drafts.length) { $("#editor").hidden = true; $("#empty").hidden = false; } } catch (e) { toast(e.message, true); } });
   document.querySelectorAll("[data-run]").forEach((b) => b.addEventListener("click", () => runStage(b.dataset.run)));
   document.querySelectorAll("[data-fact]").forEach((c) => c.addEventListener("change", async () => {
     const arr = facts.map((_, i) => !!document.querySelector(`[data-fact="${i}"]`)?.checked);
     try { state.ep = await api(`/api/draft/${ep.id}`, { method: "PUT", body: JSON.stringify({ factsChecked: arr }) }); renderEditor(); } catch (e) { toast(e.message, true); }
   }));
   document.querySelectorAll("[data-copy]").forEach((b) => b.addEventListener("click", () => navigator.clipboard.writeText(ep[b.dataset.copy] || "").then(() => toast("Copied."))));
+  document.querySelectorAll("[data-del]").forEach((b) => b.addEventListener("click", async () => { if (!confirm(`Delete ${b.dataset.del}?`)) return; await api(`/api/draft/${ep.id}/file?name=${encodeURIComponent(b.dataset.del)}`, { method: "DELETE" }); state.ep = await api(`/api/draft/${ep.id}`); renderEditor(); }));
+  document.querySelectorAll("[data-use]").forEach((b) => b.addEventListener("click", () => voiceFrom(b.dataset.use)));
+  $("#btn-rec")?.addEventListener("click", toggleRecord);
+  $("#rec-file")?.addEventListener("change", (e) => uploadRecording(e.target.files[0]));
+  $("#asset-file")?.addEventListener("change", async (e) => { const fl = e.target.files[0]; if (!fl) return; try { await upload(`/api/draft/${ep.id}/upload?name=${encodeURIComponent(fl.name)}`, fl); state.ep = await api(`/api/draft/${ep.id}`); renderEditor(); toast("Added."); } catch (er) { toast(er.message, true); } });
+  for (const id of ["drop", "drop-asset"]) { const d = $(`#${id}`); if (!d) continue; d.addEventListener("dragover", (e) => { e.preventDefault(); d.classList.add("over"); }); d.addEventListener("dragleave", () => d.classList.remove("over")); d.addEventListener("drop", (e) => { e.preventDefault(); d.classList.remove("over"); const fl = e.dataTransfer.files[0]; if (!fl) return; if (id === "drop") uploadRecording(fl); else $("#asset-file").files = e.dataTransfer.files, $("#asset-file").dispatchEvent(new Event("change")); }); }
+  if (done.research) fetch(`/api/draft/${ep.id}/file?name=research.md`).then((r) => r.text()).then((t) => { const pre = $("#research-pre"); if (pre) pre.textContent = t; }).catch(() => {});
 }
-
+function markDirty() { state.dirty = true; const b = $("#btn-save"); if (b) { b.disabled = false; $("#savestate").textContent = "Unsaved changes"; } }
+function voiceSettings() {
+  const engine = $("#v-engine")?.value || "edge";
+  return { engine, name: $("#v-name")?.value, rate: $("#v-rate")?.value.trim(), pitch: $("#v-pitch")?.value.trim(), exaggeration: parseFloat($("#v-exag")?.value || "0.45"), cfg: parseFloat($("#v-cfg")?.value || "0.5") };
+}
 async function saveDraft() {
   const ep = state.ep;
-  const body = {
-    title: $("#f-title").value, hook: $("#f-hook").value, description: $("#f-desc").value, instagramCaption: $("#f-cap").value,
-    voice: { name: $("#v-name").value, rate: $("#v-rate").value.trim(), pitch: $("#v-pitch").value.trim() },
-  };
+  const body = { title: $("#f-title").value, hook: $("#f-hook").value, description: $("#f-desc").value, instagramCaption: $("#f-cap").value, voice: voiceSettings() };
   const script = $("#f-script").value.split(/\n\s*\n/).map((s) => s.replace(/\s+/g, " ").trim()).filter(Boolean);
   if (script.join("\n") !== (ep.script || []).join("\n")) body.script = script;
   try { state.ep = await api(`/api/draft/${ep.id}`, { method: "PUT", body: JSON.stringify(body) }); state.dirty = false; toast("Saved."); await loadHealth(); renderEditor(); }
   catch (e) { toast(`Save failed: ${e.message}`, true); }
 }
 
+/* ------------------------------------------------------------ recording */
+let recTimer;
+async function toggleRecord() {
+  const btn = $("#btn-rec");
+  if (state.rec) { state.rec.recorder.stop(); return; }
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: true, channelCount: 1 } });
+    const mime = MediaRecorder.isTypeSupported("audio/webm;codecs=opus") ? "audio/webm;codecs=opus" : "audio/webm";
+    const recorder = new MediaRecorder(stream, { mimeType: mime, audioBitsPerSecond: 128000 });
+    const chunks = [];
+    const ctx = new AudioContext(); const src = ctx.createMediaStreamSource(stream); const an = ctx.createAnalyser(); an.fftSize = 512; src.connect(an);
+    const buf = new Uint8Array(an.frequencyBinCount);
+    const t0 = Date.now();
+    recTimer = setInterval(() => { an.getByteTimeDomainData(buf); let peak = 0; for (const v of buf) peak = Math.max(peak, Math.abs(v - 128)); $("#rec-meter").style.transform = `scaleX(${Math.min(1, peak / 128)})`; const s = Math.round((Date.now() - t0) / 1000); $("#rec-time").textContent = `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`; }, 80);
+    recorder.ondataavailable = (e) => { if (e.data.size) chunks.push(e.data); };
+    recorder.onstop = async () => {
+      clearInterval(recTimer); stream.getTracks().forEach((t) => t.stop()); ctx.close(); state.rec = null; btn.textContent = "Record"; btn.classList.remove("on"); $("#rec-meter").style.transform = "scaleX(0)";
+      const blob = new Blob(chunks, { type: mime });
+      await uploadRecording(new File([blob], `take-${new Date().toISOString().slice(0, 19).replace(/[:T]/g, "-")}.webm`, { type: mime }));
+    };
+    recorder.start(250);
+    state.rec = { recorder }; btn.textContent = "Stop"; btn.classList.add("on");
+  } catch (e) { toast(`Microphone: ${e.message}`, true); }
+}
+async function uploadRecording(file) {
+  if (!file || !state.ep) return;
+  try {
+    toast("Uploading recording…");
+    const r = await upload(`/api/draft/${state.ep.id}/upload?name=${encodeURIComponent(file.name)}`, file);
+    state.ep = await api(`/api/draft/${state.ep.id}`); renderEditor();
+    if (confirm(`Saved ${r.converted || r.name}. Master it as the episode voice now (trim pauses, clean up, add the theme)?`)) voiceFrom(r.converted || r.name);
+  } catch (e) { toast(e.message, true); }
+}
+function voiceFrom(name) {
+  // The server resolves fromInFolder against the draft's own folder.
+  const ep = state.ep; if (!ep) return;
+  startJob("voice", { id: ep.id, fromInFolder: name, noMusic: !($("#v-music")?.checked ?? true) });
+}
+
 /* ------------------------------------------------------------ jobs */
 async function runStage(kind) {
   const ep = state.ep;
-  if (state.dirty) { toast("Save the script first.", true); return; }
-  let action = kind, extra = {};
-  if (kind === "draft-again") { if (!confirm("Rewrite the whole script from scratch? The current draft folder is kept; a new one is created.")) return; return startJob("draft", { topic: ep.caseTitle || ep.title, minutes: ep.targetMinutes || 10 }); }
-  if (kind === "voice") extra = { voice: $("#v-name").value, rate: $("#v-rate").value.trim(), pitch: $("#v-pitch").value.trim() };
-  if (kind === "voice-from") { const from = prompt("Full path to your recording (wav, mp3, m4a):"); if (!from) return; action = "voice"; extra = { from }; }
-  if (kind === "publish") { if (!confirm(`Publish "${ep.title}" to the site and push? This goes public on crimetime.vercel.app and in feed.xml.`)) return; extra = { push: true, date: ep.publishDate || undefined }; }
-  if (kind === "publish-local") { action = "publish"; extra = { push: false, date: ep.publishDate || undefined }; }
-  startJob(action, { id: ep.id, ...extra });
+  if (state.dirty) { toast("Save first.", true); return; }
+  if (kind === "draft-again") { if (!confirm("Rewrite the script from scratch? The current folder is kept; a new one is created.")) return; return startJob("new", { topic: ep.caseTitle || ep.title, minutes: ep.targetMinutes || 2 }); }
+  if (kind === "research") return startJob("research", { id: ep.id });
+  if (kind === "voice") { const v = voiceSettings(); return startJob("voice", { id: ep.id, engine: v.engine, voice: v.name, rate: v.rate, pitch: v.pitch, exaggeration: v.exaggeration, cfg: v.cfg, noMusic: !$("#v-music").checked }); }
+  if (kind === "publish") { if (!confirm(`Publish "${ep.title}" to the site and push? This goes public on crimetime.vercel.app and in feed.xml.`)) return; return startJob("publish", { id: ep.id, push: true, date: ep.publishDate || undefined }); }
+  if (kind === "publish-local") return startJob("publish", { id: ep.id, push: false, date: ep.publishDate || undefined });
+  startJob(kind, { id: ep.id });
 }
 let pollT;
 async function startJob(action, body) {
@@ -404,19 +553,20 @@ async function poll() {
   const r = j.result;
   if (j.code === 0) toast(r?.message?.split("\n")[0] || `${j.action} finished.`); else toast(r?.message || `${j.action} failed (exit ${j.code}). Read the job output.`, true);
   await loadHealth();
-  if (j.action === "draft" && r?.id) { state.current = null; await openDraft(r.id); }
+  if ((j.action === "new" || j.action === "draft") && r?.id) { state.current = null; await openDraft(r.id); }
   else if (j.draft && j.draft === state.current) { try { state.ep = await api(`/api/draft/${j.draft}`); } catch {} renderEditor(); }
   else renderEditor();
 }
 
 /* ------------------------------------------------------------ wiring */
-$("#btn-new").addEventListener("click", () => startJob("draft", { topic: $("#topic").value.trim() || undefined, minutes: 10 }));
+$("#btn-new").addEventListener("click", () => startJob("new", { topic: $("#topic").value.trim() || undefined, minutes: parseFloat($("#minutes").value) || 2 }));
 $("#topic").addEventListener("keydown", (e) => { if (e.key === "Enter") $("#btn-new").click(); });
-$("#btn-first").addEventListener("click", () => startJob("draft", { minutes: 10 }));
+$("#btn-first").addEventListener("click", () => startJob("new", { minutes: parseFloat($("#minutes").value) || 2 }));
 $("#drafts").addEventListener("click", (e) => { const b = e.target.closest("[data-id]"); if (b) openDraft(b.dataset.id); });
 $("#backlog").addEventListener("click", (e) => { const b = e.target.closest("[data-case]"); if (b && !b.disabled) { $("#topic").value = b.textContent; $("#topic").focus(); } });
-document.querySelectorAll("[data-op]").forEach((b) => b.addEventListener("click", () => { if (b.dataset.op === "content" && !confirm("Run the full content pipeline and push to main?")) return; startJob(b.dataset.op, {}); }));
-window.addEventListener("beforeunload", (e) => { if (state.dirty) { e.preventDefault(); e.returnValue = ""; } });
+document.querySelectorAll(".ops [data-op]").forEach((b) => b.addEventListener("click", () => { if ((b.dataset.op === "content") && !confirm("Run the full content pipeline and push to main?")) return; if (b.dataset.op === "weekly" && !confirm("Run the whole weekly episode job now? Research, script, voice, art, reel. Takes a while.")) return; startJob(b.dataset.op, {}); }));
+document.querySelectorAll("[data-open]").forEach((b) => b.addEventListener("click", () => api("/api/open", { method: "POST", body: JSON.stringify({ what: b.dataset.open }) })));
+window.addEventListener("beforeunload", (e) => { if (state.dirty || state.rec) { e.preventDefault(); e.returnValue = ""; } });
 loadHealth();
 setInterval(() => { if (!state.job || state.job.done) loadHealth(); }, 90000);
 </script>

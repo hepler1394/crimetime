@@ -59,6 +59,7 @@ async function openAiCompatible({ baseUrl, apiKey, model }, system, user, ms) {
       model,
       messages: [{ role: "system", content: system }, { role: "user", content: user }],
       temperature: 0.7,
+      max_tokens: 2500,
       stream: true,
       ...(local ? { chat_template_kwargs: { enable_thinking: false } } : {}), // Qwen3 in LM Studio: answer, do not think for 10 minutes first
     }),
@@ -118,6 +119,7 @@ export async function chat(system, user, cfg) {
           system, user, cfg.timeoutMs || 60000
         );
         if (text.trim()) return { text, provider: `local (${model})` };
+        errors.push(`local (${model}): returned empty text (context overflow? check the loaded context length in LM Studio)`);
       } else if (name === "deepseek" && cfg.deepseek.apiKey) {
         return { text: await openAiCompatible(cfg.deepseek, system, user, cfg.timeoutMs || 60000), provider: "deepseek" };
       } else if (name === "anthropic" && cfg.anthropic.apiKey) {
