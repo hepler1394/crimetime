@@ -27,9 +27,9 @@ npm run studio          ->  http://127.0.0.1:4177
    push. Vercel deploys. It stays locked until voice and art exist and every
    fact is ticked.
 
-After publishing the episode panel shows where it is: the site and feed are
-done; Spotify and Apple need one of the two things in "Two feeds" below;
-Instagram assets are in the folder with the caption.
+After publishing the episode panel shows where it is: site and feed done,
+Spotify and Apple pick it up from the feed, Instagram assets are in the folder
+with the caption.
 
 ## The pipeline scripts
 
@@ -102,18 +102,17 @@ gate, and is not recommended.
 A DeepSeek key in `automation/config.json` would raise script quality a lot for
 about a cent per episode; the pipeline already falls back to it when set.
 
-## Two feeds
+## One feed, everywhere
 
-`feed.xml` on the site is a complete podcast feed and carries every studio
-episode the moment it is published. Spotify and Apple still poll the old Anchor
-feed, so today a studio episode reaches them only when its MP3 is also uploaded
-in Spotify for Podcasters (the post-publish panel has the file path and copy
-buttons for title and notes).
+Since 2026-09-05 the show's RSS is `https://www.crimetimesnacks.com/feed.xml`.
+Spotify for Creators was permanently redirected to it (the back catalogue was
+mirrored to `/audio` and `/images/episodes` first; `legacy-episodes.json` +
+`feed-mode.json` with `selfHosted: true` keep `import-feed.mjs` off the Anchor
+feed). Spotify and Apple follow the redirect and poll our feed, so Publish in
+the studio is the whole release: site, feed, and every app that reads it.
 
-The one-time fix: in Spotify for Podcasters, Settings, Distribution, "Redirect
-to another host", enter `https://www.crimetimesnacks.com/feed.xml`; in Apple
-Podcasts Connect, change the feed URL to the same. After that Publish is the
-only step, everywhere.
+If the feed ever needs to move again, `episode-mirror.mjs` and the self-hosted
+mode are the pattern; do not point anything at Anchor again.
 
 ## Weekly, hands-off up to the click
 

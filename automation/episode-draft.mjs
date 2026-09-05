@@ -187,6 +187,7 @@ const draft = {
   scriptWords,
   provider,
   researched: !!research,
+  factCheck: ep.factCheck || null,
   voice: { engine: null, name: "en-US-AndrewNeural", rate: "-3%", pitch: "-2Hz", exaggeration: 0.45, cfg: 0.5 },
   files: {},
 };
