@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"
   xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
-  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CrimeTimeSnacks • A True Crime Podcast</title>
     <link>https://crimetime.vercel.app/</link>
+    <atom:link href="https://crimetime.vercel.app/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Sep 2026 21:59:20 GMT</lastBuildDate>
     <language>en</language>
     <copyright>&#169; 2026 Cory</copyright>
     <description>Crime Time Snacks is a true crime podcast that delves into a variety of unsolved cases, exploring the facts, theories, and evidence surrounding each mystery. The podcast aims to provide listeners with a comprehensive understanding of these cases, encouraging them to engage with the content and form their own conclusions.</description>
@@ -16,7 +19,7 @@
       <itunes:name>Cory</itunes:name>
       <itunes:email>coryh2014@gmail.com</itunes:email>
     </itunes:owner>
-    <itunes:image href="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/19116320/19116320-1731820058907-101cb7e64472f.jpg" />
+    <itunes:image href="https://crimetime.vercel.app/images/episodes/show.jpg" />
     <itunes:category text="True Crime" />
     <itunes:explicit>false</itunes:explicit>
     <item>
@@ -28,8 +31,8 @@
       <itunes:summary>In this gripping episode of Crime Time Snacks , we delve into the harrowing case of the Idaho student murders that rocked the nation. On November 13, 2022, four University of Idaho students — Ethan Chapin, Madison Mogen, Xana Kernodle, and Kaylee Goncalves — were tragically murdered in their off-campus rental home in Moscow, Idaho. This episode unpacks the chilling events, the ongoing investigation, and the complexities surrounding the case.</itunes:summary>
       <itunes:author>Cory</itunes:author>
       <itunes:duration>00:11:41</itunes:duration>
-      <enclosure url="https://d3ctxlq1ktw2nl.cloudfront.net/staging/2025-2-16/db747518-c453-7022-a137-b84015e84d02.mp3" length="0" type="audio/mpeg" />
-      <itunes:image href="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731822271588-25bfd78792249.jpg" />
+      <enclosure url="https://crimetime.vercel.app/audio/murders-in-moscow.mp3" length="5615852" type="audio/mpeg" />
+      <itunes:image href="https://crimetime.vercel.app/images/episodes/murders-in-moscow.jpg" />
       <itunes:explicit>false</itunes:explicit>
     </item>
     <item>
@@ -41,8 +44,8 @@
       <itunes:summary>The Watts family murders occurred in August 2018 in Frederick, Colorado. Chris Watts, the father, killed his pregnant wife, Shanann, and their two young daughters, Bella and Celeste. The crime gained significant media attention due to its horrific nature and the subsequent investigation. Watts initially denied involvement but later confessed to the murders. He was sentenced to life in prison without the possibility of parole. The case continues to be a source of fascination and discussion for true crime enthusiasts.</itunes:summary>
       <itunes:author>Cory</itunes:author>
       <itunes:duration>00:21:42</itunes:duration>
-      <enclosure url="https://d3ctxlq1ktw2nl.cloudfront.net/staging/2024-10-17/389955425-44100-2-6648bd101d1cc.m4a" length="0" type="audio/x-m4a" />
-      <itunes:image href="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731832918663-8a0f0ee9c4129.jpg" />
+      <enclosure url="https://crimetime.vercel.app/audio/watts-family-murders.m4a" length="21065409" type="audio/x-m4a" />
+      <itunes:image href="https://crimetime.vercel.app/images/episodes/watts-family-murders.jpg" />
       <itunes:explicit>false</itunes:explicit>
     </item>
     <item>
@@ -54,8 +57,8 @@
       <itunes:summary>The Menendez brothers, Lyle and Erik, have been in prison for over 35 years. They were convicted in 1996 for the 1989 murders of their parents and sentenced to life in prison without the possibility of parole. This is their story.</itunes:summary>
       <itunes:author>Cory</itunes:author>
       <itunes:duration>00:19:38</itunes:duration>
-      <enclosure url="https://d3ctxlq1ktw2nl.cloudfront.net/staging/2024-10-17/389951995-44100-2-69460dbc489c7.m4a" length="0" type="audio/x-m4a" />
-      <itunes:image href="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731821846921-7a3bca7a5b61d.jpg" />
+      <enclosure url="https://crimetime.vercel.app/audio/erik-and-lyle-the-menendez-brothers.m4a" length="19064399" type="audio/x-m4a" />
+      <itunes:image href="https://crimetime.vercel.app/images/episodes/erik-and-lyle-the-menendez-brothers.jpg" />
       <itunes:explicit>false</itunes:explicit>
     </item>
     <item>
@@ -67,8 +70,8 @@
       <itunes:summary>JonBenét Patricia Ramsey was murdered. That is the only certain thing about this case after 26 years. Their is key evidence in this case as well as more theories than their are people involved. I took weeks of research and broke it down into a 2 part segment where I go over all the facts known to the case today as well as some key suspects. I try to stay away from the theories that have little to know factual basis. Listen to the facts of the case and make your own opinion. Visit CrimeTimeSnacks.com to stay even more involved and join an ever growing True Crime Community. -@CrimeTimeSnacks</itunes:summary>
       <itunes:author>Cory</itunes:author>
       <itunes:duration>00:15:44</itunes:duration>
-      <enclosure url="https://d3ctxlq1ktw2nl.cloudfront.net/production/exports/7289c700/60937454/8286a6188df9541ddbe83717ce9fcdcf.m4a" length="0" type="audio/x-m4a" />
-      <itunes:image href="https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/19116320/19116320-1668968108733-9f40ee8db375b.jpg" />
+      <enclosure url="https://crimetime.vercel.app/audio/jonbenet-ramsey-the-facts-96-22-part-1.m4a" length="15285985" type="audio/x-m4a" />
+      <itunes:image href="https://crimetime.vercel.app/images/episodes/jonbenet-ramsey-the-facts-96-22-part-1.jpg" />
       <itunes:explicit>false</itunes:explicit>
     </item>
     <item>
@@ -80,8 +83,8 @@
       <itunes:summary>In Boulder Colorado Just a day after Christmas in 1996, JonBenét Ramsey a six-year child pageant star of the late 90&apos;s, was found dead in her basement. She was beaten and strangled. Hours after her parents, John and Patsy, reported her missing. Hours before, her mom had found a ransom note sitting on a staircase in the house. There have never been any arrests or named suspects in this case, even 26 years later. Tune in September 20th for a 2 part special where we go back to Christmas 1996 and relook at all the facts in this case.</itunes:summary>
       <itunes:author>Cory</itunes:author>
       <itunes:duration>00:00:57</itunes:duration>
-      <enclosure url="https://d3ctxlq1ktw2nl.cloudfront.net/staging/2022-10-18/431c6811-62f8-a46a-8fbc-485ac90d7306.mp3" length="0" type="audio/mpeg" />
-      <itunes:image href="https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/19116320/19116320-1668802938397-afbcf18474af5.jpg" />
+      <enclosure url="https://crimetime.vercel.app/audio/jonbenet-ramsey-americas-child-beauty-queen.mp3" length="1244572" type="audio/mpeg" />
+      <itunes:image href="https://crimetime.vercel.app/images/episodes/jonbenet-ramsey-americas-child-beauty-queen.jpg" />
       <itunes:explicit>false</itunes:explicit>
     </item>
     <item>
@@ -93,8 +96,8 @@
       <itunes:summary>On February 14, 2017, the bodies of Abigail Williams (June 23, 2003 – February 13, 2017) and Liberty German (December 27, 2002 – February 13, 2017) were discovered near the Monon High Bridge Trail. The case has had no prominent suspects until recently. On October 28th police announced they had made an arrest in the case. A 50 year old Delphi Resident was arrested and charged with two felony counts of murder. Listen while we dive into the case starting over 5 years ago in on a beautiful hiking trail.</itunes:summary>
       <itunes:author>Cory</itunes:author>
       <itunes:duration>00:09:25</itunes:duration>
-      <enclosure url="https://d3ctxlq1ktw2nl.cloudfront.net/staging/2022-10-18/297850056-44100-2-fd08101ddc883.m4a" length="0" type="audio/x-m4a" />
-      <itunes:image href="https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/19116320/19116320-1668756728911-46682c3a84737.jpg" />
+      <enclosure url="https://crimetime.vercel.app/audio/crimetimesnacks-the-delphi-murder-case-2017.m4a" length="9150103" type="audio/x-m4a" />
+      <itunes:image href="https://crimetime.vercel.app/images/episodes/crimetimesnacks-the-delphi-murder-case-2017.jpg" />
       <itunes:explicit>false</itunes:explicit>
     </item>
   </channel>

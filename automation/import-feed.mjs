@@ -36,6 +36,24 @@ const slugify = (s) =>
   s.normalize("NFD").replace(/[̀-ͯ]/g, "") // strip accents: é -> e
    .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60);
 
+// Self-hosted mode: once the show's feed is redirected from Spotify to this
+// site's feed.xml, the Anchor feed is no longer the source of anything. The
+// back catalogue lives in legacy-episodes.json (episode-mirror.mjs), new
+// episodes in studio-episodes.json. Flip with automation/feed-mode.json:
+// {"selfHosted": true}
+let selfHosted = false;
+try { selfHosted = !!JSON.parse(await readFile(join(__dirname, "feed-mode.json"), "utf8")).selfHosted; } catch { /* default: pull Anchor */ }
+if (selfHosted) {
+  const legacy = JSON.parse(await readFile(join(__dirname, "legacy-episodes.json"), "utf8"));
+  const studio = await loadStudioEpisodes();
+  const merged = mergeEpisodes(legacy.episodes || [], studio);
+  const podcast = { ...legacy.podcast, siteUrl: "https://crimetime.vercel.app", feedUrl: "https://crimetime.vercel.app/feed.xml" };
+  await writeFile(join(__dirname, "episodes.json"), JSON.stringify({ podcast, episodes: merged }, null, 2) + "\n", "utf8");
+  console.log(`Self-hosted feed: ${legacy.episodes.length} legacy + ${merged.length - legacy.episodes.length} studio episodes (Anchor not consulted).`);
+  merged.forEach((e, i) => console.log(`  ${i + 1}. [${e.date}] ${e.title} (${e.duration})${e.source === "studio" ? "  [studio]" : ""}`));
+  process.exit(0);
+}
+
 const res = await fetch(FEED_URL);
 const xml = await res.text();
 const channel = xml.split("<item>")[0];

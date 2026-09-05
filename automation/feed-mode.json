@@ -1,0 +1,1 @@
+{ "_README": "selfHosted=true: import-feed.mjs builds episodes.json from legacy-episodes.json + studio-episodes.json and never reads the Anchor feed. Flip back to false to pull Anchor again.", "selfHosted": true }

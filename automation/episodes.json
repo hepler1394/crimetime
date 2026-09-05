@@ -9,10 +9,12 @@
     "ownerEmail": "coryh2014@gmail.com",
     "language": "en",
     "category": "True Crime",
-    "image": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/19116320/19116320-1731820058907-101cb7e64472f.jpg",
+    "image": "/images/episodes/show.jpg",
     "explicit": false,
     "appleId": "1655384400",
-    "spotifyUrl": "https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ"
+    "spotifyUrl": "https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ",
+    "imageOriginal": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/19116320/19116320-1731820058907-101cb7e64472f.jpg",
+    "feedUrl": "https://crimetime.vercel.app/feed.xml"
   },
   "episodes": [
     {
@@ -23,11 +25,15 @@
       "pubDate": "Sun, 16 Mar 2025 21:50:36 GMT",
       "duration": "00:11:41",
       "description": "In this gripping episode of Crime Time Snacks , we delve into the harrowing case of the Idaho student murders that rocked the nation. On November 13, 2022, four University of Idaho students — Ethan Chapin, Madison Mogen, Xana Kernodle, and Kaylee Goncalves — were tragically murdered in their off-campus rental home in Moscow, Idaho. This episode unpacks the chilling events, the ongoing investigation, and the complexities surrounding the case.",
-      "audio": "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2025-2-16/db747518-c453-7022-a137-b84015e84d02.mp3",
+      "audio": "/audio/murders-in-moscow.mp3",
       "audioType": "audio/mpeg",
-      "image": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731822271588-25bfd78792249.jpg",
+      "image": "/images/episodes/murders-in-moscow.jpg",
       "link": "https://podcasters.spotify.com/pod/show/cory-hepler/episodes/Murders-in-Moscow-e2r36cp",
-      "explicit": false
+      "explicit": false,
+      "audioOriginal": "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2025-2-16/db747518-c453-7022-a137-b84015e84d02.mp3",
+      "audioBytes": 5615852,
+      "imageOriginal": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731822271588-25bfd78792249.jpg",
+      "source": "legacy"
     },
     {
       "guid": "b0364833-3a03-422f-8b0f-0ae3d0de5930",
@@ -37,11 +43,15 @@
       "pubDate": "Sun, 17 Nov 2024 08:44:56 GMT",
       "duration": "00:21:42",
       "description": "The Watts family murders occurred in August 2018 in Frederick, Colorado. Chris Watts, the father, killed his pregnant wife, Shanann, and their two young daughters, Bella and Celeste. The crime gained significant media attention due to its horrific nature and the subsequent investigation. Watts initially denied involvement but later confessed to the murders. He was sentenced to life in prison without the possibility of parole. The case continues to be a source of fascination and discussion for true crime enthusiasts.",
-      "audio": "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2024-10-17/389955425-44100-2-6648bd101d1cc.m4a",
+      "audio": "/audio/watts-family-murders.m4a",
       "audioType": "audio/x-m4a",
-      "image": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731832918663-8a0f0ee9c4129.jpg",
+      "image": "/images/episodes/watts-family-murders.jpg",
       "link": "https://podcasters.spotify.com/pod/show/cory-hepler/episodes/Watts-Family-Murders-e2r3hl1",
-      "explicit": false
+      "explicit": false,
+      "audioOriginal": "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2024-10-17/389955425-44100-2-6648bd101d1cc.m4a",
+      "audioBytes": 21065409,
+      "imageOriginal": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731832918663-8a0f0ee9c4129.jpg",
+      "source": "legacy"
     },
     {
       "guid": "6d01f487-bff6-476e-bf80-bf7910573ab0",
@@ -51,11 +61,15 @@
       "pubDate": "Sun, 17 Nov 2024 05:41:11 GMT",
       "duration": "00:19:38",
       "description": "The Menendez brothers, Lyle and Erik, have been in prison for over 35 years. They were convicted in 1996 for the 1989 murders of their parents and sentenced to life in prison without the possibility of parole. This is their story.",
-      "audio": "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2024-10-17/389951995-44100-2-69460dbc489c7.m4a",
+      "audio": "/audio/erik-and-lyle-the-menendez-brothers.m4a",
       "audioType": "audio/x-m4a",
-      "image": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731821846921-7a3bca7a5b61d.jpg",
+      "image": "/images/episodes/erik-and-lyle-the-menendez-brothers.jpg",
       "link": "https://podcasters.spotify.com/pod/show/cory-hepler/episodes/ERIK-AND-LYLE-The-Menendez-Brothers-e2r3eo8",
-      "explicit": false
+      "explicit": false,
+      "audioOriginal": "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2024-10-17/389951995-44100-2-69460dbc489c7.m4a",
+      "audioBytes": 19064399,
+      "imageOriginal": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731821846921-7a3bca7a5b61d.jpg",
+      "source": "legacy"
     },
     {
       "guid": "d74f5111-493d-4028-9abb-d9014538295d",
@@ -65,11 +79,15 @@
       "pubDate": "Sun, 20 Nov 2022 18:15:22 GMT",
       "duration": "00:15:44",
       "description": "JonBenét Patricia Ramsey was murdered. That is the only certain thing about this case after 26 years. Their is key evidence in this case as well as more theories than their are people involved. I took weeks of research and broke it down into a 2 part segment where I go over all the facts known to the case today as well as some key suspects. I try to stay away from the theories that have little to know factual basis. Listen to the facts of the case and make your own opinion. Visit CrimeTimeSnacks.com to stay even more involved and join an ever growing True Crime Community. -@CrimeTimeSnacks",
-      "audio": "https://d3ctxlq1ktw2nl.cloudfront.net/production/exports/7289c700/60937454/8286a6188df9541ddbe83717ce9fcdcf.m4a",
+      "audio": "/audio/jonbenet-ramsey-the-facts-96-22-part-1.m4a",
       "audioType": "audio/x-m4a",
-      "image": "https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/19116320/19116320-1668968108733-9f40ee8db375b.jpg",
+      "image": "/images/episodes/jonbenet-ramsey-the-facts-96-22-part-1.jpg",
       "link": "https://podcasters.spotify.com/pod/show/cory-hepler/episodes/JonBent-Ramsey--The-Facts-96-22-Part-1-e1r25pe",
-      "explicit": false
+      "explicit": false,
+      "audioOriginal": "https://d3ctxlq1ktw2nl.cloudfront.net/production/exports/7289c700/60937454/8286a6188df9541ddbe83717ce9fcdcf.m4a",
+      "audioBytes": 15285985,
+      "imageOriginal": "https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/19116320/19116320-1668968108733-9f40ee8db375b.jpg",
+      "source": "legacy"
     },
     {
       "guid": "6b1da09d-2367-4e86-bef0-beb7b12bcb18",
@@ -79,11 +97,15 @@
       "pubDate": "Fri, 18 Nov 2022 20:51:45 GMT",
       "duration": "00:00:57",
       "description": "In Boulder Colorado Just a day after Christmas in 1996, JonBenét Ramsey a six-year child pageant star of the late 90's, was found dead in her basement. She was beaten and strangled. Hours after her parents, John and Patsy, reported her missing. Hours before, her mom had found a ransom note sitting on a staircase in the house. There have never been any arrests or named suspects in this case, even 26 years later. Tune in September 20th for a 2 part special where we go back to Christmas 1996 and relook at all the facts in this case.",
-      "audio": "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2022-10-18/431c6811-62f8-a46a-8fbc-485ac90d7306.mp3",
+      "audio": "/audio/jonbenet-ramsey-americas-child-beauty-queen.mp3",
       "audioType": "audio/mpeg",
-      "image": "https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/19116320/19116320-1668802938397-afbcf18474af5.jpg",
+      "image": "/images/episodes/jonbenet-ramsey-americas-child-beauty-queen.jpg",
       "link": "https://podcasters.spotify.com/pod/show/cory-hepler/episodes/JonBent-Ramsey-Americas-Child-Beauty-Queen-e1r021i",
-      "explicit": false
+      "explicit": false,
+      "audioOriginal": "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2022-10-18/431c6811-62f8-a46a-8fbc-485ac90d7306.mp3",
+      "audioBytes": 1244572,
+      "imageOriginal": "https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/19116320/19116320-1668802938397-afbcf18474af5.jpg",
+      "source": "legacy"
     },
     {
       "guid": "253bbee3-060d-41fa-adc8-69691b296a46",
@@ -93,11 +115,15 @@
       "pubDate": "Fri, 18 Nov 2022 07:37:35 GMT",
       "duration": "00:09:25",
       "description": "On February 14, 2017, the bodies of Abigail Williams (June 23, 2003 – February 13, 2017) and Liberty German (December 27, 2002 – February 13, 2017) were discovered near the Monon High Bridge Trail. The case has had no prominent suspects until recently. On October 28th police announced they had made an arrest in the case. A 50 year old Delphi Resident was arrested and charged with two felony counts of murder. Listen while we dive into the case starting over 5 years ago in on a beautiful hiking trail.",
-      "audio": "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2022-10-18/297850056-44100-2-fd08101ddc883.m4a",
+      "audio": "/audio/crimetimesnacks-the-delphi-murder-case-2017.m4a",
       "audioType": "audio/x-m4a",
-      "image": "https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/19116320/19116320-1668756728911-46682c3a84737.jpg",
+      "image": "/images/episodes/crimetimesnacks-the-delphi-murder-case-2017.jpg",
       "link": "https://podcasters.spotify.com/pod/show/cory-hepler/episodes/CrimeTimeSnacks-The-Delphi-Murder-Case-2017-e1qv004",
-      "explicit": false
+      "explicit": false,
+      "audioOriginal": "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2022-10-18/297850056-44100-2-fd08101ddc883.m4a",
+      "audioBytes": 9150103,
+      "imageOriginal": "https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/19116320/19116320-1668756728911-46682c3a84737.jpg",
+      "source": "legacy"
     }
   ]
 }
