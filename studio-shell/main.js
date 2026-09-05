@@ -1,9 +1,10 @@
 // CrimeTimeSnacks Studio Shell: one desktop window that holds the studio and a
-// real browser side by side. Two workspaces (CrimeTime, Instagram), a tab strip
+// real browser. Two workspaces (Studio, Instagram), each with its own tab strip
 // of Chromium views on a persistent profile (Instagram, grok.com and the rest
-// stay signed in between launches), downloads and right-click "Save to episode"
-// that land files straight in the current episode's folder, and a Generate
-// panel for Gemini image/video into that same folder. No framework.
+// stay signed in between launches). Downloads and right-click "Save to episode"
+// land files in the current episode's folder. A Generate panel renders Gemini
+// images/video into that folder. Post opens Instagram's create flow with the
+// file already attached and the caption on the clipboard. No framework.
 //
 //   cd studio-shell && npm start
 //
@@ -22,62 +23,68 @@ const IG_STUDIO = "D:/Dev/GitHub/ig-studio";
 const PROFILE = path.join(__dirname, "profile");
 const DOWNLOADS = path.join(__dirname, "downloads");
 const CHROME_H = 92;
+const BROWSER_SESSION = "persist:cts-browser";
+const STUDIO_SESSION = "persist:cts-studio";
 fs.mkdirSync(DOWNLOADS, { recursive: true });
 app.setPath("userData", PROFILE);
-// Custom schemes used by the Instagram workspace page (file listing + local media).
+// Custom schemes: cts-shell (commands + file lists), cts-file (local media). Both take a ?p= query, never a path.
 protocol.registerSchemesAsPrivileged([
   { scheme: "cts-shell", privileges: { standard: true, secure: true, supportFetchAPI: true, corsEnabled: true } },
-  { scheme: "cts-file", privileges: { standard: true, secure: true, stream: true, supportFetchAPI: true } },
+  { scheme: "cts-file", privileges: { standard: true, secure: true, stream: true, supportFetchAPI: true, corsEnabled: true } },
 ]);
-app.commandLine.appendSwitch("disable-features", "OutOfBlinkCors");
 
-let win, chromeView, studioView, igView;
-let studioProc = null;
-const tabs = new Map(); // id -> { view, title, url, loading }
+let win, chromeView, studioView, igView, studioProc = null;
+const tabs = new Map(); // id -> { view, title, url, loading, ws }
 let tabSeq = 0, activeTab = null, workspace = "crimetime", targetDraft = null;
-const BROWSER_SESSION = "persist:cts-browser";
+const activeByWs = { crimetime: null, instagram: null };
+const allowedRoot = (p) => { const n = p.replace(/\\/g, "/"); return n.startsWith(IG_STUDIO) || n.startsWith(REPO.replace(/\\/g, "/")); };
 
 /* ---------------------------------------------------------- studio server */
 function studioUp() { return new Promise((res) => { const r = http.get(`${STUDIO_URL}/api/drafts`, { timeout: 1500 }, (x) => { x.resume(); res(x.statusCode === 200); }); r.on("error", () => res(false)); r.on("timeout", () => { r.destroy(); res(false); }); }); }
 async function ensureStudio() {
   if (await studioUp()) return true;
-  studioProc = spawn(process.execPath.includes("electron") ? "node" : "node", [path.join(REPO, "automation", "studio", "server.mjs")], { cwd: REPO, windowsHide: true, stdio: "ignore", env: { ...process.env, ELECTRON_RUN_AS_NODE: undefined } });
+  studioProc = spawn("node", [path.join(REPO, "automation", "studio", "server.mjs")], { cwd: REPO, windowsHide: true, stdio: "ignore" });
   for (let i = 0; i < 40; i++) { await new Promise((r) => setTimeout(r, 300)); if (await studioUp()) return true; }
   return false;
 }
 function studioApi(method, p, body, raw) {
   return new Promise((resolve, reject) => {
-    const u = new URL(p, STUDIO_URL);
-    const req = http.request(u, { method, headers: raw ? { "Content-Type": "application/octet-stream", "Content-Length": raw.length } : { "Content-Type": "application/json" } }, (res) => { let s = ""; res.on("data", (c) => (s += c)); res.on("end", () => { try { resolve(JSON.parse(s)); } catch { resolve(s); } }); });
+    const req = http.request(new URL(p, STUDIO_URL), { method, headers: raw ? { "Content-Type": "application/octet-stream", "Content-Length": raw.length } : { "Content-Type": "application/json" } }, (res) => { let s = ""; res.on("data", (c) => (s += c)); res.on("end", () => { try { resolve(JSON.parse(s)); } catch { resolve(s); } }); });
     req.on("error", reject);
     if (raw) req.end(raw); else req.end(body ? JSON.stringify(body) : undefined);
   });
 }
 
 /* ------------------------------------------------------------- layout */
-function contentBounds() { const b = win.getContentBounds(); return { x: 0, y: CHROME_H, width: b.width, height: Math.max(0, b.height - CHROME_H) }; }
 function layout() {
   if (!win) return;
   const b = win.getContentBounds();
   chromeView.setBounds({ x: 0, y: 0, width: b.width, height: CHROME_H });
-  const cb = contentBounds();
-  const showStudio = !activeTab && workspace === "crimetime";
-  const showIg = !activeTab && workspace === "instagram";
-  studioView.setBounds(showStudio ? cb : { x: 0, y: 0, width: 0, height: 0 });
-  igView.setBounds(showIg ? cb : { x: 0, y: 0, width: 0, height: 0 });
-  for (const [id, t] of tabs) t.view.setBounds(id === activeTab ? cb : { x: 0, y: 0, width: 0, height: 0 });
+  const cb = { x: 0, y: CHROME_H, width: b.width, height: Math.max(0, b.height - CHROME_H) };
+  const none = { x: 0, y: 0, width: 0, height: 0 };
+  studioView.setBounds(!activeTab && workspace === "crimetime" ? cb : none);
+  igView.setBounds(!activeTab && workspace === "instagram" ? cb : none);
+  for (const [id, t] of tabs) t.view.setBounds(id === activeTab ? cb : none);
 }
 function pushTabs() {
-  chromeView.webContents.send("tabs", { active: activeTab, workspace, target: targetDraft, tabs: [...tabs.entries()].map(([id, t]) => ({ id, title: t.title, url: t.url, loading: t.loading, canBack: t.view.webContents.navigationHistory?.canGoBack?.() ?? t.view.webContents.canGoBack(), canFwd: t.view.webContents.navigationHistory?.canGoForward?.() ?? t.view.webContents.canGoForward() })) });
+  chromeView.webContents.send("tabs", {
+    active: activeTab, workspace, target: targetDraft,
+    tabs: [...tabs.entries()].filter(([, t]) => t.ws === workspace).map(([id, t]) => {
+      const wc = t.view.webContents, nh = wc.navigationHistory;
+      return { id, title: t.title, url: t.url, loading: t.loading, canBack: nh?.canGoBack?.() ?? wc.canGoBack(), canFwd: nh?.canGoForward?.() ?? wc.canGoForward() };
+    }),
+  });
 }
-const toast = (msg, bad = false) => chromeView.webContents.send("toast", { msg, bad });
+const toast = (msg, bad = false) => chromeView?.webContents.send("toast", { msg, bad });
+const goBack = (wc) => (wc.navigationHistory?.goBack ? wc.navigationHistory.goBack() : wc.goBack());
+const goFwd = (wc) => (wc.navigationHistory?.goForward ? wc.navigationHistory.goForward() : wc.goForward());
 
 /* --------------------------------------------------------------- tabs */
-function newTab(url = "https://www.instagram.com/", activate = true) {
+function newTab(url = "https://www.instagram.com/", activate = true, ws = workspace) {
   const id = `t${++tabSeq}`;
   const view = new WebContentsView({ webPreferences: { partition: BROWSER_SESSION, contextIsolation: true, sandbox: true, nodeIntegration: false } });
   const wc = view.webContents;
-  const t = { view, title: "New tab", url, loading: true };
+  const t = { view, title: "New tab", url, loading: true, ws };
   tabs.set(id, t);
   win.contentView.addChildView(view);
   wc.on("page-title-updated", (_e, title) => { t.title = title; pushTabs(); });
@@ -85,25 +92,25 @@ function newTab(url = "https://www.instagram.com/", activate = true) {
   wc.on("did-stop-loading", () => { t.loading = false; t.url = wc.getURL(); pushTabs(); });
   wc.on("did-navigate", (_e, u) => { t.url = u; pushTabs(); });
   wc.on("did-navigate-in-page", (_e, u) => { t.url = u; pushTabs(); });
-  wc.setWindowOpenHandler(({ url: u }) => { newTab(u, true); return { action: "deny" }; });
+  wc.setWindowOpenHandler(({ url: u }) => { newTab(u, true, t.ws); return { action: "deny" }; });
   wc.on("context-menu", (_e, params) => {
     const items = [];
     if (params.srcURL && params.mediaType === "image") items.push({ label: "Save image to episode", click: () => saveUrlToEpisode(params.srcURL, wc) }, { label: "Copy image address", click: () => clipboard.writeText(params.srcURL) });
     if (params.srcURL && params.mediaType === "video") items.push({ label: "Save video to episode", click: () => saveUrlToEpisode(params.srcURL, wc) });
-    if (params.linkURL) items.push({ label: "Open link in new tab", click: () => newTab(params.linkURL, true) }, { label: "Copy link", click: () => clipboard.writeText(params.linkURL) });
+    if (params.linkURL) items.push({ label: "Open link in new tab", click: () => newTab(params.linkURL, true, t.ws) }, { label: "Copy link", click: () => clipboard.writeText(params.linkURL) });
     if (params.selectionText) items.push({ label: "Copy", role: "copy" }, { label: "Save selection to episode notes", click: () => saveNoteToEpisode(params.selectionText, wc.getURL()) });
-    items.push({ type: "separator" }, { label: "Back", enabled: wc.navigationHistory?.canGoBack?.() ?? wc.canGoBack(), click: () => (wc.navigationHistory?.goBack ? wc.navigationHistory.goBack() : wc.goBack()) }, { label: "Reload", click: () => wc.reload() }, { label: "Open in system browser", click: () => osShell.openExternal(wc.getURL()) });
+    items.push({ type: "separator" }, { label: "Back", enabled: wc.navigationHistory?.canGoBack?.() ?? wc.canGoBack(), click: () => goBack(wc) }, { label: "Reload", click: () => wc.reload() }, { label: "Open in system browser", click: () => osShell.openExternal(wc.getURL()) });
     Menu.buildFromTemplate(items).popup({ window: win });
   });
   wc.loadURL(url);
-  if (activate) { activeTab = id; }
+  if (activate) { workspace = ws; activeTab = id; activeByWs[ws] = id; }
   layout(); pushTabs();
-  return id;
+  return { id, wc };
 }
 function closeTab(id) {
   const t = tabs.get(id); if (!t) return;
   win.contentView.removeChildView(t.view); t.view.webContents.close(); tabs.delete(id);
-  if (activeTab === id) activeTab = [...tabs.keys()].pop() || null;
+  if (activeTab === id) { activeTab = [...tabs.entries()].filter(([, x]) => x.ws === t.ws).map(([k]) => k).pop() || null; activeByWs[t.ws] = activeTab; }
   layout(); pushTabs();
 }
 const active = () => (activeTab ? tabs.get(activeTab) : null);
@@ -118,8 +125,7 @@ async function requireTarget() {
 async function saveUrlToEpisode(url, wc) {
   const id = await requireTarget(); if (!id) return;
   try {
-    const ses = wc.session;
-    const cookies = (await ses.cookies.get({ url })).map((c) => `${c.name}=${c.value}`).join("; ");
+    const cookies = (await wc.session.cookies.get({ url })).map((c) => `${c.name}=${c.value}`).join("; ");
     const res = await fetch(url, { headers: { Cookie: cookies, "User-Agent": wc.getUserAgent(), Referer: wc.getURL() } });
     if (!res.ok) throw new Error(`download ${res.status}`);
     const buf = Buffer.from(await res.arrayBuffer());
@@ -133,34 +139,93 @@ async function saveUrlToEpisode(url, wc) {
 async function saveNoteToEpisode(text, from) {
   const id = await requireTarget(); if (!id) return;
   const stamp = new Date().toISOString().slice(0, 16).replace("T", " ");
-  const buf = Buffer.from(`\n\n---\n${stamp}  ${from}\n\n${text.trim()}\n`, "utf8");
-  // Append: fetch existing notes if any, then re-upload.
   let existing = "";
   try { const r = await fetch(`${STUDIO_URL}/api/draft/${id}/file?name=notes.md`); if (r.ok) existing = await r.text(); } catch { /* none */ }
-  const r = await studioApi("POST", `/api/draft/${id}/upload?name=notes.md`, null, Buffer.concat([Buffer.from(existing, "utf8"), buf]));
+  const r = await studioApi("POST", `/api/draft/${id}/upload?name=notes.md`, null, Buffer.from(`${existing}\n\n---\n${stamp}  ${from}\n\n${text.trim()}\n`, "utf8"));
   if (r?.ok) toast(`Selection saved to notes.md in ${id}`); else toast(r?.error || "note save failed", true);
+}
+
+/* --------------------------------------------------------------- post */
+// Opens Instagram's create flow in the Instagram workspace with the file already
+// chosen: Chromium's file-chooser dialog is intercepted (CDP) and answered with
+// the path, so the first "Select from computer" click lands on your file. The
+// caption goes to the clipboard. You set the crop (9:16 for reels) and Share.
+async function postToInstagram(file, captionFile) {
+  if (!file || !fs.existsSync(file) || !allowedRoot(file)) return toast("Post: file not found.", true);
+  let caption = "";
+  if (captionFile && fs.existsSync(captionFile)) caption = fs.readFileSync(captionFile, "utf8").trim();
+  if (caption) clipboard.writeText(caption);
+  const { wc } = newTab("https://www.instagram.com/create/select/", true, "instagram");
+  try {
+    wc.debugger.attach("1.3");
+    await wc.debugger.sendCommand("Page.enable");
+    await wc.debugger.sendCommand("Page.setInterceptFileChooserDialog", { enabled: true });
+    let done = false;
+    wc.debugger.on("message", async (_e, method, params) => {
+      if (method === "Page.fileChooserOpened" && !done) {
+        done = true;
+        try { await wc.debugger.sendCommand("DOM.setFileInputFiles", { files: [file], backendNodeId: params.backendNodeId }); toast(`Attached ${path.basename(file)}${caption ? ". Caption is on your clipboard." : ""} Set the crop, then Share.`); }
+        catch (e) { toast(`Could not attach the file: ${e.message}`, true); }
+        try { await wc.debugger.sendCommand("Page.setInterceptFileChooserDialog", { enabled: false }); } catch { /* fine */ }
+      }
+    });
+    toast(`Instagram opening. Click "Select from computer" and ${path.basename(file)} is attached for you.${caption ? " Caption copied." : ""}`);
+  } catch (e) { toast(`Post: ${e.message}. Drag the file in by hand.`, true); osShell.showItemInFolder(file); }
+}
+
+/* ------------------------------------------------------ custom schemes */
+function igFiles() {
+  const dir = path.join(IG_STUDIO, "out");
+  try {
+    return fs.readdirSync(dir).filter((f) => /\.(jpg|jpeg|png|mp4)$/i.test(f)).map((f) => {
+      const st = fs.statSync(path.join(dir, f)); const base = f.replace(/\.(jpg|jpeg|png|mp4)$/i, "");
+      const cap = ["", "-caption", ".caption"].map((s) => path.join(dir, `${base}${s}.txt`)).find((p) => fs.existsSync(p)) || "";
+      return { name: f, path: path.join(dir, f), caption: cap, size: st.size, mtime: st.mtimeMs };
+    }).sort((x, y) => y.mtime - x.mtime);
+  } catch { return []; }
+}
+function shellRoute(req) {
+  const u = new URL(req.url); const q = (k) => u.searchParams.get(k) || "";
+  const json = (o) => new Response(JSON.stringify(o), { headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" } });
+  switch (u.hostname) {
+    case "ig-files": return json(igFiles());
+    case "reveal": { const p = q("p"); if (p && allowedRoot(p)) osShell.showItemInFolder(p); return json({ ok: true }); }
+    case "post": { postToInstagram(q("p"), q("c")); return json({ ok: true }); }
+    case "open": { const p = q("p"); if (p && allowedRoot(p)) osShell.openPath(p); return json({ ok: true }); }
+    case "tab": { const url = q("url"); if (/^https?:\/\//.test(url)) newTab(url, true, q("ws") || workspace); return json({ ok: true }); }
+    case "ping": return json({ ok: true, shell: true });
+    default: return new Response("not found", { status: 404 });
+  }
+}
+function fileRoute(req) {
+  const p = new URL(req.url).searchParams.get("p") || "";
+  if (!p || !allowedRoot(p)) return new Response("forbidden", { status: 403 });
+  return net.fetch(`file:///${p.replace(/\\/g, "/")}`);
 }
 
 /* ------------------------------------------------------------ window */
 function createWindow() {
   win = new BaseWindow({ width: 1680, height: 980, minWidth: 1100, minHeight: 640, backgroundColor: "#050505", title: "CrimeTimeSnacks Studio", autoHideMenuBar: true });
   chromeView = new WebContentsView({ webPreferences: { preload: path.join(__dirname, "preload.js"), contextIsolation: true, sandbox: false } });
-  studioView = new WebContentsView({ webPreferences: { partition: "persist:cts-studio", contextIsolation: true, sandbox: true } });
+  studioView = new WebContentsView({ webPreferences: { partition: STUDIO_SESSION, contextIsolation: true, sandbox: true } });
   igView = new WebContentsView({ webPreferences: { partition: BROWSER_SESSION, contextIsolation: true, sandbox: true } });
   win.contentView.addChildView(studioView); win.contentView.addChildView(igView); win.contentView.addChildView(chromeView);
   chromeView.webContents.loadFile(path.join(__dirname, "chrome.html"));
   studioView.webContents.loadURL(STUDIO_URL);
   igView.webContents.loadFile(path.join(__dirname, "ig.html"));
-  igView.webContents.setWindowOpenHandler(({ url }) => { newTab(url, true); return { action: "deny" }; });
-  studioView.webContents.setWindowOpenHandler(({ url }) => { if (url.startsWith(STUDIO_URL)) return { action: "allow" }; newTab(url, true); return { action: "deny" }; });
+  igView.webContents.setWindowOpenHandler(({ url }) => { newTab(url, true, "instagram"); return { action: "deny" }; });
+  studioView.webContents.setWindowOpenHandler(({ url }) => { if (url.startsWith(STUDIO_URL)) return { action: "allow" }; newTab(url, true, "crimetime"); return { action: "deny" }; });
   win.on("resize", layout); win.on("maximize", layout); win.on("unmaximize", layout);
   layout();
 
-  // Downloads from browser tabs go to the target episode when there is one, else the shell's downloads folder.
+  for (const part of [BROWSER_SESSION, STUDIO_SESSION]) {
+    const ses = session.fromPartition(part);
+    ses.protocol.handle("cts-shell", shellRoute);
+    ses.protocol.handle("cts-file", fileRoute);
+  }
   const ses = session.fromPartition(BROWSER_SESSION);
   ses.on("will-download", (_e, item) => {
-    const name = item.getFilename();
-    const file = path.join(DOWNLOADS, name);
+    const name = item.getFilename(); const file = path.join(DOWNLOADS, name);
     item.setSavePath(file);
     item.once("done", async (_ev, state) => {
       if (state !== "completed") return toast(`Download ${state}: ${name}`, true);
@@ -169,23 +234,6 @@ function createWindow() {
       const r = await studioApi("POST", `/api/draft/${id}/upload?name=${encodeURIComponent(name)}`, null, fs.readFileSync(file)).catch((e) => ({ error: e.message }));
       toast(r?.ok ? `Downloaded ${name} into ${id}` : `Downloaded to studio-shell/downloads (${r?.error || "studio upload failed"})`);
     });
-  });
-  ses.protocol.handle("cts-shell", (req) => {
-    const u = new URL(req.url);
-    if (u.hostname === "ig-files") {
-      const dir = path.join(IG_STUDIO, "out");
-      let files = [];
-      try { files = fs.readdirSync(dir).filter((f) => /\.(jpg|jpeg|png|mp4)$/i.test(f)).map((f) => { const st = fs.statSync(path.join(dir, f)); return { name: f, path: path.join(dir, f), size: st.size, mtime: st.mtimeMs }; }).sort((x, y) => y.mtime - x.mtime); } catch { /* none */ }
-      return new Response(JSON.stringify(files), { headers: { "Content-Type": "application/json" } });
-    }
-    if (u.hostname === "reveal") { const p = u.searchParams.get("p") || ""; if (p.replace(/\\/g, "/").startsWith(IG_STUDIO)) osShell.showItemInFolder(p); return new Response("ok"); }
-    return new Response("not found", { status: 404 });
-  });
-  ses.protocol.handle("cts-file", (req) => {
-    const p = decodeURIComponent(new URL(req.url).pathname.replace(/^\/+/, "")).replace(/^([a-zA-Z]):?\//, "$1:/");
-    const norm = p.replace(/\\/g, "/");
-    if (!norm.startsWith(IG_STUDIO) && !norm.startsWith(REPO.replace(/\\/g, "/"))) return new Response("forbidden", { status: 403 });
-    return net.fetch(`file:///${norm}`);
   });
   ses.setPermissionRequestHandler((_wc, permission, cb) => cb(["media", "clipboard-read", "clipboard-sanitized-write", "notifications", "fullscreen"].includes(permission)));
 }
@@ -196,29 +244,19 @@ ipcMain.handle("shell", async (_e, { cmd, ...a }) => {
   switch (cmd) {
     case "newTab": newTab(a.url || "https://www.instagram.com/", true); break;
     case "closeTab": closeTab(a.id); break;
-    case "activate": activeTab = a.id || null; layout(); pushTabs(); break;
-    case "home": activeTab = null; layout(); pushTabs(); break;
-    case "workspace": workspace = a.name; activeTab = null; layout(); pushTabs(); break;
+    case "activate": activeTab = a.id || null; activeByWs[workspace] = activeTab; layout(); pushTabs(); break;
+    case "home": activeTab = null; activeByWs[workspace] = null; layout(); pushTabs(); break;
+    case "workspace": workspace = a.name; activeTab = activeByWs[workspace] && tabs.has(activeByWs[workspace]) ? activeByWs[workspace] : null; layout(); pushTabs(); break;
     case "navigate": { let u = String(a.url || "").trim(); if (!u) break; if (!/^[a-z]+:\/\//i.test(u)) u = /\s/.test(u) || !u.includes(".") ? `https://duckduckgo.com/?q=${encodeURIComponent(u)}` : `https://${u}`; if (t) t.view.webContents.loadURL(u); else newTab(u, true); break; }
-    case "back": if (t) (t.view.webContents.navigationHistory?.goBack ? t.view.webContents.navigationHistory.goBack() : t.view.webContents.goBack()); break;
-    case "forward": if (t) (t.view.webContents.navigationHistory?.goForward ? t.view.webContents.navigationHistory.goForward() : t.view.webContents.goForward()); break;
+    case "back": if (t) goBack(t.view.webContents); break;
+    case "forward": if (t) goFwd(t.view.webContents); break;
     case "reload": if (t) t.view.webContents.reload(); else if (workspace === "crimetime") studioView.webContents.reload(); else igView.webContents.reload(); break;
     case "drafts": return studioApi("GET", "/api/drafts").catch(() => []);
     case "setTarget": targetDraft = a.id || null; pushTabs(); break;
-    case "generate": {
-      const id = a.draft || (await requireTarget()); if (!id) return { ok: false, error: "no episode selected" };
-      return studioApi("POST", "/api/run", { action: "generate", id, prompt: a.prompt, kind: a.kind, model: a.model, ref: a.ref, seconds: a.seconds });
-    }
+    case "generate": { const id = a.draft || (await requireTarget()); if (!id) return { ok: false, error: "no episode selected" }; return studioApi("POST", "/api/run", { action: "generate", id, prompt: a.prompt, kind: a.kind, model: a.model, ref: a.ref, seconds: a.seconds }); }
     case "job": return studioApi("GET", `/api/job/${a.id}`);
-    case "openFolder": osShell.openPath(a.path); break;
+    case "post": postToInstagram(a.file, a.caption); break;
     case "external": osShell.openExternal(a.url); break;
-    case "igFiles": {
-      const dir = path.join(IG_STUDIO, "out");
-      try { return fs.readdirSync(dir).filter((f) => /\.(jpg|jpeg|png|mp4)$/i.test(f)).map((f) => { const st = fs.statSync(path.join(dir, f)); return { name: f, path: path.join(dir, f), size: st.size, mtime: st.mtimeMs }; }).sort((x, y) => y.mtime - x.mtime); } catch { return []; }
-    }
-    case "copyPath": clipboard.writeText(a.path); break;
-    case "revealFile": osShell.showItemInFolder(a.path); break;
-    case "readText": { try { return fs.readFileSync(a.path, "utf8"); } catch { return ""; } }
   }
   return { ok: true };
 });

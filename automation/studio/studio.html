@@ -280,6 +280,7 @@ const fmtAgo = (iso) => { if (!iso) return "never"; const m = Math.round((Date.n
 const fmtWhen = (iso) => { if (!iso || iso.startsWith("0001")) return "none"; const d = new Date(iso); return d.toLocaleString("en-US", { weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }); };
 const fmtSize = (b) => b > 1048576 ? `${(b / 1048576).toFixed(1)} MB` : `${Math.max(1, Math.round(b / 1024))} KB`;
 const state = { health: null, drafts: [], current: null, ep: null, job: null, dirty: false, rec: null };
+const IN_SHELL = /Electron/.test(navigator.userAgent); // inside studio-shell: Post buttons talk to the shell over cts-shell://
 const VOICES = ["en-US-AndrewNeural", "en-US-BrianNeural", "en-US-ChristopherNeural", "en-US-EricNeural", "en-US-GuyNeural", "en-US-AndrewMultilingualNeural"];
 
 let toastT;
@@ -451,6 +452,7 @@ function renderEditor() {
 
         ${done.art ? `<div class="field"><label class="f">Art</label><div class="preview"><img src="${f("cover")}" alt="Episode cover"><div class="row"><img src="${f("card")}" alt="Feed card"><img src="${f("reelStill")}" alt="Reel still"></div><div class="cap"><span>cover 3000 · card 1080x1350 · reel 1080x1920</span><span>jpg</span></div></div></div>` : ""}
         ${done.social ? `<div class="field"><label class="f">Reel</label><div class="preview"><video controls preload="metadata" src="${f("reel")}"></video><div class="cap"><span>${ep.social?.clipSeconds || 45}s audiogram, -14 LUFS</span><span>mp4</span></div></div></div>` : ""}
+        ${IN_SHELL && (done.social || done.art) ? `<div class="field"><label class="f">Post to Instagram</label><div class="copy">${done.social ? `<button class="btn sm red" data-post="reel.mp4">Post reel</button>` : ""}${done.art ? `<button class="btn sm" data-post="card.jpg">Post card</button>` : ""}<a class="btn sm ghost" href="#" data-igtab="https://www.instagram.com/crimetimesnacks/">Open @crimetimesnacks</a></div><div class="hint">Opens Instagram in the shell with the file attached and the caption on your clipboard. Reels: set the crop to 9:16, then Share.</div></div>` : ""}
 
         <div class="field"><label class="f">Project folder</label>
           <ul class="files">${(ep.fileList || []).map((x) => `<li><a href="/api/draft/${ep.id}/file?name=${encodeURIComponent(x.name)}" target="_blank" rel="noopener">${esc(x.name)}</a><span class="sz">${fmtSize(x.size)}</span>${/^(episode\.json)$/.test(x.name) || pub ? "<span></span>" : `<button data-del="${esc(x.name)}" title="Delete">x</button>`}</li>`).join("") || `<li><span class="sz">empty</span></li>`}</ul>
@@ -473,6 +475,8 @@ function renderEditor() {
     try { state.ep = await api(`/api/draft/${ep.id}`, { method: "PUT", body: JSON.stringify({ factsChecked: arr }) }); renderEditor(); } catch (e) { toast(e.message, true); }
   }));
   document.querySelectorAll("[data-copy]").forEach((b) => b.addEventListener("click", () => navigator.clipboard.writeText(ep[b.dataset.copy] || "").then(() => toast("Copied."))));
+  document.querySelectorAll("[data-post]").forEach((b) => b.addEventListener("click", () => { const dir = (ep.dir || "").replace(/\\/g, "/"); fetch(`cts-shell://post/?p=${encodeURIComponent(`${dir}/${b.dataset.post}`)}&c=${encodeURIComponent(`${dir}/caption.txt`)}`).then(() => toast("Instagram is opening in the shell with the file attached.")).catch((e) => toast(e.message, true)); }));
+  document.querySelectorAll("[data-igtab]").forEach((b) => b.addEventListener("click", (e) => { e.preventDefault(); fetch(`cts-shell://tab/?url=${encodeURIComponent(b.dataset.igtab)}&ws=instagram`); }));
   document.querySelectorAll("[data-del]").forEach((b) => b.addEventListener("click", async () => { if (!confirm(`Delete ${b.dataset.del}?`)) return; await api(`/api/draft/${ep.id}/file?name=${encodeURIComponent(b.dataset.del)}`, { method: "DELETE" }); state.ep = await api(`/api/draft/${ep.id}`); renderEditor(); }));
   document.querySelectorAll("[data-use]").forEach((b) => b.addEventListener("click", () => voiceFrom(b.dataset.use)));
   $("#btn-rec")?.addEventListener("click", toggleRecord);

@@ -236,7 +236,7 @@ const server = createServer(async (req, res) => {
       if (!safeId(id)) return json(res, 400, { error: "bad id" });
       const dir = join(DRAFTS, id);
       const epPath = join(dir, "episode.json");
-      if (req.method === "GET" && !sub) { const ep = await readJson(epPath, null); return ep ? json(res, 200, { ...ep, fileList: await listFiles(dir) }) : json(res, 404, { error: "no such draft" }); }
+      if (req.method === "GET" && !sub) { const ep = await readJson(epPath, null); return ep ? json(res, 200, { ...ep, dir, fileList: await listFiles(dir) }) : json(res, 404, { error: "no such draft" }); }
       if (req.method === "GET" && sub === "files") return json(res, 200, await listFiles(dir));
       if (req.method === "PUT" && !sub) {
         const ep = await readJson(epPath, null); if (!ep) return json(res, 404, { error: "no such draft" });
