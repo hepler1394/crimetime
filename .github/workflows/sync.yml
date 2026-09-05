@@ -1,8 +1,9 @@
 name: Feed sync (every 6 hours)
 
 # Keeps the site current between content runs: new podcast episodes appear on
-# the site within hours of release, and the FBI live case board stays fresh —
-# no PC required, no AI, no keys.
+# the site within hours of release, the FBI live case board stays fresh, the
+# case watcher files new developments for review, and case pages rebuild from
+# the community database. Secrets: SUPABASE_*, GEMINI_API_KEY (repo settings).
 
 on:
   schedule:
@@ -20,10 +21,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - name: Pull feeds + rebuild
+      - name: Pull feeds, watch cases, rebuild
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           node automation/import-feed.mjs || true
           node automation/import-fbi.mjs || true
+          node automation/case-watch.mjs || true
           node automation/build-all.mjs
       - name: Commit & push if changed
         run: |
