@@ -48,3 +48,4 @@ automation/studio/drafts/
 automation/cron/cron.log.old
 automation/studio/.venv/
 automation/studio/models/
+automation/studio/research/
