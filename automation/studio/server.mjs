@@ -37,9 +37,9 @@ const slugify = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().
 const jobs = new Map();
 let jobSeq = 0;
 const ACTIONS = {
-  new:      (a) => ["episode-new.mjs", ...(a.topic ? [a.topic] : []), "--minutes", String(a.minutes || 2), "--json"],
+  new:      (a) => ["episode-new.mjs", ...(a.topic ? [a.topic] : []), "--minutes", String(a.minutes || 20), "--json"],
   research: (a) => ["episode-research.mjs", "--draft", a.id, "--json"],
-  draft:    (a) => ["episode-draft.mjs", ...(a.topic ? [a.topic] : ["--auto"]), "--minutes", String(a.minutes || 2), "--json"],
+  draft:    (a) => ["episode-draft.mjs", ...(a.topic ? [a.topic] : ["--auto"]), "--minutes", String(a.minutes || 20), "--json"],
   voice:    (a) => ["episode-voice.mjs", a.id, ...(a.engine ? ["--engine", a.engine] : []), ...(a.voice ? ["--voice", a.voice] : []), ...(a.rate ? ["--rate", a.rate] : []), ...(a.pitch ? ["--pitch", a.pitch] : []),
                     ...(a.exaggeration ? ["--exaggeration", String(a.exaggeration)] : []), ...(a.cfg ? ["--cfg", String(a.cfg)] : []), ...(a.from ? ["--from", a.from] : []), ...(a.noMusic ? ["--no-music"] : []), ...(a.noTrim ? ["--no-trim"] : []), "--json"],
   art:      (a) => ["episode-art.mjs", a.id, "--json"],

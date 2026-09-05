@@ -217,7 +217,7 @@
       <input id="topic" placeholder="Case, or blank for next in backlog" aria-label="Case for a new episode">
       <button class="btn red" id="btn-new" title="Research the case, then write the script with the local model">New</button>
     </div>
-    <div class="newopts"><label>Length <input id="minutes" value="2" aria-label="Target minutes"> min</label><span>research, then script</span></div>
+    <div class="newopts"><label>Length <input id="minutes" value="20" aria-label="Target minutes"> min</label><span>research, then script</span></div>
     <ul class="list" id="drafts"><li class="skeleton"></li><li class="skeleton"></li></ul>
     <h2 class="k">Backlog <span id="backlog-count" style="color:var(--muted)"></span></h2>
     <ul class="backlog" id="backlog"></ul>
@@ -226,7 +226,7 @@
   <main class="main" id="main">
     <div class="empty" id="empty" hidden>
       <h1>No episodes in progress</h1>
-      <p>Pick a case from the backlog, or type one in and press New. The studio researches it, writes a two-minute script in the show's voice, and the rest is one button per stage until Publish.</p>
+      <p>Pick a case from the backlog, or type one in and press New. The studio researches it, writes a twenty-minute script chapter by chapter from the notes, and the rest is one button per stage until Publish. Leave it running; a full episode takes hours on this PC.</p>
       <button class="btn red" id="btn-first">Start the next case</button>
     </div>
     <div id="editor" hidden></div>
@@ -295,7 +295,7 @@ async function loadHealth() {
     <dt>site</dt><dd>${h.status.counts ? `${h.status.counts.episodes} episodes, ${h.status.counts.posts} posts, ${h.status.counts.quizzes} quizzes` : "status.json missing"}</dd>`;
 
   $("#voicebox").innerHTML = h.voice.cloneReady
-    ? `<div><b>Cory's voice</b> is the default. Cloned from <span class="mono">voice/cory-reference.wav</span> with Chatterbox on this PC (about 15 seconds of compute per second of audio; a two-minute episode takes around half an hour).</div><audio controls preload="none" src="/api/voice/file?name=cory-reference.wav"></audio><div class="row"><label class="drop" style="flex:1">Replace the reference clip (10 to 20 s of clean talking)<input type="file" id="ref-file" accept="audio/*"></label></div>`
+    ? `<div><b>Cory's voice</b> is the default. Cloned from <span class="mono">voice/cory-reference.wav</span> with Chatterbox on this PC (about 15 seconds of compute per second of audio; a twenty-minute episode takes about five hours; start it and walk away).</div><audio controls preload="none" src="/api/voice/file?name=cory-reference.wav"></audio><div class="row"><label class="drop" style="flex:1">Replace the reference clip (10 to 20 s of clean talking)<input type="file" id="ref-file" accept="audio/*"></label></div>`
     : `<div>${h.voice.reference ? "Reference clip found, but the Chatterbox venv is missing." : "No reference clip yet."} Falling back to edge-tts (Andrew). ${h.voice.reference ? "See STUDIO.md, Voice clone." : "Drop a clean 10 to 20 second clip of Cory talking:"}</div><div class="row"><label class="drop" style="flex:1">Upload reference clip<input type="file" id="ref-file" accept="audio/*"></label></div>`;
   $("#ref-file")?.addEventListener("change", async (e) => { const f = e.target.files[0]; if (!f) return; try { await upload("/api/voice/reference", f); toast("Reference voice replaced."); loadHealth(); } catch (er) { toast(er.message, true); } });
 
@@ -392,7 +392,7 @@ function renderEditor() {
         <div class="field"><label class="f" for="f-hook">Hook (one line, used on the art)</label><input class="t" id="f-hook" value="${esc(ep.hook)}" ${pub ? "disabled" : ""}></div>
         <div class="field"><label class="f" for="f-script">Script, one paragraph per block</label>
           <textarea class="t script" id="f-script" spellcheck="true" ${pub ? "disabled" : ""}>${esc((ep.script || []).join("\n\n"))}</textarea>
-          <div class="hint">Saving a changed script resets voice and art, since they were built from the old words. Two minutes is about 300 words.</div>
+          <div class="hint">Saving a changed script resets voice and art, since they were built from the old words. Twenty minutes is about 3,200 words.</div>
         </div>
         <div class="field"><label class="f" for="f-desc">Show notes</label><textarea class="t" id="f-desc" rows="5" ${pub ? "disabled" : ""}>${esc(ep.description)}</textarea></div>
         <div class="field"><label class="f" for="f-cap">Instagram caption</label><textarea class="t" id="f-cap" rows="4" ${pub ? "disabled" : ""}>${esc(ep.instagramCaption)}</textarea></div>
@@ -526,7 +526,7 @@ function voiceFrom(name) {
 async function runStage(kind) {
   const ep = state.ep;
   if (state.dirty) { toast("Save first.", true); return; }
-  if (kind === "draft-again") { if (!confirm("Rewrite the script from scratch? The current folder is kept; a new one is created.")) return; return startJob("new", { topic: ep.caseTitle || ep.title, minutes: ep.targetMinutes || 2 }); }
+  if (kind === "draft-again") { if (!confirm("Rewrite the script from scratch? The current folder is kept; a new one is created.")) return; return startJob("new", { topic: ep.caseTitle || ep.title, minutes: ep.targetMinutes || 20 }); }
   if (kind === "research") return startJob("research", { id: ep.id });
   if (kind === "voice") { const v = voiceSettings(); return startJob("voice", { id: ep.id, engine: v.engine, voice: v.name, rate: v.rate, pitch: v.pitch, exaggeration: v.exaggeration, cfg: v.cfg, noMusic: !$("#v-music").checked }); }
   if (kind === "publish") { if (!confirm(`Publish "${ep.title}" to the site and push? This goes public on www.crimetimesnacks.com and in feed.xml.`)) return; return startJob("publish", { id: ep.id, push: true, date: ep.publishDate || undefined }); }
@@ -559,9 +559,9 @@ async function poll() {
 }
 
 /* ------------------------------------------------------------ wiring */
-$("#btn-new").addEventListener("click", () => startJob("new", { topic: $("#topic").value.trim() || undefined, minutes: parseFloat($("#minutes").value) || 2 }));
+$("#btn-new").addEventListener("click", () => startJob("new", { topic: $("#topic").value.trim() || undefined, minutes: parseFloat($("#minutes").value) || 20 }));
 $("#topic").addEventListener("keydown", (e) => { if (e.key === "Enter") $("#btn-new").click(); });
-$("#btn-first").addEventListener("click", () => startJob("new", { minutes: parseFloat($("#minutes").value) || 2 }));
+$("#btn-first").addEventListener("click", () => startJob("new", { minutes: parseFloat($("#minutes").value) || 20 }));
 $("#drafts").addEventListener("click", (e) => { const b = e.target.closest("[data-id]"); if (b) openDraft(b.dataset.id); });
 $("#backlog").addEventListener("click", (e) => { const b = e.target.closest("[data-case]"); if (b && !b.disabled) { $("#topic").value = b.textContent; $("#topic").focus(); } });
 document.querySelectorAll(".ops [data-op]").forEach((b) => b.addEventListener("click", () => { if ((b.dataset.op === "content") && !confirm("Run the full content pipeline and push to main?")) return; if (b.dataset.op === "weekly" && !confirm("Run the whole weekly episode job now? Research, script, voice, art, reel. Takes a while.")) return; startJob(b.dataset.op, {}); }));

@@ -1,7 +1,7 @@
 # The Podcast Studio
 
-The studio is the local control room for putting out a two-minute episode a
-week without touching Audacity, HTML, RSS, or ffmpeg by hand. It lives in
+The studio is the local control room for putting out a twenty-minute episode
+a week without touching Audacity, HTML, RSS, or ffmpeg by hand. It lives in
 `automation/studio/` and runs only on this PC (it drives LM Studio, Chatterbox,
 edge-tts, ffmpeg and git), so it is never deployed.
 
@@ -12,13 +12,15 @@ npm run studio          ->  http://127.0.0.1:4177
 ## One episode, start to finish
 
 1. **New.** Type a case or leave the box empty for the next one in the backlog,
-   press New. The studio researches it (Wikipedia plus recent coverage) and the
-   local model writes a two-minute script in the show's voice, cut to length by a
-   second pass and checked line by line against the research notes by a third.
+   press New, then walk away. The studio researches it (the full Wikipedia
+   article plus the text of the top coverage pages), outlines the episode into
+   chapters, writes each chapter from the notes that match it, and fact-checks
+   each chapter against those notes. On this CPU a twenty-minute script takes
+   an hour or more; nothing needs you until it is done.
 2. **Read it.** Fix anything in the script box. The fact list on the right marks
    every claim the notes do not support; tick each one after you confirm it.
 3. **Voice.** Press Make voice. Default is your cloned voice (Chatterbox, free,
-   on this CPU: about half an hour for two minutes). Or press Record and read the
+   on this CPU: roughly five hours for twenty minutes; start it and leave it). Or press Record and read the
    script yourself; long pauses are trimmed, noise reduced, and the theme is
    mixed in either way. Or drop in a file you recorded elsewhere.
 4. **Art, Instagram.** One button each: 3000 square cover, 1080x1350 card,
@@ -35,8 +37,8 @@ with the caption.
 
 | Stage | Script | What it makes |
 |---|---|---|
-| 0 Research | `episode-research.mjs` | `research.md` + `research.json`: Wikipedia extract and recent coverage, no keys. |
-| 1 Script | `episode-draft.mjs` | `episode.json`: title, hook, show notes, spoken paragraphs, fact list, caption. Three LLM passes: write, cut to length, check claims against the notes. |
+| 0 Research | `episode-research.mjs` | `research.md` + `research.json`: full Wikipedia article(s) split by section, plus the article text of the top four coverage pages. No keys. |
+| 1 Script | `episode-draft.mjs` | `episode.json`: title, hook, show notes, the script in chapters, fact list, caption. Outline pass, then one write pass and one fact-check pass per chapter, each fed only the research chunks that match the chapter (keyword retrieval), so the model's 8k context never overflows. |
 | both | `episode-new.mjs` | Research then script, what the New button and the weekly job run. |
 | 2 Voice | `episode-voice.mjs` | `episode.mp3` (-16 LUFS, theme mixed), `voice.wav` (dry), `transcript.json`. Engines: `clone` (Chatterbox + `voice/cory-reference.wav`), `edge` (edge-tts), or `--from <file>` for a recording. |
 | theme | `episode-music.mjs` | Intro (9 s) and outro (6 s) beds. Your `studio/music/intro.mp3` and `outro.mp3` if present, else an original synthesized theme. |
@@ -60,7 +62,9 @@ panel with any clean 10 to 20 second clip. Two knobs per episode: exaggeration
 test, 2026-09-05: "sounds just like me."
 
 Speed on this PC (Ryzen 5 5500, AMD GPU so no CUDA): about 15 seconds of compute
-per second of audio. Fine for the Monday job. For a quick preview use edge-tts.
+per second of audio, so a twenty-minute episode is around five hours. Cory's
+call (2026-09-05): length matters, time does not; the studio works while he is
+away. For a quick preview of a script use edge-tts.
 
 Rebuild the venv if it is ever lost:
 
@@ -92,9 +96,9 @@ pause.
 
 ## Why Publish is a click and not a schedule
 
-The script is written by a 14B model running on a CPU. It writes long, invents
-detail, and pads endings; the editor and fact-check passes catch most of it,
-and the fact list makes the rest a five-minute read. An AI-voiced episode about a
+The script is written by a 14B model running on a CPU. Left alone it invents
+detail and pads endings; chaptering, retrieval and the per-chapter fact check
+catch most of it, and the fact list makes the rest a focused read. An AI-voiced episode about a
 real crime under Cory's name is not something to ship unread. The Monday task
 does everything up to that read; `-AutoPublish` on the task action removes the
 gate, and is not recommended.
@@ -117,8 +121,9 @@ mode are the pattern; do not point anything at Anchor again.
 ## Weekly, hands-off up to the click
 
 `cron/cts-episode.ps1` runs `episode-weekly.mjs` every Monday at 08:00 (task
-"CTS Episode Draft"): research, script, cloned voice, art, Instagram kit, then
-a Telegram message through the Hermes bridge saying it is ready. Open the
+"CTS Episode Draft"): research, twenty-minute script, cloned voice, art,
+Instagram kit, then a Telegram message through the Hermes bridge saying it is
+ready. Expect it done by mid-afternoon. Open the
 studio, read, tick, Publish.
 
 ## Adding cases

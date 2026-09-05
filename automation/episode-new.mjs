@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 // Podcast studio: start a new episode. Research first, then the script.
 //
-//   node automation/episode-new.mjs --auto [--minutes 2]
-//   node automation/episode-new.mjs "Gabby Petito" [--minutes 2]
+//   node automation/episode-new.mjs --auto [--minutes 20]
+//   node automation/episode-new.mjs "Gabby Petito" [--minutes 20]
 //
 // Thin orchestrator so the studio's Draft button and the weekly job do the same
 // two things in the same order. Prints the draft step's JSON as its last line.
@@ -16,7 +16,7 @@ const here = dirname(fileURLToPath(import.meta.url));
 const args = process.argv.slice(2);
 const opt = (n, d) => { const i = args.indexOf(n); return i > -1 && args[i + 1] ? args[i + 1] : d; };
 const asJson = args.includes("--json");
-const minutes = opt("--minutes", "2");
+const minutes = opt("--minutes", "20");
 const topic = args.find((a, i) => !a.startsWith("--") && !(args[i - 1] || "").startsWith("--"));
 const slugify = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60);
 const readJson = async (p) => { try { return JSON.parse(await readFile(p, "utf8")); } catch { return null; } };

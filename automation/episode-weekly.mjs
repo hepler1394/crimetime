@@ -5,7 +5,7 @@
 // Cory's name, so the last click (fact list checked, Publish) stays his, in the
 // studio: npm run studio -> http://127.0.0.1:4177
 //
-//   node automation/episode-weekly.mjs                 draft the next case (2 minute episode)
+//   node automation/episode-weekly.mjs                 draft the next case (20 minute episode)
 //   node automation/episode-weekly.mjs --minutes 3
 //   node automation/episode-weekly.mjs --engine edge   skip the voice clone (fast)
 //   node automation/episode-weekly.mjs --publish       also publish + push (only if you have decided to trust it unattended)
@@ -23,7 +23,7 @@ const ROOT = join(here, "..");
 const args = process.argv.slice(2);
 const opt = (n, d) => { const i = args.indexOf(n); return i > -1 && args[i + 1] ? args[i + 1] : d; };
 const publish = args.includes("--publish");
-const minutes = opt("--minutes", "2");
+const minutes = opt("--minutes", "20");
 const engine = opt("--engine", null);
 
 const step = (script, a, { optional = false } = {}) => {
@@ -75,7 +75,7 @@ try {
   const facts = (ep.factsToVerify || []).length;
   const mins = Math.round((Date.now() - t0) / 60000);
   const msg = pub
-    ? `CrimeTimeSnacks: published "${ep.title}" (${ep.duration}). ${pub.page}. Upload the MP3 to Spotify for Podcasters when you get a minute.`
+    ? `CrimeTimeSnacks: published "${ep.title}" (${ep.duration}). ${pub.page}. Spotify and Apple pick it up from the feed.`
     : `CrimeTimeSnacks: this week's episode is drafted and voiced. "${ep.title}", ${ep.duration}, ${facts} facts to check, ${ep.voiceUsed}. Open the studio (npm run studio) to review and publish. Took ${mins} min.`;
   console.log(`\n${msg}`);
   await notify(msg);
