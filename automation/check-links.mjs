@@ -15,6 +15,8 @@ function walk(dir) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
     if (e.name === "node_modules" || e.name === ".git") continue;
     const p = path.join(dir, e.name);
+    // The podcast studio is a local app served by its own server, not a site page.
+    if (toPosix(p).endsWith("automation/studio")) continue;
     if (e.isDirectory()) out = out.concat(walk(p));
     else if (e.name.endsWith(".html")) out.push(p);
   }
