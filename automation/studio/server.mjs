@@ -65,7 +65,11 @@ function startJob(action, a) {
   const id = `j${++jobSeq}`;
   const job = { id, action, draft: a.id || null, started: Date.now(), done: false, code: null, log: "", result: null };
   jobs.set(id, job);
-  const child = spawn(process.execPath, [join(AUTO, argv[0]), ...argv.slice(1)], { cwd: ROOT, windowsHide: true, env: { ...process.env, FORCE_COLOR: "0", PYTHONIOENCODING: "utf-8" } });
+  // detached: a five-hour voice render must outlive a studio server restart. The
+  // script updates its draft's episode.json itself, so the result is never lost
+  // even if this process (and its log buffer) goes away.
+  const child = spawn(process.execPath, [join(AUTO, argv[0]), ...argv.slice(1)], { cwd: ROOT, windowsHide: true, detached: true, env: { ...process.env, FORCE_COLOR: "0", PYTHONIOENCODING: "utf-8" } });
+  child.unref();
   const onData = (c) => { job.log += c.toString(); if (job.log.length > 200000) job.log = job.log.slice(-150000); };
   child.stdout.on("data", onData); child.stderr.on("data", onData);
   child.on("close", (code) => {

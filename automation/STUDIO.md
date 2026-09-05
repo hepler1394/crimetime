@@ -131,3 +131,52 @@ studio, read, tick, Publish.
 `automation/cases.json` is the backlog: slug, title, angle, years. Keep it to
 cases with a public court record or sustained major-outlet coverage; the
 research step can only ground what it can find.
+
+## The desktop shell (studio-shell/)
+
+`cd studio-shell && npm start` opens one window that holds the studio and a real
+browser. Two workspaces: **Studio** (this control room) and **Instagram** (the
+ig-studio renders with the posting checklist). The tab strip is a Chromium
+browser on a persistent profile (`studio-shell/profile/`), so Instagram,
+grok.com and anything else stay signed in between launches. Bookmarks: Instagram,
+New post, Grok Imagine, FBI Wanted, CourtListener, Wikipedia, Zodiac Archive.
+
+- **Episode selector** in the toolbar sets which project folder receives saves.
+- **Right-click** any image or video on any page: Save to episode. Right-click a
+  text selection: Save selection to episode notes (appends to `notes.md`).
+- **Downloads** from browser tabs land in the selected episode's folder.
+- **Generate** panel: Gemini Flash Image (cents), Gemini 3 Pro Image, Veo 3.1
+  video (paid, about a dollar for 8 s), or Grok Imagine (opens grok.com on your
+  SuperGrok quota; prompt copied to the clipboard; save the result with
+  right-click). Files land in the episode folder and show in the studio.
+- The shell starts `automation/studio/server.mjs` if nothing answers on 4177.
+
+Pipeline jobs are spawned detached, so a long voice render survives a server
+restart; the shell and the browser tab are just windows onto the same folder.
+
+## Community (step one)
+
+Anyone can follow a case on `/cases.html` or `/cases/<slug>.html` with an email.
+They confirm once (link sets a year-long cookie), then get a weekly digest of
+approved updates on the cases they follow. Nothing goes out unless a person
+approved it in the studio.
+
+- **Database:** the shared Supabase project, tables prefixed `cts_`
+  (`automation/community/schema.sql`, apply with psql). Public reads (cases,
+  approved updates, follower counts) use the anon key; every write goes through
+  `/api/community/*` Vercel functions with the service role key.
+- **Cases** come from `cases.json` plus published episodes:
+  `node automation/community/sync-cases.mjs` (also the Sync cases button).
+- **Updates** are found by `automation/case-watch.mjs` (DuckDuckGo results
+  screened by Gemini Flash, filed as pending) every 6 hours in CI and on demand
+  from the studio ("check cases"). The studio's Community panel is the review
+  queue: Approve puts an update on the case page at the next build and into the
+  next digest; Reject hides it.
+- **Digest:** `/api/community/digest`, Vercel cron Sundays 14:00 UTC, Resend.
+  Test to one address: `.../digest?key=<CRON_SECRET>&to=<email>&dry=1`.
+- **Env:** `automation/.env.community` locally (gitignored), the same names on
+  the Vercel project and as GitHub Actions secrets. `MAIL_FROM` moves to
+  `updates@crimetimesnacks.com` once Resend finishes verifying the domain (DNS is
+  in place at Porkbun; DKIM already verified).
+- Step two is following FBI Most Wanted subjects; step three is discussion
+  threads under each case.
