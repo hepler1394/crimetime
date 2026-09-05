@@ -17,6 +17,9 @@
     "quiz": "node automation/gen-quiz.mjs",
     "status": "node automation/build-status.mjs",
     "qa": "node automation/check-links.mjs",
-    "test": "node automation/test-build.mjs"
+    "test": "node automation/test-build.mjs",
+    "studio": "node automation/studio/server.mjs",
+    "episode": "node automation/episode-draft.mjs --auto",
+    "episode:weekly": "node automation/episode-weekly.mjs"
   }
 }

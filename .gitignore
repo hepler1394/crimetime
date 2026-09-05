@@ -42,3 +42,7 @@ secrets/
 
 # cron logs
 automation/cron/cron.log
+
+# podcast studio working files (drafts hold MP3/MP4 renders; published copies live in /audio and /images/episodes)
+automation/studio/drafts/
+automation/cron/cron.log.old

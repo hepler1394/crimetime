@@ -1,0 +1,29 @@
+{
+  "_README": "Episode backlog for the podcast studio. episode-draft.mjs --auto picks the first case here that has no draft and no published episode yet (matched by slug). Every case is well documented in public court records and major-outlet reporting, so the script can stay factual without inventing detail. Keep entries evergreen. Add a case any time; the studio reads this file live.",
+  "cases": [
+    { "slug": "golden-state-killer", "title": "The Golden State Killer", "angle": "How forensic genealogy ended a forty-year hunt for Joseph DeAngelo, and what the 2020 plea hearing put on the record.", "year": "1974-2020" },
+    { "slug": "gabby-petito", "title": "Gabby Petito", "angle": "The van-life timeline, the Moab traffic stop body-cam footage, and how the case reshaped how police handle domestic calls.", "year": "2021" },
+    { "slug": "long-island-serial-killer", "title": "The Gilgo Beach Murders", "angle": "A decade of remains along Ocean Parkway, the 2023 arrest of Rex Heuermann, and where the charges stand.", "year": "2010-2023" },
+    { "slug": "chris-watts-confession", "title": "Chris Watts: The Interrogation", "angle": "What the released interview footage and the discovery documents show about how the confession unfolded.", "year": "2018" },
+    { "slug": "elisa-lam", "title": "Elisa Lam and the Cecil Hotel", "angle": "The elevator footage, what the coroner actually concluded, and how the internet built a case that was never there.", "year": "2013" },
+    { "slug": "alex-murdaugh", "title": "Alex Murdaugh", "angle": "The kennel video timestamp, the financial crimes underneath the murders, and the 2023 verdict.", "year": "2021-2023" },
+    { "slug": "btk-dennis-rader", "title": "BTK: The Floppy Disk", "angle": "How a metadata slip on a church computer ended thirty years of letters from Dennis Rader.", "year": "1974-2005" },
+    { "slug": "zodiac-killer", "title": "The Zodiac Killer", "angle": "The confirmed attacks, the ciphers that were solved and the ones that were not, and why the case is still open.", "year": "1968-1969" },
+    { "slug": "lori-vallow", "title": "Lori Vallow Daybell", "angle": "The missing-children timeline in Rexburg, the doomsday beliefs entered into evidence, and the 2023 conviction.", "year": "2019-2023" },
+    { "slug": "maura-murray", "title": "Maura Murray", "angle": "A crashed car on Route 112 in New Hampshire, a disappearance in under ten minutes, and twenty years of no answers.", "year": "2004" },
+    { "slug": "scott-peterson", "title": "Scott Peterson", "angle": "The Christmas Eve disappearance of Laci Peterson, the Berkeley Marina, and what the LA Innocence Project is now arguing.", "year": "2002-present" },
+    { "slug": "ted-bundy-escape", "title": "Ted Bundy: The Two Escapes", "angle": "The courthouse window in Aspen, the ceiling in Glenwood Springs, and the Florida murders that followed.", "year": "1977-1978" },
+    { "slug": "jonbenet-ramsey-dna", "title": "JonBenet Ramsey: The DNA", "angle": "What the touch DNA tested in 2008 did and did not prove, and why Boulder reopened testing in 2023.", "year": "1996-present" },
+    { "slug": "adnan-syed", "title": "Adnan Syed", "angle": "The Hae Min Lee case, the cell tower evidence, the 2022 release and the 2023 reinstated conviction.", "year": "1999-present" },
+    { "slug": "amanda-knox", "title": "Amanda Knox", "angle": "The Meredith Kercher case in Perugia, two convictions, two acquittals, and the 2015 final ruling.", "year": "2007-2015" },
+    { "slug": "kohberger-trial", "title": "Bryan Kohberger: The Case File", "angle": "The knife sheath DNA, the white Elantra, and the plea that closed the Idaho student murders case.", "year": "2022-2025" },
+    { "slug": "delphi-richard-allen", "title": "Delphi: The Bridge Guy", "angle": "The Snapchat video, the unspent round, and the 2024 conviction of Richard Allen for the murders of Abby Williams and Libby German.", "year": "2017-2024" },
+    { "slug": "casey-anthony", "title": "Casey Anthony", "angle": "Thirty-one days, the chloroform searches, and why the jury acquitted in 2011.", "year": "2008-2011" },
+    { "slug": "steven-avery", "title": "Steven Avery", "angle": "Eighteen years for a rape he did not commit, then the Teresa Halbach murder conviction that Making a Murderer put on trial.", "year": "1985-present" },
+    { "slug": "madeleine-mccann", "title": "Madeleine McCann", "angle": "The Praia da Luz apartment, the timeline of the checks, and the 2020 German suspect.", "year": "2007-present" },
+    { "slug": "tylenol-murders", "title": "The Tylenol Murders", "angle": "Seven deaths in Chicago in 1982, the case that invented tamper-proof packaging, and why nobody has been convicted.", "year": "1982" },
+    { "slug": "dnd-mcstay-family", "title": "The McStay Family", "angle": "A family gone from Fallbrook, graves in the Mojave three years later, and the business partner convicted in 2019.", "year": "2010-2019" },
+    { "slug": "brian-laundrie-notebook", "title": "The Laundrie Notebook", "angle": "What the FBI released about the notebook found in the Carlton Reserve and how it closed the Petito case.", "year": "2021-2022" },
+    { "slug": "kendrick-johnson", "title": "Kendrick Johnson", "angle": "The gym mat in Valdosta, two autopsies with different findings, and the case that was reopened and closed again.", "year": "2013-present" }
+  ]
+}

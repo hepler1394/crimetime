@@ -33,6 +33,12 @@ Register the Windows tasks with the commands in `automation/cron/README.md`,
 or just let GitHub Actions do it all (add `DEEPSEEK_API_KEY` or
 `ANTHROPIC_API_KEY` as a repo secret so CI can write posts/quizzes).
 
+## 2026-09-05: podcast studio + fixed schedules
+- Content runs had silently failed since 2026-08-28 (PowerShell 5.1 stderr bug in the cron wrapper). Fixed; see `cron/README.md`.
+- New: `npm run studio` (local control room), `episode-*.mjs` pipeline, `cases.json` backlog, `studio-episodes.json` merged into the feed, weekly "CTS Episode Draft" task (Mon 08:00). Read `STUDIO.md`.
+- New: Instagram launch package for @crimetimesnacks in `studio/instagram/` (handle free as of 2026-09-05; Cory creates the account).
+- To do once, by hand: re-point Spotify for Podcasters and Apple Podcasts Connect at `https://crimetime.vercel.app/feed.xml` so studio episodes reach the apps without a manual upload.
+
 ## Next, in priority order
 1. **Rotate the old Gemini + Brave keys** — regenerate at their dashboards;
    they were public and are in git history forever.

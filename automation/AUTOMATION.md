@@ -1,5 +1,10 @@
 # CrimeTimeSnacks — Full Automation Guide
 
+> 2026-09 update: the show now has a **podcast studio** (`npm run studio`) that
+> writes, voices, designs and publishes an episode a week, with a fact-check gate
+> before anything goes public. Read `STUDIO.md`. Episodes it publishes appear in
+> `feed.xml`, the episode pages, search and the Instagram kit automatically.
+
 > 2026-07 update: the site now runs TWICE A WEEK (Tue + Fri) in Cory's voice
 > (see `voice.md`), with a live FBI case board, auto-quizzes, and a shared
 > design shell (`shell.mjs`). Dashboard: /dashboard.html. Cron: cron/README.md.

@@ -8,6 +8,7 @@ schedule.
 |-----|-------|------|--------------|
 | Content run | **This PC** — `cts-content.ps1` | Tue + Fri 09:00 | New blog post, merch design, quiz (all in Cory's voice), feed + YouTube + FBI refresh, rebuild, publish |
 | Feed sync | **GitHub Actions** — `.github/workflows/sync.yml` | Every 6 hours | New podcast episodes + FBI live board, publish only if changed |
+| Episode draft | **This PC** — `cts-episode.ps1` | Mon 08:00 | Next case from `cases.json`: script, voice, art, Instagram kit, then a Telegram note. Publish stays a click in the studio (see `../STUDIO.md`) |
 
 ## One owner per job — do not duplicate
 
@@ -40,6 +41,21 @@ for the same reason, in reverse.
 If you ever move a job to the other side, disable it on this side in the same
 change — never leave both scheduled.
 
+## 2026-09-05: why every content run since 2026-08-28 died
+
+`cts-content.ps1` set `$ErrorActionPreference = "Stop"` and redirected node with
+`*>> $log`. The task runs Windows PowerShell 5.1, which turns the FIRST line a
+native command writes to stderr into a terminating error under those two
+settings. `git pull` writes "From https://github.com/..." to stderr even on
+success, so the moment the pull step was added (2026-08-26) every run died
+there, and the log recorded that harmless line as the error. The 08-24/08-25
+"To https://..." errors were the same thing on `git push`.
+
+Both wrappers now hand the redirect to `cmd /c` so PowerShell never sees
+stderr, and judge success by the exit code. The log is plain UTF-8 again (the
+old `*>>` wrote UTF-16, which is why `cron.log` looked like `C o n t e n t`);
+the garbled history is in `cron.log.old`.
+
 ## Register on Windows (per-user, no admin)
 
 ```
@@ -49,6 +65,8 @@ schtasks /create /tn "CTS Content Tue" /sc WEEKLY /d TUE /st 09:00 ^
 schtasks /create /tn "CTS Content Fri" /sc WEEKLY /d FRI /st 09:00 ^
   /tr "powershell -NoProfile -ExecutionPolicy Bypass -File D:\dev\github\crimetime\automation\cron\cts-content.ps1"
 
+schtasks /create /tn "CTS Episode Draft" /sc WEEKLY /d MON /st 08:00 ^
+  /tr "powershell -NoProfile -ExecutionPolicy Bypass -File D:\dev\github\crimetime\automation\cron\cts-episode.ps1"
 ```
 
 Do **not** register `CTS Feed Sync` — GitHub Actions owns that job. The task

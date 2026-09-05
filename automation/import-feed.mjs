@@ -9,6 +9,7 @@
 import { writeFile, readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { loadStudioEpisodes, mergeEpisodes } from "./episodes-merge.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const FEED_URL = "https://anchor.fm/s/7289c700/podcast/rss";
@@ -76,7 +77,11 @@ const episodes = items.map((b) => {
   };
 }).filter((e) => e.title);
 
-const out = { podcast, episodes };
+// Episodes produced in the studio and published straight to the site are kept
+// alongside the feed's (see episodes-merge.mjs) so a feed sync never erases them.
+const studio = await loadStudioEpisodes();
+const merged = mergeEpisodes(episodes, studio);
+const out = { podcast, episodes: merged };
 await writeFile(join(__dirname, "episodes.json"), JSON.stringify(out, null, 2) + "\n", "utf8");
-console.log(`Imported ${episodes.length} episodes from the live feed:`);
-episodes.forEach((e, i) => console.log(`  ${i + 1}. [${e.date}] ${e.title} (${e.duration})`));
+console.log(`Imported ${episodes.length} episodes from the live feed (+${merged.length - episodes.length} studio):`);
+merged.forEach((e, i) => console.log(`  ${i + 1}. [${e.date}] ${e.title} (${e.duration})${e.source === "studio" ? "  [studio]" : ""}`));
