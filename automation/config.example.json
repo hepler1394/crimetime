@@ -41,6 +41,7 @@
     "apiKey": "",
     "baseUrl": "https://generativelanguage.googleapis.com/v1beta/openai",
     "model": "gemini-3.8-flash",
-    "note": "Key comes from the GEMINI_API_KEY environment variable; leave apiKey empty here. Cents per twenty-minute episode."
+    "note": "Key comes from the GEMINI_API_KEY environment variable; leave apiKey empty here. model does the fact checks (Flash, fractions of a cent); writerModel does the outline and chapters (Pro, about 30 cents per twenty-minute episode).",
+    "writerModel": "gemini-3.1-pro-preview"
   }
 }

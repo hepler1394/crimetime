@@ -35,7 +35,7 @@ const positional = args.filter((a, i) => !a.startsWith("--") && args[i - 1] !== 
 const minutes = Math.max(1, Math.min(60, parseFloat(opt("--minutes", "20")) || 20));
 const asJson = flag("--json");
 const WPM = 160;                 // the cloned voice reads briskly
-const CHAPTER_WORDS = 420;       // one model answer, comfortably inside the context
+const CHAPTER_WORDS = 270;       // what one chapter answer actually comes back as (Gemini lands near 275 whatever is asked), so a 20 min show is 12 chapters
 const LLM_TIMEOUT = 30 * 60 * 1000;
 
 const slugify = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60);
@@ -107,9 +107,9 @@ const leadIdx = chunks.findIndex((c) => /: Lead$/.test(c.heading));
 const overview = chunks.slice(0, Math.max(1, leadIdx + 1)).concat(chunks.slice(leadIdx + 1, leadIdx + 4)).map((c) => `### ${c.heading}\n${c.text}`).join("\n\n").slice(0, cloudFirst ? 20000 : 6500);
 
 /* ------------------------------------------------------- llm helpers */
-async function ask(system, user, label) {
+async function ask(system, user, label, role = null) {
   const t0 = Date.now();
-  const { text, provider } = await chat(system, user, cfg);
+  const { text, provider } = await chat(system, user, { ...cfg, jsonMode: true, role });
   say(`  ${label}: ${Math.round((Date.now() - t0) / 1000)}s via ${provider}`);
   return { text, provider };
 }
@@ -149,9 +149,10 @@ try {
 {"title": string (max 60 chars, no colon-stacked subtitles), "hook": string (one sentence: the strangest documented detail, stated plainly), "description": string (show notes, 2 or 3 short paragraphs separated by \\n\\n, in Cory's first-person voice, no spoilers of the ending), "instagramCaption": string (3 short lines, then a final line "New episode. Link in bio.", no hashtags, no emojis), "keywords": [5 to 8 search terms], "chapters": [{"title": string, "beats": [3 to 6 short strings: the specific documented facts and events this chapter covers, in order]}]}
 Rules: exactly ${N} chapters, chronological where the story allows. Chapter 1 opens the show and states the hook, then introduces the people. Middle chapters walk the timeline, the investigation, the arrest, the trial. The last chapter is where the case stands today and hands it to the listener. Use ONLY facts from the notes. No emojis.`,
     `Case: ${kase.title}\nAngle: ${kase.angle || "the documented facts in order, and where the case stands now"}\nYears: ${kase.year || "unknown"}\n\nRESEARCH NOTES (overview):\n${overview}`,
-    "outline");
+    "outline", "writer");
   provider = p;
   outline = parseObject(text);
+  globalThis.__outlineRaw = text;
 } catch (e) { die("llm", `Outline failed: ${e.message}`); }
 if (!outline || !Array.isArray(outline.chapters) || !outline.chapters.length) {
   outline = { ...(outline || {}), chapters: Array.from({ length: N }, (_, i) => ({ title: i === 0 ? "The case" : i === N - 1 ? "Where it stands" : `Part ${i + 1}`, beats: [] })) };
@@ -161,7 +162,7 @@ while (outline.chapters.length < N) outline.chapters.push({ title: `Part ${outli
 say(`  chapters: ${outline.chapters.map((c) => c.title).join(" | ")}`);
 
 /* --------------------------------------------------------- B. chapters */
-const perChapter = Math.round(targetWords / N);
+const perChapter = Math.round((targetWords / N) * 1.2); // models undershoot; ask for a fifth more than needed
 const script = [];
 const chapterMarks = [];
 const factsToVerify = [];
@@ -183,9 +184,26 @@ ${prevTail ? `\nFor continuity, the previous chapter ended:\n${prevTail}\n` : ""
 RESEARCH NOTES for this chapter (the only allowed source of facts):
 ${notes}
 
-Output ONLY a JSON array of paragraph strings.`, `chapter ${i + 1} write`);
+Output ONLY a JSON object: {"paragraphs": [string, ...]}.`, `chapter ${i + 1} write`, "writer");
     paras = parseArray(text).map((s) => s.replace(/\s+/g, " ").trim()).filter(Boolean);
   } catch (e) { say(`  chapter ${i + 1} failed: ${e.message}`); }
+  // Models answer short. If the chapter is under 85% of its target, one more
+  // pass extends it from the notes (still only the notes) before it is checked.
+  if (paras.length && wc(paras) < perChapter * 0.85) {
+    try {
+      const { text } = await ask(VOICE_RULES, `This chapter is ${wc(paras)} words; it needs to be at least ${perChapter} words. Extend it using ONLY facts from the RESEARCH NOTES below: more of the timeline, the places, what investigators did, what the record shows, what it was like for the people involved (as documented). Keep every existing sentence's meaning, keep the order, ${first ? "keep the opener as the first sentence" : "do not re-introduce the show"}, ${last ? "keep the hand-off line as the LAST line" : "do not wrap up the episode"}. Same voice.
+
+CURRENT CHAPTER:
+${JSON.stringify(paras)}
+
+RESEARCH NOTES:
+${notes}
+
+Output ONLY a JSON object: {"paragraphs": [string, ...]}.`, `chapter ${i + 1} extend`, "writer");
+      const more = parseArray(text).map((s) => s.replace(/\s+/g, " ").trim()).filter(Boolean);
+      if (more.length >= paras.length && wc(more) > wc(paras)) paras = more;
+    } catch (e) { say(`  chapter ${i + 1} extend skipped: ${e.message}`); }
+  }
   if (!paras.length) paras = [`[Chapter ${i + 1}, "${ch.title}", did not generate. Rewrite this chapter or delete this line.]`];
   chapterMarks.push({ title: ch.title, start: script.length, paragraphs: paras.length });
   script.push(...paras);
@@ -194,8 +212,10 @@ Output ONLY a JSON array of paragraph strings.`, `chapter ${i + 1} write`);
   /* ------------------------------------------------------ C. check */
   try {
     const { text } = await ask(
-      `You are a fact-checker. You get RESEARCH NOTES and a SCRIPT CHAPTER. List every specific factual claim in the chapter (names, dates, counts, places, quotes, sequence of events). For each, decide if the notes support it. Output ONLY a JSON array of objects: {"claim": string, "supported": boolean, "note": string (for unsupported claims: what the notes actually say, or "not in notes")}. Be strict: a claim is supported only if the notes state it.`,
-      `RESEARCH NOTES:\n${notes}\n\nSCRIPT CHAPTER:\n${paras.join("\n\n")}`, `chapter ${i + 1} check`);
+      `You are a fact-checker. You get RESEARCH NOTES and a SCRIPT CHAPTER. List every specific factual claim in the chapter (names, dates, counts, places, quotes, sequence of events). For each, decide if the notes support it. Output ONLY a JSON object: {"claims": [{"claim": string, "supported": boolean, "note": string (for unsupported claims: what the notes actually say, or "not in notes")}]}. Be strict: a claim is supported only if the notes state it.`,
+      // A cloud checker gets the whole file (a fact can live in a chunk the writer
+      // was not shown); the local model gets the chapter's own slice.
+      `RESEARCH NOTES:\n${cloudFirst ? researchFull.slice(0, 200000) : notes}\n\nSCRIPT CHAPTER:\n${paras.join("\n\n")}`, `chapter ${i + 1} check`);
     const arr = parseObject(text);
     const list = Array.isArray(arr) ? arr : Array.isArray(arr?.claims) ? arr.claims : [];
     for (const c of list) {
@@ -228,6 +248,7 @@ const draft = {
   files: researchFull ? { research: "research.md" } : {},
 };
 await writeFile(join(dir, "episode.json"), JSON.stringify(draft, null, 2) + "\n", "utf8");
+await writeFile(join(dir, "outline.json"), JSON.stringify({ ...outline, raw: globalThis.__outlineRaw || "" }, null, 2) + "\n", "utf8");
 if (researchFull) await writeFile(join(dir, "research.md"), researchFull, "utf8");
 out({ ok: true, id, dir, title, words: scriptWords, minutesEstimate: +(scriptWords / WPM).toFixed(1), chapters: chapterMarks.length, checked, unsupported, provider, researched: !!researchFull,
   message: `Drafted "${title}": ${scriptWords} words (~${(scriptWords / WPM).toFixed(1)} min) in ${chapterMarks.length} chapters, ${checked} claims checked, ${unsupported} unsupported${researchFull ? "" : "; NO research notes, run episode-research first"} -> ${dir}` });

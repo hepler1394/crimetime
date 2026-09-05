@@ -26,6 +26,8 @@ export async function loadConfig() {
   // Gemini speaks the OpenAI chat-completions dialect at this endpoint.
   cfg.gemini.baseUrl = cfg.gemini.baseUrl || "https://generativelanguage.googleapis.com/v1beta/openai";
   cfg.gemini.model = e.GEMINI_MODEL || cfg.gemini.model || "gemini-3.8-flash";
+  // A stronger model for the writing passes (outline, chapters); Flash still does the checks.
+  cfg.gemini.writerModel = e.GEMINI_WRITER_MODEL || cfg.gemini.writerModel || cfg.gemini.model;
   cfg.local = cfg.local || {};
   cfg.local.baseUrl = e.LLM_BASE_URL || cfg.local.baseUrl || "http://localhost:1234/v1";
   cfg.local.model = e.LLM_MODEL || cfg.local.model || "local-model";
@@ -47,11 +49,13 @@ export async function loadConfig() {
 
 const timeout = (ms) => {
   const c = new AbortController();
-  setTimeout(() => c.abort(), ms);
+  // unref: otherwise a 30-minute deadline keeps the process alive for 30 minutes
+  // after the last answer, and the studio's job runner waits with it.
+  setTimeout(() => c.abort(), ms).unref();
   return c.signal;
 };
 
-async function openAiCompatible({ baseUrl, apiKey, model }, system, user, ms) {
+async function openAiCompatible({ baseUrl, apiKey, model }, system, user, ms, { jsonMode = false } = {}) {
   // Streamed on purpose: Node's fetch aborts ("fetch failed") when response
   // headers take more than 5 minutes, and a non-streaming completion only sends
   // headers after the whole answer is generated. A 1,500-word episode script
@@ -66,9 +70,13 @@ async function openAiCompatible({ baseUrl, apiKey, model }, system, user, ms) {
       model,
       messages: [{ role: "system", content: system }, { role: "user", content: user }],
       temperature: 0.7,
-      max_tokens: 2500,
+      // Cloud models count hidden reasoning tokens against this cap; a chapter plus
+      // its thinking needs headroom or the JSON comes back cut off.
+      max_tokens: local ? 2500 : 8192,
       stream: true,
       ...(local ? { chat_template_kwargs: { enable_thinking: false } } : {}), // Qwen3 in LM Studio: answer, do not think for 10 minutes first
+      ...(/generativelanguage\.googleapis\.com/.test(baseUrl) ? { reasoning_effort: "low" } : {}), // Gemini 3.x: write, do not deliberate
+      ...(jsonMode && !local ? { response_format: { type: "json_object" } } : {}), // guaranteed-valid JSON object from cloud models
     }),
   });
   if (!res.ok) throw new Error(`${res.status} ${await res.text().catch(() => "")}`.slice(0, 200));
@@ -105,10 +113,12 @@ async function anthropic({ apiKey, model }, system, user, ms) {
 }
 
 // Returns { text, provider } using the first provider that works, in config order.
-// Pass cfg.timeoutMs to allow long generations (episode scripts need minutes locally).
+// cfg.timeoutMs: deadline for long generations. cfg.jsonMode: cloud models must
+// return one JSON object. cfg.role === "writer": use the stronger Gemini model.
 export async function chat(system, user, cfg) {
   cfg = cfg || (await loadConfig());
   const errors = [];
+  const opts = { jsonMode: !!cfg.jsonMode };
   for (const name of cfg.order) {
     try {
       if (name === "local") {
@@ -128,15 +138,16 @@ export async function chat(system, user, cfg) {
         if (text.trim()) return { text, provider: `local (${model})` };
         errors.push(`local (${model}): returned empty text (context overflow? check the loaded context length in LM Studio)`);
       } else if (name === "gemini" && cfg.gemini.apiKey) {
-        const text = await openAiCompatible(cfg.gemini, system, user, cfg.timeoutMs || 120000);
-        if (text.trim()) return { text, provider: `gemini (${cfg.gemini.model})` };
+        const model = cfg.role === "writer" ? cfg.gemini.writerModel : cfg.gemini.model;
+        const text = await openAiCompatible({ ...cfg.gemini, model }, system, user, cfg.timeoutMs || 120000, opts);
+        if (text.trim()) return { text, provider: `gemini (${model})` };
         errors.push("gemini: returned empty text");
       } else if (name === "deepseek" && cfg.deepseek.apiKey) {
-        return { text: await openAiCompatible(cfg.deepseek, system, user, cfg.timeoutMs || 60000), provider: "deepseek" };
+        return { text: await openAiCompatible(cfg.deepseek, system, user, cfg.timeoutMs || 60000, opts), provider: "deepseek" };
       } else if (name === "anthropic" && cfg.anthropic.apiKey) {
         return { text: await anthropic(cfg.anthropic, system, user, cfg.timeoutMs || 60000), provider: "anthropic" };
       } else if (name === "openai" && cfg.openai.apiKey) {
-        return { text: await openAiCompatible(cfg.openai, system, user, cfg.timeoutMs || 60000), provider: "openai" };
+        return { text: await openAiCompatible(cfg.openai, system, user, cfg.timeoutMs || 60000, opts), provider: "openai" };
       }
     } catch (err) {
       errors.push(`${name}: ${err.message}`);
