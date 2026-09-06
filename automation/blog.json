@@ -204,19 +204,23 @@
     },
     {
       "slug": "courtney-clenney-the-case-explained",
-      "title": "Courtney Clenney: The Case Explained",
+      "title": "Courtney Clenney: The Case Explained, and How It Ended",
       "date": "2025-10-02",
       "category": "court",
       "categoryLabel": "Court",
       "image": "images/clenney-bail.jpg",
       "author": "Cory",
       "featured": false,
-      "excerpt": "A case that turns on a single, contested question the court will have to weigh. Here is the framework, without taking sides before a verdict.",
+      "excerpt": "Four years after Christian Obumseli died in a Miami condo, there was no trial. Clenney pleaded guilty to manslaughter with a deadly weapon on August 10, 2026. Here is the whole case, start to finish.",
       "body": [
-        "The case against Courtney Clenney centers on the death of her boyfriend and the competing accounts of what happened. As with any pending matter, she is presumed innocent unless and until proven otherwise.",
-        "Much of the legal argument is expected to turn on the question of self-defense, and on how the available evidence is interpreted by each side. Those are questions for a court, not for public opinion.",
-        "We lay out the timeline and the issues in dispute, and leave the conclusions where they belong: with the people who hear all of the evidence."
-      ]
+        "Update, September 5, 2026: this case is over. On August 10, 2026, Courtney Clenney pleaded guilty in Miami-Dade court to manslaughter with a deadly weapon, a step down from the second-degree murder charge she had faced since 2022. Judge Andrea Ricker Wolfson sentenced her to six years in prison with credit for the roughly four years she has already spent in jail, followed by five years of probation, mandatory mental health and substance abuse treatment, and a condition that she cannot profit from the case. Her attorneys expect her to be released in under two years. The original article follows, with the timeline filled in.",
+        "The case against Courtney Clenney centered on the death of her boyfriend, Christian Toby Obumseli, 27, on April 3, 2022, in the Edgewater condo the couple shared. Clenney called 911. Obumseli had a single stab wound to the chest and died at the hospital. Clenney, an OnlyFans creator known online as Courtney Tailor with more than two million Instagram followers, said she acted in self-defense and that she threw the knife from about ten feet away.",
+        "Prosecutors did not accept that account. The medical examiner described the wound as a forceful downward thrust rather than a throw. Surveillance video from February 21, 2022, six weeks before the killing, showed Clenney hitting Obumseli inside an elevator in their building. Clenney was arrested in August 2022 at a rehabilitation facility in Hawaii, charged with second-degree murder, and held without bond in Miami for the four years that followed.",
+        "The road to trial was long. Clenney’s parents were charged in 2024 with illegally accessing Obumseli’s laptop; those charges were later dropped. Trial dates were set and pushed as both sides fought over evidence, including whether the elevator footage and Clenney’s explicit content could be shown to a jury. In late July 2026, with a trial weeks away, the two sides announced a plea agreement.",
+        "Obumseli’s family said the guilty plea and acceptance of responsibility would begin the process of closure. Clenney’s attorney called the plea a recognition that her self-defense claim was credible enough to avoid a murder conviction. Both things can be read from the same outcome, which is why this case will keep being argued long after her release.",
+        "CrimeTimeSnacks covered this case from the first week. The full episode on Courtney Clenney, from the 911 call to the plea, is in production now."
+      ],
+      "updated": "2026-09-05"
     },
     {
       "slug": "bryan-kohberger-from-arrest-to-courtroom",
