@@ -62,15 +62,7 @@
 <div class="row2">
   <div class="nav"><button id="home" title="Back to the studio">&#8962;</button><button id="back" title="Back">&#8249;</button><button id="fwd" title="Forward">&#8250;</button><button id="reload" title="Reload">&#8635;</button></div>
   <div class="url"><input id="url" placeholder="Search or enter address" spellcheck="false"></div>
-  <div class="marks">
-    <button class="ig" data-url="https://www.instagram.com/">Instagram</button>
-    <button class="ig" data-url="https://www.instagram.com/create/select/">New post</button>
-    <button class="grok" data-url="https://grok.com/imagine">Grok Imagine</button>
-    <button data-url="https://www.fbi.gov/wanted">FBI Wanted</button>
-    <button data-url="https://www.courtlistener.com/">CourtListener</button>
-    <button data-url="https://en.wikipedia.org/">Wikipedia</button>
-    <button data-url="https://thezodiacarchive.com/">Zodiac Archive</button>
-  </div>
+  <select class="t" id="sites" aria-label="Sites"><option value="">Sites</option><option value="https://www.instagram.com/">Instagram</option><option value="https://www.instagram.com/create/select/">Instagram: new post</option><option value="https://grok.com/imagine">Grok Imagine</option><option value="https://www.fbi.gov/wanted">FBI Wanted</option><option value="https://www.courtlistener.com/">CourtListener</option><option value="https://en.wikipedia.org/">Wikipedia</option><option value="https://thezodiacarchive.com/">Zodiac Archive</option><option value="https://www.crimetimesnacks.com/">crimetimesnacks.com</option></select>
   <label class="k" for="target">Episode</label><select class="t" id="target"><option value="">latest</option></select>
 </div>
 <div class="gen" id="gen">
@@ -112,7 +104,7 @@ $("#reload").addEventListener("click", () => window.shell.send("reload"));
 $("#url").addEventListener("keydown", (e) => { if (e.key === "Enter") window.shell.send("navigate", { url: $("#url").value }); if (e.key === "Escape") $("#url").blur(); });
 $("#ws-ct").addEventListener("click", () => window.shell.send("workspace", { name: "crimetime" }));
 $("#ws-ig").addEventListener("click", () => window.shell.send("workspace", { name: "instagram" }));
-document.querySelectorAll(".marks [data-url]").forEach((b) => b.addEventListener("click", () => window.shell.send("newTab", { url: b.dataset.url })));
+$("#sites").addEventListener("change", () => { if ($("#sites").value) { window.shell.send("newTab", { url: $("#sites").value }); $("#sites").value = ""; } });
 
 async function loadDrafts() {
   const list = await window.shell.send("drafts");
