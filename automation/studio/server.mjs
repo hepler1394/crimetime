@@ -26,11 +26,18 @@ const DRAFTS = join(HERE, "drafts");
 const MUSIC = join(HERE, "music");
 const VOICE = join(HERE, "voice");
 const PORT = parseInt(process.env.STUDIO_PORT || "4177", 10);
+const POSTS = join(HERE, "posts");
+const IG_STUDIO = process.env.IG_STUDIO || "D:/Dev/GitHub/ig-studio"; // the Instagram pipeline repo (scripts/, content/queue.json, out/)
 const HOST = "127.0.0.1";
 
 const MIME = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".json": "application/json; charset=utf-8", ".md": "text/markdown; charset=utf-8", ".mp3": "audio/mpeg", ".wav": "audio/wav", ".webm": "audio/webm", ".m4a": "audio/mp4", ".ogg": "audio/ogg", ".mp4": "video/mp4", ".jpg": "image/jpeg", ".png": "image/png", ".txt": "text/plain; charset=utf-8", ".svg": "image/svg+xml" };
 const json = (res, code, body) => { res.writeHead(code, { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" }); res.end(JSON.stringify(body)); };
-const readBody = (req) => new Promise((resolve) => { let b = ""; req.on("data", (c) => (b += c)); req.on("end", () => { try { resolve(b ? JSON.parse(b) : {}); } catch { resolve({}); } }); });
+// JSON bodies over 1 MB are discarded past the limit (the request still completes, so the
+// client gets a clean 4xx from the route instead of a dropped connection).
+const readBody = (req) => new Promise((resolve) => { let b = ""; let over = false; req.on("data", (c) => { if (over) return; b += c; if (b.length > 1_000_000) { over = true; b = ""; } }); req.on("end", () => { if (over) return resolve({}); try { resolve(b ? JSON.parse(b) : {}); } catch { resolve({}); } }); req.on("error", () => resolve({})); });
+// Files the studio may serve from the repo root through /site/: public assets only. Never automation/, never dotfiles.
+const SITE_DIRS = ["images", "css", "js", "audio", "videos"];
+const isHidden = (rel) => rel.split(/[\\/]/).some((seg) => seg.startsWith("."));
 const readJson = async (p, fb) => { try { return JSON.parse(await readFile(p, "utf8")); } catch { return fb; } };
 const exists = async (p) => { try { await access(p); return true; } catch { return false; } };
 const safeId = (s) => /^[a-z0-9][a-z0-9-]{0,120}$/.test(s || "");
@@ -60,16 +67,27 @@ const ACTIONS = {
   watch:    (a) => ["case-watch.mjs", ...(a.case ? ["--case", a.case] : []), "--json"],
   generate: (a) => ["gen-image.mjs", "--draft", a.id, "--prompt", String(a.prompt || ""), ...(a.kind === "video" ? ["--video", "--seconds", String(a.seconds || 8)] : []), ...(a.model ? ["--model", a.model] : []), ...(a.ref ? ["--ref", a.ref] : []), "--json"],
   synccases:() => ["community/sync-cases.mjs", "--json"],
+  "post-render": (a) => ["social-post.mjs", a.id, "--json"],
+  "post-new":    (a) => ["social-post.mjs", "--new", String(a.title || "untitled"), "--json"],
+  // Instagram pipeline (ig-studio). argv is relative to that repo.
+  "ig-render":    (a) => ({ cwd: IG_STUDIO, argv: ["scripts/render.mjs", ...(a.ids || [])] }),
+  "ig-reel":      (a) => ({ cwd: IG_STUDIO, argv: ["scripts/reel.mjs", a.spec || "reel-01.json"] }),
+  "ig-preflight": () => ({ cwd: IG_STUDIO, argv: ["scripts/preflight.mjs"] }),
+  "ig-capture":   (a) => ({ cwd: IG_STUDIO, argv: ["scripts/capture.mjs", ...(a.slugs || [])] }),
+  "ig-board":     () => ({ cwd: IG_STUDIO, argv: ["scripts/board.mjs"] }),
+  "ig-facts":     () => ({ cwd: IG_STUDIO, argv: ["scripts/facts.mjs"] }),
 };
 function startJob(action, a) {
-  const argv = ACTIONS[action](a);
+  const spec = ACTIONS[action](a);
+  const cwd = Array.isArray(spec) ? ROOT : spec.cwd;
+  const argv = Array.isArray(spec) ? [join(AUTO, spec[0]), ...spec.slice(1)] : [join(spec.cwd, spec.argv[0]), ...spec.argv.slice(1)];
   const id = `j${++jobSeq}`;
   const job = { id, action, draft: a.id || null, started: Date.now(), done: false, code: null, log: "", result: null };
   jobs.set(id, job);
   // detached: a five-hour voice render must outlive a studio server restart. The
   // script updates its draft's episode.json itself, so the result is never lost
   // even if this process (and its log buffer) goes away.
-  const child = spawn(process.execPath, [join(AUTO, argv[0]), ...argv.slice(1)], { cwd: ROOT, windowsHide: true, detached: true, env: { ...process.env, FORCE_COLOR: "0", PYTHONIOENCODING: "utf-8" } });
+  const child = spawn(process.execPath, argv, { cwd, windowsHide: true, detached: true, env: { ...process.env, FORCE_COLOR: "0", PYTHONIOENCODING: "utf-8" } });
   child.unref();
   const onData = (c) => { job.log += c.toString(); if (job.log.length > 200000) job.log = job.log.slice(-150000); };
   child.stdout.on("data", onData); child.stderr.on("data", onData);
@@ -177,14 +195,132 @@ function saveUpload(req, file, max = 400 * 1024 * 1024) {
 }
 
 /* -------------------------------------------------------------- server */
+// Same-origin gate. The server listens on loopback only, but any web page in
+// the user's browser can still fire a request at 127.0.0.1:4177. Two rules:
+//  * the Host header must be ours (defeats DNS rebinding);
+//  * anything that changes state (non-GET) must carry the X-CTS header, which a
+//    cross-origin page cannot add without a CORS preflight that we never grant,
+//    and its Origin (when present) must be ours or the desktop shell's.
+const OWN_ORIGINS = new Set([`http://${HOST}:${PORT}`, `http://localhost:${PORT}`]);
+function gate(req, res) {
+  const host = (req.headers.host || "").toLowerCase();
+  if (host !== `${HOST}:${PORT}` && host !== `localhost:${PORT}`) { json(res, 421, { error: "wrong host" }); return false; }
+  if (req.method !== "GET" && req.method !== "HEAD") {
+    const origin = req.headers.origin;
+    if (origin && !OWN_ORIGINS.has(origin) && !/^(cts-shell|cts-file|file):\/\//.test(origin)) { json(res, 403, { error: "cross-origin write refused" }); return false; }
+    if (req.headers["x-cts"] !== "1") { json(res, 403, { error: "missing X-CTS header" }); return false; }
+  }
+  return true;
+}
+const SECURITY_HEADERS = {
+  "X-Content-Type-Options": "nosniff", "X-Frame-Options": "DENY", "Referrer-Policy": "no-referrer",
+  "Content-Security-Policy": "default-src 'self'; img-src 'self' data: blob:; media-src 'self' blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self' cts-shell:; frame-ancestors 'none'",
+};
+
 const server = createServer(async (req, res) => {
   const url = new URL(req.url, `http://${HOST}`);
   const p = url.pathname;
+  if (!gate(req, res)) return;
   try {
     if (p === "/" || p === "/index.html") {
       const html = await readFile(join(HERE, "studio.html"));
-      res.writeHead(200, { "Content-Type": MIME[".html"], "Cache-Control": "no-store" }); return res.end(html);
+      res.writeHead(200, { "Content-Type": MIME[".html"], "Cache-Control": "no-store", ...SECURITY_HEADERS }); return res.end(html);
     }
+    if (p === "/api/posts") {
+      const ids = (await readdir(POSTS, { withFileTypes: true }).catch(() => [])).filter((d) => d.isDirectory()).map((d) => d.name).sort().reverse();
+      const posts = [];
+      for (const id of ids) {
+        const spec = await readJson(join(POSTS, id, "post.json"), null); if (!spec) continue;
+        const names = await readdir(join(POSTS, id)).catch(() => []);
+        posts.push({ id, title: spec.title || id, status: spec.status || "draft", created: spec.created, rendered: spec.rendered || null, case: spec.case || null, caption: spec.caption || "", slides: (spec.slides || []).length,
+          files: names.filter((n) => /^slide-\d+\.jpg$/.test(n)).sort((x, y) => parseInt(x.slice(6)) - parseInt(y.slice(6))), dir: join(POSTS, id) });
+      }
+      return json(res, 200, posts);
+    }
+    if (p.startsWith("/api/post/")) {
+      const [, , , id, sub] = p.split("/");
+      if (!safeId(id)) return json(res, 400, { error: "bad id" });
+      const dir = join(POSTS, id);
+      if (!(await exists(join(dir, "post.json")))) return json(res, 404, { error: "no such post" });
+      if (sub === "file") {
+        const name = url.searchParams.get("name") || "";
+        if (!safeName(name) || isHidden(name)) return json(res, 400, { error: "bad name" });
+        const file = normalize(join(dir, name)); if (!file.startsWith(normalize(dir))) return json(res, 400, { error: "bad path" });
+        const st = await stat(file).catch(() => null); if (!st) return json(res, 404, { error: "no such file" });
+        return streamFile(req, res, file, st);
+      }
+      if (sub === "spec" && req.method === "GET") return json(res, 200, await readJson(join(dir, "post.json"), {}));
+      if (sub === "spec" && req.method === "PUT") {
+        const b = await readBody(req);
+        if (!Array.isArray(b.slides) || !b.slides.length) return json(res, 400, { error: "slides required" });
+        const cur = await readJson(join(dir, "post.json"), {});
+        const next = { ...cur, title: String(b.title || cur.title || id).slice(0, 200), caption: String(b.caption ?? cur.caption ?? "").slice(0, 2200), slides: b.slides.slice(0, 10), status: cur.status || "draft" };
+        await writeFile(join(dir, "post.json"), JSON.stringify(next, null, 2) + "\n", "utf8");
+        return json(res, 200, { ok: true });
+      }
+      if (sub === "status" && req.method === "POST") {
+        const b = await readBody(req);
+        if (!["draft", "approved", "posted", "rejected"].includes(b.status)) return json(res, 400, { error: "status" });
+        const cur = await readJson(join(dir, "post.json"), {}); cur.status = b.status; if (b.status === "posted") cur.postedAt = new Date().toISOString();
+        await writeFile(join(dir, "post.json"), JSON.stringify(cur, null, 2) + "\n", "utf8");
+        return json(res, 200, { ok: true });
+      }
+      if (sub === "upload" && req.method === "POST") {
+        const name = url.searchParams.get("name") || "";
+        if (!safeName(name) || isHidden(name) || !/\.(jpe?g|png|webp|mp4)$/i.test(name)) return json(res, 400, { error: "image or mp4 name" });
+        const chunks = []; let size = 0;
+        await new Promise((ok, bad) => { req.on("data", (c) => { size += c.length; if (size > 200_000_000) { req.destroy(); bad(new Error("too large")); } chunks.push(c); }); req.on("end", ok); req.on("error", bad); }).catch((e) => json(res, 413, { error: e.message }));
+        if (res.writableEnded) return;
+        await writeFile(join(dir, name), Buffer.concat(chunks));
+        return json(res, 200, { ok: true, name });
+      }
+      if (!sub && req.method === "DELETE") { await rm(dir, { recursive: true, force: true }); return json(res, 200, { ok: true }); }
+      return json(res, 404, { error: "unknown post route" });
+    }
+    if (p === "/instagram") {
+      const html = await readFile(join(HERE, "instagram.html"));
+      res.writeHead(200, { "Content-Type": MIME[".html"], "Cache-Control": "no-store", ...SECURITY_HEADERS }); return res.end(html);
+    }
+    if (p === "/api/ig/queue") {
+      const q = await readJson(join(IG_STUDIO, "content", "queue.json"), { posts: [] });
+      const outNames = await readdir(join(IG_STUDIO, "out")).catch(() => []);
+      const posts = (q.posts || []).map((x) => ({ id: x.id, type: x.type, project: x.project, headline: (x.headline || "").replace(/<br\s*\/?>/g, " "), sub: x.sub || "", domain: x.domain || "", status: x.status || "draft", caption: x.caption || "", render: outNames.find((n) => n.startsWith(`${x.id}.`) && /\.(jpe?g|png)$/i.test(n)) || null, rejectedReason: x.rejectedReason || "" }));
+      const renders = outNames.filter((n) => /\.(jpe?g|png|mp4)$/i.test(n)).map((n) => ({ name: n, path: join(IG_STUDIO, "out", n) }));
+      return json(res, 200, { batch: q.batch, rules: q._rules || [], posts, renders, outDir: join(IG_STUDIO, "out") });
+    }
+    if (p === "/api/ig/file") {
+      const name = url.searchParams.get("name") || "";
+      if (!safeName(name) || isHidden(name)) return json(res, 400, { error: "bad name" });
+      const file = normalize(join(IG_STUDIO, "out", name)); if (!file.startsWith(normalize(join(IG_STUDIO, "out")))) return json(res, 400, { error: "bad path" });
+      const st = await stat(file).catch(() => null); if (!st) return json(res, 404, { error: "no such file" });
+      return streamFile(req, res, file, st);
+    }
+    if (p === "/api/ig/status" && req.method === "POST") {
+      const b = await readBody(req);
+      if (!safeName(b.id || "") || !["draft", "approved", "posted", "rejected"].includes(b.status)) return json(res, 400, { error: "id + status (draft|approved|posted|rejected)" });
+      const qp = join(IG_STUDIO, "content", "queue.json"); const q = await readJson(qp, null); if (!q) return json(res, 404, { error: "no queue" });
+      const post = (q.posts || []).find((x) => x.id === b.id); if (!post) return json(res, 404, { error: "no such post" });
+      post.status = b.status; if (b.status === "posted") post.postedAt = new Date().toISOString(); if (typeof b.reason === "string") post.rejectedReason = b.reason;
+      await writeFile(qp, JSON.stringify(q, null, 2) + "\n", "utf8");
+      return json(res, 200, { ok: true });
+    }
+    if (p === "/api/ig/caption" && req.method === "POST") {
+      const b = await readBody(req);
+      if (!safeName(b.id || "")) return json(res, 400, { error: "id" });
+      const qp = join(IG_STUDIO, "content", "queue.json"); const q = await readJson(qp, null); if (!q) return json(res, 404, { error: "no queue" });
+      const post = (q.posts || []).find((x) => x.id === b.id); if (!post) return json(res, 404, { error: "no such post" });
+      post.caption = String(b.caption || "").slice(0, 2200);
+      await writeFile(qp, JSON.stringify(q, null, 2) + "\n", "utf8");
+      return json(res, 200, { ok: true });
+    }
+    if (p === "/api/community/digest-test" && req.method === "POST") {
+      const b = await readBody(req);
+      const to = String(b.to || "").toLowerCase(); if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(to)) return json(res, 400, { error: "valid email" });
+      const site = (process.env.SITE_URL_PUBLIC || "https://www.crimetimesnacks.com").replace(/\/$/, "");
+      try { const r = await fetch(`${site}/api/community/digest?key=${encodeURIComponent(process.env.CRON_SECRET || "")}&to=${encodeURIComponent(to)}${b.dry ? "&dry=1" : ""}`); return json(res, r.status, await r.json()); }
+      catch (e) { return json(res, 502, { error: e.message }); }
+    }
+
     if (p === "/api/health") return json(res, 200, await health());
     if (p === "/api/drafts") return json(res, 200, await listDrafts());
 
@@ -262,7 +398,7 @@ const server = createServer(async (req, res) => {
       }
       if (sub === "file") {
         const name = url.searchParams.get("name") || "";
-        if (!safeName(name)) return json(res, 400, { error: "bad name" });
+        if (!safeName(name) || isHidden(name)) return json(res, 400, { error: "bad name" });
         const file = normalize(join(dir, name));
         if (!file.startsWith(normalize(DRAFTS))) return json(res, 400, { error: "bad path" });
         if (req.method === "DELETE") {
@@ -309,7 +445,7 @@ const server = createServer(async (req, res) => {
           return json(res, 200, { ok: true, name, size });
         }
         if (sub === "file") {
-          const name = url.searchParams.get("name") || ""; if (!safeName(name)) return json(res, 400, { error: "bad name" });
+          const name = url.searchParams.get("name") || ""; if (!safeName(name) || isHidden(name)) return json(res, 400, { error: "bad name" });
           const file = normalize(join(pdir, name)); if (!file.startsWith(normalize(PROJECTS))) return json(res, 400, { error: "bad path" });
           if (req.method === "DELETE") { if (/^(project\.json|notes\.md)$/.test(name)) return json(res, 400, { error: "not that one" }); await unlink(file).catch(() => {}); return json(res, 200, { ok: true }); }
           const st = await stat(file).catch(() => null); if (!st) return json(res, 404, { error: "no such file" });
@@ -386,9 +522,10 @@ const server = createServer(async (req, res) => {
       spawn("explorer.exe", [target], { detached: true, stdio: "ignore" }).unref(); return json(res, 200, { ok: true });
     }
     if (p.startsWith("/site/")) {
-      const rel = normalize(p.slice("/site/".length));
+      const rel = normalize(decodeURIComponent(p.slice("/site/".length)));
       const file = join(ROOT, rel);
-      if (!file.startsWith(ROOT) || rel.includes("..")) return json(res, 400, { error: "bad path" });
+      const top = rel.split(/[\\/]/)[0];
+      if (!file.startsWith(ROOT) || rel.includes("..") || !SITE_DIRS.includes(top) || isHidden(rel)) return json(res, 403, { error: "not served" });
       const st = await stat(file).catch(() => null); if (!st?.isFile()) return json(res, 404, { error: "nope" });
       return streamFile(req, res, file, st);
     }
@@ -400,5 +537,5 @@ const server = createServer(async (req, res) => {
 
 server.listen(PORT, HOST, () => {
   console.log(`CrimeTimeSnacks Studio  http://${HOST}:${PORT}`);
-  console.log("Local only. Ctrl+C to stop.");
+  console.log("Loopback only; state changes need the X-CTS header from a same-origin page. Ctrl+C to stop.");
 });

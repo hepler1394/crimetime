@@ -55,3 +55,8 @@ automation/studio/research/
 automation/.env.community
 studio-shell/node_modules/
 studio-shell/profile/
+
+# Instagram post renders regenerate from post.json (node automation/social-post.mjs <id>)
+automation/studio/posts/*/slide-*.jpg
+automation/studio/posts/*/bg-*.png
+automation/studio/posts/*/*.mp4

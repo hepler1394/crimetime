@@ -49,7 +49,7 @@ async function ensureStudio() {
 }
 function studioApi(method, p, body, raw) {
   return new Promise((resolve, reject) => {
-    const req = http.request(new URL(p, STUDIO_URL), { method, headers: raw ? { "Content-Type": "application/octet-stream", "Content-Length": raw.length } : { "Content-Type": "application/json" } }, (res) => { let s = ""; res.on("data", (c) => (s += c)); res.on("end", () => { try { resolve(JSON.parse(s)); } catch { resolve(s); } }); });
+    const req = http.request(new URL(p, STUDIO_URL), { method, headers: { "X-CTS": "1", ...(raw ? { "Content-Type": "application/octet-stream", "Content-Length": raw.length } : { "Content-Type": "application/json" }) } }, (res) => { let s = ""; res.on("data", (c) => (s += c)); res.on("end", () => { try { resolve(JSON.parse(s)); } catch { resolve(s); } }); });
     req.on("error", reject);
     if (raw) req.end(raw); else req.end(body ? JSON.stringify(body) : undefined);
   });
@@ -92,7 +92,8 @@ function newTab(url = "https://www.instagram.com/", activate = true, ws = worksp
   wc.on("did-stop-loading", () => { t.loading = false; t.url = wc.getURL(); pushTabs(); });
   wc.on("did-navigate", (_e, u) => { t.url = u; pushTabs(); });
   wc.on("did-navigate-in-page", (_e, u) => { t.url = u; pushTabs(); });
-  wc.setWindowOpenHandler(({ url: u }) => { newTab(u, true, t.ws); return { action: "deny" }; });
+  wc.setWindowOpenHandler(({ url: u }) => { if (/^https?:/.test(u)) newTab(u, true, t.ws); return { action: "deny" }; });
+  wc.on("will-navigate", (e, u) => { if (!/^https?:/.test(u)) e.preventDefault(); });
   wc.on("context-menu", async (_e, params) => {
     const items = [];
     // Research projects: save this page as a PDF, or the selection, into any project.
@@ -189,10 +190,13 @@ async function saveUrlToProject(url, wc, pid) {
 // chosen: Chromium's file-chooser dialog is intercepted (CDP) and answered with
 // the path, so the first "Select from computer" click lands on your file. The
 // caption goes to the clipboard. You set the crop (9:16 for reels) and Share.
+// `file` may be one path or several joined with "|" (a carousel: slides in order).
 async function postToInstagram(file, captionFile) {
-  if (!file || !fs.existsSync(file) || !allowedRoot(file)) return toast("Post: file not found.", true);
+  const files = String(file || "").split("|").map((f) => f.trim()).filter(Boolean);
+  if (!files.length || files.some((f) => !fs.existsSync(f) || !allowedRoot(f))) return toast("Post: file not found.", true);
+  file = files[0];
   let caption = "";
-  if (captionFile && fs.existsSync(captionFile)) caption = fs.readFileSync(captionFile, "utf8").trim();
+  if (captionFile && fs.existsSync(captionFile) && allowedRoot(captionFile)) caption = fs.readFileSync(captionFile, "utf8").trim();
   if (caption) clipboard.writeText(caption);
   const { wc } = newTab("https://www.instagram.com/create/select/", true, "instagram");
   try {
@@ -203,12 +207,12 @@ async function postToInstagram(file, captionFile) {
     wc.debugger.on("message", async (_e, method, params) => {
       if (method === "Page.fileChooserOpened" && !done) {
         done = true;
-        try { await wc.debugger.sendCommand("DOM.setFileInputFiles", { files: [file], backendNodeId: params.backendNodeId }); toast(`Attached ${path.basename(file)}${caption ? ". Caption is on your clipboard." : ""} Set the crop, then Share.`); }
+        try { await wc.debugger.sendCommand("DOM.setFileInputFiles", { files, backendNodeId: params.backendNodeId }); toast(`Attached ${files.length > 1 ? `${files.length} slides` : path.basename(file)}${caption ? ". Caption is on your clipboard." : ""} Set the crop, then Share.`); }
         catch (e) { toast(`Could not attach the file: ${e.message}`, true); }
         try { await wc.debugger.sendCommand("Page.setInterceptFileChooserDialog", { enabled: false }); } catch { /* fine */ }
       }
     });
-    toast(`Instagram opening. Click "Select from computer" and ${path.basename(file)} is attached for you.${caption ? " Caption copied." : ""}`);
+    toast(`Instagram opening. Click "Select from computer" and ${files.length > 1 ? `${files.length} slides are` : `${path.basename(file)} is`} attached for you.${caption ? " Caption copied." : ""}`);
   } catch (e) { toast(`Post: ${e.message}. Drag the file in by hand.`, true); osShell.showItemInFolder(file); }
 }
 
@@ -223,22 +227,33 @@ function igFiles() {
     }).sort((x, y) => y.mtime - x.mtime);
   } catch { return []; }
 }
+// Only pages we ship may drive the shell: the Instagram workspace (file://) and
+// the studio (127.0.0.1:4177). A web site open in a tab gets 403, so a hostile
+// page cannot trigger Post, open folders, or read local files.
+function ownPage(req) {
+  const from = req.headers.get("origin") || req.headers.get("referer") || "";
+  return from === "null" || from.startsWith("file://") || from.startsWith(STUDIO_URL) || from.startsWith("cts-shell://") || from.startsWith("cts-file://");
+}
+const MEDIA_ROOTS = [path.join(IG_STUDIO, "out"), path.join(REPO, "automation", "studio", "drafts"), path.join(REPO, "automation", "studio", "projects"), path.join(REPO, "automation", "studio", "posts")].map((r) => r.replace(/\\/g, "/").toLowerCase());
+const servable = (p) => { const n = p.replace(/\\/g, "/").toLowerCase(); return MEDIA_ROOTS.some((r) => n.startsWith(r + "/")) && !n.split("/").some((seg) => seg.startsWith(".")) && /\.(jpe?g|png|gif|webp|mp4|webm|mp3|wav|m4a|pdf|txt|md)$/.test(n); };
 function shellRoute(req) {
+  if (!ownPage(req)) return new Response("forbidden", { status: 403 });
   const u = new URL(req.url); const q = (k) => u.searchParams.get(k) || "";
   const json = (o) => new Response(JSON.stringify(o), { headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" } });
   switch (u.hostname) {
     case "ig-files": return json(igFiles());
     case "reveal": { const p = q("p"); if (p && allowedRoot(p)) osShell.showItemInFolder(p); return json({ ok: true }); }
     case "post": { postToInstagram(q("p"), q("c")); return json({ ok: true }); }
-    case "open": { const p = q("p"); if (p && allowedRoot(p)) osShell.openPath(p); return json({ ok: true }); }
+    case "open": { const p = q("p"); if (p && allowedRoot(p) && fs.existsSync(p) && fs.statSync(p).isDirectory()) osShell.openPath(p); return json({ ok: true }); }
     case "tab": { const url = q("url"); if (/^https?:\/\//.test(url)) newTab(url, true, q("ws") || workspace); return json({ ok: true }); }
     case "ping": return json({ ok: true, shell: true });
     default: return new Response("not found", { status: 404 });
   }
 }
 function fileRoute(req) {
+  if (!ownPage(req)) return new Response("forbidden", { status: 403 });
   const p = new URL(req.url).searchParams.get("p") || "";
-  if (!p || !allowedRoot(p)) return new Response("forbidden", { status: 403 });
+  if (!p || !servable(p)) return new Response("forbidden", { status: 403 });
   return net.fetch(`file:///${p.replace(/\\/g, "/")}`);
 }
 
@@ -251,7 +266,7 @@ function createWindow() {
   win.contentView.addChildView(studioView); win.contentView.addChildView(igView); win.contentView.addChildView(chromeView);
   chromeView.webContents.loadFile(path.join(__dirname, "chrome.html"));
   studioView.webContents.loadURL(STUDIO_URL);
-  igView.webContents.loadFile(path.join(__dirname, "ig.html"));
+  igView.webContents.loadURL(`${STUDIO_URL}/instagram`); // served by the studio server, same origin as the studio API
   igView.webContents.setWindowOpenHandler(({ url }) => { newTab(url, true, "instagram"); return { action: "deny" }; });
   studioView.webContents.setWindowOpenHandler(({ url }) => { if (url.startsWith(STUDIO_URL)) return { action: "allow" }; newTab(url, true, "crimetime"); return { action: "deny" }; });
   win.on("resize", layout); win.on("maximize", layout); win.on("unmaximize", layout);

@@ -47,7 +47,7 @@ if (!video) {
   if (ref && dir) {
     try { const buf = await readFile(join(dir, ref)); parts.unshift({ inline_data: { mime_type: /\.png$/i.test(ref) ? "image/png" : "image/jpeg", data: buf.toString("base64") } }); parts[1].text = `Use the attached image as the style and composition reference. ${parts[1].text}`; } catch { die("ref", `Reference not found in the folder: ${ref}`); }
   }
-  const r = await api(`models/${model}:generateContent`, { contents: [{ parts }], generationConfig: { responseModalities: ["IMAGE", "TEXT"] } });
+  const r = await api(`models/${model}:generateContent`, { contents: [{ parts }], generationConfig: { responseModalities: ["IMAGE", "TEXT"], ...(opt("--aspect", null) ? { imageConfig: { aspectRatio: opt("--aspect", null) } } : {}) } });
   const j = await r.json();
   if (!r.ok) die("gemini", `${r.status} ${j.error?.message || ""}`.slice(0, 300));
   const img = (j.candidates?.[0]?.content?.parts || []).find((p) => p.inlineData || p.inline_data);

@@ -1,0 +1,46 @@
+{
+  "title": "Golden State Killer: the dishes",
+  "status": "draft",
+  "created": "2026-09-06T01:30:00.000Z",
+  "case": "golden-state-killer",
+  "caption": "He stacked dishes on the husband's back.\n\nSacramento County, late 1970s. A man in a ski mask broke into homes at night, tied up the couple inside, and balanced plates on the man's back. If he heard them rattle, he said, everyone in the house would die.\n\nHe did it in home after home. Then the attacks turned into murders down the coast. Then, in 1986, he stopped. For 32 years nobody knew his name.\n\nIn 2018 a DNA match on a genealogy website gave it to them: Joseph James DeAngelo. Former police officer. 72 years old. Still living in Citrus Heights, in the same suburbs he had terrorized.\n\nThe Golden State Killer, start to finish, is the next CrimeTimeSnacks episode. Link in bio.\n\n#truecrime #goldenstatekiller #eastarearapist #coldcase #truecrimecommunity #truecrimepodcast #sacramento #dna #crimetimesnacks",
+  "slides": [
+    {
+      "kind": "hook",
+      "eyebrow": "Case file  /  Sacramento, 1977",
+      "big": "He stacked dishes on the husband's <span class=\"r\">back.</span>",
+      "bigSize": 156,
+      "bg": "bg-house.png"
+    },
+    {
+      "kind": "text",
+      "eyebrow": "What he told them",
+      "body": [
+        "If he heard the plates rattle, he said, <span class=\"r\">everyone in the house would die.</span>",
+        "He did this in home after home across the Sacramento suburbs. Then the break-ins became murders down the California coast.",
+        "In 1986 he stopped. <span class=\"q\">For 32 years, nobody knew his name.</span>"
+      ],
+      "bodySize": 58
+    },
+    {
+      "kind": "end",
+      "eyebrow": "April 2018",
+      "body": [
+        "A DNA match on a genealogy website gave them a name.",
+        "<span class=\"r\">Joseph James DeAngelo.</span> Former police officer. 72 years old. Still living in Citrus Heights, among the streets he had terrorized."
+      ],
+      "bodySize": 56,
+      "kicker": "The Golden State Killer.<br>Full episode this week, <span class=\"r\">link in bio.</span>",
+      "foot": [
+        "@crimetimesnacks",
+        "crimetimesnacks.com"
+      ]
+    }
+  ],
+  "rendered": "2026-09-06T01:20:02.504Z",
+  "files": [
+    "slide-1.jpg",
+    "slide-2.jpg",
+    "slide-3.jpg"
+  ]
+}
