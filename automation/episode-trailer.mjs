@@ -59,7 +59,19 @@ const coldFile = names.find((n) => /^coldopen\.(mp3|wav|m4a|mp4|webm|ogg)$/i.tes
 const coldLabel = existsSync(join(dir, "coldopen.txt")) ? (await readFile(join(dir, "coldopen.txt"), "utf8")).trim().split(/\r?\n/) : [];
 // Backgrounds: generated or saved photos only. The cover and card carry their own
 // type, and type under type reads as a mistake.
-const bgs = names.filter((n) => /^(art-.*|saved-.*|test-art.*|bg-.*)\.(jpe?g|png)$/i.test(n));
+let bgs = names.filter((n) => /^(art-.*|saved-.*|test-art.*|bg-.*)\.(jpe?g|png)$/i.test(n));
+// Fewer than two photos in the folder: generate scene stills from the episode
+// (Gemini Flash Image, cents each) so every quote gets its own frame.
+if (bgs.length < 2 && process.env.GEMINI_API_KEY) {
+  const scenes = (ep.chapters || []).slice(1, 4).map((c) => c.title).filter(Boolean);
+  const prompts = scenes.length ? scenes : [ep.hook || ep.title];
+  for (const [k, sc] of prompts.slice(0, 3 - bgs.length).entries()) {
+    const name = `bg-${k + 1}`;
+    const r = spawnSync(process.execPath, [join(__dirname, "gen-image.mjs"), "--draft", id, "--name", name, "--prompt", `Scene still for a true crime episode about ${ep.caseTitle || ep.title}: ${sc}. Empty location, period-accurate, night or overcast, no people, no text.`, "--json"], { encoding: "utf8", windowsHide: true });
+    const last = (r.stdout || "").trim().split("\n").reverse().find((l) => l.startsWith("{"));
+    try { const j = JSON.parse(last || "{}"); if (j.ok) { bgs.push(j.file.split(/[\\/]/).pop()); say(`  generated ${j.file.split(/[\\/]/).pop()}`); } else say(`  background skipped: ${j.message || ""}`); } catch { /* skip */ }
+  }
+}
 const bgUrl = (n) => pathToFileURL(join(dir, n)).href;
 
 /* --------------------------------------------------------- pick lines */

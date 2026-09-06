@@ -5,20 +5,43 @@
     .venv/Scripts/python tts_clone.py --ref ... --jsonl paragraphs.jsonl --outdir tts/
 
 Reads paragraphs, synthesizes each in the reference voice, writes 24 kHz mono WAVs.
+Long inputs are split into sentence groups of about 250 characters and joined
+with a short breath: Chatterbox slows sharply (and drifts) past a few hundred
+characters, so a 400-character paragraph in one shot took over ten minutes on
+this CPU while three 130-character pieces take about two.
 The model (~2 GB) downloads from Hugging Face on first run into the HF cache.
-CPU only on this PC (AMD GPU): budget roughly 4 to 8 seconds of compute per
-second of audio, so a two minute episode takes 8 to 15 minutes. Fine for the
-weekly job; the studio shows progress per paragraph.
 """
 import argparse
 import json
+import re
 import sys
 import time
 from pathlib import Path
 
+MAX_CHARS = 250
+
 
 def log(msg):
     print(msg, flush=True)
+
+
+def chunk(text, limit=MAX_CHARS):
+    """Sentence groups under `limit` chars; a single long sentence splits on commas."""
+    sentences = re.split(r"(?<=[.!?])\s+", text.strip())
+    out, buf = [], ""
+    for s in sentences:
+        if len(s) > limit:
+            for piece in re.split(r"(?<=,)\s+", s):
+                if len(buf) + len(piece) + 1 > limit and buf:
+                    out.append(buf.strip()); buf = ""
+                buf += (" " if buf else "") + piece
+            continue
+        if len(buf) + len(s) + 1 > limit and buf:
+            out.append(buf.strip()); buf = ""
+        buf += (" " if buf else "") + s
+    if buf.strip():
+        out.append(buf.strip())
+    return out or [text]
 
 
 def main():
@@ -38,11 +61,11 @@ def main():
     from chatterbox.tts import ChatterboxTTS
 
     torch.manual_seed(a.seed)
-    torch.set_num_threads(max(1, torch.get_num_threads()))
     t0 = time.time()
     log("loading chatterbox (first run downloads the model)...")
     model = ChatterboxTTS.from_pretrained(device="cpu")
     log(f"model ready in {time.time() - t0:.0f}s, sample rate {model.sr}")
+    breath = torch.zeros(1, int(model.sr * 0.28))
 
     jobs = []
     if a.text_file:
@@ -59,11 +82,23 @@ def main():
         sys.exit("nothing to synthesize")
 
     for out, text in jobs:
+        if out.exists():
+            log(f"  {out.name}: already done, skipping")
+            continue
         t1 = time.time()
-        wav = model.generate(text, audio_prompt_path=a.ref, exaggeration=a.exaggeration, cfg_weight=a.cfg)
-        ta.save(str(out), wav, model.sr)
+        pieces = chunk(text)
+        wavs = []
+        for k, piece in enumerate(pieces):
+            torch.manual_seed(a.seed)  # same voice character for every piece
+            wavs.append(model.generate(piece, audio_prompt_path=a.ref, exaggeration=a.exaggeration, cfg_weight=a.cfg))
+            if k < len(pieces) - 1:
+                wavs.append(breath)
+        wav = torch.cat(wavs, dim=-1)
+        tmp = out.with_suffix(".part.wav")
+        ta.save(str(tmp), wav, model.sr)
+        tmp.replace(out)
         secs = wav.shape[-1] / model.sr
-        log(f"  {out.name}: {secs:.1f}s audio in {time.time() - t1:.0f}s")
+        log(f"  {out.name}: {len(pieces)} piece(s), {secs:.1f}s audio in {time.time() - t1:.0f}s")
     log("done")
 
 
