@@ -1,0 +1,46 @@
+{
+  "title": "Courtney Clenney: no trial, six years",
+  "status": "draft",
+  "created": "2026-09-06T01:45:00.000Z",
+  "case": "courtney-clenney",
+  "caption": "She said she threw the knife from across the room.\n\nMiami, April 3, 2022. Christian Toby Obumseli, 27, died from a single stab wound in the condo he shared with Courtney Clenney, an OnlyFans model with two million followers. She called 911 and said it was self-defense. Six weeks earlier, the elevator camera in their own building had caught her hitting him. The autopsy said the wound came from a forceful downward thrust, not a throw.\n\nShe was arrested that August at a rehab facility in Hawaii and charged with second-degree murder. Then four years of delays: her parents charged over his laptop, the charges dropped, trial dates set and pushed.\n\nOn August 10, 2026, there was no trial. Clenney pleaded guilty to manslaughter with a deadly weapon. Six years, with credit for the four she has already sat in jail. Five years of probation, mandatory treatment, and she cannot make a dollar off the case. Her lawyers expect her out in under two years.\n\nWe have covered this case since 2022. The full breakdown is on crimetimesnacks.com, and the episode is next. Link in bio.\n\n#courtneyclenney #christianobumseli #miami #truecrime #truecrimecommunity #truecrimepodcast #pleadeal #manslaughter #crimetimesnacks",
+  "slides": [
+    {
+      "kind": "hook",
+      "eyebrow": "Case file  /  Miami, April 3, 2022",
+      "big": "She said she threw the knife from <span class=\"r\">across the room.</span>",
+      "bigSize": 150,
+      "bg": "bg-condo.png"
+    },
+    {
+      "kind": "text",
+      "eyebrow": "What the state had",
+      "body": [
+        "Christian Toby Obumseli, 27, died from a single stab wound in the condo he shared with Courtney Clenney, an OnlyFans model with two million followers.",
+        "She called 911 and said self-defense. Six weeks earlier, the elevator camera in their own building had caught her <span class=\"r\">hitting him.</span>",
+        "The autopsy: a forceful downward thrust. <span class=\"q\">Not a throw.</span>"
+      ],
+      "bodySize": 50
+    },
+    {
+      "kind": "end",
+      "eyebrow": "August 10, 2026",
+      "body": [
+        "No trial. She pleaded guilty to <span class=\"r\">manslaughter with a deadly weapon.</span>",
+        "Six years, minus the four already served. Five years of probation. Her lawyers expect her out in under two."
+      ],
+      "bodySize": 54,
+      "kicker": "Courtney Clenney, start to finish.<br>Next episode, <span class=\"r\">link in bio.</span>",
+      "foot": [
+        "@crimetimesnacks",
+        "crimetimesnacks.com"
+      ]
+    }
+  ],
+  "rendered": "2026-09-06T01:29:08.759Z",
+  "files": [
+    "slide-1.jpg",
+    "slide-2.jpg",
+    "slide-3.jpg"
+  ]
+}
