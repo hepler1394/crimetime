@@ -214,6 +214,28 @@
   .toast.bad::before{background:var(--hot)}
   .skeleton{height:12px;border-radius:3px;background:linear-gradient(90deg,var(--panel-2),#1a1a1f,var(--panel-2));background-size:200% 100%;animation:sk 1.2s linear infinite;margin:8px 18px}
   @keyframes sk{to{background-position:-200% 0}}
+  .find{display:block;width:calc(100% - 36px);margin:0 18px 8px;background:var(--ink);border:1px solid var(--line);border-radius:4px;color:var(--white);padding:7px 10px;font:12.5px var(--body)}
+  .banner{background:#3a0b0e;color:#ffd3d5;border-bottom:1px solid var(--deep);padding:9px 22px;font-size:13px}
+  .banner code{font-family:var(--mono)}
+  .chap{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 14px}
+  .chap .lbl{font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-right:6px}
+  .chap button{background:var(--panel-2);border:1px solid var(--line);border-radius:999px;color:var(--muted);padding:4px 10px;font-size:12px;cursor:pointer}
+  .chap button:hover{color:var(--white);border-color:var(--line-2)}
+  .tx{max-height:340px;overflow:auto;border:1px solid var(--line);border-radius:4px;margin-top:10px;background:var(--ink)}
+  .tx button{display:flex;gap:12px;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);color:var(--muted);padding:7px 10px;font:13px/1.45 var(--body);cursor:pointer}
+  .tx button time{font:11.5px var(--mono);color:var(--faint);flex:none;padding-top:2px;min-width:44px}
+  .tx button:hover{color:var(--white)} .tx button.on{color:var(--white);background:rgba(229,9,20,.12)} .tx button.on time{color:var(--tape)}
+  .tx .hint{display:block;padding:10px}
+  .cold{border:1px solid var(--line);border-radius:6px;padding:14px;margin-top:16px;background:var(--panel)}
+  .cold .have{font-size:13px;color:var(--muted);margin:0 0 10px}
+  .cold .row .t{flex:1}
+  .cform{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:26px}
+  @media (max-width:900px){.cform{grid-template-columns:1fr}}
+  .cform .t{margin-bottom:8px;width:100%}
+  .cform .row .t{margin-bottom:8px}
+  .keys{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:13px;color:var(--muted)}
+  .keys kbd{font:12px var(--mono);background:var(--panel-2);border:1px solid var(--line-2);border-radius:3px;padding:1px 6px;color:var(--white)}
+  .opening{padding:40px 0;color:var(--faint);font-size:13px}
 </style>
 </head>
 <body>
@@ -232,6 +254,7 @@
     <span title="Scheduled jobs"><span class="dot" id="sig-tasks"></span>schedule</span>
   </div>
 </header>
+<div class="banner" id="offline" hidden>The studio server is not answering. Retrying every few seconds. If this stays, start it with <code>npm run studio</code>.</div>
 
 <!-- EPISODES -->
 <div class="wrap" id="sec-episodes">
@@ -241,6 +264,7 @@
       <input id="topic" placeholder="Case name, or blank for next in backlog" aria-label="Case for a new episode">
       <button class="btn red" id="btn-new" title="Research the case, then write the script">New</button>
     </div>
+    <input class="find" id="find" placeholder="Find an episode  ( / )" aria-label="Find an episode">
     <ul class="list" id="drafts"><li class="skeleton"></li><li class="skeleton"></li></ul>
     <details class="bl"><summary>Backlog <span id="backlog-count" style="color:var(--muted)"></span> &#9662;</summary><ul class="backlog" id="backlog"></ul></details>
   </aside>
@@ -274,6 +298,19 @@
   <p class="lede">People follow cases by email and get a weekly digest. Nothing reaches them unless you approve it here.</p>
   <div class="cards" id="c-cards"></div>
   <div class="row" style="margin-bottom:22px"><button class="btn" data-op="watch">Check all cases for news</button><button class="btn" data-op="synccases">Sync cases from backlog</button><a class="btn ghost" href="https://www.crimetimesnacks.com/cases.html" target="_blank" rel="noopener">Open the public Cases page</a></div>
+  <div class="cform">
+    <div class="card"><h3>Add an update by hand</h3><p class="hint" style="margin:0 0 10px">Approved on the spot; it rides the next Sunday digest to everyone following that case.</p>
+      <select class="t" id="cu-case" aria-label="Case"><option value="">Loading cases</option></select>
+      <input class="t" id="cu-title" placeholder="Headline, e.g. Sentencing set for October 14" maxlength="200" aria-label="Headline">
+      <textarea class="t" id="cu-summary" rows="3" placeholder="One or two sentences. Facts only, with the source below." maxlength="600" aria-label="Summary"></textarea>
+      <div class="row"><input class="t" id="cu-url" placeholder="Source link" style="flex:2" aria-label="Source link"><input class="t" id="cu-source" placeholder="Source name" style="flex:1" aria-label="Source name"><input class="t" id="cu-date" type="date" aria-label="Date it happened"></div>
+      <div class="row"><button class="btn red" id="cu-add">Add update</button><span class="hint" id="cu-state" style="margin:0"></span></div>
+    </div>
+    <div class="card"><h3>Test the digest</h3><p class="hint" style="margin:0 0 10px">Runs the live digest function for one address only. Dry run builds the email and sends nothing.</p>
+      <div class="row"><input class="t" id="dg-to" type="email" placeholder="you@example.com" style="flex:1" aria-label="Address"><label class="opt" style="white-space:nowrap"><input type="checkbox" id="dg-dry" checked> dry run</label></div>
+      <div class="row"><button class="btn" id="dg-send">Send test</button><span class="hint" id="dg-state" style="margin:0"></span></div>
+    </div>
+  </div>
   <h2 class="k" style="padding-left:0">Waiting for your yes or no</h2>
   <ul class="queue" id="queue"></ul>
 </div>
@@ -288,6 +325,7 @@
     <div class="card"><h3>Theme music</h3><div id="musicbox"></div></div>
     <div class="card"><h3>Scheduled jobs</h3><div class="tasks" id="tasks"></div></div>
     <div class="card"><h3>Last runs</h3><div class="cron" id="cron"></div></div>
+    <div class="card"><h3>Keyboard</h3><div class="keys"><kbd>Ctrl+S</kbd><span>save the script</span><kbd>/</kbd><span>find an episode</span><kbd>1</kbd><span>episodes</span><kbd>2</kbd><span>projects</span><kbd>3</kbd><span>community</span><kbd>4</kbd><span>settings</span><kbd>Esc</kbd><span>close the job log</span></div></div>
     <div class="card"><h3>Site actions</h3><div class="row"><button class="btn sm" data-op="sync">Sync feed</button><button class="btn sm" data-op="fbi">FBI board</button><button class="btn sm" data-op="build">Rebuild site</button><button class="btn sm" data-op="qa">Link check</button><button class="btn sm" data-op="content">Content run + push</button><button class="btn sm" data-op="weekly">Run the Monday episode job</button></div></div>
   </div>
 </div>
@@ -322,7 +360,8 @@ document.querySelectorAll(".sections button").forEach((b) => b.addEventListener(
 
 /* ------------------------------------------------------------ health */
 async function loadHealth() {
-  try { state.health = await api("/api/health"); } catch (e) { toast(`Health check failed: ${e.message}`, true); return; }
+  try { state.health = await api("/api/health"); } catch (e) { $("#offline").hidden = false; clearTimeout(state.retryT); state.retryT = setTimeout(loadHealth, 5000); return; }
+  $("#offline").hidden = true;
   const h = state.health;
   const bad = (t) => t.result && t.result !== 0 && t.result !== 267009 && t.result !== 267011;
   $("#sig-lm").className = `dot ${h.lmStudio.up || h.status ? "ok" : "warn"}`;
@@ -347,12 +386,14 @@ async function loadHealth() {
   $("#cron").innerHTML = h.cronTail.length ? h.cronTail.map((l) => `<div class="${/ERROR/.test(l) ? "e" : /OK|PUBLISHED|DONE/.test(l) ? "o" : ""}" title="${esc(l)}">${esc(l.replace(/T(\d\d:\d\d):\d\d[^\s]*/, " $1"))}</div>`).join("") : `<div>No runs logged yet.</div>`;
   $("#backlog").innerHTML = h.backlog.map((c) => `<li class="${c.used ? "used" : ""}"><button ${c.used ? "disabled" : ""} data-case="${esc(c.slug)}" title="${esc(c.angle)}">${esc(c.title)}</button><small>${esc(c.year || "")}</small></li>`).join("");
   $("#backlog-count").textContent = `${h.backlog.filter((c) => !c.used).length} left`;
+  if ($("#cu-case") && $("#cu-case").options.length <= 1) $("#cu-case").innerHTML = `<option value="">Pick the case</option>` + h.backlog.map((c) => `<option value="${esc(c.slug)}">${esc(c.title)}</option>`).join("");
   state.drafts = h.drafts;
   renderDrafts();
 }
 function renderDrafts() {
   const ul = $("#drafts");
-  ul.innerHTML = state.drafts.length ? state.drafts.map((d) => `<li><button class="draft" data-id="${esc(d.id)}" aria-current="${d.id === state.current}"><b>${esc(d.title)}</b><span>${esc(d.created?.slice(0, 10) || "")} · ${d.duration ? esc(d.duration.replace(/^00:/, "")) : `${d.scriptWords || 0} words`} <span class="pill ${esc(d.status)}">${esc(d.status)}</span></span></button></li>`).join("") : `<li style="padding:6px 10px;color:var(--faint);font-size:12.5px">Nothing in progress.</li>`;
+  const q = (state.filter || "").trim().toLowerCase(); const shown = q ? state.drafts.filter((d) => `${d.title} ${d.status} ${d.id}`.toLowerCase().includes(q)) : state.drafts;
+  ul.innerHTML = shown.length ? shown.map((d) => `<li><button class="draft" data-id="${esc(d.id)}" aria-current="${d.id === state.current}"><b>${esc(d.title)}</b><span>${esc(d.created?.slice(0, 10) || "")} · ${d.duration ? esc(d.duration.replace(/^00:/, "")) : `${d.scriptWords || 0} words`} <span class="pill ${esc(d.status)}">${esc(d.status)}</span></span></button></li>`).join("") : `<li style="padding:6px 10px;color:var(--faint);font-size:12.5px">${q ? "No episode matches." : "Nothing in progress."}</li>`;
   $("#empty").hidden = state.drafts.length > 0 || !!state.current;
   if (!state.current && state.drafts.length) openDraft(state.drafts[0].id);
   if (!state.drafts.length) $("#editor").hidden = true;
@@ -362,6 +403,7 @@ function renderDrafts() {
 async function openDraft(id) {
   if (state.dirty && !confirm("Discard unsaved edits?")) return;
   state.dirty = false; state.current = id; state.tab = null;
+  $("#empty").hidden = true; $("#editor").hidden = false; $("#editor").innerHTML = `<div class="opening">Opening the episode folder</div>`;
   try { state.ep = await api(`/api/draft/${id}`); } catch (e) { toast(e.message, true); return; }
   renderDrafts(); renderEditor();
 }
@@ -386,6 +428,8 @@ function renderEditor() {
   const engine = ep.voice?.engine || h.voice.defaultEngine || "edge";
   const takes = (ep.fileList || []).filter((x) => /\.(wav|mp3|m4a|webm|ogg|flac)$/i.test(x.name) && !/^(episode\.mp3|voice\.wav)$/.test(x.name));
   const dis = (c) => (c || runningFor || pub ? "disabled" : "");
+  const cold = (ep.fileList || []).find((x) => /^coldopen\.(mp3|wav|m4a|mp4|ogg|flac)$/i.test(x.name)) || null;
+  const coldLabel = state.coldLabel?.id === ep.id ? state.coldLabel.text : "";
 
   // what comes next, in one sentence, with one button
   let nextWhat, nextWhy, nextCta;
@@ -422,6 +466,7 @@ function renderEditor() {
     <div class="pane" id="pane-script" ${tab === "script" ? "" : "hidden"}>
       <div class="field"><label class="f" for="f-title">Title</label><input class="t" id="f-title" value="${esc(ep.title)}" ${pub ? "disabled" : ""}></div>
       <div class="field"><label class="f" for="f-hook">Hook, one line, goes on the art</label><input class="t" id="f-hook" value="${esc(ep.hook)}" ${pub ? "disabled" : ""}></div>
+      ${ep.chapters?.length ? `<div class="chap"><span class="lbl">Chapters</span>${ep.chapters.map((c, i) => `<button type="button" data-chap="${c.start}" title="${esc(c.title)}: ${c.paragraphs} paragraph${c.paragraphs === 1 ? "" : "s"}">${i + 1}. ${esc(c.title)}</button>`).join("")}</div>` : ""}
       <div class="field"><label class="f" for="f-script">Script, one paragraph per block</label><textarea class="t script" id="f-script" spellcheck="true" ${pub ? "disabled" : ""}>${esc((ep.script || []).join("\n\n"))}</textarea><div class="hint">Changing the words resets the voice and art, since they were made from the old words. Twenty minutes is about 3,200 words.</div></div>
       <div class="field"><label class="f" for="f-desc">Show notes</label><textarea class="t" id="f-desc" rows="5" ${pub ? "disabled" : ""}>${esc(ep.description)}</textarea></div>
       ${done.research ? `<div class="field"><details class="re"><summary>Research notes the script was written from</summary><pre id="research-pre">loading…</pre></details></div>` : ""}
@@ -444,7 +489,7 @@ function renderEditor() {
             <label class="opt" style="margin-top:10px"><input type="checkbox" id="v-music" ${ep.music === false ? "" : "checked"}> Mix the theme in (intro 9 s, outro 6 s)</label>
             <div class="row" style="margin-top:12px"><button class="btn red" data-run="voice" ${dis(!done.script)}>${done.voice ? "Re-make voice" : "Make voice"}</button></div>
           </div>
-          ${done.voice ? `<div class="field"><label class="f">Episode audio, ${esc(ep.duration?.replace(/^00:/, "") || "")}</label><audio controls preload="metadata" src="${f("audio")}"></audio><div class="hint">${esc(ep.voiceUsed || "")}</div></div>` : ""}
+          ${done.voice ? `<div class="field"><label class="f">Episode audio, ${esc(ep.duration?.replace(/^00:/, "") || "")}</label><audio id="ep-audio" controls preload="metadata" src="${f("audio")}"></audio><div class="hint">${esc(ep.voiceUsed || "")}</div>${ep.files.transcript ? `<div class="tx" id="tx"><span class="hint">Loading the transcript</span></div><div class="hint">Click a line to hear it. The same transcript goes on the episode page.</div>` : ""}</div>` : ""}
         </div>
         <div>
           <div class="field"><label class="f">Or record it yourself</label>
@@ -462,7 +507,7 @@ function renderEditor() {
     <div class="pane" id="pane-art" ${tab === "art" ? "" : "hidden"}>
       <div class="row" style="margin-bottom:16px"><button class="btn ${done.art ? "" : "red"}" data-run="art" ${dis(!done.script)}>${done.art ? "Re-render art" : "Render art"}</button><button class="btn ${done.art && !done.social ? "red" : ""}" data-run="social" ${dis(!done.voice || !done.art)} title="${!done.voice ? "Make the voice first" : ""}">${done.social ? "Re-cut reel" : "Build reel"}</button><span class="hint" style="margin:0">Cover 3000 square, card 1080x1350, reel still 1080x1920, then a 45 s audiogram.</span></div>
       ${done.art ? `<div class="art3"><div class="preview"><img src="${f("cover")}" alt="Cover"><div class="cap"><span>cover</span><span>3000</span></div></div><div class="preview"><img src="${f("card")}" alt="Feed card"><div class="cap"><span>card</span><span>1080x1350</span></div></div><div class="preview"><img src="${f("reelStill")}" alt="Reel still"><div class="cap"><span>reel still</span><span>1080x1920</span></div></div></div>` : `<p class="hint">No art yet.</p>`}
-      ${done.social ? `<div class="two" style="margin-top:16px">${ep.files.trailer ? `<div class="preview"><video controls preload="metadata" src="${f("trailer")}"></video><div class="cap"><span>trailer, ${ep.trailer?.seconds || ""} s${ep.trailer?.coldOpen ? ", cold open: " + esc(ep.trailer.coldOpen) : ", hook line opens"}</span><span>the post</span></div></div>` : ""}<div class="preview"><video controls preload="metadata" src="${f("reel")}"></video><div class="cap"><span>audiogram, ${ep.social?.clipSeconds || 45} s</span><span>fallback</span></div></div></div><div class="hint" style="margin-top:10px">Cold open: drop <b>coldopen.mp3</b> (or wav, m4a, mp4; public-record audio such as a 911 call, first 8 s used) and a one-line <b>coldopen.txt</b> label into the folder, then Re-cut. Without one, the hook line opens the trailer.</div>` : ""}
+      ${done.social ? `<div class="two" style="margin-top:16px">${ep.files.trailer ? `<div class="preview"><video controls preload="metadata" src="${f("trailer")}"></video><div class="cap"><span>trailer, ${ep.trailer?.seconds || ""} s${ep.trailer?.coldOpen ? ", cold open: " + esc(ep.trailer.coldOpen) : ", hook line opens"}</span><span>the post</span></div></div>` : ""}<div class="preview"><video controls preload="metadata" src="${f("reel")}"></video><div class="cap"><span>audiogram, ${ep.social?.clipSeconds || 45} s</span><span>fallback</span></div></div></div><div class="cold"><div class="f">Cold open for the trailer</div>${cold ? `<div class="have">Using <b>${esc(cold.name)}</b>${ep.trailer?.coldOpen ? `, labelled "${esc(ep.trailer.coldOpen)}"` : ""}. Re-cut the reel after changing it.</div>` : `<div class="have">No clip. The hook line opens the trailer.</div>`}<div class="row"><label class="drop" id="drop-cold" style="flex:1;margin:0">${cold ? "Replace the clip" : "Drop the clip"} (a 911 call or other public-record audio; the first 8 s are used)<input type="file" id="cold-file" accept="audio/*,video/mp4"></label><input class="t" id="cold-label" placeholder="One-line label, e.g. 911 call, April 3, 2022" value="${esc(coldLabel)}" aria-label="Cold open label"><button class="btn sm" id="cold-save">Save label</button>${cold ? `<button class="btn sm ghost" data-del="${esc(cold.name)}">Remove clip</button>` : ""}</div></div>` : ""}
     </div>
 
     <div class="pane" id="pane-publish" ${tab === "publish" ? "" : "hidden"}>
@@ -473,6 +518,7 @@ function renderEditor() {
         </ul>`
       : `<div class="row" style="margin-bottom:18px"><button class="btn red big" data-run="publish" ${canPublish ? "" : "disabled"}>Publish</button><button class="btn ghost" data-run="publish-local" ${canPublish ? "" : "disabled"}>Commit only</button></div>
         <p style="color:var(--muted);max-width:640px;line-height:1.6">Publish writes the episode page, feed.xml, the transcript and search, then commits and pushes. Vercel deploys in about a minute; Spotify and Apple read the feed within a few hours. ${canPublish ? "" : `<br><b style="color:var(--tape)">Locked:</b> ${[!done.voice && "no voice yet", !done.art && "no art yet", unchecked > 0 && `${unchecked} fact${unchecked === 1 ? "" : "s"} unchecked`].filter(Boolean).join(", ")}.`}</p>
+        <div class="field" style="margin-top:22px;max-width:320px"><label class="f" for="f-date">Publish date, on the page and in the feed</label><input class="t" id="f-date" type="date" value="${esc(ep.publishDate || new Date().toISOString().slice(0, 10))}"><div class="hint">Today by default. Set a later date to line the episode up with the Monday drop.</div></div>
         <div class="field" style="margin-top:22px"><label class="f" for="f-cap">Instagram caption (posted after publish)</label><textarea class="t" id="f-cap" rows="4">${esc(ep.instagramCaption)}</textarea></div>
         <div class="savebar"><button class="btn red" id="btn-save2" disabled>Save</button><span class="s" id="savestate2">No unsaved changes</span></div>`}
     </div>
@@ -485,7 +531,7 @@ function renderEditor() {
 
   // wiring
   document.querySelectorAll(".tabs [data-tab], .next [data-tab]").forEach((b) => b.addEventListener("click", () => { state.tab = b.dataset.tab; renderEditor(); }));
-  ["#f-title", "#f-hook", "#f-script", "#f-desc", "#f-cap", "#v-name", "#v-rate", "#v-pitch", "#v-exag", "#v-cfg"].forEach((s) => $(s)?.addEventListener("input", markDirty));
+  ["#f-title", "#f-hook", "#f-script", "#f-desc", "#f-cap", "#f-date", "#v-name", "#v-rate", "#v-pitch", "#v-exag", "#v-cfg"].forEach((s) => $(s)?.addEventListener("input", markDirty));
   $("#v-engine")?.addEventListener("change", () => { const e = $("#v-engine").value; $("#v-clone").hidden = e !== "clone"; $("#v-edge").hidden = e !== "edge"; markDirty(); });
   $("#btn-save")?.addEventListener("click", saveDraft); $("#btn-save2")?.addEventListener("click", saveDraft);
   $("#btn-folder").addEventListener("click", () => api("/api/open", { method: "POST", body: JSON.stringify({ id: ep.id }) }).catch((e) => toast(e.message, true)));
@@ -501,7 +547,29 @@ function renderEditor() {
   $("#rec-file")?.addEventListener("change", (e) => uploadRecording(e.target.files[0]));
   $("#asset-file")?.addEventListener("change", async (e) => { const fl = e.target.files[0]; if (!fl) return; try { await upload(`/api/draft/${ep.id}/upload?name=${encodeURIComponent(fl.name)}`, fl); state.ep = await api(`/api/draft/${ep.id}`); renderEditor(); toast("Added."); } catch (er) { toast(er.message, true); } });
   for (const id of ["drop", "drop-asset"]) { const d = $(`#${id}`); if (!d) continue; d.addEventListener("dragover", (e) => { e.preventDefault(); d.classList.add("over"); }); d.addEventListener("dragleave", () => d.classList.remove("over")); d.addEventListener("drop", (e) => { e.preventDefault(); d.classList.remove("over"); const fl = e.dataTransfer.files[0]; if (!fl) return; if (id === "drop") uploadRecording(fl); else { $("#asset-file").files = e.dataTransfer.files; $("#asset-file").dispatchEvent(new Event("change")); } }); }
+  document.querySelectorAll("[data-chap]").forEach((b) => b.addEventListener("click", () => jumpToParagraph(+b.dataset.chap)));
+  if (done.voice && ep.files.transcript && tab === "voice") loadTranscript(ep);
+  $("#cold-file")?.addEventListener("change", async (e) => { const fl = e.target.files[0]; if (!fl) return; const ext = (fl.name.split(".").pop() || "mp3").toLowerCase(); try { toast("Uploading the cold open"); await upload(`/api/draft/${ep.id}/upload?name=coldopen.${ext}`, fl); state.ep = await api(`/api/draft/${ep.id}`); renderEditor(); toast("Cold open saved. Re-cut the reel to use it."); } catch (er) { toast(er.message, true); } });
+  $("#cold-save")?.addEventListener("click", async () => { const text = $("#cold-label").value.trim(); try { await upload(`/api/draft/${ep.id}/upload?name=coldopen.txt`, new Blob([text + "\n"], { type: "text/plain" })); state.coldLabel = { id: ep.id, text }; toast("Label saved."); } catch (er) { toast(er.message, true); } });
+  if (tab === "art" && (ep.fileList || []).some((x) => x.name === "coldopen.txt") && state.coldLabel?.id !== ep.id) fetch(`/api/draft/${ep.id}/file?name=coldopen.txt`).then((r) => r.text()).then((t) => { state.coldLabel = { id: ep.id, text: t.trim() }; const i = $("#cold-label"); if (i) i.value = t.trim(); }).catch(() => {});
+  const dc = $("#drop-cold"); if (dc) { dc.addEventListener("dragover", (e) => { e.preventDefault(); dc.classList.add("over"); }); dc.addEventListener("dragleave", () => dc.classList.remove("over")); dc.addEventListener("drop", (e) => { e.preventDefault(); dc.classList.remove("over"); if (e.dataTransfer.files[0]) { $("#cold-file").files = e.dataTransfer.files; $("#cold-file").dispatchEvent(new Event("change")); } }); }
   if (done.research && tab === "script") fetch(`/api/draft/${ep.id}/file?name=research.md`).then((r) => r.text()).then((t) => { const pre = $("#research-pre"); if (pre) pre.textContent = t; }).catch(() => {});
+}
+function jumpToParagraph(idx) {
+  const ta = $("#f-script"); if (!ta) return;
+  const paras = ta.value.split(/\n\s*\n/); const off = paras.slice(0, idx).join("\n\n").length + (idx ? 2 : 0); const len = (paras[idx] || "").length;
+  const full = ta.value; ta.value = full.slice(0, off); ta.scrollTop = ta.scrollHeight; const top = ta.scrollTop; ta.value = full; ta.scrollTop = Math.max(0, top - 24);
+  ta.focus(); ta.setSelectionRange(off, off + len);
+}
+const mmss = (t) => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, "0")}`;
+async function loadTranscript(ep) {
+  const box = $("#tx"); const audio = $("#ep-audio"); if (!box || !audio) return;
+  let segs = [];
+  try { const j = await (await fetch(`/api/draft/${ep.id}/file?name=${encodeURIComponent(ep.files.transcript)}`)).json(); segs = j.segments || []; } catch { box.innerHTML = `<span class="hint">No transcript file yet.</span>`; return; }
+  box.innerHTML = segs.map((sg, i) => `<button type="button" data-i="${i}" data-t="${sg.start}"><time>${mmss(sg.start)}</time><span>${esc(sg.text)}</span></button>`).join("") || `<span class="hint">Empty transcript.</span>`;
+  box.querySelectorAll("[data-t]").forEach((b) => b.addEventListener("click", () => { audio.currentTime = +b.dataset.t; audio.play(); }));
+  let last = -1;
+  audio.addEventListener("timeupdate", () => { const t = audio.currentTime; let i = segs.findIndex((sg) => t >= sg.start && t < sg.end); if (i < 0) return; if (i === last) return; last = i; box.querySelectorAll(".on").forEach((x) => x.classList.remove("on")); const el = box.querySelector(`[data-i="${i}"]`); if (el) { el.classList.add("on"); el.scrollIntoView({ block: "nearest" }); } });
 }
 function markDirty() { state.dirty = true; for (const [b, s] of [["#btn-save", "#savestate"], ["#btn-save2", "#savestate2"]]) { if ($(b)) { $(b).disabled = false; $(s).textContent = "Unsaved changes"; } } }
 async function saveFacts(arr) { try { state.ep = await api(`/api/draft/${state.ep.id}`, { method: "PUT", body: JSON.stringify({ factsChecked: arr }) }); renderEditor(); } catch (e) { toast(e.message, true); } }
@@ -511,6 +579,7 @@ async function saveDraft() {
   const body = { voice: voiceSettings() };
   if ($("#f-title")) { body.title = $("#f-title").value; body.hook = $("#f-hook").value; body.description = $("#f-desc").value; }
   if ($("#f-cap")) body.instagramCaption = $("#f-cap").value;
+  if ($("#f-date")?.value) body.publishDate = $("#f-date").value;
   if ($("#f-script")) { const script = $("#f-script").value.split(/\n\s*\n/).map((s) => s.replace(/\s+/g, " ").trim()).filter(Boolean); if (script.join("\n") !== (ep.script || []).join("\n")) body.script = script; }
   try { state.ep = await api(`/api/draft/${ep.id}`, { method: "PUT", body: JSON.stringify(body) }); state.dirty = false; toast("Saved."); await loadHealth(); renderEditor(); }
   catch (e) { toast(`Save failed: ${e.message}`, true); }
@@ -644,6 +713,30 @@ $("#projects").addEventListener("click", (e) => { const b = e.target.closest("[d
 /* ------------------------------------------------------------ wiring */
 $("#btn-new").addEventListener("click", () => startJob("new", { topic: $("#topic").value.trim() || undefined, minutes: 20 }));
 $("#topic").addEventListener("keydown", (e) => { if (e.key === "Enter") $("#btn-new").click(); });
+$("#find").addEventListener("input", () => { state.filter = $("#find").value; renderDrafts(); });
+$("#cu-add").addEventListener("click", async () => {
+  const body = { case: $("#cu-case").value, title: $("#cu-title").value.trim(), summary: $("#cu-summary").value.trim(), url: $("#cu-url").value.trim(), source: $("#cu-source").value.trim(), happened_on: $("#cu-date").value };
+  if (!body.case || !body.title) { $("#cu-state").textContent = "Pick a case and write a headline."; return; }
+  $("#cu-add").disabled = true; $("#cu-state").textContent = "Saving";
+  try { await api("/api/community/add", { method: "POST", body: JSON.stringify(body) }); $("#cu-state").textContent = "Added and approved."; ["#cu-title", "#cu-summary", "#cu-url", "#cu-source"].forEach((s) => ($(s).value = "")); loadQueue(); }
+  catch (e) { $("#cu-state").textContent = e.message; }
+  $("#cu-add").disabled = false;
+});
+$("#dg-send").addEventListener("click", async () => {
+  const to = $("#dg-to").value.trim(); if (!to) { $("#dg-state").textContent = "Type the address."; return; }
+  $("#dg-send").disabled = true; $("#dg-state").textContent = "Calling the digest function";
+  try { const r = await api("/api/community/digest-test", { method: "POST", body: JSON.stringify({ to, dry: $("#dg-dry").checked }) }); $("#dg-state").textContent = r.error ? r.error : `${r.sent ?? 0} sent${r.preview?.subject ? `, subject: ${r.preview.subject}` : ""}${r.skipped ? `, ${r.skipped} skipped` : ""}`; }
+  catch (e) { $("#dg-state").textContent = e.message; }
+  $("#dg-send").disabled = false;
+});
+document.addEventListener("keydown", (e) => {
+  const inField = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement?.tagName || "");
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") { e.preventDefault(); if (state.dirty && state.ep) saveDraft(); return; }
+  if (e.key === "Escape") { $("#drawer").classList.remove("show"); if (inField) document.activeElement.blur(); return; }
+  if (inField || e.ctrlKey || e.metaKey || e.altKey) return;
+  if (e.key === "/") { e.preventDefault(); showSection("episodes"); $("#find").focus(); return; }
+  const sec = { 1: "episodes", 2: "projects", 3: "community", 4: "settings" }[e.key]; if (sec) showSection(sec);
+});
 $("#btn-first").addEventListener("click", () => startJob("new", { minutes: 20 }));
 $("#drafts").addEventListener("click", (e) => { const b = e.target.closest("[data-id]"); if (b) openDraft(b.dataset.id); });
 $("#backlog").addEventListener("click", (e) => { const b = e.target.closest("[data-case]"); if (b && !b.disabled) { $("#topic").value = b.textContent; $("#topic").focus(); } });

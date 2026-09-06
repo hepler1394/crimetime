@@ -225,3 +225,62 @@ project** (the highlighted text with source), **Save image to project**, or
 - **Turn into episode** converts the project into research notes for the
   pipeline and starts a twenty-minute script from them, so an episode can be
   written from your own reading rather than from Wikipedia.
+
+## Posts that are not episodes (studio/posts/)
+
+Instagram carousels and single cards for @crimetimesnacks that stand on their
+own: a case update, a plea, an anniversary. Each post is a folder under
+`automation/studio/posts/<date>-<slug>/` with a `post.json` spec, an optional
+background image, and the rendered `slide-N.jpg` files plus `caption.txt`.
+
+    node automation/social-post.mjs --new "Courtney Clenney: no trial"   scaffold a spec
+    node automation/social-post.mjs <post-id>                              render 1080x1350 slides + caption.txt
+    node automation/social-post.mjs --list
+
+Slide kinds: `hook` (photo background, big Bebas line, eyebrow), `text` (dark,
+body paragraphs), `end` (reveal plus the kicker and footer with the handle and
+domain). Inline `<span class="r">` turns a phrase red, `<span class="q">`
+makes it quiet. Backgrounds come from `gen-image.mjs --out <file> --aspect 4:5`.
+
+The spec and caption are versioned; renders are ignored by git and regenerate.
+Every fact on a slide is checked against at least two current sources before
+the post is approved. Statuses: draft, approved, posted, rejected.
+
+## The Instagram board (/instagram)
+
+The studio serves a second page at `http://127.0.0.1:4177/instagram`, which
+the shell shows as its Instagram workspace. It lists the CrimeTimeSnacks posts
+above (render, approve, mark posted, edit caption, Post) and, below them, the
+portfolio queue from `D:/Dev/GitHub/ig-studio` (`content/queue.json`, renders
+in `out/`): a 3-wide grid preview in publish order, Render, Preflight,
+Re-capture, Build board, per-post status and captions.
+
+Post opens Instagram in a shell tab with the file (or every slide of a
+carousel) attached to the create dialog and the caption on the clipboard. The
+Share button is yours; the studio never posts on its own.
+
+Jobs that run in the ig-studio repo are declared in `ACTIONS` with a `cwd`.
+Set `IG_STUDIO` in the environment if that repo moves.
+
+## Security model of the local server
+
+The studio runs pipeline scripts, so it is treated as a privileged local
+service, not a web page:
+
+- Binds to 127.0.0.1 only. A request whose Host header is not the loopback
+  address is refused (421), which blocks DNS rebinding.
+- Every non-GET request must carry `X-CTS: 1` and, when a browser sends an
+  Origin, it must be the studio's own origin or a shell scheme. A web page in
+  another tab cannot start jobs, write drafts, or approve updates.
+- `/site/` serves only `images/`, `css/`, `js/`, `audio/`, `videos/`. No
+  `automation/`, no dotfiles, no traversal.
+- File routes accept plain names only and refuse dotfiles.
+- JSON bodies are capped at 1 MB; uploads at 200 MB.
+- The UI ships with a Content-Security-Policy, X-Frame-Options DENY and
+  nosniff.
+- In the shell, the `cts-shell://` and `cts-file://` schemes answer only pages
+  we ship (file://, the studio origin, the shell schemes). `cts-file` serves
+  media from the ig-studio out folder, drafts, projects and posts, nothing
+  else. Web tabs cannot navigate to file:// or the shell schemes.
+
+`npm run test:studio` starts a throwaway server and checks all of the above.
