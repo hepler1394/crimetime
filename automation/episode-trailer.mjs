@@ -109,7 +109,10 @@ if (coldFile) {
   // Hook line opens the trailer, over black.
   const h = picks.shift();
   const f = join(work, "hook.wav");
-  ff(["-i", audio, "-ss", String(Math.max(0, h.start - 0.15)), "-t", String(h.dur + 0.4), "-af", "afade=t=in:st=0:d=0.15,afade=t=out:st=" + (h.dur + 0.05) + ":d=0.35", "-ac", "2", "-ar", "48000", f], "hook cut");
+  // -ss before -i and asetpts: the fades must count from the cut's own zero, not
+  // the episode's timeline, or the fade-out fires before the clip starts and the
+  // whole cut is silence.
+  ff(["-ss", String(Math.max(0, h.start - 0.15)), "-i", audio, "-t", String(h.dur + 0.4), "-af", "asetpts=PTS-STARTPTS,afade=t=in:st=0:d=0.15,afade=t=out:st=" + (h.dur + 0.05) + ":d=0.35", "-ac", "2", "-ar", "48000", f], "hook cut");
   parts.push({ file: f, type: "quote", text: h.text, cold: true });
 }
 // Title slam: the theme's first 3 seconds.
@@ -118,7 +121,7 @@ ff(["-i", beds.intro, "-t", "3.2", "-af", "afade=t=out:st=2.4:d=0.8", "-ac", "2"
 parts.push({ file: slam, type: "title" });
 for (const [k, p] of picks.entries()) {
   const f = join(work, `q${k}.wav`);
-  ff(["-i", audio, "-ss", String(Math.max(0, p.start - 0.12)), "-t", String(p.dur + 0.45), "-af", `afade=t=in:st=0:d=0.12,afade=t=out:st=${p.dur + 0.1}:d=0.35`, "-ac", "2", "-ar", "48000", f], `quote ${k}`);
+  ff(["-ss", String(Math.max(0, p.start - 0.12)), "-i", audio, "-t", String(p.dur + 0.45), "-af", `asetpts=PTS-STARTPTS,afade=t=in:st=0:d=0.12,afade=t=out:st=${p.dur + 0.1}:d=0.35`, "-ac", "2", "-ar", "48000", f], `quote ${k}`);
   parts.push({ file: f, type: "quote", text: p.text });
 }
 const outroF = join(work, "outro.wav");

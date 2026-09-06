@@ -204,3 +204,24 @@ Rendered by recording `studio/templates/trailer.html` in Playwright at 1080x1920
 then muxed with the audio timeline in ffmpeg at -14 LUFS. About 40 seconds.
 `trailer.mp4` is what Post sends to Instagram; `reel.mp4` (the audiogram) stays
 as the fallback.
+
+## Projects (research that is not an episode yet)
+
+Projects live in `automation/studio/projects/<id>/`: `notes.md` (every clipping
+with its source and time), the PDFs and images you save, `chat.json`. In the
+studio, the Projects section lists them; each has Notes (editable), Files, and
+Ask. In the shell, right-click any page: **Save page as PDF to project** (the
+page is printed to PDF by Chromium and filed, with a note), **Save selection to
+project** (the highlighted text with source), **Save image to project**, or
+**New project from this page**.
+
+- **Ask** sends the notes, PDFs and images (under about 18 MB) to Gemini Flash
+  with the history; it answers only from the project and says when the material
+  does not cover something.
+- **Export for NotebookLM** writes one Markdown file (notes, faithful summaries
+  of each PDF, the questions asked) to the project folder. NotebookLM has no API;
+  open it from Sites in the shell and paste or upload. The PDFs themselves upload
+  to NotebookLM directly.
+- **Turn into episode** converts the project into research notes for the
+  pipeline and starts a twenty-minute script from them, so an episode can be
+  written from your own reading rather than from Wikipedia.

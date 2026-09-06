@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>CrimeTimeSnacks Studio</title>
+<title>CrimeTime Studio</title>
 <link rel="icon" href="/site/images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -189,6 +189,12 @@
   .cron div{font:11px/1.7 var(--mono);color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .cron .e{color:var(--hot)} .cron .o{color:var(--ok)}
 
+  .chat{border:1px solid var(--line);border-radius:6px;background:var(--panel);padding:14px;max-height:520px;overflow:auto;margin-bottom:12px}
+  .chat .q{font-weight:600;margin:0 0 4px}
+  .chat .a{color:#d8d8dc;white-space:pre-wrap;line-height:1.6;margin:0 0 18px;font-size:14px}
+  .chat .none{color:var(--faint);font-style:italic}
+  .ask{display:grid;grid-template-columns:1fr auto;gap:8px}
+  .notes-ta{min-height:420px;font-family:Georgia,"Times New Roman",serif;font-size:15px;line-height:1.7}
   /* job drawer: only when something runs */
   .drawer{position:fixed;left:0;right:0;bottom:0;background:var(--panel);border-top:1px solid var(--line-2);box-shadow:0 -20px 60px rgba(0,0,0,.5);transform:translateY(100%);transition:transform .2s;z-index:6}
   .drawer.show{transform:none}
@@ -212,9 +218,10 @@
 </head>
 <body>
 <header class="top">
-  <div class="brand"><img src="/site/images/logo.png" alt="">Crime<em>Time</em>Snacks<small>Studio</small></div>
+  <div class="brand"><img src="/site/images/logo.png" alt="">Crime<em>Time</em> Studio<small>CrimeTimeSnacks</small></div>
   <nav class="sections" aria-label="Sections">
     <button data-sec="episodes" class="on">Episodes</button>
+    <button data-sec="projects">Projects</button>
     <button data-sec="community">Community<span class="n" id="q-count" hidden></span></button>
     <button data-sec="settings">Settings</button>
   </nav>
@@ -244,6 +251,20 @@
       <button class="btn red" id="btn-first">Start the next case</button>
     </div>
     <div id="editor" hidden></div>
+  </main>
+</div>
+
+<!-- PROJECTS -->
+<div class="wrap" id="sec-projects" hidden>
+  <aside class="left">
+    <h2 class="k">Projects</h2>
+    <div class="new"><input id="proj-title" placeholder="New project name" aria-label="New project name"><button class="btn red" id="proj-new">New</button></div>
+    <ul class="list" id="projects"></ul>
+    <p class="hint" style="padding:12px 18px">A project is a folder of clippings, PDFs and images you save while reading, from the shell's right-click menu on any page. Come back to it, ask questions over it, export it, or turn it into an episode.</p>
+  </aside>
+  <main class="main" id="proj-main">
+    <div class="empty" id="proj-empty"><h1>No projects yet</h1><p>Name one on the left. Then, in the shell, right-click any page: Save page as PDF to project, or select text and Save selection to project.</p></div>
+    <div id="proj-editor" hidden></div>
   </main>
 </div>
 
@@ -292,7 +313,8 @@ async function upload(path, blob) { const r = await fetch(path, { method: "POST"
 /* ---------------------------------------------------------- sections */
 function showSection(name) {
   state.section = name;
-  for (const s of ["episodes", "community", "settings"]) $(`#sec-${s}`).hidden = s !== name;
+  for (const s of ["episodes", "projects", "community", "settings"]) $(`#sec-${s}`).hidden = s !== name;
+  if (name === "projects") loadProjects();
   document.querySelectorAll(".sections button").forEach((b) => b.classList.toggle("on", b.dataset.sec === name));
   if (name === "community") loadQueue();
 }
@@ -564,6 +586,60 @@ async function loadQueue() {
     document.querySelectorAll("#queue [data-review]").forEach((b) => b.addEventListener("click", async () => { const li = b.closest("li"); b.disabled = true; try { await api("/api/community/review", { method: "POST", body: JSON.stringify({ id: li.dataset.id, status: b.dataset.review }) }); li.remove(); toast(b.dataset.review === "approved" ? "Approved. On the case page at the next build, in the next digest." : "Rejected."); loadQueue(); } catch (e) { toast(e.message, true); b.disabled = false; } }));
   } catch (e) { $("#c-cards").innerHTML = `<div class="card"><h3>Community</h3><p>${esc(e.message)}</p></div>`; }
 }
+
+/* ---------------------------------------------------------- projects */
+const pstate = { list: [], current: null, proj: null, tab: "notes", dirty: false };
+async function loadProjects() {
+  try { pstate.list = await api("/api/projects"); } catch (e) { toast(e.message, true); return; }
+  $("#projects").innerHTML = pstate.list.length ? pstate.list.map((p) => `<li><button class="draft" data-pid="${esc(p.id)}" aria-current="${p.id === pstate.current}"><b>${esc(p.title)}</b><span>${esc((p.updated || p.created || "").slice(0, 10))} · ${p.files} file${p.files === 1 ? "" : "s"} · ${fmtSize(p.notesBytes || 0)} of notes</span></button></li>`).join("") : `<li style="padding:6px 10px;color:var(--faint);font-size:12.5px">None yet.</li>`;
+  $("#proj-empty").hidden = pstate.list.length > 0 || !!pstate.current;
+  if (!pstate.current && pstate.list.length) openProject(pstate.list[0].id);
+  if (!pstate.list.length) $("#proj-editor").hidden = true;
+}
+async function openProject(id) {
+  if (pstate.dirty && !confirm("Discard unsaved notes?")) return;
+  pstate.dirty = false; pstate.current = id;
+  try { pstate.proj = await api(`/api/project/${id}`); } catch (e) { toast(e.message, true); return; }
+  document.querySelectorAll("#projects .draft").forEach((b) => b.setAttribute("aria-current", b.dataset.pid === id));
+  renderProject();
+}
+function renderProject() {
+  const p = pstate.proj; if (!p) return; const tab = pstate.tab;
+  const pf = (n) => `/api/project/${p.id}/file?name=${encodeURIComponent(n)}`;
+  $("#proj-empty").hidden = true; $("#proj-editor").hidden = false;
+  $("#proj-editor").innerHTML = `
+    <div class="headrow"><div class="head"><h1>${esc(p.title)}</h1><div class="meta">started ${esc((p.created || "").slice(0, 10))} · <b>${p.files.length}</b> file${p.files.length === 1 ? "" : "s"} · ${p.chat.length} question${p.chat.length === 1 ? "" : "s"} asked</div></div>
+      <div class="tools"><button class="btn ghost sm" id="p-open">Open folder</button><button class="btn ghost sm" id="p-del">Delete</button></div></div>
+    <div class="next"><div><div class="lbl">Research project</div><div class="what">Save, ask, export, or make the episode</div><div class="why">In the shell, right-click any page to save it as a PDF here, or select text and save the clipping. Ask questions over everything saved. Export one document for NotebookLM. Turn it into an episode when the file is ready.</div></div><div class="cta row"><button class="btn" id="p-export">Export for NotebookLM</button><button class="btn red big" id="p-episode">Turn into episode</button></div></div>
+    <div class="tabs"><button data-ptab="notes" class="${tab === "notes" ? "on" : ""}">Notes</button><button data-ptab="files" class="${tab === "files" ? "on" : ""}">Files<span class="n">${p.files.length}</span></button><button data-ptab="chat" class="${tab === "chat" ? "on" : ""}">Ask</button></div>
+    <div class="pane" ${tab === "notes" ? "" : "hidden"}>
+      <textarea class="t notes-ta" id="p-notes" spellcheck="true">${esc(p.notes)}</textarea>
+      <div class="savebar"><button class="btn red" id="p-save" disabled>Save notes</button><span class="s" id="p-savestate">No unsaved changes</span></div>
+    </div>
+    <div class="pane" ${tab === "files" ? "" : "hidden"}>
+      <ul class="files">${p.files.map((x) => `<li><a href="${pf(x.name)}" target="_blank" rel="noopener">${esc(x.name)}</a><span class="sz">${fmtSize(x.size)}</span><button data-pdel="${esc(x.name)}" title="Delete">x</button></li>`).join("") || `<li><span class="sz">No files yet. Save a page as PDF from the shell, or drop files below.</span></li>`}</ul>
+      <label class="drop" id="p-drop" style="margin-top:10px">Add files (PDF, images, text)<input type="file" id="p-file" multiple></label>
+    </div>
+    <div class="pane" ${tab === "chat" ? "" : "hidden"}>
+      <div class="chat" id="p-chat">${p.chat.length ? p.chat.map((c) => `<p class="q">${esc(c.q)}</p><p class="a">${esc(c.a)}</p>`).join("") : `<p class="none">Nothing asked yet. Gemini answers only from what is saved in this project.</p>`}</div>
+      <form class="ask" id="p-ask"><input class="t" id="p-q" placeholder="What does the file say about the timeline on the night of the murders?" autocomplete="off"><button class="btn red" type="submit">Ask</button></form>
+      <div class="hint">Reads the notes, PDFs and images in the folder each time. PDFs over the size limit are skipped and named in the answer.</div>
+    </div>`;
+  document.querySelectorAll("[data-ptab]").forEach((b) => b.addEventListener("click", () => { pstate.tab = b.dataset.ptab; renderProject(); }));
+  $("#p-notes").addEventListener("input", () => { pstate.dirty = true; $("#p-save").disabled = false; $("#p-savestate").textContent = "Unsaved changes"; });
+  $("#p-save").addEventListener("click", async () => { try { await api(`/api/project/${p.id}/notes`, { method: "PUT", body: JSON.stringify({ text: $("#p-notes").value }) }); pstate.dirty = false; toast("Notes saved."); await openProject(p.id); } catch (e) { toast(e.message, true); } });
+  $("#p-open").addEventListener("click", () => api(`/api/project/${p.id}/open`, { method: "POST" }));
+  $("#p-del").addEventListener("click", async () => { if (!confirm(`Delete project "${p.title}" and everything in it?`)) return; await api(`/api/project/${p.id}`, { method: "DELETE" }); pstate.current = null; pstate.proj = null; $("#proj-editor").hidden = true; loadProjects(); });
+  $("#p-export").addEventListener("click", async () => { $("#p-export").disabled = true; try { const r = await api(`/api/project/${p.id}/export`, { method: "POST" }); toast(`Exported ${r.name}. It is in Files; paste it into NotebookLM.`); pstate.tab = "files"; await openProject(p.id); } catch (e) { toast(e.message, true); } $("#p-export").disabled = false; });
+  $("#p-episode").addEventListener("click", async () => { if (!confirm("Write a twenty-minute episode from this project's notes and files? It appears under Episodes when the script is done.")) return; try { const job = await api(`/api/project/${p.id}/to-episode`, { method: "POST" }); state.job = job; $("#d-title").textContent = "Writing the script from the project"; $("#d-state").textContent = ""; $("#log").textContent = ""; $("#d-spin").hidden = false; $("#drawer").classList.add("show"); poll(); showSection("episodes"); } catch (e) { toast(e.message, true); } });
+  document.querySelectorAll("[data-pdel]").forEach((b) => b.addEventListener("click", async () => { if (!confirm(`Delete ${b.dataset.pdel}?`)) return; await api(`/api/project/${p.id}/file?name=${encodeURIComponent(b.dataset.pdel)}`, { method: "DELETE" }); await openProject(p.id); }));
+  $("#p-file").addEventListener("change", async (e) => { for (const fl of e.target.files) { try { await upload(`/api/project/${p.id}/upload?name=${encodeURIComponent(fl.name)}`, fl); } catch (er) { toast(er.message, true); } } toast("Added."); pstate.tab = "files"; await openProject(p.id); });
+  const d = $("#p-drop"); d.addEventListener("dragover", (e) => { e.preventDefault(); d.classList.add("over"); }); d.addEventListener("dragleave", () => d.classList.remove("over")); d.addEventListener("drop", (e) => { e.preventDefault(); d.classList.remove("over"); $("#p-file").files = e.dataTransfer.files; $("#p-file").dispatchEvent(new Event("change")); });
+  $("#p-ask").addEventListener("submit", async (e) => { e.preventDefault(); const q = $("#p-q").value.trim(); if (!q) return; $("#p-q").disabled = true; const box = $("#p-chat"); box.insertAdjacentHTML("beforeend", `<p class="q">${esc(q)}</p><p class="a" id="p-pending">thinking</p>`); box.scrollTop = box.scrollHeight; try { const r = await api(`/api/project/${p.id}/chat`, { method: "POST", body: JSON.stringify({ question: q }) }); const pend = $("#p-pending"); pend.textContent = r.a + (r.skipped?.length ? `\n\n(Skipped, too large: ${r.skipped.join(", ")})` : ""); pend.id = ""; pstate.proj.chat.push(r); $("#p-q").value = ""; } catch (er) { $("#p-pending").textContent = er.message; } $("#p-q").disabled = false; $("#p-q").focus(); box.scrollTop = box.scrollHeight; });
+}
+$("#proj-new").addEventListener("click", async () => { const t = $("#proj-title").value.trim(); if (!t) { $("#proj-title").focus(); return; } try { const pr = await api("/api/projects", { method: "POST", body: JSON.stringify({ title: t }) }); $("#proj-title").value = ""; pstate.current = pr.id; await loadProjects(); await openProject(pr.id); } catch (e) { toast(e.message, true); } });
+$("#proj-title").addEventListener("keydown", (e) => { if (e.key === "Enter") $("#proj-new").click(); });
+$("#projects").addEventListener("click", (e) => { const b = e.target.closest("[data-pid]"); if (b) openProject(b.dataset.pid); });
 
 /* ------------------------------------------------------------ wiring */
 $("#btn-new").addEventListener("click", () => startJob("new", { topic: $("#topic").value.trim() || undefined, minutes: 20 }));

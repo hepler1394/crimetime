@@ -16,6 +16,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join, extname, normalize, basename } from "node:path";
 import { loadEnv } from "../community/env.mjs";
 import { sb } from "../community/lib.js";
+import { PROJECTS, listProjects, createProject, getProject, appendNote, saveNotes, chatProject, exportProject, projectToResearch, deleteProject } from "./projects.mjs";
 await loadEnv();
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -42,7 +43,7 @@ let jobSeq = 0;
 const ACTIONS = {
   new:      (a) => ["episode-new.mjs", ...(a.topic ? [a.topic] : []), "--minutes", String(a.minutes || 20), "--json"],
   research: (a) => ["episode-research.mjs", "--draft", a.id, "--json"],
-  draft:    (a) => ["episode-draft.mjs", ...(a.topic ? [a.topic] : ["--auto"]), "--minutes", String(a.minutes || 20), "--json"],
+  draft:    (a) => ["episode-draft.mjs", ...(a.case ? ["--case", a.case] : a.topic ? [a.topic] : ["--auto"]), "--minutes", String(a.minutes || 20), "--json"],
   voice:    (a) => ["episode-voice.mjs", a.id, ...(a.engine ? ["--engine", a.engine] : []), ...(a.voice ? ["--voice", a.voice] : []), ...(a.rate ? ["--rate", a.rate] : []), ...(a.pitch ? ["--pitch", a.pitch] : []),
                     ...(a.exaggeration ? ["--exaggeration", String(a.exaggeration)] : []), ...(a.cfg ? ["--cfg", String(a.cfg)] : []), ...(a.from ? ["--from", a.from] : []), ...(a.noMusic ? ["--no-music"] : []), ...(a.noTrim ? ["--no-trim"] : []), "--json"],
   art:      (a) => ["episode-art.mjs", a.id, "--json"],
@@ -287,6 +288,43 @@ const server = createServer(async (req, res) => {
         return json(res, 200, { ok: true, name, size, converted, path: join(dir, converted || name) });
       }
       return json(res, 404, { error: "unknown draft route" });
+    }
+
+    /* research projects */
+    if (p === "/api/projects" && req.method === "GET") return json(res, 200, await listProjects());
+    if (p === "/api/projects" && req.method === "POST") { const b = await readBody(req); try { return json(res, 200, await createProject(b.title)); } catch (e) { return json(res, 400, { error: e.message }); } }
+    if (p.startsWith("/api/project/")) {
+      const [pid, sub] = p.slice("/api/project/".length).split("/");
+      if (!safeId(pid)) return json(res, 400, { error: "bad id" });
+      const pdir = join(PROJECTS, pid);
+      try {
+        if (!sub && req.method === "GET") { const pr = await getProject(pid); return pr ? json(res, 200, pr) : json(res, 404, { error: "no such project" }); }
+        if (!sub && req.method === "DELETE") { await deleteProject(pid); return json(res, 200, { ok: true }); }
+        if (sub === "note" && req.method === "POST") { const b = await readBody(req); if (!b.text) return json(res, 400, { error: "text" }); await appendNote(pid, b.text, b.source || ""); return json(res, 200, { ok: true }); }
+        if (sub === "notes" && req.method === "PUT") { const b = await readBody(req); await saveNotes(pid, String(b.text ?? "")); return json(res, 200, { ok: true }); }
+        if (sub === "upload" && req.method === "POST") {
+          const name = url.searchParams.get("name") || ""; if (!safeName(name) || /^(project\.json|chat\.json)$/.test(name)) return json(res, 400, { error: "bad name" });
+          if (!(await exists(pdir))) return json(res, 404, { error: "no such project" });
+          const size = await saveUpload(req, join(pdir, name)); const { touch } = await import("./projects.mjs"); await touch(pid);
+          return json(res, 200, { ok: true, name, size });
+        }
+        if (sub === "file") {
+          const name = url.searchParams.get("name") || ""; if (!safeName(name)) return json(res, 400, { error: "bad name" });
+          const file = normalize(join(pdir, name)); if (!file.startsWith(normalize(PROJECTS))) return json(res, 400, { error: "bad path" });
+          if (req.method === "DELETE") { if (/^(project\.json|notes\.md)$/.test(name)) return json(res, 400, { error: "not that one" }); await unlink(file).catch(() => {}); return json(res, 200, { ok: true }); }
+          const st = await stat(file).catch(() => null); if (!st) return json(res, 404, { error: "no such file" });
+          return streamFile(req, res, file, st);
+        }
+        if (sub === "chat" && req.method === "POST") { const b = await readBody(req); if (!b.question) return json(res, 400, { error: "question" }); return json(res, 200, await chatProject(pid, String(b.question))); }
+        if (sub === "export" && req.method === "POST") return json(res, 200, await exportProject(pid));
+        if (sub === "to-episode" && req.method === "POST") {
+          const r = await projectToResearch(pid);
+          const job = startJob("draft", { case: r.caseSlug, topic: r.title, minutes: 20 });
+          const { log, ...rest } = job; return json(res, 202, { ...rest, caseSlug: r.caseSlug });
+        }
+        if (sub === "open" && req.method === "POST") { spawn("explorer.exe", [pdir], { detached: true, stdio: "ignore" }).unref(); return json(res, 200, { ok: true }); }
+      } catch (e) { return json(res, 500, { error: e.message }); }
+      return json(res, 404, { error: "unknown project route" });
     }
 
     /* community: case update review queue */

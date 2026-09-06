@@ -93,8 +93,15 @@ function newTab(url = "https://www.instagram.com/", activate = true, ws = worksp
   wc.on("did-navigate", (_e, u) => { t.url = u; pushTabs(); });
   wc.on("did-navigate-in-page", (_e, u) => { t.url = u; pushTabs(); });
   wc.setWindowOpenHandler(({ url: u }) => { newTab(u, true, t.ws); return { action: "deny" }; });
-  wc.on("context-menu", (_e, params) => {
+  wc.on("context-menu", async (_e, params) => {
     const items = [];
+    // Research projects: save this page as a PDF, or the selection, into any project.
+    let projects = []; try { projects = await studioApi("GET", "/api/projects"); if (!Array.isArray(projects)) projects = []; } catch { projects = []; }
+    const projMenu = (label, act) => ({ label, submenu: [...projects.slice(0, 15).map((pr) => ({ label: pr.title, click: () => act(pr.id) })), { type: "separator" }, { label: "New project from this page", click: async () => { try { const pr = await studioApi("POST", "/api/projects", { title: (wc.getTitle() || "Untitled").slice(0, 60) }); if (pr?.id) act(pr.id); else toast(pr?.error || "could not create project", true); } catch (e) { toast(e.message, true); } } }] });
+    items.push(projMenu("Save page as PDF to project", (pid) => savePagePdfToProject(wc, pid)));
+    if (params.selectionText) items.push(projMenu("Save selection to project", (pid) => saveSelectionToProject(wc, pid, params.selectionText)));
+    if (params.srcURL && params.mediaType === "image") items.push(projMenu("Save image to project", (pid) => saveUrlToProject(params.srcURL, wc, pid)));
+    items.push({ type: "separator" });
     if (params.srcURL && params.mediaType === "image") items.push({ label: "Save image to episode", click: () => saveUrlToEpisode(params.srcURL, wc) }, { label: "Copy image address", click: () => clipboard.writeText(params.srcURL) });
     if (params.srcURL && params.mediaType === "video") items.push({ label: "Save video to episode", click: () => saveUrlToEpisode(params.srcURL, wc) });
     if (params.linkURL) items.push({ label: "Open link in new tab", click: () => newTab(params.linkURL, true, t.ws) }, { label: "Copy link", click: () => clipboard.writeText(params.linkURL) });
@@ -143,6 +150,38 @@ async function saveNoteToEpisode(text, from) {
   try { const r = await fetch(`${STUDIO_URL}/api/draft/${id}/file?name=notes.md`); if (r.ok) existing = await r.text(); } catch { /* none */ }
   const r = await studioApi("POST", `/api/draft/${id}/upload?name=notes.md`, null, Buffer.from(`${existing}\n\n---\n${stamp}  ${from}\n\n${text.trim()}\n`, "utf8"));
   if (r?.ok) toast(`Selection saved to notes.md in ${id}`); else toast(r?.error || "note save failed", true);
+}
+
+/* ------------------------------------------------------- projects */
+const slug = (t) => String(t).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60) || "page";
+async function savePagePdfToProject(wc, pid) {
+  try {
+    const pdf = await wc.printToPDF({ printBackground: true, pageSize: "A4", margins: { marginType: "default" } });
+    const name = `${slug(wc.getTitle())}-${new Date().toISOString().slice(0, 10)}.pdf`;
+    const r = await studioApi("POST", `/api/project/${pid}/upload?name=${encodeURIComponent(name)}`, null, pdf);
+    if (!r?.ok) throw new Error(r?.error || "upload failed");
+    await studioApi("POST", `/api/project/${pid}/note`, { text: `Saved page as PDF: ${name}
+${wc.getTitle()}`, source: wc.getURL() });
+    toast(`Saved ${name} to project ${pid}`);
+  } catch (e) { toast(`PDF save failed: ${e.message}`, true); }
+}
+async function saveSelectionToProject(wc, pid, text) {
+  try { const r = await studioApi("POST", `/api/project/${pid}/note`, { text, source: `${wc.getTitle()} | ${wc.getURL()}` }); if (!r?.ok) throw new Error(r?.error || "note failed"); toast(`Clipping saved to project ${pid}`); }
+  catch (e) { toast(`Clipping failed: ${e.message}`, true); }
+}
+async function saveUrlToProject(url, wc, pid) {
+  try {
+    const cookies = (await wc.session.cookies.get({ url })).map((c) => `${c.name}=${c.value}`).join("; ");
+    const res = await fetch(url, { headers: { Cookie: cookies, "User-Agent": wc.getUserAgent(), Referer: wc.getURL() } });
+    if (!res.ok) throw new Error(`download ${res.status}`);
+    const buf = Buffer.from(await res.arrayBuffer()); const type = res.headers.get("content-type") || "";
+    const ext = type.includes("png") ? ".png" : type.includes("webp") ? ".webp" : type.includes("gif") ? ".gif" : ".jpg";
+    const name = `image-${new Date().toISOString().slice(11, 19).replace(/:/g, "")}${ext}`;
+    const r = await studioApi("POST", `/api/project/${pid}/upload?name=${encodeURIComponent(name)}`, null, buf);
+    if (!r?.ok) throw new Error(r?.error || "upload failed");
+    await studioApi("POST", `/api/project/${pid}/note`, { text: `Saved image: ${name}`, source: wc.getURL() });
+    toast(`Saved ${name} to project ${pid}`);
+  } catch (e) { toast(`Save failed: ${e.message}`, true); }
 }
 
 /* --------------------------------------------------------------- post */
@@ -205,7 +244,7 @@ function fileRoute(req) {
 
 /* ------------------------------------------------------------ window */
 function createWindow() {
-  win = new BaseWindow({ width: 1680, height: 980, minWidth: 1100, minHeight: 640, backgroundColor: "#050505", title: "CrimeTimeSnacks Studio", autoHideMenuBar: true });
+  win = new BaseWindow({ width: 1680, height: 980, minWidth: 1100, minHeight: 640, backgroundColor: "#050505", title: "CrimeTime Studio", autoHideMenuBar: true });
   chromeView = new WebContentsView({ webPreferences: { preload: path.join(__dirname, "preload.js"), contextIsolation: true, sandbox: false } });
   studioView = new WebContentsView({ webPreferences: { partition: STUDIO_SESSION, contextIsolation: true, sandbox: true } });
   igView = new WebContentsView({ webPreferences: { partition: BROWSER_SESSION, contextIsolation: true, sandbox: true } });
