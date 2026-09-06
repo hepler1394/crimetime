@@ -57,8 +57,16 @@ const caption = [
 await writeFile(join(dir, "caption.txt"), caption + "\n", "utf8");
 
 ep.files = { ...(ep.files || {}), reel: "reel.mp4", caption: "caption.txt" };
+// The trailer reel (cold open, title, strongest lines, end card) is the post; the audiogram is the fallback.
+try {
+  const r = spawnSync(process.execPath, [join(__dirname, "episode-trailer.mjs"), id, "--json"], { encoding: "utf8", windowsHide: true, maxBuffer: 16 * 1024 * 1024 });
+  const last = (r.stdout || "").trim().split("\n").reverse().find((l) => l.startsWith("{"));
+  const tj = last ? JSON.parse(last) : null;
+  if (tj?.ok) { const fresh = JSON.parse(await readFile(join(dir, "episode.json"), "utf8")); ep.files.trailer = fresh.files?.trailer || "trailer.mp4"; ep.trailer = fresh.trailer; if (!asJson) console.log(tj.message); }
+  else if (!asJson) console.log(`Trailer skipped: ${tj?.message || (r.stderr || "").slice(-200)}`);
+} catch (e) { if (!asJson) console.log(`Trailer skipped: ${e.message}`); }
 ep.social = { clipSeconds: clip, clipStart: start, generated: new Date().toISOString() };
 if (ep.status === "designed") ep.status = "ready";
 await writeFile(join(dir, "episode.json"), JSON.stringify(ep, null, 2) + "\n", "utf8");
 const bytes = (await stat(reel)).size;
-out({ ok: true, id, reel, bytes, message: `Reel ${clip}s -> reel.mp4 (${(bytes / 1048576).toFixed(1)} MB), caption.txt written` });
+out({ ok: true, id, reel, bytes, trailer: ep.files.trailer || null, message: `Reel ${clip}s -> reel.mp4 (${(bytes / 1048576).toFixed(1)} MB)${ep.files.trailer ? ", trailer.mp4" : ""}, caption.txt written` });

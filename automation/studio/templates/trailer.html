@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CrimeTimeSnacks trailer</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@500;700;800&family=IBM+Plex+Mono:wght@500&display=block" rel="stylesheet">
+<style>
+  :root{--ink:#050505;--red:#e50914;--hot:#ff2b33;--tape:#f4c20d;--white:#f7f7f8;--muted:#a3a3ad}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:1080px;height:1920px;overflow:hidden;background:var(--ink);color:var(--white);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  .stage{position:absolute;inset:0;overflow:hidden}
+  .grain{position:absolute;inset:0;opacity:.13;mix-blend-mode:overlay;pointer-events:none;z-index:5;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+  .sec{position:absolute;inset:0;opacity:0;transition:opacity .35s}
+  .sec.on{opacity:1}
+  /* cold open: black, a slow red pulse, a small mono label */
+  .cold .pulse{position:absolute;left:50%;top:46%;width:260px;height:260px;margin:-130px 0 0 -130px;border-radius:50%;border:3px solid rgba(229,9,20,.7);animation:pulse 2.6s ease-out infinite}
+  .cold .pulse.b{animation-delay:1.3s}
+  @keyframes pulse{0%{transform:scale(.4);opacity:.9}100%{transform:scale(1.6);opacity:0}}
+  .cold .lab{position:absolute;left:80px;right:80px;top:58%;text-align:center;font:500 30px/1.5 "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--tape)}
+  .cold .sub{position:absolute;left:80px;right:80px;top:64%;text-align:center;font:500 26px/1.5 Inter,sans-serif;color:var(--muted)}
+  /* title slam */
+  .title .mark{position:absolute;left:80px;top:560px;font:normal 96px/1 "Bebas Neue",Impact,sans-serif;letter-spacing:.04em;transform:translateY(40px);opacity:0}
+  .title .mark em{color:var(--red);font-style:normal}
+  .title .ep{position:absolute;left:80px;right:80px;top:700px;font:normal 168px/.92 "Bebas Neue",Impact,sans-serif;letter-spacing:.005em;text-wrap:balance;transform:scale(1.18);opacity:0}
+  .title .tape{position:absolute;left:-8%;width:116%;height:64px;top:1180px;background:repeating-linear-gradient(-45deg,var(--tape) 0 36px,var(--ink) 36px 72px);transform:rotate(-3deg) scaleX(0);transform-origin:left;opacity:.95}
+  .title.on .mark{animation:up .5s .1s cubic-bezier(.2,.9,.3,1) forwards}
+  .title.on .ep{animation:slam .55s .35s cubic-bezier(.2,.9,.3,1) forwards}
+  .title.on .tape{animation:wipe .6s .7s cubic-bezier(.2,.9,.3,1) forwards}
+  @keyframes up{to{transform:none;opacity:1}}
+  @keyframes slam{to{transform:none;opacity:1}}
+  @keyframes wipe{to{transform:rotate(-3deg) scaleX(1)}}
+  /* quotes: photo with a slow push, dark bottom, caption words landing one by one */
+  .quote .bg{position:absolute;inset:-6%;background-size:cover;background-position:center;filter:saturate(.75) contrast(1.05);transform:scale(1);transition:transform linear}
+  .quote .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,5,.35),rgba(5,5,5,.15) 40%,rgba(5,5,5,.92) 78%)}
+  .quote .cap{position:absolute;left:80px;right:80px;bottom:300px;font:800 74px/1.12 Inter,sans-serif;letter-spacing:-.01em;text-wrap:balance;text-shadow:0 6px 40px rgba(0,0,0,.7)}
+  .quote .cap span{opacity:.18;transition:opacity .12s,color .12s}
+  .quote .cap span.said{opacity:1}
+  .quote .cap span.now{color:var(--hot)}
+  .quote .rule{position:absolute;left:80px;bottom:250px;height:6px;width:140px;background:var(--red)}
+  .quote .who{position:absolute;left:80px;bottom:200px;font:500 24px/1 "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--tape)}
+  /* end card */
+  .cta .big{position:absolute;left:80px;right:80px;top:640px;font:normal 150px/.95 "Bebas Neue",Impact,sans-serif;letter-spacing:.01em}
+  .cta .big em{color:var(--red);font-style:normal}
+  .cta .site{position:absolute;left:80px;top:1010px;font:500 34px/1 "IBM Plex Mono",monospace;letter-spacing:.06em;color:var(--white)}
+  .cta .plug{position:absolute;left:80px;right:80px;top:1090px;font:500 30px/1.4 Inter,sans-serif;color:var(--muted)}
+  .cta .logo{position:absolute;left:80px;top:440px;display:flex;align-items:center;gap:22px}
+  .cta .logo img{width:120px;height:120px;border-radius:22px}
+  .cta .logo span{font:normal 70px/1 "Bebas Neue",Impact,sans-serif;letter-spacing:.04em}
+  .cta .logo em{color:var(--red);font-style:normal}
+  .cta .tape{position:absolute;left:-8%;width:116%;height:64px;top:1300px;background:repeating-linear-gradient(-45deg,var(--tape) 0 36px,var(--ink) 36px 72px);transform:rotate(2.5deg);opacity:.9}
+  .wave{position:absolute;left:0;right:0;bottom:0;height:120px;display:flex;align-items:flex-end;gap:6px;padding:0 40px;opacity:.55;z-index:4}
+  .wave i{flex:1;background:var(--red);height:102px;border-radius:3px 3px 0 0;transform:scaleY(.06);transform-origin:bottom;transition:transform .09s}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="grain"></div>
+  <div class="sec cold" id="cold"><div class="pulse"></div><div class="pulse b"></div><div class="lab" id="cold-lab"></div><div class="sub" id="cold-sub"></div></div>
+  <div class="sec title" id="title"><div class="mark">Crime<em>Time</em>Snacks</div><div class="ep" id="ep-title"></div><div class="tape"></div></div>
+  <div class="sec quote" id="quote"><div class="bg" id="q-bg"></div><div class="shade"></div><div class="cap" id="q-cap"></div><div class="rule"></div><div class="who" id="q-who">From the episode</div></div>
+  <div class="sec cta" id="cta"><div class="logo"><img id="logo" alt=""><span>Crime<em>Time</em>Snacks</span></div><div class="big">New <em>episode.</em><br>Link in bio.</div><div class="site" id="site">www.crimetimesnacks.com</div><div class="plug" id="plug"></div><div class="tape"></div></div>
+  <div class="wave" id="wave"></div>
+</div>
+<script>
+  const T = window.TRAILER || { sections: [], title: "", logo: "" };
+  document.getElementById("ep-title").textContent = T.title || "";
+  document.getElementById("logo").src = T.logo || "";
+  document.getElementById("plug").textContent = T.plug || "";
+  const wave = document.getElementById("wave");
+  for (let i = 0; i < 48; i++) wave.appendChild(document.createElement("i"));
+  const bars = [...wave.children];
+  const secEls = { cold: document.getElementById("cold"), title: document.getElementById("title"), quote: document.getElementById("quote"), cta: document.getElementById("cta") };
+  let t0 = null, cur = null, curWords = null;
+  const fit = (el, max, min) => { let s = max; el.style.fontSize = s + "px"; while (el.scrollHeight > 640 && s > min) { s -= 4; el.style.fontSize = s + "px"; } };
+  function show(sec) {
+    if (cur === sec) return;
+    for (const k in secEls) secEls[k].classList.toggle("on", secEls[k] === secEls[sec.type] && true);
+    if (sec.type === "quote") {
+      const bg = document.getElementById("q-bg"); bg.style.transition = "none"; bg.style.transform = "scale(1)"; bg.style.backgroundImage = sec.bg ? `url("${sec.bg}")` : "linear-gradient(180deg,#1a0406,#050505)";
+      requestAnimationFrame(() => { bg.style.transition = `transform ${sec.dur}s linear`; bg.style.transform = "scale(1.12)"; });
+      const cap = document.getElementById("q-cap"); cap.innerHTML = sec.words.map((w) => `<span>${w.w}</span>`).join(" "); fit(cap, 78, 44);
+      curWords = [...cap.children];
+      document.getElementById("q-who").textContent = sec.who || "From the episode";
+    }
+    if (sec.type === "cold") { document.getElementById("cold-lab").textContent = sec.label || ""; document.getElementById("cold-sub").textContent = sec.sub || ""; }
+    cur = sec;
+  }
+  function frame(now) {
+    if (t0 === null) { requestAnimationFrame(frame); return; }
+    const t = (now - t0) / 1000;
+    const sec = T.sections.find((s) => t >= s.start && t < s.start + s.dur) || T.sections[T.sections.length - 1];
+    if (sec) show(sec);
+    if (sec && sec.type === "quote" && curWords) { const rel = t - sec.start; sec.words.forEach((w, i) => { const el = curWords[i]; if (!el) return; el.classList.toggle("said", rel >= w.t); el.classList.toggle("now", rel >= w.t && rel < (sec.words[i + 1]?.t ?? sec.dur)); }); }
+    // waveform: driven by the section's energy envelope (voice sections move, cold open breathes, cards are still)
+    const energy = sec ? (sec.type === "quote" ? 1 : sec.type === "cold" ? 0.35 : 0.15) : 0;
+    bars.forEach((b, i) => { const v = energy * (0.35 + 0.65 * Math.abs(Math.sin(t * 6.3 + i * 0.7) * Math.sin(t * 2.1 + i * 0.31))); b.style.transform = `scaleY(${(0.06 + v * 0.94).toFixed(3)})`; });
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+  // Nothing moves until the recorder says so (webfonts loaded). Returns seconds into the recording.
+  window.__start = () => { t0 = performance.now(); return performance.timeOrigin ? (performance.now() / 1000) : 0; };
+</script>
+</body>
+</html>

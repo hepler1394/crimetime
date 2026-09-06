@@ -180,3 +180,27 @@ approved it in the studio.
   in place at Porkbun; DKIM already verified).
 - Step two is following FBI Most Wanted subjects; step three is discussion
   threads under each case.
+
+## The trailer reel
+
+`episode-trailer.mjs` (run by the Instagram step, or on its own) cuts the post
+Cory actually wants: the shape of his JonBenet trailer.
+
+1. **Cold open.** If the episode folder holds `coldopen.mp3` (or wav, m4a, mp4)
+   plus a one-line `coldopen.txt` label ("911 call, December 26, 1996. Public
+   record."), the first eight seconds play over black with a slow red pulse and
+   the label. Without one, the hook line from the episode opens the trailer.
+2. **Title slam.** The theme's first three seconds under the wordmark, the
+   episode title, and the tape.
+3. **The lines.** Gemini Flash reads the transcript and picks the two or three
+   most gripping self-contained lines (never the opener, never the ending). Each
+   plays in Cory's voice over a slow push on a generated or saved photo from the
+   folder (`art-*.jpg`, `saved-*.jpg`; never the cover or card, which carry their
+   own type), the words landing on screen as they are spoken, a faint drone under.
+4. **End card.** "New episode. Link in bio.", the site, and the case's plug if
+   `cases.json` has one (the Zodiac episode plugs thezodiacarchive.com).
+
+Rendered by recording `studio/templates/trailer.html` in Playwright at 1080x1920,
+then muxed with the audio timeline in ffmpeg at -14 LUFS. About 40 seconds.
+`trailer.mp4` is what Post sends to Instagram; `reel.mp4` (the audiogram) stays
+as the fallback.
