@@ -354,7 +354,7 @@ function renderEditor() {
   const ep = state.ep; if (!ep) return;
   const h = state.health || { voice: {}, music: {} };
   const { done, next } = stageOf(ep);
-  const runningFor = state.job && !state.job.done && state.job.draft === ep.id ? state.job.action : null;
+  const runningFor = (state.job && !state.job.done && state.job.draft === ep.id ? state.job.action : null) || ep.inProgress || null;
   const pub = ep.status === "published";
   const facts = ep.factsToVerify || []; const checked = ep.factsChecked || [];
   const unchecked = facts.filter((_, i) => !checked[i]).length;
@@ -367,7 +367,7 @@ function renderEditor() {
 
   // what comes next, in one sentence, with one button
   let nextWhat, nextWhy, nextCta;
-  if (runningFor) { nextWhat = RUN_LABEL[runningFor] || "Working"; nextWhy = runningFor === "voice" ? "Your cloned voice renders about one minute of audio every fifteen minutes. Leave it; the studio keeps going without you." : "Progress is in the drawer at the bottom."; nextCta = ""; }
+  if (runningFor) { nextWhat = RUN_LABEL[runningFor] || "Working"; nextWhy = runningFor === "voice" ? "Your cloned voice renders about one minute of audio every fifteen minutes. Leave it; the studio keeps going without you, and this page updates itself when it finishes." : "Progress is in the drawer at the bottom."; nextCta = ""; }
   else if (pub) { nextWhat = "Published"; nextWhy = `Live at ${ep.pageUrl}. Spotify and Apple pick it up from the feed. Post the reel and card to Instagram from the Publish tab.`; nextCta = `<a class="btn" href="${esc(ep.pageUrl)}" target="_blank" rel="noopener">Open page</a>`; }
   else if (unchecked > 0 && done.voice && done.art) { nextWhat = `Check ${unchecked} fact${unchecked === 1 ? "" : "s"}`; nextWhy = `${unsupported ? `${unsupported} of them are not in the research notes. ` : ""}Read the Facts tab and tick each one you have confirmed. Publish unlocks when the list is clear.`; nextCta = `<button class="btn red big" data-tab="facts">Open facts</button>`; }
   else if (next === "voice") { nextWhat = "Make the voice"; nextWhy = engine === "clone" ? "Your cloned voice, about five hours for twenty minutes. Or record it yourself in the Voice tab." : "edge-tts, a couple of minutes. Or record it yourself in the Voice tab."; nextCta = `<button class="btn red big" data-run="voice">Make voice</button>`; }

@@ -142,7 +142,7 @@ async function listDrafts() {
   for (const d of dirs) {
     const ep = await readJson(join(DRAFTS, d, "episode.json"), null);
     if (!ep) continue;
-    outList.push({ id: ep.id || d, title: ep.title, status: ep.status, created: ep.created, caseSlug: ep.caseSlug, duration: ep.duration || null, scriptWords: ep.scriptWords, files: ep.files || {}, factsToVerify: (ep.factsToVerify || []).length, publishedAt: ep.publishedAt || null, researched: !!ep.researched || !!ep.files?.research });
+    outList.push({ id: ep.id || d, title: ep.title, status: ep.status, created: ep.created, caseSlug: ep.caseSlug, duration: ep.duration || null, scriptWords: ep.scriptWords, files: ep.files || {}, factsToVerify: (ep.factsToVerify || []).length, publishedAt: ep.publishedAt || null, researched: !!ep.researched || !!ep.files?.research, inProgress: (await exists(join(DRAFTS, d, "tts"))) ? "voice" : null });
   }
   return outList.sort((a, b) => (b.created || "").localeCompare(a.created || ""));
 }
@@ -236,7 +236,7 @@ const server = createServer(async (req, res) => {
       if (!safeId(id)) return json(res, 400, { error: "bad id" });
       const dir = join(DRAFTS, id);
       const epPath = join(dir, "episode.json");
-      if (req.method === "GET" && !sub) { const ep = await readJson(epPath, null); return ep ? json(res, 200, { ...ep, dir, fileList: await listFiles(dir) }) : json(res, 404, { error: "no such draft" }); }
+      if (req.method === "GET" && !sub) { const ep = await readJson(epPath, null); return ep ? json(res, 200, { ...ep, dir, fileList: await listFiles(dir), inProgress: (await exists(join(dir, "tts"))) ? "voice" : null }) : json(res, 404, { error: "no such draft" }); }
       if (req.method === "GET" && sub === "files") return json(res, 200, await listFiles(dir));
       if (req.method === "PUT" && !sub) {
         const ep = await readJson(epPath, null); if (!ep) return json(res, 404, { error: "no such draft" });
@@ -324,6 +324,7 @@ const server = createServer(async (req, res) => {
       if (!ACTIONS[body.action]) return json(res, 400, { error: "unknown action" });
       if (body.id && !safeId(body.id)) return json(res, 400, { error: "bad id" });
       if (body.id && running().some((j) => j.draft === body.id)) return json(res, 409, { error: "a job is already running for this draft" });
+      if (body.action === "voice" && body.id && (await exists(join(DRAFTS, body.id, "tts")))) return json(res, 409, { error: "a voice render is already running for this episode (its tts folder exists). Wait for it, or delete the tts folder if it crashed." });
       if (["content", "sync", "build", "publish", "weekly"].includes(body.action) && running().some((j) => ["content", "sync", "build", "publish", "weekly"].includes(j.action))) return json(res, 409, { error: "a site build is already running" });
       // A recording inside the draft folder (browser take or dropped file) is referenced by name only.
       if (body.fromInFolder) {
