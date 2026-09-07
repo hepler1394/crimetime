@@ -398,6 +398,15 @@ app.whenReady().then(async () => {
   pushTabs();
   // Say on startup which Instagram profile this window would post as. Cheap, and it is
   // the first thing to check when a post goes somewhere unexpected.
-  instagramAccount(true).then((a) => console.log(`[shell] Instagram: ${a.username ? "@" + a.username : a.signedIn ? `signed in, profile unknown${a.error ? " (" + a.error + ")" : ""}` : "not signed in"}`));
+  instagramAccount(true).then((a) => {
+    console.log(`[shell] Instagram: ${a.username ? "@" + a.username : a.signedIn ? `signed in, profile unknown${a.error ? " (" + a.error + ")" : ""}` : "not signed in"}`);
+    // Nothing can be posted from a session that has never signed in, and the login can
+    // only be done by a person. Put it in front of him rather than failing at the Post
+    // button later. It opens behind the board, in the Instagram workspace.
+    if (!a.signedIn) {
+      newTab("https://www.instagram.com/accounts/login/", false, "instagram");
+      toast("Sign in to Instagram in the Instagram workspace to post from the studio.");
+    }
+  });
 });
 app.on("window-all-closed", () => { if (studioProc) { try { studioProc.kill(); } catch { /* gone */ } } app.quit(); });

@@ -61,6 +61,13 @@ automation/studio/posts/*/slide-*.jpg
 automation/studio/posts/*/bg-*.png
 automation/studio/posts/*/*.mp4
 
+# case footage: the clips are downloaded, not authored. sources.json records the
+# URL, the in and out points and the rights basis, so any clip can be cut again
+# with one command - there is no reason to carry 5 MB of press conference per cut.
+automation/studio/footage/*/clips/
+automation/studio/footage/*/sources/*.vtt
+automation/studio/footage/*/.work/
+
 # Studio: personal and licensed assets never ship. Four scripts run `git add -A`
 # in this tree, so this list is the guard. Research projects (PDFs, clippings,
 # chat.json), the voice-clone reference and takes, Cory's own theme tracks and
