@@ -10,6 +10,7 @@
 //   node automation/footage.mjs --find <sourceId> --q "needle in the haystack"
 //   node automation/footage.mjs --clip <sourceId> --in 464 --out 476 \
 //        --label "Sacramento County DA, April 25, 2018" [--x 0.5] [--json]
+//   node automation/footage.mjs --restore --case <slug>   (re-cut missing clips)
 //
 // --add fetches metadata and the auto captions only, never the video. --find
 // searches those captions so a clip can be located by what was said. --clip is
@@ -144,19 +145,11 @@ async function find() {
 }
 
 /* ---------------------------------------------------------------------- clip */
-async function clip() {
-  const id = opt("--clip");
-  const c = slug(opt("--case", ""));
-  const inS = parseFloat(opt("--in", "-1"));
-  const outS = parseFloat(opt("--out", "-1"));
-  const label = opt("--label", "");
-  const xf = Math.max(0, Math.min(1, parseFloat(opt("--x", "0.5")))); // horizontal crop centre, 0 left .. 1 right
-  if (!c || !id || inS < 0 || outS <= inS) die("args", "--clip <sourceId> --case <slug> --in <sec> --out <sec>");
-  if (!label) die("args", "--label is required: every clip carries its source on screen.");
+// The cut itself, shared by --clip and --restore. Clips are not in git: they are
+// downloads, and sources.json holds everything needed to make them again.
+async function cut(c, src, { inS, outS, label, xf }) {
+  const id = src.id;
   const dur = Math.min(30, outS - inS);
-  const book = await readBook(c);
-  const src = book.sources.find((s) => s.id === id);
-  if (!src) die("source", `${id} is not in the ${c} library. Run --add first.`);
 
   const work = join(caseDir(c), ".work");
   await rm(work, { recursive: true, force: true });
@@ -193,10 +186,45 @@ async function clip() {
   await rm(work, { recursive: true, force: true });
 
   const rec = { id: clipId, file: `clips/${clipId}.mp4`, audio: `clips/${clipId}.wav`, in: inS, out: +(inS + dur).toFixed(2), seconds: +dur.toFixed(2), label, x: xf, source: id, cut: new Date().toISOString() };
-  src.clips = (src.clips || []).filter((x) => x.id !== clipId).concat([rec]);
+  return { rec, bytes: (await stat(file)).size, meta };
+}
+
+async function clip() {
+  const id = opt("--clip");
+  const c = slug(opt("--case", ""));
+  const inS = parseFloat(opt("--in", "-1"));
+  const outS = parseFloat(opt("--out", "-1"));
+  const label = opt("--label", "");
+  const xf = Math.max(0, Math.min(1, parseFloat(opt("--x", "0.5")))); // horizontal crop centre, 0 left .. 1 right
+  if (!c || !id || inS < 0 || outS <= inS) die("args", "--clip <sourceId> --case <slug> --in <sec> --out <sec>");
+  if (!label) die("args", "--label is required: every clip carries its source on screen.");
+  const book = await readBook(c);
+  const src = book.sources.find((x) => x.id === id);
+  if (!src) die("source", `${id} is not in the ${c} library. Run --add first.`);
+  const { rec, bytes, meta } = await cut(c, src, { inS, outS, label, xf });
+  src.clips = (src.clips || []).filter((x) => x.id !== rec.id).concat([rec]);
   await writeBook(c, book);
-  const bytes = (await stat(file)).size;
-  out({ ok: true, ...rec, message: `Clip ${clipId} ${dur.toFixed(1)}s (${(bytes / 1048576).toFixed(1)} MB) from ${meta.width}x${meta.height} - "${label}"` });
+  out({ ok: true, ...rec, message: `Clip ${rec.id} ${rec.seconds.toFixed(1)}s (${(bytes / 1048576).toFixed(1)} MB) from ${meta.width}x${meta.height} - "${label}"` });
+}
+
+/* ------------------------------------------------------------------- restore */
+// Clips are gitignored, so a fresh clone has sources.json and no video. This cuts
+// every registered clip that is missing, from the same source and the same in and
+// out points, which is the reason the library records them.
+async function restore() {
+  const c = slug(opt("--case", ""));
+  if (!c) die("args", "--restore --case <slug>");
+  const book = await readBook(c);
+  let made = 0, had = 0;
+  for (const src of book.sources) {
+    for (const cl of src.clips || []) {
+      if (existsSync(join(caseDir(c), cl.file))) { had++; continue; }
+      say(`  cutting ${cl.id}`);
+      await cut(c, src, { inS: cl.in, outS: cl.out, label: cl.label, xf: cl.x ?? 0.5 });
+      made++;
+    }
+  }
+  out({ ok: true, made, had, message: `${made} clip${made === 1 ? "" : "s"} cut, ${had} already on disk.` });
 }
 
 /* ---------------------------------------------------------------------- list */
@@ -226,5 +254,6 @@ try {
   if (has("--add")) await add();
   else if (has("--find")) await find();
   else if (has("--clip")) await clip();
+  else if (has("--restore")) await restore();
   else await list();
 } catch (e) { die("run", e.message); }
