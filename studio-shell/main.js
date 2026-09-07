@@ -409,8 +409,12 @@ app.whenReady().then(async () => {
     // only be done by a person. Put it in front of him rather than failing at the Post
     // button later. It opens behind the board, in the Instagram workspace.
     if (!a.signedIn) {
-      newTab("https://www.instagram.com/accounts/login/", false, "instagram");
-      toast("Sign in to Instagram in the Instagram workspace to post from the studio.");
+      // Foreground, and bring the window forward: a login page nobody can see is worse
+      // than no login page. The Instagram workspace becomes active with it.
+      newTab("https://www.instagram.com/accounts/login/", true, "instagram");
+      layout(); pushTabs();
+      try { win.show(); win.focus(); } catch { /* window may be closing */ }
+      toast("Sign in to Instagram here to post from the studio.");
     }
   });
   setInterval(() => instagramAccount(true).catch(() => {}), 60_000);
