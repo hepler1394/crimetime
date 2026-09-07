@@ -96,7 +96,9 @@ function render() {
   if (st.target && $("#target").value !== st.target && [...$("#target").options].some((o) => o.value === st.target)) $("#target").value = st.target;
 }
 $("#tabs").addEventListener("click", (e) => { const x = e.target.closest("[data-close]"); if (x) return window.shell.send("closeTab", { id: x.dataset.close }); const t = e.target.closest("[data-id]"); if (t) window.shell.send("activate", { id: t.dataset.id }); });
-$("#newtab").addEventListener("click", () => window.shell.send("newTab", { url: "https://duckduckgo.com/" }));
+// In the Instagram workspace a new tab means Instagram - going to a search engine
+// there is never what anyone wants, and it made signing in look broken.
+$("#newtab").addEventListener("click", () => window.shell.send("newTab", { url: st.workspace === "instagram" ? "https://www.instagram.com/" : "https://duckduckgo.com/" }));
 $("#home").addEventListener("click", () => window.shell.send("home"));
 $("#back").addEventListener("click", () => window.shell.send("back"));
 $("#fwd").addEventListener("click", () => window.shell.send("forward"));
