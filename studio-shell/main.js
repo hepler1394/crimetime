@@ -381,7 +381,7 @@ ipcMain.handle("shell", async (_e, { cmd, ...a }) => {
     case "activate": activeTab = a.id || null; activeByWs[workspace] = activeTab; layout(); pushTabs(); break;
     case "home": activeTab = null; activeByWs[workspace] = null; layout(); pushTabs(); break;
     case "workspace": workspace = a.name; activeTab = activeByWs[workspace] && tabs.has(activeByWs[workspace]) ? activeByWs[workspace] : null; layout(); pushTabs(); break;
-    case "navigate": { let u = String(a.url || "").trim(); if (!u) break; if (!/^[a-z]+:\/\//i.test(u)) u = /\s/.test(u) || !u.includes(".") ? `https://duckduckgo.com/?q=${encodeURIComponent(u)}` : `https://${u}`; if (t) t.view.webContents.loadURL(u); else newTab(u, true); break; }
+    case "navigate": { let u = String(a.url || "").trim(); if (!u) break; if (!/^[a-z]+:\/\//i.test(u)) u = /\s/.test(u) || !u.includes(".") ? `https://www.google.com/search?q=${encodeURIComponent(u)}` : `https://${u}`; if (t) t.view.webContents.loadURL(u); else newTab(u, true); break; }
     case "back": if (t) goBack(t.view.webContents); break;
     case "forward": if (t) goFwd(t.view.webContents); break;
     case "reload": if (t) t.view.webContents.reload(); else if (workspace === "crimetime") studioView.webContents.reload(); else igView.webContents.reload(); break;
