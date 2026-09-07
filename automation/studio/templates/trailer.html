@@ -38,7 +38,12 @@
   .quote .cap span.said{opacity:1}
   .quote .cap span.now{color:var(--hot)}
   .quote .rule{position:absolute;left:80px;bottom:250px;height:6px;width:140px;background:var(--red)}
-  .quote .who{position:absolute;left:80px;bottom:200px;font:500 24px/1 "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--tape)}
+  .quote .who{position:absolute;left:80px;bottom:196px;font:500 24px/1 "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--tape)}
+  /* Real footage carries its source on screen. Not decoration - a viewer has to
+     be able to see where a clip came from, and the label is what makes the clip
+     usable in the first place. */
+  .quote .src{position:absolute;left:80px;right:80px;bottom:152px;font:500 19px/1 "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:0}
+  .quote .src.on{opacity:.85}
   /* end card */
   .cta .big{position:absolute;left:80px;right:80px;top:640px;font:normal 150px/.95 "Bebas Neue",Impact,sans-serif;letter-spacing:.01em}
   .cta .big em{color:var(--red);font-style:normal}
@@ -58,7 +63,7 @@
   <div class="grain"></div>
   <div class="sec cold" id="cold"><div class="pulse"></div><div class="pulse b"></div><div class="lab" id="cold-lab"></div><div class="sub" id="cold-sub"></div></div>
   <div class="sec title" id="title"><div class="mark">Crime<em>Time</em>Snacks</div><div class="ep" id="ep-title"></div><div class="tape"></div></div>
-  <div class="sec quote" id="quote"><div class="bg" id="q-bg"></div><div class="shade"></div><div class="cap" id="q-cap"></div><div class="rule"></div><div class="who" id="q-who">From the episode</div></div>
+  <div class="sec quote" id="quote"><div class="bg" id="q-bg"></div><div class="shade" id="q-shade"></div><div class="cap" id="q-cap"></div><div class="rule"></div><div class="who" id="q-who">From the episode</div><div class="src" id="q-src"></div></div>
   <div class="sec cta" id="cta"><div class="logo"><img id="logo" alt=""><span>Crime<em>Time</em>Snacks</span></div><div class="big">New <em>episode.</em><br>Link in bio.</div><div class="site" id="site">www.crimetimesnacks.com</div><div class="plug" id="plug"></div><div class="tape"></div></div>
   <div class="wave" id="wave"></div>
 </div>
@@ -77,8 +82,16 @@
     if (cur === sec) return;
     for (const k in secEls) secEls[k].classList.toggle("on", secEls[k] === secEls[sec.type] && true);
     if (sec.type === "quote") {
-      const bg = document.getElementById("q-bg"); bg.style.transition = "none"; bg.style.transform = "scale(1)"; bg.style.backgroundImage = sec.bg ? `url("${sec.bg}")` : "linear-gradient(180deg,#1a0406,#050505)";
-      requestAnimationFrame(() => { bg.style.transition = `transform ${sec.dur}s linear`; bg.style.transform = "scale(1.12)"; });
+      const bg = document.getElementById("q-bg"); bg.style.transition = "none"; bg.style.transform = "scale(1)";
+      // Footage sections are black here on purpose: the clip is composited
+      // underneath in ffmpeg and this layer is screen-blended over it, so any
+      // colour in the background would wash the footage out. The slow push is
+      // ffmpeg's too - doing it twice would double the movement.
+      bg.style.background = sec.footage ? "#000" : "";
+      bg.style.backgroundImage = sec.footage ? "none" : (sec.bg ? `url("${sec.bg}")` : "linear-gradient(180deg,#1a0406,#050505)");
+      if (!sec.footage) requestAnimationFrame(() => { bg.style.transition = `transform ${sec.dur}s linear`; bg.style.transform = "scale(1.12)"; });
+      const src = document.getElementById("q-src"); src.textContent = sec.credit ? `Source: ${sec.credit}` : ""; src.classList.toggle("on", !!sec.credit);
+      document.getElementById("q-shade").style.display = sec.footage ? "none" : "";
       const cap = document.getElementById("q-cap"); cap.innerHTML = sec.words.map((w) => `<span>${w.w}</span>`).join(" "); fit(cap, 78, 44);
       curWords = [...cap.children];
       document.getElementById("q-who").textContent = sec.who || "From the episode";

@@ -74,6 +74,26 @@ if (bgs.length < 2 && process.env.GEMINI_API_KEY) {
 }
 const bgUrl = (n) => pathToFileURL(join(dir, n)).href;
 
+/* --------------------------------------------------- footage for this case */
+// Typography over a still photograph is a slideshow. What people stop for is
+// the real thing - the press conference where the arrest was announced, the
+// courtroom, released body-cam. automation/footage.mjs keeps those clips per
+// case with their source and rights basis; if the case has any, the quote
+// sections are cut over footage instead of stills and each one names its
+// source on screen.
+const FOOTAGE = join(__dirname, "studio", "footage");
+const caseSlug = ep.caseSlug || id.replace(/^\d{4}-\d{2}-\d{2}-/, "").replace(/^the-/, "");
+let clips = [];
+for (const c of [ep.caseSlug, caseSlug, id.replace(/^\d{4}-\d{2}-\d{2}-/, "")].filter(Boolean)) {
+  const book = join(FOOTAGE, c, "sources.json");
+  if (!existsSync(book)) continue;
+  const b = JSON.parse(await readFile(book, "utf8"));
+  clips = (b.sources || []).flatMap((src) => (src.clips || []).map((cl) => ({ ...cl, rights: src.rights, channel: src.channel, file: join(FOOTAGE, c, cl.file.replace(/\//g, "\\")) })))
+    .filter((cl) => existsSync(cl.file));
+  if (clips.length) { say(`  footage: ${clips.length} clip${clips.length === 1 ? "" : "s"} from ${c}`); break; }
+}
+const useFootage = clips.length > 0 && !args.includes("--no-footage");
+
 /* --------------------------------------------------------- pick lines */
 const opener = segs.findIndex((s) => /thanks for tuning in|crime time snacks/i.test(s.text));
 const closer = segs.findIndex((s) => /form your own conclusion|read the file/i.test(s.text));
@@ -94,6 +114,29 @@ if (picks.length < 2) {
   picks = [at(0.05), at(0.45), at(0.8)].filter(Boolean).slice(0, coldFile ? 2 : 3);
 }
 if (!picks.length) die("picks", "Could not find usable lines.");
+
+/* ------------------------------------------------------- spelling of names */
+// The captions come from a transcription of the cloned voice, and a transcriber
+// spells names by ear: this episode's script says DeAngelo 65 times and the
+// transcript came back with DiAngelo and D'Angelo. On screen that is a misspelt
+// name on the face of a published reel. The script is the authority, so a
+// near-miss proper noun in a caption is corrected back to the script's spelling.
+const scriptText = JSON.stringify(ep);
+const PROPER = /\b[A-Z][a-zA-Z\u2019\x27]{2,}\b/g;
+const properNouns = [...new Set(scriptText.match(PROPER) || [])].filter((w) => scriptText.split(w).length - 1 >= 3);
+const editDistance = (a, b) => {
+  const m = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)]);
+  for (let j = 0; j <= b.length; j++) m[0][j] = j;
+  for (let i = 1; i <= a.length; i++) for (let j = 1; j <= b.length; j++)
+    m[i][j] = Math.min(m[i - 1][j] + 1, m[i][j - 1] + 1, m[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+  return m[a.length][b.length];
+};
+const fixNames = (text) => text.replace(PROPER, (w) => {
+  if (properNouns.includes(w)) return w;
+  const near = properNouns.find((n) => n.length >= 5 && Math.abs(n.length - w.length) <= 2 && editDistance(n.toLowerCase(), w.toLowerCase()) <= 2);
+  if (near) say(`  spelling: ${w} -> ${near}`);
+  return near || w;
+});
 
 /* ---------------------------------------------------------- audio */
 const work = join(dir, "trailer-work");
@@ -136,6 +179,7 @@ for (const p of parts) {
   const d = probeSeconds(p.file);
   p.start = t; p.dur = d;
   if (p.type === "quote") {
+    p.text = fixNames(p.text);
     const words = p.text.split(/\s+/).filter(Boolean);
     const speak = Math.max(0.5, d - 0.6);
     p.words = words.map((w, i) => ({ w, t: +(0.1 + (speak * i) / words.length).toFixed(2) }));
@@ -159,10 +203,24 @@ ff([...inputs, "-filter_complex", filt.join(";"), "-map", "[a]", "-t", total.toF
 say(`  ${sections.length} parts, ${total.toFixed(1)}s`);
 
 /* ---------------------------------------------------------- video */
+// Which quote is this, counting only the quotes - the title card and the end
+// card sit in the same array and would otherwise skip clips.
+const quoteIndex = (arr, k) => arr.slice(0, k).filter((x) => x.type === "quote").length;
 const data = {
   title: ep.title, logo: LOGO, plug: plug ? plug.label : "",
-  sections: sections.map((s, k) => ({ type: s.cold ? "quote" : s.type, start: +s.start.toFixed(2), dur: +(s.dur + (k === sections.length - 1 ? 1 : GAP)).toFixed(2), label: s.label, sub: s.sub, words: s.words, who: s.cold ? "The case" : "From the episode",
-    bg: s.type === "quote" && !s.cold ? (bgs.length ? bgUrl(bgs[k % bgs.length]) : "") : "" })),
+  sections: sections.map((s, k) => {
+    const isQuote = s.type === "quote" && !s.cold;
+    // Clips are handed out in order so the strongest footage lands on the first
+    // quote, which is the one most people see before they scroll.
+    // The opening line gets footage too. It used to open over black, which was
+    // right when the alternative was a stock still; it is not when there is real
+    // footage, because the first two seconds decide whether anyone stays.
+    const shot = (isQuote || s.cold) && useFootage ? clips[quoteIndex(sections, k) % clips.length] : null;
+    if (shot) s.shot = shot;
+    return { type: s.cold ? "quote" : s.type, start: +s.start.toFixed(2), dur: +(s.dur + (k === sections.length - 1 ? 1 : GAP)).toFixed(2), label: s.label, sub: s.sub, words: s.words, who: s.cold ? "The case" : "From the episode",
+      footage: !!shot, credit: shot ? shot.label : "",
+      bg: shot ? "" : (isQuote ? (bgs.length ? bgUrl(bgs[k % bgs.length]) : "") : "") };
+  }),
 };
 const { chromium } = await import(pathToFileURL(PW).href);
 const browser = await chromium.launch();
@@ -178,10 +236,50 @@ await ctx.close(); await browser.close();
 const webm = (await readdir(work)).find((f) => f.endsWith(".webm"));
 if (!webm) die("record", "No video was recorded.");
 const mp4 = join(dir, "trailer.mp4");
-ff(["-ss", Math.max(0, leadIn - 0.05).toFixed(2), "-i", join(work, webm), "-i", timelineWav, "-map", "0:v", "-map", "1:a", "-t", total.toFixed(2), "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p", "-r", "30", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", mp4], "mux");
+const overlayWebm = join(work, webm);
+const ss = Math.max(0, leadIn - 0.05).toFixed(2);
+const shots = sections.filter((x) => x.shot);
+if (shots.length) {
+  // Two passes. First the footage track: the clips laid on black at the times
+  // their quotes land. Then the recorded page is screen-blended over it - the
+  // design is white and red type on black, and screen leaves black untouched,
+  // so the type sits on the footage with no keying and no quality loss.
+  const scrim = join(work, "scrim.png");
+  // The bottom third has to go dark or white type over a sunlit press
+  // conference is unreadable. The page cannot draw this: a dark gradient
+  // screen-blends to nothing.
+  ff(["-f", "lavfi", "-i", "color=black:s=1080x1920", "-vf", "format=rgba,geq=r=0:g=0:b=0:a='clip((Y-780)/560*255*0.96,0,255)'", "-frames:v", "1", scrim], "scrim");
+  const vin = ["-f", "lavfi", "-i", `color=black:s=1080x1920:r=30:d=${total.toFixed(2)}`];
+  const fc = []; let lastL = "[0:v]";
+  shots.forEach((x, i) => {
+    vin.push("-i", x.shot.file);
+    // Run the clip through the gap only when the next section is more footage.
+    // Letting it run into the title slam or the end card puts a press conference
+    // behind "New episode. Link in bio.", which reads as a mistake.
+    const next = sections[sections.indexOf(x) + 1];
+    const d = (next && next.shot ? x.dur + GAP : x.dur);
+    // tpad holds the last frame if a quote outlasts its clip; without it the
+    // section would cut to black mid-sentence.
+    fc.push(`[${i + 1}:v]scale=1080:1920,setsar=1,fps=30,eq=brightness=-0.11:contrast=1.12:saturation=0.34,tpad=stop_mode=clone:stop_duration=${(d + 2).toFixed(2)},trim=0:${d.toFixed(2)},setpts=PTS-STARTPTS+${x.start.toFixed(2)}/TB[s${i}]`);
+    fc.push(`${lastL}[s${i}]overlay=0:0:enable='between(t,${x.start.toFixed(2)},${(x.start + d).toFixed(2)})'[b${i}]`);
+    lastL = `[b${i}]`;
+  });
+  vin.push("-framerate", "30", "-loop", "1", "-i", scrim);
+  fc.push(`${lastL}[${shots.length + 1}:v]overlay=0:0:shortest=1[fv]`);
+  const track = join(work, "footage.mp4");
+  ff([...vin, "-filter_complex", fc.join(";"), "-map", "[fv]", "-t", total.toFixed(2), "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", "-r", "30", track], "footage track");
+  ff(["-i", track, "-ss", ss, "-i", overlayWebm, "-i", timelineWav,
+    // blend has to happen in RGB. Screen-blending YUV blends the chroma planes
+    // too, which drags U and V toward 255 and turns the whole reel magenta.
+    "-filter_complex", "[0:v]format=gbrp[bg];[1:v]fps=30,scale=1080:1920,setsar=1,format=gbrp[ov];[bg][ov]blend=all_mode=screen,format=yuv420p[v]",
+    "-map", "[v]", "-map", "2:a", "-t", total.toFixed(2), "-c:v", "libx264", "-preset", "medium", "-crf", "20",
+    "-pix_fmt", "yuv420p", "-r", "30", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", mp4], "mux over footage");
+} else {
+  ff(["-ss", ss, "-i", overlayWebm, "-i", timelineWav, "-map", "0:v", "-map", "1:a", "-t", total.toFixed(2), "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p", "-r", "30", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", mp4], "mux");
+}
 await rm(work, { recursive: true, force: true });
 ep.files = { ...(ep.files || {}), trailer: "trailer.mp4" };
-ep.trailer = { seconds: +total.toFixed(1), coldOpen: coldFile || null, lines: sections.filter((s) => s.type === "quote").map((s) => s.text), generated: new Date().toISOString() };
+ep.trailer = { seconds: +total.toFixed(1), coldOpen: coldFile || null, lines: sections.filter((s) => s.type === "quote").map((s) => s.text), footage: shots.map((x) => ({ clip: x.shot.id, label: x.shot.label, rights: x.shot.rights, channel: x.shot.channel })), generated: new Date().toISOString() };
 await writeFile(join(dir, "episode.json"), JSON.stringify(ep, null, 2) + "\n", "utf8");
 const bytes = (await stat(mp4)).size;
-out({ ok: true, id, file: mp4, seconds: +total.toFixed(1), coldOpen: !!coldFile, lines: ep.trailer.lines.length, message: `Trailer ${total.toFixed(0)}s -> trailer.mp4 (${(bytes / 1048576).toFixed(1)} MB), ${coldFile ? "cold open from " + coldFile : "hook line opens"}, ${ep.trailer.lines.length} lines${plug ? ", plug: " + plug.label : ""}` });
+out({ ok: true, id, file: mp4, seconds: +total.toFixed(1), coldOpen: !!coldFile, lines: ep.trailer.lines.length, footage: shots.length, message: `Trailer ${total.toFixed(0)}s -> trailer.mp4 (${(bytes / 1048576).toFixed(1)} MB), ${coldFile ? "cold open from " + coldFile : "hook line opens"}, ${ep.trailer.lines.length} lines, ${shots.length ? shots.length + " over real footage" : "stills"}${plug ? ", plug: " + plug.label : ""}` });

@@ -132,6 +132,20 @@
   .preview img{display:block;width:100%;object-fit:cover;background:#000}
   .preview .cap{padding:8px 12px;font:11px/1.6 var(--mono);color:var(--muted);display:flex;justify-content:space-between}
   .art3{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;align-items:start}
+  /* footage library */
+  .foot{margin-top:22px;border-top:1px solid var(--line);padding-top:18px}
+  .foot h4{margin:0 0 4px;font-size:15px}
+  .foot .clips{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:12px 0}
+  .foot .clip video{width:100%;display:block;background:#000;aspect-ratio:9/16;object-fit:cover}
+  .foot .clip{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--panel)}
+  .foot .clip .m{padding:7px 8px;font-size:11px;line-height:1.35;color:var(--dim)}
+  .foot .tag{display:inline-block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:3px;padding:1px 5px;margin-right:5px}
+  .foot .tag.news{border-color:#7a5b18;color:#d9a441}
+  .foot .src{border:1px solid var(--line);border-radius:6px;padding:10px 12px;margin-bottom:10px}
+  .foot .src .t{font-size:13px;margin-bottom:6px}
+  .foot .hits{margin-top:8px;max-height:210px;overflow:auto}
+  .foot .hit{display:flex;gap:8px;align-items:center;font-size:12px;padding:3px 0;color:var(--dim)}
+  .foot .hit b{color:var(--fg);font-weight:500;min-width:52px}
   audio{width:100%;filter:invert(1) hue-rotate(180deg) saturate(.7)}
   video{width:100%;display:block;background:#000;max-height:520px}
   .opt{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
@@ -427,7 +441,7 @@ function stageOf(ep) {
   const order = ["research", "script", "voice", "art", "social", "publish"];
   return { done, next: order.find((k) => !done[k]) || null };
 }
-const RUN_LABEL = { new: "Writing the script", research: "Researching", voice: "Making the voice", art: "Rendering art", social: "Cutting the reel", publish: "Publishing", generate: "Generating" };
+const RUN_LABEL = { new: "Writing the script", research: "Researching", voice: "Making the voice", art: "Rendering art", social: "Cutting the reel", trailer: "Cutting the trailer", publish: "Publishing", generate: "Generating", "footage-add": "Adding the source", "footage-clip": "Cutting the clip" };
 // Everything the editor shows is rebuilt from state.ep, so anything typed and not yet
 // saved would vanish on any rebuild (a finishing job, a tick, a save). Snapshot the live
 // controls first, put them back after, and restore the caret so the script stays usable.
@@ -544,6 +558,12 @@ function renderEditor() {
       <div class="row" style="margin-bottom:16px"><button class="btn ${done.art ? "" : "red"}" data-run="art" ${dis(!done.script)}>${done.art ? "Re-render art" : "Render art"}</button><button class="btn ${done.art && !done.social ? "red" : ""}" data-run="social" ${dis(!done.voice || !done.art)} title="${!done.voice ? "Make the voice first" : ""}">${done.social ? "Re-cut reel" : "Build reel"}</button><span class="hint" style="margin:0">Cover 3000 square, card 1080x1350, reel still 1080x1920, then a 45 s audiogram.</span></div>
       ${done.art ? `<div class="art3"><div class="preview"><img src="${f("cover")}" alt="Cover"><div class="cap"><span>cover</span><span>3000</span></div></div><div class="preview"><img src="${f("card")}" alt="Feed card"><div class="cap"><span>card</span><span>1080x1350</span></div></div><div class="preview"><img src="${f("reelStill")}" alt="Reel still"><div class="cap"><span>reel still</span><span>1080x1920</span></div></div></div>` : `<p class="hint">No art yet.</p>`}
       ${(done.social || done.voice) ? `<div class="two" style="margin-top:16px">${ep.files.trailer ? `<div class="preview"><video controls preload="metadata" src="${f("trailer")}"></video><div class="cap"><span>trailer, ${ep.trailer?.seconds || ""} s${ep.trailer?.coldOpen ? ", cold open: " + esc(ep.trailer.coldOpen) : ", hook line opens"}</span><span>the post</span></div></div>` : ""}<div class="preview"><video controls preload="metadata" src="${f("reel")}"></video><div class="cap"><span>audiogram, ${ep.social?.clipSeconds || 45} s</span><span>fallback</span></div></div></div><div class="cold"><div class="f">Cold open for the trailer</div>${cold ? `<div class="have">Using <b>${esc(cold.name)}</b>${ep.trailer?.coldOpen ? `, labelled "${esc(ep.trailer.coldOpen)}"` : ""}. Re-cut the reel after changing it.</div>` : `<div class="have">No clip. The hook line opens the trailer.</div>`}<div class="row"><label class="drop" id="drop-cold" style="flex:1;margin:0">${cold ? "Replace the clip" : "Drop the clip"} (a 911 call or other public-record audio; the first 8 s are used)<input type="file" id="cold-file" accept="audio/*,video/mp4"></label><input class="t" id="cold-label" placeholder="One-line label, e.g. 911 call, April 3, 2022" value="${esc(coldLabel)}" aria-label="Cold open label"><button class="btn sm" id="cold-save">Save label</button>${cold ? `<button class="btn sm ghost" data-del="${esc(cold.name)}">Remove clip</button>` : ""}</div></div>` : ""}
+
+      <div class="foot" id="foot">
+        <h4>Real footage for this case</h4>
+        <div class="hint" style="margin:0">Typography over a still is a slideshow. Add a source, find the moment by what was said, cut it, and the trailer lays the clips under the quotes with the source named on screen. Every clip keeps its origin and rights basis.</div>
+        <div id="foot-body" class="hint">Loading.</div>
+      </div>
     </div>
 
     <div class="pane" id="pane-publish" ${tab === "publish" ? "" : "hidden"}>
@@ -573,6 +593,7 @@ function renderEditor() {
   $("#btn-folder").addEventListener("click", () => api("/api/open", { method: "POST", body: JSON.stringify({ id: ep.id }) }).catch((e) => toast(e.message, true)));
   $("#btn-delete")?.addEventListener("click", async () => { if (!confirm(`Delete "${ep.title}" and its folder?`)) return; try { await api(`/api/draft/${ep.id}`, { method: "DELETE" }); state.current = null; state.ep = null; toast("Deleted."); await loadHealth(); if (!state.drafts.length) { $("#editor").hidden = true; $("#empty").hidden = false; } } catch (e) { toast(e.message, true); } });
   document.querySelectorAll("[data-run]").forEach((b) => b.addEventListener("click", () => runStage(b.dataset.run)));
+  renderFootage(ep);
   document.querySelectorAll("[data-fact]").forEach((c) => c.addEventListener("change", () => saveFacts(facts.map((_, i) => !!document.querySelector(`[data-fact="${i}"]`)?.checked))));
   $("#tick-supported")?.addEventListener("click", () => saveFacts(facts.map((t, i) => checked[i] || !/^UNSUPPORTED:/.test(t))));
   document.querySelectorAll("[data-copy]").forEach((b) => b.addEventListener("click", () => navigator.clipboard.writeText(ep[b.dataset.copy] || "").then(() => toast("Copied."))));
@@ -612,6 +633,58 @@ function jumpToParagraph(idx) {
   ta.scrollTop = Math.max(0, (lines - 1) * lh - 12);
 }
 const mmss = (t) => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, "0")}`;
+/* ------------------------------------------------------------- footage */
+// The library lives per case, not per episode: the same press conference will
+// serve every reel about that case, so clips are cut once and reused.
+async function renderFootage(ep) {
+  const box = $("#foot-body"); if (!box) return;
+  const cs = ep.caseSlug || "";
+  if (!cs) { box.innerHTML = '<div class="hint" style="margin:8px 0">This draft has no case slug, so it has no footage folder.</div>'; return; }
+  let data = { cases: [] };
+  try { data = await api(`/api/footage?case=${encodeURIComponent(cs)}`); } catch (e) { box.textContent = e.message; return; }
+  const lib = data.cases.find((c) => c.case === cs) || { case: cs, sources: [] };
+  const clips = lib.sources.flatMap((sr) => (sr.clips || []).map((c) => ({ ...c, rights: sr.rights, channel: sr.channel })));
+  const fileUrl = (c) => `/api/footage/file?case=${encodeURIComponent(cs)}&name=${encodeURIComponent(c.id)}.mp4`;
+  box.innerHTML = `
+    ${clips.length ? `<div class="clips">${clips.map((c) => `<div class="clip"><video preload="metadata" muted loop src="${fileUrl(c)}"></video><div class="m"><span class="tag ${c.rights === "news" ? "news" : ""}">${esc(c.rights || "")}</span>${c.seconds}s<br>${esc(c.label || "")}</div></div>`).join("")}</div>`
+      : `<div class="hint" style="margin:10px 0">No clips yet, so the trailer falls back to stills.</div>`}
+    <div class="row" style="margin:10px 0">
+      <input class="t" id="foot-url" placeholder="Source URL - a court stream, a DA or sheriff channel, an agency release" style="flex:1">
+      <select class="t" id="foot-rights" aria-label="Rights basis"><option value="agency">agency</option><option value="court">court</option><option value="public">public record</option><option value="news">news upload</option><option value="owned">ours</option></select>
+      <button class="btn sm" id="foot-add">Add source</button>
+    </div>
+    ${lib.sources.map((sr) => `<div class="src">
+      <div class="t"><span class="tag ${sr.rights === "news" ? "news" : ""}">${esc(sr.rights || "")}</span>${esc(sr.channel || "")} - ${esc(sr.title || "")}</div>
+      <div class="row"><input class="t foot-q" data-src="${esc(sr.id)}" placeholder="Find the moment by what was said" style="flex:1"><button class="btn sm ghost foot-find" data-src="${esc(sr.id)}">Find</button></div>
+      <div class="row"><input class="t foot-label" id="lab-${esc(sr.id)}" placeholder="Label shown on screen" value="${esc(sr.channel || "")}${sr.uploaded ? ", " + String(sr.uploaded).replace(/^(\d{4})(\d{2})(\d{2})$/, "$2/$3/$1") : ""}" style="flex:1"></div>
+      <div class="hits" id="hits-${esc(sr.id)}"></div></div>`).join("")}`;
+
+  $("#foot-add")?.addEventListener("click", () => {
+    const url = $("#foot-url").value.trim(); if (!url) return toast("Paste a source URL.", true);
+    startJob("footage-add", { case: cs, url, rights: $("#foot-rights").value });
+  });
+  const search = async (src) => {
+    const q = document.querySelector(`.foot-q[data-src="${src}"]`).value.trim();
+    const hits = $(`#hits-${src}`); if (q.length < 3) { hits.textContent = "Type three characters or more."; return; }
+    hits.textContent = "Searching.";
+    try {
+      const r = await api(`/api/footage/find?case=${encodeURIComponent(cs)}&source=${encodeURIComponent(src)}&q=${encodeURIComponent(q)}`);
+      const sr = lib.sources.find((x) => x.id === src) || {};
+      const when = (sr.uploaded || "").replace(/^(\d{4})(\d{2})(\d{2})$/, "$2/$3/$1");
+      hits.innerHTML = r.hits.length ? r.hits.map((h) => `<div class="hit"><b>${Math.floor(h.t / 60)}:${String(Math.floor(h.t % 60)).padStart(2, "0")}</b><span style="flex:1">${esc(h.text)}</span><button class="btn sm ghost foot-cut" data-src="${esc(src)}" data-t="${h.t}">Cut 14 s</button></div>`).join("") : "No match.";
+      hits.querySelectorAll(".foot-cut").forEach((b) => b.addEventListener("click", () => {
+        const t = Math.max(0, +b.dataset.t - 1.5);
+        // The label is what appears on screen under the quote, so it names the
+        // publisher and the date rather than the video title.
+        const label = ($(`#lab-${src}`)?.value || "").trim() || `${sr.channel || "Source"}${when ? ", " + when : ""}`;
+        startJob("footage-clip", { case: cs, source: src, in: +t.toFixed(1), out: +(t + 14).toFixed(1), label });
+      }));
+    } catch (e) { hits.textContent = e.message; }
+  };
+  document.querySelectorAll(".foot-find").forEach((b) => b.addEventListener("click", () => search(b.dataset.src)));
+  document.querySelectorAll(".foot-q").forEach((i) => i.addEventListener("keydown", (e) => { if (e.key === "Enter") search(i.dataset.src); }));
+}
+
 async function loadTranscript(ep) {
   const box = $("#tx"); const audio = $("#ep-audio"); if (!box || !audio) return;
   let segs = [];

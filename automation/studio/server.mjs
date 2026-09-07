@@ -28,6 +28,7 @@ const MUSIC = join(HERE, "music");
 const VOICE = join(HERE, "voice");
 const PORT = parseInt(process.env.STUDIO_PORT || "4177", 10);
 const POSTS = join(HERE, "posts");
+const FOOTAGE = join(HERE, "footage"); // real case footage per case, with its sources
 const IG_STUDIO = process.env.IG_STUDIO || "D:/Dev/GitHub/ig-studio"; // the Instagram pipeline repo (scripts/, content/queue.json, out/)
 const HOST = "127.0.0.1";
 
@@ -82,6 +83,13 @@ const ACTIONS = {
   watch:    (a) => ["case-watch.mjs", ...(a.case ? ["--case", a.case] : []), "--json"],
   generate: (a) => ["gen-image.mjs", "--draft", a.id, "--prompt", String(a.prompt || ""), ...(a.kind === "video" ? ["--video", "--seconds", String(a.seconds || 8)] : []), ...(a.model ? ["--model", a.model] : []), ...(a.ref ? ["--ref", a.ref] : []), "--json"],
   synccases:() => ["community/sync-cases.mjs", "--json"],
+  // Real footage. --add registers a source and pulls its captions only; --find
+  // searches those captions; --clip is the only step that downloads video, and
+  // it downloads that section alone.
+  "footage-add":  (a) => ["footage.mjs", "--add", String(a.url || ""), "--case", String(a.case || ""), "--rights", String(a.rights || "agency"), ...(a.note ? ["--note", String(a.note)] : []), "--json"],
+  "footage-find": (a) => ["footage.mjs", "--find", String(a.source || ""), "--case", String(a.case || ""), "--q", String(a.q || ""), "--json"],
+  "footage-clip": (a) => ["footage.mjs", "--clip", String(a.source || ""), "--case", String(a.case || ""), "--in", String(a.in || 0), "--out", String(a.out || 0), "--label", String(a.label || ""), ...(a.x ? ["--x", String(a.x)] : []), "--json"],
+  trailer:  (a) => ["episode-trailer.mjs", a.id, ...(a.seconds ? ["--seconds", String(a.seconds)] : []), ...(a.noFootage ? ["--no-footage"] : []), "--json"],
   "post-render": (a) => ["social-post.mjs", a.id, "--json"],
   "post-new":    (a) => ["social-post.mjs", "--new", String(a.title || "untitled"), "--json"],
   // Instagram pipeline (ig-studio). argv is relative to that repo.
@@ -349,7 +357,7 @@ const server = createServer(async (req, res) => {
       const outNames = await readdir(join(IG_STUDIO, "out")).catch(() => []);
       const posts = (q.posts || []).map((x) => ({ id: x.id, type: x.type, project: x.project, headline: (x.headline || "").replace(/<br\s*\/?>/g, " "), sub: x.sub || "", domain: x.domain || "", status: x.status || "draft", caption: x.caption || "", render: outNames.find((n) => n.startsWith(`${x.id}.`) && /\.(jpe?g|png)$/i.test(n)) || null, rejectedReason: x.rejectedReason || "" }));
       const renders = outNames.filter((n) => /\.(jpe?g|png|mp4)$/i.test(n)).map((n) => ({ name: n, path: join(IG_STUDIO, "out", n) }));
-      return json(res, 200, { batch: q.batch, rules: q._rules || [], posts, renders, outDir: join(IG_STUDIO, "out") });
+      return json(res, 200, { batch: q.batch, account: q.account || null, rules: q._rules || [], posts, renders, outDir: join(IG_STUDIO, "out") });
     }
     if (p === "/api/ig/file") {
       const name = url.searchParams.get("name") || "";
@@ -375,6 +383,36 @@ const server = createServer(async (req, res) => {
       post.caption = String(b.caption || "").slice(0, 2200);
       await writeFile(qp, JSON.stringify(q, null, 2) + "\n", "utf8");
       return json(res, 200, { ok: true });
+    }
+    /* footage library: what is on hand for a case, and preview of each clip */
+    if (p === "/api/footage") {
+      const only = url.searchParams.get("case") || "";
+      const names = (await readdir(FOOTAGE).catch(() => [])).filter((n) => !n.startsWith(".") && (!only || n === only));
+      const cases = [];
+      for (const c of names) {
+        const book = await readJson(join(FOOTAGE, c, "sources.json"), null);
+        if (book) cases.push({ case: c, sources: book.sources || [] });
+      }
+      return json(res, 200, { cases, dir: FOOTAGE });
+    }
+    // Caption search, served straight from the stored cues. The CLI has the same
+    // search, but a job round-trip to find a timestamp would make the studio feel
+    // broken - this is a read, so it answers immediately.
+    if (p === "/api/footage/find") {
+      const c = url.searchParams.get("case") || "", src = url.searchParams.get("source") || "", q = (url.searchParams.get("q") || "").toLowerCase();
+      if (!safeName(c) || !safeName(src) || q.length < 3) return json(res, 400, { error: "case + source + a phrase of 3 characters or more" });
+      const cues = await readJson(join(FOOTAGE, c, "sources", `${src}.cues.json`), null);
+      if (!cues) return json(res, 404, { error: "no captions stored for that source" });
+      const hits = cues.filter((x) => String(x.text).toLowerCase().includes(q)).slice(0, 20);
+      return json(res, 200, { hits });
+    }
+    if (p === "/api/footage/file") {
+      const c = url.searchParams.get("case") || "", name = url.searchParams.get("name") || "";
+      if (!safeName(c) || !safeName(name) || isHidden(name) || !/\.(mp4|wav)$/i.test(name)) return json(res, 400, { error: "case + clip name" });
+      const file = normalize(join(FOOTAGE, c, "clips", name));
+      if (!file.startsWith(normalize(FOOTAGE))) return json(res, 400, { error: "bad path" });
+      const st = await stat(file).catch(() => null); if (!st?.isFile()) return json(res, 404, { error: "no such clip" });
+      return streamFile(req, res, file, st);
     }
     if (p === "/api/community/digest-test" && req.method === "POST") {
       const b = await readBody(req); if (!b) return json(res, 413, TOO_BIG);

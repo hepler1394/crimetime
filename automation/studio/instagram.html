@@ -55,6 +55,11 @@
   .empty{border:1px dashed var(--line-2);border-radius:6px;padding:26px;text-align:center;color:var(--faint);font-size:13px}
   .banner{background:#3a0b0e;color:#ffd3d5;padding:9px 22px;font-size:13px}
   .banner code{font-family:var(--mono)}
+  .acct b{color:var(--white);font-weight:500}
+  .acct .warn{color:var(--tape)}
+  .acct .bad{color:var(--hot)}
+  .acct button{margin-left:10px;background:var(--panel-2);border:1px solid var(--line-2);border-radius:4px;color:var(--white);padding:4px 9px;font:12px var(--body);cursor:pointer}
+  .acct button:hover{border-color:rgba(255,255,255,.35)}
   .newpost{display:flex;gap:8px;align-items:center;margin:0 0 12px}
   .newpost .t{flex:1;max-width:420px;background:var(--ink);border:1px solid var(--line-2);border-radius:4px;color:var(--white);padding:8px 10px;font:13px var(--body)}
   .slides{border-top:1px solid var(--line);margin-top:2px;padding-top:12px}
@@ -97,18 +102,18 @@
 <div class="banner" id="offline" hidden>The studio server is not answering. Retrying every few seconds. Start it with <code>npm run studio</code>.</div>
 <header class="top">
   <div class="brand"><img src="/site/images/logo.png" alt="">Crime<em>Time</em> Studio<small>Instagram</small></div>
-  <div class="acct">@crimetimesnacks and the portfolio accounts</div>
+  <div class="acct" id="acct">checking which profile this window is signed in as</div>
 </header>
 <div class="wrap">
   <main>
     <h1>Instagram</h1>
     <p class="lede">Everything that goes out on Instagram, from both studios. Post opens Instagram in this window with the files attached and the caption on your clipboard. Nothing is ever posted for you.</p>
 
-    <h2 class="k">CrimeTimeSnacks posts</h2>
+    <h2 class="k">CrimeTimeSnacks posts <span style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">to @crimetimesnacks</span></h2>
     <form class="newpost" id="new-post"><input class="t" id="new-post-title" placeholder="Post title, becomes the folder name" aria-label="New post title" maxlength="120" required><button class="btn sm" type="submit">Create post</button></form>
     <div id="cts-posts"></div>
 
-    <h2 class="k" style="margin-top:44px">Portfolio queue <span style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">ig-studio, <span id="batch"></span></span></h2>
+    <h2 class="k" style="margin-top:44px">Portfolio queue <span style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">to @<span id="q-account">?</span>, ig-studio, <span id="batch"></span></span></h2>
     <div class="bar">
       <button class="btn" data-op="ig-render" title="Render every post in the queue">Render all</button>
       <button class="btn" data-op="ig-preflight" title="Every domain in a footer or caption must resolve">Preflight</button>
@@ -136,6 +141,38 @@ const IN_SHELL = /Electron/.test(navigator.userAgent);
 let toastT; function toast(m, bad) { const t = $("#toast"); t.textContent = m; t.className = `toast show${bad ? " bad" : ""}`; clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("show"), bad ? 7000 : 3500); }
 async function api(path, opts = {}) { const r = await fetch(path, { ...opts, headers: { "Content-Type": "application/json", "X-CTS": "1", ...(opts.headers || {}) } }); const j = await r.json().catch(() => ({})); if (!r.ok) throw new Error(j.error || r.statusText); return j; }
 let data = { posts: [], renders: [] }, filter = "all", job = null, cts = [], retryT;
+// All of Cory's profiles live under one Instagram login, so the question is never "is he
+// signed in" but "which profile is active right now". Only the browser session knows, and
+// it changes the moment he uses Instagram's own Switch. Every Post button is gated on it.
+const CTS_ACCOUNT = "crimetimesnacks";
+let account = null;
+async function loadAccount(refresh) {
+  const el = $("#acct");
+  if (!IN_SHELL) { el.innerHTML = "Open the studio in the desktop shell to post from here."; return; }
+  try { account = await (await fetch(`cts-shell://account/${refresh ? "?refresh=1" : ""}`)).json(); }
+  catch { el.innerHTML = `<span class="bad">Could not reach the shell.</span>`; return; }
+  const sw = `<button type="button" id="switch-acct">Switch profile</button>`;
+  el.innerHTML = account.username
+    ? `posting as <b>@${esc(account.username)}</b>${sw}`
+    : account.signedIn
+      ? `<span class="warn">signed in, but the profile could not be read</span>${sw}`
+      : `<span class="bad">not signed in to Instagram in this window</span>${sw}`;
+  $("#switch-acct")?.addEventListener("click", async () => {
+    await fetch("cts-shell://switch/");
+    toast("Instagram is open. Use Switch in the right-hand rail, pick the profile, then press Re-check.");
+    el.innerHTML += ` <button type="button" id="recheck">Re-check</button>`;
+    $("#recheck").addEventListener("click", () => loadAccount(true));
+  });
+  render(); loadPosts();
+}
+// A post may only be opened for the profile it was written for.
+function postGate(want) {
+  if (!IN_SHELL) return { ok: false, why: "" };
+  if (!account?.username) return { ok: false, why: "Check the profile first." };
+  return account.username.toLowerCase() === String(want).toLowerCase()
+    ? { ok: true, why: "" }
+    : { ok: false, why: `This window is @${account.username}; switch to @${want}.` };
+}
 async function loadPosts() {
   try { cts = await api("/api/posts"); } catch { return; }
   $("#cts-posts").innerHTML = cts.length ? cts.map((p) => `<article class="cpost" data-post="${esc(p.id)}">
@@ -147,15 +184,21 @@ async function loadPosts() {
     <details class="slides" data-slides="${esc(p.id)}"><summary>Words on the slides</summary><div class="slide-list">Loading the spec</div></details>
     <textarea data-ccap="${esc(p.id)}" placeholder="Caption" aria-label="Caption">${esc(p.caption)}</textarea>
     <div class="act">
-      ${IN_SHELL && p.files.length && p.status === "approved" ? `<button class="btn sm red" data-cpost="${esc(p.id)}">Open in Instagram${p.files.length > 1 ? ` with ${p.files.length} slides` : ""}</button>`
-        : p.files.length && p.status === "draft" ? `<span class="why">Approve it before posting.</span>` : ""}
+      ${(() => {
+        if (!(IN_SHELL && p.files.length)) return "";
+        if (p.status !== "approved") return p.status === "draft" ? `<span class="why">Approve it before posting.</span>` : "";
+        const g = postGate(CTS_ACCOUNT);
+        return g.ok
+          ? `<button class="btn sm red" data-cpost="${esc(p.id)}">Open in Instagram${p.files.length > 1 ? ` with ${p.files.length} slides` : ""}</button>`
+          : `<span class="why">${esc(g.why)}</span>`;
+      })()}
       <button class="btn sm" data-crender="${esc(p.id)}">${p.files.length ? "Re-render" : "Render"}</button>
       ${(NEXT_STATUS[p.status] || []).map((st) => `<button class="btn sm ghost" data-cstatus="${st}">${STATUS_LABEL[st]}</button>`).join("")}
       <button class="btn sm ghost" data-csave="${esc(p.id)}">Save words</button>
       ${IN_SHELL ? `<button class="btn sm ghost" data-copen="${esc(p.dir)}">Folder</button>` : ""}
       <button class="btn sm ghost" data-cdel="${esc(p.id)}" style="margin-left:auto;color:var(--faint)">Delete</button>
     </div></article>`).join("") : `<div class="empty">Nothing here yet. Name a post above and press Create post: you get a three-slide draft, a hook, a detail and the reveal, which you write below and render into 1080 by 1350 slides.</div>`;
-  document.querySelectorAll("[data-cpost]").forEach((b) => b.addEventListener("click", () => { const p = cts.find((x) => x.id === b.dataset.cpost); const files = p.files.map((f) => `${p.dir}\\${f}`).join("|"); fetch(`cts-shell://post/?p=${encodeURIComponent(files)}&c=${encodeURIComponent(`${p.dir}\\caption.txt`)}`).then(() => toast("Instagram is opening with the slides attached. Caption copied.")).catch((e) => toast(e.message, true)); }));
+  document.querySelectorAll("[data-cpost]").forEach((b) => b.addEventListener("click", () => { const p = cts.find((x) => x.id === b.dataset.cpost); const files = p.files.map((f) => `${p.dir}\\${f}`).join("|"); fetch(`cts-shell://post/?p=${encodeURIComponent(files)}&c=${encodeURIComponent(`${p.dir}\\caption.txt`)}&as=${encodeURIComponent(CTS_ACCOUNT)}`).then(() => toast("Instagram is opening with the slides attached. Caption copied.")).catch((e) => toast(e.message, true)); }));
   document.querySelectorAll("[data-crender]").forEach((b) => b.addEventListener("click", async () => {
     const id = b.dataset.crender;
     try { await savePost(id); } catch (e) { return toast(`Not rendered: ${e.message}`, true); }
@@ -241,6 +284,7 @@ async function load() {
   loadPosts();
   try { data = await api("/api/ig/queue"); $("#offline").hidden = true; }
   catch (e) { $("#offline").hidden = false; clearTimeout(retryT); retryT = setTimeout(load, 5000); return; }
+  $("#q-account").textContent = data.account || "unset";
   $("#batch").textContent = data.batch == null ? `${data.posts.length} posts` : `batch ${data.batch}, ${data.posts.length} posts`;
   if (!data.posts.length) $("#posts").innerHTML = `<div class="empty">No portfolio queue found. This half of the board reads D:/Dev/GitHub/ig-studio/content/queue.json; the CrimeTimeSnacks posts above are unaffected.</div>`;
   $("#rules").innerHTML = (data.rules || []).map((r) => `<li>${esc(r)}</li>`).join("") || "<li>No rules file.</li>";
@@ -256,8 +300,14 @@ function render() {
       ${p.sub ? `<div style="color:var(--muted);font-size:13px;margin-top:4px">${esc(p.sub)}</div>` : ""}
       <textarea data-cap="${esc(p.id)}" placeholder="Caption">${esc(p.caption)}</textarea>
       <div class="act">
-        ${IN_SHELL && p.render && p.status === "approved" ? `<button class="btn sm red" data-post="${esc(p.render)}" data-capid="${esc(p.id)}">Open in Instagram</button>`
-          : p.render && p.status === "draft" ? `<span class="why">Approve it before posting.</span>` : ""}
+        ${(() => {
+          if (!(IN_SHELL && p.render)) return "";
+          if (p.status !== "approved") return p.status === "draft" ? `<span class="why">Approve it before posting.</span>` : "";
+          const g = postGate(data.account || "");
+          return g.ok
+            ? `<button class="btn sm red" data-post="${esc(p.render)}" data-capid="${esc(p.id)}">Open in Instagram</button>`
+            : `<span class="why">${esc(g.why)}</span>`;
+        })()}
         <button class="btn sm" data-render="${esc(p.id)}">${p.render ? "Re-render" : "Render"}</button>
         ${(NEXT_STATUS[p.status] || []).map((st) => `<button class="btn sm ghost" data-status="${st}">${STATUS_LABEL[st]}</button>`).join("")}
         <button class="btn sm ghost" data-savecap="${esc(p.id)}">Save caption</button>
@@ -287,7 +337,7 @@ function render() {
   }));
   document.querySelectorAll("[data-savecap]").forEach((b) => b.addEventListener("click", async () => { const id = b.dataset.savecap; const cap = document.querySelector(`[data-cap="${id}"]`).value; try { await api("/api/ig/caption", { method: "POST", body: JSON.stringify({ id, caption: cap }) }); toast("Caption saved."); } catch (e) { toast(e.message, true); } }));
   document.querySelectorAll("[data-render]").forEach((b) => b.addEventListener("click", () => startJob("ig-render", { ids: [b.dataset.render] })));
-  document.querySelectorAll("[data-post]").forEach((b) => b.addEventListener("click", async () => { const cap = document.querySelector(`[data-cap="${b.dataset.capid}"]`).value; try { await navigator.clipboard.writeText(cap); } catch { /* fine */ } const file = `${data.outDir}\\${b.dataset.post}`.replace(/\\/g, "/"); fetch(`cts-shell://post/?p=${encodeURIComponent(file)}&c=`).then(() => toast("Instagram is opening with the file attached. Caption copied.")).catch((e) => toast(e.message, true)); }));
+  document.querySelectorAll("[data-post]").forEach((b) => b.addEventListener("click", async () => { const cap = document.querySelector(`[data-cap="${b.dataset.capid}"]`).value; try { await navigator.clipboard.writeText(cap); } catch { /* fine */ } const file = `${data.outDir}\\${b.dataset.post}`.replace(/\\/g, "/"); fetch(`cts-shell://post/?p=${encodeURIComponent(file)}&c=&as=${encodeURIComponent(data.account || "")}`).then(() => toast("Instagram is opening with the file attached. Caption copied.")).catch((e) => toast(e.message, true)); }));
 }
 $("#filters").addEventListener("click", (e) => { const b = e.target.closest("[data-f]"); if (!b) return; filter = b.dataset.f; document.querySelectorAll("#filters button").forEach((x) => x.classList.toggle("on", x === b)); render(); });
 document.querySelectorAll(".bar [data-op]").forEach((b) => b.addEventListener("click", () => startJob(b.dataset.op, {})));
@@ -305,7 +355,7 @@ async function poll() {
   toast(job.code === 0 ? "Done." : "Failed. Read the log.", job.code !== 0); load();
 }
 $("#d-close").addEventListener("click", () => $("#drawer").classList.remove("show"));
-load(); setInterval(() => { if (!job || job.done) load(); }, 60000);
+loadAccount(); load(); setInterval(() => { if (!job || job.done) load(); }, 60000);
 </script>
 </body>
 </html>

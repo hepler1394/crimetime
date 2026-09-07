@@ -1,0 +1,56 @@
+{
+  "case": "golden-state-killer",
+  "sources": [
+    {
+      "id": "DmmK9LQNkoM",
+      "url": "https://www.youtube.com/watch?v=DmmK9LQNkoM",
+      "title": "East Area Rapist Press Conference 2018 04 25",
+      "channel": "Sacramento County District Attorney's Office",
+      "channelUrl": "https://www.youtube.com/channel/UCi0AEGcHEB460WW_VC1g6NA",
+      "uploaded": "20180425",
+      "seconds": 3179,
+      "rights": "agency",
+      "note": "Sacramento County DA's own channel: the April 25 2018 press conference announcing the arrest.",
+      "captions": 1947,
+      "added": "2026-09-07T01:41:25.721Z",
+      "clips": [
+        {
+          "id": "DmmK9LQNkoM-466",
+          "file": "clips/DmmK9LQNkoM-466.mp4",
+          "audio": "clips/DmmK9LQNkoM-466.wav",
+          "in": 466,
+          "out": 480,
+          "seconds": 14,
+          "label": "Sacramento County DA, April 25, 2018",
+          "x": 0.5,
+          "source": "DmmK9LQNkoM",
+          "cut": "2026-09-07T01:42:17.830Z"
+        },
+        {
+          "id": "DmmK9LQNkoM-586",
+          "file": "clips/DmmK9LQNkoM-586.mp4",
+          "audio": "clips/DmmK9LQNkoM-586.wav",
+          "in": 586,
+          "out": 600,
+          "seconds": 14,
+          "label": "Sacramento County Sheriff, April 25, 2018",
+          "x": 0.5,
+          "source": "DmmK9LQNkoM",
+          "cut": "2026-09-07T01:43:22.920Z"
+        },
+        {
+          "id": "DmmK9LQNkoM-1027",
+          "file": "clips/DmmK9LQNkoM-1027.mp4",
+          "audio": "clips/DmmK9LQNkoM-1027.wav",
+          "in": 1027,
+          "out": 1040,
+          "seconds": 13,
+          "label": "Sacramento County DA, April 25, 2018",
+          "x": 0.5,
+          "source": "DmmK9LQNkoM",
+          "cut": "2026-09-07T01:44:04.052Z"
+        }
+      ]
+    }
+  ]
+}

@@ -192,7 +192,24 @@ async function saveUrlToProject(url, wc, pid) {
 // the path, so the first "Select from computer" click lands on your file. The
 // caption goes to the clipboard. You set the crop (9:16 for reels) and Share.
 // `file` may be one path or several joined with "|" (a carousel: slides in order).
-async function postToInstagram(file, captionFile) {
+// `expect` is the handle the post is meant for. A mismatch is refused outright: this is
+// the check that stops a portfolio card landing on the podcast account, or anything at
+// all landing on a frozen one.
+async function postToInstagram(file, captionFile, expect) {
+  if (expect) {
+    const acct = await instagramAccount(true);
+    const want = String(expect).replace(/^@/, "").toLowerCase();
+    if (!acct.signedIn) { toast(`Not signed in to Instagram in this window. Open Instagram, sign in as @${want}, then post.`, true); newTab("https://www.instagram.com/", true, "instagram"); return; }
+    if (!acct.username) { toast("Could not read which Instagram profile is active. Check it in the Instagram tab before posting.", true); return; }
+    if (acct.username.toLowerCase() !== want) {
+      toast(`Refused: this window is @${acct.username}, and the post is for @${want}. Use Switch in Instagram's right-hand rail, then try again.`, true);
+      newTab("https://www.instagram.com/", true, "instagram");
+      return;
+    }
+  }
+  return attachToInstagram(file, captionFile);
+}
+async function attachToInstagram(file, captionFile) {
   const files = String(file || "").split("|").map((f) => f.trim()).filter(Boolean);
   if (!files.length || files.some((f) => !fs.existsSync(f) || !allowedRoot(f))) return toast("Post: file not found.", true);
   file = files[0];
@@ -239,6 +256,38 @@ function ownPage(req) {
 }
 const MEDIA_ROOTS = [path.join(IG_STUDIO, "out"), path.join(REPO, "automation", "studio", "drafts"), path.join(REPO, "automation", "studio", "projects"), path.join(REPO, "automation", "studio", "posts")].map((r) => r.replace(/\\/g, "/").toLowerCase());
 const servable = (p) => { const n = p.replace(/\\/g, "/").toLowerCase(); return MEDIA_ROOTS.some((r) => n.startsWith(r + "/")) && !n.split("/").some((seg) => seg.startsWith(".")) && /\.(jpe?g|png|gif|webp|mp4|webm|mp3|wav|m4a|pdf|txt|md)$/.test(n); };
+// Which Instagram profile this shell's browser session is signed in as.
+//
+// All of Cory's profiles sit under one login, so "signed in" is not the question:
+// which profile is ACTIVE is. That lives in the ds_user_id cookie, which changes when
+// you switch profiles. The username comes from Instagram's own web API, called with the
+// session's cookies, so the answer is the live truth rather than a label in a JSON file.
+//
+// Switching profiles (desktop web, verified path):
+//   instagram.com -> the right-hand rail shows the current profile with a "Switch" link
+//   -> the switcher lists every profile on the login -> pick one. The cookie changes and
+//   this function reports the new profile. There is no way to do it without the browser.
+const IG_APP_ID = "936619743392459"; // Instagram's own public web client id
+let accountCache = { at: 0, value: null };
+async function instagramAccount(force = false) {
+  if (!force && accountCache.value && Date.now() - accountCache.at < 30_000) return accountCache.value;
+  const ses = session.fromPartition(BROWSER_SESSION);
+  let out = { signedIn: false, username: null, userId: null };
+  try {
+    const [c] = await ses.cookies.get({ domain: ".instagram.com", name: "ds_user_id" });
+    if (c?.value) {
+      out = { signedIn: true, username: null, userId: c.value };
+      const r = await net.fetch(`https://i.instagram.com/api/v1/users/${c.value}/info/`, {
+        session: ses, useSessionCookies: true,
+        headers: { "x-ig-app-id": IG_APP_ID, "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" },
+      });
+      if (r.ok) { const j = await r.json(); out.username = j?.user?.username || null; }
+    }
+  } catch (e) { out.error = e.message; }
+  accountCache = { at: Date.now(), value: out };
+  return out;
+}
+
 function shellRoute(req) {
   if (!ownPage(req)) return new Response("forbidden", { status: 403 });
   const u = new URL(req.url); const q = (k) => u.searchParams.get(k) || "";
@@ -246,9 +295,11 @@ function shellRoute(req) {
   switch (u.hostname) {
     case "ig-files": return json(igFiles());
     case "reveal": { const p = q("p"); if (p && allowedRoot(p)) osShell.showItemInFolder(p); return json({ ok: true }); }
-    case "post": { postToInstagram(q("p"), q("c")); return json({ ok: true }); }
+    case "post": { postToInstagram(q("p"), q("c"), q("as")); return json({ ok: true }); }
     case "open": { const p = q("p"); if (p && allowedRoot(p) && fs.existsSync(p) && fs.statSync(p).isDirectory()) osShell.openPath(p); return json({ ok: true }); }
     case "tab": { const url = q("url"); if (/^https?:\/\//.test(url)) newTab(url, true, q("ws") || workspace); return json({ ok: true }); }
+    case "account": return instagramAccount(q("refresh") === "1").then(json);
+    case "switch": { newTab("https://www.instagram.com/", true, "instagram"); accountCache = { at: 0, value: null }; return json({ ok: true, note: "Instagram opened. Use the Switch link in the right-hand rail, then re-check the account." }); }
     case "ping": return json({ ok: true, shell: true });
     default: return new Response("not found", { status: 404 });
   }
@@ -333,7 +384,7 @@ ipcMain.handle("shell", async (_e, { cmd, ...a }) => {
     case "setTarget": targetDraft = a.id || null; pushTabs(); break;
     case "generate": { const id = a.draft || (await requireTarget()); if (!id) return { ok: false, error: "no episode selected" }; return studioApi("POST", "/api/run", { action: "generate", id, prompt: a.prompt, kind: a.kind, model: a.model, ref: a.ref, seconds: a.seconds }); }
     case "job": return studioApi("GET", `/api/job/${a.id}`);
-    case "post": postToInstagram(a.file, a.caption); break;
+    case "post": postToInstagram(a.file, a.caption, a.as); break;
     case "external": osShell.openExternal(a.url); break;
   }
   return { ok: true };
@@ -345,5 +396,8 @@ app.whenReady().then(async () => {
   createWindow();
   if (!up) toast("Could not start the studio server on port 4177.", true);
   pushTabs();
+  // Say on startup which Instagram profile this window would post as. Cheap, and it is
+  // the first thing to check when a post goes somewhere unexpected.
+  instagramAccount(true).then((a) => console.log(`[shell] Instagram: ${a.username ? "@" + a.username : a.signedIn ? `signed in, profile unknown${a.error ? " (" + a.error + ")" : ""}` : "not signed in"}`));
 });
 app.on("window-all-closed", () => { if (studioProc) { try { studioProc.kill(); } catch { /* gone */ } } app.quit(); });
