@@ -411,7 +411,6 @@ function renderDrafts() {
 async function openDraft(id) {
   if (state.dirty && !confirm("Discard unsaved edits?")) return;
   state.dirty = false; state.current = id; state.tab = null;
-  state.next = { nextWhat, nextWhy, nextCta };
   $("#empty").hidden = true; $("#editor").hidden = false; $("#editor").innerHTML = `<div class="opening">Opening the episode folder</div>`;
   try { state.ep = await api(`/api/draft/${id}`); } catch (e) { toast(e.message, true); return; }
   renderDrafts(); renderEditor();
