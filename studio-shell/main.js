@@ -25,6 +25,7 @@ const DOWNLOADS = path.join(__dirname, "downloads");
 const ACCOUNT_FILE = path.join(REPO, "automation", "studio", "ig-account.json");
 const SWITCH_FILE = path.join(REPO, "automation", "studio", "ig-switch.json");
 const KNOWN_FILE = path.join(REPO, "automation", "studio", "ig-known-profiles.json");
+const POST_FILE = path.join(REPO, "automation", "studio", "ig-post.json");
 let known = {}; try { known = JSON.parse(fs.readFileSync(KNOWN_FILE, "utf8")); } catch { /* first run */ }
 const BASE_CHROME_H = 92;
 let CHROME_H = BASE_CHROME_H; // grows when the Generate panel opens, which lives in the chrome view
@@ -203,24 +204,27 @@ async function postToInstagram(file, captionFile, expect) {
   if (expect) {
     const acct = await instagramAccount(true);
     const want = String(expect).replace(/^@/, "").toLowerCase();
-    if (!acct.signedIn) { toast(`Not signed in to Instagram in this window. Open Instagram, sign in as @${want}, then post.`, true); newTab("https://www.instagram.com/", true, "instagram"); return; }
-    if (!acct.username) { toast("Could not read which Instagram profile is active. Check it in the Instagram tab before posting.", true); return; }
+    if (!acct.signedIn) { toast(`Not signed in to Instagram in this window. Open Instagram, sign in as @${want}, then post.`, true); newTab("https://www.instagram.com/", true, "instagram"); return { ok: false, why: "not signed in" }; }
+    if (!acct.username) { toast("Could not read which Instagram profile is active. Check it in the Instagram tab before posting.", true); return { ok: false, why: "active profile unknown" }; }
     if (acct.username.toLowerCase() !== want) {
       toast(`Refused: this window is @${acct.username}, and the post is for @${want}. Use Switch in Instagram's right-hand rail, then try again.`, true);
       newTab("https://www.instagram.com/", true, "instagram");
-      return;
+      return { ok: false, why: `the window is @${acct.username}, not @${want}` };
     }
   }
   return attachToInstagram(file, captionFile);
 }
 async function attachToInstagram(file, captionFile) {
   const files = String(file || "").split("|").map((f) => f.trim()).filter(Boolean);
-  if (!files.length || files.some((f) => !fs.existsSync(f) || !allowedRoot(f))) return toast("Post: file not found.", true);
+  if (!files.length || files.some((f) => !fs.existsSync(f) || !allowedRoot(f))) { toast("Post: file not found.", true); return { ok: false, why: "file not found" }; }
   file = files[0];
   let caption = "";
   if (captionFile && fs.existsSync(captionFile) && allowedRoot(captionFile)) caption = fs.readFileSync(captionFile, "utf8").trim();
   if (caption) clipboard.writeText(caption);
-  const { wc } = newTab("https://www.instagram.com/create/select/", true, "instagram");
+  // Load the feed, not /create/select/: that URL is read as a username on some sessions
+  // and lands on a stranger's profile called "create". Instagram's own Create button
+  // opens the composer reliably, and clicking it is what raises the file chooser.
+  const { wc } = newTab("https://www.instagram.com/", true, "instagram");
   try {
     wc.debugger.attach("1.3");
     await wc.debugger.sendCommand("Page.enable");
@@ -234,8 +238,26 @@ async function attachToInstagram(file, captionFile) {
         try { await wc.debugger.sendCommand("Page.setInterceptFileChooserDialog", { enabled: false }); } catch { /* fine */ }
       }
     });
-    toast(`Instagram opening. Click "Select from computer" and ${files.length > 1 ? `${files.length} slides are` : `${path.basename(file)} is`} attached for you.${caption ? " Caption copied." : ""}`);
-  } catch (e) { toast(`Post: ${e.message}. Drag the file in by hand.`, true); osShell.showItemInFolder(file); }
+    // Wait for the feed, then press Create, then "Select from computer". Each step is
+    // found in the page's own DOM; the file chooser it raises is intercepted above.
+    await new Promise((r) => { const t = setTimeout(r, 15000); wc.once("did-stop-loading", () => { clearTimeout(t); r(); }); });
+    const opened = await wc.executeJavaScript(`(async () => {
+      const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+      const byLabel = (re) => [...document.querySelectorAll("svg[aria-label]")].find((e) => re.test(e.getAttribute("aria-label") || ""));
+      const clickable = (e) => e && (e.closest('div[role="button"]') || e.closest("a") || e.closest("button") || e.parentElement);
+      for (let i = 0; i < 24 && !byLabel(/^new post$/i) && !byLabel(/^create$/i); i++) await sleep(500);
+      const create = byLabel(/^new post$/i) || byLabel(/^create$/i);
+      if (!create) return { ok: false, why: "no Create button on this page" };
+      clickable(create).click();
+      await sleep(2500);
+      const pick = [...document.querySelectorAll("button,div[role='button']")].find((e) => /select from (your )?computer/i.test(e.textContent || ""));
+      if (pick) { pick.click(); return { ok: true, clicked: "select from computer" }; }
+      return { ok: true, clicked: "create only" };
+    })()`, true).catch((e) => ({ ok: false, why: e.message }));
+    if (!opened?.ok) { toast(`Instagram is open but the composer did not appear (${opened?.why || "unknown"}). Press Create, then Select from computer; the file attaches itself.`, true); return { ok: false, why: opened?.why || "the composer did not open" }; }
+    toast(`Instagram composer open.${caption ? " Caption is on your clipboard." : ""} Set the crop, then Share.`);
+    return { ok: true, clicked: opened.clicked };
+  } catch (e) { toast(`Post: ${e.message}. Drag the file in by hand.`, true); osShell.showItemInFolder(file); return { ok: false, why: e.message }; }
 }
 
 /* ------------------------------------------------------ custom schemes */
@@ -495,6 +517,18 @@ app.whenReady().then(async () => {
     const res = await switchInstagramProfile(req.to).catch((e) => ({ ok: false, why: e.message }));
     fs.writeFileSync(SWITCH_FILE, JSON.stringify({ ...req, state: "done", ...res, finishedAt: new Date().toISOString() }, null, 2));
     toast(res.ok ? `Switched to @${res.username}` : `Could not switch: ${res.why}`, !res.ok);
+  }, 2000);
+
+  // Same one-request-at-a-time bridge for loading a post into Instagram's create flow.
+  // This attaches the file and copies the caption. It does NOT publish: Share is Cory's.
+  setInterval(async () => {
+    let req; try { req = JSON.parse(fs.readFileSync(POST_FILE, "utf8")); } catch { return; }
+    if (!req || req.state !== "requested") return;
+    fs.writeFileSync(POST_FILE, JSON.stringify({ ...req, state: "running" }, null, 2));
+    let res;
+    try { res = (await postToInstagram(req.file, req.caption, req.as)) || { ok: false, why: "no result" }; }
+    catch (e) { res = { ok: false, why: e.message }; }
+    fs.writeFileSync(POST_FILE, JSON.stringify({ ...req, state: "done", ...res, finishedAt: new Date().toISOString() }, null, 2));
   }, 2000);
 });
 app.on("window-all-closed", () => { if (studioProc) { try { studioProc.kill(); } catch { /* gone */ } } app.quit(); });

@@ -374,6 +374,31 @@ const server = createServer(async (req, res) => {
         return json(res, 202, { ok: true, to, note: "poll /api/ig/switch for the result" });
       }
     }
+    if (p === "/api/ig/post") {
+      const file = join(HERE, "ig-post.json");
+      if (req.method === "GET") return json(res, 200, await readJson(file, { state: "idle" }));
+      if (req.method === "POST") {
+        const b = await readBody(req); if (!b) return json(res, 413, TOO_BIG);
+        if (!safeName(b.id || "")) return json(res, 400, { error: "id" });
+        const acct = await readJson(join(HERE, "ig-account.json"), null);
+        if (!acct || Date.now() - new Date(acct.at || 0).getTime() > 5 * 60 * 1000) return json(res, 409, { error: "the desktop shell is not running" });
+        const q = await readJson(join(IG_STUDIO, "content", "queue.json"), null);
+        const post = (q?.posts || []).find((x) => x.id === b.id);
+        if (!post) return json(res, 404, { error: "no such post" });
+        if (post.status !== "approved") return json(res, 409, { error: `post is ${post.status}; approve it first` });
+        const want = (q.account || "").toLowerCase();
+        if (!want) return json(res, 409, { error: "the queue does not name an account" });
+        if ((acct.username || "").toLowerCase() !== want) return json(res, 409, { error: `the shell is @${acct.username || "unknown"}; this post is for @${want}` });
+        const names = await readdir(join(IG_STUDIO, "out")).catch(() => []);
+        const render = names.find((n) => n.startsWith(`${post.id}.`) && /\.(jpe?g|png)$/i.test(n));
+        if (!render) return json(res, 409, { error: "not rendered yet" });
+        // The caption travels as a file because that is what puts it on the clipboard.
+        const capFile = join(IG_STUDIO, "out", `${post.id}.caption.txt`);
+        await writeFile(capFile, (post.caption || "").trim() + "\n", "utf8");
+        await writeFile(file, JSON.stringify({ id: post.id, file: join(IG_STUDIO, "out", render), caption: capFile, as: want, state: "requested", at: new Date().toISOString() }, null, 2) + "\n", "utf8");
+        return json(res, 202, { ok: true, id: post.id, as: want, note: "Instagram opens with the file attached; Share is yours" });
+      }
+    }
     if (p === "/api/ig/queue") {
       const q = await readJson(join(IG_STUDIO, "content", "queue.json"), { posts: [] });
       const outNames = await readdir(join(IG_STUDIO, "out")).catch(() => []);
