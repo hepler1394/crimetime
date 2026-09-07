@@ -9,6 +9,7 @@
 // never deployed. No dependencies: node:http + the scripts in automation/.
 
 import { createServer } from "node:http";
+import { StringDecoder } from "node:string_decoder";
 import { createReadStream, createWriteStream } from "node:fs";
 import { readFile, writeFile, readdir, stat, rm, mkdir, access, unlink } from "node:fs/promises";
 import { spawn, spawnSync } from "node:child_process";
@@ -30,11 +31,25 @@ const POSTS = join(HERE, "posts");
 const IG_STUDIO = process.env.IG_STUDIO || "D:/Dev/GitHub/ig-studio"; // the Instagram pipeline repo (scripts/, content/queue.json, out/)
 const HOST = "127.0.0.1";
 
-const MIME = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".json": "application/json; charset=utf-8", ".md": "text/markdown; charset=utf-8", ".mp3": "audio/mpeg", ".wav": "audio/wav", ".webm": "audio/webm", ".m4a": "audio/mp4", ".ogg": "audio/ogg", ".mp4": "video/mp4", ".jpg": "image/jpeg", ".png": "image/png", ".txt": "text/plain; charset=utf-8", ".svg": "image/svg+xml" };
+const MIME = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".json": "application/json; charset=utf-8", ".md": "text/markdown; charset=utf-8", ".mp3": "audio/mpeg", ".wav": "audio/wav", ".webm": "audio/webm", ".m4a": "audio/mp4", ".ogg": "audio/ogg", ".mp4": "video/mp4", ".jpg": "image/jpeg", ".png": "image/png", ".txt": "text/plain; charset=utf-8", ".svg": "image/svg+xml", ".jpeg": "image/jpeg", ".webp": "image/webp", ".gif": "image/gif", ".pdf": "application/pdf" };
+// What may render in the browser straight from a user-writable folder (drafts, projects,
+// posts, ig out). None of these can execute script as a top-level document. Everything
+// else, .html and .svg included, is sent as a download: the studio origin holds write
+// power, so a page planted in a draft folder must never run inside it.
+const INLINE = new Set([".mp3", ".wav", ".webm", ".m4a", ".ogg", ".mp4", ".jpg", ".jpeg", ".png", ".webp", ".gif", ".pdf", ".json", ".txt", ".md"]);
 const json = (res, code, body) => { res.writeHead(code, { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" }); res.end(JSON.stringify(body)); };
-// JSON bodies over 1 MB are discarded past the limit (the request still completes, so the
-// client gets a clean 4xx from the route instead of a dropped connection).
-const readBody = (req) => new Promise((resolve) => { let b = ""; let over = false; req.on("data", (c) => { if (over) return; b += c; if (b.length > 1_000_000) { over = true; b = ""; } }); req.on("end", () => { if (over) return resolve({}); try { resolve(b ? JSON.parse(b) : {}); } catch { resolve({}); } }); req.on("error", () => resolve({})); });
+// JSON bodies over 1 MB are drained and rejected. readBody resolves null for "could not
+// read this body" (too large, or not JSON) so a route never mistakes a truncated request
+// for an empty object and writes the emptiness to disk. Chunks are decoded through one
+// StringDecoder because a multibyte character can straddle a chunk boundary.
+const readBody = (req) => new Promise((resolve) => {
+  const dec = new StringDecoder("utf8");
+  let b = "", over = false;
+  req.on("data", (c) => { if (over) return; b += dec.write(c); if (b.length > 1_000_000) { over = true; b = ""; } });
+  req.on("end", () => { if (over) return resolve(null); b += dec.end(); try { resolve(b ? JSON.parse(b) : {}); } catch { resolve(null); } });
+  req.on("error", () => resolve(null));
+});
+const TOO_BIG = { error: "the request body was too large or was not valid JSON; nothing was changed" };
 // Files the studio may serve from the repo root through /site/: public assets only. Never automation/, never dotfiles.
 const SITE_DIRS = ["images", "css", "js", "audio", "videos"];
 const isHidden = (rel) => rel.split(/[\\/]/).some((seg) => seg.startsWith("."));
@@ -55,7 +70,7 @@ const ACTIONS = {
                     ...(a.exaggeration ? ["--exaggeration", String(a.exaggeration)] : []), ...(a.cfg ? ["--cfg", String(a.cfg)] : []), ...(a.from ? ["--from", a.from] : []), ...(a.noMusic ? ["--no-music"] : []), ...(a.noTrim ? ["--no-trim"] : []), "--json"],
   art:      (a) => ["episode-art.mjs", a.id, "--json"],
   social:   (a) => ["episode-social.mjs", a.id, "--clip", String(a.clip || 45), "--start", String(a.start || 0), "--json"],
-  publish:  (a) => ["episode-publish.mjs", a.id, ...(a.push === false ? [] : ["--push"]), ...(a.date ? ["--date", a.date] : []), "--json"],
+  publish:  (a) => ["episode-publish.mjs", a.id, ...(a.pushOnly ? ["--push-only"] : a.push === false ? [] : ["--push"]), ...(a.date && !a.pushOnly ? ["--date", a.date] : []), "--json"],
   music:    () => ["episode-music.mjs", "--json"],
   build:    () => ["build-all.mjs"],
   sync:     () => ["import-feed.mjs"],
@@ -100,6 +115,26 @@ function startJob(action, a) {
   return job;
 }
 const running = () => [...jobs.values()].filter((j) => !j.done);
+// A five-hour clone render outlives this process, so "is it running" is read from the
+// draft's tts folder rather than the job list. A folder nothing has touched for half an
+// hour, or one carrying failed.txt, is a crash, not a render: say so instead of locking
+// the episode for ever.
+const STALE_MS = 30 * 60 * 1000;
+async function voiceStopped(tts) {
+  const st = await stat(tts).catch(() => null);
+  if (!st) return null;
+  const failed = await readFile(join(tts, "failed.txt"), "utf8").catch(() => null);
+  if (failed) return failed.trim().slice(0, 400) || "The voice render stopped.";
+  const names = await readdir(tts).catch(() => []);
+  let newest = st.mtimeMs;
+  for (const n of names) { const f = await stat(join(tts, n)).catch(() => null); if (f) newest = Math.max(newest, f.mtimeMs); }
+  return Date.now() - newest > STALE_MS ? `No progress for ${Math.round((Date.now() - newest) / 60000)} minutes. The render stopped.` : null;
+}
+async function voiceState(tts, id) {
+  if (!(await exists(tts))) return null;
+  if (running().some((j) => j.draft === id && j.action === "voice")) return "voice";
+  return (await voiceStopped(tts)) ? null : "voice";
+}
 
 /* -------------------------------------------------------------- health */
 const sh = (cmd, args, ms = 15000) => { const r = spawnSync(cmd, args, { cwd: ROOT, encoding: "utf8", windowsHide: true, timeout: ms }); return (r.stdout || "").trim(); };
@@ -112,10 +147,18 @@ async function voiceInfo() {
   const venv = await exists(join(HERE, ".venv", "Scripts", "python.exe"));
   return { reference, venv, cloneReady: reference && venv, defaultEngine: reference && venv ? "clone" : "edge" };
 }
+let healthCache = { at: 0, value: null, slowAt: 0 };
 async function health() {
+  if (healthCache.value && Date.now() - healthCache.at < 20_000) return healthCache.value;
+  const value = await healthNow(Date.now() - healthCache.slowAt > 300_000);
+  if (value.slow) healthCache.slowAt = Date.now();
+  healthCache = { ...healthCache, at: Date.now(), value };
+  return value;
+}
+async function healthNow(slow) {
   const [git, tasks, lm, log, status, cases, studioEps, eps, music, voice] = await Promise.all([
     (async () => {
-      sh("git", ["fetch", "--quiet", "origin"], 20000);
+      if (slow) sh("git", ["fetch", "--quiet", "origin"], 20000);
       const [ahead, behind] = (sh("git", ["rev-list", "--left-right", "--count", "HEAD...origin/main"]) || "0\t0").split(/\s+/).map(Number);
       const dirty = sh("git", ["status", "--porcelain"]).split("\n").filter(Boolean).length;
       const lastCi = sh("git", ["log", "origin/main", "-1", "--format=%cI|%s"]).split("|");
@@ -144,9 +187,19 @@ async function health() {
   ]);
   const drafts = await listDrafts();
   const used = new Set([...(eps.episodes || []).map((e) => e.slug), ...(studioEps.episodes || []).map((e) => e.slug), ...drafts.map((d) => d.caseSlug)]);
-  const tools = { edgeTts: !!sh("edge-tts", ["--help"], 8000), ffmpeg: !!sh("ffmpeg", ["-version"], 8000) };
+  const tools = slow || !healthCache.value ? { edgeTts: !!sh("edge-tts", ["--help"], 8000), ffmpeg: !!sh("ffmpeg", ["-version"], 8000) } : healthCache.value.tools;
+  // Which model actually writes the scripts, read from the same config the pipeline uses,
+  // so the light in the top bar means something.
+  const cfg = await readJson(join(AUTO, "config.json"), {});
+  const order = cfg.order || ["gemini"];
+  const provider = order.find((n) => n === "local" || cfg[n]?.apiKey || process.env[`${n.toUpperCase()}_API_KEY`]) || order[0];
+  const writer = {
+    provider,
+    model: provider === "local" ? (lm.models?.[0] || cfg.local?.model || "") : (cfg[provider]?.writerModel || cfg[provider]?.model || ""),
+    ready: provider === "local" ? lm.up : !!(cfg[provider]?.apiKey || process.env[`${provider.toUpperCase()}_API_KEY`]),
+  };
   return {
-    now: new Date().toISOString(), git, tasks, lmStudio: lm, cronTail: log, status, tools, music, voice,
+    now: new Date().toISOString(), slow, git, tasks, lmStudio: lm, cronTail: log, status, tools, music, voice, writer,
     episodes: (eps.episodes || []).map((e) => ({ title: e.title, date: e.date, duration: e.duration, slug: e.slug, source: e.source || "feed" })),
     backlog: cases.cases.map((c) => ({ ...c, used: used.has(c.slug) })),
     drafts, running: running().map(({ log, ...j }) => j),
@@ -161,7 +214,7 @@ async function listDrafts() {
   for (const d of dirs) {
     const ep = await readJson(join(DRAFTS, d, "episode.json"), null);
     if (!ep) continue;
-    outList.push({ id: ep.id || d, title: ep.title, status: ep.status, created: ep.created, caseSlug: ep.caseSlug, duration: ep.duration || null, scriptWords: ep.scriptWords, files: ep.files || {}, factsToVerify: (ep.factsToVerify || []).length, publishedAt: ep.publishedAt || null, researched: !!ep.researched || !!ep.files?.research, inProgress: (await exists(join(DRAFTS, d, "tts"))) ? "voice" : null });
+    outList.push({ id: ep.id || d, title: ep.title, status: ep.status, created: ep.created, caseSlug: ep.caseSlug, duration: ep.duration || null, scriptWords: ep.scriptWords, files: ep.files || {}, factsToVerify: (ep.factsToVerify || []).length, publishedAt: ep.publishedAt || null, researched: !!ep.researched || !!ep.files?.research, inProgress: await voiceState(join(DRAFTS, d, "tts"), d) });
   }
   return outList.sort((a, b) => (b.created || "").localeCompare(a.created || ""));
 }
@@ -171,17 +224,27 @@ async function listFiles(dir) {
   for (const n of names) { const st = await stat(join(dir, n)).catch(() => null); if (st?.isFile()) files.push({ name: n, size: st.size, mtime: st.mtime.toISOString() }); }
   return files.sort((a, b) => a.name.localeCompare(b.name));
 }
-function streamFile(req, res, file, st) {
+// trusted: repo assets under /site/, which keep their real type (css, js). Everything
+// from a folder a person or a download can write to goes through the INLINE gate.
+function streamFile(req, res, file, st, trusted = false) {
   const ext = extname(file).toLowerCase();
+  const inline = trusted || INLINE.has(ext);
+  const type = inline ? (MIME[ext] || "application/octet-stream") : "application/octet-stream";
+  const head = { "Content-Type": type, "Cache-Control": "no-store", "Accept-Ranges": "bytes", "X-Content-Type-Options": "nosniff",
+    ...(inline ? {} : { "Content-Disposition": `attachment; filename="${basename(file).replace(/["\\]/g, "")}"` }) };
+  const pipe = (stream) => { stream.on("error", () => res.destroy()); stream.pipe(res); };
   const range = req.headers.range;
-  if (range && /^(audio|video)\//.test(MIME[ext] || "")) {
+  if (range && /^(audio|video)\//.test(type)) {
     const [s, e] = range.replace("bytes=", "").split("-").map((n) => parseInt(n, 10));
-    const start = s || 0, end = Number.isFinite(e) ? e : st.size - 1;
-    res.writeHead(206, { "Content-Type": MIME[ext], "Content-Range": `bytes ${start}-${end}/${st.size}`, "Accept-Ranges": "bytes", "Content-Length": end - start + 1 });
-    return createReadStream(file, { start, end }).pipe(res);
+    const start = Number.isFinite(s) ? s : 0;
+    const end = Math.min(Number.isFinite(e) ? e : st.size - 1, st.size - 1);
+    // An unsatisfiable range must be answered, not crashed on.
+    if (start < 0 || start >= st.size || start > end) { res.writeHead(416, { "Content-Range": `bytes */${st.size}` }); return res.end(); }
+    res.writeHead(206, { ...head, "Content-Range": `bytes ${start}-${end}/${st.size}`, "Content-Length": end - start + 1 });
+    return pipe(createReadStream(file, { start, end }));
   }
-  res.writeHead(200, { "Content-Type": MIME[ext] || "application/octet-stream", "Content-Length": st.size, "Cache-Control": "no-store", "Accept-Ranges": "bytes" });
-  createReadStream(file).pipe(res);
+  res.writeHead(200, { ...head, "Content-Length": st.size });
+  pipe(createReadStream(file));
 }
 function saveUpload(req, file, max = 400 * 1024 * 1024) {
   return new Promise((resolve, reject) => {
@@ -246,12 +309,12 @@ const server = createServer(async (req, res) => {
         const name = url.searchParams.get("name") || "";
         if (!safeName(name) || isHidden(name)) return json(res, 400, { error: "bad name" });
         const file = normalize(join(dir, name)); if (!file.startsWith(normalize(dir))) return json(res, 400, { error: "bad path" });
-        const st = await stat(file).catch(() => null); if (!st) return json(res, 404, { error: "no such file" });
+        const st = await stat(file).catch(() => null); if (!st?.isFile()) return json(res, 404, { error: "no such file" });
         return streamFile(req, res, file, st);
       }
       if (sub === "spec" && req.method === "GET") return json(res, 200, await readJson(join(dir, "post.json"), {}));
       if (sub === "spec" && req.method === "PUT") {
-        const b = await readBody(req);
+        const b = await readBody(req); if (!b) return json(res, 413, TOO_BIG);
         if (!Array.isArray(b.slides) || !b.slides.length) return json(res, 400, { error: "slides required" });
         const cur = await readJson(join(dir, "post.json"), {});
         const next = { ...cur, title: String(b.title || cur.title || id).slice(0, 200), caption: String(b.caption ?? cur.caption ?? "").slice(0, 2200), slides: b.slides.slice(0, 10), status: cur.status || "draft" };
@@ -259,7 +322,7 @@ const server = createServer(async (req, res) => {
         return json(res, 200, { ok: true });
       }
       if (sub === "status" && req.method === "POST") {
-        const b = await readBody(req);
+        const b = await readBody(req); if (!b) return json(res, 413, TOO_BIG);
         if (!["draft", "approved", "posted", "rejected"].includes(b.status)) return json(res, 400, { error: "status" });
         const cur = await readJson(join(dir, "post.json"), {}); cur.status = b.status; if (b.status === "posted") cur.postedAt = new Date().toISOString();
         await writeFile(join(dir, "post.json"), JSON.stringify(cur, null, 2) + "\n", "utf8");
@@ -292,11 +355,11 @@ const server = createServer(async (req, res) => {
       const name = url.searchParams.get("name") || "";
       if (!safeName(name) || isHidden(name)) return json(res, 400, { error: "bad name" });
       const file = normalize(join(IG_STUDIO, "out", name)); if (!file.startsWith(normalize(join(IG_STUDIO, "out")))) return json(res, 400, { error: "bad path" });
-      const st = await stat(file).catch(() => null); if (!st) return json(res, 404, { error: "no such file" });
+      const st = await stat(file).catch(() => null); if (!st?.isFile()) return json(res, 404, { error: "no such file" });
       return streamFile(req, res, file, st);
     }
     if (p === "/api/ig/status" && req.method === "POST") {
-      const b = await readBody(req);
+      const b = await readBody(req); if (!b) return json(res, 413, TOO_BIG);
       if (!safeName(b.id || "") || !["draft", "approved", "posted", "rejected"].includes(b.status)) return json(res, 400, { error: "id + status (draft|approved|posted|rejected)" });
       const qp = join(IG_STUDIO, "content", "queue.json"); const q = await readJson(qp, null); if (!q) return json(res, 404, { error: "no queue" });
       const post = (q.posts || []).find((x) => x.id === b.id); if (!post) return json(res, 404, { error: "no such post" });
@@ -305,7 +368,7 @@ const server = createServer(async (req, res) => {
       return json(res, 200, { ok: true });
     }
     if (p === "/api/ig/caption" && req.method === "POST") {
-      const b = await readBody(req);
+      const b = await readBody(req); if (!b) return json(res, 413, TOO_BIG);
       if (!safeName(b.id || "")) return json(res, 400, { error: "id" });
       const qp = join(IG_STUDIO, "content", "queue.json"); const q = await readJson(qp, null); if (!q) return json(res, 404, { error: "no queue" });
       const post = (q.posts || []).find((x) => x.id === b.id); if (!post) return json(res, 404, { error: "no such post" });
@@ -314,7 +377,7 @@ const server = createServer(async (req, res) => {
       return json(res, 200, { ok: true });
     }
     if (p === "/api/community/digest-test" && req.method === "POST") {
-      const b = await readBody(req);
+      const b = await readBody(req); if (!b) return json(res, 413, TOO_BIG);
       const to = String(b.to || "").toLowerCase(); if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(to)) return json(res, 400, { error: "valid email" });
       const site = (process.env.SITE_URL_PUBLIC || "https://www.crimetimesnacks.com").replace(/\/$/, "");
       try { const r = await fetch(`${site}/api/community/digest?key=${encodeURIComponent(process.env.CRON_SECRET || "")}&to=${encodeURIComponent(to)}${b.dry ? "&dry=1" : ""}`); return json(res, r.status, await r.json()); }
@@ -344,7 +407,7 @@ const server = createServer(async (req, res) => {
       const name = url.searchParams.get("name");
       if (!["intro", "outro"].includes(name)) return json(res, 400, { error: "name=intro|outro" });
       const file = join(MUSIC, ".rendered", `${name}.wav`);
-      const st = await stat(file).catch(() => null); if (!st) return json(res, 404, { error: "not rendered yet; run the music action" });
+      const st = await stat(file).catch(() => null); if (!st?.isFile()) return json(res, 404, { error: "not rendered yet; run the music action" });
       return streamFile(req, res, file, st);
     }
 
@@ -362,7 +425,7 @@ const server = createServer(async (req, res) => {
     if (p === "/api/voice/file") {
       const name = url.searchParams.get("name") || "cory-reference.wav";
       if (!safeName(name)) return json(res, 400, { error: "bad name" });
-      const file = join(VOICE, name); const st = await stat(file).catch(() => null);
+      const file = join(VOICE, name); const st = await stat(file).catch(() => null); if (!st?.isFile()) return json(res, 404, { error: "no such file" });
       if (!st) return json(res, 404, { error: "no such file" });
       return streamFile(req, res, file, st);
     }
@@ -373,12 +436,12 @@ const server = createServer(async (req, res) => {
       if (!safeId(id)) return json(res, 400, { error: "bad id" });
       const dir = join(DRAFTS, id);
       const epPath = join(dir, "episode.json");
-      if (req.method === "GET" && !sub) { const ep = await readJson(epPath, null); return ep ? json(res, 200, { ...ep, dir, fileList: await listFiles(dir), inProgress: (await exists(join(dir, "tts"))) ? "voice" : null }) : json(res, 404, { error: "no such draft" }); }
+      if (req.method === "GET" && !sub) { const ep = await readJson(epPath, null); return ep ? json(res, 200, { ...ep, dir, fileList: await listFiles(dir), inProgress: await voiceState(join(dir, "tts"), id), voiceStopped: await voiceStopped(join(dir, "tts")) }) : json(res, 404, { error: "no such draft" }); }
       if (req.method === "GET" && sub === "files") return json(res, 200, await listFiles(dir));
       if (req.method === "PUT" && !sub) {
         const ep = await readJson(epPath, null); if (!ep) return json(res, 404, { error: "no such draft" });
         if (ep.status === "published") return json(res, 409, { error: "published episodes are edited in studio-episodes.json" });
-        const body = await readBody(req);
+        const body = await readBody(req); if (!body) return json(res, 413, TOO_BIG);
         for (const k of ["title", "hook", "description", "instagramCaption", "publishDate"]) if (typeof body[k] === "string") ep[k] = body[k].trim();
         if (Array.isArray(body.script)) ep.script = body.script.map((s) => String(s).trim()).filter(Boolean);
         if (Array.isArray(body.factsToVerify)) ep.factsToVerify = body.factsToVerify.map(String);
@@ -405,7 +468,7 @@ const server = createServer(async (req, res) => {
           if (/^episode\.json$/.test(name)) return json(res, 400, { error: "not that one" });
           await unlink(file).catch(() => {}); return json(res, 200, { ok: true });
         }
-        const st = await stat(file).catch(() => null); if (!st) return json(res, 404, { error: "no such file" });
+        const st = await stat(file).catch(() => null); if (!st?.isFile()) return json(res, 404, { error: "no such file" });
         return streamFile(req, res, file, st);
       }
       if (sub === "upload" && req.method === "POST") {
@@ -428,7 +491,7 @@ const server = createServer(async (req, res) => {
 
     /* research projects */
     if (p === "/api/projects" && req.method === "GET") return json(res, 200, await listProjects());
-    if (p === "/api/projects" && req.method === "POST") { const b = await readBody(req); try { return json(res, 200, await createProject(b.title)); } catch (e) { return json(res, 400, { error: e.message }); } }
+    if (p === "/api/projects" && req.method === "POST") { const b = await readBody(req); if (!b) return json(res, 413, TOO_BIG); try { return json(res, 200, await createProject(b.title)); } catch (e) { return json(res, 400, { error: e.message }); } }
     if (p.startsWith("/api/project/")) {
       const [pid, sub] = p.slice("/api/project/".length).split("/");
       if (!safeId(pid)) return json(res, 400, { error: "bad id" });
@@ -437,7 +500,7 @@ const server = createServer(async (req, res) => {
         if (!sub && req.method === "GET") { const pr = await getProject(pid); return pr ? json(res, 200, pr) : json(res, 404, { error: "no such project" }); }
         if (!sub && req.method === "DELETE") { await deleteProject(pid); return json(res, 200, { ok: true }); }
         if (sub === "note" && req.method === "POST") { const b = await readBody(req); if (!b.text) return json(res, 400, { error: "text" }); await appendNote(pid, b.text, b.source || ""); return json(res, 200, { ok: true }); }
-        if (sub === "notes" && req.method === "PUT") { const b = await readBody(req); await saveNotes(pid, String(b.text ?? "")); return json(res, 200, { ok: true }); }
+        if (sub === "notes" && req.method === "PUT") { const b = await readBody(req); if (!b) return json(res, 413, TOO_BIG); await saveNotes(pid, String(b.text ?? "")); return json(res, 200, { ok: true }); }
         if (sub === "upload" && req.method === "POST") {
           const name = url.searchParams.get("name") || ""; if (!safeName(name) || /^(project\.json|chat\.json)$/.test(name)) return json(res, 400, { error: "bad name" });
           if (!(await exists(pdir))) return json(res, 404, { error: "no such project" });
@@ -448,7 +511,7 @@ const server = createServer(async (req, res) => {
           const name = url.searchParams.get("name") || ""; if (!safeName(name) || isHidden(name)) return json(res, 400, { error: "bad name" });
           const file = normalize(join(pdir, name)); if (!file.startsWith(normalize(PROJECTS))) return json(res, 400, { error: "bad path" });
           if (req.method === "DELETE") { if (/^(project\.json|notes\.md)$/.test(name)) return json(res, 400, { error: "not that one" }); await unlink(file).catch(() => {}); return json(res, 200, { ok: true }); }
-          const st = await stat(file).catch(() => null); if (!st) return json(res, 404, { error: "no such file" });
+          const st = await stat(file).catch(() => null); if (!st?.isFile()) return json(res, 404, { error: "no such file" });
           return streamFile(req, res, file, st);
         }
         if (sub === "chat" && req.method === "POST") { const b = await readBody(req); if (!b.question) return json(res, 400, { error: "question" }); return json(res, 200, await chatProject(pid, String(b.question))); }
@@ -473,7 +536,7 @@ const server = createServer(async (req, res) => {
       } catch (e) { return json(res, 200, { pending: [], error: e.message }); }
     }
     if (p === "/api/community/review" && req.method === "POST") {
-      const body = await readBody(req);
+      const body = await readBody(req); if (!body) return json(res, 413, TOO_BIG);
       const id = parseInt(body.id, 10); const status = body.status;
       if (!Number.isFinite(id) || !["approved", "rejected", "pending"].includes(status)) return json(res, 400, { error: "id + status" });
       const patch = { status, approved_at: status === "approved" ? new Date().toISOString() : null };
@@ -485,7 +548,7 @@ const server = createServer(async (req, res) => {
     }
     if (p === "/api/community/add" && req.method === "POST") {
       // Cory adds an update by hand: approved straight away.
-      const body = await readBody(req);
+      const body = await readBody(req); if (!body) return json(res, 413, TOO_BIG);
       if (!safeId(body.case) || !body.title) return json(res, 400, { error: "case + title" });
       try {
         await sb("cts_case_updates", { method: "POST", body: { case_slug: body.case, title: String(body.title).slice(0, 200), summary: String(body.summary || "").slice(0, 600), url: String(body.url || "").slice(0, 500), source: String(body.source || "").slice(0, 80), happened_on: /^\d{4}-\d{2}-\d{2}$/.test(body.happened_on || "") ? body.happened_on : new Date().toISOString().slice(0, 10), status: "approved", found_by: "cory", approved_at: new Date().toISOString() }, prefer: "return=minimal" });
@@ -494,11 +557,21 @@ const server = createServer(async (req, res) => {
     }
 
     if (p === "/api/run" && req.method === "POST") {
-      const body = await readBody(req);
+      const body = await readBody(req); if (!body) return json(res, 413, TOO_BIG);
       if (!ACTIONS[body.action]) return json(res, 400, { error: "unknown action" });
       if (body.id && !safeId(body.id)) return json(res, 400, { error: "bad id" });
       if (body.id && running().some((j) => j.draft === body.id)) return json(res, 409, { error: "a job is already running for this draft" });
-      if (body.action === "voice" && body.id && (await exists(join(DRAFTS, body.id, "tts")))) return json(res, 409, { error: "a voice render is already running for this episode (its tts folder exists). Wait for it, or delete the tts folder if it crashed." });
+      if (body.action === "voice" && body.id && (await exists(join(DRAFTS, body.id, "tts")))) {
+        // Only block for a render that is actually alive; a crashed one is cleared below.
+        if (!(await voiceStopped(join(DRAFTS, body.id, "tts")))) return json(res, 409, { error: "a voice render is already running for this episode. Wait for it to finish." });
+        await rm(join(DRAFTS, body.id, "tts"), { recursive: true, force: true });
+      }
+      // The fact list is a house rule, so it is enforced here too, not only by the button.
+      if (body.action === "publish" && body.id && !body.pushOnly) {
+        const ep = await readJson(join(DRAFTS, body.id, "episode.json"), null);
+        const open = (ep?.factsToVerify || []).filter((_, i) => !(ep.factsChecked || [])[i]).length;
+        if (open) return json(res, 409, { error: `${open} claim${open === 1 ? " is" : "s are"} still unticked. Read the Facts tab first.` });
+      }
       if (["content", "sync", "build", "publish", "weekly"].includes(body.action) && running().some((j) => ["content", "sync", "build", "publish", "weekly"].includes(j.action))) return json(res, 409, { error: "a site build is already running" });
       // A recording inside the draft folder (browser take or dropped file) is referenced by name only.
       if (body.fromInFolder) {
@@ -515,7 +588,7 @@ const server = createServer(async (req, res) => {
     }
     if (p === "/api/jobs") return json(res, 200, [...jobs.values()].map(({ log, ...j }) => j).slice(-20));
     if (p === "/api/open" && req.method === "POST") {
-      const body = await readBody(req);
+      const body = await readBody(req); if (!body) return json(res, 413, TOO_BIG);
       const target = body.id ? (safeId(body.id) ? join(DRAFTS, body.id) : null) : body.what === "music" ? MUSIC : body.what === "voice" ? VOICE : null;
       if (!target) return json(res, 400, { error: "bad target" });
       await mkdir(target, { recursive: true });
@@ -527,13 +600,17 @@ const server = createServer(async (req, res) => {
       const top = rel.split(/[\\/]/)[0];
       if (!file.startsWith(ROOT) || rel.includes("..") || !SITE_DIRS.includes(top) || isHidden(rel)) return json(res, 403, { error: "not served" });
       const st = await stat(file).catch(() => null); if (!st?.isFile()) return json(res, 404, { error: "nope" });
-      return streamFile(req, res, file, st);
+      return streamFile(req, res, file, st, true);
     }
     json(res, 404, { error: "not found" });
   } catch (e) {
     json(res, 500, { error: e.message });
   }
 });
+
+// A render can run for five hours; one malformed request must not end it.
+process.on("uncaughtException", (e) => console.error(`[studio] uncaught: ${e?.stack || e}`));
+process.on("unhandledRejection", (e) => console.error(`[studio] unhandled rejection: ${e?.stack || e}`));
 
 server.listen(PORT, HOST, () => {
   console.log(`CrimeTimeSnacks Studio  http://${HOST}:${PORT}`);

@@ -17,7 +17,7 @@
 // Requires: ffmpeg + ffprobe, edge-tts (pip, Python 3.13), and for the clone the
 // venv in automation/studio/.venv with chatterbox-tts plus voice/cory-reference.wav.
 
-import { readFile, writeFile, mkdir, rm, stat, access, copyFile } from "node:fs/promises";
+import { readFile, writeFile, mkdir, readdir, rm, stat, access, copyFile } from "node:fs/promises";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
@@ -33,7 +33,8 @@ const opt = (n, d) => { const i = args.indexOf(n); return i > -1 && args[i + 1] 
 const id = args.find((a, i) => !a.startsWith("--") && !(args[i - 1] || "").startsWith("--"));
 const asJson = args.includes("--json");
 const out = (o) => { if (asJson) console.log(JSON.stringify(o)); else console.log(o.message || JSON.stringify(o)); };
-const die = (step, message, code = 2) => { out({ ok: false, step, message }); process.exit(code); };
+let markFailed = null; // set once the tts folder exists; see below
+const die = (step, message, code = 2) => { try { markFailed && markFailed(`${step}: ${message}`); } catch { /* folder not there yet */ } out({ ok: false, step, message }); process.exit(code); };
 const say = (m) => { if (!asJson) console.log(m); else console.error(m); };
 const exists = async (p) => { try { await access(p); return true; } catch { return false; } };
 
@@ -89,9 +90,20 @@ async function joinParts(parts, work, gap = 0.55) {
   return [joined, offsets];
 }
 
+// The tts folder is both this render's scratch space and the signal the studio reads for
+// "a render is running". Keep it when the plan has not changed, because a five-hour clone
+// render has to be resumable: tts_clone.py skips paragraphs it has already voiced.
 const work = join(dir, "tts");
-await rm(work, { recursive: true, force: true });
+const planPath = join(work, "paragraphs.jsonl");
+const plan = (ep.script || []).filter(Boolean).map((text, i) => JSON.stringify({ i, text })).join("\n");
+const samePlan = await readFile(planPath, "utf8").then((t) => t === plan).catch(() => false);
+if (!samePlan) await rm(work, { recursive: true, force: true });
 await mkdir(work, { recursive: true });
+await rm(join(work, "failed.txt"), { force: true }).catch(() => {});
+// Any exit that is not a finished episode leaves its reason behind, so the studio can
+// offer a retry instead of showing "making the voice" for ever with every button dead.
+markFailed = async (msg) => { try { await writeFile(join(work, "failed.txt"), String(msg).slice(0, 800), "utf8"); } catch { /* folder gone */ } };
+process.on("uncaughtException", async (e) => { await markFailed(e?.stack || e); process.exit(2); });
 const t0 = Date.now();
 const music = !args.includes("--no-music");
 const from = opt("--from", null);
@@ -113,9 +125,12 @@ if (from) {
   if (!(await exists(VENV_PY))) die("clone", "The studio venv is missing. See STUDIO.md, 'Voice clone'.");
   const paras = ep.script.filter(Boolean);
   if (!paras.length) die("script", "The draft has an empty script.");
-  const jsonl = join(work, "paragraphs.jsonl");
-  await writeFile(jsonl, paras.map((text, i) => JSON.stringify({ i, text })).join("\n"), "utf8");
-  say(`Cloning ${paras.length} paragraphs in Cory's voice (CPU; expect several minutes)...`);
+  const jsonl = planPath;
+  await writeFile(jsonl, plan, "utf8");
+  const alreadyDone = (await readdir(work).catch(() => [])).filter((f) => /^p\d+\.wav$/.test(f)).length;
+  say(alreadyDone
+    ? `Resuming: ${alreadyDone} of ${paras.length} paragraphs are already in your voice.`
+    : `Cloning ${paras.length} paragraphs in Cory's voice (CPU; a full episode takes hours)...`);
   const exaggeration = opt("--exaggeration", String(ep.voice?.exaggeration ?? 0.45));
   const cfg = opt("--cfg", String(ep.voice?.cfg ?? 0.5));
   try {

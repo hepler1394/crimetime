@@ -284,3 +284,38 @@ service, not a web page:
   else. Web tabs cannot navigate to file:// or the shell schemes.
 
 `npm run test:studio` starts a throwaway server and checks all of the above.
+
+
+## What the studio refuses to do
+
+These are enforced in the server and the scripts, not only by a disabled button, because
+the button is not the only way in (the shell, the weekly task and curl all reach the same
+routes):
+
+- **Publish with unticked claims.** `episode-publish.mjs` counts `factsToVerify` against
+  `factsChecked` and exits 2, and `/api/run` answers 409. The weekly job passes
+  `--skip-facts` explicitly, so any bypass is visible in the log.
+- **Report a publish that did not happen.** The checkout is synced with origin *before*
+  anything is written; the episode is only marked `published` once `git push` succeeds.
+  A failed push leaves it `committed`, exits non-zero, and the studio says so. Press
+  Publish again to retry; the built files are reused.
+- **Commit the whole working tree.** Publishing stages only what it produces. The voice
+  reference, theme tracks, research projects and browser downloads are gitignored: this
+  is a public repo.
+- **Run a page from a folder anyone can write to.** Files in drafts, projects, posts and
+  the ig out folder are served inline only when they are media, PDF, JSON or text.
+  `.html` and `.svg` download instead, with nosniff, so a planted page cannot run in the
+  studio's own origin and use its write access.
+- **Lock an episode after a crash.** A `tts` folder that has not changed for half an hour,
+  or that holds `failed.txt`, is reported as a stopped render, not a running one. The
+  episode shows what went wrong and offers to start again, and the render resumes from
+  the paragraphs already voiced.
+
+## Recovering from the two failures that actually happen
+
+- **The voice render died.** Open the episode. The red panel says why. "Start the voice
+  again" re-uses every paragraph already rendered, so a five-hour job that died at hour
+  four finishes in minutes.
+- **The push failed.** Publish says so and the episode stays `committed`. Fix the repo
+  (usually `git status` shows a conflict from the six-hourly CI sync), then press Publish
+  again: it skips the build and just pushes.

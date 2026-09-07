@@ -60,3 +60,12 @@ studio-shell/profile/
 automation/studio/posts/*/slide-*.jpg
 automation/studio/posts/*/bg-*.png
 automation/studio/posts/*/*.mp4
+
+# Studio: personal and licensed assets never ship. Four scripts run `git add -A`
+# in this tree, so this list is the guard. Research projects (PDFs, clippings,
+# chat.json), the voice-clone reference and takes, Cory's own theme tracks and
+# the beds rendered from them, and anything downloaded in the shell's browser.
+automation/studio/projects/
+automation/studio/voice/
+automation/studio/music/
+studio-shell/downloads/

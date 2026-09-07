@@ -65,7 +65,13 @@ for (const c of cases) {
     judged = JSON.parse(text).items || [];
   } catch (e) { say(`  ${c.slug}: screening failed ${e.message}`); continue; }
   const rows = judged.filter((j) => j && j.relevant && fresh[j.i]).map((j) => ({ case_slug: c.slug, happened_on: /^\d{4}-\d{2}-\d{2}$/.test(j.happened_on || "") ? j.happened_on : today, title: String(j.title || fresh[j.i].title).slice(0, 200), summary: String(j.summary || "").slice(0, 600), url: fresh[j.i].url, source: String(j.source || new URL(fresh[j.i].url).hostname).slice(0, 80), status: "pending", found_by: "watcher" }));
-  if (rows.length) { await sb("cts_case_updates?on_conflict=case_slug,url", { method: "POST", body: rows, prefer: "resolution=ignore-duplicates,return=minimal" }); found += rows.length; report.push({ case: c.slug, pending: rows.map((r) => r.title) }); }
+  // No on_conflict target: the unique index on (case_slug, url) is partial (where url <> ''),
+  // and Postgres will not infer a partial index, so naming it made every insert fail with
+  // 42P10 and killed the whole run. Duplicates are already filtered by `have` above.
+  if (rows.length) {
+    try { await sb("cts_case_updates", { method: "POST", body: rows, prefer: "return=minimal" }); found += rows.length; report.push({ case: c.slug, pending: rows.map((r) => r.title) }); }
+    catch (e) { say(`  ${c.slug}: could not file ${rows.length} update(s): ${e.message}`); }
+  }
   say(`  ${c.slug}: ${fresh.length} new results, ${rows.length} filed as pending`);
 }
 const msg = `Case watch: ${cases.length} cases, ${considered} new results screened, ${found} pending update(s) filed for review.`;

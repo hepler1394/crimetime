@@ -39,7 +39,7 @@
   .marks button.ig{color:#e8b4c4}.marks button.grok{color:#cfe3ff}
   select.t{background:var(--ink);border:1px solid var(--line-2);border-radius:4px;color:var(--white);padding:5px 8px;font:12px var(--body);max-width:260px}
   label.k{font:500 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
-  .gen{position:fixed;right:10px;top:92px;width:380px;background:var(--panel);border:1px solid var(--line-2);border-top:0;border-radius:0 0 6px 6px;padding:12px;box-shadow:0 20px 50px rgba(0,0,0,.6);display:none;z-index:9}
+  .gen{position:absolute;right:10px;top:92px;width:380px;background:var(--panel);border:1px solid var(--line-2);border-top:0;border-radius:0 0 6px 6px;padding:12px;box-shadow:0 20px 50px rgba(0,0,0,.6);display:none;z-index:9}
   .gen.show{display:block}
   .gen textarea{width:100%;min-height:74px;background:var(--ink);border:1px solid var(--line);border-radius:4px;color:var(--white);padding:8px;font:12.5px var(--body);resize:vertical}
   .gen .r{display:flex;gap:6px;align-items:center;margin-top:8px;flex-wrap:wrap}
@@ -57,7 +57,7 @@
   <div class="ws"><button id="ws-ct" class="on">Studio</button><button id="ws-ig">Instagram</button></div>
   <div class="tabs" id="tabs"></div>
   <button class="btn" id="newtab" title="New browser tab">+ Tab</button>
-  <button class="btn" id="gen-toggle" title="Generate an image or clip into the current episode">Generate</button>
+  <button class="btn" id="gen-toggle" aria-expanded="false" aria-controls="gen" title="Generate an image or clip into the current episode">Generate</button>
 </div>
 <div class="row2">
   <div class="nav"><button id="home" title="Back to the studio">&#8962;</button><button id="back" title="Back">&#8249;</button><button id="fwd" title="Forward">&#8250;</button><button id="reload" title="Reload">&#8635;</button></div>
@@ -115,7 +115,14 @@ async function loadDrafts() {
   $("#gen-ref").innerHTML = `<option value="">no reference</option>` + files.filter((f) => /\.(jpe?g|png)$/i.test(f)).map((f) => `<option>${esc(f)}</option>`).join("");
 }
 $("#target").addEventListener("change", () => { window.shell.send("setTarget", { id: $("#target").value || null }); loadDrafts(); });
-$("#gen-toggle").addEventListener("click", () => { $("#gen").classList.toggle("show"); if ($("#gen").classList.contains("show")) { loadDrafts(); $("#gen-prompt").focus(); } });
+// The chrome strip is only 92px tall, so the panel has to make room for itself: ask the
+// window to grow the strip while it is open, or it renders below the visible edge.
+$("#gen-toggle").addEventListener("click", () => {
+  const open = $("#gen").classList.toggle("show");
+  $("#gen-toggle").setAttribute("aria-expanded", String(open));
+  window.shell.send("chromeHeight", { h: open ? 92 + $("#gen").offsetHeight + 12 : 92 });
+  if (open) { loadDrafts(); $("#gen-prompt").focus(); }
+});
 $("#gen-go").addEventListener("click", async () => {
   const kind = $("#gen-kind").value, prompt = $("#gen-prompt").value.trim();
   if (kind === "grok") { window.shell.send("newTab", { url: "https://grok.com/imagine" }); if (prompt) { await navigator.clipboard.writeText(prompt); toast("Prompt copied. Paste it into Grok Imagine, then right-click the result to save it to the episode."); } return; }

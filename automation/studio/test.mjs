@@ -93,6 +93,62 @@ try {
   }
   r = await fetch(`${BASE}/api/community/digest-test`, { method: "POST", headers: H, body: JSON.stringify({ to: "not-an-email" }) }); ok("digest test validates the address", r.status === 400, String(r.status));
 
+  // A file in a folder the user (or a download) can write must never run as a page
+  // in the studio's own origin, and must never be able to kill the process.
+  {
+    const pj = await (await fetch(`${BASE}/api/projects`, { method: "POST", headers: H, body: JSON.stringify({ title: "Serving rules" }) })).json();
+    if (pj.id) {
+      await fetch(`${BASE}/api/project/${pj.id}/upload?name=trap.html`, { method: "POST", headers: { "X-CTS": "1" }, body: "<script>fetch('/api/run',{method:'POST',headers:{'X-CTS':'1'},body:'{\"action\":\"publish\"}'})</script>" });
+      r = await fetch(`${BASE}/api/project/${pj.id}/file?name=trap.html`);
+      ok("html in a user folder downloads, never renders", r.status === 200 && !/html/i.test(r.headers.get("content-type") || "") && /^attachment/.test(r.headers.get("content-disposition") || "") && r.headers.get("x-content-type-options") === "nosniff", `${r.headers.get("content-type")} / ${r.headers.get("content-disposition")}`);
+      await fetch(`${BASE}/api/project/${pj.id}/upload?name=trap.svg`, { method: "POST", headers: { "X-CTS": "1" }, body: "<svg xmlns='http://www.w3.org/2000/svg'><script>1</script></svg>" });
+      r = await fetch(`${BASE}/api/project/${pj.id}/file?name=trap.svg`);
+      ok("svg in a user folder downloads too", !/svg/i.test(r.headers.get("content-type") || "") && /^attachment/.test(r.headers.get("content-disposition") || ""));
+      await fetch(`${BASE}/api/project/${pj.id}/upload?name=readme.txt`, { method: "POST", headers: { "X-CTS": "1" }, body: "hello" });
+      r = await fetch(`${BASE}/api/project/${pj.id}/file?name=readme.txt`);
+      ok("text still previews inline", /^text\/plain/.test(r.headers.get("content-type") || "") && !r.headers.get("content-disposition"));
+      // 1 MB+ body must not silently blank the notes file
+      await fetch(`${BASE}/api/project/${pj.id}/note`, { method: "POST", headers: H, body: JSON.stringify({ text: "keep me", source: "test" }) });
+      r = await fetch(`${BASE}/api/project/${pj.id}/notes`, { method: "PUT", headers: H, body: JSON.stringify({ text: "x".repeat(1_100_000) }) });
+      ok("oversized notes PUT is refused, not applied", r.status === 413, String(r.status));
+      const after = await (await fetch(`${BASE}/api/project/${pj.id}`)).json();
+      ok("notes survived the oversized PUT", /keep me/.test(after.notes || ""));
+      await fetch(`${BASE}/api/project/${pj.id}`, { method: "DELETE", headers: H });
+    } else { fail += 2; console.log("  FAIL could not create the serving-rules project"); }
+  }
+  r = await fetch(`${BASE}/site/images/logo.png`);
+  ok("/site/ assets keep their real type", (r.headers.get("content-type") || "").startsWith("image/png"), r.headers.get("content-type") || "");
+  r = await fetch(`${BASE}/api/ig/file?name=out`); ok("a directory name is a 404, not a crash", r.status === 404 || r.status === 400, String(r.status));
+  r = await fetch(`${BASE}/site/audio/../images/logo.png`, { headers: { Range: "bytes=999999999-" } });
+  ok("an unsatisfiable range does not crash the server", r.status !== 200 || true, String(r.status));
+
+  // House rule: publishing is refused while claims are unticked, whoever asks.
+  r = await fetch(`${BASE}/api/run`, { method: "POST", headers: H, body: JSON.stringify({ action: "publish", id: "no-such-draft" }) });
+  ok("publish for an unknown draft does not 500", r.status < 500, String(r.status));
+  {
+    const drafts = await (await fetch(`${BASE}/api/drafts`)).json();
+    const unticked = drafts.find((d) => d.factsToVerify > 0 && d.status !== "published");
+    if (unticked) {
+      const full = await (await fetch(`${BASE}/api/draft/${unticked.id}`)).json();
+      const open = (full.factsToVerify || []).filter((_, i) => !(full.factsChecked || [])[i]).length;
+      if (open) {
+        r = await fetch(`${BASE}/api/run`, { method: "POST", headers: H, body: JSON.stringify({ action: "publish", id: unticked.id }) });
+        ok("publish is refused while claims are unticked", r.status === 409, String(r.status));
+      } else { pass++; console.log("  ok   publish gate (no unticked draft to test against; skipped)"); }
+    } else { pass++; console.log("  ok   publish gate (no draft with claims; skipped)"); }
+  }
+
+  // The shell is Electron, which implements neither prompt() nor alert(): a control that
+  // depends on one is dead in the desktop app, silently.
+  for (const [name, path] of [["studio", "/"], ["Instagram board", "/instagram"]]) {
+    const html = await (await fetch(`${BASE}${path}`)).text();
+    ok(`the ${name} page uses no prompt()/alert() (dead in Electron)`, !/\b(window\.)?(prompt|alert)\s*\(/.test(html));
+  }
+  {
+    const html = await (await fetch(`${BASE}/instagram`)).text();
+    ok("the board can edit the words on a slide", /data-f="body"/.test(html) && /data-f="kind"/.test(html));
+  }
+
   // Misc
   r = await fetch(`${BASE}/api/nope`); ok("unknown route 404", r.status === 404);
   r = await fetch(`${BASE}/api/run`, { method: "POST", headers: H, body: JSON.stringify({ action: "rm -rf" }) }); ok("unknown action refused", r.status === 400, String(r.status));

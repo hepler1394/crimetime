@@ -11,7 +11,7 @@
 <style>
   :root{
     --ink:#050505; --panel:#0c0c0e; --panel-2:#111114; --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.16);
-    --red:#e50914; --hot:#ff2b33; --deep:#8f0710; --tape:#f4c20d; --white:#f7f7f8; --muted:#a3a3ad; --faint:#6b6b74; --ok:#4fbf7a;
+    --red:#e50914; --hot:#ff2b33; --deep:#8f0710; --tape:#f4c20d; --white:#f7f7f8; --muted:#a3a3ad; --faint:#8f8f99; --ok:#4fbf7a;
     --display:"Bebas Neue",Impact,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace; --body:Inter,system-ui,sans-serif;
   }
   *{box-sizing:border-box}
@@ -145,7 +145,9 @@
   .meter i{display:block;height:100%;width:100%;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .08s}
   .drop{border:1px dashed var(--line-2);border-radius:4px;padding:10px;font-size:12.5px;color:var(--muted);text-align:center;cursor:pointer}
   .drop:hover,.drop.over{border-color:var(--tape);color:var(--white)}
-  .drop input{display:none}
+  .drop{position:relative}
+  .drop input{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;clip:rect(0 0 0 0)}
+  .drop:focus-within{outline:2px solid var(--tape);outline-offset:2px}
   .files{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:4px;background:var(--panel);font:12px/1.6 var(--mono)}
   .files li{display:grid;grid-template-columns:1fr auto auto;gap:10px;padding:6px 10px;border-bottom:1px solid var(--line);align-items:center}
   .files li:last-child{border-bottom:0}
@@ -236,6 +238,9 @@
   .keys{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:13px;color:var(--muted)}
   .keys kbd{font:12px var(--mono);background:var(--panel-2);border:1px solid var(--line-2);border-radius:3px;padding:1px 6px;color:var(--white)}
   .opening{padding:40px 0;color:var(--faint);font-size:13px}
+  .stopped{border:1px solid var(--deep);background:#1b0709;border-radius:6px;padding:14px 16px;margin:0 0 18px}
+  .stopped b{display:block;margin-bottom:4px}
+  .stopped p{margin:0 0 10px;color:var(--muted);font-size:13px;line-height:1.5}
 </style>
 </head>
 <body>
@@ -340,12 +345,15 @@ const fmtAgo = (iso) => { if (!iso) return "never"; const m = Math.round((Date.n
 const fmtWhen = (iso) => { if (!iso || iso.startsWith("0001")) return "none"; return new Date(iso).toLocaleString("en-US", { weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }); };
 const fmtSize = (b) => b > 1048576 ? `${(b / 1048576).toFixed(1)} MB` : `${Math.max(1, Math.round(b / 1024))} KB`;
 const IN_SHELL = /Electron/.test(navigator.userAgent);
+// Local date, not UTC: after 7 pm Central an ISO slice is already tomorrow, which
+// back-dates nothing but forward-dates the episode a day in every podcast app.
+const today = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; };
 const VOICES = ["en-US-AndrewNeural", "en-US-BrianNeural", "en-US-ChristopherNeural", "en-US-EricNeural", "en-US-GuyNeural"];
 const state = { health: null, drafts: [], current: null, ep: null, job: null, dirty: false, rec: null, tab: null, section: "episodes" };
 
 let toastT;
 function toast(msg, bad) { const t = $("#toast"); t.textContent = msg; t.className = `toast show${bad ? " bad" : ""}`; clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("show"), bad ? 7000 : 3500); }
-async function api(path, opts = {}) { const r = await fetch(path, { ...opts, headers: { "Content-Type": "application/json", "X-CTS": "1", ...(opts.headers || {}) } }); const j = await r.json().catch(() => ({})); if (!r.ok) throw new Error(j.error || r.statusText); return j; }
+async function api(path, opts = {}) { const r = await fetch(path, { ...opts, headers: { "Content-Type": "application/json", "X-CTS": "1", ...(opts.headers || {}) } }); const j = await r.json().catch(() => ({})); if (!r.ok) { const e = new Error(j.error || r.statusText); e.status = r.status; throw e; } return j; }
 async function upload(path, blob) { const r = await fetch(path, { method: "POST", body: blob, headers: { "X-CTS": "1" } }); const j = await r.json().catch(() => ({})); if (!r.ok) throw new Error(j.error || r.statusText); return j; }
 
 /* ---------------------------------------------------------- sections */
@@ -364,13 +372,13 @@ async function loadHealth() {
   $("#offline").hidden = true;
   const h = state.health;
   const bad = (t) => t.result && t.result !== 0 && t.result !== 267009 && t.result !== 267011;
-  $("#sig-lm").className = `dot ${h.lmStudio.up || h.status ? "ok" : "warn"}`;
+  $("#sig-lm").className = `dot ${h.writer?.ready ?? (h.lmStudio.up || !!h.status?.counts) ? "ok" : "warn"}`;
   $("#sig-voice").className = `dot ${h.voice.cloneReady ? "ok" : "warn"}`;
   $("#sig-git").className = `dot ${h.git.behind || h.git.ahead ? "warn" : "ok"}`;
   $("#sig-tasks").className = `dot ${h.tasks.some(bad) ? "bad" : h.tasks.some((t) => t.state === "Ready") ? "ok" : "warn"}`;
 
   $("#kv").innerHTML = `
-    <dt>script model</dt><dd>Gemini (cloud), local LM Studio ${h.lmStudio.up ? "up as fallback" : "off"}</dd>
+    <dt>script model</dt><dd>${h.writer ? `${esc(h.writer.provider)}${h.writer.model ? ` (${esc(h.writer.model)})` : ""}${h.writer.ready ? "" : " — no key set"}` : "unknown"}, local LM Studio ${h.lmStudio.up ? "up as fallback" : "off"}</dd>
     <dt>git</dt><dd class="${h.git.behind ? "warn" : ""}">${h.git.ahead ? `${h.git.ahead} to push` : "nothing to push"}${h.git.behind ? `, ${h.git.behind} behind origin` : ""}${h.git.dirty ? `, ${h.git.dirty} changed files` : ""}</dd>
     <dt>ci sync</dt><dd>${fmtAgo(h.git.lastCi.at)}</dd>
     <dt>tools</dt><dd class="${h.tools.edgeTts && h.tools.ffmpeg ? "" : "bad"}">${h.tools.edgeTts ? "edge-tts" : "edge-tts MISSING"}, ${h.tools.ffmpeg ? "ffmpeg" : "ffmpeg MISSING"}</dd>
@@ -403,10 +411,17 @@ function renderDrafts() {
 async function openDraft(id) {
   if (state.dirty && !confirm("Discard unsaved edits?")) return;
   state.dirty = false; state.current = id; state.tab = null;
+  state.next = { nextWhat, nextWhy, nextCta };
   $("#empty").hidden = true; $("#editor").hidden = false; $("#editor").innerHTML = `<div class="opening">Opening the episode folder</div>`;
   try { state.ep = await api(`/api/draft/${id}`); } catch (e) { toast(e.message, true); return; }
   renderDrafts(); renderEditor();
 }
+// Re-render just the "next step" card and the step chips, for when a job finishes while
+// the user is mid-sentence in the script box.
+// renderEditor already snapshots and restores the live form, so refreshing after a job is
+// safe even mid-sentence. These two names say what the caller means.
+const renderNext = () => renderEditorInto();
+function renderEditorInto() { if (state.ep && $("#editor") && !$("#editor").hidden) renderEditor(); }
 function stageOf(ep) {
   const f = ep.files || {};
   const done = { research: !!f.research || !!ep.researched, script: !!ep.script?.length, voice: !!f.audio, art: !!f.cover, social: !!f.reel, publish: ep.status === "published" };
@@ -414,11 +429,32 @@ function stageOf(ep) {
   return { done, next: order.find((k) => !done[k]) || null };
 }
 const RUN_LABEL = { new: "Writing the script", research: "Researching", voice: "Making the voice", art: "Rendering art", social: "Cutting the reel", publish: "Publishing", generate: "Generating" };
+// Everything the editor shows is rebuilt from state.ep, so anything typed and not yet
+// saved would vanish on any rebuild (a finishing job, a tick, a save). Snapshot the live
+// controls first, put them back after, and restore the caret so the script stays usable.
+const FORM_IDS = ["#f-title", "#f-hook", "#f-script", "#f-desc", "#f-cap", "#f-date", "#v-engine", "#v-name", "#v-rate", "#v-pitch", "#v-exag", "#v-cfg", "#v-music", "#cold-label"];
+function snapshotForm() {
+  const snap = { values: {}, focus: document.activeElement?.id || null, sel: null, scroll: null };
+  for (const sel of FORM_IDS) { const el = $(sel); if (el) snap.values[sel] = el.type === "checkbox" ? el.checked : el.value; }
+  const sc = $("#f-script");
+  if (sc) { snap.sel = [sc.selectionStart, sc.selectionEnd]; snap.scroll = sc.scrollTop; }
+  return snap;
+}
+function restoreForm(snap) {
+  if (!snap) return;
+  for (const [sel, v] of Object.entries(snap.values)) { const el = $(sel); if (!el) continue; if (el.type === "checkbox") el.checked = v; else el.value = v; }
+  const sc = $("#f-script");
+  if (sc && snap.scroll != null) { if (snap.sel) sc.setSelectionRange(snap.sel[0], snap.sel[1]); sc.scrollTop = snap.scroll; }
+  if (snap.focus) { const el = document.getElementById(snap.focus); if (el) el.focus({ preventScroll: true }); }
+  if (state.dirty) markDirty();
+}
 function renderEditor() {
   const ep = state.ep; if (!ep) return;
+  const keep = state.dirty || document.activeElement?.closest?.("#editor") ? snapshotForm() : null;
   const h = state.health || { voice: {}, music: {} };
   const { done, next } = stageOf(ep);
   const runningFor = (state.job && !state.job.done && state.job.draft === ep.id ? state.job.action : null) || ep.inProgress || null;
+  const stopped = !runningFor && ep.voiceStopped ? ep.voiceStopped : null;
   const pub = ep.status === "published";
   const facts = ep.factsToVerify || []; const checked = ep.factsChecked || [];
   const unchecked = facts.filter((_, i) => !checked[i]).length;
@@ -451,6 +487,7 @@ function renderEditor() {
     <div class="headrow"><div class="head"><h1>${esc(ep.title)}</h1><div class="meta">${esc(ep.caseTitle && ep.caseTitle !== ep.title ? ep.caseTitle + " · " : "")}<b>${ep.scriptWords || 0} words</b> · about ${Math.max(1, Math.round((ep.scriptWords || 0) / 160))} min${ep.duration ? ` · audio <b>${esc(ep.duration.replace(/^00:/, ""))}</b>` : ""}${ep.chapters?.length ? ` · ${ep.chapters.length} chapters` : ""}${pub ? ` · <b style="color:var(--ok)">published ${esc(ep.publishDate)}</b>` : ""}</div></div>
       <div class="tools"><button class="btn ghost sm" id="btn-folder">Open folder</button>${pub ? "" : `<button class="btn ghost sm" id="btn-delete" ${runningFor ? "disabled" : ""}>Delete</button>`}</div></div>
 
+    ${stopped ? `<div class="stopped"><b>The voice render stopped before it finished.</b><p>${esc(stopped)} Nothing else was lost: the script, research and any art are still in the folder. Starting it again re-uses the paragraphs that were already rendered.</p><button class="btn red" data-run="voice">Start the voice again</button></div>` : ""}
     <div class="next"><div><div class="lbl">${runningFor ? "Working" : pub ? "Done" : "Next step"}</div><div class="what">${nextWhat}</div><div class="why">${nextWhy}</div></div><div class="cta">${nextCta}</div></div>
     <div class="steps">${stepChip("research", "Research")}${stepChip("script", "Script")}${stepChip("voice", "Voice")}${stepChip("art", "Art")}${stepChip("social", "Reel")}${stepChip("publish", "Publish")}</div>
 
@@ -507,7 +544,7 @@ function renderEditor() {
     <div class="pane" id="pane-art" ${tab === "art" ? "" : "hidden"}>
       <div class="row" style="margin-bottom:16px"><button class="btn ${done.art ? "" : "red"}" data-run="art" ${dis(!done.script)}>${done.art ? "Re-render art" : "Render art"}</button><button class="btn ${done.art && !done.social ? "red" : ""}" data-run="social" ${dis(!done.voice || !done.art)} title="${!done.voice ? "Make the voice first" : ""}">${done.social ? "Re-cut reel" : "Build reel"}</button><span class="hint" style="margin:0">Cover 3000 square, card 1080x1350, reel still 1080x1920, then a 45 s audiogram.</span></div>
       ${done.art ? `<div class="art3"><div class="preview"><img src="${f("cover")}" alt="Cover"><div class="cap"><span>cover</span><span>3000</span></div></div><div class="preview"><img src="${f("card")}" alt="Feed card"><div class="cap"><span>card</span><span>1080x1350</span></div></div><div class="preview"><img src="${f("reelStill")}" alt="Reel still"><div class="cap"><span>reel still</span><span>1080x1920</span></div></div></div>` : `<p class="hint">No art yet.</p>`}
-      ${done.social ? `<div class="two" style="margin-top:16px">${ep.files.trailer ? `<div class="preview"><video controls preload="metadata" src="${f("trailer")}"></video><div class="cap"><span>trailer, ${ep.trailer?.seconds || ""} s${ep.trailer?.coldOpen ? ", cold open: " + esc(ep.trailer.coldOpen) : ", hook line opens"}</span><span>the post</span></div></div>` : ""}<div class="preview"><video controls preload="metadata" src="${f("reel")}"></video><div class="cap"><span>audiogram, ${ep.social?.clipSeconds || 45} s</span><span>fallback</span></div></div></div><div class="cold"><div class="f">Cold open for the trailer</div>${cold ? `<div class="have">Using <b>${esc(cold.name)}</b>${ep.trailer?.coldOpen ? `, labelled "${esc(ep.trailer.coldOpen)}"` : ""}. Re-cut the reel after changing it.</div>` : `<div class="have">No clip. The hook line opens the trailer.</div>`}<div class="row"><label class="drop" id="drop-cold" style="flex:1;margin:0">${cold ? "Replace the clip" : "Drop the clip"} (a 911 call or other public-record audio; the first 8 s are used)<input type="file" id="cold-file" accept="audio/*,video/mp4"></label><input class="t" id="cold-label" placeholder="One-line label, e.g. 911 call, April 3, 2022" value="${esc(coldLabel)}" aria-label="Cold open label"><button class="btn sm" id="cold-save">Save label</button>${cold ? `<button class="btn sm ghost" data-del="${esc(cold.name)}">Remove clip</button>` : ""}</div></div>` : ""}
+      ${(done.social || done.voice) ? `<div class="two" style="margin-top:16px">${ep.files.trailer ? `<div class="preview"><video controls preload="metadata" src="${f("trailer")}"></video><div class="cap"><span>trailer, ${ep.trailer?.seconds || ""} s${ep.trailer?.coldOpen ? ", cold open: " + esc(ep.trailer.coldOpen) : ", hook line opens"}</span><span>the post</span></div></div>` : ""}<div class="preview"><video controls preload="metadata" src="${f("reel")}"></video><div class="cap"><span>audiogram, ${ep.social?.clipSeconds || 45} s</span><span>fallback</span></div></div></div><div class="cold"><div class="f">Cold open for the trailer</div>${cold ? `<div class="have">Using <b>${esc(cold.name)}</b>${ep.trailer?.coldOpen ? `, labelled "${esc(ep.trailer.coldOpen)}"` : ""}. Re-cut the reel after changing it.</div>` : `<div class="have">No clip. The hook line opens the trailer.</div>`}<div class="row"><label class="drop" id="drop-cold" style="flex:1;margin:0">${cold ? "Replace the clip" : "Drop the clip"} (a 911 call or other public-record audio; the first 8 s are used)<input type="file" id="cold-file" accept="audio/*,video/mp4"></label><input class="t" id="cold-label" placeholder="One-line label, e.g. 911 call, April 3, 2022" value="${esc(coldLabel)}" aria-label="Cold open label"><button class="btn sm" id="cold-save">Save label</button>${cold ? `<button class="btn sm ghost" data-del="${esc(cold.name)}">Remove clip</button>` : ""}</div></div>` : ""}
     </div>
 
     <div class="pane" id="pane-publish" ${tab === "publish" ? "" : "hidden"}>
@@ -518,7 +555,7 @@ function renderEditor() {
         </ul>`
       : `<div class="row" style="margin-bottom:18px"><button class="btn red big" data-run="publish" ${canPublish ? "" : "disabled"}>Publish</button><button class="btn ghost" data-run="publish-local" ${canPublish ? "" : "disabled"}>Commit only</button></div>
         <p style="color:var(--muted);max-width:640px;line-height:1.6">Publish writes the episode page, feed.xml, the transcript and search, then commits and pushes. Vercel deploys in about a minute; Spotify and Apple read the feed within a few hours. ${canPublish ? "" : `<br><b style="color:var(--tape)">Locked:</b> ${[!done.voice && "no voice yet", !done.art && "no art yet", unchecked > 0 && `${unchecked} fact${unchecked === 1 ? "" : "s"} unchecked`].filter(Boolean).join(", ")}.`}</p>
-        <div class="field" style="margin-top:22px;max-width:320px"><label class="f" for="f-date">Publish date, on the page and in the feed</label><input class="t" id="f-date" type="date" value="${esc(ep.publishDate || new Date().toISOString().slice(0, 10))}"><div class="hint">Today by default. Set a later date to line the episode up with the Monday drop.</div></div>
+        <div class="field" style="margin-top:22px;max-width:320px"><label class="f" for="f-date">Publish date, on the page and in the feed</label><input class="t" id="f-date" type="date" value="${esc(ep.publishDate || today())}"><div class="hint">Today by default. Set a later date to line the episode up with the Monday drop.</div></div>
         <div class="field" style="margin-top:22px"><label class="f" for="f-cap">Instagram caption (posted after publish)</label><textarea class="t" id="f-cap" rows="4">${esc(ep.instagramCaption)}</textarea></div>
         <div class="savebar"><button class="btn red" id="btn-save2" disabled>Save</button><span class="s" id="savestate2">No unsaved changes</span></div>`}
     </div>
@@ -530,7 +567,7 @@ function renderEditor() {
     </div>`;
 
   // wiring
-  document.querySelectorAll(".tabs [data-tab], .next [data-tab]").forEach((b) => b.addEventListener("click", () => { state.tab = b.dataset.tab; renderEditor(); }));
+  document.querySelectorAll(".tabs [data-tab], .next [data-tab]").forEach((b) => b.addEventListener("click", () => showTab(b.dataset.tab)));
   ["#f-title", "#f-hook", "#f-script", "#f-desc", "#f-cap", "#f-date", "#v-name", "#v-rate", "#v-pitch", "#v-exag", "#v-cfg"].forEach((s) => $(s)?.addEventListener("input", markDirty));
   $("#v-engine")?.addEventListener("change", () => { const e = $("#v-engine").value; $("#v-clone").hidden = e !== "clone"; $("#v-edge").hidden = e !== "edge"; markDirty(); });
   $("#btn-save")?.addEventListener("click", saveDraft); $("#btn-save2")?.addEventListener("click", saveDraft);
@@ -551,15 +588,29 @@ function renderEditor() {
   if (done.voice && ep.files.transcript && tab === "voice") loadTranscript(ep);
   $("#cold-file")?.addEventListener("change", async (e) => { const fl = e.target.files[0]; if (!fl) return; const ext = (fl.name.split(".").pop() || "mp3").toLowerCase(); try { toast("Uploading the cold open"); await upload(`/api/draft/${ep.id}/upload?name=coldopen.${ext}`, fl); state.ep = await api(`/api/draft/${ep.id}`); renderEditor(); toast("Cold open saved. Re-cut the reel to use it."); } catch (er) { toast(er.message, true); } });
   $("#cold-save")?.addEventListener("click", async () => { const text = $("#cold-label").value.trim(); try { await upload(`/api/draft/${ep.id}/upload?name=coldopen.txt`, new Blob([text + "\n"], { type: "text/plain" })); state.coldLabel = { id: ep.id, text }; toast("Label saved."); } catch (er) { toast(er.message, true); } });
-  if (tab === "art" && (ep.fileList || []).some((x) => x.name === "coldopen.txt") && state.coldLabel?.id !== ep.id) fetch(`/api/draft/${ep.id}/file?name=coldopen.txt`).then((r) => r.text()).then((t) => { state.coldLabel = { id: ep.id, text: t.trim() }; const i = $("#cold-label"); if (i) i.value = t.trim(); }).catch(() => {});
+  if (tab === "art") loadColdLabel(ep);
   const dc = $("#drop-cold"); if (dc) { dc.addEventListener("dragover", (e) => { e.preventDefault(); dc.classList.add("over"); }); dc.addEventListener("dragleave", () => dc.classList.remove("over")); dc.addEventListener("drop", (e) => { e.preventDefault(); dc.classList.remove("over"); if (e.dataTransfer.files[0]) { $("#cold-file").files = e.dataTransfer.files; $("#cold-file").dispatchEvent(new Event("change")); } }); }
+  restoreForm(keep);
   if (done.research && tab === "script") fetch(`/api/draft/${ep.id}/file?name=research.md`).then((r) => r.text()).then((t) => { const pre = $("#research-pre"); if (pre) pre.textContent = t; }).catch(() => {});
+}
+function loadColdLabel(ep) {
+  if (!(ep.fileList || []).some((x) => x.name === "coldopen.txt") || state.coldLabel?.id === ep.id) return;
+  state.coldLoaded = true;
+  fetch(`/api/draft/${ep.id}/file?name=coldopen.txt`).then((r) => r.text()).then((t) => { state.coldLabel = { id: ep.id, text: t.trim() }; const i = $("#cold-label"); if (i) i.value = t.trim(); }).catch(() => {});
 }
 function jumpToParagraph(idx) {
   const ta = $("#f-script"); if (!ta) return;
-  const paras = ta.value.split(/\n\s*\n/); const off = paras.slice(0, idx).join("\n\n").length + (idx ? 2 : 0); const len = (paras[idx] || "").length;
-  const full = ta.value; ta.value = full.slice(0, off); ta.scrollTop = ta.scrollHeight; const top = ta.scrollTop; ta.value = full; ta.scrollTop = Math.max(0, top - 24);
+  const paras = ta.value.split(/\n\s*\n/);
+  const off = paras.slice(0, idx).join("\n\n").length + (idx ? 2 : 0);
+  const len = (paras[idx] || "").length;
   ta.focus(); ta.setSelectionRange(off, off + len);
+  // Put the chapter near the top of the box: count the wrapped lines above it.
+  const cs = getComputedStyle(ta);
+  const lh = parseFloat(cs.lineHeight) || parseFloat(cs.fontSize) * 1.5;
+  const cols = Math.max(20, Math.floor((ta.clientWidth - 24) / (parseFloat(cs.fontSize) * 0.5)));
+  let lines = 0;
+  for (const line of ta.value.slice(0, off).split("\n")) lines += Math.max(1, Math.ceil(line.length / cols));
+  ta.scrollTop = Math.max(0, (lines - 1) * lh - 12);
 }
 const mmss = (t) => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, "0")}`;
 async function loadTranscript(ep) {
@@ -571,8 +622,36 @@ async function loadTranscript(ep) {
   let last = -1;
   audio.addEventListener("timeupdate", () => { const t = audio.currentTime; let i = segs.findIndex((sg) => t >= sg.start && t < sg.end); if (i < 0) return; if (i === last) return; last = i; box.querySelectorAll(".on").forEach((x) => x.classList.remove("on")); const el = box.querySelector(`[data-i="${i}"]`); if (el) { el.classList.add("on"); el.scrollIntoView({ block: "nearest" }); } });
 }
+// Switching tabs only shows a different pane. The panes with data in them are already in
+// the DOM, so nothing typed is lost and focus stays where the user put it.
+function showTab(name) {
+  state.tab = name;
+  const panes = ["script", "facts", "voice", "art", "publish", "files"];
+  if (!panes.some((k) => $(`#pane-${k}`))) return renderEditor();
+  for (const k of panes) { const el = $(`#pane-${k}`); if (el) el.hidden = k !== name; }
+  document.querySelectorAll(".tabs [data-tab]").forEach((b) => b.classList.toggle("on", b.dataset.tab === name));
+  const ep = state.ep;
+  if (name === "voice" && ep?.files?.transcript && $("#tx") && $("#tx").children.length === 0) loadTranscript(ep);
+  if (name === "art" && ep && !state.coldLoaded) loadColdLabel(ep);
+  if (name === "script" && ep && $("#research-pre") && $("#research-pre").textContent === "loading…") {
+    fetch(`/api/draft/${ep.id}/file?name=research.md`).then((r) => r.text()).then((t) => { const pre = $("#research-pre"); if (pre) pre.textContent = t; }).catch(() => {});
+  }
+}
 function markDirty() { state.dirty = true; for (const [b, s] of [["#btn-save", "#savestate"], ["#btn-save2", "#savestate2"]]) { if ($(b)) { $(b).disabled = false; $(s).textContent = "Unsaved changes"; } } }
-async function saveFacts(arr) { try { state.ep = await api(`/api/draft/${state.ep.id}`, { method: "PUT", body: JSON.stringify({ factsChecked: arr }) }); renderEditor(); } catch (e) { toast(e.message, true); } }
+async function saveFacts(arr) {
+  const focus = document.activeElement?.dataset?.fact;
+  try {
+    state.ep = await api(`/api/draft/${state.ep.id}`, { method: "PUT", body: JSON.stringify({ factsChecked: arr }) });
+    // Patch the list and the counters in place; a full rebuild would drop focus and any
+    // unsaved script edit.
+    const facts = state.ep.factsToVerify || [], checked = state.ep.factsChecked || [];
+    document.querySelectorAll("#pane-facts .facts li").forEach((li, i) => { li.classList.toggle("checked", !!checked[i]); const cb = li.querySelector("[data-fact]"); if (cb) cb.checked = !!checked[i]; });
+    const open = facts.filter((_, i) => !checked[i]).length;
+    const n = $(".tabs [data-tab='facts'] .n"); if (n) { n.textContent = open; n.classList.toggle("bad", facts.some((f, i) => /^UNSUPPORTED:/.test(f) && !checked[i])); }
+    renderNext();
+    if (focus != null) document.querySelector(`[data-fact="${focus}"]`)?.focus({ preventScroll: true });
+  } catch (e) { toast(e.message, true); }
+}
 function voiceSettings() { return { engine: $("#v-engine")?.value || "edge", name: $("#v-name")?.value, rate: $("#v-rate")?.value.trim(), pitch: $("#v-pitch")?.value.trim(), exaggeration: parseFloat($("#v-exag")?.value || "0.45"), cfg: parseFloat($("#v-cfg")?.value || "0.5") }; }
 async function saveDraft() {
   const ep = state.ep;
@@ -581,7 +660,7 @@ async function saveDraft() {
   if ($("#f-cap")) body.instagramCaption = $("#f-cap").value;
   if ($("#f-date")?.value) body.publishDate = $("#f-date").value;
   if ($("#f-script")) { const script = $("#f-script").value.split(/\n\s*\n/).map((s) => s.replace(/\s+/g, " ").trim()).filter(Boolean); if (script.join("\n") !== (ep.script || []).join("\n")) body.script = script; }
-  try { state.ep = await api(`/api/draft/${ep.id}`, { method: "PUT", body: JSON.stringify(body) }); state.dirty = false; toast("Saved."); await loadHealth(); renderEditor(); }
+  try { state.ep = await api(`/api/draft/${ep.id}`, { method: "PUT", body: JSON.stringify(body) }); state.dirty = false; toast("Saved."); renderEditor(); loadHealth(); }
   catch (e) { toast(`Save failed: ${e.message}`, true); }
 }
 
@@ -628,7 +707,21 @@ async function startJob(action, body) {
 }
 async function poll() {
   clearTimeout(pollT); if (!state.job) return;
-  try { state.job = await api(`/api/job/${state.job.id}`); } catch { return; }
+  // The server can restart mid-render (it is a local tool). One failed request must not
+  // leave the spinner turning and every button disabled for the life of the tab.
+  try { state.job = await api(`/api/job/${state.job.id}`); state.pollFails = 0; }
+  catch (e) {
+    state.pollFails = (state.pollFails || 0) + 1;
+    if (e.status === 404 || state.pollFails > 5) {
+      state.job = { ...state.job, done: true, lost: true };
+      $("#d-spin").hidden = true;
+      $("#d-state").textContent = "lost contact with this job; it keeps running and writes to the episode folder";
+      toast("Lost contact with the job. It is still running; this page will pick the result up.", true);
+      await loadHealth(); if (state.current) { try { state.ep = await api(`/api/draft/${state.current}`); } catch { /* gone */ } renderEditorInto(); }
+      return;
+    }
+    pollT = setTimeout(poll, 5000); return;
+  }
   const j = state.job; const log = $("#log");
   log.innerHTML = esc(j.log).replace(/^(.*(?:FAILED|Error|error:|ERROR).*)$/gm, '<span class="err">$1</span>'); log.scrollTop = log.scrollHeight;
   if (!j.done) { const last = j.log.trim().split("\n").filter((l) => !l.startsWith("{")).pop(); $("#d-state").textContent = last ? last.slice(0, 90) : "running"; pollT = setTimeout(poll, 1200); return; }
@@ -638,8 +731,8 @@ async function poll() {
   if (j.code === 0) toast(r?.message?.split("\n")[0] || `${j.action} finished.`); else toast(r?.message || `${j.action} failed. Open the log at the bottom.`, true);
   await loadHealth();
   if ((j.action === "new" || j.action === "draft") && r?.id) { state.current = null; await openDraft(r.id); }
-  else if (j.draft && j.draft === state.current) { try { state.ep = await api(`/api/draft/${j.draft}`); } catch {} state.tab = null; renderEditor(); }
-  else renderEditor();
+  else if (j.draft && j.draft === state.current) { try { state.ep = await api(`/api/draft/${j.draft}`); } catch { /* folder gone */ } renderEditorInto(); }
+  else renderEditorInto();
   if (["watch", "synccases"].includes(j.action)) loadQueue();
 }
 $("#d-toggle").addEventListener("click", () => $("#drawer").classList.toggle("mini"));
@@ -744,6 +837,19 @@ document.querySelectorAll("[data-op]").forEach((b) => b.addEventListener("click"
 window.addEventListener("beforeunload", (e) => { if (state.dirty || state.rec) { e.preventDefault(); e.returnValue = ""; } });
 loadHealth(); loadQueue();
 setInterval(() => { if (!state.job || state.job.done) { loadHealth(); if (state.section === "community") loadQueue(); } }, 90000);
+// A render can be started by the Monday task, the shell or another tab. Watch the open
+// episode's own file so this page tells the truth about work it did not start.
+setInterval(async () => {
+  if (!state.current || (state.job && !state.job.done)) return;
+  let fresh; try { fresh = await api(`/api/draft/${state.current}`); } catch { return; }
+  const before = state.ep || {};
+  const changed = ["edited", "status", "inProgress", "voiceStopped", "duration"].some((k) => fresh[k] !== before[k])
+    || JSON.stringify(fresh.files || {}) !== JSON.stringify(before.files || {});
+  if (!changed) return;
+  state.ep = fresh;
+  renderEditorInto();
+  if (fresh.files?.audio && !before.files?.audio) toast(`The voice is done: ${fresh.duration || ""}.`);
+}, 20000);
 </script>
 </body>
 </html>

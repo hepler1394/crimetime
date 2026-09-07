@@ -22,7 +22,8 @@ const STUDIO_URL = "http://127.0.0.1:4177";
 const IG_STUDIO = "D:/Dev/GitHub/ig-studio";
 const PROFILE = path.join(__dirname, "profile");
 const DOWNLOADS = path.join(__dirname, "downloads");
-const CHROME_H = 92;
+const BASE_CHROME_H = 92;
+let CHROME_H = BASE_CHROME_H; // grows when the Generate panel opens, which lives in the chrome view
 const BROWSER_SESSION = "persist:cts-browser";
 const STUDIO_SESSION = "persist:cts-studio";
 fs.mkdirSync(DOWNLOADS, { recursive: true });
@@ -230,9 +231,11 @@ function igFiles() {
 // Only pages we ship may drive the shell: the Instagram workspace (file://) and
 // the studio (127.0.0.1:4177). A web site open in a tab gets 403, so a hostile
 // page cannot trigger Post, open folders, or read local files.
+// Only the pages this app ships may drive it. An opaque-origin document (a sandboxed
+// iframe or a data: URL inside a web tab) sends Origin "null", so "null" is not us.
 function ownPage(req) {
   const from = req.headers.get("origin") || req.headers.get("referer") || "";
-  return from === "null" || from.startsWith("file://") || from.startsWith(STUDIO_URL) || from.startsWith("cts-shell://") || from.startsWith("cts-file://");
+  return from.startsWith(STUDIO_URL) || from.startsWith("file://" + __dirname.replace(/\\/g, "/")) || from.startsWith("cts-shell://") || from.startsWith("cts-file://");
 }
 const MEDIA_ROOTS = [path.join(IG_STUDIO, "out"), path.join(REPO, "automation", "studio", "drafts"), path.join(REPO, "automation", "studio", "projects"), path.join(REPO, "automation", "studio", "posts")].map((r) => r.replace(/\\/g, "/").toLowerCase());
 const servable = (p) => { const n = p.replace(/\\/g, "/").toLowerCase(); return MEDIA_ROOTS.some((r) => n.startsWith(r + "/")) && !n.split("/").some((seg) => seg.startsWith(".")) && /\.(jpe?g|png|gif|webp|mp4|webm|mp3|wav|m4a|pdf|txt|md)$/.test(n); };
@@ -278,24 +281,45 @@ function createWindow() {
     ses.protocol.handle("cts-file", fileRoute);
   }
   const ses = session.fromPartition(BROWSER_SESSION);
+  // Only research material is filed into an episode. Anything else stays on disk in
+  // studio-shell/downloads (gitignored) and is never handed to the studio server.
+  const FILEABLE = /\.(jpe?g|png|gif|webp|mp4|webm|mp3|wav|m4a|ogg|pdf|txt|md)$/i;
+  const safeName = (n) => n.replace(/[^A-Za-z0-9._ -]/g, "-").replace(/^[.\- ]+/, "").slice(0, 120) || "download";
   ses.on("will-download", (_e, item) => {
-    const name = item.getFilename(); const file = path.join(DOWNLOADS, name);
+    const name = safeName(item.getFilename());
+    const file = path.join(DOWNLOADS, name);
     item.setSavePath(file);
     item.once("done", async (_ev, state) => {
       if (state !== "completed") return toast(`Download ${state}: ${name}`, true);
+      if (!FILEABLE.test(name)) return toast(`Saved ${name} to studio-shell/downloads. Only images, audio, video, PDF and text go into an episode.`);
       const id = targetDraft || (await studioApi("GET", "/api/drafts").catch(() => []))[0]?.id;
-      if (!id) return toast(`Downloaded ${name} to studio-shell/downloads`);
+      if (!id) return toast(`Saved ${name} to studio-shell/downloads; no episode is open.`);
       const r = await studioApi("POST", `/api/draft/${id}/upload?name=${encodeURIComponent(name)}`, null, fs.readFileSync(file)).catch((e) => ({ error: e.message }));
-      toast(r?.ok ? `Downloaded ${name} into ${id}` : `Downloaded to studio-shell/downloads (${r?.error || "studio upload failed"})`);
+      if (r?.ok) { fs.unlink(file, () => {}); toast(`Saved ${name} into ${id}`); }
+      else toast(`Kept in studio-shell/downloads (${r?.error || "the studio would not take it"})`);
     });
   });
-  ses.setPermissionRequestHandler((_wc, permission, cb) => cb(["media", "clipboard-read", "clipboard-sanitized-write", "notifications", "fullscreen"].includes(permission)));
+  // Any site Cory opens in a tab used to be handed the camera, the microphone, the
+  // clipboard and notifications without being asked. Grant only what posting needs, and
+  // only to Instagram: fullscreen for video, and writing (never reading) the clipboard.
+  const permissionFor = (origin, permission) => {
+    let host = ""; try { host = new URL(origin).hostname; } catch { return false; }
+    const instagram = /(^|\.)instagram\.com$/.test(host);
+    if (permission === "fullscreen") return true;
+    if (permission === "clipboard-sanitized-write") return instagram;
+    return false;
+  };
+  ses.setPermissionRequestHandler((wc, permission, cb, details) => cb(permissionFor(details?.requestingUrl || wc?.getURL() || "", permission)));
+  ses.setPermissionCheckHandler((_wc, permission, origin) => permissionFor(origin || "", permission));
+  // Nothing in a web tab has any business asking for a USB stick or a serial port.
+  ses.setDevicePermissionHandler(() => false);
 }
 
 /* --------------------------------------------------------------- ipc */
 ipcMain.handle("shell", async (_e, { cmd, ...a }) => {
   const t = active();
   switch (cmd) {
+    case "chromeHeight": CHROME_H = Math.max(BASE_CHROME_H, Math.min(600, Math.round(a.h || BASE_CHROME_H))); layout(); break;
     case "newTab": newTab(a.url || "https://www.instagram.com/", true); break;
     case "closeTab": closeTab(a.id); break;
     case "activate": activeTab = a.id || null; activeByWs[workspace] = activeTab; layout(); pushTabs(); break;

@@ -30,11 +30,16 @@ export const OUTRO_OVERLAP = 1.2;   // outro begins this long before the voice e
 const exists = async (p) => { try { await access(p); return true; } catch { return false; } };
 const ff = (args, label) => {
   const r = spawnSync("ffmpeg", ["-y", "-v", "error", ...args], { encoding: "utf8", windowsHide: true });
-  if (r.status !== 0) throw new Error(`${label} failed: ${(r.stderr || "").trim().slice(-500)}`);
+  if (r.status !== 0) throw new Error(`${label} failed: ${r.error?.message || (r.stderr || "").trim().slice(-500)}`);
 };
+// A zero here used to travel silently: the outro got mixed over the opening words, the
+// episode was stamped 00:00:00 and every transcript timestamp was wrong, all reported as
+// success. A duration that cannot be read is a failure, so it is thrown.
 export const probeSeconds = (file) => {
   const r = spawnSync("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", file], { encoding: "utf8", windowsHide: true });
-  return parseFloat((r.stdout || "").trim()) || 0;
+  const n = parseFloat((r.stdout || "").trim());
+  if (r.status !== 0 || !Number.isFinite(n) || n <= 0) throw new Error(`ffprobe could not read the length of ${file}: ${r.error?.message || (r.stderr || "").trim().slice(-300) || "no duration in the output"}`);
+  return n;
 };
 
 async function userTrack(name) {

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CrimeTime Studio</title>
+<title>CrimeTime Studio: Instagram</title>
 <link rel="icon" href="/site/images/logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -53,6 +53,26 @@
   .cpost .m{font:11px var(--mono);color:var(--faint);letter-spacing:.06em;text-transform:uppercase;display:flex;gap:10px;align-items:center;margin-top:4px}
   .cpost .act{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
   .empty{border:1px dashed var(--line-2);border-radius:6px;padding:26px;text-align:center;color:var(--faint);font-size:13px}
+  .banner{background:#3a0b0e;color:#ffd3d5;padding:9px 22px;font-size:13px}
+  .banner code{font-family:var(--mono)}
+  .newpost{display:flex;gap:8px;align-items:center;margin:0 0 12px}
+  .newpost .t{flex:1;max-width:420px;background:var(--ink);border:1px solid var(--line-2);border-radius:4px;color:var(--white);padding:8px 10px;font:13px var(--body)}
+  .slides{border-top:1px solid var(--line);margin-top:2px;padding-top:12px}
+  .slides summary{cursor:pointer;font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--faint);list-style:none}
+  .slides summary::-webkit-details-marker{display:none}
+  .slides summary::before{content:"+ ";color:var(--red)}
+  .slides[open] summary::before{content:"- "}
+  .slide{border:1px solid var(--line);border-radius:5px;padding:12px;margin:10px 0;background:var(--panel-2)}
+  .slide .top{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+  .slide .top .n{font:500 11px var(--mono);color:var(--tape);letter-spacing:.1em}
+  .slide select,.slide input,.slide textarea{background:var(--ink);border:1px solid var(--line);border-radius:4px;color:var(--white);padding:7px 9px;font:13px/1.45 var(--body);width:100%}
+  .slide textarea{min-height:76px;resize:vertical}
+  .slide label{display:block;font:500 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:8px 0 4px}
+  .slide .kill{margin-left:auto;background:none;border:0;color:var(--faint);cursor:pointer;font-size:16px;line-height:1;padding:2px 6px;border-radius:3px}
+  .slide .kill:hover{color:var(--hot);background:#2a0a0c}
+  .reason{display:flex;gap:6px;align-items:center;width:100%;margin-top:8px}
+  .reason input{flex:1;background:var(--ink);border:1px solid var(--line-2);border-radius:4px;color:var(--white);padding:6px 9px;font:13px var(--body)}
+  .markup{font:11px var(--mono);color:var(--faint);margin:6px 0 0}
   .side{position:sticky;top:76px;align-self:start}
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
   .grid div{aspect-ratio:4/5;background:#000;position:relative}
@@ -74,6 +94,7 @@
 </style>
 </head>
 <body>
+<div class="banner" id="offline" hidden>The studio server is not answering. Retrying every few seconds. Start it with <code>npm run studio</code>.</div>
 <header class="top">
   <div class="brand"><img src="/site/images/logo.png" alt="">Crime<em>Time</em> Studio<small>Instagram</small></div>
   <div class="acct">@crimetimesnacks and the portfolio accounts</div>
@@ -83,10 +104,11 @@
     <h1>Instagram</h1>
     <p class="lede">Everything that goes out on Instagram, from both studios. Post opens Instagram in this window with the files attached and the caption on your clipboard. Nothing is ever posted for you.</p>
 
-    <h2 class="k">CrimeTimeSnacks posts <button class="btn sm" id="new-post">New post</button></h2>
+    <h2 class="k">CrimeTimeSnacks posts</h2>
+    <form class="newpost" id="new-post"><input class="t" id="new-post-title" placeholder="Post title, becomes the folder name" aria-label="New post title" maxlength="120" required><button class="btn sm" type="submit">Create post</button></form>
     <div id="cts-posts"></div>
 
-    <h2 class="k" style="margin-top:44px">Portfolio queue <span style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">ig-studio, batch <span id="batch"></span></span></h2>
+    <h2 class="k" style="margin-top:44px">Portfolio queue <span style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">ig-studio, <span id="batch"></span></span></h2>
     <div class="bar">
       <button class="btn" data-op="ig-render" title="Render every post in the queue">Render all</button>
       <button class="btn" data-op="ig-preflight" title="Every domain in a footer or caption must resolve">Preflight</button>
@@ -113,37 +135,114 @@ const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<
 const IN_SHELL = /Electron/.test(navigator.userAgent);
 let toastT; function toast(m, bad) { const t = $("#toast"); t.textContent = m; t.className = `toast show${bad ? " bad" : ""}`; clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("show"), bad ? 7000 : 3500); }
 async function api(path, opts = {}) { const r = await fetch(path, { ...opts, headers: { "Content-Type": "application/json", "X-CTS": "1", ...(opts.headers || {}) } }); const j = await r.json().catch(() => ({})); if (!r.ok) throw new Error(j.error || r.statusText); return j; }
-let data = { posts: [], renders: [] }, filter = "all", job = null, cts = [];
+let data = { posts: [], renders: [] }, filter = "all", job = null, cts = [], retryT;
 async function loadPosts() {
-  try { cts = await api("/api/posts"); } catch (e) { $("#cts-posts").innerHTML = `<p style="color:var(--hot)">${esc(e.message)}</p>`; return; }
+  try { cts = await api("/api/posts"); } catch { return; }
   $("#cts-posts").innerHTML = cts.length ? cts.map((p) => `<article class="cpost" data-post="${esc(p.id)}">
     <div>
       <div class="h">${esc(p.title)}</div>
       <div class="m"><span class="pill ${esc(p.status)}">${esc(p.status)}</span><span>${esc(p.id)}</span><span>${p.slides} slide${p.slides === 1 ? "" : "s"}</span>${p.rendered ? `<span>rendered ${new Date(p.rendered).toLocaleString()}</span>` : `<span style="color:var(--tape)">not rendered</span>`}</div>
     </div>
-    ${p.files.length ? `<div class="strip">${p.files.map((f) => `<img src="/api/post/${esc(p.id)}/file?name=${encodeURIComponent(f)}" alt="">`).join("")}</div>` : ""}
-    <textarea data-ccap="${esc(p.id)}" placeholder="Caption">${esc(p.caption)}</textarea>
+    ${p.files.length ? `<div class="strip">${p.files.map((f) => `<img src="/api/post/${esc(p.id)}/file?name=${encodeURIComponent(f)}" alt="Slide">`).join("")}</div>` : ""}
+    <details class="slides" data-slides="${esc(p.id)}"><summary>Words on the slides</summary><div class="slide-list">Loading the spec</div></details>
+    <textarea data-ccap="${esc(p.id)}" placeholder="Caption" aria-label="Caption">${esc(p.caption)}</textarea>
     <div class="act">
-      ${IN_SHELL && p.files.length ? `<button class="btn sm red" data-cpost="${esc(p.id)}">Post${p.files.length > 1 ? ` ${p.files.length} slides` : ""}</button>` : ""}
+      ${IN_SHELL && p.files.length && p.status === "approved" ? `<button class="btn sm red" data-cpost="${esc(p.id)}">Open in Instagram${p.files.length > 1 ? ` with ${p.files.length} slides` : ""}</button>`
+        : p.files.length && p.status === "draft" ? `<span class="why">Approve it before posting.</span>` : ""}
       <button class="btn sm" data-crender="${esc(p.id)}">${p.files.length ? "Re-render" : "Render"}</button>
-      <button class="btn sm ghost" data-cstatus="approved">Approve</button>
-      <button class="btn sm ghost" data-cstatus="posted">Mark posted</button>
-      <button class="btn sm ghost" data-csave="${esc(p.id)}">Save caption</button>
+      ${(NEXT_STATUS[p.status] || []).map((st) => `<button class="btn sm ghost" data-cstatus="${st}">${STATUS_LABEL[st]}</button>`).join("")}
+      <button class="btn sm ghost" data-csave="${esc(p.id)}">Save words</button>
       ${IN_SHELL ? `<button class="btn sm ghost" data-copen="${esc(p.dir)}">Folder</button>` : ""}
       <button class="btn sm ghost" data-cdel="${esc(p.id)}" style="margin-left:auto;color:var(--faint)">Delete</button>
-    </div></article>`).join("") : `<div class="empty">No posts yet. New post scaffolds a folder with a three-slide spec you edit, then Render.</div>`;
+    </div></article>`).join("") : `<div class="empty">Nothing here yet. Name a post above and press Create post: you get a three-slide draft, a hook, a detail and the reveal, which you write below and render into 1080 by 1350 slides.</div>`;
   document.querySelectorAll("[data-cpost]").forEach((b) => b.addEventListener("click", () => { const p = cts.find((x) => x.id === b.dataset.cpost); const files = p.files.map((f) => `${p.dir}\\${f}`).join("|"); fetch(`cts-shell://post/?p=${encodeURIComponent(files)}&c=${encodeURIComponent(`${p.dir}\\caption.txt`)}`).then(() => toast("Instagram is opening with the slides attached. Caption copied.")).catch((e) => toast(e.message, true)); }));
-  document.querySelectorAll("[data-crender]").forEach((b) => b.addEventListener("click", async () => { const id = b.dataset.crender; const cap = document.querySelector(`[data-ccap="${id}"]`).value; const spec = await api(`/api/post/${id}/spec`); await api(`/api/post/${id}/spec`, { method: "PUT", body: JSON.stringify({ ...spec, caption: cap }) }).catch(() => {}); startJob("post-render", { id }); }));
-  document.querySelectorAll("[data-cstatus]").forEach((b) => b.addEventListener("click", async () => { const id = b.closest("[data-post]").dataset.post; try { await api(`/api/post/${id}/status`, { method: "POST", body: JSON.stringify({ status: b.dataset.cstatus }) }); toast(`${id}: ${b.dataset.cstatus}`); loadPosts(); } catch (e) { toast(e.message, true); } }));
-  document.querySelectorAll("[data-csave]").forEach((b) => b.addEventListener("click", async () => { const id = b.dataset.csave; const cap = document.querySelector(`[data-ccap="${id}"]`).value; try { const spec = await api(`/api/post/${id}/spec`); await api(`/api/post/${id}/spec`, { method: "PUT", body: JSON.stringify({ ...spec, caption: cap }) }); toast("Caption saved. Re-render to update caption.txt."); } catch (e) { toast(e.message, true); } }));
+  document.querySelectorAll("[data-crender]").forEach((b) => b.addEventListener("click", async () => {
+    const id = b.dataset.crender;
+    try { await savePost(id); } catch (e) { return toast(`Not rendered: ${e.message}`, true); }
+    startJob("post-render", { id });
+  }));
+  document.querySelectorAll("[data-slides]").forEach((d) => d.addEventListener("toggle", () => { if (d.open) openSpec(d.dataset.slides); }));
+  document.querySelectorAll("[data-cstatus]").forEach((b) => b.addEventListener("click", async () => {
+    const id = b.closest("[data-post]").dataset.post;
+    try { await api(`/api/post/${id}/status`, { method: "POST", body: JSON.stringify({ status: b.dataset.cstatus }) }); toast(`${id} is now ${b.dataset.cstatus}.`); loadPosts(); }
+    catch (e) { toast(e.message, true); }
+  }));
+  document.querySelectorAll("[data-csave]").forEach((b) => b.addEventListener("click", async () => {
+    try { await savePost(b.dataset.csave); toast("Saved. Re-render to put the new words on the slides."); } catch (e) { toast(e.message, true); }
+  }));
   document.querySelectorAll("[data-copen]").forEach((b) => b.addEventListener("click", () => fetch(`cts-shell://open/?p=${encodeURIComponent(b.dataset.copen)}`)));
   document.querySelectorAll("[data-cdel]").forEach((b) => b.addEventListener("click", async () => { const id = b.dataset.cdel; if (!confirm(`Delete post ${id} and its files?`)) return; try { await api(`/api/post/${id}`, { method: "DELETE" }); toast("Deleted."); loadPosts(); } catch (e) { toast(e.message, true); } }));
 }
-$("#new-post").addEventListener("click", () => { const title = prompt("Post title (becomes the folder name)"); if (title) startJob("post-new", { title }); });
+// Electron has no window.prompt, so every input here is a real field on the page.
+const NEXT_STATUS = { draft: ["approved", "rejected"], approved: ["posted", "draft"], posted: ["draft"], rejected: ["draft"] };
+const STATUS_LABEL = { approved: "Approve", posted: "Mark posted", rejected: "Reject", draft: "Back to draft" };
+const KINDS = [["hook", "Hook, photo behind a big line"], ["text", "Detail, dark slide of text"], ["end", "Reveal, with the plug"]];
+const specs = {};
+
+// The spec is the post. Everything a slide says is editable here, so nobody has to open
+// post.json in an editor to change a word.
+async function openSpec(id) {
+  const box = document.querySelector(`[data-slides="${id}"] .slide-list`);
+  if (!box) return;
+  try { specs[id] = await api(`/api/post/${id}/spec`); } catch (e) { box.innerHTML = `<p style="color:var(--hot)">${esc(e.message)}</p>`; return; }
+  drawSpec(id);
+}
+function drawSpec(id) {
+  const box = document.querySelector(`[data-slides="${id}"] .slide-list`);
+  const spec = specs[id]; if (!box || !spec) return;
+  box.innerHTML = (spec.slides || []).map((sl, i) => `<div class="slide" data-i="${i}">
+      <div class="top"><span class="n">${i + 1}</span>
+        <select data-f="kind" aria-label="Slide ${i + 1} kind" style="width:auto">${KINDS.map(([k, label]) => `<option value="${k}" ${sl.kind === k ? "selected" : ""}>${label}</option>`).join("")}</select>
+        <button type="button" class="kill" data-kill="${i}" title="Remove this slide" aria-label="Remove slide ${i + 1}">&times;</button></div>
+      <label>Eyebrow, the small line above</label><input data-f="eyebrow" value="${esc(sl.eyebrow || "")}" maxlength="80">
+      ${sl.kind === "hook"
+        ? `<label>The line that stops the thumb</label><textarea data-f="big">${esc(sl.big || "")}</textarea>
+           <label>Background image in this folder</label><input data-f="bg" value="${esc(sl.bg || "")}" placeholder="bg-house.png">`
+        : `<label>Body, one paragraph per line</label><textarea data-f="body" style="min-height:110px">${esc((sl.body || []).join("\n"))}</textarea>`}
+      ${sl.kind === "end" ? `<label>Kicker, the plug in big type</label><textarea data-f="kicker">${esc(sl.kicker || "")}</textarea>` : ""}
+    </div>`).join("") + `<div class="act"><button type="button" class="btn sm ghost" data-add="${id}">Add a slide</button></div>
+    <p class="markup">Wrap a phrase in &lt;span class="r"&gt; for red, &lt;span class="q"&gt; for quiet grey. &lt;br&gt; forces a line break.</p>`;
+  box.querySelectorAll("[data-kill]").forEach((b) => b.addEventListener("click", () => { spec.slides.splice(+b.dataset.kill, 1); drawSpec(id); }));
+  box.querySelector("[data-add]")?.addEventListener("click", () => {
+    if (spec.slides.length >= 10) return toast("Instagram takes ten images in a carousel.", true);
+    readSpec(id); spec.slides.push({ kind: "text", eyebrow: "", body: [""] }); drawSpec(id);
+  });
+  box.querySelectorAll("select[data-f='kind']").forEach((sel) => sel.addEventListener("change", () => { readSpec(id); drawSpec(id); }));
+}
+// Pull what is on screen back into the spec object before anything redraws or saves.
+function readSpec(id) {
+  const spec = specs[id]; if (!spec) return null;
+  document.querySelectorAll(`[data-slides="${id}"] .slide`).forEach((el) => {
+    const sl = spec.slides[+el.dataset.i]; if (!sl) return;
+    const v = (f) => el.querySelector(`[data-f="${f}"]`)?.value ?? undefined;
+    sl.kind = v("kind") || sl.kind;
+    sl.eyebrow = v("eyebrow") ?? sl.eyebrow;
+    if (sl.kind === "hook") { sl.big = v("big") ?? sl.big; const bg = v("bg"); if (bg !== undefined) { if (bg.trim()) sl.bg = bg.trim(); else delete sl.bg; } delete sl.body; }
+    else { const b = v("body"); if (b !== undefined) sl.body = b.split(/\n+/).map((x) => x.trim()).filter(Boolean); delete sl.big; delete sl.bg; }
+    if (sl.kind === "end") sl.kicker = v("kicker") ?? sl.kicker; else delete sl.kicker;
+  });
+  return spec;
+}
+async function savePost(id) {
+  const cap = document.querySelector(`[data-ccap="${id}"]`)?.value ?? "";
+  const spec = specs[id] ? readSpec(id) : await api(`/api/post/${id}/spec`);
+  if (!spec.slides?.length) throw new Error("a post needs at least one slide");
+  await api(`/api/post/${id}/spec`, { method: "PUT", body: JSON.stringify({ ...spec, caption: cap }) });
+  specs[id] = spec;
+}
+$("#new-post").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const t = $("#new-post-title").value.trim();
+  if (!t) return toast("Give the post a title first.", true);
+  $("#new-post-title").value = "";
+  startJob("post-new", { title: t });
+});
 async function load() {
   loadPosts();
-  try { data = await api("/api/ig/queue"); } catch (e) { $("#posts").innerHTML = `<p style="color:var(--hot)">${esc(e.message)}</p>`; return; }
-  $("#batch").textContent = `batch ${data.batch ?? "?"}, ${data.posts.length} posts`;
+  try { data = await api("/api/ig/queue"); $("#offline").hidden = true; }
+  catch (e) { $("#offline").hidden = false; clearTimeout(retryT); retryT = setTimeout(load, 5000); return; }
+  $("#batch").textContent = data.batch == null ? `${data.posts.length} posts` : `batch ${data.batch}, ${data.posts.length} posts`;
+  if (!data.posts.length) $("#posts").innerHTML = `<div class="empty">No portfolio queue found. This half of the board reads D:/Dev/GitHub/ig-studio/content/queue.json; the CrimeTimeSnacks posts above are unaffected.</div>`;
   $("#rules").innerHTML = (data.rules || []).map((r) => `<li>${esc(r)}</li>`).join("") || "<li>No rules file.</li>";
   render();
 }
@@ -157,11 +256,10 @@ function render() {
       ${p.sub ? `<div style="color:var(--muted);font-size:13px;margin-top:4px">${esc(p.sub)}</div>` : ""}
       <textarea data-cap="${esc(p.id)}" placeholder="Caption">${esc(p.caption)}</textarea>
       <div class="act">
-        ${IN_SHELL && p.render ? `<button class="btn sm red" data-post="${esc(p.render)}" data-capid="${esc(p.id)}">Post</button>` : ""}
+        ${IN_SHELL && p.render && p.status === "approved" ? `<button class="btn sm red" data-post="${esc(p.render)}" data-capid="${esc(p.id)}">Open in Instagram</button>`
+          : p.render && p.status === "draft" ? `<span class="why">Approve it before posting.</span>` : ""}
         <button class="btn sm" data-render="${esc(p.id)}">${p.render ? "Re-render" : "Render"}</button>
-        <button class="btn sm ghost" data-status="approved">Approve</button>
-        <button class="btn sm ghost" data-status="posted">Mark posted</button>
-        <button class="btn sm ghost" data-status="rejected">Reject</button>
+        ${(NEXT_STATUS[p.status] || []).map((st) => `<button class="btn sm ghost" data-status="${st}">${STATUS_LABEL[st]}</button>`).join("")}
         <button class="btn sm ghost" data-savecap="${esc(p.id)}">Save caption</button>
         ${p.rejectedReason ? `<span class="why">${esc(p.rejectedReason)}</span>` : ""}
       </div>
@@ -170,7 +268,23 @@ function render() {
   const live = data.posts.filter((p) => p.status !== "rejected" && p.render);
   const order = [...live].reverse().slice(0, 9);
   $("#grid").innerHTML = order.map((p, i) => `<div><img src="/api/ig/file?name=${encodeURIComponent(p.render)}" alt=""><span>${i + 1}</span></div>`).join("") + Array.from({ length: Math.max(0, 9 - order.length) }, () => `<div class="empty">empty</div>`).join("");
-  document.querySelectorAll("[data-status]").forEach((b) => b.addEventListener("click", async () => { const id = b.closest("[data-id]").dataset.id; let reason; if (b.dataset.status === "rejected") reason = prompt("Why? (kept in the queue file)") || ""; try { await api("/api/ig/status", { method: "POST", body: JSON.stringify({ id, status: b.dataset.status, reason }) }); toast(`${id}: ${b.dataset.status}`); load(); } catch (e) { toast(e.message, true); } }));
+  // Reject asks for a reason inline; Electron has no window.prompt.
+  document.querySelectorAll("[data-status]").forEach((b) => b.addEventListener("click", async () => {
+    const card = b.closest("[data-id]"); const id = card.dataset.id;
+    const send = async (reason) => { try { await api("/api/ig/status", { method: "POST", body: JSON.stringify({ id, status: b.dataset.status, reason }) }); toast(`${id} is now ${b.dataset.status}.`); load(); } catch (e) { toast(e.message, true); } };
+    if (b.dataset.status !== "rejected") return send();
+    if (card.querySelector(".reason")) return;
+    const row = document.createElement("div");
+    row.className = "reason";
+    row.innerHTML = `<input placeholder="Why is it rejected? Kept in the queue file." aria-label="Reason"><button class="btn sm red" type="button">Reject</button><button class="btn sm ghost" type="button">Cancel</button>`;
+    card.querySelector(".act").after(row);
+    const [input, confirmBtn, cancelBtn] = [row.querySelector("input"), ...row.querySelectorAll("button")];
+    input.focus();
+    const go = () => send(input.value.trim());
+    confirmBtn.addEventListener("click", go);
+    input.addEventListener("keydown", (e) => { if (e.key === "Enter") go(); if (e.key === "Escape") row.remove(); });
+    cancelBtn.addEventListener("click", () => row.remove());
+  }));
   document.querySelectorAll("[data-savecap]").forEach((b) => b.addEventListener("click", async () => { const id = b.dataset.savecap; const cap = document.querySelector(`[data-cap="${id}"]`).value; try { await api("/api/ig/caption", { method: "POST", body: JSON.stringify({ id, caption: cap }) }); toast("Caption saved."); } catch (e) { toast(e.message, true); } }));
   document.querySelectorAll("[data-render]").forEach((b) => b.addEventListener("click", () => startJob("ig-render", { ids: [b.dataset.render] })));
   document.querySelectorAll("[data-post]").forEach((b) => b.addEventListener("click", async () => { const cap = document.querySelector(`[data-cap="${b.dataset.capid}"]`).value; try { await navigator.clipboard.writeText(cap); } catch { /* fine */ } const file = `${data.outDir}\\${b.dataset.post}`.replace(/\\/g, "/"); fetch(`cts-shell://post/?p=${encodeURIComponent(file)}&c=`).then(() => toast("Instagram is opening with the file attached. Caption copied.")).catch((e) => toast(e.message, true)); }));
