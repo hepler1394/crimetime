@@ -22,6 +22,7 @@ const STUDIO_URL = "http://127.0.0.1:4177";
 const IG_STUDIO = "D:/Dev/GitHub/ig-studio";
 const PROFILE = path.join(__dirname, "profile");
 const DOWNLOADS = path.join(__dirname, "downloads");
+const ACCOUNT_FILE = path.join(REPO, "automation", "studio", "ig-account.json");
 const BASE_CHROME_H = 92;
 let CHROME_H = BASE_CHROME_H; // grows when the Generate panel opens, which lives in the chrome view
 const BROWSER_SESSION = "persist:cts-browser";
@@ -285,6 +286,10 @@ async function instagramAccount(force = false) {
     }
   } catch (e) { out.error = e.message; }
   accountCache = { at: Date.now(), value: out };
+  // Publish it where anything can read it. The Electron session is the only thing that
+  // knows which profile is active, but the board, the studio server and a terminal all
+  // need the answer, and none of them can ask Electron.
+  try { fs.writeFileSync(ACCOUNT_FILE, JSON.stringify({ ...out, at: new Date().toISOString() }, null, 2)); } catch { /* fine */ }
   return out;
 }
 
@@ -408,5 +413,6 @@ app.whenReady().then(async () => {
       toast("Sign in to Instagram in the Instagram workspace to post from the studio.");
     }
   });
+  setInterval(() => instagramAccount(true).catch(() => {}), 60_000);
 });
 app.on("window-all-closed", () => { if (studioProc) { try { studioProc.kill(); } catch { /* gone */ } } app.quit(); });

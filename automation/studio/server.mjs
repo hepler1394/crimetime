@@ -352,6 +352,14 @@ const server = createServer(async (req, res) => {
       const html = await readFile(join(HERE, "instagram.html"));
       res.writeHead(200, { "Content-Type": MIME[".html"], "Cache-Control": "no-store", ...SECURITY_HEADERS }); return res.end(html);
     }
+    if (p === "/api/ig/account") {
+      // Written by the desktop shell, which is the only thing that can see its own browser
+      // session. Stale means the shell is not running, so nothing can post from here.
+      const a = await readJson(join(HERE, "ig-account.json"), null);
+      if (!a) return json(res, 200, { shell: false, signedIn: false, username: null, note: "the desktop shell is not running" });
+      const ageMs = Date.now() - new Date(a.at || 0).getTime();
+      return json(res, 200, { ...a, shell: ageMs < 5 * 60 * 1000, ageSeconds: Math.round(ageMs / 1000) });
+    }
     if (p === "/api/ig/queue") {
       const q = await readJson(join(IG_STUDIO, "content", "queue.json"), { posts: [] });
       const outNames = await readdir(join(IG_STUDIO, "out")).catch(() => []);

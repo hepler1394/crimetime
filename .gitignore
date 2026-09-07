@@ -76,3 +76,6 @@ automation/studio/projects/
 automation/studio/voice/
 automation/studio/music/
 studio-shell/downloads/
+
+# Written by the desktop shell: which Instagram profile its browser session is active as.
+automation/studio/ig-account.json

@@ -149,8 +149,10 @@ let account = null;
 async function loadAccount(refresh) {
   const el = $("#acct");
   if (!IN_SHELL) { el.innerHTML = "Open the studio in the desktop shell to post from here."; return; }
-  try { account = await (await fetch(`cts-shell://account/${refresh ? "?refresh=1" : ""}`)).json(); }
-  catch { el.innerHTML = `<span class="bad">Could not reach the shell.</span>`; return; }
+  try { account = await api("/api/ig/account"); }
+  catch { el.innerHTML = `<span class="bad">Could not read the signed-in profile.</span>`; return; }
+  if (refresh) { try { await fetch("cts-shell://account/?refresh=1"); account = await api("/api/ig/account"); } catch { /* not in the shell */ } }
+  if (!account.shell) { el.innerHTML = `<span class="warn">The desktop shell is not running, so nothing can be posted from here.</span>`; render(); loadPosts(); return; }
   const sw = `<button type="button" id="switch-acct">Switch profile</button>`;
   el.innerHTML = account.username
     ? `posting as <b>@${esc(account.username)}</b>${sw}`
