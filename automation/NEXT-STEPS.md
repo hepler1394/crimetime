@@ -39,6 +39,17 @@ or just let GitHub Actions do it all (add `DEEPSEEK_API_KEY` or
 - New: Instagram launch package for @crimetimesnacks in `studio/instagram/` (handle free as of 2026-09-05; Cory creates the account).
 - To do once, by hand: re-point Spotify for Podcasters and Apple Podcasts Connect at `https://www.crimetimesnacks.com/feed.xml` so studio episodes reach the apps without a manual upload.
 
+## 2026-09-06: reels are cut over real footage
+
+Trailers no longer run type over stills. `automation/footage.mjs` is a per-case
+footage library with the provenance and rights basis attached, and
+`episode-trailer.mjs` composites the clips under the quotes with the source named
+on screen. The studio's Art and reel tab drives it.
+
+**Read `automation/FOOTAGE.md` before touching any of it.** It has the commands,
+the traps already paid for (RGB blending, name spelling, end-card overlap), and
+the roadmap to take it further, in priority order.
+
 ## Next, in priority order
 1. **Rotate the old Gemini + Brave keys** — regenerate at their dashboards;
    they were public and are in git history forever.
