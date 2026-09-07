@@ -4,19 +4,21 @@
 // member) that also sets the cookie. Never reveals whether an email exists.
 import { sb, sendMail, isEmail, isSlug, memberTokenFrom, memberByToken, readJsonBody, confirmEmail, signinEmail, SITE } from "../../automation/community/lib.js";
 
-// Per-address send cooldown. This lives in the function instance, so it holds for as long
-// as Vercel keeps one warm and resets on a cold start: it stops a flood, not a determined
-// attacker spraying across instances. The durable version is a last_mail_at column on
-// cts_members, which needs a migration on the shared Supabase project.
+// One confirmation or sign-in mail per address per ten minutes. Anyone can post to this
+// endpoint and every call sends real email, to an address that may not have asked for it.
+//
+// The claim is a single conditional UPDATE, so it holds across function instances and two
+// simultaneous requests cannot both win it: whoever stamps last_mail_at first gets the
+// row back and sends; the other gets nothing back and stays quiet. Both callers see the
+// same answer, so nothing is revealed about who is already a member.
 const MAIL_COOLDOWN_MS = 10 * 60 * 1000;
-const mailed = new Map();
-function recentlyMailed(email) {
-  const at = mailed.get(email);
-  return !!at && Date.now() - at < MAIL_COOLDOWN_MS;
-}
-function markMailed(email) {
-  mailed.set(email, Date.now());
-  if (mailed.size > 5000) for (const [k, t] of mailed) if (Date.now() - t > MAIL_COOLDOWN_MS) mailed.delete(k);
+async function claimMailSlot(memberId) {
+  const cutoff = new Date(Date.now() - MAIL_COOLDOWN_MS).toISOString();
+  const won = await sb(
+    `cts_members?id=eq.${memberId}&or=(last_mail_at.is.null,last_mail_at.lt.${cutoff})&select=id`,
+    { method: "PATCH", body: { last_mail_at: new Date().toISOString() }, prefer: "return=representation" },
+  );
+  return Array.isArray(won) && won.length > 0;
 }
 
 export default async function handler(req, res) {
@@ -45,14 +47,10 @@ export default async function handler(req, res) {
     if (!member) throw new Error("member upsert failed");
     await sb("cts_follows", { method: "POST", body: { member_id: member.id, case_slug: slug }, prefer: "resolution=ignore-duplicates,return=minimal" });
 
-    // One mail per address per ten minutes. Anyone can post here, and every post sends
-    // real email to an address that may not have asked for it. The answer is the same
-    // either way, so nothing is revealed about who is already a member.
-    if (!recentlyMailed(email)) {
+    if (await claimMailSlot(member.id)) {
       const link = `${SITE()}/api/community/confirm?t=${member.token}&c=${slug}`;
       const mail = member.confirmed_at ? signinEmail({ caseTitle: kase.title, link }) : confirmEmail({ caseTitle: kase.title, link });
       await sendMail({ to: email, ...mail });
-      markMailed(email);
     }
     return res.status(200).json({ ok: true, state: "check-email", case: slug });
   } catch (e) {

@@ -311,6 +311,17 @@ routes):
   episode shows what went wrong and offers to start again, and the render resumes from
   the paragraphs already voiced.
 
+## Community: what stops the endpoint being an email cannon
+
+`/api/community/follow` is public and every call sends real mail, so a send is claimed
+with one conditional UPDATE on `cts_members.last_mail_at`: one mail per address per ten
+minutes, and two simultaneous requests cannot both win the row. The answer to the caller
+is the same either way, so nothing is revealed about who is already a member.
+
+    npm run test:community      # writes one throwaway .invalid member and deletes it
+
+That test hits the live database, so it is deliberately not part of `npm test`.
+
 ## Recovering from the two failures that actually happen
 
 - **The voice render died.** Open the episode. The red panel says why. "Start the voice

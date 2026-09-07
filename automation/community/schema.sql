@@ -52,8 +52,14 @@ create table if not exists public.cts_members (
   confirmed_at    timestamptz,
   unsubscribed_at timestamptz,
   last_digest_at  timestamptz,
+  -- When this address was last sent a confirm or sign-in mail. /api/community/follow is
+  -- open to anyone, and every call sends real email, so one send per address per ten
+  -- minutes is the cooldown. Durable on purpose: an in-process map resets on a cold start.
+  last_mail_at    timestamptz,
   created_at      timestamptz not null default now()
 );
+-- Existing installs (the column was added 2026-09-06).
+alter table public.cts_members add column if not exists last_mail_at timestamptz;
 
 create table if not exists public.cts_follows (
   member_id   uuid not null references public.cts_members(id) on delete cascade,

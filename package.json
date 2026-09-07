@@ -21,6 +21,7 @@
     "studio": "node automation/studio/server.mjs",
     "episode": "node automation/episode-draft.mjs --auto",
     "episode:weekly": "node automation/episode-weekly.mjs",
-    "test:studio": "node automation/studio/test.mjs"
+    "test:studio": "node automation/studio/test.mjs",
+    "test:community": "node automation/community/test-cooldown.mjs"
   }
 }
