@@ -23,6 +23,9 @@ const IG_STUDIO = "D:/Dev/GitHub/ig-studio";
 const PROFILE = path.join(__dirname, "profile");
 const DOWNLOADS = path.join(__dirname, "downloads");
 const ACCOUNT_FILE = path.join(REPO, "automation", "studio", "ig-account.json");
+const SWITCH_FILE = path.join(REPO, "automation", "studio", "ig-switch.json");
+const KNOWN_FILE = path.join(REPO, "automation", "studio", "ig-known-profiles.json");
+let known = {}; try { known = JSON.parse(fs.readFileSync(KNOWN_FILE, "utf8")); } catch { /* first run */ }
 const BASE_CHROME_H = 92;
 let CHROME_H = BASE_CHROME_H; // grows when the Generate panel opens, which lives in the chrome view
 const BROWSER_SESSION = "persist:cts-browser";
@@ -283,6 +286,11 @@ async function instagramAccount(force = false) {
         headers: { "x-ig-app-id": IG_APP_ID, "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" },
       });
       if (r.ok) { const j = await r.json(); out.username = j?.user?.username || null; }
+      // Instagram's lookup fails now and then. The id is the real identity and never
+      // changes, so remember what it resolved to and fall back to that rather than
+      // reporting "unknown" and disabling every Post button over a hiccup.
+      if (out.username) { known[c.value] = out.username; try { fs.writeFileSync(KNOWN_FILE, JSON.stringify(known, null, 2)); } catch { /* fine */ } }
+      else if (known[c.value]) { out.username = known[c.value]; out.fromCache = true; }
     }
   } catch (e) { out.error = e.message; }
   accountCache = { at: Date.now(), value: out };
@@ -291,6 +299,61 @@ async function instagramAccount(force = false) {
   // need the answer, and none of them can ask Electron.
   try { fs.writeFileSync(ACCOUNT_FILE, JSON.stringify({ ...out, at: new Date().toISOString() }, null, 2)); } catch { /* fine */ }
   return out;
+}
+
+// Switch the active Instagram profile, for real.
+//
+// Done in the page's own DOM rather than by clicking screen coordinates: the switcher
+// rows are found by their exact lowercase username text, so a display name that merely
+// looks like an account (there is one on this login that renders as "Coryhepla" and is
+// a different account entirely) can never be hit by mistake. The result is confirmed by
+// re-reading ds_user_id, because Instagram silently leaves you where you were when a
+// profile's session has expired.
+const IG_TAB = () => [...tabs.values()].find((t) => /(^|\.)instagram\.com/.test((() => { try { return new URL(t.view.webContents.getURL()).hostname; } catch { return ""; } })()));
+async function switchInstagramProfile(username) {
+  const want = String(username || "").replace(/^@/, "").toLowerCase();
+  if (!/^[a-z0-9._]{1,30}$/.test(want)) return { ok: false, why: "not a username" };
+  if (want === "coryhepla") return { ok: false, why: "coryhepla is frozen; the studio will not switch to it" };
+
+  let t = IG_TAB();
+  if (!t) { t = newTab("https://www.instagram.com/", true, "instagram"); await new Promise((r) => setTimeout(r, 4000)); }
+  const wc = t.view ? t.view.webContents : t.wc;
+  if (!/instagram\.com/.test(wc.getURL())) { wc.loadURL("https://www.instagram.com/"); await new Promise((r) => setTimeout(r, 4000)); }
+
+  const before = (await session.fromPartition(BROWSER_SESSION).cookies.get({ domain: ".instagram.com", name: "ds_user_id" }))[0]?.value || null;
+  const script = `(async () => {
+    const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+    const leaves = (root) => [...root.querySelectorAll("span,div,a,button")].filter((e) => !e.children.length && e.textContent.trim());
+    const dialog = () => [...document.querySelectorAll('div[role="dialog"]')].find((d) => /switch account/i.test(d.innerText || ""));
+    let dlg = dialog();
+    if (!dlg) {
+      const sw = leaves(document).find((e) => /^switch$/i.test(e.textContent.trim()));
+      if (sw) { sw.click(); for (let i = 0; i < 20 && !dialog(); i++) await sleep(250); dlg = dialog(); }
+    }
+    if (!dlg) return { ok: false, why: "could not open the account switcher" };
+    const want = ${JSON.stringify(want)};
+    // Usernames are lowercase; a row with capitals is a display name and is not it.
+    const hit = leaves(dlg).find((e) => e.textContent.trim() === want);
+    if (!hit) return { ok: false, why: "not on this login", options: leaves(dlg).map((e) => e.textContent.trim()).filter((x) => /^[a-z0-9._]{1,30}$/.test(x)) };
+    (hit.closest('div[role="button"]') || hit.closest("button") || hit.parentElement?.parentElement || hit).click();
+    return { ok: true };
+  })()`;
+  let res;
+  try { res = await wc.executeJavaScript(script, true); } catch (e) { return { ok: false, why: e.message }; }
+  if (!res?.ok) return res || { ok: false, why: "the switcher did not respond" };
+
+  // Confirm by cookie, not by the click: a switch can fail silently.
+  for (let i = 0; i < 24; i++) {
+    await new Promise((r) => setTimeout(r, 500));
+    const now = (await session.fromPartition(BROWSER_SESSION).cookies.get({ domain: ".instagram.com", name: "ds_user_id" }))[0]?.value || null;
+    if (now && now !== before) {
+      const a = await instagramAccount(true);
+      return a.username?.toLowerCase() === want
+        ? { ok: true, username: a.username }
+        : { ok: false, why: `ended up on @${a.username || "unknown"}`, username: a.username };
+    }
+  }
+  return { ok: false, why: "the profile did not change; that account's session may have expired" };
 }
 
 function shellRoute(req) {
@@ -304,7 +367,11 @@ function shellRoute(req) {
     case "open": { const p = q("p"); if (p && allowedRoot(p) && fs.existsSync(p) && fs.statSync(p).isDirectory()) osShell.openPath(p); return json({ ok: true }); }
     case "tab": { const url = q("url"); if (/^https?:\/\//.test(url)) newTab(url, true, q("ws") || workspace); return json({ ok: true }); }
     case "account": return instagramAccount(q("refresh") === "1").then(json);
-    case "switch": { newTab("https://www.instagram.com/", true, "instagram"); accountCache = { at: 0, value: null }; return json({ ok: true, note: "Instagram opened. Use the Switch link in the right-hand rail, then re-check the account." }); }
+    case "switch": {
+      const to = q("to");
+      if (!to) { newTab("https://www.instagram.com/", true, "instagram"); accountCache = { at: 0, value: null }; return json({ ok: true, note: "Instagram opened; pick a profile." }); }
+      return switchInstagramProfile(to).then(json);
+    }
     case "ping": return json({ ok: true, shell: true });
     default: return new Response("not found", { status: 404 });
   }
@@ -390,6 +457,7 @@ ipcMain.handle("shell", async (_e, { cmd, ...a }) => {
     case "generate": { const id = a.draft || (await requireTarget()); if (!id) return { ok: false, error: "no episode selected" }; return studioApi("POST", "/api/run", { action: "generate", id, prompt: a.prompt, kind: a.kind, model: a.model, ref: a.ref, seconds: a.seconds }); }
     case "job": return studioApi("GET", `/api/job/${a.id}`);
     case "post": postToInstagram(a.file, a.caption, a.as); break;
+    case "switchProfile": return switchInstagramProfile(a.to);
     case "external": osShell.openExternal(a.url); break;
   }
   return { ok: true };
@@ -418,5 +486,15 @@ app.whenReady().then(async () => {
     }
   });
   setInterval(() => instagramAccount(true).catch(() => {}), 60_000);
+  // The studio server cannot see this browser session, so a switch is asked for through a
+  // small file it writes and this loop consumes. One request at a time, answered in place.
+  setInterval(async () => {
+    let req; try { req = JSON.parse(fs.readFileSync(SWITCH_FILE, "utf8")); } catch { return; }
+    if (!req || req.state !== "requested") return;
+    fs.writeFileSync(SWITCH_FILE, JSON.stringify({ ...req, state: "running" }, null, 2));
+    const res = await switchInstagramProfile(req.to).catch((e) => ({ ok: false, why: e.message }));
+    fs.writeFileSync(SWITCH_FILE, JSON.stringify({ ...req, state: "done", ...res, finishedAt: new Date().toISOString() }, null, 2));
+    toast(res.ok ? `Switched to @${res.username}` : `Could not switch: ${res.why}`, !res.ok);
+  }, 2000);
 });
 app.on("window-all-closed", () => { if (studioProc) { try { studioProc.kill(); } catch { /* gone */ } } app.quit(); });

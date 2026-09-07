@@ -79,3 +79,5 @@ studio-shell/downloads/
 
 # Written by the desktop shell: which Instagram profile its browser session is active as.
 automation/studio/ig-account.json
+automation/studio/ig-switch.json
+automation/studio/ig-known-profiles.json

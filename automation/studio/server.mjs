@@ -360,6 +360,20 @@ const server = createServer(async (req, res) => {
       const ageMs = Date.now() - new Date(a.at || 0).getTime();
       return json(res, 200, { ...a, shell: ageMs < 5 * 60 * 1000, ageSeconds: Math.round(ageMs / 1000) });
     }
+    if (p === "/api/ig/switch") {
+      const file = join(HERE, "ig-switch.json");
+      if (req.method === "GET") return json(res, 200, await readJson(file, { state: "idle" }));
+      if (req.method === "POST") {
+        const b = await readBody(req); if (!b) return json(res, 413, TOO_BIG);
+        const to = String(b.to || "").replace(/^@/, "").toLowerCase();
+        if (!/^[a-z0-9._]{1,30}$/.test(to)) return json(res, 400, { error: "username" });
+        if (to === "coryhepla") return json(res, 403, { error: "coryhepla is frozen; the studio will not switch to it" });
+        const acct = await readJson(join(HERE, "ig-account.json"), null);
+        if (!acct || Date.now() - new Date(acct.at || 0).getTime() > 5 * 60 * 1000) return json(res, 409, { error: "the desktop shell is not running" });
+        await writeFile(file, JSON.stringify({ to, state: "requested", at: new Date().toISOString() }, null, 2) + "\n", "utf8");
+        return json(res, 202, { ok: true, to, note: "poll /api/ig/switch for the result" });
+      }
+    }
     if (p === "/api/ig/queue") {
       const q = await readJson(join(IG_STUDIO, "content", "queue.json"), { posts: [] });
       const outNames = await readdir(join(IG_STUDIO, "out")).catch(() => []);
