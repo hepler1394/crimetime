@@ -69,7 +69,12 @@ async function wikiArticle(title) {
   return p?.extract ? { title: p.title, url: p.fullurl, text: p.extract } : null;
 }
 try {
-  const s = await (await get(`https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(kase.title + " murder case")}&srlimit=4&format=json&origin=*`)).json();
+  // cases.json titles are "<Case>: <Episode angle>" (e.g. "JonBenet Ramsey: Thirty Years"); the angle
+  // half is noise to Wikipedia's search and can knock the real article out of the top results
+  // (confirmed live: the full title returned "List of unsolved murders" and "John E. Douglas" for
+  // JonBenet, while the bare case name correctly found "Killing of JonBenét Ramsey" first).
+  const wikiQuery = kase.title.split(":")[0].trim();
+  const s = await (await get(`https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(wikiQuery + " murder case")}&srlimit=4&format=json&origin=*`)).json();
   const hits = (s.query?.search || []).slice(0, 2);
   for (const hit of hits) {
     const a = await wikiArticle(hit.title).catch(() => null);
