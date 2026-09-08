@@ -28,12 +28,12 @@
       "audio": "/audio/murders-in-moscow.mp3",
       "audioType": "audio/mpeg",
       "image": "/images/episodes/murders-in-moscow.jpg",
-      "link": "https://podcasters.spotify.com/pod/show/cory-hepler/episodes/Murders-in-Moscow-e2r36cp",
       "explicit": false,
       "audioOriginal": "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2025-2-16/db747518-c453-7022-a137-b84015e84d02.mp3",
       "audioBytes": 5615852,
       "imageOriginal": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731822271588-25bfd78792249.jpg",
-      "source": "legacy"
+      "source": "legacy",
+      "spotifyUrl": "https://open.spotify.com/episode/6L2rdkDTtHX5XSBdgXemJJ"
     },
     {
       "guid": "b0364833-3a03-422f-8b0f-0ae3d0de5930",
@@ -46,12 +46,12 @@
       "audio": "/audio/watts-family-murders.m4a",
       "audioType": "audio/x-m4a",
       "image": "/images/episodes/watts-family-murders.jpg",
-      "link": "https://podcasters.spotify.com/pod/show/cory-hepler/episodes/Watts-Family-Murders-e2r3hl1",
       "explicit": false,
       "audioOriginal": "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2024-10-17/389955425-44100-2-6648bd101d1cc.m4a",
       "audioBytes": 21065409,
       "imageOriginal": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731832918663-8a0f0ee9c4129.jpg",
-      "source": "legacy"
+      "source": "legacy",
+      "spotifyUrl": "https://open.spotify.com/episode/1NYVzmyyLywNwF6phEqDbG"
     },
     {
       "guid": "6d01f487-bff6-476e-bf80-bf7910573ab0",
@@ -64,12 +64,12 @@
       "audio": "/audio/erik-and-lyle-the-menendez-brothers.m4a",
       "audioType": "audio/x-m4a",
       "image": "/images/episodes/erik-and-lyle-the-menendez-brothers.jpg",
-      "link": "https://podcasters.spotify.com/pod/show/cory-hepler/episodes/ERIK-AND-LYLE-The-Menendez-Brothers-e2r3eo8",
       "explicit": false,
       "audioOriginal": "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2024-10-17/389951995-44100-2-69460dbc489c7.m4a",
       "audioBytes": 19064399,
       "imageOriginal": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/19116320/19116320-1731821846921-7a3bca7a5b61d.jpg",
-      "source": "legacy"
+      "source": "legacy",
+      "spotifyUrl": "https://open.spotify.com/episode/4Aj0CiBM0OcbAT2V9WImVm"
     },
     {
       "guid": "d74f5111-493d-4028-9abb-d9014538295d",
@@ -82,12 +82,12 @@
       "audio": "/audio/jonbenet-ramsey-the-facts-96-22-part-1.m4a",
       "audioType": "audio/x-m4a",
       "image": "/images/episodes/jonbenet-ramsey-the-facts-96-22-part-1.jpg",
-      "link": "https://podcasters.spotify.com/pod/show/cory-hepler/episodes/JonBent-Ramsey--The-Facts-96-22-Part-1-e1r25pe",
       "explicit": false,
       "audioOriginal": "https://d3ctxlq1ktw2nl.cloudfront.net/production/exports/7289c700/60937454/8286a6188df9541ddbe83717ce9fcdcf.m4a",
       "audioBytes": 15285985,
       "imageOriginal": "https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/19116320/19116320-1668968108733-9f40ee8db375b.jpg",
-      "source": "legacy"
+      "source": "legacy",
+      "spotifyUrl": "https://open.spotify.com/episode/4LfJAVJjSiaRwbkgeCVoI0"
     },
     {
       "guid": "6b1da09d-2367-4e86-bef0-beb7b12bcb18",
@@ -100,12 +100,12 @@
       "audio": "/audio/jonbenet-ramsey-americas-child-beauty-queen.mp3",
       "audioType": "audio/mpeg",
       "image": "/images/episodes/jonbenet-ramsey-americas-child-beauty-queen.jpg",
-      "link": "https://podcasters.spotify.com/pod/show/cory-hepler/episodes/JonBent-Ramsey-Americas-Child-Beauty-Queen-e1r021i",
       "explicit": false,
       "audioOriginal": "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2022-10-18/431c6811-62f8-a46a-8fbc-485ac90d7306.mp3",
       "audioBytes": 1244572,
       "imageOriginal": "https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/19116320/19116320-1668802938397-afbcf18474af5.jpg",
-      "source": "legacy"
+      "source": "legacy",
+      "spotifyUrl": "https://open.spotify.com/episode/1V4BlYELnRfOSQNEC2gzO6"
     },
     {
       "guid": "253bbee3-060d-41fa-adc8-69691b296a46",
@@ -118,12 +118,12 @@
       "audio": "/audio/crimetimesnacks-the-delphi-murder-case-2017.m4a",
       "audioType": "audio/x-m4a",
       "image": "/images/episodes/crimetimesnacks-the-delphi-murder-case-2017.jpg",
-      "link": "https://podcasters.spotify.com/pod/show/cory-hepler/episodes/CrimeTimeSnacks-The-Delphi-Murder-Case-2017-e1qv004",
       "explicit": false,
       "audioOriginal": "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2022-10-18/297850056-44100-2-fd08101ddc883.m4a",
       "audioBytes": 9150103,
       "imageOriginal": "https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/19116320/19116320-1668756728911-46682c3a84737.jpg",
-      "source": "legacy"
+      "source": "legacy",
+      "spotifyUrl": "https://open.spotify.com/episode/08sE4HVzcGigFzzjgRg2CF"
     }
   ]
 }

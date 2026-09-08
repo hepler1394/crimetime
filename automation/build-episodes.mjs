@@ -87,7 +87,7 @@ function gridCard(p, ep) {
                         <div class="episode-actions">
                             <a href="${epUrl(ep)}" class="btn btn-primary btn-sm">Open Case</a>
                             <div class="episode-stats">
-                                <a href="${ep.link || p.spotifyUrl}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;"><i class="fab fa-spotify" aria-hidden="true"></i> Spotify</a>
+                                <a href="${ep.spotifyUrl || p.spotifyUrl}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;"><i class="fab fa-spotify" aria-hidden="true"></i> Spotify</a>
                                 <a href="${APPLE}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;"><i class="fab fa-apple" aria-hidden="true"></i> Apple</a>
                             </div>
                         </div>
@@ -275,7 +275,7 @@ ${header("episodes")}
             <source src="${esc(ep.audio)}" type="${esc(ep.audioType)}">
         </audio>
         <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin:1.4rem 0 2rem;">
-            <a href="${ep.link || p.spotifyUrl}" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-spotify" aria-hidden="true"></i> Listen on Spotify</a>
+            <a href="${ep.spotifyUrl || p.spotifyUrl}" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-spotify" aria-hidden="true"></i> Listen on Spotify</a>
             <a href="${APPLE}" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-apple" aria-hidden="true"></i> Apple Podcasts</a>
         </div>
         <p style="color:var(--cts-muted);line-height:1.85;font-size:1.02rem;">${esc(ep.description)}</p>
@@ -356,7 +356,7 @@ function homeBlock({ podcast: p, episodes }) {
                     <source src="${esc(latest.audio)}" type="${esc(latest.audioType)}">
                 </audio>
                 <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-                    <a href="${latest.link || p.spotifyUrl}" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-spotify" aria-hidden="true"></i> Listen on Spotify</a>
+                    <a href="${latest.spotifyUrl || p.spotifyUrl}" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-spotify" aria-hidden="true"></i> Listen on Spotify</a>
                     <a href="${APPLE}" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-apple" aria-hidden="true"></i> Apple Podcasts</a>
                 </div>
             </div>

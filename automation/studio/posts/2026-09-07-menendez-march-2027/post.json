@@ -1,0 +1,54 @@
+{
+  "title": "Menendez: the date moved",
+  "status": "draft",
+  "created": "2026-09-08T03:30:47.778Z",
+  "case": "menendez-brothers",
+  "episode": "erik-and-lyle-the-menendez-brothers",
+  "caption": "Thirty-six years in, and the date just moved a year closer.\n\nAugust 20, 1989. Jose and Kitty Menendez were shot in the den of their Beverly Hills home. Their sons Erik and Lyle were convicted in 1996 and sentenced to life without the possibility of parole.\n\nIn May 2025 a judge resentenced them to 50 years to life, which made them eligible for parole for the first time. In August 2025 the board denied both of them for three years.\n\nThis month the California parole board advanced their next hearing by more than a year. They are now set to go before it in March 2027. An earlier hearing is not a release. It is an earlier hearing.\n\nErik and Lyle, start to finish. Full episode: link in bio.\n\n#menendezbrothers #erikmenendez #lylemenendez #beverlyhills #parole #truecrime #truecrimepodcast #truecrimecommunity #crimetimesnacks",
+  "slides": [
+    {
+      "kind": "cover",
+      "eyebrow": "Case file  /  Beverly Hills, 1989",
+      "art": "/images/episodes/erik-and-lyle-the-menendez-brothers.jpg",
+      "kicker": "Erik and Lyle: The Menendez Brothers"
+    },
+    {
+      "kind": "line",
+      "eyebrow": "The news",
+      "big": "Thirty-six years in. The date just moved <span class=\"r\">a year closer.</span>",
+      "bigSize": 130
+    },
+    {
+      "kind": "text",
+      "eyebrow": "How it got here",
+      "bodySize": 48,
+      "body": [
+        "On August 20, 1989 Jose and Kitty Menendez were shot in the den of their Beverly Hills home. Their sons Erik and Lyle were convicted in 1996 and sentenced to life without parole.",
+        "In May 2025 a judge resentenced them to 50 years to life, which made them eligible for parole for the first time.",
+        "<span class=\"q\">In August 2025 the board denied both of them for three years.</span>"
+      ]
+    },
+    {
+      "kind": "end",
+      "eyebrow": "September 2026",
+      "bodySize": 50,
+      "body": [
+        "The parole board has advanced their next hearing by more than a year. Erik and Lyle Menendez now go before it in <span class=\"r\">March 2027.</span>",
+        "An earlier hearing is not a release. It is an earlier hearing."
+      ],
+      "kicker": "Erik and Lyle, start to finish.<br><span class=\"r\">Link in bio.</span>",
+      "foot": [
+        "@crimetimesnacks",
+        "crimetimesnacks.com"
+      ]
+    }
+  ],
+  "rendered": "2026-09-08T04:05:20.547Z",
+  "files": [
+    "slide-1.jpg",
+    "slide-2.jpg",
+    "slide-3.jpg",
+    "slide-4.jpg"
+  ],
+  "art": "Cory's episode cover, reformatted for Instagram. No generated imagery."
+}

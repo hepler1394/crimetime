@@ -48,12 +48,26 @@
   body.end .bg{display:none}
   body.end .rule{top:860px}
   body.end .kicker{top:895px;font-size:82px}
+  /* cover slide: the episode artwork is the hero. No gradient over it, no
+     headline competing with the type Cory already set inside the art. */
+  .art{position:absolute;left:90px;width:900px;height:900px;top:212px;border-radius:12px;overflow:hidden;
+    box-shadow:0 34px 90px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.08)}
+  .art img{width:100%;height:100%;object-fit:cover;display:block}
+  body.cover .bg{display:none}
+  body.cover .eyebrow{top:158px}
+  body.cover .rule{top:1178px}
+  body.cover .kicker{top:1208px;font-size:52px;line-height:1}
+  /* line slide: one headline on black, nothing else */
+  body.line .bg{display:none}
+  body.line .eyebrow{top:440px}
+  body.line .big{top:498px}
 </style>
 </head>
 <body>
 <div class="frame">
   <div class="bg" id="bg"></div>
   <div class="glow"></div>
+  <div class="art" id="art" hidden><img id="artimg" alt=""></div>
   <div class="tape" id="tape" hidden></div>
   <div class="grain"></div>
   <div class="logo"><img id="logo" alt=""><span>Crime<em>Time</em>Snacks</span></div>
@@ -73,6 +87,7 @@
   document.getElementById("count").innerHTML = S.count ? `<b>${S.index}</b> / ${S.count}` : "";
   document.getElementById("eyebrow").textContent = S.eyebrow || "";
   if (S.bg) document.getElementById("bg").style.backgroundImage = `url("${S.bg}")`;
+  if (S.art) { document.getElementById("artimg").src = S.art; document.getElementById("art").hidden = false; }
   if (S.kind === "text") document.getElementById("tape").hidden = false;
   const show = (id, html) => { const el = document.getElementById(id); el.innerHTML = html; el.hidden = false; return el; };
   if (S.big) { const el = show("big", S.big); if (S.bigSize) el.style.fontSize = S.bigSize + "px"; }

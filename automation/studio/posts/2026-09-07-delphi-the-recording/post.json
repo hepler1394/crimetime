@@ -1,0 +1,54 @@
+{
+  "title": "Delphi: the recording",
+  "status": "draft",
+  "created": "2026-09-08T03:30:47.778Z",
+  "case": "delphi",
+  "episode": "crimetimesnacks-the-delphi-murder-case-2017",
+  "caption": "Libby German recorded the man on the bridge.\n\nFebruary 13, 2017. Abby Williams, 13, and Libby German, 14, were dropped off at the Monon High Bridge Trail in Delphi, Indiana on a day off school. They did not come home.\n\nLibby's phone came back with them. On it was a short video of a man walking the bridge and a voice saying three words: \"Down the hill.\"\n\nFive and a half years passed with no arrest. Richard Allen was arrested in October 2022, convicted in November 2024, and sentenced to 130 years. His lawyers are still arguing the jury never heard a complete defense, and on September 21, 2026 the Indiana Court of Appeals hears that argument.\n\nThe Delphi case, from the trail up. Full episode: link in bio.\n\n#delphi #delphimurders #abbyandlibby #richardallen #truecrime #truecrimepodcast #coldcase #indiana #truecrimecommunity #crimetimesnacks",
+  "slides": [
+    {
+      "kind": "cover",
+      "eyebrow": "Case file  /  Delphi, Indiana",
+      "art": "/images/episodes/crimetimesnacks-the-delphi-murder-case-2017.jpg",
+      "kicker": "The Delphi Murder Case, 2017"
+    },
+    {
+      "kind": "line",
+      "eyebrow": "The evidence",
+      "big": "Libby German recorded the man on the <span class=\"r\">bridge.</span>",
+      "bigSize": 138
+    },
+    {
+      "kind": "text",
+      "eyebrow": "February 13, 2017",
+      "bodySize": 50,
+      "body": [
+        "Abby Williams, 13, and Libby German, 14, were dropped off at the Monon High Bridge Trail on a day off school. They did not come home.",
+        "Libby's phone came back with them: a short video of a man walking the bridge, and a voice saying three words. <span class=\"r\">\"Down the hill.\"</span>",
+        "<span class=\"q\">Five and a half years passed with no arrest.</span>"
+      ]
+    },
+    {
+      "kind": "end",
+      "eyebrow": "Where it stands",
+      "bodySize": 50,
+      "body": [
+        "Richard Allen was arrested in October 2022, convicted in November 2024, and sentenced to 130 years.",
+        "His lawyers argue the jury never heard a complete defense. On <span class=\"r\">September 21, 2026</span> the Indiana Court of Appeals hears them out."
+      ],
+      "kicker": "The Delphi case, from the trail up.<br><span class=\"r\">Link in bio.</span>",
+      "foot": [
+        "@crimetimesnacks",
+        "crimetimesnacks.com"
+      ]
+    }
+  ],
+  "rendered": "2026-09-08T04:05:11.077Z",
+  "files": [
+    "slide-1.jpg",
+    "slide-2.jpg",
+    "slide-3.jpg",
+    "slide-4.jpg"
+  ],
+  "art": "Cory's episode cover, reformatted for Instagram. No generated imagery."
+}

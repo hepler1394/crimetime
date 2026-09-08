@@ -8,9 +8,17 @@
 //
 // post.json:
 //   { "title": "...", "status": "draft|approved|posted", "caption": "...",
-//     "slides": [ { "kind": "hook", "eyebrow": "...", "big": "...", "bg": "bg-house.png" },
+//     "slides": [ { "kind": "cover", "eyebrow": "...", "art": "/images/episodes/x.jpg", "kicker": "..." },
+//                 { "kind": "line", "eyebrow": "...", "big": "..." },
+//                 { "kind": "hook", "eyebrow": "...", "big": "...", "bg": "bg-house.png" },
 //                 { "kind": "text", "eyebrow": "...", "body": ["para", "para"] },
 //                 { "kind": "end",  "eyebrow": "...", "body": [...], "kicker": "...", "foot": ["@crimetimesnacks", "crimetimesnacks.com"] } ] }
+// "cover" shows episode artwork as the hero, undimmed, with no headline competing
+// with the type already set inside the art; "line" is one headline on black. Use
+// "cover" when the art is Cory's own and "hook" only for a real photograph.
+// "art" and "bg" name a file in the post folder, or, with a leading "/", one from
+// the repo root - so a post points at images/episodes/<slug>.jpg and follows it
+// when that cover is corrected, instead of keeping a copy that goes stale.
 // Slides are 1080x1350 (4:5), the feed format Instagram gives the most height.
 // Text inside big/body/kicker may use <span class="r">red</span> and <span class="q">quiet</span>.
 
@@ -62,6 +70,9 @@ let spec;
 try { spec = JSON.parse(await readFile(join(dir, "post.json"), "utf8")); } catch { die("post", `No post.json in ${dir}`); }
 if (!Array.isArray(spec.slides) || !spec.slides.length) die("post", "post.json needs a slides array");
 
+// A leading "/" reads from the repo root, anything else from the post folder.
+const asset = (name) => (name ? pathToFileURL(name.startsWith("/") ? join(ROOT, name) : join(dir, name)).href : null);
+
 const pw = PW_CANDIDATES.find((p) => existsSync(p));
 if (!pw) die("playwright", "Playwright not found. Run `npm i` in D:\\Dev\\GitHub\\ig-studio (it owns the browser install).");
 const { chromium } = await import(pathToFileURL(pw).href);
@@ -72,7 +83,7 @@ try {
   for (let i = 0; i < spec.slides.length; i++) {
     const s = spec.slides[i];
     const page = await ctx.newPage();
-    const data = { ...s, index: i + 1, count: spec.slides.length, logo: LOGO, bg: s.bg ? pathToFileURL(join(dir, s.bg)).href : null, swipe: s.swipe ?? (i < spec.slides.length - 1 && i === 0 ? "swipe" : null) };
+    const data = { ...s, index: i + 1, count: spec.slides.length, logo: LOGO, bg: asset(s.bg), art: asset(s.art), swipe: s.swipe ?? (i < spec.slides.length - 1 && i === 0 ? "swipe" : null) };
     await page.addInitScript((d) => { window.SLIDE = d; }, data);
     await page.goto(TEMPLATE, { waitUntil: "load" });
     await page.evaluate(() => document.fonts.ready);

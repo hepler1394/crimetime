@@ -1,0 +1,54 @@
+{
+  "title": "Watts: the driveway interview",
+  "status": "draft",
+  "created": "2026-09-08T03:30:47.778Z",
+  "case": "watts-family",
+  "episode": "watts-family-murders",
+  "caption": "He stood on his own driveway and asked them to come home.\n\nAugust 13, 2018. Shanann Watts, 34 and fifteen weeks pregnant, and her daughters Bella, 4, and Celeste, 3, were reported missing from their house in Frederick, Colorado.\n\nThe next day her husband stood outside that house and told a local reporter he wanted them back. He had killed all three the previous morning.\n\nChris Watts pleaded guilty on November 6, 2018 and was sentenced on November 19 to three consecutive life terms without the possibility of parole, plus 84 years. He is held at Dodge Correctional Institution in Wisconsin. He will not be released.\n\nThe Watts family murders. Full episode: link in bio.\n\n#wattsfamilymurders #shanannwatts #chriswatts #frederickcolorado #truecrime #truecrimepodcast #truecrimecommunity #crimetimesnacks",
+  "slides": [
+    {
+      "kind": "cover",
+      "eyebrow": "Case file  /  Frederick, Colorado",
+      "art": "/images/episodes/watts-family-murders.jpg",
+      "kicker": "Watts Family Murders"
+    },
+    {
+      "kind": "line",
+      "eyebrow": "August 14, 2018",
+      "big": "He stood on his own driveway and asked them to <span class=\"r\">come home.</span>",
+      "bigSize": 124
+    },
+    {
+      "kind": "text",
+      "eyebrow": "August 13, 2018",
+      "bodySize": 50,
+      "body": [
+        "Shanann Watts, 34 and fifteen weeks pregnant, and her daughters Bella, 4, and Celeste, 3, were reported missing from their house in Frederick, Colorado.",
+        "The next day her husband stood outside that house and told a local reporter he wanted them back.",
+        "<span class=\"r\">He had killed all three the previous morning.</span>"
+      ]
+    },
+    {
+      "kind": "end",
+      "eyebrow": "Where it stands",
+      "bodySize": 50,
+      "body": [
+        "Chris Watts pleaded guilty on November 6, 2018 and was sentenced on the 19th to three consecutive life terms without parole, plus 84 years.",
+        "He is held at Dodge Correctional Institution in Wisconsin. <span class=\"r\">He will not be released.</span>"
+      ],
+      "kicker": "The Watts family murders.<br>Full episode, <span class=\"r\">link in bio.</span>",
+      "foot": [
+        "@crimetimesnacks",
+        "crimetimesnacks.com"
+      ]
+    }
+  ],
+  "rendered": "2026-09-08T04:05:29.607Z",
+  "files": [
+    "slide-1.jpg",
+    "slide-2.jpg",
+    "slide-3.jpg",
+    "slide-4.jpg"
+  ],
+  "art": "Cory's episode cover, reformatted for Instagram. No generated imagery."
+}

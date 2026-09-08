@@ -1,0 +1,53 @@
+{
+  "title": "JonBenet Ramsey: thirty years",
+  "status": "draft",
+  "created": "2026-09-08T03:30:47.778Z",
+  "case": "jonbenet-ramsey",
+  "episode": "jonbenet-ramsey-the-facts-96-22-part-1",
+  "caption": "Thirty years this December.\n\nDecember 26, 1996, Boulder, Colorado. Patsy Ramsey found a ransom note on the back staircase and called police at 5:52 in the morning. Her daughter JonBenet, six years old, was found in the basement of the same house that afternoon.\n\nThe note ran to two and a half pages. Nobody has ever been charged.\n\nIn December 2025 Boulder police said they had carried out new interviews, re-interviewed people on the strength of tips, and re-tested evidence using current DNA technology. They have not said what the new evidence is. The case is open, active, and unsolved.\n\nThe facts, without the theories. Full episode: link in bio.\n\n#jonbenetramsey #boulder #colorado #coldcase #unsolved #truecrime #truecrimepodcast #truecrimecommunity #crimetimesnacks",
+  "slides": [
+    {
+      "kind": "cover",
+      "eyebrow": "Case file  /  Boulder, Colorado",
+      "art": "/images/episodes/jonbenet-ramsey-the-facts-96-22-part-1.jpg",
+      "kicker": "JonBenet Ramsey: The Facts"
+    },
+    {
+      "kind": "line",
+      "eyebrow": "The anniversary",
+      "big": "Thirty years this <span class=\"r\">December.</span>",
+      "bigSize": 168
+    },
+    {
+      "kind": "text",
+      "eyebrow": "December 26, 1996",
+      "bodySize": 50,
+      "body": [
+        "Patsy Ramsey found a ransom note on the back staircase and called police at 5:52 in the morning. Her daughter JonBenet, six, was found in the basement of the same house that afternoon.",
+        "The note ran to two and a half pages. <span class=\"r\">Nobody has ever been charged.</span>"
+      ]
+    },
+    {
+      "kind": "end",
+      "eyebrow": "December 2025",
+      "bodySize": 50,
+      "body": [
+        "Boulder police said they had run new interviews, gone back to people on the strength of tips, and re-tested evidence with current DNA technology. They have not said what they found.",
+        "The case is open, active, and <span class=\"r\">unsolved.</span>"
+      ],
+      "kicker": "The facts, without the theories.<br><span class=\"r\">Link in bio.</span>",
+      "foot": [
+        "@crimetimesnacks",
+        "crimetimesnacks.com"
+      ]
+    }
+  ],
+  "rendered": "2026-09-08T04:05:25.224Z",
+  "files": [
+    "slide-1.jpg",
+    "slide-2.jpg",
+    "slide-3.jpg",
+    "slide-4.jpg"
+  ],
+  "art": "Cory's episode cover, reformatted for Instagram. No generated imagery."
+}

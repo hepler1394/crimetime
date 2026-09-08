@@ -1,0 +1,54 @@
+{
+  "title": "Moscow, Idaho: the plea",
+  "status": "draft",
+  "created": "2026-09-08T03:30:47.778Z",
+  "case": "idaho-student-murders",
+  "episode": "murders-in-moscow",
+  "caption": "He pleaded guilty to end it. Now he wants it undone.\n\nNovember 13, 2022. Four University of Idaho students were killed in an off-campus house on King Road in Moscow: Ethan Chapin, 20, Madison Mogen, 21, Xana Kernodle, 20, and Kaylee Goncalves, 21. Two other roommates were in the house that night and survived.\n\nSix weeks later police arrested Bryan Kohberger in Pennsylvania. The case turned on DNA left on a knife sheath.\n\nOn July 2, 2025 he pleaded guilty to all five counts and waived his appeals. Three weeks later he was sentenced to four consecutive life terms without parole. In July 2026 he filed to withdraw that plea, saying his own lawyers pressured him into it. The court has not ruled.\n\nMurders in Moscow. Full episode: link in bio.\n\n#idahostudentmurders #moscowidaho #bryankohberger #universityofidaho #truecrime #truecrimepodcast #truecrimecommunity #crimetimesnacks",
+  "slides": [
+    {
+      "kind": "cover",
+      "eyebrow": "Case file  /  Moscow, Idaho",
+      "art": "/images/episodes/murders-in-moscow.jpg",
+      "kicker": "Murders in Moscow"
+    },
+    {
+      "kind": "line",
+      "eyebrow": "The turn",
+      "big": "He pleaded guilty to end it. <span class=\"r\">Now he wants it undone.</span>",
+      "bigSize": 132
+    },
+    {
+      "kind": "text",
+      "eyebrow": "November 13, 2022",
+      "bodySize": 48,
+      "body": [
+        "Four University of Idaho students were killed in an off-campus house on King Road: Ethan Chapin, 20, Madison Mogen, 21, Xana Kernodle, 20, Kaylee Goncalves, 21.",
+        "Two other roommates were in the house that night and survived.",
+        "<span class=\"q\">Six weeks later, police arrested Bryan Kohberger in Pennsylvania. The case turned on DNA left on a knife sheath.</span>"
+      ]
+    },
+    {
+      "kind": "end",
+      "eyebrow": "Where it stands",
+      "bodySize": 50,
+      "body": [
+        "On July 2, 2025 he pleaded guilty to all five counts and waived his appeals. Three weeks later: four consecutive life terms, no parole.",
+        "In July 2026 he filed to take the plea back, saying his own lawyers pressured him into it. <span class=\"r\">The court has not ruled.</span>"
+      ],
+      "kicker": "Murders in Moscow.<br>Full episode, <span class=\"r\">link in bio.</span>",
+      "foot": [
+        "@crimetimesnacks",
+        "crimetimesnacks.com"
+      ]
+    }
+  ],
+  "rendered": "2026-09-08T04:05:16.003Z",
+  "files": [
+    "slide-1.jpg",
+    "slide-2.jpg",
+    "slide-3.jpg",
+    "slide-4.jpg"
+  ],
+  "art": "Cory's episode cover, reformatted for Instagram. No generated imagery."
+}

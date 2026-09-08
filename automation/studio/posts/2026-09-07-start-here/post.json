@@ -1,0 +1,54 @@
+{
+  "title": "Start here",
+  "status": "draft",
+  "created": "2026-09-08T03:30:47.778Z",
+  "case": null,
+  "episode": null,
+  "caption": "Five cases. The facts, in order.\n\nDelphi. Moscow, Idaho. The Menendez brothers. The Watts family. JonBenet Ramsey.\n\nEach episode is the case laid out in sequence: what happened, what was found, what was proved in court, and what is still open. Sources named. No theories dressed up as facts, and no accusations against people who have never been charged.\n\nCrimeTimeSnacks is on Spotify, on Apple Podcasts, and at crimetimesnacks.com. Follow the show and new episodes land first.\n\nStart anywhere. Link in bio.\n\n#truecrime #truecrimepodcast #truecrimecommunity #podcast #coldcase #unsolved #crimetimesnacks",
+  "slides": [
+    {
+      "kind": "cover",
+      "eyebrow": "The podcast",
+      "art": "/images/episodes/show.jpg",
+      "kicker": "CrimeTimeSnacks"
+    },
+    {
+      "kind": "line",
+      "eyebrow": "What this is",
+      "big": "Five cases. The facts, <span class=\"r\">in order.</span>",
+      "bigSize": 150
+    },
+    {
+      "kind": "text",
+      "eyebrow": "What is on the feed",
+      "bodySize": 50,
+      "body": [
+        "Delphi. Moscow, Idaho. The Menendez brothers. The Watts family. JonBenet Ramsey.",
+        "Each one is the case in sequence: what happened, what was found, what was proved in court, and what is still open.",
+        "<span class=\"q\">No theories dressed up as facts. No accusations against people who have never been charged.</span>"
+      ]
+    },
+    {
+      "kind": "end",
+      "eyebrow": "Where to listen",
+      "bodySize": 52,
+      "body": [
+        "CrimeTimeSnacks is on Spotify, on Apple Podcasts, and at crimetimesnacks.com.",
+        "Follow the show and <span class=\"r\">new episodes land first.</span>"
+      ],
+      "kicker": "Start anywhere.<br><span class=\"r\">Link in bio.</span>",
+      "foot": [
+        "@crimetimesnacks",
+        "crimetimesnacks.com"
+      ]
+    }
+  ],
+  "rendered": "2026-09-08T04:05:34.020Z",
+  "files": [
+    "slide-1.jpg",
+    "slide-2.jpg",
+    "slide-3.jpg",
+    "slide-4.jpg"
+  ],
+  "art": "Cory's episode cover, reformatted for Instagram. No generated imagery."
+}
