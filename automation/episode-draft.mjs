@@ -34,7 +34,7 @@ const opt = (n, d) => { const i = args.indexOf(n); return i > -1 && args[i + 1] 
 const positional = args.filter((a, i) => !a.startsWith("--") && args[i - 1] !== "--minutes" && args[i - 1] !== "--case");
 const minutes = Math.max(1, Math.min(60, parseFloat(opt("--minutes", "20")) || 20));
 const asJson = flag("--json");
-const WPM = 160;                 // the cloned voice reads briskly
+const WPM = 166;                 // Cory reads 157-178 wpm across his real episodes; 166 is the average
 const CHAPTER_WORDS = 270;       // what one chapter answer actually comes back as (Gemini lands near 275 whatever is asked), so a 20 min show is 12 chapters
 const LLM_TIMEOUT = 30 * 60 * 1000;
 
@@ -179,7 +179,7 @@ for (let i = 0; i < outline.chapters.length; i++) {
 Beats to cover, in order: ${(ch.beats || []).map((b) => `\n- ${b}`).join("") || "\n- the documented facts for this part of the story"}
 Target: about ${perChapter} words, paragraphs of 2 to 4 sentences.
 ${first ? `This is the OPENING chapter. The first sentence is his real opener, close to: "What's up guys, thanks for tuning in to Crime Time Snacks, the true crime podcast." Then the hook: ${outline.hook || "the strangest documented detail, stated plainly"}.` : "Do NOT re-introduce the show. Continue straight from the previous chapter."}
-${last ? `This is the LAST chapter. End on the hand-off to the listener ("Read the file. Form your own conclusion." or his own words). That closing line is the LAST line; nothing after it, no sign-off, no teaser.` : "Do not wrap up the episode; the story continues in the next chapter."}
+${last ? `This is the LAST chapter. End on the hand-off to the listener ("Read the file. Form your own conclusion." or his own words), then his real sign-off as the final line, exactly: "Stay curious, stay informed, and as always, stay safe." Nothing after that sign-off; no teaser for a next episode.` : "Do not wrap up the episode; the story continues in the next chapter."}
 ${prevTail ? `\nFor continuity, the previous chapter ended:\n${prevTail}\n` : ""}
 RESEARCH NOTES for this chapter (the only allowed source of facts):
 ${notes}
