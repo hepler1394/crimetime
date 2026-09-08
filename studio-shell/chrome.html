@@ -56,6 +56,7 @@
   <div class="brand">Crime<em>Time</em> Studio</div>
   <div class="ws"><button id="ws-ct" class="on">Studio</button><button id="ws-ig">Instagram</button></div>
   <div class="tabs" id="tabs"></div>
+  <button class="btn" id="desk" title="Audio editor, media, documents and workspace chat">Production desk</button>
   <button class="btn" id="newtab" title="New browser tab">+ Tab</button>
   <button class="btn" id="gen-toggle" aria-expanded="false" aria-controls="gen" title="Generate an image or clip into the current episode">Generate</button>
 </div>
@@ -79,6 +80,7 @@
 
 <script>
 const $ = (s) => document.querySelector(s);
+$("#desk").onclick = () => window.shell.send("desk");
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 let st = { tabs: [], active: null, workspace: "crimetime", target: null };
 let toastT;

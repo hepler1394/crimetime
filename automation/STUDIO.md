@@ -1,5 +1,29 @@
 # The Podcast Studio
 
+## Production desk
+
+The Electron app opens `/workspace`, with a Production desk button in its toolbar.
+Podcast episodes and Instagram remain accessible from the desk's navigation and
+have links back to it. Both pages use the full available editing width.
+
+- Create media: choose an episode or research folder, describe an image, choose
+  its aspect ratio and generate through the configured Gemini service. Provider
+  charges apply. Trailer and audiogram controls use the existing episode jobs;
+  finished assets appear in the media library with playback and downloads.
+- Audio editor: open local or saved audio, set start/end, volume and fades,
+  preview the result, then download a WAV or save a separate copy to a research
+  folder. This is a single-clip editor; it does not replace the episode master.
+- Documents: create a research folder, edit notes, use Ctrl+S to save, upload or
+  drop files, download Markdown, or save a separate named document. New uploads
+  use unique filenames. Switching folders saves changed notes first.
+- Workspace chat: ask the existing Gemini project assistant about saved notes,
+  PDFs and images, retain the conversation, and save individual answers to notes.
+  Failed requests leave the question in the composer for retry.
+
+`npm run test:shell` includes real Electron workflow checks for the production
+desk as well as audio processing and Instagram session checks. The workflow test
+uses temporary folders and mocked provider responses; it never publishes.
+
 The studio is the local control room for putting out a twenty-minute episode
 a week without touching Audacity, HTML, RSS, or ffmpeg by hand. It lives in
 `automation/studio/` and runs only on this PC (it drives LM Studio, Chatterbox,

@@ -255,10 +255,18 @@
   .stopped{border:1px solid var(--deep);background:#1b0709;border-radius:6px;padding:14px 16px;margin:0 0 18px}
   .stopped b{display:block;margin-bottom:4px}
   .stopped p{margin:0 0 10px;color:var(--muted);font-size:13px;line-height:1.5}
+  /* Spacious production workspace: full-width editing and readable controls. */
+  .main{max-width:none;padding:40px 48px 90px}
+  .wrap{grid-template-columns:300px minmax(0,1fr)}
+  .draft{padding:14px 12px}.draft b{font-size:14px}
+  textarea{line-height:1.75}.top{gap:18px}
+  @media(max-width:1100px){.main{padding:28px}.wrap{grid-template-columns:250px minmax(0,1fr)}}
+  @media(max-width:900px){.wrap{grid-template-columns:1fr}.top{height:auto;min-height:56px;flex-wrap:wrap;padding:12px}}
 </style>
 </head>
 <body>
 <header class="top">
+  <a class="btn sm" href="/workspace">Production desk</a>
   <div class="brand"><img src="/site/images/logo.png" alt="">Crime<em>Time</em> Studio<small>CrimeTimeSnacks</small></div>
   <nav class="sections" aria-label="Sections">
     <button data-sec="episodes" class="on">Episodes</button>

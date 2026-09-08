@@ -64,6 +64,7 @@ const slugify = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().
 const jobs = new Map();
 let jobSeq = 0;
 const ACTIONS = {
+  "workspace-image": (a) => ["gen-image.mjs", "--out", a.output, "--prompt", a.prompt, "--aspect", a.aspect, "--json"],
   new:      (a) => ["episode-new.mjs", ...(a.topic ? [a.topic] : []), "--minutes", String(a.minutes || 20), "--json"],
   research: (a) => ["episode-research.mjs", "--draft", a.id, "--json"],
   draft:    (a) => ["episode-draft.mjs", ...(a.case ? ["--case", a.case] : a.topic ? [a.topic] : ["--auto"]), "--minutes", String(a.minutes || 20), "--json"],
@@ -296,6 +297,26 @@ const server = createServer(async (req, res) => {
     if (p === "/" || p === "/index.html") {
       const html = await readFile(join(HERE, "studio.html"));
       res.writeHead(200, { "Content-Type": MIME[".html"], "Cache-Control": "no-store", ...SECURITY_HEADERS }); return res.end(html);
+    }
+    const workspaceFiles = { "/workspace": "workspace.html", "/workspace.css": "workspace.css", "/workspace.mjs": "workspace.mjs", "/audio-edit.mjs": "audio-edit.mjs" };
+    if (workspaceFiles[p] && req.method === "GET") {
+      const name = workspaceFiles[p];
+      const content = await readFile(join(HERE, name));
+      res.writeHead(200, { "Content-Type": name.endsWith(".mjs") ? MIME[".js"] : MIME[extname(name)], "Cache-Control": "no-store", ...SECURITY_HEADERS });
+      return res.end(content);
+    }
+    if (p === "/api/workspace/generate" && req.method === "POST") {
+      const body = await readBody(req);
+      if (!body) return json(res, 413, TOO_BIG);
+      if (!safeId(body.id) || !["project", "episode"].includes(body.target)) return json(res, 400, { error: "Choose a valid episode or research folder." });
+      if (typeof body.prompt !== "string" || !body.prompt.trim() || body.prompt.length > 12000 || !["1:1", "4:5", "9:16", "16:9"].includes(body.aspect)) return json(res, 400, { error: "Provide an image description and a supported format." });
+      const dir = join(body.target === "project" ? PROJECTS : DRAFTS, body.id);
+      if (!(await exists(join(dir, body.target === "project" ? "project.json" : "episode.json")))) return json(res, 404, { error: "The selected folder no longer exists." });
+      if (running().some(j => j.draft === body.id)) return json(res, 409, { error: "A job is already running for this folder. Wait for it to finish." });
+      const output = join(dir, `art-${Date.now()}-${Math.random().toString(36).slice(2,8)}.png`);
+      const job = startJob("workspace-image", { id: body.id, output, prompt: body.prompt.trim(), aspect: body.aspect });
+      const { log, ...rest } = job;
+      return json(res, 202, rest);
     }
     if (p === "/api/posts") {
       const ids = (await readdir(POSTS, { withFileTypes: true }).catch(() => [])).filter((d) => d.isDirectory()).map((d) => d.name).sort().reverse();
@@ -643,7 +664,7 @@ const server = createServer(async (req, res) => {
 
     if (p === "/api/run" && req.method === "POST") {
       const body = await readBody(req); if (!body) return json(res, 413, TOO_BIG);
-      if (!ACTIONS[body.action]) return json(res, 400, { error: "unknown action" });
+      if (!Object.hasOwn(ACTIONS, body.action) || body.action === "workspace-image") return json(res, 400, { error: "unknown action" });
       if (body.id && !safeId(body.id)) return json(res, 400, { error: "bad id" });
       if (body.id && running().some((j) => j.draft === body.id)) return json(res, 409, { error: "a job is already running for this draft" });
       if (body.action === "voice" && body.id && (await exists(join(DRAFTS, body.id, "tts")))) {

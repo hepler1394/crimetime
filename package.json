@@ -22,6 +22,7 @@
     "episode": "node automation/episode-draft.mjs --auto",
     "episode:weekly": "node automation/episode-weekly.mjs",
     "test:studio": "node automation/studio/test.mjs",
+    "test:shell": "node --test studio-shell/tests/*.test.cjs",
     "test:community": "node automation/community/test-cooldown.mjs"
   }
 }

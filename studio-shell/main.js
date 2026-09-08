@@ -16,6 +16,7 @@ const { spawn } = require("child_process");
 const path = require("path");
 const fs = require("fs");
 const http = require("http");
+const { createAccountReader } = require("./instagram-account.cjs");
 
 const REPO = path.resolve(__dirname, "..");
 const STUDIO_URL = "http://127.0.0.1:4177";
@@ -293,35 +294,20 @@ const servable = (p) => { const n = p.replace(/\\/g, "/").toLowerCase(); return 
 //   instagram.com -> the right-hand rail shows the current profile with a "Switch" link
 //   -> the switcher lists every profile on the login -> pick one. The cookie changes and
 //   this function reports the new profile. There is no way to do it without the browser.
-const IG_APP_ID = "936619743392459"; // Instagram's own public web client id
-let accountCache = { at: 0, value: null };
-async function instagramAccount(force = false) {
-  if (!force && accountCache.value && Date.now() - accountCache.at < 30_000) return accountCache.value;
-  const ses = session.fromPartition(BROWSER_SESSION);
-  let out = { signedIn: false, username: null, userId: null };
-  try {
-    const [c] = await ses.cookies.get({ domain: ".instagram.com", name: "ds_user_id" });
-    if (c?.value) {
-      out = { signedIn: true, username: null, userId: c.value };
-      const r = await net.fetch(`https://i.instagram.com/api/v1/users/${c.value}/info/`, {
-        session: ses, useSessionCookies: true,
-        headers: { "x-ig-app-id": IG_APP_ID, "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" },
-      });
-      if (r.ok) { const j = await r.json(); out.username = j?.user?.username || null; }
-      // Instagram's lookup fails now and then. The id is the real identity and never
-      // changes, so remember what it resolved to and fall back to that rather than
-      // reporting "unknown" and disabling every Post button over a hiccup.
-      if (out.username) { known[c.value] = out.username; try { fs.writeFileSync(KNOWN_FILE, JSON.stringify(known, null, 2)); } catch { /* fine */ } }
-      else if (known[c.value]) { out.username = known[c.value]; out.fromCache = true; }
-    }
-  } catch (e) { out.error = e.message; }
-  accountCache = { at: Date.now(), value: out };
-  // Publish it where anything can read it. The Electron session is the only thing that
-  // knows which profile is active, but the board, the studio server and a terminal all
-  // need the answer, and none of them can ask Electron.
-  try { fs.writeFileSync(ACCOUNT_FILE, JSON.stringify({ ...out, at: new Date().toISOString() }, null, 2)); } catch { /* fine */ }
-  return out;
-}
+const instagramAccount = createAccountReader({
+  session: {
+    cookies: { get: (filter) => session.fromPartition(BROWSER_SESSION).cookies.get(filter) },
+    fetch: (...args) => session.fromPartition(BROWSER_SESSION).fetch(...args),
+    getUserAgent: () => session.fromPartition(BROWSER_SESSION).getUserAgent(),
+  },
+  known,
+  saveKnown: (value) => { try { fs.writeFileSync(KNOWN_FILE, JSON.stringify(value, null, 2)); } catch {} },
+  saveAccount: (value) => {
+    const temporary = ACCOUNT_FILE + '.' + process.pid + '.tmp';
+    try { fs.writeFileSync(temporary, JSON.stringify(value, null, 2)); fs.renameSync(temporary, ACCOUNT_FILE); }
+    catch { try { fs.unlinkSync(temporary); } catch {} }
+  },
+});
 
 // Switch the active Instagram profile, for real.
 //
@@ -385,13 +371,13 @@ function shellRoute(req) {
   switch (u.hostname) {
     case "ig-files": return json(igFiles());
     case "reveal": { const p = q("p"); if (p && allowedRoot(p)) osShell.showItemInFolder(p); return json({ ok: true }); }
-    case "post": { postToInstagram(q("p"), q("c"), q("as")); return json({ ok: true }); }
+    case "post": return postToInstagram(q("p"), q("c"), q("as")).then(json).catch(() => json({ ok: false, why: "Could not open the Instagram composer" }));
     case "open": { const p = q("p"); if (p && allowedRoot(p) && fs.existsSync(p) && fs.statSync(p).isDirectory()) osShell.openPath(p); return json({ ok: true }); }
     case "tab": { const url = q("url"); if (/^https?:\/\//.test(url)) newTab(url, true, q("ws") || workspace); return json({ ok: true }); }
     case "account": return instagramAccount(q("refresh") === "1").then(json);
     case "switch": {
       const to = q("to");
-      if (!to) { newTab("https://www.instagram.com/", true, "instagram"); accountCache = { at: 0, value: null }; return json({ ok: true, note: "Instagram opened; pick a profile." }); }
+      if (!to) { newTab("https://www.instagram.com/", true, "instagram");  return json({ ok: true, note: "Instagram opened; pick a profile." }); }
       return switchInstagramProfile(to).then(json);
     }
     case "ping": return json({ ok: true, shell: true });
@@ -413,7 +399,7 @@ function createWindow() {
   igView = new WebContentsView({ webPreferences: { partition: BROWSER_SESSION, contextIsolation: true, sandbox: true } });
   win.contentView.addChildView(studioView); win.contentView.addChildView(igView); win.contentView.addChildView(chromeView);
   chromeView.webContents.loadFile(path.join(__dirname, "chrome.html"));
-  studioView.webContents.loadURL(STUDIO_URL);
+  studioView.webContents.loadURL(`${STUDIO_URL}/workspace`);
   igView.webContents.loadURL(`${STUDIO_URL}/instagram`); // served by the studio server, same origin as the studio API
   igView.webContents.setWindowOpenHandler(({ url }) => { newTab(url, true, "instagram"); return { action: "deny" }; });
   studioView.webContents.setWindowOpenHandler(({ url }) => { if (url.startsWith(STUDIO_URL)) return { action: "allow" }; newTab(url, true, "crimetime"); return { action: "deny" }; });
@@ -469,6 +455,7 @@ ipcMain.handle("shell", async (_e, { cmd, ...a }) => {
     case "closeTab": closeTab(a.id); break;
     case "activate": activeTab = a.id || null; activeByWs[workspace] = activeTab; layout(); pushTabs(); break;
     case "home": activeTab = null; activeByWs[workspace] = null; layout(); pushTabs(); break;
+    case "desk": workspace = "crimetime"; activeTab = null; activeByWs.crimetime = null; if (!studioView.webContents.getURL().startsWith(`${STUDIO_URL}/workspace`)) studioView.webContents.loadURL(`${STUDIO_URL}/workspace`); layout(); pushTabs(); break;
     case "workspace": workspace = a.name; activeTab = activeByWs[workspace] && tabs.has(activeByWs[workspace]) ? activeByWs[workspace] : null; layout(); pushTabs(); break;
     case "navigate": { let u = String(a.url || "").trim(); if (!u) break; if (!/^[a-z]+:\/\//i.test(u)) u = /\s/.test(u) || !u.includes(".") ? `https://www.google.com/search?q=${encodeURIComponent(u)}` : `https://${u}`; if (t) t.view.webContents.loadURL(u); else newTab(u, true); break; }
     case "back": if (t) goBack(t.view.webContents); break;
@@ -478,7 +465,7 @@ ipcMain.handle("shell", async (_e, { cmd, ...a }) => {
     case "setTarget": targetDraft = a.id || null; pushTabs(); break;
     case "generate": { const id = a.draft || (await requireTarget()); if (!id) return { ok: false, error: "no episode selected" }; return studioApi("POST", "/api/run", { action: "generate", id, prompt: a.prompt, kind: a.kind, model: a.model, ref: a.ref, seconds: a.seconds }); }
     case "job": return studioApi("GET", `/api/job/${a.id}`);
-    case "post": postToInstagram(a.file, a.caption, a.as); break;
+    case "post": return postToInstagram(a.file, a.caption, a.as);
     case "switchProfile": return switchInstagramProfile(a.to);
     case "external": osShell.openExternal(a.url); break;
   }
