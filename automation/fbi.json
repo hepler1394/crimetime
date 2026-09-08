@@ -3,9 +3,70 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1242,
     "baked": 150,
-    "updated": "2026-09-08T16:42:47.439Z"
+    "updated": "2026-09-08T21:14:15.223Z"
   },
   "items": [
+    {
+      "uid": "62dba83f492e470182712dfb20fc4439",
+      "title": "BERNHARD EUGEN FRITSCH",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/bernhard-eugen-fritsch/@@images/image/large",
+      "office": "Losangeles",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Bernhard Eugen Fritsch.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/bernhard-eugen-fritsch",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster",
+        "Case of the Week"
+      ],
+      "publication": "2026-08-25T07:53:00"
+    },
+    {
+      "uid": "aee4c43085604dd2a8d7ad45dcafa9ab",
+      "title": "RONALD SCOTT WATSON",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/additional/ronald-scott-watson/@@images/image/large",
+      "office": "Atlanta",
+      "reward": "Reward up to $20,000 for information leading to the location, arrest, and conviction of Ronald Scott Watson.",
+      "url": "https://www.fbi.gov/wanted/additional/ronald-scott-watson",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Additional Violent Crimes"
+      ],
+      "publication": "2025-09-05T05:40:00"
+    },
+    {
+      "uid": "109f69822bdb4bd9bd6ea15da5d4f19d",
+      "title": "GRISELDA MARGARITA ARREDONDO PINZON",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/griselda-margarita-arredondo-pinzon/@@images/image/large",
+      "office": "Newyork",
+      "reward": "The United States Department of State’s Transnational Organized Crime Rewards Program is offering a reward of up to $2 million for information leading to the arrest and/or conviction of Griselda Margarita Arredondo Pinzón.",
+      "url": "https://www.fbi.gov/wanted/cei/griselda-margarita-arredondo-pinzon",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-08-31T11:49:00"
+    },
+    {
+      "uid": "3992cf07e26848bab7fd7b6bb58f60a2",
+      "title": "ALBERTO PEREZ-ELIAS",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/additional/alberto-perez-elias/@@images/image/large",
+      "office": "Tampa",
+      "reward": "Reward up to $50,000 for information leading to the arrest of Alberto Perez-Elias.",
+      "url": "https://www.fbi.gov/wanted/additional/alberto-perez-elias",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Additional Violent Crimes"
+      ],
+      "publication": "2026-07-01T13:48:00"
+    },
     {
       "uid": "7b7d282549b443428c21f26a2529934b",
       "title": "MANJIT SINGH BEDI",
@@ -35,22 +96,6 @@
         "Seeking Information"
       ],
       "publication": "2010-09-15T15:05:00"
-    },
-    {
-      "uid": "62dba83f492e470182712dfb20fc4439",
-      "title": "BERNHARD EUGEN FRITSCH",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/bernhard-eugen-fritsch/@@images/image/large",
-      "office": "Losangeles",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Bernhard Eugen Fritsch.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/bernhard-eugen-fritsch",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Most Wanted Fraudster",
-        "Case of the Week"
-      ],
-      "publication": "2026-08-25T07:53:00"
     },
     {
       "uid": "1fa3616fd66143d3bc9961310de0a6e6",
@@ -129,6 +174,22 @@
         "Seeking Information"
       ],
       "publication": "2010-09-21T19:40:00"
+    },
+    {
+      "uid": "a61357c6083b4953b31ec6e848922780",
+      "title": "MALEEK ROBERTSON",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/maleek-robertson/@@images/image/large",
+      "office": "Lasvegas",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the individual(s) involved in the death of Maleek Robertson.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/maleek-robertson",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country"
+      ],
+      "publication": "2026-09-02T11:53:00"
     },
     {
       "uid": "c72a8bf66e414d52917bf211fd5089ac",
@@ -715,66 +776,6 @@
         "Indian Country"
       ],
       "publication": "2023-04-17T07:24:00"
-    },
-    {
-      "uid": "0460b4c07ded49749b0057832068ff23",
-      "title": "CARLOS ANDRES RIVERA VARELA",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/carlos-andres-rivera-varela/@@images/image/large",
-      "office": "Newyork",
-      "reward": "The United States Department of State’s Transnational Organized Crime Rewards Program is offering a reward of up to $10 million for information leading to the arrest and/or conviction of Carlos Andres Rivera Varela.",
-      "url": "https://www.fbi.gov/wanted/cei/carlos-andres-rivera-varela",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND EXTREMELY DANGEROUS",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2025-11-06T09:56:00"
-    },
-    {
-      "uid": "10d62a2c73a2441ab02eaf0d5ad88c63",
-      "title": "JULIO CESAR MONTERO PINZON",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/julio-cesar-montero-pinzon/@@images/image/large",
-      "office": "Newyork",
-      "reward": "The United States Department of State’s Transnational Organized Crime Rewards Program is offering a reward of up to $10 million for information leading to the arrest and/or conviction of Julio Cesar Montero Pinzon.",
-      "url": "https://www.fbi.gov/wanted/cei/julio-cesar-montero-pinzon",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND EXTREMELY DANGEROUS",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2025-11-06T10:24:00"
-    },
-    {
-      "uid": "6432636baed2441c9a4c0ae9b4bc4323",
-      "title": "CARLOS ANDRES RENDON-BERMUDEZ",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/wcc/carlos-andres-rendon-bermudez/@@images/image/large",
-      "office": "Sanjuan",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/wcc/carlos-andres-rendon-bermudez",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
-      "subjects": [
-        "White-Collar Crime"
-      ],
-      "publication": "2026-07-23T10:57:00"
-    },
-    {
-      "uid": "a9c83daab608499a95ee547a51d55231",
-      "title": "ONITA ROSTAS",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/onita-rostas/@@images/image/large",
-      "office": "Kansascity",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cei/onita-rostas",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2024-12-09T14:39:00"
     },
     {
       "uid": "0460b4c07ded49749b0057832068ff23",
