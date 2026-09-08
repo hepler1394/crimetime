@@ -1,0 +1,6 @@
+file 'D:/Dev/GitHub/crimetime/automation/studio/snapcuts/clancy-coming-soon/.work/seg-00.mp4'
+file 'D:/Dev/GitHub/crimetime/automation/studio/snapcuts/clancy-coming-soon/.work/seg-01.mp4'
+file 'D:/Dev/GitHub/crimetime/automation/studio/snapcuts/clancy-coming-soon/.work/seg-02.mp4'
+file 'D:/Dev/GitHub/crimetime/automation/studio/snapcuts/clancy-coming-soon/.work/seg-03.mp4'
+file 'D:/Dev/GitHub/crimetime/automation/studio/snapcuts/clancy-coming-soon/.work/seg-04.mp4'
+file 'D:/Dev/GitHub/crimetime/automation/studio/snapcuts/clancy-coming-soon/.work/seg-05.mp4'

@@ -525,3 +525,5 @@ with an [auto] tag — the counter on Mission Control reads this file.
 459. [auto 2026-08-25] Published blog post in Cory's voice: "When the Case File Gets It Wrong"
 460. [auto 2026-08-25] Published new quiz: "The Delphi Murders: What You Know" (5 questions)
 461. [auto 2026-08-25] Dropped 1 new merch design into the vault
+462. [auto 2026-09-08] Published blog post in Cory's voice: "What Reasonable Doubt Actually Means in a Courtroom"
+463. [auto 2026-09-08] Published new quiz: "The Law of Reasonable Doubt" (5 questions)

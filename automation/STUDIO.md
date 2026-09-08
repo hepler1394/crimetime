@@ -2,6 +2,42 @@
 
 ## Production desk
 
+### Provider settings, script editor and production chat
+
+The desk now includes Provider settings for Gemini, OpenAI, Anthropic, DeepSeek,
+xAI, local LM Studio, ElevenLabs and Deepgram. Model IDs are editable; settings
+are saved in the existing ignored `automation/config.json`, preserving unrelated
+configuration. Key fields stay blank after saving, GET responses expose only
+configuration status, and an environment key takes precedence over a local key.
+Test connection performs a read-only provider request. ElevenLabs also lists
+available voices: select one and save before starting narration.
+
+Script editor loads an episode, edits chapter text and the Instagram caption,
+counts words and estimates reading time at 166 wpm, exports Markdown, and offers
+a large read-through view. Changed scripts keep a JSON revision in the episode's
+`revisions/` folder. A revision can be loaded into the editor for review and then
+saved. Saves check for another window's edits, refuse conflicts and reset fact
+checks when script text changes. Reload downloads any unsaved local copy first.
+
+Production chat is separate from research-folder chat. It uses the selected
+model with the episode's saved script, caption, research and notes; conversation
+history is kept as `production-chat.json` in that episode. Suggested scripts and
+captions are loaded into the editor for review, and suggested media actions have
+explicit buttons. Chat cannot publish or run arbitrary commands. The side panel
+starts research/drafting, creates Instagram post drafts, and runs voice, art,
+trailer, audiogram and transcription jobs with visible activity logs.
+
+ElevenLabs narration is generated in bounded text chunks, joined, and passed
+through the existing episode mastering pipeline. Prior audio and transcript
+files are retained under revisions. Deepgram transcribes `episode.mp3` into timed
+segments and a separate text file, keeping the previous transcript. Both use
+provider credits when run. Published episode media remains locked.
+
+Adapter references: [ElevenLabs speech](https://elevenlabs.io/docs/api-reference/text-to-speech/convert),
+[Deepgram recorded audio](https://developers.deepgram.com/docs/pre-recorded-audio),
+[Deepgram connection check](https://developers.deepgram.com/reference/manage/projects/list),
+[xAI API models](https://docs.x.ai/developers/rest-api-reference/inference/models).
+
 The Electron app opens `/workspace`, with a Production desk button in its toolbar.
 Podcast episodes and Instagram remain accessible from the desk's navigation and
 have links back to it. Both pages use the full available editing width.

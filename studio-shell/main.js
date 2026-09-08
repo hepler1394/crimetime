@@ -396,6 +396,7 @@ function createWindow() {
   win = new BaseWindow({ width: 1680, height: 980, minWidth: 1100, minHeight: 640, backgroundColor: "#050505", title: "CrimeTime Studio", autoHideMenuBar: true });
   chromeView = new WebContentsView({ webPreferences: { preload: path.join(__dirname, "preload.js"), contextIsolation: true, sandbox: false } });
   studioView = new WebContentsView({ webPreferences: { partition: STUDIO_SESSION, contextIsolation: true, sandbox: true } });
+  require('./studio-permissions.cjs').configureStudioPermissions(studioView.webContents.session,STUDIO_URL);
   igView = new WebContentsView({ webPreferences: { partition: BROWSER_SESSION, contextIsolation: true, sandbox: true } });
   win.contentView.addChildView(studioView); win.contentView.addChildView(igView); win.contentView.addChildView(chromeView);
   chromeView.webContents.loadFile(path.join(__dirname, "chrome.html"));

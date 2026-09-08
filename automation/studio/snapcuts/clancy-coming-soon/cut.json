@@ -1,0 +1,60 @@
+{
+  "case": "lindsay-clancy",
+  "title": "Lindsay Clancy - coming soon",
+  "_facts": "Trial in Plymouth Superior Court, Massachusetts. On September 4 2026 the judge declared a mistrial after the jury deadlocked across seven days of deliberation. Clancy pleaded not guilty; the jury reached no verdict, and Plymouth District Attorney Tim Cruz has not said whether he will retry the case. Nothing on screen asserts guilt, because nothing has been decided.",
+  "_footage": "Both clips come from the footage library entry z7VeOQ-3rU8 (LiveNOW from FOX, rights tier 'news'). Their upload, the court's pool camera. Short excerpts, labelled on screen, credited in README.md.",
+  "beats": [
+    {
+      "type": "hook",
+      "seconds": 2.4,
+      "kicker": "Plymouth County, Massachusetts",
+      "word": "Mistrial",
+      "sub": "September 4, 2026. Seven days of deliberation. No verdict."
+    },
+    {
+      "type": "clip",
+      "clip": "z7VeOQ-3rU8-261",
+      "in": 2.2,
+      "seconds": 4.6,
+      "label": {
+        "what": "The jury deadlocks",
+        "src": "Plymouth Superior Court, Sept 4 2026 - via LiveNOW from FOX"
+      }
+    },
+    {
+      "type": "clip",
+      "clip": "z7VeOQ-3rU8-637",
+      "in": 1.8,
+      "seconds": 4.6,
+      "label": {
+        "what": "The court declares a mistrial",
+        "src": "Plymouth Superior Court, Sept 4 2026 - via LiveNOW from FOX"
+      }
+    },
+    {
+      "type": "title",
+      "seconds": 2.6,
+      "kicker": "Next on CrimeTimeSnacks",
+      "name": "Lindsay Clancy",
+      "where": "Duxbury, Massachusetts",
+      "soon": "Coming soon"
+    },
+    {
+      "type": "site",
+      "seconds": 5.6,
+      "shot": "site-home.png",
+      "voice": "signon.wav",
+      "voiceAt": 0.5,
+      "domain": "www.crimetimesnacks.com",
+      "say": "The whole case file. Free, no ads, no sign-up."
+    },
+    {
+      "type": "end",
+      "seconds": 3.6,
+      "logo": "/images/logo.png",
+      "domain": "www.crimetimesnacks.com",
+      "ig": "@crimetimesnacks",
+      "plug": "Follow the case and we email you when something happens."
+    }
+  ]
+}

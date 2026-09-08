@@ -5,7 +5,8 @@
 // database is unreachable, so a build never fails because of the network.
 // Run: node automation/build-cases.mjs   (part of build-all)
 
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir, stat } from "node:fs/promises";
+import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { SITE, esc, head, header, footer, tape, scripts } from "./shell.mjs";
@@ -37,11 +38,64 @@ const fmtDate = (iso) => (iso ? new Date(`${iso}T12:00:00Z`).toLocaleDateString(
 const STATUS = { open: "Open", trial: "At trial", convicted: "Convicted", cold: "Cold case", closed: "Closed" };
 const updatesFor = (slug) => live.updates.filter((u) => u.case_slug === slug);
 
+// A case earns its place on the site by having an episode behind it. Listing a
+// case we have not covered sends people to a page with nothing on it but a form,
+// so the unbacked ones are built noindex, kept out of the sitemap and left off
+// the index. Their URLs still resolve - they have been live and may be linked -
+// but nothing on the site points at them until the episode exists.
+const published = (c) => Boolean(c.episode_slug && epBySlug[c.episode_slug]);
+
+// Cut on a word boundary. The old .slice(0,180) chopped mid-word and shipped
+// "sentenced to life in prison witho" to the card.
+function clip(s, n) {
+  const t = String(s || "").replace(/\s+/g, " ").trim();
+  if (t.length <= n) return t;
+  const cut = t.slice(0, n);
+  const sp = cut.lastIndexOf(" ");
+  return `${(sp > n * 0.55 ? cut.slice(0, sp) : cut).replace(/[\s,;:.–-]+$/, "")}…`;
+}
+
+// The show covers are 3000x3000 and up to 2.5 MB each; five of them on one grid
+// is 6 MB before a phone has read a word. Derive a 600px card copy once and
+// reuse it until the source changes. No ffmpeg, no thumb: fall back to the
+// original rather than losing the art again.
+const THUMBS = join(ROOT, "images", "cases");
+const mtime = async (p) => (await stat(p).then((s) => s.mtimeMs, () => 0));
+async function cardArt(webPath) {
+  if (!webPath) return "";
+  const src = join(ROOT, webPath.replace(/^\//, ""));
+  if (!(await mtime(src))) return "";
+  const name = `${webPath.split("/").pop().replace(/\.[^.]+$/, "")}-600.jpg`;
+  const out = join(THUMBS, name);
+  if ((await mtime(out)) < (await mtime(src))) {
+    const r = spawnSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", "-i", src,
+      "-vf", "scale=600:600:force_original_aspect_ratio=increase,crop=600:600", "-q:v", "4", out], { windowsHide: true });
+    if (r.status !== 0) { console.warn(`cases: no thumb for ${webPath}, using the full-size cover`); return webPath; }
+  }
+  return `/images/cases/${name}`;
+}
+
 const css = `
 <style>
 .case-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem;margin-top:1.4rem}
-.case-card{background:var(--cts-panel);border:1px solid var(--cts-line);border-radius:var(--radius);padding:1.3rem 1.3rem 1.1rem;display:flex;flex-direction:column;gap:.55rem;position:relative;transition:var(--cts-transition)}
+.case-card{background:var(--cts-panel);border:1px solid var(--cts-line);border-radius:var(--radius);display:flex;flex-direction:column;position:relative;isolation:isolate;overflow:hidden;transition:var(--cts-transition)}
 .case-card:hover{border-color:var(--cts-line-strong);transform:translateY(-2px)}
+.case-body{display:flex;flex-direction:column;gap:.55rem;flex:1;padding:1.3rem 1.3rem 1.1rem}
+/* Cory draws these covers; the grid used to throw them away. They carry their own
+   typography, so the art gets its own band rather than sitting under the copy -
+   overlaid, the card heading landed on top of the cover's title and the meta line
+   ran across the victims' names. The band fades into the panel so there is no seam. */
+.case-card .art-wrap{position:relative;overflow:hidden;background:var(--cts-black)}
+/* height:auto is load-bearing: the img carries height="600" as a presentational
+   hint, and without a CSS height that hint wins and aspect-ratio is ignored. */
+.case-card .art{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:center 30%;transition:transform .5s cubic-bezier(.16,.84,.32,1)}
+.case-card .art-wrap::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:34%;background:linear-gradient(180deg,transparent 0%,rgba(16,16,19,.55) 55%,var(--cts-panel) 100%);pointer-events:none}
+.case-card.has-art:hover .art{transform:scale(1.035)}
+.case-card.has-art .case-body{padding-top:.55rem}
+/* No cover yet: a file-folder hatch rather than an empty grey box, drawn in CSS so
+   nothing has to be sourced or invented for a case we have not covered. */
+.case-card.no-art::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;background:repeating-linear-gradient(115deg,transparent 0 13px,rgba(255,255,255,.022) 13px 26px)}
+@media(prefers-reduced-motion:reduce){.case-card,.case-card .art{transition:none}.case-card:hover{transform:none}.case-card.has-art:hover .art{transform:none}}
 .case-card h3{font-family:var(--font-display);font-size:1.7rem;letter-spacing:.02em;margin:0;line-height:1}
 .case-card h3 a{color:inherit;text-decoration:none}
 .case-card p{color:var(--cts-muted);margin:0;font-size:.95rem;line-height:1.5}
@@ -80,25 +134,30 @@ function followBlock(slug, compact = false) {
     <div class="follow-state" role="status"></div>
   </form>`;
 }
-function indexPage() {
-  const cards = live.cases.map((c) => {
+async function indexPage() {
+  const shown = live.cases.filter(published);
+  const cards = (await Promise.all(shown.map(async (c) => {
     const ups = updatesFor(c.slug);
     const n = live.counts[c.slug] || 0;
-    return `<article class="case-card">
-      <div class="case-meta"><span class="st">${esc(STATUS[c.status] || c.status)}</span>${c.years ? `<span>${esc(c.years)}</span>` : ""}${ups.length ? `<span class="up">${ups.length} update${ups.length === 1 ? "" : "s"}</span>` : ""}${c.episode_slug ? `<span>Episode</span>` : ""}</div>
-      <h3><a href="/cases/${esc(c.slug)}.html">${esc(c.title)}</a></h3>
-      <p>${esc((c.summary || c.angle || "").slice(0, 180))}</p>
-      ${c.next_date ? `<p><b style="color:var(--cts-white)">${esc(c.next_label || "Next")}:</b> ${esc(fmtDate(c.next_date))}</p>` : ""}
-      <div class="case-foot"><span>${n ? `${n} following` : "Be the first to follow"}</span><a class="btn btn-sm" href="/cases/${esc(c.slug)}.html">Open</a></div>
+    const art = await cardArt(c.image);
+    return `<article class="case-card ${art ? "has-art" : "no-art"}">
+      ${art ? `<div class="art-wrap"><img class="art" src="${esc(art)}" alt="" loading="lazy" decoding="async" width="600" height="600"></div>` : ""}
+      <div class="case-body">
+        <div class="case-meta"><span class="st">${esc(STATUS[c.status] || c.status)}</span>${c.years ? `<span>${esc(c.years)}</span>` : ""}${ups.length ? `<span class="up">${ups.length} update${ups.length === 1 ? "" : "s"}</span>` : ""}${c.episode_slug ? `<span>Episode</span>` : ""}</div>
+        <h3><a href="/cases/${esc(c.slug)}.html">${esc(c.title)}</a></h3>
+        <p>${esc(clip(c.summary || c.angle, 180))}</p>
+        ${c.next_date ? `<p><b style="color:var(--cts-white)">${esc(c.next_label || "Next")}:</b> ${esc(fmtDate(c.next_date))}</p>` : ""}
+        <div class="case-foot"><span>${n ? `${n} following` : "Be the first to follow"}</span><a class="btn btn-sm" href="/cases/${esc(c.slug)}.html">Open</a></div>
+      </div>
     </article>`;
-  }).join("\n");
+  }))).join("\n");
   return `${head({ title: "Cases | CrimeTimeSnacks", description: "Follow the cases CrimeTimeSnacks covers and get an email when something happens: a court date, a verdict, an arrest. Free.", canonicalPath: "/cases.html", extraHead: css })}
 <body>
 ${header("cases")}
     <main id="main-content">
     <section class="page-hero">
         <div class="container">
-            <p class="eyebrow" style="justify-content:center;">${live.cases.length} cases on file</p>
+            <p class="eyebrow" style="justify-content:center;">${shown.length} case${shown.length === 1 ? "" : "s"} on file</p>
             <h1 class="page-title">Follow the <span class="text-red">Case</span></h1>
             <p>Trials take years. Updates get buried. Follow a case and we email you when something actually happens: a court date set, a verdict, a filing, an arrest. One note a week at most, nothing else, free.</p>
         </div>
@@ -160,6 +219,7 @@ ${scripts(["/js/community.js"])}
 }
 
 await mkdir(join(ROOT, "cases"), { recursive: true });
-await writeFile(join(ROOT, "cases.html"), indexPage(), "utf8");
+await mkdir(THUMBS, { recursive: true });
+await writeFile(join(ROOT, "cases.html"), await indexPage(), "utf8");
 for (const c of live.cases) await writeFile(join(ROOT, "cases", `${c.slug}.html`), casePage(c), "utf8");
 console.log(`cases.html + ${live.cases.length} case pages generated (${live.updates.length} approved updates).`);

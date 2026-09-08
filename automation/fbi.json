@@ -3,7 +3,7 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1240,
     "baked": 150,
-    "updated": "2026-09-08T11:26:30.072Z"
+    "updated": "2026-09-08T14:00:07.676Z"
   },
   "items": [
     {
@@ -14,7 +14,7 @@
       "office": "Seattle",
       "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Manjit Singh Bedi.",
       "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/manjit-singh-bedi",
-      "status": "na",
+      "status": "captured",
       "warning": "",
       "subjects": [
         "Most Wanted Fraudster"

@@ -43,6 +43,13 @@ const EXCLUDE = new Set([
   "wilmington-dmv-blog.html", // superseded by wilmington-dmv-what-we-know.html
 ]);
 
+// A page that tells robots not to index it has no business in the sitemap; the
+// two together are a contradiction search engines report as an error.
+async function isNoindex(file) {
+  try { return /<meta\s+name="robots"\s+content="noindex/i.test(await readFile(file, "utf8")); }
+  catch { return false; }
+}
+
 async function collect() {
   const urls = [];
   for (const f of await htmlIn(ROOT)) {
@@ -51,8 +58,15 @@ async function collect() {
   for (const f of await htmlIn(join(ROOT, "blog-posts"))) {
     if (!EXCLUDE.has(f)) urls.push("/blog-posts/" + f);
   }
-  // Case pages people can follow.
-  try { for (const f of await htmlIn(join(ROOT, "cases"))) urls.push("/cases/" + f); } catch { /* none yet */ }
+  // Case pages people can follow. A case with no episode yet is built noindex and
+  // stays out of here - the URL keeps working for anyone who already has it, but
+  // it is not something we are publishing.
+  try {
+    for (const f of await htmlIn(join(ROOT, "cases"))) {
+      if (await isNoindex(join(ROOT, "cases", f))) continue;
+      urls.push("/cases/" + f);
+    }
+  } catch { /* none yet */ }
   // Only episode detail pages under /episodes/, not the duplicate site pages.
   for (const f of await htmlIn(join(ROOT, "episodes"))) {
     if (!CANONICAL_ROOT.has(f) && !EXCLUDE.has(f)) urls.push("/episodes/" + f);

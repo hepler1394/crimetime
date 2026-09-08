@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CrimeTimeSnacks snap cut</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@500;700;800&family=IBM+Plex+Mono:wght@500&display=block" rel="stylesheet">
+<style>
+  /* Cards for a vertical promo cut. Rendered one at a time to PNG by
+     snap-cut.mjs; the motion is added in ffmpeg, so nothing here animates.
+     Snapchat is watched full-screen on a phone at arm's length, so every size
+     here is deliberately larger than it looks right at desktop scale - check a
+     frame at ~400px wide before believing any of it. */
+  :root{--ink:#050505;--red:#e50914;--hot:#ff2b33;--tape:#f4c20d;--white:#f7f7f8;--muted:#a3a3ad}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:1080px;height:1920px;overflow:hidden;background:var(--ink);color:var(--white);
+    font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  .card{position:absolute;inset:0;display:none}
+  .card.on{display:block}
+  /* Both images are filled at render time by show(). If one is ever missing,
+     collapse it rather than burning a broken-image box into a frame. */
+  img:not([src]),img[src=""]{display:none}
+  .grain{position:absolute;inset:0;opacity:.13;mix-blend-mode:overlay;pointer-events:none;z-index:9;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+  .tape{position:absolute;left:-8%;width:116%;height:64px;
+    background:repeating-linear-gradient(-45deg,var(--tape) 0 36px,var(--ink) 36px 72px);opacity:.95}
+  .kicker{font:500 32px/1.4 "IBM Plex Mono",monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--tape)}
+  .mono{font:500 30px/1.5 "IBM Plex Mono",monospace;letter-spacing:.08em;color:var(--muted)}
+
+  /* Text cards stack in flow and centre as a block. They used to be absolutely
+     positioned at fixed tops, which held right up until a two-line case name -
+     "Lindsay Clancy" wrapped and the location printed straight through it. A
+     name of any length has to survive this layout, so nothing here is pinned. */
+  .stack{position:absolute;left:0;right:0;top:0;bottom:0;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:0 70px;gap:34px}
+
+  /* hook: one word, as big as the frame allows */
+  .hook h1{font:normal 300px/.86 "Bebas Neue",Impact,sans-serif;letter-spacing:.01em;color:var(--hot)}
+  .hook .sub{font:500 40px/1.4 Inter,sans-serif;color:var(--muted);max-width:22ch}
+  .hook .tape{top:1330px;transform:rotate(-3deg)}
+
+  /* title: the case, and the promise */
+  .title h1{font:normal 190px/.9 "Bebas Neue",Impact,sans-serif;letter-spacing:.01em;text-wrap:balance}
+  .title .where{font:500 42px/1.4 Inter,sans-serif;color:var(--muted)}
+  .title .soon{font:500 34px/1 "IBM Plex Mono",monospace;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--ink);background:var(--tape);padding:22px 40px;margin-top:10px}
+
+  /* site: the phone is the product shot, the domain is the point */
+  .site .field{position:absolute;inset:0;
+    background:radial-gradient(120% 58% at 50% 112%,rgba(229,9,20,.30) 0%,transparent 60%),
+               linear-gradient(180deg,#0d0d10 0%,var(--ink) 70%)}
+  .site img{position:absolute;left:50%;top:300px;transform:translateX(-50%);width:600px;
+    border-radius:52px;border:10px solid #17171b;
+    box-shadow:0 70px 150px -30px rgba(0,0,0,.95),0 0 0 1px rgba(255,255,255,.08)}
+  .site .scrim{position:absolute;left:0;right:0;bottom:0;height:520px;
+    background:linear-gradient(180deg,rgba(5,5,5,0) 0%,rgba(5,5,5,.86) 44%,var(--ink) 86%)}
+  .site .dom{position:absolute;left:50px;right:50px;bottom:210px;text-align:center;
+    font:500 62px/1.2 "IBM Plex Mono",monospace;letter-spacing:-.01em;color:var(--white);
+    text-shadow:0 4px 30px rgba(0,0,0,.9)}
+  .site .say{position:absolute;left:90px;right:90px;bottom:120px;text-align:center;
+    font:500 34px/1.4 Inter,sans-serif;color:var(--muted)}
+
+  /* end card: where to go, nothing else competing */
+  .end .logo{position:absolute;left:50%;top:420px;transform:translateX(-50%);
+    width:200px;height:200px;border-radius:36px}
+  .end .mark{position:absolute;left:60px;right:60px;top:680px;text-align:center;
+    font:normal 104px/1 "Bebas Neue",Impact,sans-serif;letter-spacing:.03em}
+  .end .mark em{color:var(--red);font-style:normal}
+  .end .dom{position:absolute;left:50px;right:50px;top:850px;text-align:center;
+    font:500 66px/1.2 "IBM Plex Mono",monospace;color:var(--white)}
+  .end .ig{position:absolute;left:50px;right:50px;top:990px;text-align:center;
+    font:500 48px/1.2 "IBM Plex Mono",monospace;color:var(--tape)}
+  .end .plug{position:absolute;left:110px;right:110px;top:1110px;text-align:center;
+    font:500 36px/1.45 Inter,sans-serif;color:var(--muted)}
+  .end .tape{top:1330px;transform:rotate(2.5deg)}
+
+  /* Source label. Overlaid on the footage, so it renders on a transparent page
+     and lives in the black band under the clip. A clip without one of these
+     does not go out: the label is what makes the excerpt usable and honest. */
+  body.bare{background:transparent}
+  /* display lives on .label.on, not .label: a bare "display:flex" here would beat
+     .card{display:none} on source order and paint the band onto every card. */
+  .label{position:absolute;left:0;right:0;top:1640px;height:280px;background:var(--ink);
+    flex-direction:column;justify-content:center;gap:14px;padding:0 70px}
+  .label.on{display:flex}
+  .label .what{font:700 40px/1.2 Inter,sans-serif;color:var(--white)}
+  .label .src{font:500 26px/1.35 "IBM Plex Mono",monospace;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--muted)}
+  .label .bar{position:absolute;left:0;top:0;width:100%;height:5px;background:var(--red)}
+</style>
+</head>
+<body>
+<div class="card hook" id="hook">
+  <div class="stack">
+    <div class="kicker" id="hook-kicker"></div>
+    <h1 id="hook-word"></h1>
+    <div class="sub" id="hook-sub"></div>
+  </div>
+  <div class="tape"></div>
+</div>
+
+<div class="card title" id="title">
+  <div class="stack">
+    <div class="kicker" id="title-kicker"></div>
+    <h1 id="title-name"></h1>
+    <div class="where" id="title-where"></div>
+    <div class="soon" id="title-soon"></div>
+  </div>
+</div>
+
+<div class="card site" id="site">
+  <div class="field"></div>
+  <img id="site-shot" alt="">
+  <div class="scrim"></div>
+  <div class="dom" id="site-dom"></div>
+  <div class="say" id="site-say"></div>
+</div>
+
+<div class="card end" id="end">
+  <img class="logo" id="end-logo" alt="">
+  <div class="mark">Crime<em>Time</em>Snacks</div>
+  <div class="dom" id="end-dom"></div>
+  <div class="ig" id="end-ig"></div>
+  <div class="plug" id="end-plug"></div>
+  <div class="tape"></div>
+</div>
+
+<div class="card label" id="label">
+  <div class="bar"></div>
+  <div class="what" id="label-what"></div>
+  <div class="src" id="label-src"></div>
+</div>
+
+<div class="grain"></div>
+<script>
+  // snap-cut.mjs calls show(name, data) then screenshots the page.
+  window.show = (name, d) => {
+    document.querySelectorAll('.card').forEach((c) => c.classList.remove('on'));
+    const set = (id, v) => { const el = document.getElementById(id); if (el && v != null) el.textContent = v; };
+    const src = (id, v) => { const el = document.getElementById(id); if (el && v) el.src = v; };
+    if (name === 'hook') { set('hook-kicker', d.kicker); set('hook-word', d.word); set('hook-sub', d.sub); }
+    if (name === 'title') { set('title-kicker', d.kicker); set('title-name', d.name); set('title-where', d.where); set('title-soon', d.soon); }
+    if (name === 'site') { src('site-shot', d.shot); set('site-dom', d.domain); set('site-say', d.say); }
+    if (name === 'end') { src('end-logo', d.logo); set('end-dom', d.domain); set('end-ig', d.ig); set('end-plug', d.plug); }
+    if (name === 'label') { set('label-what', d.what); set('label-src', d.src); }
+    // The label is overlaid on footage, so its frame must be genuinely
+    // transparent. omitBackground only clears the page background - the html and
+    // body backgrounds still paint, and an opaque "transparent" PNG covers the
+    // whole clip. Clear both explicitly.
+    const bare = name === 'label';
+    document.body.classList.toggle('bare', bare);
+    document.documentElement.style.background = bare ? 'transparent' : '';
+    document.body.style.background = bare ? 'transparent' : '';
+    document.getElementById(name).classList.add('on');
+    return document.fonts.ready.then(() => true);
+  };
+</script>
+</body>
+</html>

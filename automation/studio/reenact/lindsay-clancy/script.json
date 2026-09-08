@@ -1,0 +1,48 @@
+{
+  "case": "Lindsay Clancy",
+  "source": "911 call from Duxbury, Massachusetts, January 24, 2023. Transcript entered in Commonwealth v. Clancy. The audio was played for the jury in July 2026; the court did not release it publicly, so no real recording exists outside the case file.",
+  "_accuracy": "Every 'text' below is word-for-word from the transcript except for expanded numerals and normalized capitalization, which change how a voice pronounces a line but not what it says. Direction lives in 'tag' and is never part of 'text', so the quoted words stay auditable. Two kinds of line carry skip:true - ones the transcript scrambles beyond safe attribution, and ones cut from this edit. The note on each says which.",
+  "_edit": "This cut is the end of the call only: he tells the dispatcher he has to check on the kids, walks away with the line open, and she is left calling into the house. The earlier medical questions are kept below as skip:true so they can come back, but they play as ordinary conversation and were cut for it.",
+  "_direction": "Tags are ElevenLabs v3 audio tags, prepended at render time. 'distance': 'away' means he has walked off with the phone live - quieter, duller, room reflections. A negative 'gap' starts a line before the previous one ends, so people talk over each other; that overlap is what stops it sounding like turn-taking.",
+  "label": [
+    "911 call, Duxbury, Massachusetts. January 24, 2023.",
+    "Dramatization. Court transcript, synthetic voices."
+  ],
+  "disclosure": "What you are about to hear is a dramatization. The words come from the transcript entered in court. The voices are synthetic. The real recording has never been released.",
+  "voices": {
+    "DISPATCH": { "provider": "elevenlabs", "voiceId": "EXAVITQu4vr4xnSDxMaL", "model": "eleven_v3", "stability": 0.4, "line": "console", "speed": 1 },
+    "CALLER": { "provider": "elevenlabs", "voiceId": "iP95p4xoKVk53GoZ742B", "model": "eleven_v3", "stability": 0.0, "line": "phone", "speed": 1 },
+    "NARRATOR": { "provider": "elevenlabs", "voiceId": "SAz9YHcvj6GT2YYXdXww", "model": "eleven_v3", "stability": 0.7, "line": "console", "speed": 1 }
+  },
+  "lines": [
+    { "who": "DISPATCH", "text": "I'm going to stay on the line with you.", "tag": "calm", "gap": 0.3 },
+    { "who": "CALLER", "text": "Right here. Right here. I need you to stay. I've got to go check on my kids.", "tag": "frantic", "gap": 1.5, "cold": true },
+
+    { "who": "CALLER", "text": "Guys? Guys?", "tag": "calling out", "distance": "away", "gap": 0.9, "cold": true },
+    { "who": "CALLER", "text": "Oh no. Oh no.", "tag": "horrified", "distance": "away", "gap": -0.2 },
+    { "who": "CALLER", "text": "Wait!", "tag": "shouting", "distance": "away", "gap": 0.7 },
+
+    { "who": "DISPATCH", "text": "Hello?", "tag": "", "gap": 0.7 },
+    { "who": "DISPATCH", "text": "What's going on?", "tag": "urgent", "gap": -0.4 },
+    { "who": "CALLER", "text": "Oh my God.", "tag": "crying", "distance": "away", "gap": 0.5 },
+
+    { "who": "DISPATCH", "text": "What is he screaming about?", "tag": "urgent", "gap": 0.4 },
+    { "who": "CALLER", "text": "She killed the kids.", "tag": "screaming", "gap": 0.8 },
+
+    { "who": "DISPATCH", "skip": true, "note": "CUT FOR THIS EDIT, not for accuracy. The medical questions play as ordinary conversation and were what made the first render sound like two people talking. Un-skip the block if you ever want the full call.", "text": "Where is she now?" },
+    { "who": "CALLER", "skip": true, "note": "CUT FOR THIS EDIT, not for accuracy.", "text": "Stay awake." },
+    { "who": "DISPATCH", "skip": true, "note": "CUT FOR THIS EDIT, not for accuracy.", "text": "Is she breathing?" },
+    { "who": "CALLER", "skip": true, "note": "CUT FOR THIS EDIT, not for accuracy.", "text": "Twenty feet." },
+    { "who": "DISPATCH", "skip": true, "note": "CUT FOR THIS EDIT, not for accuracy.", "text": "Is she responding normally?" },
+    { "who": "CALLER", "skip": true, "note": "CUT FOR THIS EDIT, not for accuracy.", "text": "Her neck. She's breathing." },
+    { "who": "DISPATCH", "skip": true, "note": "CUT FOR THIS EDIT, not for accuracy.", "text": "Are there weapons?" },
+    { "who": "CALLER", "skip": true, "note": "CUT FOR THIS EDIT, not for accuracy.", "text": "There's something in her neck. A knife or something." },
+    { "who": "DISPATCH", "skip": true, "note": "CUT FOR THIS EDIT, not for accuracy.", "text": "I'm going to tell you how to stop the bleeding." },
+    { "who": "CALLER", "skip": true, "note": "CUT FOR THIS EDIT, not for accuracy.", "text": "Lindsay, wake up." },
+
+    { "who": "CALLER", "skip": true, "note": "ACCURACY. Transcript reads 'PC: Stay awake- how old is she? 31-33.' That welds Patrick's words to the dispatcher's question and to the call-taker's own note of the answer. Not safely attributable.", "text": "Stay awake, how old is she, thirty one to thirty three." },
+    { "who": "CALLER", "skip": true, "note": "ACCURACY. Transcript reads 'PC: Lindsay what did you do to your neck? she's talking.' The second half is the call-taker describing the scene, not Patrick speaking.", "text": "Lindsay, what did you do to your neck?" },
+    { "who": "DISPATCH", "skip": true, "note": "ACCURACY. Transcript reads 'Open your eyes, can someone - ok - lindsay look at me open your eyes.' That is Patrick's voice caught on the dispatcher's line, not the dispatcher talking.", "text": "Open your eyes. Lindsay, look at me, open your eyes." },
+    { "who": "CALLER", "skip": true, "note": "ACCURACY and edit. The transcript's 'Basement' and the repeated 'OH MY GOD' are call-taker shorthand for a stretch of screaming, not clean speech, and Cory cut them.", "text": "Basement." }
+  ]
+}

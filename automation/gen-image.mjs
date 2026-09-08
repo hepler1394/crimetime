@@ -26,7 +26,9 @@ const asJson = args.includes("--json");
 const out = (o) => console.log(asJson ? JSON.stringify(o) : (o.message || JSON.stringify(o)));
 const die = (step, message) => { out({ ok: false, step, message }); process.exit(2); };
 
-const key = process.env.GEMINI_API_KEY;
+const { loadConfig } = await import('./llm.mjs');
+const providerSettings = await loadConfig();
+const key = providerSettings.gemini.apiKey;
 if (!key) die("key", "GEMINI_API_KEY is not set.");
 const prompt = opt("--prompt", "");
 if (!prompt) die("args", "--prompt is required");
@@ -41,7 +43,7 @@ const HOUSE = "CrimeTimeSnacks house style: cinematic true-crime documentary sti
 const api = (path, body) => fetch(`https://generativelanguage.googleapis.com/v1beta/${path}?key=${key}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
 
 if (!video) {
-  const model = opt("--model", "gemini-3.1-flash-image");
+  const model = opt("--model", (providerSettings.taskDefaults?.images?.model || providerSettings.gemini.imageModel) || "gemini-3.1-flash-image");
   const parts = [{ text: `${prompt}\n\n${HOUSE}` }];
   const ref = opt("--ref", null);
   if (ref && dir) {

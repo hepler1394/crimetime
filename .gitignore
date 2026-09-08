@@ -82,3 +82,15 @@ automation/studio/ig-account.json
 automation/studio/ig-switch.json
 automation/studio/ig-known-profiles.json
 automation/studio/ig-post.json
+
+# Re-enactment renders regenerate from script.json (node automation/reenact.mjs <slug>).
+# The script is the editorial record and stays in git; the audio and the
+# per-line Deepgram cache do not.
+automation/studio/reenact/*/*.mp3
+automation/studio/reenact/*/.cache/
+automation/studio/reenact/*/.work/
+
+# Atomic provider settings writes
+automation/config.json.*.tmp
+automation/studio/jobs/
+automation/studio/releases/

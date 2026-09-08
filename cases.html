@@ -36,8 +36,24 @@
     <link rel="stylesheet" href="/css/style.css?v=2026r">
 <style>
 .case-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem;margin-top:1.4rem}
-.case-card{background:var(--cts-panel);border:1px solid var(--cts-line);border-radius:var(--radius);padding:1.3rem 1.3rem 1.1rem;display:flex;flex-direction:column;gap:.55rem;position:relative;transition:var(--cts-transition)}
+.case-card{background:var(--cts-panel);border:1px solid var(--cts-line);border-radius:var(--radius);display:flex;flex-direction:column;position:relative;isolation:isolate;overflow:hidden;transition:var(--cts-transition)}
 .case-card:hover{border-color:var(--cts-line-strong);transform:translateY(-2px)}
+.case-body{display:flex;flex-direction:column;gap:.55rem;flex:1;padding:1.3rem 1.3rem 1.1rem}
+/* Cory draws these covers; the grid used to throw them away. They carry their own
+   typography, so the art gets its own band rather than sitting under the copy -
+   overlaid, the card heading landed on top of the cover's title and the meta line
+   ran across the victims' names. The band fades into the panel so there is no seam. */
+.case-card .art-wrap{position:relative;overflow:hidden;background:var(--cts-black)}
+/* height:auto is load-bearing: the img carries height="600" as a presentational
+   hint, and without a CSS height that hint wins and aspect-ratio is ignored. */
+.case-card .art{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:center 30%;transition:transform .5s cubic-bezier(.16,.84,.32,1)}
+.case-card .art-wrap::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:34%;background:linear-gradient(180deg,transparent 0%,rgba(16,16,19,.55) 55%,var(--cts-panel) 100%);pointer-events:none}
+.case-card.has-art:hover .art{transform:scale(1.035)}
+.case-card.has-art .case-body{padding-top:.55rem}
+/* No cover yet: a file-folder hatch rather than an empty grey box, drawn in CSS so
+   nothing has to be sourced or invented for a case we have not covered. */
+.case-card.no-art::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;background:repeating-linear-gradient(115deg,transparent 0 13px,rgba(255,255,255,.022) 13px 26px)}
+@media(prefers-reduced-motion:reduce){.case-card,.case-card .art{transition:none}.case-card:hover{transform:none}.case-card.has-art:hover .art{transform:none}}
 .case-card h3{font-family:var(--font-display);font-size:1.7rem;letter-spacing:.02em;margin:0;line-height:1}
 .case-card h3 a{color:inherit;text-decoration:none}
 .case-card p{color:var(--cts-muted);margin:0;font-size:.95rem;line-height:1.5}
@@ -102,7 +118,7 @@
     <main id="main-content">
     <section class="page-hero">
         <div class="container">
-            <p class="eyebrow" style="justify-content:center;">30 cases on file</p>
+            <p class="eyebrow" style="justify-content:center;">6 cases on file</p>
             <h1 class="page-title">Follow the <span class="text-red">Case</span></h1>
             <p>Trials take years. Updates get buried. Follow a case and we email you when something actually happens: a court date set, a verdict, a filing, an arrest. One note a week at most, nothing else, free.</p>
         </div>
@@ -110,215 +126,65 @@
     <div class="crime-scene-tape" aria-hidden="true"></div>
     <section class="container" style="padding-top:1rem;">
         <div class="case-grid">
-<article class="case-card">
-      <div class="case-meta"><span class="st">Closed</span><span>1974-2020</span></div>
-      <h3><a href="/cases/golden-state-killer.html">The Golden State Killer</a></h3>
-      <p>How forensic genealogy ended a forty-year hunt for Joseph DeAngelo, and what the 2020 plea hearing put on the record.</p>
-      
-      <div class="case-foot"><span>1 following</span><a class="btn btn-sm" href="/cases/golden-state-killer.html">Open</a></div>
+<article class="case-card has-art">
+      <div class="art-wrap"><img class="art" src="/images/cases/murders-in-moscow-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
+      <div class="case-body">
+        <div class="case-meta"><span class="st">Open</span><span>2025</span><span>Episode</span></div>
+        <h3><a href="/cases/murders-in-moscow.html">Murders in Moscow</a></h3>
+        <p>In this gripping episode of Crime Time Snacks , we delve into the harrowing case of the Idaho student murders that rocked the nation. On November 13, 2022, four University of…</p>
+        
+        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/murders-in-moscow.html">Open</a></div>
+      </div>
     </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Closed</span><span>2021</span></div>
-      <h3><a href="/cases/gabby-petito.html">Gabby Petito</a></h3>
-      <p>The van-life timeline, the Moab traffic stop body-cam footage, and how the case reshaped how police handle domestic calls.</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/gabby-petito.html">Open</a></div>
+<article class="case-card has-art">
+      <div class="art-wrap"><img class="art" src="/images/cases/watts-family-murders-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
+      <div class="case-body">
+        <div class="case-meta"><span class="st">Open</span><span>2024</span><span>Episode</span></div>
+        <h3><a href="/cases/watts-family-murders.html">Watts Family Murders</a></h3>
+        <p>The Watts family murders occurred in August 2018 in Frederick, Colorado. Chris Watts, the father, killed his pregnant wife, Shanann, and their two young daughters, Bella and…</p>
+        
+        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/watts-family-murders.html">Open</a></div>
+      </div>
     </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Closed</span><span>2010-2023</span></div>
-      <h3><a href="/cases/long-island-serial-killer.html">The Gilgo Beach Murders</a></h3>
-      <p>A decade of remains along Ocean Parkway, the 2023 arrest of Rex Heuermann, and where the charges stand.</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/long-island-serial-killer.html">Open</a></div>
+<article class="case-card has-art">
+      <div class="art-wrap"><img class="art" src="/images/cases/erik-and-lyle-the-menendez-brothers-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
+      <div class="case-body">
+        <div class="case-meta"><span class="st">Open</span><span>2024</span><span>Episode</span></div>
+        <h3><a href="/cases/erik-and-lyle-the-menendez-brothers.html">ERIK AND LYLE: The Menendez Brothers</a></h3>
+        <p>The Menendez brothers, Lyle and Erik, have been in prison for over 35 years. They were convicted in 1996 for the 1989 murders of their parents and sentenced to life in prison…</p>
+        
+        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/erik-and-lyle-the-menendez-brothers.html">Open</a></div>
+      </div>
     </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Closed</span><span>2018</span></div>
-      <h3><a href="/cases/chris-watts-confession.html">Chris Watts: The Interrogation</a></h3>
-      <p>What the released interview footage and the discovery documents show about how the confession unfolded.</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/chris-watts-confession.html">Open</a></div>
+<article class="case-card has-art">
+      <div class="art-wrap"><img class="art" src="/images/cases/jonbenet-ramsey-the-facts-96-22-part-1-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
+      <div class="case-body">
+        <div class="case-meta"><span class="st">Open</span><span>2022</span><span>Episode</span></div>
+        <h3><a href="/cases/jonbenet-ramsey-the-facts-96-22.html">JonBenét Ramsey</a></h3>
+        <p>JonBenét Patricia Ramsey was murdered. That is the only certain thing about this case after 26 years. Their is key evidence in this case as well as more theories than their are…</p>
+        
+        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/jonbenet-ramsey-the-facts-96-22.html">Open</a></div>
+      </div>
     </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Closed</span><span>2013</span></div>
-      <h3><a href="/cases/elisa-lam.html">Elisa Lam and the Cecil Hotel</a></h3>
-      <p>The elevator footage, what the coroner actually concluded, and how the internet built a case that was never there.</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/elisa-lam.html">Open</a></div>
+<article class="case-card has-art">
+      <div class="art-wrap"><img class="art" src="/images/cases/jonbenet-ramsey-americas-child-beauty-queen-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
+      <div class="case-body">
+        <div class="case-meta"><span class="st">Open</span><span>2022</span><span>Episode</span></div>
+        <h3><a href="/cases/jonbenet-ramsey-americas-child-beauty-queen.html">JonBenét Ramsey Americas Child Beauty Queen</a></h3>
+        <p>In Boulder Colorado Just a day after Christmas in 1996, JonBenét Ramsey a six-year child pageant star of the late 90's, was found dead in her basement. She was beaten and…</p>
+        
+        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/jonbenet-ramsey-americas-child-beauty-queen.html">Open</a></div>
+      </div>
     </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Closed</span><span>2021-2023</span></div>
-      <h3><a href="/cases/alex-murdaugh.html">Alex Murdaugh</a></h3>
-      <p>The kennel video timestamp, the financial crimes underneath the murders, and the 2023 verdict.</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/alex-murdaugh.html">Open</a></div>
-    </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Closed</span><span>1974-2005</span></div>
-      <h3><a href="/cases/btk-dennis-rader.html">BTK: The Floppy Disk</a></h3>
-      <p>How a metadata slip on a church computer ended thirty years of letters from Dennis Rader.</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/btk-dennis-rader.html">Open</a></div>
-    </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Closed</span><span>1968-1969</span></div>
-      <h3><a href="/cases/zodiac-killer.html">The Zodiac Killer</a></h3>
-      <p>The confirmed attacks, the ciphers that were solved and the ones that were not, and why the case is still open.</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/zodiac-killer.html">Open</a></div>
-    </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Closed</span><span>2019-2023</span></div>
-      <h3><a href="/cases/lori-vallow.html">Lori Vallow Daybell</a></h3>
-      <p>The missing-children timeline in Rexburg, the doomsday beliefs entered into evidence, and the 2023 conviction.</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/lori-vallow.html">Open</a></div>
-    </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Closed</span><span>2004</span></div>
-      <h3><a href="/cases/maura-murray.html">Maura Murray</a></h3>
-      <p>A crashed car on Route 112 in New Hampshire, a disappearance in under ten minutes, and twenty years of no answers.</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/maura-murray.html">Open</a></div>
-    </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Open</span><span>2002-present</span></div>
-      <h3><a href="/cases/scott-peterson.html">Scott Peterson</a></h3>
-      <p>The Christmas Eve disappearance of Laci Peterson, the Berkeley Marina, and what the LA Innocence Project is now arguing.</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/scott-peterson.html">Open</a></div>
-    </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Closed</span><span>1977-1978</span></div>
-      <h3><a href="/cases/ted-bundy-escape.html">Ted Bundy: The Two Escapes</a></h3>
-      <p>The courthouse window in Aspen, the ceiling in Glenwood Springs, and the Florida murders that followed.</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/ted-bundy-escape.html">Open</a></div>
-    </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Open</span><span>1996-present</span></div>
-      <h3><a href="/cases/jonbenet-ramsey-dna.html">JonBenet Ramsey: The DNA</a></h3>
-      <p>What the touch DNA tested in 2008 did and did not prove, and why Boulder reopened testing in 2023.</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/jonbenet-ramsey-dna.html">Open</a></div>
-    </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Open</span><span>1999-present</span></div>
-      <h3><a href="/cases/adnan-syed.html">Adnan Syed</a></h3>
-      <p>The Hae Min Lee case, the cell tower evidence, the 2022 release and the 2023 reinstated conviction.</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/adnan-syed.html">Open</a></div>
-    </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Closed</span><span>2007-2015</span></div>
-      <h3><a href="/cases/amanda-knox.html">Amanda Knox</a></h3>
-      <p>The Meredith Kercher case in Perugia, two convictions, two acquittals, and the 2015 final ruling.</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/amanda-knox.html">Open</a></div>
-    </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Closed</span><span>2022-2025</span></div>
-      <h3><a href="/cases/kohberger-trial.html">Bryan Kohberger: The Case File</a></h3>
-      <p>The knife sheath DNA, the white Elantra, and the plea that closed the Idaho student murders case.</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/kohberger-trial.html">Open</a></div>
-    </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Closed</span><span>2017-2024</span></div>
-      <h3><a href="/cases/delphi-richard-allen.html">Delphi: The Bridge Guy</a></h3>
-      <p>The Snapchat video, the unspent round, and the 2024 conviction of Richard Allen for the murders of Abby Williams and Libby German.</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/delphi-richard-allen.html">Open</a></div>
-    </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Closed</span><span>2008-2011</span></div>
-      <h3><a href="/cases/casey-anthony.html">Casey Anthony</a></h3>
-      <p>Thirty-one days, the chloroform searches, and why the jury acquitted in 2011.</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/casey-anthony.html">Open</a></div>
-    </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Open</span><span>1985-present</span></div>
-      <h3><a href="/cases/steven-avery.html">Steven Avery</a></h3>
-      <p>Eighteen years for a rape he did not commit, then the Teresa Halbach murder conviction that Making a Murderer put on trial.</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/steven-avery.html">Open</a></div>
-    </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Open</span><span>2007-present</span></div>
-      <h3><a href="/cases/madeleine-mccann.html">Madeleine McCann</a></h3>
-      <p>The Praia da Luz apartment, the timeline of the checks, and the 2020 German suspect.</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/madeleine-mccann.html">Open</a></div>
-    </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Closed</span><span>1982</span></div>
-      <h3><a href="/cases/tylenol-murders.html">The Tylenol Murders</a></h3>
-      <p>Seven deaths in Chicago in 1982, the case that invented tamper-proof packaging, and why nobody has been convicted.</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/tylenol-murders.html">Open</a></div>
-    </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Closed</span><span>2010-2019</span></div>
-      <h3><a href="/cases/dnd-mcstay-family.html">The McStay Family</a></h3>
-      <p>A family gone from Fallbrook, graves in the Mojave three years later, and the business partner convicted in 2019.</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/dnd-mcstay-family.html">Open</a></div>
-    </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Closed</span><span>2021-2022</span></div>
-      <h3><a href="/cases/brian-laundrie-notebook.html">The Laundrie Notebook</a></h3>
-      <p>What the FBI released about the notebook found in the Carlton Reserve and how it closed the Petito case.</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/brian-laundrie-notebook.html">Open</a></div>
-    </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Open</span><span>2013-present</span></div>
-      <h3><a href="/cases/kendrick-johnson.html">Kendrick Johnson</a></h3>
-      <p>The gym mat in Valdosta, two autopsies with different findings, and the case that was reopened and closed again.</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/kendrick-johnson.html">Open</a></div>
-    </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Open</span><span>2025</span><span>Episode</span></div>
-      <h3><a href="/cases/murders-in-moscow.html">Murders in Moscow</a></h3>
-      <p>In this gripping episode of Crime Time Snacks , we delve into the harrowing case of the Idaho student murders that rocked the nation. On November 13, 2022, four University of Idaho</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/murders-in-moscow.html">Open</a></div>
-    </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Open</span><span>2024</span><span>Episode</span></div>
-      <h3><a href="/cases/watts-family-murders.html">Watts Family Murders</a></h3>
-      <p>The Watts family murders occurred in August 2018 in Frederick, Colorado. Chris Watts, the father, killed his pregnant wife, Shanann, and their two young daughters, Bella and Celest</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/watts-family-murders.html">Open</a></div>
-    </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Open</span><span>2024</span><span>Episode</span></div>
-      <h3><a href="/cases/erik-and-lyle-the-menendez-brothers.html">ERIK AND LYLE: The Menendez Brothers</a></h3>
-      <p>The Menendez brothers, Lyle and Erik, have been in prison for over 35 years. They were convicted in 1996 for the 1989 murders of their parents and sentenced to life in prison witho</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/erik-and-lyle-the-menendez-brothers.html">Open</a></div>
-    </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Open</span><span>2022</span><span>Episode</span></div>
-      <h3><a href="/cases/jonbenet-ramsey-the-facts-96-22.html">JonBenét Ramsey</a></h3>
-      <p>JonBenét Patricia Ramsey was murdered. That is the only certain thing about this case after 26 years. Their is key evidence in this case as well as more theories than their are peo</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/jonbenet-ramsey-the-facts-96-22.html">Open</a></div>
-    </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Open</span><span>2022</span><span>Episode</span></div>
-      <h3><a href="/cases/jonbenet-ramsey-americas-child-beauty-queen.html">JonBenét Ramsey Americas Child Beauty Queen</a></h3>
-      <p>In Boulder Colorado Just a day after Christmas in 1996, JonBenét Ramsey a six-year child pageant star of the late 90's, was found dead in her basement. She was beaten and strangled</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/jonbenet-ramsey-americas-child-beauty-queen.html">Open</a></div>
-    </article>
-<article class="case-card">
-      <div class="case-meta"><span class="st">Open</span><span>2022</span><span>Episode</span></div>
-      <h3><a href="/cases/the-delphi-murder-case-2017.html">The Delphi Murder Case 2017</a></h3>
-      <p>On February 14, 2017, the bodies of Abigail Williams (June 23, 2003 – February 13, 2017) and Liberty German (December 27, 2002 – February 13, 2017) were discovered near the Monon H</p>
-      
-      <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/the-delphi-murder-case-2017.html">Open</a></div>
+<article class="case-card has-art">
+      <div class="art-wrap"><img class="art" src="/images/cases/crimetimesnacks-the-delphi-murder-case-2017-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
+      <div class="case-body">
+        <div class="case-meta"><span class="st">Open</span><span>2022</span><span>Episode</span></div>
+        <h3><a href="/cases/the-delphi-murder-case-2017.html">The Delphi Murder Case 2017</a></h3>
+        <p>On February 14, 2017, the bodies of Abigail Williams (June 23, 2003 – February 13, 2017) and Liberty German (December 27, 2002 – February 13, 2017) were discovered near the Monon…</p>
+        
+        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/the-delphi-murder-case-2017.html">Open</a></div>
+      </div>
     </article>
         </div>
     </section>

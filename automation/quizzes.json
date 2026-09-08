@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-08-25T14:04:39.635Z"
+    "updated": "2026-09-08T14:01:12.391Z"
   },
   "quizzes": [
+    {
+      "slug": "the-law-of-reasonable-doubt",
+      "title": "The Law of Reasonable Doubt",
+      "tag": "Legal Standards",
+      "description": "You hear it in every trial. But what does the standard actually demand from a jury? Let's look at what the case file shows.",
+      "created": "2026-09-08",
+      "sourceTopic": "What Reasonable Doubt Actually Means in a Courtroom",
+      "questions": [
+        {
+          "q": "What level of certainty does the law require to meet the reasonable doubt standard?",
+          "options": [
+            "100% absolute scientific certainty",
+            "Proof that leaves an abiding conviction of guilt",
+            "A mere hunch that the defendant did it",
+            "A 51% balance of probability"
+          ],
+          "answer": 1,
+          "explain": "Courts routinely instruct jurors that absolute mathematical certainty is impossible. The standard demands an abiding conviction based on the evidence presented."
+        },
+        {
+          "q": "Which landmark Supreme Court case established that the Due Process Clause requires proof beyond a reasonable doubt in criminal cases?",
+          "options": [
+            "In re Winship",
+            "Miranda v. Arizona",
+            "Mapp v. Ohio",
+            "Terry v. Ohio"
+          ],
+          "answer": 0,
+          "explain": "In re Winship (1970) officially constitutionalized the standard. Justice Harlan noted it is far worse to convict an innocent person than to let a guilty person go free."
+        },
+        {
+          "q": "What is the standard burden of proof used in standard civil litigation, contrasted with criminal reasonable doubt?",
+          "options": [
+            "Clear and convincing evidence",
+            "Preponderance of the evidence",
+            "Probable cause",
+            "Reasonable suspicion"
+          ],
+          "answer": 1,
+          "explain": "Civil cases generally rely on a preponderance of the evidence, meaning roughly 51% certainty—more likely than not. Criminal law demands far more."
+        },
+        {
+          "q": "If a juror thinks the defendant 'probably' committed the crime based on the evidence, what is their legal duty?",
+          "options": [
+            "Vote guilty, because probability meets the threshold",
+            "Vote not guilty, because probability is not proof beyond reasonable doubt",
+            "Request a bench trial instead",
+            "Abstain from voting on the verdict"
+          ],
+          "answer": 1,
+          "explain": "Under standard jury instructions, thinking a defendant 'probably' did it means reasonable doubt still exists. The jury must acquit."
+        },
+        {
+          "q": "Which standard is higher than preponderance of the evidence, but lower than beyond a reasonable doubt?",
+          "options": [
+            "Probable cause",
+            "Clear and convincing evidence",
+            "Reasonable articulable suspicion",
+            "Substantial evidence"
+          ],
+          "answer": 1,
+          "explain": "Clear and convincing evidence sits in the middle. Courts use it in high-stakes civil matters, like terminating parental rights."
+        }
+      ]
+    },
     {
       "slug": "the-delphi-murders-what-you-know",
       "title": "The Delphi Murders: What You Know",

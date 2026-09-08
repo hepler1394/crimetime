@@ -85,7 +85,9 @@ async function projectParts(dir, files, { images = false } = {}) {
   return { parts, skipped };
 }
 async function gemini(model, contents, systemText) {
-  const key = process.env.GEMINI_API_KEY; if (!key) throw new Error("GEMINI_API_KEY is not set");
+  const { loadConfig } = await import('../llm.mjs');
+  const cfg = await loadConfig(); const key = cfg.gemini.apiKey; if (!key) throw new Error("Set the Gemini key in Provider settings.");
+  model = cfg.gemini.model || model;
   const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ system_instruction: { parts: [{ text: systemText }] }, contents, generationConfig: { temperature: 0.4 } }) });
   const j = await r.json();
   if (!r.ok) throw new Error(`Gemini ${r.status}: ${j.error?.message || ""}`.slice(0, 300));

@@ -9,6 +9,7 @@
 import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { unlockConfig } from './studio/credential-store.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -19,6 +20,7 @@ export async function loadConfig() {
   } catch {
     /* no config.json — fall back to env only */
   }
+  cfg = await unlockConfig(cfg);
   const e = process.env;
   cfg.order = cfg.order || ["gemini", "deepseek", "anthropic", "openai", "local"];
   cfg.gemini = cfg.gemini || {};
@@ -43,6 +45,9 @@ export async function loadConfig() {
   cfg.openai.baseUrl = cfg.openai.baseUrl || "https://api.openai.com/v1";
   cfg.openai.model = cfg.openai.model || "gpt-4o-mini";
   cfg.brave = cfg.brave || {};
+  cfg.xai = cfg.xai || {};
+  cfg.xai.apiKey = e.XAI_API_KEY || cfg.xai.apiKey || "";
+  cfg.xai.baseUrl = "https://api.x.ai/v1";
   cfg.brave.apiKey = e.BRAVE_API_KEY || cfg.brave.apiKey || "";
   return cfg;
 }
@@ -55,7 +60,7 @@ const timeout = (ms) => {
   return c.signal;
 };
 
-async function openAiCompatible({ baseUrl, apiKey, model }, system, user, ms, { jsonMode = false } = {}) {
+async function openAiCompatible({ baseUrl, apiKey, model }, system, user, ms, { jsonMode = false, onToken, signal } = {}) {
   // Streamed on purpose: Node's fetch aborts ("fetch failed") when response
   // headers take more than 5 minutes, and a non-streaming completion only sends
   // headers after the whole answer is generated. A 1,500-word episode script
@@ -64,7 +69,7 @@ async function openAiCompatible({ baseUrl, apiKey, model }, system, user, ms, { 
   const local = !apiKey;
   const res = await fetch(`${baseUrl}/chat/completions`, {
     method: "POST",
-    signal: timeout(ms),
+    signal: signal ? AbortSignal.any([timeout(ms),signal]) : timeout(ms),
     headers: { "Content-Type": "application/json", ...(apiKey ? { Authorization: `Bearer ${apiKey}` } : {}) },
     body: JSON.stringify({
       model,
@@ -79,8 +84,8 @@ async function openAiCompatible({ baseUrl, apiKey, model }, system, user, ms, { 
       ...(jsonMode && !local ? { response_format: { type: "json_object" } } : {}), // guaranteed-valid JSON object from cloud models
     }),
   });
-  if (!res.ok) throw new Error(`${res.status} ${await res.text().catch(() => "")}`.slice(0, 200));
-  let text = "", buf = "";
+  if (!res.ok) { await res.body?.cancel(); throw new Error('HTTP '+res.status+'. '+({401:'Replace the invalid or expired provider key.',403:'Check provider permissions.',402:'Check provider credits and billing.',404:'Select a model available to this account.',429:'Rate limit or quota reached; check credits and retry later.'}[res.status]||'The provider request did not finish.')); }
+  let text = "", buf = "", truncated = false, completed = false;
   const decoder = new TextDecoder();
   for await (const chunk of res.body) {
     buf += decoder.decode(chunk, { stream: true });
@@ -89,26 +94,30 @@ async function openAiCompatible({ baseUrl, apiKey, model }, system, user, ms, { 
       const line = buf.slice(0, nl).trim(); buf = buf.slice(nl + 1);
       if (!line.startsWith("data:")) continue;
       const payload = line.slice(5).trim();
-      if (payload === "[DONE]") continue;
-      try { text += JSON.parse(payload).choices?.[0]?.delta?.content ?? ""; } catch { /* keep-alive noise */ }
+      if (payload === "[DONE]") { completed=true;continue; }
+      try { const choice=JSON.parse(payload).choices?.[0],delta=choice?.delta?.content ?? ""; text += delta; if(delta)onToken?.(delta); if(choice?.finish_reason)completed=true;if(choice?.finish_reason==='length')truncated=true; } catch { /* keep-alive noise */ }
     }
   }
+  if(truncated)throw new Error('The model reached its output limit. Ask for a shorter section.');
+  if(onToken&&!completed)throw new Error('The provider stream ended before completion.');
   return text;
 }
 
-async function anthropic({ apiKey, model }, system, user, ms) {
+async function anthropic({ apiKey, model, maxOutputTokens = 2000 }, system, user, ms, {onToken,signal}={}) {
   const res = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
-    signal: timeout(ms),
+    signal: signal ? AbortSignal.any([timeout(ms),signal]) : timeout(ms),
     headers: {
       "Content-Type": "application/json",
       "x-api-key": apiKey,
       "anthropic-version": "2023-06-01",
     },
-    body: JSON.stringify({ model, max_tokens: 2000, system, messages: [{ role: "user", content: user }] }),
+    body: JSON.stringify({ model, max_tokens: maxOutputTokens, system, messages: [{ role: "user", content: user }], ...(onToken?{stream:true}:{}) }),
   });
-  if (!res.ok) throw new Error(`${res.status} ${await res.text().catch(() => "")}`.slice(0, 200));
+  if (!res.ok) { await res.body?.cancel(); throw new Error('HTTP '+res.status+'. '+({401:'Replace the invalid or expired provider key.',403:'Check provider permissions.',402:'Check provider credits and billing.',404:'Select a model available to this account.',429:'Rate limit or quota reached; check credits and retry later.'}[res.status]||'The provider request did not finish.')); }
+  if(onToken){let buffer='',text='',truncated=false,completed=false;const decoder=new TextDecoder();for await(const c of res.body){buffer+=decoder.decode(c,{stream:true});let nl;while((nl=buffer.indexOf('\n'))>=0){const line=buffer.slice(0,nl).trim();buffer=buffer.slice(nl+1);if(!line.startsWith('data:'))continue;let data;try{data=JSON.parse(line.slice(5));}catch{continue;}if(data.type==='message_stop')completed=true;if(data.type==='error')throw new Error('The provider stream stopped.');const delta=data.delta?.text;if(delta){text+=delta;onToken(delta);}if(data.delta?.stop_reason==='max_tokens')truncated=true;}}if(truncated)throw new Error('The model reached its output limit. Ask for a shorter section.');if(!completed)throw new Error('The provider stream ended before completion.');return text;}
   const data = await res.json();
+  if(data.stop_reason==='max_tokens')throw new Error('The model reached its output limit. Ask for a shorter section.');
   return data.content?.[0]?.text ?? "";
 }
 
@@ -118,7 +127,9 @@ async function anthropic({ apiKey, model }, system, user, ms) {
 export async function chat(system, user, cfg) {
   cfg = cfg || (await loadConfig());
   const errors = [];
-  const opts = { jsonMode: !!cfg.jsonMode };
+  const task=cfg.taskDefaults?.[cfg.role==='writer'?'writing':'checking'];
+  if(task&&!cfg.explicitProvider){cfg={...cfg,order:[task.provider],[task.provider]:{...cfg[task.provider],model:task.model,writerModel:task.model}};}
+  const opts = { jsonMode: !!cfg.jsonMode, onToken:cfg.onToken, signal:cfg.signal };
   for (const name of cfg.order) {
     try {
       if (name === "local") {
@@ -133,7 +144,7 @@ export async function chat(system, user, cfg) {
         }
         const text = await openAiCompatible(
           { baseUrl: cfg.local.baseUrl, apiKey: "", model },
-          system, user, cfg.timeoutMs || 60000
+          system, user, cfg.timeoutMs || 60000, opts
         );
         if (text.trim()) return { text, provider: `local (${model})` };
         errors.push(`local (${model}): returned empty text (context overflow? check the loaded context length in LM Studio)`);
@@ -145,11 +156,14 @@ export async function chat(system, user, cfg) {
       } else if (name === "deepseek" && cfg.deepseek.apiKey) {
         return { text: await openAiCompatible(cfg.deepseek, system, user, cfg.timeoutMs || 60000, opts), provider: "deepseek" };
       } else if (name === "anthropic" && cfg.anthropic.apiKey) {
-        return { text: await anthropic(cfg.anthropic, system, user, cfg.timeoutMs || 60000), provider: "anthropic" };
+        return { text: await anthropic({ ...cfg.anthropic, maxOutputTokens: cfg.maxOutputTokens || 2000 }, system, user, cfg.timeoutMs || 60000, opts), provider: "anthropic" };
+      } else if (name === "xai" && cfg.xai.apiKey && cfg.xai.model) {
+        return { text: await openAiCompatible(cfg.xai, system, user, cfg.timeoutMs || 60000, opts), provider: "xai" };
       } else if (name === "openai" && cfg.openai.apiKey) {
         return { text: await openAiCompatible(cfg.openai, system, user, cfg.timeoutMs || 60000, opts), provider: "openai" };
       }
     } catch (err) {
+      if(cfg.signal?.aborted)throw new Error('Generation stopped.');
       errors.push(`${name}: ${err.message}`);
     }
   }

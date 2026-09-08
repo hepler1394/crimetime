@@ -9,6 +9,8 @@
 // never deployed. No dependencies: node:http + the scripts in automation/.
 
 import { createServer } from "node:http";
+import { readSettings, redactSettings, saveSettings, testProvider } from './provider-settings.mjs';
+import { productionChat, assistantHistory, editPassage } from './production-assistant.mjs';
 import { StringDecoder } from "node:string_decoder";
 import { createReadStream, createWriteStream } from "node:fs";
 import { readFile, writeFile, readdir, stat, rm, mkdir, access, unlink } from "node:fs/promises";
@@ -18,6 +20,10 @@ import { dirname, join, extname, normalize, basename } from "node:path";
 import { loadEnv } from "../community/env.mjs";
 import { sb } from "../community/lib.js";
 import { PROJECTS, listProjects, createProject, getProject, appendNote, saveNotes, chatProject, exportProject, projectToResearch, deleteProject } from "./projects.mjs";
+import { ProductionQueue, publicJob } from './job-queue.mjs';
+import { ReleaseStore } from './release-store.mjs';
+import { validateRelease } from './release-package.mjs';
+import { releaseRoutes } from './release-routes.mjs';
 await loadEnv();
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -61,9 +67,18 @@ const safeName = (s) => /^[a-zA-Z0-9][a-zA-Z0-9._ -]{0,120}$/.test(s || "") && !
 const slugify = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60);
 
 /* ---------------------------------------------------------------- jobs */
-const jobs = new Map();
-let jobSeq = 0;
+const queue = new ProductionQueue(process.env.STUDIO_JOB_DIR || join(HERE,'jobs'));
+const jobs = queue.jobs;
+const releases = new ReleaseStore();
+const assistantBusy = new Set();
+const editingDrafts = new Set();
+
 const ACTIONS = {
+  'release-cover': a=>['release-cover.mjs',a.id,a.snapshot],
+  'release-voice': a=>['release-voice.mjs',a.id,a.snapshot],
+  'release-media': a=>['release-media.mjs',a.kind,a.id,a.snapshot],
+  elevenlabs: (a) => ['studio-speech.mjs','elevenlabs',a.id],
+  deepgram: (a) => ['studio-speech.mjs','deepgram',a.id],
   "workspace-image": (a) => ["gen-image.mjs", "--out", a.output, "--prompt", a.prompt, "--aspect", a.aspect, "--json"],
   new:      (a) => ["episode-new.mjs", ...(a.topic ? [a.topic] : []), "--minutes", String(a.minutes || 20), "--json"],
   research: (a) => ["episode-research.mjs", "--draft", a.id, "--json"],
@@ -105,24 +120,9 @@ function startJob(action, a) {
   const spec = ACTIONS[action](a);
   const cwd = Array.isArray(spec) ? ROOT : spec.cwd;
   const argv = Array.isArray(spec) ? [join(AUTO, spec[0]), ...spec.slice(1)] : [join(spec.cwd, spec.argv[0]), ...spec.argv.slice(1)];
-  const id = `j${++jobSeq}`;
-  const job = { id, action, draft: a.id || null, started: Date.now(), done: false, code: null, log: "", result: null };
-  jobs.set(id, job);
-  // detached: a five-hour voice render must outlive a studio server restart. The
-  // script updates its draft's episode.json itself, so the result is never lost
-  // even if this process (and its log buffer) goes away.
-  const child = spawn(process.execPath, argv, { cwd, windowsHide: true, detached: true, env: { ...process.env, FORCE_COLOR: "0", PYTHONIOENCODING: "utf-8" } });
-  child.unref();
-  const onData = (c) => { job.log += c.toString(); if (job.log.length > 200000) job.log = job.log.slice(-150000); };
-  child.stdout.on("data", onData); child.stderr.on("data", onData);
-  child.on("close", (code) => {
-    job.done = true; job.code = code; job.finished = Date.now();
-    const last = job.log.trim().split("\n").reverse().find((l) => l.startsWith("{"));
-    if (last) { try { job.result = JSON.parse(last); } catch { /* not json */ } }
-  });
-  child.on("error", (e) => { job.done = true; job.code = -1; job.log += `\n${e.message}`; });
-  return job;
+  return queue.enqueue(action, a, {cwd,argv});
 }
+
 const running = () => [...jobs.values()].filter((j) => !j.done);
 // A five-hour clone render outlives this process, so "is it running" is read from the
 // draft's tts folder rather than the job list. A folder nothing has touched for half an
@@ -201,11 +201,11 @@ async function healthNow(slow) {
   // so the light in the top bar means something.
   const cfg = await readJson(join(AUTO, "config.json"), {});
   const order = cfg.order || ["gemini"];
-  const provider = order.find((n) => n === "local" || cfg[n]?.apiKey || process.env[`${n.toUpperCase()}_API_KEY`]) || order[0];
+  const provider = order.find((n) => n === "local" || (cfg[n]?.apiKey || cfg[n]?.apiKeyProtected) || process.env[`${n.toUpperCase()}_API_KEY`]) || order[0];
   const writer = {
     provider,
     model: provider === "local" ? (lm.models?.[0] || cfg.local?.model || "") : (cfg[provider]?.writerModel || cfg[provider]?.model || ""),
-    ready: provider === "local" ? lm.up : !!(cfg[provider]?.apiKey || process.env[`${provider.toUpperCase()}_API_KEY`]),
+    ready: provider === "local" ? lm.up : !!(cfg[provider]?.apiKey || cfg[provider]?.apiKeyProtected || process.env[`${provider.toUpperCase()}_API_KEY`]),
   };
   return {
     now: new Date().toISOString(), slow, git, tasks, lmStudio: lm, cronTail: log, status, tools, music, voice, writer,
@@ -294,11 +294,16 @@ const server = createServer(async (req, res) => {
   const p = url.pathname;
   if (!gate(req, res)) return;
   try {
+    if (await releaseRoutes({req,res,url,p,releases,json,readBody,streamFile,startJob,running})) return;
     if (p === "/" || p === "/index.html") {
       const html = await readFile(join(HERE, "studio.html"));
       res.writeHead(200, { "Content-Type": MIME[".html"], "Cache-Control": "no-store", ...SECURITY_HEADERS }); return res.end(html);
     }
-    const workspaceFiles = { "/workspace": "workspace.html", "/workspace.css": "workspace.css", "/workspace.mjs": "workspace.mjs", "/audio-edit.mjs": "audio-edit.mjs" };
+    if (p === '/api/settings' && req.method === 'GET') return json(res,200,redactSettings(await readSettings()));
+    if (p === '/api/settings' && req.method === 'PUT') { const body=await readBody(req); if(!body)return json(res,413,TOO_BIG); try{return json(res,200,await saveSettings(body));}catch(e){return json(res,400,{error:e.message});} }
+    if (p === '/api/settings/test' && req.method === 'POST') { const body=await readBody(req);if(!body)return json(res,413,TOO_BIG);try{return json(res,200,await testProvider(body.provider));}catch(e){return json(res,400,{error:e.message});} }
+    if(p==='/api/passage-edit'&&req.method==='POST'){const b=await readBody(req);try{return json(res,200,await editPassage(b));}catch(e){return json(res,400,{error:e.message});}}
+    const workspaceFiles = { "/workspace": "workspace.html", "/workspace.css": "workspace.css", "/workspace.mjs": "workspace.mjs", "/production.mjs": "production.mjs", "/production.css": "production.css", "/audio-edit.mjs": "audio-edit.mjs", "/release.mjs":"release.mjs", "/release.css":"release.css", "/script-tools.mjs":"script-tools.mjs", "/recorder.mjs":"recorder.mjs", "/mix.mjs":"mix.mjs", "/campaign.mjs":"campaign.mjs", "/social-canvas.mjs":"social-canvas.mjs", "/release-desk.mjs":"release-desk.mjs", "/conversation-ui.mjs":"conversation-ui.mjs", "/voice-booth.mjs":"voice-booth.mjs", "/catalog.mjs":"catalog.mjs", "/audio-timeline.mjs":"audio-timeline.mjs" };
     if (workspaceFiles[p] && req.method === "GET") {
       const name = workspaceFiles[p];
       const content = await readFile(join(HERE, name));
@@ -315,7 +320,7 @@ const server = createServer(async (req, res) => {
       if (running().some(j => j.draft === body.id)) return json(res, 409, { error: "A job is already running for this folder. Wait for it to finish." });
       const output = join(dir, `art-${Date.now()}-${Math.random().toString(36).slice(2,8)}.png`);
       const job = startJob("workspace-image", { id: body.id, output, prompt: body.prompt.trim(), aspect: body.aspect });
-      const { log, ...rest } = job;
+      const { log, ...rest } = publicJob(job);
       return json(res, 202, rest);
     }
     if (p === "/api/posts") {
@@ -542,12 +547,31 @@ const server = createServer(async (req, res) => {
       if (!safeId(id)) return json(res, 400, { error: "bad id" });
       const dir = join(DRAFTS, id);
       const epPath = join(dir, "episode.json");
+      if(sub==='conversation' && req.method==='GET') { if(!(await exists(epPath)))return json(res,404,{error:'No such episode.'});return json(res,200,await assistantHistory(dir)); }
+      if(sub==='conversation' && req.method==='POST') {
+        const ep=await readJson(epPath,null);if(!ep)return json(res,404,{error:'No such episode.'});
+        const body=await readBody(req);if(!body)return json(res,413,TOO_BIG);
+        if(assistantBusy.has(id))return json(res,409,{error:'An answer is already being written for this episode.'});
+        assistantBusy.add(id);try{return json(res,200,await productionChat(dir,body.question,body.provider,ep));}catch(e){return json(res,400,{error:e.message});}finally{assistantBusy.delete(id);}
+      }
+      if(sub==='revisions' && req.method==='GET') {
+        if(!(await exists(epPath)))return json(res,404,{error:'No such episode.'});
+        const name=url.searchParams.get('name');
+        if(name){if(!/^script-[0-9]+-[a-z0-9]+\.json$/.test(name))return json(res,400,{error:'Invalid revision.'});const revision=await readJson(join(dir,'revisions',name),null);return json(res,revision?200:404,revision||{error:'Revision not found.'});}
+        return json(res,200,(await readdir(join(dir,'revisions')).catch(()=>[])).filter(n=>/^script-[0-9]+-[a-z0-9]+\.json$/.test(n)).sort().reverse());
+      }
       if (req.method === "GET" && !sub) { const ep = await readJson(epPath, null); return ep ? json(res, 200, { ...ep, dir, fileList: await listFiles(dir), inProgress: await voiceState(join(dir, "tts"), id), voiceStopped: await voiceStopped(join(dir, "tts")) }) : json(res, 404, { error: "no such draft" }); }
       if (req.method === "GET" && sub === "files") return json(res, 200, await listFiles(dir));
       if (req.method === "PUT" && !sub) {
+        if(editingDrafts.has(id))return json(res,409,{error:'This episode is already being saved. Retry in a moment.'});
+        editingDrafts.add(id);try {
         const ep = await readJson(epPath, null); if (!ep) return json(res, 404, { error: "no such draft" });
         if (ep.status === "published") return json(res, 409, { error: "published episodes are edited in studio-episodes.json" });
         const body = await readBody(req); if (!body) return json(res, 413, TOO_BIG);
+        if(running().some(j=>j.draft===id))return json(res,409,{error:'Wait for the episode job to finish before editing its script.'});
+        if(Object.hasOwn(body,'expectedEdited') && body.expectedEdited !== (ep.edited||ep.created||null))return json(res,409,{error:'This episode changed in another window. Reload it before saving.'});
+        const scriptChanged=Array.isArray(body.script) && JSON.stringify(body.script)!==JSON.stringify(ep.script);
+        if(scriptChanged){await mkdir(join(dir,'revisions'),{recursive:true});await writeFile(join(dir,'revisions',`script-${Date.now()}-${Math.random().toString(36).slice(2,8)}.json`),JSON.stringify(ep,null,2));}
         for (const k of ["title", "hook", "description", "instagramCaption", "publishDate"]) if (typeof body[k] === "string") ep[k] = body[k].trim();
         if (Array.isArray(body.script)) ep.script = body.script.map((s) => String(s).trim()).filter(Boolean);
         if (Array.isArray(body.factsToVerify)) ep.factsToVerify = body.factsToVerify.map(String);
@@ -555,10 +579,11 @@ const server = createServer(async (req, res) => {
         if (body.voice && typeof body.voice === "object") ep.voice = { ...ep.voice, ...body.voice };
         if (typeof body.title === "string") ep.slug = slugify(ep.title) || ep.slug;
         ep.scriptWords = ep.script.join(" ").split(/\s+/).filter(Boolean).length;
-        if (Array.isArray(body.script) && ep.status !== "scripted") { ep.status = "scripted"; ep.files = { research: ep.files?.research }; }
+        if (scriptChanged) { ep.status = "scripted"; ep.files = { research: ep.files?.research }; ep.factsChecked=(ep.factsToVerify||[]).map(()=>false); }
         ep.edited = new Date().toISOString();
         await writeFile(epPath, JSON.stringify(ep, null, 2) + "\n", "utf8");
         return json(res, 200, { ...ep, fileList: await listFiles(dir) });
+        } finally { editingDrafts.delete(id); }
       }
       if (req.method === "DELETE" && !sub) {
         const ep = await readJson(epPath, null); if (!ep) return json(res, 404, { error: "no such draft" });
@@ -625,7 +650,7 @@ const server = createServer(async (req, res) => {
         if (sub === "to-episode" && req.method === "POST") {
           const r = await projectToResearch(pid);
           const job = startJob("draft", { case: r.caseSlug, topic: r.title, minutes: 20 });
-          const { log, ...rest } = job; return json(res, 202, { ...rest, caseSlug: r.caseSlug });
+          const { log, ...rest } = publicJob(job); return json(res, 202, { ...rest, caseSlug: r.caseSlug });
         }
         if (sub === "open" && req.method === "POST") { spawn("explorer.exe", [pdir], { detached: true, stdio: "ignore" }).unref(); return json(res, 200, { ok: true }); }
       } catch (e) { return json(res, 500, { error: e.message }); }
@@ -664,16 +689,19 @@ const server = createServer(async (req, res) => {
 
     if (p === "/api/run" && req.method === "POST") {
       const body = await readBody(req); if (!body) return json(res, 413, TOO_BIG);
-      if (!Object.hasOwn(ACTIONS, body.action) || body.action === "workspace-image") return json(res, 400, { error: "unknown action" });
+      if (!Object.hasOwn(ACTIONS, body.action) || ["workspace-image","release-media","release-voice","release-cover"].includes(body.action)) return json(res, 400, { error: "unknown action" });
+      if(['elevenlabs','deepgram'].includes(body.action)){if(!safeId(body.id))return json(res,400,{error:'Choose an episode.'});const ep=await readJson(join(DRAFTS,body.id,'episode.json'),null);if(!ep)return json(res,404,{error:'No such episode.'});if(ep.status==='published')return json(res,409,{error:'Published episode media is locked.'});}
       if (body.id && !safeId(body.id)) return json(res, 400, { error: "bad id" });
+      if(body.id && editingDrafts.has(body.id))return json(res,409,{error:'Wait for the script save to finish before starting a job.'});
       if (body.id && running().some((j) => j.draft === body.id)) return json(res, 409, { error: "a job is already running for this draft" });
-      if (body.action === "voice" && body.id && (await exists(join(DRAFTS, body.id, "tts")))) {
+      if (["voice", "elevenlabs"].includes(body.action) && body.id && (await exists(join(DRAFTS, body.id, "tts")))) {
         // Only block for a render that is actually alive; a crashed one is cleared below.
         if (!(await voiceStopped(join(DRAFTS, body.id, "tts")))) return json(res, 409, { error: "a voice render is already running for this episode. Wait for it to finish." });
         await rm(join(DRAFTS, body.id, "tts"), { recursive: true, force: true });
       }
       // The fact list is a house rule, so it is enforced here too, not only by the button.
       if (body.action === "publish" && body.id && !body.pushOnly) {
+        for(const release of (await releases.list()).filter(r=>r.episodeId===body.id)){const review=await validateRelease(releases,release.id);if(!review.ready)return json(res,409,{error:'Open the Release desk before publishing: '+review.issues.slice(0,3).map(i=>i.message).join(' ')});}
         const ep = await readJson(join(DRAFTS, body.id, "episode.json"), null);
         const open = (ep?.factsToVerify || []).filter((_, i) => !(ep.factsChecked || [])[i]).length;
         if (open) return json(res, 409, { error: `${open} claim${open === 1 ? " is" : "s are"} still unticked. Read the Facts tab first.` });
@@ -688,11 +716,12 @@ const server = createServer(async (req, res) => {
       const job = startJob(body.action, body);
       const { log, ...rest } = job; return json(res, 202, rest);
     }
+    if (p.startsWith('/api/job/') && p.endsWith('/retry') && req.method==='POST') { const b=await readBody(req); try { return json(res,202,publicJob(queue.retry(p.split('/')[3],b?.acknowledgeCredits))); } catch(e) { return json(res,409,{error:e.message}); } }
     if (p.startsWith("/api/job/")) {
       const job = jobs.get(p.slice("/api/job/".length));
-      return job ? json(res, 200, job) : json(res, 404, { error: "no such job" });
+      return job ? json(res, 200, publicJob(job)) : json(res, 404, { error: "no such job" });
     }
-    if (p === "/api/jobs") return json(res, 200, [...jobs.values()].map(({ log, ...j }) => j).slice(-20));
+    if (p === "/api/jobs") return json(res, 200, [...jobs.values()].map(publicJob).map(({ log, ...j }) => j).slice(-100));
     if (p === "/api/open" && req.method === "POST") {
       const body = await readBody(req); if (!body) return json(res, 413, TOO_BIG);
       const target = body.id ? (safeId(body.id) ? join(DRAFTS, body.id) : null) : body.what === "music" ? MUSIC : body.what === "voice" ? VOICE : null;

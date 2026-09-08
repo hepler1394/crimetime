@@ -1,0 +1,44 @@
+{
+  "case": "lindsay-clancy",
+  "sources": [
+    {
+      "id": "z7VeOQ-3rU8",
+      "url": "https://www.youtube.com/watch?v=z7VeOQ-3rU8",
+      "title": "Judge declares mistrial in Lindsay Clancy trial",
+      "channel": "LiveNOW from FOX",
+      "channelUrl": "https://www.youtube.com/channel/UCJg9wBPyKMNA5sRDnvzmkdg",
+      "uploaded": "20260904",
+      "seconds": 657,
+      "rights": "news",
+      "note": "LiveNOW from FOX raw feed of the Plymouth Superior Court pool camera, September 4 2026: the judge declares a mistrial.",
+      "captions": 522,
+      "added": "2026-09-08T07:18:20.117Z",
+      "clips": [
+        {
+          "id": "z7VeOQ-3rU8-637",
+          "file": "clips/z7VeOQ-3rU8-637.mp4",
+          "audio": "clips/z7VeOQ-3rU8-637.wav",
+          "in": 637,
+          "out": 647,
+          "seconds": 10,
+          "label": "Plymouth Superior Court, September 4, 2026. Via LiveNOW from FOX",
+          "x": 0.5,
+          "source": "z7VeOQ-3rU8",
+          "cut": "2026-09-08T07:19:06.591Z"
+        },
+        {
+          "id": "z7VeOQ-3rU8-261",
+          "file": "clips/z7VeOQ-3rU8-261.mp4",
+          "audio": "clips/z7VeOQ-3rU8-261.wav",
+          "in": 261,
+          "out": 270,
+          "seconds": 9,
+          "label": "Plymouth Superior Court, September 4, 2026. Via LiveNOW from FOX",
+          "x": 0.5,
+          "source": "z7VeOQ-3rU8",
+          "cut": "2026-09-08T07:19:49.957Z"
+        }
+      ]
+    }
+  ]
+}
