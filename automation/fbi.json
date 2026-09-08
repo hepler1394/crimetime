@@ -1,9 +1,9 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1240,
+    "totalOnFile": 1242,
     "baked": 150,
-    "updated": "2026-09-08T14:00:07.676Z"
+    "updated": "2026-09-08T16:42:47.439Z"
   },
   "items": [
     {
@@ -777,6 +777,66 @@
       "publication": "2024-12-09T14:39:00"
     },
     {
+      "uid": "0460b4c07ded49749b0057832068ff23",
+      "title": "CARLOS ANDRES RIVERA VARELA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/carlos-andres-rivera-varela/@@images/image/large",
+      "office": "Newyork",
+      "reward": "The United States Department of State’s Transnational Organized Crime Rewards Program is offering a reward of up to $10 million for information leading to the arrest and/or conviction of Carlos Andres Rivera Varela.",
+      "url": "https://www.fbi.gov/wanted/cei/carlos-andres-rivera-varela",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND EXTREMELY DANGEROUS",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2025-11-06T09:56:00"
+    },
+    {
+      "uid": "10d62a2c73a2441ab02eaf0d5ad88c63",
+      "title": "JULIO CESAR MONTERO PINZON",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/julio-cesar-montero-pinzon/@@images/image/large",
+      "office": "Newyork",
+      "reward": "The United States Department of State’s Transnational Organized Crime Rewards Program is offering a reward of up to $10 million for information leading to the arrest and/or conviction of Julio Cesar Montero Pinzon.",
+      "url": "https://www.fbi.gov/wanted/cei/julio-cesar-montero-pinzon",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND EXTREMELY DANGEROUS",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2025-11-06T10:24:00"
+    },
+    {
+      "uid": "6432636baed2441c9a4c0ae9b4bc4323",
+      "title": "CARLOS ANDRES RENDON-BERMUDEZ",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/wcc/carlos-andres-rendon-bermudez/@@images/image/large",
+      "office": "Sanjuan",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/wcc/carlos-andres-rendon-bermudez",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
+      "subjects": [
+        "White-Collar Crime"
+      ],
+      "publication": "2026-07-23T10:57:00"
+    },
+    {
+      "uid": "a9c83daab608499a95ee547a51d55231",
+      "title": "ONITA ROSTAS",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/onita-rostas/@@images/image/large",
+      "office": "Kansascity",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/onita-rostas",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2024-12-09T14:39:00"
+    },
+    {
       "uid": "526a99e838eb48b581bde31de9130dbd",
       "title": "KHADIJAH ROSE BRITTON",
       "kind": "missing",
@@ -927,21 +987,6 @@
         "ViCAP Missing Persons"
       ],
       "publication": "2026-07-23T12:01:00"
-    },
-    {
-      "uid": "3992cf07e26848bab7fd7b6bb58f60a2",
-      "title": "ALBERTO PEREZ-ELIAS",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/additional/alberto-perez-elias/@@images/image/large",
-      "office": "Tampa",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/additional/alberto-perez-elias",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Additional Violent Crimes"
-      ],
-      "publication": "2026-07-01T13:48:00"
     },
     {
       "uid": "7b33028e22a94609927835f1475d99d3",
@@ -2243,51 +2288,6 @@
         "Seeking Information"
       ],
       "publication": "2026-02-10T09:58:00"
-    },
-    {
-      "uid": "de6fe82fedf64b38b0a1bb97accd80bf",
-      "title": "CIVIL UNREST - OREGON",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/civil-unrest-oregon-2/@@images/image/large",
-      "office": "Portland",
-      "reward": "Reward up to $5,000 for information leading to the arrest and conviction of the individuals involved in the vandalism and/or destruction of government property in Eugene, Oregon.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/civil-unrest-oregon-2",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2026-02-10T09:58:00"
-    },
-    {
-      "uid": "8c55bfed9a074d218bfa33aa42ae3667",
-      "title": "ANA MARIA HENAO KNEZEVIC",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/ana-maria-henao-knezevic/@@images/image/large",
-      "office": "Miami",
-      "reward": "Reward up to $25,000 USD for information leading to the location of the human remains of Ana Maria Henao Knezevic.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/ana-maria-henao-knezevic",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2026-01-06T10:56:00"
-    },
-    {
-      "uid": "3655754556789142b13969b940b93c2b",
-      "title": "AMY LYNN BRADLEY",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/amy-lynn-bradley/@@images/image/large",
-      "office": "Washingtondc",
-      "reward": "Reward up to $100,000 for information leading to the recovery of Amy Lynn Bradley and information that leads to the identification, arrest, and conviction of the person(s) responsible for her disappearance.",
-      "url": "https://www.fbi.gov/wanted/kidnap/amy-lynn-bradley",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons"
-      ],
-      "publication": "2010-09-13T15:25:00"
     }
   ]
 }
