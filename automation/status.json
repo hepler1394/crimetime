@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-09T11:32:23.106Z",
+  "generated": "2026-09-09T16:44:33.686Z",
   "improvementsShipped": 463,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
@@ -36,12 +36,12 @@
     }
   },
   "freshness": {
-    "episodesJson": "2026-09-09T11:31:50.947Z",
-    "blogJson": "2026-09-09T11:31:45.586Z",
+    "episodesJson": "2026-09-09T16:43:56.082Z",
+    "blogJson": "2026-09-09T16:43:51.751Z",
     "merchJson": "2026-09-08T14:00:36.610Z",
     "quizzesJson": "2026-09-08T14:01:12.391Z",
-    "fbiJson": "2026-09-09T11:31:51.387Z",
-    "css": "2026-09-09T11:31:45.657Z"
+    "fbiJson": "2026-09-09T16:43:56.877Z",
+    "css": "2026-09-09T16:43:51.823Z"
   },
   "nextTopics": [
     "The history of fingerprint evidence",
