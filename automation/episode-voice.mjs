@@ -6,7 +6,9 @@
 //   node automation/episode-voice.mjs <draft-id> --engine edge [--voice en-US-AndrewNeural --rate -3% --pitch -2Hz]
 //   node automation/episode-voice.mjs <draft-id> --engine clone [--exaggeration 0.45 --cfg 0.5]
 //   node automation/episode-voice.mjs <draft-id> --from "C:\path\to\recording.wav"   Cory recorded it: trim the long pauses, master, add music
-//   ... --no-music        skip the intro/outro beds
+//   ... --no-music        skip the music entirely (no intro, outro or bed)
+//   ... --no-bed          keep the intro and outro, drop the bed under the read
+//   ... --theme <name>    cold-case | active-investigation | missing-person | courtroom
 //   ... --no-trim         keep every pause in a recording as is
 //
 // Output in the draft folder: episode.mp3 (128k, -16 LUFS, music mixed in),
@@ -22,6 +24,7 @@ import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { mixEpisode, probeSeconds } from "./episode-music.mjs";
+import { normalizeTheme } from "./episode-format.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const STUDIO = join(__dirname, "studio");
@@ -38,7 +41,7 @@ const die = (step, message, code = 2) => { try { markFailed && markFailed(`${ste
 const say = (m) => { if (!asJson) console.log(m); else console.error(m); };
 const exists = async (p) => { try { await access(p); return true; } catch { return false; } };
 
-if (!id) die("args", "usage: episode-voice.mjs <draft-id> [--engine clone|edge] [--from file] [--no-music] [--no-trim]");
+if (!id) die("args", "usage: episode-voice.mjs <draft-id> [--engine clone|edge] [--from file] [--no-music] [--no-bed] [--theme <name>] [--no-trim]");
 const dir = join(DRAFTS, id);
 const epPath = join(dir, "episode.json");
 let ep;
@@ -106,6 +109,9 @@ markFailed = async (msg) => { try { await writeFile(join(work, "failed.txt"), St
 process.on("uncaughtException", async (e) => { await markFailed(e?.stack || e); process.exit(2); });
 const t0 = Date.now();
 const music = !args.includes("--no-music");
+const bed = !args.includes("--no-bed");
+// --theme wins, then whatever the drafter chose for this case, then the default.
+const theme = normalizeTheme(opt("--theme", ep.theme));
 const from = opt("--from", null);
 let engine = opt("--engine", ep.voice?.engine || null);
 if (!engine) engine = (await exists(REFERENCE)) && (await exists(VENV_PY)) ? "clone" : "edge";
@@ -171,7 +177,7 @@ if (from) {
 
 // Mix with the theme, master, encode.
 const mixed = join(work, "mixed.wav");
-const voiceOffset = await mixEpisode(voiceWav, mixed, { music });
+const voiceOffset = await mixEpisode(voiceWav, mixed, { music, bed, theme });
 const finalMp3 = join(dir, "episode.mp3");
 run("ffmpeg", ["-y", "-v", "error", "-i", mixed, "-af", "apad=pad_dur=0.5,loudnorm=I=-16:TP=-1.5:LRA=11", "-ar", "44100", "-c:a", "libmp3lame", "-b:a", "128k", "-id3v2_version", "3",
   "-metadata", `title=${ep.title}`, "-metadata", "artist=CrimeTimeSnacks", "-metadata", "album=CrimeTimeSnacks", "-metadata", "genre=Podcast", finalMp3], "ffmpeg master");
@@ -204,8 +210,10 @@ ep.audioBytes = bytes;
 ep.voiceUsed = voiceUsed;
 ep.voice = { ...(ep.voice || {}), engine: engine === "recording" ? (ep.voice?.engine || "clone") : engine };
 ep.music = music;
+ep.bed = music && bed;
+ep.theme = theme;
 ep.files = { ...(ep.files || {}), audio: "episode.mp3", voice: "voice.wav", transcript: transcript ? "transcript.json" : undefined };
 await writeFile(epPath, JSON.stringify(ep, null, 2) + "\n", "utf8");
 await rm(work, { recursive: true, force: true });
 const wall = Math.round((Date.now() - t0) / 1000);
-out({ ok: true, id, duration: ep.duration, seconds: ep.durationSeconds, bytes, voice: voiceUsed, music, wall, message: `Voiced ${id}: ${ep.duration}, ${(bytes / 1048576).toFixed(1)} MB, ${voiceUsed}${music ? ", theme mixed in" : ""} (${wall}s)` });
+out({ ok: true, id, duration: ep.duration, seconds: ep.durationSeconds, bytes, voice: voiceUsed, music, bed: ep.bed, theme, wall, message: `Voiced ${id}: ${ep.duration}, ${(bytes / 1048576).toFixed(1)} MB, ${voiceUsed}${music ? `, ${theme} theme${ep.bed ? " and bed" : ""} mixed in` : ""} (${wall}s)` });

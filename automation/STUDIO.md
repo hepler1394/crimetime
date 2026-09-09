@@ -134,16 +134,70 @@ py -3.11 -m venv .venv
 .venv\Scripts\python -m pip install chatterbox-tts --extra-index-url https://download.pytorch.org/whl/cpu
 ```
 
+## The opener and the sign-off
+
+Every episode starts and ends on the same words. They live in
+`automation/episode-format.mjs` as `OPENER` and `OUTRO`:
+
+    What's up guys, welcome back to CrimeTimeSnacks.
+    That's it for this one. Thanks for hanging out with me. This has been
+    CrimeTimeSnacks, and I'll catch you next time.
+
+The writer is told to use them and paraphrases anyway, so `episode-draft.mjs`
+corrects the assembled script with `enforceShowFormat()` rather than trusting
+it. That function is idempotent and replaces an old opener or sign-off instead
+of stacking a second one on top, so it is safe to run over old drafts.
+`npm run test:format` covers it.
+
 ## Theme music
 
-Nothing to download or license. `episode-music.mjs` synthesizes an intro and
-outro from ffmpeg expressions (sub drone, clock ticks, a slow kick, a riser),
-identical every episode. The voice starts five seconds into the intro while the
-bed fades under it; the outro fades in over the last second of speech.
+Nothing to download or license. `episode-music.mjs` synthesizes every piece
+from ffmpeg expressions (sub drone, clock ticks, a slow kick, a riser), the
+same every episode. There are four themes, one per case type:
 
-To use your own track instead, drop `intro.mp3` (and optionally `outro.mp3`)
-into `automation/studio/music/` or upload them from the Theme panel. They are
-trimmed to length, faded, and level-matched automatically.
+| Theme | For |
+|---|---|
+| `cold-case` | sparse, clock ticks; the default |
+| `active-investigation` | driving pulse, a hunt still running |
+| `missing-person` | open, unresolved, never lands on the root |
+| `courtroom` | steady, procedural |
+
+Each theme has three pieces: an intro sting, an outro, and a bed. The voice
+starts five seconds into the intro while it fades under; the outro fades in
+over the last second of speech; the bed runs under the whole read at about
+-28 dBFS, sidechained off the voice so it opens up in the pauses.
+
+`pickTheme()` chooses from the case title, hook and keywords when the draft is
+written. Override it in the studio's Art tab (there is an audition player next
+to the picker) or on the command line:
+
+    node automation/episode-voice.mjs <id> --theme courtroom
+    node automation/episode-voice.mjs <id> --no-bed     intro and outro only
+    node automation/episode-voice.mjs <id> --no-music   no music at all
+
+    node automation/episode-music.mjs --all             render all four themes
+    node automation/episode-music.mjs --samples         audition mp3s for all four
+
+To use your own tracks instead, drop them into `automation/studio/music/`,
+either per theme (`intro-courtroom.mp3`, `bed-cold-case.wav`) or one set for
+every theme (`intro.mp3`, `outro.mp3`, `bed.mp3`). They are trimmed, faded and
+level-matched automatically. The bed loops, so give it a clean loop point.
+
+## The public reaction chapter
+
+The second to last chapter of every episode is what people said about the case
+and what the coverage did, built only from what the research notes record.
+Where the notes say the reaction was unhelpful, misinformed or unfair, the
+chapter says so. It describes what was argued, never who argued it: no
+usernames, no named private individuals, and never an accusation against a
+person who was not charged. If the notes carry nothing about reaction, the
+drafter writes an ordinary story chapter instead rather than inventing one.
+
+Reddit is deliberately not a source. `episode-research.mjs` excludes it along
+with the other social domains, because those pages are commentary and the
+research notes are the fact base. Reddit also ended anonymous API access:
+its JSON endpoints return 403 without an OAuth app, and only the search RSS
+still answers without credentials.
 
 ## Recording in the studio
 

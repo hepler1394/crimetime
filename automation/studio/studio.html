@@ -564,6 +564,16 @@ function renderEditor() {
 
     <div class="pane" id="pane-art" ${tab === "art" ? "" : "hidden"}>
       <div class="row" style="margin-bottom:16px"><button class="btn ${done.art ? "" : "red"}" data-run="art" ${dis(!done.script)}>${done.art ? "Re-render art" : "Render art"}</button><button class="btn ${done.art && !done.social ? "red" : ""}" data-run="social" ${dis(!done.voice || !done.art)} title="${!done.voice ? "Make the voice first" : ""}">${done.social ? "Re-cut reel" : "Build reel"}</button><span class="hint" style="margin:0">Cover 3000 square, card 1080x1350, reel still 1080x1920, then a 45 s audiogram.</span></div>
+      <div class="cold" style="margin-bottom:16px">
+        <div class="f">Theme music</div>
+        <div class="have">The bed runs under the whole read and ducks under your voice. Picked from the case; change it here if it reads the case wrong. Takes effect the next time you make the voice.</div>
+        <div class="row">
+          <select class="t" id="ep-theme" style="flex:0 0 240px" aria-label="Theme music">
+            ${(h.music.themes || []).map((t) => `<option value="${t}" ${(ep.theme || "cold-case") === t ? "selected" : ""}>${t.replace(/-/g, " ")}</option>`).join("")}
+          </select>
+          <audio id="theme-audition" controls preload="none" src="/api/music/file?name=sample&theme=${encodeURIComponent(ep.theme || "cold-case")}" style="flex:1;height:34px"></audio>
+        </div>
+      </div>
       ${done.art ? `<div class="art3"><div class="preview"><img src="${f("cover")}" alt="Cover"><div class="cap"><span>cover</span><span>3000</span></div></div><div class="preview"><img src="${f("card")}" alt="Feed card"><div class="cap"><span>card</span><span>1080x1350</span></div></div><div class="preview"><img src="${f("reelStill")}" alt="Reel still"><div class="cap"><span>reel still</span><span>1080x1920</span></div></div></div>` : `<p class="hint">No art yet.</p>`}
       ${(done.social || done.voice) ? `<div class="two" style="margin-top:16px">${ep.files.trailer ? `<div class="preview"><video controls preload="metadata" src="${f("trailer")}"></video><div class="cap"><span>trailer, ${ep.trailer?.seconds || ""} s${ep.trailer?.coldOpen ? ", cold open: " + esc(ep.trailer.coldOpen) : ", hook line opens"}</span><span>the post</span></div></div>` : ""}<div class="preview"><video controls preload="metadata" src="${f("reel")}"></video><div class="cap"><span>audiogram, ${ep.social?.clipSeconds || 45} s</span><span>fallback</span></div></div></div><div class="cold"><div class="f">Cold open for the trailer</div>${cold ? `<div class="have">Using <b>${esc(cold.name)}</b>${ep.trailer?.coldOpen ? `, labelled "${esc(ep.trailer.coldOpen)}"` : ""}. Re-cut the reel after changing it.</div>` : `<div class="have">No clip. The hook line opens the trailer.</div>`}<div class="row"><label class="drop" id="drop-cold" style="flex:1;margin:0">${cold ? "Replace the clip" : "Drop the clip"} (a 911 call or other public-record audio; the first 8 s are used)<input type="file" id="cold-file" accept="audio/*,video/mp4"></label><input class="t" id="cold-label" placeholder="One-line label, e.g. 911 call, April 3, 2022" value="${esc(coldLabel)}" aria-label="Cold open label"><button class="btn sm" id="cold-save">Save label</button>${cold ? `<button class="btn sm ghost" data-del="${esc(cold.name)}">Remove clip</button>` : ""}</div></div>` : ""}
 
@@ -616,6 +626,12 @@ function renderEditor() {
   if (done.voice && ep.files.transcript && tab === "voice") loadTranscript(ep);
   $("#cold-file")?.addEventListener("change", async (e) => { const fl = e.target.files[0]; if (!fl) return; const ext = (fl.name.split(".").pop() || "mp3").toLowerCase(); try { toast("Uploading the cold open"); await upload(`/api/draft/${ep.id}/upload?name=coldopen.${ext}`, fl); state.ep = await api(`/api/draft/${ep.id}`); renderEditor(); toast("Cold open saved. Re-cut the reel to use it."); } catch (er) { toast(er.message, true); } });
   $("#cold-save")?.addEventListener("click", async () => { const text = $("#cold-label").value.trim(); try { await upload(`/api/draft/${ep.id}/upload?name=coldopen.txt`, new Blob([text + "\n"], { type: "text/plain" })); state.coldLabel = { id: ep.id, text }; toast("Label saved."); } catch (er) { toast(er.message, true); } });
+  $("#ep-theme")?.addEventListener("change", async (e) => {
+    const theme = e.target.value;
+    const a = $("#theme-audition"); if (a) { a.pause(); a.src = `/api/music/file?name=sample&theme=${encodeURIComponent(theme)}`; }
+    try { state.ep = await api(`/api/draft/${ep.id}`, { method: "PUT", body: JSON.stringify({ theme }) }); toast(`Theme set to ${theme.replace(/-/g, " ")}. Make the voice again to hear it on the episode.`); }
+    catch (er) { toast(er.message, true); }
+  });
   if (tab === "art") loadColdLabel(ep);
   const dc = $("#drop-cold"); if (dc) { dc.addEventListener("dragover", (e) => { e.preventDefault(); dc.classList.add("over"); }); dc.addEventListener("dragleave", () => dc.classList.remove("over")); dc.addEventListener("drop", (e) => { e.preventDefault(); dc.classList.remove("over"); if (e.dataTransfer.files[0]) { $("#cold-file").files = e.dataTransfer.files; $("#cold-file").dispatchEvent(new Event("change")); } }); }
   restoreForm(keep);

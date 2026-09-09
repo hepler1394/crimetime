@@ -18,6 +18,7 @@ import { spawn, spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { dirname, join, extname, normalize, basename } from "node:path";
 import { loadEnv } from "../community/env.mjs";
+import { THEMES, normalizeTheme } from "../episode-format.mjs";
 import { sb } from "../community/lib.js";
 import { PROJECTS, listProjects, createProject, getProject, appendNote, saveNotes, chatProject, exportProject, projectToResearch, deleteProject } from "./projects.mjs";
 import { ProductionQueue, publicJob } from './job-queue.mjs';
@@ -148,8 +149,11 @@ async function voiceState(tts, id) {
 /* -------------------------------------------------------------- health */
 const sh = (cmd, args, ms = 15000) => { const r = spawnSync(cmd, args, { cwd: ROOT, encoding: "utf8", windowsHide: true, timeout: ms }); return (r.stdout || "").trim(); };
 async function musicInfo() {
-  const files = (await readdir(MUSIC).catch(() => [])).filter((f) => /^(intro|outro)\.(wav|mp3|m4a|flac|ogg)$/i.test(f));
-  return { source: files.length ? "cory" : "synth", files, rendered: await exists(join(MUSIC, ".rendered", "intro.wav")) };
+  // Cory's own tracks, either for one theme (intro-courtroom.mp3) or for all of them (intro.mp3).
+  const files = (await readdir(MUSIC).catch(() => [])).filter((f) => /^(intro|outro|bed)(-[a-z-]+)?\.(wav|mp3|m4a|flac|ogg)$/i.test(f));
+  const rendered = [];
+  for (const t of THEMES) if (await exists(join(MUSIC, ".rendered", `${t}-intro.wav`))) rendered.push(t);
+  return { source: files.length ? "cory" : "synth", files, themes: THEMES, rendered, allRendered: rendered.length === THEMES.length };
 }
 async function voiceInfo() {
   const reference = await exists(join(VOICE, "cory-reference.wav"));
@@ -516,8 +520,10 @@ const server = createServer(async (req, res) => {
     }
     if (p === "/api/music/file") {
       const name = url.searchParams.get("name");
-      if (!["intro", "outro"].includes(name)) return json(res, 400, { error: "name=intro|outro" });
-      const file = join(MUSIC, ".rendered", `${name}.wav`);
+      const theme = normalizeTheme(url.searchParams.get("theme") || "");
+      // name=sample plays the audition for a theme: intro, a slice of the bed, then the outro.
+      if (!["intro", "outro", "bed", "sample"].includes(name)) return json(res, 400, { error: "name=intro|outro|bed|sample" });
+      const file = name === "sample" ? join(MUSIC, ".rendered", `sample-${theme}.mp3`) : join(MUSIC, ".rendered", `${theme}-${name}.wav`);
       const st = await stat(file).catch(() => null); if (!st?.isFile()) return json(res, 404, { error: "not rendered yet; run the music action" });
       return streamFile(req, res, file, st);
     }
@@ -573,6 +579,8 @@ const server = createServer(async (req, res) => {
         const scriptChanged=Array.isArray(body.script) && JSON.stringify(body.script)!==JSON.stringify(ep.script);
         if(scriptChanged){await mkdir(join(dir,'revisions'),{recursive:true});await writeFile(join(dir,'revisions',`script-${Date.now()}-${Math.random().toString(36).slice(2,8)}.json`),JSON.stringify(ep,null,2));}
         for (const k of ["title", "hook", "description", "instagramCaption", "publishDate"]) if (typeof body[k] === "string") ep[k] = body[k].trim();
+        // A theme is not free text: an unknown name would silently fall back at mix time.
+        if (typeof body.theme === "string") ep.theme = normalizeTheme(body.theme);
         if (Array.isArray(body.script)) ep.script = body.script.map((s) => String(s).trim()).filter(Boolean);
         if (Array.isArray(body.factsToVerify)) ep.factsToVerify = body.factsToVerify.map(String);
         if (Array.isArray(body.factsChecked)) ep.factsChecked = body.factsChecked.map(Boolean);

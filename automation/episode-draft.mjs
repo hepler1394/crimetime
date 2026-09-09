@@ -24,6 +24,7 @@ import { readFile, writeFile, mkdir, readdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { chat, loadConfig } from "./llm.mjs";
+import { OPENER, OUTRO, enforceShowFormat, pickTheme } from "./episode-format.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DRAFTS = join(__dirname, "studio", "drafts");
@@ -147,7 +148,7 @@ try {
   const { text, provider: p } = await ask(
     `You are the showrunner for CrimeTimeSnacks, a true crime podcast hosted by Cory. Plan one episode from research notes. Output ONLY valid JSON, no markdown fences:
 {"title": string (max 60 chars, no colon-stacked subtitles), "hook": string (one sentence: the strangest documented detail, stated plainly), "description": string (show notes, 2 or 3 short paragraphs separated by \\n\\n, in Cory's first-person voice, no spoilers of the ending), "instagramCaption": string (3 short lines, then a final line "New episode. Link in bio.", no hashtags, no emojis), "keywords": [5 to 8 search terms], "chapters": [{"title": string, "beats": [3 to 6 short strings: the specific documented facts and events this chapter covers, in order]}]}
-Rules: exactly ${N} chapters, chronological where the story allows. Chapter 1 opens the show and states the hook, then introduces the people. Middle chapters walk the timeline, the investigation, the arrest, the trial. The last chapter is where the case stands today and hands it to the listener. Use ONLY facts from the notes. No emojis.`,
+Rules: exactly ${N} chapters, chronological where the story allows. Chapter 1 opens the show and states the hook, then introduces the people. Middle chapters walk the timeline, the investigation, the arrest, the trial. The SECOND TO LAST chapter is the public reaction: what people said about the case while it was happening, the coverage it drew or failed to draw, and any documented criticism of that coverage. Build it only from what the notes actually record about reaction, commentary and coverage; if the notes carry nothing on that, make it an ordinary story chapter instead rather than inventing one. The last chapter is where the case stands today and hands it to the listener. Use ONLY facts from the notes. No emojis.`,
     `Case: ${kase.title}\nAngle: ${kase.angle || "the documented facts in order, and where the case stands now"}\nYears: ${kase.year || "unknown"}\n\nRESEARCH NOTES (overview):\n${overview}`,
     "outline", "writer");
   provider = p;
@@ -163,23 +164,24 @@ say(`  chapters: ${outline.chapters.map((c) => c.title).join(" | ")}`);
 
 /* --------------------------------------------------------- B. chapters */
 const perChapter = Math.round((targetWords / N) * 1.2); // models undershoot; ask for a fifth more than needed
-const script = [];
+const rawScript = [];
 const chapterMarks = [];
 const factsToVerify = [];
 let checked = 0, unsupported = 0;
 for (let i = 0; i < outline.chapters.length; i++) {
   const ch = outline.chapters[i];
-  const first = i === 0, last = i === outline.chapters.length - 1;
+  const first = i === 0, last = i === outline.chapters.length - 1, reaction = i === outline.chapters.length - 2;
   const query = `${ch.title} ${(ch.beats || []).join(" ")} ${kase.title}`;
   const notes = retrieve(query, CHUNK_BUDGET, first && leadIdx > -1 ? [leadIdx] : []) || overview.slice(0, CHUNK_BUDGET);
-  const prevTail = script.slice(-2).join("\n\n");
+  const prevTail = rawScript.slice(-2).join("\n\n");
   let paras = [];
   try {
     const { text } = await ask(VOICE_RULES, `Write chapter ${i + 1} of ${outline.chapters.length}: "${ch.title}".
 Beats to cover, in order: ${(ch.beats || []).map((b) => `\n- ${b}`).join("") || "\n- the documented facts for this part of the story"}
 Target: about ${perChapter} words, paragraphs of 2 to 4 sentences.
-${first ? `This is the OPENING chapter. The first sentence is his real opener, close to: "What's up guys, thanks for tuning in to Crime Time Snacks, the true crime podcast." Then the hook: ${outline.hook || "the strangest documented detail, stated plainly"}.` : "Do NOT re-introduce the show. Continue straight from the previous chapter."}
-${last ? `This is the LAST chapter. End on the hand-off to the listener ("Read the file. Form your own conclusion." or his own words), then his real sign-off as the final line, exactly: "Stay curious, stay informed, and as always, stay safe." Nothing after that sign-off; no teaser for a next episode.` : "Do not wrap up the episode; the story continues in the next chapter."}
+${first ? `This is the OPENING chapter. The first sentence is the show's opener, word for word, exactly: "${OPENER}" Then the hook: ${outline.hook || "the strangest documented detail, stated plainly"}.` : "Do NOT re-introduce the show. Continue straight from the previous chapter."}
+${reaction ? `This is the PUBLIC REACTION chapter. Cover what people said and what the coverage did, from the notes only. Describe what was argued, not who argued it: no usernames, no named private individuals, and never repeat an accusation against a person who was not charged. Where the notes record that the reaction was unhelpful, misinformed or unfair, say so; this chapter is not a victory lap for the internet.` : ""}
+${last ? `This is the LAST chapter. End on the hand-off to the listener ("Read the file. Form your own conclusion." or his own words), then the show's sign-off as the final line, word for word, exactly: "${OUTRO}" Nothing after that sign-off; no teaser for a next episode.` : "Do not wrap up the episode; the story continues in the next chapter."}
 ${prevTail ? `\nFor continuity, the previous chapter ended:\n${prevTail}\n` : ""}
 RESEARCH NOTES for this chapter (the only allowed source of facts):
 ${notes}
@@ -205,8 +207,8 @@ Output ONLY a JSON object: {"paragraphs": [string, ...]}.`, `chapter ${i + 1} ex
     } catch (e) { say(`  chapter ${i + 1} extend skipped: ${e.message}`); }
   }
   if (!paras.length) paras = [`[Chapter ${i + 1}, "${ch.title}", did not generate. Rewrite this chapter or delete this line.]`];
-  chapterMarks.push({ title: ch.title, start: script.length, paragraphs: paras.length });
-  script.push(...paras);
+  chapterMarks.push({ title: ch.title, start: rawScript.length, paragraphs: paras.length });
+  rawScript.push(...paras);
   say(`  chapter ${i + 1}: ${wc(paras)} words`);
 
   /* ------------------------------------------------------ C. check */
@@ -229,6 +231,10 @@ Output ONLY a JSON object: {"paragraphs": [string, ...]}.`, `chapter ${i + 1} ex
 factsToVerify.sort((a, b) => (b.startsWith("UNSUPPORTED:") ? 1 : 0) - (a.startsWith("UNSUPPORTED:") ? 1 : 0));
 
 /* ------------------------------------------------------------ write */
+// The writer is asked for the exact opener and sign-off above, and still paraphrases
+// them. Correcting the assembled script is what actually puts the same words on every
+// episode. Paragraph count is unchanged, so chapterMarks stay valid.
+const script = enforceShowFormat(rawScript);
 const scriptWords = wc(script);
 const date = new Date().toISOString().slice(0, 10);
 const title = String(outline.title || kase.title).trim();
@@ -244,6 +250,7 @@ const draft = {
   factsToVerify, factCheck: { checked, unsupported },
   instagramCaption: outline.instagramCaption || "", keywords: Array.isArray(outline.keywords) ? outline.keywords : [],
   targetMinutes: minutes, targetWords, scriptWords, provider, researched: !!researchFull,
+  theme: pickTheme({ title, caseTitle: kase.title, hook: outline.hook, keywords: outline.keywords }),
   voice: { engine: null, name: "en-US-AndrewNeural", rate: "-3%", pitch: "-2Hz", exaggeration: 0.45, cfg: 0.5 },
   files: researchFull ? { research: "research.md" } : {},
 };
