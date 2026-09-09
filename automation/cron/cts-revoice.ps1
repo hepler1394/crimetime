@@ -1,13 +1,34 @@
-# CrimeTimeSnacks RE-VOICE (one-off, run as a scheduled task).
+# CrimeTimeSnacks RE-VOICE (one-off, run on demand as a scheduled task).
 #
 # Re-renders one draft's audio after its script changed, then tells Cory on the
-# agent relay when it lands. Run it as a scheduled task rather than from a shell:
-# a clone render takes four to five hours, and anything started from an agent
-# session or a terminal dies with that session. That is not theoretical; it is
-# why this file exists.
+# agent relay when it lands. A clone render takes four to five hours.
 #
-#   schtasks /create /tn "CTS Revoice" /tr "powershell -NoProfile -ExecutionPolicy Bypass -File D:\dev\github\crimetime\automation\cron\cts-revoice.ps1 -Id <draft-id>" /sc once /st <HH:mm> /f
-#   schtasks /run /tn "CTS Revoice"
+# Why a task and not a shell: the danger with a job this long is not that it dies,
+# it is that a second one starts. Both instances share the draft's tts/ work folder,
+# both master the episode from it, and whichever finishes first deletes the folder
+# out from under the other. Registering this as a task with MultipleInstances
+# IgnoreNew makes that impossible, and the task keeps running regardless of what
+# started it. Two renders did once run concurrently on one draft; the audio survived,
+# but only by luck.
+#
+# Register it WITHOUT a trigger and start it by hand. A "/sc once /st HH:mm" trigger
+# plus an immediate run is what started two instances in the first place: the manual
+# run goes first and the trigger fires a second one underneath it minutes later.
+#
+#   $action = New-ScheduledTaskAction -Execute "powershell.exe" `
+#     -Argument '-NoProfile -ExecutionPolicy Bypass -File "D:\dev\github\crimetime\automation\cron\cts-revoice.ps1" -Id <draft-id>' `
+#     -WorkingDirectory "D:\dev\github\crimetime"
+#   $settings = New-ScheduledTaskSettingsSet -MultipleInstances IgnoreNew `
+#     -ExecutionTimeLimit (New-TimeSpan -Hours 12) `
+#     -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -DontStopOnIdleEnd
+#   Register-ScheduledTask -TaskName "CTS Revoice" -Action $action -Settings $settings -Force
+#   Start-ScheduledTask -TaskName "CTS Revoice"
+#
+# Check on it with the paragraph count, not with a process query. wmic has been seen
+# reporting no matching processes while the render was running normally; use
+# Get-CimInstance Win32_Process if you need to look at the processes themselves.
+#
+#   Get-ChildItem automation\studio\drafts\<id>\tts\p*.wav | Measure-Object
 #
 # Native commands run through cmd /c so Windows PowerShell 5.1 never sees their
 # stderr (it would turn a harmless stderr line into a fatal error). See cts-content.ps1.
