@@ -3,7 +3,7 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1242,
     "baked": 150,
-    "updated": "2026-09-10T16:30:05.574Z"
+    "updated": "2026-09-10T20:55:50.893Z"
   },
   "items": [
     {
@@ -17,8 +17,7 @@
       "status": "na",
       "warning": "",
       "subjects": [
-        "Most Wanted Fraudster",
-        "Case of the Week"
+        "Most Wanted Fraudster"
       ],
       "publication": "2026-08-25T07:53:00"
     },
@@ -33,7 +32,8 @@
       "status": "na",
       "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
       "subjects": [
-        "Additional Violent Crimes"
+        "Additional Violent Crimes",
+        "Case of the Week"
       ],
       "publication": "2025-09-05T05:40:00"
     },
