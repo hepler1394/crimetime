@@ -30,6 +30,19 @@
 #
 #   Get-ChildItem automation\studio\drafts\<id>\tts\p*.wav | Measure-Object
 #
+# KNOWN ISSUE, unresolved as of 2026-09-09. Started from this task, the render can hang
+# before the model loads: the python process sits at two or three CPU-seconds with a
+# trickle of I/O and never prints "loading chatterbox". It reproduced three times in a
+# row on a task registered with Register-ScheduledTask, and did NOT reproduce for the
+# same command run directly, or launched with Start-Process, which loaded in 24 seconds
+# and rendered normally. A task created earlier with schtasks /create did work, so the
+# difference is somewhere in the principal or settings, not in the script below.
+# It is not a Hugging Face cache lock, not a cold file cache, and not the hub call:
+# HF_HUB_OFFLINE was tried and made no difference.
+# Until that is pinned down, check the log after starting this. If it stalls, fall back to
+#   Start-Process cmd.exe -ArgumentList '/c','node','automation\episode-voice.mjs','<id>' -WindowStyle Hidden
+# The render resumes from whatever paragraphs are already in tts/, so a retry costs nothing.
+#
 # Native commands run through cmd /c so Windows PowerShell 5.1 never sees their
 # stderr (it would turn a harmless stderr line into a fatal error). See cts-content.ps1.
 param([Parameter(Mandatory = $true)][string]$Id, [string]$Theme = "")

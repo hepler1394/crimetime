@@ -211,13 +211,16 @@ Output ONLY a JSON object: {"paragraphs": [string, ...]}.`, `chapter ${i + 1} ex
   rawScript.push(...paras);
   say(`  chapter ${i + 1}: ${wc(paras)} words`);
 
+  // Strip the show's fixed opener and sign-off before checking: they are not claims
+  // about the case, and the checker flags them as unsupported on every episode.
+  const checkable = (ps) => ps.map((t) => t.replace(OPENER, "").replace(OUTRO, "").trim()).filter(Boolean);
   /* ------------------------------------------------------ C. check */
   try {
     const { text } = await ask(
       `You are a fact-checker. You get RESEARCH NOTES and a SCRIPT CHAPTER. List every specific factual claim in the chapter (names, dates, counts, places, quotes, sequence of events). For each, decide if the notes support it. Output ONLY a JSON object: {"claims": [{"claim": string, "supported": boolean, "note": string (for unsupported claims: what the notes actually say, or "not in notes")}]}. Be strict: a claim is supported only if the notes state it.`,
       // A cloud checker gets the whole file (a fact can live in a chunk the writer
       // was not shown); the local model gets the chapter's own slice.
-      `RESEARCH NOTES:\n${cloudFirst ? researchFull.slice(0, 200000) : notes}\n\nSCRIPT CHAPTER:\n${paras.join("\n\n")}`, `chapter ${i + 1} check`);
+      `RESEARCH NOTES:\n${cloudFirst ? researchFull.slice(0, 200000) : notes}\n\nSCRIPT CHAPTER:\n${checkable(paras).join("\n\n")}`, `chapter ${i + 1} check`);
     const arr = parseObject(text);
     const list = Array.isArray(arr) ? arr : Array.isArray(arr?.claims) ? arr.claims : [];
     for (const c of list) {
