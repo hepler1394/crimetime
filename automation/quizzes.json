@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-09-08T14:01:12.391Z"
+    "updated": "2026-09-11T14:00:48.611Z"
   },
   "quizzes": [
+    {
+      "slug": "fingerprints-on-trial",
+      "title": "Fingerprints on Trial",
+      "tag": "Forensic History",
+      "description": "Before DNA, courts relied on eyewitnesses and alibis. Here's what the record shows about how fingerprints changed criminal trials forever.",
+      "created": "2026-09-11",
+      "sourceTopic": "The Fingerprint That Changed the Courtroom",
+      "questions": [
+        {
+          "q": "In 1910, Thomas Jennings became the first person in the US convicted of murder using fingerprint evidence. What surface held his prints?",
+          "options": [
+            "A shattered window pane",
+            "A freshly painted porch railing",
+            "A brass doorknob",
+            "A dropped firearm"
+          ],
+          "answer": 1,
+          "explain": "Jennings touched wet paint on a railing outside Clarence Hiller's home while escaping. Prosecutors cut the railing apart and brought the wood directly into court."
+        },
+        {
+          "q": "In 1892, Argentine investigators solved a double homicide using a bloody print. Who became the first person convicted worldwide via fingerprint evidence?",
+          "options": [
+            "Francesca Rojas",
+            "Enriqueta Marti",
+            "Leoncio Carrizo",
+            "Jane Toppan"
+          ],
+          "answer": 0,
+          "explain": "Rojas blamed an outside attacker for killing her two sons, but a bloody thumbprint left on a wooden door post proved she committed the crime."
+        },
+        {
+          "q": "What historic precedent did the 1905 Stratton Brothers trial establish in British courtrooms?",
+          "options": [
+            "The first acquittal due to tainted print evidence",
+            "The first UK murder conviction secured by fingerprint forensics",
+            "The first time latent lifting tape was accepted into evidence",
+            "The first ruling to mandate a twelve-point matching threshold"
+          ],
+          "answer": 1,
+          "explain": "Scotland Yard matched Alfred Stratton's right thumbprint to a smudge found on the victims' cash box, sealing Britain's first murder verdict built on ridge details."
+        },
+        {
+          "q": "In 1903, the Bertillon body measurement system collapsed at Leavenworth Penitentiary after two unrelated inmates shared near-identical measurements. What were their names?",
+          "options": [
+            "Arthur and Albert Orton",
+            "Thomas and Alfred Stratton",
+            "Will West and William West",
+            "Edward and Richard Henry"
+          ],
+          "answer": 2,
+          "explain": "Staff pulled William West's Bertillon card when Will West arrived, convinced he was already in custody. Fingerprint ridges were the only reliable metric that separated them."
+        },
+        {
+          "q": "Which system, developed in the late 1890s and adopted by Scotland Yard in 1901, standardized how police departments filed and searched fingerprints?",
+          "options": [
+            "The Galton Index",
+            "The Vucetich Array",
+            "The Bertillon Grid",
+            "The Henry Classification System"
+          ],
+          "answer": 3,
+          "explain": "Sir Edward Henry adapted work from Francis Galton and Indian police sub-inspectors to create a numerical filing system that let detectives search thousands of print cards in minutes."
+        }
+      ]
+    },
     {
       "slug": "the-law-of-reasonable-doubt",
       "title": "The Law of Reasonable Doubt",

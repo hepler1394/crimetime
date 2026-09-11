@@ -527,3 +527,5 @@ with an [auto] tag — the counter on Mission Control reads this file.
 461. [auto 2026-08-25] Dropped 1 new merch design into the vault
 462. [auto 2026-09-08] Published blog post in Cory's voice: "What Reasonable Doubt Actually Means in a Courtroom"
 463. [auto 2026-09-08] Published new quiz: "The Law of Reasonable Doubt" (5 questions)
+464. [auto 2026-09-11] Published blog post in Cory's voice: "The Fingerprint That Changed the Courtroom"
+465. [auto 2026-09-11] Published new quiz: "Fingerprints on Trial" (5 questions)
