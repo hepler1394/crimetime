@@ -1,0 +1,13 @@
+{
+  "case": "watts-family",
+  "stills": [
+    {
+      "file": "watts-family.jpg",
+      "credit": "",
+      "rights": "family photo, widely circulated; source not yet identified",
+      "fit": "contain",
+      "focus": "center top",
+      "note": "Chris, Shanann, Bella and Celeste Watts. 832x713, from images/watts.jpg in this repo. fit=contain so nobody is cropped out; a 4:5 centre crop takes about 130px off each side and clips Chris. NOTE: images/watts-family-murders.jpg is NOT a Watts photograph despite its name - it is the show's generic cover art."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Watts Family Murders quote card",
+  "status": "draft",
+  "caption": "The Watts Family Murders. Full episode at crimetimesnacks.com.",
+  "slides": [
+    {
+      "kind": "quote",
+      "bg": "/automation/studio/stills/watts-family/watts-family.jpg",
+      "fit": "contain",
+      "focus": "center top",
+      "tag": "CASE FILE: THE WATTS FAMILY",
+      "quote": "Shanann, Bella, Celeste. <em>If they're anywhere out there, just come back.</em>",
+      "quoteSize": 92,
+      "attrib": "Chris Watts, hours after the welfare check, August 2018"
+    }
+  ],
+  "rendered": "2026-09-12T04:26:46.203Z",
+  "files": [
+    "slide-1.jpg"
+  ]
+}
