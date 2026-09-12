@@ -7,7 +7,7 @@
     <title>CrimeTimeSnacks • A True Crime Podcast</title>
     <link>https://www.crimetimesnacks.com/</link>
     <atom:link href="https://www.crimetimesnacks.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sat, 12 Sep 2026 05:26:23 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 12 Sep 2026 07:10:10 GMT</lastBuildDate>
     <language>en</language>
     <copyright>&#169; 2026 Cory</copyright>
     <description>Crime Time Snacks is a true crime podcast that delves into a variety of unsolved cases, exploring the facts, theories, and evidence surrounding each mystery. The podcast aims to provide listeners with a comprehensive understanding of these cases, encouraging them to engage with the content and form their own conclusions.</description>
@@ -37,6 +37,23 @@ But the reality behind the camera was much darker. When Brian returned to his pa
       <itunes:duration>00:21:35</itunes:duration>
       <enclosure url="https://www.crimetimesnacks.com/audio/the-disappearance-of-gabby-petito.mp3" length="20718815" type="audio/mpeg" />
       <itunes:image href="https://www.crimetimesnacks.com/images/episodes/the-disappearance-of-gabby-petito.jpg" />
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>Hunting the Golden State Killer</title>
+      <link>https://www.crimetimesnacks.com/episodes/the-golden-state-killer.html</link>
+      <guid isPermaLink="false">cts-studio-the-golden-state-killer</guid>
+      <pubDate>Sat, 12 Sep 2026 07:10:10 GMT</pubDate>
+      <description>For more than forty years, California was haunted by an elusive predator known across decades by different names: the Visalia Ransacker, the East Area Rapist, the Original Night Stalker, and ultimately, the Golden State Killer. Leaving behind dozens of violated homes, traumatized survivors, and shattered families, the attacker seemed to vanish into thin air by the mid-1980s, evading traditional police work and fingerprint databases alike.
+
+In this episode, I walk you through how a predator who once wore a police badge managed to operate in the shadows, and how investigators revolutionized criminal forensics by using genetic genealogy to crack open the coldest trail in California history. We examine the timeline, the evidence, and the long road to unmasking an ordinary retiree living in a quiet suburban neighborhood.</description>
+      <itunes:summary>For more than forty years, California was haunted by an elusive predator known across decades by different names: the Visalia Ransacker, the East Area Rapist, the Original Night Stalker, and ultimately, the Golden State Killer. Leaving behind dozens of violated homes, traumatized survivors, and shattered families, the attacker seemed to vanish into thin air by the mid-1980s, evading traditional police work and fingerprint databases alike.
+
+In this episode, I walk you through how a predator who once wore a police badge managed to operate in the shadows, and how investigators revolutionized criminal forensics by using genetic genealogy to crack open the coldest trail in California history. We examine the timeline, the evidence, and the long road to unmasking an ordinary retiree living in a quiet suburban neighborhood.</itunes:summary>
+      <itunes:author>Cory</itunes:author>
+      <itunes:duration>00:22:40</itunes:duration>
+      <enclosure url="https://www.crimetimesnacks.com/audio/the-golden-state-killer.mp3" length="21761203" type="audio/mpeg" />
+      <itunes:image href="https://www.crimetimesnacks.com/images/episodes/the-golden-state-killer.jpg" />
       <itunes:explicit>false</itunes:explicit>
     </item>
     <item>

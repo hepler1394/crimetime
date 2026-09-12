@@ -43,6 +43,31 @@
       ]
     },
     {
+      "guid": "cts-studio-the-golden-state-killer",
+      "title": "Hunting the Golden State Killer",
+      "slug": "the-golden-state-killer",
+      "date": "2026-09-12",
+      "pubDate": "Sat, 12 Sep 2026 07:10:10 GMT",
+      "duration": "00:22:40",
+      "description": "For more than forty years, California was haunted by an elusive predator known across decades by different names: the Visalia Ransacker, the East Area Rapist, the Original Night Stalker, and ultimately, the Golden State Killer. Leaving behind dozens of violated homes, traumatized survivors, and shattered families, the attacker seemed to vanish into thin air by the mid-1980s, evading traditional police work and fingerprint databases alike.\n\nIn this episode, I walk you through how a predator who once wore a police badge managed to operate in the shadows, and how investigators revolutionized criminal forensics by using genetic genealogy to crack open the coldest trail in California history. We examine the timeline, the evidence, and the long road to unmasking an ordinary retiree living in a quiet suburban neighborhood.",
+      "audio": "/audio/the-golden-state-killer.mp3",
+      "audioType": "audio/mpeg",
+      "audioBytes": 21761203,
+      "image": "/images/episodes/the-golden-state-killer.jpg",
+      "link": "",
+      "explicit": false,
+      "source": "studio",
+      "keywords": [
+        "Golden State Killer",
+        "Joseph James DeAngelo",
+        "East Area Rapist",
+        "Visalia Ransacker",
+        "forensic genealogy",
+        "Paul Holes",
+        "Sacramento true crime"
+      ]
+    },
+    {
       "guid": "b208b312-bb72-4914-88f6-c5d0bb6d1b82",
       "title": "Murders in Moscow",
       "slug": "murders-in-moscow",
