@@ -530,3 +530,4 @@ with an [auto] tag — the counter on Mission Control reads this file.
 464. [auto 2026-09-11] Published blog post in Cory's voice: "The Fingerprint That Changed the Courtroom"
 465. [auto 2026-09-11] Published new quiz: "Fingerprints on Trial" (5 questions)
 466. [auto 2026-09-12] Published podcast episode from the studio: "The Disappearance of Gabby Petito" (00:21:35)
+467. [auto 2026-09-12] Published podcast episode from the studio: "Hunting the Golden State Killer" (00:22:40)

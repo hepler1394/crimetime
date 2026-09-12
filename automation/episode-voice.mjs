@@ -203,16 +203,26 @@ if (transcript) {
   }, null, 1), "utf8");
 }
 
-ep.status = "voiced";
-ep.duration = fmtDur(seconds);
-ep.durationSeconds = +seconds.toFixed(1);
-ep.audioBytes = bytes;
-ep.voiceUsed = voiceUsed;
-ep.voice = { ...(ep.voice || {}), engine: engine === "recording" ? (ep.voice?.engine || "clone") : engine };
-ep.music = music;
-ep.bed = music && bed;
-ep.theme = theme;
-ep.files = { ...(ep.files || {}), audio: "episode.mp3", voice: "voice.wav", transcript: transcript ? "transcript.json" : undefined };
+// A clone render runs for hours, and episode.json is edited underneath it the whole
+// time: fact ticks, a quote card, a caption. Writing back the copy read at the start
+// threw all of that away - the Golden State Killer card was re-rendered from a stale
+// file on 2026-09-12 because the quoteCard set mid-render was overwritten here. So
+// re-read the file now and lay only this step's own fields over the current contents.
+let fresh = ep;
+try { fresh = JSON.parse(await readFile(epPath, "utf8")); } catch { /* keep what we have */ }
+Object.assign(fresh, {
+  status: "voiced",
+  duration: fmtDur(seconds),
+  durationSeconds: +seconds.toFixed(1),
+  audioBytes: bytes,
+  voiceUsed,
+  voice: { ...(fresh.voice || {}), engine: engine === "recording" ? (fresh.voice?.engine || "clone") : engine },
+  music,
+  bed: music && bed,
+  theme,
+  files: { ...(fresh.files || {}), audio: "episode.mp3", voice: "voice.wav", transcript: transcript ? "transcript.json" : undefined },
+});
+ep = fresh;
 await writeFile(epPath, JSON.stringify(ep, null, 2) + "\n", "utf8");
 await rm(work, { recursive: true, force: true });
 const wall = Math.round((Date.now() - t0) / 1000);
