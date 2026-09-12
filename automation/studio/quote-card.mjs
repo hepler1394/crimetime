@@ -39,7 +39,7 @@ export async function stillFor(ep) {
     for (const s of book.stills || []) {
       const file = join(dir, s.file || "");
       if (s.file && existsSync(file)) {
-        return { file, folder, credit: s.credit || "", rights: s.rights || "", fit: s.fit || "cover", focus: s.focus || "center top" };
+        return { file, folder, credit: s.credit || "", rights: s.rights || "", fit: s.fit || "cover", focus: s.focus || "center top", grayscale: s.grayscale !== false };
       }
     }
     return null;
@@ -115,7 +115,7 @@ export async function renderQuoteCard(ep, dir) {
     const page = await ctx.newPage();
     const slide = {
       kind: "quote", logo: LOGO,
-      bg: pathToFileURL(still.file).href, fit: still.fit, focus: still.focus,
+      bg: pathToFileURL(still.file).href, fit: still.fit, focus: still.focus, grayscale: still.grayscale,
       tag: cardTag(ep),
       quote: said.text, quoted: said.quoted,
       attrib: said.attrib,

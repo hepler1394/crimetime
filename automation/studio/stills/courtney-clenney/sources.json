@@ -2,12 +2,13 @@
   "case": "courtney-clenney",
   "stills": [
     {
-      "file": "courtney-clenney.jpg",
+      "file": "courtney-bw-left.jpg",
       "credit": "",
       "rights": "supplied by Cory 2026-09-12, source not yet identified",
-      "fit": "cover",
-      "focus": "center 20%",
-      "note": "1500x1000. Cory asked in the filename for it to be black and white; the card desaturates every photograph already, so nothing extra is needed. CREDIT STILL NEEDED."
+      "fit": "contain",
+      "focus": "center top",
+      "grayscale": false,
+      "note": "Side-by-side: Courtney Clenney's booking photo left, Christian Obumseli right. The divider is at x=751, found by column-difference rather than guessed. Her half only is desaturated in the file (ffmpeg hue=s=0 on crop 0-751); his stays in colour, which is why grayscale is false - the card must not re-grey the whole thing. fit=contain because a 3:2 source centre-cropped to 4:5 cut his face. courtney-clenney.jpg is the untouched original."
     }
   ]
 }
