@@ -1,6 +1,6 @@
 {
   "title": "Gabby Petito quote card",
-  "status": "approved",
+  "status": "posted",
   "created": "2026-09-12T05:41:40.821Z",
   "case": "gabby-petito",
   "caption": "She asked him why he had to be so mean.\n\nAugust 12, 2021. A witness in Moab, Utah called 911 to report a man slapping a woman outside a co-op. Police pulled the van over. On the body-cam, Gabby Petito, 22, is in tears, apologising for her own mood. Brian Laundrie is calm. Nobody was arrested.\n\nTwo weeks later a Whole Foods camera in Jackson, Wyoming caught them for the last time. On September 1 Laundrie drove the van home to Florida without her. On September 19 her remains were found at Spread Creek. The autopsy found manual strangulation.\n\nLaundrie was found dead in a Florida reserve the next month. In his notebook he wrote that he ended her life.\n\nThe disappearance of Gabby Petito. Full episode: link in bio.\n\n#gabbypetito #brianlaundrie #vanlife #moab #truecrime #truecrimepodcast #truecrimecommunity #crimetimesnacks",
@@ -14,5 +14,7 @@
   "files": [
     "slide-1.jpg"
   ],
-  "note": "Quote-card redo of the Canva post, 2026-09-12. slide-1.jpg is the episode quote card; re-render from the draft, not from social-post.mjs."
+  "note": "Quote-card redo of the Canva post, 2026-09-12. slide-1.jpg is the episode quote card; re-render from the draft, not from social-post.mjs.",
+  "posted": "2026-09-12T12:45:00-05:00",
+  "postedTo": "crimetimesnacks"
 }
