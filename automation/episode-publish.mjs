@@ -53,6 +53,19 @@ const sh = (cmd, a, label) => {
 };
 const quiet = (cmd, a) => { const r = spawnSync(cmd, a, { cwd: ROOT, encoding: "utf8", windowsHide: true }); return { code: r.status, out: (r.stdout || "").trim() }; };
 
+// The slot an episode is meant to land in is 13:00 UTC, which is the 08:00 Central
+// slot the Monday draft task runs on. But a pubDate must never be in the future:
+// Spotify and Apple read a future-dated item as scheduled and simply do not show it.
+// Publishing runs unattended and finishes whenever the render finishes, which is
+// usually the small hours, so the 13:00 stamp landed hours ahead of real time and
+// the episode was live on the site while the podcast apps ignored it. Gabby Petito
+// went out at 00:03 Central stamped 13:00 UTC and sat invisible on both platforms.
+// Take the slot when it has already passed, and the actual moment when it has not.
+const publishedAt = (day, now = new Date()) => {
+  const slot = new Date(`${day}T13:00:00Z`);
+  return (slot > now ? now : slot).toUTCString();
+};
+
 if (!id) die("args", "usage: episode-publish.mjs <draft-id> [--push] [--date YYYY-MM-DD] [--push-only]");
 const dir = join(DRAFTS, id);
 const epPath = join(dir, "episode.json");
@@ -109,7 +122,7 @@ if (!pushOnly) {
     title: ep.title,
     slug,
     date,
-    pubDate: new Date(`${date}T13:00:00Z`).toUTCString(),
+    pubDate: publishedAt(date),
     duration: ep.duration || "",
     description: ep.description,
     audio: audioRel,

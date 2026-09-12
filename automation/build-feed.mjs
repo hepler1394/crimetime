@@ -29,7 +29,10 @@ function item(p, ep) {
   const link = ep.link || abs(p.siteUrl, `/episodes/${ep.slug}.html`);
   const audio = abs(p.siteUrl, ep.audio);
   const img = abs(p.siteUrl, ep.image);
-  const pub = ep.pubDate || new Date(`${ep.date}T12:00:00Z`).toUTCString();
+  // Never emit a pubDate in the future; Spotify and Apple treat one as scheduled
+  // and hide the episode. Same guard as publishedAt() in episode-publish.mjs.
+  const stamp = new Date(ep.pubDate || `${ep.date}T12:00:00Z`);
+  const pub = (stamp > new Date() ? new Date() : stamp).toUTCString();
   const dur = ep.duration ? `\n      <itunes:duration>${esc(ep.duration)}</itunes:duration>` : "";
   return `    <item>
       <title>${esc(ep.title)}</title>
