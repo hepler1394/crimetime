@@ -1,0 +1,13 @@
+{
+  "case": "jonbenet-ramsey",
+  "stills": [
+    {
+      "file": "jonbenet-ramsey.jpg",
+      "credit": "",
+      "rights": "",
+      "fit": "cover",
+      "focus": "center top",
+      "note": "AWAITING FILE. Drop a photograph here named jonbenet-ramsey.jpg and the card renders. Wants roughly 1200px on the short side; anything near 300px upscales to mush at 1080 wide. A side-by-side or composite usually needs fit:contain, or a centre crop throws people out of frame."
+    }
+  ]
+}
