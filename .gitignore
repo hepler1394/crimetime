@@ -94,3 +94,6 @@ automation/studio/reenact/*/.work/
 automation/config.json.*.tmp
 automation/studio/jobs/
 automation/studio/releases/
+
+# Claude Code local permissions (personal, not team-wide)
+.claude/settings.local.json

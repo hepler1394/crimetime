@@ -208,14 +208,38 @@ then mastered: leading silence and pauses over 1.2 s cut to half a second,
 Dropped files (wav, mp3, m4a) go through the same chain. `--no-trim` keeps every
 pause.
 
-## Why Publish is a click and not a schedule
+## The fact gate, and why Publish is no longer a click
 
 The script is written by a 14B model running on a CPU. Left alone it invents
 detail and pads endings; chaptering, retrieval and the per-chapter fact check
-catch most of it, and the fact list makes the rest a focused read. An AI-voiced episode about a
-real crime under Cory's name is not something to ship unread. The Monday task
-does everything up to that read; `-AutoPublish` on the task action removes the
-gate, and is not recommended.
+catch most of it. For a year the last gate was Cory reading the fact list and
+ticking it. That gate was the right instinct and the wrong mechanism: nobody has
+time to read two hundred claims a week, so finished episodes sat unpublished for
+weeks. Unpublished is not safer, only slower.
+
+`episode-verify.mjs` now does that read, to a stricter standard than a tired
+person ticking boxes:
+
+    node automation/episode-verify.mjs <draft-id> [--dry]
+
+Every claim is checked against that episode's own `research.md`. A claim is
+ticked only if each name, date, figure and quoted phrase in it appears in the
+notes, and its wording overlaps a passage there. Anything else is HELD, and one
+held claim blocks the publish. Held claims go to the draft's `fact-check.md`
+with the closest passages from the notes, and into the Telegram message.
+
+Numbers are normalised both ways ("fourteen" against "14"), numbers are matched
+on a word boundary so "19" does not match inside "2019", and a partial name
+matches a fuller one ("Robert Vance" against "Robert Ellis Vance"). Measured over
+the first eight drafts it holds between 0 and 9 claims out of 143 to 274, about
+five on average.
+
+What it cannot catch: a claim can be carried by the notes and still contradict
+another line in the same script. The Golden State Killer episode said he was
+never charged with a rape and, ninety seconds later, that he pleaded guilty to
+charges involving rape; both traced to the notes, and only reading the script end
+to end found it. A clean run means nothing is unsupported, not that the episode is
+right. `npm run test:verify` covers the gate.
 
 A DeepSeek key in `automation/config.json` would raise script quality a lot for
 about a cent per episode; the pipeline already falls back to it when set.

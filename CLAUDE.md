@@ -27,8 +27,15 @@ repo, push to main deploys) plus the automation that runs the show. Read
 
 ## Rules
 
-- Episodes are twenty minutes minimum, in Cory's cloned voice, published only
-  after he ticks the fact list in the studio. Never enable auto-publish.
+- Episodes are twenty minutes minimum, in Cory's cloned voice. Publishing is
+  automatic and the gate is `automation/episode-verify.mjs`, not a human tick:
+  every claim on an episode's fact list must be carried by that episode's own
+  `research.md`, or it does not go out. Anything held blocks the publish and lands
+  in the draft's `fact-check.md` and in Cory's Telegram. Changed 2026-09-11 at
+  Cory's instruction; the manual gate meant finished episodes sat for weeks, which
+  was slower rather than safer. A clean gate run means nothing is unsupported, not
+  that the episode is right - it cannot see a claim that the notes support but that
+  contradicts another line in the same script.
 - No emojis anywhere. Plain, specific, factual writing; `automation/voice.md` is
   the voice. Presumption of innocence in every script.
 - Secrets never go in the repo: keys live in env vars, `automation/config.json`
