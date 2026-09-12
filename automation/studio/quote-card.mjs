@@ -78,7 +78,25 @@ export function cardText(ep) {
   return null;
 }
 
-export const cardTag = (ep) => `UPDATE: ${(ep.caseTitle || ep.title || "").toUpperCase()}`.slice(0, 46);
+// The tag names the CASE, not the episode. Episode titles are written "Case: Angle"
+// ("Murders in Moscow: The Plea", "Courtney Clenney: Six Years, No Trial"), so the part before
+// the colon is the case and makes the tag. caseTitle is sometimes a raw slug, so a real title
+// wins over a de-slugged one. Cut on a word boundary or not at all.
+export function cardTag(ep) {
+  const deslug = (s) => String(s || "").trim().includes(" ") ? String(s || "").trim() : String(s || "").replace(/-/g, " ").trim();
+  // caseTitle names the case and wins when it is readable; title names the episode and is the
+  // fallback for when caseTitle came through as a slug.
+  const titled = String(ep.caseTitle || "").includes(" ") ? ep.caseTitle
+               : String(ep.title || "").includes(" ") ? ep.title : null;
+  let name = deslug(titled || ep.caseTitle || ep.title || "");
+  name = name.split(":")[0].trim() || name;
+  if (name.length > 36) {
+    const cut = name.slice(0, 36);
+    const sp = cut.lastIndexOf(" ");
+    name = (sp > 12 ? cut.slice(0, sp) : cut).trim();
+  }
+  return `UPDATE: ${name.toUpperCase()}`.trim();
+}
 
 // Returns { file, credit } or { skipped: reason }.
 export async function renderQuoteCard(ep, dir) {
