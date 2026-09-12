@@ -1,0 +1,1386 @@
+{
+ "slug": "the-disappearance-of-gabby-petito",
+ "title": "The Disappearance of Gabby Petito",
+ "language": "en",
+ "duration": 1294.8,
+ "model": "faster-whisper small (int8)",
+ "generated": "2026-09-10",
+ "note": "Transcript generated from the episode script.",
+ "segments": [
+  {
+   "start": 5,
+   "end": 9.4,
+   "text": "What's up guys, welcome back to Crime Time Snacks. Let's unpack a case that grabbed the entire"
+  },
+  {
+   "start": 9.4,
+   "end": 13.9,
+   "text": "country's attention, a witness called Emergency Services to report a man slapping a woman in"
+  },
+  {
+   "start": 13.9,
+   "end": 19,
+   "text": "front of the Utah Cooperative. Police tracked down the van and initiated a traffic stop."
+  },
+  {
+   "start": 19,
+   "end": 23.1,
+   "text": "Yet after speaking with the visibly distraught couple, the officers let them continue their"
+  },
+  {
+   "start": 23.1,
+   "end": 27.7,
+   "text": "road trip. The woman crying on that police body camera footage was 22-year-old Gabrielle"
+  },
+  {
+   "start": 27.7,
+   "end": 32.6,
+   "text": "Petito. Gabby was a Long Island native and the oldest of six children. Friends described"
+  },
+  {
+   "start": 32.6,
+   "end": 37.7,
+   "text": "her as a creative free spirit. She wanted to build a career as a YouTube creator and blogger"
+  },
+  {
+   "start": 37.7,
+   "end": 43.1,
+   "text": "under the name Nomadic Stotic. To make that happen, she joined the growing van life movement."
+  },
+  {
+   "start": 43.1,
+   "end": 47.8,
+   "text": "She and her fiancee bought a white Ford Transit van and converted it into a camper. On July the"
+  },
+  {
+   "start": 47.8,
+   "end": 53.2,
+   "text": "2nd, 2021, they left New York. The plan was a four-month cross-country journey to explore"
+  },
+  {
+   "start": 53.2,
+   "end": 58,
+   "text": "state and national parks all the way to the west coast. That fiancee was Brian Laundrie."
+  },
+  {
+   "start": 58,
+   "end": 61.9,
+   "text": "He was two years ahead of Gabby in high school and they started dating in 2019."
+  },
+  {
+   "start": 62.4,
+   "end": 66.3,
+   "text": "They eventually moved into his parents' house in North Port, Florida. While Gabby was"
+  },
+  {
+   "start": 66.3,
+   "end": 71.2,
+   "text": "outgoing, friends saw Brian as quiet and withdrawn. To their social media followers,"
+  },
+  {
+   "start": 71.2,
+   "end": 75.6,
+   "text": "the couple looked perfectly happy. But what the evidence actually shows is a relationship full"
+  },
+  {
+   "start": 75.6,
+   "end": 81,
+   "text": "of tension. During that August 12 traffic stop in Moab, Utah, Brian had scratches on his face and"
+  },
+  {
+   "start": 81,
+   "end": 86,
+   "text": "arm. Gabby had visible marks and told officers she had anxiety. The police separated them for"
+  },
+  {
+   "start": 86,
+   "end": 90.3,
+   "text": "the night but no charges were filed. A few weeks later, all communication from Gabby"
+  },
+  {
+   "start": 90.3,
+   "end": 95.9,
+   "text": "abruptly stopped. Gabby grew up in Blue Point, New York. A quiet suburb on Long Island, she was the"
+  },
+  {
+   "start": 95.9,
+   "end": 101,
+   "text": "oldest of six children and half-siblings. Her family described her as a creative free spirit who always"
+  },
+  {
+   "start": 101,
+   "end": 106,
+   "text": "had a camera in her hand. She attended Bayport Blue Point High School, which is where she first"
+  },
+  {
+   "start": 106,
+   "end": 111,
+   "text": "crossed paths with Brian. He was two years ahead of her in school. People who knew them back then"
+  },
+  {
+   "start": 111,
+   "end": 115.3,
+   "text": "said they made an interesting pair. Gabby had a large circle of friends, while Brian was known"
+  },
+  {
+   "start": 115.3,
+   "end": 120.2,
+   "text": "for being soft-spoken and withdrawn. He would sit and do art projects with Gabby's younger sisters"
+  },
+  {
+   "start": 120.2,
+   "end": 125.5,
+   "text": "and her parents thought he seemed like a nice quiet kid. After graduating high school in 2017,"
+  },
+  {
+   "start": 125.5,
+   "end": 129.9,
+   "text": "Gabby briefly moved down to North Carolina. She worked as a hostess and in a restaurant"
+  },
+  {
+   "start": 129.9,
+   "end": 134.4,
+   "text": "kitchen for a little over a year. She applied to a local community college, but the records show"
+  },
+  {
+   "start": 134.4,
+   "end": 139.8,
+   "text": "she never attended. That chapter ended in January 2019. Two months later in March,"
+  },
+  {
+   "start": 139.8,
+   "end": 144.4,
+   "text": "she and Brian officially started dating. As their relationship got serious, they decided to"
+  },
+  {
+   "start": 144.4,
+   "end": 149.7,
+   "text": "leave the Northeast. Brian's family had recently relocated to Northport, Florida. Gabby and Brian"
+  },
+  {
+   "start": 149.7,
+   "end": 154.4,
+   "text": "moved down there to join them, eventually moving right into his parents' house. To pay the bills,"
+  },
+  {
+   "start": 154.4,
+   "end": 160,
+   "text": "the couple took jobs at a local public supermarket in Northport. Gabby worked as a pharmacy technician."
+  },
+  {
+   "start": 160,
+   "end": 164.5,
+   "text": "Brian took a job in the grocery department. They settled into a very typical routine,"
+  },
+  {
+   "start": 164.5,
+   "end": 169.6,
+   "text": "living under his parents' roof and working retail. That routine did not last. Within a year,"
+  },
+  {
+   "start": 169.6,
+   "end": 174.9,
+   "text": "everything about the way they lived had changed. When the pandemic shut everything down in early 2020,"
+  },
+  {
+   "start": 174.9,
+   "end": 179.1,
+   "text": "Gabby and Brian walked away from their grocery store jobs. The world was on pause, but they wanted"
+  },
+  {
+   "start": 179.1,
+   "end": 183.8,
+   "text": "to keep moving. They had already done some traveling together, driving from New York out to California"
+  },
+  {
+   "start": 183.8,
+   "end": 189.6,
+   "text": "to see places like Yosemite National Park. By June 2020, they are exploring Soap Creek in Georgia."
+  },
+  {
+   "start": 190.1,
+   "end": 194,
+   "text": "The following month, the couple officially got engaged. They decided to make travel their"
+  },
+  {
+   "start": 194,
+   "end": 198.4,
+   "text": "entire lifestyle, drawn to the growing van life movement popping up all over social media."
+  },
+  {
+   "start": 199.1,
+   "end": 203.5,
+   "text": "In December 2020, Gabby made a major purchase to make that dream a reality."
+  },
+  {
+   "start": 203.5,
+   "end": 207.7,
+   "text": "She bought a white 2012 Ford Transit Connect van that was already converted into a camper."
+  },
+  {
+   "start": 208.3,
+   "end": 212.2,
+   "text": "That small vehicle was going to be their home for a massive cross-country road trip."
+  },
+  {
+   "start": 212.9,
+   "end": 217.9,
+   "text": "But living on the road takes serious cash. Gabby put her head down and started pulling"
+  },
+  {
+   "start": 217.9,
+   "end": 223.5,
+   "text": "50-hour weeks at a local Taco Bell just to save up money. She also took on work as a nutritionist,"
+  },
+  {
+   "start": 223.5,
+   "end": 228.7,
+   "text": "while Brian picked up a job at an organic juice bar. Every spare dollar went straight toward funding"
+  },
+  {
+   "start": 228.7,
+   "end": 233.6,
+   "text": "their future on the road. The case file shows they spent the first half of 2021 preparing to drive"
+  },
+  {
+   "start": 233.6,
+   "end": 238,
+   "text": "from New York all the way out to Oregon. They plan to spend four months visiting state and"
+  },
+  {
+   "start": 238,
+   "end": 242.9,
+   "text": "national parks across the western United States. Gabby wanted to use the journey to launch a"
+  },
+  {
+   "start": 242.9,
+   "end": 247.6,
+   "text": "career as a YouTube creator and blogger under the name Nomadic Stotic. She described her main"
+  },
+  {
+   "start": 247.6,
+   "end": 252.4,
+   "text": "interests online as art, yoga, and veggies. They were young, engaged, and completely"
+  },
+  {
+   "start": 252.4,
+   "end": 256.6,
+   "text": "focused on getting that white Ford van ready for the highway. Before they hit the highway,"
+  },
+  {
+   "start": 256.6,
+   "end": 261.6,
+   "text": "Gabby and Brian met one last stop at home. On June 17, 2021, they visited her native"
+  },
+  {
+   "start": 261.6,
+   "end": 266,
+   "text": "Blue Point, New York to attend her brother's high school graduation. Her family got to see"
+  },
+  {
+   "start": 266,
+   "end": 270.6,
+   "text": "them together, excited, and completely focused on their upcoming adventure. They had no way of"
+  },
+  {
+   "start": 270.6,
+   "end": 275.2,
+   "text": "knowing this would be the last time they would see Gabby. On July 2nd, the couple finally drove"
+  },
+  {
+   "start": 275.2,
+   "end": 279.2,
+   "text": "that converted Ford Transit out of Blue Point and pointed it west. The four-month road"
+  },
+  {
+   "start": 279.2,
+   "end": 284.1,
+   "text": "trip was officially underway. The plan was to live entirely out of the camper van while crossing"
+  },
+  {
+   "start": 284.1,
+   "end": 288.9,
+   "text": "the country toward Oregon. Gabby immediately started documenting their journey for the internet."
+  },
+  {
+   "start": 288.9,
+   "end": 293.6,
+   "text": "She posted regular photo updates to Instagram and uploaded videos to her new YouTube channel,"
+  },
+  {
+   "start": 293.6,
+   "end": 297.6,
+   "text": "Nomadic Stotic. If you look at the digital footprint from those first few weeks,"
+  },
+  {
+   "start": 297.6,
+   "end": 302.5,
+   "text": "it looks like the perfect getaway. She was working hard to build her brand as an influencer,"
+  },
+  {
+   "start": 302.5,
+   "end": 306,
+   "text": "sharing her love for art, yoga, and veggies with anyone who would watch."
+  },
+  {
+   "start": 306.8,
+   "end": 311.5,
+   "text": "They made great time driving across the country. By later that month, the case file shows they"
+  },
+  {
+   "start": 311.5,
+   "end": 315.8,
+   "text": "were already exploring some of the most famous landscapes out west. They stopped at Monument"
+  },
+  {
+   "start": 315.8,
+   "end": 321,
+   "text": "Rocks and Great Sand Dunes National Park and Preserve. From there, they crossed the border"
+  },
+  {
+   "start": 321,
+   "end": 326.2,
+   "text": "into Utah. They spent time hiking and taking photos through Zion, Bryce Canyon, and Canyon"
+  },
+  {
+   "start": 326.2,
+   "end": 330.7,
+   "text": "Lands National Parks. To their followers, it looked like the ultimate road trip,"
+  },
+  {
+   "start": 330.7,
+   "end": 335,
+   "text": "but what the evidence actually shows is that the reality of van life is often less glamorous"
+  },
+  {
+   "start": 335.1,
+   "end": 339.9,
+   "text": "than the pictures. They were two people living in a few square feet of space, day and night."
+  },
+  {
+   "start": 339.9,
+   "end": 342.9,
+   "text": "The miles were adding up, and they were heading deeper into remote territory."
+  },
+  {
+   "start": 343.6,
+   "end": 349.6,
+   "text": "On August 12, 2021, the tension finally boiled over in public. A witness called 911 to report"
+  },
+  {
+   "start": 349.6,
+   "end": 354.6,
+   "text": "a fight outside the Moonflower Community Cooperative in Moab, Utah. The caller reported seeing a man"
+  },
+  {
+   "start": 354.6,
+   "end": 359.1,
+   "text": "slap a woman. After that, they watched the couple run up and down the sidewalk before"
+  },
+  {
+   "start": 359.1,
+   "end": 364.1,
+   "text": "the man hit the woman again. Another witness gave police a similar description of the chaos"
+  },
+  {
+   "start": 364.1,
+   "end": 368.8,
+   "text": "that afternoon. They told investigators that Petito and Laundrie were talking aggressively to"
+  },
+  {
+   "start": 368.8,
+   "end": 373.7,
+   "text": "each other. During the scuffle, this witness noted that Petito was punching Laundrie in the arm."
+  },
+  {
+   "start": 373.7,
+   "end": 377.6,
+   "text": "It looked to the bystander like Laundrie was trying to leave her behind and take her phone with him."
+  },
+  {
+   "start": 378.4,
+   "end": 382.1,
+   "text": "The situation remained volatile right up until they got back into the vehicle."
+  },
+  {
+   "start": 382.1,
+   "end": 386,
+   "text": "Before they drove away, Petito climbed into the driver's seat of the van. She then moved"
+  },
+  {
+   "start": 386,
+   "end": 390,
+   "text": "over to the passenger side so Laundrie could get behind the wheel. As she made room for him,"
+  },
+  {
+   "start": 390,
+   "end": 395.2,
+   "text": "she asked him, why do you have to be so mean? They pulled away from the cooperative together,"
+  },
+  {
+   "start": 395.2,
+   "end": 399.6,
+   "text": "but they did not get far. Their erratic driving quickly caught the attention of the Moab City"
+  },
+  {
+   "start": 399.6,
+   "end": 404.2,
+   "text": "Police Department. Officers pulled the white Ford van over near the entrance to Arches National"
+  },
+  {
+   "start": 404.2,
+   "end": 408.2,
+   "text": "Park. When they approached the vehicle, they found Petito sobbing in the passenger seat."
+  },
+  {
+   "start": 408.9,
+   "end": 412.6,
+   "text": "The officers activated their body cameras, capturing an encounter that has since been"
+  },
+  {
+   "start": 412.6,
+   "end": 417.4,
+   "text": "heavily scrutinized. The footage shows Petito visibly distressed while apologizing to the"
+  },
+  {
+   "start": 417.4,
+   "end": 422.8,
+   "text": "police. She was actively minimizing her own situation and downplaying the physical restraint."
+  },
+  {
+   "start": 422.8,
+   "end": 427.3,
+   "text": "What she tells the officers next on that roadside tells us a lot about the reality of their relationship."
+  },
+  {
+   "start": 428.2,
+   "end": 433,
+   "text": "I went back through the body camera footage from that August 12 traffic stop. Moab City"
+  },
+  {
+   "start": 433,
+   "end": 437.2,
+   "text": "Police had pulled their Ford Transit van over after spotting it driving erratically near the"
+  },
+  {
+   "start": 437.2,
+   "end": 442,
+   "text": "entrance to Arches National Park. You can see Petito crying and visibly distraught in the"
+  },
+  {
+   "start": 442,
+   "end": 446.4,
+   "text": "passenger seat. She tells the Moab officers that she suffers from anxiety and that the"
+  },
+  {
+   "start": 446.4,
+   "end": 451.5,
+   "text": "two of them had been arguing all morning. Instead of pointing to the 911 caller who reported seeing"
+  },
+  {
+   "start": 451.5,
+   "end": 456.4,
+   "text": "a man slap a woman, she actually takes the blame. That 911 caller specifically reported"
+  },
+  {
+   "start": 456.4,
+   "end": 459.8,
+   "text": "seeing a man hit a woman, chase her up and down the sidewalk, and hit her again."
+  },
+  {
+   "start": 460.5,
+   "end": 464,
+   "text": "Another witness said Laundrie was trying to leave Petito behind and take her phone"
+  },
+  {
+   "start": 464,
+   "end": 469,
+   "text": "before they drove off together. The footage shows a stark contrast between the two of them."
+  },
+  {
+   "start": 469,
+   "end": 472.9,
+   "text": "Reviewers of the case file often point to this as a classic sign of reactive abuse."
+  },
+  {
+   "start": 473.6,
+   "end": 478.4,
+   "text": "Laundrie maintains a calm demeanor while talking to the police. While Petito remains highly emotional"
+  },
+  {
+   "start": 478.4,
+   "end": 483,
+   "text": "and takes responsibility for the fight, she apologizes to the officers and minimizes her own"
+  },
+  {
+   "start": 483,
+   "end": 488.1,
+   "text": "situation. The officers noted that Laundrie had scratches on his face and arm. Petito also had"
+  },
+  {
+   "start": 488.1,
+   "end": 492.2,
+   "text": "visible marks on her face and arms from their altercation. What the evidence actually shows"
+  },
+  {
+   "start": 492.2,
+   "end": 496.4,
+   "text": "is a pattern of downplaying the physical restraint. Despite the physical marks on"
+  },
+  {
+   "start": 496.4,
+   "end": 500.4,
+   "text": "both of them, the officers made a crucial decision on that roadside. After questioning the"
+  },
+  {
+   "start": 500.4,
+   "end": 504.9,
+   "text": "couple, they determined Petito was the aggressor. That conclusion came directly from Petito,"
+  },
+  {
+   "start": 504.9,
+   "end": 509.6,
+   "text": "admitting she physically hit Laundrie first. A witness had also told police they saw Petito"
+  },
+  {
+   "start": 509.6,
+   "end": 513.5,
+   "text": "punching him in the arm. Because of how they assessed the situation, the officers did not"
+  },
+  {
+   "start": 513.5,
+   "end": 518.6,
+   "text": "file any charges. This is where the systemic response to the incident comes into focus."
+  },
+  {
+   "start": 518.6,
+   "end": 522.7,
+   "text": "The officers classified the roadside encounter as a mental health crisis rather than domestic"
+  },
+  {
+   "start": 522.7,
+   "end": 527.1,
+   "text": "violence. They decided the best course of action was simply to separate the couple for the"
+  },
+  {
+   "start": 527.6,
+   "end": 531.7,
+   "text": "night. They did not provide any domestic violence support resources. Petito was allowed to keep the"
+  },
+  {
+   "start": 531.7,
+   "end": 536.6,
+   "text": "van while the police took Laundrie to a local hotel. The police actually perceived him as the"
+  },
+  {
+   "start": 536.6,
+   "end": 542.1,
+   "text": "victim. The next morning, they reunited and resumed their cross-country trip. In 2022,"
+  },
+  {
+   "start": 542.1,
+   "end": 546.7,
+   "text": "Petito's parents filed a wrongful death lawsuit against the city of Moab. They alleged the"
+  },
+  {
+   "start": 546.7,
+   "end": 550.7,
+   "text": "officers missed clear signs of domestic violence and failed to protect her on that roadside."
+  },
+  {
+   "start": 551.6,
+   "end": 555.2,
+   "text": "I went back through the body camera footage from that Moab traffic stop"
+  },
+  {
+   "start": 555.2,
+   "end": 559.8,
+   "text": "to see exactly how the questioning unfolded. What you see on the tape is a stark contrast"
+  },
+  {
+   "start": 559.8,
+   "end": 564.6,
+   "text": "between the two of them. Petito is visibly distressed, sobbing in the passenger seat,"
+  },
+  {
+   "start": 564.6,
+   "end": 569.1,
+   "text": "and constantly minimizing her own injuries to the officers. Laundrie, on the other hand,"
+  },
+  {
+   "start": 569.1,
+   "end": 572.2,
+   "text": "maintains a completely calm demeanor while he answers their questions."
+  },
+  {
+   "start": 572.9,
+   "end": 577.2,
+   "text": "You can see how that calm demeanor influenced the way the officers assessed the situation."
+  },
+  {
+   "start": 577.2,
+   "end": 581.7,
+   "text": "Even with witnesses reporting that a man slapped a woman, the police focused on Petito's emotional"
+  },
+  {
+   "start": 581.7,
+   "end": 586.4,
+   "text": "state. They made the choice to treat the encounter as a mental health crisis rather than a domestic"
+  },
+  {
+   "start": 586.4,
+   "end": 590.5,
+   "text": "violence incident. Because of that specific classification, they decided not to make an arrest."
+  },
+  {
+   "start": 591.2,
+   "end": 595.6,
+   "text": "Let's unpack the systemic response here. Instead of bringing anyone to the station,"
+  },
+  {
+   "start": 595.6,
+   "end": 599.9,
+   "text": "their solution was just to separate the couple for the night. They let Petito keep the converted"
+  },
+  {
+   "start": 599.9,
+   "end": 604,
+   "text": "four transit van so she had a place to sleep. The police then drove Laundrie to a local"
+  },
+  {
+   "start": 604,
+   "end": 608.9,
+   "text": "hotel, fully perceiving him as the victim of the altercation. What the case file actually"
+  },
+  {
+   "start": 608.9,
+   "end": 613.4,
+   "text": "shows is a total lack of domestic violence intervention on that roadside. The officers"
+  },
+  {
+   "start": 613.4,
+   "end": 616.8,
+   "text": "didn't provide Petito with any specific support resources before they walked away."
+  },
+  {
+   "start": 617.4,
+   "end": 620.8,
+   "text": "They simply told the couple to stay away from each other until the sun came up."
+  },
+  {
+   "start": 620.8,
+   "end": 623,
+   "text": "It was a temporary fix to a much deeper problem."
+  },
+  {
+   "start": 623.9,
+   "end": 628,
+   "text": "The next morning, Petito and Laundrie reunited in Utah just like they planned."
+  },
+  {
+   "start": 628,
+   "end": 631.6,
+   "text": "They got right back into the four transit van and resumed their cross-country trip"
+  },
+  {
+   "start": 631.6,
+   "end": 635.9,
+   "text": "toward the national parks. The brief police intervention was over, but the underlying"
+  },
+  {
+   "start": 635.9,
+   "end": 640.4,
+   "text": "dynamic between them had not changed at all. It just kept driving, completely isolated on the"
+  },
+  {
+   "start": 640.4,
+   "end": 646.3,
+   "text": "road once again. The timeline goes dark on August 27. Between 1 and 2 in the afternoon,"
+  },
+  {
+   "start": 646.3,
+   "end": 649.9,
+   "text": "witnesses saw the couple at the Mary Piglet's Tex-Mex restaurant in Jackson,"
+  },
+  {
+   "start": 649.9,
+   "end": 653.5,
+   "text": "Wyoming, where Laundrie got into an aggressive argument with the manager and staff,"
+  },
+  {
+   "start": 653.5,
+   "end": 659.1,
+   "text": "apparently over money. Petito actually came back inside crying to apologize for his behavior."
+  },
+  {
+   "start": 659.1,
+   "end": 662.8,
+   "text": "Shortly afterwards, security cameras caught them at a Whole Foods. They arrived at the"
+  },
+  {
+   "start": 662.8,
+   "end": 669,
+   "text": "parking lot at 2,011 p.m. and walked inside. They left the store at 2,030 p.m. and headed back"
+  },
+  {
+   "start": 669,
+   "end": 674.6,
+   "text": "into their White Ford Transit Van. They sat there for about 20 minutes. Finally, at 2,056 p.m.,"
+  },
+  {
+   "start": 674.6,
+   "end": 679.1,
+   "text": "they drove away on Highway 89, heading north toward the Spread Creek Dispersed Camping Area in the"
+  },
+  {
+   "start": 679.1,
+   "end": 684.7,
+   "text": "Bridger Teton National Forest. That was the last time anyone saw Gabby Petito alive. After that"
+  },
+  {
+   "start": 684.7,
+   "end": 689.3,
+   "text": "afternoon, normal communication abruptly stopped. A text from Petito's phone went to her mother"
+  },
+  {
+   "start": 689.3,
+   "end": 693.7,
+   "text": "asking for help with someone named Stan. That raised immediate red flags for her mother,"
+  },
+  {
+   "start": 693.7,
+   "end": 697.2,
+   "text": "because Stan was her grandfather and she never called him by his first name."
+  },
+  {
+   "start": 698,
+   "end": 702.8,
+   "text": "Then, on September 1, Brian Laundrie secretly pulled the van into his parents' driveway in"
+  },
+  {
+   "start": 702.8,
+   "end": 707.2,
+   "text": "Northport, Florida. He had driven across the country completely alone. Petito's family"
+  },
+  {
+   "start": 707.2,
+   "end": 712,
+   "text": "was frantically trying to reach her. Her father, Joseph Petito, said they made multiple attempts"
+  },
+  {
+   "start": 712,
+   "end": 716.1,
+   "text": "to contact Laundrie and his parents, Roberta and Christopher. They never received a reply."
+  },
+  {
+   "start": 717,
+   "end": 721.7,
+   "text": "Laundrie simply refused to discuss her whereabouts with anyone. He shut out the people who were"
+  },
+  {
+   "start": 721.7,
+   "end": 725.8,
+   "text": "desperately searching for his fiance and refused to cooperate with the investigation."
+  },
+  {
+   "start": 726.4,
+   "end": 731.2,
+   "text": "He was quickly deemed a person of interest. While her family panicked, Laundrie was accessing"
+  },
+  {
+   "start": 731.2,
+   "end": 735.7,
+   "text": "her bank account. What the evidence actually shows is that he made unauthorized withdrawals"
+  },
+  {
+   "start": 735.7,
+   "end": 740.8,
+   "text": "using Petito's Capra 1 debit card. He took out more than $1,000. He wasn't charged with"
+  },
+  {
+   "start": 740.8,
+   "end": 745.1,
+   "text": "her death at this point, but that financial trail gave investigators exactly what they needed."
+  },
+  {
+   "start": 745.1,
+   "end": 748.9,
+   "text": "They issued an arrest warrant for intent to defraud making him a wanted man."
+  },
+  {
+   "start": 748.9,
+   "end": 753.4,
+   "text": "On September 13, Laundrie left his home. He was reported missing four days later,"
+  },
+  {
+   "start": 753.4,
+   "end": 756.3,
+   "text": "sparking a massive search in a vast Florida Nature Reserve."
+  },
+  {
+   "start": 757.1,
+   "end": 761.3,
+   "text": "On September 11, Gaby's mother officially filed a missing person report. She had not"
+  },
+  {
+   "start": 761.3,
+   "end": 765.5,
+   "text": "heard from her daughter since late August. Four days later, police formally named Brian"
+  },
+  {
+   "start": 765.5,
+   "end": 770.2,
+   "text": "a person of interest. His parents hired a lawyer and on that lawyer's advice,"
+  },
+  {
+   "start": 770.2,
+   "end": 774.7,
+   "text": "they stayed completely silent. We know Brian was already emptying her bank account."
+  },
+  {
+   "start": 775.1,
+   "end": 779.4,
+   "text": "That unauthorized use of her Capital One card gave investigators the leverage they needed to"
+  },
+  {
+   "start": 779.4,
+   "end": 784.5,
+   "text": "issue a federal arrest warrant. But police did not yet know he was gone. They believed he was still"
+  },
+  {
+   "start": 784.5,
+   "end": 788.7,
+   "text": "inside his parents' house. His parents claimed he left for the reserve on September 13,"
+  },
+  {
+   "start": 788.7,
+   "end": 792,
+   "text": "turning a missing person case into a massive two-front manhunt."
+  },
+  {
+   "start": 792.8,
+   "end": 796.5,
+   "text": "While police searched the Florida swamps, the case exploded online."
+  },
+  {
+   "start": 796.5,
+   "end": 800.2,
+   "text": "You have probably never seen a missing person investigation generate this much"
+  },
+  {
+   "start": 800.2,
+   "end": 805.3,
+   "text": "instant media coverage. People were dissecting the couple's social media posts and analyzing"
+  },
+  {
+   "start": 805.3,
+   "end": 810,
+   "text": "the Utah body cam footage. Witnesses started posting their own videos and observations,"
+  },
+  {
+   "start": 810,
+   "end": 814.4,
+   "text": "creating a mountain of publicly available evidence. Some of those tips from the van life"
+  },
+  {
+   "start": 814.4,
+   "end": 817.8,
+   "text": "community actually helped investigators narrow down the physical search in Wyoming."
+  },
+  {
+   "start": 818.6,
+   "end": 823.1,
+   "text": "But a lot of the internet speculation was just noise. We saw outright misinformation,"
+  },
+  {
+   "start": 823.1,
+   "end": 826.8,
+   "text": "insensitive rumors, and people trying to cash in on a family's tragedy."
+  },
+  {
+   "start": 826.8,
+   "end": 830.5,
+   "text": "Protesters even showed up outside the laundry home demanding answers."
+  },
+  {
+   "start": 830.5,
+   "end": 835.2,
+   "text": "The sheer volume of coverage also sparked a serious conversation about missing white woman syndrome."
+  },
+  {
+   "start": 836,
+   "end": 840,
+   "text": "Commentators pointed out the stark disparity between the attention Gabby received and the"
+  },
+  {
+   "start": 840,
+   "end": 844.4,
+   "text": "hundreds of Indigenous people reported missing in that exact same region. It is a hard truth"
+  },
+  {
+   "start": 844.4,
+   "end": 849.1,
+   "text": "about how the media operates. Even Gabby's father eventually used his platform to highlight"
+  },
+  {
+   "start": 849.1,
+   "end": 853.2,
+   "text": "that disparity. But right then, the focus was entirely on finding his daughter."
+  },
+  {
+   "start": 854,
+   "end": 859.2,
+   "text": "While the search for Gabby intensified out west, the investigation in Florida hit a brick wall."
+  },
+  {
+   "start": 859.9,
+   "end": 864.7,
+   "text": "Gabby's mother had filed a missing person report on September 11 after not hearing from her daughter"
+  },
+  {
+   "start": 864.7,
+   "end": 870.2,
+   "text": "since late August. By September 15, investigators officially named Brian a person of interest."
+  },
+  {
+   "start": 870.2,
+   "end": 874.6,
+   "text": "But Brian simply refused to talk. His parents, Christopher and Roberta Laundrie, hired an"
+  },
+  {
+   "start": 874.6,
+   "end": 879.1,
+   "text": "attorney and followed his advice to remain entirely silent. They wouldn't speak to the police,"
+  },
+  {
+   "start": 879.1,
+   "end": 883.6,
+   "text": "and they wouldn't speak to Gabby's desperate family. Northport Police set up surveillance on"
+  },
+  {
+   "start": 883.6,
+   "end": 888.3,
+   "text": "the Laundrie House and watched Brian leave on September 13. Two days later, his car returned,"
+  },
+  {
+   "start": 888.3,
+   "end": 892.7,
+   "text": "and investigators believed they saw Brian get out and go inside. The following day,"
+  },
+  {
+   "start": 892.7,
+   "end": 897.2,
+   "text": "Northport Police Chief Todd Garrison confidently told reporters they knew exactly where he was."
+  },
+  {
+   "start": 897.7,
+   "end": 901.6,
+   "text": "He told the press, all I'm going to say is, we know where Brian Laundrie is at."
+  },
+  {
+   "start": 902.2,
+   "end": 905.6,
+   "text": "But they had made a critical error mistaking Brian's mother for Brian himself."
+  },
+  {
+   "start": 906.4,
+   "end": 909.9,
+   "text": "After obtaining search warrants, police seized the couple's Ford Transit Van,"
+  },
+  {
+   "start": 909.9,
+   "end": 914.7,
+   "text": "an external hard drive, and the family's Ford Mustang. The police didn't realize their"
+  },
+  {
+   "start": 914.7,
+   "end": 919.2,
+   "text": "surveillance mistake until September 17. That is when Brian's parents finally contacted"
+  },
+  {
+   "start": 919.2,
+   "end": 923.1,
+   "text": "authorities to report their son missing. They claimed they hadn't laid eyes on him since he"
+  },
+  {
+   "start": 923.1,
+   "end": 927.8,
+   "text": "left four days earlier. According to them, Brian had gone camping in the nearby Carlton"
+  },
+  {
+   "start": 927.8,
+   "end": 933.3,
+   "text": "Reserve to avoid the public glare of the case, and never came back. That sparked a massive,"
+  },
+  {
+   "start": 933.3,
+   "end": 938.4,
+   "text": "weeks-long manhunt. Local and federal authorities combed through the 25,000-acre Florida Nature"
+  },
+  {
+   "start": 938.4,
+   "end": 942.4,
+   "text": "Reserve looking for him. At this point, Brian wasn't charged with anything related to Gabby's"
+  },
+  {
+   "start": 942.4,
+   "end": 947,
+   "text": "disappearance. But he was wanted on a federal warrant for intent to defraud. He was accused of"
+  },
+  {
+   "start": 947,
+   "end": 952.6,
+   "text": "making unauthorized withdrawals of over $1,000 using a Capital One bank card. The actions of"
+  },
+  {
+   "start": 952.6,
+   "end": 957.4,
+   "text": "the Laundrie family drew intense public scrutiny. Protesters gathered outside their floor to"
+  },
+  {
+   "start": 957.4,
+   "end": 962.5,
+   "text": "home demanding answers. The silence fueled a media firestorm, driven by the couple's"
+  },
+  {
+   "start": 962.6,
+   "end": 968.1,
+   "text": "social media content and the intense public interest in their van life journey. Gabby's father,"
+  },
+  {
+   "start": 968.1,
+   "end": 973.1,
+   "text": "Joe Petito, publicly stated his family had made multiple attempts to reach Brian's parents"
+  },
+  {
+   "start": 973.1,
+   "end": 978.5,
+   "text": "after Gabby vanished, but never got a single reply. He went on the Dr. Phil television show and"
+  },
+  {
+   "start": 978.5,
+   "end": 982.7,
+   "text": "called anyone living in that house a coward. He said they didn't know how to stand up for their"
+  },
+  {
+   "start": 982.7,
+   "end": 987.8,
+   "text": "actions. While the search for Brian dragged on in Florida, investigators in Wyoming made a"
+  },
+  {
+   "start": 987.8,
+   "end": 992.7,
+   "text": "devastating breakthrough. On September 19, search teams found human remains at the"
+  },
+  {
+   "start": 992.7,
+   "end": 997.8,
+   "text": "Spread Creek Dispurs Camping Area in the Bridger-Teton National Forest. This was right near where"
+  },
+  {
+   "start": 997.8,
+   "end": 1002.4,
+   "text": "vloggers had previously spotted the couple's white Ford Transit Van. The remains were quickly"
+  },
+  {
+   "start": 1002.4,
+   "end": 1007.6,
+   "text": "and positively identified as Gabby Petito. The autopsy results laid out exactly what"
+  },
+  {
+   "start": 1007.6,
+   "end": 1011.6,
+   "text": "happened out there in the wilderness. The medical examiner confirmed Gabby was killed by"
+  },
+  {
+   "start": 1011.6,
+   "end": 1016.2,
+   "text": "Blunford's injuries to her head and neck, combined with manual strangulation. The"
+  },
+  {
+   "start": 1016.3,
+   "end": 1021.2,
+   "text": "coroner officially ruled her death a homicide. According to the case file, she had been dead for"
+  },
+  {
+   "start": 1021.2,
+   "end": 1026.3,
+   "text": "three to four weeks before searchers finally found her. With Gabby's fate confirmed, the pressure"
+  },
+  {
+   "start": 1026.3,
+   "end": 1030.7,
+   "text": "to find Brian reached a boiling point. For over a month, local and federal law enforcement"
+  },
+  {
+   "start": 1030.7,
+   "end": 1034.9,
+   "text": "scoured the swampy terrain of the Carlton Reserve and the adjacent Myakahatchee Creek"
+  },
+  {
+   "start": 1034.9,
+   "end": 1040,
+   "text": "Environmental Park. Then, the water levels in a previously flooded area of the park finally"
+  },
+  {
+   "start": 1040,
+   "end": 1045.3,
+   "text": "receded. On October 20, searchers discovered skeletal remains alongside a backpack and some"
+  },
+  {
+   "start": 1045.3,
+   "end": 1050.9,
+   "text": "of Brian's personal items. Forensic dentistry quickly confirmed the remains belonged to Brian"
+  },
+  {
+   "start": 1050.9,
+   "end": 1056.2,
+   "text": "Laundrie. Let's look at what the evidence actually shows about his final days. The initial autopsy"
+  },
+  {
+   "start": 1056.2,
+   "end": 1060.6,
+   "text": "couldn't determine the cause of death, so his remains were handed over to a forensic anthropologist."
+  },
+  {
+   "start": 1060.6,
+   "end": 1065.9,
+   "text": "On November 20, 30s announced their conclusion. Brian died from a self-inflicted gunshot wound"
+  },
+  {
+   "start": 1065.9,
+   "end": 1070.8,
+   "text": "to the head. The manhunt was officially over, but the investigation into exactly what happened"
+  },
+  {
+   "start": 1070.8,
+   "end": 1075.9,
+   "text": "on that cross-country trip was about to take one last turn. Near Brian's remains, investigators"
+  },
+  {
+   "start": 1075.9,
+   "end": 1080.3,
+   "text": "recovered a handwritten notebook that would change everything. There is a part of this story that"
+  },
+  {
+   "start": 1080.3,
+   "end": 1085.8,
+   "text": "is not really about Gabby or Brian. It is about everybody who is watching. This case pulled in more"
+  },
+  {
+   "start": 1085.8,
+   "end": 1090,
+   "text": "attention on news and social media than almost any other missing person case in the country,"
+  },
+  {
+   "start": 1090,
+   "end": 1095.2,
+   "text": "and it is worth asking plainly why. The reasons are on the record. The couple had filmed their"
+  },
+  {
+   "start": 1095.2,
+   "end": 1100.6,
+   "text": "own lives, so there was footage. The body camera video from Moab was public. The 911 call was"
+  },
+  {
+   "start": 1100.6,
+   "end": 1105.9,
+   "text": "public. Witnesses posted what they had seen. Brian's parents said nothing on their lawyer's advice,"
+  },
+  {
+   "start": 1105.9,
+   "end": 1110.2,
+   "text": "and silence pulls a crowd. Add a young couple, a van, and a road trip that a lot of people had"
+  },
+  {
+   "start": 1110.2,
+   "end": 1114.3,
+   "text": "spent a pandemic dreaming about, and the case had every ingredient the internet reaches for."
+  },
+  {
+   "start": 1115.1,
+   "end": 1120.2,
+   "text": "Some of that attention did real work. Two of the most useful accounts in this entire timeline"
+  },
+  {
+   "start": 1120.2,
+   "end": 1124.8,
+   "text": "came from ordinary people posting online. A couple posted a video about the van they had"
+  },
+  {
+   "start": 1124.8,
+   "end": 1129,
+   "text": "seen near Spread Creek, and according to that witness, an FBI agent told them their account"
+  },
+  {
+   "start": 1129,
+   "end": 1133.6,
+   "text": "tipped the bureau off to the right location. A woman posted that she and her boyfriend had picked"
+  },
+  {
+   "start": 1133.6,
+   "end": 1137.9,
+   "text": "up Brian hitchhiking, and described how he behaved when he found out where they were driving. That is"
+  },
+  {
+   "start": 1137.9,
+   "end": 1143.7,
+   "text": "the public genuinely helping. The search also found people nobody was looking for. While the country"
+  },
+  {
+   "start": 1143.7,
+   "end": 1148.2,
+   "text": "watched this one case, the attention around it led to the discovery of five other missing people."
+  },
+  {
+   "start": 1148.8,
+   "end": 1154,
+   "text": "Five families got an answer because of a case that was not theirs. But the record is honest"
+  },
+  {
+   "start": 1154,
+   "end": 1158.4,
+   "text": "about the rest of it. A lot of what got posted has been described as insensitive,"
+  },
+  {
+   "start": 1158.4,
+   "end": 1164.4,
+   "text": "unhelpful, driven by exposure or money or outright misinformation, and commentators pointed at something"
+  },
+  {
+   "start": 1164.4,
+   "end": 1170.1,
+   "text": "uncomfortable. Roughly 710 indigenous people were reported missing in or near that same part"
+  },
+  {
+   "start": 1170.1,
+   "end": 1175.6,
+   "text": "of the country between 2011 and 2020, and not one of those cases drew a fraction of this coverage."
+  },
+  {
+   "start": 1176.2,
+   "end": 1180,
+   "text": "Gabby's father was uneasy with the term missing white woman syndrome at first,"
+  },
+  {
+   "start": 1180,
+   "end": 1184.4,
+   "text": "and later said he recognized the disparity it points at. He has spent the year since using"
+  },
+  {
+   "start": 1184.4,
+   "end": 1189.3,
+   "text": "the attention on his daughter to push for the cases that never get any. On January 21,"
+  },
+  {
+   "start": 1189.3,
+   "end": 1193.7,
+   "text": "22, the FBI confirmed what investigators found inside that handwritten notebook near Brian's"
+  },
+  {
+   "start": 1193.7,
+   "end": 1198.6,
+   "text": "remains. He explicitly admitted to killing Gabby. When his family's lawyer released the"
+  },
+  {
+   "start": 1198.6,
+   "end": 1203.2,
+   "text": "full entry months later, the public read his version of events. Brian claimed Gabby fell"
+  },
+  {
+   "start": 1203.2,
+   "end": 1206.4,
+   "text": "into some water and injured herself, writing that he ended her life because he thought it"
+  },
+  {
+   "start": 1206.4,
+   "end": 1211.8,
+   "text": "was merciful. But that explanation simply does not match what the evidence actually shows."
+  },
+  {
+   "start": 1211.8,
+   "end": 1216,
+   "text": "The autopsy proved Gabby was killed by blunt force injuries to her head and neck,"
+  },
+  {
+   "start": 1216,
+   "end": 1220.3,
+   "text": "along with manual strangulation. Criminal justice experts who reviewed the notebook entry"
+  },
+  {
+   "start": 1220.3,
+   "end": 1224.8,
+   "text": "concluded it was written by someone desperately trying to justify his own violence. He could"
+  },
+  {
+   "start": 1224.8,
+   "end": 1229.5,
+   "text": "not face the reality of what he actually did. Beyond the notebook, the public's understanding"
+  },
+  {
+   "start": 1229.5,
+   "end": 1233.2,
+   "text": "of this tragedy completely shifted when the full-body camera footage from the Moab"
+  },
+  {
+   "start": 1233.2,
+   "end": 1238.3,
+   "text": "traffic stop was released. The video shows Brian acting perfectly calm, while Gabby is"
+  },
+  {
+   "start": 1238.3,
+   "end": 1243.8,
+   "text": "visibly distressed, apologizing and minimizing her own situation. It reshaped how people view"
+  },
+  {
+   "start": 1243.8,
+   "end": 1249,
+   "text": "domestic disturbance calls. Advocates pointed out a clear pattern of reactive abuse, noting that"
+  },
+  {
+   "start": 1249,
+   "end": 1253.2,
+   "text": "officers just separated them for the night instead of offering targeted domestic violence support."
+  },
+  {
+   "start": 1254,
+   "end": 1257.8,
+   "text": "The massive media storm also forced the necessary conversation about missing"
+  },
+  {
+   "start": 1257.8,
+   "end": 1261.8,
+   "text": "white woman syndrome, especially since hundreds of Indigenous people were missing in that"
+  },
+  {
+   "start": 1261.9,
+   "end": 1267.6,
+   "text": "same region with almost no coverage. Gabby's father publicly recognized this stark disparity."
+  },
+  {
+   "start": 1267.6,
+   "end": 1272.1,
+   "text": "He established the Gabby Petito Foundation to help fund searches for all missing persons,"
+  },
+  {
+   "start": 1272.1,
+   "end": 1277.2,
+   "text": "focusing on those from marginalized groups. The FBI officially closed the investigation,"
+  },
+  {
+   "start": 1277.2,
+   "end": 1281.1,
+   "text": "but the conversations that started are still happening today. The timeline is laid out in"
+  },
+  {
+   "start": 1281.1,
+   "end": 1285.2,
+   "text": "the official record. Read the file, form your own conclusion. That's it for this one."
+  },
+  {
+   "start": 1285.2,
+   "end": 1289.2,
+   "text": "Thanks for hanging out with me. This has been Crime Time Snacks, and I'll catch you next time."
+  }
+ ]
+}

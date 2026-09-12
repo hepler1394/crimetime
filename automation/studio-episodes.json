@@ -1,0 +1,30 @@
+{
+  "_README": "Episodes published from the podcast studio. Merged into episodes.json by import-feed.mjs so the Anchor feed sync never erases them. Edit here, then run build-all.",
+  "episodes": [
+    {
+      "guid": "cts-studio-the-disappearance-of-gabby-petito",
+      "title": "The Disappearance of Gabby Petito",
+      "slug": "the-disappearance-of-gabby-petito",
+      "date": "2026-09-12",
+      "pubDate": "Sat, 12 Sep 2026 13:00:00 GMT",
+      "duration": "00:21:35",
+      "description": "Hey everyone, Cory here. This week on CrimeTimeSnacks, we are looking at a case that completely consumed the internet in the summer of 2021. Gabby Petito and her fiancé Brian Laundrie set out on a four-month van-life journey across the United States. They documented their travels on YouTube and Instagram, painting a picture of the perfect bohemian adventure among the national parks.\n\nBut the reality behind the camera was much darker. When Brian returned to his parents' home in Florida without Gabby, and then refused to speak to anyone about where she was, alarm bells rang nationwide. We are going to walk through their timeline, dive into the infamous Moab body-cam footage, and look at how this case changed the way police handle domestic disturbance calls.",
+      "audio": "/audio/the-disappearance-of-gabby-petito.mp3",
+      "audioType": "audio/mpeg",
+      "audioBytes": 20718815,
+      "image": "/images/episodes/the-disappearance-of-gabby-petito.jpg",
+      "link": "",
+      "explicit": false,
+      "source": "studio",
+      "keywords": [
+        "Gabby Petito",
+        "Brian Laundrie",
+        "van life",
+        "Moab traffic stop",
+        "body-cam footage",
+        "domestic disturbance",
+        "true crime"
+      ]
+    }
+  ]
+}
