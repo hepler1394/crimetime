@@ -20,6 +20,7 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { articleIsAboutCase } from "./studio/research-filter.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const RESEARCH = join(__dirname, "studio", "research");
@@ -59,6 +60,7 @@ if (!kase) {
   kase = cases.find((c) => c.slug === wanted || c.slug === slugify(wanted) || c.title.toLowerCase() === wanted.toLowerCase()) || { slug: slugify(wanted), title: wanted, angle: "" };
 }
 
+
 const sources = [];
 const sections = []; // { heading, url, body }
 
@@ -75,10 +77,15 @@ try {
   // JonBenet, while the bare case name correctly found "Killing of JonBenét Ramsey" first).
   const wikiQuery = kase.title.split(":")[0].trim();
   const s = await (await get(`https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(wikiQuery + " murder case")}&srlimit=4&format=json&origin=*`)).json();
-  const hits = (s.query?.search || []).slice(0, 2);
+  // Look at more candidates than we need, then keep the two that are about this case.
+  const hits = (s.query?.search || []).slice(0, 4);
+  let kept = 0;
   for (const hit of hits) {
+    if (kept >= 2) break;
     const a = await wikiArticle(hit.title).catch(() => null);
     if (!a) continue;
+    if (!articleIsAboutCase(wikiQuery, a.title, a.text)) { say(`  wikipedia: skipped "${a.title}" - not about ${wikiQuery}`); continue; }
+    kept++;
     // Drop the reference tail; split into sections on the == Heading == markers so the writer can retrieve by topic.
     const text = a.text.replace(/\n==+\s*(References|External links|Further reading|See also|Notes|Bibliography)\s*==+[\s\S]*$/i, "").replace(/\n{3,}/g, "\n\n").trim().slice(0, 40000);
     const parts = text.split(/\n(?===+ )/);
@@ -91,6 +98,7 @@ try {
     sources.push({ kind: "wikipedia", title: a.title, url: a.url, chars: text.length, fetched: new Date().toISOString() });
     say(`  wikipedia: ${a.title} (${text.length} chars)`);
   }
+  if (!kept) say(`  wikipedia: nothing found that is about ${wikiQuery}; the notes will rest on the web sources alone`);
 } catch (e) { say(`  wikipedia failed: ${e.message}`); }
 
 // 2. DuckDuckGo: top pages, fetched and read.

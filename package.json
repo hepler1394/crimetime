@@ -25,6 +25,7 @@
     "test:shell": "node --test studio-shell/tests/*.test.cjs",
     "test:community": "node automation/community/test-cooldown.mjs",
     "test:format": "node --test automation/test-format.mjs",
-    "test:verify": "node --test automation/test-verify.mjs"
+    "test:verify": "node --test automation/test-verify.mjs",
+    "test:research": "node --test automation/test-research.mjs"
   }
 }
