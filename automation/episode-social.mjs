@@ -54,7 +54,17 @@ const caption = [
   `Full episode: www.crimetimesnacks.com/episodes/${ep.slug}.html`,
   "Also on Spotify and Apple Podcasts.",
 ].join("\n");
-await writeFile(join(dir, "caption.txt"), caption + "\n", "utf8");
+// A caption is often edited by hand - the Golden State Killer one carries a footage credit
+// that nothing here can regenerate. So keep the generated text in its own file, and only
+// touch caption.txt when it still matches the last generated version. If it differs,
+// somebody edited it and it wins.
+const captionPath = join(dir, "caption.txt"), generatedPath = join(dir, "caption-generated.txt");
+const previousCaption = await readFile(generatedPath, "utf8").catch(() => null);
+const currentCaption = await readFile(captionPath, "utf8").catch(() => null);
+const captionEdited = currentCaption !== null && previousCaption !== null && currentCaption.trim() !== previousCaption.trim();
+await writeFile(generatedPath, caption + "\n", "utf8");
+if (captionEdited) { if (!asJson) console.log("caption.txt looks hand-edited, so it was left alone; the regenerated text is in caption-generated.txt"); }
+else await writeFile(captionPath, caption + "\n", "utf8");
 
 ep.files = { ...(ep.files || {}), reel: "reel.mp4", caption: "caption.txt" };
 // The trailer reel (cold open, title, strongest lines, end card) is the post; the audiogram is the fallback.
