@@ -64,6 +64,13 @@ automation/studio/posts/*/*.mp4
 # case footage: the clips are downloaded, not authored. sources.json records the
 # URL, the in and out points and the rights basis, so any clip can be cut again
 # with one command - there is no reason to carry 5 MB of press conference per cut.
+# case stills: the sources.json (credit + rights) is the record and is tracked;
+# the photographs themselves are licensed material and stay out of the repo,
+# same split as footage/*/clips/
+automation/studio/stills/*/*.jpg
+automation/studio/stills/*/*.jpeg
+automation/studio/stills/*/*.png
+automation/studio/stills/*/*.webp
 automation/studio/footage/*/clips/
 automation/studio/footage/*/sources/*.vtt
 automation/studio/footage/*/.work/

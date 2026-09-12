@@ -183,6 +183,41 @@ either per theme (`intro-courtroom.mp3`, `bed-cold-case.wav`) or one set for
 every theme (`intro.mp3`, `outro.mp3`, `bed.mp3`). They are trimmed, faded and
 level-matched automatically. The bed loops, so give it a clean loop point.
 
+## The Instagram quote card
+
+Every episode that has a photograph gets one, rendered by `episode-social.mjs` alongside the
+reel and trailer: `quote-card.jpg`, 1080x1350. A real photograph of the case desaturated into
+black, a red tag, one line, the attribution, and the mark. The structure is Crime Junkie's,
+which is what Cory asked for; the colours and the mark are this show's.
+
+The photograph comes from `automation/studio/stills/<case>/`, next to a `sources.json` that
+records its credit and its rights. Read `stills/README.md` before adding one.
+
+**No photograph, no card.** The alternative is inventing an image of a real person, which this
+show does not do. The step says why it skipped and the rest of the kit still renders.
+
+Two things the lookup and the renderer are careful about, both learned the hard way:
+
+- A draft's `caseSlug` names the ANGLE, not the case (`moscow-idaho-the-plea`,
+  `delphi-the-appeal`). Stills are keyed on the case, so the lookup tries `ep.stills`, then the
+  exact slug, then a folder sharing a distinctive word. Otherwise every follow-up episode about
+  a case would silently lose its photograph.
+- The line is **never truncated**. A card wants one sentence; if the hook has no whole sentence
+  that fits, the card is skipped rather than cut. A half sentence reads as a claim nobody
+  finished making, and a clipped word looks like a bug because it is one. The type auto-fits
+  down to 52px so a long line shrinks instead of burying the faces.
+
+Set `quoteCard` in `episode.json` for a better card than the automatic one:
+
+    "quoteCard": { "quote": "...", "attrib": "Name, Role" }      a real quotation, in quote marks
+    "quoteCard": { "line":  "...", "attrib": "From the case file" }  the record speaking, no quote marks
+
+A real quotation lands harder than narration. The distinction is enforced: `line` renders
+without quotation marks, because putting narration in them attributes words to somebody who
+never said them. Use `<em>` around one phrase to pick up the red accent.
+
+A card is built but never posted automatically. Posting stays a person's click.
+
 ## The public reaction chapter
 
 The second to last chapter of every episode is what people said about the case

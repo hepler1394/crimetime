@@ -75,6 +75,16 @@ try {
   if (tj?.ok) { const fresh = JSON.parse(await readFile(join(dir, "episode.json"), "utf8")); ep.files.trailer = fresh.files?.trailer || "trailer.mp4"; ep.trailer = fresh.trailer; if (!asJson) console.log(tj.message); }
   else if (!asJson) console.log(`Trailer skipped: ${tj?.message || (r.stderr || "").slice(-200)}`);
 } catch (e) { if (!asJson) console.log(`Trailer skipped: ${e.message}`); }
+// The Instagram quote card. Needs a real photograph of the case in studio/stills/<case>/;
+// without one there is no card, because the alternative is inventing an image of a real person.
+try {
+  const { renderQuoteCard } = await import("./studio/quote-card.mjs");
+  const card = await renderQuoteCard(ep, dir);
+  if (card.file) {
+    ep.files.quoteCard = "quote-card.jpg";
+    if (!asJson) console.log(`Quote card -> quote-card.jpg${card.credit ? ` (photo credit: ${card.credit})` : " (NO CREDIT RECORDED)"}`);
+  } else if (!asJson) console.log(`Quote card skipped: ${card.skipped}`);
+} catch (e) { if (!asJson) console.log(`Quote card skipped: ${e.message}`); }
 ep.social = { clipSeconds: clip, clipStart: start, generated: new Date().toISOString() };
 if (ep.status === "designed") ep.status = "ready";
 await writeFile(join(dir, "episode.json"), JSON.stringify(ep, null, 2) + "\n", "utf8");
