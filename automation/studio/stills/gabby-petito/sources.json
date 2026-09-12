@@ -4,10 +4,11 @@
     {
       "file": "gabby-petito.jpg",
       "credit": "",
-      "rights": "",
+      "rights": "memorial composite supplied by Cory 2026-09-12, source not yet identified",
       "fit": "cover",
-      "focus": "center top",
-      "note": "AWAITING FILE. Drop a photograph here named gabby-petito.jpg and the card renders. Wants roughly 1200px on the short side; anything near 300px upscales to mush at 1080 wide. A side-by-side or composite usually needs fit:contain, or a centre crop throws people out of frame."
+      "focus": "32% center",
+      "grayscale": false,
+      "note": "Gabby Petito in front of the Moab angel-wings mural, composited onto a Grand Teton landscape. grayscale=false because the colour is the whole point of a memorial image; desaturating it would throw away what it is. focus=32% because she stands left of centre and a centre crop of a 16:9 source at 4:5 clips her. Converted from the gabby.webp Cory saved."
     }
   ]
 }
