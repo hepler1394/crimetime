@@ -1,0 +1,18 @@
+{
+  "title": "Moscow quote card",
+  "status": "approved",
+  "created": "2026-09-12T05:41:40.568Z",
+  "case": "moscow-murders",
+  "caption": "He pleaded guilty to end it. Now he wants it undone.\n\nNovember 13, 2022. Four University of Idaho students were killed in an off-campus house on King Road in Moscow: Ethan Chapin, 20, Madison Mogen, 21, Xana Kernodle, 20, and Kaylee Goncalves, 21. Two other roommates were in the house that night and survived.\n\nSix weeks later police arrested Bryan Kohberger in Pennsylvania. The case turned on DNA left on a knife sheath.\n\nOn July 2, 2025 he pleaded guilty to all five counts and waived his appeals. Three weeks later he was sentenced to four consecutive life terms without parole. In July 2026 he filed to withdraw that plea, saying his own lawyers pressured him into it. The court has not ruled.\n\nMurders in Moscow. Full episode: link in bio.\n\n#idahostudentmurders #moscowidaho #bryankohberger #universityofidaho #truecrime #truecrimepodcast #truecrimecommunity #crimetimesnacks",
+  "slides": [
+    {
+      "kind": "quote",
+      "from": "drafts/2026-09-08-the-moscow-murders-plea-deal"
+    }
+  ],
+  "rendered": "2026-09-12T05:41:40.568Z",
+  "files": [
+    "slide-1.jpg"
+  ],
+  "note": "Quote-card redo of the Canva post, 2026-09-12. slide-1.jpg is the episode quote card; re-render from the draft, not from social-post.mjs."
+}
