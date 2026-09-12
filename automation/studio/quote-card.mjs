@@ -117,7 +117,7 @@ export async function renderQuoteCard(ep, dir) {
       kind: "quote", logo: LOGO,
       bg: pathToFileURL(still.file).href, fit: still.fit, focus: still.focus, grayscale: still.grayscale,
       tag: cardTag(ep),
-      quote: said.text, quoted: said.quoted,
+      quote: said.text, quoted: said.quoted, quoteSize: (ep.quoteCard && ep.quoteCard.size) || undefined,
       attrib: said.attrib,
       credit: still.credit ? `Photo: ${still.credit}` : "",
     };
