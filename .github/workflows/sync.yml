@@ -27,6 +27,7 @@ jobs:
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          CTS_RELAY_KEY: ${{ secrets.CTS_RELAY_KEY }}
         run: |
           node automation/import-feed.mjs || true
           node automation/import-fbi.mjs || true

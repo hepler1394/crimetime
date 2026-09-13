@@ -668,11 +668,16 @@ const server = createServer(async (req, res) => {
     /* community: case update review queue */
     if (p === "/api/community/pending") {
       try {
-        const rows = await sb("cts_case_updates?select=id,case_slug,happened_on,title,summary,url,source,status,created_at&status=eq.pending&order=created_at.desc&limit=100");
+        // pending: what the update gate held. recent: what it published on its own in the last
+        // two weeks, so a bad one can still be pulled.
+        const since = new Date(Date.now() - 14 * 864e5).toISOString();
+        const rows = await sb("cts_case_updates?select=id,case_slug,happened_on,title,summary,url,source,status,gate_note,created_at&status=eq.pending&order=created_at.desc&limit=100");
+        const recent = await sb(`cts_case_updates?select=id,case_slug,happened_on,title,summary,url,source,status,gate_note,approved_at&status=eq.approved&found_by=eq.watcher&approved_at=gte.${encodeURIComponent(since)}&order=approved_at.desc&limit=100`);
         const cases = Object.fromEntries((await sb("cts_cases?select=slug,title")).map((c) => [c.slug, c.title]));
         const members = (await sb("cts_members?select=id&confirmed_at=not.is.null&unsubscribed_at=is.null"))?.length ?? 0;
-        return json(res, 200, { pending: rows.map((r) => ({ ...r, caseTitle: cases[r.case_slug] || r.case_slug })), members, cases: Object.keys(cases).length });
-      } catch (e) { return json(res, 200, { pending: [], error: e.message }); }
+        const named = (r) => ({ ...r, caseTitle: cases[r.case_slug] || r.case_slug });
+        return json(res, 200, { pending: rows.map(named), recent: recent.map(named), members, cases: Object.keys(cases).length });
+      } catch (e) { return json(res, 200, { pending: [], recent: [], error: e.message }); }
     }
     if (p === "/api/community/review" && req.method === "POST") {
       const body = await readBody(req); if (!body) return json(res, 413, TOO_BIG);

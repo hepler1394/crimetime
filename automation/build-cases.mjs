@@ -197,7 +197,7 @@ ${tape()}
     <section class="container case-hero" style="padding-top:1.5rem;">
         <div>
             <h2 style="font-family:var(--font-display);font-size:2rem;letter-spacing:.02em;margin:0 0 .4rem;">Case <span class="text-red">Updates</span></h2>
-            <p style="color:var(--cts-muted);margin:0;">What has happened, newest first. Every entry is checked by a person before it appears here or in an email.</p>
+            <p style="color:var(--cts-muted);margin:0;">What has happened, newest first, each with the article it comes from. An entry goes up only after that article is read and found to report it.</p>
             ${ups.length ? `<ol class="timeline">
 ${ups.map((u) => `                <li><time datetime="${esc(u.happened_on)}">${esc(fmtDate(u.happened_on))}</time><h4>${esc(u.title)}</h4>${u.summary ? `<p>${esc(u.summary)}</p>` : ""}${u.url ? `<p><a href="${esc(u.url)}" rel="noopener nofollow" target="_blank">${esc(u.source || new URL(u.url).hostname)}</a></p>` : ""}</li>`).join("\n")}
             </ol>` : `<p class="empty-note" style="margin-top:1.2rem;">Nothing logged yet. Follow the case and you will hear about the first update.</p>`}

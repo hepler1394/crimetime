@@ -36,6 +36,14 @@ repo, push to main deploys) plus the automation that runs the show. Read
   was slower rather than safer. A clean gate run means nothing is unsupported, not
   that the episode is right - it cannot see a claim that the notes support but that
   contradicts another line in the same script.
+- Case updates publish themselves the same way. The gate is
+  `automation/community/update-gate.mjs`, run by `case-watch.mjs`: an update goes onto
+  the case page and into the Sunday digest only when its article was read, every name
+  and number in it is in that article, and the sentence the model quotes as support is
+  actually on the page. Held ones stay pending with the reason in `gate_note`, in the
+  studio's Community panel and in Cory's Telegram. Changed 2026-09-13 at Cory's
+  instruction; the human queue never approved a single update. The digest only mails
+  updates dated within 45 days.
 - No emojis anywhere. Plain, specific, factual writing; `automation/voice.md` is
   the voice. Presumption of innocence in every script.
 - Secrets never go in the repo: keys live in env vars, `automation/config.json`

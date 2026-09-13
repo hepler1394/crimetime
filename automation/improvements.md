@@ -541,3 +541,9 @@ with an [auto] tag — the counter on Mission Control reads this file.
 475. Signup copy matches what is sent: one email on Sundays, not "twice a week"
 476. CSS/JS cache cut from a week to an hour so site fixes reach returning visitors the same day
 477. Service worker v2: scripts and styles network-first, so a deploy reaches returning visitors on their next page load (v1 could pin last week's main.js)
+478. Case updates approve themselves through automation/community/update-gate.mjs, the community's episode-verify: article read, names and numbers found in it, model's quoted support sentence really on the page
+479. Gate holds go to pending with the reason in gate_note and to Cory's Telegram; duplicates are rejected
+480. case-watch.mjs --pending re-runs the gate over held updates
+481. Studio Community panel: held updates with their reason, plus two weeks of self-published ones with Reject
+482. Digest mails only updates dated within 45 days, so a development found late is not sent as this week's news
+483. Case page copy says how an entry is checked, instead of claiming a person checked it

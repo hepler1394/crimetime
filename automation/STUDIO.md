@@ -331,8 +331,8 @@ restart; the shell and the browser tab are just windows onto the same folder.
 
 Anyone can follow a case on `/cases.html` or `/cases/<slug>.html` with an email.
 They confirm once (link sets a year-long cookie), then get a weekly digest of
-approved updates on the cases they follow. Nothing goes out unless a person
-approved it in the studio.
+approved updates on the cases they follow. Updates approve themselves through the
+update gate (below); nothing the gate held goes out.
 
 - **Database:** the shared Supabase project, tables prefixed `cts_`
   (`automation/community/schema.sql`, apply with psql). Public reads (cases,
@@ -343,10 +343,23 @@ approved it in the studio.
 - **Updates** are found by `automation/case-watch.mjs` every 6 hours in CI and on
   demand from the studio ("check cases"): DuckDuckGo results, each page fetched and
   dropped if it never names the case, the article text screened by Gemini Flash,
-  filed as pending. The page read is what stopped it filing a Heuermann sentencing
-  sourced to a listicle that never mentions him. The studio's Community panel is
-  the review queue: Approve puts an update on the case page at the next build and
-  into the next digest; Reject hides it.
+  drafted as an update. The page read is what stopped it filing a Heuermann sentencing
+  sourced to a listicle that never mentions him.
+- **The update gate** (`automation/community/update-gate.mjs`, tests in
+  `npm run test:gate`) decides each draft, the way `episode-verify.mjs` decides an
+  episode. Approved only when: the article was read (a snippet is not enough), it is
+  not dated in the future, it is not a duplicate of an update already on the case,
+  every name and number in the summary (and every number in the title) is in the
+  article, and a model reading the article says it reports the development AND the
+  sentence it quotes is really on the page. Duplicates are rejected; everything else
+  that fails is held as pending with the reason in `gate_note`. Approved updates reach
+  the case page at the next build (the CI sync builds right after the watcher) and the
+  next digest, which only mails updates dated within 45 days; older ones stay on the
+  timeline. Cory gets a Telegram of what published and what was held (from CI too,
+  once the `CTS_RELAY_KEY` Actions secret is set). The studio's Community panel shows
+  the held ones with Approve and Reject, and the last two weeks of self-published ones
+  with Reject. `node automation/case-watch.mjs --pending` re-runs the gate over the
+  held ones. It cannot catch an article that is itself wrong.
 - **The Case File** is the signup on the homepage and in every page footer
   (`js/main.js` -> `/api/community/subscribe`). It sends a confirm link; the
   `cts_members.newsletter` flag is set only when that link is clicked

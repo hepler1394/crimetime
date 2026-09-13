@@ -1,5 +1,5 @@
 {
-  "fetched": "2026-09-13T23:35:55.803Z",
+  "fetched": "2026-09-13T23:51:28.090Z",
   "cases": [
     {
       "slug": "golden-state-killer",
@@ -512,7 +512,32 @@
       "updated_at": "2026-09-05T23:28:46.665401+00:00"
     }
   ],
-  "updates": [],
+  "updates": [
+    {
+      "case_slug": "gabby-petito",
+      "happened_on": "2026-09-11",
+      "title": "Oral arguments anticipated in Petito family lawsuit against Utah police",
+      "summary": "Attorneys representing Gabby Petito's family expect oral arguments soon in their lawsuit alleging a Utah police department failed to prevent her murder.",
+      "url": "https://patch.com/new-york/patchogue/gaby-petito-5th-anniv-her-slaying-nears-lawyers-expect-oral-arguments-suit-be",
+      "source": "Patch"
+    },
+    {
+      "case_slug": "gabby-petito",
+      "happened_on": "2026-01-30",
+      "title": "Utah Supreme Court sets hearing for Petito wrongful death lawsuit",
+      "summary": "The Utah Supreme Court scheduled oral arguments for March 4 in the wrongful death lawsuit brought by Gabby Petito's parents against Moab police.",
+      "url": "https://www.deseret.com/utah/2026/01/30/gabby-petito-wrongful-death-suit-against-moab-police-heads-to-utah-supreme-court/",
+      "source": "Deseret News"
+    },
+    {
+      "case_slug": "gabby-petito",
+      "happened_on": "2024-11-28",
+      "title": "Judge Dismisses $50M Wrongful Death Lawsuit Against Moab Police",
+      "summary": "A Utah judge dismissed the Petito family's $50 million wrongful death lawsuit against the Moab Police Department, citing the state's Governmental Immunity Act.",
+      "url": "https://moabsunnews.com/2024/11/28/lawsuit-against-the-moab-police-in-petito-case-dismissed/",
+      "source": "Moab Sun News"
+    }
+  ],
   "counts": {
     "adnan-syed": 0,
     "amanda-knox": 0,

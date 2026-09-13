@@ -322,7 +322,7 @@
 <!-- COMMUNITY -->
 <div class="section" id="sec-community" hidden>
   <h1>Community</h1>
-  <p class="lede">People follow cases by email and get a weekly digest. Nothing reaches them unless you approve it here.</p>
+  <p class="lede">People follow cases by email and get a weekly digest. Updates the watcher finds publish themselves once the article they cite is read and found to report them; anything that check would not stand behind waits here for you.</p>
   <div class="cards" id="c-cards"></div>
   <div class="row" style="margin-bottom:22px"><button class="btn" data-op="watch">Check all cases for news</button><button class="btn" data-op="synccases">Sync cases from backlog</button><a class="btn ghost" href="https://www.crimetimesnacks.com/cases.html" target="_blank" rel="noopener">Open the public Cases page</a></div>
   <div class="cform">
@@ -338,8 +338,10 @@
       <div class="row"><button class="btn" id="dg-send">Send test</button><span class="hint" id="dg-state" style="margin:0"></span></div>
     </div>
   </div>
-  <h2 class="k" style="padding-left:0">Waiting for your yes or no</h2>
+  <h2 class="k" style="padding-left:0">Held by the check</h2>
   <ul class="queue" id="queue"></ul>
+  <h2 class="k" style="padding-left:0">Published on their own, last two weeks</h2>
+  <ul class="queue" id="auto-queue"></ul>
 </div>
 
 <!-- SETTINGS -->
@@ -839,9 +841,12 @@ async function loadQueue() {
   try {
     const q = await api("/api/community/pending");
     $("#q-count").hidden = !(q.pending || []).length; $("#q-count").textContent = (q.pending || []).length;
-    $("#c-cards").innerHTML = q.error ? `<div class="card"><h3>Database</h3><p>${esc(q.error)}</p></div>` : `<div class="card"><h3>Members</h3><div class="big">${q.members}</div><p>confirmed, getting the weekly digest</p></div><div class="card"><h3>Cases</h3><div class="big">${q.cases}</div><p>people can follow</p></div><div class="card"><h3>Waiting</h3><div class="big">${(q.pending || []).length}</div><p>updates for your yes or no</p></div>`;
-    $("#queue").innerHTML = (q.pending || []).length ? q.pending.map((u) => `<li data-id="${u.id}"><div><div class="c">${esc(u.caseTitle)} · ${esc(u.happened_on)} · ${esc(u.source)}</div><b>${esc(u.title)}</b>${u.summary ? `<p>${esc(u.summary)}</p>` : ""}${u.url ? `<a href="${esc(u.url)}" target="_blank" rel="noopener">${esc(u.url.slice(0, 90))}</a>` : ""}</div><div class="act"><button class="btn sm red" data-review="approved">Approve</button><button class="btn sm ghost" data-review="rejected">Reject</button></div></li>`).join("") : `<li style="border:0;background:none;color:var(--faint);font-style:italic;padding:8px 0">Nothing waiting. The watcher checks every six hours; press "Check all cases for news" to look now.</li>`;
-    document.querySelectorAll("#queue [data-review]").forEach((b) => b.addEventListener("click", async () => { const li = b.closest("li"); b.disabled = true; try { await api("/api/community/review", { method: "POST", body: JSON.stringify({ id: li.dataset.id, status: b.dataset.review }) }); li.remove(); toast(b.dataset.review === "approved" ? "Approved. On the case page at the next build, in the next digest." : "Rejected."); loadQueue(); } catch (e) { toast(e.message, true); b.disabled = false; } }));
+    $("#c-cards").innerHTML = q.error ? `<div class="card"><h3>Database</h3><p>${esc(q.error)}</p></div>` : `<div class="card"><h3>Members</h3><div class="big">${q.members}</div><p>confirmed, getting the weekly digest</p></div><div class="card"><h3>Cases</h3><div class="big">${q.cases}</div><p>people can follow</p></div><div class="card"><h3>Held</h3><div class="big">${(q.pending || []).length}</div><p>updates the check would not stand behind</p></div>`;
+    const item = (u, buttons) => `<li data-id="${u.id}"><div><div class="c">${esc(u.caseTitle)} · ${esc(u.happened_on)} · ${esc(u.source)}</div><b>${esc(u.title)}</b>${u.summary ? `<p>${esc(u.summary)}</p>` : ""}${u.gate_note ? `<p class="hint" style="margin:4px 0">${esc(u.gate_note)}</p>` : ""}${u.url ? `<a href="${esc(u.url)}" target="_blank" rel="noopener">${esc(u.url.slice(0, 90))}</a>` : ""}</div><div class="act">${buttons}</div></li>`;
+    const empty = (t) => `<li style="border:0;background:none;color:var(--faint);font-style:italic;padding:8px 0">${t}</li>`;
+    $("#queue").innerHTML = (q.pending || []).length ? q.pending.map((u) => item(u, `<button class="btn sm red" data-review="approved">Approve</button><button class="btn sm ghost" data-review="rejected">Reject</button>`)).join("") : empty(`Nothing held. The watcher checks every six hours; press "Check all cases for news" to look now.`);
+    $("#auto-queue").innerHTML = (q.recent || []).length ? q.recent.map((u) => item(u, `<button class="btn sm ghost" data-review="rejected">Reject</button>`)).join("") : empty("Nothing published on its own in the last two weeks.");
+    document.querySelectorAll("#queue [data-review], #auto-queue [data-review]").forEach((b) => b.addEventListener("click", async () => { const li = b.closest("li"); b.disabled = true; try { await api("/api/community/review", { method: "POST", body: JSON.stringify({ id: li.dataset.id, status: b.dataset.review }) }); li.remove(); toast(b.dataset.review === "approved" ? "Approved. On the case page at the next build, in the next digest." : "Rejected. Off the case page at the next build."); loadQueue(); } catch (e) { toast(e.message, true); b.disabled = false; } }));
   } catch (e) { $("#c-cards").innerHTML = `<div class="card"><h3>Community</h3><p>${esc(e.message)}</p></div>`; }
 }
 

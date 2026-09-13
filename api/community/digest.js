@@ -7,7 +7,12 @@
 //   - for members on The Case File, the episodes and blog posts that went up on the
 //     site since their last digest (first digest: the last 7 days).
 // None if both are empty. Logged in cts_digest_log.
+//
+// Case updates approve themselves (automation/community/update-gate.mjs), and the watcher
+// sometimes finds a development months late. Only updates dated within the last
+// DIGEST_MAX_AGE_DAYS are mailed; older ones still go on the case page timeline.
 import { sb, sendMail, digestEmail, publishedSince, SITE } from "../../automation/community/lib.js";
+import { DIGEST_MAX_AGE_DAYS } from "../../automation/community/update-gate.mjs";
 
 const DAY = 864e5;
 
@@ -21,6 +26,7 @@ export default async function handler(req, res) {
   try {
     const members = await sb(`cts_members?select=id,email,token,last_digest_at,newsletter&confirmed_at=not.is.null&unsubscribed_at=is.null${only ? `&email=eq.${encodeURIComponent(only)}` : ""}`);
     const cases = Object.fromEntries((await sb("cts_cases?select=slug,title")).map((c) => [c.slug, c]));
+    const recentFrom = new Date(Date.now() - DIGEST_MAX_AGE_DAYS * DAY).toISOString().slice(0, 10);
     // The site content is the same for everyone; fetch it once, window it per member.
     const siteJson = {};
     const fetchJson = async (p) => { if (!siteJson[p]) siteJson[p] = fetch(`${SITE()}${p}`).then((r) => { if (!r.ok) throw new Error(`${p}: ${r.status}`); return r.json(); }); return siteJson[p]; };
@@ -31,7 +37,7 @@ export default async function handler(req, res) {
         if (!follows.length && !m.newsletter) { report.skipped++; continue; }
         const updatesSince = m.last_digest_at || new Date(Date.now() - 30 * DAY).toISOString();
         const updates = follows.length
-          ? await sb(`cts_case_updates?select=case_slug,happened_on,title,summary,url,source&status=eq.approved&approved_at=gt.${encodeURIComponent(updatesSince)}&case_slug=in.(${follows.map(encodeURIComponent).join(",")})&order=happened_on.desc&limit=60`)
+          ? await sb(`cts_case_updates?select=case_slug,happened_on,title,summary,url,source&status=eq.approved&approved_at=gt.${encodeURIComponent(updatesSince)}&happened_on=gte.${recentFrom}&case_slug=in.(${follows.map(encodeURIComponent).join(",")})&order=happened_on.desc&limit=60`)
           : [];
         const fresh = m.newsletter
           ? await publishedSince(m.last_digest_at || new Date(Date.now() - 7 * DAY).toISOString(), { fetchJson })
