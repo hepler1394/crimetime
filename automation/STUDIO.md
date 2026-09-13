@@ -340,12 +340,21 @@ approved it in the studio.
   `/api/community/*` Vercel functions with the service role key.
 - **Cases** come from `cases.json` plus published episodes:
   `node automation/community/sync-cases.mjs` (also the Sync cases button).
-- **Updates** are found by `automation/case-watch.mjs` (DuckDuckGo results
-  screened by Gemini Flash, filed as pending) every 6 hours in CI and on demand
-  from the studio ("check cases"). The studio's Community panel is the review
-  queue: Approve puts an update on the case page at the next build and into the
-  next digest; Reject hides it.
+- **Updates** are found by `automation/case-watch.mjs` every 6 hours in CI and on
+  demand from the studio ("check cases"): DuckDuckGo results, each page fetched and
+  dropped if it never names the case, the article text screened by Gemini Flash,
+  filed as pending. The page read is what stopped it filing a Heuermann sentencing
+  sourced to a listicle that never mentions him. The studio's Community panel is
+  the review queue: Approve puts an update on the case page at the next build and
+  into the next digest; Reject hides it.
+- **The Case File** is the signup on the homepage and in every page footer
+  (`js/main.js` -> `/api/community/subscribe`). It sends a confirm link; the
+  `cts_members.newsletter` flag is set only when that link is clicked
+  (`confirm?t=..&n=1`), never by the open endpoint. Members on it get the week's new
+  episodes and blog posts in the Sunday digest, read from the deployed
+  `/automation/episodes.json` and `blog.json`, so it can only list what is already public.
 - **Digest:** `/api/community/digest`, Vercel cron Sundays 14:00 UTC, Resend.
+  One email per member: case updates plus, for Case File members, what is new.
   Test to one address: `.../digest?key=<CRON_SECRET>&to=<email>&dry=1`.
 - **Env:** `automation/.env.community` locally (gitignored), the same names on
   the Vercel project and as GitHub Actions secrets. `MAIL_FROM` moves to

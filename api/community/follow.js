@@ -2,24 +2,8 @@
 // Follow a case by email. A member with the cookie follows at once; anyone else
 // gets one email: a confirmation link (new member) or a sign-in link (known
 // member) that also sets the cookie. Never reveals whether an email exists.
-import { sb, sendMail, isEmail, isSlug, memberTokenFrom, memberByToken, readJsonBody, confirmEmail, signinEmail, SITE } from "../../automation/community/lib.js";
-
-// One confirmation or sign-in mail per address per ten minutes. Anyone can post to this
-// endpoint and every call sends real email, to an address that may not have asked for it.
-//
-// The claim is a single conditional UPDATE, so it holds across function instances and two
-// simultaneous requests cannot both win it: whoever stamps last_mail_at first gets the
-// row back and sends; the other gets nothing back and stays quiet. Both callers see the
-// same answer, so nothing is revealed about who is already a member.
-const MAIL_COOLDOWN_MS = 10 * 60 * 1000;
-async function claimMailSlot(memberId) {
-  const cutoff = new Date(Date.now() - MAIL_COOLDOWN_MS).toISOString();
-  const won = await sb(
-    `cts_members?id=eq.${memberId}&or=(last_mail_at.is.null,last_mail_at.lt.${cutoff})&select=id`,
-    { method: "PATCH", body: { last_mail_at: new Date().toISOString() }, prefer: "return=representation" },
-  );
-  return Array.isArray(won) && won.length > 0;
-}
+// One mail per address per ten minutes: see claimMailSlot in lib.js.
+import { sb, sendMail, isEmail, isSlug, memberTokenFrom, memberByToken, readJsonBody, claimMailSlot, confirmEmail, signinEmail, SITE } from "../../automation/community/lib.js";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "POST only" });
@@ -50,7 +34,7 @@ export default async function handler(req, res) {
     if (await claimMailSlot(member.id)) {
       const link = `${SITE()}/api/community/confirm?t=${member.token}&c=${slug}`;
       const mail = member.confirmed_at ? signinEmail({ caseTitle: kase.title, link }) : confirmEmail({ caseTitle: kase.title, link });
-      await sendMail({ to: email, ...mail });
+      await sendMail({ to: email, ...mail, unsubToken: member.token });
     }
     return res.status(200).json({ ok: true, state: "check-email", case: slug });
   } catch (e) {

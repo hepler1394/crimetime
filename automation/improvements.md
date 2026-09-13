@@ -531,3 +531,12 @@ with an [auto] tag — the counter on Mission Control reads this file.
 465. [auto 2026-09-11] Published new quiz: "Fingerprints on Trial" (5 questions)
 466. [auto 2026-09-12] Published podcast episode from the studio: "The Disappearance of Gabby Petito" (00:21:35)
 467. [auto 2026-09-12] Published podcast episode from the studio: "Hunting the Golden State Killer" (00:22:40)
+468. The Case File signup works: /api/community/subscribe behind the homepage block and the footer on every page (it had no handler and did nothing)
+469. Sunday digest carries the week's new episodes and blog posts for Case File members, next to their case updates
+470. Newsletter flag is set only from the emailed confirm link, so nobody can sign up someone else's address
+471. List-Unsubscribe header fixed (it pointed at a literal t=UNSUB placeholder) and one-click unsubscribe added
+472. Supabase reads retry on 5xx; the 2026-09-13 digest died on one gateway 504
+473. Case watcher reads each article before filing and drops pages that never name the case
+474. Case watcher compares URLs normalised, so a story's /video/ twin is not filed twice
+475. Signup copy matches what is sent: one email on Sundays, not "twice a week"
+476. CSS/JS cache cut from a week to an hour so site fixes reach returning visitors the same day

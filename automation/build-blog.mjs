@@ -118,7 +118,7 @@ ${rest.map(card).join("\n")}
         <div class="newsletter-block">
             <p class="eyebrow">The Case File</p>
             <h2>Get Case Updates in Your Inbox</h2>
-            <p style="color:var(--cts-muted);max-width:52ch;margin-top:0.8rem;">New posts, new episodes, and the live board &mdash; twice a week, no spam.</p>
+            <p style="color:var(--cts-muted);max-width:52ch;margin-top:0.8rem;">The week's new episodes and posts, plus updates on the cases you follow. One email, Sundays.</p>
             <form class="newsletter-form" onsubmit="return false;">
                 <input type="email" inputmode="email" autocomplete="email" placeholder="Your email address" aria-label="Email address">
                 <button type="submit" class="btn btn-primary" style="white-space:nowrap;">Get the Case File</button>

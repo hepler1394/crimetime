@@ -1,28 +1,18 @@
 #!/usr/bin/env node
-// Proves the follow endpoint's mail cooldown against the real table.
+// Proves the mail cooldown shared by the follow and subscribe endpoints against the real table.
 //
 //   npm run test:community
 //
-// /api/community/follow is open to anyone and every call sends real email, so a send is
+// /api/community/follow and /subscribe are open to anyone and every call sends real email, so a send is
 // claimed with one conditional UPDATE on cts_members.last_mail_at. This checks that the
 // claim actually holds: the first caller wins, callers inside the window get nothing, and
 // the window expires. It writes one throwaway member on a .invalid address and deletes it
 // again, so it is safe to run against production, but it does touch the live database and
 // is therefore not part of `npm test`.
 import { loadEnv } from "./env.mjs";
-import { sb } from "./lib.js";
+// The endpoints' own claim, so this tests the code that runs rather than a copy of it.
+import { sb, claimMailSlot } from "./lib.js";
 await loadEnv();
-
-const MAIL_COOLDOWN_MS = 10 * 60 * 1000;
-// Same claim the endpoint makes; kept here so a change to one without the other fails.
-async function claimMailSlot(memberId) {
-  const cutoff = new Date(Date.now() - MAIL_COOLDOWN_MS).toISOString();
-  const won = await sb(
-    `cts_members?id=eq.${memberId}&or=(last_mail_at.is.null,last_mail_at.lt.${cutoff})&select=id`,
-    { method: "PATCH", body: { last_mail_at: new Date().toISOString() }, prefer: "return=representation" },
-  );
-  return Array.isArray(won) && won.length > 0;
-}
 
 const email = "cooldown-selftest@crimetimesnacks.invalid";
 let pass = 0, fail = 0;

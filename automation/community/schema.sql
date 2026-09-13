@@ -56,6 +56,9 @@ create table if not exists public.cts_members (
   -- open to anyone, and every call sends real email, so one send per address per ten
   -- minutes is the cooldown. Durable on purpose: an in-process map resets on a cold start.
   last_mail_at    timestamptz,
+  -- On The Case File: the week's new episodes and posts go into their Sunday digest.
+  -- Set only by the confirm link (confirm.js n=1), never by the open subscribe endpoint.
+  newsletter      boolean not null default false,
   created_at      timestamptz not null default now()
 );
 -- Existing installs (the column was added 2026-09-06).

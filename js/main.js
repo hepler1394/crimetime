@@ -3,6 +3,61 @@
 // Mark JS as available ASAP so CSS can safely hide pre-animation content.
 document.documentElement.classList.add('js');
 
+// The Case File signup: the homepage block and the footer on every page. Talks to
+// /api/community/subscribe. The footer on the hand-written pages is a bare input and
+// button rather than a form, so this binds to the container, not to a form element.
+document.addEventListener('DOMContentLoaded', function () {
+    var boxes = document.querySelectorAll('.newsletter-form, .footer-newsletter');
+    var landed = new URLSearchParams(location.search).get('subscribed');
+    var hasBlock = !!document.querySelector('.newsletter-form');
+    boxes.forEach(function (box) {
+        var input = box.querySelector('input[type=email]');
+        var button = box.querySelector('button');
+        if (!input || !button) return;
+        var isForm = box.tagName === 'FORM';
+        var note = document.createElement('p');
+        note.setAttribute('role', 'status');
+        note.style.cssText = 'margin:.7rem 0 0;font-size:.9rem;line-height:1.5;min-height:1.4em;color:var(--cts-muted)';
+        if (isForm) box.parentNode.insertBefore(note, box.nextSibling); else box.appendChild(note);
+        function say(text, tone) {
+            note.textContent = text;
+            note.style.color = tone === 'ok' ? '#9fe3b8' : tone === 'err' ? 'var(--cts-red-hot)' : 'var(--cts-muted)';
+        }
+        // Landing from the confirm link: say it once, in the homepage block when there is one.
+        if (landed && (isForm || !hasBlock)) {
+            if (landed === 'confirmed') say('You are on the list. The Case File arrives on Sunday.', 'ok');
+            else if (landed === 'invalid') say('That link was not valid. Enter your email for a fresh one.', 'err');
+            else say('Something broke on our side. Enter your email to try again.', 'err');
+        }
+        function submit(e) {
+            if (e) e.preventDefault();
+            var email = input.value.trim();
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { say('Enter a valid email.', 'err'); input.focus(); return; }
+            button.disabled = true;
+            say('One moment...');
+            fetch('/api/community/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'same-origin',
+                body: JSON.stringify({ email: email })
+            })
+                .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok) throw new Error(j.error || 'Something broke on our side. Try again in a minute.'); return j; }); })
+                .then(function (j) {
+                    input.value = '';
+                    say(j.state === 'subscribed' ? 'You are on the list. The Case File arrives on Sunday.' : 'Check your inbox and click the link to confirm.', 'ok');
+                })
+                .catch(function (err) { say(err.message, 'err'); })
+                .then(function () { button.disabled = false; });
+        }
+        if (isForm) {
+            box.addEventListener('submit', submit);
+        } else {
+            button.addEventListener('click', submit);
+            input.addEventListener('keydown', function (e) { if (e.key === 'Enter') submit(e); });
+        }
+    });
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Navigation Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
