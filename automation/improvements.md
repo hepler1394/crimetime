@@ -540,3 +540,4 @@ with an [auto] tag — the counter on Mission Control reads this file.
 474. Case watcher compares URLs normalised, so a story's /video/ twin is not filed twice
 475. Signup copy matches what is sent: one email on Sundays, not "twice a week"
 476. CSS/JS cache cut from a week to an hour so site fixes reach returning visitors the same day
+477. Service worker v2: scripts and styles network-first, so a deploy reaches returning visitors on their next page load (v1 could pin last week's main.js)
