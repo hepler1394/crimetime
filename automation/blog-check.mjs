@@ -14,7 +14,9 @@ const clean = (w) => w.replace(/^[("“‘'\[]+/, "").replace(/[)"”’'\]]+$/,
 export function postTokens(text, { numbersOnly = false } = {}) {
   const s = String(text || "");
   const out = new Set();
-  for (const m of s.matchAll(/(?<![\w$])\$?(\d[\d,.:\/]*)(?:[KMB]\b|(?![\w]))/g)) {
+  // A currency prefix is part of the number ("US$41,000"), and a match may never start right
+  // after a digit and comma: without both, "US$41,000" was read as the number "000".
+  for (const m of s.matchAll(/(?<![\w.,$])(?:[A-Z]{1,2}\$|\$)?(\d[\d,.:\/]*)(?:[KMB]\b|(?![\w]))/g)) {
     const n = m[1].replace(/[,.:\/]+$/, "").replace(/,/g, "");
     if (n) out.add(n);
   }

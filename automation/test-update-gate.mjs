@@ -74,6 +74,14 @@ test("distinctive picks numbers and summary names, not Title Case title words", 
   assert.ok(!d.includes("Dismisses"));
 });
 
+test("US$41,000 is the number 41000, not 000", () => {
+  assert.deepEqual(distinctive({ title: "", summary: "a reward of US$41,000 was offered" }), ["41000"]);
+});
+
+test("a figure written US$41,000 in the source still matches 41000 (the Delphi hold)", () => {
+  assert.deepEqual(missingFromArticle({ title: "", summary: "A reward of $41,000 was offered." }, "the reward offered in the case was set at US$41,000 (equivalent to $53,900 today)"), []);
+});
+
 test("numbers match on a word boundary: 19 is not found inside 2019", () => {
   assert.deepEqual(missingFromArticle({ title: "", summary: "Sentenced on May 19." }, "He was sentenced in May 2019 in a long hearing."), ["19"]);
 });

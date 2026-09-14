@@ -27,6 +27,12 @@ test("an invented name and a wrong year are caught", () => {
   assert.ok(!miss.includes("Sacramento"));
 });
 
+test("a currency amount is one number (the Delphi hold: US$41,000 read as 000)", () => {
+  assert.deepEqual(postTokens("A reward was set at US$41,000. Later $1,000 more.", { numbersOnly: true }).sort(), ["1000", "41000"]);
+  const post = { title: "x", body: ["A reward was set at US$41,000."] };
+  assert.deepEqual(unsupportedInPost(post, "The reward reached $41,000 by March."), []);
+});
+
 test("headings only have their numbers checked", () => {
   const post = { title: "x", body: ["## What Changed After The Arrest", "## The 1999 Break"] };
   assert.deepEqual(unsupportedInPost(post, NOTES), ["1999"]);

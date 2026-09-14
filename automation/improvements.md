@@ -553,3 +553,9 @@ with an [auto] tag — the counter on Mission Control reads this file.
 487. Blog post pages render section headings and carry dateModified and an Updated date
 488. ai-write.mjs --rewrite expands an old post in place, keeping its URL
 489. Google Search Console property verified for www.crimetimesnacks.com (HTML file, hyvee13800 account)
+490. [auto 2026-09-14] Expanded blog post from research notes: "The 2022 University of Idaho Student Murders" (1700 words, 5 sources)
+491. [auto 2026-09-14] Expanded blog post from research notes: "The Watts Family Murders: What the Record Shows" (1355 words, 6 sources)
+492. [auto 2026-09-14] Expanded blog post from research notes: "The Documented Facts of the JonBenét Ramsey Case" (1775 words, 6 sources)
+493. [auto 2026-09-14] Expanded blog post from research notes: "The Case File: Erik and Lyle Menendez" (1581 words, 6 sources)
+494. [auto 2026-09-14] Expanded blog post from research notes: "Investigative Genetic Genealogy" (1295 words, 6 sources)
+495. [auto 2026-09-14] Expanded blog post from research notes: "The Courtney Clenney Case: What the Evidence Shows" (1219 words, 4 sources)

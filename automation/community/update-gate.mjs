@@ -31,6 +31,9 @@ export const norm = (s) => String(s || "").toLowerCase().normalize("NFD").replac
   .replace(/\baug(ust)?\b/g, "august").replace(/\bsept?(ember)?\b/g, "september")
   .replace(/\boct(ober)?\b/g, "october").replace(/\bnov(ember)?\b/g, "november")
   .replace(/\bdec(ember)?\b/g, "december")
+  // "US$41,000" in Wikipedia's notes: drop the country letters with the symbol, or the number
+  // becomes "us41000" and no longer stands on a word boundary.
+  .replace(/\b[a-z]{1,2}\$(?=\d)/g, "$")
   .replace(/[,$]/g, "")
   .replace(new RegExp(`\\b(${Object.keys(NUM).join("|")})\\b`, "g"), (m) => String(NUM[m]));
 // For matching a quoted sentence: punctuation and spacing differ between a model's copy and
@@ -44,7 +47,9 @@ const LEADING = /^(The|This|That|These|Those|He|She|They|It|A|An|In|On|At|By|For
 export function distinctive({ title = "", summary = "" }) {
   const out = new Set();
   // "$50M" in a headline is "$50 million" in the article: check the 50.
-  const numbers = (s) => { for (const m of s.matchAll(/(?<![\w$])\$?(\d[\d,.:\/]*)(?:[KMB]\b|(?![\w]))/g)) out.add(m[1].replace(/[,.]$/, "").replace(/,/g, "")); };
+  // "US$41,000" is one number: take the currency prefix, and never start a match just after a
+  // digit and comma, or the "000" is read on its own.
+  const numbers = (s) => { for (const m of s.matchAll(/(?<![\w.,$])(?:[A-Z]{1,2}\$|\$)?(\d[\d,.:\/]*)(?:[KMB]\b|(?![\w]))/g)) out.add(m[1].replace(/[,.]$/, "").replace(/,/g, "")); };
   numbers(title); numbers(summary);
   for (const m of summary.matchAll(/\b([A-Z][a-z]{2,}(?:\s+[A-Z][a-z.]+){0,3})\b/g)) {
     const first = m[1].split(/\s+/)[0];
