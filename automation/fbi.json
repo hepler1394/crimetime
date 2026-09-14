@@ -1,18 +1,33 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1243,
+    "totalOnFile": 1244,
     "baked": 150,
-    "updated": "2026-09-14T12:59:08.674Z"
+    "updated": "2026-09-14T21:53:16.768Z"
   },
   "items": [
+    {
+      "uid": "cb829c4b9cdd4c7aa63e855ca92b2812",
+      "title": "EMYLEE THAI",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/emylee-thai/@@images/image/large",
+      "office": "Houston",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Emylee Thai.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/emylee-thai",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED A FLIGHT RISK",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2026-06-18T08:22:00"
+    },
     {
       "uid": "270183a5bbeb472a975b171f0d444a4c",
       "title": "SHOOTING - TUSCALOOSA, ALABAMA",
       "kind": "victim",
       "image": "https://www.fbi.gov/wanted/seeking-info/shooting---tuscaloosa-alabama/@@images/image/large",
       "office": "Birmingham",
-      "reward": "",
+      "reward": "Reward up to $10,000 for information leading to the identification, arrest, and conviction of those responsible for this shooting",
       "url": "https://www.fbi.gov/wanted/seeking-info/shooting---tuscaloosa-alabama",
       "status": "na",
       "warning": "",
@@ -20,6 +35,21 @@
         "Seeking Information"
       ],
       "publication": "2026-09-13T17:26:00"
+    },
+    {
+      "uid": "2e973b825a0f4a6aa65f0883e9b354dc",
+      "title": "NA'RYAH ADAMS",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/naryah-adams/@@images/image/large",
+      "office": "Baltimore",
+      "reward": "Reward up to $15,000 for information leading to the arrest and conviction of the individual(s) involved in the shooting death of Na’Ryah Adams.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/naryah-adams",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-09-10T10:57:00"
     },
     {
       "uid": "62dba83f492e470182712dfb20fc4439",
@@ -1093,21 +1123,6 @@
         "ViCAP Homicides and Sexual Assaults"
       ],
       "publication": "2026-07-20T10:39:00"
-    },
-    {
-      "uid": "cb829c4b9cdd4c7aa63e855ca92b2812",
-      "title": "EMYLEE THAI",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/emylee-thai/@@images/image/large",
-      "office": "Houston",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Emylee Thai.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/emylee-thai",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED A FLIGHT RISK",
-      "subjects": [
-        "Most Wanted Fraudster"
-      ],
-      "publication": "2026-06-18T08:22:00"
     },
     {
       "uid": "1582e7db343a44508dd4e52490c1b80d",
@@ -2274,21 +2289,6 @@
         "ViCAP Missing Persons"
       ],
       "publication": "2026-04-10T09:46:00"
-    },
-    {
-      "uid": "4760d61850d74f4091a8c6e9b22b087a",
-      "title": "JAKODI KESHONE WILSON",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/jakodi-keshone-wilson/@@images/image/large",
-      "office": "Tampa",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cei/jakodi-keshone-wilson",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-04-07T12:39:00"
     }
   ]
 }
