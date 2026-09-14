@@ -559,3 +559,4 @@ with an [auto] tag — the counter on Mission Control reads this file.
 493. [auto 2026-09-14] Expanded blog post from research notes: "The Case File: Erik and Lyle Menendez" (1581 words, 6 sources)
 494. [auto 2026-09-14] Expanded blog post from research notes: "Investigative Genetic Genealogy" (1295 words, 6 sources)
 495. [auto 2026-09-14] Expanded blog post from research notes: "The Courtney Clenney Case: What the Evidence Shows" (1219 words, 4 sources)
+496. [auto 2026-09-14] Expanded blog post from research notes: "The Delphi Murders: What the Record Shows" (1122 words, 6 sources)
