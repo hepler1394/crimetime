@@ -547,3 +547,9 @@ with an [auto] tag — the counter on Mission Control reads this file.
 481. Studio Community panel: held updates with their reason, plus two weeks of self-published ones with Reject
 482. Digest mails only updates dated within 45 days, so a development found late is not sent as this week's news
 483. Case page copy says how an entry is checked, instead of claiming a person checked it
+484. Blog writer rebuilt: researches first (Wikipedia and current coverage), writes 1,100 to 1,500 words in sections with Gemini Pro from the notes only
+485. Blog fact check (blog-check.mjs): every name and number in a post must be in its research notes; one rewrite, then the post is held and Cory is told
+486. Blog posts list their sources and link the case page and episode
+487. Blog post pages render section headings and carry dateModified and an Updated date
+488. ai-write.mjs --rewrite expands an old post in place, keeping its URL
+489. Google Search Console property verified for www.crimetimesnacks.com (HTML file, hyvee13800 account)

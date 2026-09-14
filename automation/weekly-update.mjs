@@ -2,7 +2,7 @@
 // THE ONE BUTTON. Refreshes everything and rebuilds the site:
 //   1. Pull latest podcast episodes (Anchor RSS)        [network]
 //   2. Pull latest YouTube uploads + Shorts (YT RSS)    [network]
-//   3. Write one fresh, slop-free blog post             [local LLM first]
+//   3. Write one researched long-form blog post, checked against its notes (ai-write.mjs)
 //   4. Add one new merch design                         [local LLM, offline-safe]
 //   5. Rebuild the whole site (feed, episodes, blog, videos, merch, meta, sitemap)
 //   6. QA internal links

@@ -18,6 +18,10 @@ const img = (p) => (p.image.startsWith("/") ? p.image : `/${p.image}`);
 const readingTime = (p) =>
   Math.max(1, Math.round(p.body.join(" ").split(/\s+/).length / 220));
 
+const readJson = async (p, fb) => { try { return JSON.parse(await readFile(p, "utf8")); } catch { return fb; } };
+const liveCases = Object.fromEntries(((await readJson(join(__dirname, "cases-live.json"), {})).cases || []).map((c) => [c.slug, c]));
+const epBySlug = Object.fromEntries(((await readJson(join(__dirname, "episodes.json"), {})).episodes || []).map((e) => [e.slug, e]));
+
 /* ------------------------------------------------------------------ cards */
 function card(p) {
   return `                <div class="blog-card" data-category="${esc(p.category)}">
@@ -157,6 +161,7 @@ function articleLd(p) {
     description: p.excerpt,
     image: `${SITE}${img(p)}`,
     datePublished: p.date,
+    dateModified: p.updated || p.date,
     author: { "@type": "Person", name: p.author },
     publisher: {
       "@type": "Organization",
@@ -187,9 +192,34 @@ function shareRow(url, title) {
         </div>`;
 }
 
+// Posts written from research notes (ai-write.mjs) carry "## " section headings, their
+// sources, and the case they are about; older posts are plain paragraphs and render as before.
+function caseBlock(p) {
+  const kase = p.caseSlug && liveCases[p.caseSlug];
+  if (!kase) return "";
+  const ep = kase.episode_slug && epBySlug[kase.episode_slug];
+  return `        <aside style="margin:2.4rem 0;padding:1.3rem 1.4rem;border:1px solid var(--cts-line-strong);border-radius:var(--radius);background:var(--cts-panel);">
+            <p class="eyebrow" style="margin:0 0 .5rem;">The case file</p>
+            <p style="margin:0 0 1rem;color:var(--cts-muted);">Follow ${esc(kase.title)} and we email you when something happens: a court date, a ruling, an arrest.${ep ? ` Or hear the whole case in the episode.` : ""}</p>
+            <div style="display:flex;gap:.7rem;flex-wrap:wrap;">
+                <a class="btn btn-primary btn-sm" href="/cases/${esc(kase.slug)}.html">Follow this case</a>
+                ${ep ? `<a class="btn btn-secondary btn-sm" href="/episodes/${esc(ep.slug)}.html">Listen: ${esc(ep.title)}</a>` : ""}
+            </div>
+        </aside>`;
+}
+function sourcesBlock(p) {
+  if (!p.sources?.length) return "";
+  return `        <h2 style="font-family:var(--font-display);font-size:1.6rem;letter-spacing:.02em;margin:2.6rem 0 .8rem;">Sources</h2>
+        <ol style="color:var(--cts-muted);line-height:1.7;padding-left:1.2rem;margin:0 0 1.6rem;">
+${p.sources.map((s) => `            <li><a href="${esc(s.url)}" rel="noopener" target="_blank" style="color:var(--cts-muted);">${esc(s.title || s.url)}</a></li>`).join("\n")}
+        </ol>`;
+}
+
 function postPage(p, posts) {
-  const paras = p.body.map((t) => `        <p style="color:var(--cts-muted);line-height:1.9;font-size:1.03rem;margin-bottom:1.3rem;">${esc(t)}</p>`).join("\n");
-  const articleMeta = `\n    <meta property="article:published_time" content="${p.date}">\n    <meta property="article:author" content="${esc(p.author)}">`;
+  const paras = p.body.map((t) => t.startsWith("## ")
+    ? `        <h2 style="font-family:var(--font-display);font-size:clamp(1.6rem,3vw,2.1rem);letter-spacing:.02em;margin:2.6rem 0 1rem;color:var(--cts-white);">${esc(t.slice(3))}</h2>`
+    : `        <p style="color:var(--cts-muted);line-height:1.9;font-size:1.03rem;margin-bottom:1.3rem;">${esc(t)}</p>`).join("\n");
+  const articleMeta = `\n    <meta property="article:published_time" content="${p.date}">${p.updated ? `\n    <meta property="article:modified_time" content="${p.updated}">` : ""}\n    <meta property="article:author" content="${esc(p.author)}">`;
   const more = posts.filter((x) => x.slug !== p.slug).slice(0, 3);
   return `${head({
     title: `${p.title} | CrimeTimeSnacks Blog`,
@@ -206,13 +236,15 @@ ${header("blog")}
         <div class="container">
             <div class="blog-tags" style="justify-content:center;display:flex;margin-bottom:0.9rem;"><span class="blog-tag">${esc(p.categoryLabel)}</span><span class="blog-tag">${readingTime(p)} min read</span></div>
             <h1>${esc(p.title)}</h1>
-            <p class="episode-date" style="justify-content:center;margin-top:0.7rem;"><i class="far fa-calendar-alt" aria-hidden="true"></i> ${fmtDate(p.date)} &nbsp;&middot;&nbsp; ${esc(p.author)}</p>
+            <p class="episode-date" style="justify-content:center;margin-top:0.7rem;"><i class="far fa-calendar-alt" aria-hidden="true"></i> ${fmtDate(p.date)}${p.updated ? ` &nbsp;&middot;&nbsp; Updated ${fmtDate(p.updated)}` : ""} &nbsp;&middot;&nbsp; ${esc(p.author)}</p>
         </div>
     </section>
 
     <div class="container" style="max-width:780px;margin:3rem auto;">
         <img src="${esc(img(p))}" alt="${esc(p.title)}" decoding="async" style="width:100%;border-radius:16px;margin-bottom:2.2rem;border:1px solid var(--cts-line-strong);box-shadow:var(--shadow-2);">
 ${paras}
+${caseBlock(p)}
+${sourcesBlock(p)}
 ${shareRow(`${SITE}${postUrl(p)}`, `${p.title} — CrimeTimeSnacks`)}
         <div style="margin-top:2.5rem;">
             <a href="/blog.html" class="btn btn-secondary"><i class="fas fa-arrow-left" aria-hidden="true"></i> All Posts</a>

@@ -54,9 +54,11 @@ export function distinctive({ title = "", summary = "" }) {
   return [...out].filter(Boolean);
 }
 
-export function missingFromArticle(update, articleText) {
-  const page = norm(articleText);
-  const found = (t) => {
+// found(token) against one text, normalised once: the blog check calls it hundreds of times
+// against 90,000 characters of research notes.
+export function makeFinder(text) {
+  const page = norm(text);
+  return (t) => {
     const n = norm(t);
     // Numbers on a word boundary: "19" must not be found inside "2019".
     if (/^[\d.:\/]+$/.test(n)) return new RegExp(`(?<![\\w.])${n.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?![\\w])`).test(page);
@@ -64,6 +66,10 @@ export function missingFromArticle(update, articleText) {
     const parts = n.split(/\s+/).filter(Boolean);
     return parts.length > 1 && parts.every((p) => page.includes(p));
   };
+}
+
+export function missingFromArticle(update, articleText) {
+  const found = makeFinder(articleText);
   return distinctive(update).filter((t) => !found(t));
 }
 
