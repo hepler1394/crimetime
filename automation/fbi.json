@@ -1,11 +1,26 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1242,
+    "totalOnFile": 1243,
     "baked": 150,
-    "updated": "2026-09-13T23:53:05.537Z"
+    "updated": "2026-09-14T05:04:26.579Z"
   },
   "items": [
+    {
+      "uid": "270183a5bbeb472a975b171f0d444a4c",
+      "title": "SHOOTING - TUSCALOOSA, ALABAMA",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/shooting---tuscaloosa-alabama/@@images/image/large",
+      "office": "Birmingham",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/seeking-info/shooting---tuscaloosa-alabama",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-09-13T17:26:00"
+    },
     {
       "uid": "62dba83f492e470182712dfb20fc4439",
       "title": "BERNHARD EUGEN FRITSCH",
@@ -2274,21 +2289,6 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2026-04-07T12:39:00"
-    },
-    {
-      "uid": "604061113b0742898784103e18451b3d",
-      "title": "CIVIL UNREST - OREGON",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/civil-unrest-oregon-3/@@images/image/large",
-      "office": "Portland",
-      "reward": "Reward up to $5,000 for information leading to the arrest and conviction of the individuals involved in the vandalism and/or destruction of government property in Eugene, Oregon.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/civil-unrest-oregon-3",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2026-02-10T09:58:00"
     }
   ]
 }

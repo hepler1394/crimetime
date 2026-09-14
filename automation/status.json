@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-14T00:27:01.516Z",
+  "generated": "2026-09-14T05:05:08.533Z",
   "improvementsShipped": 496,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
@@ -36,12 +36,12 @@
     }
   },
   "freshness": {
-    "episodesJson": "2026-09-12T07:10:10.117Z",
-    "blogJson": "2026-09-14T00:26:54.320Z",
+    "episodesJson": "2026-09-14T05:04:26.060Z",
+    "blogJson": "2026-09-14T05:04:21.451Z",
     "merchJson": "2026-09-11T14:00:39.970Z",
     "quizzesJson": "2026-09-11T14:00:48.611Z",
-    "fbiJson": "2026-09-13T23:53:05.537Z",
-    "css": "2026-08-26T05:08:11.786Z"
+    "fbiJson": "2026-09-14T05:04:26.579Z",
+    "css": "2026-09-14T05:04:21.524Z"
   },
   "nextTopics": [
     "How the FBI's ViCAP database links violent crimes",
