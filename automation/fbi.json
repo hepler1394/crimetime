@@ -1,11 +1,103 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1245,
+    "totalOnFile": 1246,
     "baked": 150,
-    "updated": "2026-09-15T17:05:55.999Z"
+    "updated": "2026-09-15T21:27:29.903Z"
   },
   "items": [
+    {
+      "uid": "aee4c43085604dd2a8d7ad45dcafa9ab",
+      "title": "RONALD SCOTT WATSON",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/additional/ronald-scott-watson/@@images/image/large",
+      "office": "Atlanta",
+      "reward": "Reward up to $20,000 for information leading to the location, arrest, and conviction of Ronald Scott Watson.",
+      "url": "https://www.fbi.gov/wanted/additional/ronald-scott-watson",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Additional Violent Crimes"
+      ],
+      "publication": "2025-09-05T05:40:00"
+    },
+    {
+      "uid": "2e973b825a0f4a6aa65f0883e9b354dc",
+      "title": "NA'RYAH ADAMS",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/naryah-adams/@@images/image/large",
+      "office": "Baltimore",
+      "reward": "Reward up to $15,000 for information leading to the arrest and conviction of the individual(s) involved in the shooting death of Na’Ryah Adams.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/naryah-adams",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Case of the Week"
+      ],
+      "publication": "2026-09-10T10:57:00"
+    },
+    {
+      "uid": "109f69822bdb4bd9bd6ea15da5d4f19d",
+      "title": "GRISELDA MARGARITA ARREDONDO PINZON",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/griselda-margarita-arredondo-pinzon/@@images/image/large",
+      "office": "Newyork",
+      "reward": "The United States Department of State’s Transnational Organized Crime Rewards Program is offering a reward of up to $2 million for information leading to the arrest and/or conviction of Griselda Margarita Arredondo Pinzón.",
+      "url": "https://www.fbi.gov/wanted/cei/griselda-margarita-arredondo-pinzon",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-08-31T11:49:00"
+    },
+    {
+      "uid": "d845d5679b8c493ca4ae583e1eee2c34",
+      "title": "MICHAEL BARNEY SR.",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/michael-barney-sr/@@images/image/large",
+      "office": "Albuquerque",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the person or persons responsible for the death of Michael Barney Sr.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/michael-barney-sr",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Indian Country",
+        "Seeking Information"
+      ],
+      "publication": "2021-08-03T15:06:00"
+    },
+    {
+      "uid": "2454ac0e87944565ab67e9d12f5a6132",
+      "title": "ONUR SIMSEK",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/onur-simsek/@@images/image/large",
+      "office": "Tampa",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Onur Simsek.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/onur-simsek",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2026-08-25T09:34:00"
+    },
+    {
+      "uid": "f1af47e4bd99425c8ef6da6b2f9bbe7e",
+      "title": "TAG GILKESON",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cac/tag-gilkeson/@@images/image/large",
+      "office": "Dallas",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cac/tag-gilkeson",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Crimes Against Children"
+      ],
+      "publication": "2026-08-24T14:05:00"
+    },
     {
       "uid": "f03b9a09ff06f2ea36d26591898a7efe",
       "title": "JOSE ANTONIO BARROSO",
@@ -68,21 +160,6 @@
       "publication": "2026-06-18T08:22:00"
     },
     {
-      "uid": "2e973b825a0f4a6aa65f0883e9b354dc",
-      "title": "NA'RYAH ADAMS",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/naryah-adams/@@images/image/large",
-      "office": "Baltimore",
-      "reward": "Reward up to $15,000 for information leading to the arrest and conviction of the individual(s) involved in the shooting death of Na’Ryah Adams.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/naryah-adams",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2026-09-10T10:57:00"
-    },
-    {
       "uid": "62dba83f492e470182712dfb20fc4439",
       "title": "BERNHARD EUGEN FRITSCH",
       "kind": "wanted",
@@ -96,37 +173,6 @@
         "Most Wanted Fraudster"
       ],
       "publication": "2026-08-25T07:53:00"
-    },
-    {
-      "uid": "aee4c43085604dd2a8d7ad45dcafa9ab",
-      "title": "RONALD SCOTT WATSON",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/additional/ronald-scott-watson/@@images/image/large",
-      "office": "Atlanta",
-      "reward": "Reward up to $20,000 for information leading to the location, arrest, and conviction of Ronald Scott Watson.",
-      "url": "https://www.fbi.gov/wanted/additional/ronald-scott-watson",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Additional Violent Crimes",
-        "Case of the Week"
-      ],
-      "publication": "2025-09-05T05:40:00"
-    },
-    {
-      "uid": "109f69822bdb4bd9bd6ea15da5d4f19d",
-      "title": "GRISELDA MARGARITA ARREDONDO PINZON",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/griselda-margarita-arredondo-pinzon/@@images/image/large",
-      "office": "Newyork",
-      "reward": "The United States Department of State’s Transnational Organized Crime Rewards Program is offering a reward of up to $2 million for information leading to the arrest and/or conviction of Griselda Margarita Arredondo Pinzón.",
-      "url": "https://www.fbi.gov/wanted/cei/griselda-margarita-arredondo-pinzon",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-08-31T11:49:00"
     },
     {
       "uid": "3992cf07e26848bab7fd7b6bb58f60a2",
@@ -219,22 +265,6 @@
         "Seeking Information"
       ],
       "publication": "2026-09-02T17:49:00"
-    },
-    {
-      "uid": "d845d5679b8c493ca4ae583e1eee2c34",
-      "title": "MICHAEL BARNEY SR.",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/michael-barney-sr/@@images/image/large",
-      "office": "Albuquerque",
-      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the person or persons responsible for the death of Michael Barney Sr.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/michael-barney-sr",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Indian Country",
-        "Seeking Information"
-      ],
-      "publication": "2021-08-03T15:06:00"
     },
     {
       "uid": "3a3ec6ff4ecd1c5aac9a7f2380eccd47",
@@ -427,21 +457,6 @@
       "publication": "2022-10-05T12:41:00"
     },
     {
-      "uid": "f1af47e4bd99425c8ef6da6b2f9bbe7e",
-      "title": "TAG GILKESON",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cac/tag-gilkeson/@@images/image/large",
-      "office": "Dallas",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cac/tag-gilkeson",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Crimes Against Children"
-      ],
-      "publication": "2026-08-24T14:05:00"
-    },
-    {
       "uid": "8b2461d815d5493886832689c2ef538d",
       "title": "DONALD STEVEN LANG",
       "kind": "wanted",
@@ -471,21 +486,6 @@
         "Indian Country"
       ],
       "publication": "2024-10-22T11:00:00"
-    },
-    {
-      "uid": "2454ac0e87944565ab67e9d12f5a6132",
-      "title": "ONUR SIMSEK",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/onur-simsek/@@images/image/large",
-      "office": "Tampa",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Onur Simsek.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/onur-simsek",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Most Wanted Fraudster"
-      ],
-      "publication": "2026-08-25T09:34:00"
     },
     {
       "uid": "95c9abca38a44575ae75ac8267463b43",
@@ -777,6 +777,21 @@
         "Seeking Information"
       ],
       "publication": "2026-08-13T11:36:00"
+    },
+    {
+      "uid": "ffc971d4a49048bd891663a295da570f",
+      "title": "JIMMY DOLLISON - GARNETT, KANSAS",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/jimmy-dollison---garnett-kansas/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/jimmy-dollison---garnett-kansas",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Homicides and Sexual Assaults"
+      ],
+      "publication": "2026-08-13T11:26:00"
     },
     {
       "uid": "cbcf79b08004491e9f395edc6a8ef823",
@@ -2276,21 +2291,6 @@
         "Violent Crime - Murders"
       ],
       "publication": "2026-02-25T16:10:00"
-    },
-    {
-      "uid": "6297a38924874e6b8f4b38d7aa74d860",
-      "title": "ALFRED RAYMOND MURRAY - DECEASED HOMICIDE OFFENDER",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/alfred-raymond-murray---deceased-homicide-offender/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/alfred-raymond-murray---deceased-homicide-offender",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Homicides and Sexual Assaults"
-      ],
-      "publication": "2026-04-10T12:53:00"
     }
   ]
 }
