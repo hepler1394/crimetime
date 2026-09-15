@@ -1,11 +1,42 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1244,
+    "totalOnFile": 1245,
     "baked": 150,
-    "updated": "2026-09-15T14:00:11.900Z"
+    "updated": "2026-09-15T17:05:55.999Z"
   },
   "items": [
+    {
+      "uid": "f03b9a09ff06f2ea36d26591898a7efe",
+      "title": "JOSE ANTONIO BARROSO",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cac/jose-antonio-barroso/@@images/image/large",
+      "office": "Littlerock",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cac/jose-antonio-barroso",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED DANGEROUS AND AN ESCAPE RISK",
+      "subjects": [
+        "Crimes Against Children"
+      ],
+      "publication": "2010-08-27T17:55:00"
+    },
+    {
+      "uid": "69bfe3c5c4e34b77a37b6593d4f81206",
+      "title": "BESALYNN MARY JAMES",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/besalynn-mary-james/@@images/image/large",
+      "office": "Seattle",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the individual(s) involved in the disappearance of Besalynn Mary James.",
+      "url": "https://www.fbi.gov/wanted/kidnap/besalynn-mary-james",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons",
+        "Indian Country"
+      ],
+      "publication": "2026-01-16T07:41:00"
+    },
     {
       "uid": "270183a5bbeb472a975b171f0d444a4c",
       "title": "SHOOTING - TUSCALOOSA, ALABAMA",
@@ -396,6 +427,21 @@
       "publication": "2022-10-05T12:41:00"
     },
     {
+      "uid": "f1af47e4bd99425c8ef6da6b2f9bbe7e",
+      "title": "TAG GILKESON",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cac/tag-gilkeson/@@images/image/large",
+      "office": "Dallas",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cac/tag-gilkeson",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Crimes Against Children"
+      ],
+      "publication": "2026-08-24T14:05:00"
+    },
+    {
       "uid": "8b2461d815d5493886832689c2ef538d",
       "title": "DONALD STEVEN LANG",
       "kind": "wanted",
@@ -515,6 +561,22 @@
         "Kidnappings and Missing Persons"
       ],
       "publication": "2024-06-28T14:49:00"
+    },
+    {
+      "uid": "2944349620314baeb2eb77ed35c62f49",
+      "title": "ALEJANDRO PILAR VASQUEZ",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/alejandro-pilar-vasquez/@@images/image/large",
+      "office": "Minneapolis",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the person(s) responsible for the disappearance of Alejandro Pilar Vasquez.",
+      "url": "https://www.fbi.gov/wanted/kidnap/alejandro-pilar-vasquez",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons",
+        "Indian Country"
+      ],
+      "publication": "2026-08-21T07:31:00"
     },
     {
       "uid": "7d2223d182384ef9a7869fe105fc470d",
@@ -715,21 +777,6 @@
         "Seeking Information"
       ],
       "publication": "2026-08-13T11:36:00"
-    },
-    {
-      "uid": "ffc971d4a49048bd891663a295da570f",
-      "title": "JIMMY DOLLISON - GARNETT, KANSAS",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/jimmy-dollison---garnett-kansas/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/jimmy-dollison---garnett-kansas",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Homicides and Sexual Assaults"
-      ],
-      "publication": "2026-08-13T11:26:00"
     },
     {
       "uid": "cbcf79b08004491e9f395edc6a8ef823",
@@ -2244,51 +2291,6 @@
         "ViCAP Homicides and Sexual Assaults"
       ],
       "publication": "2026-04-10T12:53:00"
-    },
-    {
-      "uid": "d9266683013b4bc681a239ee9db46a58",
-      "title": "JERRY WHALEY - STANTON, MISSOURI",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/jerry-whaley---stanton-missouri/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/jerry-whaley---stanton-missouri",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Missing Persons"
-      ],
-      "publication": "2026-04-10T12:42:00"
-    },
-    {
-      "uid": "9ec6b210780643858e7ab470d8b28c72",
-      "title": "UNKNOWN BANK ROBBER - WISCONSIN",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/unknown-bank-robber---wisconsin/@@images/image/large",
-      "office": "Milwaukee",
-      "reward": "Reward up to $5,000 for information leading to the arrest and conviction of the unknown suspect involved in this robbery.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/unknown-bank-robber---wisconsin",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2026-04-06T11:41:00"
-    },
-    {
-      "uid": "1fa52fde689c4a56bb186e68f2648aaa",
-      "title": "SALLI MARIE THOMAS - WAYNESBORO, VIRGINIA",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/salli-marie-thomas-waynesboro-virginia/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/salli-marie-thomas-waynesboro-virginia",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Missing Persons"
-      ],
-      "publication": "2026-04-10T09:46:00"
     }
   ]
 }
