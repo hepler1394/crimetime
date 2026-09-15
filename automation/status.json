@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-15T11:52:47.827Z",
-  "improvementsShipped": 496,
+  "generated": "2026-09-15T14:02:31.765Z",
+  "improvementsShipped": 499,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
     "content": [
@@ -11,11 +11,11 @@
   },
   "counts": {
     "episodes": 8,
-    "posts": 16,
-    "merchDesigns": 32,
+    "posts": 17,
+    "merchDesigns": 33,
     "merchCollection": 0,
-    "quizzes": 17,
-    "quizQuestions": 85,
+    "quizzes": 18,
+    "quizQuestions": 90,
     "fbiCases": 150,
     "videos": 1,
     "topicsQueued": 118,
@@ -27,21 +27,21 @@
       "date": "2026-09-12"
     },
     "post": {
-      "title": "The Fingerprint That Changed the Courtroom",
-      "date": "2026-09-11"
+      "title": "The Killing of JonBenét Ramsey: What the Record Shows",
+      "date": "2026-09-15"
     },
     "quiz": {
-      "title": "Fingerprints on Trial",
-      "created": "2026-09-11"
+      "title": "The Gabby Petito Case",
+      "created": "2026-09-15"
     }
   },
   "freshness": {
-    "episodesJson": "2026-09-15T11:52:03.020Z",
-    "blogJson": "2026-09-15T11:51:57.767Z",
-    "merchJson": "2026-09-11T14:00:39.970Z",
-    "quizzesJson": "2026-09-11T14:00:48.611Z",
-    "fbiJson": "2026-09-15T11:52:03.445Z",
-    "css": "2026-09-15T11:51:57.849Z"
+    "episodesJson": "2026-09-15T14:00:11.078Z",
+    "blogJson": "2026-09-15T14:02:18.353Z",
+    "merchJson": "2026-09-15T14:02:27.587Z",
+    "quizzesJson": "2026-09-15T14:02:30.387Z",
+    "fbiJson": "2026-09-15T14:00:11.900Z",
+    "css": "2026-08-26T05:08:11.786Z"
   },
   "nextTopics": [
     "How the FBI's ViCAP database links violent crimes",

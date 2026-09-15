@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-09-11T14:00:48.611Z"
+    "updated": "2026-09-15T14:02:30.387Z"
   },
   "quizzes": [
+    {
+      "slug": "the-gabby-petito-case",
+      "title": "The Gabby Petito Case",
+      "tag": "Case File",
+      "description": "You followed the headlines in 2021. Let's look at what the timeline and the official records actually show.",
+      "created": "2026-09-15",
+      "sourceTopic": "The Disappearance of Gabby Petito",
+      "questions": [
+        {
+          "q": "In which national park or forest were Gabby Petito's remains located on September 19, 2021?",
+          "options": [
+            "Yellowstone National Park",
+            "Bridger-Teton National Forest",
+            "Grand Teton National Park",
+            "Zion National Park"
+          ],
+          "answer": 1,
+          "explain": "Her remains were discovered at the Spread Creek Dispersed Camping area, located within Bridger-Teton National Forest just east of Grand Teton."
+        },
+        {
+          "q": "Which law enforcement department initiated the August 12, 2021, traffic stop involving Petito and Laundrie?",
+          "options": [
+            "Moab Police Department",
+            "Salt Lake City Police",
+            "Utah Highway Patrol",
+            "Grand County Sheriff's Office"
+          ],
+          "answer": 0,
+          "explain": "Moab officers responded to a 911 call reporting a domestic dispute near Moonflower Community Cooperative, separating the two for the night."
+        },
+        {
+          "q": "When did Gabby Petito's mother formally report her missing to authorities?",
+          "options": [
+            "September 1, 2021",
+            "September 11, 2021",
+            "September 15, 2021",
+            "August 30, 2021"
+          ],
+          "answer": 1,
+          "explain": "Her family filed the report on September 11 with the Suffolk County Police Department after ten days of silence and learning the van was back in Florida."
+        },
+        {
+          "q": "What was the official manner of death ruled by the Teton County Coroner?",
+          "options": [
+            "Accidental",
+            "Undetermined",
+            "Homicide",
+            "Natural causes"
+          ],
+          "answer": 2,
+          "explain": "Coroner Dr. Brent Blue determined the manner was homicide and the cause was manual strangulation, estimated to have occurred three to four weeks prior."
+        },
+        {
+          "q": "Where were Brian Laundrie's remains eventually recovered in October 2021?",
+          "options": [
+            "Carlton Reserve",
+            "Myakka River State Park",
+            "Everglades National Park",
+            "Withlacoochee State Forest"
+          ],
+          "answer": 0,
+          "explain": "After extensive searches hampered by flooding, his remains and a notebook containing a written confession were located in Myakkahatchee Creek Environmental Park within the Carlton Reserve."
+        }
+      ]
+    },
     {
       "slug": "fingerprints-on-trial",
       "title": "Fingerprints on Trial",

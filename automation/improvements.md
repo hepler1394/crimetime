@@ -560,3 +560,6 @@ with an [auto] tag — the counter on Mission Control reads this file.
 494. [auto 2026-09-14] Expanded blog post from research notes: "Investigative Genetic Genealogy" (1295 words, 6 sources)
 495. [auto 2026-09-14] Expanded blog post from research notes: "The Courtney Clenney Case: What the Evidence Shows" (1219 words, 4 sources)
 496. [auto 2026-09-14] Expanded blog post from research notes: "The Delphi Murders: What the Record Shows" (1122 words, 6 sources)
+497. [auto 2026-09-15] Published blog post from research notes: "The Killing of JonBenét Ramsey: What the Record Shows" (1561 words, 6 sources)
+498. [auto 2026-09-15] Dropped 1 new merch design into the vault
+499. [auto 2026-09-15] Published new quiz: "The Gabby Petito Case" (5 questions)
