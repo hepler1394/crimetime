@@ -3,24 +3,9 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1244,
     "baked": 150,
-    "updated": "2026-09-14T21:53:16.768Z"
+    "updated": "2026-09-15T05:00:44.357Z"
   },
   "items": [
-    {
-      "uid": "cb829c4b9cdd4c7aa63e855ca92b2812",
-      "title": "EMYLEE THAI",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/emylee-thai/@@images/image/large",
-      "office": "Houston",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Emylee Thai.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/emylee-thai",
-      "status": "captured",
-      "warning": "SHOULD BE CONSIDERED A FLIGHT RISK",
-      "subjects": [
-        "Most Wanted Fraudster"
-      ],
-      "publication": "2026-06-18T08:22:00"
-    },
     {
       "uid": "270183a5bbeb472a975b171f0d444a4c",
       "title": "SHOOTING - TUSCALOOSA, ALABAMA",
@@ -35,6 +20,21 @@
         "Seeking Information"
       ],
       "publication": "2026-09-13T17:26:00"
+    },
+    {
+      "uid": "cb829c4b9cdd4c7aa63e855ca92b2812",
+      "title": "EMYLEE THAI",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/emylee-thai/@@images/image/large",
+      "office": "Houston",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Emylee Thai.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/emylee-thai",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED A FLIGHT RISK",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2026-06-18T08:22:00"
     },
     {
       "uid": "2e973b825a0f4a6aa65f0883e9b354dc",
