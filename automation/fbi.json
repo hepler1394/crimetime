@@ -1,9 +1,9 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1246,
+    "totalOnFile": 1247,
     "baked": 150,
-    "updated": "2026-09-16T11:45:36.760Z"
+    "updated": "2026-09-16T17:05:57.444Z"
   },
   "items": [
     {
@@ -158,6 +158,21 @@
         "Most Wanted Fraudster"
       ],
       "publication": "2026-06-18T08:22:00"
+    },
+    {
+      "uid": "e68a2cd0426f44e0965dc7f92ca95a3b",
+      "title": "TAVIS LAMAR CHENAULT",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/tavis-lamar-chenault/@@images/image/large",
+      "office": "Louisville",
+      "reward": "Reward up to $20,000 for information leading to the arrest and conviction of Tavis Lamar Chenault.",
+      "url": "https://www.fbi.gov/wanted/cei/tavis-lamar-chenault",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-09-09T08:31:00"
     },
     {
       "uid": "62dba83f492e470182712dfb20fc4439",
@@ -716,6 +731,52 @@
         "Most Wanted Fraudster"
       ],
       "publication": "2010-10-29T16:10:00"
+    },
+    {
+      "uid": "82bcacf074974ee1879fa227815cd13c",
+      "title": "JULIEANNE BALDUEZA DIMITRION",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/julieanne-baldueza-dimitrion/@@images/image/large",
+      "office": "Honolulu",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Julieanne Baldueza Dimitrion.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/julieanne-baldueza-dimitrion",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2010-10-29T16:10:00"
+    },
+    {
+      "uid": "2f842fd0b2cf4449806ab4c68813e563",
+      "title": "GREGORY HENDERSON, JR.",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/topten/gregory-henderson-jr/@@images/image/large",
+      "office": "Indianapolis",
+      "reward": "Reward up to $1,000,000 for information leading to the arrest of Gregory Henderson, Jr.",
+      "url": "https://www.fbi.gov/wanted/topten/gregory-henderson-jr",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Ten Most Wanted Fugitives"
+      ],
+      "publication": "2026-07-14T10:03:00"
+    },
+    {
+      "uid": "60a95a13a258419981877b5e638c6545",
+      "title": "MARY JOHNSON (DAVIS)",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/mary-johnson-davis/@@images/image/large",
+      "office": "Seattle",
+      "reward": "Reward up to $25,000 for information leading to the identification, arrest, and conviction of person(s) responsible for the death of Mary Johnson (Davis).",
+      "url": "https://www.fbi.gov/wanted/seeking-info/mary-johnson-davis",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Indian Country",
+        "Seeking Information"
+      ],
+      "publication": "2021-09-14T06:37:00"
     },
     {
       "uid": "82bcacf074974ee1879fa227815cd13c",
@@ -2231,66 +2292,6 @@
         "Kidnappings and Missing Persons"
       ],
       "publication": "2026-04-20T10:56:00"
-    },
-    {
-      "uid": "6d4795c3c203428bb48ed1f0ce2477c3",
-      "title": "RAMIL VENTURA PALAFOX",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/wcc/ramil-ventura-palafox/@@images/image/large",
-      "office": "Washingtondc",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/wcc/ramil-ventura-palafox",
-      "status": "captured",
-      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
-      "subjects": [
-        "White-Collar Crime"
-      ],
-      "publication": "2026-04-13T10:45:00"
-    },
-    {
-      "uid": "f05cba69aa3244b6ad1b57d232cd5160",
-      "title": "KASHAWN NICOLA ROPER",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/topten/kashawn-nicola-roper/@@images/image/large",
-      "office": "Kansascity",
-      "reward": "Reward up to $1,000,000 for information leading directly to the arrest of KaShawn Nicola Roper.",
-      "url": "https://www.fbi.gov/wanted/topten/kashawn-nicola-roper",
-      "status": "captured",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Ten Most Wanted Fugitives"
-      ],
-      "publication": "2021-03-10T12:37:00"
-    },
-    {
-      "uid": "1f79104a765c4111a04987ef2adcd034",
-      "title": "AUSTIN JAN SY YATCO",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cac/austin-jan-sy-yatco/@@images/image/large",
-      "office": "Dallas, Newyork",
-      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of Austin Jan Sy Yatco.",
-      "url": "https://www.fbi.gov/wanted/cac/austin-jan-sy-yatco",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Crimes Against Children"
-      ],
-      "publication": "2026-03-30T10:35:00"
-    },
-    {
-      "uid": "738a3cd3276d4de1b02ec23ebec19fce",
-      "title": "ABEL ELIAS ACOSTA",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/murders/abel-elias-acosta/@@images/image/large",
-      "office": "Dallas",
-      "reward": "Reward up to $50,000 for information leading to the arrest and conviction of Abel Elias Acosta.",
-      "url": "https://www.fbi.gov/wanted/murders/abel-elias-acosta",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Violent Crime - Murders"
-      ],
-      "publication": "2026-02-25T16:10:00"
     }
   ]
 }
