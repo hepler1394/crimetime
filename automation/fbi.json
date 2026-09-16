@@ -3,9 +3,57 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1247,
     "baked": 150,
-    "updated": "2026-09-16T17:05:57.444Z"
+    "updated": "2026-09-16T21:23:18.477Z"
   },
   "items": [
+    {
+      "uid": "5ded915d73a944d7b0e84a965964ddc0",
+      "title": "ODELL VEST",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/odell-vest/@@images/image/large",
+      "office": "Albuquerque, Denver, Saltlakecity",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the individual(s) responsible for the murder of Odell Vest.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/odell-vest",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country"
+      ],
+      "publication": "2020-10-21T13:02:00"
+    },
+    {
+      "uid": "c12d84bd73aa4501b6e0fdd9a4f05332",
+      "title": "AVERY WHITESKUNK",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/avery-whiteskunk/@@images/image/large",
+      "office": "Albuquerque, Denver, Saltlakecity",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the individual(s) responsible for the murder of Avery Whiteskunk.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/avery-whiteskunk",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country"
+      ],
+      "publication": "2021-02-10T10:54:00"
+    },
+    {
+      "uid": "5da32b94b6e14977a2bf41b06b65ce37",
+      "title": "JEREMIAH JAKE",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/jeremiah-jake/@@images/image/large",
+      "office": "Denver",
+      "reward": "Reward up to $25,000 for information leading to the arrest of the individual(s) responsible for the death of Jeremiah Jake.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/jeremiah-jake",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country"
+      ],
+      "publication": "2026-02-03T10:00:00"
+    },
     {
       "uid": "aee4c43085604dd2a8d7ad45dcafa9ab",
       "title": "RONALD SCOTT WATSON",
@@ -731,52 +779,6 @@
         "Most Wanted Fraudster"
       ],
       "publication": "2010-10-29T16:10:00"
-    },
-    {
-      "uid": "82bcacf074974ee1879fa227815cd13c",
-      "title": "JULIEANNE BALDUEZA DIMITRION",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/julieanne-baldueza-dimitrion/@@images/image/large",
-      "office": "Honolulu",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Julieanne Baldueza Dimitrion.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/julieanne-baldueza-dimitrion",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Most Wanted Fraudster"
-      ],
-      "publication": "2010-10-29T16:10:00"
-    },
-    {
-      "uid": "2f842fd0b2cf4449806ab4c68813e563",
-      "title": "GREGORY HENDERSON, JR.",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/topten/gregory-henderson-jr/@@images/image/large",
-      "office": "Indianapolis",
-      "reward": "Reward up to $1,000,000 for information leading to the arrest of Gregory Henderson, Jr.",
-      "url": "https://www.fbi.gov/wanted/topten/gregory-henderson-jr",
-      "status": "captured",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Ten Most Wanted Fugitives"
-      ],
-      "publication": "2026-07-14T10:03:00"
-    },
-    {
-      "uid": "60a95a13a258419981877b5e638c6545",
-      "title": "MARY JOHNSON (DAVIS)",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/mary-johnson-davis/@@images/image/large",
-      "office": "Seattle",
-      "reward": "Reward up to $25,000 for information leading to the identification, arrest, and conviction of person(s) responsible for the death of Mary Johnson (Davis).",
-      "url": "https://www.fbi.gov/wanted/seeking-info/mary-johnson-davis",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Indian Country",
-        "Seeking Information"
-      ],
-      "publication": "2021-09-14T06:37:00"
     },
     {
       "uid": "82bcacf074974ee1879fa227815cd13c",
