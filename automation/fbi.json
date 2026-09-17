@@ -3,9 +3,24 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1247,
     "baked": 150,
-    "updated": "2026-09-16T21:23:18.477Z"
+    "updated": "2026-09-17T04:59:21.773Z"
   },
   "items": [
+    {
+      "uid": "fcce63ed6b9e49d98f88a4a4dbd502c4",
+      "title": "ZE'KEVIOUS ZENARD PERRY",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/zekevious-zenard-perry/@@images/image/large",
+      "office": "Atlanta",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/zekevious-zenard-perry",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Law Enforcement Assistance"
+      ],
+      "publication": "2026-08-26T11:38:00"
+    },
     {
       "uid": "5ded915d73a944d7b0e84a965964ddc0",
       "title": "ODELL VEST",
@@ -390,21 +405,6 @@
         "Indian Country"
       ],
       "publication": "2026-08-27T13:40:00"
-    },
-    {
-      "uid": "fcce63ed6b9e49d98f88a4a4dbd502c4",
-      "title": "ZE'KEVIOUS ZENARD PERRY",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/zekevious-zenard-perry/@@images/image/large",
-      "office": "Atlanta",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/zekevious-zenard-perry",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Law Enforcement Assistance"
-      ],
-      "publication": "2026-08-26T11:38:00"
     },
     {
       "uid": "459fcd662ee849fe9df91f59de93f83f",
