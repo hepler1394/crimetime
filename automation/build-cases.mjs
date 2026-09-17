@@ -7,6 +7,7 @@
 
 import { readFile, writeFile, mkdir, stat } from "node:fs/promises";
 import { spawnSync } from "node:child_process";
+import { existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { SITE, esc, head, header, footer, tape, scripts } from "./shell.mjs";
@@ -124,6 +125,9 @@ const css = `
 .case-side .kv{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem;font-size:.9rem;color:var(--cts-muted)}
 .case-side .kv b{color:var(--cts-white);font-weight:500}
 .empty-note{color:var(--cts-faint);font-style:italic}
+.case-photo{margin:0 0 1.6rem}
+.case-photo img{display:block;width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--cts-line)}
+.case-photo figcaption{margin-top:.5rem;font-size:.8rem;color:var(--cts-faint)}
 </style>`;
 
 /* ------------------------------------------------------------- index */
@@ -177,6 +181,15 @@ ${scripts(["/js/community.js"])}
 }
 
 /* -------------------------------------------------------------- pages */
+// A photograph of the person the case is about, when Cory has supplied one:
+// images/cases/<slug>-photo.jpg, captioned from PHOTOS. Never generated, and no
+// file means no figure rather than a placeholder.
+const PHOTOS = { "gabby-petito": { alt: "Gabby Petito smiling in front of a painted angel-wings mural, set against the Teton range", caption: "Gabby Petito. Memorial image." } };
+function casePhoto(c) {
+  const meta = PHOTOS[c.slug];
+  if (!meta || !existsSync(join(ROOT, "images", "cases", `${c.slug}-photo.jpg`))) return "";
+  return `<figure class="case-photo"><img src="/images/cases/${esc(c.slug)}-photo.jpg" alt="${esc(meta.alt)}" loading="lazy" decoding="async" width="1600" height="910"><figcaption>${esc(meta.caption)}</figcaption></figure>`;
+}
 function casePage(c) {
   const ups = updatesFor(c.slug);
   const ep = epBySlug[c.episode_slug];
@@ -196,6 +209,7 @@ ${header("cases")}
 ${tape()}
     <section class="container case-hero" style="padding-top:1.5rem;">
         <div>
+            ${casePhoto(c)}
             <h2 style="font-family:var(--font-display);font-size:2rem;letter-spacing:.02em;margin:0 0 .4rem;">Case <span class="text-red">Updates</span></h2>
             <p style="color:var(--cts-muted);margin:0;">What has happened, newest first, each with the article it comes from. An entry goes up only after that article is read and found to report it.</p>
             ${ups.length ? `<ol class="timeline">
