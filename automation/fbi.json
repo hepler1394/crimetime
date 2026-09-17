@@ -3,7 +3,7 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1247,
     "baked": 150,
-    "updated": "2026-09-17T11:49:57.614Z"
+    "updated": "2026-09-17T17:06:58.704Z"
   },
   "items": [
     {
@@ -764,6 +764,21 @@
         "Most Wanted Fraudster"
       ],
       "publication": "2026-01-12T14:02:00"
+    },
+    {
+      "uid": "27f6739b638b437192b1bb4fdb0426d3",
+      "title": "JOHN MICHAEL DIMITRION",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/john-michael-dimitrion/@@images/image/large",
+      "office": "Honolulu",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of John Michael Dimitrion.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/john-michael-dimitrion",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2010-10-29T16:10:00"
     },
     {
       "uid": "27f6739b638b437192b1bb4fdb0426d3",
@@ -2279,21 +2294,6 @@
         "Seeking Information"
       ],
       "publication": "2026-02-12T14:04:00"
-    },
-    {
-      "uid": "6b803fbe042e44de8b72bbec85e181d0",
-      "title": "ISIAH JENIFER",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/isiah-jenifer/@@images/image/large",
-      "office": "Philadelphia",
-      "reward": "Reward up to $5,000 for information leading to the arrest and conviction of the individual(s) involved in the disappearance of Isiah Jenifer.",
-      "url": "https://www.fbi.gov/wanted/kidnap/isiah-jenifer",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons"
-      ],
-      "publication": "2026-04-20T10:56:00"
     }
   ]
 }
