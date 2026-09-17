@@ -3,9 +3,24 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1247,
     "baked": 150,
-    "updated": "2026-09-17T17:06:58.704Z"
+    "updated": "2026-09-17T21:28:03.097Z"
   },
   "items": [
+    {
+      "uid": "38f8fc6d4abe4733b8f8226cb8b5de83",
+      "title": "ARMED ROBBERY - KANSAS",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/armed-robbery---kansas/@@images/image/large",
+      "office": "Kansascity",
+      "reward": "reward of $5,000 for information leading to the identification, arrest, and conviction of the individual responsible for this robbery.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/armed-robbery---kansas",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2025-11-21T13:09:00"
+    },
     {
       "uid": "fcce63ed6b9e49d98f88a4a4dbd502c4",
       "title": "ZE'KEVIOUS ZENARD PERRY",
@@ -764,21 +779,6 @@
         "Most Wanted Fraudster"
       ],
       "publication": "2026-01-12T14:02:00"
-    },
-    {
-      "uid": "27f6739b638b437192b1bb4fdb0426d3",
-      "title": "JOHN MICHAEL DIMITRION",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/john-michael-dimitrion/@@images/image/large",
-      "office": "Honolulu",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of John Michael Dimitrion.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/john-michael-dimitrion",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Most Wanted Fraudster"
-      ],
-      "publication": "2010-10-29T16:10:00"
     },
     {
       "uid": "27f6739b638b437192b1bb4fdb0426d3",
