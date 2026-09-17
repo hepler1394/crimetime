@@ -20,21 +20,28 @@ const hash = (s) => {
 };
 
 // Stack the slogan's words as bold lines, sized to fit, last word in red.
-function slogan(lines, { cx = 500, cy = 500, max = 760, color = WHITE, accent = RED } = {}) {
+// The art is shown as an <img>, where web fonts never load, so the face is whatever
+// heavy sans the device has. CAP is the width of a heavy capital in ems; the old
+// sum assumed .54 and "DEADBOLT" ran off the tape, "WHISPERS" out of its box. A line
+// that fills the measure is also pinned with textLength, so a wider fallback face
+// is squeezed to fit rather than allowed to spill. maxH is the room the template
+// really has for the block, which is less than the canvas.
+const CAP = 0.76;
+function slogan(lines, { cx = 500, cy = 500, max = 760, maxH = 0, color = WHITE, accent = RED } = {}) {
   const longest = Math.max(...lines.map((l) => l.length));
   const n = lines.length;
-  let size = Math.max(46, Math.min(150, Math.floor(max * 1.85 / longest)));
-  // Clamp by vertical room so the centered block always stays inside the
-  // 1000-tall canvas (fixes tall 3-line slogans clipping off the bottom).
-  const budget = 2 * Math.min(cy - 60, 970 - cy);
-  size = Math.max(40, Math.min(size, Math.floor(budget / (n * 1.12))));
+  let size = Math.max(40, Math.min(150, Math.floor(max / (longest * CAP))));
+  const budget = maxH || 2 * Math.min(cy - 60, 970 - cy);
+  size = Math.max(34, Math.min(size, Math.floor(budget / (n * 1.08))));
   const lineH = size * 1.05;
   const startY = cy - (lineH * (lines.length - 1)) / 2 + size * 0.34;
   return lines
     .map((l, i) => {
       const y = startY + i * lineH;
       const fill = i === lines.length - 1 ? accent : color;
-      return `    <text x="${cx}" y="${y.toFixed(0)}" font-family="'Montserrat','Arial Black',Impact,sans-serif" font-weight="900" font-size="${size}" letter-spacing="1.5" fill="${fill}" text-anchor="middle">${esc(l.toUpperCase())}</text>`;
+      const est = l.length * size * CAP;
+      const pin = est > max * 0.9 ? ` textLength="${Math.min(max, Math.round(est))}" lengthAdjust="spacingAndGlyphs"` : "";
+      return `    <text x="${cx}" y="${y.toFixed(0)}" font-family="'Montserrat','Arial Black',Impact,sans-serif" font-weight="900" font-size="${size}" letter-spacing="1.5" fill="${fill}" text-anchor="middle"${pin}>${esc(l.toUpperCase())}</text>`;
     })
     .join("\n");
 }
@@ -56,7 +63,7 @@ function tplPoliceTape(lines) {
     </g>`;
   return `${band(250, -12)}${band(770, 9)}
 ${wordmark(170)}
-${slogan(lines, { cy: 510, max: 720 })}`;
+${slogan(lines, { cy: 510, max: 720, maxH: 330 })}`;
 }
 
 function tplEvidenceTag(lines) {
@@ -68,7 +75,7 @@ function tplEvidenceTag(lines) {
       <circle cx="500" cy="250" r="20" fill="none" stroke="${WHITE}" stroke-width="7"/>
       <rect x="210" y="300" width="580" height="74" fill="${RED}"/>
       <text x="500" y="352" font-family="'Montserrat',Arial,sans-serif" font-weight="800" font-size="44" letter-spacing="10" fill="${WHITE}" text-anchor="middle">EVIDENCE</text>
-${slogan(lines, { cy: 540, max: 560 })}
+${slogan(lines, { cy: 560, max: 540, maxH: 300 })}
       <text x="500" y="780" font-family="'Roboto',monospace,Arial" font-weight="500" font-size="26" letter-spacing="6" fill="${GREY}" text-anchor="middle">CASE NO. CTS-001</text>
     </g>`;
 }
@@ -86,8 +93,8 @@ function tplFingerprint(lines) {
     <g>${loops}
       <path d="M500 250 q40 60 0 130" fill="none" stroke="${RED}" stroke-width="6"/>
     </g>
-${wordmark(660)}
-${slogan(lines, { cy: 800, max: 720 })}`;
+${wordmark(712)}
+${slogan(lines, { cy: 840, max: 720, maxH: 200 })}`;
 }
 
 function tplCaseFile(lines) {
@@ -100,7 +107,7 @@ function tplCaseFile(lines) {
         <rect x="312" y="432" width="376" height="76" fill="none" stroke="${RED}" stroke-width="3"/>
         <text x="500" y="488" font-family="'Montserrat',Arial,sans-serif" font-weight="900" font-size="52" letter-spacing="8" fill="${RED}" text-anchor="middle">UNSOLVED</text>
       </g>
-${slogan(lines, { cy: 640, max: 520 })}
+${slogan(lines, { cy: 640, max: 480, maxH: 170 })}
     </g>
 ${wordmark(880, GREY)}`;
 }
@@ -133,7 +140,7 @@ function tplRedacted(lines) {
   return `
     <g>
       <rect x="190" y="180" width="620" height="640" rx="10" fill="none" stroke="${WHITE}" stroke-width="8"/>
-${slogan(lines, { cx: 500, cy: 320, max: 520 })}
+${slogan(lines, { cx: 500, cy: 292, max: 520, maxH: 170 })}
       <rect x="220" y="392" width="560" height="4" fill="${RED}"/>${body}
       <g transform="rotate(-13 660 760)">
         <rect x="520" y="715" width="280" height="78" fill="none" stroke="${RED}" stroke-width="6"/>

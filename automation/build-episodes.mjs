@@ -389,7 +389,7 @@ function statsBlock(count) {
                     <div class="stat"><div class="stat-num"><span data-count="${count}">0</span><em>+</em></div><div class="stat-label">Cases Covered</div></div>
                     <div class="stat"><div class="stat-num"><span data-count="${count}">0</span></div><div class="stat-label">Episodes</div></div>
                     <div class="stat"><div class="stat-num">5.0<em>★</em></div><div class="stat-label">Listener Rated</div></div>
-                    <div class="stat"><div class="stat-num">2<em>×</em>/wk</div><div class="stat-label">New Drops</div></div>
+                    <div class="stat"><div class="stat-num">1<em>×</em>/wk</div><div class="stat-label">New Episode</div></div>
                 </div>
                 <!-- HOME-STATS:END -->`;
 }

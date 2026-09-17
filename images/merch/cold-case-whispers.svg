@@ -3,9 +3,9 @@
 
     <g>
       <rect x="190" y="180" width="620" height="640" rx="10" fill="none" stroke="#f5f5f5" stroke-width="8"/>
-    <text x="500" y="235" font-family="'Montserrat','Arial Black',Impact,sans-serif" font-weight="900" font-size="120" letter-spacing="1.5" fill="#f5f5f5" text-anchor="middle">COLD</text>
-    <text x="500" y="361" font-family="'Montserrat','Arial Black',Impact,sans-serif" font-weight="900" font-size="120" letter-spacing="1.5" fill="#f5f5f5" text-anchor="middle">CASE</text>
-    <text x="500" y="487" font-family="'Montserrat','Arial Black',Impact,sans-serif" font-weight="900" font-size="120" letter-spacing="1.5" fill="#e11d2a" text-anchor="middle">WHISPERS</text>
+    <text x="500" y="255" font-family="'Montserrat','Arial Black',Impact,sans-serif" font-weight="900" font-size="52" letter-spacing="1.5" fill="#f5f5f5" text-anchor="middle">COLD</text>
+    <text x="500" y="310" font-family="'Montserrat','Arial Black',Impact,sans-serif" font-weight="900" font-size="52" letter-spacing="1.5" fill="#f5f5f5" text-anchor="middle">CASE</text>
+    <text x="500" y="364" font-family="'Montserrat','Arial Black',Impact,sans-serif" font-weight="900" font-size="52" letter-spacing="1.5" fill="#e11d2a" text-anchor="middle">WHISPERS</text>
       <rect x="220" y="392" width="560" height="4" fill="#e11d2a"/>
       <rect x="220" y="470" width="560" height="14" rx="3" fill="#9a9a9a" opacity="0.55"/>
       <rect x="220" y="512" width="620" height="14" rx="3" fill="#9a9a9a" opacity="0.55"/>

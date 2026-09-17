@@ -147,6 +147,12 @@ if (!pushOnly) {
   eps.episodes = mergeEpisodes((eps.episodes || []).filter((e) => e.source !== "studio"), studio);
   await writeFile(epsPath, JSON.stringify(eps, null, 2) + "\n", "utf8");
 
+  // Link the new episode to its case before the pages are built. Nothing else runs
+  // this sync, and without it the case page for a published episode still read
+  // "No episode on this case yet". The database being down must not block a publish.
+  const synced = quiet(process.execPath, [join(__dirname, "community", "sync-cases.mjs")]);
+  if (synced.code !== 0) console.warn("sync-cases failed; the case page will not show this episode until it is run.");
+
   try {
     sh(process.execPath, [join(__dirname, "build-all.mjs")], "build-all");
     sh(process.execPath, [join(__dirname, "check-links.mjs")], "check-links");
