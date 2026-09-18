@@ -542,46 +542,6 @@ But the reality behind the camera was much darker. When Brian returned to his pa
                 }).catch(() => { holder.closest('section').style.display = 'none'; });
             }
 
-            // Continue listening (saved progress)
-            const continueListeningSection = document.getElementById('continue-listening');
-            const continueListeningContent = document.getElementById('continue-listening-content');
-            if (continueListeningSection && continueListeningContent) {
-                const episodes = JSON.parse(localStorage.getItem('episodeProgress') || '{}');
-                const episodeKeys = Object.keys(episodes);
-                if (episodeKeys.length > 0) {
-                    continueListeningSection.style.display = 'block';
-                    let mostRecentEpisode = null;
-                    let mostRecentTimestamp = 0;
-                    episodeKeys.forEach(key => {
-                        if (episodes[key].timestamp > mostRecentTimestamp) {
-                            mostRecentEpisode = { key: key, ...episodes[key] };
-                            mostRecentTimestamp = episodes[key].timestamp;
-                        }
-                    });
-                    if (mostRecentEpisode) {
-                        // The key is the audio file name, which is the episode's slug. The old code turned the
-                        // dashes into spaces and then used that for the link and the cover, so Resume went
-                        // to a 404 and the cover never loaded; and it drew seconds played as a percentage.
-                        const slug = mostRecentEpisode.key.replace(/\.(mp3|m4a|wav)$/i, '');
-                        if (!/^[a-z0-9-]+$/.test(slug)) return;
-                        const card = [...document.querySelectorAll('a[href="/episodes/' + slug + '.html"]')].map(a => a.textContent.trim()).find(t => t && !/listen/i.test(t));
-                        const formattedName = card || slug.replace(/^crimetimesnacks-/, '').split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-                        const played = Math.max(0, Math.floor(mostRecentEpisode.time || 0));
-                        continueListeningContent.innerHTML = `
-                            <div class="continue-card">
-                                <img src="/images/episodes/${slug}.jpg" onerror="this.onerror=null;this.src='/images/logo.png'" class="continue-image" alt="">
-                                <div class="continue-info">
-                                    <h3 class="continue-title">${formattedName}</h3>
-                                    <div class="continue-actions">
-                                        <span class="continue-time">You stopped at ${formatTime(played)}</span>
-                                        <a href="/episodes/${slug}.html" class="btn btn-primary btn-sm">Resume</a>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                    }
-                }
-            }
         });
 
         function formatTime(seconds) {

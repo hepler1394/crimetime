@@ -314,7 +314,11 @@ function initializeNativeAudioExperience() {
         const card = audio.closest('.episode-card, article, .episode-detail, main');
         const title = card?.querySelector('.episode-title, h1, h2, h3')?.textContent?.trim() || document.title.split('•')[0].trim();
         const image = card?.querySelector('img')?.src || new URL('images/logo.png', window.location.href).href;
-        const episodeLink = card?.querySelector('a[href*="episodes/"]')?.href || window.location.href;
+        // On an episode's own page the page IS the link. Looking for an "episodes/" anchor there
+        // finds the previous-episode button first, so Resume on the homepage opened the wrong case.
+        const onEpisodePage = /\/episodes\/[^/]+\.html$/.test(window.location.pathname);
+        const episodeLink = onEpisodePage ? window.location.href.split('#')[0]
+            : (card?.querySelector('a[href*="episodes/"]')?.href || window.location.href);
         return { title, image, href: episodeLink, src: sourceFor(audio) };
     }
 
