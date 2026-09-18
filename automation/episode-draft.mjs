@@ -137,7 +137,10 @@ SCRIPT RULES (non-negotiable):
 - SPOKEN. Write the way Cory talks on the mic: short sentences, contractions, direct address. No headings, no bullet points, no stage directions, no "[music]" cues, no markdown. Every paragraph is something he says out loud.
 - FACTS ONLY from the RESEARCH NOTES you are given. If a detail is not in the notes, leave it out or say it generally ("investigators", "that winter"). Never invent a quote, a number, a date or a name.
 - Presumption of innocence: "accused", "charged", "suspected" for anyone not convicted. Respect the victims and their families. No gore for its own sake.
-- No emojis. No AI filler. No "in this episode we will explore". No teaser for a next episode.`;
+- No emojis. No AI filler. No "in this episode we will explore". No teaser for a next episode.
+- TELL EACH FACT ONCE. You are given the script so far. Everything in it has already been said to the listener: do not describe the same scene, list the same objects or walk the same timeline again. If this chapter needs an earlier fact, point back to it in a clause ("the purse on the kitchen island") and move on. If the notes for this chapter hold nothing new, write a shorter chapter rather than repeat one.
+- Cory has read the RESEARCH NOTES, nothing else. Never have him claim to have gone through documents, transcripts, financial records or reports. "The case file shows", "one account says" and "the medical examiner wrote" are fine; "I went through the discovery documents" is not.
+- When two sources in the notes disagree (a time, who was where, the order of events), say that they disagree and give both. Never state one version in one chapter and the other version in another.`;
 
 /* ---------------------------------------------------------- A. outline */
 const targetWords = Math.round(minutes * WPM);
@@ -173,7 +176,11 @@ for (let i = 0; i < outline.chapters.length; i++) {
   const first = i === 0, last = i === outline.chapters.length - 1, reaction = i === outline.chapters.length - 2;
   const query = `${ch.title} ${(ch.beats || []).join(" ")} ${kase.title}`;
   const notes = retrieve(query, CHUNK_BUDGET, first && leadIdx > -1 ? [leadIdx] : []) || overview.slice(0, CHUNK_BUDGET);
-  const prevTail = rawScript.slice(-2).join("\n\n");
+  // The whole script so far, not its last two paragraphs. Chapters are written one call at a
+  // time and retrieve overlapping notes; shown only the tail, the writer told the Watts welfare
+  // check four times and the confession twice, and contradicted itself between tellings. A
+  // twenty-minute script is about 4,000 words, which any writer model holds easily.
+  const prevTail = rawScript.join("\n\n");
   let paras = [];
   try {
     const { text } = await ask(VOICE_RULES, `Write chapter ${i + 1} of ${outline.chapters.length}: "${ch.title}".
@@ -182,7 +189,7 @@ Target: about ${perChapter} words, paragraphs of 2 to 4 sentences.
 ${first ? `This is the OPENING chapter. The first sentence is the show's opener, word for word, exactly: "${OPENER}" Then the hook: ${outline.hook || "the strangest documented detail, stated plainly"}.` : "Do NOT re-introduce the show. Continue straight from the previous chapter."}
 ${reaction ? `This is the PUBLIC REACTION chapter. Cover what people said and what the coverage did, from the notes only. Describe what was argued, not who argued it: no usernames, no named private individuals, and never repeat an accusation against a person who was not charged. Where the notes record that the reaction was unhelpful, misinformed or unfair, say so; this chapter is not a victory lap for the internet.` : ""}
 ${last ? `This is the LAST chapter. End on the hand-off to the listener ("Read the file. Form your own conclusion." or his own words), then the show's sign-off as the final line, word for word, exactly: "${OUTRO}" Nothing after that sign-off; no teaser for a next episode.` : "Do not wrap up the episode; the story continues in the next chapter."}
-${prevTail ? `\nFor continuity, the previous chapter ended:\n${prevTail}\n` : ""}
+${prevTail ? `\nTHE SCRIPT SO FAR (already said to the listener; continue from its last line and do not retell any of it):\n${prevTail}\n` : ""}
 RESEARCH NOTES for this chapter (the only allowed source of facts):
 ${notes}
 
@@ -195,6 +202,7 @@ Output ONLY a JSON object: {"paragraphs": [string, ...]}.`, `chapter ${i + 1} wr
     try {
       const { text } = await ask(VOICE_RULES, `This chapter is ${wc(paras)} words; it needs to be at least ${perChapter} words. Extend it using ONLY facts from the RESEARCH NOTES below: more of the timeline, the places, what investigators did, what the record shows, what it was like for the people involved (as documented). Keep every existing sentence's meaning, keep the order, ${first ? "keep the opener as the first sentence" : "do not re-introduce the show"}, ${last ? "keep the hand-off line as the LAST line" : "do not wrap up the episode"}. Same voice.
 
+${prevTail ? `Do not pad with anything the earlier chapters already told. If the notes hold nothing new for this chapter, return it unchanged.\n\nEARLIER CHAPTERS (already said):\n${prevTail}\n` : ""}
 CURRENT CHAPTER:
 ${JSON.stringify(paras)}
 

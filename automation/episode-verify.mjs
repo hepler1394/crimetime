@@ -62,6 +62,7 @@ const norm = (s) => s.toLowerCase()
   .replace(/\boct(ober)?\b/g, "october").replace(/\bnov(ember)?\b/g, "november")
   .replace(/\bdec(ember)?\b/g, "december")
   .replace(/[,$]/g, "")
+  .replace(/\b(\d+(?:\.\d+)?)k\b/g, (_, n) => String(Math.round(parseFloat(n) * 1000)))   // "$70K" in the notes, "$70,000" in a claim
   .replace(/(\d)\s*:\s*00\b/g, "$1")            // "1:00 p.m." in a script, "1 p.m." in the notes
   // A script says "fourteen years" where the notes say "14". Spell numbers out to digits on
   // BOTH sides, or every written-out number in a script reads as absent from the notes.
@@ -72,10 +73,13 @@ const STOP = new Set(("the a an and or but of to in on at by for from with as th
   "which who whom whose what where how very just also more most other some such only own same too can will would " +
   "could should may might must about into over under after before during again further once here there all any " +
   "both each few nor now s t don claim notes").split(/\s+/));
-const words = (s) => norm(s).replace(/[^a-z0-9'\s]/g, " ").split(/\s+/).filter((w) => w.length > 2 && !STOP.has(w));
+// A light stem, so "knocked" in a claim meets "knocks" in the notes and "repeatedly" meets
+// "repeated". Edge apostrophes go too: a claim quoting 'CeCe' never matched "CeCe".
+const stem = (w) => { const b = w.replace(/^'+|'+$/g, "").replace(/'s$/, ""); return b.length > 4 ? b.replace(/(ly|ing|ed|es|s)$/, "").replace(/(ly|ed)$/, "") : b; };
+const words = (s) => norm(s).replace(/[^a-z0-9'\s]/g, " ").split(/\s+/).map(stem).filter((w) => w.length > 2 && !STOP.has(w));
 
 const notes = norm(notesRaw);
-const noteSentences = notesRaw.split(/(?<=[.!?])\s+|\n/).map((s) => s.trim()).filter((s) => s.length > 40);
+const noteSentences = notesRaw.split(/(?<=[.!?])\s+|\n/).map((s) => s.trim()).filter((s) => s.length > 15);   // was 40, which threw away "They filed for bankruptcy in 2015." and held every claim resting on it
 const noteWordSets = noteSentences.map((s) => new Set(words(s)));
 
 // The load-bearing parts of a claim: proper names, numbers, dates, quoted phrases. A claim
@@ -84,7 +88,7 @@ function distinctive(claim) {
   const outSet = new Set();
   for (const m of claim.matchAll(/\b\d[\d,.:\/]*\b/g)) outSet.add(m[0].replace(/[,.]$/, "").replace(/,/g, ""));
   for (const m of claim.matchAll(/\b([A-Z][a-z]{2,}(?:\s+[A-Z][a-z.]+){0,3})\b/g)) {
-    if (/^(The|This|That|These|Those|He|She|They|It|A|An|In|On|At|By|For|From|With|And|But|His|Her|Their|Its|After|Before|During|When|While|Police|Investigators|Prosecutors|Defense|Defence|Court|Judge|State|Notes|Every|Both|What|Where|Chapter|Studies)\b/.test(m[1])) continue;
+    if (/^(The|This|That|These|Those|He|She|They|It|A|An|In|On|At|By|For|From|With|And|But|His|Her|Their|Its|After|Before|During|When|While|Police|Investigators|Prosecutors|Defense|Defence|Court|Judge|State|Notes|Every|Both|What|Where|Chapter|Studies|Another|One|Some|Many|Several|Later|Then|There|According|Researchers|Coverage|Accounts|Hours|Days|Weeks|Months|Years)\b/.test(m[1])) continue;
     outSet.add(m[1]);
   }
   for (const m of claim.matchAll(/"([^"]{4,60})"/g)) outSet.add(m[1]);
@@ -134,7 +138,9 @@ const results = claims.map((claim, i) => {
     // Numbers must match on a word boundary. Plain substring matching finds "19" inside
     // "2019" and waves through a wrong date, which is exactly the error worth catching.
     if (/^[\d.:\/]+$/.test(n)) {
-      return new RegExp(`(?<![\\w.])${n.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?![\\w.])`).test(notes);
+      // A full stop only disqualifies when it is a decimal point. "(?![\w.])" also refused a year
+      // that ends a sentence ("married ... on November 3, 2012."), holding a claim the notes state.
+      return new RegExp(`(?<!\\w|\\d\\.)${n.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?!\\w|\\.\\d)`).test(notes);
     }
     if (notes.includes(n)) return true;
     const parts = n.split(/\s+/).filter(Boolean);
@@ -144,7 +150,10 @@ const results = claims.map((claim, i) => {
   if (missing.length) {
     return { i, claim: text, hold: true, reason: `not in the notes: ${missing.join(", ")}`, evidence };
   }
-  if (overlap < MIN_OVERLAP || top.hit < MIN_HITS) {
+  // A claim of two or three content words ("The girls had been smothered") cannot reach two
+  // hits in one window when the notes name the girls instead; ask it for all but one.
+  const needHits = cw.size <= 3 ? Math.max(1, cw.size - 1) : MIN_HITS;
+  if (overlap < MIN_OVERLAP || top.hit < needHits) {
     return { i, claim: text, hold: true, reason: "no passage in the notes carries this", evidence };
   }
   return { i, claim: text, hold: false, reason: "", evidence };
