@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-18T11:25:27.677Z",
+  "generated": "2026-09-18T12:30:06.267Z",
   "improvementsShipped": 499,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
@@ -10,7 +10,7 @@
     "sync": "Every 6 hours"
   },
   "counts": {
-    "episodes": 8,
+    "episodes": 9,
     "posts": 17,
     "merchDesigns": 33,
     "merchCollection": 0,
@@ -23,8 +23,8 @@
   },
   "latest": {
     "episode": {
-      "title": "The Disappearance of Gabby Petito",
-      "date": "2026-09-12"
+      "title": "The Interrogation of Chris Watts",
+      "date": "2026-09-18"
     },
     "post": {
       "title": "The Killing of JonBenét Ramsey: What the Record Shows",
@@ -36,12 +36,12 @@
     }
   },
   "freshness": {
-    "episodesJson": "2026-09-18T11:25:04.893Z",
-    "blogJson": "2026-09-18T11:25:00.563Z",
+    "episodesJson": "2026-09-18T12:30:03.625Z",
+    "blogJson": "2026-09-15T14:02:18.353Z",
     "merchJson": "2026-09-15T14:02:27.587Z",
     "quizzesJson": "2026-09-15T14:02:30.387Z",
     "fbiJson": "2026-09-18T11:25:05.199Z",
-    "css": "2026-09-18T11:25:00.635Z"
+    "css": "2026-08-26T05:08:11.786Z"
   },
   "nextTopics": [
     "How the FBI's ViCAP database links violent crimes",

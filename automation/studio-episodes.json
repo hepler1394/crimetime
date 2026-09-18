@@ -50,6 +50,31 @@
         "Paul Holes",
         "Sacramento true crime"
       ]
+    },
+    {
+      "guid": "cts-studio-the-interrogation-of-chris-watts",
+      "title": "The Interrogation of Chris Watts",
+      "slug": "the-interrogation-of-chris-watts",
+      "date": "2026-09-18",
+      "pubDate": "Fri, 18 Sep 2026 12:30:03 GMT",
+      "duration": "00:20:08",
+      "description": "Hey everyone, it's Cory. This time on CrimeTimeSnacks: the forty-eight hours in which Chris Watts's story came apart on camera. A friend who would not leave a doorstep, a patrol officer who noticed a husband was too calm, a neighbor's security camera, an FBI agent who held back his best evidence, a polygraph score of negative 18, and the way out that investigators offered him. Where the published accounts disagree, I say so. From the welfare check on August 13, 2018 to the oil site at 11 that night two days later, then the plea, the sentence, and the versions of the story he has told since.",
+      "audio": "/audio/the-interrogation-of-chris-watts.mp3",
+      "audioType": "audio/mpeg",
+      "audioBytes": 19321577,
+      "image": "/images/episodes/the-interrogation-of-chris-watts.jpg",
+      "link": "",
+      "explicit": false,
+      "source": "studio",
+      "keywords": [
+        "Chris Watts",
+        "Shanann Watts",
+        "Frederick Colorado",
+        "family annihilator",
+        "CBI investigation",
+        "interrogation footage",
+        "true crime podcast"
+      ]
     }
   ]
 }
