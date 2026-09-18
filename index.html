@@ -55,7 +55,8 @@
       "logo": "https://www.crimetimesnacks.com/images/logo.png",
       "sameAs": [
         "https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ",
-        "https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400"
+        "https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400",
+        "https://www.instagram.com/crimetimesnacks/"
       ]
     }
     </script>
@@ -430,6 +431,7 @@ But the reality behind the camera was much darker. When Brian returned to his pa
                     <div class="footer-social">
                         <a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" aria-label="Spotify" target="_blank" rel="noopener"><i class="fab fa-spotify" aria-hidden="true"></i></a>
                         <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" aria-label="Apple Podcasts" target="_blank" rel="noopener"><i class="fab fa-apple" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/crimetimesnacks/" aria-label="CrimeTimeSnacks on Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram" aria-hidden="true"></i></a>
                         <a href="/feed.xml" aria-label="RSS feed"><i class="fas fa-rss" aria-hidden="true"></i></a>
                         <a href="mailto:crimetimesnacks@gmail.com" aria-label="Email CrimeTimeSnacks"><i class="fas fa-envelope" aria-hidden="true"></i></a>
                     </div>
@@ -472,7 +474,7 @@ But the reality behind the camera was much darker. When Brian returned to his pa
     <!-- Mini Player (hidden by default) -->
     <div id="mini-player" class="mini-player" aria-hidden="true" aria-label="Episode player">
         <div class="mini-player-progress"></div>
-        <img id="mini-player-image" alt="Episode" class="mini-player-image">
+        <img id="mini-player-image" src="/images/logo.png" alt="" class="mini-player-image" width="50" height="50">
         <div class="mini-player-info">
             <h4 id="mini-player-title" class="mini-player-title"></h4>
             <div id="mini-player-time" class="mini-player-time"></div>
@@ -557,20 +559,22 @@ But the reality behind the camera was much darker. When Brian returned to his pa
                         }
                     });
                     if (mostRecentEpisode) {
-                        const episodeName = mostRecentEpisode.key.replace('.mp3', '').replace('.m4a', '').replace(/-/g, ' ');
-                        const formattedName = episodeName.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-                        const progressPercent = (mostRecentEpisode.time / 100) * 100;
+                        // The key is the audio file name, which is the episode's slug. The old code turned the
+                        // dashes into spaces and then used that for the link and the cover, so Resume went
+                        // to a 404 and the cover never loaded; and it drew seconds played as a percentage.
+                        const slug = mostRecentEpisode.key.replace(/\.(mp3|m4a|wav)$/i, '');
+                        if (!/^[a-z0-9-]+$/.test(slug)) return;
+                        const card = [...document.querySelectorAll('a[href="/episodes/' + slug + '.html"]')].map(a => a.textContent.trim()).find(t => t && !/listen/i.test(t));
+                        const formattedName = card || slug.replace(/^crimetimesnacks-/, '').split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+                        const played = Math.max(0, Math.floor(mostRecentEpisode.time || 0));
                         continueListeningContent.innerHTML = `
                             <div class="continue-card">
-                                <img src="/images/${episodeName}.jpg" onerror="this.src='/images/logo.png'" class="continue-image" alt="">
+                                <img src="/images/episodes/${slug}.jpg" onerror="this.onerror=null;this.src='/images/logo.png'" class="continue-image" alt="">
                                 <div class="continue-info">
                                     <h3 class="continue-title">${formattedName}</h3>
-                                    <div class="continue-progress">
-                                        <div class="continue-progress-bar" style="width: ${progressPercent}%"></div>
-                                    </div>
                                     <div class="continue-actions">
-                                        <span class="continue-time">${formatTime(mostRecentEpisode.time)} remaining</span>
-                                        <a href="/episodes/${episodeName}.html" class="btn btn-primary btn-sm">Resume</a>
+                                        <span class="continue-time">You stopped at ${formatTime(played)}</span>
+                                        <a href="/episodes/${slug}.html" class="btn btn-primary btn-sm">Resume</a>
                                     </div>
                                 </div>
                             </div>

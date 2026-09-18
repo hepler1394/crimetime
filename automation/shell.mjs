@@ -116,6 +116,7 @@ export function footer(opts = {}) {
                     <div class="footer-social">
                         <a href="${spotify}" aria-label="Spotify" target="_blank" rel="noopener"><i class="fab fa-spotify" aria-hidden="true"></i></a>
                         <a href="${APPLE}" aria-label="Apple Podcasts" target="_blank" rel="noopener"><i class="fab fa-apple" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/crimetimesnacks/" aria-label="CrimeTimeSnacks on Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram" aria-hidden="true"></i></a>
                         <a href="/feed.xml" aria-label="RSS feed"><i class="fas fa-rss" aria-hidden="true"></i></a>
                         <a href="mailto:${EMAIL}" aria-label="Email CrimeTimeSnacks"><i class="fas fa-envelope" aria-hidden="true"></i></a>
                     </div>
