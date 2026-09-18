@@ -214,18 +214,33 @@
     },
     {
       "slug": "wilmington-dmv-what-we-know",
-      "title": "Wilmington DMV: What We Know So Far",
+      "title": "Wilmington DMV: What the Record Shows",
       "date": "2025-12-26",
-      "category": "breaking",
-      "categoryLabel": "Breaking",
-      "image": "images/wilmington-dmv.jpg",
+      "category": "investigation",
+      "categoryLabel": "Investigation",
+      "image": "images/logo.png",
       "author": "Cory",
-      "featured": true,
-      "excerpt": "Separating the verified facts from the speculation that filled the first hours after the December 23 incident at the Wilmington DMV.",
+      "featured": false,
+      "excerpt": "Corporal Grade One Matthew \"Ty\" Snook of the Delaware State Police was killed on December 23, 2025, at the DMV on Hessler Boulevard. Here is what the State Police investigation has put on the record.",
       "body": [
-        "In the hours after the December 23, 2025 incident at the Wilmington DMV, the story moved faster than the facts. This post collects what has actually been confirmed and sets aside the rest until it can be verified.",
-        "At the center of the account is Corporal Matthew Snook, a Delaware State Police officer. By the official statement, his actions in the final moments saved the lives of others present. Investigators have asked for patience as they piece together a complete timeline.",
-        "We will update this post as verified details are released, rather than chasing every early claim. Our full episode walks through the timeline in depth."
+        "On December 23, 2025, Corporal Grade One Matthew T. \"Ty\" Snook of the Delaware State Police was shot and killed while working an overtime assignment at the Karen L. Johnson Division of Motor Vehicles on Hessler Boulevard, near Wilmington. He was 34, from Hockessin, a ten-year veteran who joined the State Police in March 2015 and spent his career at Troop 6. He had wrestled at the University of Maryland. He is survived by his wife and their one-year-old daughter. I wrote the first version of this post three days after it happened, when the story was moving faster than the facts. This is the version the record supports.",
+        "The State Police published their findings on January 16, 2026. The gunman, Rahman Rose, 44, came into the DMV around 11:30 that morning, left, and came back at about 1:56 in the afternoon. Roughly three minutes later he ambushed Corporal Snook from behind, firing several rounds. According to investigators, Snook shielded a DMV employee from harm before he was struck again. The only other shots Rose fired were at the officers who responded. A New Castle County police officer shot him through a window at about 2:07 p.m., and he died at a hospital.",
+        "On motive, investigators found no prior relationship, interaction or dispute between the two men. They reported that Rose believed the police were targeting him, had posted anti-police content online, and believed he was being constantly surveilled. The handgun had been bought legally in Connecticut in 2021. That is where it stands: a trooper who was targeted for the uniform, and who spent his last seconds protecting the person next to him. His name was Ty Snook."
+      ],
+      "updated": "2026-09-18",
+      "sources": [
+        {
+          "title": "Delaware State Police: update on the line-of-duty death investigation (January 16, 2026)",
+          "url": "https://dsp.delaware.gov/2026/01/16/state-police-provides-update-of-line-of-duty-death-investigation-at-wilmington-dmv/"
+        },
+        {
+          "title": "Delaware State Police mourns Corporal Grade One Matthew T. \"Ty\" Snook (December 24, 2025)",
+          "url": "https://dsp.delaware.gov/2025/12/24/delaware-state-police-mourns-the-line-of-duty-death-of-corporal-grade-one-matthew-t-ty-snook/"
+        },
+        {
+          "title": "WHYY: Police identify suspect in Delaware trooper killing",
+          "url": "https://whyy.org/articles/wilmington-delaware-state-trooper-dmv-shooting-suspect-identified/"
+        }
       ]
     },
     {
