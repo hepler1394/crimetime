@@ -104,3 +104,6 @@ automation/studio/releases/
 
 # Claude Code local permissions (personal, not team-wide)
 .claude/settings.local.json
+
+# YouTube renders of episodes that predate the studio (episode-video.mjs)
+automation/studio/youtube/
