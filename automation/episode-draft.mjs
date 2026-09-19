@@ -37,7 +37,7 @@ const minutes = Math.max(1, Math.min(60, parseFloat(opt("--minutes", "20")) || 2
 const asJson = flag("--json");
 const WPM = 200;                 // The cloned voice, measured: 4,148 words ran 21:35 and 4,061 ran 20:08. This was 166 (Cory at the mic),
                                  // so every "20 minute" draft was really 16 to 17 minutes and failed the twenty-minute rule.
-const CHAPTER_WORDS = 270;       // what one chapter answer actually comes back as (Gemini lands near 275 whatever is asked), so a 20 min show is 12 chapters
+const CHAPTER_WORDS = 350;       // what a chapter actually comes back as from the current writer (6,039 words over 17 chapters on 2026-09-18); at 270 a 22 minute request came back as 30
 const LLM_TIMEOUT = 30 * 60 * 1000;
 
 const slugify = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60);
