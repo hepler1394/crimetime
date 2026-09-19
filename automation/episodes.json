@@ -18,6 +18,30 @@
   },
   "episodes": [
     {
+      "guid": "cts-studio-murders-in-moscow-the-plea",
+      "title": "Murders in Moscow: The Plea",
+      "slug": "murders-in-moscow-the-plea",
+      "date": "2026-09-19",
+      "pubDate": "Sat, 19 Sep 2026 07:52:48 GMT",
+      "duration": "00:22:26",
+      "description": "Welcome back to CrimeTimeSnacks, I'm your host Cory. Today we are returning to Moscow, Idaho, to look at the legal aftermath of a tragedy that shook the nation. If you haven't heard our previous coverage of the devastating loss of Ethan, Madison, Xana, and Kaylee, you might want to start there. This time, we are focusing entirely on what happened after the arrest of Bryan Kohberger.\n\nWe will walk through the grueling pre-trial motions, the intense battles over DNA and cell-site evidence, and the sudden pivot to a plea agreement in the summer of 2025. It is a complex look at the justice system, the weight of capital punishment, and the legal maneuvering that followed the initial shock of the crimes.",
+      "audio": "/audio/murders-in-moscow-the-plea.mp3",
+      "audioType": "audio/mpeg",
+      "audioBytes": 21530486,
+      "image": "/images/episodes/murders-in-moscow-the-plea.jpg",
+      "link": "",
+      "explicit": false,
+      "source": "studio",
+      "keywords": [
+        "Bryan Kohberger",
+        "Moscow Idaho",
+        "University of Idaho",
+        "plea agreement",
+        "capital case",
+        "true crime podcast"
+      ]
+    },
+    {
       "guid": "cts-studio-the-interrogation-of-chris-watts",
       "title": "The Interrogation of Chris Watts",
       "slug": "the-interrogation-of-chris-watts",

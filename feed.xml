@@ -7,7 +7,7 @@
     <title>CrimeTimeSnacks • A True Crime Podcast</title>
     <link>https://www.crimetimesnacks.com/</link>
     <atom:link href="https://www.crimetimesnacks.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sat, 19 Sep 2026 04:44:13 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 19 Sep 2026 07:52:50 GMT</lastBuildDate>
     <language>en</language>
     <copyright>&#169; 2026 Cory</copyright>
     <description>Crime Time Snacks is a true crime podcast that delves into a variety of unsolved cases, exploring the facts, theories, and evidence surrounding each mystery. The podcast aims to provide listeners with a comprehensive understanding of these cases, encouraging them to engage with the content and form their own conclusions.</description>
@@ -22,6 +22,23 @@
     <itunes:image href="https://www.crimetimesnacks.com/images/episodes/show.jpg" />
     <itunes:category text="True Crime" />
     <itunes:explicit>false</itunes:explicit>
+    <item>
+      <title>Murders in Moscow: The Plea</title>
+      <link>https://www.crimetimesnacks.com/episodes/murders-in-moscow-the-plea.html</link>
+      <guid isPermaLink="false">cts-studio-murders-in-moscow-the-plea</guid>
+      <pubDate>Sat, 19 Sep 2026 07:52:48 GMT</pubDate>
+      <description>Welcome back to CrimeTimeSnacks, I&apos;m your host Cory. Today we are returning to Moscow, Idaho, to look at the legal aftermath of a tragedy that shook the nation. If you haven&apos;t heard our previous coverage of the devastating loss of Ethan, Madison, Xana, and Kaylee, you might want to start there. This time, we are focusing entirely on what happened after the arrest of Bryan Kohberger.
+
+We will walk through the grueling pre-trial motions, the intense battles over DNA and cell-site evidence, and the sudden pivot to a plea agreement in the summer of 2025. It is a complex look at the justice system, the weight of capital punishment, and the legal maneuvering that followed the initial shock of the crimes.</description>
+      <itunes:summary>Welcome back to CrimeTimeSnacks, I&apos;m your host Cory. Today we are returning to Moscow, Idaho, to look at the legal aftermath of a tragedy that shook the nation. If you haven&apos;t heard our previous coverage of the devastating loss of Ethan, Madison, Xana, and Kaylee, you might want to start there. This time, we are focusing entirely on what happened after the arrest of Bryan Kohberger.
+
+We will walk through the grueling pre-trial motions, the intense battles over DNA and cell-site evidence, and the sudden pivot to a plea agreement in the summer of 2025. It is a complex look at the justice system, the weight of capital punishment, and the legal maneuvering that followed the initial shock of the crimes.</itunes:summary>
+      <itunes:author>Cory</itunes:author>
+      <itunes:duration>00:22:26</itunes:duration>
+      <enclosure url="https://www.crimetimesnacks.com/audio/murders-in-moscow-the-plea.mp3" length="21530486" type="audio/mpeg" />
+      <itunes:image href="https://www.crimetimesnacks.com/images/episodes/murders-in-moscow-the-plea.jpg" />
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>The Interrogation of Chris Watts</title>
       <link>https://www.crimetimesnacks.com/episodes/the-interrogation-of-chris-watts.html</link>

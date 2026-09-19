@@ -1,0 +1,1471 @@
+{
+ "slug": "murders-in-moscow-the-plea",
+ "title": "Murders in Moscow: The Plea",
+ "language": "en",
+ "duration": 1345.6,
+ "model": "faster-whisper small (int8)",
+ "generated": "2026-09-19",
+ "note": "Transcript generated from the episode script.",
+ "segments": [
+  {
+   "start": 5,
+   "end": 9.1,
+   "text": "What's up guys, welcome back to Crime Time Snacks. A year after accepting a plea deal to"
+  },
+  {
+   "start": 9.1,
+   "end": 14,
+   "text": "avoid the death penalty, Brian Coburger filed a motion to withdraw his guilty plea by claiming he"
+  },
+  {
+   "start": 14,
+   "end": 19.7,
+   "text": "was coerced. In a handwritten petition he blamed his plea on threats, false promises, and bad"
+  },
+  {
+   "start": 19.7,
+   "end": 25.2,
+   "text": "information from his own defense team. He wants to reopen the case and face a trial. You've"
+  },
+  {
+   "start": 25.2,
+   "end": 28.7,
+   "text": "probably heard the headline version of what happened in Moscow, Idaho. In the early"
+  },
+  {
+   "start": 28.7,
+   "end": 33.7,
+   "text": "morning hours of November 13, 2022, four University of Idaho students were fatally"
+  },
+  {
+   "start": 33.7,
+   "end": 38.7,
+   "text": "stabbed in their off-campus rental house on King Road. Ethan Chapin, Madison Mogan,"
+  },
+  {
+   "start": 38.7,
+   "end": 44.1,
+   "text": "Zana Curnodal, and Kayleek and Calbis were all killed in an attack that lasted roughly 15 minutes."
+  },
+  {
+   "start": 44.1,
+   "end": 47,
+   "text": "The coroner stated they were likely asleep when the intruder entered,"
+  },
+  {
+   "start": 47,
+   "end": 51.2,
+   "text": "though some fought back and had defensive wounds. Two other roommates were inside the"
+  },
+  {
+   "start": 51.2,
+   "end": 54.8,
+   "text": "house that night. The case file shows they remained in the home during the attacks"
+  },
+  {
+   "start": 54.8,
+   "end": 59.2,
+   "text": "but were left completely unharmed. When authorities responded to a 911 call just"
+  },
+  {
+   "start": 59.2,
+   "end": 63.5,
+   "text": "before noon, they found a brutal scene with no signs of forced entry. They also found a"
+  },
+  {
+   "start": 63.5,
+   "end": 66.7,
+   "text": "massive piece of evidence left behind on a bed next to one of the victims."
+  },
+  {
+   "start": 67.5,
+   "end": 71.1,
+   "text": "Investigators discovered a leather knife sheath right there at the crime scene."
+  },
+  {
+   "start": 71.1,
+   "end": 74.4,
+   "text": "That sheath yielded touched DNA matching a single male profile."
+  },
+  {
+   "start": 75.1,
+   "end": 79.7,
+   "text": "Police used investigative genetic genealogy to link that DNA to public databases,"
+  },
+  {
+   "start": 79.7,
+   "end": 83.6,
+   "text": "which pointed them straight to a Washington State University criminology student living just"
+  },
+  {
+   "start": 83.6,
+   "end": 88.9,
+   "text": "eight miles away. On December 30, authorities arrested Brian Coburger at his parents' house"
+  },
+  {
+   "start": 88.9,
+   "end": 92.1,
+   "text": "in Pennsylvania and charged him with four counts of first-degree murder."
+  },
+  {
+   "start": 93,
+   "end": 97.2,
+   "text": "He eventually took a plea deal that put him in prison for four consecutive life sentences."
+  },
+  {
+   "start": 97.2,
+   "end": 100,
+   "text": "Now he wants to take that plea back and claims actual innocence."
+  },
+  {
+   "start": 100.5,
+   "end": 104.4,
+   "text": "To understand how we got to this massive reversal, we need to look at what the evidence"
+  },
+  {
+   "start": 104.4,
+   "end": 108,
+   "text": "actually shows from the very beginning. The record starts with the timeline of that"
+  },
+  {
+   "start": 108,
+   "end": 113.7,
+   "text": "frigid November night. At 1.45 a.m., Zana and Ethan returned to the King Road House."
+  },
+  {
+   "start": 113.7,
+   "end": 117.7,
+   "text": "11 minutes later, Madison and Kayleek got a ride home from a private individual."
+  },
+  {
+   "start": 117.7,
+   "end": 122.6,
+   "text": "At 4.00 a.m., Zana received a door-dash order, and phone records show she was using the TikTok app"
+  },
+  {
+   "start": 122.6,
+   "end": 127.2,
+   "text": "12 minutes after that. Detectives believe all four murders occurred between 4.00 a.m. and 4.00 a.m."
+  },
+  {
+   "start": 127.2,
+   "end": 132.4,
+   "text": "4.00 a.m. Madison and Kayleek were killed in a bedroom on the third floor."
+  },
+  {
+   "start": 132.4,
+   "end": 135.6,
+   "text": "Zana and Ethan were murdered in a bedroom on the second floor."
+  },
+  {
+   "start": 135.6,
+   "end": 138.8,
+   "text": "Investigators believe the killer used a fixed-blade KABA knife."
+  },
+  {
+   "start": 139.4,
+   "end": 141,
+   "text": "That weapon has never been recovered."
+  },
+  {
+   "start": 141.7,
+   "end": 145.6,
+   "text": "When a massive case like this breaks, the public reaction is always a major part of the"
+  },
+  {
+   "start": 145.6,
+   "end": 149.7,
+   "text": "story. The limited flow of information from authorities frustrated a lot of people."
+  },
+  {
+   "start": 150.4,
+   "end": 154.8,
+   "text": "The fathers of Kayleek and Kaubes and Ethan Chapin openly criticized the lack of communication from"
+  },
+  {
+   "start": 154.8,
+   "end": 159,
+   "text": "police and the university to the victims' families. The fear on campus was immediate."
+  },
+  {
+   "start": 159,
+   "end": 163.4,
+   "text": "The university canceled classes for November 14. From the very day of the killings,"
+  },
+  {
+   "start": 163.4,
+   "end": 166.8,
+   "text": "investigators initially told the public there was no risk to the community."
+  },
+  {
+   "start": 166.8,
+   "end": 170.6,
+   "text": "But just three days later, Moscow police chief James Frye had to reverse course."
+  },
+  {
+   "start": 171.2,
+   "end": 174.6,
+   "text": "He stood in front of the press and stated they could not say there was no threat."
+  },
+  {
+   "start": 174.7,
+   "end": 178.6,
+   "text": "That sudden shift completely fractured the community's trust in those early assurances."
+  },
+  {
+   "start": 179.4,
+   "end": 184.2,
+   "text": "Fall break was scheduled to begin after November 18 with classes resuming 10 days later."
+  },
+  {
+   "start": 184.2,
+   "end": 188.8,
+   "text": "But students in Moscow residents were terrified. They started an early Thanksgiving holiday"
+  },
+  {
+   "start": 188.8,
+   "end": 193.6,
+   "text": "exodus just to get out of the area. The people who stayed behind were incredibly anxious,"
+  },
+  {
+   "start": 193.6,
+   "end": 197.5,
+   "text": "and some professors simply canceled their remaining classes. The university tried to"
+  },
+  {
+   "start": 197.5,
+   "end": 201.2,
+   "text": "organize a candlelight vigil on the administration building lawn for November 16."
+  },
+  {
+   "start": 201.7,
+   "end": 205,
+   "text": "They ended up postponing it for two weeks. Due to weather concerns,"
+  },
+  {
+   "start": 205,
+   "end": 209.2,
+   "text": "grieving families and classmates finally gathered indoors at the Kibbe Dome on November 30."
+  },
+  {
+   "start": 209.8,
+   "end": 214,
+   "text": "Ethan's mother Stacey Chapin cried as she told the mourners that time is precious and you can"
+  },
+  {
+   "start": 214,
+   "end": 218.7,
+   "text": "not get it back. Kayleek's dad, Steve Guncabes, spoke about how his daughter in Madison had"
+  },
+  {
+   "start": 218.7,
+   "end": 223.9,
+   "text": "been inseparable since the sixth grade. He shared the heartbreaking detail that the two lifelong"
+  },
+  {
+   "start": 223.9,
+   "end": 229.2,
+   "text": "best friends died together in the same room, in the same bed. Let's unpack the staggering"
+  },
+  {
+   "start": 229.2,
+   "end": 233.4,
+   "text": "administrative details of the investigation. The Moscow Police Department didn't work this"
+  },
+  {
+   "start": 233.4,
+   "end": 238.1,
+   "text": "massive case alone. They relied heavily on support from the Idaho State Police and the FBI."
+  },
+  {
+   "start": 238.8,
+   "end": 242.9,
+   "text": "Nearly 130 law enforcement personnel were assigned to work on homicides."
+  },
+  {
+   "start": 243.7,
+   "end": 248.2,
+   "text": "The sheer volume of public input they had to manage was unprecedented for the small department."
+  },
+  {
+   "start": 248.2,
+   "end": 252.4,
+   "text": "Investigators set up dedicated phone lines and email addresses through the FBI just to"
+  },
+  {
+   "start": 252.4,
+   "end": 259.9,
+   "text": "handle the influx. By early December, they had already logged over 2,600 emails and 2,700 phone calls."
+  },
+  {
+   "start": 259.9,
+   "end": 263.9,
+   "text": "They also processed 1,000 digital media submissions from people trying to help."
+  },
+  {
+   "start": 264.7,
+   "end": 269,
+   "text": "The tips just kept pouring in as the weeks went on. On December 24, investigators reported"
+  },
+  {
+   "start": 269,
+   "end": 274,
+   "text": "receiving over 15,000 tips regarding the case. Every single one of those leads had to be"
+  },
+  {
+   "start": 274,
+   "end": 278.5,
+   "text": "catalogued, assigned and tracked by that task force. Investigators were chasing down"
+  },
+  {
+   "start": 278.6,
+   "end": 283.5,
+   "text": "everything, even early rumors. For example, the police chief had previously mentioned receiving"
+  },
+  {
+   "start": 283.5,
+   "end": 288.6,
+   "text": "tips that Kaylee had a stalker. Investigators chased that down but could not verify the claim or identify"
+  },
+  {
+   "start": 288.6,
+   "end": 293.9,
+   "text": "any such individual. They also initially left open the possibility of multiple perpetrators."
+  },
+  {
+   "start": 293.9,
+   "end": 297.6,
+   "text": "Early on, police stated they believed it was a targeted attack, but they hadn't concluded"
+  },
+  {
+   "start": 297.6,
+   "end": 302.5,
+   "text": "if the target was the house itself or the specific occupants. That information vacuum was"
+  },
+  {
+   "start": 302.5,
+   "end": 306.8,
+   "text": "quickly filled by the internet. Tick-tockers, self-proclaimed psychics and social media"
+  },
+  {
+   "start": 306.8,
+   "end": 312.1,
+   "text": "users began to speculate wildly. Rampant rumors and misinformation started spreading online as"
+  },
+  {
+   "start": 312.1,
+   "end": 316.8,
+   "text": "people tried to solve the case from their couches. The Moscow Police Department had to step in and"
+  },
+  {
+   "start": 316.8,
+   "end": 321.1,
+   "text": "push back against the internet sleuths. They criticized these online investigators for"
+  },
+  {
+   "start": 321.1,
+   "end": 325.7,
+   "text": "creating a huge distraction. Police warned that spreading false facts and speculation without"
+  },
+  {
+   "start": 325.7,
+   "end": 330.3,
+   "text": "factual backing was stoking community fears and threatening the integrity of the investigation."
+  },
+  {
+   "start": 330.9,
+   "end": 335.2,
+   "text": "Moscow police captain Roger Lanier publicly stated that tracking down and quelling"
+  },
+  {
+   "start": 335.2,
+   "end": 340,
+   "text": "rumors about events that never even happened was pulling resources away from the actual manhunt."
+  },
+  {
+   "start": 340.6,
+   "end": 344.2,
+   "text": "He explained they were keeping specific details quiet because they did not want to"
+  },
+  {
+   "start": 344.2,
+   "end": 349.4,
+   "text": "compromise the case. The department even had to issue a formal warning. They made it clear that"
+  },
+  {
+   "start": 349.4,
+   "end": 354.1,
+   "text": "people harassing or threatening those potentially involved with the case could face actual criminal"
+  },
+  {
+   "start": 354.1,
+   "end": 359.1,
+   "text": "charges. The legal battle started before the ink on the charging documents was even dry."
+  },
+  {
+   "start": 359.1,
+   "end": 363.2,
+   "text": "The case file shows Pennsylvania State Police and the FBI coordinated a pre-dawn rate at his"
+  },
+  {
+   "start": 363.2,
+   "end": 367.3,
+   "text": "parents' home in Albrightsville, where he had traveled for winter break. Investigators"
+  },
+  {
+   "start": 367.3,
+   "end": 371.2,
+   "text": "executed search warrants and seized personal electronics, clothing, and the White Hunt"
+  },
+  {
+   "start": 371.2,
+   "end": 375.6,
+   "text": "De Elantra. After his arrest in Pennsylvania, he was held at the Monroe County Correctional"
+  },
+  {
+   "start": 375.6,
+   "end": 380.6,
+   "text": "Facility. Coburger waived his right to extradition on January 3. He was flown back to"
+  },
+  {
+   "start": 380.6,
+   "end": 384.7,
+   "text": "Idaho the very next day and remanded to the Lottie County jail without bail."
+  },
+  {
+   "start": 384.7,
+   "end": 388.8,
+   "text": "A judge quickly issued a strict gag order that barred attorneys and law enforcement from"
+  },
+  {
+   "start": 388.8,
+   "end": 393.8,
+   "text": "discussing the case with the public. Coburger was appointed a public defender to navigate what"
+  },
+  {
+   "start": 393.8,
+   "end": 398.5,
+   "text": "was shaping up to be a massive capital murder trial. His defense team, which included attorney"
+  },
+  {
+   "start": 398.5,
+   "end": 404,
+   "text": "Ann Taylor, immediately went on the offensive. They filed a wave of pretrial motions asking"
+  },
+  {
+   "start": 404,
+   "end": 408.1,
+   "text": "the court to dismiss the indictment, to suppress the biological evidence, and to"
+  },
+  {
+   "start": 408.1,
+   "end": 412.8,
+   "text": "challenge the state's use of investigative genetic genealogy. Before the arrest,"
+  },
+  {
+   "start": 412.8,
+   "end": 416.5,
+   "text": "authorities had collected trash from the Pennsylvania home and sent it to the Idaho"
+  },
+  {
+   "start": 416.5,
+   "end": 421,
+   "text": "State Lab. That trash yielded a familial DNA match to Coburger's father,"
+  },
+  {
+   "start": 421,
+   "end": 426.8,
+   "text": "which investigators used to secure the warrant. By May 2023, a grand jury indicted"
+  },
+  {
+   "start": 426.8,
+   "end": 431.7,
+   "text": "Coburger on four counts of first-degree murder and one count of felony burglary."
+  },
+  {
+   "start": 431.7,
+   "end": 435.1,
+   "text": "Prosecutors built their case on more than just the DNA on the knife sheath."
+  },
+  {
+   "start": 435.7,
+   "end": 438.9,
+   "text": "Surveillance footage showed a White Hunt De Elantra driving near the house"
+  },
+  {
+   "start": 438.9,
+   "end": 443.1,
+   "text": "multiple times during the exact window of the attacks. Cell network records also"
+  },
+  {
+   "start": 443.1,
+   "end": 446.4,
+   "text": "indicated Coburger's phone registered near the residence at least 12 times in the"
+  },
+  {
+   "start": 446.4,
+   "end": 450,
+   "text": "months before the murders, though the signal vanished during the hours of the slams."
+  },
+  {
+   "start": 450,
+   "end": 454.5,
+   "text": "At his arraignment, he chose to stand silent. Disprompted the presiding judge to enter a"
+  },
+  {
+   "start": 454.5,
+   "end": 459.7,
+   "text": "plea of not guilty on his behalf. On June 26, the Wadah County prosecutor's office"
+  },
+  {
+   "start": 459.7,
+   "end": 464.5,
+   "text": "officially declared their intent to seek the death penalty. Prosecutors cited the aggravating"
+  },
+  {
+   "start": 464.5,
+   "end": 469.5,
+   "text": "circumstances of the murders to justify the ultimate punishment. That decision raised the"
+  },
+  {
+   "start": 469.5,
+   "end": 473.2,
+   "text": "stakes of the upcoming trial significantly. It was a full-blown capital case."
+  },
+  {
+   "start": 473.7,
+   "end": 478.8,
+   "text": "For a small college town that had not seen a single murder since 2015, the pressure was immense."
+  },
+  {
+   "start": 478.8,
+   "end": 482.1,
+   "text": "Even with the charges filed, the motive for the crimes remained completely unknown."
+  },
+  {
+   "start": 482.7,
+   "end": 486.2,
+   "text": "As they prepared for trial, his attorneys offered an alternate explanation for his"
+  },
+  {
+   "start": 486.2,
+   "end": 491.4,
+   "text": "whereabouts. They stated that Coburger was simply out driving alone on the night of the killings."
+  },
+  {
+   "start": 491.4,
+   "end": 495.1,
+   "text": "The defense also successfully pushed to transfer the case to Ada County due to"
+  },
+  {
+   "start": 495.1,
+   "end": 499.3,
+   "text": "intense local publicity. On September 9, the Idaho Supreme Court officially moved the"
+  },
+  {
+   "start": 499.3,
+   "end": 504.4,
+   "text": "trial to Boise and assigned Judge Stephen Hipler to take over. Coburger was flown south and booked"
+  },
+  {
+   "start": 504.4,
+   "end": 508.4,
+   "text": "into the Ada County jail. The battle lines for a death penalty trial were officially drawn."
+  },
+  {
+   "start": 509.3,
+   "end": 513.1,
+   "text": "The calendar just kept shifting as both sides argued over the rules of engagement."
+  },
+  {
+   "start": 513.1,
+   "end": 517.2,
+   "text": "A preliminary probable cause hearing was originally put on the docket for June 26."
+  },
+  {
+   "start": 517.9,
+   "end": 522,
+   "text": "That hearing ended up being cancelled entirely once the grand jury handed down their indictment"
+  },
+  {
+   "start": 522,
+   "end": 527.4,
+   "text": "in May. That indictment included the four murder charges plus one count of felony burglary,"
+  },
+  {
+   "start": 527.4,
+   "end": 530.1,
+   "text": "which meant breaking into a home with the intent to commit a felony."
+  },
+  {
+   "start": 530.7,
+   "end": 535.4,
+   "text": "As the motions piled up, the judge tentatively set jury selection to start on August 4,"
+  },
+  {
+   "start": 535.4,
+   "end": 540,
+   "text": "2025, with the trial beginning two weeks later. The defense team knew the"
+  },
+  {
+   "start": 540,
+   "end": 543.6,
+   "text": "touch DNA on that tan leather sheath was the state's most powerful weapon."
+  },
+  {
+   "start": 543.6,
+   "end": 547.3,
+   "text": "They made it their primary target. They didn't just question the swab itself."
+  },
+  {
+   "start": 547.3,
+   "end": 551.6,
+   "text": "They went after the entire method investigators used to put a name to that genetic profile."
+  },
+  {
+   "start": 552.4,
+   "end": 556.6,
+   "text": "The arguments centered entirely around the use of investigative genetic genealogy."
+  },
+  {
+   "start": 556.6,
+   "end": 560,
+   "text": "The record shows local police originally handed the DNA sample to Othrim,"
+  },
+  {
+   "start": 560,
+   "end": 563.9,
+   "text": "a private forensic company. Othrim started building family trees, but they hit a wall."
+  },
+  {
+   "start": 564.6,
+   "end": 569.5,
+   "text": "The closest match they found shared just over 70 centimorgans of DNA with the suspect."
+  },
+  {
+   "start": 569.5,
+   "end": 572.9,
+   "text": "That is the genetic equivalent of sharing a great great grandparent."
+  },
+  {
+   "start": 573.5,
+   "end": 577.2,
+   "text": "The company suggested contacting potential relatives to narrow the pool,"
+  },
+  {
+   "start": 577.2,
+   "end": 580,
+   "text": "but the FBI stepped in and took over the search completely."
+  },
+  {
+   "start": 580.7,
+   "end": 583.7,
+   "text": "That handoff became the cornerstone of the defense's challenge."
+  },
+  {
+   "start": 583.7,
+   "end": 588.9,
+   "text": "To find a closer match, the FBI ran the profile through ancestral websites like GEDMatch and MyHeritage."
+  },
+  {
+   "start": 589.5,
+   "end": 593.8,
+   "text": "The bureau later acknowledged those searches included users who had not opted in to law enforcement"
+  },
+  {
+   "start": 593.8,
+   "end": 598.5,
+   "text": "access. The defense pointed out this went directly against a Justice Department policy regarding"
+  },
+  {
+   "start": 598.5,
+   "end": 603.9,
+   "text": "explicit user consent. But the controversial search worked. The FBI found a relative sharing"
+  },
+  {
+   "start": 603.9,
+   "end": 608.1,
+   "text": "250 centimorgans of DNA drastically narrowing the suspect pool."
+  },
+  {
+   "start": 608.8,
+   "end": 612.7,
+   "text": "The family tree data just gave them a name to look at, which led them to the trash outside the"
+  },
+  {
+   "start": 612.7,
+   "end": 617.2,
+   "text": "Pennsylvania home. The actual legal proof came even later. Later samples taken from"
+  },
+  {
+   "start": 617.2,
+   "end": 621.6,
+   "text": "Coburger after he was apprehended provided a statistical match to the DNA on the knife sheath."
+  },
+  {
+   "start": 622.2,
+   "end": 626.4,
+   "text": "With the DNA battle raging, intense scrutiny shifted to the cellular network records to"
+  },
+  {
+   "start": 626.4,
+   "end": 630.4,
+   "text": "track the accused's movements. Cell phone data shows his phone stopped connecting to the"
+  },
+  {
+   "start": 630.4,
+   "end": 637.5,
+   "text": "network impulminate 2047 AM on the night of the murders. It did not reconnect until 4048 AM"
+  },
+  {
+   "start": 637.5,
+   "end": 642.5,
+   "text": "near Blaine, Idaho, which sits south of Moscow. Investigators argue the device was intentionally"
+  },
+  {
+   "start": 642.5,
+   "end": 645.9,
+   "text": "turned off or put into airplane mode during the exact window of the attacks."
+  },
+  {
+   "start": 646.6,
+   "end": 651,
+   "text": "But the timeline didn't just focus on that single night. Historical location data indicated"
+  },
+  {
+   "start": 651,
+   "end": 655.6,
+   "text": "the phone ping from the tower nearest the residence at least 12 times between June 2022"
+  },
+  {
+   "start": 655.7,
+   "end": 661.2,
+   "text": "and November 13. There was one more digital detail. Cell phone data showed the phone connected to a"
+  },
+  {
+   "start": 661.2,
+   "end": 666.3,
+   "text": "cell tower near the victim's residence again at roughly 9 under AM on November 13. That is about"
+  },
+  {
+   "start": 666.3,
+   "end": 670.9,
+   "text": "five hours after the slames, but still hours before the surviving roommates ever called 911."
+  },
+  {
+   "start": 671.9,
+   "end": 677.5,
+   "text": "The court calendar was locked for a massive capital trial with jury selection set for August 2025."
+  },
+  {
+   "start": 677.5,
+   "end": 681.5,
+   "text": "Both sides had spent years arguing over cellular data, genetic genealogy,"
+  },
+  {
+   "start": 681.5,
+   "end": 685.4,
+   "text": "and police tactics. Then, on June 30, everything came to an abrupt halt."
+  },
+  {
+   "start": 686,
+   "end": 688.9,
+   "text": "An announcement confirmed a sudden shift in the legal proceedings."
+  },
+  {
+   "start": 689.7,
+   "end": 694.4,
+   "text": "The prosecution and the defense had reached a comprehensive plea agreement behind closed doors."
+  },
+  {
+   "start": 694.4,
+   "end": 698.9,
+   "text": "Coburger agreed to plead guilty to all five charges against him. That meant accepting"
+  },
+  {
+   "start": 698.9,
+   "end": 703.2,
+   "text": "the four counts of first-degree murder and the single count of felony burglary."
+  },
+  {
+   "start": 703.2,
+   "end": 708,
+   "text": "In exchange, the death penalty came off the table. The deal was specifically structured for"
+  },
+  {
+   "start": 708,
+   "end": 712.6,
+   "text": "Coburger to avoid the death penalty. State prosecutors formally agreed to withdraw capital"
+  },
+  {
+   "start": 712.6,
+   "end": 717.6,
+   "text": "punishment from the table entirely. The terms dictated that he would accept four consecutive life"
+  },
+  {
+   "start": 717.6,
+   "end": 722,
+   "text": "sentences without the possibility of parole. He also agreed to serve an additional 10 years"
+  },
+  {
+   "start": 722,
+   "end": 726.8,
+   "text": "for the burglary conviction. To finalize this arrangement, Coburger had to wave his right"
+  },
+  {
+   "start": 726.8,
+   "end": 731.2,
+   "text": "to any future appeals. The agreement guaranteed he would remain in prison until he dies."
+  },
+  {
+   "start": 732,
+   "end": 736.8,
+   "text": "Two days later, on July 2, Coburger walked into the Ada County Courthouse to make it official."
+  },
+  {
+   "start": 736.8,
+   "end": 740.8,
+   "text": "The judge still needed to formally accept the terms and conduct the change of plea hearing."
+  },
+  {
+   "start": 740.8,
+   "end": 745.9,
+   "text": "We know exactly what happened in that room. For the very first time, the defendant publicly admitted"
+  },
+  {
+   "start": 745.9,
+   "end": 750.8,
+   "text": "to the four killings. Judge Hippler looked directly at him and asked if he was pleading guilty because"
+  },
+  {
+   "start": 750.8,
+   "end": 756,
+   "text": "he was actually guilty. When prompted by the court, Coburger officially entered his guilty plea."
+  },
+  {
+   "start": 756,
+   "end": 759.9,
+   "text": "He confirmed out loud that he was waving his right to a trial and giving up all future"
+  },
+  {
+   "start": 759.9,
+   "end": 765,
+   "text": "appeals to secure the deal. All the previous battles over cellular data and forensic evidence"
+  },
+  {
+   "start": 765,
+   "end": 769.9,
+   "text": "were suddenly in the rearview mirror. He pleaded guilty to all four counts of first-degree murder."
+  },
+  {
+   "start": 769.9,
+   "end": 774,
+   "text": "That meant formally admitting to the fatal stabbings of the four students on the record."
+  },
+  {
+   "start": 774,
+   "end": 778.7,
+   "text": "There would be no jury selection, no cross-examination, and no need for the state to present their"
+  },
+  {
+   "start": 778.7,
+   "end": 783.7,
+   "text": "timeline in front of a gallery. The judge then moved to the final charge listed on the grand jury"
+  },
+  {
+   "start": 783.7,
+   "end": 788.8,
+   "text": "indictment. Coburger also pleaded guilty to the single count of felony burglary. By legally"
+  },
+  {
+   "start": 788.8,
+   "end": 792.4,
+   "text": "admitting he entered that off-campus rental house with the intent to commit a crime,"
+  },
+  {
+   "start": 792.4,
+   "end": 796.6,
+   "text": "he cemented the final piece of the state's case. The plea was officially accepted."
+  },
+  {
+   "start": 797.2,
+   "end": 801.2,
+   "text": "Judge Hippler then formally scheduled the sentencing hearing for July 23 at 9th out of"
+  },
+  {
+   "start": 801.2,
+   "end": 806,
+   "text": "AM. Immediately following the hearing, the emotional toll of the morning spilled out"
+  },
+  {
+   "start": 806,
+   "end": 810,
+   "text": "onto the courthouse steps. Attorney Leander James issued a public statement on behalf of"
+  },
+  {
+   "start": 810,
+   "end": 814.6,
+   "text": "Madison Mogan's family. He told the press that the family was turning from tragedy and"
+  },
+  {
+   "start": 814.6,
+   "end": 819.3,
+   "text": "the dark uncertainty of the legal process. James stated they finally had closure and were"
+  },
+  {
+   "start": 819.3,
+   "end": 824.3,
+   "text": "embarking on a path of hope and healing. At that moment, the case appeared completely resolved."
+  },
+  {
+   "start": 825,
+   "end": 830.7,
+   "text": "The calendar flipped to July 23, 2025. The date Judge Hippler had set aside to finalize the"
+  },
+  {
+   "start": 830.7,
+   "end": 835.7,
+   "text": "punishment. The families of Ethan Madison, Zana, and Kaylee gathered inside the Aida County"
+  },
+  {
+   "start": 835.7,
+   "end": 840.5,
+   "text": "Courthouse for the sentencing phase. You have to remember that for years this case was dominated"
+  },
+  {
+   "start": 840.5,
+   "end": 845.2,
+   "text": "by pretrial motions and forensic debates. Now, the legal arguments over cell towers and"
+  },
+  {
+   "start": 845.2,
+   "end": 849.4,
+   "text": "DNA were finished. The focus of the proceeding shifted entirely to the victims."
+  },
+  {
+   "start": 850.1,
+   "end": 854.7,
+   "text": "The judge dedicated a full, day-long hearing strictly for the families to speak."
+  },
+  {
+   "start": 854.7,
+   "end": 858.8,
+   "text": "One by one, relatives took the podium to deliver their victim impact statements."
+  },
+  {
+   "start": 858.8,
+   "end": 862.5,
+   "text": "They stood just feet away from the defendant to put their pain on the official record."
+  },
+  {
+   "start": 862.5,
+   "end": 866.4,
+   "text": "The courtroom listened as they described the devastating reality of losing their children."
+  },
+  {
+   "start": 867.1,
+   "end": 870.7,
+   "text": "These statements are a crucial part of the justice system. They ensure the human cost of"
+  },
+  {
+   "start": 870.7,
+   "end": 874.4,
+   "text": "a crime is documented forever, separate from the sterile facts of an indictment."
+  },
+  {
+   "start": 874.9,
+   "end": 878.9,
+   "text": "The family spoke about the bright futures of four college students that were violently cut"
+  },
+  {
+   "start": 878.9,
+   "end": 882,
+   "text": "shorter. Madison and Zana were both studying marketing."
+  },
+  {
+   "start": 883.3,
+   "end": 887.7,
+   "text": "Kaylee had just moved out and was only visiting for the weekend. Ethan was just 20 years old,"
+  },
+  {
+   "start": 887.7,
+   "end": 892.3,
+   "text": "and the girls were 20 and 21. The record shows a sign hanging in the window of their rental"
+  },
+  {
+   "start": 892.3,
+   "end": 897.4,
+   "text": "house simply read, Saturday is for the girls. They detailed the massive void left in their"
+  },
+  {
+   "start": 897.4,
+   "end": 902.8,
+   "text": "own lives and the broader Moscow community. For hours, the gallery heard exactly what was"
+  },
+  {
+   "start": 902.8,
+   "end": 907.6,
+   "text": "taken from the world in that brief window on King Road. The loved ones of the victims made sure the"
+  },
+  {
+   "start": 907.6,
+   "end": 912,
+   "text": "court understood the true weight of the tragedy. It was a grueling emotional day that brought the"
+  },
+  {
+   "start": 912,
+   "end": 917,
+   "text": "human element of this massive case into sharp focus. When the statements finally concluded,"
+  },
+  {
+   "start": 917,
+   "end": 921.8,
+   "text": "Judge Hippler officially imposed the sentence on the record. He handed down the four consecutive"
+  },
+  {
+   "start": 921.8,
+   "end": 926.2,
+   "text": "life terms in prison without the possibility of parole, plus the 10 years for burglary."
+  },
+  {
+   "start": 927,
+   "end": 933.2,
+   "text": "The court also ordered a combined fine of $250,000, which breaks down to $50,000 per count,"
+  },
+  {
+   "start": 933.2,
+   "end": 937.9,
+   "text": "and he was ordered to pay $20,000 in restitution, $5,000 for each victim."
+  },
+  {
+   "start": 938.8,
+   "end": 944.4,
+   "text": "The judge formally handed down four consecutive life terms. That specific structure is incredibly"
+  },
+  {
+   "start": 944.4,
+   "end": 948.9,
+   "text": "important in a case with multiple victims. It means the punishment for each student's murder"
+  },
+  {
+   "start": 948.9,
+   "end": 953.7,
+   "text": "must be served back to back. The court ensured the penalty reflected four distinct and separate"
+  },
+  {
+   "start": 953.7,
+   "end": 960,
+   "text": "crimes. This sentence ensures imprisonment without the possibility of parole. There is no future date"
+  },
+  {
+   "start": 960,
+   "end": 965,
+   "text": "where a review board will ever evaluate his release. He is incarcerated at the Idaho Maximum"
+  },
+  {
+   "start": 965,
+   "end": 969.8,
+   "text": "Security Institution. Under the strict terms accepted by the court, he will remain behind"
+  },
+  {
+   "start": 969.8,
+   "end": 974.9,
+   "text": "bars for the rest of his life. Before his arrest, he was a 28-year-old criminology student"
+  },
+  {
+   "start": 974.9,
+   "end": 978.9,
+   "text": "completing his first semester at Washington State University. He lived in Pullman less"
+  },
+  {
+   "start": 978.9,
+   "end": 983.9,
+   "text": "than eight miles away from the King Road House. Now, at 31 years old, his reality is completely"
+  },
+  {
+   "start": 983.9,
+   "end": 988.9,
+   "text": "confined to a state penitentiary. The transition from a university classroom to a maximum security"
+  },
+  {
+   "start": 988.9,
+   "end": 993.8,
+   "text": "cell was absolute. The plea agreement seemed entirely ironclad. The state had officially"
+  },
+  {
+   "start": 993.8,
+   "end": 998,
+   "text": "withdrawn the death penalty and in exchange, Coburger explicitly waived his right to appeal."
+  },
+  {
+   "start": 998.8,
+   "end": 1003,
+   "text": "You might think a signed waiver means the legal fight is over. It doesn't. Waving an"
+  },
+  {
+   "start": 1003,
+   "end": 1007.2,
+   "text": "appeal does not legally prevent a defendant from filing a new case to challenge the validity"
+  },
+  {
+   "start": 1007.2,
+   "end": 1013,
+   "text": "of the plea agreement itself. In July 2026, Coburger filed a petition for post-conviction relief in"
+  },
+  {
+   "start": 1013,
+   "end": 1017.9,
+   "text": "Ada County District Court. The handwritten court documents outlined his specific complaints"
+  },
+  {
+   "start": 1017.9,
+   "end": 1022.7,
+   "text": "against his former defense team. Citing ineffective assistance of counsel, Coburger claims his"
+  },
+  {
+   "start": 1022.7,
+   "end": 1027.6,
+   "text": "attorneys failed to disclose or review exculpatory evidence. He also wrote that he was given a"
+  },
+  {
+   "start": 1027.6,
+   "end": 1032.2,
+   "text": "gross misrepresentation of what a life sentence in death row in Idaho would actually look like."
+  },
+  {
+   "start": 1032.2,
+   "end": 1036.8,
+   "text": "Antaylor's office declined to comment on the accusations. The New York Times first reported"
+  },
+  {
+   "start": 1036.8,
+   "end": 1041.2,
+   "text": "on this petition after conducting an interview with Coburger in prison. In a statement provided to"
+  },
+  {
+   "start": 1041.2,
+   "end": 1046.4,
+   "text": "the paper, he claimed he was convinced to falsely confess. He stated his actual innocence is his"
+  },
+  {
+   "start": 1046.4,
+   "end": 1050.3,
+   "text": "truth and argued the plea was hinged on false promises and blatant disinformation."
+  },
+  {
+   "start": 1050.9,
+   "end": 1055.6,
+   "text": "The state is not backing down. Officials and legal counsel representing the victim's families"
+  },
+  {
+   "start": 1055.6,
+   "end": 1058.9,
+   "text": "publicly affirmed their confidence in the original conviction. They stated their"
+  },
+  {
+   "start": 1058.9,
+   "end": 1064.4,
+   "text": "readiness to challenge the new petition in court. Meanwhile, on August 29, 2026,"
+  },
+  {
+   "start": 1064.4,
+   "end": 1069.1,
+   "text": "Coburger formally asked the court to disqualify Judge Hipler from presiding over the new case."
+  },
+  {
+   "start": 1070,
+   "end": 1074.9,
+   "text": "The timing of this reversal was impossible to ignore. He publicly revealed his petition to"
+  },
+  {
+   "start": 1074.9,
+   "end": 1079.5,
+   "text": "ascend the plea the exact same week a major documentary about the murders premiered on"
+  },
+  {
+   "start": 1079.5,
+   "end": 1085.5,
+   "text": "Netflix. That project, titled The Idaho Murders, College Nightmare, was set to release on July"
+  },
+  {
+   "start": 1085.5,
+   "end": 1090.6,
+   "text": "29. The media spotlight on this case is only getting brighter. A new book by Christopher"
+  },
+  {
+   "start": 1090.6,
+   "end": 1095.2,
+   "text": "Whitcomb titled Broken Ply, The Explosive Search for Truth Behind the Idaho Murders,"
+  },
+  {
+   "start": 1095.2,
+   "end": 1101.1,
+   "text": "is set to be published on April 28. ABC also scheduled a special 20s-20 episode called Idaho"
+  },
+  {
+   "start": 1101.1,
+   "end": 1106.2,
+   "text": "Justice to air on September 5 and stream the next day on Hulu. Just as the public was revisiting"
+  },
+  {
+   "start": 1106.2,
+   "end": 1110.1,
+   "text": "the tragedy, the man convicted of the crimes forced his way back into the headlines."
+  },
+  {
+   "start": 1111.2,
+   "end": 1115.1,
+   "text": "The case file shows some of the strategies that original defense king tried to use before"
+  },
+  {
+   "start": 1115.1,
+   "end": 1119.6,
+   "text": "the plea. At one point, his attorneys alleged that he was diagnosed with autism spectrum"
+  },
+  {
+   "start": 1119.6,
+   "end": 1125.1,
+   "text": "disorder. The judge pushed back hard on that specific claim. Judge Hipler stated he had never"
+  },
+  {
+   "start": 1125.1,
+   "end": 1130.1,
+   "text": "seen any odd behavior from the defendant across months of hearings. The judge noted that by all"
+  },
+  {
+   "start": 1130.1,
+   "end": 1134,
+   "text": "accounts the defendant is highly functioning. He ruled that a jury would not be allowed to"
+  },
+  {
+   "start": 1134,
+   "end": 1138.1,
+   "text": "hear testimony about an autism diagnosis unless Coburger actually took the stand himself."
+  },
+  {
+   "start": 1138.8,
+   "end": 1144,
+   "text": "Now, the defendant is arguing the legal guidance he received was completely flawed."
+  },
+  {
+   "start": 1144,
+   "end": 1148.8,
+   "text": "He claims the false promises from his counsel led to a gross misrepresentation of what a"
+  },
+  {
+   "start": 1148.8,
+   "end": 1153.2,
+   "text": "life sentence would actually look like. We also know the original defense team made moves that"
+  },
+  {
+   "start": 1153.2,
+   "end": 1157.9,
+   "text": "significantly extended the timeline. Early in the process, Coburger waved his right to a speedy"
+  },
+  {
+   "start": 1157.9,
+   "end": 1161.9,
+   "text": "trial. His attorney at the time cited the need for additional time to repair the defense."
+  },
+  {
+   "start": 1162.4,
+   "end": 1166,
+   "text": "Now, the new filing argues that preparation was completely inadequate."
+  },
+  {
+   "start": 1166,
+   "end": 1170,
+   "text": "Read the file and you see a defendant trying to dismantle his own defense strategy piece by"
+  },
+  {
+   "start": 1170,
+   "end": 1175.7,
+   "text": "piece. The handwritten petition goes far beyond just complaining about bad legal advice."
+  },
+  {
+   "start": 1175.7,
+   "end": 1179.6,
+   "text": "The motion further alleges that the plea was not made voluntarily."
+  },
+  {
+   "start": 1179.6,
+   "end": 1184,
+   "text": "In the criminal justice system, an admission of guilt has to be a free and independent choice."
+  },
+  {
+   "start": 1184.7,
+   "end": 1189.2,
+   "text": "If a judge determines that standard was not met, the entire agreement is thrown into question."
+  },
+  {
+   "start": 1190.3,
+   "end": 1194.8,
+   "text": "The ultimate goal of this post-conviction maneuver is absolute. The defense requests"
+  },
+  {
+   "start": 1194.8,
+   "end": 1199.7,
+   "text": "the court to invalidate the guilty plea entirely. They are not asking for a modified sentence or"
+  },
+  {
+   "start": 1199.7,
+   "end": 1204.5,
+   "text": "transfer to a different maximum security facility. They want the judge to completely erase the"
+  },
+  {
+   "start": 1204.5,
+   "end": 1209.4,
+   "text": "admission of guilt from the official record. If the court actually agrees to grant this request,"
+  },
+  {
+   "start": 1209.4,
+   "end": 1213.8,
+   "text": "the legal landscape shifts overnight. The four consecutive life sentences would immediately"
+  },
+  {
+   "start": 1213.8,
+   "end": 1218.8,
+   "text": "disappear. The waiver of a PLC sign would be tossed out right along with the rest of the paperwork."
+  },
+  {
+   "start": 1218.8,
+   "end": 1223,
+   "text": "The state of Idaho would be forced to take the entire homicide prosecution back to square one."
+  },
+  {
+   "start": 1223.9,
+   "end": 1227.6,
+   "text": "That means prosecutors would have to prepare for the massive capital trial they thought they"
+  },
+  {
+   "start": 1227.6,
+   "end": 1231.2,
+   "text": "avoided. The victims' families would have to sit in a courtroom and listen to weeks"
+  },
+  {
+   "start": 1231.2,
+   "end": 1235.9,
+   "text": "of grueling cross-examinations. The legal finality they were promised after the sentencing hearing"
+  },
+  {
+   "start": 1235.9,
+   "end": 1241.3,
+   "text": "would be completely undone. A finalized capital murder case does not just reopen quietly."
+  },
+  {
+   "start": 1241.3,
+   "end": 1245.6,
+   "text": "State prosecutors now have to defend a conviction they thought was permanently walked in place by"
+  },
+  {
+   "start": 1245.6,
+   "end": 1250.2,
+   "text": "a signed waiver. The scrutiny has shifted away from the touch DNA and the cellular data."
+  },
+  {
+   "start": 1250.8,
+   "end": 1255.2,
+   "text": "Now, the microscope is pointed directly at the closed-door negotiations"
+  },
+  {
+   "start": 1255.2,
+   "end": 1260.3,
+   "text": "and the actions of the original defense team. The presiding judge now has to weigh the signed"
+  },
+  {
+   "start": 1260.3,
+   "end": 1264.8,
+   "text": "waiver against these new claims of coercion. The court will have to determine if the original"
+  },
+  {
+   "start": 1264.8,
+   "end": 1269.2,
+   "text": "defense team actually crossed a line or if the defendant simply changed his mind."
+  },
+  {
+   "start": 1269.2,
+   "end": 1272.3,
+   "text": "We are waiting to see if the legal system will actually let him take it all back."
+  },
+  {
+   "start": 1273.1,
+   "end": 1277.7,
+   "text": "That July 2026 motion to withdraw the plea remains pending on the court docket."
+  },
+  {
+   "start": 1277.7,
+   "end": 1282.8,
+   "text": "The legal system moves slowly, especially when a defendant tries to completely unravel a finalized"
+  },
+  {
+   "start": 1282.8,
+   "end": 1287.8,
+   "text": "capital agreement. The state is standing its ground and defending the original conviction."
+  },
+  {
+   "start": 1287.9,
+   "end": 1291.6,
+   "text": "Prosecutors are absolutely refusing to let the admission of guilt just slip away."
+  },
+  {
+   "start": 1292.4,
+   "end": 1296.8,
+   "text": "The court has not yet ruled on the specific claims of coercion and ineffective counsel."
+  },
+  {
+   "start": 1296.8,
+   "end": 1300.8,
+   "text": "A judge still needs to evaluate the serious accusations leveled against the original defense"
+  },
+  {
+   "start": 1300.8,
+   "end": 1305.1,
+   "text": "attorneys. They have to weigh the handwritten petition against the official transcript of"
+  },
+  {
+   "start": 1305.1,
+   "end": 1309.7,
+   "text": "the change of plea hearing. Until a formal ruling is handed down, the convictions are locked in"
+  },
+  {
+   "start": 1309.7,
+   "end": 1314.7,
+   "text": "place. The final legal resolution of the King Road homicides now rests entirely in the hands"
+  },
+  {
+   "start": 1314.7,
+   "end": 1318.9,
+   "text": "of the judge. They have the authority to uphold the waiver or throw the entire plea deal out the"
+  },
+  {
+   "start": 1318.9,
+   "end": 1324,
+   "text": "window. The Goncalves family has expressed confidence he will get the death penalty if there is a trial."
+  },
+  {
+   "start": 1324.7,
+   "end": 1329.4,
+   "text": "We will just have to wait and see how the justice system handles this unprecedented reversal."
+  },
+  {
+   "start": 1329.4,
+   "end": 1332.5,
+   "text": "The documents are out there for anyone willing to look past the headlines."
+  },
+  {
+   "start": 1332.5,
+   "end": 1334.4,
+   "text": "Read the file. Form your own conclusion."
+  },
+  {
+   "start": 1335.3,
+   "end": 1338.9,
+   "text": "That's it for this one. Thanks for hanging out with me. This has been Crime Time Snacks,"
+  },
+  {
+   "start": 1338.9,
+   "end": 1344.5,
+   "text": "and I'll catch you next time."
+  }
+ ]
+}
