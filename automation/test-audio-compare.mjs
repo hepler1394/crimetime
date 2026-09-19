@@ -36,6 +36,11 @@ test("a past tense folded into the next word is speech, not a glitch", () => {
   assert.deepEqual(kinds("They planned to spend four months visiting state and national parks", "They plan to spend four months visiting state and national parks"), []);
   assert.deepEqual(kinds("Police separated them for the night and drove away", "Police separate them for the night and drove away"), []);
 });
+test("names the transcriber spells its own way are not findings", () => {
+  assert.deepEqual(kinds("Officer Scott Coonts arrived at the house that afternoon", "Officer Scott Koontz arrived at the house that afternoon"), []);
+  assert.deepEqual(kinds("They arrived at the Cervi 319 worksite that night", "They arrived at the Servi 319 worksite that night"), []);
+  assert.deepEqual(kinds("he had driven them from the house to the site", "he had driven them for the house to the site"), []);
+});
 test("a garbled last word of a paragraph is still caught", () => {
   assert.deepEqual(kinds("On November 23, authorities announced their conclusion.", "On November 23rd, he announced their conclusion."), ["MISHEARD"]);
 });

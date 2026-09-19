@@ -5,9 +5,12 @@
 const NUMS = { zero: "0", one: "1", two: "2", three: "3", four: "4", five: "5", six: "6", seven: "7", eight: "8", nine: "9", ten: "10", eleven: "11", twelve: "12", thirteen: "13", fourteen: "14", fifteen: "15", sixteen: "16", seventeen: "17", eighteen: "18", nineteen: "19", twenty: "20", thirty: "30", forty: "40", fifty: "50", sixty: "60", seventy: "70", eighty: "80", ninety: "90", hundred: "100", thousand: "1000" };
 export const tokens = (s) => String(s).toLowerCase().replace(/[’']/g, "").replace(/(\d),(\d)/g, "$1$2").replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter(Boolean).map((w) => NUMS[w] || w.replace(/(\d+)(st|nd|rd|th)$/, "$1"));
 
+const SMALL = new Set("a an the of to in on at by for from with as it its is was are were be that this these those they there their he she his her him them and or but so if then than not no".split(" "));
+
 // Consonant skeleton: what is left when spelling guesses are taken out. "laundrie" and
 // "laundry" match, "capital" and "capra" do not.
-const skel = (w) => w.replace(/x/g, "ks").replace(/[cq]/g, "k").replace(/ph/g, "f").replace(/[aeiouyhw]/g, "").replace(/(.)\1+/g, "$1");
+// Soft c is an s ("Cervi"/"Servi"), and s and z are one sound to a transcriber ("Coonts"/"Koontz").
+const skel = (w) => w.replace(/x/g, "ks").replace(/c(?=[eiy])/g, "s").replace(/z/g, "s").replace(/[cq]/g, "k").replace(/ph/g, "f").replace(/[aeiouyhw]/g, "").replace(/(.)\1+/g, "$1");
 
 // paras: the script's paragraphs. heardWords: [{ w, s, p }] (word, start second, confidence).
 // Returns findings as { kind, at (seconds into the voice track), pi (paragraph index), text }.
@@ -61,7 +64,8 @@ export function compareWords(paras, heardWords, audioOk = []) {
     if (!d.heard.length) { if (d.script.length >= 3) findings.push({ kind: "DROPPED", at: d.at, pi: d.pi, text: `"${d.script.join(" ")}" is in the script and was not heard` }); continue; }
     if (skel(sJoin) === skel(hJoin)) continue;
     if (d.script.every((w) => okNames.has(w))) continue;
-    if (Math.max(sJoin.length, hJoin.length) < 4) continue;                    // a/the, is/was: the model's own coin flips
+    if (Math.max(sJoin.length, hJoin.length) < 4) continue;
+    if (d.script.length === 1 && d.heard.length === 1 && SMALL.has(sJoin) && SMALL.has(hJoin)) continue;  // from/for, that/it: the model's own coin flips
     findings.push({ kind: "MISHEARD", at: d.at, pi: d.pi, text: `script says "${d.script.join(" ")}", it sounds like "${d.heard.map((x) => x.w).join(" ")}"` });
   }
   return { findings, scriptWords: A.length, heardWordCount: B.length };
