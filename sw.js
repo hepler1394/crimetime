@@ -9,9 +9,9 @@
    2026-09-13 that meant the new Case File signup did nothing for them. Scripts
    and styles now revalidate with the server on every load, and the precache
    bypasses the HTTP cache. */
-const VERSION = 'cts-v2';
+const VERSION = 'cts-v3';
 const OFFLINE_URL = '/offline.html';
-const PRECACHE = [OFFLINE_URL, '/css/style.css?v=2026r', '/js/main.js', '/js/effects.js', '/images/logo.png'];
+const PRECACHE = [OFFLINE_URL, '/css/style.css?v=2026s', '/js/main.js', '/js/effects.js', '/images/logo.png'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(

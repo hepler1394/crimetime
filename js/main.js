@@ -469,3 +469,18 @@ function renderContinueListening() {
     card.append(image, info);
     content.replaceChildren(card);
 }
+
+// YouTube posters: swap the real player in on the first tap (see build-videos.mjs, ytLite).
+document.addEventListener('click', (e) => {
+    const lite = e.target.closest && e.target.closest('a.yt-lite[data-yt]');
+    if (!lite || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    e.preventDefault();
+    const frame = document.createElement('iframe');
+    frame.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(lite.dataset.yt) + '?autoplay=1&rel=0';
+    frame.className = lite.className.replace('yt-lite', '').trim();
+    frame.title = (lite.getAttribute('aria-label') || 'Video').replace(/^Play video: /, '');
+    frame.setAttribute('frameborder', '0');
+    frame.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+    frame.allowFullscreen = true;
+    lite.replaceWith(frame);
+});

@@ -38,17 +38,16 @@ const videoLd = all.length
     }, null, 2)}\n    </script>`
   : "";
 
+// A YouTube iframe costs about 1.1 MB of script before anyone presses play; measured on the
+// homepage on 2026-09-18 it was 40% of the page. Show the poster and a play button, and let
+// js/main.js swap the real player in on the first tap. No script, no tap: the button is a
+// plain link to the video, so it still works.
+const ytLite = (v, cls) => `<a class="yt-lite ${cls}" href="https://www.youtube.com/watch?v=${esc(v.id)}" data-yt="${esc(v.id)}" target="_blank" rel="noopener" aria-label="Play video: ${esc(v.title)}" style="background-image:url('https://i.ytimg.com/vi/${esc(v.id)}/hqdefault.jpg')"><span class="yt-lite-play" aria-hidden="true"></span></a>`;
+
 function videoCard(v) {
   return `            <div class="video-card" data-format="full">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/${esc(v.id)}"
-                            class="video"
-                            title="${esc(v.title)}"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            loading="lazy"
-                            allowfullscreen>
-                    </iframe>
+                    ${ytLite(v, "video")}
                 </div>
                 <div class="video-content">
                     <h3 class="video-title">${esc(v.title)}</h3>
@@ -60,14 +59,7 @@ function videoCard(v) {
 function shortCard(v) {
   return `            <div class="short-card">
                 <div class="short-container">
-                    <iframe src="https://www.youtube.com/embed/${esc(v.id)}"
-                            class="short"
-                            title="${esc(v.title)}"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            loading="lazy"
-                            allowfullscreen>
-                    </iframe>
+                    ${ytLite(v, "short")}
                 </div>
                 <p class="short-title">${esc(v.title)}</p>
             </div>`;
@@ -197,7 +189,7 @@ function homeShort(v) {
 function homeVideo(v) {
   return `                <div class="video-card">
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/${esc(v.id)}" class="video" title="${esc(v.title)}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy" allowfullscreen></iframe>
+                        ${ytLite(v, "video")}
                     </div>
                     <div class="video-content"><h3 class="video-title">${esc(v.title)}</h3></div>
                 </div>`;
