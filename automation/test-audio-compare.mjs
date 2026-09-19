@@ -41,6 +41,11 @@ test("names the transcriber spells its own way are not findings", () => {
   assert.deepEqual(kinds("They arrived at the Cervi 319 worksite that night", "They arrived at the Servi 319 worksite that night"), []);
   assert.deepEqual(kinds("he had driven them from the house to the site", "he had driven them for the house to the site"), []);
 });
+test("a run of names is judged word by word", () => {
+  const script = "Ethan Chapin, Madison Mogen, Xana Kernodle, and Kaylee Goncalves were all killed in the attack";
+  assert.deepEqual(kinds(script, "Ethan Chapin, Madison Mogan, Zana Kernodle, and Kaley Goncalves were all killed in the attack", ["Xana"]), []);
+  assert.deepEqual(kinds(script, "Ethan Chapman, Madison Mogan, Zana Knodel, and Kalyan Calvez were all killed in the attack", ["Xana"]), ["MISHEARD"]);
+});
 test("a garbled last word of a paragraph is still caught", () => {
   assert.deepEqual(kinds("On November 23, authorities announced their conclusion.", "On November 23rd, he announced their conclusion."), ["MISHEARD"]);
 });

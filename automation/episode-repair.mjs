@@ -52,7 +52,13 @@ for (const k of Object.keys(edits)) if (edits[k].drop) want.delete(+k);
 if (!want.size && !Object.values(edits).some((e) => e.drop)) die("nothing", `${id} has nothing flagged. Run episode-audit.mjs first.`);
 const textOf = (i) => ({ script: edits[i]?.script || paras[i], spoken: edits[i]?.spoken || edits[i]?.script || paras[i] });
 
-const work = join(dir, "repair"); await rm(work, { recursive: true, force: true }); await mkdir(join(work, "accepted"), { recursive: true });
+// --recheck: judge the attempts a previous run kept (repair/roundN) again, without rendering or
+// transcribing anything. For when the checker was wrong, not the audio: on 2026-09-19 it held the
+// Moscow episode because the transcriber writes "Hitler" for a clearly spoken "Hippler".
+const recheck = args.includes("--recheck");
+const work = join(dir, "repair");
+if (!recheck) await rm(work, { recursive: true, force: true });
+await rm(join(work, "accepted"), { recursive: true, force: true }); await mkdir(join(work, "accepted"), { recursive: true });
 const run = (cmd, a, label, env) => {
   const r = spawnSync(cmd, a, { encoding: "utf8", windowsHide: true, maxBuffer: 256 * 1024 * 1024, env: { ...process.env, PYTHONIOENCODING: "utf-8", ...(env || {}) } });
   if (r.status !== 0) die(label, `${label}: ${(r.stderr || r.stdout || "").trim().slice(-400)}`);
@@ -64,8 +70,10 @@ let remaining = [...want].sort((a, b) => a - b);
 const accepted = {}, history = {};
 for (let r = 1; r <= rounds && remaining.length; r++) {
   const rdir = join(work, `round${r}`); await mkdir(rdir, { recursive: true });
+  const kept = recheck && existsSync(join(rdir, "heard.json"));
   const toRender = [];
   for (const i of remaining) {
+    if (kept && existsSync(join(rdir, pName(i)))) continue;
     if (r === 1 && pre && existsSync(join(pre, pName(i)))) await copyFile(join(pre, pName(i)), join(rdir, pName(i)));
     else toRender.push(i);
   }
@@ -78,7 +86,7 @@ for (let r = 1; r <= rounds && remaining.length; r++) {
   say(`Round ${r}: listening to ${remaining.length} paragraph(s)...`);
   const files = remaining.map((i) => join(rdir, pName(i)));
   const heard = join(rdir, "heard.json");
-  run("python", [join(STUDIO, "asr_words.py"), "--batch", heard, ...files], "faster-whisper");
+  if (!(kept && !toRender.length)) run("python", [join(STUDIO, "asr_words.py"), "--batch", heard, ...files], "faster-whisper");
   const words = JSON.parse(await readFile(heard, "utf8"));
   const next = [];
   for (const i of remaining) {

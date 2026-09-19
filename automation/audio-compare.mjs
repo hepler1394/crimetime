@@ -55,6 +55,7 @@ export function compareWords(paras, heardWords, audioOk = []) {
     if (shortW.length >= 4 && longW.startsWith(shortW) && longW.length - shortW.length <= 2) continue;
     // A past tense swallowed by the next word: "planned to spend" is said, and heard, as
     // "plan to spend". Three tries at re-voicing that paragraph all "failed" on it.
+    if (shortW.length >= 4 && shortW.endsWith("y") && longW === shortW.slice(0, -1) + "ies") continue;   // "families" heard as "family"
     if (shortW.length >= 4 && /ed$/.test(longW) && longW.replace(/(.)\1ed$/, "$1").replace(/ed$/, "") === shortW.replace(/e$/, "")) continue;
     if (!d.script.length) {
       const weak = d.heard.filter((x) => x.p < 0.2);
@@ -64,6 +65,11 @@ export function compareWords(paras, heardWords, audioOk = []) {
     if (!d.heard.length) { if (d.script.length >= 3) findings.push({ kind: "DROPPED", at: d.at, pi: d.pi, text: `"${d.script.join(" ")}" is in the script and was not heard` }); continue; }
     if (skel(sJoin) === skel(hJoin)) continue;
     if (d.script.every((w) => okNames.has(w))) continue;
+    // A run of names comes back as one difference ("mogen xana kernodle and kaylee" against
+    // "mogan zana kernodle and kaley"). When the word counts line up, judge it word by word:
+    // every pair has to be the same sound, or a name on the allow list.
+    if (d.script.length > 1 && d.script.length === d.heard.length &&
+        d.script.every((w, n) => w === d.heard[n].w || okNames.has(w) || skel(w) === skel(d.heard[n].w))) continue;
     if (Math.max(sJoin.length, hJoin.length) < 4) continue;
     if (d.script.length === 1 && d.heard.length === 1 && SMALL.has(sJoin) && SMALL.has(hJoin)) continue;  // from/for, that/it: the model's own coin flips
     findings.push({ kind: "MISHEARD", at: d.at, pi: d.pi, text: `script says "${d.script.join(" ")}", it sounds like "${d.heard.map((x) => x.w).join(" ")}"` });
