@@ -110,6 +110,8 @@ const fresh = JSON.parse(await readFile(epPath, "utf8"));
 fresh.audioAudit = { ...(fresh.audioAudit || {}), at: new Date().toISOString(), repaired: Object.keys(accepted).map(Number).map(renum), unresolved: remaining.map(renum),
   paragraphs: remaining.map(renum), findings: remaining.length, clean: remaining.length === 0, seconds: spliced?.seconds ?? fresh.audioAudit?.seconds, history };
 await writeFile(epPath, JSON.stringify(fresh, null, 2) + "\n", "utf8");
-await rm(work, { recursive: true, force: true });
+// Keep the attempts when something is still unresolved: they are minutes of CPU each, and a
+// person (or a tuned checker) may find one of them was fine all along.
+if (!remaining.length) await rm(work, { recursive: true, force: true });
 out({ ok: true, id, clean: remaining.length === 0, repaired: Object.keys(accepted).length, dropped: drops.length, unresolved: remaining.map(renum), duration: spliced?.duration || fresh.duration,
   message: `Repaired ${id}: ${Object.keys(accepted).length} paragraph(s) re-voiced and verified, ${drops.length} dropped${remaining.length ? `, ${remaining.length} still wrong after ${rounds} tries (paragraphs ${remaining.map(renum).join(", ")})` : ""}. Now ${spliced?.duration || fresh.duration}.` });

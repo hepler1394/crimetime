@@ -32,6 +32,10 @@ test("numbers, plurals and joined words are not findings", () => {
   assert.deepEqual(kinds("sobbing in the passenger seat of the van", "sobbing in the passengers seat of the van"), []);
   assert.deepEqual(kinds("part of the vanlife movement that summer", "part of the van life movement that summer"), []);
 });
+test("a past tense folded into the next word is speech, not a glitch", () => {
+  assert.deepEqual(kinds("They planned to spend four months visiting state and national parks", "They plan to spend four months visiting state and national parks"), []);
+  assert.deepEqual(kinds("Police separated them for the night and drove away", "Police separate them for the night and drove away"), []);
+});
 test("a garbled last word of a paragraph is still caught", () => {
   assert.deepEqual(kinds("On November 23, authorities announced their conclusion.", "On November 23rd, he announced their conclusion."), ["MISHEARD"]);
 });

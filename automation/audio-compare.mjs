@@ -50,6 +50,9 @@ export function compareWords(paras, heardWords, audioOk = []) {
     // A plural or a tense the model rounded off: "passenger"/"passengers", "dispersed"/"disperse".
     const [shortW, longW] = sJoin.length <= hJoin.length ? [sJoin, hJoin] : [hJoin, sJoin];
     if (shortW.length >= 4 && longW.startsWith(shortW) && longW.length - shortW.length <= 2) continue;
+    // A past tense swallowed by the next word: "planned to spend" is said, and heard, as
+    // "plan to spend". Three tries at re-voicing that paragraph all "failed" on it.
+    if (shortW.length >= 4 && /ed$/.test(longW) && longW.replace(/(.)\1ed$/, "$1").replace(/ed$/, "") === shortW.replace(/e$/, "")) continue;
     if (!d.script.length) {
       const weak = d.heard.filter((x) => x.p < 0.2);
       if (weak.length) findings.push({ kind: "ARTIFACT", at: d.at, pi: d.pi, text: `heard "${d.heard.map((x) => x.w).join(" ")}", which is not in the script (confidence ${Math.min(...weak.map((x) => x.p)).toFixed(2)}): a stutter or a stray sound` });
