@@ -89,7 +89,7 @@ function distinctive(claim) {
   const outSet = new Set();
   for (const m of claim.matchAll(/\b\d[\d,.:\/]*\b/g)) outSet.add(m[0].replace(/[,.]$/, "").replace(/,/g, ""));
   for (const m of claim.matchAll(/\b([A-Z][a-z]{2,}(?:\s+[A-Z][a-z.]+){0,3})\b/g)) {
-    if (/^(The|This|That|These|Those|He|She|They|It|A|An|In|On|At|By|For|From|With|And|But|His|Her|Their|Its|After|Before|During|When|While|Police|Investigators|Prosecutors|Defense|Defence|Court|Judge|State|Notes|Every|Both|What|Where|Chapter|Studies|Another|One|Some|Many|Several|Later|Then|There|According|Researchers|Coverage|Accounts|Hours|Days|Weeks|Months|Years)\b/.test(m[1])) continue;
+    if (/^(The|This|That|These|Those|He|She|They|It|A|An|In|On|At|By|For|From|With|And|But|His|Her|Their|Its|After|Before|During|When|While|Police|Investigators|Prosecutors|Defense|Defence|Court|Judge|State|Notes|Every|Both|What|Where|Chapter|Studies|Another|One|Some|Many|Several|Later|Then|There|According|Researchers|Coverage|Accounts|Hours|Days|Weeks|Months|Years|Nobody|Nothing|Neither|Serious|Panelist|Critics|Friends|Visitors)\b/.test(m[1])) continue;
     outSet.add(m[1]);
   }
   for (const m of claim.matchAll(/"([^"]{4,60})"/g)) outSet.add(m[1]);
