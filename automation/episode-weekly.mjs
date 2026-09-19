@@ -94,16 +94,23 @@ try {
   const check = step("episode-verify.mjs", [draft.id]);
 
   step("episode-voice.mjs", [draft.id, ...(engine ? ["--engine", engine] : [])]);
+
+  // The audio gate: listen to the render, re-voice the paragraphs the clone got wrong, and only
+  // then cut the reel and trailer from it. episode-publish.mjs refuses an unaudited render.
+  let audio = step("episode-audit.mjs", [draft.id]);
+  if (!audio.clean && (audio.paragraphs || []).length) audio = step("episode-repair.mjs", [draft.id]);
   step("episode-art.mjs", [draft.id]);
   step("episode-social.mjs", [draft.id]);
 
   let pub = null;
-  if (publish && check.publishable) pub = step("episode-publish.mjs", [draft.id, "--push"]);
+  if (publish && check.publishable && audio.clean) pub = step("episode-publish.mjs", [draft.id, "--push"]);
   const ep = JSON.parse(await readFile(join(here, "studio", "drafts", draft.id, "episode.json"), "utf8"));
   const mins = Math.round((Date.now() - t0) / 60000);
   const held = check.heldClaims || [];
   const msg = pub
     ? `CrimeTimeSnacks: published "${ep.title}" (${ep.duration}). ${pub.page}. All ${check.total} claims are carried by the research notes. Spotify and Apple pick it up from the feed. Took ${mins} min.`
+    : !audio.clean
+      ? `CrimeTimeSnacks: "${ep.title}" (${ep.duration}) is built and NOT published: the audio audit still hears a problem after the automatic re-voice (paragraphs ${(audio.unresolved || audio.paragraphs || []).join(", ") || "levels"}). See automation/studio/drafts/${draft.id}/audio-audit.md. Took ${mins} min.`
     : check.publishable
       ? `CrimeTimeSnacks: "${ep.title}" (${ep.duration}) is built and all ${check.total} claims check out, but publishing was turned off for this run. Publish it with: node automation/episode-publish.mjs ${draft.id} --push`
       : `CrimeTimeSnacks: "${ep.title}" (${ep.duration}) is built and NOT published. ${check.ticked} of ${check.total} claims check out against the notes; ${check.held} need you.\n` +

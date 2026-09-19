@@ -95,6 +95,15 @@ try {
     log(msg); await notify(msg); process.exit(0);
   }
 
+  // 2b. The audio gate: listen to the render and re-voice what the clone got wrong.
+  let audio = step("episode-audit.mjs", [id]);
+  if (!audio.clean && (audio.paragraphs || []).length) audio = step("episode-repair.mjs", [id]);
+  if (!audio.clean) {
+    const ep = JSON.parse(await readFile(epPath, "utf8"));
+    const msg = `CrimeTimeSnacks: "${ep.title}" is built but NOT published. The audio audit still hears a problem after the automatic re-voice (paragraphs ${(audio.unresolved || audio.paragraphs || []).join(", ") || "levels"}). See automation/studio/drafts/${id}/audio-audit.md`;
+    log(msg); await notify(msg); process.exit(0);
+  }
+
   // 3. The reel and trailer are cut from the audio, so they have to be rebuilt after a render.
   step("episode-social.mjs", [id]);
 

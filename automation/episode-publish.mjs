@@ -99,6 +99,16 @@ if (!pushOnly) {
   const open = facts.filter((_, i) => !ticked[i]).length;
   if (open && !skipFacts) die("facts", `${open} claim${open === 1 ? " is" : "s are"} still unticked in the studio. Read the Facts tab, tick what you have confirmed, then publish.`);
   if (open && skipFacts) process.stderr.write(`WARNING: publishing with ${open} unticked claim(s) because --skip-facts was passed.\n`);
+  // The audio gate. Cory, 2026-09-18: "always..always audit the audio". The fact gate reads
+  // text; the Petito episode passed it and went out saying "Capra One". Nothing publishes
+  // until episode-audit.mjs has listened to THIS render (an audit older than the mp3 is an
+  // audit of some other file) and found nothing, or episode-repair.mjs has fixed what it found.
+  const audit = ep.audioAudit, mp3Time = (await stat(join(dir, "episode.mp3"))).mtimeMs;
+  const audited = audit?.at && Date.parse(audit.at) >= mp3Time - 5000;
+  if (!args.includes("--skip-audio")) {
+    if (!audited) die("audio", `The audio has not been audited since it was rendered. Run: node automation/episode-audit.mjs ${id}`);
+    if (!audit.clean) die("audio", `The audio audit found ${audit.findings} problem(s) (paragraphs ${(audit.paragraphs || []).join(", ") || "n/a"}). See audio-audit.md, then: node automation/episode-repair.mjs ${id}`);
+  } else process.stderr.write("WARNING: publishing without an audio audit because --skip-audio was passed.\n");
 }
 await gitPreflight();
 

@@ -36,6 +36,17 @@ repo, push to main deploys) plus the automation that runs the show. Read
   was slower rather than safer. A clean gate run means nothing is unsupported, not
   that the episode is right - it cannot see a claim that the notes support but that
   contradicts another line in the same script.
+- Always audit the audio. Cory, 2026-09-18, in those words, after the Petito episode had been
+  live for six days saying "Capra One" for Capital One and stuttering a word the script never
+  had. The fact gate reads text; `automation/episode-audit.mjs` listens: levels on the mp3,
+  then a word-level diff of a faster-whisper medium.en transcript of the dry voice against the
+  script. `episode-repair.mjs` re-voices only the flagged paragraphs on another seed, checks
+  each one, and swaps it in with `episode-splice.mjs` on the silent gaps between paragraphs.
+  `episode-publish.mjs` refuses a render that has not been audited clean since it was made.
+  This covers re-renders, splices, trailers and reels too. A clean audit means nothing was
+  caught, not that a person would find nothing: it cannot hear a wrong vowel, and it cannot
+  see a scene told twice. Read the whole script before a five-hour render. Never run the
+  audit while a clone render is running; both want every core.
 - Case updates publish themselves the same way. The gate is
   `automation/community/update-gate.mjs`, run by `case-watch.mjs`: an update goes onto
   the case page and into the Sunday digest only when its article was read, every name
