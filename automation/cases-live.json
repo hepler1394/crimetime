@@ -1,5 +1,5 @@
 {
-  "fetched": "2026-09-19T15:57:05.219Z",
+  "fetched": "2026-09-19T19:56:09.100Z",
   "cases": [
     {
       "slug": "murders-in-moscow",
@@ -16,7 +16,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "watts-family-murders",
@@ -33,7 +33,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "jonbenet-ramsey-the-facts-96-22",
@@ -50,7 +50,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "jonbenet-ramsey-americas-child-beauty-queen",
@@ -67,7 +67,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "the-delphi-murder-case-2017",
@@ -84,7 +84,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "golden-state-killer",
@@ -101,7 +101,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "gabby-petito",
@@ -118,7 +118,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "long-island-serial-killer",
@@ -135,7 +135,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "chris-watts-confession",
@@ -152,7 +152,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "elisa-lam",
@@ -169,7 +169,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "alex-murdaugh",
@@ -186,7 +186,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "btk-dennis-rader",
@@ -203,7 +203,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "zodiac-killer",
@@ -220,7 +220,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "lori-vallow",
@@ -237,7 +237,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "maura-murray",
@@ -254,24 +254,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
-    },
-    {
-      "slug": "erik-and-lyle-the-menendez-brothers",
-      "title": "ERIK AND LYLE: The Menendez Brothers",
-      "summary": "The Menendez brothers, Lyle and Erik, have been in prison for over 35 years. They were convicted in 1996 for the 1989 murders of their parents and sentenced to life in prison without the possibility of parole. This is their story.",
-      "angle": "",
-      "years": "2024",
-      "status": "convicted",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "/images/episodes/erik-and-lyle-the-menendez-brothers.jpg",
-      "episode_slug": "erik-and-lyle-the-menendez-brothers",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "brian-laundrie-notebook",
@@ -288,7 +271,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "kendrick-johnson",
@@ -305,7 +288,24 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
+    },
+    {
+      "slug": "erik-and-lyle-the-menendez-brothers",
+      "title": "ERIK AND LYLE: The Menendez Brothers",
+      "summary": "The Menendez brothers, Lyle and Erik, have been in prison for over 35 years. They were convicted in 1996 for the 1989 murders of their parents and sentenced to life in prison without the possibility of parole. This is their story.",
+      "angle": "",
+      "years": "2024",
+      "status": "convicted",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "/images/episodes/erik-and-lyle-the-menendez-brothers.jpg",
+      "episode_slug": "erik-and-lyle-the-menendez-brothers",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "scott-peterson",
@@ -322,7 +322,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "ted-bundy-escape",
@@ -339,7 +339,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "jonbenet-ramsey-dna",
@@ -356,7 +356,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "delphi-the-appeal",
@@ -368,29 +368,12 @@
       "category": "case",
       "next_date": null,
       "next_label": "",
-      "image": "",
-      "episode_slug": "",
+      "image": "/images/episodes/delphi-update-the-richard-allen-appeal.jpg",
+      "episode_slug": "delphi-update-the-richard-allen-appeal",
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
-    },
-    {
-      "slug": "moscow-idaho-the-plea",
-      "title": "Murders in Moscow: The Plea",
-      "summary": "DO NOT RETELL THE MURDERS. This is a follow-up for listeners who already heard the 2025 episode. Chapter 1 and ONLY chapter 1 recaps November 13 2022 in a few sentences: the King Road house, Ethan Chapin, Madison Mogen, Xana Kernodle, Kaylee Goncalves, the two surviving roommates, the knife-sheath DNA, the arrest. Chapters 2 through 12 cover ONLY what happened after the arrest and must not revisit the night of the murders: the capital case and the death-penalty filing, the defence motions and the DNA and cell-site fights, the June 30 2025 plea agreement, the July 2 2025 guilty plea to all five counts with appeals waived, the victim impact statements, the July 23 2025 sentencing to four consecutive life terms plus ten years, the gag order and released case files, and the July 2026 motion to withdraw the plea claiming ineffective counsel and coercion. He pleaded guilty and is serving life; he has moved to withdraw that plea and the court has not ruled.",
-      "angle": "DO NOT RETELL THE MURDERS. This is a follow-up for listeners who already heard the 2025 episode. Chapter 1 and ONLY chapter 1 recaps November 13 2022 in a few sentences: the King Road house, Ethan Chapin, Madison Mogen, Xana Kernodle, Kaylee Goncalves, the two surviving roommates, the knife-sheath DNA, the arrest. Chapters 2 through 12 cover ONLY what happened after the arrest and must not revisit the night of the murders: the capital case and the death-penalty filing, the defence motions and the DNA and cell-site fights, the June 30 2025 plea agreement, the July 2 2025 guilty plea to all five counts with appeals waived, the victim impact statements, the July 23 2025 sentencing to four consecutive life terms plus ten years, the gag order and released case files, and the July 2026 motion to withdraw the plea claiming ineffective counsel and coercion. He pleaded guilty and is serving life; he has moved to withdraw that plea and the court has not ruled.",
-      "years": "2022-2026",
-      "status": "closed",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "/images/episodes/murders-in-moscow-the-plea.jpg",
-      "episode_slug": "murders-in-moscow-the-plea",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "the-menendez-brothers-parole-years",
@@ -407,7 +390,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-19T10:46:49.066069+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "adnan-syed",
@@ -424,7 +407,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "amanda-knox",
@@ -441,7 +424,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "kohberger-trial",
@@ -458,7 +441,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "delphi-richard-allen",
@@ -475,7 +458,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "casey-anthony",
@@ -492,7 +475,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "steven-avery",
@@ -509,7 +492,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "madeleine-mccann",
@@ -526,7 +509,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "tylenol-murders",
@@ -543,7 +526,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "dnd-mcstay-family",
@@ -560,24 +543,24 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
-      "slug": "the-interrogation-of-chris-watts",
-      "title": "The Interrogation of Chris Watts",
-      "summary": "Hey everyone, it's Cory. This time on CrimeTimeSnacks: the forty-eight hours in which Chris Watts's story came apart on camera. A friend who would not leave a doorstep, a patrol officer who noticed a husband was too calm, a neighbor's security camera, an FBI agent who held back his best evidence, a polygraph score of negative 18, and the way out that investigators offered him. Where the published accounts disagree, I say so. From the welfare check on August 13, 2018 to the oil site at 11 that night two days later, then the plea, the sentence, and the versions of the story he has told since.",
-      "angle": "",
-      "years": "2026",
-      "status": "open",
+      "slug": "moscow-idaho-the-plea",
+      "title": "Murders in Moscow: The Plea",
+      "summary": "DO NOT RETELL THE MURDERS. This is a follow-up for listeners who already heard the 2025 episode. Chapter 1 and ONLY chapter 1 recaps November 13 2022 in a few sentences: the King Road house, Ethan Chapin, Madison Mogen, Xana Kernodle, Kaylee Goncalves, the two surviving roommates, the knife-sheath DNA, the arrest. Chapters 2 through 12 cover ONLY what happened after the arrest and must not revisit the night of the murders: the capital case and the death-penalty filing, the defence motions and the DNA and cell-site fights, the June 30 2025 plea agreement, the July 2 2025 guilty plea to all five counts with appeals waived, the victim impact statements, the July 23 2025 sentencing to four consecutive life terms plus ten years, the gag order and released case files, and the July 2026 motion to withdraw the plea claiming ineffective counsel and coercion. He pleaded guilty and is serving life; he has moved to withdraw that plea and the court has not ruled.",
+      "angle": "DO NOT RETELL THE MURDERS. This is a follow-up for listeners who already heard the 2025 episode. Chapter 1 and ONLY chapter 1 recaps November 13 2022 in a few sentences: the King Road house, Ethan Chapin, Madison Mogen, Xana Kernodle, Kaylee Goncalves, the two surviving roommates, the knife-sheath DNA, the arrest. Chapters 2 through 12 cover ONLY what happened after the arrest and must not revisit the night of the murders: the capital case and the death-penalty filing, the defence motions and the DNA and cell-site fights, the June 30 2025 plea agreement, the July 2 2025 guilty plea to all five counts with appeals waived, the victim impact statements, the July 23 2025 sentencing to four consecutive life terms plus ten years, the gag order and released case files, and the July 2026 motion to withdraw the plea claiming ineffective counsel and coercion. He pleaded guilty and is serving life; he has moved to withdraw that plea and the court has not ruled.",
+      "years": "2022-2026",
+      "status": "closed",
       "category": "case",
       "next_date": null,
       "next_label": "",
-      "image": "/images/episodes/the-interrogation-of-chris-watts.jpg",
-      "episode_slug": "the-interrogation-of-chris-watts",
+      "image": "/images/episodes/murders-in-moscow-the-plea.jpg",
+      "episode_slug": "murders-in-moscow-the-plea",
       "sources": [],
       "featured": false,
-      "created_at": "2026-09-18T12:30:03.688863+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "created_at": "2026-09-17T23:01:46.405034+00:00",
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "menendez-the-parole-years",
@@ -594,7 +577,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     },
     {
       "slug": "jonbenet-thirty-years",
@@ -611,7 +594,24 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-09-19T10:46:49.066069+00:00"
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
+    },
+    {
+      "slug": "the-interrogation-of-chris-watts",
+      "title": "The Interrogation of Chris Watts",
+      "summary": "Hey everyone, it's Cory. This time on CrimeTimeSnacks: the forty-eight hours in which Chris Watts's story came apart on camera. A friend who would not leave a doorstep, a patrol officer who noticed a husband was too calm, a neighbor's security camera, an FBI agent who held back his best evidence, a polygraph score of negative 18, and the way out that investigators offered him. Where the published accounts disagree, I say so. From the welfare check on August 13, 2018 to the oil site at 11 that night two days later, then the plea, the sentence, and the versions of the story he has told since.",
+      "angle": "",
+      "years": "2026",
+      "status": "open",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "/images/episodes/the-interrogation-of-chris-watts.jpg",
+      "episode_slug": "the-interrogation-of-chris-watts",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-18T12:30:03.688863+00:00",
+      "updated_at": "2026-09-19T19:56:04.25947+00:00"
     }
   ],
   "updates": [

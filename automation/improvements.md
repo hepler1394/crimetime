@@ -567,3 +567,4 @@ with an [auto] tag — the counter on Mission Control reads this file.
 501. [auto 2026-09-19] Published podcast episode from the studio: "The Disappearance of Gabby Petito" (00:20:21)
 502. [auto 2026-09-19] Published podcast episode from the studio: "The Interrogation of Chris Watts" (00:20:10)
 503. [auto 2026-09-19] Published podcast episode from the studio: "Murders in Moscow: The Plea" (00:22:26)
+504. [auto 2026-09-19] Published podcast episode from the studio: "The Menendez Brothers: The Parole Years" (00:21:15)

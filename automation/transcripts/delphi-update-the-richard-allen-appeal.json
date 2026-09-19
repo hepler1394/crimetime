@@ -1,0 +1,1276 @@
+{
+ "slug": "delphi-update-the-richard-allen-appeal",
+ "title": "Delphi: The Appeal",
+ "language": "en",
+ "duration": 1210.8,
+ "model": "faster-whisper small (int8)",
+ "generated": "2026-09-19",
+ "note": "Transcript generated from the episode script.",
+ "segments": [
+  {
+   "start": 5,
+   "end": 9.2,
+   "text": "What's up guys, welcome back to Crime Time Snacks. On Monday, September 21,"
+  },
+  {
+   "start": 9.2,
+   "end": 13.5,
+   "text": "2026, at 10 in the morning, three judges of the Indiana Court of Appeals are scheduled to sit in"
+  },
+  {
+   "start": 13.5,
+   "end": 17.9,
+   "text": "the Supreme Court courtroom at the Indiana State House. Each side gets 30 minutes."
+  },
+  {
+   "start": 18.7,
+   "end": 21.6,
+   "text": "The question in front of them is whether Richard Allen got a fair trial."
+  },
+  {
+   "start": 22.4,
+   "end": 27,
+   "text": "If you listened to my Delphi episode back in 2022, you know where we left it."
+  },
+  {
+   "start": 27,
+   "end": 32.6,
+   "text": "Two girls, a bridge, a few seconds of video, and no arrest. A lot has happened since then."
+  },
+  {
+   "start": 32.6,
+   "end": 37.7,
+   "text": "There wasn't arrest. There was a trial. There was a verdict and a sentence of 130 years."
+  },
+  {
+   "start": 38.4,
+   "end": 43.2,
+   "text": "So let me be clear about where things stand before we start. Richard Allen is not an accused"
+  },
+  {
+   "start": 43.2,
+   "end": 48.4,
+   "text": "man anymore. A jury convicted him of murdering Abby Williams and Libby German. He is also a"
+  },
+  {
+   "start": 48.4,
+   "end": 52.9,
+   "text": "man with an appeal pending and he has the right to make it. An appeal is not proof that the"
+  },
+  {
+   "start": 52.9,
+   "end": 57.7,
+   "text": "jury got it wrong and it is not proof that they got it right. It is a set of questions."
+  },
+  {
+   "start": 57.7,
+   "end": 61.3,
+   "text": "Today I want to walk you through how this case got to a verdict and then through the three"
+  },
+  {
+   "start": 61.3,
+   "end": 67.2,
+   "text": "questions his lawyers are asking. Let's unpack it. I am going to keep the recap short because most of"
+  },
+  {
+   "start": 67.2,
+   "end": 74.2,
+   "text": "you know it. At 1.30 in the afternoon on February 13, 2017, Libby German's older sister Kelsey dropped"
+  },
+  {
+   "start": 74.2,
+   "end": 80.5,
+   "text": "two girls off on County Road 300 North outside Delphi, Indiana. Libby was 14. Her friend,"
+  },
+  {
+   "start": 80.5,
+   "end": 85,
+   "text": "Abby Williams, was 13. They had the day off from school and they were going to walk the"
+  },
+  {
+   "start": 85.1,
+   "end": 91.2,
+   "text": "Monon High Bridge, an abandoned rail bridge over Deer Creek. At 2007, Libby posted a photo of Abby"
+  },
+  {
+   "start": 91.2,
+   "end": 95.7,
+   "text": "walking the bridge. After that, nobody heard from them again. They were supposed to meet Libby's"
+  },
+  {
+   "start": 95.7,
+   "end": 101.7,
+   "text": "father at 3,005. They did not show up. The family searched on their own first and at 5,000,"
+  },
+  {
+   "start": 101.7,
+   "end": 106.2,
+   "text": "the girls were reported missing. Around noon the next day, Valentine's Day, their bodies were"
+  },
+  {
+   "start": 106.2,
+   "end": 110.2,
+   "text": "found on the North Bank of Deer Creek. What made this case different from the start was"
+  },
+  {
+   "start": 110.2,
+   "end": 114,
+   "text": "Libby's phone. When a man came up behind them on that bridge, she started recording."
+  },
+  {
+   "start": 114.4,
+   "end": 118.4,
+   "text": "Two days after the murders, Indiana State Police were already circulating a grainy still image"
+  },
+  {
+   "start": 118.4,
+   "end": 123.1,
+   "text": "of a man walking the rail bridge, hands in his pockets, head down. People started calling him"
+  },
+  {
+   "start": 123.1,
+   "end": 129.1,
+   "text": "Bridge Guy. On February 22, police released a piece of audio from the same phone. It is a man's voice,"
+  },
+  {
+   "start": 129.1,
+   "end": 134.4,
+   "text": "muffled, saying three words, down the hill. Police called Libby a hero for having the presence"
+  },
+  {
+   "start": 134.4,
+   "end": 138,
+   "text": "of mind to record it. They also said there was more on the phone and that they were holding"
+  },
+  {
+   "start": 138,
+   "end": 142.6,
+   "text": "it back so they would not compromise a future trial. At that point, the reward stood at $41,000."
+  },
+  {
+   "start": 144,
+   "end": 149.6,
+   "text": "Then the years went by. A composite sketch came out that July. In April 2019, State Police announced"
+  },
+  {
+   "start": 149.6,
+   "end": 154.2,
+   "text": "what they called a new direction and released a second sketch. They told the public the killer"
+  },
+  {
+   "start": 154.2,
+   "end": 158,
+   "text": "might be hiding in plain sight and that he was almost certainly familiar with Delphi,"
+  },
+  {
+   "start": 158,
+   "end": 161.6,
+   "text": "from living there, working there, or some other reason. They were right about that."
+  },
+  {
+   "start": 162.2,
+   "end": 166.7,
+   "text": "They just did not know they already had his name. In that same 2019 announcement,"
+  },
+  {
+   "start": 166.7,
+   "end": 171.2,
+   "text": "police asked for help with one more thing. They wanted to identify the driver of a vehicle"
+  },
+  {
+   "start": 171.2,
+   "end": 175.4,
+   "text": "that had been left at the former child services office just off the Hoosier-Hartland Highway,"
+  },
+  {
+   "start": 175.4,
+   "end": 180.4,
+   "text": "between noon and five on the day of the murders. Over the years, investigators ran down thousands"
+  },
+  {
+   "start": 180.4,
+   "end": 186.2,
+   "text": "of leads. None of them ended in an arrest. Three days after the murders, a man walked up to an"
+  },
+  {
+   "start": 186.2,
+   "end": 190.7,
+   "text": "Indiana conservation officer who was helping on the case. They talked in a grocery store parking"
+  },
+  {
+   "start": 190.7,
+   "end": 195.1,
+   "text": "lot. The man said he had been on the trails the afternoon the girls disappeared and that he"
+  },
+  {
+   "start": 195.1,
+   "end": 200,
+   "text": "had passed three girls along the way. His name was Richard Allen. The officer typed up his notes"
+  },
+  {
+   "start": 200,
+   "end": 204.8,
+   "text": "and turned them in. And then the paperwork went nowhere. Allen's last name was recorded incorrectly"
+  },
+  {
+   "start": 204.8,
+   "end": 211.3,
+   "text": "on the tip and the file was marked cleared. It sat like that for five years. In September 2022,"
+  },
+  {
+   "start": 211.3,
+   "end": 215.9,
+   "text": "a volunteer file clerk named Kathy Schenck was helping investigators organize thousands of old"
+  },
+  {
+   "start": 215.9,
+   "end": 220.7,
+   "text": "tips. She found the conservation officer's notes, worked out that the tip was about Richard Allen,"
+  },
+  {
+   "start": 220.7,
+   "end": 225,
+   "text": "and brought it to the investigator on the case. At trial, Carroll County Sheriff Tony Liggett"
+  },
+  {
+   "start": 225,
+   "end": 229.3,
+   "text": "put it this way. The tip fell on the cracks, he said, and Allen was hiding in plain sight."
+  },
+  {
+   "start": 230.1,
+   "end": 236.2,
+   "text": "Things move fast after that. On October 13, 2022, police interviewed Allen again. He told them he had"
+  },
+  {
+   "start": 236.2,
+   "end": 240.8,
+   "text": "worn jeans and a black or blue jacket that day and that he had gone out to the bridge to watch fish."
+  },
+  {
+   "start": 241.5,
+   "end": 245.4,
+   "text": "Police searched his home and recovered a pistol. Remember that pistol because it becomes the"
+  },
+  {
+   "start": 245.4,
+   "end": 251.6,
+   "text": "center of the physical case. On October 26, 2022, Richard Allen was taken into custody."
+  },
+  {
+   "start": 251.6,
+   "end": 255.5,
+   "text": "On October 31, state police announced he had been charged with two counts of murder."
+  },
+  {
+   "start": 255.6,
+   "end": 260.1,
+   "text": "He pleaded not guilty. Time Magazine called it the first major break in a case that had"
+  },
+  {
+   "start": 260.1,
+   "end": 266.4,
+   "text": "captivated national attention for nearly six years. A month later, Judge Francisco unsealed the probable"
+  },
+  {
+   "start": 266.4,
+   "end": 271.6,
+   "text": "cause affidavit with redactions. According to that document, the video from Libby's phone"
+  },
+  {
+   "start": 271.6,
+   "end": 276.4,
+   "text": "showed one of the girls mentioning a gun as a man in a dark jacket and jeans approached and"
+  },
+  {
+   "start": 276.4,
+   "end": 281.3,
+   "text": "ordered them down the hill. Investigators had found an unspent 40 caliber round less than"
+  },
+  {
+   "start": 281.3,
+   "end": 286,
+   "text": "two feet from one of the bodies between the two girls. One witness described a man walking away"
+  },
+  {
+   "start": 286,
+   "end": 291,
+   "text": "from the bridge in a blue jacket and blue jeans, muddy and bloody. Another described a car parked"
+  },
+  {
+   "start": 291,
+   "end": 296,
+   "text": "oddly as if to hide its license plate. Investigators said the description matched a car Allen owned"
+  },
+  {
+   "start": 296,
+   "end": 302.8,
+   "text": "in 2017. So who was he? Richard Matthew Allen was born in September 1972 and grew up in Mexico,"
+  },
+  {
+   "start": 302.8,
+   "end": 308.4,
+   "text": "Indiana. He played football and ran track in high school, graduated in 1991, studied accounting at"
+  },
+  {
+   "start": 308.4,
+   "end": 313.2,
+   "text": "a community college and had short stints in the Army and the National Guard. He married and had one"
+  },
+  {
+   "start": 313.2,
+   "end": 320.4,
+   "text": "daughter. From 2003 to 2013, he managed a Walmart in Logan Sport. In December 2006, he moved to Delphi."
+  },
+  {
+   "start": 320.4,
+   "end": 325.5,
+   "text": "After Walmart, he went to work for CVS and he got his pharmacy technician license in February 2018."
+  },
+  {
+   "start": 325.5,
+   "end": 331,
+   "text": "That is one year after the murders. Delphi is a town of about 3,000 people. One resident told"
+  },
+  {
+   "start": 331,
+   "end": 335.3,
+   "text": "Annie that he was a familiar face if you went into the CVS. And there is one detail that"
+  },
+  {
+   "start": 335.3,
+   "end": 340.6,
+   "text": "people in town could not get past after the arrest. Libby's grandmother Becky Patty told reporters"
+  },
+  {
+   "start": 340.6,
+   "end": 344.8,
+   "text": "that Allen had printed photos of the two girls at no charge for their funerals."
+  },
+  {
+   "start": 344.8,
+   "end": 349,
+   "text": "Years later in court, she said it this way, he developed photos with no remorse and he didn't"
+  },
+  {
+   "start": 349,
+   "end": 354,
+   "text": "blink. Allen never hid the fact that he was out there. Shortly after the murders, he told his"
+  },
+  {
+   "start": 354,
+   "end": 358.3,
+   "text": "wife he had been on the trail that day. After his arrest, he told investigators he had been at"
+  },
+  {
+   "start": 358.3,
+   "end": 362.5,
+   "text": "his mother's house in Peru, Indiana that morning, got to the trail around midday,"
+  },
+  {
+   "start": 362.5,
+   "end": 367.5,
+   "text": "saw three girls pass by, saw nobody else, and watched a stock ticker on his phone while he walked."
+  },
+  {
+   "start": 368.4,
+   "end": 372.3,
+   "text": "His defense would later point at all of this. He lived in Delphi for more than five years"
+  },
+  {
+   "start": 372.3,
+   "end": 377.1,
+   "text": "after the killings. He went to police on his own. The prosecution pointed at the same facts and saw"
+  },
+  {
+   "start": 377.1,
+   "end": 380.8,
+   "text": "something else, a man who put himself on that trail at the time the girls disappeared."
+  },
+  {
+   "start": 381.7,
+   "end": 387.4,
+   "text": "The trial was originally set for March 20, 2023. It did not start until October 2024"
+  },
+  {
+   "start": 387.4,
+   "end": 393,
+   "text": "and the road in between was rough. In December 2022, Judge Gull put a gag order on the case."
+  },
+  {
+   "start": 393,
+   "end": 396.9,
+   "text": "The defense asked to move the trial out of Carroll County, arguing that the extensive"
+  },
+  {
+   "start": 396.9,
+   "end": 403.1,
+   "text": "media attention made a fair local jury impossible. Two public defenders, Brad Rossi and Andrew Baldwin,"
+  },
+  {
+   "start": 403.1,
+   "end": 406.8,
+   "text": "were appointed to represent Allen and the first trial date was pushed back so they could get"
+  },
+  {
+   "start": 406.8,
+   "end": 412.4,
+   "text": "through the discovery. Then in October 2023, crime scene photos leaked from the defense"
+  },
+  {
+   "start": 413,
+   "end": 417.3,
+   "text": "office. Judge Gull removed both attorneys from the case, citing gross negligence."
+  },
+  {
+   "start": 417.3,
+   "end": 421.2,
+   "text": "The attorneys took that to the Indiana Supreme Court and the justices reinstated them."
+  },
+  {
+   "start": 421.7,
+   "end": 425.5,
+   "text": "Those photos never went away either. After sentencing, the prosecutor said they were"
+  },
+  {
+   "start": 425.5,
+   "end": 428.4,
+   "text": "still out there and he asked anyone who receives them to delete them rather than"
+  },
+  {
+   "start": 428.4,
+   "end": 433.3,
+   "text": "put the families through it again. The other fight was over what the defense wanted to argue."
+  },
+  {
+   "start": 433.3,
+   "end": 437.3,
+   "text": "Allen's lawyer suggested the girls were killed as part of a pagan ritual sacrifice"
+  },
+  {
+   "start": 437.3,
+   "end": 442.7,
+   "text": "by followers of Odinism, a Norse pagan religion. They accused police of ignoring evidence from the"
+  },
+  {
+   "start": 442.7,
+   "end": 447.6,
+   "text": "crime scene and they pointed to a search warrant request for March 2017 in which an FBI agent"
+  },
+  {
+   "start": 447.6,
+   "end": 452,
+   "text": "said the bodies appeared to have been moved and staged. Judge Gull repeatedly rejected"
+  },
+  {
+   "start": 452,
+   "end": 456.1,
+   "text": "motions to bring that theory in front of the jury. Hold on to that ruling. It is one of the three"
+  },
+  {
+   "start": 456.1,
+   "end": 460.2,
+   "text": "things the Court of Appeals is being asked about. While all of that was going on,"
+  },
+  {
+   "start": 460.2,
+   "end": 463.9,
+   "text": "Richard Allen was not sitting in a county jail. He was being held at Westville"
+  },
+  {
+   "start": 463.9,
+   "end": 468.9,
+   "text": "Correctional Facility, a state prison, and his lawyers say he spent 13 months in solitary confinement"
+  },
+  {
+   "start": 468.9,
+   "end": 473.7,
+   "text": "before he got his day in court. Here is what the jury heard about that time. Monica Walla was"
+  },
+  {
+   "start": 473.7,
+   "end": 478,
+   "text": "the lead psychologist at Westville. She testified that Allen first told her he was innocent."
+  },
+  {
+   "start": 478.5,
+   "end": 482.5,
+   "text": "In April 2023, around the time he was put back on Suicide Watch, that changed."
+  },
+  {
+   "start": 483.1,
+   "end": 488,
+   "text": "He was on Suicide Watch twice. According to her testimony, he showed bizarre behavior,"
+  },
+  {
+   "start": 488,
+   "end": 492.4,
+   "text": "including eating his own feces and banging his head and at one point he was diagnosed with a"
+  },
+  {
+   "start": 492.4,
+   "end": 498.2,
+   "text": "brief psychotic disorder. And he started confessing. On April 3, 2020 on a recorded call to his wife,"
+  },
+  {
+   "start": 498.2,
+   "end": 503.2,
+   "text": "Kathy, he said, I killed Abby and Libby. When she pushed back, he said, I think I did. I don't know."
+  },
+  {
+   "start": 503.2,
+   "end": 505.8,
+   "text": "I wish they would kill me and let me apologize to the families."
+  },
+  {
+   "start": 506.4,
+   "end": 509.7,
+   "text": "On a call with his mother the following month, he said, I'm just worried you guys aren't going"
+  },
+  {
+   "start": 509.7,
+   "end": 514.6,
+   "text": "to love me because I said I did it. While it testified that Allen told her I killed Abby"
+  },
+  {
+   "start": 514.6,
+   "end": 518.5,
+   "text": "and Libby. I'm sorry. She said he told her he had originally planned to sexually assault"
+  },
+  {
+   "start": 518.5,
+   "end": 522.4,
+   "text": "the girls that he ran when he saw a van nearby and that he cut their throats and covered their"
+  },
+  {
+   "start": 522.4,
+   "end": 527.6,
+   "text": "bodies with sticks. Prosecuteers counted more than 60 of these statements to his wife,"
+  },
+  {
+   "start": 527.6,
+   "end": 532.8,
+   "text": "to his mother, to the psychologist, the warden, other prison employees and other inmates in person"
+  },
+  {
+   "start": 532.8,
+   "end": 538,
+   "text": "on the phone and in writing. The defense called Deanna Dwinger, a clinical psychologist who worked"
+  },
+  {
+   "start": 538,
+   "end": 542.1,
+   "text": "for the Department of Corrections Behavioral Health Service. She testified that in April"
+  },
+  {
+   "start": 542.1,
+   "end": 547.6,
+   "text": "2023, the same month the confessions began, Allen was diagnosed with a serious mental illness"
+  },
+  {
+   "start": 547.7,
+   "end": 551.6,
+   "text": "and that a team of mental health professionals concluded he had a grave disability."
+  },
+  {
+   "start": 551.6,
+   "end": 555.2,
+   "text": "A neuropsychologist hired by the defense testified to pretty severe depression."
+  },
+  {
+   "start": 555.8,
+   "end": 560.7,
+   "text": "So both sides agree that he said it. What they disagree about is what state he was in when he"
+  },
+  {
+   "start": 560.7,
+   "end": 564.2,
+   "text": "said it and whose fault that was. That is the second question in the appeal."
+  },
+  {
+   "start": 564.9,
+   "end": 570.6,
+   "text": "The trial began on October 18, 2024 in Delphi, in front of a sequestered jury of seven women"
+  },
+  {
+   "start": 570.6,
+   "end": 575.7,
+   "text": "and five men. There were 17 days of testimony. People were so desperate to get in that,"
+  },
+  {
+   "start": 575.7,
+   "end": 580.4,
+   "text": "according to one resident, podcasters and YouTubers were paying people to sit in lawn chairs overnight"
+  },
+  {
+   "start": 580.4,
+   "end": 585.5,
+   "text": "to hold their place in line. The first day set the tone. Becky Paddy, Libby's grandmother,"
+  },
+  {
+   "start": 585.5,
+   "end": 588.6,
+   "text": "took the stand and described her last conversation with her granddaughter."
+  },
+  {
+   "start": 588.6,
+   "end": 592.4,
+   "text": "She had told Libby to take a jacket. Libby answered, Grandma, I'll be okay."
+  },
+  {
+   "start": 593.2,
+   "end": 597.5,
+   "text": "Prosecutor Nick McClellan's theory was simple. Richard Allen is a bridge guy. He forced"
+  },
+  {
+   "start": 597.5,
+   "end": 601.6,
+   "text": "the girls down the hill at gunpoint and he killed them. Prosecutors told the jury both"
+  },
+  {
+   "start": 601.6,
+   "end": 607.4,
+   "text": "girls had their throats cut. Abby was found fully clothed in Libby's clothing. Libby was found nude."
+  },
+  {
+   "start": 607.4,
+   "end": 611.6,
+   "text": "The phone was found underneath Abby's body and the Clellan later praised Abby for hiding it from"
+  },
+  {
+   "start": 611.6,
+   "end": 616.6,
+   "text": "the killer so that police could find it. The state showed jurors a digitally enhanced 43 second"
+  },
+  {
+   "start": 616.6,
+   "end": 621.6,
+   "text": "version of Libby's video. State police master trooper Brian Harshman testified that he had listened"
+  },
+  {
+   "start": 621.6,
+   "end": 625.6,
+   "text": "to more than 700 of Allen's prison phone calls and that in his opinion, the voice of"
+  },
+  {
+   "start": 625.6,
+   "end": 629.4,
+   "text": "bridge guy is the voice of Richard Allen. Witnesses said they saw a man on the trail"
+  },
+  {
+   "start": 629.4,
+   "end": 634,
+   "text": "that day whose clothes matched the man in the video. Investigators testified that Allen was off"
+  },
+  {
+   "start": 634,
+   "end": 639.8,
+   "text": "work that day and had no alibi. Then the round. A state police firearms examiner testified that"
+  },
+  {
+   "start": 639.8,
+   "end": 644.4,
+   "text": "the unspent 40 caliber cartridge found between the girls had been cycled through Allen's pistol,"
+  },
+  {
+   "start": 644.4,
+   "end": 650.5,
+   "text": "a Sig Sauer P226 based on the quality and quantity of the marks on it. That was the state's key"
+  },
+  {
+   "start": 650.5,
+   "end": 655.3,
+   "text": "piece of physical evidence. And the jury heard the confessions including the phone calls and"
+  },
+  {
+   "start": 655.3,
+   "end": 659.9,
+   "text": "Allen's own voice. A journalist who sat through the trial Susan Hendrick said he did not sound"
+  },
+  {
+   "start": 659.9,
+   "end": 665.4,
+   "text": "psychotic or manic on those calls. She said it sounded like a casual conversation. Brad Rossi's"
+  },
+  {
+   "start": 665.4,
+   "end": 670.2,
+   "text": "closing argument for the defense came down to three things. A broken timeline, false confessions,"
+  },
+  {
+   "start": 670.2,
+   "end": 675.3,
+   "text": "and no DNA and no weapon. On the physical evidence, the defense had a real point and the"
+  },
+  {
+   "start": 675.3,
+   "end": 679.8,
+   "text": "state's own witness made it for them. A DNA expert testifying for the prosecution found none"
+  },
+  {
+   "start": 679.8,
+   "end": 684.8,
+   "text": "of Allen's DNA at the crime scene. None of Abby's or Libby's DNA was found on anything"
+  },
+  {
+   "start": 684.8,
+   "end": 690.5,
+   "text": "recovered from his home. The murder weapon was never found. On the round, the defense asked why"
+  },
+  {
+   "start": 690.5,
+   "end": 695.3,
+   "text": "more images had not been taken of the cartridge and suggested it could have come from a law enforcement"
+  },
+  {
+   "start": 695.3,
+   "end": 701,
+   "text": "officer's weapon. On identification, Rossi told jurors that no witness clearly identified Allen"
+  },
+  {
+   "start": 701,
+   "end": 706,
+   "text": "as the man on the trail or on the bridge that afternoon. And on the confessions, the defense"
+  },
+  {
+   "start": 706,
+   "end": 709.7,
+   "text": "said they were false. The product of months in solitary confinement while his mental health"
+  },
+  {
+   "start": 709.7,
+   "end": 714.5,
+   "text": "fell apart. Their argument was that you cannot take the words of a man in that condition"
+  },
+  {
+   "start": 714.5,
+   "end": 719.8,
+   "text": "and treat them like a calm admission. Rossi closed with the fact that Allen never left town."
+  },
+  {
+   "start": 719.8,
+   "end": 724,
+   "text": "He had every chance to run, he told the jury, but he did not because he didn't do it."
+  },
+  {
+   "start": 724.8,
+   "end": 728.8,
+   "text": "Nick McClellan had already walked the jury through the evidence, the photos, the video,"
+  },
+  {
+   "start": 728.8,
+   "end": 733.5,
+   "text": "and the recorded calls. He told them he believed the evidence was firmly convincing that Richard"
+  },
+  {
+   "start": 733.5,
+   "end": 738.2,
+   "text": "Allen is Bridge Guy and he killed Abby and Libby. The jury got the case on Thursday,"
+  },
+  {
+   "start": 738.2,
+   "end": 742.4,
+   "text": "November 7. Before the verdict came in, Judge Goh said something from the bench that turned"
+  },
+  {
+   "start": 742.4,
+   "end": 746.4,
+   "text": "out to be true. Regardless of what the verdict is, she said, people aren't going to be happy."
+  },
+  {
+   "start": 747.2,
+   "end": 752.9,
+   "text": "They deliberated for about 19 hours over three days. On November 11, 2024, they found Richard"
+  },
+  {
+   "start": 752.9,
+   "end": 757.2,
+   "text": "Allen guilty on all four counts, two counts of murder and two counts of felony murder for"
+  },
+  {
+   "start": 757.2,
+   "end": 762.2,
+   "text": "killing each girl while attempting to commit kidnapping. Allen sat without emotion as it was"
+  },
+  {
+   "start": 762.2,
+   "end": 766.3,
+   "text": "read. Outside the courthouse, the crowd broke into applause. Some people out there were"
+  },
+  {
+   "start": 766.3,
+   "end": 770,
+   "text": "holding signs supporting him. His wife, Kathy, told the reporter on her way out,"
+  },
+  {
+   "start": 770,
+   "end": 777.6,
+   "text": "this isn't over at all. Sentencing was December 20, 2024. The seats reserved for Allen's family were empty."
+  },
+  {
+   "start": 777.6,
+   "end": 783.2,
+   "text": "None of his relatives came. Judge Goh gave him 65 years for each murder to be served one after the"
+  },
+  {
+   "start": 783.2,
+   "end": 789.2,
+   "text": "other, 130 years in total, with credit for the 760 days he had already served. The gag order came"
+  },
+  {
+   "start": 789.2,
+   "end": 794.1,
+   "text": "off that day and for the first time the families could talk. Becky Patty told the court,"
+  },
+  {
+   "start": 794.1,
+   "end": 797.5,
+   "text": "I can never change my choice to let Libby and Abby go to the trails that day."
+  },
+  {
+   "start": 798.2,
+   "end": 801.9,
+   "text": "Abby's grandmother, Diane Erskine, said she never let herself leave the courtroom"
+  },
+  {
+   "start": 801.9,
+   "end": 805.6,
+   "text": "even during the worst testimony because Abby's last words on the recording were,"
+  },
+  {
+   "start": 805.6,
+   "end": 810.5,
+   "text": "don't leave me up here. Libby's grandfather, Mike Patty, spoke directly to Allen."
+  },
+  {
+   "start": 810.5,
+   "end": 816.9,
+   "text": "You need to stand up, he said, and not appeal. And Judge Goh told him, I've spent 27 years as"
+  },
+  {
+   "start": 816.9,
+   "end": 821.4,
+   "text": "a judge and you rank right up there with the most heinous crimes in the state of Indiana."
+  },
+  {
+   "start": 821.4,
+   "end": 824.7,
+   "text": "These families, she said, will deal with your carnage forever."
+  },
+  {
+   "start": 825.6,
+   "end": 828.9,
+   "text": "State Police Lieutenant Jerry Holman told the judge the girls had been stalked,"
+  },
+  {
+   "start": 828.9,
+   "end": 834.4,
+   "text": "kidnapped, humiliated, and treated like animals. He called Allen manipulative and persuasive and"
+  },
+  {
+   "start": 834.4,
+   "end": 839.1,
+   "text": "said he showed a lack of remorse. Libby's mother, Carrie Timmons, said Allen's decisions had created"
+  },
+  {
+   "start": 839.1,
+   "end": 843.8,
+   "text": "a path of destruction. Afterward, Sheriff Ligget apologized to the families for how long it"
+  },
+  {
+   "start": 843.8,
+   "end": 848.6,
+   "text": "had taken. There will never be any closure in this case, he said. A form of justice was"
+  },
+  {
+   "start": 848.6,
+   "end": 853.2,
+   "text": "served but it does not bring Abby or Libby back. And under Indiana law, a person convicted of"
+  },
+  {
+   "start": 853.3,
+   "end": 857.5,
+   "text": "more than one murder who receives a sentence like this one is not eligible for parole."
+  },
+  {
+   "start": 857.5,
+   "end": 863.2,
+   "text": "A must-a-court steps in, Richard Allen will die in prison. He appealed. Allen went first to Westville"
+  },
+  {
+   "start": 863.2,
+   "end": 868.6,
+   "text": "and then to Pendleton Correctional Facility. On July 18, 2025, Indiana moved him out of state"
+  },
+  {
+   "start": 868.6,
+   "end": 873.7,
+   "text": "to the Lexington Assessment and Reception Center, a maximum security prison in Lexington, Oklahoma."
+  },
+  {
+   "start": 873.7,
+   "end": 877.6,
+   "text": "The Department of Correction described the move as a precaution. That April,"
+  },
+  {
+   "start": 877.6,
+   "end": 880.9,
+   "text": "the interrogation videos and the recorded confession calls that had been played"
+  },
+  {
+   "start": 880.9,
+   "end": 885,
+   "text": "at trial were released to the public so anyone can now hear what the jury heard."
+  },
+  {
+   "start": 885.7,
+   "end": 891.2,
+   "text": "His appellate lawyers asked for more time more than once. On December 17, 2025,"
+  },
+  {
+   "start": 891.2,
+   "end": 897.4,
+   "text": "they filed their brief 113 pages long. The Indiana Attorney General's Office answered on March 25,"
+  },
+  {
+   "start": 897.4,
+   "end": 903.7,
+   "text": "2026. The defense filed a reply on April 27, along with a motion asking the judges to hear"
+  },
+  {
+   "start": 903.7,
+   "end": 909.7,
+   "text": "the case in person. On May 14, the court said yes. The panel is judges Nancy Vidic,"
+  },
+  {
+   "start": 909.7,
+   "end": 914.8,
+   "text": "Elaine Brown and Robert Altis. The record in front of them is 22 volumes of trial transcript"
+  },
+  {
+   "start": 914.8,
+   "end": 920.6,
+   "text": "and 15 volumes of exhibits. And the brief raises three issues. I will take them one at a time with"
+  },
+  {
+   "start": 920.6,
+   "end": 925.9,
+   "text": "the state's answer to each because you deserve to hear both. The first issue is the search of"
+  },
+  {
+   "start": 925.9,
+   "end": 930.8,
+   "text": "Allen's home in October, 22. That search produced the pistol and the pistol produced the match to"
+  },
+  {
+   "start": 930.8,
+   "end": 936,
+   "text": "the round. If the search falls, the state's key physical evidence is in trouble. Allen's lawyers"
+  },
+  {
+   "start": 936.1,
+   "end": 940.1,
+   "text": "say the document police used to get that warrant mischaracterized what witnesses had said."
+  },
+  {
+   "start": 940.7,
+   "end": 945.1,
+   "text": "Their claim is that law enforcement omitted and altered witness descriptions to make Allen seem"
+  },
+  {
+   "start": 945.1,
+   "end": 949.1,
+   "text": "like the man in the bridge guy video and that the trial court should never have admitted what"
+  },
+  {
+   "start": 949.1,
+   "end": 953.3,
+   "text": "came out of the house. The state's answer is that the warrant was obtained properly and"
+  },
+  {
+   "start": 953.3,
+   "end": 957.8,
+   "text": "that it contained no false statements. The second issue is the one that could matter beyond this"
+  },
+  {
+   "start": 957.8,
+   "end": 962.8,
+   "text": "case. The defense argues that the confessions were involuntary. They say Allen was deeply"
+  },
+  {
+   "start": 963.3,
+   "end": 967.6,
+   "text": "held in what they call unprecedented confinement and that what he said in that condition was the"
+  },
+  {
+   "start": 967.6,
+   "end": 973.6,
+   "text": "result of psychological coercion. They argue that using those statements violated federal due process"
+  },
+  {
+   "start": 973.6,
+   "end": 977.4,
+   "text": "and also a protection in Indiana's own constitution against unnecessary rigor."
+  },
+  {
+   "start": 978,
+   "end": 981.5,
+   "text": "In their request for oral argument, his lawyers call this an issue of first"
+  },
+  {
+   "start": 981.5,
+   "end": 984.9,
+   "text": "impression, meaning a question the court has not squarely answered before."
+  },
+  {
+   "start": 984.9,
+   "end": 990,
+   "text": "Can statements made during psychosis caused by prolonged solitary confinement be considered"
+  },
+  {
+   "start": 990,
+   "end": 995.8,
+   "text": "voluntary? The state says yes in this case. The Attorney General's office argues that nobody"
+  },
+  {
+   "start": 995.8,
+   "end": 1001.3,
+   "text": "coerced anything. In its telling, the 60 plus confessions were voluntary, they were unprompted,"
+  },
+  {
+   "start": 1001.3,
+   "end": 1006.6,
+   "text": "and they were unrelated to his psychosis. The third issue is about what the jury never heard."
+  },
+  {
+   "start": 1006.6,
+   "end": 1010.3,
+   "text": "Allen's lawyers argue he was denied his right to present a complete defense,"
+  },
+  {
+   "start": 1010.3,
+   "end": 1014.6,
+   "text": "and they tie that to the 14th amendment. They wanted to tell the jury that Odinus"
+  },
+  {
+   "start": 1014.6,
+   "end": 1019.1,
+   "text": "committed these murders as a ritual killing. They wanted to offer alternative suspects."
+  },
+  {
+   "start": 1019.1,
+   "end": 1023,
+   "text": "They wanted to show the jury one of the early police sketches, which they say looks nothing like"
+  },
+  {
+   "start": 1023,
+   "end": 1028.3,
+   "text": "Allen. The trial court kept all of it out. They also say the court let the prosecution use"
+  },
+  {
+   "start": 1028.3,
+   "end": 1032.2,
+   "text": "inadmissible hearsay while blocking the defense from showing the full circumstances of the"
+  },
+  {
+   "start": 1032.2,
+   "end": 1037,
+   "text": "confessions. The state's answer is that the judge ruled correctly. It says the defense"
+  },
+  {
+   "start": 1037,
+   "end": 1041,
+   "text": "wanted to point at two third party suspects but offered no evidence putting either of them at"
+  },
+  {
+   "start": 1041,
+   "end": 1045.7,
+   "text": "the crime scene. It says the opinion of the defense's ritual expert, Don Perlmutter,"
+  },
+  {
+   "start": 1045.7,
+   "end": 1050.5,
+   "text": "was formed before she had seen any evidence. On the ritual theory itself, the state wrote,"
+  },
+  {
+   "start": 1050.5,
+   "end": 1055.2,
+   "text": "it was a speculative motive and there is no history of human sacrifice and Odinism."
+  },
+  {
+   "start": 1055.2,
+   "end": 1059.2,
+   "text": "One local station added that police did look into the Odinism angle early on,"
+  },
+  {
+   "start": 1059.2,
+   "end": 1063.9,
+   "text": "with input from the FBI's behavioral analysis unit and never found evidence to take it further."
+  },
+  {
+   "start": 1064.6,
+   "end": 1068.6,
+   "text": "And the state comes back to the fact it started with. Whatever else is argued,"
+  },
+  {
+   "start": 1068.6,
+   "end": 1072.5,
+   "text": "Richard Allen put himself on the Monon High Bridge trail at the time the girls disappeared."
+  },
+  {
+   "start": 1073.2,
+   "end": 1077.2,
+   "text": "So what should you expect, not a verdict? Monday is 30 minutes aside,"
+  },
+  {
+   "start": 1077.2,
+   "end": 1081.5,
+   "text": "in front of three judges who have had the briefs for months. The court of appeals will rule later,"
+  },
+  {
+   "start": 1081.5,
+   "end": 1086.1,
+   "text": "in writing. Allen's lawyers are asking for a new trial. The state is asking the court to"
+  },
+  {
+   "start": 1086.1,
+   "end": 1091.1,
+   "text": "leave the conviction exactly where it is. One legal analyst quoted by CBS after the"
+  },
+  {
+   "start": 1091.1,
+   "end": 1094.8,
+   "text": "sentencing put the sticks plainly. The conviction could be reversed, he said,"
+  },
+  {
+   "start": 1094.8,
+   "end": 1097.8,
+   "text": "if an appeal finds that the jury did not hear a fair amount of the evidence."
+  },
+  {
+   "start": 1098.4,
+   "end": 1102.4,
+   "text": "That is the third question and it is why the defense has spent so much of its brief on"
+  },
+  {
+   "start": 1102.4,
+   "end": 1108.1,
+   "text": "what was kept out. I will tell you how I am thinking about it. Each of these three questions is a real"
+  },
+  {
+   "start": 1108.1,
+   "end": 1113.8,
+   "text": "legal question. How honest does a warrant application have to be? When is a confession from a sick man"
+  },
+  {
+   "start": 1113.8,
+   "end": 1118.4,
+   "text": "in an isolation cell his own? How much room does a defendant get to point at somebody else?"
+  },
+  {
+   "start": 1118.4,
+   "end": 1123.5,
+   "text": "Courts take those seriously and they should. But none of them is the question the jury answered."
+  },
+  {
+   "start": 1123.5,
+   "end": 1127.5,
+   "text": "Twelve people sat through 17 days of testimony, heard that voice on the phone calls,"
+  },
+  {
+   "start": 1127.5,
+   "end": 1133.2,
+   "text": "watched that video and said guilty four times. An appeals court asking whether the trial was fair"
+  },
+  {
+   "start": 1133.2,
+   "end": 1137.4,
+   "text": "is not the same as an appeals court saying he did not do it. If you see a headline on Monday that"
+  },
+  {
+   "start": 1137.4,
+   "end": 1142,
+   "text": "treats it that way in either direction, be careful with it. Whatever the court decides,"
+  },
+  {
+   "start": 1142,
+   "end": 1146.4,
+   "text": "I will come back to it. I want to end where this case should always end, with the two of them."
+  },
+  {
+   "start": 1147.2,
+   "end": 1151.1,
+   "text": "In 2017, Libby's mother asked people to put orange lights on their porches"
+  },
+  {
+   "start": 1151.1,
+   "end": 1154.8,
+   "text": "for the girls and as a reminder that whoever did this was still out there."
+  },
+  {
+   "start": 1154.8,
+   "end": 1159.4,
+   "text": "Homeowners across central Indiana did it. That same year, the families announced they would dole"
+  },
+  {
+   "start": 1159.4,
+   "end": 1164.8,
+   "text": "the park in the girls memory. Today there is an Abbey and Libby Memorial Park, a mile north of Delphi."
+  },
+  {
+   "start": 1165.3,
+   "end": 1168.8,
+   "text": "The library at Delphi Community Middle School where both girls went is now the Abbey and"
+  },
+  {
+   "start": 1168.8,
+   "end": 1174.4,
+   "text": "Libby Memorial Library. At sentencing, Libby's mother said her daughter would be 22 now"
+  },
+  {
+   "start": 1174.4,
+   "end": 1178,
+   "text": "and that the family has stopped celebrating her birthday because it is too hard."
+  },
+  {
+   "start": 1178,
+   "end": 1181.1,
+   "text": "Abby's grandmother said she has watched Abby's friends graduate from college."
+  },
+  {
+   "start": 1182,
+   "end": 1184.3,
+   "text": "And the prosecutor said the thing I keep coming back to."
+  },
+  {
+   "start": 1184.8,
+   "end": 1187.9,
+   "text": "Libby had the wherewithal to pull out her phone to know something wasn't right."
+  },
+  {
+   "start": 1188.6,
+   "end": 1191.9,
+   "text": "He called that recording arguably the biggest piece of evidence they had."
+  },
+  {
+   "start": 1192.5,
+   "end": 1195.1,
+   "text": "A 14 year old did that in the last minutes of her life."
+  },
+  {
+   "start": 1195.9,
+   "end": 1198.5,
+   "text": "The briefs, the rulings, and the trial videos are public."
+  },
+  {
+   "start": 1198.5,
+   "end": 1201.8,
+   "text": "Read the file. Form your own conclusion. That's it for this one."
+  },
+  {
+   "start": 1201.8,
+   "end": 1210.9,
+   "text": "Thanks for hanging out with me. This has been Crime Time Snacks and I'll catch you next time."
+  }
+ ]
+}
