@@ -53,7 +53,8 @@ const NUM = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eigh
   ten: 10, eleven: 11, twelve: 12, thirteen: 13, fourteen: 14, fifteen: 15, sixteen: 16,
   seventeen: 17, eighteen: 18, nineteen: 19, twenty: 20, thirty: 30, forty: 40, fifty: 50,
   sixty: 60, seventy: 70, eighty: 80, ninety: 90 };
-const norm = (s) => s.toLowerCase()
+// Accents are folded on both sides: the notes write "Rosselló" and "José", a claim may not.
+const norm = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase()
   .replace(/[‘’]/g, "'").replace(/[“”]/g, '"')
   .replace(/\bjan(uary)?\b/g, "january").replace(/\bfeb(ruary)?\b/g, "february")
   .replace(/\bmar(ch)?\b/g, "march").replace(/\bapr(il)?\b/g, "april")
