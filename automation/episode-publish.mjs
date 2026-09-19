@@ -181,7 +181,7 @@ if (!pushOnly) {
 
 // Stage what publishing produces, not the whole tree: an episode commit should
 // never sweep up whatever else is in flight in the working copy.
-const STAGE = ["audio", "images/episodes", "automation/transcripts", "automation/studio-episodes.json", "automation/episodes.json",
+const STAGE = ["audio", "images/episodes", "images/thumbs", "images/cases", "automation/transcripts", "automation/studio-episodes.json", "automation/episodes.json",
   "automation/cases-live.json", "automation/search-index.json", "automation/status.json", "automation/improvements.md",
   "episodes.html", "episodes", "cases.html", "cases", "blog.html", "blog-feed.xml", "feed.xml", "sitemap.xml", "index.html"];
 
