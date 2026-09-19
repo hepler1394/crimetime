@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-19T00:18:02.667Z",
+  "generated": "2026-09-19T01:40:05.819Z",
   "improvementsShipped": 500,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
@@ -36,7 +36,7 @@
     }
   },
   "freshness": {
-    "episodesJson": "2026-09-18T23:59:23.281Z",
+    "episodesJson": "2026-09-19T01:40:02.427Z",
     "blogJson": "2026-09-18T23:59:23.269Z",
     "merchJson": "2026-09-15T14:02:27.587Z",
     "quizzesJson": "2026-09-15T14:02:30.387Z",

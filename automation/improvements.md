@@ -563,3 +563,4 @@ with an [auto] tag — the counter on Mission Control reads this file.
 497. [auto 2026-09-15] Published blog post from research notes: "The Killing of JonBenét Ramsey: What the Record Shows" (1561 words, 6 sources)
 498. [auto 2026-09-15] Dropped 1 new merch design into the vault
 499. [auto 2026-09-15] Published new quiz: "The Gabby Petito Case" (5 questions)
+500. [auto 2026-09-18] Published podcast episode from the studio: "The Interrogation of Chris Watts" (00:20:08)
