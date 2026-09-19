@@ -30,7 +30,7 @@ const opt = (n, d) => { const i = args.indexOf(n); return i > -1 && args[i + 1] 
 // Publishing is the default. The fact gate, not a flag, is what decides whether an episode
 // actually goes out: episode-verify.mjs must find every claim carried by the research notes.
 const publish = !args.includes("--no-publish");
-const minutes = opt("--minutes", "20");
+const minutes = opt("--minutes", "22");   // two minutes of margin over the twenty-minute rule
 const engine = opt("--engine", null);
 
 const step = (script, a, { optional = false } = {}) => {
@@ -82,10 +82,19 @@ async function nextCase() {
 
 const t0 = Date.now();
 try {
-  const kase = await nextCase();
-  if (!kase) throw new Error("cases.json is exhausted. Add cases.");
-  step("episode-research.mjs", ["--case", kase.slug], { optional: true });
-  const draft = step("episode-draft.mjs", ["--case", kase.slug, "--minutes", String(minutes)]);
+  // --draft <id>: take a script that already exists (re-drafted, revised or edited by hand) and
+  // run it through the rest of the line: gate, voice, audio audit and repair, art, kit, publish.
+  const given = (() => { const i = process.argv.indexOf("--draft"); return i > -1 ? process.argv[i + 1] : null; })();
+  let draft;
+  if (given) draft = { id: given };
+  else {
+    const kase = await nextCase();
+    if (!kase) throw new Error("cases.json is exhausted. Add cases.");
+    step("episode-research.mjs", ["--case", kase.slug], { optional: true });
+    draft = step("episode-draft.mjs", ["--case", kase.slug, "--minutes", String(minutes)]);
+    // Fix what the drafter's own checker flagged before any of it is voiced.
+    step("episode-revise.mjs", [draft.id], { optional: true });
+  }
 
   // The fact gate. It runs before the render so its verdict is in hand early, but a held
   // claim does not stop the render: most holds are the checker being literal about a name,
