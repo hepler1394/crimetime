@@ -7,7 +7,7 @@
     <title>CrimeTimeSnacks • A True Crime Podcast</title>
     <link>https://www.crimetimesnacks.com/</link>
     <atom:link href="https://www.crimetimesnacks.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sat, 19 Sep 2026 07:52:50 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 19 Sep 2026 10:46:51 GMT</lastBuildDate>
     <language>en</language>
     <copyright>&#169; 2026 Cory</copyright>
     <description>Crime Time Snacks is a true crime podcast that delves into a variety of unsolved cases, exploring the facts, theories, and evidence surrounding each mystery. The podcast aims to provide listeners with a comprehensive understanding of these cases, encouraging them to engage with the content and form their own conclusions.</description>
@@ -37,6 +37,27 @@ We will walk through the grueling pre-trial motions, the intense battles over DN
       <itunes:duration>00:22:26</itunes:duration>
       <enclosure url="https://www.crimetimesnacks.com/audio/murders-in-moscow-the-plea.mp3" length="21530486" type="audio/mpeg" />
       <itunes:image href="https://www.crimetimesnacks.com/images/episodes/murders-in-moscow-the-plea.jpg" />
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>The Menendez Brothers: The Parole Years</title>
+      <link>https://www.crimetimesnacks.com/episodes/the-menendez-brothers-parole-years.html</link>
+      <guid isPermaLink="false">cts-studio-the-menendez-brothers-parole-years</guid>
+      <pubDate>Sat, 19 Sep 2026 10:46:49 GMT</pubDate>
+      <description>Hey everyone, it&apos;s Cory. This time on CrimeTimeSnacks: what happened to Lyle and Erik Menendez after the verdict. Thirty years of appeals that went nowhere, the marriages inside prison walls, the TikTok generation that heard the abuse testimony differently, a letter found in a dresser, and a former Menudo member who came forward in 2023.
+
+Then the part that is still moving: one district attorney who asked for resentencing and another who called their defense self-serving lies, the May 2025 ruling that cut their sentences to fifty years to life, the parole board that said no three months later, the judge who refused a new trial, and the early parole hearing now set for March 2027.
+
+I covered the murders and the trials in an earlier episode, so this one tells 1989 once and spends its time on everything since.</description>
+      <itunes:summary>Hey everyone, it&apos;s Cory. This time on CrimeTimeSnacks: what happened to Lyle and Erik Menendez after the verdict. Thirty years of appeals that went nowhere, the marriages inside prison walls, the TikTok generation that heard the abuse testimony differently, a letter found in a dresser, and a former Menudo member who came forward in 2023.
+
+Then the part that is still moving: one district attorney who asked for resentencing and another who called their defense self-serving lies, the May 2025 ruling that cut their sentences to fifty years to life, the parole board that said no three months later, the judge who refused a new trial, and the early parole hearing now set for March 2027.
+
+I covered the murders and the trials in an earlier episode, so this one tells 1989 once and spends its time on everything since.</itunes:summary>
+      <itunes:author>Cory</itunes:author>
+      <itunes:duration>00:21:15</itunes:duration>
+      <enclosure url="https://www.crimetimesnacks.com/audio/the-menendez-brothers-parole-years.mp3" length="20403262" type="audio/mpeg" />
+      <itunes:image href="https://www.crimetimesnacks.com/images/episodes/the-menendez-brothers-parole-years.jpg" />
       <itunes:explicit>false</itunes:explicit>
     </item>
     <item>

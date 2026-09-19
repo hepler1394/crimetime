@@ -99,6 +99,30 @@
         "capital case",
         "true crime podcast"
       ]
+    },
+    {
+      "guid": "cts-studio-the-menendez-brothers-parole-years",
+      "title": "The Menendez Brothers: The Parole Years",
+      "slug": "the-menendez-brothers-parole-years",
+      "date": "2026-09-19",
+      "pubDate": "Sat, 19 Sep 2026 10:46:49 GMT",
+      "duration": "00:21:15",
+      "description": "Hey everyone, it's Cory. This time on CrimeTimeSnacks: what happened to Lyle and Erik Menendez after the verdict. Thirty years of appeals that went nowhere, the marriages inside prison walls, the TikTok generation that heard the abuse testimony differently, a letter found in a dresser, and a former Menudo member who came forward in 2023.\n\nThen the part that is still moving: one district attorney who asked for resentencing and another who called their defense self-serving lies, the May 2025 ruling that cut their sentences to fifty years to life, the parole board that said no three months later, the judge who refused a new trial, and the early parole hearing now set for March 2027.\n\nI covered the murders and the trials in an earlier episode, so this one tells 1989 once and spends its time on everything since.",
+      "audio": "/audio/the-menendez-brothers-parole-years.mp3",
+      "audioType": "audio/mpeg",
+      "audioBytes": 20403262,
+      "image": "/images/episodes/the-menendez-brothers-parole-years.jpg",
+      "link": "",
+      "explicit": false,
+      "source": "studio",
+      "keywords": [
+        "Menendez brothers",
+        "Lyle Menendez",
+        "Erik Menendez",
+        "parole hearing",
+        "George Gascon",
+        "resentencing"
+      ]
     }
   ]
 }

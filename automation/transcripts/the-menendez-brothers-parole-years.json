@@ -1,0 +1,1401 @@
+{
+ "slug": "the-menendez-brothers-parole-years",
+ "title": "The Menendez Brothers: The Parole Years",
+ "language": "en",
+ "duration": 1275.1,
+ "model": "faster-whisper small (int8)",
+ "generated": "2026-09-19",
+ "note": "Transcript generated from the episode script.",
+ "segments": [
+  {
+   "start": 5,
+   "end": 9.6,
+   "text": "What's up guys, welcome back to Crimetime Snacks. In September 2026, the California"
+  },
+  {
+   "start": 9.6,
+   "end": 14.1,
+   "text": "Parole Board did something it did not have to do. It gave Lyle and Eric Menendez an early"
+  },
+  {
+   "start": 14.1,
+   "end": 19.4,
+   "text": "parole suitability hearing, tentatively scheduled for March 2027. One year earlier,"
+  },
+  {
+   "start": 19.4,
+   "end": 23.7,
+   "text": "that same board had turned both brothers down and told them to come back in August 2028."
+  },
+  {
+   "start": 24.4,
+   "end": 28,
+   "text": "So next year, two men who were sentenced to die in prison are going to sit in front of"
+  },
+  {
+   "start": 28,
+   "end": 32.4,
+   "text": "a parole panel for the second time. Lyle is 58, Eric is 55, they have been locked"
+  },
+  {
+   "start": 32.4,
+   "end": 37.2,
+   "text": "up since March of 1990. You've probably heard the headline version of this case,"
+  },
+  {
+   "start": 37.2,
+   "end": 41.4,
+   "text": "the Beverly Hills mansion, the shotguns, the spending spree, the trial on television."
+  },
+  {
+   "start": 41.4,
+   "end": 45.3,
+   "text": "I cover the murders and the trials in an earlier episode, so I am only going to walk"
+  },
+  {
+   "start": 45.3,
+   "end": 50.4,
+   "text": "through that part once and quickly. This episode is about everything that came after the verdict."
+  },
+  {
+   "start": 50.4,
+   "end": 55.2,
+   "text": "30 years of appeals that went nowhere, a letter found in a dresser, a district attorney who"
+  },
+  {
+   "start": 55.2,
+   "end": 59.4,
+   "text": "wanted them resentenced, and another one who fought it, a judge who cut their sentences,"
+  },
+  {
+   "start": 59.4,
+   "end": 63.8,
+   "text": "a parole board that said no and now would date on the calendar. Let's unpack it."
+  },
+  {
+   "start": 64.7,
+   "end": 69.7,
+   "text": "On August 20, 1989, Lyle and Eric Menendez killed their parents, Jose and Kitty,"
+  },
+  {
+   "start": 69.7,
+   "end": 75.1,
+   "text": "inside the family's $5 million home in Beverly Hills. Lyle was 21, Eric was 18."
+  },
+  {
+   "start": 75.7,
+   "end": 80.8,
+   "text": "Hold on to those two ages, because 36 years later, they are the reason a parole hearing is possible"
+  },
+  {
+   "start": 80.8,
+   "end": 85,
+   "text": "at all. Two days before the killings, the brothers bought Mossberg shotguns at a big"
+  },
+  {
+   "start": 85.1,
+   "end": 89.4,
+   "text": "five sporting goods store in San Diego, and Eric used a driver's license that had been stolen from"
+  },
+  {
+   "start": 89.4,
+   "end": 94.2,
+   "text": "a friend of Lyle's. After the murders, they told police that unknown intruders were responsible,"
+  },
+  {
+   "start": 94.2,
+   "end": 99.2,
+   "text": "and Lyle suggested it might be business related, a mob killing. Police looked into that at first."
+  },
+  {
+   "start": 100,
+   "end": 104.5,
+   "text": "What turned detectives around was money and a confession. The brothers spent approximately"
+  },
+  {
+   "start": 104.5,
+   "end": 109.2,
+   "text": "$700,000 in the months after the killings, and they hired a computer expert to delete"
+  },
+  {
+   "start": 109.2,
+   "end": 114.4,
+   "text": "their father's recently updated will. Then Eric confessed to a psychologist to Rome Osial."
+  },
+  {
+   "start": 114.4,
+   "end": 118.9,
+   "text": "Osial told his mistress, Judeleon Smith, after the two of them broke up, Smith went to the police."
+  },
+  {
+   "start": 119.8,
+   "end": 124,
+   "text": "Lyle was arrested on March 8, 1990, outside the Beverly Hills mansion."
+  },
+  {
+   "start": 124,
+   "end": 127.8,
+   "text": "Eric was in Israel for a tennis tournament, and he flew back to Los Angeles and turned"
+  },
+  {
+   "start": 127.8,
+   "end": 132,
+   "text": "himself in three days later. They were charged with two counts of first degree murder with"
+  },
+  {
+   "start": 132,
+   "end": 136.3,
+   "text": "special circumstances for lying in wait, which made them eligible for the death penalty."
+  },
+  {
+   "start": 136.3,
+   "end": 140,
+   "text": "On January 12, 1993, prosecutors announced that they would seek it."
+  },
+  {
+   "start": 140.7,
+   "end": 145.1,
+   "text": "There were two trials, and the difference between them is the whole reason this case is still alive,"
+  },
+  {
+   "start": 145.1,
+   "end": 150.3,
+   "text": "so let's take them one at a time. The first trial did not begin until July 1993,"
+  },
+  {
+   "start": 150.3,
+   "end": 152.8,
+   "text": "and a good part of the wait was a fight over the therapy tapes."
+  },
+  {
+   "start": 153.6,
+   "end": 158.7,
+   "text": "In August 1990, Judge James Albracht ruled the tapes of the sessions with Osial were admissible,"
+  },
+  {
+   "start": 158.7,
+   "end": 162.7,
+   "text": "because Osial said Lyle had threatened him, which broke doctor-patient privilege."
+  },
+  {
+   "start": 162.7,
+   "end": 165.4,
+   "text": "That ruling was appealed, and the proceedings stalled for two years."
+  },
+  {
+   "start": 166.1,
+   "end": 170.6,
+   "text": "In August 1992, the Supreme Court of California ruled that most of the tapes could come in,"
+  },
+  {
+   "start": 170.6,
+   "end": 173.9,
+   "text": "with one exception, the tape on which Eric discussed the murders."
+  },
+  {
+   "start": 174.7,
+   "end": 177.9,
+   "text": "A grand jury indicted the brothers in December 1992."
+  },
+  {
+   "start": 178.5,
+   "end": 183.1,
+   "text": "And here is a detail that gets lost. The special circumstance that the killings were"
+  },
+  {
+   "start": 183.1,
+   "end": 187.3,
+   "text": "committed for financial gain was deemed unsupported by the evidence, and it was"
+  },
+  {
+   "start": 187.3,
+   "end": 190.9,
+   "text": "excluded from the charges. The greed theory was argued a trial,"
+  },
+  {
+   "start": 190.9,
+   "end": 196.3,
+   "text": "but it was not what they were charged with. The first trial began in July 1993."
+  },
+  {
+   "start": 196.3,
+   "end": 199.6,
+   "text": "Cameras were allowed in the courtroom, and it was broadcast on court TV."
+  },
+  {
+   "start": 199.6,
+   "end": 204.5,
+   "text": "The brothers had separate juries. Eric was represented by Leslie Abramson and Lyle by Jill"
+  },
+  {
+   "start": 204.5,
+   "end": 209.8,
+   "text": "Lansing. The defense was that the brothers killed their parents out of fear for their lives,"
+  },
+  {
+   "start": 209.8,
+   "end": 215.2,
+   "text": "after a lifetime of abuse, especially sexual abuse by Jose. Lyle testified that his father"
+  },
+  {
+   "start": 215.2,
+   "end": 219.3,
+   "text": "began abusing him when he was six and stopped when he was eight. Eric testified that it"
+  },
+  {
+   "start": 219.3,
+   "end": 223.6,
+   "text": "continued until shortly before the murders, and that two weeks before the killings he told Lyle"
+  },
+  {
+   "start": 223.6,
+   "end": 227.3,
+   "text": "about it for the first time. Both of them testified that Jose had threatened to kill them"
+  },
+  {
+   "start": 227.3,
+   "end": 231.7,
+   "text": "if they did not keep it secret. They were not the only ones who took the stand on this."
+  },
+  {
+   "start": 231.7,
+   "end": 237.2,
+   "text": "A cousin, Diane Vander Mullen, testified that in the summer of 1976, Lyle confided in her"
+  },
+  {
+   "start": 237.2,
+   "end": 241.4,
+   "text": "that his father was sexually abusing him. She said she told Kitty, and Kitty sided"
+  },
+  {
+   "start": 241.4,
+   "end": 245.4,
+   "text": "with her husband and accused Lyle of lying. Under questioning, she said she had never"
+  },
+  {
+   "start": 245.4,
+   "end": 249.8,
+   "text": "directly witnessed any abuse. Another cousin testified that Eric had told him about the abuse"
+  },
+  {
+   "start": 249.8,
+   "end": 256.5,
+   "text": "when they were children. That cousin's name was Andy Cano. Remember it. The prosecution's answer was"
+  },
+  {
+   "start": 256.5,
+   "end": 260.9,
+   "text": "that the abuse was fabricated. They told the jurors that nobody mentioned abuse until"
+  },
+  {
+   "start": 260.9,
+   "end": 265.2,
+   "text": "illegal defense was being put together seven months after the murders. It was absent from"
+  },
+  {
+   "start": 265.2,
+   "end": 269.6,
+   "text": "the taped sessions with the psychologist. On those tapes, the brothers complained about a"
+  },
+  {
+   "start": 269.6,
+   "end": 273.6,
+   "text": "dictatorial father and a suicidal mother, and according to Oziel's account they killed"
+  },
+  {
+   "start": 273.6,
+   "end": 276.5,
+   "text": "out of hatred and a desire to be free of their father's domination."
+  },
+  {
+   "start": 277.3,
+   "end": 282.1,
+   "text": "The defense went after the psychologist. A defense consultant, Ann Burgess, called Oziel"
+  },
+  {
+   "start": 282.1,
+   "end": 286.6,
+   "text": "manipulative and controlling and argued that he directed many of the statements on those recordings."
+  },
+  {
+   "start": 287.2,
+   "end": 291.5,
+   "text": "And Judewan Smith, the woman whose tip had led to the arrest, now testified for the defense,"
+  },
+  {
+   "start": 291.5,
+   "end": 294.4,
+   "text": "saying Oziel taped the sessions because he wanted to control the brothers."
+  },
+  {
+   "start": 294.9,
+   "end": 298.8,
+   "text": "Prosecutors pointed out that she was the one who had gone to the police in the first place"
+  },
+  {
+   "start": 298.9,
+   "end": 304.4,
+   "text": "and that she had changed sides after a tumultuous breakup. Prosecutor Pam Bozanage pointed to the"
+  },
+  {
+   "start": 304.4,
+   "end": 309.2,
+   "text": "shotguns bought in advance and to a taped statement that the murders were planned beforehand."
+  },
+  {
+   "start": 309.2,
+   "end": 312.8,
+   "text": "She played Lyle's 911 call for the jury to show how good an actor he was."
+  },
+  {
+   "start": 313.6,
+   "end": 316.8,
+   "text": "And before the trial, Lyle had offered a bribe and ex-girlfriend to say that"
+  },
+  {
+   "start": 316.8,
+   "end": 322.4,
+   "text": "Jose had made sexual advances toward her. She went to the police. Lyle admitted to the scheme"
+  },
+  {
+   "start": 322.4,
+   "end": 328.1,
+   "text": "on the stand. After a month of deliberations in January 1994, both juries deadlocked,"
+  },
+  {
+   "start": 328.2,
+   "end": 332.1,
+   "text": "and they split by gender. The female jurors leaned toward voluntary manslaughter."
+  },
+  {
+   "start": 332.1,
+   "end": 336.9,
+   "text": "The male jurors pushed for first-degree murder. District Attorney Gil Garcetti chose to retry"
+  },
+  {
+   "start": 336.9,
+   "end": 342.4,
+   "text": "the brothers rather than offer a plea to lesser charges. The second trial looked very different."
+  },
+  {
+   "start": 342.4,
+   "end": 346.8,
+   "text": "Judge Stanley Weisberg did not allow cameras this time. He said they would increase the risk"
+  },
+  {
+   "start": 346.8,
+   "end": 350.3,
+   "text": "that jurors would be exposed to commentary about the case outside the courtroom."
+  },
+  {
+   "start": 350.3,
+   "end": 356,
+   "text": "It was also far less publicized. Eric testified for 15 days about the abuse he alleged."
+  },
+  {
+   "start": 356,
+   "end": 360.5,
+   "text": "Lyle did not testify at all. The judge limited some of the testimony about certain allegations,"
+  },
+  {
+   "start": 360.5,
+   "end": 367.2,
+   "text": "and he limited the defense to 64 witnesses. The cross-examination was blunt. Prosecutor David Khan"
+  },
+  {
+   "start": 367.2,
+   "end": 371.5,
+   "text": "challenged Eric's claim that the abuse continued when he was 18 with a car and enough money to"
+  },
+  {
+   "start": 371.5,
+   "end": 376.7,
+   "text": "leave home. He asked why Eric had not simply joined the army. Eric said he would not have"
+  },
+  {
+   "start": 376.7,
+   "end": 381.4,
+   "text": "been safe from his father even there because his father was, in his words, the most powerful"
+  },
+  {
+   "start": 381.4,
+   "end": 387.3,
+   "text": "man I've ever met. Eric also admitted that there were no witnesses to the sexual abuse he described."
+  },
+  {
+   "start": 388,
+   "end": 392.8,
+   "text": "The experts split the same way the juries had. A psychology professor John Wilson testified"
+  },
+  {
+   "start": 392.8,
+   "end": 396.6,
+   "text": "for the defense that Eric showed symptoms of post-traumatic stress disorder that supported"
+  },
+  {
+   "start": 396.6,
+   "end": 401.6,
+   "text": "his account. A psychiatrist for the prosecution, Park Elliott Deets, countered that there was no"
+  },
+  {
+   "start": 401.6,
+   "end": 406.4,
+   "text": "way to know that because the allegations themselves were unproven. He added that Eric had not"
+  },
+  {
+   "start": 406.4,
+   "end": 410.8,
+   "text": "shown learned helplessness. He had bought guns and practiced with them at a shooting range."
+  },
+  {
+   "start": 411.6,
+   "end": 416.1,
+   "text": "Then came the ruling that mattered most. Weisberg determined there was insufficient evidence that"
+  },
+  {
+   "start": 416.1,
+   "end": 420.4,
+   "text": "the brothers were in imminent danger when they killed their parents. Under California law,"
+  },
+  {
+   "start": 420.4,
+   "end": 424.8,
+   "text": "that was the door to manslaughter, and it closed. He allowed the defense to argue that they shot"
+  },
+  {
+   "start": 424.8,
+   "end": 429.8,
+   "text": "Jose in the heat of passion. He did not allow that argument for Kitty. The prosecution also"
+  },
+  {
+   "start": 429.8,
+   "end": 434.3,
+   "text": "went after credibility. Khan told the jury that Lyle had asked a friend to fabricate a story"
+  },
+  {
+   "start": 434.3,
+   "end": 438.7,
+   "text": "for the first trial, and police had found a seven-page letter allegedly from Lyle laying out"
+  },
+  {
+   "start": 438.7,
+   "end": 443.6,
+   "text": "how he wanted that friend to testify. There was a second letter allegedly written to an ex-girlfriend"
+  },
+  {
+   "start": 443.6,
+   "end": 448.4,
+   "text": "with instructions on how to testify. One line read, We will decide later around what date this"
+  },
+  {
+   "start": 448.4,
+   "end": 454.2,
+   "text": "incident occurred. The defense disputed that the letter was authentic. Even the penalty phase"
+  },
+  {
+   "start": 454.2,
+   "end": 458.9,
+   "text": "produced a side fight. Leslie Abramson reportedly told a defense witness William Vicarri"
+  },
+  {
+   "start": 458.9,
+   "end": 463.4,
+   "text": "to edit his own notes of his meetings with Eric to take out potentially incriminating information."
+  },
+  {
+   "start": 463.4,
+   "end": 467.2,
+   "text": "The district attorney's office decided not to open a criminal investigation."
+  },
+  {
+   "start": 467.2,
+   "end": 471.6,
+   "text": "Both brothers filed motions for a mistrial over it, claiming ineffective representation."
+  },
+  {
+   "start": 472.4,
+   "end": 475.7,
+   "text": "They were convicted of first-degree murder with special circumstances,"
+  },
+  {
+   "start": 475.7,
+   "end": 481.5,
+   "text": "and of conspiracy to murder. On July 2, 1996, Judge Weisberg sentenced them to life without the"
+  },
+  {
+   "start": 481.5,
+   "end": 486.4,
+   "text": "possibility of parole, the terms to run consecutively. So here is the argument their"
+  },
+  {
+   "start": 486.4,
+   "end": 491.3,
+   "text": "supporters have made for 30 years. One set of jurors heard the full abuse case and could not"
+  },
+  {
+   "start": 491.3,
+   "end": 495.8,
+   "text": "agree. The next jury heard less of it and convicted. And here is the argument on the"
+  },
+  {
+   "start": 495.9,
+   "end": 501.1,
+   "text": "other side. These are two defendants accused of coaching witnesses, and the judge who limited"
+  },
+  {
+   "start": 501.1,
+   "end": 506,
+   "text": "the abuse evidence still let them argue heat of passion, and the jury still said murder."
+  },
+  {
+   "start": 506,
+   "end": 509.8,
+   "text": "Both of those things are in the record. Keep both in mind for what comes next."
+  },
+  {
+   "start": 510.4,
+   "end": 514.4,
+   "text": "The brothers did not accept the verdict. They appealed, and then they kept appealing,"
+  },
+  {
+   "start": 514.4,
+   "end": 516.9,
+   "text": "and the record of those appeals is a straight line of losses."
+  },
+  {
+   "start": 518,
+   "end": 523.6,
+   "text": "On February 27, 1998, the California Court of Appeal upheld the murder convictions."
+  },
+  {
+   "start": 523.6,
+   "end": 528.2,
+   "text": "On May 28, 1998, the Supreme Court of California declined to review the case,"
+  },
+  {
+   "start": 528.2,
+   "end": 532.8,
+   "text": "which let that decision stand. Both brothers then filed habeas corpus petitions with the"
+  },
+  {
+   "start": 532.8,
+   "end": 538.6,
+   "text": "state supreme court. Those were denied in 1999. With nothing left to try in state court,"
+  },
+  {
+   "start": 538.6,
+   "end": 543.2,
+   "text": "they filed separate habeas petitions in federal district court. On March 4, 2003,"
+  },
+  {
+   "start": 543.2,
+   "end": 547.5,
+   "text": "a magistrate judge recommended denying them, and the district court adopted that recommendation."
+  },
+  {
+   "start": 548.1,
+   "end": 554.5,
+   "text": "They appealed to the 9th Circuit. On September 7, 2005, a three-judge panel denied both petitions."
+  },
+  {
+   "start": 555.5,
+   "end": 559.6,
+   "text": "Every court that had looked at the case had reached the same answer. For a long time,"
+  },
+  {
+   "start": 559.6,
+   "end": 564.4,
+   "text": "that is exactly where it stood, two men serving life without parole with no legal road left in"
+  },
+  {
+   "start": 564.4,
+   "end": 569.6,
+   "text": "front of them. So what does a life sentence actually look like year after year? The record has"
+  },
+  {
+   "start": 569.6,
+   "end": 575.5,
+   "text": "some answers, and they are stranger and sadder than you might expect. On July 2, 1996, the same"
+  },
+  {
+   "start": 575.5,
+   "end": 580.4,
+   "text": "day he was sentenced to life without parole, Lyle married a woman named Anna Erickson. The ceremony"
+  },
+  {
+   "start": 580.4,
+   "end": 586,
+   "text": "was done over the telephone, and his Aunt Marta attended. They divorced on April 1, 2001. After"
+  },
+  {
+   "start": 586,
+   "end": 591.2,
+   "text": "Erickson discovered he had been writing to another woman. In November 2003, he married Rebecca Snead"
+  },
+  {
+   "start": 591.2,
+   "end": 596,
+   "text": "in a visiting area of Mule Creek State Prison. They had known each other for around 10 years."
+  },
+  {
+   "start": 596.7,
+   "end": 603.2,
+   "text": "They separated in 2024. On June 12, 1999, Erick married Tammy Sackoman in the waiting"
+  },
+  {
+   "start": 603.2,
+   "end": 606.1,
+   "text": "room of Folsom State Prison. She described the day later. She said,"
+  },
+  {
+   "start": 606.1,
+   "end": 610.6,
+   "text": "Our wedding cake was a Twinkie. We improvised. It was a wonderful ceremony until I had to leave."
+  },
+  {
+   "start": 610.6,
+   "end": 615.9,
+   "text": "That was a very lonely night. In 2005, she self-published a book about the marriage,"
+  },
+  {
+   "start": 615.9,
+   "end": 619.7,
+   "text": "and she said she and her daughter drove 150 miles every weekend to visit him."
+  },
+  {
+   "start": 620.3,
+   "end": 623.1,
+   "text": "That same year, Erick talked to People Magazine about his sentence."
+  },
+  {
+   "start": 623.8,
+   "end": 628,
+   "text": "He said, Tammy is what gets me through. I can't think about the sentence. When I do,"
+  },
+  {
+   "start": 628,
+   "end": 632.9,
+   "text": "I do it with a great sadness and a primal fear. Their family points to what the brothers built in"
+  },
+  {
+   "start": 632.9,
+   "end": 636.8,
+   "text": "those years. According to relatives, they helped establish a hospice program,"
+  },
+  {
+   "start": 636.8,
+   "end": 640.1,
+   "text": "launched a beautification project, and created something called green space."
+  },
+  {
+   "start": 640.8,
+   "end": 644.3,
+   "text": "The family's description is that it was all meant to remind people serving life"
+  },
+  {
+   "start": 644.3,
+   "end": 648.2,
+   "text": "sentences that their lives still have meaning. Remember that, because when the parole board"
+  },
+  {
+   "start": 648.2,
+   "end": 652.8,
+   "text": "finally got to look at their prison records, it did not see model prisoners. It saw something"
+  },
+  {
+   "start": 652.8,
+   "end": 658.1,
+   "text": "else. While the courts were saying no, the story never left television. In 1994 alone,"
+  },
+  {
+   "start": 658.1,
+   "end": 662.3,
+   "text": "there was a CBS miniseries and a television film called Honor Thy Father and Mother."
+  },
+  {
+   "start": 662.4,
+   "end": 666,
+   "text": "Court TV did an episode in 2000. Barbara Walters featured the brothers."
+  },
+  {
+   "start": 666.5,
+   "end": 670.6,
+   "text": "In 2017, there was a lifetime movie with Courtney Love, and a law and order"
+  },
+  {
+   "start": 670.6,
+   "end": 674.7,
+   "text": "true crime season produced by Dick Wolf. That same year, Erick gave telephone interviews"
+  },
+  {
+   "start": 674.7,
+   "end": 678.8,
+   "text": "from prison for an A&E docuseries, and Lyall did one with Chris Cuomo for HLN."
+  },
+  {
+   "start": 679.6,
+   "end": 683.6,
+   "text": "For most of those years, the case was a punchline. The notes I worked from have an entire"
+  },
+  {
+   "start": 683.6,
+   "end": 687.3,
+   "text": "section on parodies and dark comedy. The brothers were the rich kids who shot their"
+  },
+  {
+   "start": 687.3,
+   "end": 692.6,
+   "text": "parents and bought Rolexes. One detail tells you how deep into the culture this went."
+  },
+  {
+   "start": 692.6,
+   "end": 696,
+   "text": "The brothers can be seen sitting courtside at a Knicks game in the background of a"
+  },
+  {
+   "start": 696,
+   "end": 701.2,
+   "text": "Mark Jackson basketball card. In December 2018, eBay began terminating auctions that"
+  },
+  {
+   "start": 701.2,
+   "end": 707.3,
+   "text": "mentioned them in the listing. Then the audience changed. In 2021, an ABC20 special called"
+  },
+  {
+   "start": 707.3,
+   "end": 711.2,
+   "text": "Inside the Menendez Movement documented something nobody had predicted. The brothers"
+  },
+  {
+   "start": 711.2,
+   "end": 715.6,
+   "text": "had become popular on TikTok. Young adults inside and outside the United States who"
+  },
+  {
+   "start": 715.6,
+   "end": 719.2,
+   "text": "had not been born when the trials aired were watching the old testimony about abuse and"
+  },
+  {
+   "start": 719.2,
+   "end": 725.6,
+   "text": "hearing it very differently than audiences had in 1993. In 2022, a Discovery Plus documentary"
+  },
+  {
+   "start": 725.6,
+   "end": 730.8,
+   "text": "asked outright whether the brothers had been misjudged. And in September 2024, Netflix released"
+  },
+  {
+   "start": 730.8,
+   "end": 734.6,
+   "text": "a Ryan Murphy series about the case. It was widely criticized for implying an"
+  },
+  {
+   "start": 734.6,
+   "end": 739,
+   "text": "incestuous relationship between the brothers. The journalist Robert Rand, who wrote a book"
+  },
+  {
+   "start": 739,
+   "end": 742.4,
+   "text": "on the case, called that fantasy with no credible evidence behind it."
+  },
+  {
+   "start": 743.1,
+   "end": 748,
+   "text": "Eric answered it himself in a statement posted through his Weiss account on September 2020-2024."
+  },
+  {
+   "start": 748,
+   "end": 750.8,
+   "text": "He called the series a dishonest portrayal, and he wrote,"
+  },
+  {
+   "start": 750.8,
+   "end": 753.8,
+   "text": "Is the truth not enough? But the truth stand as the truth."
+  },
+  {
+   "start": 754.5,
+   "end": 758.4,
+   "text": "Five days later, the family put out their own statement. They called the show a phobic,"
+  },
+  {
+   "start": 758.4,
+   "end": 764,
+   "text": "gross, anachronistic, serial episodic nightmare. But here is the uncomfortable part."
+  },
+  {
+   "start": 764,
+   "end": 768,
+   "text": "The series is widely credited with reigniting public interest in the case."
+  },
+  {
+   "start": 768,
+   "end": 771.6,
+   "text": "Murphy himself said it was the best thing that had happened to the brothers in 30 years."
+  },
+  {
+   "start": 772.1,
+   "end": 777,
+   "text": "And District Attorney George Gascon said that October that his office had received an influx of"
+  },
+  {
+   "start": 777,
+   "end": 781.8,
+   "text": "calls about Lyle and Eric Menendez. Legal experts who talked to Business Insider were careful about"
+  },
+  {
+   "start": 781.8,
+   "end": 787.4,
+   "text": "this. The series was not new evidence. They called it a catalyst. It did things in the"
+  },
+  {
+   "start": 787.4,
+   "end": 792.5,
+   "text": "real world, too. The house in Beverly Hills where the murders happened saw an influx of tourists,"
+  },
+  {
+   "start": 792.5,
+   "end": 796.2,
+   "text": "some from outside the country. Police took calls about trespassing,"
+  },
+  {
+   "start": 796.2,
+   "end": 799.7,
+   "text": "including people trying to get onto the property to recreate old photographs of the"
+  },
+  {
+   "start": 799.7,
+   "end": 804.7,
+   "text": "brothers. And a covered barricade and fencing went up. One of the actors, Cooper Coe, who played"
+  },
+  {
+   "start": 804.7,
+   "end": 809.2,
+   "text": "Eric, met both brothers at the Richard J. Donovan Correctional Facility as part of a prison reform"
+  },
+  {
+   "start": 809.2,
+   "end": 815,
+   "text": "meeting led by Kim Kardashian. And in February 2025, Lyle told TMZ that he and Eric were"
+  },
+  {
+   "start": 815,
+   "end": 818.9,
+   "text": "grateful the series had shed light on child abuse. So the brothers' own view of it moved,"
+  },
+  {
+   "start": 818.9,
+   "end": 823.2,
+   "text": "too. There was new evidence, though, or at least evidence that was being called new."
+  },
+  {
+   "start": 823.2,
+   "end": 828,
+   "text": "It came in two pieces. The first was a man named Roy Roslow. He had been a member of"
+  },
+  {
+   "start": 828,
+   "end": 833.5,
+   "text": "Minuto, the boy band, which was signed to RCA Records while Jose Menendez was an executive there."
+  },
+  {
+   "start": 833.5,
+   "end": 839.2,
+   "text": "On April 18, 2023, Roslow appeared on NBC's Today Show and said that when he was 14 years old,"
+  },
+  {
+   "start": 839.2,
+   "end": 843.8,
+   "text": "he was drugged and raped by Jose Menendez while visiting the family's home in New Jersey."
+  },
+  {
+   "start": 843.8,
+   "end": 848.4,
+   "text": "The next month, Peacock released a documentary series built around his account called Menendez"
+  },
+  {
+   "start": 848.4,
+   "end": 854,
+   "text": "Plus Minuto, Boys Betrayed. The second was a letter, and this is where that name comes back."
+  },
+  {
+   "start": 854.6,
+   "end": 858.6,
+   "text": "It appears to have been written by Eric in 1988, the year before the murders,"
+  },
+  {
+   "start": 858.6,
+   "end": 862.3,
+   "text": "to his cousin Andy Cano, the same cousin who testified at the first trial."
+  },
+  {
+   "start": 862.8,
+   "end": 867.6,
+   "text": "Inna Eric talks about the abuse. Robert Rand said he found it in 2018, an address"
+  },
+  {
+   "start": 867.6,
+   "end": 873.2,
+   "text": "there in Cano's bedroom. In May 2023, attorneys for the brothers filed a habeas corpus petition"
+  },
+  {
+   "start": 873.2,
+   "end": 877.9,
+   "text": "in Los Angeles County Superior Court built on those two things. The petition cited them as"
+  },
+  {
+   "start": 877.9,
+   "end": 884.3,
+   "text": "new evidence. On October 3, 2024, George Gascon held a press conference and announced that his"
+  },
+  {
+   "start": 884.3,
+   "end": 889.3,
+   "text": "office was actively reviewing the petition. Three weeks later, on October 24, he announced he"
+  },
+  {
+   "start": 889.3,
+   "end": 893.3,
+   "text": "was asking the court to resentence the brothers. If a judge went along with it, they would be"
+  },
+  {
+   "start": 893.3,
+   "end": 898.5,
+   "text": "eligible for parole. What he actually said is worth hearing in full, because both sides quote"
+  },
+  {
+   "start": 898.5,
+   "end": 902.6,
+   "text": "half of it. He said, I do believe that the brothers were subjected to a tremendous"
+  },
+  {
+   "start": 902.6,
+   "end": 908.3,
+   "text": "amount of dysfunction in the home and molestation. And he also said, I don't believe that manslaughter"
+  },
+  {
+   "start": 908.3,
+   "end": 912.5,
+   "text": "would have been the appropriate charge given the premeditation that was involved. So he was not"
+  },
+  {
+   "start": 912.5,
+   "end": 917,
+   "text": "saying they were innocent, and he was not saying it was self-defense. His recommendation rested"
+  },
+  {
+   "start": 917,
+   "end": 921.3,
+   "text": "on the length of time they had already served and on their behavior in prison. His phrase"
+  },
+  {
+   "start": 921.3,
+   "end": 926.4,
+   "text": "was that they had paid their debt to society. A resentencing hearing was set for December 11,"
+  },
+  {
+   "start": 926.4,
+   "end": 931.8,
+   "text": "2024. It did not happen. At a hearing on November 25, it was pushed to the end of January,"
+  },
+  {
+   "start": 931.9,
+   "end": 935.6,
+   "text": "then the Los Angeles fires pushed it to March 20, then it was pushed again to April."
+  },
+  {
+   "start": 936.3,
+   "end": 940.8,
+   "text": "By March 24, Governor Gavin Newsom was talking about the case on his own podcast,"
+  },
+  {
+   "start": 940.8,
+   "end": 944.8,
+   "text": "where he announced a June 13, 2025 deadline for the brothers' resentencing."
+  },
+  {
+   "start": 945.6,
+   "end": 949.3,
+   "text": "In the middle of all that, Los Angeles elected a new district attorney. Nathan"
+  },
+  {
+   "start": 949.3,
+   "end": 953.9,
+   "text": "Hockman took office and he reversed Gascon's recommendation. He also filed an opposition"
+  },
+  {
+   "start": 953.9,
+   "end": 959.1,
+   "text": "to the habeas petition. Hockman did not soften it. He called the brothers' claims of self-defense,"
+  },
+  {
+   "start": 959.1,
+   "end": 964,
+   "text": "self-serving lies. And he went straight out the letter. His argument was that the letter to Andy"
+  },
+  {
+   "start": 964,
+   "end": 968.6,
+   "text": "Cano was not credible, because it had not been used by either defense team at either trial."
+  },
+  {
+   "start": 968.6,
+   "end": 972.9,
+   "text": "If a letter like that had existed in 1993, why did nobody put it in front of a jury?"
+  },
+  {
+   "start": 973.6,
+   "end": 977.4,
+   "text": "That is the same position the original prosecutors took. They told the juries the"
+  },
+  {
+   "start": 977.4,
+   "end": 982.1,
+   "text": "abuse allegations were fabricated and that the brothers killed out of hatred and for the estate."
+  },
+  {
+   "start": 982.1,
+   "end": 987.1,
+   "text": "Thirty years later, the office had come back to where it started. So by the spring of 2025,"
+  },
+  {
+   "start": 987.2,
+   "end": 991.4,
+   "text": "the question was in front of a judge with the county's top prosecutor arguing against it."
+  },
+  {
+   "start": 991.4,
+   "end": 995.4,
+   "text": "It is worth noticing what that means. The resentencing did not happen because the district"
+  },
+  {
+   "start": 995.4,
+   "end": 1001.5,
+   "text": "attorney wanted it. By the end, it happened in spite of him. In May 2025, a judge resentenced"
+  },
+  {
+   "start": 1001.5,
+   "end": 1006.3,
+   "text": "Lyle and Eric Menendez to 50 years to life. On paper that still sounds like forever."
+  },
+  {
+   "start": 1006.8,
+   "end": 1012,
+   "text": "It is not. And the reason is those two ages I asked you to hold on to. Lyle was 21 and"
+  },
+  {
+   "start": 1012,
+   "end": 1017.3,
+   "text": "Eric was 18. Under California law, because they were under 26 when they committed the murders,"
+  },
+  {
+   "start": 1017.3,
+   "end": 1020,
+   "text": "the new sentence made them immediately eligible for parole."
+  },
+  {
+   "start": 1020.7,
+   "end": 1022.8,
+   "text": "Their family released a statement. They said,"
+  },
+  {
+   "start": 1022.8,
+   "end": 1026.1,
+   "text": "Eric and Lyle were once sentenced to life without the possibility of parole."
+  },
+  {
+   "start": 1026.8,
+   "end": 1030.4,
+   "text": "We will always be profoundly grateful that they have been resentenced and that our"
+  },
+  {
+   "start": 1030.4,
+   "end": 1034.4,
+   "text": "family can now imagine a future in which they are once again part of our everyday lives."
+  },
+  {
+   "start": 1035.2,
+   "end": 1038.6,
+   "text": "Eligible is not the same as released though. A judge can change a sentence."
+  },
+  {
+   "start": 1038.7,
+   "end": 1043.2,
+   "text": "Only the parole board can open the door. The hearings came three months later,"
+  },
+  {
+   "start": 1043.2,
+   "end": 1048.4,
+   "text": "on consecutive days. On August 25, Eric went first. The California Board of Parole"
+  },
+  {
+   "start": 1048.4,
+   "end": 1052.8,
+   "text": "hearings denied him, citing ongoing rural violations and concerns about public safety."
+  },
+  {
+   "start": 1052.8,
+   "end": 1056.7,
+   "text": "Lyle was denied the following day, with the board referencing repeated cell phone infractions."
+  },
+  {
+   "start": 1057.3,
+   "end": 1061.5,
+   "text": "Parole Board Commissioner Robert Barton cited prison violations, including the use of illegal"
+  },
+  {
+   "start": 1061.5,
+   "end": 1065.4,
+   "text": "cell phones and incidents of violence. One report said Eric had been linked to a prison"
+  },
+  {
+   "start": 1065.4,
+   "end": 1070.5,
+   "text": "gang at one time. The family had been telling the public these were model prisoners. The board read"
+  },
+  {
+   "start": 1070.5,
+   "end": 1075.3,
+   "text": "their files and said their conduct in prison did not make them suitable. This is the part of the"
+  },
+  {
+   "start": 1075.3,
+   "end": 1080.3,
+   "text": "story that does not fit neatly on either side. If you believe the brothers, the hospice program,"
+  },
+  {
+   "start": 1080.3,
+   "end": 1084.4,
+   "text": "and green space are the real record, if you believe the board, the cell phones, and the"
+  },
+  {
+   "start": 1084.4,
+   "end": 1090,
+   "text": "violence are, both sets of facts are in the same file, about the same two men. The denial was"
+  },
+  {
+   "start": 1090,
+   "end": 1095.7,
+   "text": "for three years. That put their next chance in August 2028. There was one more door, and it closed"
+  },
+  {
+   "start": 1095.7,
+   "end": 1100.9,
+   "text": "the following month. In September 2025, a Los Angeles Superior Court judge ruled on the"
+  },
+  {
+   "start": 1100.9,
+   "end": 1105.6,
+   "text": "brother's petition for a new trial, the one built on the Ross Lowe allegation and the Cana letter."
+  },
+  {
+   "start": 1106.4,
+   "end": 1108.4,
+   "text": "Judge William Ryan denied it. He wrote,"
+  },
+  {
+   "start": 1108.4,
+   "end": 1112.3,
+   "text": "The evidence alleged here is not so compelling that it would have produced a reasonable doubt in"
+  },
+  {
+   "start": 1112.3,
+   "end": 1116.4,
+   "text": "the mind of at least one juror, or supportive of an imperfect self-defense instruction."
+  },
+  {
+   "start": 1117.3,
+   "end": 1122.6,
+   "text": "Read that sentence again, slowly. He is not saying the abuse did not happen. He is saying that even"
+  },
+  {
+   "start": 1122.6,
+   "end": 1126.7,
+   "text": "if a jury had seen this evidence, it would not have changed the verdict on premeditated murder."
+  },
+  {
+   "start": 1127.2,
+   "end": 1131.8,
+   "text": "That is a narrower ruin than the headlines made it sound, and it is also a complete loss,"
+  },
+  {
+   "start": 1131.8,
+   "end": 1134.6,
+   "text": "the conviction stand. There will be no third trial."
+  },
+  {
+   "start": 1135.3,
+   "end": 1140.9,
+   "text": "Which brings us back to where we started. In September 2026, weeks after the 37th anniversary"
+  },
+  {
+   "start": 1140.9,
+   "end": 1145.6,
+   "text": "of the murders, the parole board granted both brothers an early suitability hearing."
+  },
+  {
+   "start": 1145.6,
+   "end": 1149.6,
+   "text": "Instead of August 2028, it is tentatively scheduled for March 2027."
+  },
+  {
+   "start": 1150.3,
+   "end": 1154.4,
+   "text": "How does that happen after a three-year denial? According to the Orange County Register,"
+  },
+  {
+   "start": 1154.4,
+   "end": 1158.4,
+   "text": "it comes from two provisions in a California law called Proposition 9."
+  },
+  {
+   "start": 1158.4,
+   "end": 1162.1,
+   "text": "Those provisions allow an inmate's next hearing to be moved up if there is a change in"
+  },
+  {
+   "start": 1162.1,
+   "end": 1166.7,
+   "text": "circumstances, or new information indicating the person may be suitable for parole."
+  },
+  {
+   "start": 1167.6,
+   "end": 1170.9,
+   "text": "The family statement thanked the board for recognizing the brother's efforts,"
+  },
+  {
+   "start": 1170.9,
+   "end": 1173.8,
+   "text": "and it gave a reason for the urgency that has nothing to do with law."
+  },
+  {
+   "start": 1174.4,
+   "end": 1177.9,
+   "text": "They wrote that time together is something none of them can take for granted,"
+  },
+  {
+   "start": 1177.9,
+   "end": 1181.6,
+   "text": "particularly as the elderly members of the family, including the brothers' aunts,"
+  },
+  {
+   "start": 1181.6,
+   "end": 1185.2,
+   "text": "Joan, Terry and Marta, grow older and face serious health challenges."
+  },
+  {
+   "start": 1186.1,
+   "end": 1190.4,
+   "text": "Not everyone is glad about it. A former Sacramento District Attorney, Ann Marie"
+  },
+  {
+   "start": 1190.4,
+   "end": 1194.3,
+   "text": "Schubert, is leading a lawsuit against new board of parole hearings guidelines,"
+  },
+  {
+   "start": 1194.3,
+   "end": 1198.6,
+   "text": "and she warns they will open a path to freedom for the state's worst violent criminals."
+  },
+  {
+   "start": 1198.6,
+   "end": 1201.3,
+   "text": "The Menendez hearing landed right in the middle of that fight."
+  },
+  {
+   "start": 1202,
+   "end": 1205.7,
+   "text": "Both brothers are held at the Richard J. Donovan Correctional Facility in San Diego."
+  },
+  {
+   "start": 1206.4,
+   "end": 1210.4,
+   "text": "So here is where the case stands, and here is what I think is worth watching next year."
+  },
+  {
+   "start": 1211.2,
+   "end": 1215.2,
+   "text": "The parole board is not going to retry 1989. It is not going to decide whether"
+  },
+  {
+   "start": 1215.2,
+   "end": 1218.7,
+   "text": "Jose Menendez abused his sons. Gascon said he believed it,"
+  },
+  {
+   "start": 1218.7,
+   "end": 1222.6,
+   "text": "Hokeman called it lies, and Judge Ryan ruled it would not have changed the verdict."
+  },
+  {
+   "start": 1223.3,
+   "end": 1226.8,
+   "text": "None of that is the board's question. The board's question is narrower and harder."
+  },
+  {
+   "start": 1226.8,
+   "end": 1229.5,
+   "text": "Are these two men, today, a danger to the public?"
+  },
+  {
+   "start": 1230.1,
+   "end": 1234.9,
+   "text": "In 2025, the answer was about cell phones and rule violations. In 2027,"
+  },
+  {
+   "start": 1234.9,
+   "end": 1237.6,
+   "text": "the brothers have to show that something has changed since then,"
+  },
+  {
+   "start": 1237.6,
+   "end": 1240.6,
+   "text": "because that is the only reason the hearing got moved up in the first place."
+  },
+  {
+   "start": 1241.4,
+   "end": 1245.6,
+   "text": "I am not going to tell you how that should come out. There are two dead people at the center"
+  },
+  {
+   "start": 1245.6,
+   "end": 1249.3,
+   "text": "of this, and there are two men who have spent more than three decades in prison,"
+  },
+  {
+   "start": 1249.3,
+   "end": 1252.4,
+   "text": "and the record gives you reasons to feel strongly in both directions."
+  },
+  {
+   "start": 1253,
+   "end": 1257.7,
+   "text": "The next hearing is tentatively scheduled for March 2027, and I will be watching it."
+  },
+  {
+   "start": 1258.5,
+   "end": 1261.6,
+   "text": "The filings, the rulings, and the family statements are all public."
+  },
+  {
+   "start": 1261.6,
+   "end": 1263.5,
+   "text": "Read the file. Form your own conclusion."
+  },
+  {
+   "start": 1265.3,
+   "end": 1267.2,
+   "text": "That's it for this one. Thanks for hanging out with me."
+  },
+  {
+   "start": 1267.2,
+   "end": 1269.6,
+   "text": "This has been Crime Time Snacks, and I'll catch you next time."
+  }
+ ]
+}
