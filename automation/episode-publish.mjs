@@ -39,6 +39,10 @@ const args = process.argv.slice(2);
 const opt = (n, d) => { const i = args.indexOf(n); return i > -1 && args[i + 1] ? args[i + 1] : d; };
 const id = args.find((a, i) => !a.startsWith("--") && !(args[i - 1] || "").startsWith("--"));
 const pushOnly = args.includes("--push-only");
+// --replace-audio: the episode is already out and its audio has been corrected (episode-repair
+// or a re-render). Same guid, same date and pubDate, so podcast apps see the same episode with
+// a new enclosure rather than a new episode. The audio gate applies exactly as for a first publish.
+const replaceAudio = args.includes("--replace-audio");
 const push = args.includes("--push") || pushOnly;
 const skipFacts = args.includes("--skip-facts");
 const asJson = args.includes("--json");
@@ -71,7 +75,7 @@ const dir = join(DRAFTS, id);
 const epPath = join(dir, "episode.json");
 let ep;
 try { ep = JSON.parse(await readFile(epPath, "utf8")); } catch { die("draft", `No draft ${id}`); }
-if (ep.status === "published" && !pushOnly) die("state", `${id} is already published (${ep.publishedAt}). Use --push-only to retry a push that failed.`);
+if (ep.status === "published" && !pushOnly && !replaceAudio) die("state", `${id} is already published (${ep.publishedAt}). Use --push-only to retry a push that failed.`);
 
 /* ------------------------------------------------- the checks, before any work */
 
@@ -132,7 +136,7 @@ if (!pushOnly) {
     title: ep.title,
     slug,
     date,
-    pubDate: publishedAt(date),
+    pubDate: publishedAt(date),   // overwritten below when replacing audio
     duration: ep.duration || "",
     description: ep.description,
     audio: audioRel,
@@ -148,6 +152,10 @@ if (!pushOnly) {
   // Register in the studio list (source of truth for studio episodes).
   const studio = await loadStudioEpisodes();
   const idx = studio.findIndex((e) => e.slug === slug);
+  if (replaceAudio) {
+    if (idx < 0) die("state", `--replace-audio: ${slug} is not in studio-episodes.json, so there is nothing to replace.`);
+    entry.date = studio[idx].date; entry.pubDate = studio[idx].pubDate;
+  }
   if (idx > -1) studio[idx] = entry; else studio.push(entry);
   await writeFile(STUDIO_EPISODES, JSON.stringify({ _README: "Episodes published from the podcast studio. Merged into episodes.json by import-feed.mjs so the Anchor feed sync never erases them. Edit here, then run build-all.", episodes: studio }, null, 2) + "\n", "utf8");
 
@@ -181,7 +189,7 @@ let pushed = false, gitNote = "", committed = false;
 try {
   if (!pushOnly) {
     sh("git", ["add", "-A", "--", ...STAGE], "git add");
-    if (quiet("git", ["diff", "--cached", "--quiet"]).code !== 0) { sh("git", ["commit", "-m", `Episode: ${ep.title}`], "git commit"); committed = true; }
+    if (quiet("git", ["diff", "--cached", "--quiet"]).code !== 0) { sh("git", ["commit", "-m", replaceAudio ? `Episode audio corrected: ${ep.title}` : `Episode: ${ep.title}`], "git commit"); committed = true; }
     else gitNote = "Nothing changed in the site files; the episode was already registered.";
   }
   if (push) {
@@ -203,7 +211,8 @@ if (!pushOnly) await logImprovement(`Published podcast episode from the studio: 
 ep.status = pushed ? "published" : "committed";
 ep.pushed = pushed;
 ep.gitNote = gitNote;
-if (pushed) ep.publishedAt = new Date().toISOString();
+if (pushed && !replaceAudio) ep.publishedAt = new Date().toISOString();
+if (pushed && replaceAudio) ep.audioReplacedAt = new Date().toISOString();
 ep.publishDate = date;
 ep.pageUrl = `https://www.crimetimesnacks.com/episodes/${slug}.html`;
 await writeFile(epPath, JSON.stringify(ep, null, 2) + "\n", "utf8");
