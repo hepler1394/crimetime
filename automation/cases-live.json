@@ -1,5 +1,5 @@
 {
-  "fetched": "2026-09-19T10:46:53.627Z",
+  "fetched": "2026-09-19T11:09:52.700Z",
   "cases": [
     {
       "slug": "murders-in-moscow",
@@ -615,6 +615,14 @@
     }
   ],
   "updates": [
+    {
+      "case_slug": "jonbenet-ramsey-the-facts-96-22",
+      "happened_on": "2026-09-16",
+      "title": "Netflix schedules premiere date for The Murder of JonBenét Ramsey limited series",
+      "summary": "Netflix announced that its upcoming limited series, \"The Murder of JonBenét Ramsey\" starring Melissa McCarthy and Clive Owen, will premiere globally on December 10, 2026.",
+      "url": "https://www.usatoday.com/story/news/state/georgia/atlanta/2026/09/16/the-murder-of-jonbent-ramsey-is-coming-to-netflix-who-was-she/91789285007/",
+      "source": "USA TODAY"
+    },
     {
       "case_slug": "long-island-serial-killer",
       "happened_on": "2026-09-13",
