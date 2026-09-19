@@ -8,6 +8,7 @@ import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { SITE, APPLE, esc, head, header, footer, tape, scripts } from "./shell.mjs";
+import { thumb } from "./thumbs.mjs";
 
 // Transcript for a slug (automation/transcripts/<slug>.json), if it exists.
 async function loadTranscript(slug) {
@@ -72,7 +73,7 @@ const durISO = (d) => {
 
 function gridCard(p, ep) {
   return `                <article class="episode-card" data-categories="true-crime" data-date="${esc(ep.date || "")}" data-seconds="${durSeconds(ep.duration)}">
-                    <a href="${epUrl(ep)}" aria-label="${esc(ep.title)}"><img src="${esc(ep.image)}" alt="Cover art: ${esc(ep.title)}" class="episode-image" loading="lazy" decoding="async" width="600" height="600"></a>
+                    <a href="${epUrl(ep)}" aria-label="${esc(ep.title)}"><img src="${esc(ep.card || ep.image)}" alt="Cover art: ${esc(ep.title)}" class="episode-image" loading="lazy" decoding="async" width="600" height="600"></a>
                     <div class="episode-content">
                         <div class="episode-badges">
                             <span class="episode-badge">True Crime</span>
@@ -232,7 +233,7 @@ function shareRow(url, title) {
 
 function relatedCard(ep) {
   return `                <a class="episode-card" href="${epUrl(ep)}" style="text-decoration:none;color:inherit;">
-                    <img src="${esc(ep.image)}" alt="${esc(ep.title)}" class="episode-image" loading="lazy" style="height:150px;">
+                    <img src="${esc(ep.card || ep.image)}" alt="${esc(ep.title)}" class="episode-image" loading="lazy" decoding="async" style="height:150px;">
                     <div class="episode-content" style="padding:1rem 1.1rem;">
                         <h3 class="episode-title" style="font-size:1rem;">${esc(ep.title)}</h3>
                         <p class="episode-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> ${esc(fmtDate(ep.date))}</p>
@@ -270,7 +271,7 @@ ${header("episodes")}
     </section>
 
     <div class="container" style="max-width:820px;margin:2.6rem auto;">
-        <img src="${esc(ep.image)}" alt="${esc(ep.title)}" style="width:100%;max-width:440px;display:block;margin:0 auto 2rem;border-radius:16px;border:1px solid var(--cts-line-strong);box-shadow:var(--shadow-2);">
+        <img src="${esc(ep.hero || ep.image)}" alt="${esc(ep.title)}" width="960" height="960" decoding="async" style="width:100%;height:auto;max-width:440px;display:block;margin:0 auto 2rem;border-radius:16px;border:1px solid var(--cts-line-strong);box-shadow:var(--shadow-2);">
         <audio preload="none" controls>
             <source src="${esc(ep.audio)}" type="${esc(ep.audioType)}">
         </audio>
@@ -311,7 +312,7 @@ ${scripts()}
 /* ------------------------------- homepage regions (spotlight + recent grid) */
 function homeRecentCard(p, ep) {
   return `                <div class="episode-card" data-categories="true-crime">
-                    <a href="${epUrl(ep)}" aria-label="${esc(ep.title)}"><img src="${esc(ep.image)}" alt="${esc(ep.title)}" class="episode-image" loading="lazy"></a>
+                    <a href="${epUrl(ep)}" aria-label="${esc(ep.title)}"><img src="${esc(ep.card || ep.image)}" alt="${esc(ep.title)}" class="episode-image" loading="lazy" decoding="async"></a>
                     <div class="episode-content">
                         <div class="episode-badges">
                             <span class="episode-badge">True Crime</span>
@@ -342,7 +343,7 @@ function homeBlock({ podcast: p, episodes }) {
         </div>
         <article class="spotlight">
             <div class="spotlight-media">
-                <img src="${esc(latest.image)}" alt="${esc(latest.title)}" loading="lazy">
+                <img src="${esc(latest.hero || latest.image)}" alt="${esc(latest.title)}" loading="lazy" decoding="async">
             </div>
             <div class="spotlight-body">
                 <div class="episode-badges">
@@ -429,6 +430,8 @@ async function updateHome(data) {
 }
 
 const data = JSON.parse(await readFile(join(__dirname, "episodes.json"), "utf8"));
+// Pages get web-sized covers (thumbs.mjs); ep.image stays the original for Open Graph and JSON-LD.
+for (const ep of data.episodes) { ep.card = await thumb(ep.image, 640); ep.hero = await thumb(ep.image, 960); }
 const sorted = [...data.episodes].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
 await writeFile(join(ROOT, "episodes.html"), page(data), "utf8");
 await mkdir(join(ROOT, "episodes"), { recursive: true });
