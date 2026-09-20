@@ -244,13 +244,24 @@ async function listDrafts() {
 // whether the key is on disk, and leaves actually reaching the box to
 // render-remote.mjs --check, which costs a network round trip.
 async function renderHost() {
+  // fal first: it needs no box of its own, so when the key is there it is the
+  // path a render should take. Only the presence of the key is reported, never
+  // any part of its value.
+  const falKey = await readFile(join(AUTO, ".env.fal"), "utf8").then((t) => /FAL_KEY\s*=\s*\S+/.test(t)).catch(() => false);
+  if (falKey || process.env.FAL_KEY) {
+    return {
+      configured: true, engine: "fal", ready: true, where: "fal (hosted Chatterbox)",
+      message: "Clone renders can go to fal with --fal: same model and reference voice, minutes instead of hours. Runs on this CPU without the flag.",
+    };
+  }
   const cfgPath = join(AUTO, "render-host.json");
   const cfg = await readJson(cfgPath, null);
-  if (!cfg) return { configured: false, where: "this CPU", message: "No GPU host configured; clone renders run on this machine and take hours." };
+  if (!cfg) return { configured: false, engine: "cpu", where: "this CPU", message: "No GPU host or fal key configured; clone renders run on this machine and take hours." };
   const identity = cfg.identity || null;
   const keyPresent = identity ? await access(identity).then(() => true).catch(() => false) : false;
   return {
     configured: true,
+    engine: "ssh",
     where: `${cfg.user || "?"}@${cfg.host || "?"}`,
     workdir: cfg.workdir || "/workspace/cts",
     identity, keyPresent,

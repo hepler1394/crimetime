@@ -134,7 +134,35 @@ py -3.11 -m venv .venv
 .venv\Scripts\python -m pip install chatterbox-tts --extra-index-url https://download.pytorch.org/whl/cpu
 ```
 
-## Renting a GPU for the render
+## Renting the render: fal (the easy one)
+
+`fal-ai/chatterbox/text-to-speech` is the same Resemble model this venv runs, and
+it takes the same knobs: `audio_url` is the reference voice, `exaggeration`, `cfg`
+and `seed` map straight across. No box to rent, no SSH, no CUDA.
+
+```
+node automation/render-fal.mjs --check
+node automation/episode-voice.mjs <draft-id> --fal
+node automation/episode-weekly.mjs --draft <id> --fal
+```
+
+`FAL_KEY` lives in `automation/.env.fal`, gitignored. The chunking in
+`render-fal.mjs` is a transcription of `chunk()` in `tts_clone.py`, not a rewrite:
+verified byte-for-byte identical across the Miami script's 80 paragraphs and 150
+pieces. fal would take whole paragraphs at 5000 characters and taking that offer
+would change the read, so it is deliberately not taken.
+
+Measured 2026-09-19 on identical text at seed 108 (JonBenet repair round 1,
+three paragraphs, 258 words): CPU 212.1 wpm, fal 214.3 wpm. A 1.1% difference
+with per-paragraph swing from -5.1% to +2.0%, so the two engines read at the same
+pace and `episode-length.mjs` needs no separate calibration for fal.
+
+**The audit cannot check the one thing that matters here.** `episode-audit.mjs`
+compares words, not timbre, so it will pass a render in the wrong voice. Before
+switching engines for a published episode, listen to an A/B of the same paragraph
+rendered both ways.
+
+## Renting a GPU box for the render
 
 The clone runs on the CPU because mainpc's RX 5700 XT has no CUDA and the venv's
 torch is a `+cpu` build. That is the whole reason an episode takes about six hours:
