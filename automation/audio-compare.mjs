@@ -3,7 +3,12 @@
 // means and what this cannot hear.
 
 const NUMS = { zero: "0", one: "1", two: "2", three: "3", four: "4", five: "5", six: "6", seven: "7", eight: "8", nine: "9", ten: "10", eleven: "11", twelve: "12", thirteen: "13", fourteen: "14", fifteen: "15", sixteen: "16", seventeen: "17", eighteen: "18", nineteen: "19", twenty: "20", thirty: "30", forty: "40", fifty: "50", sixty: "60", seventy: "70", eighty: "80", ninety: "90", hundred: "100", thousand: "1000" };
-export const tokens = (s) => String(s).toLowerCase().replace(/[’']/g, "").replace(/(\d),(\d)/g, "$1$2").replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter(Boolean).map((w) => NUMS[w] || w.replace(/(\d+)(st|nd|rd|th)$/, "$1"));
+// Accents fold to their base letter BEFORE the strip below, which turns anything
+// outside [a-z0-9] into a space. Without that, "JonBenét's" came apart into
+// "jonben" and "ts", and the audit then reported the script saying "jonben ts"
+// against a transcriber's perfectly good "jonbenese" - a name the show says in
+// every other sentence, flagged on every episode about her.
+export const tokens = (s) => String(s).toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "").replace(/[’']/g, "").replace(/(\d),(\d)/g, "$1$2").replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter(Boolean).map((w) => NUMS[w] || w.replace(/(\d+)(st|nd|rd|th)$/, "$1"));
 
 const SMALL = new Set("a an the of to in on at by for from with as it its is was are were be that this these those they there their he she his her him them and or but so if then than not no".split(" "));
 

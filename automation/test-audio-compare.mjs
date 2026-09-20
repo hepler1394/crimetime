@@ -3,7 +3,7 @@
 // had to be tuned out before the audit could be a publish gate.
 import test from "node:test";
 import assert from "node:assert/strict";
-import { compareWords } from "./audio-compare.mjs";
+import { compareWords, tokens } from "./audio-compare.mjs";
 
 // Turn a sentence into the word list the ASR helper returns. "[x]" marks a low-confidence word.
 const heard = (s) => s.split(/\s+/).map((w, i) => ({ w: w.replace(/[\[\]]/g, ""), s: i * 0.3, p: /^\[/.test(w) ? 0.01 : 0.95 }));
@@ -52,4 +52,12 @@ test("a garbled last word of a paragraph is still caught", () => {
 test("audioOk lets a name through", () => {
   assert.deepEqual(kinds("She worked at a Publix supermarket in North Port", "She worked at a public supermarket in North Port"), ["MISHEARD"]);
   assert.deepEqual(kinds("She worked at a Publix supermarket in North Port", "She worked at a public supermarket in North Port", ["Publix"]), []);
+});
+test("an accented name stays one word", () => {
+  // "JonBenét's" used to come apart into "jonben" and "ts", because the strip that
+  // removes punctuation turned the accented letter into a space. The audit then
+  // reported the script saying "jonben ts" on every episode about her.
+  assert.deepEqual(tokens("JonBenét's"), ["jonbenets"]);
+  assert.deepEqual(tokens("JonBenét"), ["jonbenet"]);
+  assert.deepEqual(kinds("The DNA came from JonBenét's underwear", "The DNA came from JonBenet's underwear"), []);
 });
