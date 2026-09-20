@@ -18,6 +18,31 @@
   },
   "episodes": [
     {
+      "guid": "cts-studio-gilgo-beach-eight-names",
+      "title": "Gilgo Beach: Eight Names",
+      "slug": "gilgo-beach-eight-names",
+      "date": "2026-09-20",
+      "pubDate": "Sun, 20 Sep 2026 13:00:00 GMT",
+      "duration": "00:20:53",
+      "description": "In April 2026, Rex Heuermann was asked how he killed eight women. He gave the same one-word answer each time. Hey everyone, it's Cory. This time on CrimeTimeSnacks: the Gilgo Beach murders from the 911 call that started the search to the guilty plea that ended it. Who the women were, why the case stalled for a decade, the truck and the pizza crust that broke it, and what is still unanswered: Shannan Gilbert, the victim known as Asian Doe, and a mother and daughter whose case turned out to be something else.",
+      "audio": "/audio/gilgo-beach-eight-names.mp3",
+      "audioType": "audio/mpeg",
+      "audioBytes": 20052997,
+      "image": "/images/episodes/gilgo-beach-eight-names.jpg",
+      "link": "",
+      "explicit": false,
+      "source": "studio",
+      "keywords": [
+        "Gilgo Beach",
+        "Long Island Serial Killer",
+        "Rex Heuermann",
+        "Shannan Gilbert",
+        "True crime",
+        "Cold case",
+        "DNA"
+      ]
+    },
+    {
       "guid": "cts-studio-murders-in-moscow-the-plea",
       "title": "Murders in Moscow: The Plea",
       "slug": "murders-in-moscow-the-plea",

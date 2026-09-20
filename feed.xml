@@ -7,7 +7,7 @@
     <title>CrimeTimeSnacks • A True Crime Podcast</title>
     <link>https://www.crimetimesnacks.com/</link>
     <atom:link href="https://www.crimetimesnacks.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 20 Sep 2026 16:14:16 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 20 Sep 2026 17:04:47 GMT</lastBuildDate>
     <language>en</language>
     <copyright>&#169; 2026 Cory</copyright>
     <description>Crime Time Snacks is a true crime podcast that delves into a variety of unsolved cases, exploring the facts, theories, and evidence surrounding each mystery. The podcast aims to provide listeners with a comprehensive understanding of these cases, encouraging them to engage with the content and form their own conclusions.</description>
@@ -22,6 +22,19 @@
     <itunes:image href="https://www.crimetimesnacks.com/images/episodes/show.jpg" />
     <itunes:category text="True Crime" />
     <itunes:explicit>false</itunes:explicit>
+    <item>
+      <title>Gilgo Beach: Eight Names</title>
+      <link>https://www.crimetimesnacks.com/episodes/gilgo-beach-eight-names.html</link>
+      <guid isPermaLink="false">cts-studio-gilgo-beach-eight-names</guid>
+      <pubDate>Sun, 20 Sep 2026 13:00:00 GMT</pubDate>
+      <description>In April 2026, Rex Heuermann was asked how he killed eight women. He gave the same one-word answer each time. Hey everyone, it&apos;s Cory. This time on CrimeTimeSnacks: the Gilgo Beach murders from the 911 call that started the search to the guilty plea that ended it. Who the women were, why the case stalled for a decade, the truck and the pizza crust that broke it, and what is still unanswered: Shannan Gilbert, the victim known as Asian Doe, and a mother and daughter whose case turned out to be something else.</description>
+      <itunes:summary>In April 2026, Rex Heuermann was asked how he killed eight women. He gave the same one-word answer each time. Hey everyone, it&apos;s Cory. This time on CrimeTimeSnacks: the Gilgo Beach murders from the 911 call that started the search to the guilty plea that ended it. Who the women were, why the case stalled for a decade, the truck and the pizza crust that broke it, and what is still unanswered: Shannan Gilbert, the victim known as Asian Doe, and a mother and daughter whose case turned out to be something else.</itunes:summary>
+      <itunes:author>Cory</itunes:author>
+      <itunes:duration>00:20:53</itunes:duration>
+      <enclosure url="https://www.crimetimesnacks.com/audio/gilgo-beach-eight-names.mp3" length="20052997" type="audio/mpeg" />
+      <itunes:image href="https://www.crimetimesnacks.com/images/episodes/gilgo-beach-eight-names.jpg" />
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Murders in Moscow: The Plea</title>
       <link>https://www.crimetimesnacks.com/episodes/murders-in-moscow-the-plea.html</link>
