@@ -113,3 +113,6 @@ automation/render-host.json
 
 # Python bytecode from the studio venv
 __pycache__/
+
+# fal.ai API key for the hosted chatterbox render
+automation/.env.fal

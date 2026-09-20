@@ -120,7 +120,7 @@ try {
 
   // --remote puts both clone renders (the episode and any repair) on the GPU box in
   // render-host.json. Everything else in the run is unchanged and still happens here.
-  const remote = args.includes("--remote") ? ["--remote"] : [];
+  const remote = args.includes("--fal") ? ["--fal"] : args.includes("--remote") ? ["--remote"] : [];
   step("episode-voice.mjs", [draft.id, ...(engine ? ["--engine", engine] : []), ...remote]);
 
   // The audio gate: listen to the render, re-voice the paragraphs the clone got wrong, and only

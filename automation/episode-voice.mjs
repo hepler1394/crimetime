@@ -140,16 +140,24 @@ if (from) {
   // same folder, so joining, mastering, music and the audit are all unchanged,
   // and a half-finished remote run resumes exactly like a half-finished local one.
   const remoteRender = args.includes("--remote");
+  // --fal sends the chunks to fal's hosted Chatterbox, the same Resemble model this
+  // venv runs, with the same reference voice and the same chunking. It is a queue,
+  // so chunks go out in parallel and an episode takes minutes rather than hours.
+  const falRender = args.includes("--fal");
   say(alreadyDone
     ? `Resuming: ${alreadyDone} of ${paras.length} paragraphs are already in your voice.`
-    : remoteRender
-      ? `Cloning ${paras.length} paragraphs in Cory's voice on the render host...`
-      : `Cloning ${paras.length} paragraphs in Cory's voice (CPU; a full episode takes hours)...`);
+    : falRender
+      ? `Cloning ${paras.length} paragraphs in Cory's voice through fal...`
+      : remoteRender
+        ? `Cloning ${paras.length} paragraphs in Cory's voice on the render host...`
+        : `Cloning ${paras.length} paragraphs in Cory's voice (CPU; a full episode takes hours)...`);
   const exaggeration = opt("--exaggeration", String(ep.voice?.exaggeration ?? 0.45));
   const cfg = opt("--cfg", String(ep.voice?.cfg ?? 0.5));
   const stdio = asJson ? "pipe" : ["ignore", "inherit", "pipe"];
   try {
-    if (remoteRender) {
+    if (falRender) {
+      run(process.execPath, [join(__dirname, "render-fal.mjs"), "--ref", REFERENCE, "--jsonl", jsonl, "--outdir", work, "--exaggeration", exaggeration, "--cfg", cfg], "fal render", { stdio });
+    } else if (remoteRender) {
       run(process.execPath, [join(__dirname, "render-remote.mjs"), "--ref", REFERENCE, "--jsonl", jsonl, "--outdir", work, "--exaggeration", exaggeration, "--cfg", cfg, "--device", "cuda"], "remote render", { stdio });
     } else {
       run(VENV_PY, [join(STUDIO, "tts_clone.py"), "--ref", REFERENCE, "--jsonl", jsonl, "--outdir", work, "--exaggeration", exaggeration, "--cfg", cfg], "chatterbox", { stdio, env: { ...process.env, PYTHONIOENCODING: "utf-8" } });
@@ -159,7 +167,7 @@ if (from) {
   const [joined] = await joinParts(parts, work);
   voiceWav = join(work, "voice.wav");
   run("ffmpeg", ["-y", "-v", "error", "-i", joined, "-af", "highpass=f=70,acompressor=threshold=-20dB:ratio=2:attack=8:release=120:makeup=2", voiceWav], "ffmpeg voice");
-  voiceUsed = `cloned (chatterbox, exaggeration ${exaggeration}, cfg ${cfg})${remoteRender ? ", rendered on the GPU host" : ""}`;
+  voiceUsed = `cloned (chatterbox, exaggeration ${exaggeration}, cfg ${cfg})${falRender ? ", rendered on fal" : remoteRender ? ", rendered on the GPU host" : ""}`;
 } else {
   const voice = opt("--voice", ep.voice?.name || "en-US-AndrewNeural");
   const rate = opt("--rate", ep.voice?.rate || "-3%");
