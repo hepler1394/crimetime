@@ -19,6 +19,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join, extname, normalize, basename } from "node:path";
 import { loadEnv } from "../community/env.mjs";
 import { THEMES, normalizeTheme } from "../episode-format.mjs";
+import { calibrate, modelFrom, predictWith } from "../episode-length.mjs";
 import { sb } from "../community/lib.js";
 import { PROJECTS, listProjects, createProject, getProject, appendNote, saveNotes, chatProject, exportProject, projectToResearch, deleteProject } from "./projects.mjs";
 import { ProductionQueue, publicJob } from './job-queue.mjs';
@@ -223,13 +224,43 @@ async function healthNow(slow) {
 async function listDrafts() {
   let dirs = [];
   try { dirs = await readdir(DRAFTS); } catch { return []; }
+  // The pace is measured once for the whole listing, not per draft: calibrate()
+  // reads every draft and every published episode, so doing it inside the loop
+  // would make listing the drafts quadratic.
+  const pace = modelFrom(await calibrate().catch(() => []));
   const outList = [];
   for (const d of dirs) {
     const ep = await readJson(join(DRAFTS, d, "episode.json"), null);
     if (!ep) continue;
-    outList.push({ id: ep.id || d, title: ep.title, status: ep.status, created: ep.created, caseSlug: ep.caseSlug, duration: ep.duration || null, scriptWords: ep.scriptWords, files: ep.files || {}, factsToVerify: (ep.factsToVerify || []).length, publishedAt: ep.publishedAt || null, researched: !!ep.researched || !!ep.files?.research, inProgress: await voiceState(join(DRAFTS, d, "tts"), d) });
+    // What this script will actually run to, before anyone spends hours finding out.
+    const length = ep.duration ? null : predictWith(pace, ep.scriptWords || 0);
+    outList.push({ id: ep.id || d, title: ep.title, status: ep.status, created: ep.created, caseSlug: ep.caseSlug, duration: ep.duration || null, scriptWords: ep.scriptWords, files: ep.files || {}, factsToVerify: (ep.factsToVerify || []).length, publishedAt: ep.publishedAt || null, researched: !!ep.researched || !!ep.files?.research, length, inProgress: await voiceState(join(DRAFTS, d, "tts"), d) });
   }
   return outList.sort((a, b) => (b.created || "").localeCompare(a.created || ""));
+}
+
+// Where a clone render would go right now: this CPU, or the GPU box in
+// render-host.json. Read-only and cheap - it reports what is configured and
+// whether the key is on disk, and leaves actually reaching the box to
+// render-remote.mjs --check, which costs a network round trip.
+async function renderHost() {
+  const cfgPath = join(AUTO, "render-host.json");
+  const cfg = await readJson(cfgPath, null);
+  if (!cfg) return { configured: false, where: "this CPU", message: "No GPU host configured; clone renders run on this machine and take hours." };
+  const identity = cfg.identity || null;
+  const keyPresent = identity ? await access(identity).then(() => true).catch(() => false) : false;
+  return {
+    configured: true,
+    where: `${cfg.user || "?"}@${cfg.host || "?"}`,
+    workdir: cfg.workdir || "/workspace/cts",
+    identity, keyPresent,
+    ready: !!cfg.host && (!identity || keyPresent),
+    message: !cfg.host
+      ? "render-host.json has no host."
+      : identity && !keyPresent
+        ? `Key not found at ${identity}.`
+        : `Clone renders go to ${cfg.user}@${cfg.host}. Run render-remote.mjs --check to confirm the GPU is live.`,
+  };
 }
 async function listFiles(dir) {
   const names = await readdir(dir).catch(() => []);
@@ -500,6 +531,8 @@ const server = createServer(async (req, res) => {
     }
 
     if (p === "/api/health") return json(res, 200, await health());
+    if (p === "/api/render-host") return json(res, 200, await renderHost());
+    if (p === "/api/pace") { const pts = await calibrate().catch(() => []); return json(res, 200, { points: pts, model: modelFrom(pts) }); }
     if (p === "/api/drafts") return json(res, 200, await listDrafts());
 
     /* music: theme beds */

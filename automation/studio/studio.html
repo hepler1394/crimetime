@@ -65,6 +65,12 @@
   .draft b{display:block;font-weight:600;font-size:13px;line-height:1.3}
   .draft span{display:block;font:11px/1.6 var(--mono);color:var(--muted)}
   .pill{display:inline-block;font:500 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:3px 6px;border-radius:3px;background:#1a1a1f;color:var(--muted)}
+  /* Predicted runtime against the twenty-minute floor: plain when it clears,
+     tape yellow when the margin only survives the usual pace, red when the
+     render would be refused. Carries a title, so it reads on hover too. */
+  .len{font-variant-numeric:tabular-nums;color:var(--muted)}
+  .len.thin{color:var(--tape)}
+  .len.bad{color:var(--hot)}
   .pill.scripted{color:var(--tape)} .pill.voiced,.pill.designed{color:#f7f7f8} .pill.ready{background:var(--deep);color:#fff} .pill.published{background:#123d24;color:#9fe3b8}
   details.bl summary{list-style:none;cursor:pointer;font:500 11px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);padding:22px 18px 10px}
   details.bl summary::-webkit-details-marker{display:none}
@@ -422,10 +428,21 @@ async function loadHealth() {
   state.drafts = h.drafts;
   renderDrafts();
 }
+// How long the script will actually run, measured from the episodes already
+// published rather than guessed from a fixed words-per-minute. A script that
+// misses the twenty-minute floor is refused at publish, and finding that out
+// after the render costs the whole render, so it is said here instead.
+function lengthChip(len) {
+  if (!len || !len.words) return "";
+  if (len.willFail) return ` · <b class="len bad" title="Even at the usual pace this runs under twenty minutes and would be refused. Add about ${len.wordsShort} words from research.md.">~${esc(len.expected)}, too short</b>`;
+  if (!len.safe) return ` · <b class="len thin" title="Clears twenty minutes at the usual pace but not at the fastest pace yet seen. About ${len.wordsShort} more words would make it comfortable.">~${esc(len.expected)}, thin</b>`;
+  return ` · <span class="len">~${esc(len.expected)}</span>`;
+}
+
 function renderDrafts() {
   const ul = $("#drafts");
   const q = (state.filter || "").trim().toLowerCase(); const shown = q ? state.drafts.filter((d) => `${d.title} ${d.status} ${d.id}`.toLowerCase().includes(q)) : state.drafts;
-  ul.innerHTML = shown.length ? shown.map((d) => `<li><button class="draft" data-id="${esc(d.id)}" aria-current="${d.id === state.current}"><b>${esc(d.title)}</b><span>${esc(d.created?.slice(0, 10) || "")} · ${d.duration ? esc(d.duration.replace(/^00:/, "")) : `${d.scriptWords || 0} words`} <span class="pill ${esc(d.status)}">${esc(d.status)}</span></span></button></li>`).join("") : `<li style="padding:6px 10px;color:var(--faint);font-size:12.5px">${q ? "No episode matches." : "Nothing in progress."}</li>`;
+  ul.innerHTML = shown.length ? shown.map((d) => `<li><button class="draft" data-id="${esc(d.id)}" aria-current="${d.id === state.current}"><b>${esc(d.title)}</b><span>${esc(d.created?.slice(0, 10) || "")} · ${d.duration ? esc(d.duration.replace(/^00:/, "")) : `${d.scriptWords || 0} words${lengthChip(d.length)}`} <span class="pill ${esc(d.status)}">${esc(d.status)}</span></span></button></li>`).join("") : `<li style="padding:6px 10px;color:var(--faint);font-size:12.5px">${q ? "No episode matches." : "Nothing in progress."}</li>`;
   $("#empty").hidden = state.drafts.length > 0 || !!state.current;
   if (!state.current && state.drafts.length) openDraft(state.drafts[0].id);
   if (!state.drafts.length) $("#editor").hidden = true;
@@ -479,6 +496,8 @@ function renderEditor() {
   const runningFor = (state.job && !state.job.done && state.job.draft === ep.id ? state.job.action : null) || ep.inProgress || null;
   const stopped = !runningFor && ep.voiceStopped ? ep.voiceStopped : null;
   const pub = ep.status === "published";
+  // The measured prediction for this draft, carried on the list entry.
+  const epLen = (state.drafts.find((d) => d.id === ep.id) || {}).length;
   const facts = ep.factsToVerify || []; const checked = ep.factsChecked || [];
   const unchecked = facts.filter((_, i) => !checked[i]).length;
   const unsupported = facts.filter((f, i) => /^UNSUPPORTED:/.test(f) && !checked[i]).length;
@@ -507,7 +526,7 @@ function renderEditor() {
 
   $("#empty").hidden = true; $("#editor").hidden = false;
   $("#editor").innerHTML = `
-    <div class="headrow"><div class="head"><h1>${esc(ep.title)}</h1><div class="meta">${esc(ep.caseTitle && ep.caseTitle !== ep.title ? ep.caseTitle + " · " : "")}<b>${ep.scriptWords || 0} words</b> · about ${Math.max(1, Math.round((ep.scriptWords || 0) / 160))} min${ep.duration ? ` · audio <b>${esc(ep.duration.replace(/^00:/, ""))}</b>` : ""}${ep.chapters?.length ? ` · ${ep.chapters.length} chapters` : ""}${pub ? ` · <b style="color:var(--ok)">published ${esc(ep.publishDate)}</b>` : ""}</div></div>
+    <div class="headrow"><div class="head"><h1>${esc(ep.title)}</h1><div class="meta">${esc(ep.caseTitle && ep.caseTitle !== ep.title ? ep.caseTitle + " · " : "")}<b>${ep.scriptWords || 0} words</b>${epLen ? ` · runs about <b>${esc(epLen.expected)}</b>${epLen.safe ? "" : ` <b class="len ${epLen.willFail ? "bad" : "thin"}" title="${epLen.willFail ? "Under the twenty-minute floor at the usual pace; publish would refuse it." : "Clears the floor at the usual pace but not at the fastest pace yet seen."} Add about ${epLen.wordsShort} words from research.md.">${epLen.willFail ? "too short to publish" : "thin margin"}</b>`}` : ""}${ep.duration ? ` · audio <b>${esc(ep.duration.replace(/^00:/, ""))}</b>` : ""}${ep.chapters?.length ? ` · ${ep.chapters.length} chapters` : ""}${pub ? ` · <b style="color:var(--ok)">published ${esc(ep.publishDate)}</b>` : ""}</div></div>
       <div class="tools"><button class="btn ghost sm" id="btn-folder">Open folder</button>${pub ? "" : `<button class="btn ghost sm" id="btn-delete" ${runningFor ? "disabled" : ""}>Delete</button>`}</div></div>
 
     ${stopped ? `<div class="stopped"><b>The voice render stopped before it finished.</b><p>${esc(stopped)} Nothing else was lost: the script, research and any art are still in the folder. Starting it again re-uses the paragraphs that were already rendered.</p><button class="btn red" data-run="voice">Start the voice again</button></div>` : ""}

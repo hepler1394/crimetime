@@ -134,6 +134,58 @@ py -3.11 -m venv .venv
 .venv\Scripts\python -m pip install chatterbox-tts --extra-index-url https://download.pytorch.org/whl/cpu
 ```
 
+## Renting a GPU for the render
+
+The clone runs on the CPU because mainpc's RX 5700 XT has no CUDA and the venv's
+torch is a `+cpu` build. That is the whole reason an episode takes about six hours:
+JonBenet was 4196 words and 20:42 of audio in 20,707 seconds, roughly 17x slower
+than realtime. A rented NVIDIA box turns that into minutes.
+
+`tts_clone.py --device auto` takes CUDA when the machine has it and CPU otherwise,
+so nothing changes here and the same file renders on a GPU without an edit.
+
+`render-remote.mjs` is a drop-in for `tts_clone.py`: same arguments, same
+`pNNN.wav` in the same folder, so joining, mastering, music and the audit are all
+untouched. It is deliberately provider-agnostic - anything reachable over SSH
+works, so the show is never tied to one vendor's API.
+
+```
+copy automation\render-host.example.json automation\render-host.json   # then edit it
+node automation/render-remote.mjs --check          # is the box up, is CUDA there, is chatterbox installed
+node automation/episode-voice.mjs <draft-id> --remote
+node automation/episode-weekly.mjs --draft <id> --remote   # episode and any repair both go to the box
+```
+
+`render-host.json` is gitignored: it names the box and the private key, so it
+never goes in the repo. Only the paragraphs missing from the draft's `tts/`
+folder are sent, so an interrupted render costs what was left, not the episode.
+
+## How long will it run?
+
+`episode-publish.mjs` refuses anything under twenty minutes, and finding that out
+after the render costs the render. `episode-length.mjs` answers it beforehand,
+from measured pace rather than a guess:
+
+```
+node automation/episode-length.mjs --calibrate     # the curve, and the episodes behind it
+node automation/episode-length.mjs <draft-id>
+```
+
+Every published episode whose draft is still on disk contributes a words-per-minute
+reading taken from the finished mp3, so the theme and bed are counted the way they
+will be next time. The floor is judged against the FASTEST reading seen, not the
+average, because the risk is one-sided: running long is fine, running short does
+not go out. As of 2026-09-19 that is 195.5 wpm typical, 202.3 fastest, and a script
+needs about 4128 words to clear twenty minutes safely.
+
+`episode-weekly.mjs` runs this before the voice step: a thin margin is a warning,
+and a script the ordinary pace cannot carry over the floor stops the run before
+any hours are spent. The studio shows the same number on every draft in the list.
+
+This exists because the Miami script was 4126 words on 2026-09-19 - two words under
+the safe mark, about 20:23 - and nothing would have said so until six hours of CPU
+had already gone.
+
 ## The opener and the sign-off
 
 Every episode starts and ends on the same words. They live in

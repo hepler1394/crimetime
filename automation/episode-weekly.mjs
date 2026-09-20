@@ -102,12 +102,31 @@ try {
   // episode either way, and let the gate decide only whether it goes out.
   const check = step("episode-verify.mjs", [draft.id]);
 
-  step("episode-voice.mjs", [draft.id, ...(engine ? ["--engine", engine] : [])]);
+  // Length preflight. episode-publish.mjs refuses a render under twenty minutes, and
+  // finding that out afterwards costs the whole render. Measure the script against the
+  // pace of the episodes already published and say so now, while the fix is still a
+  // text edit. A thin margin is a warning; a script the ordinary pace cannot carry
+  // over the floor stops the run here rather than spending the hours first.
+  const len = step("episode-length.mjs", [draft.id], { optional: true });
+  if (len && !len.safe) {
+    console.log(`\nLength preflight: ${len.words} words, expected ${len.expected}, worst case ${len.worst}.`);
+    if (len.willFail) {
+      const msg = `${draft.id} is too short to publish: ${len.words} words runs about ${len.expected}, under the twenty-minute floor. Add roughly ${len.wordsShort} words from research.md and run it again. Nothing was rendered.`;
+      await notify(`CrimeTimeSnacks: ${msg}`);
+      throw new Error(msg);
+    }
+    console.log(`  Thin margin (${len.marginSeconds}s in the worst case). Rendering anyway; about ${len.wordsShort} more words would make it comfortable.`);
+  }
+
+  // --remote puts both clone renders (the episode and any repair) on the GPU box in
+  // render-host.json. Everything else in the run is unchanged and still happens here.
+  const remote = args.includes("--remote") ? ["--remote"] : [];
+  step("episode-voice.mjs", [draft.id, ...(engine ? ["--engine", engine] : []), ...remote]);
 
   // The audio gate: listen to the render, re-voice the paragraphs the clone got wrong, and only
   // then cut the reel and trailer from it. episode-publish.mjs refuses an unaudited render.
   let audio = step("episode-audit.mjs", [draft.id]);
-  if (!audio.clean && (audio.paragraphs || []).length) audio = step("episode-repair.mjs", [draft.id]);
+  if (!audio.clean && (audio.paragraphs || []).length) audio = step("episode-repair.mjs", [draft.id, ...remote]);
   step("episode-art.mjs", [draft.id]);
   step("episode-social.mjs", [draft.id]);
 

@@ -81,7 +81,12 @@ for (let r = 1; r <= rounds && remaining.length; r++) {
     say(`Round ${r}: cloning ${toRender.length} paragraph(s) on seed ${7 + 101 * r}...`);
     const jsonl = join(rdir, "paragraphs.jsonl");
     await writeFile(jsonl, toRender.map((i) => JSON.stringify({ i, text: textOf(i).spoken })).join("\n"), "utf8");
-    run(VENV_PY, [join(STUDIO, "tts_clone.py"), "--ref", REFERENCE, "--jsonl", jsonl, "--outdir", rdir, "--exaggeration", String(ep.voice?.exaggeration ?? 0.45), "--cfg", String(ep.voice?.cfg ?? 0.5), "--seed", String(7 + 101 * r)], "chatterbox");
+    // A repair is a clone render too, so it takes the same GPU path when --remote
+    // is on; re-voicing ten paragraphs is the difference between half an hour and
+    // under a minute.
+    const cloneArgs = ["--ref", REFERENCE, "--jsonl", jsonl, "--outdir", rdir, "--exaggeration", String(ep.voice?.exaggeration ?? 0.45), "--cfg", String(ep.voice?.cfg ?? 0.5), "--seed", String(7 + 101 * r)];
+    if (args.includes("--remote")) run(process.execPath, [join(here, "render-remote.mjs"), ...cloneArgs, "--device", "cuda"], "remote render");
+    else run(VENV_PY, [join(STUDIO, "tts_clone.py"), ...cloneArgs], "chatterbox");
   }
   say(`Round ${r}: listening to ${remaining.length} paragraph(s)...`);
   const files = remaining.map((i) => join(rdir, pName(i)));

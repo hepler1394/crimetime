@@ -5,6 +5,7 @@
 //   node automation/episode-voice.mjs <draft-id>                          cloned voice (Cory, via Chatterbox) if the reference exists, else edge-tts
 //   node automation/episode-voice.mjs <draft-id> --engine edge [--voice en-US-AndrewNeural --rate -3% --pitch -2Hz]
 //   node automation/episode-voice.mjs <draft-id> --engine clone [--exaggeration 0.45 --cfg 0.5]
+//   ... --remote          clone on the GPU box in render-host.json instead of this CPU (minutes, not hours)
 //   node automation/episode-voice.mjs <draft-id> --from "C:\path\to\recording.wav"   Cory recorded it: trim the long pauses, master, add music
 //   ... --no-music        skip the music entirely (no intro, outro or bed)
 //   ... --no-bed          keep the intro and outro, drop the bed under the read
@@ -134,19 +135,31 @@ if (from) {
   const jsonl = planPath;
   await writeFile(jsonl, plan, "utf8");
   const alreadyDone = (await readdir(work).catch(() => [])).filter((f) => /^p\d+\.wav$/.test(f)).length;
+  // --remote sends the paragraphs to the GPU box in render-host.json instead of
+  // grinding them out here. It is a straight swap: the same pNNN.wav land in the
+  // same folder, so joining, mastering, music and the audit are all unchanged,
+  // and a half-finished remote run resumes exactly like a half-finished local one.
+  const remoteRender = args.includes("--remote");
   say(alreadyDone
     ? `Resuming: ${alreadyDone} of ${paras.length} paragraphs are already in your voice.`
-    : `Cloning ${paras.length} paragraphs in Cory's voice (CPU; a full episode takes hours)...`);
+    : remoteRender
+      ? `Cloning ${paras.length} paragraphs in Cory's voice on the render host...`
+      : `Cloning ${paras.length} paragraphs in Cory's voice (CPU; a full episode takes hours)...`);
   const exaggeration = opt("--exaggeration", String(ep.voice?.exaggeration ?? 0.45));
   const cfg = opt("--cfg", String(ep.voice?.cfg ?? 0.5));
+  const stdio = asJson ? "pipe" : ["ignore", "inherit", "pipe"];
   try {
-    run(VENV_PY, [join(STUDIO, "tts_clone.py"), "--ref", REFERENCE, "--jsonl", jsonl, "--outdir", work, "--exaggeration", exaggeration, "--cfg", cfg], "chatterbox", { stdio: asJson ? "pipe" : ["ignore", "inherit", "pipe"], env: { ...process.env, PYTHONIOENCODING: "utf-8" } });
+    if (remoteRender) {
+      run(process.execPath, [join(__dirname, "render-remote.mjs"), "--ref", REFERENCE, "--jsonl", jsonl, "--outdir", work, "--exaggeration", exaggeration, "--cfg", cfg, "--device", "cuda"], "remote render", { stdio });
+    } else {
+      run(VENV_PY, [join(STUDIO, "tts_clone.py"), "--ref", REFERENCE, "--jsonl", jsonl, "--outdir", work, "--exaggeration", exaggeration, "--cfg", cfg], "chatterbox", { stdio, env: { ...process.env, PYTHONIOENCODING: "utf-8" } });
+    }
   } catch (e) { die("clone", e.message); }
   const parts = paras.map((_, i) => join(work, `p${String(i).padStart(3, "0")}.wav`));
   const [joined] = await joinParts(parts, work);
   voiceWav = join(work, "voice.wav");
   run("ffmpeg", ["-y", "-v", "error", "-i", joined, "-af", "highpass=f=70,acompressor=threshold=-20dB:ratio=2:attack=8:release=120:makeup=2", voiceWav], "ffmpeg voice");
-  voiceUsed = `cloned (chatterbox, exaggeration ${exaggeration}, cfg ${cfg})`;
+  voiceUsed = `cloned (chatterbox, exaggeration ${exaggeration}, cfg ${cfg})${remoteRender ? ", rendered on the GPU host" : ""}`;
 } else {
   const voice = opt("--voice", ep.voice?.name || "en-US-AndrewNeural");
   const rate = opt("--rate", ep.voice?.rate || "-3%");

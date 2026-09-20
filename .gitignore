@@ -107,3 +107,9 @@ automation/studio/releases/
 
 # YouTube renders of episodes that predate the studio (episode-video.mjs)
 automation/studio/youtube/
+
+# The rented GPU render box: host, user and the path to its private key.
+automation/render-host.json
+
+# Python bytecode from the studio venv
+__pycache__/

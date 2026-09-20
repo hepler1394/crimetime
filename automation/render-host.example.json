@@ -1,0 +1,9 @@
+{
+  "host": "213.0.0.1",
+  "port": 22,
+  "user": "root",
+  "identity": "C:/Users/Cory/.ssh/autopilot_ed25519",
+  "workdir": "/workspace/cts",
+  "python": "python",
+  "setup": "pip install -q chatterbox-tts"
+}
