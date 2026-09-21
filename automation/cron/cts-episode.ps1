@@ -22,8 +22,13 @@ $netHelper = Join-Path $PSScriptRoot "wait-for-network.ps1"
 if (Test-Path $netHelper) { . $netHelper; $null = Wait-ForNetwork -MaxSeconds 600 -LogPath $log }
 $flag = if ($NoPublish) { "--no-publish" } else { "" }
 cmd /c "node automation\episode-weekly.mjs $flag >> ""$log"" 2>&1"
-if ($LASTEXITCODE -eq 0) {
+# Capture it before Add-Content, which clobbers $LASTEXITCODE, and hand it back to Task
+# Scheduler. This used to always exit 0: the run that lost the 2026-09-21 episode is recorded
+# in the task history as Last Result 0, so nothing but cron.log knew it had failed.
+$code = $LASTEXITCODE
+if ($code -eq 0) {
     Add-Content -Path $log -Value "$(Get-Date -Format o)  EPISODE OK" -Encoding UTF8
 } else {
-    Add-Content -Path $log -Value "$(Get-Date -Format o)  EPISODE ERROR  node exited $LASTEXITCODE (read the lines above)" -Encoding UTF8
+    Add-Content -Path $log -Value "$(Get-Date -Format o)  EPISODE ERROR  node exited $code (read the lines above)" -Encoding UTF8
+    exit $code
 }

@@ -21,8 +21,11 @@ Add-Content -Path $log -Value "$(Get-Date -Format o)  CONTENT START" -Encoding U
 $netHelper = Join-Path $PSScriptRoot "wait-for-network.ps1"
 if (Test-Path $netHelper) { . $netHelper; $null = Wait-ForNetwork -MaxSeconds 600 -LogPath $log }
 cmd /c "node automation\weekly-update.mjs --commit --push >> ""$log"" 2>&1"
-if ($LASTEXITCODE -eq 0) {
+# Captured before Add-Content clobbers it, and handed back so the task history is honest.
+$code = $LASTEXITCODE
+if ($code -eq 0) {
     Add-Content -Path $log -Value "$(Get-Date -Format o)  CONTENT OK" -Encoding UTF8
 } else {
-    Add-Content -Path $log -Value "$(Get-Date -Format o)  CONTENT ERROR  node exited $LASTEXITCODE (read the lines above)" -Encoding UTF8
+    Add-Content -Path $log -Value "$(Get-Date -Format o)  CONTENT ERROR  node exited $code (read the lines above)" -Encoding UTF8
+    exit $code
 }
