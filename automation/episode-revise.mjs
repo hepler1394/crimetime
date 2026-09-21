@@ -3,6 +3,7 @@
 // script instead of leaving the episode held for a person.
 //
 //   node automation/episode-revise.mjs <draft-id> [--rounds 2] [--json]
+//   node automation/episode-revise.mjs <draft-id> --repeats      cut the scenes it tells twice
 //
 // For each chapter that has unsupported claims, the writer gets the chapter, the list of what
 // is wrong with it (the checker's own note says what the research actually supports), and the
@@ -21,6 +22,7 @@ import { readFile, writeFile, copyFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { chat, loadConfig } from "./llm.mjs";
+import { findRepeats } from "./script-repeats.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const args = process.argv.slice(2);
@@ -30,7 +32,7 @@ const asJson = args.includes("--json");
 const out = (o) => console.log(asJson ? JSON.stringify(o) : (o.message || JSON.stringify(o)));
 const die = (step, message) => { out({ ok: false, step, message }); process.exit(2); };
 const say = (m) => { if (!asJson) console.log(m); };
-if (!id) die("args", "usage: episode-revise.mjs <draft-id> [--rounds 2]");
+if (!id) die("args", "usage: episode-revise.mjs <draft-id> [--rounds 2] [--repeats]");
 
 const dir = join(here, "studio", "drafts", id);
 const epPath = join(dir, "episode.json");
@@ -49,6 +51,72 @@ async function check(paras) {
   const { text } = await chat(`You are a fact-checker. You get RESEARCH NOTES and a SCRIPT CHAPTER. List every specific factual claim in the chapter (names, dates, counts, places, quotes, sequence of events). For each, decide if the notes support it. Output ONLY a JSON object: {"claims": [{"claim": string, "supported": boolean, "note": string (for unsupported claims: what the notes actually say, or "not in notes")}]}. Be strict: a claim is supported only if the notes state it.`,
     `RESEARCH NOTES:\n${research.slice(0, 200000)}\n\nSCRIPT CHAPTER:\n${body}`, { ...cfg, jsonMode: true });
   return (parse(text).claims || []).filter((c) => c && c.claim);
+}
+
+/* ------------------------------------------------------------------- --repeats */
+// The repetition preflight in episode-weekly.mjs stops the run before the render when a script
+// tells its scenes twice. That is only worth doing if there is a way through it: on 2026-09-21
+// it held the Elisa Lam episode at 9.0% and the alternative was handing Cory twenty-five
+// paragraph numbers, which is the checklist the whole pipeline exists to avoid.
+//
+// This cuts the SECOND telling, never the first, and it may only delete or compress. A
+// paragraph usually carries something new alongside the retread, so the instruction is to keep
+// that and lose the repetition rather than drop the paragraph.
+if (args.includes("--repeats")) {
+  const script = [...ep.script];
+  const chapters = (ep.chapters || []).map((c) => ({ ...c }));
+  const paraChapter = (pi) => chapters.findIndex((c) => pi >= c.start && pi < c.start + c.paragraphs);
+  const before = findRepeats(script.filter(Boolean));
+  if (before.verdict === "clean") {
+    out({ ok: true, id, words: ep.scriptWords, share: +before.share.toFixed(3), revised: 0, message: `${id} does not repeat itself (${(before.share * 100).toFixed(1)}%). Nothing to do.` });
+    process.exit(0);
+  }
+  say(`${id}: ${before.retold} of ${before.sentences} sentences retell an earlier one (${(before.share * 100).toFixed(1)}%).`);
+
+  let touched = 0;
+  for (let r = 1; r <= rounds; r++) {
+    const found = findRepeats(script.filter(Boolean));
+    if (found.verdict !== "edit before voicing") break;
+    // Worst first, and one paragraph at a time so a bad rewrite cannot take the episode with it.
+    const worst = Object.entries(found.byPara).map(([pi, ps]) => ({ pi: +pi, ps }))
+      .sort((a, b) => Math.max(...b.ps.map((p) => p.score)) - Math.max(...a.ps.map((p) => p.score)));
+    say(`Round ${r}: ${worst.length} paragraph(s) retell something earlier.`);
+    for (const { pi, ps } of worst) {
+      const original = script[pi];
+      if (!original) continue;
+      const { text } = await chat(`You edit the spoken script for CrimeTimeSnacks, a true crime podcast hosted by Cory. Voice guide:\n\n${voice}\n\nYou are given one paragraph from late in the script, and the earlier sentences it repeats. The audience has already heard those earlier sentences. Remove the repetition from this paragraph: delete the retold sentence, or cut it down to a short reference that assumes the listener remembers. Keep every fact and every sentence that is NOT a repeat, word for word. Add nothing. Do not replace the repetition with new material to hold the length. If the whole paragraph is a repeat, return an empty string. Keep it spoken and in first person, and keep these two lines exactly if they appear: "${OPENER}" and "${OUTRO}". Output ONLY a JSON object: {"paragraph": string}.`,
+        `ALREADY SAID EARLIER:\n${ps.map((p, i) => `${i + 1}. ${p.first.t}`).join("\n")}\n\nTHE SENTENCES IN THIS PARAGRAPH THAT REPEAT THEM:\n${ps.map((p, i) => `${i + 1}. ${p.again.t}`).join("\n")}\n\nPARAGRAPH TO EDIT:\n${JSON.stringify(original)}`,
+        { ...cfg, jsonMode: true, role: "writer" });
+      let next = parse(text).paragraph;
+      if (next == null) continue;
+      next = String(next).replace(/\s+/g, " ").trim();
+      if (next === original) continue;
+      // A rewrite that grew is not a cut, and one that kept the repeat is no use either.
+      if (next.length > original.length) { say(`  paragraph ${pi}: rewrite came back longer; left alone.`); continue; }
+      script[pi] = next;
+      touched++;
+      say(`  paragraph ${pi}: ${original.split(/\s+/).length} -> ${next ? next.split(/\s+/).length : 0} words`);
+    }
+  }
+
+  // Empty paragraphs come out, and the chapter marks move with them.
+  for (let pi = script.length - 1; pi >= 0; pi--) {
+    if (String(script[pi]).trim()) continue;
+    const n = paraChapter(pi);
+    if (n > -1) { chapters[n].paragraphs--; for (let m = n + 1; m < chapters.length; m++) chapters[m].start--; }
+    script.splice(pi, 1);
+  }
+  const kept = chapters.filter((c) => c.paragraphs > 0);
+  const after = findRepeats(script);
+  const words = script.join(" ").split(/\s+/).filter(Boolean).length;
+  await copyFile(epPath, join(dir, "episode.json.bak-repeats"));
+  const freshR = JSON.parse(await readFile(epPath, "utf8"));
+  Object.assign(freshR, { script, chapters: kept, scriptWords: words, edited: new Date().toISOString() });
+  await writeFile(epPath, JSON.stringify(freshR, null, 2) + "\n", "utf8");
+  out({ ok: true, id, words, revised: touched, share: +after.share.toFixed(3), verdict: after.verdict,
+    was: +before.share.toFixed(3), wordsBefore: ep.scriptWords,
+    message: `Cut the repetition in ${id}: ${touched} paragraph(s) edited, ${(before.share * 100).toFixed(1)}% -> ${(after.share * 100).toFixed(1)}% (${after.verdict}). ${ep.scriptWords} -> ${words} words.` });
+  process.exit(0);
 }
 
 // The stored list is sorted with UNSUPPORTED first and carries no chapter number, so start by

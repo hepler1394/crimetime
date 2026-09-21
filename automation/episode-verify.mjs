@@ -85,11 +85,26 @@ const noteWordSets = noteSentences.map((s) => new Set(words(s)));
 
 // The load-bearing parts of a claim: proper names, numbers, dates, quoted phrases. A claim
 // can only be ticked when every one of these is somewhere in the notes.
+// Ranks and honorifics. The notes and the script rarely agree on how to write one.
+const TITLE = /^(sgt|sergeant|det|detective|officer|ofc|judge|justice|dr|doctor|prof|professor|capt|captain|lt|lieutenant|cmdr|commander|chief|deputy|sheriff|mr|mister|mrs|ms|miss|madam|madame|rev|reverend|father|coroner|attorney|mayor|governor|senator|congressman|congresswoman|agent|inspector|constable|commissioner|marshal|warden|nurse|paramedic)\.?$/i;
+
 function distinctive(claim) {
   const outSet = new Set();
   for (const m of claim.matchAll(/\b\d[\d,.:\/]*\b/g)) outSet.add(m[0].replace(/[,.]$/, "").replace(/,/g, ""));
   for (const m of claim.matchAll(/\b([A-Z][a-z]{2,}(?:\s+[A-Z][a-z.]+){0,3})\b/g)) {
     if (/^(The|This|That|These|Those|He|She|They|It|A|An|In|On|At|By|For|From|With|And|But|His|Her|Their|Its|After|Before|During|When|While|Police|Investigators|Prosecutors|Defense|Defence|Court|Judge|State|Notes|Every|Both|What|Where|Chapter|Studies|Another|One|Some|Many|Several|Later|Then|There|According|Researchers|Coverage|Accounts|Hours|Days|Weeks|Months|Years|Nobody|Nothing|Neither|Serious|Panelist|Critics|Friends|Visitors)\b/.test(m[1])) continue;
+    // A capital at the start of a sentence says nothing about whether the word is a name, and
+    // the list above is thirty-odd attempts to say so one word at a time. On 2026-09-21 the
+    // Elisa Lam episode was held on "Officers" and on "Former" - "Officers searched the
+    // premises", where the notes say "Police searched the hotel", and "Former hotel manager
+    // Amy Price", where the notes name Amy Price three times. Both claims are fully supported.
+    //
+    // So a LONE capitalised word opening a sentence is not treated as distinctive. A name that
+    // opens a sentence is no longer checked by this rule - the drafter's own fact-checker and
+    // the word-overlap check both still see it - and that is the price of the rule not firing
+    // on ordinary words the notes happen to phrase differently.
+    const opensSentence = m.index === 0 || /[.!?]["')\]]?\s+$/.test(claim.slice(0, m.index));
+    if (opensSentence && !/\s/.test(m[1])) continue;
     outSet.add(m[1]);
   }
   for (const m of claim.matchAll(/"([^"]{4,60})"/g)) outSet.add(m[1]);
@@ -145,7 +160,13 @@ const results = claims.map((claim, i) => {
     }
     if (notes.includes(n)) return true;
     const parts = n.split(/\s+/).filter(Boolean);
-    return parts.length > 1 && parts.every((p) => notes.includes(p));
+    if (parts.length <= 1) return false;
+    if (parts.every((p) => notes.includes(p))) return true;
+    // A rank or an honorific is not part of the identity, and the notes abbreviate where the
+    // script spells out. "Sergeant Rudy Lopez stated..." was held because the notes say
+    // "Sgt. Rudy Lopez said later" - the man is named, the word "Sergeant" is not there.
+    const named = parts.filter((p) => !TITLE.test(p));
+    return named.length > 0 && named.length < parts.length && named.every((p) => notes.includes(p));
   };
   const missing = distinctive(text).filter((t) => !found(t));
   if (missing.length) {

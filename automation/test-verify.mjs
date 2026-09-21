@@ -124,6 +124,31 @@ test("writes the ticks and a readable report, and --dry writes nothing", async (
   assert.match(await readFile(join(dir, "fact-check.md"), "utf8"), /contradict another line/);
 });
 
+// Both cases are real holds from the 2026-09-21 Elisa Lam draft, where the notes supported the
+// claim outright and the gate held it on a word that is not a name.
+test("a capital that only opens a sentence is not a name", async () => {
+  // "Officers searched the premises", where the notes say "Police searched the hotel"; and
+  // "Former hotel manager Amy Price", where the notes name Amy Price three times.
+  const r = await runVerify([
+    "Officers recovered a rag from the loading dock at the Hollis Street warehouse.",
+    "Former prosecutors said the fire caused 1.2 million dollars of damage.",
+  ]);
+  assert.equal(r.held, 0, `held: ${JSON.stringify(r.heldClaims?.map((c) => c.reason))}`);
+  // A name in the middle of a sentence is still checked, so a wrong one is still caught.
+  const wrong = await runVerify(["The rag was recovered by Marcus Delacroix at the warehouse."]);
+  assert.equal(wrong.held, 1);
+});
+
+test("a rank is not part of the name", async () => {
+  // The script spells out what the notes abbreviate: "Sergeant Rudy Lopez" against "Sgt. Rudy
+  // Lopez". The man is named in the notes; the word "Sergeant" is not.
+  const r = await runVerify(["Whitfield's lawyer Mister Robert Ellis Vance said his client was at home that night."]);
+  assert.equal(r.held, 0, `held: ${JSON.stringify(r.heldClaims?.map((c) => c.reason))}`);
+  // Dropping the title must not drop the name with it.
+  const wrong = await runVerify(["Whitfield's lawyer Detective Harold Bramwell said his client was at home."]);
+  assert.equal(wrong.held, 1);
+});
+
 test("refuses a draft with no research notes rather than passing it", async () => {
   await mkdir(dir, { recursive: true });
   await rm(join(dir, "research.md"), { force: true });
