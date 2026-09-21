@@ -14,6 +14,11 @@ function Log($msg) { Add-Content -Path $log -Value "$(Get-Date -Format o)  $msg"
 function Run($cmd) { cmd /c "$cmd >> ""$log"" 2>&1"; return $LASTEXITCODE }
 
 Log "FEEDSYNC START"
+
+# The network is not always up when the task fires, and a job that does not wait for it
+# loses the whole run. See wait-for-network.ps1.
+$netHelper = Join-Path $PSScriptRoot "wait-for-network.ps1"
+if (Test-Path $netHelper) { . $netHelper; $null = Wait-ForNetwork -MaxSeconds 600 -LogPath $log }
 if ((Run "git pull --rebase --autostash") -ne 0) { Log "FEEDSYNC ERROR  git pull --rebase failed; tree is out of sync with origin"; exit 1 }
 Run "node automation\import-feed.mjs" | Out-Null
 Run "node automation\import-fbi.mjs"  | Out-Null

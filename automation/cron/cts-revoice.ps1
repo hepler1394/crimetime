@@ -51,6 +51,11 @@ $log  = Join-Path $repo "automation\cron\cron.log"
 Set-Location $repo
 Add-Content -Path $log -Value "$(Get-Date -Format o)  REVOICE START $Id" -Encoding UTF8
 
+# The network is not always up when the task fires, and a job that does not wait for it
+# loses the whole run. See wait-for-network.ps1.
+$netHelper = Join-Path $PSScriptRoot "wait-for-network.ps1"
+if (Test-Path $netHelper) { . $netHelper; $null = Wait-ForNetwork -MaxSeconds 600 -LogPath $log }
+
 $themeArg = if ($Theme) { "--theme $Theme" } else { "" }
 cmd /c "node automation\episode-voice.mjs $Id $themeArg >> ""$log"" 2>&1"
 $code = $LASTEXITCODE

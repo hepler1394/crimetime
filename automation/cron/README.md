@@ -10,6 +10,28 @@ schedule.
 | Feed sync | **GitHub Actions** — `.github/workflows/sync.yml` | Every 6 hours | New podcast episodes + FBI live board, publish only if changed |
 | Episode draft | **This PC** — `cts-episode.ps1` | Mon 08:00 | Next case from `cases.json`: script, voice, art, Instagram kit, then a Telegram note. Publish stays a click in the studio (see `../STUDIO.md`) |
 
+## Every job waits for the network first
+
+A scheduled task fires at its minute whether or not the machine is on the network
+yet, and these jobs all reach for it immediately. Twice in four days that cost a
+whole run:
+
+- **2026-09-18 09:00** — content run died on `Could not resolve host: github.com`.
+- **2026-09-21 08:00** — Monday episode died three minutes in, `fetch failed` from
+  both Gemini and Anthropic. No episode was drafted that week.
+
+Both worked by hand the same day. It was DNS, not the providers.
+
+`wait-for-network.ps1` is dot-sourced by every wrapper and blocks until github.com
+resolves and answers on 443, up to ten minutes, logging how long it waited. A real
+outage still fails, just later and with a line saying so.
+
+It is built on `[System.Net.Dns]` and `TcpClient` rather than `Resolve-DnsName`
+on purpose: PowerShell 5.1 turns a failed cmdlet's error stream into a fatal error,
+which is the same class of bug as the `cmd /c` rule below. Verified on 5.1.26100
+that a DNS failure inside it is caught and non-fatal even under
+`$ErrorActionPreference = 'Stop'`.
+
 ## One owner per job — do not duplicate
 
 From 2026-07-17 to 2026-08-26 both sides ran both jobs, and `main` split in two:

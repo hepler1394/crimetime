@@ -571,3 +571,4 @@ with an [auto] tag — the counter on Mission Control reads this file.
 505. [auto 2026-09-19] Published podcast episode from the studio: "Delphi: The Appeal" (00:20:11)
 506. [auto 2026-09-20] Published podcast episode from the studio: "Gilgo Beach: Eight Names" (00:20:53)
 507. [auto 2026-09-21] Published podcast episode from the studio: "The Miami Apartment Stabbing" (00:21:12)
+508. [auto 2026-09-21] Published podcast episode from the studio: "JonBenet Ramsey: Thirty Years" (00:20:43)

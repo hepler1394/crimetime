@@ -8,6 +8,11 @@ $repo = "D:\dev\github\crimetime"
 $log  = Join-Path $repo "automation\cron\cron.log"
 Set-Location $repo
 "$(Get-Date -Format o)  WEEKLY START" | Add-Content $log
+
+# The network is not always up when the task fires, and a job that does not wait for it
+# loses the whole run. See wait-for-network.ps1.
+$netHelper = Join-Path $PSScriptRoot "wait-for-network.ps1"
+if (Test-Path $netHelper) { . $netHelper; $null = Wait-ForNetwork -MaxSeconds 600 -LogPath $log }
 try {
     & node "automation/weekly-update.mjs" --commit --push *>> $log
     "$(Get-Date -Format o)  WEEKLY OK" | Add-Content $log
