@@ -97,7 +97,12 @@ try {
 
   // 2b. The audio gate: listen to the render and re-voice what the clone got wrong.
   let audio = step("episode-audit.mjs", [id]);
-  if (!audio.clean && (audio.paragraphs || []).length) audio = step("episode-repair.mjs", [id]);
+  if (!audio.clean && (audio.paragraphs || []).length) {
+    const fixed = step("episode-repair.mjs", [id]);
+    // A splice makes a different file, and the audio that goes out has to be the audio that was
+    // audited. Re-audit the render the repair produced; that is also what cuts its digest.
+    audio = (fixed.repaired || fixed.dropped) ? step("episode-audit.mjs", [id]) : fixed;
+  }
   if (!audio.clean) {
     const ep = JSON.parse(await readFile(epPath, "utf8"));
     const msg = `CrimeTimeSnacks: "${ep.title}" is built but NOT published. The audio audit still hears a problem after the automatic re-voice (paragraphs ${(audio.unresolved || audio.paragraphs || []).join(", ") || "levels"}). See automation/studio/drafts/${id}/audio-audit.md`;

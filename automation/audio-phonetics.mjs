@@ -13,6 +13,13 @@
 // What it must NOT do is swallow a real mispronunciation. The case that defines the floor is
 // "Capital One" read as "Capra One", live on Apple Podcasts for six days: KPTL against KPR,
 // still two different words here, still reported.
+//
+// Where it is deliberately loose: one consonant out of a word of eight letters or more is
+// forgiven, because that is what the transcriber does to a surname it has never seen - the
+// Moscow episode alone produced "Kohberger" as "cobreter", "kolberger" and "koberter". The cost
+// of that rule is a pair like "defendant" and "defended", which it will not report. That is a
+// real hole and it is a smaller one than holding finished episodes on people's names, which is
+// what happened on 2026-09-20.
 
 // Letters that carry no sound at the front of a word.
 const HEAD = [[/^(kn|gn|pn|ps)/, (m) => m[1]], [/^wr/, () => "r"], [/^wh/, () => "w"], [/^x/, () => "z"]];
@@ -56,7 +63,7 @@ export function soundKeys(word) {
     if (two === "gh") { push(i > 0 && /[aeiou]/.test(w[i - 1]) ? ["", "f"] : ["k"]); i += 2; continue; }
     if (two === "ch") { push(["X", "k"]); i += 2; continue; }
     if (two === "sh") { push(["X"]); i += 2; continue; }
-    if (two === "th") { push(["0"]); i += 2; continue; }
+    if (two === "th") { push(["0", "t"]); i += 2; continue; }        // Thomas, Thames, thyme
     if (two === "ck") { push(["k"]); i += 2; continue; }
     if (two === "dg") { push(["j"]); i += 2; continue; }
     if (two === "qu") { push(["kw"]); i += 2; continue; }
@@ -93,7 +100,31 @@ export function sameSound(a, b) {
   if (a.length < 4 || b.length < 4) return false;
   const A = soundKeys(a), B = soundKeys(b);
   for (const k of A) if (k && B.has(k)) return true;
+  // One consonant out of a long word is a transcriber losing a syllable in something it has
+  // never seen - "centimorgans" written "cinamorgans". A long word carries enough of itself
+  // that one slip is not a mispronunciation. Short words get no such benefit, and two slips
+  // get none at all, which is what keeps "capital" and "capra" apart (KPTL against KPR).
+  if (Math.min(a.length, b.length) < 8) return false;
+  for (const k of A) for (const j of B) if (k && j && oneEdit(k, j)) return true;
   return false;
+}
+
+// Exactly one insertion, deletion or substitution apart.
+function oneEdit(a, b) {
+  if (Math.abs(a.length - b.length) > 1) return false;
+  if (a.length === b.length) {
+    let diff = 0;
+    for (let i = 0; i < a.length; i++) if (a[i] !== b[i] && ++diff > 1) return false;
+    return diff === 1;
+  }
+  const [s, l] = a.length < b.length ? [a, b] : [b, a];
+  let i = 0, j = 0, skipped = false;
+  while (i < s.length && j < l.length) {
+    if (s[i] === l[j]) { i++; j++; continue; }
+    if (skipped) return false;
+    skipped = true; j++;
+  }
+  return true;
 }
 
 // A reduction of the script's words, not a different reading of them.

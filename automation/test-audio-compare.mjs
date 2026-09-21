@@ -84,6 +84,17 @@ test("a name that contains a number is still checked", () => {
   // And a difference that really is only about how a number was written is still forgiven.
   assert.deepEqual(kinds("He took out more than a thousand dollars that week", "He took out more than $1,000 that week"), []);
   assert.deepEqual(kinds("the Turner Guilford Knight Correctional Center on Sixth Street", "the Turner Guilford night Correctional Center on 6th Street"), []);
+  // Forms tokens() has no digit for, and the wreckage of "a.m." after the punctuation goes.
+  assert.deepEqual(kinds("four women in their twenties named Shannan and Megan", "four women in their 20s named Shannon and Megan"), []);
+  assert.deepEqual(kinds("victims ranged from their twenties to their mid forties", "victims ranged from their 20s to their mid 40s"), []);
+  assert.deepEqual(kinds("at 3:00 a.m. Xana and Ethan returned", "at 3 am Zana and Ethan returned"), []);
+});
+test("a surname the transcriber has never seen is not a mispronunciation", () => {
+  // One episode produced "Kohberger" as "cobreter", "kolberger" and "koberter". One consonant
+  // out of a long word is forgiven; two is not, which is what keeps Capital and Capra apart.
+  assert.deepEqual(kinds("prosecutors said Kohberger drove past the house that night", "prosecutors said cobreter drove past the house that night"), []);
+  assert.deepEqual(kinds("the sample showed centimorgans shared with the suspect", "the sample showed cinamorgans shared with the suspect"), []);
+  assert.deepEqual(kinds("a Denver reporter named Tomas Hoppough covered it", "a Denver reporter named Thomas Hoppow covered it"), []);
 });
 test("the mispronunciation that started all of this is still caught", () => {
   // If any of the rules above ever swallow this, the gate is worthless.

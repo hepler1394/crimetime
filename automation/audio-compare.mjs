@@ -17,6 +17,11 @@ const NUMS = { zero: "0", one: "1", two: "2", three: "3", four: "4", five: "5", 
 // every other sentence, flagged on every episode about her.
 export const tokens = (s) => String(s).toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "").replace(/[’']/g, "").replace(/(\d),(\d)/g, "$1$2").replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter(Boolean).map((w) => NUMS[w] || w.replace(/(\d+)(st|nd|rd|th)$/, "$1"));
 
+// A number however it is written. tokens() already turns "twenty" into "20", but not the forms
+// it has no digit for - "twenties", "forties", "fifteenth" - and those have to count as numbers
+// too, or "women in their twenties" against "women in their 20s" reads as a mispronunciation.
+const NUMBERISH = /\d|^(zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|(thir|four|fif|six|seven|eigh|nine)teen|(twen|thir|for|fif|six|seven|eigh|nine)t(y|ies|ieth)|hundred|thousand|million|billion|am|pm|oclock|first|second|third|(four|fif|six|seven|eigh|nin|ten|eleven|twelf)th)s?$/;
+
 const SMALL = new Set("a an the of to in on at by for from with as it its is was are were be that this these those they there their he she his her him them and or but so if then than not no".split(" "));
 
 // Consonant skeleton: what is left when spelling guesses are taken out. "laundrie" and
@@ -83,7 +88,8 @@ export function compareWords(paras, heardWords, audioOk = []) {
     // without ever being considered - the exact shape of the failure this gate exists for.
     // Judge what is left with the numbers and the small words taken out.
     if (/\d/.test(sJoin) || /\d/.test(hJoin)) {
-      const core = (ws) => ws.filter((w) => !/\d/.test(w) && !SMALL.has(w));
+      // A lone letter is what is left of "a.m." after the punctuation goes; it is not evidence.
+      const core = (ws) => ws.filter((w) => w.length > 1 && !NUMBERISH.test(w) && !SMALL.has(w));
       const sc = core(d.script), hc = core(d.heard.map((x) => x.w));
       if (!sc.length || !hc.length || sc.join(" ") === hc.join(" ")) continue;
       if (sc.length === hc.length && sc.every((w, n) => same(w, hc[n]) || allowed(w))) continue;
