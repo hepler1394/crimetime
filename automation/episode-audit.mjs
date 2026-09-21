@@ -40,7 +40,7 @@
 //
 // Do not run this while a clone render is going: both want every core.
 
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, writeFile, stat } from "node:fs/promises";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
@@ -87,8 +87,17 @@ for (const m of sd.matchAll(/silence_start: ([\d.]+)[\s\S]*?silence_duration: ([
 
 /* ------------------------------------------------------------------- 2. words */
 let asr;
-if (opt("--asr")) asr = JSON.parse(await readFile(opt("--asr"), "utf8"));
-else {
+if (opt("--asr")) {
+  // A transcript older than the voice track is a transcript of a different render, and an audit
+  // built on one certifies audio it never heard. episode-publish.mjs only checks that the audit
+  // RECORD is newer than the mp3, so it cannot catch this; several published episodes carry a
+  // clean record produced exactly this way. Reuse a transcript only when it is of this render.
+  const { mtimeMs: asrAt } = await stat(opt("--asr"));
+  const { mtimeMs: voiceAt } = await stat(voice);
+  if (asrAt < voiceAt - 5000 && !args.includes("--force-asr"))
+    die("asr", `${opt("--asr")} is older than voice.wav, so it is a transcript of an earlier render. Drop --asr to listen to this one, or pass --force-asr if you are certain.`);
+  asr = JSON.parse(await readFile(opt("--asr"), "utf8"));
+} else {
   say("Transcribing the dry voice with faster-whisper medium.en (about as long as the episode on this CPU)...");
   const tmp = join(dir, "audit-words.json");
   const r = spawnSync("python", [join(STUDIO, "asr_words.py"), voice, tmp], { encoding: "utf8", windowsHide: true, env: { ...process.env, PYTHONIOENCODING: "utf-8" }, maxBuffer: 64 * 1024 * 1024 });

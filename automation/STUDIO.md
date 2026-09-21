@@ -371,6 +371,12 @@ claim in it had passed the fact gate.
     node automation/episode-audit.mjs <draft-id> --asr audit-words.json   reuse a transcript
     node automation/episode-audit.mjs <draft-id> --no-confirm --no-delivery --no-digest
 
+`--asr` is refused if the transcript is older than `voice.wav`, because a transcript of
+an earlier render certifies audio this run never heard. `episode-publish.mjs` cannot
+catch that on its own - it only checks that the audit RECORD is newer than the mp3 -
+and several episodes went out carrying a clean record made exactly that way.
+`--force-asr` overrides it.
+
 Four passes:
 
 1. **Levels** on `episode.mp3`: integrated loudness, true peak, length, dead air.
