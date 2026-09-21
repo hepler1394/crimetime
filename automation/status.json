@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-21T02:23:56.203Z",
-  "improvementsShipped": 506,
+  "generated": "2026-09-21T02:38:26.840Z",
+  "improvementsShipped": 507,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
     "content": [
@@ -10,7 +10,7 @@
     "sync": "Every 6 hours"
   },
   "counts": {
-    "episodes": 14,
+    "episodes": 15,
     "posts": 17,
     "merchDesigns": 33,
     "merchCollection": 0,
@@ -36,7 +36,7 @@
     }
   },
   "freshness": {
-    "episodesJson": "2026-09-21T02:23:52.143Z",
+    "episodesJson": "2026-09-21T02:38:22.531Z",
     "blogJson": "2026-09-18T23:59:23.269Z",
     "merchJson": "2026-09-15T14:02:27.587Z",
     "quizzesJson": "2026-09-15T14:02:30.387Z",

@@ -1,5 +1,5 @@
 {
-  "fetched": "2026-09-21T02:23:55.654Z",
+  "fetched": "2026-09-21T02:38:26.177Z",
   "cases": [
     {
       "slug": "moscow-idaho-the-plea",
@@ -16,7 +16,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "jonbenet-thirty-years",
@@ -28,12 +28,12 @@
       "category": "case",
       "next_date": null,
       "next_label": "",
-      "image": "",
-      "episode_slug": "",
+      "image": "/images/episodes/jonbenet-ramsey-thirty-years.jpg",
+      "episode_slug": "jonbenet-ramsey-thirty-years",
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "gilgo-beach-eight-names",
@@ -50,7 +50,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-20T17:04:47.335399+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "murders-in-moscow",
@@ -67,7 +67,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "golden-state-killer",
@@ -84,7 +84,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "gabby-petito",
@@ -101,7 +101,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "long-island-serial-killer",
@@ -118,7 +118,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "chris-watts-confession",
@@ -135,7 +135,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "elisa-lam",
@@ -152,7 +152,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "alex-murdaugh",
@@ -169,7 +169,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "btk-dennis-rader",
@@ -186,7 +186,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "zodiac-killer",
@@ -203,7 +203,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "lori-vallow",
@@ -220,7 +220,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "maura-murray",
@@ -237,24 +237,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
-    },
-    {
-      "slug": "erik-and-lyle-the-menendez-brothers",
-      "title": "ERIK AND LYLE: The Menendez Brothers",
-      "summary": "The Menendez brothers, Lyle and Erik, have been in prison for over 35 years. They were convicted in 1996 for the 1989 murders of their parents and sentenced to life in prison without the possibility of parole. This is their story.",
-      "angle": "",
-      "years": "2024",
-      "status": "convicted",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "/images/episodes/erik-and-lyle-the-menendez-brothers.jpg",
-      "episode_slug": "erik-and-lyle-the-menendez-brothers",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "brian-laundrie-notebook",
@@ -271,7 +254,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "kendrick-johnson",
@@ -288,7 +271,24 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+    },
+    {
+      "slug": "erik-and-lyle-the-menendez-brothers",
+      "title": "ERIK AND LYLE: The Menendez Brothers",
+      "summary": "The Menendez brothers, Lyle and Erik, have been in prison for over 35 years. They were convicted in 1996 for the 1989 murders of their parents and sentenced to life in prison without the possibility of parole. This is their story.",
+      "angle": "",
+      "years": "2024",
+      "status": "convicted",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "/images/episodes/erik-and-lyle-the-menendez-brothers.jpg",
+      "episode_slug": "erik-and-lyle-the-menendez-brothers",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "scott-peterson",
@@ -305,7 +305,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "ted-bundy-escape",
@@ -322,7 +322,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "jonbenet-ramsey-dna",
@@ -339,7 +339,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "delphi-the-appeal",
@@ -356,7 +356,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "the-menendez-brothers-parole-years",
@@ -373,7 +373,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-19T10:46:49.066069+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "adnan-syed",
@@ -390,7 +390,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "amanda-knox",
@@ -407,7 +407,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "kohberger-trial",
@@ -424,7 +424,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "delphi-richard-allen",
@@ -441,7 +441,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "casey-anthony",
@@ -458,7 +458,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "steven-avery",
@@ -475,7 +475,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "madeleine-mccann",
@@ -492,7 +492,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "tylenol-murders",
@@ -509,7 +509,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "dnd-mcstay-family",
@@ -526,41 +526,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
-    },
-    {
-      "slug": "the-interrogation-of-chris-watts",
-      "title": "The Interrogation of Chris Watts",
-      "summary": "Hey everyone, it's Cory. This time on CrimeTimeSnacks: the forty-eight hours in which Chris Watts's story came apart on camera. A friend who would not leave a doorstep, a patrol officer who noticed a husband was too calm, a neighbor's security camera, an FBI agent who held back his best evidence, a polygraph score of negative 18, and the way out that investigators offered him. Where the published accounts disagree, I say so. From the welfare check on August 13, 2018 to the oil site at 11 that night two days later, then the plea, the sentence, and the versions of the story he has told since.",
-      "angle": "",
-      "years": "2026",
-      "status": "open",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "/images/episodes/the-interrogation-of-chris-watts.jpg",
-      "episode_slug": "the-interrogation-of-chris-watts",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-18T12:30:03.688863+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
-    },
-    {
-      "slug": "watts-family-murders",
-      "title": "Watts Family Murders",
-      "summary": "The Watts family murders occurred in August 2018 in Frederick, Colorado. Chris Watts, the father, killed his pregnant wife, Shanann, and their two young daughters, Bella and Celeste. The crime gained significant media attention due to its horrific nature and the subsequent investigation. Watts initially denied involvement but later confessed to the murders. He was sentenced to life in prison without the possibility of parole. The case continues to be a source of fascination and discussion for true crime enthusiasts.",
-      "angle": "",
-      "years": "2024",
-      "status": "convicted",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "/images/episodes/watts-family-murders.jpg",
-      "episode_slug": "watts-family-murders",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "menendez-the-parole-years",
@@ -577,58 +543,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
-    },
-    {
-      "slug": "the-miami-apartment-stabbing",
-      "title": "The Miami Apartment Stabbing",
-      "summary": "Courtney Clenney was arrested on August 10, 2022. She pleaded guilty on August 10, 2026. Four years, to the day, and the case still did not answer its own question. Hey everyone, it's Cory. This time on CrimeTimeSnacks: the killing of Christian Obumseli in a Miami high-rise. The fourteen minutes on April 3, 2022, the elevator video, the medical examiner's finding that broke the self-defense account, the four months before an arrest, the battered spouse defense that never reached a jury, and what a plea leaves unsettled. If any of this sounds like your life, the National Domestic Violence Hotline is 800-799-7233.",
-      "angle": "",
-      "years": "2026",
-      "status": "open",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "/images/episodes/the-miami-apartment-stabbing.jpg",
-      "episode_slug": "the-miami-apartment-stabbing",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-21T02:23:51.906377+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
-    },
-    {
-      "slug": "jonbenet-ramsey-the-facts-96-22",
-      "title": "JonBenét Ramsey",
-      "summary": "JonBenét Patricia Ramsey was murdered. That is the only certain thing about this case after 26 years. There is key evidence in this case, as well as more theories than there are people involved. I took weeks of research and broke it down into a two-part segment where I go over all the facts known in the case today, as well as some key suspects. I try to stay away from the theories that have little to no factual basis. Listen to the facts of the case and form your own opinion. Visit CrimeTimeSnacks.com to stay even more involved and join an ever-growing true crime community. -@CrimeTimeSnacks",
-      "angle": "",
-      "years": "2022",
-      "status": "open",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "/images/episodes/jonbenet-ramsey-the-facts-96-22-part-1.jpg",
-      "episode_slug": "jonbenet-ramsey-the-facts-96-22-part-1",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
-    },
-    {
-      "slug": "jonbenet-ramsey-americas-child-beauty-queen",
-      "title": "JonBenét Ramsey Americas Child Beauty Queen",
-      "summary": "In Boulder, Colorado, just a day after Christmas in 1996, JonBenét Ramsey, a six-year-old child pageant star, was found dead in her basement. She had been beaten and strangled. That was hours after her parents, John and Patsy, reported her missing, and hours after her mom found a ransom note on a staircase in the house. Nobody has ever been convicted in this case, even 26 years later. This is the lead-in to a two-part special where we go back to Christmas 1996 and look again at all the facts in this case.",
-      "angle": "",
-      "years": "2022",
-      "status": "open",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "/images/episodes/jonbenet-ramsey-americas-child-beauty-queen.jpg",
-      "episode_slug": "jonbenet-ramsey-americas-child-beauty-queen",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     },
     {
       "slug": "the-delphi-murder-case-2017",
@@ -645,7 +560,92 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:23:51.906377+00:00"
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+    },
+    {
+      "slug": "the-miami-apartment-stabbing",
+      "title": "The Miami Apartment Stabbing",
+      "summary": "Courtney Clenney was arrested on August 10, 2022. She pleaded guilty on August 10, 2026. Four years, to the day, and the case still did not answer its own question. Hey everyone, it's Cory. This time on CrimeTimeSnacks: the killing of Christian Obumseli in a Miami high-rise. The fourteen minutes on April 3, 2022, the elevator video, the medical examiner's finding that broke the self-defense account, the four months before an arrest, the battered spouse defense that never reached a jury, and what a plea leaves unsettled. If any of this sounds like your life, the National Domestic Violence Hotline is 800-799-7233.",
+      "angle": "",
+      "years": "2026",
+      "status": "open",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "/images/episodes/the-miami-apartment-stabbing.jpg",
+      "episode_slug": "the-miami-apartment-stabbing",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-21T02:23:51.906377+00:00",
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+    },
+    {
+      "slug": "the-interrogation-of-chris-watts",
+      "title": "The Interrogation of Chris Watts",
+      "summary": "Hey everyone, it's Cory. This time on CrimeTimeSnacks: the forty-eight hours in which Chris Watts's story came apart on camera. A friend who would not leave a doorstep, a patrol officer who noticed a husband was too calm, a neighbor's security camera, an FBI agent who held back his best evidence, a polygraph score of negative 18, and the way out that investigators offered him. Where the published accounts disagree, I say so. From the welfare check on August 13, 2018 to the oil site at 11 that night two days later, then the plea, the sentence, and the versions of the story he has told since.",
+      "angle": "",
+      "years": "2026",
+      "status": "open",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "/images/episodes/the-interrogation-of-chris-watts.jpg",
+      "episode_slug": "the-interrogation-of-chris-watts",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-18T12:30:03.688863+00:00",
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+    },
+    {
+      "slug": "watts-family-murders",
+      "title": "Watts Family Murders",
+      "summary": "The Watts family murders occurred in August 2018 in Frederick, Colorado. Chris Watts, the father, killed his pregnant wife, Shanann, and their two young daughters, Bella and Celeste. The crime gained significant media attention due to its horrific nature and the subsequent investigation. Watts initially denied involvement but later confessed to the murders. He was sentenced to life in prison without the possibility of parole. The case continues to be a source of fascination and discussion for true crime enthusiasts.",
+      "angle": "",
+      "years": "2024",
+      "status": "convicted",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "/images/episodes/watts-family-murders.jpg",
+      "episode_slug": "watts-family-murders",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+    },
+    {
+      "slug": "jonbenet-ramsey-the-facts-96-22",
+      "title": "JonBenét Ramsey",
+      "summary": "JonBenét Patricia Ramsey was murdered. That is the only certain thing about this case after 26 years. There is key evidence in this case, as well as more theories than there are people involved. I took weeks of research and broke it down into a two-part segment where I go over all the facts known in the case today, as well as some key suspects. I try to stay away from the theories that have little to no factual basis. Listen to the facts of the case and form your own opinion. Visit CrimeTimeSnacks.com to stay even more involved and join an ever-growing true crime community. -@CrimeTimeSnacks",
+      "angle": "",
+      "years": "2022",
+      "status": "open",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "/images/episodes/jonbenet-ramsey-the-facts-96-22-part-1.jpg",
+      "episode_slug": "jonbenet-ramsey-the-facts-96-22-part-1",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+    },
+    {
+      "slug": "jonbenet-ramsey-americas-child-beauty-queen",
+      "title": "JonBenét Ramsey Americas Child Beauty Queen",
+      "summary": "In Boulder, Colorado, just a day after Christmas in 1996, JonBenét Ramsey, a six-year-old child pageant star, was found dead in her basement. She had been beaten and strangled. That was hours after her parents, John and Patsy, reported her missing, and hours after her mom found a ransom note on a staircase in the house. Nobody has ever been convicted in this case, even 26 years later. This is the lead-in to a two-part special where we go back to Christmas 1996 and look again at all the facts in this case.",
+      "angle": "",
+      "years": "2022",
+      "status": "open",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "/images/episodes/jonbenet-ramsey-americas-child-beauty-queen.jpg",
+      "episode_slug": "jonbenet-ramsey-americas-child-beauty-queen",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-09-21T02:38:22.18165+00:00"
     }
   ],
   "updates": [

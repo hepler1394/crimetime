@@ -43,6 +43,31 @@
       ]
     },
     {
+      "guid": "cts-studio-jonbenet-ramsey-thirty-years",
+      "title": "JonBenet Ramsey: Thirty Years",
+      "slug": "jonbenet-ramsey-thirty-years",
+      "date": "2026-09-21",
+      "pubDate": "Mon, 21 Sep 2026 02:38:22 GMT",
+      "duration": "00:20:43",
+      "description": "Thirty years on, two investigations are still running: Boulder police, and a volunteer team working from the spreadsheet a dead detective left behind. Hey everyone, it's Cory. This time on CrimeTimeSnacks: what the record in the JonBenet Ramsey case actually shows at thirty years. The morning the scene was lost, the ransom note two courts read two ways, the grand jury vote that stayed secret for fourteen years, the unknown male DNA, and where both investigations stand now. No one has ever been charged.",
+      "audio": "/audio/jonbenet-ramsey-thirty-years.mp3",
+      "audioType": "audio/mpeg",
+      "audioBytes": 19882057,
+      "image": "/images/episodes/jonbenet-ramsey-thirty-years.jpg",
+      "link": "",
+      "explicit": false,
+      "source": "studio",
+      "keywords": [
+        "JonBenet Ramsey",
+        "Boulder Police",
+        "True crime",
+        "DNA testing",
+        "Grand jury",
+        "Cold case",
+        "Ransom note"
+      ]
+    },
+    {
       "guid": "cts-studio-gilgo-beach-eight-names",
       "title": "Gilgo Beach: Eight Names",
       "slug": "gilgo-beach-eight-names",
