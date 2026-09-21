@@ -71,16 +71,23 @@ export function delivery(paras, meas, { joins = [], spliced = [] } = {}) {
       notes.push({ kind: "FLAT", pi: r.i, score: 1 - r.sd / medSd, text: `the voice moves less here than anywhere else (${(r.sd / medSd * 100).toFixed(0)}% of this episode's usual pitch movement)` });
   }
 
-  // A swapped paragraph that does not sit at the level of its neighbours.
-  const swapped = new Set(spliced.flatMap((s) => (s.changes || []).filter((c) => c.action === "replaced").map((c) => c.i)));
+  // A swapped paragraph that does not sit at the level of its neighbours. The indices in the
+  // splice history only mean anything if nothing has been dropped since: a drop renumbers every
+  // paragraph after it, and checking the wrong paragraph is worse than not checking.
+  const everDropped = spliced.some((s) => (s.changes || []).some((c) => c.action === "dropped"));
+  const swapped = everDropped ? new Set() : new Set(spliced.flatMap((s) => (s.changes || []).filter((c) => c.action === "replaced").map((c) => c.i)));
   for (const i of [...swapped].sort((a, b) => a - b)) {
     const r = rows[i]; if (!r || r.db == null) continue;
+    let worst = null;
     for (const [side, nb] of [["before", rows[i - 1]], ["after", rows[i + 1]]]) {
       if (!nb || nb.db == null) continue;
       const step = Math.abs(r.db - nb.db);
-      if (step > LIMITS.seamDb) holds.push({ kind: "SEAM", pi: i, score: step,
-        text: `paragraph ${i} was swapped in and sits ${step.toFixed(1)} dB ${r.db > nb.db ? "above" : "below"} the paragraph ${side} it` });
+      if (step > LIMITS.seamDb && (!worst || step > worst.step)) worst = { step, side, louder: r.db > nb.db };
     }
+    // One finding per paragraph, on its worse side. Both neighbours reported separately is the
+    // same seam twice, and a gate that says everything twice gets read as noise.
+    if (worst) holds.push({ kind: "SEAM", pi: i, score: worst.step,
+      text: `paragraph ${i} was swapped in and sits ${worst.step.toFixed(1)} dB ${worst.louder ? "above" : "below"} the paragraph ${worst.side} it` });
   }
 
   const js = joins.map((j) => j.seconds).filter((x) => x != null);
