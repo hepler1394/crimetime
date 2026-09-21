@@ -444,9 +444,11 @@ and 6.0%.
     node automation/episode-digest.mjs <draft-id> [--seconds 75]
 
 `digest.mp3` and `digest.md`: the places the gate is least sure about, worst first,
-in 60 to 90 seconds, with an index giving each one's time in the real episode. On an
-episode with nothing flagged it falls back to the stretches the transcriber was least
-sure of, so there is always something to spot-check.
+in 60 to 90 seconds, with an index giving each one's time in the real episode. No more
+than three of any one kind, so a minute of the same complaint does not crowd out
+everything else, and the stretches the transcriber was least sure of fill out whatever
+is left. An episode with nothing flagged at all is entirely those, so a spot check is
+always worth the same amount of listening.
 
 **It is crossfaded, and the windows are cut on pauses the clone actually left.** On
 2026-09-20 a montage of six six-second windows with hard ffmpeg boundaries went to
