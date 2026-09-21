@@ -43,10 +43,25 @@ repo, push to main deploys) plus the automation that runs the show. Read
   script. `episode-repair.mjs` re-voices only the flagged paragraphs on another seed, checks
   each one, and swaps it in with `episode-splice.mjs` on the silent gaps between paragraphs.
   `episode-publish.mjs` refuses a render that has not been audited clean since it was made.
-  This covers re-renders, splices, trailers and reels too. A clean audit means nothing was
-  caught, not that a person would find nothing: it cannot hear a wrong vowel, and it cannot
-  see a scene told twice. Read the whole script before a five-hour render. Never run the
-  audit while a clone render is running; both want every core.
+  This covers re-renders, splices, trailers and reels too. Read the whole script before a
+  five-hour render. Never run the audit while a clone render is running; both want every core.
+- A HOLD has to mean something, so the audit hears everything twice. Changed 2026-09-21, after
+  it held two finished episodes on ten findings and every one was the transcriber rather than
+  the render: homophones ("Knight" written "night"), elision ("because" heard as "cause"), and
+  words at confidence 0.00 to 0.16 hallucinated at paragraph edges. `audio-phonetics.mjs`
+  compares sounds rather than letters, and anything still standing is cut out of `voice.wav`
+  and transcribed on its own by `audio-confirm.mjs`; a finding has to come back as itself or it
+  is recorded as unstable and not held. What a second listen threw out is written down, never
+  suppressed silently. Levels, length, a confirmed word finding, a splice seam over 3 dB and a
+  script past `script-repeats.mjs`'s "edit before voicing" line hold an episode. Pace and flat
+  delivery do not: those are judgements, and Gilgo's slowest paragraph by far is the eight
+  victims' names read one at a time. A clean audit still means nothing was caught, not that a
+  person would find nothing - it cannot hear a wrong vowel.
+- The audit cuts `digest.mp3`, 60 to 90 seconds of the places it is least sure about, worst
+  first, with `digest.md` giving each one's time in the real episode. Build it with crossfades
+  and windows cut on pauses the clone actually left: on 2026-09-20 a montage with hard ffmpeg
+  boundaries went to Cory and he reported "lots of cut out of pauses", which was the montage
+  and not the episode. A hard-cut digest manufactures the artifact it exists to detect.
 - Case updates publish themselves the same way. The gate is
   `automation/community/update-gate.mjs`, run by `case-watch.mjs`: an update goes onto
   the case page and into the Sunday digest only when its article was read, every name

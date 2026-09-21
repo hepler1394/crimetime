@@ -2,26 +2,41 @@
 // Podcast studio, the audio gate: listen to what was actually rendered before it goes out.
 //
 //   node automation/episode-audit.mjs <draft-id> [--json] [--asr <words.json>] [--no-write]
+//                                      [--no-confirm] [--no-digest] [--no-delivery]
 //
 // Cory, 2026-09-18: "always..always audit the audio". The Petito episode had been live for six
 // days with the clone saying "Capra One" for Capital One, garbling "authorities" and stuttering
 // an extra "fraud" after "intent to defraud"; every claim in it had passed the fact gate, and
 // the fact gate reads text. This reads the sound.
 //
-// Two passes:
+// Four passes:
 //   1. Levels on episode.mp3: integrated loudness, true peak, length, dead air.
 //   2. Words on voice.wav (the dry voice, no music): a faster-whisper medium.en transcript with
-//      per-word time and confidence, aligned against episode.json's script. It reports
-//        ARTIFACT  a word the script never had, heard at low confidence: a stutter or a noise
+//      per-word time and confidence, aligned against episode.json's script. It proposes
+//        ARTIFACT  a word the script never had: a stutter or a stray sound
 //        DROPPED   three or more script words in a row that were never heard
-//        MISHEARD  a word whose consonants differ from the script's: a likely mispronunciation
-//      each with its time in the finished episode and its paragraph, so episode-splice.mjs can
-//      replace just that paragraph.
+//        MISHEARD  a word that does not sound like the script's: a likely mispronunciation
+//   3. A SECOND LISTEN to every flagged paragraph on its own (audio-confirm.mjs). Anything that
+//      does not come back the same way is the transcriber's, not the render's, and is recorded
+//      as unstable rather than held.
+//   4. Delivery and writing (audio-delivery.mjs): pace, pitch movement, splice seams, and
+//      whether the script tells a scene twice.
 //
-// It HOLDS on any of those. It cannot tell a wrong vowel from a right one ("Statik" read as
-// "Stotic" has the same consonants), and a model hearing a rare surname as a common word is
-// noise, not a glitch; names that are fine can be listed in episode.json as audioOk: ["..."].
-// A clean run means nothing was caught, not that a person would find nothing.
+// WHAT HOLDS AN EPISODE AND WHAT DOES NOT
+//
+// Held: levels, length, dead air, a confirmed word finding, a splice seam that steps in level,
+// and a script that retells enough of itself to read as padding. Every one of those has a right
+// answer that does not depend on taste.
+//
+// Not held, only reported: pace and flat delivery. On 2026-09-20 this gate held two finished
+// episodes on ten findings and every one was a false alarm, which is slower and no safer - the
+// same lesson the fact gate learned on 2026-09-11. A judgement is not a defect. Those notes
+// rank episode-digest.mjs instead, which cuts the minute worth listening to.
+//
+// It still cannot tell a wrong vowel from a right one ("Statik" read as "Stotic" has the same
+// consonants). Names it keeps getting wrong can be listed in episode.json as audioOk: ["..."],
+// though after audio-phonetics.mjs that list should rarely need to grow. A clean run means
+// nothing was caught, not that a person would find nothing.
 //
 // Do not run this while a clone render is going: both want every core.
 
@@ -32,6 +47,10 @@ import { dirname, join } from "node:path";
 import { existsSync } from "node:fs";
 import { VOICE_STARTS_AT } from "./episode-music.mjs";
 import { compareWords } from "./audio-compare.mjs";
+import { paragraphSpans, paragraphAt } from "./audio-paragraphs.mjs";
+import { confirmFindings } from "./audio-confirm.mjs";
+import { measure, delivery, repeats, LIMITS } from "./audio-delivery.mjs";
+import { buildDigest } from "./episode-digest.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const STUDIO = join(here, "studio");
@@ -80,22 +99,80 @@ else {
 const heardWords = (asr.words || (Array.isArray(asr) ? asr.flatMap((s) => s.words || []) : [])).map((w) => ({ raw: w.w, s: w.s, p: w.p }));
 
 const paras = (ep.script || []).filter(Boolean);
-const cmp = compareWords(paras, heardWords.map((h) => ({ w: h.raw, s: h.s, p: h.p })), ep.audioOk || []);
-for (const f of cmp.findings) findings.push({ ...f, at: f.at + VOICE_STARTS_AT });
+const asrWords = heardWords.map((h) => ({ w: h.raw, s: h.s, e: h.e, p: h.p }));
+const cmp = compareWords(paras, asrWords, ep.audioOk || []);
 const A = { length: cmp.scriptWords }, B = { length: cmp.heardWordCount };
 
-/* ------------------------------------------------------------------ 3. report */
+// Where each paragraph actually sits in the voice track, read from the transcript.
+const sp = paragraphSpans(voice, paras, { words: asrWords });
+if (!sp.ok && sp.why) say(`Paragraph boundaries: ${sp.why}`);
+
+// The aligner numbers a difference by the script word it stopped at, so a word that really
+// belongs to the next paragraph gets reported against this one. The clock does not have that
+// problem: put each finding in the paragraph whose audio contains it.
+let candidates = cmp.findings.map((f) => {
+  if (!sp.spans.length || !f.seconds) return f;
+  const owner = paragraphAt(sp.spans, f.seconds[0]);
+  const inside = sp.spans[owner] && f.seconds[0] >= sp.spans[owner][0] && f.seconds[0] <= sp.spans[owner][1];
+  return inside && owner !== f.pi ? { ...f, pi: owner, movedFrom: f.pi } : f;
+});
+
+/* ------------------------------------------------- 3. the same spots, heard again */
+let unstable = [];
+if (!args.includes("--no-confirm") && candidates.length && sp.spans.length) {
+  const res = await confirmFindings(voice, candidates, paras, sp.spans, {
+    work: join(dir, "audit-confirm"), asr: join(STUDIO, "asr_words.py"), audioOk: ep.audioOk || [], say });
+  if (res.ran) { candidates = res.kept; unstable = res.dropped; }
+}
+for (const f of candidates) findings.push({ ...f, at: f.at + VOICE_STARTS_AT });
+
+/* ------------------------------------------- 4. delivery, seams and repetition */
+const notes = [];
+let stats = null, retold = [];
+if (!args.includes("--no-delivery") && sp.spans.length) {
+  const meas = await measure(voice, sp.spans, join(dir, "audit-delivery.json"), { say });
+  const d = delivery(paras, meas, { joins: sp.joins, spliced: ep.spliced || [] });
+  notes.push(...d.notes);
+  for (const h of d.holds) findings.push({ ...h, at: (sp.spans[h.pi]?.[0] ?? 0) + VOICE_STARTS_AT });
+  stats = d.stats;
+}
+const rep = repeats(id, { say });
+if (rep?.ok) {
+  // Below the note line the retelling is negligible, and listing it would crowd the digest on an
+  // episode that scored clean.
+  if (rep.share > LIMITS.repeatsNote) retold = (rep.paragraphs || []).map((pi) => ({ pi, text: "this paragraph retells an earlier one" }));
+  const line = `${rep.retold} of ${rep.sentences} sentences retell an earlier one (${(rep.share * 100).toFixed(1)}%): ${rep.verdict}`;
+  if (rep.share > LIMITS.repeatsHold) findings.push({ kind: "REPEATS", at: 0, text: line });
+  else if (rep.share > LIMITS.repeatsNote) notes.push({ kind: "REPEATS", pi: null, score: rep.share, text: line });
+}
+
+/* ------------------------------------------------------------------ 5. report */
 findings.sort((a, b) => a.at - b.at);
 const blocking = findings;
 const parasToFix = [...new Set(findings.filter((f) => f.pi != null).map((f) => f.pi))].sort((a, b) => a - b);
 const md = [`# Audio audit: ${ep.title}`, "", `Audited ${new Date().toISOString().slice(0, 16).replace("T", " ")} UTC. ${clock(seconds)}, ${I} LUFS, true peak ${TP} dBFS. ${A.length} script words, ${B.length} heard.`, "",
-  findings.length ? `**${findings.length} thing(s) to fix before this goes out.** Paragraphs: ${parasToFix.join(", ") || "none (levels only)"}.` : "**Nothing caught.** That means no stutter, dropped line or changed consonant was detected; it does not mean a person would find nothing.", "",
-  ...findings.map((f) => `- ${f.at ? clock(f.at) : "whole file"}  ${f.kind}${f.pi != null ? ` (paragraph ${f.pi})` : ""}: ${f.text}`), ""].join("\n");
+  findings.length ? `**${findings.length} thing(s) to fix before this goes out.** Paragraphs: ${parasToFix.join(", ") || "none (levels only)"}.` : "**Nothing caught.** That means no stutter, dropped line or changed consonant survived a second listen; it does not mean a person would find nothing.", "",
+  ...findings.map((f) => `- ${f.at ? clock(f.at) : "whole file"}  ${f.kind}${f.pi != null ? ` (paragraph ${f.pi})` : ""}: ${f.text}`),
+  ...(unstable.length ? ["", `## Heard once, not twice (${unstable.length})`, "", "Reported by the first pass and gone on a second listen of the same audio. Not held.", "",
+    ...unstable.map((f) => `- ${clock((f.seconds?.[0] ?? 0) + VOICE_STARTS_AT)}  ${f.kind}${f.pi != null ? ` (paragraph ${f.pi})` : ""}: ${f.text} - ${f.why}`)] : []),
+  ...(notes.length ? ["", `## Worth an ear, not a hold (${notes.length})`, "",
+    ...notes.map((n) => `- ${n.pi != null ? `paragraph ${n.pi}` : "whole script"}  ${n.kind}: ${n.text}`)] : []),
+  ...(stats ? ["", `Pace ${stats.medianWps} words a second, pitch movement ${stats.medianSemitoneSd} semitones, ${stats.joins} joins spanning ${stats.joinSpread}s.`] : []), ""].join("\n");
 if (!args.includes("--no-write")) {
   await writeFile(join(dir, "audio-audit.md"), md, "utf8");
   const fresh = JSON.parse(await readFile(epPath, "utf8"));
-  fresh.audioAudit = { at: new Date().toISOString(), seconds: +seconds.toFixed(1), lufs: I, truePeak: TP, findings: findings.length, paragraphs: parasToFix, clean: blocking.length === 0 };
+  fresh.audioAudit = { at: new Date().toISOString(), seconds: +seconds.toFixed(1), lufs: I, truePeak: TP, findings: findings.length, paragraphs: parasToFix,
+    clean: blocking.length === 0, list: findings, unstable, notes, retold, stats, boundaries: sp.how };
   await writeFile(epPath, JSON.stringify(fresh, null, 2) + "\n", "utf8");
 }
-out({ ok: true, id, clean: blocking.length === 0, findings, paragraphs: parasToFix, lufs: I, truePeak: TP, seconds,
-  message: blocking.length ? `Audio audit of ${id}: ${findings.length} finding(s), NOT clear to publish.\n${findings.map((f) => `  ${f.at ? clock(f.at) : "file"} ${f.kind}: ${f.text}`).join("\n")}` : `Audio audit of ${id}: nothing caught. ${clock(seconds)}, ${I} LUFS.` });
+
+/* ---------------------------------------------------- 6. the minute to listen to */
+let digest = null;
+if (!args.includes("--no-digest") && !args.includes("--no-write")) {
+  try { digest = await buildDigest(dir, { seconds: 75, say }); if (digest?.ok) say(`Digest: ${digest.seconds}s over ${digest.clips} moment(s) -> digest.mp3`); }
+  catch (e) { say(`Digest not built: ${String(e.message || e)}`); }
+}
+
+out({ ok: true, id, clean: blocking.length === 0, findings, unstable, notes, paragraphs: parasToFix, lufs: I, truePeak: TP, seconds,
+  digest: digest?.ok ? { file: digest.file, seconds: digest.seconds, clips: digest.clips } : null,
+  message: blocking.length ? `Audio audit of ${id}: ${findings.length} finding(s), NOT clear to publish.\n${findings.map((f) => `  ${f.at ? clock(f.at) : "file"} ${f.kind}: ${f.text}`).join("\n")}` : `Audio audit of ${id}: nothing caught. ${clock(seconds)}, ${I} LUFS.${unstable.length ? ` ${unstable.length} first-pass finding(s) did not survive a second listen.` : ""}${notes.length ? ` ${notes.length} note(s) to listen to.` : ""}` });

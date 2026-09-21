@@ -118,6 +118,20 @@ try {
     console.log(`  Thin margin (${len.marginSeconds}s in the worst case). Rendering anyway; about ${len.wordsShort} more words would make it comfortable.`);
   }
 
+  // Repetition preflight, for the same reason as the length one: a script that tells the same
+  // scene three times is the thing a listener calls filler, and the audio audit cannot hear it.
+  // The published Petito episode scores 11.8% here and walks the Moab traffic stop three times;
+  // every episode since is between 2.1% and 6.0%. Over its own "edit before voicing" line the
+  // script is rewritten before five hours are spent reading it aloud.
+  const rep = step("script-repeats.mjs", [draft.id], { optional: true });
+  if (rep?.ok && rep.verdict === "edit before voicing") {
+    const msg = `${draft.id} tells the same scenes over: ${rep.retold} of ${rep.sentences} sentences retell an earlier one (${(rep.share * 100).toFixed(1)}%), in paragraphs ${rep.paragraphs.join(", ")}. Edit those and run it again. Nothing was rendered.`;
+    await notify(`CrimeTimeSnacks: ${msg}`);
+    throw new Error(msg);
+  } else if (rep?.ok && rep.retold) {
+    console.log(`Repetition preflight: ${(rep.share * 100).toFixed(1)}% (${rep.verdict}).`);
+  }
+
   // --remote puts both clone renders (the episode and any repair) on the GPU box in
   // render-host.json. Everything else in the run is unchanged and still happens here.
   const remote = args.includes("--fal") ? ["--fal"] : args.includes("--remote") ? ["--remote"] : [];
@@ -126,7 +140,13 @@ try {
   // The audio gate: listen to the render, re-voice the paragraphs the clone got wrong, and only
   // then cut the reel and trailer from it. episode-publish.mjs refuses an unaudited render.
   let audio = step("episode-audit.mjs", [draft.id]);
-  if (!audio.clean && (audio.paragraphs || []).length) audio = step("episode-repair.mjs", [draft.id, ...remote]);
+  if (!audio.clean && (audio.paragraphs || []).length) {
+    const fixed = step("episode-repair.mjs", [draft.id, ...remote]);
+    // A splice makes a different file, and the rule is that the audio that goes out is the audio
+    // that was audited. Re-audit the render the repair produced rather than trusting the
+    // paragraph-by-paragraph check that built it; that is also what cuts the digest for it.
+    audio = (fixed.repaired || fixed.dropped) ? step("episode-audit.mjs", [draft.id]) : fixed;
+  }
   step("episode-art.mjs", [draft.id]);
   step("episode-social.mjs", [draft.id]);
 

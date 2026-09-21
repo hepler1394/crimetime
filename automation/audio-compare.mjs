@@ -1,6 +1,13 @@
 // Shared by episode-audit.mjs and episode-repair.mjs: line a transcript up against the script
 // and say which differences are worth a person's ear. See episode-audit.mjs for what each kind
 // means and what this cannot hear.
+//
+// A finding here is a CANDIDATE, not a verdict. Everything below is orthography: it can rule out
+// a difference that is only a spelling ("Knight" written "night"), but it cannot tell a clone
+// that mispronounced a word from a transcriber that guessed one. episode-audit.mjs settles that
+// by listening to the spot again, which is why each finding carries the seconds it covers.
+
+import { sameSound, isElision } from "./audio-phonetics.mjs";
 
 const NUMS = { zero: "0", one: "1", two: "2", three: "3", four: "4", five: "5", six: "6", seven: "7", eight: "8", nine: "9", ten: "10", eleven: "11", twelve: "12", thirteen: "13", fourteen: "14", fifteen: "15", sixteen: "16", seventeen: "17", eighteen: "18", nineteen: "19", twenty: "20", thirty: "30", forty: "40", fifty: "50", sixty: "60", seventy: "70", eighty: "80", ninety: "90", hundred: "100", thousand: "1000" };
 // Accents fold to their base letter BEFORE the strip below, which turns anything
@@ -16,18 +23,27 @@ const SMALL = new Set("a an the of to in on at by for from with as it its is was
 // "laundry" match, "capital" and "capra" do not.
 // Soft c is an s ("Cervi"/"Servi"), and s and z are one sound to a transcriber ("Coonts"/"Koontz").
 const skel = (w) => w.replace(/x/g, "ks").replace(/c(?=[eiy])/g, "s").replace(/z/g, "s").replace(/[cq]/g, "k").replace(/ph/g, "f").replace(/[aeiouyhw]/g, "").replace(/(.)\1+/g, "$1");
+// skel works on letters, so a silent k or gh defeats it; soundKeys works on sounds. Both are
+// kept: skel is the cheap first answer and the one the older cases were tuned against.
+const same = (a, b) => skel(a) === skel(b) || sameSound(a, b);
 
 // paras: the script's paragraphs. heardWords: [{ w, s, p }] (word, start second, confidence).
 // Returns findings as { kind, at (seconds into the voice track), pi (paragraph index), text }.
 export function compareWords(paras, heardWords, audioOk = []) {
   const A = []; paras.forEach((t, pi) => tokens(t).forEach((w) => A.push({ w, pi })));
-  const B = []; heardWords.forEach((h) => tokens(h.w).forEach((w) => B.push({ w, s: h.s, p: h.p })));
+  const B = []; heardWords.forEach((h) => tokens(h.w).forEach((w) => B.push({ w, s: h.s, e: h.e ?? h.s, p: h.p })));
 
   // Greedy alignment with three-word anchors: both sides are the same text almost everywhere,
   // so a full edit-distance table over 4,000 x 4,000 words buys nothing.
+  // Every word that matched outright, with the second it was heard. Two paragraphs' worth of
+  // these is what tells audio-paragraphs.mjs where one paragraph stops being spoken and the next
+  // starts, which a level detector cannot know.
+  const paraTimes = paras.map(() => null);
+  const mark = (pi, s, e) => { const p = paraTimes[pi] || (paraTimes[pi] = { first: s, last: e }); if (s < p.first) p.first = s; if (e > p.last) p.last = e; };
+
   const diffs = []; let i = 0, j = 0;
   while (i < A.length && j < B.length) {
-    if (A[i].w === B[j].w) { i++; j++; continue; }
+    if (A[i].w === B[j].w) { mark(A[i].pi, B[j].s, B[j].e || B[j].s); i++; j++; continue; }
     // Resync on the nearest run of k matching words. Three is safe in running text; near the
     // end of a paragraph there is no room for three, so fall back to two, then one. Without
     // that, a harmless "the the" five words before the end read as a mispronounced last line.
@@ -49,12 +65,29 @@ export function compareWords(paras, heardWords, audioOk = []) {
   if (j < B.length) diffs.push({ pi: A.length ? A[A.length - 1].pi : 0, at: B[j].s, script: [], heard: B.slice(j), next: "", nextScript: "" });
 
   const okNames = new Set(audioOk.flatMap((n) => tokens(n)));
+  // A name on the allow list covers the possessive and the plural of itself: the script token is
+  // "jonbenets" where the list says "JonBenet", and an allow list that misses that is no list.
+  const allowed = (w) => okNames.has(w) || [...okNames].some((n) => n.length > 3 && sameSound(w, n));
+  // What a second listen needs to find the spot again.
+  const ev = (d) => ({ seconds: d.heard.length ? [+d.heard[0].s.toFixed(2), +(d.heard[d.heard.length - 1].e || d.heard[d.heard.length - 1].s).toFixed(2)] : [+d.at.toFixed(2), +(d.at + 0.4).toFixed(2)],
+    confidence: d.heard.length ? +Math.min(...d.heard.map((x) => x.p)).toFixed(2) : null,
+    said: d.script.join(" "), heard: d.heard.map((x) => x.w).join(" ") });
   const findings = [];
   for (const d of diffs) {
     const sJoin = d.script.join(""), hJoin = d.heard.map((x) => x.w).join("");
     if (sJoin === hJoin) continue;                                             // "van life" / "vanlife"
     if (sJoin === hJoin + d.next || sJoin + d.nextScript === hJoin) continue;  // "bodycam" heard as "body cam", split across the anchor
-    if (/\d/.test(sJoin) || /\d/.test(hJoin)) continue;                         // numbers are written a dozen ways
+    // Numbers are written a dozen ways, so a difference that is ONLY about how a number was
+    // spelled is not a finding. A run that merely contains one is a different thing: tokens()
+    // maps "One" to "1", so "Capital One" read as "Capstone Mutual" used to disappear here
+    // without ever being considered - the exact shape of the failure this gate exists for.
+    // Judge what is left with the numbers and the small words taken out.
+    if (/\d/.test(sJoin) || /\d/.test(hJoin)) {
+      const core = (ws) => ws.filter((w) => !/\d/.test(w) && !SMALL.has(w));
+      const sc = core(d.script), hc = core(d.heard.map((x) => x.w));
+      if (!sc.length || !hc.length || sc.join(" ") === hc.join(" ")) continue;
+      if (sc.length === hc.length && sc.every((w, n) => same(w, hc[n]) || allowed(w))) continue;
+    }
     // A plural or a tense the model rounded off: "passenger"/"passengers", "dispersed"/"disperse".
     const [shortW, longW] = sJoin.length <= hJoin.length ? [sJoin, hJoin] : [hJoin, sJoin];
     if (shortW.length >= 4 && longW.startsWith(shortW) && longW.length - shortW.length <= 2) continue;
@@ -64,20 +97,25 @@ export function compareWords(paras, heardWords, audioOk = []) {
     if (shortW.length >= 4 && /ed$/.test(longW) && longW.replace(/(.)\1ed$/, "$1").replace(/ed$/, "") === shortW.replace(/e$/, "")) continue;
     if (!d.script.length) {
       const weak = d.heard.filter((x) => x.p < 0.2);
-      if (weak.length) findings.push({ kind: "ARTIFACT", at: d.at, pi: d.pi, text: `heard "${d.heard.map((x) => x.w).join(" ")}", which is not in the script (confidence ${Math.min(...weak.map((x) => x.p)).toFixed(2)}): a stutter or a stray sound` });
+      if (weak.length) findings.push({ kind: "ARTIFACT", at: d.at, pi: d.pi, ...ev(d), text: `heard "${d.heard.map((x) => x.w).join(" ")}", which is not in the script (confidence ${Math.min(...weak.map((x) => x.p)).toFixed(2)}): a stutter or a stray sound` });
       continue;
     }
-    if (!d.heard.length) { if (d.script.length >= 3) findings.push({ kind: "DROPPED", at: d.at, pi: d.pi, text: `"${d.script.join(" ")}" is in the script and was not heard` }); continue; }
-    if (skel(sJoin) === skel(hJoin)) continue;
-    if (d.script.every((w) => okNames.has(w))) continue;
+    if (!d.heard.length) { if (d.script.length >= 3) findings.push({ kind: "DROPPED", at: d.at, pi: d.pi, ...ev(d), text: `"${d.script.join(" ")}" is in the script and was not heard` }); continue; }
+    if (same(sJoin, hJoin)) continue;
+    // "because" read as "cause" is how the word is said, not a defect in the render.
+    if (isElision(d.script, d.heard.map((x) => x.w))) continue;
+    if (d.script.every((w) => allowed(w))) continue;
     // A run of names comes back as one difference ("mogen xana kernodle and kaylee" against
     // "mogan zana kernodle and kaley"). When the word counts line up, judge it word by word:
-    // every pair has to be the same sound, or a name on the allow list.
+    // every pair has to be the same sound, a name on the allow list, or - the case that held the
+    // Miami episode - two small words the model flips between ("account TO police" written
+    // "account OF police"), which is already forgiven when it is the whole difference and was
+    // only being reported because a name sat next to it.
     if (d.script.length > 1 && d.script.length === d.heard.length &&
-        d.script.every((w, n) => w === d.heard[n].w || okNames.has(w) || skel(w) === skel(d.heard[n].w))) continue;
+        d.script.every((w, n) => w === d.heard[n].w || allowed(w) || same(w, d.heard[n].w) || (SMALL.has(w) && SMALL.has(d.heard[n].w)))) continue;
     if (Math.max(sJoin.length, hJoin.length) < 4) continue;
     if (d.script.length === 1 && d.heard.length === 1 && SMALL.has(sJoin) && SMALL.has(hJoin)) continue;  // from/for, that/it: the model's own coin flips
-    findings.push({ kind: "MISHEARD", at: d.at, pi: d.pi, text: `script says "${d.script.join(" ")}", it sounds like "${d.heard.map((x) => x.w).join(" ")}"` });
+    findings.push({ kind: "MISHEARD", at: d.at, pi: d.pi, ...ev(d), text: `script says "${d.script.join(" ")}", it sounds like "${d.heard.map((x) => x.w).join(" ")}"` });
   }
-  return { findings, scriptWords: A.length, heardWordCount: B.length };
+  return { findings, scriptWords: A.length, heardWordCount: B.length, paraTimes };
 }

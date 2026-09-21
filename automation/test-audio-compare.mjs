@@ -53,6 +53,50 @@ test("audioOk lets a name through", () => {
   assert.deepEqual(kinds("She worked at a Publix supermarket in North Port", "She worked at a public supermarket in North Port"), ["MISHEARD"]);
   assert.deepEqual(kinds("She worked at a Publix supermarket in North Port", "She worked at a public supermarket in North Port", ["Publix"]), []);
 });
+// Every case below is a real finding that held a finished episode on 2026-09-20. All ten were
+// the transcriber spelling a word its own way, and between them they cost two episodes a day.
+test("a silent letter is a spelling, not a mispronunciation", () => {
+  // Turner Guilford KNIGHT Correctional Center, written "night". The clone says it correctly.
+  assert.deepEqual(kinds("she stayed in the Turner Guilford Knight Correctional Center that year", "she stayed in the Turner Guilford night Correctional Center that year"), []);
+  assert.deepEqual(kinds("the detective who wrote the note that night", "the detective who wrote the note that knight"), []);
+});
+test("Stephen and Steven are the same name out loud", () => {
+  assert.deepEqual(kinds("One writer who has followed the case for years, Stephen Singular, said so", "One writer who has followed the case for years, Steven Singular, said so"), []);
+  assert.deepEqual(kinds("the report filed by Detective Redfearn that afternoon", "the report filed by Detective Redfern that afternoon"), []);
+});
+test("a reduced pronunciation is speech, not a defect", () => {
+  assert.deepEqual(kinds("Stop on that for a second, because April 1 is the whole case in miniature", "Stop on that for a second, cause April 1 is the whole case in miniature"), []);
+});
+test("a small word flipped next to a name is still just a small word", () => {
+  // "Clenney's account to police" written "Clenny's account of police": the name was the only
+  // reason the run was reported at all.
+  assert.deepEqual(kinds("Clenney's account to police was that he shoved her", "Clenny's account of police was that he shoved her"), []);
+});
+test("a possessive the transcriber ran together is covered by the allow list", () => {
+  assert.deepEqual(kinds("material from a mixed blood sample on JonBenét's underwear", "material from a mixed blood sample on JonBenese underwear", ["JonBenet"]), []);
+});
+test("a name that contains a number is still checked", () => {
+  // tokens() maps "One" to "1", and the rule that forgives however a number was spelled used to
+  // throw away the whole difference with it. "Capital One" read as "Capstone Mutual" produced
+  // nothing at all - the exact shape of the failure this gate exists for. Found on 2026-09-21
+  // by staging defects into the Petito audio and checking they survived.
+  assert.deepEqual(kinds("he made withdrawals using Capstone Mutual debit card and left", "he made withdrawals using Capital One debit card and left"), ["MISHEARD"]);
+  // And a difference that really is only about how a number was written is still forgiven.
+  assert.deepEqual(kinds("He took out more than a thousand dollars that week", "He took out more than $1,000 that week"), []);
+  assert.deepEqual(kinds("the Turner Guilford Knight Correctional Center on Sixth Street", "the Turner Guilford night Correctional Center on 6th Street"), []);
+});
+test("the mispronunciation that started all of this is still caught", () => {
+  // If any of the rules above ever swallow this, the gate is worthless.
+  assert.deepEqual(kinds("withdrawals using Petito's Capital One debit card. He took out more", "withdrawals using Petito's Capra One debit card. He took out more"), ["MISHEARD"]);
+  assert.deepEqual(kinds("She worked at a Publix supermarket in North Port", "She worked at a public supermarket in North Port"), ["MISHEARD"]);
+});
+test("a finding carries the seconds a second listen needs", () => {
+  const f = compareWords(["withdrawals using Petito's Capital One debit card"], heard("withdrawals using Petito's Capra One debit card")).findings[0];
+  assert.equal(f.kind, "MISHEARD");
+  assert.ok(Array.isArray(f.seconds) && f.seconds.length === 2, "seconds span");
+  assert.equal(f.said, "capital");
+  assert.equal(f.heard, "capra");
+});
 test("an accented name stays one word", () => {
   // "JonBenét's" used to come apart into "jonben" and "ts", because the strip that
   // removes punctuation turned the accented letter into a space. The audit then

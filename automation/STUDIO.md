@@ -104,6 +104,8 @@ with the caption.
 | theme | `episode-music.mjs` | Intro (9 s) and outro (6 s) beds. Your `studio/music/intro.mp3` and `outro.mp3` if present, else an original synthesized theme. |
 | 3 Art | `episode-art.mjs` | `cover.jpg`, `card.jpg`, `reel.jpg` from `studio/templates/art.html` via Playwright (borrowed from ig-studio). |
 | 4 Instagram | `episode-social.mjs` | `reel.mp4` audiogram (-14 LUFS) and `caption.txt`. |
+| audit | `episode-audit.mjs` | `audio-audit.md`, `digest.mp3` + `digest.md`. Levels, a word-level diff of the dry voice against the script, a second listen to anything flagged, and delivery notes. Holds the publish. |
+| digest | `episode-digest.mjs` | `digest.mp3`: 60-90 seconds of the places the gate is least sure about, worst first, crossfaded. |
 | 5 Publish | `episode-publish.mjs` | MP3 to `/audio`, art to `/images/episodes`, transcript to `automation/transcripts`, entry in `studio-episodes.json`, `build-all`, link check, commit, `--push`. |
 | weekly | `episode-weekly.mjs` | Research, script, voice, art, Instagram for the next case; Telegram note; no publish. |
 
@@ -358,6 +360,120 @@ right. `npm run test:verify` covers the gate.
 
 A DeepSeek key in `automation/config.json` would raise script quality a lot for
 about a cent per episode; the pipeline already falls back to it when set.
+
+## The audio gate, and what a HOLD is worth
+
+The fact gate reads text. This reads the sound, because on 2026-09-18 the Petito
+episode had been live for six days saying "Capra One" for Capital One, and every
+claim in it had passed the fact gate.
+
+    node automation/episode-audit.mjs <draft-id> [--json]
+    node automation/episode-audit.mjs <draft-id> --asr audit-words.json   reuse a transcript
+    node automation/episode-audit.mjs <draft-id> --no-confirm --no-delivery --no-digest
+
+Four passes:
+
+1. **Levels** on `episode.mp3`: integrated loudness, true peak, length, dead air.
+2. **Words** on `voice.wav`: a faster-whisper medium.en transcript with per-word
+   time and confidence, aligned against the script. It proposes ARTIFACT (a word
+   the script never had), DROPPED (three or more script words never heard) and
+   MISHEARD (a word that does not sound like the script's).
+3. **A second listen** to every flagged paragraph, on its own (`audio-confirm.mjs`).
+4. **Delivery and writing** (`audio-delivery.mjs`): pace, pitch movement, splice
+   seams, and whether the script tells a scene twice.
+
+### Why there are two listens
+
+On 2026-09-20 this gate held two finished episodes on ten findings, and every one
+was a false alarm. Four classes, all of them the transcriber rather than the render:
+
+- **Homophones.** Turner Guilford **Knight** Correctional Center written "night";
+  Detective **Arndt** written "Arendt"; **Stephen** written "Steven"; **Redfearn**
+  written "Redfern". `audio-phonetics.mjs` compares sounds instead of letters, so a
+  silent k or gh no longer reads as a mispronunciation. The consonant skeleton that
+  was already there works on spelling, which is why it caught "Laundrie"/"laundry"
+  and missed all four of these.
+- **Elision.** "because" heard as "cause". That is how the word is said.
+- **Boundary hallucinations.** Five findings were words at confidence 0.00 to 0.16
+  sitting at the edge of a paragraph - "him", "window", "passed", "too", "crime".
+  None of them are in the audio. Two runs of faster-whisper over byte-identical
+  audio disagreed about paragraph 16 of the JonBenet episode, one clean and one
+  flagged.
+- **Alignment spillover.** A word that belongs to paragraph N+1 reported against N.
+  Findings are now numbered by the clock, not by where the aligner stopped.
+
+The first three are settled by orthography, which is free. What orthography cannot
+do is tell a clone that mispronounced a word from a transcriber that guessed one,
+so anything still standing is **heard again**: the paragraph is cut out of
+`voice.wav` on the silence either side of it and transcribed on its own, and the
+finding has to come back as itself. Decoding one paragraph is a genuinely different
+draw from decoding it inside twenty minutes of speech, and it has none of the
+segment boundaries that produced most of the phantoms. Two passes that disagree
+with the script in two different ways are two guesses. A render that is really
+wrong sounds wrong both times, which is why "Capra One" survives this.
+
+It costs about a minute. Nothing is suppressed silently: what a second listen threw
+out is written to `audio-audit.md` under "Heard once, not twice", with the reason.
+
+### What holds an episode and what does not
+
+Held: levels, length, dead air, a confirmed word finding, a splice seam that steps
+more than 3 dB, and a script over `script-repeats.mjs`'s own "edit before voicing"
+line.
+
+Reported only: pace and flat delivery. Those are judgements, and a gate that holds a
+finished episode on a judgement is the gate that stalled two episodes. The Gilgo
+episode's slowest paragraph by a wide margin is the eight victims' names read one at
+a time - 40% under its median pace, and the moment the episode is named after.
+
+`audioOk: ["..."]` in `episode.json` still exists and should rarely be needed now.
+
+### Repetition
+
+`script-repeats.mjs` finds the scenes a script tells twice, which neither gate can
+hear. It runs as a **preflight in `episode-weekly.mjs`**, before the render, where
+the fix is still a text edit and costs nothing. Over its own "edit before voicing"
+line the run stops and Cory gets a Telegram naming the paragraphs.
+
+The line is set where the evidence put it: the published Petito episode scores 11.8%
+and walks the Moab traffic stop three times; every episode since scores between 2.1%
+and 6.0%.
+
+### The minute that stands in for the twenty
+
+    node automation/episode-digest.mjs <draft-id> [--seconds 75]
+
+`digest.mp3` and `digest.md`: the places the gate is least sure about, worst first,
+in 60 to 90 seconds, with an index giving each one's time in the real episode. On an
+episode with nothing flagged it falls back to the stretches the transcriber was least
+sure of, so there is always something to spot-check.
+
+**It is crossfaded, and the windows are cut on pauses the clone actually left.** On
+2026-09-20 a montage of six six-second windows with hard ffmpeg boundaries went to
+Cory; he listened and reported "lots of cut out of pauses", and he was hearing the
+montage, not the episode. A hard-cut digest manufactures the exact artifact it exists
+to detect. The finished file has no silence over 0.25 s anywhere in it.
+
+### Paragraph boundaries
+
+`episode-splice.mjs` swaps single paragraphs on the silence between them, and used to
+find that silence by counting: 0.55 s of digital silence, N-1 of them. On 2026-09-20
+that refused the finished Miami episode - "Found 80 paragraph gaps for 80 paragraphs"
+- because the clone left a beat inside paragraph 3, after "That is in the notes for a
+reason", before "Let's unpack it." A beat and a join are the same thing to a level
+detector, and tightening the threshold only moves the problem.
+
+`audio-paragraphs.mjs` reads them against the transcript instead: the last moment
+paragraph N is heard and the first moment N+1 is heard bracket exactly one gap. With
+no transcript it falls back to fitting paragraph lengths, which is second best - on
+Miami that fallback picks the wrong gap, because paragraph 3 is short text carrying a
+long beat and the fit would rather split it than believe it. Run the audit first.
+
+Joins are now rebuilt at the length they were rather than a flat 0.550 s. An untouched
+render varies between about 0.50 and 0.63 s and a spliced one came out at 0.550 every
+time; it is a small thing and it is the kind of regularity that sounds machine-made.
+
+`npm run test:audio` covers the comparer and the boundary logic, from the real cases.
 
 ## One feed, everywhere
 

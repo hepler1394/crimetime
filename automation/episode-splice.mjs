@@ -9,10 +9,19 @@
 // <dir> holds pNNN.wav for every index that has a "script" (render them with tts_clone.py).
 //
 // Why this is safe to do: episode-voice.mjs joins paragraphs with 0.55 s of digital silence
-// (joinParts), and nothing inside a paragraph is ever that quiet for that long, so the
-// paragraph boundaries can be read back out of voice.wav exactly. A swap lands on those
-// boundaries, never inside speech, so there is no seam to hear. It refuses to run if the
-// number of gaps it finds does not match the script.
+// (joinParts), so the paragraph boundaries can be read back out of voice.wav. A swap lands on
+// those boundaries, never inside speech, so there is no seam to hear.
+//
+// It used to find those boundaries by counting, and refuse when the count came out wrong. On
+// 2026-09-20 that refused the finished Miami episode - "Found 80 paragraph gaps for 80
+// paragraphs" - because the clone left a beat inside paragraph 3, after "That is in the notes
+// for a reason", and a beat and a join look the same to a level detector. audio-paragraphs.mjs
+// settles it against the transcript instead. See its header.
+//
+// The joins are rebuilt at the length they actually were, not at a flat 0.55 s. An untouched
+// render varies between about 0.50 and 0.63 s and a spliced one used to come out at 0.550 every
+// time; the difference is small but it is the kind of regularity that makes a thing sound
+// machine-made, and there is no reason to introduce it.
 //
 // The previous voice.wav, episode.mp3, transcript.json and episode.json are kept beside the
 // new ones as *.before-splice.
@@ -23,6 +32,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { existsSync } from "node:fs";
 import { mixEpisode, probeSeconds } from "./episode-music.mjs";
+import { paragraphSpans } from "./audio-paragraphs.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const STUDIO = join(here, "studio");
@@ -53,21 +63,22 @@ const meanDb = (file) => {
   const m = /mean_volume:\s*(-?[\d.]+) dB/.exec(r.stderr || ""); return m ? parseFloat(m[1]) : null;
 };
 
-/* 1. paragraph boundaries, read back from the audio */
-const det = spawnSync("ffmpeg", ["-hide_banner", "-nostats", "-i", voice, "-af", "silencedetect=noise=-70dB:d=0.45", "-f", "null", "-"], { encoding: "utf8", windowsHide: true, maxBuffer: 64 * 1024 * 1024 });
-const starts = [...det.stderr.matchAll(/silence_start: ([\d.]+)/g)].map((m) => +m[1]);
-const ends = [...det.stderr.matchAll(/silence_end: ([\d.]+)/g)].map((m) => +m[1]);
+/* 1. paragraph boundaries, read back from the audio against the transcript */
 const paras = ep.script.filter(Boolean);
-if (starts.length !== paras.length - 1 || ends.length !== starts.length) die("boundaries", `Found ${starts.length} paragraph gaps for ${paras.length} paragraphs; refusing to guess where they are.`);
-const total = probeSeconds(voice);
-const span = (i) => [i ? ends[i - 1] : 0, i < starts.length ? starts[i] : total];
+const wordsFile = join(dir, "audit-words.json");
+const heard = existsSync(wordsFile) ? (JSON.parse(await readFile(wordsFile, "utf8")).words || []) : null;
+const bounds = paragraphSpans(voice, paras, { words: heard?.length ? heard : null });
+if (!bounds.ok) die("boundaries", `${bounds.why}. Run episode-audit.mjs first so the joins can be read against the transcript.`);
+if (bounds.extra.length) say(`Ignored ${bounds.extra.length} pause(s) inside paragraphs: ${bounds.extra.map((g) => g.start.toFixed(2)).join(", ")}`);
+const span = (i) => bounds.spans[i];
 
 /* 2. cut the kept paragraphs out, bring the new ones to the same processing and level */
 const work = join(dir, "splice"); await rm(work, { recursive: true, force: true }); await mkdir(work, { recursive: true });
-const parts = [], script = [], report = [];
+const parts = [], script = [], report = [], partOf = [];
 for (let i = 0; i < paras.length; i++) {
   const e = edits[String(i)];
   if (e?.drop) { report.push({ i, action: "dropped", seconds: +(span(i)[1] - span(i)[0]).toFixed(1) }); continue; }
+  partOf.push(i);
   const [s, t] = span(i);
   const orig = join(work, `o${String(i).padStart(3, "0")}.wav`);
   run("ffmpeg", ["-y", "-v", "error", "-ss", s.toFixed(4), "-to", t.toFixed(4), "-i", voice, "-ac", "1", "-ar", "44100", orig], "cut");
@@ -85,10 +96,18 @@ for (let i = 0; i < paras.length; i++) {
   report.push({ i, action: "replaced", was: +(t - s).toFixed(1), now: +probeSeconds(fin).toFixed(1), gainDb: +gain.toFixed(2) });
 }
 
-/* 3. rejoin with the same 0.55 s gap */
-const gap = join(work, "gap.wav");
-run("ffmpeg", ["-y", "-v", "error", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=mono", "-t", "0.55", gap], "gap");
-const list = parts.flatMap((p, i) => (i ? [gap, p] : [p])).map((p) => `file '${p.replace(/\\/g, "/").replace(/'/g, "'\\''")}'`).join("\n");
+/* 3. rejoin, each gap at the length it was */
+const gapFile = new Map();
+const gapOf = (seconds) => {
+  const s = Math.max(0.3, Math.min(1.2, seconds || 0.55)).toFixed(3);
+  if (!gapFile.has(s)) {
+    const f = join(work, `gap-${s.replace(".", "")}.wav`);
+    run("ffmpeg", ["-y", "-v", "error", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=mono", "-t", s, f], "gap");
+    gapFile.set(s, f);
+  }
+  return gapFile.get(s);
+};
+const list = parts.flatMap((p, i) => (i ? [gapOf(bounds.joins[partOf[i] - 1]?.seconds), p] : [p])).map((p) => `file '${p.replace(/\\/g, "/").replace(/'/g, "'\\''")}'`).join("\n");
 await writeFile(join(work, "concat.txt"), list, "utf8");
 const newVoice = join(work, "voice.wav");
 run("ffmpeg", ["-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", join(work, "concat.txt"), "-ac", "1", "-ar", "44100", newVoice], "concat");
