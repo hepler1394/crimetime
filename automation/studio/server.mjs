@@ -153,6 +153,16 @@ async function voiceState(tts, id) {
   if (running().some((j) => j.draft === id && j.action === "voice")) return "voice";
   return (await voiceStopped(tts)) ? null : "voice";
 }
+// Which episode, if any, is mid clone render anywhere on this machine. The audit runs
+// faster-whisper and a repair runs the clone again; either one alongside a render leaves both
+// crawling, which is why CLAUDE.md says not to. A house rule only the documentation knows is
+// not a rule, so it is refused here.
+async function renderingNow() {
+  for (const id of await readdir(DRAFTS).catch(() => [])) {
+    if (await voiceState(join(DRAFTS, id, "tts"), id)) return id;
+  }
+  return null;
+}
 
 /* -------------------------------------------------------------- health */
 const sh = (cmd, args, ms = 15000) => { const r = spawnSync(cmd, args, { cwd: ROOT, encoding: "utf8", windowsHide: true, timeout: ms }); return (r.stdout || "").trim(); };
@@ -758,6 +768,10 @@ const server = createServer(async (req, res) => {
       if (body.id && !safeId(body.id)) return json(res, 400, { error: "bad id" });
       if(body.id && editingDrafts.has(body.id))return json(res,409,{error:'Wait for the script save to finish before starting a job.'});
       if (body.id && running().some((j) => j.draft === body.id)) return json(res, 409, { error: "a job is already running for this draft" });
+      if (["audit", "repair"].includes(body.action)) {
+        const busy = await renderingNow();
+        if (busy) return json(res, 409, { error: `A voice render is running for ${busy}. It and this both want every core; wait for it to finish.` });
+      }
       if (["voice", "elevenlabs"].includes(body.action) && body.id && (await exists(join(DRAFTS, body.id, "tts")))) {
         // Only block for a render that is actually alive; a crashed one is cleared below.
         if (!(await voiceStopped(join(DRAFTS, body.id, "tts")))) return json(res, 409, { error: "a voice render is already running for this episode. Wait for it to finish." });

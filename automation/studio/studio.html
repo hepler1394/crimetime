@@ -478,10 +478,15 @@ function stageOf(ep) {
 // apart: nothing has listened to this file, something is being held, or it is clear. In the
 // clear case it still shows what a second listen threw out, because a gate that suppresses
 // findings silently is a gate nobody has any reason to believe.
-function auditPanel(ep, a, auditFresh, busy, esc) {
+function auditPanel(ep, a, auditFresh, runningFor, pub, esc) {
   const url = (n) => `/api/draft/${ep.id}/file?name=${encodeURIComponent(n)}&v=${encodeURIComponent(ep.edited || ep.created)}`;
   const has = (n) => (ep.fileList || []).some((x) => x.name === n);
-  const dis = busy ? "disabled" : "";
+  // Listening is read-only: it writes audio-audit.md, the audit record and the digest, and
+  // touches nothing that ships. So it stays available on a published episode, which is
+  // exactly when you want to know what is in the thing already out there. Re-voicing does
+  // change the audio, so that one is locked once the episode is out.
+  const dis = runningFor ? "disabled" : "";
+  const disWrite = runningFor || pub ? "disabled" : "";
   if (!a || !auditFresh) return `<p class="hint" style="margin:0 0 10px">${a ? "The audit on file is of an earlier render of this episode, not this one." : "Nothing has listened to this render yet."} Publish refuses audio nothing has checked.</p>
       <div class="row"><button class="btn red" data-run="audit" ${dis}>Audit the audio</button></div>
       <p class="hint" style="margin:8px 0 0">Takes about as long as the episode. Do not start it while a clone render is going; both want every core.</p>`;
@@ -500,7 +505,7 @@ function auditPanel(ep, a, auditFresh, busy, esc) {
         ${d?.items?.length ? `<ol class="hint" style="margin:8px 0 0;padding-left:20px;line-height:1.6">${d.items.map((i) => `<li>${esc(i.kind)} at <b>${Math.floor(i.at / 60)}:${String(Math.floor(i.at % 60)).padStart(2, "0")}</b> in the episode &mdash; ${esc(i.text)}</li>`).join("")}</ol>` : ""}
         <p class="hint" style="margin:8px 0 0">Worst first. Every window starts and ends in a pause the clone left and crossfades into the next, so a clipped pause you hear is in the episode, not in this file.</p></div>`
       : `<div class="row" style="margin-top:12px"><button class="btn ghost sm" data-run="digest" ${dis}>Cut a spot check</button></div>`}
-    <div class="row" style="margin-top:14px">${held ? `<button class="btn red" data-run="repair" ${dis}>Re-voice the flagged paragraphs</button>` : ""}<button class="btn ghost sm" data-run="audit" ${dis}>Re-audit</button></div>
+    <div class="row" style="margin-top:14px">${held ? `<button class="btn red" data-run="repair" ${disWrite}>Re-voice the flagged paragraphs</button>` : ""}<button class="btn ghost sm" data-run="audit" ${dis}>Re-audit</button>${has("digest.mp3") ? `<button class="btn ghost sm" data-run="digest" ${dis}>Re-cut the spot check</button>` : ""}</div>
     ${held ? `<p class="hint" style="margin:8px 0 0">Re-voicing re-reads only those paragraphs on another seed, checks each one, and splices it back in on the silence between paragraphs. Nothing else in the render is touched.</p>` : ""}`;
 }
 const RUN_LABEL = { new: "Writing the script", research: "Researching", voice: "Making the voice", audit: "Listening to the render", repair: "Re-voicing the flagged paragraphs", digest: "Cutting the digest", art: "Rendering art", social: "Cutting the reel", trailer: "Cutting the trailer", publish: "Publishing", generate: "Generating", "footage-add": "Adding the source", "footage-clip": "Cutting the clip" };
@@ -612,7 +617,7 @@ function renderEditor() {
             <div class="row" style="margin-top:12px"><button class="btn red" data-run="voice" ${dis(!done.script)}>${done.voice ? "Re-make voice" : "Make voice"}</button></div>
           </div>
           ${done.voice ? `<div class="field"><label class="f">Episode audio, ${esc(ep.duration?.replace(/^00:/, "") || "")}</label><audio id="ep-audio" controls preload="metadata" src="${f("audio")}"></audio><div class="hint">${esc(ep.voiceUsed || "")}</div>${ep.files.transcript ? `<div class="tx" id="tx"><span class="hint">Loading the transcript</span></div><div class="hint">Click a line to hear it. The same transcript goes on the episode page.</div>` : ""}</div>` : ""}
-          ${done.voice ? `<div class="field"><label class="f">Audio gate</label>${auditPanel(ep, auditRec, auditFresh, runningFor || pub, esc)}</div>` : ""}
+          ${done.voice ? `<div class="field"><label class="f">Audio gate</label>${auditPanel(ep, auditRec, auditFresh, runningFor, pub, esc)}</div>` : ""}
         </div>
         <div>
           <div class="field"><label class="f">Or record it yourself</label>
