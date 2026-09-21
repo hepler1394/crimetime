@@ -172,6 +172,31 @@
         "Cold case",
         "DNA"
       ]
+    },
+    {
+      "guid": "cts-studio-the-miami-apartment-stabbing",
+      "title": "The Miami Apartment Stabbing",
+      "slug": "the-miami-apartment-stabbing",
+      "date": "2026-09-21",
+      "pubDate": "Mon, 21 Sep 2026 02:23:52 GMT",
+      "duration": "00:21:12",
+      "description": "Courtney Clenney was arrested on August 10, 2022. She pleaded guilty on August 10, 2026. Four years, to the day, and the case still did not answer its own question. Hey everyone, it's Cory. This time on CrimeTimeSnacks: the killing of Christian Obumseli in a Miami high-rise. The fourteen minutes on April 3, 2022, the elevator video, the medical examiner's finding that broke the self-defense account, the four months before an arrest, the battered spouse defense that never reached a jury, and what a plea leaves unsettled. If any of this sounds like your life, the National Domestic Violence Hotline is 800-799-7233.",
+      "audio": "/audio/the-miami-apartment-stabbing.mp3",
+      "audioType": "audio/mpeg",
+      "audioBytes": 20360619,
+      "image": "/images/episodes/the-miami-apartment-stabbing.jpg",
+      "link": "",
+      "explicit": false,
+      "source": "studio",
+      "keywords": [
+        "Courtney Clenney",
+        "Christian Obumseli",
+        "Miami",
+        "Domestic violence",
+        "True crime",
+        "Manslaughter",
+        "Court case"
+      ]
     }
   ]
 }

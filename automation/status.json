@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-20T20:54:59.176Z",
-  "improvementsShipped": 505,
+  "generated": "2026-09-21T02:23:56.203Z",
+  "improvementsShipped": 506,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
     "content": [
@@ -10,7 +10,7 @@
     "sync": "Every 6 hours"
   },
   "counts": {
-    "episodes": 13,
+    "episodes": 14,
     "posts": 17,
     "merchDesigns": 33,
     "merchCollection": 0,
@@ -23,8 +23,8 @@
   },
   "latest": {
     "episode": {
-      "title": "Gilgo Beach: Eight Names",
-      "date": "2026-09-20"
+      "title": "The Miami Apartment Stabbing",
+      "date": "2026-09-21"
     },
     "post": {
       "title": "The Killing of JonBenét Ramsey: What the Record Shows",
@@ -36,12 +36,12 @@
     }
   },
   "freshness": {
-    "episodesJson": "2026-09-20T20:54:34.689Z",
-    "blogJson": "2026-09-20T20:54:30.174Z",
+    "episodesJson": "2026-09-21T02:23:52.143Z",
+    "blogJson": "2026-09-18T23:59:23.269Z",
     "merchJson": "2026-09-15T14:02:27.587Z",
     "quizzesJson": "2026-09-15T14:02:30.387Z",
     "fbiJson": "2026-09-20T20:54:35.509Z",
-    "css": "2026-09-20T20:54:30.241Z"
+    "css": "2026-09-19T00:16:45.931Z"
   },
   "nextTopics": [
     "How the FBI's ViCAP database links violent crimes",

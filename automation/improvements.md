@@ -569,3 +569,4 @@ with an [auto] tag — the counter on Mission Control reads this file.
 503. [auto 2026-09-19] Published podcast episode from the studio: "Murders in Moscow: The Plea" (00:22:26)
 504. [auto 2026-09-19] Published podcast episode from the studio: "The Menendez Brothers: The Parole Years" (00:21:15)
 505. [auto 2026-09-19] Published podcast episode from the studio: "Delphi: The Appeal" (00:20:11)
+506. [auto 2026-09-20] Published podcast episode from the studio: "Gilgo Beach: Eight Names" (00:20:53)

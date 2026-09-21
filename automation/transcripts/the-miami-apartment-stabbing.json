@@ -1,0 +1,1366 @@
+{
+ "slug": "the-miami-apartment-stabbing",
+ "title": "The Miami Apartment Stabbing",
+ "language": "en",
+ "duration": 1272.5,
+ "model": "faster-whisper small (int8)",
+ "generated": "2026-09-21",
+ "note": "Transcript generated from the episode script.",
+ "segments": [
+  {
+   "start": 5,
+   "end": 10.4,
+   "text": "What's up guys welcome back to Crime Time Snacks. On August 10, 2026 a 30 year old woman named"
+  },
+  {
+   "start": 10.4,
+   "end": 14.8,
+   "text": "Courtney Clenney stood up in a Miami courtroom and pleaded guilty to manslaughter with a deadly"
+  },
+  {
+   "start": 14.8,
+   "end": 20,
+   "text": "weapon. She was sentenced to six years with credit for the time she'd already served and five years"
+  },
+  {
+   "start": 20,
+   "end": 25.3,
+   "text": "of probation after that. Here is the detail I cannot get past. She was arrested on August 10,"
+  },
+  {
+   "start": 25.3,
+   "end": 31,
+   "text": "2022. Her sentencing was August 10, 2026, four years to the day between the handcuffs and"
+  },
+  {
+   "start": 31.1,
+   "end": 36.2,
+   "text": "the plea. This one is hard to talk about and I want to say why up front. A man is dead."
+  },
+  {
+   "start": 36.8,
+   "end": 42.6,
+   "text": "Christian Obumseli was 27 years old and his case is not a who done it. Clenney called 911 herself"
+  },
+  {
+   "start": 42.6,
+   "end": 47.8,
+   "text": "and said she had stabbed him. What this case has always been about is why and whether the law called"
+  },
+  {
+   "start": 47.8,
+   "end": 52.8,
+   "text": "it a crime. Both of these people accused the other of abuse and the record has real evidence on"
+  },
+  {
+   "start": 52.8,
+   "end": 57.5,
+   "text": "both sides of that. So I am going to walk you through what is documented, what was alleged"
+  },
+  {
+   "start": 57.5,
+   "end": 62,
+   "text": "and what the plea actually settled, which is less than you might think. One more thing before we"
+  },
+  {
+   "start": 62,
+   "end": 68.2,
+   "text": "start. If any part of this sounds like your life, the National Domestic Violence Hotline is 807-997-233"
+  },
+  {
+   "start": 68.2,
+   "end": 74.9,
+   "text": "they. That is in the notes for a reason. Let's unpack it. They lived in unit 2001 at 1"
+  },
+  {
+   "start": 74.9,
+   "end": 79.5,
+   "text": "Paraiso Residences, a luxury high rise on Northeast 7th Avenue in the Edgewater neighborhood of"
+  },
+  {
+   "start": 79.5,
+   "end": 84.9,
+   "text": "Miami. They had moved in that January. The arrest warrant affidavit shows the day started"
+  },
+  {
+   "start": 84.9,
+   "end": 90.5,
+   "text": "peacefully. They were in the apartment playing with their two dogs. At about 2015 in the afternoon,"
+  },
+  {
+   "start": 90.5,
+   "end": 94.9,
+   "text": "Obumseli left with the dogs to pick up Subway for the two of them. While he was out,"
+  },
+  {
+   "start": 94.9,
+   "end": 99.3,
+   "text": "Clenney recorded and posted a live video to Instagram. Phone records show she called him"
+  },
+  {
+   "start": 99.3,
+   "end": 104.8,
+   "text": "just before she filmed it and again just before he got back. At 4032, he came back"
+  },
+  {
+   "start": 104.8,
+   "end": 110.3,
+   "text": "into the building with the dogs and the sandwiches. At 4043, Clenney called her mother."
+  },
+  {
+   "start": 110.3,
+   "end": 114,
+   "text": "That call was still going on or had just ended when the rest of it happened."
+  },
+  {
+   "start": 114,
+   "end": 118.4,
+   "text": "Her mother told police that she heard her daughter calling Obumseli a liar and yelling at him to get"
+  },
+  {
+   "start": 118.4,
+   "end": 124,
+   "text": "out of the apartment. At 4046, the building's management called 911 to report a disturbance"
+  },
+  {
+   "start": 124,
+   "end": 130.4,
+   "text": "in their apartment. At 4057, Clenney called 911 herself and told the operator that Obumseli"
+  },
+  {
+   "start": 130.4,
+   "end": 135.2,
+   "text": "had been stabbed and needed help and here's the line from that call that ended up in the warrant."
+  },
+  {
+   "start": 135.2,
+   "end": 138.9,
+   "text": "In the background, the victim can be heard repeatedly saying he is dying and that he"
+  },
+  {
+   "start": 138.9,
+   "end": 144.7,
+   "text": "cannot feel his arm. Clenney can be heard saying I'm so sorry baby. Investigators put the stabbing"
+  },
+  {
+   "start": 144.7,
+   "end": 150.8,
+   "text": "somewhere between 4000-4000-57. 14 minutes at the outside is the window they gave for it"
+  },
+  {
+   "start": 150.8,
+   "end": 157,
+   "text": "and he had been back in the apartment since 4000-1000-1000-002. Police got to the apartment"
+  },
+  {
+   "start": 157,
+   "end": 160.8,
+   "text": "and found Clenney holding him. He had a stab wound to the chest. He was taken to the"
+  },
+  {
+   "start": 160.8,
+   "end": 165.8,
+   "text": "Ryder Trauma Center at Jackson Memorial and he died. TMZ later published a photograph of"
+  },
+  {
+   "start": 165.8,
+   "end": 170.4,
+   "text": "Clenney in the hallway of the building talking to Miami police covered in blood. The warrant"
+  },
+  {
+   "start": 170.4,
+   "end": 174.2,
+   "text": "notes something else about that scene. There was blood throughout the condominium at different"
+  },
+  {
+   "start": 174.2,
+   "end": 178.3,
+   "text": "levels including two large pools of it. Investigators took that to mean he had been"
+  },
+  {
+   "start": 178.3,
+   "end": 183.3,
+   "text": "bleeding for a long time before anyone got there. Christian Tobichak Obumseli went by Toby."
+  },
+  {
+   "start": 183.3,
+   "end": 187.5,
+   "text": "He was born in Dallas and went to Plano East Senior High School in Texas. He earned a"
+  },
+  {
+   "start": 187.5,
+   "end": 191.4,
+   "text": "football scholarship to Abilene Christian University then transferred to Texas Tech"
+  },
+  {
+   "start": 191.4,
+   "end": 196.3,
+   "text": "to study engineering. He worked in cryptocurrency and he also worked as a kind of assistant to"
+  },
+  {
+   "start": 196.3,
+   "end": 201.7,
+   "text": "Clenney. His obituary calls him a free spirit with larger-than-life dreams and says his fun-loving"
+  },
+  {
+   "start": 201.7,
+   "end": 206.4,
+   "text": "attitude let him be comfortable in almost any atmosphere. Courtney Taylor Clenney was born"
+  },
+  {
+   "start": 206.4,
+   "end": 211.5,
+   "text": "in Midland, Texas in April 1996 and her family moved to Austin when she was 7. She wanted to"
+  },
+  {
+   "start": 211.5,
+   "end": 216.1,
+   "text": "act from a young age. She did commercials and she had a small part in a 2016 movie."
+  },
+  {
+   "start": 216.7,
+   "end": 220.7,
+   "text": "What actually made her famous was social media. Under the name Courtney Taylor she"
+  },
+  {
+   "start": 220.7,
+   "end": 225.3,
+   "text": "built a following of nearly 2 million on Instagram and she had a large OnlyFans income."
+  },
+  {
+   "start": 225.3,
+   "end": 231.9,
+   "text": "In 2020 she made about $900,000 Schmuelney fans. In 2021 more than 1.8 million."
+  },
+  {
+   "start": 232.6,
+   "end": 236.8,
+   "text": "They started dating in November 2020. They were together a little under two years."
+  },
+  {
+   "start": 237.6,
+   "end": 241.6,
+   "text": "One more thing about her because it comes up later. Rolling Stone reported she had one DUI"
+  },
+  {
+   "start": 241.6,
+   "end": 245.7,
+   "text": "conviction in Texas and another case pending there. A friend of the couple described the"
+  },
+  {
+   "start": 245.7,
+   "end": 250.3,
+   "text": "pattern to that magazine as her always having these manic episodes dragging him into it and"
+  },
+  {
+   "start": 250.4,
+   "end": 255.9,
+   "text": "him trying to say calm down calm down. Her own attorney would later call it simply a toxic"
+  },
+  {
+   "start": 255.9,
+   "end": 259.2,
+   "text": "relationship that had its ups and downs and unfortunately culminated with his death."
+  },
+  {
+   "start": 260,
+   "end": 263.6,
+   "text": "Now the part that shaped everything else. The state attorney's office described their"
+  },
+  {
+   "start": 263.6,
+   "end": 268.6,
+   "text": "relationship as extremely tempestuous and combative going back to November 2020."
+  },
+  {
+   "start": 268.6,
+   "end": 272.8,
+   "text": "Police put it in the warrant this way. Multiple incidents of domestic violence from both sides"
+  },
+  {
+   "start": 272.8,
+   "end": 277.9,
+   "text": "over the period of their relationship. I want you to hold on to that phrase from both sides"
+  },
+  {
+   "start": 277.9,
+   "end": 282,
+   "text": "because both the prosecution and the defense spent four years arguing about which side it meant."
+  },
+  {
+   "start": 283,
+   "end": 288.2,
+   "text": "Here is what was documented against Clenny. In July 2021 she was arrested in Las Vegas on a"
+  },
+  {
+   "start": 288.2,
+   "end": 292.8,
+   "text": "domestic battery charge after an incident in a hotel room with Obam Selle. Police were called"
+  },
+  {
+   "start": 292.8,
+   "end": 298,
+   "text": "to their home in Austin multiple times. And after they moved into one perreso in January"
+  },
+  {
+   "start": 298,
+   "end": 302.6,
+   "text": "22 the argument started almost immediately. There were so many documented incidents that"
+  },
+  {
+   "start": 302.6,
+   "end": 307.1,
+   "text": "management was preparing legal action to evict them. Tenants two floors up could hear them."
+  },
+  {
+   "start": 308,
+   "end": 312.8,
+   "text": "One detail from Las Vegas matters more than it looks. The Miami Herald reported she was arrested"
+  },
+  {
+   "start": 312.8,
+   "end": 317.3,
+   "text": "there after she admitted that thrown a glass at him. That was nine months before the stabbing."
+  },
+  {
+   "start": 318,
+   "end": 322,
+   "text": "Keep it in mind because it turns up again later in how police finally described this relationship."
+  },
+  {
+   "start": 322.8,
+   "end": 328.3,
+   "text": "And then there is the video. On February 21 2022 at about 8,030 at night a camera in the"
+  },
+  {
+   "start": 328.3,
+   "end": 332.8,
+   "text": "building's elevator recorded about a minute of them. Clenny gets in, hits the floor selection"
+  },
+  {
+   "start": 332.8,
+   "end": 338.8,
+   "text": "screen hard. Obam Selle gets in behind her in motions for her to stop. She hits him repeatedly."
+  },
+  {
+   "start": 338.8,
+   "end": 343.2,
+   "text": "She pulls at his shirt and his hair. He pushes her away and holds his arms up to block her."
+  },
+  {
+   "start": 343.2,
+   "end": 347.8,
+   "text": "He does not hit back. He gets out of the elevator and she follows him out still hitting him."
+  },
+  {
+   "start": 348.6,
+   "end": 353.2,
+   "text": "Prosecutors released that video at a news conference. It is the single most seen piece"
+  },
+  {
+   "start": 353.2,
+   "end": 358.3,
+   "text": "of evidence in this case. I want to be honest about what that video does to a person watching"
+  },
+  {
+   "start": 358.3,
+   "end": 362.4,
+   "text": "it. It is about 60 seconds long and the man in it never raises a hand."
+  },
+  {
+   "start": 363.1,
+   "end": 367.6,
+   "text": "If you only ever see one piece of this case that is the one you will see and it is very hard to"
+  },
+  {
+   "start": 367.6,
+   "end": 372.1,
+   "text": "look at it and then hear that he was the abuser. That is exactly what the defense spent four"
+  },
+  {
+   "start": 372.1,
+   "end": 377.3,
+   "text": "years worried about. But the same warrant that describes that video also contains this sentence"
+  },
+  {
+   "start": 377.3,
+   "end": 381.6,
+   "text": "while certainly not one-sided. The evidence shows there were prior incidents of the defendant"
+  },
+  {
+   "start": 381.6,
+   "end": 385.6,
+   "text": "being physically violent with the victim. Police wrote that the events were certainly"
+  },
+  {
+   "start": 385.6,
+   "end": 390.6,
+   "text": "not one-sided and then they did not elaborate. That one clause is where the entire defense lived"
+  },
+  {
+   "start": 390.6,
+   "end": 396.4,
+   "text": "for four years. The relationship kept breaking. They split up several times and the last time was"
+  },
+  {
+   "start": 396.4,
+   "end": 401.3,
+   "text": "the last week of March 2022 when Clenny put him out of the apartment for about a week."
+  },
+  {
+   "start": 402.3,
+   "end": 406.7,
+   "text": "On April 1 they got back together and he moved back in. That same night police were called to"
+  },
+  {
+   "start": 406.7,
+   "end": 411.3,
+   "text": "the building on a domestic call. Clenny made the report. She told officers Obam Selle had been"
+  },
+  {
+   "start": 411.3,
+   "end": 414.4,
+   "text": "stalking her and asked them how to get a restraining order. She said,"
+  },
+  {
+   "start": 414.4,
+   "end": 418.4,
+   "text": "I have not always been a victim but like right now I am the victim in this situation."
+  },
+  {
+   "start": 418.4,
+   "end": 422.8,
+   "text": "One account says she had bruises on her arms and legs. The officers noted she appeared intoxicated."
+  },
+  {
+   "start": 422.8,
+   "end": 427.8,
+   "text": "Nobody was arrested. Stop on that for a second because April 1 is the whole case in miniature."
+  },
+  {
+   "start": 428.4,
+   "end": 432.6,
+   "text": "Inside one police visit you have a woman saying she is being stalked and asking about a"
+  },
+  {
+   "start": 432.6,
+   "end": 437.2,
+   "text": "restraining order, visible bruises on her and an officer writing down that she seemed drunk."
+  },
+  {
+   "start": 437.8,
+   "end": 442.2,
+   "text": "Everybody in this story had a version and the versions did not fit together and nobody had to"
+  },
+  {
+   "start": 442.2,
+   "end": 447.6,
+   "text": "decide between them that night. Two days later he was dead. Here's the part of this case that"
+  },
+  {
+   "start": 447.6,
+   "end": 451.9,
+   "text": "made a lot of people angry and I think you should understand why. On the night of the"
+  },
+  {
+   "start": 451.9,
+   "end": 455.9,
+   "text": "stabbing, Clenny gave police a recorded statement and was sent home pending investigation."
+  },
+  {
+   "start": 455.9,
+   "end": 459.6,
+   "text": "She was not arrested. At the time the preliminary read was that this looked like"
+  },
+  {
+   "start": 459.6,
+   "end": 464.1,
+   "text": "self-defense in a mutual fight. Her attorney Frank Prieto said publicly that this was not"
+  },
+  {
+   "start": 464.1,
+   "end": 469.6,
+   "text": "a crime, that she was innocent, that she had acted in self-defense and that no charges should be filed."
+  },
+  {
+   "start": 470.1,
+   "end": 473.8,
+   "text": "He told Rolling Stone that Obam Selle had been committing a crime, that she had every right"
+  },
+  {
+   "start": 473.8,
+   "end": 478.5,
+   "text": "to defend herself and that she felt horrible. There is one more thing about that night."
+  },
+  {
+   "start": 478.5,
+   "end": 483,
+   "text": "It was investigators who broke the news to her during a police interview that Obam Selle had"
+  },
+  {
+   "start": 483,
+   "end": 487.7,
+   "text": "died. In four months went by. Clenny went to Hawaii. Her attorney says she was there on a"
+  },
+  {
+   "start": 487.7,
+   "end": 492,
+   "text": "program for substance abuse and post-traumatic stress disorder. Her lawyer and detectives"
+  },
+  {
+   "start": 492,
+   "end": 495.9,
+   "text": "had also had her committed for psychiatric evaluation under Florida's Baker Act after the"
+  },
+  {
+   "start": 495.9,
+   "end": 500.8,
+   "text": "stabbing. Obam Selle's family spent those four months saying publicly and repeatedly that"
+  },
+  {
+   "start": 500.8,
+   "end": 504.4,
+   "text": "Clenny was getting preferential treatment because she was a wealthy white woman and Obam Selle was a"
+  },
+  {
+   "start": 504.4,
+   "end": 507.6,
+   "text": "black man. Their attorney Larry Hanfield said,"
+  },
+  {
+   "start": 507.6,
+   "end": 511.7,
+   "text": "the family believed that once a full investigation was done she would be held to account for"
+  },
+  {
+   "start": 511.7,
+   "end": 516.4,
+   "text": "taking his life. His cousin Karen Igbuna said at a news conference that the family had no"
+  },
+  {
+   "start": 516.4,
+   "end": 521.4,
+   "text": "cause to believe this was self-defense. I am not going to tell you what was in anyone's head."
+  },
+  {
+   "start": 521.4,
+   "end": 525.7,
+   "text": "I will tell you the sequence. A man was stabbed to death. The woman who did it went home that"
+  },
+  {
+   "start": 525.7,
+   "end": 529.6,
+   "text": "night and it took four months and a medical examiner's report for a charge to be filed."
+  },
+  {
+   "start": 530.6,
+   "end": 534.7,
+   "text": "There is one more fact in that stretch worth knowing. The Miami police department's own"
+  },
+  {
+   "start": 534.7,
+   "end": 539,
+   "text": "early statement said the preliminary investigation determined that both Obam Selle and the female"
+  },
+  {
+   "start": 539,
+   "end": 544.1,
+   "text": "had been involved in a physical altercation. That is how it was framed at first as a fight."
+  },
+  {
+   "start": 544.1,
+   "end": 548.3,
+   "text": "Rundle's office then opened a review that ran four months and Miami police went back"
+  },
+  {
+   "start": 548.3,
+   "end": 552.3,
+   "text": "through it with the state attorney's office obtaining several warrants and subpoenas,"
+  },
+  {
+   "start": 552.3,
+   "end": 556.3,
+   "text": "pulling cell phone extraction data, recorded statements, 911 calls and records,"
+  },
+  {
+   "start": 556.3,
+   "end": 559.2,
+   "text": "and taking information from law enforcement agencies in other states."
+  },
+  {
+   "start": 560,
+   "end": 565,
+   "text": "What changed was the science. Clennie's account to police was that Obam Selle shoved her against"
+  },
+  {
+   "start": 565,
+   "end": 569,
+   "text": "the wall by her neck, threw her to the ground and that she picked up a kitchen knife and threw"
+  },
+  {
+   "start": 569,
+   "end": 574.1,
+   "text": "it at him for more than 10 feet away. A thrown knife. She said she never meant to kill him."
+  },
+  {
+   "start": 574.8,
+   "end": 579.3,
+   "text": "The Miami day chief medical examiner Kenneth Hutchins found that the cause of death was a stab"
+  },
+  {
+   "start": 579.3,
+   "end": 584.7,
+   "text": "wound to the chest and the manner was homicide. The knife went in at a downward angle to a depth"
+  },
+  {
+   "start": 584.7,
+   "end": 589.3,
+   "text": "of eight centimeters, about three inches, and it punctured the subclavian artery on the right"
+  },
+  {
+   "start": 589.3,
+   "end": 594.8,
+   "text": "side of his chest. That wound explains what officers found in that apartment, the two"
+  },
+  {
+   "start": 594.8,
+   "end": 599.2,
+   "text": "large pools in the blood at different levels, and it explains what you can hear in the 911"
+  },
+  {
+   "start": 599.2,
+   "end": 604.9,
+   "text": "call. A wound like that at that angle in that depth does not come from a knife thrown across a room."
+  },
+  {
+   "start": 605.6,
+   "end": 609.5,
+   "text": "That was the medical examiner's conclusion and it is the hinge the whole case turned on."
+  },
+  {
+   "start": 610.3,
+   "end": 613.9,
+   "text": "There was a second problem. Clennie said he had choked her and thrown her down."
+  },
+  {
+   "start": 613.9,
+   "end": 618.6,
+   "text": "The Miami police chief, Manuel Morales, put it bluntly, there was no physical evidence to"
+  },
+  {
+   "start": 618.6,
+   "end": 623.8,
+   "text": "suggest she was actually harmed in any way on the day of the incident. No bruises consistent"
+  },
+  {
+   "start": 623.8,
+   "end": 628.5,
+   "text": "with choking. She never claimed he had a weapon. And in her own recorded statement,"
+  },
+  {
+   "start": 628.5,
+   "end": 632.6,
+   "text": "after giving accounts that investigators called inconsistent, Clennie said this,"
+  },
+  {
+   "start": 632.6,
+   "end": 635.3,
+   "text": "I don't know. I really don't know if this was justified at all."
+  },
+  {
+   "start": 636.1,
+   "end": 642,
+   "text": "There was one more thing in that warrant. At 5.25 that evening, 28 minutes after the 911 call,"
+  },
+  {
+   "start": 642,
+   "end": 647.3,
+   "text": "a text arrived on Clennie's phone from mom. It mentioned self-defense and it advised her not"
+  },
+  {
+   "start": 647.3,
+   "end": 651.6,
+   "text": "to say anything to investigators without an attorney. There is a wrinkle in what her"
+  },
+  {
+   "start": 651.6,
+   "end": 655.6,
+   "text": "mother told police. In her own recorded statement to investigators that day,"
+  },
+  {
+   "start": 655.6,
+   "end": 659.6,
+   "text": "she rejected the idea that she and her daughter had been discussing the fight while it was going on."
+  },
+  {
+   "start": 659.6,
+   "end": 665.5,
+   "text": "She heard it happen. She told him she was not part of it. On the morning of August 10, 2022,"
+  },
+  {
+   "start": 665.5,
+   "end": 669.5,
+   "text": "officers from the Hawaii police department and United States Marshals arrested Courtney Clennie"
+  },
+  {
+   "start": 669.5,
+   "end": 674.3,
+   "text": "on Hawaii Island on a Florida warrant for second-degree murder with a deadly weapon. She was 26."
+  },
+  {
+   "start": 675,
+   "end": 678.7,
+   "text": "Her attorney said he was completely shocked that they had been cooperating with the"
+  },
+  {
+   "start": 678.7,
+   "end": 682.7,
+   "text": "investigation and had offered to surrender her voluntarily if she was charged."
+  },
+  {
+   "start": 682.7,
+   "end": 687.6,
+   "text": "A reporter asked state attorney Catherine Fernandez Rundle why they had not let her turn herself in."
+  },
+  {
+   "start": 687.6,
+   "end": 691.5,
+   "text": "Rundle said the circumstances were a little more unusual, that Clennie was far away on a"
+  },
+  {
+   "start": 691.5,
+   "end": 695.1,
+   "text": "remote island and that the right thing was to go and get her and secure her presence."
+  },
+  {
+   "start": 695.9,
+   "end": 699.6,
+   "text": "That afternoon, she appeared before a judge in Hilo and waved extradition."
+  },
+  {
+   "start": 699.6,
+   "end": 703.5,
+   "text": "Her public defender there asked the judge to keep cameras out, arguing that the international"
+  },
+  {
+   "start": 703.5,
+   "end": 707.3,
+   "text": "attention could hurt her chance at a fair trial. The judge allowed the cameras."
+  },
+  {
+   "start": 707.9,
+   "end": 712.3,
+   "text": "A prosecutor told the court she also had outstanding warrants in Nevada and Texas."
+  },
+  {
+   "start": 712.3,
+   "end": 717.3,
+   "text": "The judge held her without bail. Rundle, at her own news conference in Miami that morning,"
+  },
+  {
+   "start": 717.3,
+   "end": 721.4,
+   "text": "said the violent and toxic two-year relationship of Christian Obumseli and Courtney Clennie"
+  },
+  {
+   "start": 721.4,
+   "end": 725.3,
+   "text": "did not have to end in tragedy, with Christian's murder as a victim of domestic violence."
+  },
+  {
+   "start": 726,
+   "end": 729.6,
+   "text": "The warrant's own conclusion was that the two had been in a violent and toxic"
+  },
+  {
+   "start": 729.6,
+   "end": 733.8,
+   "text": "domestic relationship for over two years, which often escalated into Clennie throwing"
+  },
+  {
+   "start": 733.8,
+   "end": 738.2,
+   "text": "or using weapons, and that on April 3 she acted without justification in an"
+  },
+  {
+   "start": 738.2,
+   "end": 742.4,
+   "text": "imminently dangerous act demonstrating a depraved mind without regard for human life."
+  },
+  {
+   "start": 743.2,
+   "end": 747.8,
+   "text": "Clennie was extradited to Florida and held without bond. Prosecutors argued her social"
+  },
+  {
+   "start": 747.8,
+   "end": 752.3,
+   "text": "media income made her a flight risk. She stayed in the Miami-day jail at the Turner-Gilford"
+  },
+  {
+   "start": 752.3,
+   "end": 757.5,
+   "text": "Knight Correctional Center and she pleaded not guilty. She would stay in that jail for four years,"
+  },
+  {
+   "start": 757.5,
+   "end": 761.6,
+   "text": "a county jail, not a prison, held without bond while both sides fought over depositions."
+  },
+  {
+   "start": 762.2,
+   "end": 766.5,
+   "text": "That is worth knowing when you hear that her sentence is six years and she has about two left."
+  },
+  {
+   "start": 766.5,
+   "end": 771,
+   "text": "Nearly all of the first four were served before anyone had decided she was guilty of anything."
+  },
+  {
+   "start": 771.6,
+   "end": 776.3,
+   "text": "Now I want to give the defense its due because a plea deal does not mean the defense had nothing."
+  },
+  {
+   "start": 777,
+   "end": 780.4,
+   "text": "Frank Piedos said the arrest warrant contained deceptive and incomplete statements."
+  },
+  {
+   "start": 781,
+   "end": 784.3,
+   "text": "He said it was a shame the state attorney's office was trying to win the case in the"
+  },
+  {
+   "start": 784.3,
+   "end": 789.9,
+   "text": "court of public opinion by showing what he called an irrelevant and likely inadmissible elevator video."
+  },
+  {
+   "start": 790.4,
+   "end": 794.4,
+   "text": "His point about that video was that it does not show what happened before it started."
+  },
+  {
+   "start": 795.2,
+   "end": 799.2,
+   "text": "His position on Obamselli was blunt. Obamselli was the abuser, he said,"
+  },
+  {
+   "start": 799.2,
+   "end": 803,
+   "text": "the worst kind of abuser who would manipulate and abuse Courtney and Pry that when he thought"
+  },
+  {
+   "start": 803,
+   "end": 807.6,
+   "text": "nobody was around. He said the initial Miami police investigation had turned up an independent"
+  },
+  {
+   "start": 807.6,
+   "end": 810.8,
+   "text": "witness who saw Obamselli hitting Courtney in the head when he thought he was alone in her"
+  },
+  {
+   "start": 810.8,
+   "end": 814.6,
+   "text": "apartment. He said he was confident she would be exonerated and seen as a victim"
+  },
+  {
+   "start": 814.6,
+   "end": 819.5,
+   "text": "of domestic abuse who survived her abuser. Court filing showed that at trial the defense"
+  },
+  {
+   "start": 819.5,
+   "end": 824.4,
+   "text": "planned to run a battered spouse syndrome case. They had texts, alleged injuries and incidents"
+  },
+  {
+   "start": 824.4,
+   "end": 830.4,
+   "text": "spread across Miami, Austin and Dubai. One filing said Obamselli had engaged in a pattern of physical"
+  },
+  {
+   "start": 830.4,
+   "end": 835.7,
+   "text": "violence, intimidation, threats, stalking, controlling behavior, coercive control, manipulation,"
+  },
+  {
+   "start": 835.7,
+   "end": 839.5,
+   "text": "and emotional abuse, and that Clinty would testify to incidents in which he struck,"
+  },
+  {
+   "start": 840.1,
+   "end": 846.8,
+   "text": "grabbed, shoved, restrained and choked her. Some of it was specific. An April 2021 text in"
+  },
+  {
+   "start": 846.8,
+   "end": 851,
+   "text": "which she accused him of hitting her in the face as hard as you could, and his reply that he was"
+  },
+  {
+   "start": 851,
+   "end": 856.4,
+   "text": "trying to move her hand and really didn't mean to. An August 2021 text saying he had been punching"
+  },
+  {
+   "start": 856.4,
+   "end": 861.6,
+   "text": "her in the back. A September 2021 argument about leaving a pool in which she says he grabbed her"
+  },
+  {
+   "start": 861.6,
+   "end": 866,
+   "text": "wrist and pulled her backward hard enough to dislocate her shoulder for the fourth time."
+  },
+  {
+   "start": 866,
+   "end": 869.7,
+   "text": "A trip to Dubai where she says an argument about marijuana ended with him shoving her"
+  },
+  {
+   "start": 869.7,
+   "end": 873.8,
+   "text": "hard enough that she believed she had fractured her ribs and she did not get it looked at."
+  },
+  {
+   "start": 873.9,
+   "end": 878.5,
+   "text": "An incident in Austin in January 2022 that she says left her with an injured finger."
+  },
+  {
+   "start": 879.2,
+   "end": 884,
+   "text": "Here is where I have to be careful and so should you. Those are allegations in a court filing."
+  },
+  {
+   "start": 884,
+   "end": 888.5,
+   "text": "They were never tested in front of a jury and the man they accused has been dead since 2022 and"
+  },
+  {
+   "start": 888.5,
+   "end": 893.2,
+   "text": "cannot answer them. Both sides also pointed at that same Aspen video, the one from a trip"
+  },
+  {
+   "start": 893.2,
+   "end": 897.1,
+   "text": "weeks before his death where she is screaming at him and hitting him and each side said it"
+  },
+  {
+   "start": 897.1,
+   "end": 901.1,
+   "text": "proved their client was the one being abused. That tells you something about how this case"
+  },
+  {
+   "start": 901.1,
+   "end": 905.6,
+   "text": "would have gone a trial. The case took four years to get anywhere and most of that was procedure."
+  },
+  {
+   "start": 906.4,
+   "end": 911.1,
+   "text": "It was set for trial at the end of April 2026 then pushed when both sides filed a joint motion."
+  },
+  {
+   "start": 911.6,
+   "end": 916.2,
+   "text": "Prosecutors had 15 or 16 depositions scheduled and witnesses were not showing up,"
+  },
+  {
+   "start": 916.2,
+   "end": 920.2,
+   "text": "including witnesses they wanted under Florida's Williams rule which lets the state show a"
+  },
+  {
+   "start": 920.2,
+   "end": 925,
+   "text": "pattern of past conduct. The defense had the same problem in April and by a June 1 hearing"
+  },
+  {
+   "start": 925,
+   "end": 928.9,
+   "text": "said they were back on track that they had finally examined the knives and that more than"
+  },
+  {
+   "start": 928.9,
+   "end": 934,
+   "text": "eight depositions were coming. Judge Andrea Wolfson made it clear there would not be another delay."
+  },
+  {
+   "start": 934,
+   "end": 937.8,
+   "text": "She asked, if we're in the same position next time we come back and these witnesses are just"
+  },
+  {
+   "start": 937.8,
+   "end": 942.1,
+   "text": "not appearing there's going to come a time when it's fish or cut bait right? There was a"
+  },
+  {
+   "start": 942.1,
+   "end": 946.7,
+   "text": "civil case running alongside all of this. Months after her arrest Obam Sallie's family sued."
+  },
+  {
+   "start": 947.3,
+   "end": 951.2,
+   "text": "They sued Clenny for battery and they also sued the condominium association,"
+  },
+  {
+   "start": 951.2,
+   "end": 955.6,
+   "text": "the property manager and the security companies arguing the building failed to provide"
+  },
+  {
+   "start": 955.6,
+   "end": 961.8,
+   "text": "adequate security when the attack was foreseeable. On December 3rd 2025 the estate filed a notice of"
+  },
+  {
+   "start": 961.8,
+   "end": 966.1,
+   "text": "settlement as to Clenny only. Those claims were dismissed with prejudice on March 4,"
+  },
+  {
+   "start": 966.1,
+   "end": 971.7,
+   "text": "2026. The financial terms have never been made public. The suit against the building continued"
+  },
+  {
+   "start": 971.7,
+   "end": 975.6,
+   "text": "and in that one the companies agreed to cover outstanding hospital and medical bills and"
+  },
+  {
+   "start": 975.6,
+   "end": 980.2,
+   "text": "related liens in exchange for a dismissal. Think about what that lawsuit was arguing,"
+  },
+  {
+   "start": 980.2,
+   "end": 984.6,
+   "text": "not just that she did it but that the building knew. Management had documented the arguments"
+  },
+  {
+   "start": 984.6,
+   "end": 988.8,
+   "text": "neighbors two floors up had heard them. The company was preparing to evict them over it."
+  },
+  {
+   "start": 988.8,
+   "end": 993.6,
+   "text": "The family's position was that with all of that on the record what happened in 2201 was foreseeable"
+  },
+  {
+   "start": 993.6,
+   "end": 996.2,
+   "text": "and somebody with a security desk in the lobby should have seen it coming."
+  },
+  {
+   "start": 997.1,
+   "end": 1001,
+   "text": "Ten days after that last civil order on July 31, 2026,"
+  },
+  {
+   "start": 1001,
+   "end": 1005.2,
+   "text": "Clenny's lawyer told TMZ she had reached a plea deal. Civil case closed first,"
+  },
+  {
+   "start": 1005.2,
+   "end": 1009.6,
+   "text": "criminal case second. Lawyers do it in that order on purpose so statements from one"
+  },
+  {
+   "start": 1009.6,
+   "end": 1014.5,
+   "text": "proceeding cannot be used against a defendant in the other. Her lawyers confirmed there was a deal"
+  },
+  {
+   "start": 1014.5,
+   "end": 1018.1,
+   "text": "but would not say what was in it and they were careful to add that its terms were not final"
+  },
+  {
+   "start": 1018.1,
+   "end": 1022.6,
+   "text": "unless the court accepted them. A defense attorney named Jack Palmieri explained why anyone takes"
+  },
+  {
+   "start": 1022.6,
+   "end": 1028.1,
+   "text": "one. It is never a slam dunk case he said. Nothing is ever a gimme when it comes to trial"
+  },
+  {
+   "start": 1028.1,
+   "end": 1034.3,
+   "text": "so everyone has exposure. On August 10, 2026, Courtney Clenny pleaded guilty to manslaughter"
+  },
+  {
+   "start": 1034.3,
+   "end": 1038.8,
+   "text": "with a deadly weapon. Second-degree murder came off the table and with it the possibility of"
+  },
+  {
+   "start": 1038.8,
+   "end": 1044.4,
+   "text": "life. The sentence is six years in state prison followed by five years of probation with credit"
+  },
+  {
+   "start": 1044.4,
+   "end": 1048.6,
+   "text": "for the four years she had already served. That means about two more years and with credit she"
+  },
+  {
+   "start": 1048.6,
+   "end": 1052.6,
+   "text": "could be out in something over a year and a half. On release she has to undergo mental"
+  },
+  {
+   "start": 1052.6,
+   "end": 1057,
+   "text": "health and substance abuse, evaluation and treatment. She was to be transferred out of"
+  },
+  {
+   "start": 1057,
+   "end": 1061.5,
+   "text": "the county jail to a Florida state prison. Prosecutors also made a point of saying she"
+  },
+  {
+   "start": 1061.5,
+   "end": 1066.5,
+   "text": "should not profit from this. Assistant state attorney Sean Abelhoff said they believed nobody"
+  },
+  {
+   "start": 1066.5,
+   "end": 1070.1,
+   "text": "should benefit financially from murdering somebody and that they would work hand in hand"
+  },
+  {
+   "start": 1070.1,
+   "end": 1073.9,
+   "text": "with the Florida Attorney General's office on any lien or financial proceeding against her."
+  },
+  {
+   "start": 1074.4,
+   "end": 1078.3,
+   "text": "She reserved the right to challenge that. The family was in the room."
+  },
+  {
+   "start": 1078.3,
+   "end": 1080.4,
+   "text": "Obumselli's mother, Cio, read a statement."
+  },
+  {
+   "start": 1081.3,
+   "end": 1085.8,
+   "text": "There is simply too much pain to put on paper, she said. Four years later there are still"
+  },
+  {
+   "start": 1085.8,
+   "end": 1091,
+   "text": "nights when I cannot sleep. I do not want Christian to be remembered only for how he died."
+  },
+  {
+   "start": 1091,
+   "end": 1094.8,
+   "text": "She said everyone who knew him could attest he was kind-hearted, compassionate,"
+  },
+  {
+   "start": 1094.8,
+   "end": 1099.2,
+   "text": "friendly and respectful. She said nothing can describe what it feels like for a mother to"
+  },
+  {
+   "start": 1099.2,
+   "end": 1103.3,
+   "text": "stand at the grave of her child. And she said the family had lived with the loss every day and"
+  },
+  {
+   "start": 1103.3,
+   "end": 1108,
+   "text": "waited for accountability. Today closes a legal chapter, she said, but it certainly doesn't"
+  },
+  {
+   "start": 1108,
+   "end": 1113.3,
+   "text": "close our grief. No sentence, no plea can bring back my son to me. A cousin said that April"
+  },
+  {
+   "start": 1113.3,
+   "end": 1117.7,
+   "text": "Day was the darkest of her life and that the darkness kept unfolding as she learned Christian"
+  },
+  {
+   "start": 1117.7,
+   "end": 1123.2,
+   "text": "had been killed by someone he had trusted and loved. Since April 22, she said she has lived"
+  },
+  {
+   "start": 1123.2,
+   "end": 1127.6,
+   "text": "with fear, anxiety, sleepless nights, heartache and more tears than she could ever count."
+  },
+  {
+   "start": 1128.1,
+   "end": 1132.3,
+   "text": "Words can never fully explain, she said, how Christian's death has affected my life and the"
+  },
+  {
+   "start": 1132.3,
+   "end": 1137.3,
+   "text": "lives of everyone in our family. A family representative spoke directly to Clenny."
+  },
+  {
+   "start": 1137.3,
+   "end": 1141.4,
+   "text": "Your actions have left the Obumselli family with a void that can never be filled, they said."
+  },
+  {
+   "start": 1142,
+   "end": 1146.4,
+   "text": "A chair where a family gathers for holidays will always remain empty. His life had meaning."
+  },
+  {
+   "start": 1147,
+   "end": 1151.8,
+   "text": "He had a future and his family deserved to grow with him. He was robbed of all those things"
+  },
+  {
+   "start": 1151.8,
+   "end": 1156.4,
+   "text": "while you still have all yours to enjoy. The family also told the court something that"
+  },
+  {
+   "start": 1156.4,
+   "end": 1160,
+   "text": "has stayed with me. They said he had stayed in a relationship they called destructive,"
+  },
+  {
+   "start": 1160,
+   "end": 1163.7,
+   "text": "despite previous violence, that he had been cut in the face and stabbed before,"
+  },
+  {
+   "start": 1163.7,
+   "end": 1167.2,
+   "text": "and that he had written about his fear that his love for Courtney Clenny could cost him his life."
+  },
+  {
+   "start": 1168.1,
+   "end": 1172,
+   "text": "So what does this actually resolve, less than a verdict would have? State Attorney"
+  },
+  {
+   "start": 1172,
+   "end": 1175.5,
+   "text": "Fernandez Rundle said the family finally heard what they had long sought, Courtney"
+  },
+  {
+   "start": 1175.5,
+   "end": 1179.6,
+   "text": "Clenny accepting full responsibility for his death. She said the plea was reached in full"
+  },
+  {
+   "start": 1179.6,
+   "end": 1183.7,
+   "text": "consultation and with the approval of Christian's family, that her prosecutor stayed"
+  },
+  {
+   "start": 1183.7,
+   "end": 1187.6,
+   "text": "focused on the core evidence that Clenny stabbed him as part of a pattern of escalating violence"
+  },
+  {
+   "start": 1187.6,
+   "end": 1191.6,
+   "text": "toward him, and that while nothing can heal the wounds, she hoped the plea brought a measure of"
+  },
+  {
+   "start": 1191.6,
+   "end": 1196.6,
+   "text": "justice too long denied. The family's attorney said pleading guilty and accepting full responsibility"
+  },
+  {
+   "start": 1196.6,
+   "end": 1201.9,
+   "text": "would begin the process of bringing closure. That is real. An admission in open court from"
+  },
+  {
+   "start": 1201.9,
+   "end": 1206.8,
+   "text": "her own mouth is something the family did not have for four years. But a plea also"
+  },
+  {
+   "start": 1206.8,
+   "end": 1211.9,
+   "text": "closes the door on the questions. No jury ever weighed the battered spouse case. No jury ever"
+  },
+  {
+   "start": 1211.9,
+   "end": 1216.5,
+   "text": "heard the elevator video next to those text messages and decided what the relationship actually was."
+  },
+  {
+   "start": 1217.2,
+   "end": 1221.5,
+   "text": "Pomeroy was right, and it cut both ways. The state faced a self-defense claim and"
+  },
+  {
+   "start": 1221.5,
+   "end": 1225.6,
+   "text": "depositions that would not happen, and the defense faced a medical examiner and a video."
+  },
+  {
+   "start": 1226.4,
+   "end": 1230.8,
+   "text": "What the record leaves us with is this. Two people in a relationship that everyone around"
+  },
+  {
+   "start": 1230.8,
+   "end": 1236.5,
+   "text": "them described as violent and toxic. Documented violence by her, on camera, more than once."
+  },
+  {
+   "start": 1236.5,
+   "end": 1241.5,
+   "text": "Serious allegations against him that never got tested. A man who died on an April afternoon in"
+  },
+  {
+   "start": 1241.5,
+   "end": 1246.9,
+   "text": "his own apartment 25 minutes after walking in with sandwiches. And a plea four years to the day after"
+  },
+  {
+   "start": 1246.9,
+   "end": 1252.3,
+   "text": "the arrest that ends the case without ever answering it. Christiano Boomseli was 27."
+  },
+  {
+   "start": 1252.3,
+   "end": 1255.8,
+   "text": "If anything here sounds familiar to you, the National Domestic Violence Hotline is"
+  },
+  {
+   "start": 1255.8,
+   "end": 1261.4,
+   "text": "800-799-72333. The warrant, the filings, and the sentencing are public. Read the"
+  },
+  {
+   "start": 1261.4,
+   "end": 1264.7,
+   "text": "file. Form your own conclusion. That's it for this one. Thanks for hanging out with me."
+  },
+  {
+   "start": 1264.7,
+   "end": 1268.7,
+   "text": "This has been Crime Time Snacks, and I'll catch you next time."
+  }
+ ]
+}

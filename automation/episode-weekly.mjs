@@ -156,7 +156,7 @@ try {
   const mins = Math.round((Date.now() - t0) / 60000);
   const held = check.heldClaims || [];
   const msg = pub
-    ? `CrimeTimeSnacks: published "${ep.title}" (${ep.duration}). ${pub.page}. All ${check.total} claims are carried by the research notes. Spotify and Apple pick it up from the feed. Took ${mins} min.`
+    ? `CrimeTimeSnacks: published "${ep.title}" (${ep.duration}). ${pub.page}. All ${check.total} claims are carried by the research notes. Spotify and Apple pick it up from the feed. Took ${mins} min.${audio.digest ? `\nIf you want to spot-check it, digest.mp3 in the draft folder is ${Math.round(audio.digest.seconds)}s of the ${audio.digest.clips} places the gate was least sure about, worst first; digest.md says where each one is in the episode.` : ""}`
     : !audio.clean
       ? `CrimeTimeSnacks: "${ep.title}" (${ep.duration}) is built and NOT published: the audio audit still hears a problem after the automatic re-voice (paragraphs ${(audio.unresolved || audio.paragraphs || []).join(", ") || "levels"}). See automation/studio/drafts/${draft.id}/audio-audit.md. Took ${mins} min.`
     : check.publishable

@@ -7,7 +7,7 @@
     <title>CrimeTimeSnacks • A True Crime Podcast</title>
     <link>https://www.crimetimesnacks.com/</link>
     <atom:link href="https://www.crimetimesnacks.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 20 Sep 2026 20:54:58 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 02:23:53 GMT</lastBuildDate>
     <language>en</language>
     <copyright>&#169; 2026 Cory</copyright>
     <description>Crime Time Snacks is a true crime podcast that delves into a variety of unsolved cases, exploring the facts, theories, and evidence surrounding each mystery. The podcast aims to provide listeners with a comprehensive understanding of these cases, encouraging them to engage with the content and form their own conclusions.</description>
@@ -22,6 +22,19 @@
     <itunes:image href="https://www.crimetimesnacks.com/images/episodes/show.jpg" />
     <itunes:category text="True Crime" />
     <itunes:explicit>false</itunes:explicit>
+    <item>
+      <title>The Miami Apartment Stabbing</title>
+      <link>https://www.crimetimesnacks.com/episodes/the-miami-apartment-stabbing.html</link>
+      <guid isPermaLink="false">cts-studio-the-miami-apartment-stabbing</guid>
+      <pubDate>Mon, 21 Sep 2026 02:23:52 GMT</pubDate>
+      <description>Courtney Clenney was arrested on August 10, 2022. She pleaded guilty on August 10, 2026. Four years, to the day, and the case still did not answer its own question. Hey everyone, it&apos;s Cory. This time on CrimeTimeSnacks: the killing of Christian Obumseli in a Miami high-rise. The fourteen minutes on April 3, 2022, the elevator video, the medical examiner&apos;s finding that broke the self-defense account, the four months before an arrest, the battered spouse defense that never reached a jury, and what a plea leaves unsettled. If any of this sounds like your life, the National Domestic Violence Hotline is 800-799-7233.</description>
+      <itunes:summary>Courtney Clenney was arrested on August 10, 2022. She pleaded guilty on August 10, 2026. Four years, to the day, and the case still did not answer its own question. Hey everyone, it&apos;s Cory. This time on CrimeTimeSnacks: the killing of Christian Obumseli in a Miami high-rise. The fourteen minutes on April 3, 2022, the elevator video, the medical examiner&apos;s finding that broke the self-defense account, the four months before an arrest, the battered spouse defense that never reached a jury, and what a plea leaves unsettled. If any of this sounds like your life, the National Domestic Violence Hotline is 800-799-7233.</itunes:summary>
+      <itunes:author>Cory</itunes:author>
+      <itunes:duration>00:21:12</itunes:duration>
+      <enclosure url="https://www.crimetimesnacks.com/audio/the-miami-apartment-stabbing.mp3" length="20360619" type="audio/mpeg" />
+      <itunes:image href="https://www.crimetimesnacks.com/images/episodes/the-miami-apartment-stabbing.jpg" />
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Gilgo Beach: Eight Names</title>
       <link>https://www.crimetimesnacks.com/episodes/gilgo-beach-eight-names.html</link>
