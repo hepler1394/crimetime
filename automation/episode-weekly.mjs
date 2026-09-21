@@ -123,11 +123,27 @@ try {
   // The published Petito episode scores 11.8% here and walks the Moab traffic stop three times;
   // every episode since is between 2.1% and 6.0%. Over its own "edit before voicing" line the
   // script is rewritten before five hours are spent reading it aloud.
-  const rep = step("script-repeats.mjs", [draft.id], { optional: true });
+  let rep = step("script-repeats.mjs", [draft.id], { optional: true });
   if (rep?.ok && rep.verdict === "edit before voicing") {
-    const msg = `${draft.id} tells the same scenes over: ${rep.retold} of ${rep.sentences} sentences retell an earlier one (${(rep.share * 100).toFixed(1)}%), in paragraphs ${rep.paragraphs.join(", ")}. Edit those and run it again. Nothing was rendered.`;
-    await notify(`CrimeTimeSnacks: ${msg}`);
-    throw new Error(msg);
+    // Cut the second telling rather than handing back a list of paragraph numbers. This is
+    // still cheap: it is a text edit before the render, which is the whole point of doing the
+    // check here instead of after five hours of audio.
+    console.log(`\nRepetition preflight: ${rep.retold} of ${rep.sentences} sentences retell an earlier one (${(rep.share * 100).toFixed(1)}%). Cutting the repeats...`);
+    const cut = step("episode-revise.mjs", [draft.id, "--repeats"], { optional: true });
+    if (cut?.ok) rep = step("script-repeats.mjs", [draft.id], { optional: true });
+    if (!rep?.ok || rep.verdict === "edit before voicing") {
+      const msg = `${draft.id} tells the same scenes over: ${rep?.retold ?? "?"} of ${rep?.sentences ?? "?"} sentences retell an earlier one (${((rep?.share ?? 0) * 100).toFixed(1)}%)${rep?.paragraphs?.length ? `, in paragraphs ${rep.paragraphs.join(", ")}` : ""}, and the automatic cut did not clear it. Edit those and run it again. Nothing was rendered.`;
+      await notify(`CrimeTimeSnacks: ${msg}`);
+      throw new Error(msg);
+    }
+    console.log(`  Now ${(rep.share * 100).toFixed(1)}% (${rep.verdict}).`);
+    // Cutting repetition takes words out, and the floor is judged on words. Ask again.
+    const after = step("episode-length.mjs", [draft.id], { optional: true });
+    if (after?.willFail) {
+      const msg = `${draft.id} came in under the twenty-minute floor once the repeated scenes were cut: ${after.words} words runs about ${after.expected}. Add roughly ${after.wordsShort} words from research.md and run it again. Nothing was rendered.`;
+      await notify(`CrimeTimeSnacks: ${msg}`);
+      throw new Error(msg);
+    }
   } else if (rep?.ok && rep.retold) {
     console.log(`Repetition preflight: ${(rep.share * 100).toFixed(1)}% (${rep.verdict}).`);
   }
