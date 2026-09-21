@@ -96,7 +96,10 @@ else {
   asr = JSON.parse(await readFile(tmp, "utf8"));
 }
 // Accept the scratch format used on 2026-09-18 (segments with words) as well as asr_words.py's.
-const heardWords = (asr.words || (Array.isArray(asr) ? asr.flatMap((s) => s.words || []) : [])).map((w) => ({ raw: w.w, s: w.s, p: w.p }));
+// Keep the end time as well as the start. Without it every finding's span collapses to a point,
+// the window cut for a second listen is a shade short, and audio-paragraphs.mjs reads the last
+// moment a paragraph is heard as the moment its last word BEGAN.
+const heardWords = (asr.words || (Array.isArray(asr) ? asr.flatMap((s) => s.words || []) : [])).map((w) => ({ raw: w.w, s: w.s, e: w.e ?? w.s, p: w.p }));
 
 const paras = (ep.script || []).filter(Boolean);
 const asrWords = heardWords.map((h) => ({ w: h.raw, s: h.s, e: h.e, p: h.p }));
