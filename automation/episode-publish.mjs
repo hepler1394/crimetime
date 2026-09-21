@@ -175,6 +175,15 @@ if (!pushOnly) {
     sh(process.execPath, [join(__dirname, "build-all.mjs")], "build-all");
     sh(process.execPath, [join(__dirname, "check-links.mjs")], "check-links");
   } catch (e) { die("build", e.message); }
+
+  // The ledger line goes in before the COMMIT, so the episode's own commit carries it. It used
+  // to be written after the push, which left improvements.md one episode behind for ever: every
+  // entry was swept up by the next episode's commit, and 507 lines had accumulated that way.
+  // After the build rather than before it, so a build that dies does not leave a line claiming
+  // an episode that never went out - and a retry would then number a second one for the same
+  // episode. status.json's counter is a build behind as a result, and the six-hourly CI sync
+  // corrects it.
+  await logImprovement(`Published podcast episode from the studio: "${ep.title}" (${ep.duration || "?"})`);
 }
 
 /* ---------------------------------------------------------------- git */
@@ -207,7 +216,6 @@ try {
   die("git", `The site files are built${committed ? " and committed locally" : ""}, but ${push ? "the push" : "git"} failed:\n${e.message}\nThe episode is NOT live. Fix it in the repo (git status), then press Publish again; the work already done is reused.`);
 }
 
-if (!pushOnly) await logImprovement(`Published podcast episode from the studio: "${ep.title}" (${ep.duration || "?"})`);
 ep.status = pushed ? "published" : "committed";
 ep.pushed = pushed;
 ep.gitNote = gitNote;
