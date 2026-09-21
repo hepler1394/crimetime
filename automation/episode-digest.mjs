@@ -141,9 +141,12 @@ export async function buildDigest(dir, { seconds = 75, say: log = () => {} } = {
   const dur = probe(digest);
 
   /* -------------------------------------------------------------------- index */
+  // Each excerpt overlaps the next by XFADE, so every clip after the first starts that much
+  // earlier than its own length suggests. Subtract it once per join, not once per clip index,
+  // or the index drifts further from the audio with every entry.
   let atDigest = 0;
   const lines = picked.map((p, i) => {
-    const start = atDigest; atDigest += (p.b - p.a) - (i ? XFADE : 0);
+    const start = atDigest; atDigest += (p.b - p.a) - XFADE;
     return `${i + 1}. digest ${clock(start)} - episode ${clock(p.a + VOICE_STARTS_AT)}${p.pi != null ? `, paragraph ${p.pi}` : ""}: **${p.kind}** ${p.text}`;
   });
   const md = [`# Worst moments: ${ep.title}`, "", `${clock(dur)} of the ${ep.duration || ""} episode, worst first. Each excerpt starts and ends in a pause the clone left and is crossfaded into the next, so any clipped pause you hear is in the episode, not in this file.`, "", ...lines, ""].join("\n");
