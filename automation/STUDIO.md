@@ -475,7 +475,28 @@ Joins are now rebuilt at the length they were rather than a flat 0.550 s. An unt
 render varies between about 0.50 and 0.63 s and a spliced one came out at 0.550 every
 time; it is a small thing and it is the kind of regularity that sounds machine-made.
 
-`npm run test:audio` covers the comparer and the boundary logic, from the real cases.
+### At the desk
+
+The gate is a step in the studio, between Voice and Art: **Audio gate** in the step
+strip, and a panel under the episode audio in the Voice tab. It says one of three
+things - nothing has listened to this render, something is being held, or it is clear
+- and in the clear case it still shows what a second listen threw out, because a gate
+that suppresses findings silently is one nobody has reason to believe. The spot check
+plays there, with its index.
+
+Publish is locked until the audit is clean, and says so: "this render has not been
+audited", or "the audio audit is holding 2 things". Until 2026-09-21 none of this
+existed. There was no audit job at all, so an episode voiced at the desk could be
+rendered and then never published from the desk - `episode-publish.mjs` refuses a
+render nothing has listened to, and the only way to clear that was to go and find a
+terminal. The actions are `audit`, `repair` and `digest`.
+
+**Audited means audited THIS render.** An audit older than `episode.mp3` is an audit
+of some other file, and the desk makes the same comparison the publish gate makes
+rather than showing a tick it cannot justify.
+
+`npm run test:audio` covers the comparer and the boundary logic, from the real cases;
+`npm run test:studio` covers the desk wiring.
 
 ## One feed, everywhere
 

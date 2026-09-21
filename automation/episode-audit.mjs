@@ -172,8 +172,18 @@ if (!args.includes("--no-write")) {
 /* ---------------------------------------------------- 6. the minute to listen to */
 let digest = null;
 if (!args.includes("--no-digest") && !args.includes("--no-write")) {
-  try { digest = await buildDigest(dir, { seconds: 75, say }); if (digest?.ok) say(`Digest: ${digest.seconds}s over ${digest.clips} moment(s) -> digest.mp3`); }
-  catch (e) { say(`Digest not built: ${String(e.message || e)}`); }
+  try {
+    digest = await buildDigest(dir, { seconds: 75, say });
+    if (digest?.ok) {
+      say(`Digest: ${digest.seconds}s over ${digest.clips} moment(s) -> digest.mp3`);
+      // Carry the index on the audit record so the studio can show what is in the digest
+      // without going and reading digest.md. Written after the fact because the digest is cut
+      // from the audit that was just saved.
+      const withDigest = JSON.parse(await readFile(epPath, "utf8"));
+      withDigest.audioAudit = { ...(withDigest.audioAudit || {}), digest: { seconds: digest.seconds, clips: digest.clips, items: digest.items } };
+      await writeFile(epPath, JSON.stringify(withDigest, null, 2) + "\n", "utf8");
+    }
+  } catch (e) { say(`Digest not built: ${String(e.message || e)}`); }
 }
 
 out({ ok: true, id, clean: blocking.length === 0, findings, unstable, notes, paragraphs: parasToFix, lufs: I, truePeak: TP, seconds,

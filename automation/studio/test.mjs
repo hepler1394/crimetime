@@ -138,6 +138,21 @@ try {
     } else { pass++; console.log("  ok   publish gate (no draft with claims; skipped)"); }
   }
 
+  // The audio gate has to be reachable from the desk. Until 2026-09-21 it was not: there was
+  // no audit job, so a draft voiced here could be rendered and then never published, because
+  // episode-publish.mjs refuses a render nothing has listened to and the only way to clear
+  // that was to go and find a terminal.
+  {
+    const html = await (await fetch(`${BASE}/`)).text();
+    ok("the desk has an audio gate step", /stepChip\("audit"/.test(html) && /Audio gate/.test(html));
+    ok("publish waits on the audit", /canPublish\s*=\s*done\.voice\s*&&\s*done\.audit/.test(html));
+    ok("an audit of an earlier render does not count", /episode\.mp3/.test(html) && /auditFresh/.test(html));
+    for (const action of ["audit", "repair", "digest"]) {
+      r = await fetch(`${BASE}/api/run`, { method: "POST", headers: H, body: JSON.stringify({ action, id: "no-such-draft" }) });
+      ok(`${action} is a known action`, r.status !== 400, String(r.status));
+    }
+  }
+
   // The shell is Electron, which implements neither prompt() nor alert(): a control that
   // depends on one is dead in the desktop app, silently.
   for (const [name, path] of [["studio", "/"], ["Instagram board", "/instagram"]]) {

@@ -88,6 +88,13 @@ const ACTIONS = {
   voice:    (a) => ["episode-voice.mjs", a.id, ...(a.engine ? ["--engine", a.engine] : []), ...(a.voice ? ["--voice", a.voice] : []), ...(a.rate ? ["--rate", a.rate] : []), ...(a.pitch ? ["--pitch", a.pitch] : []),
                     ...(a.exaggeration ? ["--exaggeration", String(a.exaggeration)] : []), ...(a.cfg ? ["--cfg", String(a.cfg)] : []), ...(a.from ? ["--from", a.from] : []), ...(a.noMusic ? ["--no-music"] : []), ...(a.noTrim ? ["--no-trim"] : []), "--json"],
   art:      (a) => ["episode-art.mjs", a.id, "--json"],
+  // The audio gate. Without these the desk could render an episode it had no way to publish:
+  // episode-publish.mjs refuses a render nothing has listened to since it was made, and the
+  // only way to clear that from here was to go and find a terminal.
+  audit:    (a) => ["episode-audit.mjs", a.id, ...(a.noDigest ? ["--no-digest"] : []), ...(a.noConfirm ? ["--no-confirm"] : []), "--json"],
+  repair:   (a) => ["episode-repair.mjs", a.id, ...(a.paragraphs ? ["--paragraphs", String(a.paragraphs)] : []), ...(a.rounds ? ["--rounds", String(a.rounds)] : []),
+                    ...(a.fal ? ["--fal"] : a.remote ? ["--remote"] : []), "--json"],
+  digest:   (a) => ["episode-digest.mjs", a.id, ...(a.seconds ? ["--seconds", String(a.seconds)] : []), "--json"],
   social:   (a) => ["episode-social.mjs", a.id, "--clip", String(a.clip || 45), "--start", String(a.start || 0), "--json"],
   publish:  (a) => ["episode-publish.mjs", a.id, ...(a.pushOnly ? ["--push-only"] : a.push === false ? [] : ["--push"]), ...(a.date && !a.pushOnly ? ["--date", a.date] : []), "--json"],
   music:    () => ["episode-music.mjs", "--json"],
