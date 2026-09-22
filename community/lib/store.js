@@ -104,8 +104,11 @@ export function restStore() {
     },
 
     /* ---- profiles ---- */
+    // The public profile's own query. The column list is the allow-list: email and token are
+    // not absent by luck here, they are absent because this is the one read whose result is
+    // rendered to strangers, and a select=* would put them one careless template away.
     async byHandle(handle) {
-      const rows = await sb(`cts_members?select=handle,display_name,avatar_url,bio,show_follows,created_at&handle=eq.${q(handle)}&limit=1`);
+      const rows = await sb(`cts_members?select=id,handle,display_name,avatar_url,bio,show_follows,created_at&handle=eq.${q(handle)}&limit=1`);
       return rows?.[0] || null;
     },
     async setProfile(memberId, patch) {

@@ -212,3 +212,18 @@ button.quiet { background: none; cursor: pointer; font: inherit; font-size: .875
 .cases li.dropped span { color: var(--dim); text-decoration: line-through; }
 .cases li.dropped .drop { color: var(--yellow); }
 .cases li.dropped .drop:hover { color: #ffd84d; }
+
+/* ------------------------------------------------------------ public profile */
+.profile-head { align-items: center; display: flex; gap: 1.1rem; margin-bottom: 1.4rem; }
+.profile-head > div { min-width: 0; }
+.avatar { border-radius: 10px; flex: none; height: 72px; width: 72px; }
+/* Initials on a colour derived from the handle. The same person gets the same tile on
+   every page, with nothing stored and nothing fetched. */
+.avatar.mono {
+  align-items: center; background: var(--tile); color: var(--ink); display: flex;
+  font: 600 1.6rem/1 Inter, sans-serif; justify-content: center; letter-spacing: .02em;
+}
+.name { margin-bottom: .2rem; overflow-wrap: anywhere; }
+.at { color: var(--yellow); font-weight: 600; margin: 0 0 .15rem; }
+.profile-bio { margin: 0 0 .5rem; max-width: 54ch; white-space: pre-line; }
+.profile-head + .profile-bio { margin-top: 0; }
