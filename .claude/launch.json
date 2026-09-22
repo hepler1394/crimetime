@@ -4,8 +4,21 @@
     {
       "name": "studio",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "studio"],
+      "runtimeArgs": [
+        "run",
+        "studio"
+      ],
       "port": 4177
+    },
+    {
+      "name": "community",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
+      "cwd": "community",
+      "port": 3000
     }
   ]
 }
