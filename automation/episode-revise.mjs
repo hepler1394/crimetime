@@ -4,6 +4,7 @@
 //
 //   node automation/episode-revise.mjs <draft-id> [--rounds 2] [--json]
 //   node automation/episode-revise.mjs <draft-id> --repeats      cut the scenes it tells twice
+//   node automation/episode-revise.mjs <draft-id> --facts        rebuild the claim list only
 //
 // For each chapter that has unsupported claims, the writer gets the chapter, the list of what
 // is wrong with it (the checker's own note says what the research actually supports), and the
@@ -16,7 +17,8 @@
 // keeps them on the list, so the episode still holds.
 //
 // Only for a draft that has not been voiced: changing the words after the render makes the
-// audio wrong. Use episode-repair.mjs --edits for that.
+// audio wrong. Use episode-repair.mjs --edits for that. The exception is --facts, which
+// rewrites no words and so is safe at any point.
 
 import { readFile, writeFile, copyFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
@@ -37,7 +39,9 @@ if (!id) die("args", "usage: episode-revise.mjs <draft-id> [--rounds 2] [--repea
 const dir = join(here, "studio", "drafts", id);
 const epPath = join(dir, "episode.json");
 const ep = JSON.parse(await readFile(epPath, "utf8").catch(() => die("draft", `No draft ${id}.`)));
-if (["voiced", "ready", "committed", "published"].includes(ep.status)) die("state", `${id} is already voiced (${ep.status}). Changing its words now would make the audio wrong.`);
+// --facts rebuilds the claim list and changes no words, so it is the one mode that is safe
+// on a draft that has already been voiced.
+if (!args.includes("--facts") && ["voiced", "ready", "committed", "published"].includes(ep.status)) die("state", `${id} is already voiced (${ep.status}). Changing its words now would make the audio wrong.`);
 const research = await readFile(join(dir, "research.md"), "utf8").catch(() => die("notes", `${id} has no research.md.`));
 const voice = await readFile(join(here, "voice.md"), "utf8").catch(() => "");
 const cfg = await loadConfig();
@@ -51,6 +55,39 @@ async function check(paras) {
   const { text } = await chat(`You are a fact-checker. You get RESEARCH NOTES and a SCRIPT CHAPTER. List every specific factual claim in the chapter (names, dates, counts, places, quotes, sequence of events). For each, decide if the notes support it. Output ONLY a JSON object: {"claims": [{"claim": string, "supported": boolean, "note": string (for unsupported claims: what the notes actually say, or "not in notes")}]}. Be strict: a claim is supported only if the notes state it.`,
     `RESEARCH NOTES:\n${research.slice(0, 200000)}\n\nSCRIPT CHAPTER:\n${body}`, { ...cfg, jsonMode: true });
   return (parse(text).claims || []).filter((c) => c && c.claim);
+}
+
+/* --------------------------------------------------------------------- --facts */
+// Rebuild the claim list against the script as it stands now, and change nothing else.
+//
+// For a draft whose script was edited after its list was made. A claim is a description of
+// a sentence, so once the sentence is gone the claim can never be ticked and can never be
+// cleared by editing - the gate just holds forever on text that is not in the episode. That
+// is what happened to Elisa Lam on 2026-09-21. Safe on a voiced draft: no words change, so
+// the audio stays the audio that was audited.
+if (args.includes("--facts")) {
+  const chapters = (ep.chapters || []).map((c) => ({ ...c }));
+  const claimsBy = [];
+  let stillBad = 0;
+  for (const [n, c] of chapters.entries()) {
+    say(`Chapter ${n + 1}/${chapters.length}: ${c.title || ""}`);
+    const claims = await check(ep.script.slice(c.start, c.start + c.paragraphs));
+    stillBad += claims.filter((x) => x.supported === false).length;
+    claimsBy.push(claims);
+  }
+  const facts = claimsBy.flat().map((c) => (c.supported === false ? `UNSUPPORTED: ${c.claim}${c.note ? ` (notes: ${c.note})` : ""}` : String(c.claim)));
+  facts.sort((a, b) => (b.startsWith("UNSUPPORTED:") ? 1 : 0) - (a.startsWith("UNSUPPORTED:") ? 1 : 0));
+
+  await copyFile(epPath, join(dir, "episode.json.bak-facts"));
+  const freshF = JSON.parse(await readFile(epPath, "utf8"));
+  const wasCount = (freshF.factsToVerify || []).length;
+  // factsChecked and factsHeld describe the old list, so they go with it.
+  Object.assign(freshF, { factsToVerify: facts, factsChecked: [], factsHeld: [],
+    factCheck: { checked: facts.length, unsupported: stillBad }, edited: new Date().toISOString() });
+  await writeFile(epPath, JSON.stringify(freshF, null, 2) + "\n", "utf8");
+  out({ ok: true, id, claims: facts.length, was: wasCount, unsupported: stillBad,
+    message: `Rebuilt the fact list for ${id} against the current script: ${wasCount} -> ${facts.length} claims, ${stillBad} unsupported. No words changed.` });
+  process.exit(0);
 }
 
 /* ------------------------------------------------------------------- --repeats */
@@ -109,13 +146,31 @@ if (args.includes("--repeats")) {
   const kept = chapters.filter((c) => c.paragraphs > 0);
   const after = findRepeats(script);
   const words = script.join(" ").split(/\s+/).filter(Boolean).length;
+
+  // The fact list describes the script, so an edited script needs a new one. Without this
+  // the gate goes on checking sentences this pass just deleted: on 2026-09-21 the Elisa Lam
+  // episode was held on two claims whose sentences no longer existed anywhere in it, and no
+  // amount of editing the script could ever have cleared them. Re-check the chapters that
+  // changed and rebuild the list the same way the full revise does.
+  const claimsBy = [];
+  let stillBad = 0;
+  for (const c of kept) {
+    const claims = await check(script.slice(c.start, c.start + c.paragraphs));
+    stillBad += claims.filter((x) => x.supported === false).length;
+    claimsBy.push(claims);
+  }
+  const facts = claimsBy.flat().map((c) => (c.supported === false ? `UNSUPPORTED: ${c.claim}${c.note ? ` (notes: ${c.note})` : ""}` : String(c.claim)));
+  facts.sort((a, b) => (b.startsWith("UNSUPPORTED:") ? 1 : 0) - (a.startsWith("UNSUPPORTED:") ? 1 : 0));
+
   await copyFile(epPath, join(dir, "episode.json.bak-repeats"));
   const freshR = JSON.parse(await readFile(epPath, "utf8"));
-  Object.assign(freshR, { script, chapters: kept, scriptWords: words, edited: new Date().toISOString() });
+  Object.assign(freshR, { script, chapters: kept, scriptWords: words, edited: new Date().toISOString(),
+    factsToVerify: facts, factsChecked: [], factsHeld: [], factCheck: { checked: facts.length, unsupported: stillBad } });
   await writeFile(epPath, JSON.stringify(freshR, null, 2) + "\n", "utf8");
   out({ ok: true, id, words, revised: touched, share: +after.share.toFixed(3), verdict: after.verdict,
     was: +before.share.toFixed(3), wordsBefore: ep.scriptWords,
-    message: `Cut the repetition in ${id}: ${touched} paragraph(s) edited, ${(before.share * 100).toFixed(1)}% -> ${(after.share * 100).toFixed(1)}% (${after.verdict}). ${ep.scriptWords} -> ${words} words.` });
+    claims: facts.length, unsupported: stillBad,
+    message: `Cut the repetition in ${id}: ${touched} paragraph(s) edited, ${(before.share * 100).toFixed(1)}% -> ${(after.share * 100).toFixed(1)}% (${after.verdict}). ${ep.scriptWords} -> ${words} words. Fact list rebuilt against the edited script: ${facts.length} claims, ${stillBad} unsupported.` });
   process.exit(0);
 }
 
