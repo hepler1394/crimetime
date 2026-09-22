@@ -1,9 +1,18 @@
 {
   "meta": {
     "intro": "Original CrimeTimeSnacks prints, straight from the studio — new designs drop automatically. Every file is real, print-ready art you can grab now; the print-on-demand store opens soon.",
-    "updated": "2026-09-15T14:02:27.587Z"
+    "updated": "2026-09-22T14:02:22.646Z"
   },
   "designs": [
+    {
+      "slug": "open-investigation",
+      "slogan": "Open Investigation",
+      "tagline": "CRIMETIMESNACKS",
+      "price": "28",
+      "template": null,
+      "svg": "images/merch/open-investigation.svg",
+      "created": "2026-09-22"
+    },
     {
       "slug": "check-the-deadbolt",
       "slogan": "Check The Deadbolt",

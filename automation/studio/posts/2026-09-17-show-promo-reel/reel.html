@@ -1,0 +1,128 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--black:#050505;--panel:#101013;--red:#e50914;--hot:#ff2b33;--tape:#f4c20d;--white:#f5f5f5;--muted:#b9b9c0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--black);color:var(--white);font-family:Inter,sans-serif}
+.stage{position:absolute;inset:0;overflow:hidden;background:radial-gradient(1200px 900px at 50% 0%,rgba(229,9,20,.26),transparent 62%),var(--black)}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:90px 90px;mask-image:linear-gradient(180deg,#000 0%,transparent 70%)}
+.scene{position:absolute;inset:0;opacity:0}
+.disp{font-family:'Bebas Neue',sans-serif;letter-spacing:.02em;line-height:.92}
+.eyebrow{font-weight:700;letter-spacing:.34em;text-transform:uppercase;font-size:30px;color:var(--muted)}
+.tape{position:absolute;left:-120px;width:1320px;height:96px;background:var(--tape);color:#0a0a0a;font-weight:800;font-size:34px;letter-spacing:.12em;display:flex;align-items:center;white-space:nowrap;border-top:5px solid #0a0a0a;border-bottom:5px solid #0a0a0a;box-shadow:0 18px 50px rgba(0,0,0,.6)}
+.tape span{padding-left:24px}
+/* scene 1 */
+#s1 .cover{position:absolute;left:190px;top:400px;width:700px;height:700px;border-radius:44px;overflow:hidden;border:2px solid rgba(255,255,255,.14);box-shadow:0 50px 120px rgba(229,9,20,.35),0 30px 80px rgba(0,0,0,.8)}
+#s1 .cover img,.art img{width:100%;height:100%;object-fit:cover;display:block}
+#s1 .name{position:absolute;left:0;right:0;top:1170px;text-align:center;font-size:170px}
+#s1 .name b{color:var(--red);font-weight:400}
+#s1 .sub{position:absolute;left:0;right:0;top:1360px;text-align:center}
+#s1 .by{position:absolute;left:0;right:0;top:1440px;text-align:center;font-size:40px;color:var(--white);font-weight:500}
+/* scene 2: the hook */
+#s2 .art{position:absolute;left:165px;top:230px;width:750px;height:750px;border-radius:40px;overflow:hidden;border:2px solid rgba(255,255,255,.14);box-shadow:0 40px 110px rgba(0,0,0,.85)}
+#s2 .from{position:absolute;left:90px;right:90px;top:1030px;text-align:center}
+#s2 .cap{position:absolute;left:80px;right:80px;top:1115px;height:400px;display:block;text-align:center;font-size:66px;font-weight:700;line-height:1.16;opacity:0}
+#s2 .cap em{font-style:normal;color:var(--hot)}
+#s2 .voice{position:absolute;left:0;right:0;top:1540px;display:flex;justify-content:center;gap:10px;align-items:flex-end;height:70px}
+#s2 .voice i{display:block;width:10px;border-radius:5px;background:var(--red)}
+#s2 .photo{position:absolute;left:70px;top:230px;width:940px;height:750px;border-radius:40px;overflow:hidden;border:2px solid rgba(255,255,255,.16);box-shadow:0 40px 110px rgba(0,0,0,.85);opacity:0}
+#s2 .photo img{width:100%;height:100%;object-fit:cover;object-position:7% center;display:block}
+#s2 .who{position:absolute;left:90px;right:90px;top:1030px;text-align:center;opacity:0;color:var(--white)}
+/* scene 3: covers */
+#s3 h2{position:absolute;left:0;right:0;top:235px;text-align:center;font-size:190px}
+#s3 h2 b{color:var(--red);font-weight:400}
+#s3 .wall{position:absolute;left:70px;top:430px;width:940px;display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+#s3 .wall .art{aspect-ratio:1/1;border-radius:26px;overflow:hidden;border:2px solid rgba(255,255,255,.12);opacity:0}
+#s3 .wall.four{grid-template-columns:repeat(4,1fr);gap:20px}
+#s3 .line{position:absolute;left:0;right:0;top:1405px;text-align:center;font-size:54px;font-weight:700}
+#s3 .line2{position:absolute;left:0;right:0;top:1490px;text-align:center;font-size:40px;color:var(--muted);font-weight:500}
+/* scene 4: the site */
+#s4 .phone{position:absolute;left:300px;top:225px;width:480px;height:985px;border-radius:66px;background:#0b0b0d;border:10px solid #26262b;box-shadow:0 60px 140px rgba(0,0,0,.9),0 0 0 2px rgba(255,255,255,.06);overflow:hidden}
+#s4 .phone img{position:absolute;left:0;top:0;width:100%;height:auto}
+#s4 .notch{position:absolute;left:50%;top:18px;width:150px;height:34px;margin-left:-75px;border-radius:20px;background:#000;z-index:3}
+#s4 h2{position:absolute;left:0;right:0;top:1250px;text-align:center;font-size:150px}
+#s4 h2 b{color:var(--red);font-weight:400}
+#s4 .url{position:absolute;left:0;right:0;top:1410px;text-align:center;font-size:62px;font-weight:800;letter-spacing:.01em}
+#s4 .on{position:absolute;left:0;right:0;top:1508px;text-align:center}
+</style></head><body>
+<div class="stage"><div class="grid"></div>
+
+<section class="scene" id="s1">
+  <div class="tape" id="t1" style="top:250px;transform:rotate(-7deg)"><span>CRIME SCENE &bull; DO NOT CROSS &bull; CRIME SCENE &bull; DO NOT CROSS &bull; CRIME SCENE &bull; DO NOT CROSS &bull;</span></div>
+  <div class="cover"><img src="show.jpg"></div>
+  <div class="name disp">CRIME<b>TIME</b>SNACKS</div>
+  <div class="sub eyebrow">A true crime podcast</div>
+  <div class="by">Researched, written and hosted by Cory</div>
+</section>
+
+<section class="scene" id="s2">
+  <div class="art"><img src="the-disappearance-of-gabby-petito.jpg"></div>
+  <div class="photo"><img src="gabby.jpg"></div>
+  <div class="from eyebrow">From the latest episode</div>
+  <div class="who eyebrow">Gabby Petito &middot; 1999 &ndash; 2021</div>
+  <div class="cap" data-a="5.0" data-b="7.7">What&rsquo;s up guys, welcome back to <em>CrimeTimeSnacks.</em></div>
+  <div class="cap" data-a="7.7" data-b="10.3">Let&rsquo;s unpack a case that grabbed the entire country&rsquo;s attention.</div>
+  <div class="cap" data-a="10.3" data-b="15.3">A witness called emergency services to report a man slapping a woman in front of a Utah cooperative.</div>
+  <div class="cap" data-a="15.3" data-b="19.1">Police tracked down the van and initiated a <em>traffic stop.</em></div>
+  <div class="voice" id="voice"></div>
+</section>
+
+<section class="scene" id="s3">
+  <h2 class="disp">8 CASES <b>ON FILE</b></h2>
+  <div class="wall four" id="wall"></div>
+  <div class="line">A new episode every week</div>
+  <div class="line2">The facts and the record. No sensationalism.</div>
+</section>
+
+<section class="scene" id="s4">
+  <div class="phone"><div class="notch"></div><img id="ph1" src="site-home.jpg"><img id="ph2" src="site-episode.jpg"><img id="ph3" src="site-case.jpg"></div>
+  <h2 class="disp">LISTEN <b>FREE</b></h2>
+  <div class="url">crimetimesnacks.com</div>
+  <div class="on eyebrow">Apple Podcasts &middot; Spotify</div>
+  <div class="tape" id="t4" style="top:1610px;transform:rotate(4deg)"><span>CRIME SCENE &bull; DO NOT CROSS &bull; CRIME SCENE &bull; DO NOT CROSS &bull; CRIME SCENE &bull; DO NOT CROSS &bull;</span></div>
+</section>
+</div>
+<script>
+const COVERS=["the-disappearance-of-gabby-petito","the-golden-state-killer","murders-in-moscow","watts-family-murders","erik-and-lyle-the-menendez-brothers","jonbenet-ramsey-the-facts-96-22-part-1","jonbenet-ramsey-americas-child-beauty-queen","crimetimesnacks-the-delphi-murder-case-2017"];
+const wall=document.getElementById('wall'); wall.classList.remove('four');
+COVERS.forEach(c=>{const d=document.createElement('div');d.className='art';d.innerHTML=`<img src="${c}.jpg">`;wall.appendChild(d);});
+wall.style.gridTemplateColumns='repeat(3,1fr)'; wall.style.gap='18px'; wall.style.top='455px';
+// two rows of four would leave the covers small; use 2 rows x 4 on a wider wall, scaled up
+wall.style.left='90px'; wall.style.width='900px'; {const d=document.createElement('div');d.className='art';d.innerHTML='<img src="show.jpg">';wall.appendChild(d);}
+const voice=document.getElementById('voice'); for(let i=0;i<34;i++) voice.appendChild(document.createElement('i'));
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)); const pr=(t,a,b)=>cl((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3); const eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const $=s=>document.querySelector(s); const $$=s=>[...document.querySelectorAll(s)];
+function scene(id,t,a,b,f=.45){const o=Math.min(pr(t,a,a+f),1-pr(t,b-f,b));$(id).style.opacity=cl(o);return o>0;}
+window.TOTAL=27;
+window.seek=function(t){
+  if(scene('#s1',t,-1,5.2)){
+    const p=eo(pr(t,.1,1.3)); $('#s1 .cover').style.transform=`scale(${.86+.14*p+.02*pr(t,0,5)}) translateY(${(1-p)*80}px)`; $('#s1 .cover').style.opacity=p;
+    $('#t1').style.transform=`translateX(${(1-eo(pr(t,.0,1.1)))*-1300}px) rotate(-7deg)`;
+    const n=eo(pr(t,1.0,1.9)); $('#s1 .name').style.opacity=n; $('#s1 .name').style.transform=`translateY(${(1-n)*50}px)`;
+    $('#s1 .sub').style.opacity=eo(pr(t,1.6,2.3)); $('#s1 .by').style.opacity=eo(pr(t,2.3,3.0));
+  }
+  if(scene('#s2',t,4.8,19.4)){
+    $('#s2 .art').style.transform=`scale(${1+.05*pr(t,4.8,19.4)})`;
+    {const k=eio(pr(t,10.0,10.9));$('#s2 .photo').style.opacity=k;$('#s2 .photo').style.transform=`scale(${1+.04*pr(t,10,19.4)})`;$('#s2 .who').style.opacity=k;$('#s2 .from').style.opacity=1-k;}
+    $$('#s2 .cap').forEach(c=>{const a=+c.dataset.a,b=+c.dataset.b;const o=Math.min(pr(t,a,a+.25),1-pr(t,b-.2,b));c.style.opacity=cl(o);c.style.transform=`translateY(${(1-eo(pr(t,a,a+.35)))*26}px)`;});
+    [...voice.children].forEach((b,i)=>{const talking=t>5&&t<19.1?1:.12;const h=12+talking*52*Math.abs(Math.sin(t*7.3+i*1.7)*Math.sin(t*3.1+i*.6));b.style.height=h+'px';b.style.opacity=.55+.45*talking;});
+  }
+  if(scene('#s3',t,19.1,23.2)){
+    const h=eo(pr(t,19.2,19.9)); $('#s3 h2').style.opacity=h; $('#s3 h2').style.transform=`translateY(${(1-h)*40}px)`;
+    $$('#s3 .wall .art').forEach((a,i)=>{const p=eo(pr(t,19.5+i*.12,20.1+i*.12));a.style.opacity=p;a.style.transform=`translateY(${(1-p)*60}px) scale(${.9+.1*p})`;});
+    $('#s3 .line').style.opacity=eo(pr(t,20.8,21.4)); $('#s3 .line2').style.opacity=eo(pr(t,21.3,21.9));
+  }
+  if(scene('#s4',t,22.9,28,.4)){
+    $('#s4').style.opacity=cl(pr(t,22.9,23.3));
+    const p=eo(pr(t,23.0,23.9)); $('#s4 .phone').style.transform=`translateY(${(1-p)*140}px)`;
+    $('#ph1').style.transform=`translateY(${-eio(pr(t,23.6,24.6))*0}px)`;
+    $('#ph2').style.opacity=eio(pr(t,24.4,24.9)); $('#ph3').style.opacity=eio(pr(t,25.6,26.1));
+    const h=eo(pr(t,23.5,24.2)); $('#s4 h2').style.opacity=h; $('#s4 h2').style.transform=`translateY(${(1-h)*40}px)`;
+    $('#s4 .url').style.opacity=eo(pr(t,24.0,24.7)); $('#s4 .on').style.opacity=eo(pr(t,24.5,25.2));
+    $('#t4').style.transform=`translateX(${(1-eo(pr(t,23.2,24.3)))*1300}px) rotate(4deg)`;
+  }
+};
+seek(0);
+</script></body></html>
