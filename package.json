@@ -26,6 +26,7 @@
     "test:community": "node --test community/lib/*.test.mjs",
     "test:format": "node --test automation/test-format.mjs",
     "test:verify": "node --test automation/test-verify.mjs",
+    "test:llm": "node --test automation/test-llm-retry.mjs",
     "test:research": "node --test automation/test-research.mjs",
     "test:gate": "node --test automation/test-update-gate.mjs",
     "test:blog": "node --test automation/test-blog-check.mjs",

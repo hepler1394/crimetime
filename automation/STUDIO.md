@@ -361,6 +361,86 @@ right. `npm run test:verify` covers the gate.
 A DeepSeek key in `automation/config.json` would raise script quality a lot for
 about a cent per episode; the pipeline already falls back to it when set.
 
+### Rebuilding the list when the script changed underneath it
+
+    node automation/episode-revise.mjs <draft-id> --facts
+
+A claim is a description of a sentence, so once an editing pass removes the
+sentence the claim describes, that claim can never be ticked and can never be
+cleared by editing either: the gate holds forever on text that is not in the
+episode. The Elisa Lam draft sat like that on 2026-09-21 after `--repeats` cut
+its retold scenes without regenerating the list. `--repeats` now rebuilds the
+list itself, and `--facts` does it after the fact. It rewrites no words, so it is
+the one mode that is safe on a draft that has already been voiced and audited.
+
+### Why a provider is retried before the next one is tried
+
+`--facts` is one provider call per chapter, thirteen of them for a twenty-minute
+episode, and until 2026-09-22 any one of them failing ended the run and threw
+away the rest. That was survivable while a failure meant something was wrong. It
+stopped being survivable when Gemini spent a day shedding load: measured that
+afternoon it answered about a third of requests and refused the rest with 503
+"high demand", in bursts of minutes. Thirteen calls in a row at that rate is
+about one chance in eight thousand, and the rebuild never once finished.
+
+Two things were wrong, and the obvious diagnosis was the third:
+
+- **No retry.** `llm.mjs` now retries the same provider on a transient failure
+  (503, 502, 500, 504, 429, a dropped connection, our own deadline) with capped
+  exponential backoff and jitter - `cfg.retries`, default 6, `LLM_RETRIES`. A
+  401, a 404 and an answer cut off at the output limit are facts about the
+  request, so they are not retried. Neither is a half-streamed answer, because
+  the reader has already seen the first half. `npm run test:llm` covers this.
+- **Falling through is a downgrade, not a recovery.** The old behaviour on a 503
+  was to move down the provider order, which for a fact check means a 4B model
+  on the desk that cannot read 45KB of notes and hand back clean JSON. That does
+  not fail; it produces a worse opinion of the same episode and says nothing. The
+  retry happens before the fall-through for that reason.
+- **The size theory was wrong.** It looked like the service was accepting small
+  requests and shedding large ones, which would have made a five-token health
+  check a liar. Probing both sizes alternately killed that: five-token requests
+  were refused as readily as 45KB ones. It is load, not size. A single probe of
+  any size is close to meaningless, which is what `node automation/test-llm.mjs
+  --real` reports - the share of real-size requests that land, and what that
+  share implies for a thirteen-call pass.
+
+Finished chapters are parked in the draft's `facts-progress.json` and a rerun
+resumes from there, keyed by a hash of the script so an edit discards them. What
+is never written is a short list: a fact list built from nine chapters of
+thirteen is not a partial result, it is a weaker gate that looks like a finished
+one, because the four missing chapters have nothing to check and sail through.
+`episode.json` is written only once every chapter is in hand.
+
+### The bug the 503s were hiding, which was worse than the 503s
+
+The first rebuild with retries in place got to chapter five and stopped on JSON
+that would not parse. Two chapters behind it had come back with **zero claims**
+and been accepted - 493 and 494 words of medication names, diagnoses, dates and
+a Conan taping, recorded as a chapter with nothing in it to check.
+
+Both had one cause. `openAiCompatible` streams, and it only checked that the
+stream reached its done marker when a caller had passed an `onToken` callback. A
+batch job passes none, so a connection that died mid-answer returned the first
+half as though it were the whole thing. Half a JSON array parses one of two ways:
+it throws, or the "find the outermost braces" regex finds no closing brace, hands
+back `{}`, and `(parse(text).claims || [])` turns that into an empty list. The
+throw is loud. The empty list is silent, and it is the one that reaches the gate.
+
+Two changes, because one of them is not enough:
+
+- `llm.mjs` requires the done marker on every stream, watched or not. A truncated
+  stream is retried unless tokens already went to a reader, in which case it is
+  raised rather than silently sent twice. `npm run test:llm` pins both.
+- `episode-revise.mjs` will not accept a chapter that comes back with no claims
+  at all, or an answer that does not parse. It asks again up to four times and
+  then stops the run. The transport retry cannot see this failure - as far as it
+  is concerned the request succeeded - so the checker has to judge the answer.
+
+The general form, worth remembering the next time something looks like an outage:
+an unreliable provider produces loud failures and quiet ones, the loud ones get
+all the attention, and the quiet ones are what actually reach the gate. A fact
+gate that holds nothing is indistinguishable from an episode with nothing wrong.
+
 ## The audio gate, and what a HOLD is worth
 
 The fact gate reads text. This reads the sound, because on 2026-09-18 the Petito

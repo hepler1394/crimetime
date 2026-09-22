@@ -20,7 +20,8 @@
 // audio wrong. Use episode-repair.mjs --edits for that. The exception is --facts, which
 // rewrites no words and so is safe at any point.
 
-import { readFile, writeFile, copyFile } from "node:fs/promises";
+import { readFile, writeFile, copyFile, rm } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { chat, loadConfig } from "./llm.mjs";
@@ -34,7 +35,7 @@ const asJson = args.includes("--json");
 const out = (o) => console.log(asJson ? JSON.stringify(o) : (o.message || JSON.stringify(o)));
 const die = (step, message) => { out({ ok: false, step, message }); process.exit(2); };
 const say = (m) => { if (!asJson) console.log(m); };
-if (!id) die("args", "usage: episode-revise.mjs <draft-id> [--rounds 2] [--repeats]");
+if (!id) die("args", "usage: episode-revise.mjs <draft-id> [--rounds 2] [--repeats] [--facts]");
 
 const dir = join(here, "studio", "drafts", id);
 const epPath = join(dir, "episode.json");
@@ -50,12 +51,103 @@ const OPENER = "What's up guys, welcome back to CrimeTimeSnacks.";
 const OUTRO = "That's it for this one. Thanks for hanging out with me. This has been CrimeTimeSnacks, and I'll catch you next time.";
 const parse = (t) => { const m = String(t).match(/\{[\s\S]*\}/); return m ? JSON.parse(m[0]) : {}; };
 
+// The fact list is an enumeration of every claim in a chapter, and the gate is only ever as
+// complete as that enumeration. When Gemini sheds load, falling through to the 4B model on
+// the desk does not look like a failure: it looks like a chapter with fewer claims in it,
+// and a shorter list is a weaker gate, not a slower one. So the checker waits the provider
+// out instead of working around it. A machine with no cloud key at all still uses the local
+// model, because there it is the only checker there is - and the run says which one read it.
+const cloudFirst = cfg.order.filter((n) => n !== "local");
+const checkCfg = { ...cfg, order: cloudFirst.length ? cloudFirst : cfg.order };
+const checkedBy = new Set();
+let lastProvider = "";
+
+// An answer that does not parse, or that finds no claims at all in five hundred words of
+// true crime, is a failed extraction and not a verdict. It used to be taken at face value:
+// `(parse(text).claims || [])` turns a half-received answer into an empty array, and an
+// empty array is a chapter the gate has nothing to check in, which is indistinguishable
+// from a chapter that passed. Two of the Elisa Lam chapters came back that way on
+// 2026-09-22. So: ask again, and if it keeps coming back like that, stop the run. The
+// transport retry in llm.mjs cannot see this - to it the request succeeded.
+const EXTRACT_TRIES = 4;
 async function check(paras) {
   const body = paras.map((t) => t.replace(OPENER, "").replace(OUTRO, "").trim()).filter(Boolean).join("\n\n");
-  const { text } = await chat(`You are a fact-checker. You get RESEARCH NOTES and a SCRIPT CHAPTER. List every specific factual claim in the chapter (names, dates, counts, places, quotes, sequence of events). For each, decide if the notes support it. Output ONLY a JSON object: {"claims": [{"claim": string, "supported": boolean, "note": string (for unsupported claims: what the notes actually say, or "not in notes")}]}. Be strict: a claim is supported only if the notes state it.`,
-    `RESEARCH NOTES:\n${research.slice(0, 200000)}\n\nSCRIPT CHAPTER:\n${body}`, { ...cfg, jsonMode: true });
-  return (parse(text).claims || []).filter((c) => c && c.claim);
+  if (!body.trim()) return [];   // a chapter that is only the opener or the sign-off
+  let last = "";
+  for (let attempt = 1; attempt <= EXTRACT_TRIES; attempt++) {
+    const { text, provider } = await chat(`You are a fact-checker. You get RESEARCH NOTES and a SCRIPT CHAPTER. List every specific factual claim in the chapter (names, dates, counts, places, quotes, sequence of events). For each, decide if the notes support it. Output ONLY a JSON object: {"claims": [{"claim": string, "supported": boolean, "note": string (for unsupported claims: what the notes actually say, or "not in notes")}]}. Be strict: a claim is supported only if the notes state it.`,
+      `RESEARCH NOTES:\n${research.slice(0, 200000)}\n\nSCRIPT CHAPTER:\n${body}`, { ...checkCfg, jsonMode: true });
+    let claims = [];
+    try { claims = (parse(text).claims || []).filter((c) => c && c.claim); }
+    catch (err) { last = `the answer did not parse (${err.message})`; }
+    if (claims.length) { checkedBy.add(provider); lastProvider = provider; return claims; }
+    if (!last) last = `${provider} found no claims in ${body.split(/\s+/).length} words`;
+    say(`  extraction attempt ${attempt}/${EXTRACT_TRIES}: ${last}; asking again`);
+  }
+  throw new Error(`${last}, ${EXTRACT_TRIES} times over. A chapter with no claims on its list is a chapter the gate cannot hold, so the list is not being written.`);
 }
+
+/* Checking every chapter, and keeping what is already checked if the run dies.
+ *
+ * A thirteen-chapter rebuild is thirteen separate provider calls, and until 2026-09-22 a
+ * run that lost the ninth threw away the eight before it. That was fine when a failure
+ * meant something was wrong; it is not fine against a provider shedding a third of
+ * requests, where the ninth call failing says nothing at all. llm.mjs now retries, and
+ * this keeps the finished chapters so a run that still dies restarts where it stopped.
+ *
+ * What is NOT done here is writing a short list to episode.json. A fact list built from
+ * nine chapters of thirteen is not a partial result, it is a weaker gate that looks like
+ * a finished one: the four missing chapters would have nothing to check and would sail
+ * through. So the parked chapters stay in their own file and episode.json is written only
+ * once every chapter is in hand. The file is keyed by the script it was checked against,
+ * so an edited script discards it rather than certifying sentences that are gone.
+ */
+const progressPath = join(dir, "facts-progress.json");
+async function checkChapters(list, scriptArr) {
+  const key = createHash("sha1").update(JSON.stringify(scriptArr)).digest("hex").slice(0, 12);
+  let done = {};
+  try {
+    const p = JSON.parse(await readFile(progressPath, "utf8"));
+    // An empty chapter is never picked up, whatever parked it. check() refuses to return
+    // one now, but a file written before it did would otherwise carry the hole forward.
+    if (p.script === key) {
+      for (const [n, v] of Object.entries(p.chapters || {})) if (v?.claims?.length) done[n] = v;
+      if (Object.keys(done).length) say(`Picking up ${Object.keys(done).length} chapter(s) checked by an earlier run.`);
+    }
+  } catch { /* no progress, or unreadable: check everything */ }
+  const claimsBy = [];
+  for (const [n, c] of list.entries()) {
+    if (done[n]) {
+      say(`Chapter ${n + 1}/${list.length}: ${c.title || ""} (already checked by ${done[n].provider})`);
+      checkedBy.add(done[n].provider);   // a resumed run still names every model that read it
+      claimsBy.push(done[n].claims); continue;
+    }
+    say(`Chapter ${n + 1}/${list.length}: ${c.title || ""}`);
+    let claims;
+    try {
+      claims = await check(scriptArr.slice(c.start, c.start + c.paragraphs));
+    } catch (err) {
+      await writeFile(progressPath, JSON.stringify({ script: key, chapters: done }), "utf8");
+      die("check", `Chapter ${n + 1} of ${list.length} could not be checked: ${err.message}\nThe ${Object.keys(done).length} chapter(s) before it are kept; running this again resumes there. Nothing was written to episode.json.`);
+    }
+    done[n] = { claims, provider: lastProvider };
+    await writeFile(progressPath, JSON.stringify({ script: key, chapters: done }), "utf8");
+    claimsBy.push(claims);
+  }
+  await rm(progressPath, { force: true });
+  return claimsBy;
+}
+
+// The stored list is UNSUPPORTED-first so the worst of it is the first thing read.
+const toFacts = (claimsBy) => claimsBy.flat()
+  .map((c) => (c.supported === false ? `UNSUPPORTED: ${c.claim}${c.note ? ` (notes: ${c.note})` : ""}` : String(c.claim)))
+  .sort((a, b) => (b.startsWith("UNSUPPORTED:") ? 1 : 0) - (a.startsWith("UNSUPPORTED:") ? 1 : 0));
+const countBad = (claimsBy) => claimsBy.flat().filter((x) => x.supported === false).length;
+// Which model actually read the chapters. Written into episode.json because a list built by
+// a 4B model and a list built by Flash are not the same artefact, and six months later
+// nothing else on disk would say which one this was. Chapters resumed from a parked run
+// carry their own provider, so a list assembled over three runs names all three.
+const listedBy = () => (checkedBy.size ? [...checkedBy].sort().join(", ") : "unknown");
 
 /* --------------------------------------------------------------------- --facts */
 // Rebuild the claim list against the script as it stands now, and change nothing else.
@@ -67,26 +159,19 @@ async function check(paras) {
 // the audio stays the audio that was audited.
 if (args.includes("--facts")) {
   const chapters = (ep.chapters || []).map((c) => ({ ...c }));
-  const claimsBy = [];
-  let stillBad = 0;
-  for (const [n, c] of chapters.entries()) {
-    say(`Chapter ${n + 1}/${chapters.length}: ${c.title || ""}`);
-    const claims = await check(ep.script.slice(c.start, c.start + c.paragraphs));
-    stillBad += claims.filter((x) => x.supported === false).length;
-    claimsBy.push(claims);
-  }
-  const facts = claimsBy.flat().map((c) => (c.supported === false ? `UNSUPPORTED: ${c.claim}${c.note ? ` (notes: ${c.note})` : ""}` : String(c.claim)));
-  facts.sort((a, b) => (b.startsWith("UNSUPPORTED:") ? 1 : 0) - (a.startsWith("UNSUPPORTED:") ? 1 : 0));
+  const claimsBy = await checkChapters(chapters, ep.script);
+  const stillBad = countBad(claimsBy);
+  const facts = toFacts(claimsBy);
 
   await copyFile(epPath, join(dir, "episode.json.bak-facts"));
   const freshF = JSON.parse(await readFile(epPath, "utf8"));
   const wasCount = (freshF.factsToVerify || []).length;
   // factsChecked and factsHeld describe the old list, so they go with it.
   Object.assign(freshF, { factsToVerify: facts, factsChecked: [], factsHeld: [],
-    factCheck: { checked: facts.length, unsupported: stillBad }, edited: new Date().toISOString() });
+    factCheck: { checked: facts.length, unsupported: stillBad }, factsListedBy: listedBy(), edited: new Date().toISOString() });
   await writeFile(epPath, JSON.stringify(freshF, null, 2) + "\n", "utf8");
-  out({ ok: true, id, claims: facts.length, was: wasCount, unsupported: stillBad,
-    message: `Rebuilt the fact list for ${id} against the current script: ${wasCount} -> ${facts.length} claims, ${stillBad} unsupported. No words changed.` });
+  out({ ok: true, id, claims: facts.length, was: wasCount, unsupported: stillBad, listedBy: listedBy(),
+    message: `Rebuilt the fact list for ${id} against the current script: ${wasCount} -> ${facts.length} claims, ${stillBad} unsupported, read by ${listedBy()}. No words changed.` });
   process.exit(0);
 }
 
@@ -152,21 +237,20 @@ if (args.includes("--repeats")) {
   // episode was held on two claims whose sentences no longer existed anywhere in it, and no
   // amount of editing the script could ever have cleared them. Re-check the chapters that
   // changed and rebuild the list the same way the full revise does.
-  const claimsBy = [];
-  let stillBad = 0;
-  for (const c of kept) {
-    const claims = await check(script.slice(c.start, c.start + c.paragraphs));
-    stillBad += claims.filter((x) => x.supported === false).length;
-    claimsBy.push(claims);
-  }
-  const facts = claimsBy.flat().map((c) => (c.supported === false ? `UNSUPPORTED: ${c.claim}${c.note ? ` (notes: ${c.note})` : ""}` : String(c.claim)));
-  facts.sort((a, b) => (b.startsWith("UNSUPPORTED:") ? 1 : 0) - (a.startsWith("UNSUPPORTED:") ? 1 : 0));
+  // The edited script only exists in memory until the write below, so park it next to the
+  // checked chapters: without it a rebuild that dies here loses the editing pass as well,
+  // and the next run pays for both again.
+  await writeFile(join(dir, "repeats-pending.json"), JSON.stringify({ script, chapters: kept, words }, null, 2), "utf8");
+  const claimsBy = await checkChapters(kept, script);
+  const stillBad = countBad(claimsBy);
+  const facts = toFacts(claimsBy);
 
   await copyFile(epPath, join(dir, "episode.json.bak-repeats"));
   const freshR = JSON.parse(await readFile(epPath, "utf8"));
   Object.assign(freshR, { script, chapters: kept, scriptWords: words, edited: new Date().toISOString(),
-    factsToVerify: facts, factsChecked: [], factsHeld: [], factCheck: { checked: facts.length, unsupported: stillBad } });
+    factsToVerify: facts, factsChecked: [], factsHeld: [], factCheck: { checked: facts.length, unsupported: stillBad }, factsListedBy: listedBy() });
   await writeFile(epPath, JSON.stringify(freshR, null, 2) + "\n", "utf8");
+  await rm(join(dir, "repeats-pending.json"), { force: true });
   out({ ok: true, id, words, revised: touched, share: +after.share.toFixed(3), verdict: after.verdict,
     was: +before.share.toFixed(3), wordsBefore: ep.scriptWords,
     claims: facts.length, unsupported: stillBad,
@@ -208,7 +292,7 @@ const facts = claimsBy.flat().map((c) => (c.supported === false ? `UNSUPPORTED: 
 facts.sort((a, b) => (b.startsWith("UNSUPPORTED:") ? 1 : 0) - (a.startsWith("UNSUPPORTED:") ? 1 : 0));
 await copyFile(epPath, join(dir, "episode.json.bak-revise"));
 const fresh = JSON.parse(await readFile(epPath, "utf8"));
-Object.assign(fresh, { script, chapters, factsToVerify: facts, factsChecked: [], factsHeld: [], factCheck: { checked: facts.length, unsupported: stillBad },
+Object.assign(fresh, { script, chapters, factsToVerify: facts, factsChecked: [], factsHeld: [], factCheck: { checked: facts.length, unsupported: stillBad }, factsListedBy: listedBy(),
   scriptWords: script.join(" ").split(/\s+/).length, edited: new Date().toISOString() });
 await writeFile(epPath, JSON.stringify(fresh, null, 2) + "\n", "utf8");
 out({ ok: true, id, words: fresh.scriptWords, claims: facts.length, revised: fixed, unsupported: stillBad,
