@@ -7,7 +7,7 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { SITE, APPLE, esc, head, header, footer, tape, scripts } from "./shell.mjs";
+import { SITE, APPLE, esc, head, header, footer, tape, scripts, mark } from "./shell.mjs";
 import { thumb } from "./thumbs.mjs";
 
 // Transcript for a slug (automation/transcripts/<slug>.json), if it exists.
@@ -88,8 +88,8 @@ function gridCard(p, ep) {
                         <div class="episode-actions">
                             <a href="${epUrl(ep)}" class="btn btn-primary btn-sm">Open Case</a>
                             <div class="episode-stats">
-                                <a href="${ep.spotifyUrl || p.spotifyUrl}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;"><i class="fab fa-spotify" aria-hidden="true"></i> Spotify</a>
-                                <a href="${APPLE}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;"><i class="fab fa-apple" aria-hidden="true"></i> Apple</a>
+                                <a href="${ep.spotifyUrl || p.spotifyUrl}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">${mark("spotify", 16)} Spotify</a>
+                                <a href="${APPLE}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">${mark("applepodcasts", 16)} Apple</a>
                             </div>
                         </div>
                     </div>
@@ -276,8 +276,8 @@ ${header("episodes")}
             <source src="${esc(ep.audio)}" type="${esc(ep.audioType)}">
         </audio>
         <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin:1.4rem 0 2rem;">
-            <a href="${ep.spotifyUrl || p.spotifyUrl}" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-spotify" aria-hidden="true"></i> Listen on Spotify</a>
-            <a href="${APPLE}" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-apple" aria-hidden="true"></i> Apple Podcasts</a>
+            <a href="${ep.spotifyUrl || p.spotifyUrl}" target="_blank" rel="noopener" class="btn btn-primary">${mark("spotify", 16)} Listen on Spotify</a>
+            <a href="${APPLE}" target="_blank" rel="noopener" class="btn btn-secondary">${mark("applepodcasts", 16)} Apple Podcasts</a>
         </div>
         <p style="color:var(--cts-muted);line-height:1.85;font-size:1.02rem;">${esc(ep.description)}</p>
 ${transcriptBlock(transcript)}
@@ -357,8 +357,8 @@ function homeBlock({ podcast: p, episodes }) {
                     <source src="${esc(latest.audio)}" type="${esc(latest.audioType)}">
                 </audio>
                 <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-                    <a href="${latest.spotifyUrl || p.spotifyUrl}" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-spotify" aria-hidden="true"></i> Listen on Spotify</a>
-                    <a href="${APPLE}" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fab fa-apple" aria-hidden="true"></i> Apple Podcasts</a>
+                    <a href="${latest.spotifyUrl || p.spotifyUrl}" target="_blank" rel="noopener" class="btn btn-primary">${mark("spotify", 16)} Listen on Spotify</a>
+                    <a href="${APPLE}" target="_blank" rel="noopener" class="btn btn-secondary">${mark("applepodcasts", 16)} Apple Podcasts</a>
                 </div>
             </div>
         </article>
@@ -387,8 +387,8 @@ ${recent.map((ep) => homeRecentCard(p, ep)).join("\n")}
 function statsBlock(count) {
   return `                <!-- HOME-STATS:START (auto-filled by automation/build-episodes.mjs) -->
                 <div class="stat-row">
-                    <div class="stat"><div class="stat-num"><span data-count="${count}">${count}</span><em>+</em></div><div class="stat-label">Cases Covered</div></div>
-                    <div class="stat"><div class="stat-num"><span data-count="${count}">${count}</span></div><div class="stat-label">Episodes</div></div>
+                    <div class="stat"><div class="stat-num"><span>${count}</span><em>+</em></div><div class="stat-label">Cases Covered</div></div>
+                    <div class="stat"><div class="stat-num"><span>${count}</span></div><div class="stat-label">Episodes</div></div>
                     <div class="stat"><div class="stat-num">5.0<em>★</em></div><div class="stat-label">Listener Rated</div></div>
                     <div class="stat"><div class="stat-num">1<em>×</em>/wk</div><div class="stat-label">New Episode</div></div>
                 </div>

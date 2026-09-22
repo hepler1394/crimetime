@@ -543,7 +543,7 @@ header::after {
     transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), background 0.25s var(--ease), box-shadow 0.25s var(--ease);
 }
 
-.platform-pill i { font-size: 1.05rem; }
+.platform-pill .mark { flex: none; }
 
 .platform-pill:hover {
     transform: translateY(-3px);
@@ -552,10 +552,10 @@ header::after {
     box-shadow: var(--shadow-red);
 }
 
-.platform-pill .fa-spotify { color: #1db954; }
-.platform-pill .fa-apple { color: #d8d8e0; }
-.platform-pill .fa-youtube { color: #ff0000; }
-.platform-pill .fa-rss { color: var(--cts-tape); }
+.platform-pill .mark--spotify { color: #1db954; }
+.platform-pill .mark--applepodcasts { color: #9933CC; }
+.platform-pill .mark--youtube { color: #ff0000; }
+.platform-pill .mark--rss { color: #F26522; }
 
 /* the promo renders — Cory's pride. Kept, glorified. */
 .hero-visual {
@@ -1464,21 +1464,31 @@ audio { width: 100%; }
 
 .footer-social { display: flex; gap: 0.7rem; margin-top: 1.1rem; }
 
+/* No boxes. A logo is already a shape - putting it in a rounded square gives every one of
+   them the same silhouette and throws away the thing that makes a logo recognisable at a
+   glance. They sit on the background and each takes its own brand colour on hover, which
+   is also what tells you they are the real marks and not an icon font. The 42px box is
+   kept as the tap target, just invisible. */
 .footer-social a {
-    color: var(--cts-white);
-    font-size: 1.05rem;
-    transition: var(--cts-transition);
+    color: var(--cts-muted);
     width: 42px;
     height: 42px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid var(--cts-line-strong);
-    display: flex;
+    margin-left: -9px;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    transition: color 0.2s var(--ease), transform 0.2s var(--ease);
 }
+.footer-social a:first-child { margin-left: 0; }
+.footer-social a:hover { transform: translateY(-2px); }
+.footer-social a:focus-visible { outline: 2px solid var(--cts-red); outline-offset: 0; border-radius: 8px; }
 
-.footer-social a:hover { background: var(--cts-red); border-color: transparent; transform: translateY(-4px); box-shadow: var(--shadow-red); }
+.footer-social a:hover .mark--spotify { color: #1DB954; }
+.footer-social a:hover .mark--applepodcasts { color: #9933CC; }
+.footer-social a:hover .mark--instagram { color: #E4405F; }
+.footer-social a:hover .mark--rss { color: #F26522; }
+.footer-social a:hover .mark--email { color: var(--cts-red-hot); }
+.mark { display: block; }
 
 .footer-heading {
     font-size: 0.74rem;
@@ -1992,3 +2002,7 @@ html.js .animate-on-scroll.animated { opacity: 1; transform: translateY(0); }
     .nav-account[data-account="out"] { display: none; }
     .nav-account[data-account="in"] { font-size: 0.75rem; padding: 0.6rem 0.35rem; }
 }
+
+/* A brand mark sitting on a text baseline beside its label, rather than alone in the
+   footer row. Sized to the type around it and nudged so it centres on the x-height. */
+.mark--inline { display: inline-block; vertical-align: -0.18em; margin-right: 0.15rem; }

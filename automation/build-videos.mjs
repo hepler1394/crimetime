@@ -7,7 +7,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { esc, head, header, footer, tape, scripts } from "./shell.mjs";
+import { esc, head, header, footer, tape, scripts, mark } from "./shell.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -132,7 +132,7 @@ ${header("videos")}
             <p class="eyebrow" style="justify-content:center;">On Camera</p>
             <h1 class="page-title">Shorts &amp; <span class="text-red">Videos</span></h1>
             <p>Quick true-crime clips and full case breakdowns.</p>
-${data.meta.channelUrl ? `            <p style="margin-top:1.6rem;"><a href="${esc(data.meta.channelUrl)}" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-youtube" aria-hidden="true"></i> Subscribe on YouTube</a></p>\n` : ""}        </div>
+${data.meta.channelUrl ? `            <p style="margin-top:1.6rem;"><a href="${esc(data.meta.channelUrl)}" target="_blank" rel="noopener" class="btn btn-primary">${mark("youtube", 16)} Subscribe on YouTube</a></p>\n` : ""}        </div>
     </section>
 
     <section class="container">
