@@ -7,7 +7,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
+// CTS_LINK_ROOT lets the test point this at a scratch tree instead of the repo.
+const ROOT = process.env.CTS_LINK_ROOT || path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const toPosix = (p) => p.split(path.sep).join("/");
 
 function walk(dir) {
@@ -15,8 +16,12 @@ function walk(dir) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
     if (e.name === "node_modules" || e.name === ".git") continue;
     const p = path.join(dir, e.name);
-    // The podcast studio is a local app served by its own server, not a site page.
+    // Neither of these is a site page. The podcast studio is a local app served by its own
+    // server. community/ is a separate Vercel project, and its .next build output carries
+    // hashed asset references that resolve on that zone and nowhere else - walking it would
+    // report them broken and stop every episode publish.
     if (toPosix(p).endsWith("automation/studio")) continue;
+    if (toPosix(path.relative(ROOT, p)) === "community") continue;
     if (e.isDirectory()) out = out.concat(walk(p));
     else if (e.name.endsWith(".html")) out.push(p);
   }
