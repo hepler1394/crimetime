@@ -29,3 +29,96 @@ a { color: var(--paper); }
   margin-bottom: 28px;
 }
 .mark em { color: var(--red); font-style: normal; }
+
+/* ------------------------------------------------------------------ typography */
+.h1 {
+  font: 400 clamp(2.2rem, 6vw, 3rem)/1 "Bebas Neue", Impact, Haettenschweiler, sans-serif;
+  letter-spacing: .02em;
+  margin: 0 0 .5rem;
+  text-transform: uppercase;
+}
+.lede { color: var(--muted); margin: 0 0 2rem; max-width: 46ch; }
+.note { color: var(--dim); font-size: .875rem; margin: .4rem 0 0; }
+.fine { color: var(--dim); font-size: .8125rem; margin-top: 2.5rem; }
+.fine a, .lede a { color: var(--muted); }
+.quiet {
+  color: var(--muted); font-size: .875rem; text-decoration: none;
+  border-bottom: 1px solid var(--line); padding-bottom: 1px; align-self: flex-start;
+}
+.quiet:hover { color: var(--paper); border-bottom-color: var(--muted); }
+
+/* ----------------------------------------------------------------------- forms */
+.stack { display: flex; flex-direction: column; gap: .35rem; }
+.label { font-size: .8125rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.field {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--paper);
+  font: inherit;
+  padding: .8rem .9rem;
+  width: 100%;
+}
+.field::placeholder { color: #55555e; }
+.field:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; border-color: transparent; }
+.code { font: 600 1.5rem/1 ui-monospace, Menlo, Consolas, monospace; letter-spacing: .4em; text-align: center; }
+
+.btn {
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+  font: 600 .95rem/1 inherit;
+  margin-top: .9rem;
+  padding: .85rem 1.1rem;
+  width: 100%;
+}
+.btn:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+.btn.primary { background: var(--red); color: #fff; }
+.btn.primary:hover { background: #c40810; }
+.btn.google { background: var(--paper); color: #111; margin-top: 0; }
+.btn.google:hover { background: #e4e4e8; }
+.btn.google .g { font-weight: 700; color: #4285f4; }
+.btn.ghost { background: transparent; border-color: var(--line); color: var(--paper); }
+.btn.ghost:hover { border-color: var(--muted); }
+.btn.danger { background: transparent; border-color: #5a1a1d; color: #ff6b6b; }
+.btn.danger:hover { background: #1a0c0d; }
+
+/* The divider between the two ways in. */
+.or { align-items: center; color: var(--dim); display: flex; font-size: .8125rem; gap: .9rem; margin: 1.6rem 0; }
+.or::before, .or::after { background: var(--line); content: ""; flex: 1; height: 1px; }
+
+.error {
+  background: #1a0c0d;
+  border-left: 2px solid var(--red);
+  color: #ffb4b4;
+  font-size: .9rem;
+  margin: 0 0 1.4rem;
+  padding: .75rem .9rem;
+}
+
+/* --------------------------------------------------------------- handle picker */
+.handle-input { position: relative; }
+.handle-input .at {
+  color: var(--dim); font-weight: 600; left: .9rem; pointer-events: none;
+  position: absolute; top: 50%; transform: translateY(-50%);
+}
+.handle-input .field { font-weight: 600; padding-left: 2rem; }
+.preview {
+  color: var(--dim); font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: .8125rem; margin: .55rem 0 0;
+}
+.preview b { color: var(--yellow); font-weight: 600; }
+.preview.empty b { color: var(--dim); font-weight: 400; }
+
+/* Rules that answer as you type. A square that fills rather than a tick, because a tick
+   reads as a symbol on the page and this site does not use them. */
+.rules { display: grid; gap: .45rem; list-style: none; margin: 1.1rem 0 0; padding: 0; }
+.rules li { align-items: center; color: var(--dim); display: flex; font-size: .8125rem; gap: .6rem; }
+.rules li::before {
+  background: var(--line); border-radius: 2px; content: ""; flex: none; height: 7px; width: 7px;
+}
+.rules li.met { color: var(--muted); }
+.rules li.met::before { background: var(--yellow); }
+
+.btn[disabled] { cursor: default; opacity: .6; }

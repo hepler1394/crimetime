@@ -31,3 +31,18 @@ export function handleError(input) {
   if (RESERVED.has(h)) return "That handle is not available.";
   return null;
 }
+
+// A first guess at a handle, from the display name the provider gave us. Never from the
+// email address: someone pressing enter on a prefilled field should not be publishing the
+// local part of their inbox. Returns "" when there is nothing usable in the name, because
+// an empty field is honest and a bad suggestion is a trap.
+export function suggestHandle(name) {
+  let h = String(name ?? "").trim().toLowerCase()
+    .replace(/['’]/g, "")     // o'brien is obrien, not o_brien
+    .replace(/[^a-z0-9]+/g, "_")   // every other run of punctuation or space is one underscore
+    .replace(/^_+|_+$/g, "")
+    .replace(/^[^a-z]+/, "");      // handles start with a letter, so drop what comes before one
+  if (h.length > 20) h = h.slice(0, 20).replace(/_+$/, "");
+  if (RESERVED.has(h)) h = `${h.slice(0, 19)}_`;
+  return handleError(h) ? "" : h;
+}
