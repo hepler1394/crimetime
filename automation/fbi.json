@@ -3,9 +3,24 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1247,
     "baked": 150,
-    "updated": "2026-09-22T14:00:04.326Z"
+    "updated": "2026-09-22T17:02:07.997Z"
   },
   "items": [
+    {
+      "uid": "23a89046e8df431aaa665cbceafd0c8b",
+      "title": "ROY MAYNARD - GREENSBORO, NORTH CAROLINA",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/roy-maynard---greensboro-north-carolina/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/roy-maynard---greensboro-north-carolina",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Missing Persons"
+      ],
+      "publication": "2026-09-22T09:22:00"
+    },
     {
       "uid": "38f8fc6d4abe4733b8f8226cb8b5de83",
       "title": "ARMED ROBBERY - KANSAS",
@@ -764,21 +779,6 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2026-07-30T08:43:00"
-    },
-    {
-      "uid": "2a19f6cd74ad405f81af8f79fda32aed",
-      "title": "MICHAEL LIZASO MARASIGAN",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/michael-lizaso-marasigan/@@images/image/large",
-      "office": "Honolulu",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Michael Lizaso Marasigan.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/michael-lizaso-marasigan",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
-      "subjects": [
-        "Most Wanted Fraudster"
-      ],
-      "publication": "2026-01-12T14:02:00"
     },
     {
       "uid": "27f6739b638b437192b1bb4fdb0426d3",
