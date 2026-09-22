@@ -107,3 +107,24 @@ create or replace function public.cts_touch_updated_at() returns trigger languag
 begin new.updated_at = now(); return new; end $$;
 drop trigger if exists cts_cases_touch on public.cts_cases;
 create trigger cts_cases_touch before update on public.cts_cases for each row execute function public.cts_touch_updated_at();
+
+-- Community phase one (2026-09-21): identity. Members get an account, a handle and a
+-- profile. auth_user_id links the row to Supabase Auth; it stays null for the email-only
+-- followers who came before, and is filled on their first sign-in so their follows carry
+-- across rather than stranding on a row nobody can reach (community/lib/members.mjs).
+alter table public.cts_members add column if not exists auth_user_id uuid;
+alter table public.cts_members add column if not exists handle        text;
+alter table public.cts_members add column if not exists display_name  text not null default '';
+alter table public.cts_members add column if not exists avatar_url    text not null default '';
+alter table public.cts_members add column if not exists bio           text not null default '';
+-- Following a murder case is a sensitive thing to publish about a person, so a profile
+-- shows saved cases only when the member opts in.
+alter table public.cts_members add column if not exists show_follows  boolean not null default false;
+
+create unique index if not exists cts_members_auth_user_id_uq on public.cts_members (auth_user_id) where auth_user_id is not null;
+create unique index if not exists cts_members_handle_uq       on public.cts_members (lower(handle)) where handle is not null;
+-- Kept in step with handleError() in community/lib/handle.mjs. The database is the last
+-- word: a handle that reaches a row without passing the validator is still refused here.
+alter table public.cts_members drop constraint if exists cts_members_handle_shape;
+alter table public.cts_members add  constraint cts_members_handle_shape
+  check (handle is null or handle ~ '^[a-z][a-z0-9_]{2,19}$');
