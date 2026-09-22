@@ -96,11 +96,29 @@ try {
     step("episode-revise.mjs", [draft.id], { optional: true });
   }
 
-  // The fact gate. It runs before the render so its verdict is in hand early, but a held
-  // claim does not stop the render: most holds are the checker being literal about a name,
-  // and in that case the script is fine and the audio stays valid. So build the whole
-  // episode either way, and let the gate decide only whether it goes out.
+  // The fact gate. It runs before the render so its verdict is in hand early. Most holds do
+  // not stop the render: the checker being literal about a name leaves the script, and so
+  // the audio, perfectly good, so the episode is built either way and the gate decides only
+  // whether it goes out. The exception is directly below.
   const check = step("episode-verify.mjs", [draft.id]);
+
+  // With one exception, and it is the one that cost a night. The reasoning above holds for a
+  // gate being literal - a name or a figure the notes phrase differently leaves the script,
+  // and so the audio, perfectly good. It does not hold when the drafter's OWN fact-checker
+  // has marked a claim UNSUPPORTED: that sentence has to be cut or sourced before this can
+  // publish, cutting or sourcing it rewrites the paragraph, and the paragraph has to be read
+  // aloud again. On 2026-09-21 the Elisa Lam run carried three of those into a 408-minute
+  // render of an episode that could never have gone out as written.
+  //
+  // So those stop the run here, while the fix is still a text edit. Every other kind of hold
+  // still builds, exactly as before.
+  const unsupported = (check.heldClaims || []).filter((h) => /fact-checker/.test(h.reason || ""));
+  if (unsupported.length) {
+    const lines = unsupported.map((h) => `  - ${String(h.claim).replace(/^UNSUPPORTED:\s*/, "").split(" (notes:")[0]}`).join("\n");
+    const msg = `${draft.id} has ${unsupported.length} claim(s) the drafter's own fact-checker marked unsupported. Each has to be cut or sourced, which rewrites the paragraph and means re-voicing it, so nothing was rendered:\n${lines}\nFix them in the draft and run it again.`;
+    await notify(`CrimeTimeSnacks: ${msg}`);
+    throw new Error(msg);
+  }
 
   // Length preflight. episode-publish.mjs refuses a render under twenty minutes, and
   // finding that out afterwards costs the whole render. Measure the script against the

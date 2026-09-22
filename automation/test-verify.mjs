@@ -28,11 +28,11 @@ sentenced to fourteen years. A forensic chemist testified that accelerant was fo
 recovered from the loading dock, and the defense challenged the chain of custody.
 `;
 
-async function runVerify(claims, extraArgs = []) {
+async function runVerify(claims, extraArgs = [], notes = NOTES) {
   await mkdir(dir, { recursive: true });
   // Each run starts clean, or a report left by an earlier test makes the --dry check lie.
   await rm(join(dir, "fact-check.md"), { force: true });
-  await writeFile(join(dir, "research.md"), NOTES, "utf8");
+  await writeFile(join(dir, "research.md"), notes, "utf8");
   await writeFile(join(dir, "episode.json"), JSON.stringify({ id: ID, title: "Test", factsToVerify: claims }, null, 2), "utf8");
   const r = spawnSync(process.execPath, [join(here, "episode-verify.mjs"), ID, "--json", ...extraArgs], { encoding: "utf8", windowsHide: true });
   const line = (r.stdout || "").trim().split("\n").reverse().find((l) => l.startsWith("{"));
@@ -160,3 +160,55 @@ test("refuses a draft with no research notes rather than passing it", async () =
 });
 
 test.after(async () => { await rm(dir, { recursive: true, force: true }); });
+
+/* ------------------------------------------------- numbers with a scale word
+
+On 2026-09-22 the Elisa Lam episode was held on this, with the gate printing the very
+passage that supports it:
+
+    ## [138] not in the notes: 40
+    In its first ten days on Youku, the clip accumulated three million views and forty
+    thousand comments.
+    > ...accumulated 3 million views and 40,000 comments in its first 10 days.
+
+"forty" became the token "40"; the notes' "40,000" lost its comma and became "40000"; and
+"40" is not a word inside "40000". Note it did not hold "three" or "ten" - there the scale
+word stays a separate token on both sides, so they matched. It is specifically a spelled-out
+number joined to a scale word that breaks, and it is the same shape of false positive the
+audio gate had before it learned to compare sounds. A hold has to mean something. */
+
+const FIGURES = `# Research
+
+## Case: Reach
+The clip was reposted widely, including on the Chinese video-sharing site Youku, where it
+accumulated 3 million views and 40,000 comments in its first 10 days. A later filing put the
+settlement at 250,000 dollars and the building's capacity at two hundred guests.
+`;
+
+test("ticks a spelled-out number joined to a scale word", async () => {
+  const r = await runVerify(
+    ["In its first ten days on Youku, the clip accumulated three million views and forty thousand comments."],
+    [], FIGURES,
+  );
+  assert.equal(r.held, 0, `held: ${JSON.stringify(r.heldClaims?.map((h) => h.reason))}`);
+});
+
+test("ticks the same figure written either way round", async () => {
+  const r = await runVerify(["The settlement was two hundred and fifty thousand dollars."], [], FIGURES);
+  assert.equal(r.held, 0, `held: ${JSON.stringify(r.heldClaims?.map((h) => h.reason))}`);
+});
+
+test("still holds a spelled-out number the notes do not carry", async () => {
+  // The whole point of the gate. Making it read "forty thousand" must not make it credulous.
+  const r = await runVerify(
+    ["In its first ten days the clip accumulated three million views and ninety thousand comments."],
+    [], FIGURES,
+  );
+  assert.equal(r.held, 1, "a figure that is not in the notes must still be held");
+  assert.match(r.heldClaims[0].reason, /not in the notes/);
+});
+
+test("still holds a scale word the notes do not carry", async () => {
+  const r = await runVerify(["The clip accumulated three billion views."], [], FIGURES);
+  assert.equal(r.held, 1, "three billion is not three million");
+});

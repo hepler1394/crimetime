@@ -53,6 +53,43 @@ const NUM = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eigh
   ten: 10, eleven: 11, twelve: 12, thirteen: 13, fourteen: 14, fifteen: 15, sixteen: 16,
   seventeen: 17, eighteen: 18, nineteen: 19, twenty: 20, thirty: 30, forty: 40, fifty: 50,
   sixty: 60, seventy: 70, eighty: 80, ninety: 90 };
+// A scale word changes the number in front of it, and until 2026-09-22 nothing here read
+// one. Two consequences, and the second is the dangerous one.
+//
+//   "forty thousand comments" was HELD against notes reading "40,000 comments". "forty"
+//   became the token "40", the notes' comma was stripped to "40000", and "40" is not a word
+//   inside "40000". A hold that meant nothing.
+//
+//   "three billion views" was TICKED against notes reading "3 million views". "three"
+//   became "3", the notes carry a "3", and nothing ever looked at "billion". That is a
+//   wrong figure about a real case walking straight through the gate.
+//
+// So a run of number words is read as a single number, the same way on both sides, before
+// anything is compared. Only a run containing a scale word is touched; a lone "fourteen"
+// is left to the single-word pass below, exactly as before.
+const SCALE = { hundred: 100, thousand: 1000, million: 1e6, billion: 1e9 };
+const ONE_WORDS = Object.keys(NUM).join("|");
+const NUM_PART = `(?:\\d+(?:\\.\\d+)?|${ONE_WORDS}|hundred|thousand|million|billion)`;
+const NUM_RUN = new RegExp(`\\b${NUM_PART}(?:[\\s-]+(?:and[\\s-]+)?${NUM_PART})*\\b`, "gi");
+
+// The ordinary accumulator: parts add up, a scale word banks what came before it.
+function readNumberRun(run) {
+  let total = 0, current = 0, sawScale = false, sawValue = false;
+  for (const w of run.toLowerCase().split(/[\s-]+/)) {
+    if (w === "and") continue;
+    if (/^\d/.test(w)) { current += parseFloat(w); sawValue = true; continue; }
+    if (NUM[w] !== undefined) { current += NUM[w]; sawValue = true; continue; }
+    if (w === "hundred") { current = (current || 1) * 100; sawScale = true; continue; }
+    if (SCALE[w] !== undefined) { total += (current || 1) * SCALE[w]; current = 0; sawScale = true; continue; }
+    return null;
+  }
+  return sawValue && sawScale ? String(Math.round(total + current)) : null;
+}
+
+// A trailing "and" belongs to the sentence, not to the number: "forty thousand and the police".
+const scaleNumbers = (text) =>
+  String(text).replace(NUM_RUN, (run) => readNumberRun(run.replace(/[\s-]+and$/i, "")) ?? run);
+
 // Accents are folded on both sides: the notes write "Rosselló" and "José", a claim may not.
 const norm = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase()
   .replace(/[‘’]/g, "'").replace(/[“”]/g, '"')
@@ -77,9 +114,11 @@ const STOP = new Set(("the a an and or but of to in on at by for from with as th
 // A light stem, so "knocked" in a claim meets "knocks" in the notes and "repeatedly" meets
 // "repeated". Edge apostrophes go too: a claim quoting 'CeCe' never matched "CeCe".
 const stem = (w) => { const b = w.replace(/^'+|'+$/g, "").replace(/'s$/, ""); return b.length > 4 ? b.replace(/(ly|ing|ed|es|s)$/, "").replace(/(ly|ed)$/, "") : b; };
-const words = (s) => norm(s).replace(/[^a-z0-9'\s]/g, " ").split(/\s+/).map(stem).filter((w) => w.length > 2 && !STOP.has(w));
+// scaleNumbers runs before norm on every side, so "forty thousand", "40 thousand" and
+// "40,000" all reach the comparison as the same string.
+const words = (s) => norm(scaleNumbers(s)).replace(/[^a-z0-9'\s]/g, " ").split(/\s+/).map(stem).filter((w) => w.length > 2 && !STOP.has(w));
 
-const notes = norm(notesRaw);
+const notes = norm(scaleNumbers(notesRaw));
 const noteSentences = notesRaw.split(/(?<=[.!?])\s+|\n/).map((s) => s.trim()).filter((s) => s.length > 15);   // was 40, which threw away "They filed for bankruptcy in 2015." and held every claim resting on it
 const noteWordSets = noteSentences.map((s) => new Set(words(s)));
 
@@ -90,7 +129,10 @@ const TITLE = /^(sgt|sergeant|det|detective|officer|ofc|judge|justice|dr|doctor|
 
 function distinctive(claim) {
   const outSet = new Set();
-  for (const m of claim.matchAll(/\b\d[\d,.:\/]*\b/g)) outSet.add(m[0].replace(/[,.]$/, "").replace(/,/g, ""));
+  // Figures are read off the collapsed claim, so "three million" demands 3000000 rather
+  // than a bare "3" that any date in the notes would happen to satisfy.
+  const figures = scaleNumbers(claim);
+  for (const m of figures.matchAll(/\b\d[\d,.:\/]*\b/g)) outSet.add(m[0].replace(/[,.]$/, "").replace(/,/g, ""));
   for (const m of claim.matchAll(/\b([A-Z][a-z]{2,}(?:\s+[A-Z][a-z.]+){0,3})\b/g)) {
     if (/^(The|This|That|These|Those|He|She|They|It|A|An|In|On|At|By|For|From|With|And|But|His|Her|Their|Its|After|Before|During|When|While|Police|Investigators|Prosecutors|Defense|Defence|Court|Judge|State|Notes|Every|Both|What|Where|Chapter|Studies|Another|One|Some|Many|Several|Later|Then|There|According|Researchers|Coverage|Accounts|Hours|Days|Weeks|Months|Years|Nobody|Nothing|Neither|Serious|Panelist|Critics|Friends|Visitors)\b/.test(m[1])) continue;
     // A capital at the start of a sentence says nothing about whether the word is a name, and
@@ -108,7 +150,9 @@ function distinctive(claim) {
     outSet.add(m[1]);
   }
   for (const m of claim.matchAll(/"([^"]{4,60})"/g)) outSet.add(m[1]);
-  for (const m of claim.toLowerCase().matchAll(/\b([a-z-]+)\b/g)) if (NUM[m[1]]) outSet.add(String(NUM[m[1]]));
+  // Also off the collapsed claim: "forty thousand" must not leave a bare "40" behind,
+  // demanding a token the notes were never going to carry.
+  for (const m of figures.toLowerCase().matchAll(/\b([a-z-]+)\b/g)) if (NUM[m[1]]) outSet.add(String(NUM[m[1]]));
   return [...outSet];
 }
 
