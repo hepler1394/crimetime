@@ -1,0 +1,19 @@
+{
+  "name": "crimetime-community",
+  "private": true,
+  "version": "1.0.0",
+  "description": "The CrimeTimeSnacks community zone: accounts, handles, profiles and saved cases. Deployed as its own Vercel project and reached from www.crimetimesnacks.com through rewrites, so the episode publish pipeline never has to know it exists.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "node --test lib/*.test.mjs"
+  },
+  "dependencies": {
+    "next": "16.3.5",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "@supabase/ssr": "0.12.7",
+    "@supabase/supabase-js": "2.116.0"
+  }
+}
