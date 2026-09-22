@@ -621,7 +621,10 @@ In `vercel.json`, add a `rewrites` array before `redirects`:
 ]
 ```
 
-- [x] **Step 6: Prove the seam in a real browser**
+- [ ] **Step 6: Prove the seam in a real browser** - blocked on merging to main, which is
+  the production cutover and Cory's call. The zone is deployed and answers at
+  https://crimetime-community.vercel.app/health; the rewrites are written in
+  vercel.json on this branch and take effect the moment it merges.
 
 Deploy, then open `https://www.crimetimesnacks.com/health` — it must render `community zone ok` served through the rewrite. Screenshot it. Then confirm `https://www.crimetimesnacks.com/episodes/` still lists episodes and an episode page still plays, proving the static zone is untouched.
 

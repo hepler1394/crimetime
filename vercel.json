@@ -122,6 +122,52 @@
       ]
     }
   ],
+  "rewrites": [
+    {
+      "source": "/health",
+      "destination": "https://crimetime-community.vercel.app/health"
+    },
+    {
+      "source": "/signin",
+      "destination": "https://crimetime-community.vercel.app/signin"
+    },
+    {
+      "source": "/signin/:path*",
+      "destination": "https://crimetime-community.vercel.app/signin/:path*"
+    },
+    {
+      "source": "/account",
+      "destination": "https://crimetime-community.vercel.app/account"
+    },
+    {
+      "source": "/account/:path*",
+      "destination": "https://crimetime-community.vercel.app/account/:path*"
+    },
+    {
+      "source": "/u/:path*",
+      "destination": "https://crimetime-community.vercel.app/u/:path*"
+    },
+    {
+      "source": "/api/handle",
+      "destination": "https://crimetime-community.vercel.app/api/handle"
+    },
+    {
+      "source": "/api/account",
+      "destination": "https://crimetime-community.vercel.app/api/account"
+    },
+    {
+      "source": "/api/account/:path*",
+      "destination": "https://crimetime-community.vercel.app/api/account/:path*"
+    },
+    {
+      "source": "/auth/:path*",
+      "destination": "https://crimetime-community.vercel.app/auth/:path*"
+    },
+    {
+      "source": "/_community/:path*",
+      "destination": "https://crimetime-community.vercel.app/_community/:path*"
+    }
+  ],
   "redirects": [
     {
       "source": "/(.*)",
