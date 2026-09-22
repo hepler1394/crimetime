@@ -788,7 +788,7 @@ git commit -m "The account page: your handle, your cases, your data, and the doo
 **Interfaces:**
 - Produces: `monogram(handle): { initials: string, hue: number }` — deterministic.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```js
 import test from "node:test";
@@ -807,19 +807,19 @@ test("falls back to one letter when there is no separator", () => {
 });
 ```
 
-- [ ] **Step 2: Run it and watch it fail, then write it, then pass**
+- [x] **Step 2: Run it and watch it fail, then write it, then pass**
 
 Run: `node --test community/lib/monogram.test.mjs`
 
-- [ ] **Step 3: The page**
+- [x] **Step 3: The page**
 
 `/u/<handle>` renders avatar (provider photo or monogram), display name, handle, bio, member since, and saved cases only when `show_follows` is true. A handle that does not exist, or a member with no handle, is a 404. The email never appears in the markup — grep the rendered HTML to prove it.
 
-- [ ] **Step 4: Prove it in a browser**
+- [x] **Step 4: Prove it in a browser**
 
 Open a profile with `show_follows` off and confirm no cases are listed. Turn it on, reload, confirm they appear. Open a nonexistent handle and confirm a real 404 page, not a crash. Screenshot each. Run `curl` on the profile and grep for the email address to prove it is absent.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add community
@@ -833,24 +833,24 @@ git commit -m "Public profiles at /u/<handle>, closed by default"
 **Files:**
 - Modify: `api/community/follow.js`, `automation/build-cases.mjs`
 
-- [ ] **Step 1: Follow without the email round trip**
+- [x] **Step 1: Follow without the email round trip**
 
 `POST /api/community/follow` gains a path: if the request carries a valid session, add the follow immediately and return `{ ok: true, followed: true }` with no mail sent. The logged-out email flow is unchanged, including its ten-minute cooldown.
 
-- [ ] **Step 2: Header state on generated pages**
+- [x] **Step 2: Header state on generated pages**
 
 `build-cases.mjs` (and the shared header it emits) gains a small script that fetches `/api/community/me` and swaps "Sign in" for the member's handle linking to `/account`. It degrades to "Sign in" if the fetch fails.
 
-- [ ] **Step 3: Prove both**
+- [x] **Step 3: Prove both**
 
 Signed out, follow a case and confirm the email flow still works. Signed in, follow a case and confirm it is instant, no mail, and the row exists. Reload a case page signed in and confirm the header shows the handle. Screenshot.
 
-- [ ] **Step 4: Confirm the pipeline is still green**
+- [x] **Step 4: Confirm the pipeline is still green**
 
 Run: `npm test`, `npm run test:community`, `npm run test:links`
 Expected: all pass.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add api/community/follow.js automation/build-cases.mjs
