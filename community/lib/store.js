@@ -53,6 +53,12 @@ export function restStore() {
     },
     async findByEmail(email) {
       // Addresses were stored as typed, so the match has to ignore case rather than assume it.
+      //
+      // Deliberately does NOT read cts_member_emails. A linked address is a record that an
+      // address belongs to someone, not a second way in: a row reached through one would
+      // already hold a different auth_user_id, and linkMember refuses that rather than
+      // overwrite it - so making linked addresses sign-in routes would turn a helpful link
+      // into a locked door. Sign-in stays on the address the account was opened with.
       const rows = await sb(`cts_members?select=*&email=ilike.${q(String(email).trim())}&limit=1`);
       return rows?.[0] || null;
     },
@@ -108,6 +114,42 @@ export function restStore() {
       });
       return rows?.[0] || null;
     },
+    /* ---- the account page ---- */
+    // Saved cases with the titles to show them under. Two calls rather than an embedded
+    // join: cts_follows.case_slug has no foreign key to cts_cases, so a case that has not
+    // been imported yet still has to appear, under its slug, instead of dropping out.
+    async followedCases(memberId) {
+      const rows = await sb(`cts_follows?select=case_slug,created_at&member_id=eq.${q(memberId)}&order=created_at.desc`);
+      const slugs = (rows || []).map((r) => r.case_slug);
+      if (!slugs.length) return [];
+      const cases = await sb(`cts_cases?select=slug,title&slug=in.(${slugs.map(q).join(",")})`);
+      const titles = new Map((cases || []).map((c) => [c.slug, c.title]));
+      return slugs.map((slug) => ({ slug, title: titles.get(slug) || slug }));
+    },
+    async unfollow(memberId, slug) {
+      await sb(`cts_follows?member_id=eq.${q(memberId)}&case_slug=eq.${q(slug)}`, { method: "DELETE", prefer: "return=minimal" });
+    },
+
+    /* ---- linked addresses ---- */
+    async linkedEmails(memberId) {
+      const rows = await sb(`cts_member_emails?select=email,added_at&member_id=eq.${q(memberId)}&order=added_at`);
+      return rows || [];
+    },
+    async linkedEmailOwner(email) {
+      const rows = await sb(`cts_member_emails?select=member_id&email=ilike.${q(String(email).trim())}&limit=1`);
+      return rows?.[0]?.member_id || null;
+    },
+    async addLinkedEmail(memberId, email) {
+      await sb("cts_member_emails", {
+        method: "POST",
+        body: [{ member_id: memberId, email: String(email).trim().toLowerCase() }],
+        prefer: "resolution=ignore-duplicates,return=minimal",
+      });
+    },
+    async removeLinkedEmail(memberId, email) {
+      await sb(`cts_member_emails?member_id=eq.${q(memberId)}&email=ilike.${q(String(email).trim())}`, { method: "DELETE", prefer: "return=minimal" });
+    },
+
     async handleTaken(handle, exceptMemberId) {
       const rows = await sb(`cts_members?select=id&handle=eq.${q(handle)}&limit=1`);
       const row = rows?.[0];

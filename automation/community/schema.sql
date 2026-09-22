@@ -128,3 +128,21 @@ create unique index if not exists cts_members_handle_uq       on public.cts_memb
 alter table public.cts_members drop constraint if exists cts_members_handle_shape;
 alter table public.cts_members add  constraint cts_members_handle_shape
   check (handle is null or handle ~ '^[a-z][a-z0-9_]{2,19}$');
+
+-- A member's other proved addresses. The case this exists for: someone followed cases as
+-- kate@work.com, then signed in with Google as kate@gmail.com, and their saved cases
+-- appear to have vanished. /account lets them prove the second address with a code; the
+-- address lands here, mergeMembers folds the old row into theirs, and this table records
+-- that the address is theirs so the same claim cannot be made from another account.
+-- It is not a second way to sign in: see findByEmail in community/lib/store.js.
+--
+-- email is the primary key, not member_id: one address belongs to one member, and the
+-- database is what stops two accounts claiming it rather than a check in application code.
+create table if not exists public.cts_member_emails (
+  email     text primary key,
+  member_id uuid not null references public.cts_members(id) on delete cascade,
+  added_at  timestamptz not null default now()
+);
+create index if not exists cts_member_emails_member on public.cts_member_emails (member_id);
+alter table public.cts_member_emails enable row level security;
+-- No policies: only the service role touches it, same as members and follows.
