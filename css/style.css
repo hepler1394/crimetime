@@ -349,12 +349,18 @@ header::after {
 .mobile-menu-btn {
     display: none;
     background: none;
-    border: 1px solid var(--cts-line-strong);
-    border-radius: 10px;
-    color: var(--cts-white);
-    font-size: 1.15rem;
+    border: 0;
+    color: var(--cts-red);
+    font-size: 1.35rem;
+    line-height: 1;
+    /* No border, so the padding is what keeps the tap target at 44px rather than the
+       size of the glyph. */
+    padding: 0.55rem 0.6rem;
     cursor: pointer;
+    transition: color 0.2s var(--ease);
 }
+.mobile-menu-btn:hover { color: var(--cts-red-hot); }
+.mobile-menu-btn:focus-visible { outline: 2px solid var(--cts-red); outline-offset: 2px; border-radius: 4px; }
 
 .utility-nav { display: flex; align-items: center; gap: 0.4rem; }
 
@@ -686,18 +692,22 @@ section[id] { scroll-margin-top: 96px; }
     position: relative;
 }
 
+/* The section label. Built like .nav-cta above it - same pill, same type - because two
+   different red treatments on one screen reads as two different systems. No outline-plus-
+   tint box: that is a button shape drawn around something nobody can click. */
 .section-head .file-no {
+    display: inline-flex;
+    align-items: center;
     font-family: var(--font-body);
-    font-size: 0.68rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    letter-spacing: 0.3em;
-    color: var(--cts-red-hot);
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     white-space: nowrap;
-    padding: 0.32rem 0.7rem;
-    border: 1px solid rgba(229, 9, 20, 0.4);
-    border-radius: 4px;
-    background: rgba(229, 9, 20, 0.07);
+    color: #fff;
+    background: linear-gradient(135deg, var(--cts-red), #b40710);
+    padding: 0.42rem 0.95rem;
+    border-radius: 999px;
 }
 
 .section-head h2 {
@@ -815,14 +825,18 @@ section[id] { scroll-margin-top: 96px; }
     box-shadow: var(--shadow-red);
 }
 
+/* Card metadata: a category and a runtime. No red outline and no tint - that combination
+   draws a button around text nobody can press, which is the same thing that made the old
+   section badge read as a control. Red is kept for the things that are actually the
+   show speaking: the Listen button and the section markers. */
 .episode-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
     padding: 0.28rem 0.75rem;
-    background: rgba(229, 9, 20, 0.14);
-    border: 1px solid rgba(229, 9, 20, 0.45);
-    color: #ff8f94;
+    background: var(--cts-panel-2);
+    border: 1px solid var(--cts-line);
+    color: var(--cts-muted);
     border-radius: 999px;
     font-size: 0.68rem;
     font-weight: 700;

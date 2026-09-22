@@ -387,8 +387,8 @@ ${recent.map((ep) => homeRecentCard(p, ep)).join("\n")}
 function statsBlock(count) {
   return `                <!-- HOME-STATS:START (auto-filled by automation/build-episodes.mjs) -->
                 <div class="stat-row">
-                    <div class="stat"><div class="stat-num"><span data-count="${count}">0</span><em>+</em></div><div class="stat-label">Cases Covered</div></div>
-                    <div class="stat"><div class="stat-num"><span data-count="${count}">0</span></div><div class="stat-label">Episodes</div></div>
+                    <div class="stat"><div class="stat-num"><span data-count="${count}">${count}</span><em>+</em></div><div class="stat-label">Cases Covered</div></div>
+                    <div class="stat"><div class="stat-num"><span data-count="${count}">${count}</span></div><div class="stat-label">Episodes</div></div>
                     <div class="stat"><div class="stat-num">5.0<em>★</em></div><div class="stat-label">Listener Rated</div></div>
                     <div class="stat"><div class="stat-num">1<em>×</em>/wk</div><div class="stat-label">New Episode</div></div>
                 </div>

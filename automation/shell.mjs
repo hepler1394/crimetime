@@ -6,7 +6,7 @@ export const SITE = "https://www.crimetimesnacks.com";
 export const APPLE = "https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400";
 export const SPOTIFY = "https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ";
 export const EMAIL = "crimetimesnacks@gmail.com";
-export const CSS = "/css/style.css?v=2026t";
+export const CSS = "/css/style.css?v=2026u";
 export const FA = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css";
 export const FONTS = "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap";
 
