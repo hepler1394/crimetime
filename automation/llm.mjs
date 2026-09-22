@@ -33,6 +33,12 @@ export async function loadConfig() {
   cfg.local = cfg.local || {};
   cfg.local.baseUrl = e.LLM_BASE_URL || cfg.local.baseUrl || "http://localhost:1234/v1";
   cfg.local.model = e.LLM_MODEL || cfg.local.model || "local-model";
+  // The 60s default is right for a cloud call, where a long wait means something is wrong.
+  // It is not right for a local model reading 44KB of research notes off a consumer GPU:
+  // prompt processing alone runs past it, and the abort looks exactly like a failure. Set
+  // LLM_TIMEOUT_MS when deliberately routing a big prompt at the local box.
+  cfg.timeoutMs = Number(e.LLM_TIMEOUT_MS) || cfg.timeoutMs || 0;
+  cfg.maxOutputTokens = Number(e.LLM_MAX_OUTPUT_TOKENS) || cfg.maxOutputTokens || 0;
   cfg.deepseek = cfg.deepseek || {};
   cfg.deepseek.apiKey = e.DEEPSEEK_API_KEY || cfg.deepseek.apiKey || "";
   cfg.deepseek.baseUrl = cfg.deepseek.baseUrl || "https://api.deepseek.com/v1";
@@ -60,7 +66,7 @@ const timeout = (ms) => {
   return c.signal;
 };
 
-async function openAiCompatible({ baseUrl, apiKey, model }, system, user, ms, { jsonMode = false, onToken, signal } = {}) {
+async function openAiCompatible({ baseUrl, apiKey, model, maxOutputTokens }, system, user, ms, { jsonMode = false, onToken, signal } = {}) {
   // Streamed on purpose: Node's fetch aborts ("fetch failed") when response
   // headers take more than 5 minutes, and a non-streaming completion only sends
   // headers after the whole answer is generated. A 1,500-word episode script
@@ -77,7 +83,12 @@ async function openAiCompatible({ baseUrl, apiKey, model }, system, user, ms, { 
       temperature: 0.7,
       // Cloud models count hidden reasoning tokens against this cap; a chapter plus
       // its thinking needs headroom or the JSON comes back cut off.
-      max_tokens: local ? 2500 : 8192,
+      //
+      // 2500 is right for a local model loaded at the usual 8k, where a longer answer
+      // could not fit anyway. It is the binding limit once one is loaded at 32k and asked
+      // for every claim in a chapter: the answer stops mid-array and the JSON will not
+      // parse. maxOutputTokens raises it for that case without touching the default.
+      max_tokens: maxOutputTokens || (local ? 2500 : 8192),
       stream: true,
       ...(local ? { chat_template_kwargs: { enable_thinking: false } } : {}), // Qwen3 in LM Studio: answer, do not think for 10 minutes first
       ...(/generativelanguage\.googleapis\.com/.test(baseUrl) ? { reasoning_effort: "low" } : {}), // Gemini 3.x: write, do not deliberate
@@ -143,7 +154,7 @@ export async function chat(system, user, cfg) {
           } catch { /* server down -> falls through to cloud */ }
         }
         const text = await openAiCompatible(
-          { baseUrl: cfg.local.baseUrl, apiKey: "", model },
+          { baseUrl: cfg.local.baseUrl, apiKey: "", model, maxOutputTokens: cfg.maxOutputTokens },
           system, user, cfg.timeoutMs || 60000, opts
         );
         if (text.trim()) return { text, provider: `local (${model})` };
