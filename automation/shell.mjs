@@ -6,7 +6,7 @@ export const SITE = "https://www.crimetimesnacks.com";
 export const APPLE = "https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400";
 export const SPOTIFY = "https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ";
 export const EMAIL = "crimetimesnacks@gmail.com";
-export const CSS = "/css/style.css?v=2026s";
+export const CSS = "/css/style.css?v=2026t";
 export const FA = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css";
 export const FONTS = "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap";
 
@@ -92,6 +92,7 @@ ${NAV.map(([href, key, label]) => `                    <li><a href="${href}"${ke
             </nav>
             <div class="utility-nav">
                 <a href="/search.html" aria-label="Search the site" style="color:var(--cts-muted);font-size:1.05rem;padding:0.6rem;display:inline-flex;"><i class="fas fa-magnifying-glass" aria-hidden="true"></i></a>
+                <a class="nav-account" href="/signin" data-account="out">Sign in</a>
                 <a class="nav-cta" href="/listen.html"><i class="fas fa-headphones" aria-hidden="true"></i> Listen</a>
             </div>
         </div>
@@ -159,7 +160,9 @@ export function footer(opts = {}) {
 
 // Script tags. extras: array of additional script srcs.
 export function scripts(extras = []) {
-  const tags = ["/js/main.js", "/js/effects.js", ...extras]
+  // account.js is on every page: it swaps "Sign in" in the header for the member's handle,
+  // and it is the single place that asks /api/community/me, which js/community.js reuses.
+  const tags = ["/js/main.js", "/js/effects.js", "/js/account.js", ...extras]
     .map((s) => `    <script src="${s}"></script>`)
     .join("\n");
   return tags;

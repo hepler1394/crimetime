@@ -32,7 +32,7 @@
     <meta name="format-detection" content="telephone=no">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="/css/style.css?v=2026s">
+    <link rel="stylesheet" href="/css/style.css?v=2026t">
 <style>
 .case-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem;margin-top:1.4rem}
 .case-card{background:var(--cts-panel);border:1px solid var(--cts-line);border-radius:var(--radius);display:flex;flex-direction:column;position:relative;isolation:isolate;overflow:hidden;transition:var(--cts-transition)}
@@ -114,6 +114,7 @@
             </nav>
             <div class="utility-nav">
                 <a href="/search.html" aria-label="Search the site" style="color:var(--cts-muted);font-size:1.05rem;padding:0.6rem;display:inline-flex;"><i class="fas fa-magnifying-glass" aria-hidden="true"></i></a>
+                <a class="nav-account" href="/signin" data-account="out">Sign in</a>
                 <a class="nav-cta" href="/listen.html"><i class="fas fa-headphones" aria-hidden="true"></i> Listen</a>
             </div>
         </div>
@@ -195,13 +196,14 @@ I covered the murders and the trials in an earlier episode, so this one tells 19
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 CrimeTimeSnacks. All Rights Reserved. Made with respect for victims and their families.</p>
+                <p>&copy; 2026 CrimeTimeSnacks. All Rights Reserved. Made with respect for victims and their families. <a href="/privacy.html" style="color:inherit;">Privacy</a> &middot; <a href="/terms.html" style="color:inherit;">Terms</a></p>
                 <span class="crisis">If you have information about an unsolved case, contact your local authorities or <a href="https://tips.fbi.gov" target="_blank" rel="noopener" style="color:inherit;">tips.fbi.gov</a>.</span>
             </div>
         </div>
     </footer>
     <script src="/js/main.js"></script>
     <script src="/js/effects.js"></script>
+    <script src="/js/account.js"></script>
     <script src="/js/community.js"></script>
 </body>
 </html>

@@ -36,7 +36,7 @@
 
 This lands before the app exists. `check-links.mjs` walks every `.html` under the repo root, skipping only `node_modules`, `.git` and anything ending `automation/studio`. A Next.js `.next/` build output contains HTML with hashed asset references that do not resolve from the root, so without this the first build breaks `npm test`, which breaks the publish.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 Create `automation/test-check-links.mjs`:
 
@@ -77,12 +77,12 @@ test("a genuinely broken reference is still caught", async () => {
 });
 ```
 
-- [ ] **Step 2: Run it and watch it fail**
+- [x] **Step 2: Run it and watch it fail**
 
 Run: `node --test automation/test-check-links.mjs`
 Expected: FAIL. The checker has no `CTS_LINK_ROOT` override, so it scans the real repo and the temp-dir assertions do not hold.
 
-- [ ] **Step 3: Make the root overridable and skip `community`**
+- [x] **Step 3: Make the root overridable and skip `community`**
 
 In `automation/check-links.mjs`, replace the `ROOT` line:
 
@@ -101,17 +101,17 @@ and replace the studio skip inside `walk()` with:
     if (rel === "automation/studio" || rel === "community" || toPosix(p).endsWith("automation/studio")) continue;
 ```
 
-- [ ] **Step 4: Run the tests**
+- [x] **Step 4: Run the tests**
 
 Run: `node --test automation/test-check-links.mjs`
 Expected: PASS, both tests.
 
-- [ ] **Step 5: Confirm the real repo still passes**
+- [x] **Step 5: Confirm the real repo still passes**
 
 Run: `npm test`
 Expected: `ALL TESTS PASSED`, ending with `OK: no broken local asset references.`
 
-- [ ] **Step 6: Wire it into the test family and commit**
+- [x] **Step 6: Wire it into the test family and commit**
 
 In `package.json`, add to `scripts`: `"test:links": "node --test automation/test-check-links.mjs"`
 
@@ -134,7 +134,7 @@ git commit -m "Keep the link checker out of the community build output"
   - `handleError(input: unknown): string | null` — a reader-facing message, or `null` when valid.
   - `RESERVED: Set<string>`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 Create `community/lib/handle.test.mjs`:
 
@@ -176,12 +176,12 @@ test("reserved words are matched after normalising", () => {
 });
 ```
 
-- [ ] **Step 2: Run it and watch it fail**
+- [x] **Step 2: Run it and watch it fail**
 
 Run: `node --test community/lib/handle.test.mjs`
 Expected: FAIL, cannot find module `./handle.mjs`.
 
-- [ ] **Step 3: Write it**
+- [x] **Step 3: Write it**
 
 Create `community/lib/handle.mjs`:
 
@@ -215,12 +215,12 @@ export function handleError(input) {
 }
 ```
 
-- [ ] **Step 4: Run the tests**
+- [x] **Step 4: Run the tests**
 
 Run: `node --test community/lib/handle.test.mjs`
 Expected: PASS, five tests.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add community/lib/handle.mjs community/lib/handle.test.mjs
@@ -243,7 +243,7 @@ git commit -m "Handle rules, with the reserved list that stops someone becoming 
 
 This is where a bug silently costs somebody their follows, so it gets the most tests. `cts_follows.member_id` must never change.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 Create `community/lib/members.test.mjs`:
 
@@ -313,12 +313,12 @@ test("is idempotent when run twice", async () => {
 });
 ```
 
-- [ ] **Step 2: Run it and watch it fail**
+- [x] **Step 2: Run it and watch it fail**
 
 Run: `node --test community/lib/members.test.mjs`
 Expected: FAIL, cannot find module `./members.mjs`.
 
-- [ ] **Step 3: Write it**
+- [x] **Step 3: Write it**
 
 Create `community/lib/members.mjs`:
 
@@ -353,12 +353,12 @@ export async function linkMember(store, { authUserId, email }) {
 }
 ```
 
-- [ ] **Step 4: Run the tests**
+- [x] **Step 4: Run the tests**
 
 Run: `node --test community/lib/members.test.mjs`
 Expected: PASS, six tests.
 
-- [ ] **Step 5: Wire both lib tests into the test family and commit**
+- [x] **Step 5: Wire both lib tests into the test family and commit**
 
 In `package.json`, add: `"test:community": "node --test community/lib/*.test.mjs"`
 
@@ -383,7 +383,7 @@ git commit -m "Link a sign-in to the member row that already holds their follows
 
 Needed when someone followed cases on one address and signs in with a Google account on another. Follows are copied **before** the row is deleted, and the operation is safe to repeat.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 Append to `community/lib/members.test.mjs`:
 
@@ -451,12 +451,12 @@ test("merging a row that is already gone is a no-op, so a retry is safe", async 
 });
 ```
 
-- [ ] **Step 2: Run it and watch it fail**
+- [x] **Step 2: Run it and watch it fail**
 
 Run: `npm run test:community`
 Expected: FAIL, `mergeMembers` is not exported.
 
-- [ ] **Step 3: Write it**
+- [x] **Step 3: Write it**
 
 Append to `community/lib/members.mjs`:
 
@@ -486,12 +486,12 @@ export async function mergeMembers(store, { keepId, mergeId }) {
 }
 ```
 
-- [ ] **Step 4: Run the tests**
+- [x] **Step 4: Run the tests**
 
 Run: `npm run test:community`
 Expected: PASS, eleven tests.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add community/lib/members.mjs community/lib/members.test.mjs
@@ -508,7 +508,7 @@ git commit -m "Merge two member rows without losing a saved case"
 **Interfaces:**
 - Produces: `cts_members.auth_user_id`, `.handle`, `.display_name`, `.avatar_url`, `.bio`, `.show_follows`.
 
-- [ ] **Step 1: Append the columns**
+- [x] **Step 1: Append the columns**
 
 Append to `automation/community/schema.sql`:
 
@@ -533,7 +533,7 @@ alter table public.cts_members add  constraint cts_members_handle_shape
   check (handle is null or handle ~ '^[a-z][a-z0-9_]{2,19}$');
 ```
 
-- [ ] **Step 2: Apply it to the live project and verify**
+- [x] **Step 2: Apply it to the live project and verify**
 
 Apply with the service key from `automation/.env.community`, then confirm every column exists:
 
@@ -549,7 +549,7 @@ fetch(env.SUPABASE_URL+'/rest/v1/cts_members?select=id,auth_user_id,handle,displ
 
 Expected: `200 all columns present`.
 
-- [ ] **Step 3: Confirm no existing member was disturbed**
+- [x] **Step 3: Confirm no existing member was disturbed**
 
 ```bash
 node -e "
@@ -566,7 +566,7 @@ Promise.all([
 
 Record both counts in the commit message. They must be unchanged at the end of the phase.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add automation/community/schema.sql
@@ -584,7 +584,7 @@ git commit -m "Schema: accounts, handles and profiles on cts_members"
 **Interfaces:**
 - Produces: a deployed zone answering `/health`, and rewrites from the main site.
 
-- [ ] **Step 1: Scaffold the app**
+- [x] **Step 1: Scaffold the app**
 
 `community/package.json` with `next`, `react`, `react-dom`, and `@supabase/ssr` plus `@supabase/supabase-js`. `community/next.config.mjs` sets `assetPrefix: "/_community"` so `/_next/*` does not collide with static routes.
 
@@ -592,21 +592,21 @@ git commit -m "Schema: accounts, handles and profiles on cts_members"
 
 `community/app/health/page.jsx` renders the string `community zone ok` and nothing else.
 
-- [ ] **Step 2: Build it locally**
+- [x] **Step 2: Build it locally**
 
 Run: `cd community && npm install && npm run build`
 Expected: a successful build. Then `npm run dev` and confirm `http://localhost:3000/health` shows `community zone ok`.
 
-- [ ] **Step 3: Confirm the repo's own tests are unaffected**
+- [x] **Step 3: Confirm the repo's own tests are unaffected**
 
 Run (from the repo root): `npm test`
 Expected: `ALL TESTS PASSED`. This proves Task 1 did its job now that `community/.next` exists.
 
-- [ ] **Step 4: Create the Vercel project and deploy a preview**
+- [x] **Step 4: Create the Vercel project and deploy a preview**
 
 Create a second Vercel project from this repo with Root Directory `community`. Set env: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`. Deploy a preview and open `/health` on the preview URL in a browser to confirm it renders.
 
-- [ ] **Step 5: Add the rewrites**
+- [x] **Step 5: Add the rewrites**
 
 In `vercel.json`, add a `rewrites` array before `redirects`:
 
@@ -621,11 +621,11 @@ In `vercel.json`, add a `rewrites` array before `redirects`:
 ]
 ```
 
-- [ ] **Step 6: Prove the seam in a real browser**
+- [x] **Step 6: Prove the seam in a real browser**
 
 Deploy, then open `https://www.crimetimesnacks.com/health` — it must render `community zone ok` served through the rewrite. Screenshot it. Then confirm `https://www.crimetimesnacks.com/episodes/` still lists episodes and an episode page still plays, proving the static zone is untouched.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add community vercel.json
@@ -642,7 +642,7 @@ git commit -m "The community zone: a second Vercel project behind rewrites"
 **Interfaces:**
 - Produces: a session cookie valid across the domain; `safeNext(input): string` returning a same-origin path or `/account`.
 
-- [ ] **Step 1: Write the failing test for the redirect validator**
+- [x] **Step 1: Write the failing test for the redirect validator**
 
 Create `community/lib/next-path.test.mjs`:
 
@@ -667,11 +667,11 @@ test("refuses anything that leaves the site", () => {
 });
 ```
 
-- [ ] **Step 2: Run it and watch it fail**
+- [x] **Step 2: Run it and watch it fail**
 
 Run: `node --test community/lib/next-path.test.mjs` — FAIL, module missing.
 
-- [ ] **Step 3: Write it**
+- [x] **Step 3: Write it**
 
 ```js
 // Where to send someone after signing in. Anything that could leave the site becomes
@@ -685,25 +685,25 @@ export function safeNext(input) {
 }
 ```
 
-- [ ] **Step 4: Run the tests**
+- [x] **Step 4: Run the tests**
 
 Run: `npm run test:community` — PASS.
 
-- [ ] **Step 5: Build the sign-in page**
+- [x] **Step 5: Build the sign-in page**
 
 `/signin` renders, in the site's colours: a "Continue with Google" button, and an email field that swaps to a six-digit code field in the same tab. Supabase `signInWithOtp` for the code, `signInWithOAuth` for Google, both driven server-side via `@supabase/ssr` so the session lands in HttpOnly cookies. `/auth/callback` exchanges the code and redirects to `safeNext(next)`.
 
 Cookies are set on `.crimetimesnacks.com` so both zones see the session.
 
-- [ ] **Step 6: Prove both flows in a real browser**
+- [x] **Step 6: Prove both flows in a real browser**
 
 On the preview: sign in with Google and confirm you land back signed in; sign in with an email code and confirm the same. Screenshot both. Confirm in the database that exactly one `cts_members` row exists for that address and `auth_user_id` is set.
 
-- [ ] **Step 7: Prove the migration path with a real legacy row**
+- [x] **Step 7: Prove the migration path with a real legacy row**
 
 Insert a test member with an email and no `auth_user_id`, give it two follows, sign in with that address, then confirm: the same `id`, `auth_user_id` now set, both follows still attached, and no second row. Delete the test row afterwards.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add community
@@ -717,19 +717,19 @@ git commit -m "Sign in with Google or a code, and keep the follows you already h
 **Files:**
 - Create: `community/app/account/handle/page.jsx`, `community/app/api/handle/route.js`
 
-- [ ] **Step 1: Server-side validation**
+- [x] **Step 1: Server-side validation**
 
 `POST /api/handle` normalises, runs `handleError`, and on success writes `handle` to the signed-in member's row. A duplicate must return a readable "That handle is taken." rather than a database error — catch the unique-violation and translate it.
 
-- [ ] **Step 2: The page**
+- [x] **Step 2: The page**
 
 First sign-in redirects here. Shows the rules as you type, live. On success, continues to `safeNext`.
 
-- [ ] **Step 3: Prove it in a browser**
+- [x] **Step 3: Prove it in a browser**
 
 Take a handle, then try to take the same handle from a second account and confirm the readable error. Try `admin`, `9lives` and `kate smith` and confirm each is refused with the right message. Screenshot.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add community
@@ -743,15 +743,15 @@ git commit -m "Pick a handle, with the collisions and reserved words refused rea
 **Files:**
 - Create: `community/app/account/page.jsx`, `community/app/api/account/route.js`, `community/app/api/account/delete/route.js`
 
-- [ ] **Step 1: Read and edit**
+- [x] **Step 1: Read and edit**
 
 `/account` shows handle, display name, bio, masked email, linked providers, saved cases with one-click unfollow, The Case File toggle, the `show_follows` toggle, sign out, and delete account. Every field is length-checked server-side against the Global Constraints.
 
-- [ ] **Step 2: Delete means delete**
+- [x] **Step 2: Delete means delete**
 
 Deleting removes the `cts_members` row (cascading `cts_follows`) and the Supabase Auth user. Confirm in the database that both are gone.
 
-- [ ] **Step 3: Link another email, which is what makes Task 4 reachable**
+- [x] **Step 3: Link another email, which is what makes Task 4 reachable**
 
 This is the recovery path for the edge case in the spec: someone followed cases as `kate@work.com` and signed in with Google as `kate@gmail.com`, so their saved cases appear to have vanished.
 
@@ -763,15 +763,15 @@ This is the recovery path for the edge case in the spec: someone followed cases 
 
 The store passed in is the real Supabase-backed one implementing `get`, `follows`, `update`, `addFollows`, `deleteMember`.
 
-- [ ] **Step 4: Prove the recovery path end to end**
+- [x] **Step 4: Prove the recovery path end to end**
 
 Create a throwaway member row with a second address and two follows and no `auth_user_id`. Signed in as the first account, link that address with a real code. Confirm: the follows now appear on the signed-in account, the throwaway row is gone, and the follow count for the account went up by exactly two. Screenshot the account page before and after.
 
-- [ ] **Step 5: Prove the rest in a browser**
+- [x] **Step 5: Prove the rest in a browser**
 
 Edit each field and reload to confirm it persisted. Unfollow a case and confirm the row is gone. Toggle The Case File and confirm `newsletter` changed. Delete a throwaway account and confirm both rows are gone. Screenshot.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add community

@@ -29,7 +29,11 @@
   if (q.get("follow") === "confirmed") forms.forEach(function (f) { state(f, "Confirmed. You will get an email when something happens in this case.", "ok"); });
   if (q.get("follow") === "invalid") forms.forEach(function (f) { state(f, "That link was not valid. Enter your email to get a fresh one.", "err"); });
 
-  api("/api/community/me").then(function (j) { me = j; forms.forEach(paint); }).catch(function () { forms.forEach(paint); });
+  // js/account.js already asked, on every page. Reuse its answer rather than making
+  // the same request a second time; fall back to asking if that script is not there.
+  (window.__ctsMe || api("/api/community/me"))
+    .then(function (j) { me = j; forms.forEach(paint); })
+    .catch(function () { forms.forEach(paint); });
 
   forms.forEach(function (form) {
     form.addEventListener("submit", function (e) {

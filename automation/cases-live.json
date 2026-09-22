@@ -1,5 +1,5 @@
 {
-  "fetched": "2026-09-21T22:02:53.453Z",
+  "fetched": "2026-09-22T02:59:35.186Z",
   "cases": [
     {
       "slug": "moscow-idaho-the-plea",
@@ -705,7 +705,7 @@
     "adnan-syed": 0,
     "brian-laundrie-notebook": 0,
     "delphi-the-appeal": 0,
-    "gilgo-beach-eight-names": 0,
+    "gilgo-beach-eight-names": 1,
     "btk-dennis-rader": 0,
     "moscow-idaho-the-plea": 0,
     "zodiac-killer": 0,
@@ -724,10 +724,10 @@
     "the-interrogation-of-chris-watts": 0,
     "jonbenet-ramsey-dna": 0,
     "watts-family-murders": 0,
-    "delphi-richard-allen": 0,
     "scott-peterson": 0,
+    "delphi-richard-allen": 1,
     "ted-bundy-escape": 0,
     "madeleine-mccann": 0,
-    "gabby-petito": 0
+    "gabby-petito": 1
   }
 }

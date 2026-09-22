@@ -1945,3 +1945,36 @@ html.js .animate-on-scroll.animated { opacity: 1; transform: translateY(0); }
     user-select: none;
 }
 .transcript > p:last-of-type { padding-bottom: 1.2rem; }
+
+/* Signed-in state in the header. Starts as "Sign in" in the markup and is swapped for the
+   member's handle by js/account.js, so a reader with no JavaScript, or a request that
+   fails, still gets a working link to sign in rather than an empty space. */
+.nav-account {
+    color: var(--cts-muted);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.6rem 0.55rem;
+    white-space: nowrap;
+    transition: color 0.25s var(--ease);
+}
+.nav-account:hover { color: var(--cts-white); }
+.nav-account:focus-visible { outline: 2px solid var(--cts-red); outline-offset: 3px; border-radius: 4px; }
+/* Once it is a handle it is a name, not a label: mixed case, normal spacing, tape yellow. */
+.nav-account[data-account="in"] {
+    color: var(--cts-tape);
+    font-size: 0.8rem;
+    letter-spacing: 0.01em;
+    text-transform: none;
+}
+.nav-account[data-account="in"]:hover { color: var(--cts-white); }
+
+@media (max-width: 640px) {
+    /* The header is tight on a phone, so the "Sign in" label gives up its space - signing
+       in is reachable from the follow form on any case page. The handle stays, because
+       hiding it would leave a signed-in reader no way back to their account from here. */
+    .nav-account[data-account="out"] { display: none; }
+    .nav-account[data-account="in"] { font-size: 0.75rem; padding: 0.6rem 0.35rem; }
+}

@@ -1,10 +1,10 @@
 // POST /api/community/unfollow { case }   (cookie required)
-import { sb, isSlug, memberTokenFrom, memberByToken, readJsonBody } from "../../automation/community/lib.js";
+import { sb, isSlug, memberFrom, readJsonBody } from "../../automation/community/lib.js";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "POST only" });
   try {
-    const member = await memberByToken(memberTokenFrom(req));
+    const member = await memberFrom(req);
     if (!member) return res.status(401).json({ error: "not signed in" });
     const { case: slug } = await readJsonBody(req);
     if (!isSlug(slug)) return res.status(400).json({ error: "bad case" });

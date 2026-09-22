@@ -6,6 +6,8 @@
 //   SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, SUPABASE_ANON_KEY,
 //   RESEND_API_KEY, MAIL_FROM, SITE_URL, CRON_SECRET
 
+import { storageKeyFor, accessTokenFromCookieHeader } from "../../community/lib/session-cookie.mjs";
+
 export const env = (k, d) => process.env[k] ?? d;
 export const SITE = () => (env("SITE_URL", "https://www.crimetimesnacks.com")).replace(/\/$/, "");
 export const FROM = () => env("MAIL_FROM", "CrimeTimeSnacks <updates@thebaseline.report>");
@@ -94,6 +96,40 @@ export async function memberByToken(token) {
   if (!token) return null;
   const rows = await sb(`cts_members?select=*&token=eq.${token}&limit=1`);
   return rows?.[0] || null;
+}
+
+// The signed-in member, from the Supabase session cookie the community zone writes.
+//
+// Two cookies can identify somebody on this site now. The old cts_m carries a permanent
+// secret that also went out in every email and never rotates; the Supabase one carries a
+// short-lived token that does. New code should reach for memberFrom, which prefers the
+// session, so the old cookie fades out as people sign in rather than needing a migration.
+//
+// The token in a cookie is a claim, not a fact. Supabase is asked to verify it on every
+// request: an expired or edited one comes back 401 and the caller is simply signed out.
+export async function memberFromSession(req) {
+  const key = storageKeyFor(env("SUPABASE_URL"));
+  const token = accessTokenFromCookieHeader(req?.headers?.cookie, key);
+  if (!token) return null;
+
+  let res;
+  try {
+    res = await fetch(`${env("SUPABASE_URL")}/auth/v1/user`, {
+      headers: { apikey: env("SUPABASE_ANON_KEY"), Authorization: `Bearer ${token}` },
+    });
+  } catch { return null; }
+  if (!res.ok) return null;
+
+  const user = await res.json().catch(() => null);
+  if (!user?.id) return null;
+
+  const rows = await sb(`cts_members?select=*&auth_user_id=eq.${encodeURIComponent(user.id)}&limit=1`);
+  return rows?.[0] || null;
+}
+
+// Whoever is signed in, by either cookie.
+export async function memberFrom(req) {
+  return (await memberFromSession(req)) || (await memberByToken(memberTokenFrom(req)));
 }
 export async function readJsonBody(req) {
   if (req.body && typeof req.body === "object") return req.body;
