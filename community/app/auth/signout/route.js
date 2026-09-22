@@ -5,10 +5,11 @@
 // anything. The account page posts a form here.
 import { NextResponse } from "next/server";
 import { supabaseServer } from "../../../lib/supabase.js";
+import { siteOrigin } from "../../../lib/site-url.mjs";
 
 export async function POST(request) {
   const sb = await supabaseServer();
   await sb.auth.signOut();
   // 303 so the browser follows with GET rather than re-posting.
-  return NextResponse.redirect(new URL("/signin", new URL(request.url).origin), { status: 303 });
+  return NextResponse.redirect(new URL("/signin", siteOrigin(request)), { status: 303 });
 }
