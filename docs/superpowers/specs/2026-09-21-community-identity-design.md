@@ -154,13 +154,28 @@ logged-out email path is unchanged.
 ## What this could break
 
 **`check-links.mjs` runs inside `npm test`, which runs inside the publish
-pipeline.** Once static pages link to `/signin` or `/u/<handle>`, those are not
-local files, and the link checker will call them broken. That fails `npm test`,
-which fails the publish, which stops an episode shipping.
+pipeline.** An earlier draft of this spec claimed that static pages linking to
+`/signin` or `/u/<handle>` would be reported broken and stop an episode
+shipping. That was checked on 2026-09-21 and it is **wrong**: the checker's
+regex only matches references that end in a file extension
+(`png|jpg|...|css|js|xml|webmanifest|html`), so an extensionless path is never
+examined. No allowlist is needed and none will be built.
 
-This is the single most likely way this work breaks the show. The link checker
-gets an allowlist of paths owned by the community zone, with a test, and it
-lands before any static page links to them.
+The real version of the risk is the build output. `check-links.mjs` walks every
+`.html` file under the repo root, skipping only `node_modules`, `.git`, and
+anything ending `automation/studio`. A Next.js app living in this repo as
+`community/` would be walked, `.next/` included, and its generated HTML carries
+hashed asset references that do not resolve relative to the repo root. That
+fails `npm test`, which fails the publish.
+
+The fix is one line: skip `community` the same way `automation/studio` is
+already skipped. It lands first, with a test, before the app exists.
+
+The app lives in this repo under `community/` rather than a second repo, with
+the Vercel project's Root Directory set to `community`. One repo keeps the
+design system and the agents in one place; the separate Vercel project keeps the
+deploys apart. `episode-publish.mjs` stages an explicit allowlist, so nothing
+under `community/` can be swept into an episode commit.
 
 Untouched throughout: `/api/community/*`, the Sunday digest cron, the
 follow-by-email flow for logged-out readers, and every generated page.
