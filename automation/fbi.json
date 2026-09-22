@@ -1,11 +1,42 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1247,
+    "totalOnFile": 1250,
     "baked": 150,
-    "updated": "2026-09-22T17:02:07.997Z"
+    "updated": "2026-09-22T21:25:22.067Z"
   },
   "items": [
+    {
+      "uid": "2e973b825a0f4a6aa65f0883e9b354dc",
+      "title": "NA'RYAH ADAMS",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/naryah-adams/@@images/image/large",
+      "office": "Baltimore",
+      "reward": "Reward up to $15,000 for information leading to the arrest and conviction of the individual(s) involved in the shooting death of Na’Ryah Adams.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/naryah-adams",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-09-10T10:57:00"
+    },
+    {
+      "uid": "b38a849f5f9644a48e03b4153b85df97",
+      "title": "STEFANIE DAMRON",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/stefanie-damron/@@images/image/large",
+      "office": "Boston",
+      "reward": "Reward up to $15,000 for information leading to the safe return of Stefanie Damron and/or information leading to the arrest and prosecution of anyone involved in her disappearance.",
+      "url": "https://www.fbi.gov/wanted/kidnap/stefanie-damron",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons",
+        "Case of the Week"
+      ],
+      "publication": "2024-10-01T06:48:00"
+    },
     {
       "uid": "23a89046e8df431aaa665cbceafd0c8b",
       "title": "ROY MAYNARD - GREENSBORO, NORTH CAROLINA",
@@ -113,22 +144,6 @@
         "Additional Violent Crimes"
       ],
       "publication": "2025-09-05T05:40:00"
-    },
-    {
-      "uid": "2e973b825a0f4a6aa65f0883e9b354dc",
-      "title": "NA'RYAH ADAMS",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/naryah-adams/@@images/image/large",
-      "office": "Baltimore",
-      "reward": "Reward up to $15,000 for information leading to the arrest and conviction of the individual(s) involved in the shooting death of Na’Ryah Adams.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/naryah-adams",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information",
-        "Case of the Week"
-      ],
-      "publication": "2026-09-10T10:57:00"
     },
     {
       "uid": "109f69822bdb4bd9bd6ea15da5d4f19d",
@@ -283,6 +298,21 @@
       "publication": "2026-08-25T07:53:00"
     },
     {
+      "uid": "275136bf2d134228a086aaedc4ec231f",
+      "title": "CHRISTIAN ONEIL MELENDEZ-LOPEZ",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/christian-oneil-melendez-lopez/@@images/image/large",
+      "office": "Sanjuan",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/christian-oneil-melendez-lopez",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-09-10T08:13:00"
+    },
+    {
       "uid": "3992cf07e26848bab7fd7b6bb58f60a2",
       "title": "ALBERTO PEREZ-ELIAS",
       "kind": "wanted",
@@ -419,6 +449,21 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2026-08-18T10:47:00"
+    },
+    {
+      "uid": "095373f57d6640c6b53169e2cd848216",
+      "title": "JOSE ONAIRAM MEDINA-MARRERO",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/jose-onairam-medina-marrero/@@images/image/large",
+      "office": "Sanjuan",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/jose-onairam-medina-marrero",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-08-31T14:00:00"
     },
     {
       "uid": "5c53990e4e3e4d758eea28c51c1f1cd9",
@@ -779,6 +824,21 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2026-07-30T08:43:00"
+    },
+    {
+      "uid": "2a19f6cd74ad405f81af8f79fda32aed",
+      "title": "MICHAEL LIZASO MARASIGAN",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/michael-lizaso-marasigan/@@images/image/large",
+      "office": "Honolulu",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Michael Lizaso Marasigan.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/michael-lizaso-marasigan",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2026-01-12T14:02:00"
     },
     {
       "uid": "27f6739b638b437192b1bb4fdb0426d3",
@@ -1480,21 +1540,6 @@
         "Kidnappings and Missing Persons"
       ],
       "publication": "2026-03-17T09:56:00"
-    },
-    {
-      "uid": "c5103e3333a545cd9596c4a065d5a40d",
-      "title": "MARGARET HADDICAN-MCENROE",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/margaret-haddican-mcenroe/@@images/image/large",
-      "office": "Newark",
-      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of those involved in the disappearance of Margaret Haddican-McEnroe.",
-      "url": "https://www.fbi.gov/wanted/kidnap/margaret-haddican-mcenroe",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons"
-      ],
-      "publication": "2026-06-09T10:27:00"
     },
     {
       "uid": "07909fc7290c4a34a289eda0354528ab",
@@ -2249,51 +2294,6 @@
         "Kidnappings and Missing Persons"
       ],
       "publication": "2022-07-15T08:17:00"
-    },
-    {
-      "uid": "1d6a877c08ff4c1ca28f408dc6e76a27",
-      "title": "TRACY MCMATH - MANNHEIM, GERMANY",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/tracy-mcmath---mannheim-germany/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/tracy-mcmath---mannheim-germany",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Homicides and Sexual Assaults"
-      ],
-      "publication": "2026-04-30T10:05:00"
-    },
-    {
-      "uid": "63317cf0ccc44bb8a3f4bf834e2231f9",
-      "title": "RODOLFO MANTILLA",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/rodolfo-mantilla/@@images/image/large",
-      "office": "Miami",
-      "reward": "Reward up to $30,000 for information leading to the arrest and conviction of Rodolfo Mantilla.",
-      "url": "https://www.fbi.gov/wanted/cei/rodolfo-mantilla",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2024-07-16T09:06:00"
-    },
-    {
-      "uid": "11f93b91a98e43de828a9f6be58a8390",
-      "title": "ALIZA SPENCER",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/aliza-spencer/@@images/image/large",
-      "office": "Albany",
-      "reward": "Reward up to $50,000 for information leading to the identification, arrest, and conviction of the individual(s) responsible for the murder of Aliza Spencer.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/aliza-spencer",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2026-02-12T14:04:00"
     }
   ]
 }
