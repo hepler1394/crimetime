@@ -53,6 +53,14 @@ test("holds a figure that is not in the notes", async () => {
   assert.match(r.heldClaims[0].reason, /not in the notes/);
 });
 
+test("reads whole-dollar cents as the same figure, and still holds a different one", async () => {
+  const notes = NOTES + "\nThe Edisto beach house was placed on the market for $920,000.00.\n";
+  const ok = await runVerify(["The Edisto beach house was placed on the market for $920,000."], [], notes);
+  assert.equal(ok.held, 0, "$920,000 is $920,000.00");
+  const wrong = await runVerify(["The Edisto beach house was placed on the market for $92,000."], [], notes);
+  assert.equal(wrong.held, 1, "a different figure must still be held");
+});
+
 test("holds a date that is not in the notes", async () => {
   const r = await runVerify(["The jury returned its verdict on November 19, 2021."]);
   assert.equal(r.held, 1);

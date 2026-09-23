@@ -100,6 +100,7 @@ const norm = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase()
   .replace(/\boct(ober)?\b/g, "october").replace(/\bnov(ember)?\b/g, "november")
   .replace(/\bdec(ember)?\b/g, "december")
   .replace(/,/g, "").replace(/\$/g, " ")                  // "US$41,000" must not become the one word "us41000"
+  .replace(/(\d)\.00\b/g, "$1")                          // "$920,000.00" in the notes, "$920,000" in a script
   .replace(/\b(\d+(?:\.\d+)?)k\b/g, (_, n) => String(Math.round(parseFloat(n) * 1000)))   // "$70K" in the notes, "$70,000" in a claim
   .replace(/(\d)\s*:\s*00\b/g, "$1")            // "1:00 p.m." in a script, "1 p.m." in the notes
   // A script says "fourteen years" where the notes say "14". Spell numbers out to digits on
