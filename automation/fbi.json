@@ -3,7 +3,7 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1250,
     "baked": 150,
-    "updated": "2026-09-22T21:25:22.067Z"
+    "updated": "2026-09-23T04:52:10.197Z"
   },
   "items": [
     {
@@ -1542,6 +1542,21 @@
       "publication": "2026-03-17T09:56:00"
     },
     {
+      "uid": "c5103e3333a545cd9596c4a065d5a40d",
+      "title": "MARGARET HADDICAN-MCENROE",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/margaret-haddican-mcenroe/@@images/image/large",
+      "office": "Newark",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of those involved in the disappearance of Margaret Haddican-McEnroe.",
+      "url": "https://www.fbi.gov/wanted/kidnap/margaret-haddican-mcenroe",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2026-06-09T10:27:00"
+    },
+    {
       "uid": "07909fc7290c4a34a289eda0354528ab",
       "title": "JOSE GUADALUPE LOPEZ NUNEZ",
       "kind": "wanted",
@@ -2279,21 +2294,6 @@
         "Seeking Information"
       ],
       "publication": "2026-04-23T09:39:00"
-    },
-    {
-      "uid": "a57a97cbdf654169a6fd617d07d9b6e3",
-      "title": "MAYUSHI BHAGAT",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/mayushi-bhagat/@@images/image/large",
-      "office": "Newark",
-      "reward": "Reward up to $10,000 for information leading to the location or recovery of the missing person, Mayushi Bhagat, and the identification, arrest, and conviction of the person(s) responsible.",
-      "url": "https://www.fbi.gov/wanted/kidnap/mayushi-bhagat",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons"
-      ],
-      "publication": "2022-07-15T08:17:00"
     }
   ]
 }
