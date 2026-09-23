@@ -1,5 +1,5 @@
 {
-  "fetched": "2026-09-22T22:22:19.964Z",
+  "fetched": "2026-09-23T03:34:23.589Z",
   "cases": [
     {
       "slug": "moscow-idaho-the-plea",
@@ -16,7 +16,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "jonbenet-thirty-years",
@@ -33,7 +33,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "gilgo-beach-eight-names",
@@ -50,7 +50,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-20T17:04:47.335399+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "murders-in-moscow",
@@ -67,7 +67,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "golden-state-killer",
@@ -84,7 +84,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "gabby-petito",
@@ -101,7 +101,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "long-island-serial-killer",
@@ -118,7 +118,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "chris-watts-confession",
@@ -135,7 +135,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "elisa-lam",
@@ -147,12 +147,12 @@
       "category": "case",
       "next_date": null,
       "next_label": "",
-      "image": "",
-      "episode_slug": "",
+      "image": "/images/episodes/elisa-lam-and-the-cecil-hotel.jpg",
+      "episode_slug": "elisa-lam-and-the-cecil-hotel",
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "alex-murdaugh",
@@ -169,7 +169,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "btk-dennis-rader",
@@ -186,7 +186,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "zodiac-killer",
@@ -203,7 +203,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "lori-vallow",
@@ -220,7 +220,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "maura-murray",
@@ -237,7 +237,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "brian-laundrie-notebook",
@@ -254,7 +254,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "kendrick-johnson",
@@ -271,7 +271,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "erik-and-lyle-the-menendez-brothers",
@@ -288,7 +288,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "scott-peterson",
@@ -305,7 +305,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "ted-bundy-escape",
@@ -322,7 +322,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "jonbenet-ramsey-dna",
@@ -339,7 +339,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "delphi-the-appeal",
@@ -356,7 +356,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "the-menendez-brothers-parole-years",
@@ -373,7 +373,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-19T10:46:49.066069+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "adnan-syed",
@@ -390,7 +390,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "amanda-knox",
@@ -407,7 +407,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "kohberger-trial",
@@ -424,7 +424,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "delphi-richard-allen",
@@ -441,7 +441,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "casey-anthony",
@@ -458,7 +458,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "steven-avery",
@@ -475,7 +475,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "madeleine-mccann",
@@ -492,7 +492,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "tylenol-murders",
@@ -509,7 +509,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "dnd-mcstay-family",
@@ -526,7 +526,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "menendez-the-parole-years",
@@ -543,7 +543,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "the-delphi-murder-case-2017",
@@ -560,7 +560,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "the-miami-apartment-stabbing",
@@ -577,7 +577,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-21T02:23:51.906377+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "the-interrogation-of-chris-watts",
@@ -594,7 +594,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-18T12:30:03.688863+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "watts-family-murders",
@@ -611,7 +611,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "jonbenet-ramsey-the-facts-96-22",
@@ -628,7 +628,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     },
     {
       "slug": "jonbenet-ramsey-americas-child-beauty-queen",
@@ -645,7 +645,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-21T02:38:22.18165+00:00"
+      "updated_at": "2026-09-23T03:34:15.979185+00:00"
     }
   ],
   "updates": [

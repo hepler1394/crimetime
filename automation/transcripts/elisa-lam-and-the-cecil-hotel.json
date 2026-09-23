@@ -1,0 +1,1596 @@
+{
+ "slug": "elisa-lam-and-the-cecil-hotel",
+ "title": "Elisa Lam and the Cecil Hotel",
+ "language": "en",
+ "duration": 1479.6,
+ "model": "faster-whisper small (int8)",
+ "generated": "2026-09-23",
+ "note": "Transcript generated from the episode script.",
+ "segments": [
+  {
+   "start": 5,
+   "end": 9.2,
+   "text": "What's up guys, welcome back to Crimetime Snacks. A hotel maintenance worker investigating"
+  },
+  {
+   "start": 9.2,
+   "end": 13.8,
+   "text": "complaints of low water pressure found a missing tourist floating inside a large rooftop cistern."
+  },
+  {
+   "start": 14.4,
+   "end": 20.8,
+   "text": "That discovery happened on February 19, 2013, at the Stay On Main Hotel in downtown Los Angeles."
+  },
+  {
+   "start": 20.8,
+   "end": 24.3,
+   "text": "Guests had actually been complaining about a weird taste coming from the tap water."
+  },
+  {
+   "start": 25,
+   "end": 28.4,
+   "text": "The maintenance worker, Santiago Lopez, made the discovery."
+  },
+  {
+   "start": 28.4,
+   "end": 31.3,
+   "text": "According to a statement by the chief of the Los Angeles fire department,"
+  },
+  {
+   "start": 31.3,
+   "end": 36,
+   "text": "the tank had to be drained completely. Then crews had to cut it open from the side just to remove"
+  },
+  {
+   "start": 36,
+   "end": 40.5,
+   "text": "her 5 foot 4 frame. The body in the water belonged to 21 year old Elisa Lam."
+  },
+  {
+   "start": 41.2,
+   "end": 45.2,
+   "text": "Elisa was a Canadian tourist on a solo trip around the West Coast. She was originally from"
+  },
+  {
+   "start": 45.2,
+   "end": 48.8,
+   "text": "Vancouver, where she was a student at the University of British Columbia. Her family had"
+  },
+  {
+   "start": 48.8,
+   "end": 53.3,
+   "text": "been wary of her traveling by herself. As a compromise, she made sure to check in with"
+  },
+  {
+   "start": 53.3,
+   "end": 58.5,
+   "text": "her parents every single day to let them know she was safe. Before she became the center of a"
+  },
+  {
+   "start": 58.5,
+   "end": 61.8,
+   "text": "massive mystery, she was just a young woman documenting her wife online."
+  },
+  {
+   "start": 62.8,
+   "end": 66.2,
+   "text": "In mid-2010, she started a blog on Blogspot called Ether Fields."
+  },
+  {
+   "start": 66.8,
+   "end": 70.6,
+   "text": "She posted photos of models in fashionable clothing, but she also wrote honestly about"
+  },
+  {
+   "start": 70.6,
+   "end": 74.4,
+   "text": "her daily life and her struggles with mental illness. She used a quote from the novelist"
+  },
+  {
+   "start": 74.4,
+   "end": 80.3,
+   "text": "Chuck Polanyuk as an epigraph for the site. In a January 2012 post, she used that quote for"
+  },
+  {
+   "start": 80.3,
+   "end": 84,
+   "text": "the title, writing about being haunted by the idea that you are wasting your life."
+  },
+  {
+   "start": 84.5,
+   "end": 88.1,
+   "text": "She lamented that a relapse at the start of the school term had forced her to drop"
+  },
+  {
+   "start": 88.1,
+   "end": 92.8,
+   "text": "several classes. She worried her transcript would look suspicious and keep her from attending"
+  },
+  {
+   "start": 92.8,
+   "end": 98.2,
+   "text": "graduate school. She wrote that she felt utterly directionless and lost. A little over two years,"
+  },
+  {
+   "start": 98.2,
+   "end": 102.3,
+   "text": "after starting that blog, she announced she was abandoning it for a tumbler she called"
+  },
+  {
+   "start": 102.3,
+   "end": 106.8,
+   "text": "Nouvelle Nouveau. The content there shifted mostly to fashion photos and quotes,"
+  },
+  {
+   "start": 106.8,
+   "end": 111.9,
+   "text": "with very few posts in her own words. But she kept that exact same Chuck Polanyuk"
+  },
+  {
+   "start": 111.9,
+   "end": 116,
+   "text": "quotation as the epigraph. It was a digital footprint of a student looking for her place in"
+  },
+  {
+   "start": 116,
+   "end": 121.4,
+   "text": "the world right before she arrived in Los Angeles. Alisa's writing about feeling lost wasn't just"
+  },
+  {
+   "start": 121.4,
+   "end": 126.4,
+   "text": "typical college burnout. The case file shows a very specific medical background. She was formally"
+  },
+  {
+   "start": 126.4,
+   "end": 131.3,
+   "text": "diagnosed with bipolar disorder and depression. To manage her mental health, she was prescribed a"
+  },
+  {
+   "start": 131.3,
+   "end": 136.8,
+   "text": "complex rotation of medications. The medical history lists several specific drugs. Her"
+  },
+  {
+   "start": 136.8,
+   "end": 142.6,
+   "text": "doctors had her on bupropion, lamotrigine, quateyapine, dextroamphetamine, and venlafaxine,"
+  },
+  {
+   "start": 143.2,
+   "end": 148.3,
+   "text": "balancing antidepressants, mood stabilizers, and antipsychotics require strict adherence to work"
+  },
+  {
+   "start": 148.3,
+   "end": 153.2,
+   "text": "correctly. Medical experts note that using antidepressants to treat bipolar disorder can actually"
+  },
+  {
+   "start": 153.2,
+   "end": 158.4,
+   "text": "risk inducing manic side effects if done without caution. Her family reportedly kept her mental"
+  },
+  {
+   "start": 158.4,
+   "end": 163.5,
+   "text": "illness private. They stated she had absolutely no history of suicidal ideations or attempts,"
+  },
+  {
+   "start": 163.5,
+   "end": 167.6,
+   "text": "but the records do show a documented history of medication non-compliance."
+  },
+  {
+   "start": 167.7,
+   "end": 171.3,
+   "text": "Alisa had a pattern of not taking her bipolar medications as prescribed."
+  },
+  {
+   "start": 172,
+   "end": 176.4,
+   "text": "When she went off her medication, the consequences were severe. The records show that she suffered"
+  },
+  {
+   "start": 176.4,
+   "end": 180.4,
+   "text": "from intense hallucinations during these periods. The paranoia would get so bad that she"
+  },
+  {
+   "start": 180.4,
+   "end": 185.2,
+   "text": "would physically hide under her bed for refuge. These were not mild side effects, they were"
+  },
+  {
+   "start": 185.2,
+   "end": 189.3,
+   "text": "full psychiatric emergencies. According to the background files, she was hospitalized at"
+  },
+  {
+   "start": 189.3,
+   "end": 193.7,
+   "text": "least once for one of these episodes. Another report claims she had even gone missing for a"
+  },
+  {
+   "start": 193.7,
+   "end": 198.8,
+   "text": "brief period during a past crisis. This is what the evidence actually shows about her baseline."
+  },
+  {
+   "start": 198.8,
+   "end": 203.6,
+   "text": "She was a young woman managing a severe psychiatric condition. It is a vital piece of the puzzle to"
+  },
+  {
+   "start": 203.6,
+   "end": 208.1,
+   "text": "remember before we look at her arrival in California. So let's look at that trip. Alisa"
+  },
+  {
+   "start": 208.1,
+   "end": 213,
+   "text": "traveled down the West Coast alone, riding on Amtrak trains and inner-city buses. She made a"
+  },
+  {
+   "start": 213,
+   "end": 217.1,
+   "text": "stop at the San Diego Zoo and posted photos online. Her ultimate goal was to make it up to"
+  },
+  {
+   "start": 217.1,
+   "end": 222.9,
+   "text": "Santa Cruz. But on January 26 she arrived in Los Angeles. Two days later she checked into"
+  },
+  {
+   "start": 222.9,
+   "end": 228.3,
+   "text": "the Cecil Hotel. The building sits right near downtown Skid Row. At first she was booked into"
+  },
+  {
+   "start": 228.3,
+   "end": 232.5,
+   "text": "a hostile style shared room on the fifth floor, but that arrangement did not last long."
+  },
+  {
+   "start": 233.2,
+   "end": 237,
+   "text": "Her new roommates started complaining to the staff about her actions. The hotel's"
+  },
+  {
+   "start": 237,
+   "end": 241.4,
+   "text": "lawyer later called it certain odd behavior. According to Amy Price, who managed the hotel at"
+  },
+  {
+   "start": 241.4,
+   "end": 245.6,
+   "text": "the time, Alisa started leaving notes for the other girls in the room. The notes told them"
+  },
+  {
+   "start": 245.6,
+   "end": 250.8,
+   "text": "to go home and go away. It escalated from there. Alisa began locking the door to the"
+  },
+  {
+   "start": 250.8,
+   "end": 255.8,
+   "text": "shared room and demanding a password before she would let anyone inside. After just two days of"
+  },
+  {
+   "start": 255.8,
+   "end": 261,
+   "text": "this, management moved her into a private room of her own. The strange behavior was not contained"
+  },
+  {
+   "start": 261,
+   "end": 265.9,
+   "text": "in the hotel. A few days before she vanished, Alisa went to Burbank to attend a live taping"
+  },
+  {
+   "start": 265.9,
+   "end": 270.5,
+   "text": "of the Conan show. She never got to see the end of it. Security escorted her off the premises"
+  },
+  {
+   "start": 270.5,
+   "end": 274.2,
+   "text": "because she was being disruptive. The cracks were starting to show, right in public."
+  },
+  {
+   "start": 275,
+   "end": 279.4,
+   "text": "We just saw how her behavior escalated at the comedy taping and inside her shared room."
+  },
+  {
+   "start": 280,
+   "end": 283.6,
+   "text": "But the case file shows this trip was originally supposed to be a simple getaway."
+  },
+  {
+   "start": 284.1,
+   "end": 287.5,
+   "text": "Alisa wanted a break from her studies at the University of British Columbia."
+  },
+  {
+   "start": 288.2,
+   "end": 292,
+   "text": "We already tracked her route on those inner city buses from the San Diego Zoo up to her arrival"
+  },
+  {
+   "start": 292,
+   "end": 296.5,
+   "text": "in Los Angeles on January 26. She was blogging about her encounters and self-discovery along"
+  },
+  {
+   "start": 296.5,
+   "end": 301.6,
+   "text": "the way. Her ultimate destination was supposed to be Santa Cruz. Let's talk about where she"
+  },
+  {
+   "start": 301.6,
+   "end": 308,
+   "text": "actually ended up staying. The Cecil Hotel was an old building with a notoriously heavy reputation."
+  },
+  {
+   "start": 308,
+   "end": 311,
+   "text": "It had long been a magnet for darkness in downtown Los Angeles."
+  },
+  {
+   "start": 311.9,
+   "end": 316.7,
+   "text": "Over the decades, the property was home to serial killers. It was the site of numerous murders and"
+  },
+  {
+   "start": 316.7,
+   "end": 321.1,
+   "text": "suicides. Alisa could not have known she was walking into one of the most infamous addresses"
+  },
+  {
+   "start": 321.1,
+   "end": 326.4,
+   "text": "in American history. She never made it to Santa Cruz. January 31 was the day she was"
+  },
+  {
+   "start": 326.4,
+   "end": 330.4,
+   "text": "scheduled to check out of the Cecil and leave for Santa Cruz. We know she spent time around then"
+  },
+  {
+   "start": 330.4,
+   "end": 335.4,
+   "text": "at a nearby shop called the Last Bookstore. Katie Orphin, the manager of the Last Bookstore,"
+  },
+  {
+   "start": 335.4,
+   "end": 341.1,
+   "text": "was the only person outside the hotel who recalled seeing her that day. Orphin later told a local CBS"
+  },
+  {
+   "start": 341.1,
+   "end": 346.3,
+   "text": "station that Alisa was buying books and music. She was getting gifts for her family back in Vancouver."
+  },
+  {
+   "start": 346.3,
+   "end": 350.4,
+   "text": "The shop owner noted that Alisa clearly had plans to return home and reconnect with her relatives."
+  },
+  {
+   "start": 351.3,
+   "end": 356.1,
+   "text": "That makes what happened next even harder to explain. Alisa contacted her parents in British"
+  },
+  {
+   "start": 356.1,
+   "end": 361.2,
+   "text": "Columbia daily while she was traveling right up until the day she disappeared. On January 31,"
+  },
+  {
+   "start": 361.2,
+   "end": 366,
+   "text": "they did not hear from her. When that daily check-in did not happen, her family knew something"
+  },
+  {
+   "start": 366,
+   "end": 371,
+   "text": "was wrong. They reached out to the Los Angeles Police Department. We already established the"
+  },
+  {
+   "start": 371,
+   "end": 375.4,
+   "text": "shift in her demeanor during those early days at the hotel. That was the original plan for her"
+  },
+  {
+   "start": 375.4,
+   "end": 380.1,
+   "text": "stay in Los Angeles. We also talked about how that arrangement quickly fell apart. She was"
+  },
+  {
+   "start": 380.1,
+   "end": 385.4,
+   "text": "leaving them notes telling them to go away. That is exactly why hotel management stepped in."
+  },
+  {
+   "start": 386,
+   "end": 389.7,
+   "text": "We also know this was not just happening behind closed doors. Security had to escort"
+  },
+  {
+   "start": 389.7,
+   "end": 394.3,
+   "text": "her out for disruptive behavior. When they couldn't find her, they turned to the public for help."
+  },
+  {
+   "start": 394.3,
+   "end": 398.4,
+   "text": "They released surveillance footage taken from one of the hotel's elevators. It was published six"
+  },
+  {
+   "start": 398.4,
+   "end": 403.5,
+   "text": "days before her body was discovered. That four-minute video of her elevator episode changed the entire"
+  },
+  {
+   "start": 403.5,
+   "end": 409.1,
+   "text": "trajectory of this case. The video shows Alisa acting erratically on the day she disappeared."
+  },
+  {
+   "start": 409.1,
+   "end": 412.9,
+   "text": "You can see her stepping into the elevator and pushing all the floor buttons. The doors never"
+  },
+  {
+   "start": 412.9,
+   "end": 417.9,
+   "text": "close. She steps in and out of the car, poking her head out sideways toward the hallways."
+  },
+  {
+   "start": 417.9,
+   "end": 420.4,
+   "text": "She peers out a few times before stepping out entirely."
+  },
+  {
+   "start": 421.2,
+   "end": 425.2,
+   "text": "In the final minutes of the footage, she is standing by the left side of the open door."
+  },
+  {
+   "start": 425.2,
+   "end": 428.8,
+   "text": "She starts moving her hands in random, unnerving gestures in the air."
+  },
+  {
+   "start": 428.8,
+   "end": 432,
+   "text": "Nobody else is captured on the video. She is entirely alone."
+  },
+  {
+   "start": 432.8,
+   "end": 437.2,
+   "text": "That footage went completely viral. It crossed international borders, drawing massive attention"
+  },
+  {
+   "start": 437.2,
+   "end": 442,
+   "text": "in Canada and China. It racked up tens of millions of views. Internet sleuths started"
+  },
+  {
+   "start": 442,
+   "end": 446.2,
+   "text": "dissecting every frame, spawning theories about murder conspiracies and even evil spirits."
+  },
+  {
+   "start": 447,
+   "end": 451.6,
+   "text": "The reality of the case file is far more grounded. When her body was finally recovered from that"
+  },
+  {
+   "start": 451.6,
+   "end": 456.1,
+   "text": "rooftop tank, she was floating lifelessly next to clothing similar to what she was wearing in"
+  },
+  {
+   "start": 456.1,
+   "end": 461,
+   "text": "that elevator video. Hotel staff told authorities she was always seen by herself around the premises."
+  },
+  {
+   "start": 462,
+   "end": 467.2,
+   "text": "The autopsy results only added to the confusion. The coroner's office ultimately ruled her death"
+  },
+  {
+   "start": 467.2,
+   "end": 472.2,
+   "text": "in accidental drowning. But they found absolutely no signs of foul play from the evidence processed."
+  },
+  {
+   "start": 473,
+   "end": 477.3,
+   "text": "The toxicology report is where the medical history we discussed earlier becomes critical."
+  },
+  {
+   "start": 477.3,
+   "end": 482,
+   "text": "The screening confirmed there was a very small quantity of alcohol, but no illegal substances"
+  },
+  {
+   "start": 482,
+   "end": 485.1,
+   "text": "in her system. It did show the presence of her prescription drugs."
+  },
+  {
+   "start": 486,
+   "end": 489.7,
+   "text": "One summary of her toxicology report was posted online by a Reddit sleuth with an"
+  },
+  {
+   "start": 489.7,
+   "end": 493.9,
+   "text": "obvious interest in medicine. The summary showed she took at least one antidepressant the day"
+  },
+  {
+   "start": 493.9,
+   "end": 499.3,
+   "text": "she vanished. She had taken a second antidepressant and a mood stabilizer recently, but not that"
+  },
+  {
+   "start": 499.3,
+   "end": 504,
+   "text": "specific day. Most importantly, the report indicated she had not taken her antipsychotic"
+  },
+  {
+   "start": 504,
+   "end": 509.4,
+   "text": "medication recently at all. This brings us right back to her baseline. The record shows a young"
+  },
+  {
+   "start": 509.4,
+   "end": 515.3,
+   "text": "woman whose medication regimen was completely out of balance. As NBCLA reporter Lolita Lopez put it,"
+  },
+  {
+   "start": 515.3,
+   "end": 519.7,
+   "text": "we know the who, what, when, and where. But the why is always the question."
+  },
+  {
+   "start": 520.4,
+   "end": 524.4,
+   "text": "We already know January 31 was supposed to be her last day at the Cecil Hotel."
+  },
+  {
+   "start": 524.4,
+   "end": 528,
+   "text": "She was scheduled to check out and head north to Santa Cruz. Before leaving,"
+  },
+  {
+   "start": 528,
+   "end": 531.9,
+   "text": "she made that stop at the last bookstore to pick up gifts for her family in British Columbia."
+  },
+  {
+   "start": 532.7,
+   "end": 537.4,
+   "text": "The manager of that store, Katie Orphin, gave a few more details to CNN about that specific"
+  },
+  {
+   "start": 537.4,
+   "end": 542.8,
+   "text": "interaction. She described the young student as outgoing, very lively, and very friendly."
+  },
+  {
+   "start": 542.8,
+   "end": 545.3,
+   "text": "It was a completely normal, pleasant retail encounter."
+  },
+  {
+   "start": 546.2,
+   "end": 549.6,
+   "text": "The case file shows Elisa was actually worried about the weight of her luggage."
+  },
+  {
+   "start": 549.6,
+   "end": 553.4,
+   "text": "Orphin recalled her debating whether the books she wanted would be too heavy to carry around"
+  },
+  {
+   "start": 553.4,
+   "end": 558.4,
+   "text": "as she continued her travels. That is the behavior of someone actively planning the next leg of their"
+  },
+  {
+   "start": 558.4,
+   "end": 563.6,
+   "text": "journey. This interaction stands in stark contrast to the erratic actions her roommates reported"
+  },
+  {
+   "start": 563.6,
+   "end": 567.7,
+   "text": "just days earlier. She was lucid, friendly, and looking forward to handing those gifts to her"
+  },
+  {
+   "start": 567.7,
+   "end": 572.8,
+   "text": "parents. But that evening, the daily phone call home never happened. Her parents knew immediately"
+  },
+  {
+   "start": 572.8,
+   "end": 577.6,
+   "text": "that this silence was a massive red flag. They did not wait around for her to turn up in Santa"
+  },
+  {
+   "start": 577.6,
+   "end": 581.2,
+   "text": "Cruz. They booked flights to California to join the search themselves."
+  },
+  {
+   "start": 582,
+   "end": 586.8,
+   "text": "The LAPD started their investigation right at the Cecil Hotel. Officers searched a private room and"
+  },
+  {
+   "start": 586.8,
+   "end": 590.8,
+   "text": "brought in tracking dogs to sweep the massive building. The official timeline notes those dogs"
+  },
+  {
+   "start": 590.8,
+   "end": 595.8,
+   "text": "even went up to the rooftop. The search dogs were completely unsuccessful in detecting her scent"
+  },
+  {
+   "start": 595.8,
+   "end": 600,
+   "text": "up there. Sergeant Rudy Lopez later explained that officers legally searched the hotel to the"
+  },
+  {
+   "start": 600,
+   "end": 605,
+   "text": "extent that they could. They did not search every single room in the building. Lopez stated they"
+  },
+  {
+   "start": 605,
+   "end": 609.7,
+   "text": "could only enter other guest rooms if they had probable cause to believe a crime had been committed."
+  },
+  {
+   "start": 609.7,
+   "end": 614.8,
+   "text": "So the rest of the hotel was left untouched. A full week went by with absolutely no sign of"
+  },
+  {
+   "start": 614.8,
+   "end": 620.1,
+   "text": "the missing student. On February 6th, the police decided they needed to escalate their efforts."
+  },
+  {
+   "start": 620.1,
+   "end": 624.3,
+   "text": "They printed flyers with her face and plastered them around the downtown neighborhood. They also"
+  },
+  {
+   "start": 624.3,
+   "end": 629.6,
+   "text": "posted her image online to drum up public awareness. That decision brought the local media"
+  },
+  {
+   "start": 629.6,
+   "end": 634.3,
+   "text": "into the fold. It took the case out of the hotel and into the public eye. The search for a"
+  },
+  {
+   "start": 634.3,
+   "end": 639.1,
+   "text": "missing tourist was about to become a global obsession. We already established that Alisa"
+  },
+  {
+   "start": 639.1,
+   "end": 642.9,
+   "text": "missed her scheduled checking call. When her parents did not hear from her, they contacted the"
+  },
+  {
+   "start": 642.9,
+   "end": 646.5,
+   "text": "Los Angeles Police Department. They did not just wait by the phone in British Columbia."
+  },
+  {
+   "start": 647.1,
+   "end": 650.8,
+   "text": "The family flew to Los Angeles to help with the search. They were living through the worst"
+  },
+  {
+   "start": 650.8,
+   "end": 655.2,
+   "text": "moment of their lives. Years later, documentary makers noted that the family refused to"
+  },
+  {
+   "start": 655.2,
+   "end": 659.4,
+   "text": "participate in television shows about the case. They did not want to deal with narratives"
+  },
+  {
+   "start": 659.4,
+   "end": 663.5,
+   "text": "that exaggerated the circumstances of the tragedy or claimed an evil presence took control of"
+  },
+  {
+   "start": 664,
+   "end": 668.2,
+   "text": "the city. They just wanted to find their daughter. The police started their physical search inside"
+  },
+  {
+   "start": 668.2,
+   "end": 672.6,
+   "text": "the hotel. They went through Alisa's room looking for any clues about where she might have gone."
+  },
+  {
+   "start": 672.6,
+   "end": 677.1,
+   "text": "But the building was massive and they were restricted by the law. The CESA was set right"
+  },
+  {
+   "start": 677.1,
+   "end": 681.5,
+   "text": "in the heart of downtown Los Angeles. That specific neighborhood has a massive homelessness"
+  },
+  {
+   "start": 681.5,
+   "end": 686,
+   "text": "problem. The hotel itself had a split purpose. Some floors were reserved for visiting tourists"
+  },
+  {
+   "start": 686,
+   "end": 690.5,
+   "text": "like Alisa. Other floors were utilized as short or long-term accommodation for people"
+  },
+  {
+   "start": 690.5,
+   "end": 695,
+   "text": "living in the Skid Row area. The police were dealing with a property filled with permanent residents."
+  },
+  {
+   "start": 695.8,
+   "end": 699.7,
+   "text": "Sergeant Rudy Lopez went on the record about those limitations. They could not just kick"
+  },
+  {
+   "start": 699.7,
+   "end": 704.6,
+   "text": "down every door in the building. That legal wall frustrated the public. Fingers were immediately"
+  },
+  {
+   "start": 704.6,
+   "end": 709.4,
+   "text": "pointed at the long-term residents and the hotel staff. Former hotel manager Amy Price later"
+  },
+  {
+   "start": 709.4,
+   "end": 714.4,
+   "text": "called those accusations stressful and heartbreaking. Price stated she genuinely thought Alisa had"
+  },
+  {
+   "start": 714.4,
+   "end": 718.4,
+   "text": "simply gotten mixed up with the wrong crowd. She noted that would not be hard to do in"
+  },
+  {
+   "start": 718.4,
+   "end": 723.4,
+   "text": "downtown Los Angeles. Because of those legal guardrails, the physical search was limited."
+  },
+  {
+   "start": 723.4,
+   "end": 726.6,
+   "text": "The dogs were led to the building and eventually taken up to the roof."
+  },
+  {
+   "start": 726.6,
+   "end": 729.9,
+   "text": "That roof was a sprawling space housing the hotel's massive water tanks."
+  },
+  {
+   "start": 730.8,
+   "end": 735.6,
+   "text": "That rooftop sweep turned up absolutely nothing. The dogs failed to detector scent up there."
+  },
+  {
+   "start": 735.6,
+   "end": 739.1,
+   "text": "The immediate search of the premises yielded no trace of the missing student."
+  },
+  {
+   "start": 739.1,
+   "end": 742,
+   "text": "The lack of evidence left a massive void in the investigation."
+  },
+  {
+   "start": 742.8,
+   "end": 746.8,
+   "text": "Webb's sleuth stepped in and developed severe tunnel vision. They focused on strange"
+  },
+  {
+   "start": 746.8,
+   "end": 751.9,
+   "text": "coincidences like a tuberculosis test literally named Lama Lisa. They compared the case to the plot"
+  },
+  {
+   "start": 751.9,
+   "end": 756.4,
+   "text": "of a horror movie called Dark Water. But those ghost stories and conspiracies did not help the"
+  },
+  {
+   "start": 756.4,
+   "end": 760.2,
+   "text": "actual investigation. The fact remained that the physical search hit a dead end."
+  },
+  {
+   "start": 761,
+   "end": 764.9,
+   "text": "The physical search of that massive hotel went as far as the law allowed."
+  },
+  {
+   "start": 764.9,
+   "end": 769.1,
+   "text": "Police searched Alisa's room and they sent dogs through the building including the rooftop."
+  },
+  {
+   "start": 769.8,
+   "end": 774.3,
+   "text": "But they did not search every room. Without probable cause to believe a crime had been"
+  },
+  {
+   "start": 774.3,
+   "end": 780,
+   "text": "committed they could not push any further inside. That legal barrier meant a week went by without a"
+  },
+  {
+   "start": 780,
+   "end": 784.9,
+   "text": "single major break. By February 6th the LAPD knew they could not solve this quietly."
+  },
+  {
+   "start": 784.9,
+   "end": 789,
+   "text": "They took Alisa's face to the streets hanging flyers across the neighborhood and pushing her"
+  },
+  {
+   "start": 789,
+   "end": 794.1,
+   "text": "image onto the internet. That decision changed everything. The investigation was no longer"
+  },
+  {
+   "start": 794.1,
+   "end": 798.9,
+   "text": "confined to the walls of the Cecil. The media took hold of those missing person flyers and"
+  },
+  {
+   "start": 798.9,
+   "end": 803.6,
+   "text": "the search for the young student became a very public obsession. We already talked about that"
+  },
+  {
+   "start": 803.6,
+   "end": 808,
+   "text": "pixelated elevator video. They officially released that security camera footage to the public on"
+  },
+  {
+   "start": 808,
+   "end": 813.9,
+   "text": "February 13. Investigators needed a break in the case. But when the LAPD put that elevator clip"
+  },
+  {
+   "start": 813.9,
+   "end": 818.6,
+   "text": "online it went further than asking the community for tips. It brought massive public and media"
+  },
+  {
+   "start": 818.6,
+   "end": 823.8,
+   "text": "attention to the case overnight. The footage immediately went viral online. It was reposted"
+  },
+  {
+   "start": 823.8,
+   "end": 828,
+   "text": "widely across different platforms and crossed international borders. It was uploaded to the"
+  },
+  {
+   "start": 828,
+   "end": 833.5,
+   "text": "Chinese video sharing site YOKU. In just its first 10 days on that site the clip accumulated"
+  },
+  {
+   "start": 833.5,
+   "end": 839.2,
+   "text": "3 million views and 40,000 comments. People found the video deeply unsettling to watch."
+  },
+  {
+   "start": 839.2,
+   "end": 843.7,
+   "text": "The internet started tearing the footage apart and viewers quickly argued that the video had been"
+  },
+  {
+   "start": 843.7,
+   "end": 847.9,
+   "text": "tampered with before being made public. They pointed to a few specific details to make their"
+  },
+  {
+   "start": 847.9,
+   "end": 852.5,
+   "text": "case. Allmind sleuths claim that parts of the clip had been intentionally slowed down."
+  },
+  {
+   "start": 852.5,
+   "end": 856.5,
+   "text": "They also pointed out that the timestamp on the video was completely obscured. Most importantly"
+  },
+  {
+   "start": 856.5,
+   "end": 862,
+   "text": "they argued that nearly a minute of footage had been removed. These amateur investigators theorized"
+  },
+  {
+   "start": 862,
+   "end": 866.6,
+   "text": "the edits were made to protect someone's identity. They believed someone else was in that hallway,"
+  },
+  {
+   "start": 866.6,
+   "end": 871.6,
+   "text": "either related to the disappearance or just a bystander. The missing time fueled a massive"
+  },
+  {
+   "start": 871.6,
+   "end": 876.9,
+   "text": "wayless speculation. Other theories emerged to explain her unusual moves and gestures."
+  },
+  {
+   "start": 876.9,
+   "end": 880.8,
+   "text": "Some viewers suggested she was trying to get the elevator car to move to escape from someone"
+  },
+  {
+   "start": 880.8,
+   "end": 885.1,
+   "text": "pursuing her. Others guessed she might be under the influence of ecstasy or another party drug."
+  },
+  {
+   "start": 885.8,
+   "end": 890,
+   "text": "We already know the later toxicology results ruled out any illegal substances,"
+  },
+  {
+   "start": 890,
+   "end": 893.1,
+   "text": "but in mid-February the public did not have those medical records."
+  },
+  {
+   "start": 893.6,
+   "end": 897.7,
+   "text": "They just had a strange video that blurred the line between a real human tragedy and an internet"
+  },
+  {
+   "start": 897.7,
+   "end": 902.9,
+   "text": "ghost story. The release of that footage changed the entire scale of the investigation."
+  },
+  {
+   "start": 902.9,
+   "end": 906.6,
+   "text": "Millions of people were now watching the Cecil Hotel, waiting to see what the police would"
+  },
+  {
+   "start": 906.6,
+   "end": 911.8,
+   "text": "find next. You already know the search ended on February 19. Guests were also complaining"
+  },
+  {
+   "start": 911.8,
+   "end": 916.1,
+   "text": "about low water pressure, but the case file shows the situation was actually much worse."
+  },
+  {
+   "start": 916.8,
+   "end": 920.6,
+   "text": "People staying at the stay on main reported that the water was coming out colored black."
+  },
+  {
+   "start": 920.6,
+   "end": 923,
+   "text": "There were also complaints about flooding in parts of the building."
+  },
+  {
+   "start": 923.7,
+   "end": 927.2,
+   "text": "That is what finally sent him up to the roof that morning. He needed to check the building's"
+  },
+  {
+   "start": 927.2,
+   "end": 932.3,
+   "text": "water supply system. The rooftop housed four massive water cisterns. Each one of these"
+  },
+  {
+   "start": 932.3,
+   "end": 937.2,
+   "text": "tanks held a thousand gallons of water. These tanks were vital to the daily operations of"
+  },
+  {
+   "start": 937.2,
+   "end": 941.3,
+   "text": "the entire building. They did not just supply the bathrooms and the guest rooms. The water"
+  },
+  {
+   "start": 941.4,
+   "end": 944.9,
+   "text": "inside also fed directly into a kitchen and a coffee shop on the property."
+  },
+  {
+   "start": 945.5,
+   "end": 949.3,
+   "text": "Lopez went up after responding to complaints about low water pressure and a weird taste"
+  },
+  {
+   "start": 949.3,
+   "end": 953.2,
+   "text": "coming from the tap water. When he checked one of the tanks, he noticed the maintenance"
+  },
+  {
+   "start": 953.2,
+   "end": 957.5,
+   "text": "hatch was open. He looked down through the opening and made a horrific discovery."
+  },
+  {
+   "start": 957.5,
+   "end": 962.3,
+   "text": "Alisa Lam was lying face up in the water. We talked about how fire crews had to drain"
+  },
+  {
+   "start": 962.3,
+   "end": 966.5,
+   "text": "and cut the tank open to get her out. The records explain exactly why that drastic step"
+  },
+  {
+   "start": 966.5,
+   "end": 970.3,
+   "text": "was necessary. The open hatch at the top of the cistern was simply too small."
+  },
+  {
+   "start": 971,
+   "end": 975,
+   "text": "Rescuers could not fit the heavy equipment they needed through that narrow opening to safely"
+  },
+  {
+   "start": 975,
+   "end": 980.3,
+   "text": "recover her remains. The full coroner's report details exactly what investigators found once"
+  },
+  {
+   "start": 980.3,
+   "end": 985.1,
+   "text": "they finally removed her from the stay on main rooftop. The official file adds that those garments"
+  },
+  {
+   "start": 985.1,
+   "end": 990.7,
+   "text": "were completely coated in a sand-like particulate. Investigators also found a few of her personal"
+  },
+  {
+   "start": 990.7,
+   "end": 995.3,
+   "text": "items inside the tank. Her watch and her hotel room key were recovered from the water,"
+  },
+  {
+   "start": 995.4,
+   "end": 1000.7,
+   "text": "but Alisa herself was found entirely naked. The medical examiner carefully documented the"
+  },
+  {
+   "start": 1000.7,
+   "end": 1005.2,
+   "text": "physical state of her remains. Because she had been in the water for nearly three weeks,"
+  },
+  {
+   "start": 1005.2,
+   "end": 1010.4,
+   "text": "her body was moderately decomposed and bloated. The report notes her skin was mostly greenish,"
+  },
+  {
+   "start": 1010.4,
+   "end": 1013.6,
+   "text": "with visible marbling on her abdomen and clear signs of skin separation."
+  },
+  {
+   "start": 1014.5,
+   "end": 1018.6,
+   "text": "It was a devastating scene for the recovery crews, but despite the severe decomposition,"
+  },
+  {
+   "start": 1018.6,
+   "end": 1022.8,
+   "text": "the coroner was actually able to conduct toxicology tests. The blood analysis results"
+  },
+  {
+   "start": 1022.8,
+   "end": 1027.1,
+   "text": "revealed that she had not been taking her medication properly. The official autopsy was"
+  },
+  {
+   "start": 1027.1,
+   "end": 1032.5,
+   "text": "performed on February 21, and it was inconclusive on how she died. You already know the harsh physical"
+  },
+  {
+   "start": 1032.5,
+   "end": 1036.7,
+   "text": "reality of her remains from that water tank. Her body was moderately decomposed and bloated."
+  },
+  {
+   "start": 1037.4,
+   "end": 1042.8,
+   "text": "The coroner's office was dealing with a high-profile tragedy. Alisa was born Lam Ho Yee to parents"
+  },
+  {
+   "start": 1042.8,
+   "end": 1046.7,
+   "text": "who had immigrated from Hong Kong. She was a daughter, not just an internet mystery."
+  },
+  {
+   "start": 1046.7,
+   "end": 1050.8,
+   "text": "The public thought of her as an active college student on a break. But what the evidence"
+  },
+  {
+   "start": 1050.8,
+   "end": 1055,
+   "text": "actually shows is she was not registered for classes at the University of British Columbia"
+  },
+  {
+   "start": 1055,
+   "end": 1061.1,
+   "text": "at the beginning of 2013. The coroner needed to figure out exactly how she died. But the initial"
+  },
+  {
+   "start": 1061.1,
+   "end": 1065.9,
+   "text": "autopsy results were completely inconclusive. The medical examiner could not immediately"
+  },
+  {
+   "start": 1065.9,
+   "end": 1069.9,
+   "text": "determine the manner of death. They had the physical evidence we just unpacked,"
+  },
+  {
+   "start": 1069.9,
+   "end": 1074.7,
+   "text": "but it was not enough to make a final ruling. The pressure for answers was massive. The"
+  },
+  {
+   "start": 1074.7,
+   "end": 1080,
+   "text": "Cecil Hotel already had a deeply dark history. We talked about the murders and suicides."
+  },
+  {
+   "start": 1080.1,
+   "end": 1084.2,
+   "text": "We know serial killers Richard Ramirez and Jack Unterveger were past guests."
+  },
+  {
+   "start": 1084.2,
+   "end": 1088.6,
+   "text": "The building's reputation was so heavy that it later inspired a season of the television show,"
+  },
+  {
+   "start": 1088.6,
+   "end": 1094,
+   "text": "American Horror Story. The physical exam could not answer it, so the chemistry had to."
+  },
+  {
+   "start": 1094,
+   "end": 1098.7,
+   "text": "Toxicology tests were run and a blood analysis followed. Ultimately, they ruled the death"
+  },
+  {
+   "start": 1098.7,
+   "end": 1102.9,
+   "text": "in an accident, but they specifically listed her bipolar disorder as a significant contributing"
+  },
+  {
+   "start": 1102.9,
+   "end": 1108.6,
+   "text": "factor. That medical conclusion did not stop the legal battles. In September 2013,"
+  },
+  {
+   "start": 1108.6,
+   "end": 1113.5,
+   "text": "Alisa's parents filed a wrongful death lawsuit against the hotel. They claimed the property operators"
+  },
+  {
+   "start": 1113.5,
+   "end": 1117.8,
+   "text": "failed to inspect for hazards and presented an unreasonable risk of danger to the guests."
+  },
+  {
+   "start": 1118.6,
+   "end": 1123.3,
+   "text": "The physical investigation at the hotel had essentially hit a wall. Now, detectives had"
+  },
+  {
+   "start": 1123.3,
+   "end": 1127.7,
+   "text": "to step back and let the medical professionals do their jobs. Investigators waited for those"
+  },
+  {
+   "start": 1127.7,
+   "end": 1132.2,
+   "text": "blood results to come back from the lab. They needed that data to finally understand what"
+  },
+  {
+   "start": 1132.2,
+   "end": 1136.4,
+   "text": "happened to her. The hotel defended itself in court against the family's lawsuit."
+  },
+  {
+   "start": 1136.4,
+   "end": 1140.4,
+   "text": "Their lawyers argued they could not have reasonably foreseen that a guest would get into the rooftop"
+  },
+  {
+   "start": 1140.4,
+   "end": 1145.4,
+   "text": "water tanks. Because nobody knew exactly how she got into them, the hotel claimed no liability"
+  },
+  {
+   "start": 1145.4,
+   "end": 1149.6,
+   "text": "could be a sign for failing to prevent it. A judge agreed, and the suit was dismissed in"
+  },
+  {
+   "start": 1149.6,
+   "end": 1155.9,
+   "text": "2015. Other guests also sued the hotel over the incident. The aftermath of this tragedy"
+  },
+  {
+   "start": 1155.9,
+   "end": 1160.7,
+   "text": "changed the building itself. The Cecil Hotel tried to shake its infamous past by rebranding and"
+  },
+  {
+   "start": 1160.7,
+   "end": 1166,
+   "text": "changing its name. In 2021, the property reopened as an affordable housing complex."
+  },
+  {
+   "start": 1166,
+   "end": 1171.5,
+   "text": "But the financial troubles continued. By 2024, the building was placed right back on the real"
+  },
+  {
+   "start": 1171.5,
+   "end": 1176.4,
+   "text": "estate market. The legal system closed the books on the case, but the internet never really moved on."
+  },
+  {
+   "start": 1177.2,
+   "end": 1181.8,
+   "text": "Those lab results were the final piece of the medical puzzle. The autopsy on its own had been"
+  },
+  {
+   "start": 1181.8,
+   "end": 1185.7,
+   "text": "inconclusive about how she died. It was the bloodwork that the coroner's office would"
+  },
+  {
+   "start": 1185.7,
+   "end": 1190.5,
+   "text": "ultimately rest its ruling on. The bloodwork showed the level of her prescription medication"
+  },
+  {
+   "start": 1190.5,
+   "end": 1195.4,
+   "text": "in her system was very low. Investigators and experts took that, along with the number"
+  },
+  {
+   "start": 1195.4,
+   "end": 1200,
+   "text": "of pills left in her bottle, as a sign she had been undermedicating or had recently stopped taking"
+  },
+  {
+   "start": 1200,
+   "end": 1205.2,
+   "text": "her medication. With that chemical evidence in hand, the Los Angeles County Coroner's Office made"
+  },
+  {
+   "start": 1205.2,
+   "end": 1209.6,
+   "text": "their final decision. They officially ruled the death in accident. The autopsy found no"
+  },
+  {
+   "start": 1209.6,
+   "end": 1214.4,
+   "text": "evidence of trauma, sexual assault, or foul play, but the pathologists were actually ambivalent"
+  },
+  {
+   "start": 1214.4,
+   "end": 1219,
+   "text": "about their conclusion. But that official story did not sit right with the public."
+  },
+  {
+   "start": 1219,
+   "end": 1222.7,
+   "text": "Internet sleuths immediately pointed to the physical barriers on the property."
+  },
+  {
+   "start": 1222.7,
+   "end": 1227,
+   "text": "They wanted to know how a single guest could access a locked and alarmed rooftop."
+  },
+  {
+   "start": 1227,
+   "end": 1231,
+   "text": "They questioned how she could bypass the building's security systems completely unnoticed."
+  },
+  {
+   "start": 1231.8,
+   "end": 1236.7,
+   "text": "They also focused on the cistern itself. People demanded to know how she could lift a heavy metal"
+  },
+  {
+   "start": 1236.7,
+   "end": 1242,
+   "text": "lid and climb into that massive tank entirely alone. The official investigation never fully"
+  },
+  {
+   "start": 1242,
+   "end": 1246.6,
+   "text": "explained exactly how she got inside. Because the police lacked that specific timeline,"
+  },
+  {
+   "start": 1246.6,
+   "end": 1251.4,
+   "text": "the internet filled the gap with folklore, web forums exploded with tales of paranormal"
+  },
+  {
+   "start": 1251.4,
+   "end": 1256.9,
+   "text": "elevator games and ghostly presences haunting the Cecil. The legend of the hotel grew louder than ever"
+  },
+  {
+   "start": 1256.9,
+   "end": 1262.4,
+   "text": "as people tried to make sense of the tragedy. The medical examiner documented exactly why this"
+  },
+  {
+   "start": 1262.4,
+   "end": 1267.5,
+   "text": "accident happened. The coroner's report listed her bipolar disorder as a significant contributing"
+  },
+  {
+   "start": 1267.5,
+   "end": 1272.4,
+   "text": "factor in the drowning. This conclusion brings the entire investigation right back to the baseline"
+  },
+  {
+   "start": 1272.4,
+   "end": 1277.2,
+   "text": "we established earlier. The coroner's findings perfectly align with her history of hallucinations"
+  },
+  {
+   "start": 1277.2,
+   "end": 1281.5,
+   "text": "when she went off her medication. We know these hallucinations would cause her to hide under her"
+  },
+  {
+   "start": 1281.5,
+   "end": 1287.7,
+   "text": "bed for refuge. What the evidence actually shows is a tragic medical crisis. The erratic gestures"
+  },
+  {
+   "start": 1287.7,
+   "end": 1291.8,
+   "text": "in the elevator and the locked doors in her shared room were not paranormal events."
+  },
+  {
+   "start": 1291.8,
+   "end": 1296.4,
+   "text": "They were the escalating symptoms of a psychiatric emergency. She was a young woman"
+  },
+  {
+   "start": 1296.4,
+   "end": 1300.7,
+   "text": "battling a massive mental health crisis alone. The official ruling closed the police"
+  },
+  {
+   "start": 1300.7,
+   "end": 1305.4,
+   "text": "investigation and grounded the tragedy and documented medical facts. The legal system"
+  },
+  {
+   "start": 1305.4,
+   "end": 1310.8,
+   "text": "demands evidence, cause, and reason. The blood analysis tells the true story of what happened"
+  },
+  {
+   "start": 1310.8,
+   "end": 1315.5,
+   "text": "at the hotel. It stands as a stark reminder of the limits of the law in the face of a human tragedy."
+  },
+  {
+   "start": 1316.3,
+   "end": 1319.7,
+   "text": "You already know millions of people were watching that pixelated elevator footage."
+  },
+  {
+   "start": 1319.7,
+   "end": 1323.6,
+   "text": "Even after the coroner released the final autopsy results, the internet refused to"
+  },
+  {
+   "start": 1323.6,
+   "end": 1328,
+   "text": "let the official medical conclusion stand. Amateur sleuths began pouring over any"
+  },
+  {
+   "start": 1328,
+   "end": 1331.9,
+   "text": "information they could find, hoping to solve the mystery behind the death of Elisa Lam."
+  },
+  {
+   "start": 1332.8,
+   "end": 1336.9,
+   "text": "One of the strangest details they fixated on was a tuberculosis test."
+  },
+  {
+   "start": 1336.9,
+   "end": 1341.4,
+   "text": "Online sleuths looking for clues discovered suggested links to a test literally called"
+  },
+  {
+   "start": 1341.4,
+   "end": 1346.8,
+   "text": "LAMALISA. That bizarre coincidence sent the internet into absolute overdrive."
+  },
+  {
+   "start": 1346.8,
+   "end": 1350.8,
+   "text": "Commentators started spinning wild conspiracy theories and ghost stories based on the name."
+  },
+  {
+   "start": 1351.7,
+   "end": 1356.7,
+   "text": "The online reaction did not stop at conspiracy theories. People also started drawing comparisons"
+  },
+  {
+   "start": 1356.7,
+   "end": 1362.8,
+   "text": "to the 2005 horror film Darkwater. The plot of that movie is undeniably close to what happened at"
+  },
+  {
+   "start": 1362.8,
+   "end": 1367.8,
+   "text": "the Cecil. In the film, discolored water gushing from the building's faucets eventually leads"
+  },
+  {
+   "start": 1367.8,
+   "end": 1372.5,
+   "text": "to the building's rooftop water tank. The climax revolves around a body discovered inside that"
+  },
+  {
+   "start": 1372.5,
+   "end": 1378.6,
+   "text": "tank. The parallels were definitely eerie and web forums ran with them. But a creepy coincidence"
+  },
+  {
+   "start": 1378.6,
+   "end": 1383,
+   "text": "is not forensic evidence. The internet built a massive, sprawling mystery that completely"
+  },
+  {
+   "start": 1383,
+   "end": 1387.7,
+   "text": "ignored the hard medical facts. They focused on movie plots instead of the documented reality."
+  },
+  {
+   "start": 1388.5,
+   "end": 1392.2,
+   "text": "This reaction was entirely unhelpful. Real people were living through the worst moment"
+  },
+  {
+   "start": 1392.2,
+   "end": 1396,
+   "text": "of their lives, while online communities treated the tragedy like an interactive game."
+  },
+  {
+   "start": 1396.9,
+   "end": 1401.1,
+   "text": "The legal fallout did not end quietly. You already know that guests at the stay on"
+  },
+  {
+   "start": 1401.1,
+   "end": 1405.4,
+   "text": "main sued the hotel over the incident, but the most significant legal battle came months"
+  },
+  {
+   "start": 1405.4,
+   "end": 1410.4,
+   "text": "after the initial shock were off. They were seeking unspecified damages and burial costs"
+  },
+  {
+   "start": 1410.4,
+   "end": 1416.4,
+   "text": "for their daughter. Their claim was straightforward. The hotel's defense centered entirely on the concept"
+  },
+  {
+   "start": 1416.4,
+   "end": 1421.7,
+   "text": "of foreseeability. Negligence laws dictate that you cannot be held liable for a situation you"
+  },
+  {
+   "start": 1421.7,
+   "end": 1426.8,
+   "text": "could not foresee. The legal system ultimately sided with the property owners. A judge"
+  },
+  {
+   "start": 1426.8,
+   "end": 1432,
+   "text": "officially dismissed the parents lawsuit in 2015. There was no trial and no liability was"
+  },
+  {
+   "start": 1432,
+   "end": 1436.5,
+   "text": "assigned to the hotel for the tragedy. The court officially closed the books on the case,"
+  },
+  {
+   "start": 1436.5,
+   "end": 1439.3,
+   "text": "leaving the family without the legal accountability they were looking for."
+  },
+  {
+   "start": 1440,
+   "end": 1444.2,
+   "text": "But the public never really let it go. The case continues to be referenced heavily in"
+  },
+  {
+   "start": 1444.2,
+   "end": 1448.2,
+   "text": "international popular culture. It has been the subject of several creative works,"
+  },
+  {
+   "start": 1448.2,
+   "end": 1452.4,
+   "text": "documentaries, and television shows. The internet kept the mystery alive long"
+  },
+  {
+   "start": 1452.4,
+   "end": 1457.4,
+   "text": "after the courtrooms moved on. What happened on that rooftop is a stark reminder of how fast"
+  },
+  {
+   "start": 1457.4,
+   "end": 1461.5,
+   "text": "documented facts can be overshadowed by folklore. The medical records and the"
+  },
+  {
+   "start": 1461.5,
+   "end": 1465.4,
+   "text": "legal rulings tell a very specific story about a young woman in crisis."
+  },
+  {
+   "start": 1465.5,
+   "end": 1469.2,
+   "text": "The web forms tell a completely different one. Read the file, form your own conclusion."
+  },
+  {
+   "start": 1469.9,
+   "end": 1473.1,
+   "text": "That's it for this one. Thanks for hanging out with me. This has been Crime Time Snacks,"
+  },
+  {
+   "start": 1473.1,
+   "end": 1474,
+   "text": "and I'll catch you next time."
+  }
+ ]
+}

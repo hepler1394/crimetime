@@ -222,6 +222,31 @@
         "Cold case",
         "Ransom note"
       ]
+    },
+    {
+      "guid": "cts-studio-elisa-lam-and-the-cecil-hotel",
+      "title": "Elisa Lam and the Cecil Hotel",
+      "slug": "elisa-lam-and-the-cecil-hotel",
+      "date": "2026-09-23",
+      "pubDate": "Wed, 23 Sep 2026 03:34:17 GMT",
+      "duration": "00:24:40",
+      "description": "I'm Cory, and this week on CrimeTimeSnacks we are looking at a case that completely took over the internet in 2013. Elisa Lam was a Canadian student traveling alone through California. When she vanished from a notorious Los Angeles hotel, the only clue left behind was a bizarre security video from an elevator that left millions of people guessing.\n\nWe will walk through Elisa's journey down the coast, her struggles with mental health, and her final known movements in downtown LA. The police had very little to go on, and the search of the massive hotel was restricted by legal limits, leaving her family desperate for answers.\n\nEventually, a gruesome discovery on the roof would answer where she went, but it only sparked more questions. We are going to dig into the actual facts of the investigation, the coroner's final conclusions, and how online sleuths built a massive mystery out of a tragic reality.",
+      "audio": "/audio/elisa-lam-and-the-cecil-hotel.mp3",
+      "audioType": "audio/mpeg",
+      "audioBytes": 23675037,
+      "image": "/images/episodes/elisa-lam-and-the-cecil-hotel.jpg",
+      "link": "",
+      "explicit": false,
+      "source": "studio",
+      "keywords": [
+        "Elisa Lam",
+        "Cecil Hotel",
+        "Stay on Main",
+        "Los Angeles",
+        "elevator video",
+        "true crime podcast",
+        "missing person"
+      ]
     }
   ]
 }

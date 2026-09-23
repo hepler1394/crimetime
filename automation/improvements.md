@@ -573,3 +573,4 @@ with an [auto] tag — the counter on Mission Control reads this file.
 507. [auto 2026-09-21] Published podcast episode from the studio: "The Miami Apartment Stabbing" (00:21:12)
 508. [auto 2026-09-21] Published podcast episode from the studio: "JonBenet Ramsey: Thirty Years" (00:20:43)
 509. [auto 2026-09-22] Dropped 1 new merch design into the vault
+510. [auto 2026-09-23] Published podcast episode from the studio: "Elisa Lam and the Cecil Hotel" (00:24:40)

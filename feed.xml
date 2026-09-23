@@ -7,7 +7,7 @@
     <title>CrimeTimeSnacks • A True Crime Podcast</title>
     <link>https://www.crimetimesnacks.com/</link>
     <atom:link href="https://www.crimetimesnacks.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 22 Sep 2026 22:22:16 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 03:34:19 GMT</lastBuildDate>
     <language>en</language>
     <copyright>&#169; 2026 Cory</copyright>
     <description>Crime Time Snacks is a true crime podcast that delves into a variety of unsolved cases, exploring the facts, theories, and evidence surrounding each mystery. The podcast aims to provide listeners with a comprehensive understanding of these cases, encouraging them to engage with the content and form their own conclusions.</description>
@@ -22,6 +22,27 @@
     <itunes:image href="https://www.crimetimesnacks.com/images/episodes/show.jpg" />
     <itunes:category text="True Crime" />
     <itunes:explicit>false</itunes:explicit>
+    <item>
+      <title>Elisa Lam and the Cecil Hotel</title>
+      <link>https://www.crimetimesnacks.com/episodes/elisa-lam-and-the-cecil-hotel.html</link>
+      <guid isPermaLink="false">cts-studio-elisa-lam-and-the-cecil-hotel</guid>
+      <pubDate>Wed, 23 Sep 2026 03:34:17 GMT</pubDate>
+      <description>I&apos;m Cory, and this week on CrimeTimeSnacks we are looking at a case that completely took over the internet in 2013. Elisa Lam was a Canadian student traveling alone through California. When she vanished from a notorious Los Angeles hotel, the only clue left behind was a bizarre security video from an elevator that left millions of people guessing.
+
+We will walk through Elisa&apos;s journey down the coast, her struggles with mental health, and her final known movements in downtown LA. The police had very little to go on, and the search of the massive hotel was restricted by legal limits, leaving her family desperate for answers.
+
+Eventually, a gruesome discovery on the roof would answer where she went, but it only sparked more questions. We are going to dig into the actual facts of the investigation, the coroner&apos;s final conclusions, and how online sleuths built a massive mystery out of a tragic reality.</description>
+      <itunes:summary>I&apos;m Cory, and this week on CrimeTimeSnacks we are looking at a case that completely took over the internet in 2013. Elisa Lam was a Canadian student traveling alone through California. When she vanished from a notorious Los Angeles hotel, the only clue left behind was a bizarre security video from an elevator that left millions of people guessing.
+
+We will walk through Elisa&apos;s journey down the coast, her struggles with mental health, and her final known movements in downtown LA. The police had very little to go on, and the search of the massive hotel was restricted by legal limits, leaving her family desperate for answers.
+
+Eventually, a gruesome discovery on the roof would answer where she went, but it only sparked more questions. We are going to dig into the actual facts of the investigation, the coroner&apos;s final conclusions, and how online sleuths built a massive mystery out of a tragic reality.</itunes:summary>
+      <itunes:author>Cory</itunes:author>
+      <itunes:duration>00:24:40</itunes:duration>
+      <enclosure url="https://www.crimetimesnacks.com/audio/elisa-lam-and-the-cecil-hotel.mp3" length="23675037" type="audio/mpeg" />
+      <itunes:image href="https://www.crimetimesnacks.com/images/episodes/elisa-lam-and-the-cecil-hotel.jpg" />
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>The Miami Apartment Stabbing</title>
       <link>https://www.crimetimesnacks.com/episodes/the-miami-apartment-stabbing.html</link>

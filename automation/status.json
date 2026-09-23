@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-22T22:22:20.801Z",
+  "generated": "2026-09-23T03:34:24.564Z",
   "improvementsShipped": 509,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
@@ -10,7 +10,7 @@
     "sync": "Every 6 hours"
   },
   "counts": {
-    "episodes": 15,
+    "episodes": 16,
     "posts": 17,
     "merchDesigns": 34,
     "merchCollection": 0,
@@ -23,8 +23,8 @@
   },
   "latest": {
     "episode": {
-      "title": "The Miami Apartment Stabbing",
-      "date": "2026-09-21"
+      "title": "Elisa Lam and the Cecil Hotel",
+      "date": "2026-09-23"
     },
     "post": {
       "title": "The Killing of JonBenét Ramsey: What the Record Shows",
@@ -36,7 +36,7 @@
     }
   },
   "freshness": {
-    "episodesJson": "2026-09-22T14:00:03.166Z",
+    "episodesJson": "2026-09-23T03:34:17.620Z",
     "blogJson": "2026-09-18T23:59:23.269Z",
     "merchJson": "2026-09-22T14:02:22.646Z",
     "quizzesJson": "2026-09-15T14:02:30.387Z",
