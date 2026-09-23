@@ -24,7 +24,10 @@ export async function loadConfig() {
   const e = process.env;
   cfg.order = cfg.order || ["gemini", "deepseek", "anthropic", "openai", "local"];
   cfg.gemini = cfg.gemini || {};
-  cfg.gemini.apiKey = e.GEMINI_API_KEY || cfg.gemini.apiKey || "";
+  // CTS_GEMINI_API_KEY lets the show bill to a key of its own. GEMINI_API_KEY is set
+  // machine-wide and every other program on this PC reads it too, so on the shared key
+  // the Gemini bill cannot say which program spent what.
+  cfg.gemini.apiKey = e.CTS_GEMINI_API_KEY || e.GEMINI_API_KEY || cfg.gemini.apiKey || "";
   // Gemini speaks the OpenAI chat-completions dialect at this endpoint.
   cfg.gemini.baseUrl = cfg.gemini.baseUrl || "https://generativelanguage.googleapis.com/v1beta/openai";
   cfg.gemini.model = e.GEMINI_MODEL || cfg.gemini.model || "gemini-3.8-flash";
