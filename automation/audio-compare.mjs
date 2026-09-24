@@ -15,7 +15,12 @@ const NUMS = { zero: "0", one: "1", two: "2", three: "3", four: "4", five: "5", 
 // "jonben" and "ts", and the audit then reported the script saying "jonben ts"
 // against a transcriber's perfectly good "jonbenese" - a name the show says in
 // every other sentence, flagged on every episode about her.
-export const tokens = (s) => String(s).toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "").replace(/[’']/g, "").replace(/(\d),(\d)/g, "$1$2").replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter(Boolean).map((w) => NUMS[w] || w.replace(/(\d+)(st|nd|rd|th)$/, "$1"));
+// Name suffixes the transcriber writes the way a newspaper would. The script spells them as
+// they are said, so "Randolph Murdaugh the Third" came back as "Randolph Murdaugh III" and
+// held the Murdaugh episode on four findings the clone said perfectly. "iv" is left out on
+// purpose: in this show it is far more often an IV line than a fourth.
+const SUFFIX = { ii: ["the", "second"], iii: ["the", "third"], jr: ["junior"], sr: ["senior"] };
+export const tokens = (s) => String(s).toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "").replace(/[’']/g, "").replace(/(\d),(\d)/g, "$1$2").replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter(Boolean).flatMap((w) => SUFFIX[w] || [w]).map((w) => NUMS[w] || w.replace(/(\d+)(st|nd|rd|th)$/, "$1"));
 
 // A number however it is written. tokens() already turns "twenty" into "20", but not the forms
 // it has no digit for - "twenties", "forties", "fifteenth" - and those have to count as numbers

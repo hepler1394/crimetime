@@ -27,6 +27,13 @@ test("three dropped words in a row are caught", () => {
 test("a surname heard as a common word is spelling, not a glitch", () => {
   assert.deepEqual(kinds("police took Laundrie to a local hotel for the night", "police took laundry to a local hotel for the night"), []);
 });
+test("a name suffix the transcriber abbreviates is the same words", () => {
+  // Murdaugh, 2026-09-24: held on "the third" heard as "iii" and "junior" heard as "jr".
+  assert.deepEqual(kinds("Randolph Murdaugh the Third died peacefully at his home", "Randolph Murdaugh III died peacefully at his home"), []);
+  assert.deepEqual(kinds("from his own father, Randolph Junior, who retired", "from his own father, Randolph Jr., who retired"), []);
+  // A real slip next to a suffix is still caught.
+  assert.deepEqual(kinds("Randolph Murdaugh the Third died peacefully", "Randolph Murdaugh III dried peacefully"), ["MISHEARD"]);
+});
 test("numbers, plurals and joined words are not findings", () => {
   assert.deepEqual(kinds("He took out more than a thousand dollars that week", "He took out more than $1,000 that week"), []);
   assert.deepEqual(kinds("sobbing in the passenger seat of the van", "sobbing in the passengers seat of the van"), []);
