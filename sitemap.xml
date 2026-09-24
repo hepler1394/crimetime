@@ -337,6 +337,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.crimetimesnacks.com/cases/the-murdaugh-family-murders.html</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.crimetimesnacks.com/cases/tylenol-murders.html</loc>
     <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -453,6 +459,12 @@
   <url>
     <loc>https://www.crimetimesnacks.com/episodes/the-miami-apartment-stabbing.html</loc>
     <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.crimetimesnacks.com/episodes/the-murdaugh-family-murders.html</loc>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

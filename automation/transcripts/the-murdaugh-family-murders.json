@@ -1,0 +1,1791 @@
+{
+ "slug": "the-murdaugh-family-murders",
+ "title": "The Murdaugh Family Murders",
+ "language": "en",
+ "duration": 1701.2,
+ "model": "faster-whisper small (int8)",
+ "generated": "2026-09-24",
+ "note": "Transcript generated from the episode script.",
+ "segments": [
+  {
+   "start": 5,
+   "end": 11,
+   "text": "What's up guys welcome back to Crime Time Snacks. On June 7, 2021, 52 year old Maggie Murdoff texted"
+  },
+  {
+   "start": 11,
+   "end": 16,
+   "text": "a friend. She said her husband sounded fishy and was up to something. A few hours later she was dead."
+  },
+  {
+   "start": 16.8,
+   "end": 19.8,
+   "text": "To understand how this happened you have to look at the Murdoff family."
+  },
+  {
+   "start": 19.8,
+   "end": 23.1,
+   "text": "They were a massive legal dynasty in the South Carolina Low Country."
+  },
+  {
+   "start": 23.1,
+   "end": 26.6,
+   "text": "Alex's grandfather and father ran the local prosecutor's office for decades."
+  },
+  {
+   "start": 27.2,
+   "end": 32.3,
+   "text": "Alex Murdoff followed right in their footsteps. He graduated from the University of South Carolina's"
+  },
+  {
+   "start": 32.3,
+   "end": 37.9,
+   "text": "School of Law in 1994. He worked as an attorney at the family's prominent private law firm and"
+  },
+  {
+   "start": 37.9,
+   "end": 42.9,
+   "text": "volunteered at the prosecutor's office. Alex was married to Maggie who was known locally as a"
+  },
+  {
+   "start": 42.9,
+   "end": 49,
+   "text": "socialite. They shared a massive 1,070 acre estate in a small community called Eilinton."
+  },
+  {
+   "start": 49,
+   "end": 55,
+   "text": "They had two sons, Buster and 22 year old Paul. In the summer of 2021 the family was already"
+  },
+  {
+   "start": 55,
+   "end": 59.9,
+   "text": "making headlines. Paul was under criminal indictment for the wrongful death of a 19 year old"
+  },
+  {
+   "start": 59.9,
+   "end": 64.7,
+   "text": "named Mallory Beach. She was a passenger on a boat Paul allegedly drove into a bridge while drunk"
+  },
+  {
+   "start": 64.7,
+   "end": 70.9,
+   "text": "back in 2019. Paul had pleaded not guilty and was out awaiting trial. He was a student at the University"
+  },
+  {
+   "start": 70.9,
+   "end": 75.3,
+   "text": "of South Carolina working a summer job at his uncle's tractor dealership. The family was under"
+  },
+  {
+   "start": 75.3,
+   "end": 80.8,
+   "text": "immense public and legal pressure. Then came the night of June 7. Alex called Maggie and asked"
+  },
+  {
+   "start": 80.8,
+   "end": 84.8,
+   "text": "her to meet him at the family's hunting lodge. He reportedly wanted them to travel together to"
+  },
+  {
+   "start": 84.8,
+   "end": 90.5,
+   "text": "visit his father who was terminally ill. Maggie agreed but she was suspicious. That is when she"
+  },
+  {
+   "start": 90.5,
+   "end": 94.8,
+   "text": "sent the text about Alex sounding fishy. She drove to the estate parked her car and walked down to"
+  },
+  {
+   "start": 94.8,
+   "end": 101.2,
+   "text": "the dog kennels. That is where she found Paul. At 10,006 p.m. Alex called 911 from his cell"
+  },
+  {
+   "start": 101.2,
+   "end": 105,
+   "text": "phone. He told dispatchers he had just discovered the bodies of his wife and son on the ground"
+  },
+  {
+   "start": 105,
+   "end": 109.6,
+   "text": "and that they were not breathing. The case file shows both victims were shot multiple"
+  },
+  {
+   "start": 109.6,
+   "end": 114.1,
+   "text": "times at close range. They were hit in the head, wrists and chest. Investigators quickly"
+  },
+  {
+   "start": 114.2,
+   "end": 119.2,
+   "text": "noted that two different guns were used in the killings. We have to look closer at that 2019"
+  },
+  {
+   "start": 119.2,
+   "end": 125.2,
+   "text": "boat crash. It happened on February 24, 2019 at a bridge near Parris Island in Beaufort County."
+  },
+  {
+   "start": 125.2,
+   "end": 129.6,
+   "text": "The boat actually belonged to Alex Murdoch. There were six people on board that night."
+  },
+  {
+   "start": 129.6,
+   "end": 134.4,
+   "text": "The crash killed Mowry Beach and injured two other passengers. In April 2019, Paul was"
+  },
+  {
+   "start": 134.4,
+   "end": 138,
+   "text": "officially charged with three felonies including boating under the influence causing death."
+  },
+  {
+   "start": 138.8,
+   "end": 144.6,
+   "text": "The case file shows Paul had a blood alcohol content of 28.6. That is more than three times the"
+  },
+  {
+   "start": 144.6,
+   "end": 150.1,
+   "text": "legal limit for an adult driver. To get the alcohol, Paul used an ID belonging to his older"
+  },
+  {
+   "start": 150.1,
+   "end": 155.4,
+   "text": "brother Buster. What happened immediately after the crash caused massive local outrage."
+  },
+  {
+   "start": 155.4,
+   "end": 159.9,
+   "text": "Despite allegedly driving the boat, Paul was never handcuffed. He was not given a field"
+  },
+  {
+   "start": 159.9,
+   "end": 164.9,
+   "text": "sobriety test and police did not take him to jail for booking. People immediately speculated"
+  },
+  {
+   "start": 164.9,
+   "end": 168.9,
+   "text": "the family was getting special treatment because of their deep ties to the local justice system."
+  },
+  {
+   "start": 168.9,
+   "end": 172.9,
+   "text": "A judge even denied a request from prosecutors to make Paul wear an alcohol monitor while awaiting"
+  },
+  {
+   "start": 172.9,
+   "end": 178.1,
+   "text": "trial. The fallout quickly moved into civil court. The Beach family's lawsuit implicated"
+  },
+  {
+   "start": 178.1,
+   "end": 182.7,
+   "text": "both Alex and Buster for providing the alcohol to an underage Paul. The family of another"
+  },
+  {
+   "start": 182.7,
+   "end": 187.7,
+   "text": "teen on the boat, Connor Cook, also filed a lawsuit. Cook's family claimed Alex tried to"
+  },
+  {
+   "start": 187.7,
+   "end": 192,
+   "text": "orchestrate a coverup. They alleged Alex pushed them to hire a specific attorney named Corey"
+  },
+  {
+   "start": 192,
+   "end": 196.8,
+   "text": "Fleming just to protect Paul. By September 2021, state investigators were looking into"
+  },
+  {
+   "start": 196.8,
+   "end": 201.6,
+   "text": "whether local police were pressured not to charge Paul initially. That civil lawsuit was a"
+  },
+  {
+   "start": 201.6,
+   "end": 206.4,
+   "text": "ticking clock for Alex. The Beach case began exposing information that led to an inquiry into"
+  },
+  {
+   "start": 206.4,
+   "end": 211.9,
+   "text": "his finances. Had the boat crash trial gone forward, prosecutors later argued Alex's"
+  },
+  {
+   "start": 211.9,
+   "end": 216.4,
+   "text": "financial misdeeds would have been completely uncovered. In the days before Maggie and Paul"
+  },
+  {
+   "start": 216.4,
+   "end": 220.1,
+   "text": "were killed, a judge scheduled a hearing to consider a motion compelling Alex to turn over"
+  },
+  {
+   "start": 220.1,
+   "end": 224.6,
+   "text": "his financial records. Maggie had also arranged for a forensic accountant to review the family"
+  },
+  {
+   "start": 224.6,
+   "end": 231.7,
+   "text": "finances. The walls were closing in. The case file shows June 7, 2021, did not start as a normal"
+  },
+  {
+   "start": 231.7,
+   "end": 236.4,
+   "text": "Monday for Alex Murdoch. That morning, the chief financial officer at his namesake law firm"
+  },
+  {
+   "start": 236.4,
+   "end": 243,
+   "text": "confronted him. They demanded answers about $792,000 in missing funds. That confrontation came"
+  },
+  {
+   "start": 243,
+   "end": 247.3,
+   "text": "just hours before Alex called Maggie to the hunting estate, which the family called Mozel."
+  },
+  {
+   "start": 248.3,
+   "end": 253.8,
+   "text": "The property sat right on the Salcahatchee River. The stated plan was to travel together to see Alex's"
+  },
+  {
+   "start": 253.8,
+   "end": 259.6,
+   "text": "father, Randolph Murdoch III. Randolph had also served as the local prosecutor. Now, he was 81"
+  },
+  {
+   "start": 259.6,
+   "end": 264.9,
+   "text": "years old and terminally ill. But the record shows Maggie had her own reasons to be wary of a sudden"
+  },
+  {
+   "start": 264.9,
+   "end": 269.9,
+   "text": "meetup. She was reportedly considering ending her marriage to Alex. In fact, she had consulted"
+  },
+  {
+   "start": 269.9,
+   "end": 274.3,
+   "text": "a divorce lawyer in Charleston just several weeks before this phone call. What we do not"
+  },
+  {
+   "start": 274.3,
+   "end": 278.3,
+   "text": "know is exactly what she expected to happen when she got there. She walked into a situation"
+  },
+  {
+   "start": 278.3,
+   "end": 283.2,
+   "text": "that investigators would spend years trying to fully unpack. Alex's initial story to police was"
+  },
+  {
+   "start": 283.2,
+   "end": 287.5,
+   "text": "very specific about his own movements that evening. He told officers he took a nap after dinner while"
+  },
+  {
+   "start": 287.5,
+   "end": 292,
+   "text": "Maggie and Paul went down to the kennels. He claimed he woke up, left the property to visit"
+  },
+  {
+   "start": 292,
+   "end": 296,
+   "text": "his ailing mother in Almeda, and only found the bodies when he returned after 10 p.m."
+  },
+  {
+   "start": 296.8,
+   "end": 300.8,
+   "text": "His mother, Libby, suffered from dementia, and she had a caregiver named Mooshal Smith"
+  },
+  {
+   "start": 300.8,
+   "end": 306.4,
+   "text": "working that night. Smith later told investigators that Alex's visit lasted about 20 minutes."
+  },
+  {
+   "start": 306.4,
+   "end": 310.4,
+   "text": "She also noted that Alex later insisted to her that he had actually been there closer to 40 minutes."
+  },
+  {
+   "start": 311.2,
+   "end": 315.9,
+   "text": "That conversation made Smith uneasy enough to contact her brother, who worked in law enforcement."
+  },
+  {
+   "start": 315.9,
+   "end": 320.7,
+   "text": "It was one of several details that investigators flagged early on. The timeline Alex gave simply"
+  },
+  {
+   "start": 320.7,
+   "end": 324.1,
+   "text": "did not line up with the witness accounts they were gathering. There was also the"
+  },
+  {
+   "start": 324.1,
+   "end": 328.6,
+   "text": "matter of what Alex was wearing. Blanca Terubiedi Simpson, the family's housekeeper,"
+  },
+  {
+   "start": 328.6,
+   "end": 331.6,
+   "text": "remembered fixing the collar about his blue polo shirt that morning."
+  },
+  {
+   "start": 332.3,
+   "end": 336,
+   "text": "That same shirt is visible in a video Paul took hours before the murders,"
+  },
+  {
+   "start": 336,
+   "end": 338,
+   "text": "but investigators have never been able to find it."
+  },
+  {
+   "start": 338.8,
+   "end": 343.4,
+   "text": "That night, Maggie already knew something was off. We know she texted her friend about Alex"
+  },
+  {
+   "start": 343.4,
+   "end": 347.1,
+   "text": "acting fishy. What she did not know was that her son Paul was about to capture the most"
+  },
+  {
+   "start": 347.1,
+   "end": 352.1,
+   "text": "critical piece of evidence in the entire case. Down at the dog kennels, Paul recorded a video"
+  },
+  {
+   "start": 352.1,
+   "end": 357.3,
+   "text": "on his phone. The time stamp on that video is 8,044 p.m. When investigators pulled the"
+  },
+  {
+   "start": 357.3,
+   "end": 361.8,
+   "text": "data, they heard something that changed everything. In the background of Paul's video,"
+  },
+  {
+   "start": 361.8,
+   "end": 368,
+   "text": "you can clearly hear Alex's voice. This completely shattered the timeline Alex gave police."
+  },
+  {
+   "start": 368,
+   "end": 372,
+   "text": "Cell phone data placed him right there at the scene just minutes before prosecutors say the"
+  },
+  {
+   "start": 372,
+   "end": 378.3,
+   "text": "murders happened. He was not taking a nap inside the house. Alex eventually had to admit he lied."
+  },
+  {
+   "start": 378.3,
+   "end": 382.7,
+   "text": "When he took the witness stand at his trial, he was confronted with that 8,044 p.m. video."
+  },
+  {
+   "start": 382.8,
+   "end": 387.8,
+   "text": "He confessed he was actually at the kennels that night. He blamed his deception on paranoia caused"
+  },
+  {
+   "start": 387.8,
+   "end": 392.4,
+   "text": "by an opioid addiction. On the stand, he actually said, oh what a tangled web we weave. But the"
+  },
+  {
+   "start": 392.4,
+   "end": 396.7,
+   "text": "strange behavior did not stop on the night of the killings. The morning after Maggie and Paul"
+  },
+  {
+   "start": 396.7,
+   "end": 401.2,
+   "text": "were shot, Alex made a specific request. He asked Blanca to come over. He told her to clean the"
+  },
+  {
+   "start": 401.2,
+   "end": 406,
+   "text": "house the way Maggie liked. The case file shows the investigation quickly expanded past the"
+  },
+  {
+   "start": 406,
+   "end": 410.8,
+   "text": "events of June 7. By August 11, a state investigator sharply questioned Alex and"
+  },
+  {
+   "start": 410.8,
+   "end": 415.2,
+   "text": "intimated he was a suspect. The pressure was mounting and Alex's life was about to unravel"
+  },
+  {
+   "start": 415.2,
+   "end": 422.2,
+   "text": "even further. On September 3, 2021, Alex resigned from his law firm. The firm stated he misappropriated"
+  },
+  {
+   "start": 422.2,
+   "end": 427.2,
+   "text": "funds. The very next day, Alex called 911 to report he had been shot in the head on a rural"
+  },
+  {
+   "start": 427.2,
+   "end": 432.8,
+   "text": "road in Hampton County. He was taken to a hospital in Savannah, Georgia with a superficial wound."
+  },
+  {
+   "start": 432.8,
+   "end": 436.8,
+   "text": "A family spokesperson issued a statement saying a man in a blue pickup truck shot"
+  },
+  {
+   "start": 436.8,
+   "end": 440.3,
+   "text": "Alex while he was checking a low tire. But the truth was much darker."
+  },
+  {
+   "start": 441.1,
+   "end": 445,
+   "text": "Court documents later revealed Alex inspired with a former client and distant cousin,"
+  },
+  {
+   "start": 445,
+   "end": 449.5,
+   "text": "Curtis Edward Smith, to kill him. The plan was to secure a $10 million life insurance"
+  },
+  {
+   "start": 449.5,
+   "end": 454,
+   "text": "payout for his surviving son, Buster. The roadside shooting was completely staged."
+  },
+  {
+   "start": 454.7,
+   "end": 458.8,
+   "text": "While this was happening, investigators started looking backward. On June 22,"
+  },
+  {
+   "start": 458.8,
+   "end": 463.1,
+   "text": "the State Law Enforcement Division reopened the 2015 unsolved death of 19-year-old"
+  },
+  {
+   "start": 463.1,
+   "end": 468.2,
+   "text": "Stephen Smith. His body had been found on a road in Hampton County. The agency stated they"
+  },
+  {
+   "start": 468.2,
+   "end": 472.8,
+   "text": "reopened Smith's case based on information gathered while investigating the deaths of Maggie and Paul."
+  },
+  {
+   "start": 472.8,
+   "end": 477.6,
+   "text": "They were also looking at the 2018 death of Gloria Satterfield. She was a long-time housekeeper"
+  },
+  {
+   "start": 477.6,
+   "end": 482.7,
+   "text": "who died in a reported trip and fall accident at the Murdoch home. After Satterfield's death,"
+  },
+  {
+   "start": 482.7,
+   "end": 488.2,
+   "text": "a $500,000 wrongful death claim was filed against Alex. The deeper investigators dug,"
+  },
+  {
+   "start": 488.2,
+   "end": 491.3,
+   "text": "the more bodies and missing money they found tied to the Murdoch name."
+  },
+  {
+   "start": 492,
+   "end": 496.9,
+   "text": "Maggie and Paul were found near the dog kennels. The case file shows what investigators found when"
+  },
+  {
+   "start": 496.9,
+   "end": 502,
+   "text": "they arrived. Maggie and Paul were both shot multiple times in the head, wrists, and chest."
+  },
+  {
+   "start": 502,
+   "end": 504.7,
+   "text": "The scene made it clear that two different guns were used in the attack."
+  },
+  {
+   "start": 505.4,
+   "end": 509,
+   "text": "When a Calton County grand jury eventually indicted Alex for the killings,"
+  },
+  {
+   "start": 509,
+   "end": 513,
+   "text": "the paperwork detailed those weapons. The indictment stated that Alex shot his wife"
+  },
+  {
+   "start": 513,
+   "end": 515.8,
+   "text": "with a rifle. It said he used a shotgun to kill his son."
+  },
+  {
+   "start": 516.5,
+   "end": 520.4,
+   "text": "On the initial 911 call, Alex actually referred to the scene as a cold-blooded"
+  },
+  {
+   "start": 520.4,
+   "end": 525.7,
+   "text": "murder. The South Carolina law enforcement division, known as SLED, released redacted audio of that"
+  },
+  {
+   "start": 525.7,
+   "end": 530.8,
+   "text": "call in July. You can hear Alex sounding distraught, telling dispatchers his family members were on"
+  },
+  {
+   "start": 530.8,
+   "end": 536.4,
+   "text": "the ground and not breathing. SLED investigators spent that night and the next morning collecting"
+  },
+  {
+   "start": 536.4,
+   "end": 540.5,
+   "text": "evidence around the kennels. Publicly, the Murdoch family presented a united front."
+  },
+  {
+   "start": 541.1,
+   "end": 545.6,
+   "text": "On June 17, Alex's brothers, John Marvin and Randy, appeared on national television."
+  },
+  {
+   "start": 546.4,
+   "end": 550.2,
+   "text": "They went on Good Morning America and told the public that Alex was completely devastated."
+  },
+  {
+   "start": 550.6,
+   "end": 554.5,
+   "text": "They explicitly stated they did not believe their brother was involved in the killings."
+  },
+  {
+   "start": 554.5,
+   "end": 559.7,
+   "text": "A week later, Alex and his surviving son, Buster, announced a $100,000 reward for"
+  },
+  {
+   "start": 559.7,
+   "end": 564.3,
+   "text": "information leading to a conviction. But the public narrative did not match what was"
+  },
+  {
+   "start": 564.3,
+   "end": 568.8,
+   "text": "happening behind closed doors. It was later revealed that SLED considered Alex a person of"
+  },
+  {
+   "start": 568.8,
+   "end": 573.9,
+   "text": "interest from the very start of the investigation. When prosecutors finally laid out their case,"
+  },
+  {
+   "start": 573.9,
+   "end": 577.9,
+   "text": "they offered a very specific motive. They suggested Alex was desperate for a"
+  },
+  {
+   "start": 577.9,
+   "end": 581.3,
+   "text": "distraction from his financial crimes, which were just beginning to go public."
+  },
+  {
+   "start": 581.9,
+   "end": 585.6,
+   "text": "They argued he committed the murders to garner sympathy and stall the inevitable."
+  },
+  {
+   "start": 586.4,
+   "end": 589.9,
+   "text": "Alex pleaded not guilty to the murder charges and was denied bond."
+  },
+  {
+   "start": 589.9,
+   "end": 593,
+   "text": "Prosecutors announced they would seek life imprisonment without the possibility of"
+  },
+  {
+   "start": 593,
+   "end": 597,
+   "text": "parole rather than the death penalty. The evidence collected at the kennels that night"
+  },
+  {
+   "start": 597,
+   "end": 601.3,
+   "text": "would soon become the center of a massive trial. When you look at the official record of"
+  },
+  {
+   "start": 601.3,
+   "end": 606.4,
+   "text": "that 911 call, there's a slight discrepancy in the timeline. Early reports and some case files"
+  },
+  {
+   "start": 606.4,
+   "end": 612,
+   "text": "note that Alex styled police from his cell phone at exactly 10,006 p.m., but SLED logged the call at"
+  },
+  {
+   "start": 612,
+   "end": 618.1,
+   "text": "10,007 p.m. It is just a one-minute difference, but in a case where the timeline is everything,"
+  },
+  {
+   "start": 618.1,
+   "end": 622.9,
+   "text": "those 60 seconds matter. First responders had to make their way out to the family's massive"
+  },
+  {
+   "start": 622.9,
+   "end": 628.1,
+   "text": "hunting estate. The property sits in Eilinton. That is a small community located about an"
+  },
+  {
+   "start": 628.1,
+   "end": 632.1,
+   "text": "hour north of Hilton Head Island. That is where the investigation began."
+  },
+  {
+   "start": 633,
+   "end": 638.4,
+   "text": "That property is no longer in the family. The estate was later rebranded as Cross Swamp Farm."
+  },
+  {
+   "start": 638.4,
+   "end": 643.7,
+   "text": "It was listed for sale and sold for $3.9 million by people who wanted the land for farming and"
+  },
+  {
+   "start": 643.7,
+   "end": 648.7,
+   "text": "hunting. They had no interest in the main house. The new owners partitioned the buildings in"
+  },
+  {
+   "start": 648.7,
+   "end": 654.8,
+   "text": "about 21 surrounding acres into a separate property. In 2024, they resold that parcel for $1 million,"
+  },
+  {
+   "start": 654.8,
+   "end": 659.2,
+   "text": "which was well below market value. The buyer was a local home restoration professional who"
+  },
+  {
+   "start": 659.2,
+   "end": 664,
+   "text": "quickly made major changes to the layout of the house. While investigators were processing that"
+  },
+  {
+   "start": 664,
+   "end": 669.9,
+   "text": "estate back in June 2021, the family suffered another loss. Just three days later, Alex's father"
+  },
+  {
+   "start": 669.9,
+   "end": 675.4,
+   "text": "passed away. Randolph Murdov III died peacefully at his home on June 10. The Murdov name had"
+  },
+  {
+   "start": 675.4,
+   "end": 681.1,
+   "text": "dominated the local justice system for generations. Randolph III had taken over the prosecutor"
+  },
+  {
+   "start": 681.1,
+   "end": 686.4,
+   "text": "role from his own father, Randolph Jr., who retired in 1986. When Randolph III stepped"
+  },
+  {
+   "start": 686.4,
+   "end": 692,
+   "text": "down, the governor appointed an attorney named Duffy Stone to serve as the 14th Circuit Solicitor in 2006"
+  },
+  {
+   "start": 692,
+   "end": 696.4,
+   "text": "that made Stone the first person without the last name Murdov to hold the position in decades."
+  },
+  {
+   "start": 696.4,
+   "end": 701.2,
+   "text": "The Solicitor website notes he has been elected five times since, most recently in 2024."
+  },
+  {
+   "start": 702,
+   "end": 706.8,
+   "text": "The investigation into the murders eventually blew the lid off Alex's financial history."
+  },
+  {
+   "start": 706.8,
+   "end": 712.9,
+   "text": "By 2023, the record shows Alex faced a staggering 102 grand jury criminal charges."
+  },
+  {
+   "start": 712.9,
+   "end": 717.9,
+   "text": "He was hit with 19 indictments relating to fraud and drug offenses. 99 of those charges came from the"
+  },
+  {
+   "start": 717.9,
+   "end": 722.8,
+   "text": "state grand jury, while three came from Hampton County. As a result of the theft and fraud convictions,"
+  },
+  {
+   "start": 722.8,
+   "end": 727.6,
+   "text": "Alex was disbarred, his assets were seized, and he is currently serving a 40-year prison sentence."
+  },
+  {
+   "start": 728.4,
+   "end": 732.4,
+   "text": "The murder case itself became a massive media event. News outlets called it"
+  },
+  {
+   "start": 732.4,
+   "end": 736.6,
+   "text": "South Carolina's trial of the century. After a five-week trial, the jury deliberated for"
+  },
+  {
+   "start": 736.6,
+   "end": 742.4,
+   "text": "just three hours. On March 2, 2023, they found Alex guilty of both murders. He was handed"
+  },
+  {
+   "start": 742.4,
+   "end": 746.4,
+   "text": "two consecutive life sentences. But that is not where the story ends."
+  },
+  {
+   "start": 747,
+   "end": 752.4,
+   "text": "On May 13, 2026, the South Carolina Supreme Court made a massive ruling that unanimously"
+  },
+  {
+   "start": 752.4,
+   "end": 756.9,
+   "text": "voted to vacate Alex's murder convictions and his life sentence. The court ruled that the"
+  },
+  {
+   "start": 756.9,
+   "end": 761.8,
+   "text": "jury had been tampered with by a court clerk named Becky Hill. Because her actions tainted the trial,"
+  },
+  {
+   "start": 761.8,
+   "end": 765.2,
+   "text": "the justices ordered a completely new trial for the murders of Maggie and Paul."
+  },
+  {
+   "start": 765.9,
+   "end": 768.4,
+   "text": "Prosecutors have already stated they plan to retry the case."
+  },
+  {
+   "start": 769.2,
+   "end": 772.8,
+   "text": "Alex initially claimed that at the time of the killings he had been with his mother, who has"
+  },
+  {
+   "start": 772.8,
+   "end": 778.7,
+   "text": "dementia. However, cell phone data, including video containing Alex's voice, placed him at the scene"
+  },
+  {
+   "start": 778.7,
+   "end": 785.9,
+   "text": "before the murders. In July 2022, a Colleton County grand jury indicted Alex on two counts of murder"
+  },
+  {
+   "start": 785.9,
+   "end": 789.7,
+   "text": "and two counts of possession of a weapon during the commission of a violent crime."
+  },
+  {
+   "start": 789.7,
+   "end": 795.4,
+   "text": "He pleaded not guilty. On the witness stand, he later admitted repeatedly lying to law officers"
+  },
+  {
+   "start": 795.4,
+   "end": 800.7,
+   "text": "about whether he had been at the kennels. Murdoch appealed the conviction. The defense alleged jury"
+  },
+  {
+   "start": 800.7,
+   "end": 805.2,
+   "text": "tampering by Colleton County Clerk of Court Rebecca Hill. They alleged that Hill advised the jury not"
+  },
+  {
+   "start": 805.2,
+   "end": 809.8,
+   "text": "to believe Alex's testimony on the stand. The defense also claimed she pressured them to reach"
+  },
+  {
+   "start": 809.8,
+   "end": 813.9,
+   "text": "a quick guilty verdict and misrepresented information presented during the trial."
+  },
+  {
+   "start": 813.9,
+   "end": 816.4,
+   "text": "Hill even went on to write a book about her time working on the case."
+  },
+  {
+   "start": 817.5,
+   "end": 822.1,
+   "text": "The state Supreme Court ruled 5-0 in favor of Alex's appeal. They stated that the jury's"
+  },
+  {
+   "start": 822.1,
+   "end": 825.8,
+   "text": "efforts were in vain because Hill placed her fingers on the scales of justice."
+  },
+  {
+   "start": 825.8,
+   "end": 829.6,
+   "text": "South Carolina Attorney General Allen Wilson quickly released a statement following the ruling."
+  },
+  {
+   "start": 829.6,
+   "end": 833.6,
+   "text": "He said his office respectfully disagreed with the decision but would aggressively seek to retry"
+  },
+  {
+   "start": 833.6,
+   "end": 837.9,
+   "text": "Alex as soon as possible. Wilson also made it clear that this decision did not mean Alex was"
+  },
+  {
+   "start": 837.9,
+   "end": 843.1,
+   "text": "going free, noting he would remain in prison for his financial crimes. Those financial crimes had"
+  },
+  {
+   "start": 843.1,
+   "end": 848.6,
+   "text": "unraveled at lightning speed back in September 2021. On September 6, Alex released a statement"
+  },
+  {
+   "start": 848.6,
+   "end": 853.2,
+   "text": "through his attorney, Dick Harputlian, to a local news station saying he was resigning an entering"
+  },
+  {
+   "start": 853.2,
+   "end": 859.3,
+   "text": "rehab. The very next day, his former law firm, PMPED, confirmed he resigned after they discovered he"
+  },
+  {
+   "start": 859.3,
+   "end": 864.4,
+   "text": "misappropriated funds. A few days later, on September 13, the state law enforcement division"
+  },
+  {
+   "start": 864.4,
+   "end": 869.2,
+   "text": "announced they had opened a formal investigation into the missing money. The financial walls were"
+  },
+  {
+   "start": 869.2,
+   "end": 873.6,
+   "text": "closing in on Alex by September, but the physical evidence from the night of the murders was"
+  },
+  {
+   "start": 873.6,
+   "end": 878.2,
+   "text": "already a massive problem. When law enforcement arrived at the estate on June 7, they had"
+  },
+  {
+   "start": 878.2,
+   "end": 883.7,
+   "text": "to secure a sprawling outdoor area. The case file shows that process was flawed almost from the very"
+  },
+  {
+   "start": 883.7,
+   "end": 888.5,
+   "text": "beginning. The weather immediately worked against the investigators down by the dog kennels. It was"
+  },
+  {
+   "start": 888.5,
+   "end": 892.8,
+   "text": "a misty June night and rain began falling on the property while police were trying to process the"
+  },
+  {
+   "start": 892.8,
+   "end": 897.3,
+   "text": "area. First responders made a critical choice to cover Maggie and Paul's bodies with standard"
+  },
+  {
+   "start": 897.3,
+   "end": 901.5,
+   "text": "sheets instead of waterproof tarps. That decision allowed the rain to soak right through,"
+  },
+  {
+   "start": 901.5,
+   "end": 906.6,
+   "text": "spoiling a completely exposed outdoor crime scene. The issues went beyond just the weather"
+  },
+  {
+   "start": 906.6,
+   "end": 911.4,
+   "text": "and the tarps. During the murder trial, Alex's defense attorney, Dick Harputlian,"
+  },
+  {
+   "start": 911.4,
+   "end": 914.8,
+   "text": "heavily criticized how the state handled the physical space around the victims."
+  },
+  {
+   "start": 915.4,
+   "end": 919.2,
+   "text": "The record shows police reportedly failed to collect various pieces of physical evidence"
+  },
+  {
+   "start": 919.2,
+   "end": 923.2,
+   "text": "before the scene was officially cleared. Once crucial evidence is left behind in the mud"
+  },
+  {
+   "start": 923.2,
+   "end": 928,
+   "text": "and rain, investigators can never get it back. The scene was also heavily compromised by"
+  },
+  {
+   "start": 928,
+   "end": 932.8,
+   "text": "unnecessary foot traffic. First responders, family members, and friends were all seen walking"
+  },
+  {
+   "start": 932.8,
+   "end": 937.6,
+   "text": "right through the taped off restricted areas. You have an unsolved double homicide on a massive"
+  },
+  {
+   "start": 937.6,
+   "end": 941.6,
+   "text": "rural property and unauthorized people are just pacing through the exact spots where a"
+  },
+  {
+   "start": 941.6,
+   "end": 945,
+   "text": "shooter might have stood. It is a complete nightmare for forensic integrity."
+  },
+  {
+   "start": 945.7,
+   "end": 949.8,
+   "text": "The timeline of how quickly law enforcement handed the property back is also a major"
+  },
+  {
+   "start": 949.8,
+   "end": 953.9,
+   "text": "sticking point in the record. The crime scene at the kennels was released back to the Murdoff"
+  },
+  {
+   "start": 953.9,
+   "end": 958.8,
+   "text": "family a mere 12 hours after the murders took place. Alex's brother John Marvin actually"
+  },
+  {
+   "start": 958.8,
+   "end": 962.7,
+   "text": "went down to the kennels shortly after the police tape came down. He quickly began cleaning"
+  },
+  {
+   "start": 962.8,
+   "end": 966.1,
+   "text": "up Paul's blood and brain matter later stating he just felt compelled to do it."
+  },
+  {
+   "start": 967,
+   "end": 971.4,
+   "text": "While the physical crime scene was deteriorating, investigators were pulling digital evidence."
+  },
+  {
+   "start": 971.4,
+   "end": 975.1,
+   "text": "When you look at the record, Alex's phone activity showed a sudden burst of movement"
+  },
+  {
+   "start": 975.1,
+   "end": 979.2,
+   "text": "at 9,002 pm that night. They also pulled the GPS data from his car."
+  },
+  {
+   "start": 979.8,
+   "end": 983.6,
+   "text": "It recorded him driving 80 miles per hour to and from his parents home."
+  },
+  {
+   "start": 983.6,
+   "end": 987.7,
+   "text": "During that drive, he passed the exact spot where Maggie's phone was later found discarded"
+  },
+  {
+   "start": 987.7,
+   "end": 992.4,
+   "text": "on the side of the road. As the investigation dragged on into the fall, the financial side"
+  },
+  {
+   "start": 992.4,
+   "end": 998.2,
+   "text": "of the case blew wide open. In September 2021, Alex gave broad powers of attorney to his surviving"
+  },
+  {
+   "start": 998.2,
+   "end": 1003,
+   "text": "son, Buster. This gave Buster the authority to sell and dispose of his father's assets."
+  },
+  {
+   "start": 1003.6,
+   "end": 1007.5,
+   "text": "They quickly placed the family's Edisto Beach House on the market for $9,000.00."
+  },
+  {
+   "start": 1008.8,
+   "end": 1013.7,
+   "text": "But the court stepped in before the money could disappear. On November 1, 2021,"
+  },
+  {
+   "start": 1013.7,
+   "end": 1018.4,
+   "text": "a judge ordered all of the Murdoff assets to be frozen. Evidence suggested the family"
+  },
+  {
+   "start": 1018.4,
+   "end": 1022.1,
+   "text": "was trying to move and hide money from potential creditors and multiple plaintiffs."
+  },
+  {
+   "start": 1022.1,
+   "end": 1026.6,
+   "text": "Alex and Buster actually tried to overturn the order. They claimed they had no money left to pay"
+  },
+  {
+   "start": 1026.6,
+   "end": 1031.3,
+   "text": "for food, medical insurance, or utilities. The assets were ultimately placed into a"
+  },
+  {
+   "start": 1031.3,
+   "end": 1035.9,
+   "text": "receivership to protect them. The professional consequences for Alex also became permanent."
+  },
+  {
+   "start": 1036.6,
+   "end": 1041.4,
+   "text": "On July 12, 2022, the court officially disbarred him. The court cited his admitted"
+  },
+  {
+   "start": 1041.4,
+   "end": 1045.6,
+   "text": "reprehensible misconduct. Alex was given the opportunity to contest the disbarment,"
+  },
+  {
+   "start": 1045.6,
+   "end": 1050.4,
+   "text": "but he did not. As we discussed, the crime scene was spoiled by rain. Police reportedly"
+  },
+  {
+   "start": 1050.4,
+   "end": 1053.8,
+   "text": "failed to collect various evidence, and family members and friends were allowed to walk through"
+  },
+  {
+   "start": 1053.8,
+   "end": 1059.6,
+   "text": "the scene. SLED investigators kept their cards close to the chest. They were quietly working"
+  },
+  {
+   "start": 1059.6,
+   "end": 1063.6,
+   "text": "through the cell phone data and the ballistic evidence left in the rain. They built their case"
+  },
+  {
+   "start": 1063.6,
+   "end": 1069.2,
+   "text": "through the summer and into the fall. Then came October, 2021, when it was revealed that SLED"
+  },
+  {
+   "start": 1069.2,
+   "end": 1073.2,
+   "text": "had regarded Alex as a person of interest in the homicide since the start of the investigation."
+  },
+  {
+   "start": 1074,
+   "end": 1078,
+   "text": "This was not a new development for the investigators. The man who made that"
+  },
+  {
+   "start": 1078,
+   "end": 1083.3,
+   "text": "frantic 911 call had been in their crosshairs since night one. But now it was public."
+  },
+  {
+   "start": 1084.2,
+   "end": 1088.6,
+   "text": "This shift in the investigation turned a local tragedy into a national obsession."
+  },
+  {
+   "start": 1088.6,
+   "end": 1092.5,
+   "text": "The case became arguably one of the most high-profile and sensational cases in"
+  },
+  {
+   "start": 1092.5,
+   "end": 1097.2,
+   "text": "South Carolina legal history. Media outlets and independent creators rushed to cover"
+  },
+  {
+   "start": 1097.2,
+   "end": 1102.1,
+   "text": "every single development. In 2021, reporters Liz Farrell and Mandy Matney launched the"
+  },
+  {
+   "start": 1102.1,
+   "end": 1107.3,
+   "text": "Murdoch Murders podcast. Television networks quickly followed suit. HBO Max released a"
+  },
+  {
+   "start": 1107.3,
+   "end": 1112.4,
+   "text": "documentary called Low Country. Investigation Discovery put out Deadly Dynasty and Netflix"
+  },
+  {
+   "start": 1112.4,
+   "end": 1117.3,
+   "text": "dropped a Southern scandal. There was also a dramatized movie on Lifetime. The public could"
+  },
+  {
+   "start": 1117.3,
+   "end": 1122.3,
+   "text": "not look away from the downfall of this Low Country legal dynasty. People wanted to know"
+  },
+  {
+   "start": 1122.3,
+   "end": 1127.2,
+   "text": "everything about the man at the center of it all. Richard Owens and Murdoch was born on May 27,"
+  },
+  {
+   "start": 1127.2,
+   "end": 1132.5,
+   "text": "1968. He earned his undergraduate degree from the University of South Carolina in 1990."
+  },
+  {
+   "start": 1132.5,
+   "end": 1136.8,
+   "text": "He built his career at the firm officially known as Peters, Murdoch, Parker,"
+  },
+  {
+   "start": 1136.8,
+   "end": 1141.9,
+   "text": "Eltsroth and Dietrich. The public also learned more about the victims and the surviving son."
+  },
+  {
+   "start": 1142.4,
+   "end": 1148.4,
+   "text": "Maggie was born Margaret Kennedy Brandstetter on September 15, 1968. The surviving son, Buster,"
+  },
+  {
+   "start": 1148.4,
+   "end": 1154,
+   "text": "was born on April 11, 1996. While the murder case grabbed the headlines, the financial cases"
+  },
+  {
+   "start": 1154,
+   "end": 1158.8,
+   "text": "were quietly moving forward. Owens officially pleaded guilty to a series of financial crimes,"
+  },
+  {
+   "start": 1158.8,
+   "end": 1162.5,
+   "text": "but the overlap between the stolen money and the murders created a massive legal issue."
+  },
+  {
+   "start": 1163.2,
+   "end": 1167.4,
+   "text": "When the state Supreme Court eventually overturned the murder convictions in 2026,"
+  },
+  {
+   "start": 1167.4,
+   "end": 1172.3,
+   "text": "they cited more than just jury tampering. The justices stated that the trial court allowed"
+  },
+  {
+   "start": 1172.3,
+   "end": 1176.9,
+   "text": "the state to go far too deep into Alex's financial crimes. They ruled that those financial details"
+  },
+  {
+   "start": 1176.9,
+   "end": 1181.3,
+   "text": "were not probative of the state's theory of motive. Instead, the court stated that including"
+  },
+  {
+   "start": 1181.3,
+   "end": 1185.3,
+   "text": "all that financial evidence created a considerable danger of unfair prejudice against Alex."
+  },
+  {
+   "start": 1186,
+   "end": 1189.8,
+   "text": "We already know Alex's alibi fell apart because of that video at the Kennels,"
+  },
+  {
+   "start": 1189.8,
+   "end": 1193.5,
+   "text": "but getting that digital proof into a courtroom was a massive hurdle for the state."
+  },
+  {
+   "start": 1194.1,
+   "end": 1198.2,
+   "text": "Investigators had to dig deep into the cell phone data from both victims to map out their"
+  },
+  {
+   "start": 1198.2,
+   "end": 1203.2,
+   "text": "final moments. Paul was actually communicating with people right up until the end. When the"
+  },
+  {
+   "start": 1203.2,
+   "end": 1208,
+   "text": "trial began, prosecutors brought in two of his close friends to take the stand. They testified"
+  },
+  {
+   "start": 1208,
+   "end": 1211.8,
+   "text": "about their interactions with the family and their specific communications with Paul"
+  },
+  {
+   "start": 1211.8,
+   "end": 1217.2,
+   "text": "moments before his death. The prosecution also asked the judge to compel a representative of Snapchat"
+  },
+  {
+   "start": 1217.2,
+   "end": 1222.4,
+   "text": "to testify about a video posted by Paul minutes before his death. But the recording at the center"
+  },
+  {
+   "start": 1222.4,
+   "end": 1226.9,
+   "text": "of the case was the one from the Kennels at 8044 p.m. with Alex's voice in the background."
+  },
+  {
+   "start": 1227.6,
+   "end": 1231.2,
+   "text": "The prosecution also presented another crucial piece of audio during the trial."
+  },
+  {
+   "start": 1231.2,
+   "end": 1235.1,
+   "text": "They brought in witnesses to testify about an interview conducted with Alex in a car on"
+  },
+  {
+   "start": 1235.1,
+   "end": 1240.4,
+   "text": "June 21, 2021. The state emphasized a specific moment in that recording for the jury."
+  },
+  {
+   "start": 1241.1,
+   "end": 1246.3,
+   "text": "In the audio, Alex is heard talking about his son. The prosecution argued that Alex said,"
+  },
+  {
+   "start": 1246.3,
+   "end": 1250.9,
+   "text": "it is just so bad, I did him so bad. The defense team immediately fought back,"
+  },
+  {
+   "start": 1250.9,
+   "end": 1255.1,
+   "text": "disputing the audio and claiming the recording actually said they instead of I."
+  },
+  {
+   "start": 1256,
+   "end": 1260.7,
+   "text": "The digital witness went beyond just audio and video clips. The state built a massive"
+  },
+  {
+   "start": 1260.7,
+   "end": 1265.5,
+   "text": "technological timeline to prove their case. They brought in an expert witness to testify"
+  },
+  {
+   "start": 1265.5,
+   "end": 1271.1,
+   "text": "specifically about the data collected from Maggie's phone. To tie it all together, prosecutors called a"
+  },
+  {
+   "start": 1271.1,
+   "end": 1275.7,
+   "text": "sled agent to testify about a timeline for the events of June 7, aggregating all of the data"
+  },
+  {
+   "start": 1275.7,
+   "end": 1280.8,
+   "text": "collected from various sources. They did not just rely on the victims' devices. The agent"
+  },
+  {
+   "start": 1280.8,
+   "end": 1285.5,
+   "text": "combined the cell phone data from Maggie, Paul and Alex with local cell phone tower pings."
+  },
+  {
+   "start": 1285.5,
+   "end": 1289.6,
+   "text": "They even layered in the car telemetry data to track Alex's exact movements that night."
+  },
+  {
+   "start": 1290.4,
+   "end": 1295.7,
+   "text": "The murder trial officially opened on January 25, 2023. Proceedings took place in the 14th"
+  },
+  {
+   "start": 1295.7,
+   "end": 1300.4,
+   "text": "Circuit of the South Carolina Circuit Court. After years of public speculation and financial"
+  },
+  {
+   "start": 1300.4,
+   "end": 1305.2,
+   "text": "scandals, Alex Murdoch was finally sitting in front of a jury. The state built their case"
+  },
+  {
+   "start": 1305.2,
+   "end": 1310,
+   "text": "over several weeks, resting on February 17. Their first witnesses were the responders who arrived"
+  },
+  {
+   "start": 1310,
+   "end": 1315.2,
+   "text": "right after Alex made that 911 call. Prosecutors also brought in state agents to lay out the"
+  },
+  {
+   "start": 1315.2,
+   "end": 1319.6,
+   "text": "firearms and ballistics evidence. They called former colleagues and clients to testify about"
+  },
+  {
+   "start": 1319.6,
+   "end": 1324.6,
+   "text": "Alex's financial situation right before the murders. A local bank executive even took the"
+  },
+  {
+   "start": 1324.6,
+   "end": 1330.1,
+   "text": "stand to detail their discovery of his theft. But the defense strategy was clear from the start."
+  },
+  {
+   "start": 1330.1,
+   "end": 1335.2,
+   "text": "Attorney Dick Harputlian led the charge by relentlessly attacking the state's investigation."
+  },
+  {
+   "start": 1335.2,
+   "end": 1340.5,
+   "text": "He pointed right at the decisions made by first responders. The defense heavily criticized"
+  },
+  {
+   "start": 1340.5,
+   "end": 1344.9,
+   "text": "what they saw as total police incompetence. They brought in their own expert witnesses to"
+  },
+  {
+   "start": 1344.9,
+   "end": 1349.6,
+   "text": "hammer this idea home for the jury. One was a crime scene engineer who recreated the physical"
+  },
+  {
+   "start": 1349.6,
+   "end": 1354.2,
+   "text": "space around the kennels. That engineer argued that the calculated height of the shooter did"
+  },
+  {
+   "start": 1354.2,
+   "end": 1358.9,
+   "text": "not match Alex's actual height. Harputlian's team also called the Colleton County Coroner to the"
+  },
+  {
+   "start": 1358.9,
+   "end": 1363.4,
+   "text": "stand to question the state's timeline. The coroner testified that he had only estimated"
+  },
+  {
+   "start": 1363.4,
+   "end": 1367.3,
+   "text": "the victim's body temperatures, making the official time of death just an estimate."
+  },
+  {
+   "start": 1368.1,
+   "end": 1373.5,
+   "text": "The defense also brought in a bloodstain spatter expert named Tim Palmback. The record shows Palmback"
+  },
+  {
+   "start": 1373.5,
+   "end": 1379.2,
+   "text": "has testified in other high-profile trials, including the Michael Peterson case. He testified that whoever"
+  },
+  {
+   "start": 1379.2,
+   "end": 1382.9,
+   "text": "fired those weapons at such close range would have been completely covered in blood in gunshot"
+  },
+  {
+   "start": 1382.9,
+   "end": 1387.4,
+   "text": "residue. Palmback told the jury that the physical evidence was actually consistent with two shooters"
+  },
+  {
+   "start": 1387.4,
+   "end": 1392.4,
+   "text": "being present. They even had a pathologist dispute the state's findings on the entrance and exit"
+  },
+  {
+   "start": 1392.4,
+   "end": 1397.6,
+   "text": "wounds on Paul's body. The defense wanted the jury to believe law enforcement botched the scene and"
+  },
+  {
+   "start": 1397.6,
+   "end": 1403.6,
+   "text": "rushed to judgment. On February 21, the defense called Buster to the stand. Their final witness was"
+  },
+  {
+   "start": 1403.6,
+   "end": 1409.5,
+   "text": "John Marvin. But the biggest moment of the trial came on February 23. Alex Murdoch took the stand"
+  },
+  {
+   "start": 1409.5,
+   "end": 1414.2,
+   "text": "in his own defense. He flatly denied shooting his wife and son. He did, however, admit to"
+  },
+  {
+   "start": 1414.2,
+   "end": 1418.8,
+   "text": "stealing from his legal clients and his firm. He also confessed on the record to asking a"
+  },
+  {
+   "start": 1418.8,
+   "end": 1423.9,
+   "text": "relative to shoot him in that staged roadside incident. Alex finished his testimony the next day."
+  },
+  {
+   "start": 1424.7,
+   "end": 1429.2,
+   "text": "The record shows Judge Newman dismissed the jury immediately after it concluded. The defense"
+  },
+  {
+   "start": 1429.2,
+   "end": 1433.5,
+   "text": "officially rested their case on February 27 and asked for a directed verdict, which the judge"
+  },
+  {
+   "start": 1433.5,
+   "end": 1438.6,
+   "text": "quickly denied. The state then lost a reply case. Wilson personally conducted the direct"
+  },
+  {
+   "start": 1438.6,
+   "end": 1443.3,
+   "text": "examination of their final crime scene expert. When those court proceedings finally kicked"
+  },
+  {
+   "start": 1443.3,
+   "end": 1447.7,
+   "text": "off, the public could not look away. Because of the intense public interest in the case,"
+  },
+  {
+   "start": 1447.7,
+   "end": 1452,
+   "text": "the verdict would later be transmitted live across the United States on major broadcast and"
+  },
+  {
+   "start": 1452,
+   "end": 1457.5,
+   "text": "cable news networks. It is not hard to see why news outlets called it the trial of the century."
+  },
+  {
+   "start": 1457.5,
+   "end": 1461.7,
+   "text": "You had a disgraced lawyer from a powerful local dynasty sitting at the defense table"
+  },
+  {
+   "start": 1461.7,
+   "end": 1466.1,
+   "text": "accused of killing his own wife and son. The coverage went far beyond the local news"
+  },
+  {
+   "start": 1466.1,
+   "end": 1471,
+   "text": "cycle and turned a double homicide into a true crime sensation. The public interest in the"
+  },
+  {
+   "start": 1471,
+   "end": 1476.5,
+   "text": "case was intense. The media machine just kept churning out new material year after year."
+  },
+  {
+   "start": 1476.5,
+   "end": 1482.5,
+   "text": "In 2024, a television series called Storm of Suspicion dedicated two full episodes to the saga."
+  },
+  {
+   "start": 1482.5,
+   "end": 1486.3,
+   "text": "They called the first part fatal fog, focusing entirely on the bow crash,"
+  },
+  {
+   "start": 1486.3,
+   "end": 1490.7,
+   "text": "while the second part covered the murders at the estate. The content never really stopped"
+  },
+  {
+   "start": 1490.7,
+   "end": 1496.8,
+   "text": "coming. Hula released a project in 2025 called Death in the Family. By 2026, Netflix dropped"
+  },
+  {
+   "start": 1496.8,
+   "end": 1501.1,
+   "text": "another documentary specifically focused on his unconvicted status after that ruling."
+  },
+  {
+   "start": 1501.7,
+   "end": 1505.5,
+   "text": "The sheer volume of podcasts, articles, and television specials made the case"
+  },
+  {
+   "start": 1505.5,
+   "end": 1510,
+   "text": "impossible to ignore. But in a courtroom, the only thing that matters is what the evidence actually"
+  },
+  {
+   "start": 1510,
+   "end": 1514.7,
+   "text": "shows. The jury had to step into that highly charged environment and try to tune out the national"
+  },
+  {
+   "start": 1514.7,
+   "end": 1519.7,
+   "text": "obsession. That national obsession eventually bled right into the jury room. Colton County"
+  },
+  {
+   "start": 1519.7,
+   "end": 1523.8,
+   "text": "clerk of court, Becky Hill, published a book about the trial called Behind the Doors of Justice,"
+  },
+  {
+   "start": 1523.8,
+   "end": 1527.6,
+   "text": "but the record shows she did not write all of it. Her co-author, Neil Gordon,"
+  },
+  {
+   "start": 1527.6,
+   "end": 1531.3,
+   "text": "discovered she actually plagiarized excerpts from a BBC news reporter named Holly"
+  },
+  {
+   "start": 1531.3,
+   "end": 1536.4,
+   "text": "Hondrick. Hill passed a stolen text off as her own words. Once the plagiarism was exposed,"
+  },
+  {
+   "start": 1536.4,
+   "end": 1541.9,
+   "text": "the book was quickly withdrawn from circulation. Hill's legal troubles did not stop there. In May"
+  },
+  {
+   "start": 1541.9,
+   "end": 1546.4,
+   "text": "2025, she was charged with three felonies following an independent state investigation."
+  },
+  {
+   "start": 1546.4,
+   "end": 1549.9,
+   "text": "By December of that year, she pleaded guilty to obstruction of justice,"
+  },
+  {
+   "start": 1549.9,
+   "end": 1554.8,
+   "text": "perjury, and misconduct in office. She admitted to revealing sealed court exhibits"
+  },
+  {
+   "start": 1554.8,
+   "end": 1558.6,
+   "text": "to a member of the media and lying about it. She also confessed to using her elected"
+  },
+  {
+   "start": 1558.6,
+   "end": 1563.1,
+   "text": "office to promote her book. The judge sentenced her to three years of probation."
+  },
+  {
+   "start": 1563.8,
+   "end": 1567.7,
+   "text": "The fallout from her actions is still playing out in the legal system. On May 18,"
+  },
+  {
+   "start": 1567.7,
+   "end": 1573,
+   "text": "2026, just days after his murder convictions were vacated, Alex filed a federal lawsuit against"
+  },
+  {
+   "start": 1573,
+   "end": 1576.8,
+   "text": "Hill. He officially accused the former clerk of violating his civil rights."
+  },
+  {
+   "start": 1577.7,
+   "end": 1581.8,
+   "text": "That federal lawsuit against Rebecca Hill is just the latest twist in a legal saga that"
+  },
+  {
+   "start": 1581.8,
+   "end": 1586.8,
+   "text": "keeps rewriting itself. To understand how we got here, we have to look at exactly what happened"
+  },
+  {
+   "start": 1586.8,
+   "end": 1591.9,
+   "text": "inside that jury room. The public record now includes sworn affidavits from the jurors who decided"
+  },
+  {
+   "start": 1591.9,
+   "end": 1597.6,
+   "text": "Alex's fate. Those documents show exactly how the tampering played out. One juror testified that"
+  },
+  {
+   "start": 1597.6,
+   "end": 1602.4,
+   "text": "when deliberations began, Hill explicitly told them it should not take long. That same juror"
+  },
+  {
+   "start": 1602.4,
+   "end": 1607,
+   "text": "admitted in a sworn statement that she had questions about Alex's guilt. She ultimately"
+  },
+  {
+   "start": 1607,
+   "end": 1611.9,
+   "text": "voted to convict because she felt pressured by the other jurors. Other jurors came forward"
+  },
+  {
+   "start": 1611.9,
+   "end": 1616,
+   "text": "with similar stories about Hill's behavior. One testified that Hill told them to watch"
+  },
+  {
+   "start": 1616,
+   "end": 1620.7,
+   "text": "Alex's body language while he was on the stand. Another said the clerk called the day of Alex's"
+  },
+  {
+   "start": 1620.7,
+   "end": 1626.4,
+   "text": "testimony an epic day. The person responsible for the jury was actively trying to steer their decision."
+  },
+  {
+   "start": 1627.2,
+   "end": 1631.6,
+   "text": "None of this was known when the jury returned a guilty verdict on all four counts on March 2,"
+  },
+  {
+   "start": 1631.6,
+   "end": 1637,
+   "text": "2023. At the time, Judge Newman denied a motion for a mistrial. He stated on the record that"
+  },
+  {
+   "start": 1637,
+   "end": 1642.6,
+   "text": "the evidence of guilt was overwhelming. The next morning at 10,008 a.m., Alex received two"
+  },
+  {
+   "start": 1642.6,
+   "end": 1647.4,
+   "text": "consecutive life sentences without parole. It looked like the book was finally closed on the"
+  },
+  {
+   "start": 1647.4,
+   "end": 1652.7,
+   "text": "Murdoch murders, but the justice system demands an impartial jury untainted by external forces."
+  },
+  {
+   "start": 1652.7,
+   "end": 1656.3,
+   "text": "When the state Supreme Court reviewed the juror affidavits, they issued a scathing,"
+  },
+  {
+   "start": 1656.3,
+   "end": 1661.5,
+   "text": "unanimous opinion. The justices describe Hill's conduct as a breathtaking and disgraceful effort"
+  },
+  {
+   "start": 1661.5,
+   "end": 1665.8,
+   "text": "to undermine the process. That brings us to the massive ruling on May 13,"
+  },
+  {
+   "start": 1665.8,
+   "end": 1671.5,
+   "text": "2026. They ruled that her actions denied Alex his constitutional right to a fair trial."
+  },
+  {
+   "start": 1671.5,
+   "end": 1676.4,
+   "text": "The decision wiped out the guilty verdicts completely. But this story is far from over."
+  },
+  {
+   "start": 1676.4,
+   "end": 1680,
+   "text": "Attorney General Allen Wilson reminded the public that Alex is not going free,"
+  },
+  {
+   "start": 1680,
+   "end": 1682.8,
+   "text": "as he is still serving 40 years for those financial crimes."
+  },
+  {
+   "start": 1683.5,
+   "end": 1687.3,
+   "text": "Wilson said he plans to retry the case. We will have to wait and see what a second"
+  },
+  {
+   "start": 1687.3,
+   "end": 1690.1,
+   "text": "trial uncovers. Read the file, form your own conclusion."
+  },
+  {
+   "start": 1690.9,
+   "end": 1694.5,
+   "text": "That's it for this one. Thanks for hanging out with me. This has been Crime Time Snacks,"
+  },
+  {
+   "start": 1694.5,
+   "end": 1701.3,
+   "text": "and I'll catch you next time."
+  }
+ ]
+}

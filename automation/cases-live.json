@@ -1,6 +1,23 @@
 {
-  "fetched": "2026-09-24T05:01:05.823Z",
+  "fetched": "2026-09-24T05:44:51.644Z",
   "cases": [
+    {
+      "slug": "maura-murray",
+      "title": "Maura Murray",
+      "summary": "A crashed car on Route 112 in New Hampshire, a disappearance in under ten minutes, and twenty years of no answers.",
+      "angle": "A crashed car on Route 112 in New Hampshire, a disappearance in under ten minutes, and twenty years of no answers.",
+      "years": "2004",
+      "status": "closed",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "",
+      "episode_slug": "",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+    },
     {
       "slug": "moscow-idaho-the-plea",
       "title": "Murders in Moscow: The Plea",
@@ -16,7 +33,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "jonbenet-thirty-years",
@@ -33,41 +50,24 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
-      "slug": "gilgo-beach-eight-names",
-      "title": "Gilgo Beach: Eight Names",
-      "summary": "In April 2026, Rex Heuermann was asked how he killed eight women. He gave the same one-word answer each time. Hey everyone, it's Cory. This time on CrimeTimeSnacks: the Gilgo Beach murders from the 911 call that started the search to the guilty plea that ended it. Who the women were, why the case stalled for a decade, the truck and the pizza crust that broke it, and what is still unanswered: Shannan Gilbert, the victim known as Asian Doe, and a mother and daughter whose case turned out to be something else.",
+      "slug": "the-murdaugh-family-murders",
+      "title": "The Murdaugh Family Murders",
+      "summary": "Hey everyone, Cory here. Today we are looking at a case that completely consumed the South Carolina Lowcountry. The Murdaugh family was a legal dynasty, but everything started to unravel on a June night in 2021 when Maggie and Paul Murdaugh were found dead near the dog kennels of their hunting lodge.\n\nAlex Murdaugh claimed he was visiting his mother who had dementia when the murders happened. But as investigators dug deeper, cellphone data and a crucial video started telling a very different story. We are diving into the timeline, the botched crime scene, and the massive trial that followed.",
       "angle": "",
       "years": "2026",
       "status": "open",
       "category": "case",
       "next_date": null,
       "next_label": "",
-      "image": "/images/episodes/gilgo-beach-eight-names.jpg",
-      "episode_slug": "gilgo-beach-eight-names",
+      "image": "/images/episodes/the-murdaugh-family-murders.jpg",
+      "episode_slug": "the-murdaugh-family-murders",
       "sources": [],
       "featured": false,
-      "created_at": "2026-09-20T17:04:47.335399+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
-    },
-    {
-      "slug": "murders-in-moscow",
-      "title": "Murders in Moscow",
-      "summary": "In this gripping episode of Crime Time Snacks , we delve into the harrowing case of the Idaho student murders that rocked the nation. On November 13, 2022, four University of Idaho students — Ethan Chapin, Madison Mogen, Xana Kernodle, and Kaylee Goncalves — were tragically murdered in their off-campus rental home in Moscow, Idaho. This episode unpacks the chilling events, the ongoing investigation, and the complexities surrounding the case.",
-      "angle": "",
-      "years": "2025",
-      "status": "convicted",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "/images/episodes/murders-in-moscow.jpg",
-      "episode_slug": "murders-in-moscow",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "created_at": "2026-09-24T05:44:46.08741+00:00",
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "golden-state-killer",
@@ -84,7 +84,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "gabby-petito",
@@ -101,7 +101,41 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+    },
+    {
+      "slug": "gilgo-beach-eight-names",
+      "title": "Gilgo Beach: Eight Names",
+      "summary": "In April 2026, Rex Heuermann was asked how he killed eight women. He gave the same one-word answer each time. Hey everyone, it's Cory. This time on CrimeTimeSnacks: the Gilgo Beach murders from the 911 call that started the search to the guilty plea that ended it. Who the women were, why the case stalled for a decade, the truck and the pizza crust that broke it, and what is still unanswered: Shannan Gilbert, the victim known as Asian Doe, and a mother and daughter whose case turned out to be something else.",
+      "angle": "",
+      "years": "2026",
+      "status": "open",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "/images/episodes/gilgo-beach-eight-names.jpg",
+      "episode_slug": "gilgo-beach-eight-names",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-20T17:04:47.335399+00:00",
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+    },
+    {
+      "slug": "murders-in-moscow",
+      "title": "Murders in Moscow",
+      "summary": "In this gripping episode of Crime Time Snacks , we delve into the harrowing case of the Idaho student murders that rocked the nation. On November 13, 2022, four University of Idaho students — Ethan Chapin, Madison Mogen, Xana Kernodle, and Kaylee Goncalves — were tragically murdered in their off-campus rental home in Moscow, Idaho. This episode unpacks the chilling events, the ongoing investigation, and the complexities surrounding the case.",
+      "angle": "",
+      "years": "2025",
+      "status": "convicted",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "/images/episodes/murders-in-moscow.jpg",
+      "episode_slug": "murders-in-moscow",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "long-island-serial-killer",
@@ -118,7 +152,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "chris-watts-confession",
@@ -135,7 +169,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "elisa-lam",
@@ -152,7 +186,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "alex-murdaugh",
@@ -169,7 +203,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "btk-dennis-rader",
@@ -186,7 +220,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "zodiac-killer",
@@ -203,7 +237,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "lori-vallow",
@@ -220,24 +254,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
-    },
-    {
-      "slug": "maura-murray",
-      "title": "Maura Murray",
-      "summary": "A crashed car on Route 112 in New Hampshire, a disappearance in under ten minutes, and twenty years of no answers.",
-      "angle": "A crashed car on Route 112 in New Hampshire, a disappearance in under ten minutes, and twenty years of no answers.",
-      "years": "2004",
-      "status": "closed",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "",
-      "episode_slug": "",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "brian-laundrie-notebook",
@@ -254,7 +271,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "kendrick-johnson",
@@ -271,7 +288,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "erik-and-lyle-the-menendez-brothers",
@@ -288,58 +305,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
-    },
-    {
-      "slug": "scott-peterson",
-      "title": "Scott Peterson",
-      "summary": "The Christmas Eve disappearance of Laci Peterson, the Berkeley Marina, and what the LA Innocence Project is now arguing.",
-      "angle": "The Christmas Eve disappearance of Laci Peterson, the Berkeley Marina, and what the LA Innocence Project is now arguing.",
-      "years": "2002-present",
-      "status": "open",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "",
-      "episode_slug": "",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
-    },
-    {
-      "slug": "ted-bundy-escape",
-      "title": "Ted Bundy: The Two Escapes",
-      "summary": "The courthouse window in Aspen, the ceiling in Glenwood Springs, and the Florida murders that followed.",
-      "angle": "The courthouse window in Aspen, the ceiling in Glenwood Springs, and the Florida murders that followed.",
-      "years": "1977-1978",
-      "status": "closed",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "",
-      "episode_slug": "",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
-    },
-    {
-      "slug": "jonbenet-ramsey-dna",
-      "title": "JonBenet Ramsey: The DNA",
-      "summary": "What the touch DNA tested in 2008 did and did not prove, and why Boulder reopened testing in 2023.",
-      "angle": "What the touch DNA tested in 2008 did and did not prove, and why Boulder reopened testing in 2023.",
-      "years": "1996-present",
-      "status": "open",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "",
-      "episode_slug": "",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "delphi-the-appeal",
@@ -356,7 +322,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "the-menendez-brothers-parole-years",
@@ -373,7 +339,58 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-19T10:46:49.066069+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+    },
+    {
+      "slug": "scott-peterson",
+      "title": "Scott Peterson",
+      "summary": "The Christmas Eve disappearance of Laci Peterson, the Berkeley Marina, and what the LA Innocence Project is now arguing.",
+      "angle": "The Christmas Eve disappearance of Laci Peterson, the Berkeley Marina, and what the LA Innocence Project is now arguing.",
+      "years": "2002-present",
+      "status": "open",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "",
+      "episode_slug": "",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+    },
+    {
+      "slug": "ted-bundy-escape",
+      "title": "Ted Bundy: The Two Escapes",
+      "summary": "The courthouse window in Aspen, the ceiling in Glenwood Springs, and the Florida murders that followed.",
+      "angle": "The courthouse window in Aspen, the ceiling in Glenwood Springs, and the Florida murders that followed.",
+      "years": "1977-1978",
+      "status": "closed",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "",
+      "episode_slug": "",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+    },
+    {
+      "slug": "jonbenet-ramsey-dna",
+      "title": "JonBenet Ramsey: The DNA",
+      "summary": "What the touch DNA tested in 2008 did and did not prove, and why Boulder reopened testing in 2023.",
+      "angle": "What the touch DNA tested in 2008 did and did not prove, and why Boulder reopened testing in 2023.",
+      "years": "1996-present",
+      "status": "open",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "",
+      "episode_slug": "",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "adnan-syed",
@@ -390,7 +407,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "amanda-knox",
@@ -407,7 +424,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "kohberger-trial",
@@ -424,7 +441,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "delphi-richard-allen",
@@ -441,7 +458,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "casey-anthony",
@@ -458,7 +475,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "steven-avery",
@@ -475,7 +492,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "madeleine-mccann",
@@ -492,7 +509,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "tylenol-murders",
@@ -509,7 +526,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "dnd-mcstay-family",
@@ -526,7 +543,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "menendez-the-parole-years",
@@ -543,7 +560,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "the-delphi-murder-case-2017",
@@ -560,7 +577,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "the-miami-apartment-stabbing",
@@ -577,7 +594,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-21T02:23:51.906377+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "the-interrogation-of-chris-watts",
@@ -594,7 +611,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-18T12:30:03.688863+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "watts-family-murders",
@@ -611,7 +628,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "jonbenet-ramsey-the-facts-96-22",
@@ -628,7 +645,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     },
     {
       "slug": "jonbenet-ramsey-americas-child-beauty-queen",
@@ -645,7 +662,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-23T03:34:15.979185+00:00"
+      "updated_at": "2026-09-24T05:44:46.08741+00:00"
     }
   ],
   "updates": [
@@ -692,6 +709,7 @@
   ],
   "counts": {
     "chris-watts-confession": 0,
+    "the-murdaugh-family-murders": 0,
     "casey-anthony": 0,
     "elisa-lam": 0,
     "erik-and-lyle-the-menendez-brothers": 0,

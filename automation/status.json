@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-24T05:01:06.723Z",
+  "generated": "2026-09-24T05:44:52.412Z",
   "improvementsShipped": 510,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
@@ -10,7 +10,7 @@
     "sync": "Every 6 hours"
   },
   "counts": {
-    "episodes": 16,
+    "episodes": 17,
     "posts": 17,
     "merchDesigns": 34,
     "merchCollection": 0,
@@ -23,8 +23,8 @@
   },
   "latest": {
     "episode": {
-      "title": "Elisa Lam and the Cecil Hotel",
-      "date": "2026-09-23"
+      "title": "The Murdaugh Family Murders",
+      "date": "2026-09-24"
     },
     "post": {
       "title": "The Killing of JonBenét Ramsey: What the Record Shows",
@@ -36,12 +36,12 @@
     }
   },
   "freshness": {
-    "episodesJson": "2026-09-24T05:00:40.055Z",
-    "blogJson": "2026-09-24T05:00:35.394Z",
+    "episodesJson": "2026-09-24T05:44:46.833Z",
+    "blogJson": "2026-09-18T23:59:23.269Z",
     "merchJson": "2026-09-22T14:02:22.646Z",
     "quizzesJson": "2026-09-15T14:02:30.387Z",
     "fbiJson": "2026-09-24T05:00:40.336Z",
-    "css": "2026-09-24T05:00:35.484Z"
+    "css": "2026-09-22T16:34:08.912Z"
   },
   "nextTopics": [
     "How the FBI's ViCAP database links violent crimes",

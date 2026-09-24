@@ -18,6 +18,30 @@
   },
   "episodes": [
     {
+      "guid": "cts-studio-the-murdaugh-family-murders",
+      "title": "The Murdaugh Family Murders",
+      "slug": "the-murdaugh-family-murders",
+      "date": "2026-09-24",
+      "pubDate": "Thu, 24 Sep 2026 05:44:46 GMT",
+      "duration": "00:28:21",
+      "description": "Hey everyone, Cory here. Today we are looking at a case that completely consumed the South Carolina Lowcountry. The Murdaugh family was a legal dynasty, but everything started to unravel on a June night in 2021 when Maggie and Paul Murdaugh were found dead near the dog kennels of their hunting lodge.\n\nAlex Murdaugh claimed he was visiting his mother who had dementia when the murders happened. But as investigators dug deeper, cellphone data and a crucial video started telling a very different story. We are diving into the timeline, the botched crime scene, and the massive trial that followed.",
+      "audio": "/audio/the-murdaugh-family-murders.mp3",
+      "audioType": "audio/mpeg",
+      "audioBytes": 27220582,
+      "image": "/images/episodes/the-murdaugh-family-murders.jpg",
+      "link": "",
+      "explicit": false,
+      "source": "studio",
+      "keywords": [
+        "Alex Murdaugh",
+        "Maggie Murdaugh",
+        "Paul Murdaugh",
+        "South Carolina Lowcountry",
+        "Islandton hunting lodge",
+        "Murdaugh trial"
+      ]
+    },
+    {
       "guid": "cts-studio-elisa-lam-and-the-cecil-hotel",
       "title": "Elisa Lam and the Cecil Hotel",
       "slug": "elisa-lam-and-the-cecil-hotel",
