@@ -44,10 +44,17 @@ let svgMissing = 0;
 for (const d of merch.designs) if (!(await exists(d.svg))) svgMissing++;
 svgMissing === 0 ? ok(`all ${merch.designs.length} merch SVGs present`) : fail("merch SVGs present", `${svgMissing} missing`);
 
-// 5. videos.html has the shorts-first sections + filter.
+// 5. videos.html: the Shorts rail and the All/Shorts/Full filter exist exactly when there are
+// shorts to show. With none, the page carries no empty rail promising that clips "drop here
+// automatically" (2026-09-24).
 const vhtml = await read("videos.html");
-vhtml.includes('class="format-filters"') && vhtml.includes("format-shorts")
-  ? ok("videos.html shorts-first layout") : fail("videos.html shorts-first layout");
+const videos = JSON.parse(await read("automation/videos.json"));
+const hasShorts = (videos.videos || []).some((v) => v.short);
+const shortsUi = vhtml.includes('class="format-filters"') && vhtml.includes('class="container format-shorts"');
+const placeholder = vhtml.includes('class="shorts-empty"');
+(hasShorts ? shortsUi : !shortsUi && !placeholder)
+  ? ok(hasShorts ? "videos.html shorts-first layout" : "videos.html has no empty Shorts placeholder")
+  : fail("videos.html shorts layout", hasShorts ? "shorts exist but the rail or filter is missing" : "no shorts, but the rail, filter or placeholder is present");
 
 // 6. Feeds are well-formed-ish (have closing root tags).
 for (const [f, tag] of [["feed.xml", "</rss>"], ["blog-feed.xml", "</rss>"], ["sitemap.xml", "</urlset>"]]) {

@@ -82,7 +82,7 @@ ${header("blog")}
         <div class="container">
             <p class="eyebrow" style="justify-content:center;">Case Updates &middot; Analysis &middot; The Details</p>
             <h1 class="page-title">The Crime <span class="text-red">Blog</span></h1>
-            <p>Case updates, analysis, and the stories behind the headlines &mdash; written in-house, checked against sources.</p>
+            <p>Case updates, analysis, and the stories behind the headlines. Each post is written from research notes, checked against them, and published with its sources listed.</p>
         </div>
     </section>
 

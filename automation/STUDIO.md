@@ -93,6 +93,32 @@ After publishing the episode panel shows where it is: site and feed done,
 Spotify and Apple pick it up from the feed, Instagram assets are in the folder
 with the caption.
 
+## The transcript is the script
+
+Until 2026-09-24 a cloned episode's public transcript was faster-whisper "small" listening to
+the finished voice track, and the page labelled it "generated from the episode script". It was
+not, and on The Murdaugh Family Murders an outside audit found what that costs: "Maggie
+Murdoff", "Eilinton" for Islandton, "Mowry Beach" for Mallory Beach, a blood alcohol content of
+"28.6" for .286, "10,006 p.m." for 10:06 p.m. None of it was in the script or the audio; all of
+it read as the show getting real victims' names wrong.
+
+The script is the checked artifact - the fact gate passed every claim in it and the audio gate
+confirmed the render says those words - so the transcript is now the script, and the recording
+only supplies the clock. `script-transcript.mjs` lays the paragraphs over their spans (exact,
+from the paragraph renders `episode-voice.mjs` joins; or read back from `voice.wav` against
+`audit-words.json` by `audio-paragraphs.mjs`) and spreads each paragraph's sentences across its
+span by length. Timestamps are within a sentence; the words are exact.
+
+    node automation/episode-transcript.mjs <draft-id> [--publish]     rebuild one draft's transcript
+    node automation/episode-transcript.mjs --all-published --publish  every published draft on disk
+    node automation/transcript-legacy.mjs [slug]                      the 2022-2025 recordings
+
+`episode-voice.mjs` and `episode-splice.mjs` write script transcripts directly;
+`episode-publish.mjs` refuses to ship a transcript whose note is not `SCRIPT_NOTE` without
+rebuilding it first. The six episodes Cory recorded himself have no script, so they are
+transcribed with medium.en primed with the case's names (`transcript-legacy.mjs`) and their
+pages say the wording may contain minor errors.
+
 ## The pipeline scripts
 
 | Stage | Script | What it makes |
@@ -100,7 +126,8 @@ with the caption.
 | 0 Research | `episode-research.mjs` | `research.md` + `research.json`: full Wikipedia article(s) split by section, plus the article text of the top four coverage pages. No keys. |
 | 1 Script | `episode-draft.mjs` | `episode.json`: title, hook, show notes, the script in chapters, fact list, caption. Outline pass, then one write pass and one fact-check pass per chapter, each fed only the research chunks that match the chapter (keyword retrieval), so the model's 8k context never overflows. |
 | both | `episode-new.mjs` | Research then script, what the New button and the weekly job run. |
-| 2 Voice | `episode-voice.mjs` | `episode.mp3` (-16 LUFS, theme mixed), `voice.wav` (dry), `transcript.json`. Engines: `clone` (Chatterbox + `voice/cory-reference.wav`), `edge` (edge-tts), or `--from <file>` for a recording. |
+| 2 Voice | `episode-voice.mjs` | `episode.mp3` (-16 LUFS, theme mixed), `voice.wav` (dry), `transcript.json` (the script, timed to the render). Engines: `clone` (Chatterbox + `voice/cory-reference.wav`), `edge` (edge-tts), or `--from <file>` for a recording. |
+| transcript | `episode-transcript.mjs` | Rebuilds `transcript.json` from the script and `voice.wav`; `--publish` installs it under `automation/transcripts/`. |
 | theme | `episode-music.mjs` | Intro (9 s) and outro (6 s) beds. Your `studio/music/intro.mp3` and `outro.mp3` if present, else an original synthesized theme. |
 | 3 Art | `episode-art.mjs` | `cover.jpg`, `card.jpg`, `reel.jpg` from `studio/templates/art.html` via Playwright (borrowed from ig-studio). |
 | 4 Instagram | `episode-social.mjs` | `reel.mp4` audiogram (-14 LUFS) and `caption.txt`. |

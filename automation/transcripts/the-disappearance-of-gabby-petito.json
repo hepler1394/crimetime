@@ -3,989 +3,1044 @@
  "title": "The Disappearance of Gabby Petito",
  "language": "en",
  "duration": 1221.1,
- "model": "faster-whisper small (int8)",
- "generated": "2026-09-19",
- "note": "Transcript generated from the episode script.",
+ "model": "episode script, timed to the recording (paragraphs read against the audit transcript)",
+ "generated": "2026-09-25",
+ "note": "This transcript is the episode script as written and fact-checked, timed to the recording. Timestamps are approximate within a sentence.",
  "segments": [
   {
    "start": 5,
-   "end": 9.4,
-   "text": "What's up guys, welcome back to Crimetime Snacks. Let's unpack a case that grabbed the entire"
+   "end": 7.5,
+   "text": "What's up guys, welcome back to CrimeTimeSnacks."
   },
   {
-   "start": 9.4,
-   "end": 13.9,
-   "text": "country's attention, a witness called emergency services to report a man slapping a woman in"
+   "start": 7.5,
+   "end": 10.7,
+   "text": "Let's unpack a case that grabbed the entire country's attention."
   },
   {
-   "start": 13.9,
-   "end": 19,
-   "text": "front of the Utah Cooperative. Police tracked down the van and initiated a traffic stop."
+   "start": 10.7,
+   "end": 15.7,
+   "text": "A witness called emergency services to report a man slapping a woman in front of a Utah cooperative."
   },
   {
-   "start": 19,
-   "end": 23.1,
-   "text": "Yet after speaking with the visibly distraught couple, the officers let them continue their"
+   "start": 15.7,
+   "end": 18.5,
+   "text": "Police tracked down the van and initiated a traffic stop."
   },
   {
-   "start": 23.1,
-   "end": 28.6,
-   "text": "road trip. The woman crying on that police body camera footage was 22-year-old Gabrielle Petito."
+   "start": 18.5,
+   "end": 23.7,
+   "text": "Yet after speaking with the visibly distraught couple, the officers let them continue their road trip."
   },
   {
-   "start": 28.6,
-   "end": 32.9,
-   "text": "Gabby was a Long Island native and the oldest of six children. Friends described her as a"
+   "start": 24.2,
+   "end": 28.7,
+   "text": "The woman crying on that police body camera footage was 22-year-old Gabrielle Petito."
   },
   {
-   "start": 32.9,
-   "end": 37.4,
-   "text": "creative free spirit. She wanted to build a career as a YouTube creator and blogger"
+   "start": 28.7,
+   "end": 31.8,
+   "text": "Gabby was a Long Island native and the oldest of six children."
   },
   {
-   "start": 37.4,
-   "end": 42.7,
-   "text": "under the name Nomadic Static. To make that happen, she joined the growing van life movement."
+   "start": 31.8,
+   "end": 34.3,
+   "text": "Friends described her as a creative free spirit."
   },
   {
-   "start": 42.7,
-   "end": 46.8,
-   "text": "She and her fiancee bought a white Ford Transit van and converted it into a camper."
+   "start": 34.3,
+   "end": 39,
+   "text": "She wanted to build a career as a YouTube creator and blogger under the name Nomadic Statik."
   },
   {
-   "start": 46.8,
-   "end": 52.2,
-   "text": "On July 2, 2021, they left New York. The plan was a four-month cross-country journey"
+   "start": 39.5,
+   "end": 42.9,
+   "text": "To make that happen, she joined the growing van life movement."
   },
   {
-   "start": 52.2,
-   "end": 55,
-   "text": "to explore state and national parks all the way to the west coast."
+   "start": 42.9,
+   "end": 47.2,
+   "text": "She and her fiancé bought a white Ford Transit van and converted it into a camper."
+  },
+  {
+   "start": 47.2,
+   "end": 49.1,
+   "text": "On July 2, 2021, they left New York."
+  },
+  {
+   "start": 49.1,
+   "end": 55.2,
+   "text": "The plan was a four-month cross-country journey to explore state and national parks all the way to the West Coast."
   },
   {
    "start": 55.8,
-   "end": 59.6,
-   "text": "That fiancee was Brian Laundrie. He was two years ahead of Gabby in high school"
+   "end": 57.4,
+   "text": "That fiancé was Brian Laundrie."
   },
   {
-   "start": 59.6,
-   "end": 64.3,
-   "text": "and they started dating in 2019. They eventually moved into his parents' house in Northport,"
+   "start": 57.4,
+   "end": 61.4,
+   "text": "He was two years ahead of Gabby in high school, and they started dating in 2019."
   },
   {
-   "start": 64.3,
-   "end": 68.4,
-   "text": "Florida. While Gabby was outgoing, friends saw Brian as quiet and withdrawn."
+   "start": 61.4,
+   "end": 65.1,
+   "text": "They eventually moved into his parents' house in North Port, Florida."
+  },
+  {
+   "start": 65.1,
+   "end": 68.6,
+   "text": "While Gabby was outgoing, friends saw Brian as quiet and withdrawn."
   },
   {
    "start": 69.1,
-   "end": 73.3,
-   "text": "To their social media followers, the couple looked perfectly happy. But what the evidence"
+   "end": 72.7,
+   "text": "To their social media followers, the couple looked perfectly happy."
   },
   {
-   "start": 73.3,
-   "end": 78.3,
-   "text": "actually shows is a relationship full of tension. During that August 12 traffic stop in Moab,"
+   "start": 72.7,
+   "end": 76.4,
+   "text": "But what the evidence actually shows is a relationship full of tension."
   },
   {
-   "start": 78.3,
-   "end": 83.2,
-   "text": "Utah, Brian had scratches on his face and arm. Gabby had visible marks and told officers"
+   "start": 76.4,
+   "end": 81,
+   "text": "During that August 12 traffic stop in Moab, Utah, Brian had scratches on his face and arm."
   },
   {
-   "start": 83.2,
-   "end": 87.6,
-   "text": "she had anxiety. The police separated them for the night, but no charges were filed."
+   "start": 81,
+   "end": 84,
+   "text": "Gabby had visible marks and told officers she had anxiety."
   },
   {
-   "start": 87.6,
-   "end": 90.6,
+   "start": 84,
+   "end": 87.5,
+   "text": "The police separated them for the night, but no charges were filed."
+  },
+  {
+   "start": 87.5,
+   "end": 90.9,
    "text": "A few weeks later, all communication from Gabby abruptly stopped."
   },
   {
    "start": 91.5,
-   "end": 95.8,
-   "text": "Gabby grew up in Blue Point, New York. A quiet suburb on Long Island, she was the oldest of"
+   "end": 94.9,
+   "text": "Gabby grew up in Blue Point, New York, a quiet suburb on Long Island."
   },
   {
-   "start": 95.8,
-   "end": 100.7,
-   "text": "six children and half-siblings. Her family described her as a creative free spirit who always had a"
+   "start": 94.9,
+   "end": 97.6,
+   "text": "She was the oldest of six children and half-siblings."
   },
   {
-   "start": 100.7,
-   "end": 105.4,
-   "text": "camera in her hand. She attended Bayport Blue Point High School, which is where she first"
+   "start": 97.6,
+   "end": 101.9,
+   "text": "Her family described her as a creative free spirit who always had a camera in her hand."
   },
   {
-   "start": 105.4,
-   "end": 110.2,
-   "text": "crossed paths with Brian. He was two years ahead of her in school. People who knew them back"
+   "start": 101.9,
+   "end": 106.8,
+   "text": "She attended Bayport-Blue Point High School, which is where she first crossed paths with Brian."
   },
   {
-   "start": 110.2,
-   "end": 113.8,
-   "text": "then said they made an interesting pair. Gabby had a large circle of friends,"
+   "start": 107.3,
+   "end": 109.1,
+   "text": "He was two years ahead of her in school."
   },
   {
-   "start": 113.8,
-   "end": 118,
-   "text": "while Brian was known for being soft-spoken and withdrawn. He would sit and do art projects"
+   "start": 109.1,
+   "end": 112.1,
+   "text": "People who knew them back then said they made an interesting pair."
   },
   {
-   "start": 118,
-   "end": 121.7,
-   "text": "with Gabby's younger sisters, and her parents thought he seemed like a nice, quiet kid."
+   "start": 112.1,
+   "end": 116.4,
+   "text": "Gabby had a large circle of friends, while Brian was known for being soft-spoken and withdrawn."
+  },
+  {
+   "start": 116.4,
+   "end": 121.9,
+   "text": "He would sit and do art projects with Gabby's younger sisters, and her parents thought he seemed like a nice, quiet kid."
   },
   {
    "start": 122.4,
-   "end": 127.2,
+   "end": 126.9,
    "text": "After graduating high school in 2017, Gabby briefly moved down to North Carolina."
   },
   {
-   "start": 127.2,
+   "start": 126.9,
    "end": 130.8,
    "text": "She worked as a hostess and in a restaurant kitchen for a little over a year."
   },
   {
    "start": 130.8,
-   "end": 135.2,
+   "end": 135.3,
    "text": "She applied to a local community college, but the records show she never attended."
   },
   {
-   "start": 135.2,
-   "end": 140.1,
-   "text": "That chapter ended in January 2019. Two months later, in March, she and Brian officially"
+   "start": 135.3,
+   "end": 137.2,
+   "text": "That chapter ended in January 2019."
   },
   {
-   "start": 140.1,
-   "end": 145,
-   "text": "started dating. As their relationship got serious, they decided to leave the northeast."
+   "start": 137.2,
+   "end": 141,
+   "text": "Two months later, in March, she and Brian officially started dating."
   },
   {
-   "start": 145,
-   "end": 149.7,
-   "text": "Brian's family had recently relocated to Northport, Florida. Gabby and Brian moved down there to"
+   "start": 141.5,
+   "end": 144.9,
+   "text": "As their relationship got serious, they decided to leave the northeast."
   },
   {
-   "start": 149.7,
-   "end": 154.4,
-   "text": "join them, eventually moving right into his parents' house. To pay the bills, the couple took"
+   "start": 144.9,
+   "end": 147.8,
+   "text": "Brian's family had recently relocated to North Port, Florida."
   },
   {
-   "start": 154.4,
-   "end": 159.6,
-   "text": "jobs at a local public supermarket in Northport. Gabby worked as a pharmacy technician. Brian"
+   "start": 147.8,
+   "end": 152.3,
+   "text": "Gabby and Brian moved down there to join them, eventually moving right into his parents' house."
   },
   {
-   "start": 159.6,
-   "end": 164.4,
-   "text": "took a job in the grocery department. They settled into a very typical routine, living under his"
+   "start": 152.8,
+   "end": 157.1,
+   "text": "To pay the bills, the couple took jobs at a local Publix supermarket in North Port."
   },
   {
-   "start": 164.4,
-   "end": 169.4,
-   "text": "parents' roof and working retail. That routine did not last. Within a year, everything about"
+   "start": 157.1,
+   "end": 159.1,
+   "text": "Gabby worked as a pharmacy technician."
   },
   {
-   "start": 169.4,
-   "end": 175.1,
-   "text": "the way they lived had changed. When the pandemic shut everything down in early 2020, Gabby and Brian"
+   "start": 159.1,
+   "end": 161.4,
+   "text": "Brian took a job in the grocery department."
   },
   {
-   "start": 175.1,
-   "end": 179.6,
-   "text": "walked away from their grocery store jobs. The world was on pause, but they wanted to keep moving."
+   "start": 161.4,
+   "end": 166.2,
+   "text": "They settled into a very typical routine, living under his parents' roof and working retail."
   },
   {
-   "start": 179.6,
-   "end": 183.5,
-   "text": "They had already done some traveling together, driving from New York out to California to see"
+   "start": 166.8,
+   "end": 168,
+   "text": "That routine did not last."
   },
   {
-   "start": 183.5,
-   "end": 189.5,
-   "text": "places like Yosemite National Park. By June 2020, they are exploring Soap Creek in Georgia."
+   "start": 168,
+   "end": 170.9,
+   "text": "Within a year, everything about the way they lived had changed."
   },
   {
-   "start": 189.5,
-   "end": 193.3,
-   "text": "The following month, the couple officially got engaged. They decided to make travel their"
+   "start": 171.5,
+   "end": 176.7,
+   "text": "When the pandemic shut everything down in early 2020, Gabby and Brian walked away from their grocery store jobs."
   },
   {
-   "start": 193.3,
-   "end": 197.7,
-   "text": "entire lifestyle, drawn to the growing van life movement popping up all over social media."
+   "start": 176.7,
+   "end": 179.2,
+   "text": "The world was on pause, but they wanted to keep moving."
+  },
+  {
+   "start": 179.2,
+   "end": 185.3,
+   "text": "They had already done some traveling together, driving from New York out to California to see places like Yosemite National Park."
+  },
+  {
+   "start": 185.9,
+   "end": 188.7,
+   "text": "By June 2020, they were exploring Sope Creek in Georgia."
+  },
+  {
+   "start": 188.7,
+   "end": 191.6,
+   "text": "The following month, the couple officially got engaged."
+  },
+  {
+   "start": 191.6,
+   "end": 197.9,
+   "text": "They decided to make travel their entire lifestyle, drawn to the growing van life movement popping up all over social media."
   },
   {
    "start": 198.4,
-   "end": 203.6,
-   "text": "In December 2020, Gabby made a major purchase to make that dream a reality. She bought a white"
+   "end": 202.4,
+   "text": "In December 2020, Gabby made a major purchase to make that dream a reality."
   },
   {
-   "start": 203.6,
-   "end": 208.5,
-   "text": "2012 Ford Transit Connect van that was already converted into a camper. That small vehicle"
+   "start": 202.4,
+   "end": 207.2,
+   "text": "She bought a white 2012 Ford Transit Connect van that was already converted into a camper."
   },
   {
-   "start": 208.5,
-   "end": 213.2,
-   "text": "was going to be their home for a massive cross-country road trip. But living on the road"
+   "start": 207.2,
+   "end": 211.7,
+   "text": "That small vehicle was going to be their home for a massive cross-country road trip."
   },
   {
-   "start": 213.2,
-   "end": 218.5,
-   "text": "takes serious cash. Gabby put her head down and started pulling 50-hour weeks at a local"
+   "start": 212.3,
+   "end": 214.6,
+   "text": "But living on the road takes serious cash."
   },
   {
-   "start": 218.5,
-   "end": 222.8,
-   "text": "Taco Bell just to save up money. She also took on work as a nutritionist,"
+   "start": 214.6,
+   "end": 220.4,
+   "text": "Gabby put her head down and started pulling fifty-hour weeks at a local Taco Bell just to save up money."
   },
   {
-   "start": 222.8,
-   "end": 225.2,
-   "text": "while Brian picked up a job at an organic juice bar."
+   "start": 220.4,
+   "end": 225.4,
+   "text": "She also took on work as a nutritionist, while Brian picked up a job at an organic juice bar."
   },
   {
    "start": 226,
-   "end": 229.9,
-   "text": "Every spare dollar went straight toward funding their future on the road. The case file shows"
+   "end": 229.5,
+   "text": "Every spare dollar went straight toward funding their future on the road."
   },
   {
-   "start": 229.9,
-   "end": 234,
-   "text": "they spent the first half of 2021 preparing to drive from New York all the way out to Oregon."
+   "start": 229.5,
+   "end": 234.7,
+   "text": "The case file shows they spent the first half of 2021 preparing to drive from New York all the way out to Oregon."
   },
   {
-   "start": 234.6,
-   "end": 239.3,
+   "start": 234.7,
+   "end": 239.6,
    "text": "They planned to spend four months visiting state and national parks across the western United States."
   },
   {
    "start": 240.2,
-   "end": 243.9,
-   "text": "Gabby wanted to use the journey to launch a career as a YouTube creator and blogger"
+   "end": 245.6,
+   "text": "Gabby wanted to use the journey to launch a career as a YouTube creator and blogger under the name Nomadic Statik."
   },
   {
-   "start": 243.9,
-   "end": 247.8,
-   "text": "under the name Nomadic Static. She described her main interests online as art,"
+   "start": 245.6,
+   "end": 248.8,
+   "text": "She described her main interests online as art, yoga, and veggies."
   },
   {
-   "start": 247.8,
-   "end": 252.4,
-   "text": "yoga, and veggies. They were young, engaged, and completely focused on getting that white"
+   "start": 248.8,
+   "end": 253.7,
+   "text": "They were young, engaged, and completely focused on getting that white Ford van ready for the highway."
   },
   {
-   "start": 252.4,
+   "start": 254.3,
    "end": 257.8,
-   "text": "Ford van ready for the highway. Before they hit the highway, Gabby and Brian met one last stop at home."
+   "text": "Before they hit the highway, Gabby and Brian made one last stop at home."
   },
   {
    "start": 257.8,
-   "end": 262.5,
-   "text": "On June 17, 2021, they visited her native Blue Point, New York to attend her brother's high"
+   "end": 263.4,
+   "text": "On June 17, 2021, they visited her native Blue Point, New York, to attend her brother's high school graduation."
   },
   {
-   "start": 262.5,
-   "end": 267.5,
-   "text": "school graduation. Her family got to see them together, excited, and completely focused on their"
+   "start": 263.4,
+   "end": 268.4,
+   "text": "Her family got to see them together, excited and completely focused on their upcoming adventure."
   },
   {
-   "start": 267.5,
-   "end": 271.6,
-   "text": "upcoming adventure. They had no way of knowing this would be the last time they would see Gabby."
+   "start": 268.4,
+   "end": 272.1,
+   "text": "They had no way of knowing this would be the last time they would see Gabby."
   },
   {
-   "start": 272.2,
-   "end": 276.2,
-   "text": "On July 2nd, the couple finally drove that converted Ford Transit out of Blue Point and"
+   "start": 272.1,
+   "end": 277.1,
+   "text": "On July 2, the couple finally drove that converted Ford Transit out of Blue Point and pointed it west."
   },
   {
-   "start": 276.2,
-   "end": 281.2,
-   "text": "pointed at West. The four-month road trip was officially underway. The plan was to live"
+   "start": 277.1,
+   "end": 279.7,
+   "text": "The four-month road trip was officially underway."
   },
   {
-   "start": 281.2,
-   "end": 284.1,
-   "text": "entirely out of the camper van while crossing the country toward Oregon."
+   "start": 280.3,
+   "end": 284.8,
+   "text": "The plan was to live entirely out of the camper van while crossing the country toward Oregon."
   },
   {
-   "start": 284.7,
-   "end": 289.2,
-   "text": "Gabby immediately started documenting their journey for the internet. She posted regular photo"
+   "start": 284.8,
+   "end": 288.3,
+   "text": "Gabby immediately started documenting their journey for the internet."
   },
   {
-   "start": 289.2,
+   "start": 288.3,
    "end": 293.8,
-   "text": "updates to Instagram and uploaded videos to her new YouTube channel, Nomadic Static."
+   "text": "She posted regular photo updates to Instagram and uploaded videos to her new YouTube channel, Nomadic Statik."
   },
   {
    "start": 293.8,
-   "end": 296.9,
-   "text": "If you look at the digital footprint from those first few weeks, it looks like the"
+   "end": 298.6,
+   "text": "If you look at the digital footprint from those first few weeks, it looks like the perfect getaway."
   },
   {
-   "start": 296.9,
-   "end": 301.9,
-   "text": "perfect getaway. She was working hard to build her brand as an influencer, sharing her love"
+   "start": 298.6,
+   "end": 304.8,
+   "text": "She was working hard to build her brand as an influencer, sharing her love for art, yoga, and veggies with anyone who would watch."
   },
   {
-   "start": 301.9,
-   "end": 306.6,
-   "text": "for art, yoga, and veggies with anyone who would watch. They made great time driving"
+   "start": 305.4,
+   "end": 308,
+   "text": "They made great time driving across the country."
   },
   {
-   "start": 306.6,
-   "end": 310.8,
-   "text": "across the country. By later that month, the case file shows they were already exploring"
+   "start": 308,
+   "end": 313.9,
+   "text": "By later that month, the case file shows they were already exploring some of the most famous landscapes out West."
   },
   {
-   "start": 310.8,
-   "end": 315.2,
-   "text": "some of the most famous landscapes out west. They stopped at Monument Rocks and Great"
+   "start": 313.9,
+   "end": 318.2,
+   "text": "They stopped at Monument Rocks and Great Sand Dunes National Park and Preserve."
   },
   {
-   "start": 315.2,
-   "end": 320.4,
-   "text": "Sand Dunes National Park and Preserve. From there, they crossed the border into Utah."
+   "start": 318.2,
+   "end": 320.6,
+   "text": "From there, they crossed the border into Utah."
   },
   {
-   "start": 320.4,
-   "end": 325.1,
-   "text": "They spent time hiking and taking photos through Zion, Bryce Canyon, and Canyonlands"
+   "start": 320.6,
+   "end": 326.1,
+   "text": "They spent time hiking and taking photos through Zion, Bryce Canyon, and Canyonlands National Parks."
   },
   {
-   "start": 325.1,
-   "end": 329.2,
-   "text": "National Parks. To their followers, it looked like the ultimate road trip,"
+   "start": 326.6,
+   "end": 329.4,
+   "text": "To their followers, it looked like the ultimate road trip."
   },
   {
-   "start": 329.2,
-   "end": 333.1,
-   "text": "but what the evidence actually shows is that the reality of van life is often less"
+   "start": 329.4,
+   "end": 334.6,
+   "text": "But what the evidence actually shows is that the reality of van life is often less glamorous than the pictures."
   },
   {
-   "start": 333.1,
-   "end": 337.3,
-   "text": "glamorous than the pictures. They were two people living in a few square feet of space,"
+   "start": 334.6,
+   "end": 337.9,
+   "text": "They were two people living in a few square feet of space, day and night."
   },
   {
-   "start": 337.3,
-   "end": 340.8,
-   "text": "day and night. The miles were adding up and they were heading deeper into remote"
+   "start": 337.9,
+   "end": 341.6,
+   "text": "The miles were adding up, and they were heading deeper into remote territory."
   },
   {
-   "start": 340.8,
-   "end": 346.8,
-   "text": "territory. On August 12, 2021, the tension finally boiled over in public. A witness"
+   "start": 342.1,
+   "end": 345.6,
+   "text": "On August 12, 2021, the tension finally boiled over in public."
   },
   {
-   "start": 346.8,
-   "end": 350.8,
-   "text": "called 911 to report a fight outside the Moonflower Community Cooperative in Moab,"
+   "start": 345.6,
+   "end": 351.2,
+   "text": "A witness called 9-1-1 to report a fight outside the Moonflower Community Cooperative in Moab, Utah."
   },
   {
-   "start": 350.8,
-   "end": 355.9,
-   "text": "Utah. The caller reported seeing a man slap a woman. After that, they watched the"
+   "start": 351.2,
+   "end": 353.7,
+   "text": "The caller reported seeing a man slap a woman."
   },
   {
-   "start": 355.9,
-   "end": 358.8,
-   "text": "couple run up and down the sidewalk before the man hit the woman again."
+   "start": 353.7,
+   "end": 359.2,
+   "text": "After that, they watched the couple run up and down the sidewalk before the man hit the woman again."
   },
   {
-   "start": 359.8,
-   "end": 363.8,
+   "start": 359.7,
+   "end": 363.5,
    "text": "Another witness gave police a similar description of the chaos that afternoon."
   },
   {
-   "start": 363.8,
-   "end": 367.7,
+   "start": 363.5,
+   "end": 367.8,
    "text": "They told investigators that Petito and Laundrie were talking aggressively to each other."
   },
   {
-   "start": 368.4,
-   "end": 372.3,
+   "start": 367.8,
+   "end": 371.8,
    "text": "During the scuffle, this witness noted that Petito was punching Laundrie in the arm."
   },
   {
-   "start": 372.3,
-   "end": 375.8,
-   "text": "It looked to the bystander like Laundrie was trying to leave her behind and take her phone"
+   "start": 371.8,
+   "end": 376.5,
+   "text": "It looked to the bystander like Laundrie was trying to leave her behind and take her phone with him."
   },
   {
-   "start": 375.8,
+   "start": 377,
    "end": 380.7,
-   "text": "with him. The situation remained volatile right up until they got back into the vehicle."
+   "text": "The situation remained volatile right up until they got back into the vehicle."
   },
   {
    "start": 380.7,
-   "end": 384,
+   "end": 384.1,
    "text": "Before they drove away, Petito climbed into the driver's seat of the van."
   },
   {
-   "start": 384,
-   "end": 386.9,
+   "start": 384.1,
+   "end": 387.9,
    "text": "She then moved over to the passenger side so Laundrie could get behind the wheel."
   },
   {
-   "start": 387.5,
-   "end": 390.8,
-   "text": "As she made room for him, she asked him, why do you have to be so mean?"
+   "start": 387.9,
+   "end": 391.1,
+   "text": "As she made room for him, she asked him, \"Why do you have to be so mean?\""
   },
   {
    "start": 391.7,
-   "end": 395.2,
+   "end": 395,
    "text": "They pulled away from the cooperative together, but they did not get far."
   },
   {
-   "start": 395.2,
+   "start": 395,
    "end": 399.2,
    "text": "Their erratic driving quickly caught the attention of the Moab City Police Department."
   },
   {
    "start": 399.2,
-   "end": 403.5,
+   "end": 403,
    "text": "Officers pulled the white Ford van over near the entrance to Arches National Park."
   },
   {
-   "start": 403.5,
-   "end": 406.7,
+   "start": 403,
+   "end": 406.9,
    "text": "When they approached the vehicle, they found Petito sobbing in the passenger seat."
   },
   {
    "start": 407.4,
-   "end": 410.9,
-   "text": "The officers activated their body cameras, capturing an encounter that has since"
+   "end": 412.8,
+   "text": "The officers activated their body cameras, capturing an encounter that has since been heavily scrutinized."
   },
   {
-   "start": 410.9,
-   "end": 415.2,
-   "text": "been heavily scrutinized. The footage shows Petito visibly distressed while"
+   "start": 412.8,
+   "end": 416.7,
+   "text": "The footage shows Petito visibly distressed while apologizing to the police."
   },
   {
-   "start": 415.2,
-   "end": 420,
-   "text": "apologizing to the police. She was actively minimizing her own situation and downplaying"
+   "start": 416.7,
+   "end": 421,
+   "text": "She was actively minimizing her own situation and downplaying the physical restraint."
   },
   {
-   "start": 420,
-   "end": 424.3,
-   "text": "the physical restraint. What she tells the officers next on that roadside tells us a lot"
+   "start": 421,
+   "end": 426.1,
+   "text": "What she tells the officers next on that roadside tells us a lot about the reality of their relationship."
   },
   {
-   "start": 424.3,
-   "end": 429.6,
-   "text": "about the reality of their relationship. I went back through the body camera footage from that stop."
+   "start": 426.6,
+   "end": 429.5,
+   "text": "I went back through the body-camera footage from that stop."
   },
   {
-   "start": 429.6,
-   "end": 433.2,
+   "start": 429.5,
+   "end": 433,
    "text": "You can see Petito crying and visibly distraught in the passenger seat."
   },
   {
-   "start": 433.2,
-   "end": 436.8,
-   "text": "She tells the Moab officers that she suffers from anxiety and that the two of them had"
+   "start": 433,
+   "end": 438.4,
+   "text": "She tells the Moab officers that she suffers from anxiety and that the two of them had been arguing all morning."
   },
   {
-   "start": 436.8,
-   "end": 441.6,
-   "text": "been arguing all morning. Instead of pointing to what the 911 caller reported, she actually"
+   "start": 438.4,
+   "end": 442.5,
+   "text": "Instead of pointing to what the 9-1-1 caller reported, she actually takes the blame."
   },
   {
-   "start": 441.6,
-   "end": 446,
-   "text": "takes the blame. The footage shows a stark contrast between the two of them."
+   "start": 443,
+   "end": 445.9,
+   "text": "The footage shows a stark contrast between the two of them."
   },
   {
-   "start": 446,
-   "end": 449.8,
+   "start": 445.9,
+   "end": 449.9,
    "text": "Reviewers of the case file often point to this as a classic sign of reactive abuse."
   },
   {
-   "start": 450.5,
-   "end": 455.3,
-   "text": "Wondry maintains a calm demeanor while talking to the police. While Petito remains highly emotional"
+   "start": 449.9,
+   "end": 457.1,
+   "text": "Laundrie maintains a calm demeanor while talking to the police, while Petito remains highly emotional and takes responsibility for the fight."
   },
   {
-   "start": 455.3,
-   "end": 460,
-   "text": "and takes responsibility for the fight, she apologizes to the officers and minimizes her own"
+   "start": 457.1,
+   "end": 460.3,
+   "text": "She apologizes to the officers and minimizes her own situation."
   },
   {
-   "start": 460,
-   "end": 464.2,
-   "text": "situation. The officers noted that Wondry had scratches on his face and arm."
+   "start": 460.3,
+   "end": 463.6,
+   "text": "The officers noted that Laundrie had scratches on his face and arm."
   },
   {
-   "start": 464.2,
-   "end": 467.7,
+   "start": 463.6,
+   "end": 467.2,
    "text": "Petito also had visible marks on her face and arms from their altercation."
   },
   {
-   "start": 467.7,
-   "end": 471.2,
+   "start": 467.2,
+   "end": 471.4,
    "text": "What the evidence actually shows is a pattern of downplaying the physical restraint."
   },
   {
    "start": 472,
-   "end": 475.6,
-   "text": "Despite the physical marks on both of them, the officers made a crucial decision on that"
+   "end": 476.7,
+   "text": "Despite the physical marks on both of them, the officers made a crucial decision on that roadside."
   },
   {
-   "start": 475.6,
-   "end": 479.2,
-   "text": "roadside. After questioning the couple, they determined Petito was the aggressor."
+   "start": 476.7,
+   "end": 480.2,
+   "text": "After questioning the couple, they determined Petito was the aggressor."
   },
   {
-   "start": 479.9,
-   "end": 484.2,
-   "text": "That conclusion came directly from Petito admitting she physically hit Wondry first."
+   "start": 480.2,
+   "end": 484.5,
+   "text": "That conclusion came directly from Petito admitting she physically hit Laundrie first."
   },
   {
-   "start": 484.2,
-   "end": 487.7,
+   "start": 484.5,
+   "end": 487.9,
    "text": "A witness had also told police they saw Petito punching him in the arm."
   },
   {
-   "start": 487.7,
-   "end": 491.3,
+   "start": 487.9,
+   "end": 491.8,
    "text": "Because of how they assessed the situation, the officers did not file any charges."
   },
   {
    "start": 492.4,
-   "end": 495.5,
+   "end": 495.8,
    "text": "This is where the systemic response to the incident comes into focus."
   },
   {
-   "start": 495.5,
-   "end": 499.6,
-   "text": "The officers classified the roadside encounter as a mental health crisis rather than domestic"
+   "start": 495.8,
+   "end": 501,
+   "text": "The officers classified the roadside encounter as a mental health crisis rather than domestic violence."
   },
   {
-   "start": 499.6,
-   "end": 504.4,
-   "text": "violence. They decided the best course of action was simply to separate the couple for the night."
+   "start": 501,
+   "end": 505.3,
+   "text": "They decided the best course of action was simply to separate the couple for the night."
   },
   {
-   "start": 504.4,
-   "end": 509.1,
-   "text": "They did not provide any domestic violence support resources. Petito was allowed to keep the van"
+   "start": 505.3,
+   "end": 508.4,
+   "text": "They did not provide any domestic violence support resources."
   },
   {
-   "start": 509.1,
-   "end": 514.3,
-   "text": "while the police took Wondry to a local hotel. The police actually perceived him as the victim."
+   "start": 508.4,
+   "end": 512.5,
+   "text": "Petito was allowed to keep the van, while the police took Laundrie to a local hotel."
   },
   {
-   "start": 514.3,
-   "end": 517.9,
-   "text": "The next morning they reunited and resumed their cross-country trip."
+   "start": 512.5,
+   "end": 514.9,
+   "text": "The police actually perceived him as the victim."
   },
   {
-   "start": 517.9,
-   "end": 522.8,
+   "start": 514.9,
+   "end": 518.4,
+   "text": "The next morning, they reunited and resumed their cross-country trip."
+  },
+  {
+   "start": 518.4,
+   "end": 522.5,
    "text": "In 2022, Petito's parents filed a wrongful death lawsuit against the city of Moab."
   },
   {
-   "start": 522.8,
-   "end": 527.6,
+   "start": 522.5,
+   "end": 527.9,
    "text": "They alleged the officers missed clear signs of domestic violence and failed to protect her on that roadside."
   },
   {
-   "start": 528.4,
-   "end": 532.8,
-   "text": "You can see how that calm demeanor influenced the way the officers assessed the situation,"
+   "start": 528.5,
+   "end": 532.6,
+   "text": "You can see how that calm demeanor influenced the way the officers assessed the situation."
   },
   {
-   "start": 532.8,
-   "end": 537.2,
-   "text": "even with witnesses reporting that a man slapped a woman, the police focused on Petito's emotional"
+   "start": 532.6,
+   "end": 537.5,
+   "text": "Even with witnesses reporting that a man slapped a woman, the police focused on Petito's emotional state."
   },
   {
-   "start": 537.2,
-   "end": 541.9,
-   "text": "state. They made the choice to treat the encounter as a mental health crisis rather than a domestic"
+   "start": 537.5,
+   "end": 542.6,
+   "text": "They made the choice to treat the encounter as a mental health crisis rather than a domestic violence incident."
   },
   {
-   "start": 541.9,
-   "end": 545.6,
-   "text": "violence incident. Because of that specific classification, they decided not to make an"
+   "start": 542.6,
+   "end": 546.2,
+   "text": "Because of that specific classification, they decided not to make an arrest."
   },
   {
-   "start": 545.6,
-   "end": 550.4,
-   "text": "arrest. What the case file actually shows is a total lack of domestic violence intervention on"
+   "start": 546.7,
+   "end": 551.6,
+   "text": "What the case file actually shows is a total lack of domestic violence intervention on that roadside."
   },
   {
-   "start": 550.4,
-   "end": 555.2,
-   "text": "that roadside. The officers didn't provide Petito with any specific support resources before they"
+   "start": 551.6,
+   "end": 556.4,
+   "text": "The officers didn't provide Petito with any specific support resources before they walked away."
   },
   {
-   "start": 555.2,
-   "end": 559.6,
-   "text": "walked away. They simply told the couple to stay away from each other until the sun came up."
+   "start": 556.4,
+   "end": 560.1,
+   "text": "They simply told the couple to stay away from each other until the sun came up."
   },
   {
-   "start": 559.7,
-   "end": 565.3,
-   "text": "It was a temporary fix to a much deeper problem. The next morning, Petito and Laundry reunited in"
+   "start": 560.1,
+   "end": 562.3,
+   "text": "It was a temporary fix to a much deeper problem."
   },
   {
-   "start": 565.3,
-   "end": 570,
-   "text": "Utah just like they planned. They got right back into the Ford Transit van and resumed their cross"
+   "start": 562.9,
+   "end": 566.7,
+   "text": "The next morning, Petito and Laundrie reunited in Utah just like they planned."
   },
   {
-   "start": 570,
-   "end": 574.1,
-   "text": "country trip toward the national parks. The brief police intervention was over,"
+   "start": 566.7,
+   "end": 572,
+   "text": "They got right back into the Ford Transit van and resumed their cross-country trip toward the national parks."
   },
   {
-   "start": 574.1,
-   "end": 578.3,
-   "text": "but the underlying dynamic between them had not changed at all. It just kept driving,"
+   "start": 572,
+   "end": 577,
+   "text": "The brief police intervention was over, but the underlying dynamic between them had not changed at all."
   },
   {
-   "start": 578.3,
-   "end": 583.4,
-   "text": "completely isolated on the road once again. The timeline goes dark on August 27."
+   "start": 577,
+   "end": 580.3,
+   "text": "They just kept driving, completely isolated on the road once again."
   },
   {
-   "start": 583.4,
-   "end": 588.4,
-   "text": "Between 1 and 2 in the afternoon, witnesses saw the couple at the Mary Piglet's Tex-Mex restaurant"
+   "start": 580.9,
+   "end": 582.8,
+   "text": "The timeline goes dark on August 27."
   },
   {
-   "start": 588.4,
-   "end": 592.5,
-   "text": "in Jackson, Wyoming, where Laundry got into an aggressive argument with the manager and staff,"
+   "start": 582.8,
+   "end": 594.6,
+   "text": "Between one and two in the afternoon, witnesses saw the couple at the Merry Piglets Tex-Mex restaurant in Jackson, Wyoming, where Laundrie got into an aggressive argument with the manager and staff, apparently over money."
   },
   {
-   "start": 592.5,
-   "end": 598.1,
-   "text": "apparently over money. Petito actually came back inside crying to apologize for his behavior."
+   "start": 594.6,
+   "end": 598.4,
+   "text": "Petito actually came back inside crying to apologize for his behavior."
   },
   {
-   "start": 598.1,
-   "end": 602.2,
-   "text": "Shortly afterwards, security cameras caught them at a Whole Foods. They arrived at the parking"
+   "start": 598.4,
+   "end": 602,
+   "text": "Shortly afterwards, security cameras caught them at a Whole Foods."
   },
   {
-   "start": 602.2,
-   "end": 608.2,
-   "text": "lot at 2,011 p.m. and walked inside. They left the store at 2,030 p.m. and headed back into"
+   "start": 602,
+   "end": 605.3,
+   "text": "They arrived at the parking lot at 2:11 p.m. and walked inside."
   },
   {
-   "start": 608.2,
-   "end": 613.6,
-   "text": "their White Ford Transit van. They sat there for about 20 minutes. Finally, at 2,056 p.m.,"
+   "start": 605.3,
+   "end": 609.6,
+   "text": "They left the store at 2:30 p.m. and headed back into their white Ford Transit van."
   },
   {
-   "start": 613.6,
-   "end": 618,
-   "text": "they drove away on Highway 89, heading north toward the Spread Creek Dispers Camping Area in"
+   "start": 609.6,
+   "end": 611.8,
+   "text": "They sat there for about twenty minutes."
   },
   {
-   "start": 618,
-   "end": 623.2,
-   "text": "the Bridger Teton National Forest. That was the last time anyone saw Gabby Petito alive."
+   "start": 611.8,
+   "end": 619.9,
+   "text": "Finally, at 2:56 p.m., they drove away on Highway 89, heading north toward the Spread Creek Dispersed Camping area in the Bridger-Teton National Forest."
   },
   {
-   "start": 623.2,
-   "end": 628,
-   "text": "After that afternoon, normal communication abruptly stopped. A text from Petito's phone went to her"
+   "start": 620.5,
+   "end": 623,
+   "text": "That was the last time anyone saw Gabby Petito alive."
   },
   {
-   "start": 628,
-   "end": 632.8,
-   "text": "mother asking for help with someone named Stan. That raised immediate red flags for her mother,"
+   "start": 623,
+   "end": 626.2,
+   "text": "After that afternoon, normal communication abruptly stopped."
   },
   {
-   "start": 632.8,
-   "end": 636.2,
-   "text": "because Stan was her grandfather and she never called him by his first name."
+   "start": 626.2,
+   "end": 630.3,
+   "text": "A text from Petito's phone went to her mother asking for help with someone named Stan."
   },
   {
-   "start": 637,
-   "end": 641.6,
-   "text": "Then, on September 1, Brian Laundry secretly pulled the van into his parents' driveway"
+   "start": 630.3,
+   "end": 636.3,
+   "text": "That raised immediate red flags for her mother, because Stan was her grandfather and she never called him by his first name."
   },
   {
-   "start": 641.6,
-   "end": 646.1,
-   "text": "in Northport, Florida. He had driven across the country completely alone. Petito's family"
+   "start": 636.9,
+   "end": 642.5,
+   "text": "Then, on September 1, Brian Laundrie secretly pulled the van into his parents' driveway in North Port, Florida."
   },
   {
-   "start": 646.1,
-   "end": 650.6,
-   "text": "was frantically trying to reach her. Her father, Joseph Petito, said they made multiple"
+   "start": 642.5,
+   "end": 645.1,
+   "text": "He had driven across the country completely alone."
   },
   {
-   "start": 650.6,
-   "end": 655.2,
-   "text": "attempts to contact Laundry and his parents, Roberta and Christopher. They never received a reply."
+   "start": 645.1,
+   "end": 647.7,
+   "text": "Petito's family was frantically trying to reach her."
   },
   {
-   "start": 656,
-   "end": 660.7,
-   "text": "Laundry simply refused to discuss her whereabouts with anyone. He shut out the people who were"
+   "start": 647.7,
+   "end": 654,
+   "text": "Her father, Joseph Petito, said they made multiple attempts to contact Laundrie and his parents, Roberta and Christopher."
   },
   {
-   "start": 660.7,
-   "end": 664.8,
-   "text": "desperately searching for his fiancee and refused to cooperate with the investigation."
+   "start": 654,
+   "end": 655.4,
+   "text": "They never received a reply."
   },
   {
-   "start": 665.3,
-   "end": 670.1,
-   "text": "He was quickly deemed a person of interest. While her family panicked, Laundry was accessing"
+   "start": 655.9,
+   "end": 659.3,
+   "text": "Laundrie simply refused to discuss her whereabouts with anyone."
   },
   {
-   "start": 670.1,
-   "end": 674.7,
-   "text": "her bank account. What the evidence actually shows is that he made unauthorized withdrawals"
+   "start": 659.3,
+   "end": 665.4,
+   "text": "He shut out the people who were desperately searching for his fiancée and refused to cooperate with the investigation."
   },
   {
-   "start": 674.7,
-   "end": 680.4,
-   "text": "using Petito's Capital One debit card. He took out more than $1,000. He wasn't charged with her death"
+   "start": 665.4,
+   "end": 667.6,
+   "text": "He was quickly deemed a person of interest."
   },
   {
-   "start": 680.4,
-   "end": 684.9,
-   "text": "at this point, but that financial trail gave investigators exactly what they needed. They"
+   "start": 667.6,
+   "end": 671.1,
+   "text": "While her family panicked, Laundrie was accessing her bank account."
   },
   {
-   "start": 684.9,
-   "end": 690,
-   "text": "issued an arrest warrant for intent to defraud, making him a wanted man. On September 13,"
+   "start": 671.7,
+   "end": 677.6,
+   "text": "What the evidence actually shows is that he made unauthorized withdrawals using Petito's Capital One debit card."
   },
   {
-   "start": 690,
-   "end": 695.1,
-   "text": "Laundry left his home. He was reported missing four days later, sparking a massive search"
+   "start": 677.6,
+   "end": 679.7,
+   "text": "He took out more than a thousand dollars."
   },
   {
-   "start": 695.1,
-   "end": 700.3,
-   "text": "in a vast Florida nature reserve. On September 11, Gabby's mother officially filed a missing"
+   "start": 679.7,
+   "end": 685.8,
+   "text": "He wasn't charged with her death at this point, but that financial trail gave investigators exactly what they needed."
   },
   {
-   "start": 700.3,
-   "end": 704.5,
-   "text": "person report. She had not heard from her daughter since late August. Four days later,"
+   "start": 685.8,
+   "end": 689.7,
+   "text": "They issued an arrest warrant for intent to defraud, making him a wanted man."
   },
   {
-   "start": 704.5,
-   "end": 708.9,
-   "text": "police formally named Brian a person of interest. His parents hired a lawyer,"
+   "start": 689.7,
+   "end": 691.8,
+   "text": "On September 13, Laundrie left his home."
   },
   {
-   "start": 708.9,
-   "end": 712.2,
-   "text": "and on that lawyer's advice, they stayed completely silent."
+   "start": 691.8,
+   "end": 697,
+   "text": "He was reported missing four days later, sparking a massive search in a vast Florida nature reserve."
+  },
+  {
+   "start": 697.5,
+   "end": 701.5,
+   "text": "On September 11, Gabby's mother officially filed a missing person report."
+  },
+  {
+   "start": 701.5,
+   "end": 704.3,
+   "text": "She had not heard from her daughter since late August."
+  },
+  {
+   "start": 704.3,
+   "end": 707.8,
+   "text": "Four days later, police formally named Brian a person of interest."
+  },
+  {
+   "start": 707.8,
+   "end": 712.4,
+   "text": "His parents hired a lawyer, and on that lawyer's advice, they stayed completely silent."
   },
   {
    "start": 712.9,
-   "end": 717.7,
-   "text": "Police did not yet know Brian was gone. They believed he was still inside his parents' house."
+   "end": 715,
+   "text": "Police did not yet know Brian was gone."
   },
   {
-   "start": 717.7,
-   "end": 720.9,
-   "text": "His parents claimed he left for the reserve on September 13,"
+   "start": 715,
+   "end": 717.8,
+   "text": "They believed he was still inside his parents' house."
   },
   {
-   "start": 720.9,
-   "end": 724.4,
-   "text": "turning a missing person case into a massive two-front manhunt."
+   "start": 717.8,
+   "end": 724.6,
+   "text": "His parents claimed he left for the reserve on September 13, turning a missing person case into a massive, two-front manhunt."
   },
   {
    "start": 725.1,
-   "end": 728.8,
+   "end": 728.6,
    "text": "While police searched the Florida swamps, the case exploded online."
   },
   {
-   "start": 728.8,
-   "end": 733.1,
-   "text": "You have probably never seen a missing person investigation generate this much instant media"
+   "start": 728.6,
+   "end": 733.7,
+   "text": "You have probably never seen a missing person investigation generate this much instant media coverage."
   },
   {
-   "start": 733.1,
-   "end": 738.1,
-   "text": "coverage. People were dissecting the couple's social media posts and analyzing the Utah"
+   "start": 733.7,
+   "end": 738.5,
+   "text": "People were dissecting the couple's social media posts and analyzing the Utah bodycam footage."
   },
   {
-   "start": 738.1,
-   "end": 742.4,
-   "text": "body cam footage. Witnesses started posting their own videos and observations,"
+   "start": 738.5,
+   "end": 744.3,
+   "text": "Witnesses started posting their own videos and observations, creating a mountain of publicly available evidence."
   },
   {
-   "start": 742.4,
-   "end": 746.2,
-   "text": "creating a mountain of publicly available evidence. Some of those tips from the"
+   "start": 744.3,
+   "end": 750.3,
+   "text": "Some of those tips from the van life community actually helped investigators narrow down the physical search in Wyoming."
   },
   {
-   "start": 746.2,
-   "end": 750.1,
-   "text": "VanLife community actually helped investigators narrow down the physical search in Wyoming."
+   "start": 750.9,
+   "end": 753.5,
+   "text": "But a lot of the internet speculation was just noise."
   },
   {
-   "start": 750.8,
-   "end": 755.4,
-   "text": "But a lot of the internet speculation was just noise. We saw outright misinformation,"
+   "start": 753.5,
+   "end": 758.9,
+   "text": "We saw outright misinformation, insensitive rumors, and people trying to cash in on a family's tragedy."
   },
   {
-   "start": 755.4,
-   "end": 759.2,
-   "text": "insensitive rumors, and people trying to cash in on a family's tragedy."
+   "start": 758.9,
+   "end": 762.6,
+   "text": "Protestors even showed up outside the Laundrie home demanding answers."
   },
   {
-   "start": 759.2,
-   "end": 762.8,
-   "text": "Protesters even showed up outside the laundry home demanding answers."
+   "start": 762.6,
+   "end": 767.8,
+   "text": "The sheer volume of coverage also sparked a serious conversation about missing white woman syndrome."
   },
   {
-   "start": 762.8,
-   "end": 766.7,
-   "text": "The sheer volume of coverage also sparked a serious conversation about missing white"
+   "start": 768.3,
+   "end": 776.5,
+   "text": "Commentators pointed out the stark disparity between the attention Gabby received and the hundreds of indigenous people reported missing in that exact same region."
   },
   {
-   "start": 766.7,
-   "end": 771.4,
-   "text": "woman syndrome. Commentators pointed out the stark disparity between the attention Gaby"
-  },
-  {
-   "start": 771.4,
-   "end": 775.9,
-   "text": "received and the hundreds of Indigenous people reported missing in that exact same region."
-  },
-  {
-   "start": 775.9,
-   "end": 778.5,
+   "start": 776.5,
+   "end": 778.7,
    "text": "It is a hard truth about how the media operates."
   },
   {
-   "start": 778.5,
+   "start": 778.7,
    "end": 782.6,
-   "text": "Even Gaby's father eventually used his platform to highlight that disparity."
+   "text": "Even Gabby's father eventually used his platform to highlight that disparity."
   },
   {
    "start": 782.6,
-   "end": 785.6,
+   "end": 785.7,
    "text": "But right then, the focus was entirely on finding his daughter."
   },
   {
-   "start": 786.3,
-   "end": 791.5,
-   "text": "While the search for Gaby intensified out west, the investigation in Florida hit a brick wall."
+   "start": 786.2,
+   "end": 791.1,
+   "text": "While the search for Gabby intensified out west, the investigation in Florida hit a brick wall."
   },
   {
-   "start": 792.1,
-   "end": 796.4,
-   "text": "Gaby's mother had filed a missing person report on September 11 after not hearing from"
+   "start": 791.1,
+   "end": 797.3,
+   "text": "Gabby's mother had filed a missing person report on September 11 after not hearing from her daughter since late August."
   },
   {
-   "start": 796.4,
-   "end": 801.2,
-   "text": "her daughter since late August. By September 15, investigators officially named Brian a"
+   "start": 797.3,
+   "end": 801.3,
+   "text": "By September 15, investigators officially named Brian a person of interest."
   },
   {
-   "start": 801.2,
-   "end": 806,
-   "text": "person of interest. But Brian simply refused to talk. His parents, Christopher and Roberta"
+   "start": 801.3,
+   "end": 803,
+   "text": "But Brian simply refused to talk."
   },
   {
-   "start": 806,
-   "end": 809.4,
-   "text": "Laundrie, hired an attorney and followed his advice to remain entirely silent."
+   "start": 803,
+   "end": 809.1,
+   "text": "His parents, Christopher and Roberta Laundrie, hired an attorney and followed his advice to remain entirely silent."
   },
   {
-   "start": 810,
-   "end": 813.4,
-   "text": "They wouldn't speak to the police and they wouldn't speak to Gaby's desperate family."
+   "start": 809.1,
+   "end": 813.6,
+   "text": "They wouldn't speak to the police, and they wouldn't speak to Gabby's desperate family."
   },
   {
    "start": 814.2,
-   "end": 819,
-   "text": "Northport police set up surveillance on the Laundrie house and watched Brian leave on September 13."
+   "end": 819.3,
+   "text": "North Port police set up surveillance on the Laundrie house and watched Brian leave on September 13."
   },
   {
-   "start": 819,
-   "end": 822.5,
-   "text": "Two days later, his car returned and investigators believed they saw Brian get"
+   "start": 819.3,
+   "end": 824.3,
+   "text": "Two days later, his car returned, and investigators believed they saw Brian get out and go inside."
   },
   {
-   "start": 822.5,
-   "end": 827.5,
-   "text": "out and go inside. The following day, Northport police chief Todd Garrison confidently told"
+   "start": 824.3,
+   "end": 830.3,
+   "text": "The following day, North Port Police Chief Todd Garrison confidently told reporters they knew exactly where he was."
   },
   {
-   "start": 827.5,
-   "end": 832.3,
-   "text": "reporters they knew exactly where he was. He told the press, all I'm going to say is,"
+   "start": 830.3,
+   "end": 834.1,
+   "text": "He told the press, all I'm going to say is we know where Brian Laundrie is at."
   },
   {
-   "start": 832.3,
-   "end": 835.9,
-   "text": "we know where Brian Laundrie is at. But they had made a critical error"
+   "start": 834.1,
+   "end": 838.2,
+   "text": "But they had made a critical error, mistaking Brian's mother for Brian himself."
   },
   {
-   "start": 835.9,
-   "end": 840.7,
-   "text": "mistaking Brian's mother for Brian himself. After obtaining search warrants, police seized"
+   "start": 838.2,
+   "end": 845.1,
+   "text": "After obtaining search warrants, police seized the couple's Ford Transit van, an external hard drive, and the family's Ford Mustang."
   },
   {
-   "start": 840.7,
-   "end": 844.8,
-   "text": "the couple's Ford Transit Van, an external hard drive and the family's Ford Mustang."
-  },
-  {
-   "start": 845.6,
+   "start": 845.7,
    "end": 849.4,
    "text": "The police didn't realize their surveillance mistake until September 17."
   },
   {
    "start": 849.4,
-   "end": 853.6,
+   "end": 853.8,
    "text": "That is when Brian's parents finally contacted authorities to report their son missing."
   },
   {
-   "start": 853.6,
-   "end": 856.4,
+   "start": 853.8,
+   "end": 857.4,
    "text": "They claimed they hadn't laid eyes on him since he left four days earlier."
   },
   {
-   "start": 857,
-   "end": 861.3,
-   "text": "According to them, Brian had gone camping in the nearby Carlton Reserve to avoid the public"
+   "start": 857.4,
+   "end": 863.7,
+   "text": "According to them, Brian had gone camping in the nearby Carlton Reserve to avoid the public glare of the case and never came back."
   },
   {
-   "start": 861.3,
-   "end": 867.2,
-   "text": "glare of the case and never came back. That sparked a massive, weeks-long manhunt."
+   "start": 864.3,
+   "end": 866.5,
+   "text": "That sparked a massive, weeks-long manhunt."
   },
   {
-   "start": 867.2,
-   "end": 871.9,
-   "text": "Local and federal authorities combed through the 25,000-acre Florida Nature Reserve looking for him."
+   "start": 866.5,
+   "end": 871.7,
+   "text": "Local and federal authorities combed through the 25,000-acre Florida nature reserve looking for him."
   },
   {
-   "start": 871.9,
-   "end": 875.3,
-   "text": "At this point, Brian was in charge with anything related to Gaby's disappearance."
+   "start": 871.7,
+   "end": 876,
+   "text": "At this point, Brian wasn't charged with anything related to Gabby's disappearance."
   },
   {
-   "start": 875.9,
-   "end": 879.2,
-   "text": "The only warrant out for him was the federal one for intent to defraud."
+   "start": 876,
+   "end": 879.5,
+   "text": "The only warrant out for him was the federal one, for intent to defraud."
   },
   {
    "start": 880,
@@ -994,363 +1049,358 @@
   },
   {
    "start": 883.6,
-   "end": 886.8,
-   "text": "Protesters gathered outside their Florida home demanding answers."
+   "end": 887.4,
+   "text": "Protestors gathered outside their Florida home, demanding answers."
   },
   {
-   "start": 887.5,
-   "end": 892.3,
-   "text": "The silence fueled a media firestorm driven by the couple's social media content and the"
+   "start": 887.4,
+   "end": 895,
+   "text": "The silence fueled a media firestorm, driven by the couple's social media content and the intense public interest in their vanlife journey."
   },
   {
-   "start": 892.3,
-   "end": 898.4,
-   "text": "intense public interest in their van life journey. Gaby's father, Joe Petito, publicly stated his"
+   "start": 895,
+   "end": 903.7,
+   "text": "Gabby's father, Joe Petito, publicly stated his family had made multiple attempts to reach Brian's parents after Gabby vanished, but never got a single reply."
   },
   {
-   "start": 898.4,
-   "end": 903.2,
-   "text": "family had made multiple attempts to reach Brian's parents after Gaby vanished, but never got a"
+   "start": 903.7,
+   "end": 908.3,
+   "text": "He went on the Dr. Phil television show and called anyone living in that house a coward."
   },
   {
-   "start": 903.2,
-   "end": 908.4,
-   "text": "single reply. He went on the Dr. Phil television show and called anyone living in that house a"
-  },
-  {
-   "start": 908.4,
-   "end": 911.2,
-   "text": "coward. He said they didn't know how to stand up for their actions."
+   "start": 908.3,
+   "end": 911.4,
+   "text": "He said they didn't know how to stand up for their actions."
   },
   {
    "start": 912,
-   "end": 915.9,
-   "text": "While the search for Brian dragged on in Florida, investigators in Wyoming made a"
+   "end": 917.7,
+   "text": "While the search for Brian dragged on in Florida, investigators in Wyoming made a devastating breakthrough."
   },
   {
-   "start": 915.9,
-   "end": 920.8,
-   "text": "devastating breakthrough. On September 19, search teams found human remains at the"
+   "start": 917.7,
+   "end": 924.5,
+   "text": "On September 19, search teams found human remains at the Spread Creek Dispersed Camping area in the Bridger-Teton National Forest."
   },
   {
-   "start": 920.8,
-   "end": 924.8,
-   "text": "Spread Creek Dispersed Camping Area in the Bridger-Teton National Forest."
-  },
-  {
-   "start": 924.8,
-   "end": 929.3,
+   "start": 924.5,
+   "end": 929.5,
    "text": "This was right near where vloggers had previously spotted the couple's white Ford Transit van."
   },
   {
-   "start": 929.3,
-   "end": 932.8,
-   "text": "The remains were quickly and positively identified as Gaby Petito."
+   "start": 929.5,
+   "end": 933.1,
+   "text": "The remains were quickly and positively identified as Gabby Petito."
   },
   {
    "start": 933.6,
-   "end": 937.3,
+   "end": 937.6,
    "text": "The autopsy results laid out exactly what happened out there in the wilderness."
   },
   {
-   "start": 937.3,
-   "end": 941.9,
-   "text": "The medical examiner confirmed Gaby was killed by Blunford's injuries to her head and neck,"
+   "start": 937.6,
+   "end": 944.1,
+   "text": "The medical examiner confirmed Gabby was killed by blunt-force injuries to her head and neck, combined with manual strangulation."
   },
   {
-   "start": 941.9,
-   "end": 946.8,
-   "text": "combined with manual strangulation. The coroner officially ruled her death a homicide."
+   "start": 944.1,
+   "end": 946.7,
+   "text": "The coroner officially ruled her death a homicide."
   },
   {
-   "start": 946.8,
-   "end": 950.4,
-   "text": "According to the case file, she had been dead for three to four weeks before"
+   "start": 946.7,
+   "end": 951.8,
+   "text": "According to the case file, she had been dead for three to four weeks before searchers finally found her."
   },
   {
-   "start": 950.4,
-   "end": 955.1,
-   "text": "searchers finally found her. With Gaby's fate confirmed, the pressure to find Brian"
+   "start": 952.4,
+   "end": 956.6,
+   "text": "With Gabby's fate confirmed, the pressure to find Brian reached a boiling point."
   },
   {
-   "start": 955.1,
-   "end": 959.8,
-   "text": "reached a boiling point. For over a month, local and federal law enforcement scoured the swampy"
+   "start": 956.6,
+   "end": 965,
+   "text": "For over a month, local and federal law enforcement scoured the swampy terrain of the Carlton Reserve and the adjacent Myakkahatchee Creek Environmental Park."
   },
   {
-   "start": 959.8,
-   "end": 963.8,
-   "text": "terrain of the Carlton Reserve and the adjacent Myakahatchee Creek Environmental Park."
-  },
-  {
-   "start": 964.5,
-   "end": 969.1,
+   "start": 965,
+   "end": 969.2,
    "text": "Then, the water levels in a previously flooded area of the park finally receded."
   },
   {
-   "start": 969.1,
-   "end": 973.1,
-   "text": "On October 20, searchers discovered skeletal remains alongside a backpack"
+   "start": 969.2,
+   "end": 975,
+   "text": "On October 20, searchers discovered skeletal remains alongside a backpack and some of Brian's personal items."
   },
   {
-   "start": 973.1,
-   "end": 977.6,
-   "text": "and some of Brian's personal items. Forensic dentistry quickly confirmed the remains"
+   "start": 975.6,
+   "end": 979.4,
+   "text": "Forensic dentistry quickly confirmed the remains belonged to Brian Laundrie."
   },
   {
-   "start": 977.6,
-   "end": 981.8,
-   "text": "belonged to Brian Laundrie. Let's look at what the evidence actually shows about his final days."
+   "start": 979.4,
+   "end": 982.7,
+   "text": "Let's look at what the evidence actually shows about his final days."
   },
   {
-   "start": 982.4,
-   "end": 986.4,
-   "text": "The initial autopsy couldn't determine a cause of death, so his remains were handed over to"
+   "start": 982.7,
+   "end": 988.4,
+   "text": "The initial autopsy couldn't determine a cause of death, so his remains were handed over to a forensic anthropologist."
   },
   {
-   "start": 986.4,
-   "end": 991,
-   "text": "a forensic anthropologist. On November 23rd, authorities announced their conclusion."
+   "start": 988.4,
+   "end": 991.2,
+   "text": "On November 23, authorities announced their conclusion."
   },
   {
-   "start": 991.6,
-   "end": 996.4,
-   "text": "Brian died from a self-inflicted gunshot wound to the head. The manhunt was officially over,"
+   "start": 991.7,
+   "end": 994.6,
+   "text": "Brian died from a self-inflicted gunshot wound to the head."
   },
   {
-   "start": 996.4,
-   "end": 1000.9,
-   "text": "but the investigation into exactly what happened on that cross-country trip was about to take one"
+   "start": 994.6,
+   "end": 996.2,
+   "text": "The manhunt was officially over."
   },
   {
-   "start": 1000.9,
-   "end": 1005.7,
-   "text": "last turn. Near Brian's remains, investigators recovered a handwritten notebook that would change"
+   "start": 996.2,
+   "end": 1001.4,
+   "text": "But the investigation into exactly what happened on that cross-country trip was about to take one last turn."
   },
   {
-   "start": 1005.7,
-   "end": 1010.9,
-   "text": "everything. There is a part of this story that is not really about Gaby or Brian. It is about"
+   "start": 1001.4,
+   "end": 1006.3,
+   "text": "Near Brian's remains, investigators recovered a handwritten notebook that would change everything."
   },
   {
-   "start": 1010.9,
-   "end": 1015.7,
-   "text": "everybody who is watching. This case pulled in more attention on news and social media than"
+   "start": 1006.9,
+   "end": 1010.4,
+   "text": "There is a part of this story that is not really about Gabby or Brian."
   },
   {
-   "start": 1015.7,
-   "end": 1020,
-   "text": "almost any other missing person case in the country, and it is worth asking plainly why."
+   "start": 1010.4,
+   "end": 1012.4,
+   "text": "It is about everybody who was watching."
   },
   {
-   "start": 1020.7,
-   "end": 1024.7,
-   "text": "The reasons are on the record. The couple had filmed their own lives, so there was footage."
+   "start": 1012.4,
+   "end": 1020.3,
+   "text": "This case pulled in more attention on news and social media than almost any other missing person case in the country, and it is worth asking plainly why."
   },
   {
-   "start": 1024.8,
-   "end": 1029,
-   "text": "The body camera video from Moab was public, the 911 call was public,"
+   "start": 1020.8,
+   "end": 1022.3,
+   "text": "The reasons are on the record."
   },
   {
-   "start": 1029,
-   "end": 1033.4,
-   "text": "witnesses posted what they had seen. Brian's parents said nothing on their lawyer's advice,"
+   "start": 1022.3,
+   "end": 1025.3,
+   "text": "The couple had filmed their own lives, so there was footage."
   },
   {
-   "start": 1033.4,
-   "end": 1038.1,
-   "text": "and silence pulls a crowd. At a young couple, a van, and a road trip that a lot of people had"
+   "start": 1025.3,
+   "end": 1027.5,
+   "text": "The body camera video from Moab was public."
   },
   {
-   "start": 1038.1,
-   "end": 1042.4,
-   "text": "spent the pandemic dreaming about, and the case had every ingredient the internet reaches for."
+   "start": 1027.5,
+   "end": 1028.7,
+   "text": "The 911 call was public."
+  },
+  {
+   "start": 1028.7,
+   "end": 1030.6,
+   "text": "Witnesses posted what they had seen."
+  },
+  {
+   "start": 1030.6,
+   "end": 1034.7,
+   "text": "Brian's parents said nothing on their lawyer's advice, and silence pulls a crowd."
+  },
+  {
+   "start": 1034.7,
+   "end": 1042.7,
+   "text": "Add a young couple, a van, and a road trip that a lot of people had spent the pandemic dreaming about, and the case had every ingredient the internet reaches for."
   },
   {
    "start": 1043.2,
-   "end": 1048.3,
-   "text": "Some of that attention did real work. Two of the most useful accounts in this entire timeline"
+   "end": 1045,
+   "text": "Some of that attention did real work."
   },
   {
-   "start": 1048.3,
-   "end": 1053.1,
-   "text": "came from ordinary people posting online. A couple posted a video about the van they had seen"
+   "start": 1045,
+   "end": 1049.9,
+   "text": "Two of the most useful accounts in this entire timeline came from ordinary people posting online."
   },
   {
-   "start": 1053.2,
-   "end": 1057.5,
-   "text": "in Spread Creek, and according to that witness, an FBI agent told them their account tipped the"
+   "start": 1049.9,
+   "end": 1058.8,
+   "text": "A couple posted a video about the van they had seen near Spread Creek, and according to that witness, an FBI agent told them their account tipped the bureau off to the right location."
   },
   {
-   "start": 1057.5,
-   "end": 1062.1,
-   "text": "bureau off to the right location. A woman posted that she and her boyfriend had picked up Brian"
+   "start": 1058.8,
+   "end": 1065.9,
+   "text": "A woman posted that she and her boyfriend had picked up Brian hitchhiking, and described how he behaved when he found out where they were driving."
   },
   {
-   "start": 1062.1,
-   "end": 1066.2,
-   "text": "hitchhiking, and described how he behaved when he found out where they were driving. That is the"
+   "start": 1065.9,
+   "end": 1067.8,
+   "text": "That is the public genuinely helping."
   },
   {
-   "start": 1066.2,
-   "end": 1071.8,
-   "text": "public genuinely helping. The search also found people nobody was looking for. While the country"
+   "start": 1068.3,
+   "end": 1071.1,
+   "text": "The search also found people nobody was looking for."
   },
   {
-   "start": 1071.8,
-   "end": 1076.3,
-   "text": "watched this one case, the attention around it led to the discovery of five other missing people."
+   "start": 1071.1,
+   "end": 1077,
+   "text": "While the country watched this one case, the attention around it led to the discovery of five other missing people."
   },
   {
-   "start": 1076.9,
-   "end": 1080,
+   "start": 1077,
+   "end": 1080.3,
    "text": "Five families got an answer because of a case that was not theirs."
   },
   {
-   "start": 1080.8,
-   "end": 1085.5,
-   "text": "But the record is honest about the rest of it. A lot of what got posted has been described as"
+   "start": 1080.9,
+   "end": 1083.2,
+   "text": "But the record is honest about the rest of it."
   },
   {
-   "start": 1085.5,
-   "end": 1092,
-   "text": "insensitive, unhelpful, driven by exposure or money or outright misinformation, and commentators pointed"
+   "start": 1083.2,
+   "end": 1090,
+   "text": "A lot of what got posted has been described as insensitive, unhelpful, driven by exposure or money, or outright misinformation."
   },
   {
-   "start": 1092,
-   "end": 1098,
-   "text": "at something uncomfortable. Roughly 710 indigenous people were reported missing in or near that same"
+   "start": 1090,
+   "end": 1093,
+   "text": "And commentators pointed at something uncomfortable."
   },
   {
-   "start": 1098,
-   "end": 1103.2,
-   "text": "part of the country between 2011 and 2020, and not one of those cases drew a fraction of this"
+   "start": 1093,
+   "end": 1103.1,
+   "text": "Roughly seven hundred and ten indigenous people were reported missing in or near that same part of the country between 2011 and 2020, and not one of those cases drew a fraction of this coverage."
   },
   {
-   "start": 1103.2,
-   "end": 1108,
-   "text": "coverage. Gabby's father was uneasy with the term missing white woman syndrome at first,"
+   "start": 1103.1,
+   "end": 1110.2,
+   "text": "Gabby's father was uneasy with the term missing white woman syndrome at first, and later said he recognized the disparity it points at."
   },
   {
-   "start": 1108,
-   "end": 1112.6,
-   "text": "and later said he recognized the disparity it points at. He has spent the year since using the"
+   "start": 1110.2,
+   "end": 1115.6,
+   "text": "He has spent the years since using the attention on his daughter to push for the cases that never get any."
   },
   {
-   "start": 1112.6,
-   "end": 1118.4,
-   "text": "attention on his daughter to push for the cases that never get any. On January 21, 2022, the FBI"
+   "start": 1116.1,
+   "end": 1122.1,
+   "text": "On January 21, 2022, the FBI confirmed what investigators found inside that handwritten notebook near Brian's remains."
   },
   {
-   "start": 1118.4,
-   "end": 1122.8,
-   "text": "confirmed what investigators found inside that handwritten notebook near Brian's remains."
+   "start": 1122.1,
+   "end": 1124.2,
+   "text": "He explicitly admitted to killing Gabby."
   },
   {
-   "start": 1122.8,
-   "end": 1127.2,
-   "text": "He explicitly admitted to killing Gabby. When his family's lawyer released the full entry"
+   "start": 1124.2,
+   "end": 1129.1,
+   "text": "When his family's lawyer released the full entry months later, the public read his version of events."
   },
   {
-   "start": 1127.2,
-   "end": 1131.9,
-   "text": "months later, the public read his version of events. Brian claimed Gabby fell into some water"
-  },
-  {
-   "start": 1131.9,
-   "end": 1135.2,
-   "text": "and injured herself, writing that he ended her life because he thought it was merciful."
+   "start": 1129.1,
+   "end": 1135.4,
+   "text": "Brian claimed Gabby fell into some water and injured herself, writing that he ended her life because he thought it was merciful."
   },
   {
    "start": 1135.9,
-   "end": 1140,
+   "end": 1139.8,
    "text": "But that explanation simply does not match what the evidence actually shows."
   },
   {
-   "start": 1140,
-   "end": 1144.1,
-   "text": "The autopsy proved Gabby was killed by blunt force injuries to her head and neck,"
+   "start": 1139.8,
+   "end": 1145.4,
+   "text": "The autopsy proved Gabby was killed by blunt-force injuries to her head and neck, along with manual strangulation."
   },
   {
-   "start": 1144.1,
-   "end": 1148.4,
-   "text": "along with manual strangulation. Criminal justice experts who reviewed the notebook entry"
+   "start": 1145.4,
+   "end": 1152.5,
+   "text": "Criminal justice experts who reviewed the notebook entry concluded it was written by someone desperately trying to justify his own violence."
   },
   {
-   "start": 1148.4,
-   "end": 1152.8,
-   "text": "concluded it was written by someone desperately trying to justify his own violence. He could"
+   "start": 1152.5,
+   "end": 1155.1,
+   "text": "He could not face the reality of what he actually did."
   },
   {
-   "start": 1152.8,
-   "end": 1157.8,
-   "text": "not face the reality of what he actually did. Beyond the notebook, the public's understanding"
+   "start": 1155.6,
+   "end": 1163.1,
+   "text": "Beyond the notebook, the public's understanding of this tragedy completely shifted when the full body-camera footage from the Moab traffic stop was released."
   },
   {
-   "start": 1157.8,
-   "end": 1161.7,
-   "text": "of this tragedy completely shifted when the full-body camera footage from the Moab traffic"
+   "start": 1163.1,
+   "end": 1169.2,
+   "text": "The video shows Brian acting perfectly calm, while Gabby is visibly distressed, apologizing, and minimizing her own situation."
   },
   {
-   "start": 1161.7,
-   "end": 1167,
-   "text": "stop was released. The video shows Brian acting perfectly calm, while Gabby is visibly distressed,"
+   "start": 1169.2,
+   "end": 1171.8,
+   "text": "It reshaped how people view domestic disturbance calls."
   },
   {
-   "start": 1167,
-   "end": 1171.6,
-   "text": "apologizing and minimizing her own situation. It reshaped how people view domestic disturbance"
-  },
-  {
-   "start": 1171.6,
-   "end": 1176.1,
-   "text": "calls. Advocates pointed out a clear pattern of reactive abuse, noting that officers just"
-  },
-  {
-   "start": 1176.1,
-   "end": 1179.6,
-   "text": "separated them for the night instead of offering targeted domestic violence support."
+   "start": 1171.8,
+   "end": 1179.8,
+   "text": "Advocates pointed out a clear pattern of reactive abuse, noting that officers just separated them for the night instead of offering targeted domestic violence support."
   },
   {
    "start": 1180.3,
-   "end": 1184.1,
-   "text": "The massive media storm also forced the necessary conversation about missing"
+   "end": 1190.8,
+   "text": "The massive media storm also forced a necessary conversation about missing white woman syndrome, especially since hundreds of indigenous people were missing in that same region with almost no coverage."
   },
   {
-   "start": 1184.1,
-   "end": 1188.4,
-   "text": "white woman syndrome, especially since hundreds of Indigenous people were missing in that same"
+   "start": 1190.8,
+   "end": 1193.9,
+   "text": "Gabby's father publicly recognized this stark disparity."
   },
   {
-   "start": 1188.4,
-   "end": 1193.8,
-   "text": "region with almost no coverage. Gabby's father publicly recognized this stark disparity."
+   "start": 1193.9,
+   "end": 1200.8,
+   "text": "He established the Gabby Petito Foundation to help fund searches for all missing persons, focusing on those from marginalized groups."
   },
   {
-   "start": 1193.8,
-   "end": 1198.4,
-   "text": "He established the Gabby Petito Foundation to help fund searches for all missing persons,"
+   "start": 1201.4,
+   "end": 1206.4,
+   "text": "The FBI officially closed the investigation, but the conversations it started are still happening today."
   },
   {
-   "start": 1198.4,
-   "end": 1203.4,
-   "text": "focusing on those from marginalized groups. The FBI officially closed the investigation,"
+   "start": 1206.4,
+   "end": 1208.6,
+   "text": "The timeline is laid out in the official record."
   },
   {
-   "start": 1203.4,
-   "end": 1207.3,
-   "text": "but the conversations that started are still happening today. The timeline is laid out in"
+   "start": 1208.6,
+   "end": 1209.2,
+   "text": "Read the file."
   },
   {
-   "start": 1207.3,
-   "end": 1211.6,
-   "text": "the official record. Read the file, form your own conclusion. That's it for this one. Thanks"
+   "start": 1209.2,
+   "end": 1210.5,
+   "text": "Form your own conclusion."
   },
   {
-   "start": 1211.6,
-   "end": 1218.2,
-   "text": "for hanging out with me. This has been Crime Time Snacks, and I'll catch you next time."
+   "start": 1210.5,
+   "end": 1211.5,
+   "text": "That's it for this one."
+  },
+  {
+   "start": 1211.5,
+   "end": 1213,
+   "text": "Thanks for hanging out with me."
+  },
+  {
+   "start": 1213,
+   "end": 1215.8,
+   "text": "This has been CrimeTimeSnacks, and I'll catch you next time."
   }
  ]
 }

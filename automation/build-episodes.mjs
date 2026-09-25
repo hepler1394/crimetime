@@ -384,13 +384,18 @@ ${recent.map((ep) => homeRecentCard(p, ep)).join("\n")}
     <!-- HOME-EPISODES:END -->`;
 }
 
-function statsBlock(count) {
+// Only numbers the site can stand behind. Until 2026-09-24 this row said "5.0 Listener
+// Rated" on the strength of one Apple Podcasts rating, "1x/wk New Episode" over a feed with
+// a seventeen-month gap in it, and "17+ Cases Covered" where 17 was the episode count.
+function statsBlock(data, transcribed) {
+  const eps = data.episodes || [];
+  const since = eps.map((e) => (e.date || "").slice(0, 4)).filter(Boolean).sort()[0] || new Date().getFullYear();
   return `                <!-- HOME-STATS:START (auto-filled by automation/build-episodes.mjs) -->
                 <div class="stat-row">
-                    <div class="stat"><div class="stat-num"><span>${count}</span><em>+</em></div><div class="stat-label">Cases Covered</div></div>
-                    <div class="stat"><div class="stat-num"><span>${count}</span></div><div class="stat-label">Episodes</div></div>
-                    <div class="stat"><div class="stat-num">5.0<em>★</em></div><div class="stat-label">Listener Rated</div></div>
-                    <div class="stat"><div class="stat-num">1<em>×</em>/wk</div><div class="stat-label">New Episode</div></div>
+                    <div class="stat"><div class="stat-num"><span>${eps.length}</span></div><div class="stat-label">Episodes</div></div>
+                    <div class="stat"><div class="stat-num"><span>${transcribed}</span></div><div class="stat-label">Full Transcripts</div></div>
+                    <div class="stat"><div class="stat-num"><span>${since}</span></div><div class="stat-label">On the Air Since</div></div>
+                    <div class="stat"><div class="stat-num"><span>0</span></div><div class="stat-label">Ads</div></div>
                 </div>
                 <!-- HOME-STATS:END -->`;
 }
@@ -403,7 +408,7 @@ function replaceRegion(html, startMark, endMark, block) {
   return html.slice(0, lineStart) + block + html.slice(j + endMark.length);
 }
 
-async function updateHome(data) {
+async function updateHome(data, transcribed = 0) {
   const indexPath = join(ROOT, "index.html");
   let html;
   try { html = await readFile(indexPath, "utf8"); } catch { return false; }
@@ -420,7 +425,7 @@ async function updateHome(data) {
     html,
     "<!-- HOME-STATS:START (auto-filled by automation/build-episodes.mjs) -->",
     "<!-- HOME-STATS:END -->",
-    statsBlock(data.episodes.length)
+    statsBlock(data, transcribed)
   );
   if (stats) html = stats;
 
@@ -441,7 +446,7 @@ for (const ep of data.episodes) {
   if (transcript) transcribed++;
   await writeFile(join(ROOT, "episodes", `${ep.slug}.html`), episodePage(data.podcast, ep, sorted, transcript), "utf8");
 }
-const home = await updateHome(data);
+const home = await updateHome(data, transcribed);
 console.log(
   `episodes.html + ${data.episodes.length} episode pages generated (${transcribed} with transcripts).` +
     (home ? " Homepage episodes + stats refreshed." : " (home markers not found)")

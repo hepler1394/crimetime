@@ -33,6 +33,7 @@ import { dirname, join } from "node:path";
 import { existsSync } from "node:fs";
 import { mixEpisode, probeSeconds } from "./episode-music.mjs";
 import { paragraphSpans } from "./audio-paragraphs.mjs";
+import { segmentsFromSpans, spansFromParts, transcriptDoc } from "./script-transcript.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const STUDIO = join(here, "studio");
@@ -120,17 +121,16 @@ run("ffmpeg", ["-y", "-v", "error", "-i", mixed, "-af", "apad=pad_dur=0.5,loudno
   "-metadata", `title=${ep.title}`, "-metadata", "artist=CrimeTimeSnacks", "-metadata", "album=CrimeTimeSnacks", "-metadata", "genre=Podcast", newMp3], "master");
 const seconds = probeSeconds(newMp3);
 if (seconds < 20 * 60) die("length", `The spliced episode would be ${Math.floor(seconds / 60)}:${String(Math.round(seconds % 60)).padStart(2, "0")}, under the twenty-minute minimum. Nothing was changed.`);
-say("Transcribing with faster-whisper...");
-const tj = join(work, "whisper.json");
-run("python", [join(STUDIO, "transcribe_file.py"), newVoice, tj, "--offset", String(voiceOffset)], "faster-whisper");
-const segments = JSON.parse(await readFile(tj, "utf8")).segments;
+// The transcript is the (edited) script on the clock the concat above just made: each kept
+// or replaced paragraph at its measured length, each join at the length it was rebuilt to.
+const gapSeconds = (i) => Math.max(0.3, Math.min(1.2, bounds.joins[partOf[i] - 1]?.seconds || 0.55));
+const segments = segmentsFromSpans(script, spansFromParts(parts.map((p) => probeSeconds(p)), parts.map((_, i) => (i < parts.length - 1 ? gapSeconds(i + 1) : 0))), voiceOffset);
 
 /* 5. keep the old files, install the new ones, fix the bookkeeping */
 for (const f of ["voice.wav", "episode.mp3", "transcript.json", "episode.json"]) if (existsSync(join(dir, f))) await copyFile(join(dir, f), join(dir, `${f}.before-splice`));
 await copyFile(newVoice, join(dir, "voice.wav")); await copyFile(newMp3, join(dir, "episode.mp3"));
 const fmt = (s) => `${String(Math.floor(s / 3600)).padStart(2, "0")}:${String(Math.floor((s % 3600) / 60)).padStart(2, "0")}:${String(Math.round(s % 60)).padStart(2, "0")}`;
-await writeFile(join(dir, "transcript.json"), JSON.stringify({ slug: ep.slug, title: ep.title, language: "en", duration: +seconds.toFixed(1), model: "faster-whisper small (int8)",
-  generated: new Date().toISOString().slice(0, 10), note: "Transcript generated from the episode script.", segments }, null, 1), "utf8");
+await writeFile(join(dir, "transcript.json"), JSON.stringify(transcriptDoc({ slug: ep.slug, title: ep.title, seconds, segments }), null, 1), "utf8");
 // Chapter marks count paragraphs, so dropped ones have to come out of them.
 const dropped = Object.keys(edits).filter((k) => edits[k].drop).map(Number);
 let at = 0;

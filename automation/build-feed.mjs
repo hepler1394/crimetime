@@ -64,7 +64,7 @@ function buildFeed({ podcast: p, episodes }) {
     <atom:link href="${esc(self)}" rel="self" type="application/rss+xml" />
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <language>${esc(p.language)}</language>
-    <copyright>&#169; ${new Date().getFullYear()} ${esc(p.author)}</copyright>
+    <copyright>&#169; ${new Date().getFullYear()} ${esc(p.copyright || p.author)}</copyright>
     <description>${esc(p.description)}</description>
     <itunes:subtitle>${esc(p.subtitle)}</itunes:subtitle>
     <itunes:author>${esc(p.author)}</itunes:author>

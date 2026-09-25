@@ -76,4 +76,16 @@ repo, push to main deploys) plus the automation that runs the show. Read
   and `automation/.env.community` (both gitignored).
 - Scheduled-task wrappers in `automation/cron/*.ps1` must run native commands via
   `cmd /c ... >> log 2>&1`; Windows PowerShell 5.1 turns stderr into fatal errors otherwise.
+- The public transcript of a synthesized episode is the script, timed to the recording,
+  never a transcriber's guess (`automation/script-transcript.mjs`). Changed 2026-09-24 after an
+  outside audit found the Murdaugh page saying "Maggie Murdoff", "Eilinton", "28.6" for .286 and
+  "10,006 p.m.": all faster-whisper small mishearing a fact-checked script, labelled as the
+  script. `episode-voice.mjs` and `episode-splice.mjs` build transcripts from the script now,
+  `episode-publish.mjs` rebuilds one that is not, and `episode-transcript.mjs` redoes a draft.
+  Only Cory's own recordings, which have no script, are transcribed (`transcript-legacy.mjs`,
+  medium.en primed with the case's names), and their pages say so.
+- Nothing on the site claims what it cannot show. No cadence claim over a feed with a gap in
+  it, no rating built on one review, no prices over a store that does not exist, no writer's
+  brief (`cases.json` `angle`) on a public page: a case whose brief is an instruction carries a
+  `summary`. Corrections go in `automation/corrections.json`, which renders `/corrections.html`.
 - Test with `npm test` (build + link check) before pushing.

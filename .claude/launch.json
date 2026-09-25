@@ -19,6 +19,12 @@
       ],
       "cwd": "community",
       "port": 3000
+    },
+    {
+      "name": "site",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "4180", "--bind", "127.0.0.1"],
+      "port": 4180
     }
   ]
 }

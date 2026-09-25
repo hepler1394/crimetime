@@ -1,0 +1,54 @@
+{
+  "_README": "The public corrections log, rendered to /corrections.html by build-corrections.mjs. Newest first. Every entry is dated and says what was wrong, where, and what changed. Add one whenever a published episode, transcript, post or page is corrected; do not edit the record quietly.",
+  "corrections": [
+    {
+      "date": "2026-09-24",
+      "where": "Case page: Murders in Moscow: The Plea",
+      "url": "/cases/moscow-idaho-the-plea.html",
+      "wrong": "The page description showed the internal writing brief for the episode (\"DO NOT RETELL THE MURDERS...\") instead of a description of the case.",
+      "fixed": "The brief was replaced with a plain summary of what the episode covers. The same fix was applied to the three other follow-up case pages (Delphi, Menendez, JonBenet) whose descriptions were writing instructions."
+    },
+    {
+      "date": "2026-09-24",
+      "where": "Transcripts: every episode voiced in the studio (Golden State Killer through The Murdaugh Family Murders, eleven episodes)",
+      "url": "/episodes.html",
+      "wrong": "The transcripts were a speech recogniser's guess at the audio, labelled as generated from the script. On The Murdaugh Family Murders that produced \"Maggie Murdoff\", \"Eilinton\" for Islandton, \"Mowry Beach\" for Mallory Beach, \"Calton County\" for Colleton County, \"Tim Palmback\" for Tim Palmbach, a blood alcohol content of \"28.6\" for .286, and times written \"10,006 p.m.\" for 10:06 p.m. None of it was in the script or the audio.",
+      "fixed": "Every studio transcript is now the fact-checked script itself, timed to the recording, and the label says so. The studio cannot publish a guessed transcript again."
+    },
+    {
+      "date": "2026-09-24",
+      "where": "Transcripts: the episodes recorded before the studio (2022 to 2025)",
+      "url": "/episodes.html",
+      "wrong": "Names were misspelled throughout: \"Jean-Benet\" for JonBenet across the 2022 episode, \"Coburger\" for Kohberger, \"Zana Cronodal\" for Xana Kernodle, \"Shanaen\" for Shanann, \"Oseol\" for Oziel, and \"ancestryinme and 123inme\" for Ancestry and 23andMe.",
+      "fixed": "Re-transcribed with a larger model primed with the names in each case, then corrected by hand. These are recordings without a script, so the page still says the wording may contain minor errors."
+    },
+    {
+      "date": "2026-09-24",
+      "where": "Homepage and About page",
+      "url": "/",
+      "wrong": "The site claimed \"a new episode every week\" over a feed with a seventeen-month gap in it, and showed a \"5.0 Listener Rated\" figure that rested on a single rating.",
+      "fixed": "Both claims were removed. The About page now describes how an episode is made, including the parts that are automated, and the schedule is stated as what it is: weekly since September 2026, with an archive back to 2022."
+    },
+    {
+      "date": "2026-09-24",
+      "where": "Merch page",
+      "url": "/merch.html",
+      "wrong": "Thirty-four designs were listed \"from $28\" over a store that did not exist.",
+      "fixed": "Prices and the pre-order markup were removed. The page says there is no store and offers the files as downloads."
+    },
+    {
+      "date": "2026-09-18",
+      "where": "Episode: The Interrogation of Chris Watts",
+      "url": "/episodes/the-interrogation-of-chris-watts.html",
+      "wrong": "The first release was withdrawn the same day: the audio audit that had just been built found paragraphs where the cloned voice did not say what the script said.",
+      "fixed": "The affected paragraphs were re-voiced, checked against the script, and the audio and transcript were replaced."
+    },
+    {
+      "date": "2026-09-18",
+      "where": "Episode: The Disappearance of Gabby Petito",
+      "url": "/episodes/the-disappearance-of-gabby-petito.html",
+      "wrong": "For six days after release (12 to 18 September 2026) the audio said \"Capra One\" where the script said Capital One, and stuttered on a word the script did not have.",
+      "fixed": "The affected paragraphs were re-voiced and the audio and transcript were replaced. An audit of every render against its script was added to the studio the same day and now gates every release."
+    }
+  ]
+}

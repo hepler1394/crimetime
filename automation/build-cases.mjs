@@ -195,7 +195,7 @@ function casePage(c) {
   const ep = epBySlug[c.episode_slug];
   const n = live.counts[c.slug] || 0;
   const ld = { "@context": "https://schema.org", "@type": "WebPage", name: `${c.title} | CrimeTimeSnacks`, url: `${SITE}/cases/${c.slug}.html`, description: c.summary || c.angle };
-  return `${head({ title: `${c.title} | Cases | CrimeTimeSnacks`, description: (c.summary || c.angle || `Follow ${c.title} on CrimeTimeSnacks.`).slice(0, 160), canonicalPath: `/cases/${c.slug}.html`, extraHead: css + `\n<script type="application/ld+json">${JSON.stringify(ld)}</script>` })}
+  return `${head({ title: `${c.title} | Cases | CrimeTimeSnacks`, description: (c.summary || c.angle || `Follow ${c.title} on CrimeTimeSnacks.`).slice(0, 160), canonicalPath: `/cases/${c.slug}.html`, noindex: !published(c), extraHead: css + `\n<script type="application/ld+json">${JSON.stringify(ld)}</script>` })}
 <body>
 ${header("cases")}
     <main id="main-content">

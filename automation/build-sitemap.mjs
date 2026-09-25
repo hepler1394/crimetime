@@ -33,7 +33,7 @@ const CANONICAL_ROOT = new Set([
   "live.html", "quiz.html", "glossary.html", "cases.html",
   // Required by Google before an OAuth app can be published, and required of any site
   // that collects an email address in the first place.
-  "privacy.html", "terms.html",
+  "privacy.html", "terms.html", "corrections.html",
 ]);
 
 const htmlIn = async (dir) =>

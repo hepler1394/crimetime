@@ -31,6 +31,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { loadStudioEpisodes, mergeEpisodes, STUDIO_EPISODES } from "./episodes-merge.mjs";
 import { logImprovement } from "./ledger.mjs";
+import { SCRIPT_NOTE } from "./script-transcript.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -128,6 +129,16 @@ if (!pushOnly) {
   await mkdir(join(__dirname, "transcripts"), { recursive: true });
   await copyFile(join(dir, "episode.mp3"), join(ROOT, audioRel));
   await copyFile(join(dir, "cover.jpg"), join(ROOT, imageRel));
+  // The public transcript of a synthesized episode is the script, never a transcriber's guess
+  // (script-transcript.mjs). A draft voiced before 2026-09-24 still carries the old whisper
+  // transcript, so it is rebuilt here before it can ship.
+  try {
+    const t = JSON.parse(await readFile(join(dir, "transcript.json"), "utf8"));
+    if (t.note !== SCRIPT_NOTE && (ep.voice?.engine || "clone") !== "recording" && !/recording/i.test(ep.voiceUsed || "")) {
+      const r = spawnSync(process.execPath, [join(__dirname, "episode-transcript.mjs"), id, "--json"], { encoding: "utf8", windowsHide: true });
+      if (r.status !== 0) die("transcript", `The transcript is not the script and could not be rebuilt from it: ${(r.stdout || r.stderr || "").trim().slice(-300)}`);
+    }
+  } catch (e) { if (e?.step) throw e; /* no transcript at all: a recording */ }
   try { await copyFile(join(dir, "transcript.json"), join(__dirname, "transcripts", `${slug}.json`)); hasTranscript = true; } catch { /* recorded, not synthesized */ }
   bytes = (await stat(join(ROOT, audioRel))).size;
 

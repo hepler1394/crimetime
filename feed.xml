@@ -7,17 +7,17 @@
     <title>CrimeTimeSnacks • A True Crime Podcast</title>
     <link>https://www.crimetimesnacks.com/</link>
     <atom:link href="https://www.crimetimesnacks.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 24 Sep 2026 21:35:56 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2026 02:53:02 GMT</lastBuildDate>
     <language>en</language>
-    <copyright>&#169; 2026 Cory</copyright>
-    <description>Crime Time Snacks is a true crime podcast that delves into a variety of unsolved cases, exploring the facts, theories, and evidence surrounding each mystery. The podcast aims to provide listeners with a comprehensive understanding of these cases, encouraging them to engage with the content and form their own conclusions.</description>
+    <copyright>&#169; 2026 CrimeTimeSnacks</copyright>
+    <description>CrimeTimeSnacks is a true crime podcast about the cases people argue about, built from the public record: court filings, released case files and years of reporting. Each episode lays out the facts, the theories and the evidence, says what is still unknown, and leaves the conclusion to you.</description>
     <itunes:subtitle>Exploring unsolved cases, murders, and mysteries.</itunes:subtitle>
     <itunes:author>Cory</itunes:author>
-    <itunes:summary>Crime Time Snacks is a true crime podcast that delves into a variety of unsolved cases, exploring the facts, theories, and evidence surrounding each mystery. The podcast aims to provide listeners with a comprehensive understanding of these cases, encouraging them to engage with the content and form their own conclusions.</itunes:summary>
+    <itunes:summary>CrimeTimeSnacks is a true crime podcast about the cases people argue about, built from the public record: court filings, released case files and years of reporting. Each episode lays out the facts, the theories and the evidence, says what is still unknown, and leaves the conclusion to you.</itunes:summary>
     <itunes:type>episodic</itunes:type>
     <itunes:owner>
       <itunes:name>Cory</itunes:name>
-      <itunes:email>coryh2014@gmail.com</itunes:email>
+      <itunes:email>crimetimesnacks@gmail.com</itunes:email>
     </itunes:owner>
     <itunes:image href="https://www.crimetimesnacks.com/images/episodes/show.jpg" />
     <itunes:category text="True Crime" />
@@ -202,8 +202,8 @@ In this episode, I walk you through how a predator who once wore a police badge 
       <link>https://www.crimetimesnacks.com/episodes/murders-in-moscow.html</link>
       <guid isPermaLink="false">b208b312-bb72-4914-88f6-c5d0bb6d1b82</guid>
       <pubDate>Sun, 16 Mar 2025 21:50:36 GMT</pubDate>
-      <description>In this gripping episode of Crime Time Snacks , we delve into the harrowing case of the Idaho student murders that rocked the nation. On November 13, 2022, four University of Idaho students — Ethan Chapin, Madison Mogen, Xana Kernodle, and Kaylee Goncalves — were tragically murdered in their off-campus rental home in Moscow, Idaho. This episode unpacks the chilling events, the ongoing investigation, and the complexities surrounding the case.</description>
-      <itunes:summary>In this gripping episode of Crime Time Snacks , we delve into the harrowing case of the Idaho student murders that rocked the nation. On November 13, 2022, four University of Idaho students — Ethan Chapin, Madison Mogen, Xana Kernodle, and Kaylee Goncalves — were tragically murdered in their off-campus rental home in Moscow, Idaho. This episode unpacks the chilling events, the ongoing investigation, and the complexities surrounding the case.</itunes:summary>
+      <description>The Idaho student murders. On November 13, 2022, four University of Idaho students, Ethan Chapin, Madison Mogen, Xana Kernodle and Kaylee Goncalves, were killed in their off-campus rental home in Moscow, Idaho. This episode goes through what happened that night, the investigation that followed, and where the case against Bryan Kohberger stood in March 2025, before his plea.</description>
+      <itunes:summary>The Idaho student murders. On November 13, 2022, four University of Idaho students, Ethan Chapin, Madison Mogen, Xana Kernodle and Kaylee Goncalves, were killed in their off-campus rental home in Moscow, Idaho. This episode goes through what happened that night, the investigation that followed, and where the case against Bryan Kohberger stood in March 2025, before his plea.</itunes:summary>
       <itunes:author>Cory</itunes:author>
       <itunes:duration>00:11:41</itunes:duration>
       <enclosure url="https://www.crimetimesnacks.com/audio/murders-in-moscow.mp3" length="5615852" type="audio/mpeg" />

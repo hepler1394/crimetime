@@ -3,7 +3,7 @@
   "podcast": {
     "title": "CrimeTimeSnacks • A True Crime Podcast",
     "subtitle": "Exploring unsolved cases, murders, and mysteries.",
-    "description": "Crime Time Snacks is a true crime podcast that delves into a variety of unsolved cases, exploring the facts, theories, and evidence surrounding each mystery. The podcast aims to provide listeners with a comprehensive understanding of these cases, encouraging them to engage with the content and form their own conclusions.",
+    "description": "CrimeTimeSnacks is a true crime podcast about the cases people argue about, built from the public record: court filings, released case files and years of reporting. Each episode lays out the facts, the theories and the evidence, says what is still unknown, and leaves the conclusion to you.",
     "siteUrl": "https://www.crimetimesnacks.com",
     "author": "Cory",
     "ownerName": "Cory",
@@ -24,7 +24,7 @@
       "date": "2025-03-16",
       "pubDate": "Sun, 16 Mar 2025 21:50:36 GMT",
       "duration": "00:11:41",
-      "description": "In this gripping episode of Crime Time Snacks , we delve into the harrowing case of the Idaho student murders that rocked the nation. On November 13, 2022, four University of Idaho students — Ethan Chapin, Madison Mogen, Xana Kernodle, and Kaylee Goncalves — were tragically murdered in their off-campus rental home in Moscow, Idaho. This episode unpacks the chilling events, the ongoing investigation, and the complexities surrounding the case.",
+      "description": "The Idaho student murders. On November 13, 2022, four University of Idaho students, Ethan Chapin, Madison Mogen, Xana Kernodle and Kaylee Goncalves, were killed in their off-campus rental home in Moscow, Idaho. This episode goes through what happened that night, the investigation that followed, and where the case against Bryan Kohberger stood in March 2025, before his plea.",
       "audio": "/audio/murders-in-moscow.mp3",
       "audioType": "audio/mpeg",
       "image": "/images/episodes/murders-in-moscow.jpg",

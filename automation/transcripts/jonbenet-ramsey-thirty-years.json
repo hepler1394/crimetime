@@ -3,132 +3,112 @@
  "title": "JonBenet Ramsey: Thirty Years",
  "language": "en",
  "duration": 1242.6,
- "model": "faster-whisper small (int8)",
- "generated": "2026-09-20",
- "note": "Transcript generated from the episode script.",
+ "model": "episode script, timed to the recording (paragraphs read against the audit transcript)",
+ "generated": "2026-09-25",
+ "note": "This transcript is the episode script as written and fact-checked, timed to the recording. Timestamps are approximate within a sentence.",
  "segments": [
   {
    "start": 5,
-   "end": 7.8,
-   "text": "What's up guys, welcome back to Crime Time Snacks."
+   "end": 7.6,
+   "text": "What's up guys, welcome back to CrimeTimeSnacks."
   },
   {
-   "start": 7.8,
-   "end": 12.1,
-   "text": "On December 26th of this year, it will be 30 years since John Benet Ramsey was found"
+   "start": 7.6,
+   "end": 15.1,
+   "text": "On December 26 of this year, it will be thirty years since JonBenét Ramsey was found dead in the basement of her family's home in Boulder, Colorado."
   },
   {
-   "start": 12.1,
-   "end": 15.3,
-   "text": "dead in the basement of her family's home in Boulder, Colorado."
+   "start": 15.1,
+   "end": 15.7,
+   "text": "She was six."
   },
   {
-   "start": 15.3,
-   "end": 16.6,
-   "text": "She was 6."
+   "start": 15.7,
+   "end": 18.9,
+   "text": "This past August 6 would have been her thirty-sixth birthday."
   },
   {
-   "start": 16.6,
-   "end": 19.5,
-   "text": "This past August 6th would have been her 36th birthday."
+   "start": 18.9,
+   "end": 22.4,
+   "text": "And in thirty years, nobody has ever been charged with killing her."
   },
   {
-   "start": 19.5,
-   "end": 23,
-   "text": "And in 30 years, nobody has ever been charged with killing her."
+   "start": 22.9,
+   "end": 27.4,
+   "text": "I have covered this case on the show before, so this is not going to be a beat-by-beat retelling."
   },
   {
-   "start": 23,
-   "end": 26.5,
-   "text": "I have covered this case on the show before, so this is not going to be a beat-by-beat"
-  },
-  {
-   "start": 26.5,
-   "end": 27.6,
-   "text": "retelling."
-  },
-  {
-   "start": 27.6,
-   "end": 29.5,
+   "start": 27.4,
+   "end": 29.1,
    "text": "What I want to do today is different."
   },
   {
-   "start": 29.5,
-   "end": 32.8,
-   "text": "I want to lay out what the record actually shows, where the two sides of this case"
+   "start": 29.1,
+   "end": 36.1,
+   "text": "I want to lay out what the record actually shows, where the two sides of this case split and why, and then spend real time on where it stands right now."
   },
   {
-   "start": 32.8,
-   "end": 36.6,
-   "text": "split and why, and then spend real time on where it stands right now."
-  },
-  {
-   "start": 36.6,
-   "end": 39.8,
+   "start": 36.1,
+   "end": 39.2,
    "text": "Because right now there are two separate investigations going."
   },
   {
-   "start": 39.8,
-   "end": 41.7,
+   "start": 39.2,
+   "end": 41.4,
    "text": "One belongs to the Boulder Police Department."
   },
   {
-   "start": 41.7,
-   "end": 45,
-   "text": "The other is a group of volunteers working from a spreadsheet, a dead detective"
+   "start": 41.4,
+   "end": 45.8,
+   "text": "The other is a group of volunteers working from a spreadsheet a dead detective left behind."
   },
   {
-   "start": 45,
-   "end": 46.5,
-   "text": "left behind."
+   "start": 46.3,
+   "end": 47.6,
+   "text": "One thing before we start."
   },
   {
-   "start": 46.5,
-   "end": 50.4,
-   "text": "One thing before we start, no one in this story has been convicted of anything."
+   "start": 47.6,
+   "end": 50.1,
+   "text": "No one in this story has been convicted of anything."
   },
   {
-   "start": 50.4,
-   "end": 53.6,
-   "text": "Not the parents, not the brother, not any of the names that have floated around"
+   "start": 50.1,
+   "end": 54.9,
+   "text": "Not the parents, not the brother, not any of the names that have floated around for three decades."
   },
   {
-   "start": 53.6,
-   "end": 55.1,
-   "text": "for three decades."
-  },
-  {
-   "start": 55.1,
-   "end": 58.7,
+   "start": 54.9,
+   "end": 58.8,
    "text": "I am going to be careful about that, and I would ask you to be careful about it too."
   },
   {
-   "start": 58.7,
-   "end": 60.3,
+   "start": 58.8,
+   "end": 59.6,
    "text": "Let's unpack it."
   },
   {
-   "start": 60.3,
-   "end": 66.1,
-   "text": "At 5.52 in the morning on December 26, 1996, Patsy Ramsey called the police."
+   "start": 60.2,
+   "end": 64.5,
+   "text": "At 5:52 in the morning on December 26, 1996, Patsy Ramsey called the police."
   },
   {
-   "start": 66.1,
-   "end": 70,
-   "text": "She said she had found a ransom note on the kitchen staircase and her daughter was gone."
+   "start": 64.5,
+   "end": 69.5,
+   "text": "She said she had found a ransom note on the kitchen staircase, and her daughter was gone."
   },
   {
-   "start": 70,
+   "start": 69.5,
    "end": 72.3,
    "text": "The note said not to contact the police or friends."
   },
   {
    "start": 72.3,
-   "end": 73.9,
+   "end": 73.3,
    "text": "She called both."
   },
   {
-   "start": 73.9,
+   "start": 73.8,
    "end": 76.2,
    "text": "Two officers got to the house within three minutes."
   },
@@ -139,2313 +119,1293 @@
   },
   {
    "start": 78.8,
-   "end": 82,
-   "text": "One of them, Officer Rick French, went down to the basement and came to a door"
+   "end": 84.5,
+   "text": "One of them, Officer Rick French, went down to the basement and came to a door held shut by a wooden latch at the top of the frame."
   },
   {
-   "start": 82,
-   "end": 84.8,
-   "text": "held shut by a wooden latch at the top of the frame."
-  },
-  {
-   "start": 84.8,
-   "end": 88.3,
+   "start": 84.5,
+   "end": 87.7,
    "text": "He stopped in front of it, and then he walked away without opening it."
   },
   {
-   "start": 88.4,
-   "end": 92,
-   "text": "His reasoning, he said later, was that he was looking for the way a kidnapper got out,"
+   "start": 87.7,
+   "end": 95.8,
+   "text": "His reasoning, he said later, was that he was looking for the way a kidnapper got out, and nobody could have gone through that door and then latched it behind them from the inside."
   },
   {
-   "start": 92,
-   "end": 95.7,
-   "text": "and nobody could have gone through that door and then latched it behind them from the inside."
+   "start": 95.8,
+   "end": 97.5,
+   "text": "JonBenét's body was behind that door."
   },
   {
-   "start": 95.7,
-   "end": 98.2,
-   "text": "John Benet's body was behind that door."
-  },
-  {
-   "start": 98.2,
+   "start": 98.1,
    "end": 101.2,
    "text": "What happened next is the part everyone agrees was a disaster."
   },
   {
    "start": 101.2,
-   "end": 104,
-   "text": "Police believe they had a kidnapping, so they sealed off one room,"
+   "end": 105.6,
+   "text": "Police believed they had a kidnapping, so they sealed off one room, JonBenét's bedroom."
   },
   {
-   "start": 104,
-   "end": 106.2,
-   "text": "John Benet's bedroom, nothing else."
+   "start": 105.6,
+   "end": 106.3,
+   "text": "Nothing else."
   },
   {
-   "start": 106.2,
-   "end": 110.5,
-   "text": "Friends came over, victim advocates came over, the family's minister came over."
+   "start": 106.3,
+   "end": 107.3,
+   "text": "Friends came over."
   },
   {
-   "start": 110.5,
-   "end": 113.7,
+   "start": 107.3,
+   "end": 108.7,
+   "text": "Victim advocates came over."
+  },
+  {
+   "start": 108.7,
+   "end": 110.4,
+   "text": "The family's minister came over."
+  },
+  {
+   "start": 110.4,
+   "end": 113.5,
    "text": "Visitors picked things up and cleaned surfaces in the kitchen."
   },
   {
-   "start": 113.7,
-   "end": 116.7,
+   "start": 113.5,
+   "end": 116.5,
    "text": "John Ramsey started making arrangements to pay the ransom."
   },
   {
-   "start": 116.7,
-   "end": 120.8,
+   "start": 116.5,
+   "end": 120.4,
    "text": "Detective Linda Arndt arrived around eight to wait for the kidnappers to call."
   },
   {
-   "start": 120.8,
-   "end": 123.4,
+   "start": 120.4,
+   "end": 123.6,
    "text": "Nobody ever called, and nobody ever tried to collect the money."
   },
   {
-   "start": 124.4,
-   "end": 127.9,
-   "text": "At one in the afternoon, Ar-Anne asked John Ramsey and a family friend,"
+   "start": 124.1,
+   "end": 131.1,
+   "text": "At one in the afternoon, Arndt asked John Ramsey and a family friend, Fleet White, to go through the house and see if anything seemed amiss."
   },
   {
-   "start": 127.9,
-   "end": 130.8,
-   "text": "Fleet White, to go through the house and see if anything seemed to miss."
-  },
-  {
-   "start": 132,
-   "end": 133.3,
+   "start": 131.1,
+   "end": 132.6,
    "text": "They started in the basement."
   },
   {
-   "start": 133.3,
-   "end": 136,
-   "text": "John opened the latch door and his daughter was there."
+   "start": 132.6,
+   "end": 135.5,
+   "text": "John opened the latched door, and his daughter was there."
   },
   {
-   "start": 136,
-   "end": 137.7,
+   "start": 135.5,
+   "end": 137.3,
    "text": "Her mouth was covered with duct tape."
   },
   {
-   "start": 137.7,
-   "end": 140.4,
-   "text": "There was a nylon cord around her wrists and her neck and"
+   "start": 137.3,
+   "end": 141.7,
+   "text": "There was a nylon cord around her wrists and her neck, and a white blanket over her torso."
   },
   {
-   "start": 140.4,
-   "end": 142.2,
-   "text": "a white blanket over her torso."
-  },
-  {
-   "start": 142.2,
-   "end": 144.1,
+   "start": 141.7,
+   "end": 143.8,
    "text": "He picked her up and ran upstairs with her."
   },
   {
-   "start": 144.1,
-   "end": 146.3,
+   "start": 143.8,
+   "end": 145.6,
    "text": "It is hard to blame a father for that."
   },
   {
-   "start": 146.3,
-   "end": 150.6,
+   "start": 145.6,
+   "end": 149.9,
    "text": "It also meant the crime scene was disturbed again before the forensics team got back."
   },
   {
-   "start": 150.6,
+   "start": 150.5,
    "end": 152.9,
    "text": "Two neighbors gave statements about that night."
   },
   {
    "start": 152.9,
-   "end": 156.3,
-   "text": "Scott Gibbons said that around midnight, looking out his kitchen window,"
+   "end": 159,
+   "text": "Scott Gibbons said that around midnight, looking out his kitchen window, he saw dimmed lights on in the Ramseys' upper kitchen."
   },
   {
-   "start": 156.3,
-   "end": 159.4,
-   "text": "he saw dimmed lights on in Ramsey's upper kitchen."
+   "start": 159,
+   "end": 164.1,
+   "text": "Melody Stanton said she woke shortly after midnight to the sound of a child's scream coming from the house."
   },
   {
-   "start": 159.4,
-   "end": 162.6,
-   "text": "Melody Stan said she woke shortly after midnight to the sound of a child's"
+   "start": 164.1,
+   "end": 171.3,
+   "text": "Each of the Ramseys gave police handwriting, blood and hair samples, and John and Patsy sat for a preliminary interview that ran more than two hours."
   },
   {
-   "start": 162.6,
-   "end": 164.6,
-   "text": "scream coming from the house."
-  },
-  {
-   "start": 164.6,
-   "end": 167.8,
-   "text": "Each of the Ramsey's gate police hand writing blood and hair samples, and"
-  },
-  {
-   "start": 167.8,
-   "end": 172,
-   "text": "John and Patsy sat for a preliminary interview that ran more than two hours."
-  },
-  {
-   "start": 172,
-   "end": 175.3,
+   "start": 171.8,
+   "end": 175,
    "text": "The ransom note is where this case stops looking like any other."
   },
   {
-   "start": 175.3,
-   "end": 177.6,
-   "text": "It was two and a half pages long handwritten."
+   "start": 175,
+   "end": 177.3,
+   "text": "It was two and a half pages long, handwritten."
   },
   {
-   "start": 177.6,
-   "end": 180.1,
-   "text": "The FBI told Boulder Police it was very unusual for"
+   "start": 177.3,
+   "end": 182.8,
+   "text": "The FBI told Boulder police it was very unusual for a note like that to be written at the scene, and this one was."
   },
   {
-   "start": 180.1,
-   "end": 183.2,
-   "text": "a note like that to be written at the scene, and this one was."
+   "start": 182.8,
+   "end": 187.5,
+   "text": "The pen and the notepad both came from inside the Ramsey house, and there was a practice draft."
   },
   {
-   "start": 183.2,
-   "end": 186.4,
-   "text": "The pen and a notepad both came from inside the Ramsey house, and"
+   "start": 188.1,
+   "end": 189.6,
+   "text": "It demanded 118,000 dollars."
   },
   {
-   "start": 186.4,
-   "end": 188.4,
-   "text": "there was a practice draft."
-  },
-  {
-   "start": 188.4,
-   "end": 191,
-   "text": "It demanded $11,000-$18,000."
-  },
-  {
-   "start": 191,
-   "end": 193.9,
-   "text": "John Ramsey pointed out to the first officers on scene that the figure was"
-  },
-  {
-   "start": 193.9,
+   "start": 189.6,
    "end": 196.8,
-   "text": "nearly identical to his Christmas bonus from the year before."
+   "text": "John Ramsey pointed out to the first officers on scene that the figure was nearly identical to his Christmas bonus from the year before."
   },
   {
    "start": 196.8,
-   "end": 200.4,
+   "end": 201.3,
    "text": "Investigators looked at employees of his company who might have known that number."
   },
   {
-   "start": 200.4,
-   "end": 203.6,
+   "start": 201.3,
+   "end": 204.5,
    "text": "They even considered whether it was a reference to Psalm 118."
   },
   {
-   "start": 203.6,
-   "end": 206.2,
+   "start": 204.5,
+   "end": 206.9,
    "text": "The note also seems to borrow movie dialogue."
   },
   {
-   "start": 206.2,
-   "end": 211.1,
+   "start": 206.9,
+   "end": 211.6,
    "text": "Dirty Harry, Speed, Ransom and Ruthless People have all been named as possible sources."
   },
   {
-   "start": 211.1,
-   "end": 214.4,
-   "text": "It was signed with four letters, SBTC."
+   "start": 211.6,
+   "end": 216.5,
+   "text": "It was signed with four letters, S, B, T, C. Nobody has ever established what they stand for."
   },
   {
-   "start": 214.4,
-   "end": 217.3,
-   "text": "Nobody has ever established what they stand for."
+   "start": 217,
+   "end": 218.8,
+   "text": "Police thought the note was staged."
   },
   {
-   "start": 217.3,
-   "end": 220.6,
-   "text": "Police thought the note was staged, the only fingerprints on a belong to Patsy"
+   "start": 218.8,
+   "end": 222.9,
+   "text": "The only fingerprints on it belonged to Patsy and to the authorities who handled it."
   },
   {
-   "start": 220.6,
-   "end": 222.7,
-   "text": "and to the authorities who handled it."
+   "start": 222.9,
+   "end": 230.9,
+   "text": "A Colorado Bureau of Investigation report said there were indications that the author was Patricia Ramsey, but the evidence fell short of a definitive conclusion."
   },
   {
-   "start": 222.7,
-   "end": 226,
-   "text": "A Colorado Bureau of Investigation reports said there were indications that"
-  },
-  {
-   "start": 226,
-   "end": 229.4,
-   "text": "the author was Patricia Ramsey, but the evidence fell short of a definitive"
-  },
-  {
-   "start": 229.4,
-   "end": 230.4,
-   "text": "conclusion."
-  },
-  {
-   "start": 230.4,
-   "end": 233,
+   "start": 230.9,
+   "end": 233.4,
    "text": "A handwriting test eliminated John as the writer."
   },
   {
-   "start": 233,
-   "end": 234.8,
-   "text": "The report did not clear Patsy."
+   "start": 233.4,
+   "end": 234.5,
+   "text": "It did not clear Patsy."
   },
   {
-   "start": 234.8,
-   "end": 238.2,
-   "text": "Michael Baden, a forensic pathologist who consulted with both sides, said he had"
+   "start": 234.5,
+   "end": 242.8,
+   "text": "Michael Baden, a forensic pathologist who consulted with both sides, said he had never seen a note like it in sixty years, and he did not think an outside stranger wrote it."
   },
   {
-   "start": 238.2,
-   "end": 242.2,
-   "text": "never seen a note like it in 60 years, and he did not think an outside stranger"
-  },
-  {
-   "start": 242.2,
-   "end": 243.5,
-   "text": "wrote it."
-  },
-  {
-   "start": 243.5,
-   "end": 244.8,
+   "start": 243.3,
+   "end": 244.3,
    "text": "Now the other side."
   },
   {
-   "start": 244.8,
-   "end": 248.2,
-   "text": "A federal court, citing six certified handwriting experts, ruled it was"
+   "start": 244.3,
+   "end": 250.3,
+   "text": "A federal court, citing six certified handwriting experts, ruled it was highly unlikely that Patsy wrote that note."
   },
   {
-   "start": 248.2,
-   "end": 250.5,
-   "text": "highly unlikely that Patsy wrote that note."
+   "start": 250.3,
+   "end": 257,
+   "text": "The same court criticized the self-proclaimed experts, people without credentials, who had accused her with no scientific basis."
   },
   {
-   "start": 250.5,
-   "end": 253.7,
-   "text": "The same court criticized the self-proclaimed experts, people without"
+   "start": 257,
+   "end": 264.1,
+   "text": "So on the single strangest piece of evidence in the case, you have a state lab that leaned one way and a federal judge who leaned hard the other."
   },
   {
-   "start": 253.7,
-   "end": 257.2,
-   "text": "credentials, who had accused her with no scientific basis."
-  },
-  {
-   "start": 257.2,
-   "end": 260.4,
-   "text": "So on the single strangest piece of evidence in the case, you have a"
-  },
-  {
-   "start": 260.4,
-   "end": 264.8,
-   "text": "state lab that leaned one way and a federal judge who leaned hard the other."
-  },
-  {
-   "start": 264.8,
-   "end": 267.2,
+   "start": 264.7,
+   "end": 266.7,
    "text": "I am going to keep this part short and plain."
   },
   {
-   "start": 267.2,
-   "end": 270.3,
-   "text": "The official cause of death was asphyxia by strangulation associated with"
+   "start": 266.7,
+   "end": 271.5,
+   "text": "The official cause of death was asphyxia by strangulation associated with craniocerebral trauma."
   },
   {
-   "start": 270.3,
-   "end": 272,
-   "text": "craniosclerial trauma."
+   "start": 271.5,
+   "end": 277.3,
+   "text": "In other words, she was strangled, and she had a skull fracture, eight and a half inches long, on the right side of her head."
   },
   {
-   "start": 272,
-   "end": 275.4,
-   "text": "In other words, she was strangled and she had a skull fracture 8.5 inches"
-  },
-  {
-   "start": 275.4,
-   "end": 277.4,
-   "text": "long on the right side of her head."
-  },
-  {
-   "start": 277.4,
-   "end": 279.6,
+   "start": 277.3,
+   "end": 278.8,
    "text": "Her death was ruled a homicide."
   },
   {
-   "start": 279.6,
-   "end": 283.3,
-   "text": "The cord around her neck was a grote, made from a length of nylon cord"
+   "start": 279.3,
+   "end": 284.8,
+   "text": "The cord around her neck was a garrote, made from a length of nylon cord and the broken handle of a paintbrush."
   },
   {
-   "start": 283.3,
-   "end": 285.5,
-   "text": "and the broken handle of a paintbrush."
-  },
-  {
-   "start": 285.5,
-   "end": 289.1,
+   "start": 284.8,
+   "end": 288.3,
    "text": "Part of that paintbrush was found in a tub with Patsy's art supplies."
   },
   {
-   "start": 289.1,
-   "end": 293,
+   "start": 288.3,
+   "end": 292.4,
    "text": "The bottom third of it was never found, despite extensive searching of the house."
   },
   {
-   "start": 293,
-   "end": 296.1,
-   "text": "There was evidence of a vaginal injury and the pathologist could not rule out"
+   "start": 292.4,
+   "end": 297.2,
+   "text": "There was evidence of a vaginal injury, and the pathologist could not rule out sexual assault."
   },
   {
-   "start": 296.1,
-   "end": 297.9,
-   "text": "sexual assault."
+   "start": 297.7,
+   "end": 300.8,
+   "text": "And then the pineapple, which has launched a thousand theories."
   },
   {
-   "start": 297.9,
-   "end": 300.6,
-   "text": "And in the pineapple, which has launched a thousand theories."
+   "start": 300.8,
+   "end": 305.7,
+   "text": "The autopsy found material in her system that may have been pineapple, eaten a few hours before she died."
   },
   {
-   "start": 300.6,
-   "end": 303.7,
-   "text": "The autopsy found material in her system that may have been pineapple"
+   "start": 305.7,
+   "end": 309.6,
+   "text": "Crime scene photos show a bowl of pineapple on the kitchen table with a spoon in it."
   },
   {
-   "start": 303.7,
-   "end": 305.8,
-   "text": "eaten a few hours before she died."
-  },
-  {
-   "start": 305.8,
-   "end": 308.8,
-   "text": "Crime scene photos show a bowl of pineapple on the kitchen table with"
-  },
-  {
-   "start": 308.8,
-   "end": 309.8,
-   "text": "a spoon in it."
-  },
-  {
-   "start": 309.8,
+   "start": 309.6,
    "end": 312.6,
    "text": "Neither parent remembered putting it there or feeding it to her."
   },
   {
    "start": 312.6,
-   "end": 314.9,
+   "end": 315.1,
    "text": "Police reported Patsy's fingerprints on the bowl."
   },
   {
-   "start": 314.9,
-   "end": 317.3,
+   "start": 315.1,
+   "end": 317.2,
    "text": "That is everything the record says about it."
   },
   {
-   "start": 317.3,
-   "end": 319.9,
-   "text": "It is a bowl of fruit in a family's kitchen and people have built"
+   "start": 317.2,
+   "end": 321.6,
+   "text": "It is a bowl of fruit in a family's kitchen, and people have built entire timelines on top of it."
   },
   {
-   "start": 319.9,
-   "end": 322.3,
-   "text": "entire timelines on top of it."
+   "start": 322.1,
+   "end": 325.8,
+   "text": "Before we get into thirty years of adults arguing, I want to say who she was."
   },
   {
-   "start": 322.3,
-   "end": 326.2,
-   "text": "Before we get into 30 years of adults arguing, I want to say who she was."
+   "start": 325.8,
+   "end": 329.4,
+   "text": "JonBenét Patricia Ramsey was born on August 6, 1990, in Atlanta, Georgia."
   },
   {
-   "start": 326.2,
-   "end": 330.9,
-   "text": "John Benet Patricia Ramsey was born on August 6, 1990 in Atlanta, Georgia."
+   "start": 329.4,
+   "end": 335.2,
+   "text": "Her name came from her father's first and middle names, John Bennett, and her middle name was her mother's first name."
   },
   {
-   "start": 330.9,
-   "end": 333.9,
-   "text": "Her name came from her father's first and middle names, John Bennett,"
+   "start": 335.2,
+   "end": 340,
+   "text": "She had an older brother, Burke, and three older half-siblings from her father's first marriage."
   },
   {
-   "start": 333.9,
-   "end": 336,
-   "text": "and her middle name was her mother's first name."
-  },
-  {
-   "start": 336,
-   "end": 338.6,
-   "text": "She had an older brother Burke and three older half siblings for"
-  },
-  {
-   "start": 338.6,
-   "end": 340.2,
-   "text": "her father's first marriage."
-  },
-  {
-   "start": 340.2,
-   "end": 344.4,
+   "start": 340,
+   "end": 343.8,
    "text": "That school year she was in kindergarten at High Peaks Elementary in Boulder."
   },
   {
    "start": 344.4,
-   "end": 347.7,
-   "text": "Her father ran a computer company called Access Graphics, which later"
+   "end": 350,
+   "text": "Her father ran a computer company called Access Graphics, which later became a subsidiary of Lockheed Martin."
   },
   {
-   "start": 347.7,
-   "end": 350.1,
-   "text": "became a subsidiary of Lockheed Martin."
+   "start": 350,
+   "end": 354.7,
+   "text": "The family had moved to Boulder in 1991, because that is where the company was headquartered."
   },
   {
-   "start": 350.1,
-   "end": 353.6,
-   "text": "The family had moved to Boulder in 1991 because that is where the company"
+   "start": 354.7,
+   "end": 361.3,
+   "text": "Her mother entered her in child beauty pageants, and she won titles, including Little Miss Colorado and National Tiny Miss Beauty."
   },
   {
-   "start": 353.6,
-   "end": 354.8,
-   "text": "was headquartered."
+   "start": 361.3,
+   "end": 367.5,
+   "text": "After she died, those pageant images were broadcast over and over, and they became what most of the country knew about her."
   },
   {
-   "start": 354.8,
-   "end": 357.9,
-   "text": "Her mother entered her in child beauty pageants, and she won titles"
+   "start": 368.1,
+   "end": 377.8,
+   "text": "She was buried on December 31 at St. James Episcopal Cemetery in Marietta, Georgia, next to her half-sister Elizabeth, who had died in a car crash nearly five years earlier at twenty-two."
   },
   {
-   "start": 357.9,
-   "end": 361.8,
-   "text": "including Little Miss Colorado and National Tiny Miss Beauty."
+   "start": 377.8,
+   "end": 381.5,
+   "text": "Six months later, the Ramseys left Boulder and moved back to Atlanta."
   },
   {
-   "start": 361.8,
-   "end": 365.2,
-   "text": "After she died, those pageant images were broadcast over and over,"
+   "start": 382,
+   "end": 388.8,
+   "text": "From the start, Boulder police concentrated almost exclusively on John and Patsy, and if you want to be fair to the police, there were reasons."
   },
   {
-   "start": 365.2,
-   "end": 368.2,
-   "text": "and they became what most of the country knew about her."
-  },
-  {
-   "start": 368.2,
-   "end": 371.5,
-   "text": "She was buried on December 31 at St. James Episcopal Cemetery"
-  },
-  {
-   "start": 371.6,
-   "end": 375,
-   "text": "in Marietta, Georgia, next to her half sister Elizabeth, who had died"
-  },
-  {
-   "start": 375,
-   "end": 378.2,
-   "text": "in a car crash nearly five years earlier at 22."
-  },
-  {
-   "start": 378.2,
-   "end": 382.1,
-   "text": "Six months later, the Ramses left Boulder and moved back to Atlanta."
-  },
-  {
-   "start": 382.1,
-   "end": 385.2,
-   "text": "From the start, Boulder police concentrated almost exclusively on John"
-  },
-  {
-   "start": 385.2,
-   "end": 388,
-   "text": "and Patsey, and if you want to be fair to the police, there were reasons."
-  },
-  {
-   "start": 388,
-   "end": 389.7,
+   "start": 388.8,
+   "end": 390.4,
    "text": "There was no sign of forced entry."
   },
   {
-   "start": 389.7,
-   "end": 392.1,
+   "start": 390.4,
+   "end": 392.5,
    "text": "There was a ransom note that looked staged."
   },
   {
-   "start": 392.1,
-   "end": 395.4,
-   "text": "A retired FBI profiler, Greg McCrary, put the numbers this way."
+   "start": 392.5,
+   "end": 401.4,
+   "text": "A retired FBI profiler, Gregg McCrary, put the numbers this way: statistically, it is a twelve-to-one probability that a family member or a caregiver is involved when a child is killed."
   },
   {
-   "start": 395.4,
-   "end": 399,
-   "text": "Statistically, it is a 12 to 1 probability that a family member or"
+   "start": 402,
+   "end": 404.4,
+   "text": "Police also did not find the Ramseys cooperative."
   },
   {
-   "start": 399.1,
-   "end": 402.1,
-   "text": "caregiver is involved when a child is killed."
+   "start": 404.4,
+   "end": 410.3,
+   "text": "The Ramseys said they held back because they feared police would not seriously look for an intruder and would settle on them."
   },
   {
-   "start": 402.1,
-   "end": 404.8,
-   "text": "Police also did not find the Ramses cooperative."
+   "start": 410.3,
+   "end": 417.9,
+   "text": "It took until the end of April 1997, more than four months after the murder, for them to sit for separate formal interviews at the Boulder County Justice Center."
   },
   {
-   "start": 404.8,
-   "end": 407.4,
-   "text": "The Ramses said they held back because they feared police would not"
+   "start": 417.9,
+   "end": 421.8,
+   "text": "That was three days after they ran a newspaper ad offering a 100,000 dollar reward."
   },
   {
-   "start": 407.4,
-   "end": 410.2,
-   "text": "seriously look for an intruder and would settle on them."
+   "start": 421.8,
+   "end": 428.6,
+   "text": "In 1999, the governor of Colorado, Bill Owens, publicly told them to quit hiding behind their attorneys and quit hiding behind their PR firm."
   },
   {
-   "start": 410.2,
-   "end": 414,
-   "text": "It took until the end of April 1997, more than four months after the murder,"
-  },
-  {
-   "start": 414,
-   "end": 417.7,
-   "text": "for them to sit for separate formal interviews at the Boulder County Justice Center."
-  },
-  {
-   "start": 417.7,
-   "end": 422,
-   "text": "That was three days after they ran a newspaper ad offering a hundred thousand dollar reward."
-  },
-  {
-   "start": 422,
-   "end": 426,
-   "text": "In 1999, the governor of Colorado, Bill Owens, publicly told them to quit hiding"
-  },
-  {
-   "start": 426,
-   "end": 429.2,
-   "text": "behind their attorneys and quit hiding behind their PR firm."
-  },
-  {
-   "start": 429.2,
-   "end": 430.9,
+   "start": 429.1,
+   "end": 430.7,
    "text": "But the record also says this."
   },
   {
-   "start": 430.9,
-   "end": 434.2,
-   "text": "Boulder police intentionally leaked misleading information hoping public"
+   "start": 430.7,
+   "end": 437.8,
+   "text": "Boulder police intentionally leaked misleading information, hoping public pressure would push the Ramseys into cooperating."
   },
   {
-   "start": 434.2,
-   "end": 436.9,
-   "text": "pressure would push the Ramses into cooperating."
+   "start": 437.8,
+   "end": 444.1,
+   "text": "The investigation lost and contaminated evidence, lacked experienced staff, and shared evidence with the family."
   },
   {
-   "start": 436.9,
-   "end": 439.7,
-   "text": "The investigation lost and contaminated evidence,"
+   "start": 444.1,
+   "end": 448.5,
+   "text": "By October 1997, the index of persons of interest had more than 1,600 names in it."
   },
   {
-   "start": 439.7,
-   "end": 443.5,
-   "text": "lacked experienced staff, and shared evidence with the family."
-  },
-  {
-   "start": 443.5,
-   "end": 448.4,
-   "text": "By October 1997, the index of persons of interest had more than 600 names in it."
-  },
-  {
-   "start": 448.4,
+   "start": 448.5,
    "end": 449.6,
    "text": "The focus was narrow."
   },
   {
    "start": 449.6,
-   "end": 451.2,
+   "end": 450.5,
    "text": "The list was not."
   },
   {
-   "start": 451.2,
-   "end": 454.9,
-   "text": "Two weeks after the murder, on January 9, 1997,"
+   "start": 451.1,
+   "end": 457.9,
+   "text": "Two weeks after the murder, on January 9, 1997, Police Chief Thomas Koby went on television and said something worth hearing again."
   },
   {
-   "start": 454.9,
-   "end": 459,
-   "text": "police chief Thomas Kobe went on television and said something worth hearing again."
+   "start": 457.9,
+   "end": 461.1,
+   "text": "Prejudging and media hype have never solved a crime, he said."
   },
   {
-   "start": 459,
-   "end": 462.4,
-   "text": "Pre-judging and media hype have never solved a crime, he said."
-  },
-  {
-   "start": 462.4,
-   "end": 465.8,
+   "start": 461.1,
+   "end": 464.1,
    "text": "Crime solving requires diligent and careful police work."
   },
   {
-   "start": 465.8,
-   "end": 468.6,
-   "text": "His department had already told the public the killing looked like an isolated"
+   "start": 464.1,
+   "end": 471,
+   "text": "His department had already told the public the killing looked like an isolated incident and that other children were not in danger."
   },
   {
-   "start": 468.6,
-   "end": 471.6,
-   "text": "incident and that other children were not in danger."
+   "start": 471.5,
+   "end": 478.8,
+   "text": "The former FBI profiler John Douglas, who was hired by the Ramsey family and came to believe the parents did not do this, was blunter about the coverage."
   },
   {
-   "start": 471.6,
-   "end": 475.2,
-   "text": "The former FBI profiler, John Douglas, who was hired by the Ramsey family and"
+   "start": 478.8,
+   "end": 489.5,
+   "text": "He said he knew of no other case in which the majority of people had decided the solution based on statistics, and no other case in which the mainstream media let the tabloids take the lead and then reported on their reporting."
   },
   {
-   "start": 475.2,
-   "end": 479.4,
-   "text": "came to believe the parents did not do this, was blunder about the coverage."
+   "start": 490.1,
+   "end": 497.6,
+   "text": "In early 1997, the Boulder County District Attorney's office brought a veteran homicide detective named Lou Smit out of retirement to look at the case fresh."
   },
   {
-   "start": 479.4,
-   "end": 482.5,
-   "text": "He said he knew of no other case in which the majority of people had decided"
+   "start": 497.6,
+   "end": 502.1,
+   "text": "He looked at the same evidence the police had, and he came out somewhere completely different."
   },
   {
-   "start": 482.5,
-   "end": 485.6,
-   "text": "to solve the solution based on statistics and no other case in which the"
+   "start": 502.6,
+   "end": 504.3,
+   "text": "Smit concluded an intruder did this."
   },
   {
-   "start": 485.6,
-   "end": 490.2,
-   "text": "mainstream media let the taboids take the lead and then reported on their reporting."
-  },
-  {
-   "start": 490.2,
-   "end": 493.9,
-   "text": "In early 1997, the Boulder County District Attorney's Office brought a veteran"
-  },
-  {
-   "start": 493.9,
-   "end": 498.2,
-   "text": "homicide detective named Lou Smith out of retirement to look at the case fresh."
-  },
-  {
-   "start": 498.2,
-   "end": 501,
-   "text": "He looked at the same evidence the police had and he came out somewhere"
-  },
-  {
-   "start": 501,
-   "end": 502.7,
-   "text": "completely different."
-  },
-  {
-   "start": 502.7,
-   "end": 504.6,
-   "text": "Smith concluded an intruder did this."
-  },
-  {
-   "start": 504.6,
-   "end": 507.6,
-   "text": "On the night of the murder, two windows had been left slightly open to run"
-  },
-  {
-   "start": 507.6,
+   "start": 504.3,
    "end": 509.4,
-   "text": "cords for the outdoor Christmas lights."
+   "text": "On the night of the murder, two windows had been left slightly open to run cords for the outdoor Christmas lights."
   },
   {
    "start": 509.4,
-   "end": 513.2,
-   "text": "There was one unlocked door and there was a broken window in the basement."
+   "end": 510.8,
+   "text": "There was one unlocked door."
   },
   {
-   "start": 513.2,
-   "end": 516,
-   "text": "Smith's theory was that someone came in through that basement window,"
+   "start": 510.8,
+   "end": 512.8,
+   "text": "And there was a broken window in the basement."
   },
   {
-   "start": 516,
-   "end": 519.8,
-   "text": "subdued John Benet with a stun gun, took her downstairs, killed her and left"
+   "start": 512.8,
+   "end": 519.9,
+   "text": "Smit's theory was that someone came in through that basement window, subdued JonBenét with a stun gun, took her downstairs, killed her, and left the note."
   },
   {
-   "start": 519.8,
-   "end": 520.8,
-   "text": "the note."
-  },
-  {
-   "start": 520.8,
-   "end": 524.4,
+   "start": 519.9,
+   "end": 523.4,
    "text": "There was an unidentified boot mark in the basement room where she was found."
   },
   {
-   "start": 524.4,
-   "end": 526.8,
-   "text": "There had been more than 100 burglaries in the Ramsey's neighborhood"
+   "start": 523.4,
+   "end": 531.4,
+   "text": "There had been more than a hundred burglaries in the Ramseys' neighborhood in the months before, and thirty-eight registered sex offenders lived within two miles of the house."
   },
   {
-   "start": 526.8,
-   "end": 530.2,
-   "text": "in the months before and 38 registered sex offenders live within"
-  },
-  {
-   "start": 530.2,
-   "end": 532.1,
-   "text": "two miles of the house."
-  },
-  {
-   "start": 532.1,
-   "end": 534,
+   "start": 532,
+   "end": 533.9,
    "text": "Critics had an answer for the window."
   },
   {
-   "start": 534,
-   "end": 536,
+   "start": 533.9,
+   "end": 535.6,
    "text": "There was an intact cobweb in it."
   },
   {
-   "start": 536,
-   "end": 539.3,
-   "text": "The steel grate over the window well had undisturbed cobwebs too"
+   "start": 535.6,
+   "end": 541.5,
+   "text": "The steel grate over the window well had undisturbed cobwebs too, and the foliage around it had not been disturbed."
   },
   {
-   "start": 539.4,
-   "end": 542.2,
-   "text": "and the foliage around it had not been disturbed."
+   "start": 542.1,
+   "end": 547.2,
+   "text": "In May 1998, Smit and others from the DA's office presented their findings to Boulder police."
   },
   {
-   "start": 542.2,
-   "end": 545.8,
-   "text": "In May 1998, Smith and others from the DA's office presented their"
-  },
-  {
-   "start": 545.8,
-   "end": 547.6,
-   "text": "findings to Boulder police."
-  },
-  {
-   "start": 547.6,
-   "end": 549.3,
+   "start": 547.2,
+   "end": 548.5,
    "text": "They could not move them."
   },
   {
-   "start": 549.3,
-   "end": 552.3,
-   "text": "The relationship between the two agencies got so bad that the"
+   "start": 548.5,
+   "end": 558.4,
+   "text": "The relationship between the two agencies got so bad that the governor at the time, Roy Romer, stepped in and named a special prosecutor, Michael Kane, to take the case to a grand jury."
   },
   {
-   "start": 552.3,
-   "end": 555.1,
-   "text": "governor at the time, Roy Romer, stepped in and named a special"
-  },
-  {
-   "start": 555.1,
-   "end": 559.2,
-   "text": "prosecutor, Michael Cain, to take the case to a grand jury."
-  },
-  {
-   "start": 559.2,
+   "start": 559,
    "end": 562.2,
-   "text": "Both lead investigators ended up quitting for opposite reasons."
+   "text": "Both lead investigators ended up quitting, for opposite reasons."
   },
   {
    "start": 562.2,
-   "end": 565.4,
-   "text": "Smith resigned on September 20, 1998, five days after the"
+   "end": 569.1,
+   "text": "Smit resigned on September 20, 1998, five days after the grand jury was convened, because he believed the intruder evidence was being ignored."
   },
   {
-   "start": 565.4,
-   "end": 567.8,
-   "text": "grand jury was convened because he believed the intruder"
+   "start": 569.1,
+   "end": 574.8,
+   "text": "Detective Steve Thomas resigned because he believed the DA's office had interfered with the case against the family."
   },
   {
-   "start": 567.8,
-   "end": 569.6,
-   "text": "evidence was being ignored."
+   "start": 574.8,
+   "end": 578.8,
+   "text": "Two experienced detectives, the same file, and they could not both stay in the room."
   },
   {
-   "start": 569.6,
-   "end": 572.4,
-   "text": "Detective Steve Thomas resigned because he believed the DA's"
+   "start": 579.3,
+   "end": 581,
+   "text": "Smit was not alone on his side of it."
   },
   {
-   "start": 572.4,
-   "end": 574.9,
-   "text": "office had interfered with the case against the family."
+   "start": 581,
+   "end": 590.5,
+   "text": "In 2001, a former Boulder County prosecutor, Trip DeMuth, and a sheriff's detective, Steve Ainsworth, both said publicly that the intruder theory deserved a more aggressive investigation."
   },
   {
-   "start": 574.9,
-   "end": 577.8,
-   "text": "Two experienced detectives, the same file, and they could not"
+   "start": 590.5,
+   "end": 594.9,
+   "text": "One of the people Smit had flagged over the years was named on national television in 2002."
   },
   {
-   "start": 577.8,
-   "end": 579.4,
-   "text": "both stay in the room."
+   "start": 594.9,
+   "end": 596.5,
+   "text": "I am not going to repeat the name."
   },
   {
-   "start": 579.4,
-   "end": 581.2,
-   "text": "Smith was not alone on his side of it."
-  },
-  {
-   "start": 581.2,
-   "end": 584.3,
-   "text": "In 2001, a former Boulder County prosecutor tripped a"
-  },
-  {
-   "start": 584.3,
-   "end": 586.4,
-   "text": "mooth and a sheriff's detective, Steve Ainsworth,"
-  },
-  {
-   "start": 586.4,
-   "end": 588.7,
-   "text": "both said publicly that the intruder theory deserved a"
-  },
-  {
-   "start": 588.7,
-   "end": 590.7,
-   "text": "more aggressive investigation."
-  },
-  {
-   "start": 590.7,
-   "end": 592.8,
-   "text": "One of the people Smith had flagged over the years was"
-  },
-  {
-   "start": 592.8,
-   "end": 595.4,
-   "text": "named on national television in 2002."
-  },
-  {
-   "start": 595.4,
-   "end": 596.8,
-   "text": "I'm not going to repeat the name."
-  },
-  {
-   "start": 596.8,
-   "end": 598.9,
-   "text": "He has never been charged in this case, and that is the"
-  },
-  {
-   "start": 598.9,
+   "start": 596.5,
    "end": 600.4,
-   "text": "point of a list like Smith's."
+   "text": "He has never been charged in this case, and that is the point of a list like Smit's."
   },
   {
    "start": 600.4,
-   "end": 602.7,
+   "end": 602,
    "text": "It is a list of people to rule out."
   },
   {
-   "start": 602.7,
-   "end": 606,
+   "start": 602.5,
+   "end": 605.3,
    "text": "The grand jury began on September 15, 1998."
   },
   {
-   "start": 606,
-   "end": 608.4,
-   "text": "It heard from experts, including the DNA specialist"
+   "start": 605.3,
+   "end": 612,
+   "text": "It heard from experts including the DNA specialist Barry Scheck and the forensic scientist Henry Lee."
   },
   {
-   "start": 608.4,
-   "end": 611.6,
-   "text": "Barry Scheck and the forensic scientist Henry Lee."
+   "start": 612,
+   "end": 615.5,
+   "text": "And in 1999, it voted to indict John and Patsy Ramsey."
   },
   {
-   "start": 611.6,
-   "end": 616.2,
-   "text": "And in 1999, it voted to indict John and Patsy Ramsey,"
+   "start": 616,
+   "end": 616.9,
+   "text": "Not for murder."
   },
   {
-   "start": 616.2,
-   "end": 617.4,
-   "text": "not for murder."
-  },
-  {
-   "start": 617.4,
-   "end": 620.3,
+   "start": 616.9,
+   "end": 619.7,
    "text": "The indictment cited two counts each of child abuse."
   },
   {
-   "start": 620.3,
-   "end": 622.4,
-   "text": "It said the parents had permitted a child to be"
+   "start": 619.7,
+   "end": 628.3,
+   "text": "It said the parents had permitted a child to be unreasonably placed in a situation that posed a threat of injury to her life or health, which resulted in her death."
   },
   {
-   "start": 622.4,
-   "end": 624.7,
-   "text": "unreasonably placed in a situation that posed a"
-  },
-  {
-   "start": 624.7,
-   "end": 627,
-   "text": "threat of injury to her life or health, which"
-  },
-  {
-   "start": 627,
-   "end": 628.6,
-   "text": "resulted in her death."
-  },
-  {
-   "start": 628.6,
-   "end": 630.8,
+   "start": 628.3,
+   "end": 630.7,
    "text": "There was also a count of accessory to a crime."
   },
   {
-   "start": 630.8,
-   "end": 634.4,
+   "start": 630.7,
+   "end": 633.7,
    "text": "A grand jury works on probable cause, which is a low bar."
   },
   {
-   "start": 634.4,
-   "end": 637.8,
-   "text": "On October 13, 1999, District Attorney Alex Hunter"
+   "start": 634.3,
+   "end": 638.1,
+   "text": "On October 13, 1999, District Attorney Alex Hunter refused to sign it."
   },
   {
-   "start": 637.8,
-   "end": 639.1,
-   "text": "refused to sign it."
+   "start": 638.1,
+   "end": 644.7,
+   "text": "He said the evidence was insufficient, and he did not believe he could prove guilt beyond a reasonable doubt at a trial."
   },
   {
-   "start": 639.1,
-   "end": 641.2,
-   "text": "He said the evidence was insufficient, and he did"
-  },
-  {
-   "start": 641.2,
-   "end": 643.5,
-   "text": "not believe he could prove guilt beyond a reasonable"
-  },
-  {
-   "start": 643.5,
-   "end": 644.8,
-   "text": "doubt at a trial."
-  },
-  {
-   "start": 644.8,
-   "end": 647.5,
+   "start": 644.7,
+   "end": 647.2,
    "text": "And here is the part that still bothers people."
   },
   {
-   "start": 647.5,
-   "end": 649.2,
+   "start": 647.2,
+   "end": 649.5,
    "text": "The public was never told about the vote."
   },
   {
-   "start": 649.2,
-   "end": 651.4,
-   "text": "For 14 years, everyone assumed the grand jury had"
+   "start": 649.5,
+   "end": 654.1,
+   "text": "For fourteen years, everyone assumed the grand jury had simply been inconclusive."
   },
   {
-   "start": 651.4,
-   "end": 653.1,
-   "text": "simply been inconclusive."
+   "start": 654.1,
+   "end": 658.6,
+   "text": "The truth came out on October 25, 2013, when sealed court documents were released."
   },
   {
-   "start": 653.1,
-   "end": 656.6,
-   "text": "The truth came out on October 25, 2013, when sealed court"
+   "start": 658.6,
+   "end": 659.7,
+   "text": "By then it was moot."
   },
   {
-   "start": 656.6,
-   "end": 658.1,
-   "text": "documents were released."
+   "start": 659.7,
+   "end": 663.2,
+   "text": "The statute of limitations on those charges had run out in 2002."
   },
   {
-   "start": 658.1,
-   "end": 659.6,
-   "text": "By then, it was moot."
+   "start": 663.7,
+   "end": 668.5,
+   "text": "One writer who has followed the case for years, Stephen Singular, has offered a reading of that vote."
   },
   {
-   "start": 659.6,
-   "end": 662,
-   "text": "The statute of limitations on those charges had run out"
+   "start": 668.5,
+   "end": 679.2,
+   "text": "He thinks the grand jury did not recommend a murder charge because the jurors did not believe the parents killed her, and that the child abuse counts were about placing her in a risky situation, not about that night in the basement."
   },
   {
-   "start": 662,
-   "end": 663.9,
-   "text": "in 2002."
-  },
-  {
-   "start": 663.9,
-   "end": 666.4,
-   "text": "One writer who has followed the case for years, Stephen"
-  },
-  {
-   "start": 666.4,
-   "end": 668.8,
-   "text": "Singular, has offered a reading of that vote."
-  },
-  {
-   "start": 668.8,
-   "end": 671.1,
-   "text": "He thinks the grand jury did not recommend a murder charge"
-  },
-  {
-   "start": 671.1,
-   "end": 673.6,
-   "text": "because the jurors did not believe the parents killed her"
-  },
-  {
-   "start": 673.6,
-   "end": 675.6,
-   "text": "and that the child abuse counts were about placing her"
-  },
-  {
-   "start": 675.6,
-   "end": 678.7,
-   "text": "in a risky situation, not about that night in the basement."
-  },
-  {
-   "start": 678.7,
-   "end": 681,
+   "start": 679.2,
+   "end": 680.4,
    "text": "That is his speculation."
   },
   {
    "start": 681,
-   "end": 684.1,
-   "text": "In December 2003, forensic investigators pulled enough"
+   "end": 688.7,
+   "text": "In December 2003, forensic investigators pulled enough material from a mixed blood sample on JonBenét's underwear to build a DNA profile."
   },
   {
-   "start": 684.1,
-   "end": 686.3,
-   "text": "material from a mixed blood sample on John Beniz"
-  },
-  {
-   "start": 686.3,
-   "end": 688.5,
-   "text": "underwear to build a DNA profile."
-  },
-  {
-   "start": 688.5,
-   "end": 690,
+   "start": 688.7,
+   "end": 690.4,
    "text": "It belonged to an unknown male."
   },
   {
-   "start": 690,
-   "end": 692.7,
-   "text": "It excluded every member of the Ramsay family."
+   "start": 690.4,
+   "end": 692.9,
+   "text": "It excluded every member of the Ramsey family."
   },
   {
-   "start": 692.7,
-   "end": 695.2,
-   "text": "It went into CODIS, the FBI's database, which held more"
+   "start": 692.9,
+   "end": 698.1,
+   "text": "It went into CODIS, the FBI's database, which held more than 1.6 million profiles at the time."
   },
   {
-   "start": 695.2,
-   "end": 699.4,
-   "text": "than 1.6 million profiles at the time, no match."
+   "start": 698.1,
+   "end": 698.6,
+   "text": "No match."
   },
   {
-   "start": 699.4,
-   "end": 702,
-   "text": "By then, a new District Attorney, Mary Lacey, had taken"
+   "start": 699.2,
+   "end": 703.6,
+   "text": "By then a new district attorney, Mary Lacy, had taken the case away from the police."
   },
   {
-   "start": 702,
-   "end": 703.8,
-   "text": "the case away from the police."
-  },
-  {
-   "start": 703.8,
-   "end": 707.9,
+   "start": 703.6,
+   "end": 706.7,
    "text": "That happened on December 26, 2002, six years to the day."
   },
   {
-   "start": 707.9,
-   "end": 709.9,
-   "text": "Lacey favored the intruder theory, and she had a"
+   "start": 706.7,
+   "end": 710.6,
+   "text": "Lacy favored the intruder theory, and she had a federal judge on her side."
   },
   {
-   "start": 710,
-   "end": 712,
-   "text": "federal judge on her side."
+   "start": 710.6,
+   "end": 722.1,
+   "text": "In a 2003 defamation case, Judge Julie Carnes wrote that there was virtually no evidence the Ramseys murdered their child, but abundant evidence to support their belief that an intruder entered the home that night."
   },
   {
-   "start": 712,
-   "end": 715.4,
-   "text": "In a 2003 defamation case, Judge Julie Carnes wrote"
-  },
-  {
-   "start": 715.4,
-   "end": 717.2,
-   "text": "that there was virtually no evidence the Ramses"
-  },
-  {
-   "start": 717.2,
-   "end": 719.8,
-   "text": "murdered their child, but abundant evidence to support"
-  },
-  {
-   "start": 719.8,
-   "end": 722.9,
-   "text": "their belief that an intruder entered the home that night."
-  },
-  {
-   "start": 722.9,
-   "end": 725.3,
+   "start": 722.7,
+   "end": 724.8,
    "text": "That closeness drew criticism of its own."
   },
   {
-   "start": 725.3,
-   "end": 727.9,
-   "text": "The Ramses developed a relationship with Lacey's office,"
+   "start": 724.8,
+   "end": 730.4,
+   "text": "The Ramseys developed a relationship with Lacy's office, and the mayor of Boulder was among those who objected."
   },
   {
-   "start": 727.9,
-   "end": 730.7,
-   "text": "and the mayor, Boulder, was among those who objected."
+   "start": 730.4,
+   "end": 739.4,
+   "text": "A former Denver prosecutor, Craig Silverman, said that once you have conceded the possibility of an intruder, he did not see how any Ramsey could ever be successfully prosecuted."
   },
   {
-   "start": 730.7,
-   "end": 733.4,
-   "text": "A former Denver prosecutor, Craig Silverman, said that"
+   "start": 739.4,
+   "end": 750.9,
+   "text": "Gordon Coombes, who joined Lacy's office as an investigator while the clothing was being tested, said she talked about the intruder theory with staff, and that he was told not to voice opposition to it because he might lose his job."
   },
   {
-   "start": 733.4,
-   "end": 736,
-   "text": "once you have conceded the possibility of an intruder,"
+   "start": 751.5,
+   "end": 762,
+   "text": "Then, on July 9, 2008, Lacy's office announced that a newer technique called touch DNA had excluded the Ramsey family as suspects, and she sent them a letter publicly exonerating them."
   },
   {
-   "start": 736,
-   "end": 738.6,
-   "text": "he did not see how any Ramses could ever be"
-  },
-  {
-   "start": 738.6,
-   "end": 740.5,
-   "text": "successfully prosecuted."
-  },
-  {
-   "start": 740.5,
-   "end": 743.2,
-   "text": "Gordon Coombs, who joined Lacey's office as an investigator"
-  },
-  {
-   "start": 743.2,
-   "end": 745.6,
-   "text": "while the clothing was being tested, said she talked"
-  },
-  {
-   "start": 745.6,
-   "end": 747.8,
-   "text": "about the intruder theory with staff, and that he was"
-  },
-  {
-   "start": 747.8,
-   "end": 749.8,
-   "text": "told not to voice opposition to it because"
-  },
-  {
-   "start": 749.8,
-   "end": 751.6,
-   "text": "he might lose his job."
-  },
-  {
-   "start": 751.6,
-   "end": 754.7,
-   "text": "Then, on July 9, 2008, Lacey's office announced"
-  },
-  {
-   "start": 754.7,
-   "end": 756.6,
-   "text": "that a newer technique called Touch DNA had"
-  },
-  {
-   "start": 756.6,
-   "end": 759,
-   "text": "excluded the Ramsey family as suspects, and she"
-  },
-  {
-   "start": 759,
-   "end": 761.7,
-   "text": "sent them a letter publicly exonerating them."
-  },
-  {
-   "start": 761.7,
-   "end": 763.2,
+   "start": 762,
+   "end": 763.1,
    "text": "Patsy never saw it."
   },
   {
-   "start": 763.2,
-   "end": 767,
-   "text": "She had died of ovarian cancer in 2006 at 49."
+   "start": 763.1,
+   "end": 766.2,
+   "text": "She had died of ovarian cancer in 2006, at forty-nine."
   },
   {
-   "start": 767,
-   "end": 768.8,
+   "start": 766.7,
+   "end": 768.6,
    "text": "That letter did not settle anything."
   },
   {
-   "start": 768.8,
-   "end": 771.5,
-   "text": "Former police chief Mark Beckner said in 2015 that"
+   "start": 768.6,
+   "end": 777.1,
+   "text": "Former police chief Mark Beckner said in 2015 that exonerating anyone based on a small piece of evidence that had not been proved to be connected to the crime was absurd."
   },
   {
-   "start": 771.5,
-   "end": 774.1,
-   "text": "exonerating anyone based on a small piece of evidence"
+   "start": 777.1,
+   "end": 781.5,
+   "text": "In the same breath, he said the unknown DNA has got to be the focus of the investigation."
   },
   {
-   "start": 774.1,
-   "end": 776.3,
-   "text": "that had not been proved to be connected to the crime"
+   "start": 781.5,
+   "end": 790.8,
+   "text": "A former DA's investigator, Gordon Coombes, pointed out that we all shed DNA all the time, and clearing somebody on touch DNA, from a scene that was never secured, really is a stretch."
   },
   {
-   "start": 776.3,
-   "end": 777.6,
-   "text": "was absurd."
+   "start": 790.8,
+   "end": 797.6,
+   "text": "A later district attorney, Stan Garnett, said in 2016 that Lacy's letter was not legally binding and she never should have written it."
   },
   {
-   "start": 777.6,
-   "end": 779.7,
-   "text": "In the same breath, he said the unknown DNA has"
-  },
-  {
-   "start": 779.7,
-   "end": 782.2,
-   "text": "got to be the focus of the investigation."
-  },
-  {
-   "start": 782.2,
-   "end": 784.2,
-   "text": "A former DA's investigator, Gordon Coombs,"
-  },
-  {
-   "start": 784.2,
-   "end": 786.8,
-   "text": "pointed out that we all shed DNA all the time,"
-  },
-  {
-   "start": 786.8,
-   "end": 789,
-   "text": "and clearing somebody on Touch DNA from a scene"
-  },
-  {
-   "start": 789,
-   "end": 791.7,
-   "text": "that was never secured really is a stretch."
-  },
-  {
-   "start": 791.7,
-   "end": 794.4,
-   "text": "A later district attorney, Stan Garnett, said in 2016"
-  },
-  {
-   "start": 794.4,
-   "end": 796.2,
-   "text": "that Lacey's letter was not legally binding,"
-  },
-  {
-   "start": 796.2,
-   "end": 798.4,
-   "text": "and she never should have written it."
-  },
-  {
-   "start": 798.4,
-   "end": 800.9,
+   "start": 798.3,
+   "end": 800.3,
    "text": "And the DNA itself got more complicated."
   },
   {
-   "start": 800.9,
-   "end": 803.7,
-   "text": "A 2016 report said more sensitive analysis"
+   "start": 800.3,
+   "end": 807,
+   "text": "A 2016 report said more sensitive analysis showed the original sample contained markers from two individuals other than JonBenét."
   },
   {
-   "start": 803.7,
-   "end": 805.6,
-   "text": "showed the original sample contained markers"
+   "start": 807,
+   "end": 817.2,
+   "text": "James Kolar, who had been a lead investigator for the DA's office, said there were additional traces of male DNA on the cord and the paintbrush, and six separate samples from unknown individuals overall."
   },
   {
-   "start": 805.6,
-   "end": 808.1,
-   "text": "from two individuals other than John Benet."
-  },
-  {
-   "start": 808.1,
-   "end": 810,
-   "text": "James Kohler, who had been a lead investigator"
-  },
-  {
-   "start": 810,
-   "end": 812.3,
-   "text": "for the DA's office, said there were additional traces"
-  },
-  {
-   "start": 812.3,
-   "end": 814.4,
-   "text": "of male DNA on the cord in the paintbrush"
-  },
-  {
-   "start": 814.4,
-   "end": 817.9,
-   "text": "and six separate samples from unknown individuals overall."
-  },
-  {
-   "start": 817.9,
-   "end": 820,
+   "start": 817.7,
+   "end": 819.9,
    "text": "There is even a theory about the factory."
   },
   {
-   "start": 820,
-   "end": 823.2,
-   "text": "The experts on a 2016 CBS special concluded"
+   "start": 819.9,
+   "end": 827.7,
+   "text": "The experts on a 2016 CBS special concluded that a trace amount of DNA like this could have been transferred when the underwear was made and packaged."
   },
   {
-   "start": 823.2,
-   "end": 824.8,
-   "text": "that a trace amount of DNA like this"
+   "start": 827.7,
+   "end": 829.6,
+   "text": "Candice DeLong laughed at that one."
   },
   {
-   "start": 824.9,
-   "end": 826.7,
-   "text": "could have been transferred when the underwear was made"
+   "start": 829.6,
+   "end": 837.2,
+   "text": "Her point was that the same touch DNA turned up on more than one item of clothing, and she did not think one factory worker in China explains that."
   },
   {
-   "start": 826.7,
-   "end": 827.8,
-   "text": "and packaged."
-  },
-  {
-   "start": 827.8,
-   "end": 830,
-   "text": "Candace DeLong laughed at that one."
-  },
-  {
-   "start": 830,
-   "end": 832.3,
-   "text": "Her point was that the same Touch DNA turned up"
-  },
-  {
-   "start": 832.3,
-   "end": 834,
-   "text": "on more than one item of clothing,"
-  },
-  {
-   "start": 834,
-   "end": 836.3,
-   "text": "and she did not think one factory worker in China"
-  },
-  {
-   "start": 836.3,
-   "end": 837.8,
-   "text": "explains that."
-  },
-  {
-   "start": 837.8,
-   "end": 839.5,
+   "start": 837.7,
+   "end": 839.4,
    "text": "So you get two honest readings."
   },
   {
-   "start": 839.5,
-   "end": 841.8,
-   "text": "The former FBI profiler Candace DeLong says"
+   "start": 839.4,
+   "end": 846.4,
+   "text": "The former FBI profiler Candice DeLong says this is a DNA case, because the same profile turned up in more than one place on her clothing."
   },
   {
-   "start": 841.8,
-   "end": 844.5,
-   "text": "this is a DNA case because the same profile turned up"
+   "start": 846.4,
+   "end": 854.4,
+   "text": "Michael Baden says trace DNA gets onto clothing by all kinds of nonsuspicious means, and there is no forensic evidence to show this was a stranger murder."
   },
   {
-   "start": 844.5,
-   "end": 846.8,
-   "text": "in more than one place on her clothing."
+   "start": 854.4,
+   "end": 859.3,
+   "text": "Bob Grant, the former prosecutor who advised the Boulder DA for years, split the difference."
   },
   {
-   "start": 846.8,
-   "end": 849.2,
-   "text": "Michael Baden says trace DNA gets onto clothing"
+   "start": 859.3,
+   "end": 863.2,
+   "text": "Any resolution of this case, he said, has to explain how that DNA got there."
   },
   {
-   "start": 849.2,
-   "end": 851.2,
-   "text": "by all kinds of non-suspicious means,"
+   "start": 863.7,
+   "end": 868.1,
+   "text": "Twice, this case looked like it was about to end on television, and both times it fell apart."
   },
   {
-   "start": 851.2,
-   "end": 853.1,
-   "text": "and there is no forensic evidence to show"
+   "start": 868.7,
+   "end": 875.3,
+   "text": "In August 2006, a forty-one-year-old schoolteacher named John Mark Karr was arrested in Bangkok, Thailand, after confessing."
   },
   {
-   "start": 853.1,
-   "end": 854.8,
-   "text": "this was a stranger murder."
+   "start": 875.3,
+   "end": 878.9,
+   "text": "He said he had drugged her, assaulted her, and killed her by accident."
   },
   {
-   "start": 854.8,
-   "end": 856.9,
-   "text": "Bob Grant, the former prosecutor who advised"
+   "start": 878.9,
+   "end": 882.4,
+   "text": "But his confession only contained facts that were already public."
   },
   {
-   "start": 856.9,
-   "end": 859.6,
-   "text": "the Boulder DA for years, swiped the difference."
+   "start": 882.4,
+   "end": 884.5,
+   "text": "The autopsy had found no drugs in her body."
   },
   {
-   "start": 859.6,
-   "end": 861.2,
-   "text": "Any resolution of this case, he said,"
-  },
-  {
-   "start": 861.2,
-   "end": 863.8,
-   "text": "has to explain how that DNA got there."
-  },
-  {
-   "start": 863.8,
-   "end": 865.8,
-   "text": "Twice, this case looked like it was about to end"
-  },
-  {
-   "start": 865.8,
-   "end": 868.9,
-   "text": "on television, and both times it fell apart."
-  },
-  {
-   "start": 868.9,
-   "end": 871.3,
-   "text": "In August 2006, a 41-year-old school teacher"
-  },
-  {
-   "start": 871.3,
-   "end": 872.7,
-   "text": "named John Mark Carr was arrested"
-  },
-  {
-   "start": 872.7,
-   "end": 875.1,
-   "text": "in Bangkok, Thailand after confessing."
-  },
-  {
-   "start": 875.1,
-   "end": 876.8,
-   "text": "He said he had drugged her, assaulted her,"
-  },
-  {
-   "start": 876.8,
-   "end": 879.4,
-   "text": "and killed her by accident, but his confession"
-  },
-  {
-   "start": 879.4,
-   "end": 881.8,
-   "text": "only contained facts that were already public."
-  },
-  {
-   "start": 881.8,
-   "end": 884.2,
-   "text": "The autopsy had found no drugs in her body,"
-  },
-  {
-   "start": 884.2,
+   "start": 884.5,
    "end": 885.8,
-   "text": "and his DNA did not match."
+   "text": "And his DNA did not match."
   },
   {
    "start": 885.8,
-   "end": 887.8,
+   "end": 887.2,
    "text": "It was a false confession."
   },
   {
-   "start": 887.8,
-   "end": 890.4,
-   "text": "10 years later, in September 2016,"
+   "start": 887.7,
+   "end": 899.1,
+   "text": "Ten years later, in September 2016, CBS aired a two-night special in which a panel of experts theorized that her brother, Burke, had hit her with a heavy object, possibly a flashlight, in a fight over a piece of pineapple."
   },
   {
-   "start": 890.4,
-   "end": 892.6,
-   "text": "CBS aired a two-night special in which a panel"
+   "start": 899.1,
+   "end": 903.9,
+   "text": "One of the panelists, the pathologist Werner Spitz, accused him outright in an interview."
   },
   {
-   "start": 892.6,
-   "end": 894.8,
-   "text": "of experts theorized that her brother, Burke,"
+   "start": 904.4,
+   "end": 907.5,
+   "text": "I want to be precise here, because this is a living person."
   },
   {
-   "start": 894.8,
-   "end": 897.5,
-   "text": "had hit her with a heavy object, possibly a flashlight,"
-  },
-  {
-   "start": 897.5,
-   "end": 899.7,
-   "text": "in a fight over a piece of pineapple."
-  },
-  {
-   "start": 899.7,
-   "end": 901.2,
-   "text": "One of the panelists, the pathologist,"
-  },
-  {
-   "start": 901.2,
-   "end": 904.7,
-   "text": "Warner Spitz, accused him outright in an interview."
-  },
-  {
-   "start": 904.7,
-   "end": 905.8,
-   "text": "I want to be precise here,"
-  },
-  {
-   "start": 905.8,
-   "end": 907.6,
-   "text": "because this is a living person."
-  },
-  {
-   "start": 907.6,
-   "end": 909.3,
+   "start": 907.5,
+   "end": 909.2,
    "text": "Burke Ramsey was nine years old."
   },
   {
-   "start": 909.3,
-   "end": 911.3,
-   "text": "Investigators interviewed him at least three times,"
+   "start": 909.2,
+   "end": 914.4,
+   "text": "Investigators interviewed him at least three times, and those interviews raised no concerns."
   },
   {
-   "start": 911.3,
-   "end": 913.4,
-   "text": "and those interviews raised no concerns."
+   "start": 914.4,
+   "end": 917.1,
+   "text": "In 1998 the police chief said he was not involved."
   },
   {
-   "start": 913.4,
-   "end": 916.4,
-   "text": "In 1998, the police chief said he was not involved."
+   "start": 917.1,
+   "end": 920.3,
+   "text": "In May 1999 the DA's office repeated that he was not a suspect."
   },
   {
-   "start": 916.4,
-   "end": 919,
-   "text": "In May 1999, the DA's office repeated"
-  },
-  {
-   "start": 919,
-   "end": 920.8,
-   "text": "that he was not a suspect."
-  },
-  {
-   "start": 920.8,
-   "end": 924.2,
+   "start": 920.3,
+   "end": 923.4,
    "text": "The record says investigators never considered him one."
   },
   {
-   "start": 924.2,
-   "end": 926.2,
+   "start": 924,
+   "end": 926.3,
    "text": "The reviews of that special were brutal."
   },
   {
-   "start": 926.2,
-   "end": 928.4,
-   "text": "Rolling Stone faulted it for confirmation bias"
+   "start": 926.3,
+   "end": 931,
+   "text": "Rolling Stone faulted it for confirmation bias and for dismissing the DNA entirely."
   },
   {
-   "start": 928.4,
-   "end": 930.4,
-   "text": "and for dismissing the DNA entirely."
+   "start": 931,
+   "end": 934.8,
+   "text": "The panel had claimed to hear three voices at the end of the 9-1-1 call."
   },
   {
-   "start": 930.4,
-   "end": 932.2,
-   "text": "The panel had claimed to hear three voices"
-  },
-  {
-   "start": 932.2,
-   "end": 934,
-   "text": "at the end of the 911 call."
-  },
-  {
-   "start": 934,
-   "end": 936.4,
-   "text": "20 years earlier, the Secret Service and the FBI"
-  },
-  {
-   "start": 936.4,
-   "end": 939.7,
-   "text": "had listened to the same tape and heard nothing of the kind."
-  },
-  {
-   "start": 939.7,
+   "start": 934.8,
    "end": 941,
-   "text": "Burke sued."
+   "text": "Twenty years earlier, the Secret Service and the FBI had listened to the same tape and heard nothing of the kind."
   },
   {
    "start": 941,
-   "end": 945.1,
-   "text": "His lawyers asked for $250 million in compensatory damages"
+   "end": 941.6,
+   "text": "Burke sued."
   },
   {
-   "start": 945.1,
-   "end": 947.2,
-   "text": "and 500 million impugnative damages"
+   "start": 941.6,
+   "end": 949.2,
+   "text": "His lawyers asked for 250 million dollars in compensatory damages and 500 million in punitive damages from CBS and the people involved."
   },
   {
-   "start": 947.2,
-   "end": 949.4,
-   "text": "from CBS and the people involved."
+   "start": 949.2,
+   "end": 956.7,
+   "text": "A judge refused to throw the case out, and in January 2019 his attorney announced it had been settled to the satisfaction of all parties."
   },
   {
-   "start": 949.4,
-   "end": 951.4,
-   "text": "A judge refused to throw the case out,"
+   "start": 957.3,
+   "end": 960.5,
+   "text": "That was not the family's first time in court over coverage."
   },
   {
-   "start": 951.4,
-   "end": 954.2,
-   "text": "and in January 2019, his attorney announced"
+   "start": 960.5,
+   "end": 967.2,
+   "text": "Their libel attorney, Lin Wood, had been filing defamation suits since 1999, starting with Star magazine on Burke's behalf."
   },
   {
-   "start": 954.2,
-   "end": 957.5,
-   "text": "it had been settled to the satisfaction of all parties."
+   "start": 967.2,
+   "end": 972.2,
+   "text": "A suit over a book co-written by Steve Thomas, the detective who quit, was settled out of court."
   },
   {
-   "start": 957.5,
-   "end": 959,
-   "text": "That was not the family's first time"
+   "start": 972.2,
+   "end": 978.6,
+   "text": "And when two people named in the Ramseys' own book, The Death of Innocence, sued them, both of those suits were dismissed."
   },
   {
-   "start": 959,
-   "end": 960.4,
-   "text": "in court over coverage."
-  },
-  {
-   "start": 960.4,
-   "end": 961.8,
-   "text": "Their libel attorney, Lynn Wood,"
-  },
-  {
-   "start": 961.8,
-   "end": 964.6,
-   "text": "had been filing defamation suits since 1999,"
-  },
-  {
-   "start": 964.6,
-   "end": 967.3,
-   "text": "starting with Star magazine on Burke's behalf."
-  },
-  {
-   "start": 967.3,
-   "end": 969.6,
-   "text": "A suit over a book co-written by Steve Thomas,"
-  },
-  {
-   "start": 969.6,
-   "end": 972.3,
-   "text": "the detective who quit, was settled out of court."
-  },
-  {
-   "start": 972.3,
-   "end": 974.8,
-   "text": "And when two people named in the Ramses' own book,"
-  },
-  {
-   "start": 974.8,
-   "end": 977,
-   "text": "The Death of Innocence, sued them,"
-  },
-  {
-   "start": 977,
-   "end": 979.3,
-   "text": "both of those suits were dismissed."
-  },
-  {
-   "start": 979.3,
-   "end": 980.6,
+   "start": 979.2,
+   "end": 980.1,
    "text": "So where is it now?"
   },
   {
-   "start": 980.6,
-   "end": 982.2,
-   "text": "The Boulder Police Department took the case"
+   "start": 980.1,
+   "end": 985,
+   "text": "The Boulder Police Department took the case back in February 2009, and it has had it ever since."
   },
   {
-   "start": 982.2,
-   "end": 985.6,
-   "text": "back in February 2009, and it has had it ever since."
+   "start": 985,
+   "end": 989.1,
+   "text": "It is an open homicide, and every December the department gives a public update."
   },
   {
-   "start": 985.6,
-   "end": 987.7,
-   "text": "It is an open homicide, and every December,"
-  },
-  {
-   "start": 987.7,
-   "end": 989.9,
-   "text": "the department gives a public update."
-  },
-  {
-   "start": 989.9,
-   "end": 992.6,
+   "start": 989.7,
+   "end": 992.4,
    "text": "It has not been sitting in a box that whole time."
   },
   {
-   "start": 992.6,
-   "end": 995.2,
-   "text": "In October 2010, Boulder Police formally reopened it"
+   "start": 992.4,
+   "end": 1001.1,
+   "text": "In October 2010, Boulder police formally reopened it as a cold case, after a fresh review by a committee that included state and federal investigators."
   },
   {
-   "start": 995.2,
-   "end": 997.8,
-   "text": "as a cold case after a fresh review by a committee"
-  },
-  {
-   "start": 997.8,
-   "end": 1000.3,
-   "text": "that included state and federal investigators."
-  },
-  {
-   "start": 1000.3,
-   "end": 1001.9,
+   "start": 1001.1,
+   "end": 1002.6,
    "text": "New interviews were done."
   },
   {
-   "start": 1001.9,
-   "end": 1003.8,
+   "start": 1002.6,
+   "end": 1004.2,
    "text": "Nothing new came out of them."
   },
   {
-   "start": 1003.8,
-   "end": 1006.8,
-   "text": "In 2016, the police chief at the time, Greg Testa,"
+   "start": 1004.2,
+   "end": 1010.1,
+   "text": "In 2016, the police chief at the time, Greg Testa, said it was still an active homicide investigation."
   },
   {
-   "start": 1006.8,
-   "end": 1009.9,
-   "text": "said it was still an active homicide investigation."
+   "start": 1010.1,
+   "end": 1019.1,
+   "text": "That same year, a forensic DNA scientist named Lawrence Kobilinsky said on an A&E special that, based on the DNA, an unidentified male committed this crime."
   },
   {
-   "start": 1009.9,
-   "end": 1012.2,
-   "text": "That same year, a forensic DNA scientist"
+   "start": 1019.6,
+   "end": 1023.8,
+   "text": "The most recent one came on December 12, 2025, from Police Chief Stephen Redfearn."
   },
   {
-   "start": 1012.2,
-   "end": 1014.8,
-   "text": "named Lawrence Kobolinski said on an A&E special"
+   "start": 1023.8,
+   "end": 1030.2,
+   "text": "He said that over the past year detectives had conducted several new interviews and had re-interviewed people based on tips."
   },
   {
-   "start": 1014.8,
-   "end": 1017.9,
-   "text": "that, based on the DNA, an unidentified male"
+   "start": 1030.2,
+   "end": 1035.5,
+   "text": "He said they had collected new evidence, and had tested and retested other evidence to generate leads."
   },
   {
-   "start": 1017.9,
-   "end": 1019.8,
-   "text": "committed this crime."
+   "start": 1035.5,
+   "end": 1038.7,
+   "text": "He did not say what the new evidence was, or who was interviewed."
   },
   {
-   "start": 1019.8,
-   "end": 1022.6,
-   "text": "The most recent one came on December 12, 2025,"
+   "start": 1038.7,
+   "end": 1043.9,
+   "text": "He did say this: it is never too late for people with knowledge of this terrible crime to come forward."
   },
   {
-   "start": 1022.6,
-   "end": 1024.5,
-   "text": "from police chief Stephen Redfern."
+   "start": 1044.4,
+   "end": 1046.1,
+   "text": "John Ramsey is in his eighties now."
   },
   {
-   "start": 1024.5,
-   "end": 1025.9,
-   "text": "He said that over the past year,"
+   "start": 1046.1,
+   "end": 1055,
+   "text": "He has pushed Boulder police for years to retest evidence with the newest genetic technology, and he has said his greatest wish is to learn who killed his daughter while he is still alive."
   },
   {
-   "start": 1025.9,
-   "end": 1027.9,
-   "text": "detectives had conducted several new interviews"
+   "start": 1055,
+   "end": 1063.1,
+   "text": "Earlier in 2025, he said police told him the degraded DNA from her underwear could not go through genealogy testing yet, because the technology is not advanced enough."
   },
   {
-   "start": 1027.9,
-   "end": 1030.4,
-   "text": "and had re-interviewed people based on tips."
-  },
-  {
-   "start": 1030.4,
-   "end": 1032.3,
-   "text": "He said they had collected new evidence"
-  },
-  {
-   "start": 1032.3,
-   "end": 1034.5,
-   "text": "and had tested and retested other evidence"
-  },
-  {
-   "start": 1034.5,
-   "end": 1035.9,
-   "text": "to generate leads."
-  },
-  {
-   "start": 1035.9,
-   "end": 1038,
-   "text": "He did not say what the new evidence was"
-  },
-  {
-   "start": 1038,
-   "end": 1039.7,
-   "text": "or who was interviewed."
-  },
-  {
-   "start": 1039.7,
-   "end": 1041.9,
-   "text": "He did say this, it is never too late for people"
-  },
-  {
-   "start": 1041.9,
-   "end": 1044.6,
-   "text": "with knowledge of this terrible crime to come forward."
-  },
-  {
-   "start": 1044.6,
-   "end": 1046.4,
-   "text": "John Ramsey is in his 80s now."
-  },
-  {
-   "start": 1046.4,
-   "end": 1048.1,
-   "text": "He has pushed Boulder Police for years"
-  },
-  {
-   "start": 1048.1,
-   "end": 1050.8,
-   "text": "to retest evidence with the newest genetic technology,"
-  },
-  {
-   "start": 1050.8,
-   "end": 1052.9,
-   "text": "and he has said his greatest wish is to learn"
-  },
-  {
-   "start": 1052.9,
-   "end": 1055.4,
-   "text": "who killed his daughter while he is still alive."
-  },
-  {
-   "start": 1055.4,
-   "end": 1057.6,
-   "text": "Earlier in 2025, he said police told him"
-  },
-  {
-   "start": 1057.6,
-   "end": 1059.2,
-   "text": "that degraded DNA from her underwear"
-  },
-  {
-   "start": 1059.2,
-   "end": 1061.2,
-   "text": "could not go through genealogy testing yet,"
-  },
-  {
-   "start": 1061.2,
-   "end": 1063.8,
-   "text": "because the technology is not advanced enough."
-  },
-  {
-   "start": 1063.8,
+   "start": 1063.7,
    "end": 1066.4,
    "text": "He has also asked for something bigger than his own case."
   },
   {
    "start": 1066.4,
-   "end": 1069.2,
-   "text": "He has urged the FBI to make child murder a federal crime"
+   "end": 1072.9,
+   "text": "He has urged the FBI to make child murder a federal crime, so the Bureau could step in automatically when the victim is twelve or younger."
   },
   {
-   "start": 1069.2,
-   "end": 1070.9,
-   "text": "so the bureau could step in automatically"
+   "start": 1072.9,
+   "end": 1080.3,
+   "text": "Whatever you think happened in that house, it is hard to hear that and not think about the first six hours of this investigation, and who was in charge of them."
   },
   {
-   "start": 1070.9,
-   "end": 1073,
-   "text": "when the victim is 12 or younger."
+   "start": 1080.9,
+   "end": 1084.4,
+   "text": "The second investigation is the one most people have never heard of."
   },
   {
-   "start": 1073,
-   "end": 1074.5,
-   "text": "Whatever you think happened in that house"
+   "start": 1084.4,
+   "end": 1087.9,
+   "text": "Lou Smit kept working this case on his own until he died in August 2010."
   },
   {
-   "start": 1074.5,
-   "end": 1076.4,
-   "text": "is hard to hear that and not think about"
+   "start": 1087.9,
+   "end": 1092.1,
+   "text": "He left behind a spreadsheet with hundreds of names, sorted into priority tiers."
   },
   {
-   "start": 1076.4,
-   "end": 1078.8,
-   "text": "the first six hours of this investigation"
-  },
-  {
-   "start": 1078.8,
-   "end": 1081.1,
-   "text": "and who was in charge of them."
-  },
-  {
-   "start": 1081.1,
-   "end": 1082.6,
-   "text": "The second investigation is the one"
-  },
-  {
-   "start": 1082.6,
-   "end": 1084.2,
-   "text": "most people have never heard of."
-  },
-  {
-   "start": 1084.2,
-   "end": 1086,
-   "text": "Lou Smith kept working this case on his own"
-  },
-  {
-   "start": 1086,
-   "end": 1088.1,
-   "text": "until he died in August 2010."
-  },
-  {
-   "start": 1088.1,
-   "end": 1090.2,
-   "text": "He left behind a spreadsheet with hundreds of names"
-  },
-  {
-   "start": 1090.2,
-   "end": 1092.2,
-   "text": "sorted into priority tiers."
-  },
-  {
-   "start": 1092.2,
-   "end": 1094.6,
+   "start": 1092.1,
+   "end": 1094.7,
    "text": "After his death, his family and friends picked it up."
   },
   {
-   "start": 1094.6,
+   "start": 1094.7,
    "end": 1096.6,
-   "text": "They called themselves the Smith team."
+   "text": "They call themselves the Smit Team."
   },
   {
    "start": 1096.6,
-   "end": 1098.5,
-   "text": "His daughter, Cindy Mara, a paralegal"
+   "end": 1101.1,
+   "text": "His daughter, Cindy Marra, a paralegal who worked the case with him, is the driving force."
   },
   {
-   "start": 1098.5,
-   "end": 1101.2,
-   "text": "who worked the case with him is the driving force."
+   "start": 1101.1,
+   "end": 1106.3,
+   "text": "His former homicide partners are on it too, including a former El Paso County sheriff, John Anderson."
   },
   {
-   "start": 1101.2,
-   "end": 1103.3,
-   "text": "His former homicide partners are on it too,"
-  },
-  {
-   "start": 1103.3,
-   "end": 1107.1,
-   "text": "including a former El Paso County Sheriff, John Anderson."
-  },
-  {
-   "start": 1107.1,
-   "end": 1108.6,
+   "start": 1106.9,
+   "end": 1107.9,
    "text": "They do one thing."
   },
   {
-   "start": 1108.6,
-   "end": 1111,
-   "text": "They collect DNA from people on Lou Smith's list"
+   "start": 1107.9,
+   "end": 1113.2,
+   "text": "They collect DNA from people on Lou Smit's list and compare it to the unidentified male profile."
   },
   {
-   "start": 1111,
-   "end": 1113.5,
-   "text": "and compare it to the unidentified male profile."
-  },
-  {
-   "start": 1113.5,
-   "end": 1117,
+   "start": 1113.2,
+   "end": 1116.3,
    "text": "When a sample does not match, that name gets crossed off."
   },
   {
-   "start": 1117,
-   "end": 1119.8,
-   "text": "So far they have eliminated 28 persons of interest"
+   "start": 1116.3,
+   "end": 1121.3,
+   "text": "So far they have eliminated twenty-eight persons of interest and tested forty-five items."
   },
   {
-   "start": 1119.8,
-   "end": 1121.6,
-   "text": "and tested 45 items."
-  },
-  {
-   "start": 1121.6,
-   "end": 1123.6,
+   "start": 1121.3,
+   "end": 1122.9,
    "text": "Nobody on the team gets paid."
   },
   {
-   "start": 1123.6,
-   "end": 1127.3,
-   "text": "It runs on small donations, nearly $100,000 over the years"
-  },
-  {
-   "start": 1127.3,
-   "end": 1129.2,
-   "text": "and the team says more than 90% of that"
-  },
-  {
-   "start": 1129.2,
+   "start": 1122.9,
    "end": 1131,
-   "text": "has gone to lab work and travel."
+   "text": "It runs on small donations, nearly 100,000 dollars over the years, and the team says more than ninety percent of that has gone to lab work and travel."
   },
   {
    "start": 1131,
-   "end": 1133,
+   "end": 1132.8,
    "text": "They describe it as exhausting."
   },
   {
-   "start": 1133,
-   "end": 1134.6,
-   "text": "Every lead brings hope"
+   "start": 1132.8,
+   "end": 1136.6,
+   "text": "Every lead brings hope, and then the lab results come back negative."
   },
   {
-   "start": 1134.6,
-   "end": 1137.3,
-   "text": "and then the lab results come back negative."
+   "start": 1137.1,
+   "end": 1142.7,
+   "text": "A three-part Fox Nation documentary followed them recently, which is how a lot of people found out they exist."
   },
   {
-   "start": 1137.3,
-   "end": 1139.1,
-   "text": "A three part Fox Nation documentary"
+   "start": 1142.7,
+   "end": 1146.3,
+   "text": "John Ramsey meets with the team from time to time, in person or over Zoom."
   },
   {
-   "start": 1139.1,
-   "end": 1140.3,
-   "text": "followed them recently,"
+   "start": 1146.3,
+   "end": 1148.5,
+   "text": "And they are clear about what they believe."
   },
   {
-   "start": 1140.3,
-   "end": 1142.8,
-   "text": "which is how a lot of people found out they exist."
+   "start": 1148.5,
+   "end": 1153.1,
+   "text": "They think DNA will identify the killer, and that it will not be a member of the Ramsey family."
   },
   {
-   "start": 1142.8,
-   "end": 1145,
-   "text": "John Ramsey meets with the team from time to time,"
+   "start": 1153.7,
+   "end": 1166.5,
+   "text": "Anderson also says a Colorado Bureau of Investigation DNA report was turned over to Boulder police within three weeks of the murder, that it excluded every member of the Ramsey family, and that it was not made public until his team released it in February 2023."
   },
   {
-   "start": 1145,
-   "end": 1146.7,
-   "text": "in person or over Zoom,"
-  },
-  {
-   "start": 1146.7,
-   "end": 1149,
-   "text": "and they are clear about what they believe."
-  },
-  {
-   "start": 1149,
-   "end": 1151,
-   "text": "They think DNA will identify the killer"
-  },
-  {
-   "start": 1151,
-   "end": 1153.9,
-   "text": "and that it will not be a member of the Ramsey family."
-  },
-  {
-   "start": 1153.9,
-   "end": 1156.6,
-   "text": "Anderson also says a Colorado Bureau of Investigation"
-  },
-  {
-   "start": 1156.6,
-   "end": 1158.8,
-   "text": "DNA report was turned over to Boulder Police"
-  },
-  {
-   "start": 1158.8,
-   "end": 1160.3,
-   "text": "within three weeks of the murder"
-  },
-  {
-   "start": 1160.3,
-   "end": 1163.1,
-   "text": "that it excluded every member of the Ramsey family"
-  },
-  {
-   "start": 1163.1,
-   "end": 1164.4,
-   "text": "and that it was not made public"
-  },
-  {
-   "start": 1164.4,
-   "end": 1167,
-   "text": "until his team released it in February 2023."
-  },
-  {
-   "start": 1167,
-   "end": 1168.2,
+   "start": 1166.5,
+   "end": 1167.5,
    "text": "That is his account."
   },
   {
-   "start": 1168.2,
-   "end": 1169.8,
-   "text": "If it is accurate, it means the question"
-  },
-  {
-   "start": 1169.8,
-   "end": 1171,
-   "text": "that split this case in half"
-  },
-  {
-   "start": 1171,
-   "end": 1173.2,
-   "text": "had an early answer sitting in a file."
+   "start": 1167.5,
+   "end": 1172.6,
+   "text": "If it is accurate, it means the question that split this case in half had an early answer sitting in a file."
   },
   {
    "start": 1173.2,
-   "end": 1176.4,
-   "text": "Here is what I think you can say for sure after 30 years."
+   "end": 1176.3,
+   "text": "Here is what I think you can say for sure after thirty years."
   },
   {
-   "start": 1176.4,
-   "end": 1178.5,
-   "text": "The scene was compromised in the first hours"
+   "start": 1176.3,
+   "end": 1181.6,
+   "text": "The scene was compromised in the first hours, and nothing anyone has done since can fully fix that."
   },
   {
-   "start": 1178.5,
-   "end": 1181.9,
-   "text": "and nothing anyone has done since can fully fix that."
-  },
-  {
-   "start": 1181.9,
-   "end": 1184.1,
-   "text": "The police built a case against the parents"
-  },
-  {
-   "start": 1184.1,
-   "end": 1186.4,
-   "text": "that a grand jury found probable cause for"
-  },
-  {
-   "start": 1186.4,
+   "start": 1181.6,
    "end": 1189,
-   "text": "and a district attorney decided he could not prove."
+   "text": "The police built a case against the parents that a grand jury found probable cause for, and a district attorney decided he could not prove."
   },
   {
    "start": 1189,
-   "end": 1191,
-   "text": "The DNA points to an unknown male"
+   "end": 1194.1,
+   "text": "The DNA points to an unknown male, and serious people still disagree about what that DNA means."
   },
   {
-   "start": 1191,
-   "end": 1192.6,
-   "text": "and serious people still disagree"
-  },
-  {
-   "start": 1192.6,
-   "end": 1194.9,
-   "text": "about what that DNA means."
-  },
-  {
-   "start": 1194.9,
+   "start": 1194.7,
    "end": 1196.5,
    "text": "Bob Grant said it better than I can."
   },
   {
    "start": 1196.5,
-   "end": 1197.9,
-   "text": "The case will always be one"
+   "end": 1202.7,
+   "text": "The case will always be one where there are two likely scenarios, he said, and to prove one, you have to disprove the other."
   },
   {
-   "start": 1197.9,
-   "end": 1200,
-   "text": "where there are two likely scenarios he said"
+   "start": 1202.7,
+   "end": 1207.6,
+   "text": "He also said that without a viable confession, it is unlikely there will ever be a resolution."
   },
   {
-   "start": 1200,
-   "end": 1202.6,
-   "text": "and to prove one you have to disprove the other."
-  },
-  {
-   "start": 1202.6,
-   "end": 1204.8,
-   "text": "He also said that without a viable confession"
-  },
-  {
-   "start": 1204.8,
-   "end": 1207.5,
-   "text": "it is unlikely there will ever be a resolution."
-  },
-  {
-   "start": 1207.5,
+   "start": 1207.6,
    "end": 1209,
    "text": "I hope he is wrong about that."
   },
   {
    "start": 1209,
-   "end": 1211,
-   "text": "Cold cases get solved every year now"
+   "end": 1215.3,
+   "text": "Cold cases get solved every year now with genetic genealogy, and that is what John Ramsey and the Smit Team are hoping for."
   },
   {
-   "start": 1211,
-   "end": 1212.4,
-   "text": "with genetic genealogy"
+   "start": 1215.9,
+   "end": 1220.2,
+   "text": "If you know something, Boulder police have a tip line."
   },
   {
-   "start": 1212.4,
-   "end": 1213.8,
-   "text": "and that is what John Ramsey"
-  },
-  {
-   "start": 1213.8,
-   "end": 1216,
-   "text": "and the Smith team are hoping for."
-  },
-  {
-   "start": 1216,
-   "end": 1219,
-   "text": "If you know something, Boulder Police have a tip line."
-  },
-  {
-   "start": 1219,
-   "end": 1223.2,
+   "start": 1220.2,
+   "end": 1222.6,
    "text": "The number is 303-441-1974."
   },
   {
-   "start": 1223.2,
-   "end": 1225.8,
-   "text": "She was six years old and she would be 36."
+   "start": 1223.1,
+   "end": 1225.6,
+   "text": "She was six years old, and she would be thirty-six."
   },
   {
-   "start": 1225.8,
-   "end": 1228,
+   "start": 1225.6,
+   "end": 1227.8,
    "text": "Patsy Ramsey is buried next to her in Georgia."
   },
   {
-   "start": 1228,
-   "end": 1229.9,
+   "start": 1227.8,
+   "end": 1229.7,
    "text": "The reports and the rulings are public."
   },
   {
-   "start": 1230.8,
+   "start": 1229.7,
+   "end": 1230.4,
+   "text": "Read the file."
+  },
+  {
+   "start": 1230.4,
+   "end": 1231.7,
+   "text": "Form your own conclusion."
+  },
+  {
+   "start": 1231.7,
    "end": 1232.8,
    "text": "That's it for this one."
   },
   {
    "start": 1232.8,
-   "end": 1234.4,
+   "end": 1234.3,
    "text": "Thanks for hanging out with me."
   },
   {
-   "start": 1234.4,
-   "end": 1236,
-   "text": "This has been Crime Time Snacks"
-  },
-  {
-   "start": 1236,
-   "end": 1237.2,
-   "text": "and I'll catch you next time."
+   "start": 1234.3,
+   "end": 1237.3,
+   "text": "This has been CrimeTimeSnacks, and I'll catch you next time."
   }
  ]
 }

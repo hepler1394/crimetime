@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Generates merch.html from merch.json — the Logo Collection (real print files
 // of the show's cover art) up top, then the gallery of generated SVG designs.
-// Honest CTA (no fake checkout): downloads + notify until the POD store opens.
+// No prices, no checkout, no "opens soon": downloads plus a notify email, and the page says
+// plainly that nothing is for sale. Prices go back on the day a store exists.
 // Uses the shared 2026 shell. Run: node automation/build-merch.mjs
 
 import { readFile, writeFile } from "node:fs/promises";
@@ -23,35 +24,17 @@ const designs = merch.designs || [];
 const collection = merch.collection || [];
 
 /* --------------------------------------------------- structured data */
-const products = [
-  ...collection.map((c) => ({ name: `${c.name} — CrimeTimeSnacks`, image: `${SITE}/${c.file}`, price: c.price })),
-  ...designs.map((d) => ({ name: `${d.slogan} — CrimeTimeSnacks`, image: `${SITE}/${d.svg}`, price: d.price })),
-];
-const merchLd = products.length
-  ? `\n    <script type="application/ld+json">\n${JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      itemListElement: products.map((p, i) => ({
-        "@type": "ListItem",
-        position: i + 1,
-        item: {
-          "@type": "Product",
-          name: p.name,
-          image: p.image,
-          brand: { "@type": "Brand", name: "CrimeTimeSnacks" },
-          category: "Apparel",
-          offers: { "@type": "Offer", price: p.price, priceCurrency: "USD", availability: "https://schema.org/PreOrder" },
-        },
-      })),
-    }, null, 2)}\n    </script>\n    <script type="application/ld+json">\n${JSON.stringify({
+// No Product or Offer markup and no prices: nothing here is for sale. Until 2026-09-24 the
+// page listed thirty-four designs "from $28" with PreOrder offers over a store that did not
+// exist, which an outside audit called vaporware. It was.
+const merchLd = `\n    <script type="application/ld+json">\n${JSON.stringify({
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
         { "@type": "ListItem", position: 2, name: "Merch", item: `${SITE}/merch.html` },
       ],
-    })}\n    </script>`
-  : "";
+    })}\n    </script>`;
 
 /* ----------------------------------------------------------- notify link */
 const NOTIFY = `onclick="var i=document.querySelector('.footer-newsletter input');if(i){i.focus();i.scrollIntoView({behavior:'smooth',block:'center'});}return false;"`;
@@ -63,7 +46,6 @@ function collectionCard(c) {
                 <span class="episode-badge" style="margin-bottom:0.6rem;">${esc(c.kind)}</span>
                 <h3 style="margin:0.35rem 0;color:var(--cts-white);">${esc(c.name)}</h3>
                 <p style="color:var(--cts-muted);font-size:0.88rem;margin:0.3rem 0 0.9rem;">${esc(c.blurb || "")}</p>
-                <p class="merch-price">from $${esc(c.price)}</p>
                 <div style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;margin-top:0.9rem;">
                     <a href="/${esc(c.file)}" download class="btn btn-secondary btn-sm"><i class="fas fa-download" aria-hidden="true"></i> Print File</a>
                     <a href="#notify" ${NOTIFY} class="btn btn-primary btn-sm"><i class="fas fa-bell" aria-hidden="true"></i> Notify Me</a>
@@ -77,9 +59,9 @@ const collectionSection = collection.length
             <div>
                 <p class="eyebrow">The Logo Collection</p>
                 <h2 style="font-family:var(--font-display);font-weight:400;text-transform:uppercase;font-size:clamp(2rem,4.4vw,3.2rem);line-height:1;">Wear the <span class="text-red">Cover Art</span></h2>
-                <p style="color:var(--cts-muted);margin-top:1rem;max-width:46ch;">The official CrimeTimeSnacks logo — the mic, the snacks, the whole mood — as real, print-ready files. Grab the art now; the print-on-demand store opens soon.</p>
+                <p style="color:var(--cts-muted);margin-top:1rem;max-width:46ch;">The official CrimeTimeSnacks logo, the mic and the snacks, as real print-ready files. Download the art. There is no store yet.</p>
                 <div style="display:flex;gap:0.8rem;flex-wrap:wrap;margin-top:1.5rem;">
-                    <a href="#notify" ${NOTIFY} class="btn btn-primary"><i class="fas fa-bell" aria-hidden="true"></i> Get First Access</a>
+                    <a href="#notify" ${NOTIFY} class="btn btn-primary"><i class="fas fa-bell" aria-hidden="true"></i> Tell me when there is a store</a>
                 </div>
             </div>
             <img src="/images/merch/logo-classic-web.jpg" alt="CrimeTimeSnacks cover art print" loading="eager">
@@ -98,11 +80,8 @@ function card(d) {
                 <img src="/${esc(d.svg)}" alt="${esc(d.slogan)} — CrimeTimeSnacks design" class="merch-image" loading="lazy" decoding="async" width="280" height="250">
                 <h3 style="margin:0.25rem 0;color:var(--cts-white);">${esc(d.slogan)}</h3>
                 <div style="display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:center;margin:0.75rem 0;">
-                    <span class="episode-badge">Tee</span>
-                    <span class="episode-badge">Hoodie</span>
-                    <span class="episode-badge">Sticker</span>
+                    <span class="episode-badge">Print-ready SVG</span>
                 </div>
-                <p class="merch-price">from $${esc(d.price)}</p>
                 <div style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;margin-top:0.9rem;">
                     <a href="/${esc(d.svg)}" download class="btn btn-secondary btn-sm"><i class="fas fa-download" aria-hidden="true"></i> Design</a>
                     <a href="#notify" ${NOTIFY} class="btn btn-primary btn-sm"><i class="fas fa-bell" aria-hidden="true"></i> Notify</a>
@@ -112,7 +91,7 @@ function card(d) {
 
 const page = `${head({
   title: "Merch | CrimeTimeSnacks",
-  description: "Official CrimeTimeSnacks merch — the logo collection plus original true crime tee, hoodie, and sticker designs. Print-ready art, store opening on print-on-demand.",
+  description: "CrimeTimeSnacks designs: original print-ready art from the studio, free to download. There is no store yet; leave an email to hear when there is.",
   canonicalPath: "/merch.html",
   ogImage: `${SITE}/images/merch/logo-classic-web.jpg`,
   extraHead: merchLd,
@@ -139,7 +118,7 @@ ${collectionSection}
         <div class="merch-container">
 ${designs.map(card).join("\n")}
         </div>
-        <p style="text-align:center;color:var(--cts-faint);margin-top:2rem;">Store opening soon on print-on-demand &mdash; tap Notify on any design to get first access.</p>
+        <p style="text-align:center;color:var(--cts-faint);margin-top:2rem;">Nothing here is for sale yet. The files are free to download; Notify leaves an email for the day that changes.</p>
     </section>
     </main>
 

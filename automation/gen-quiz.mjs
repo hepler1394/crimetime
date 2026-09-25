@@ -34,11 +34,21 @@ async function pickTopic() {
       readFile(join(__dirname, "blog.json"), "utf8").then(JSON.parse).catch(() => ({ posts: [] })),
     ]);
     const quizzed = new Set(quizzes.quizzes.map((q) => q.sourceTopic).filter(Boolean));
+    // One quiz per CASE, not per title. Matching on the exact title let every new JonBenet
+    // episode or post spawn another JonBenet quiz: by 2026-09-24 the page had three of them,
+    // two on Watts, two on Menendez, two on Delphi. A candidate that shares a distinctive
+    // word with an existing quiz's title or topic is treated as already covered.
+    const GENERIC = new Set("the a an and of in on at to for with from case file files facts fact what you really know just evidence murders murder brothers family killer killing crime true iq history forensics caught technology infamous unsolved cold quiz part update years interrogation disappearance stabbing apartment beach names appeal plea parole thirty".split(" "));
+    const keys = (s) => new Set(String(s || "").toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "").replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter((w) => w.length > 3 && !GENERIC.has(w) && !/^\d+$/.test(w)));
+    const covered = quizzes.quizzes.map((q) => new Set([...keys(q.title), ...keys(q.sourceTopic)]));
+    const alreadyCovered = (title) => { const k = keys(title); return covered.some((c) => [...k].some((w) => c.has(w))); };
     const candidates = [
       ...episodes.episodes.map((e) => e.title),
       ...blog.posts.map((p) => p.title),
     ];
-    for (const c of candidates) if (!quizzed.has(c)) return c;
+    for (const c of candidates) if (!quizzed.has(c) && !alreadyCovered(c)) return c;
+    console.log("Every case on the site already has a quiz. Nothing to write.");
+    process.exit(0);
   } catch { /* fall through */ }
   return "Famous forensic breakthroughs in true crime history";
 }

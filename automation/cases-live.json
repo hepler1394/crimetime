@@ -1,5 +1,5 @@
 {
-  "fetched": "2026-09-24T21:35:57.432Z",
+  "fetched": "2026-09-25T02:53:08.686Z",
   "cases": [
     {
       "slug": "maura-murray",
@@ -16,12 +16,12 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "moscow-idaho-the-plea",
       "title": "Murders in Moscow: The Plea",
-      "summary": "DO NOT RETELL THE MURDERS. This is a follow-up for listeners who already heard the 2025 episode. Chapter 1 and ONLY chapter 1 recaps November 13 2022 in a few sentences: the King Road house, Ethan Chapin, Madison Mogen, Xana Kernodle, Kaylee Goncalves, the two surviving roommates, the knife-sheath DNA, the arrest. Chapters 2 through 12 cover ONLY what happened after the arrest and must not revisit the night of the murders: the capital case and the death-penalty filing, the defence motions and the DNA and cell-site fights, the June 30 2025 plea agreement, the July 2 2025 guilty plea to all five counts with appeals waived, the victim impact statements, the July 23 2025 sentencing to four consecutive life terms plus ten years, the gag order and released case files, and the July 2026 motion to withdraw the plea claiming ineffective counsel and coercion. He pleaded guilty and is serving life; he has moved to withdraw that plea and the court has not ruled.",
+      "summary": "A follow-up to the 2025 episode on the King Road murders: the capital case against Bryan Kohberger, the June 2025 plea agreement, the July 2025 guilty plea to all five counts and the four consecutive life sentences, the released case files, and the July 2026 motion to withdraw the plea, which the court has not ruled on.",
       "angle": "DO NOT RETELL THE MURDERS. This is a follow-up for listeners who already heard the 2025 episode. Chapter 1 and ONLY chapter 1 recaps November 13 2022 in a few sentences: the King Road house, Ethan Chapin, Madison Mogen, Xana Kernodle, Kaylee Goncalves, the two surviving roommates, the knife-sheath DNA, the arrest. Chapters 2 through 12 cover ONLY what happened after the arrest and must not revisit the night of the murders: the capital case and the death-penalty filing, the defence motions and the DNA and cell-site fights, the June 30 2025 plea agreement, the July 2 2025 guilty plea to all five counts with appeals waived, the victim impact statements, the July 23 2025 sentencing to four consecutive life terms plus ten years, the gag order and released case files, and the July 2026 motion to withdraw the plea claiming ineffective counsel and coercion. He pleaded guilty and is serving life; he has moved to withdraw that plea and the court has not ruled.",
       "years": "2022-2026",
       "status": "closed",
@@ -33,12 +33,12 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "jonbenet-thirty-years",
       "title": "JonBenet Ramsey: Thirty Years",
-      "summary": "A follow-up to the 2022 episodes, timed to the thirtieth anniversary in December 2026. ONE short chapter recapping December 26 1996, the ransom note, the 5:52 a.m. call and the discovery in the basement. The rest is the thirty years since and what has moved recently: the 2008 touch-DNA testing and the exoneration letter, the grand jury documents, Boulder Police's annual updates, and the department's December 2025 statement that it had conducted new interviews and re-tested evidence with current DNA technology. Nobody has ever been charged; name no suspects.",
+      "summary": "Thirty years after December 26, 1996: the 2008 touch-DNA testing and the exoneration letter, the grand jury documents, Boulder Police's annual updates, and the department's December 2025 statement that it had conducted new interviews and re-tested evidence with current DNA technology. Nobody has ever been charged.",
       "angle": "A follow-up to the 2022 episodes, timed to the thirtieth anniversary in December 2026. ONE short chapter recapping December 26 1996, the ransom note, the 5:52 a.m. call and the discovery in the basement. The rest is the thirty years since and what has moved recently: the 2008 touch-DNA testing and the exoneration letter, the grand jury documents, Boulder Police's annual updates, and the department's December 2025 statement that it had conducted new interviews and re-tested evidence with current DNA technology. Nobody has ever been charged; name no suspects.",
       "years": "1996-2026",
       "status": "closed",
@@ -50,7 +50,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "the-murdaugh-family-murders",
@@ -67,7 +67,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-24T05:44:46.08741+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "golden-state-killer",
@@ -84,7 +84,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "gabby-petito",
@@ -101,7 +101,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "gilgo-beach-eight-names",
@@ -118,7 +118,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-20T17:04:47.335399+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "murders-in-moscow",
@@ -135,7 +135,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "long-island-serial-killer",
@@ -152,7 +152,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "chris-watts-confession",
@@ -169,7 +169,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "elisa-lam",
@@ -186,7 +186,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "alex-murdaugh",
@@ -203,7 +203,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "btk-dennis-rader",
@@ -220,7 +220,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "zodiac-killer",
@@ -237,7 +237,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "lori-vallow",
@@ -254,7 +254,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "brian-laundrie-notebook",
@@ -271,7 +271,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "kendrick-johnson",
@@ -288,7 +288,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "erik-and-lyle-the-menendez-brothers",
@@ -305,12 +305,12 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "delphi-the-appeal",
       "title": "Delphi: The Appeal",
-      "summary": "A follow-up to the 2022 episode, for listeners who already know the case. Spend ONE short chapter recapping February 13 2017, the Monon High Bridge, Abby Williams, Libby German and the phone recording. Everything after that is what has happened SINCE: the October 2022 arrest of Richard Allen, the 2024 trial, the prison statements the defence attributed to psychosis, the November 2024 conviction, the 130-year sentence, and the appeal argued before the Indiana Court of Appeals on September 21 2026. He is convicted and appealing; say so, and do not treat the appeal as proof either way.",
+      "summary": "A follow-up to the 2022 episode: the October 2022 arrest of Richard Allen, the 2024 trial, the November 2024 conviction and 130-year sentence, and the appeal argued before the Indiana Court of Appeals in September 2026. He is convicted and appealing.",
       "angle": "A follow-up to the 2022 episode, for listeners who already know the case. Spend ONE short chapter recapping February 13 2017, the Monon High Bridge, Abby Williams, Libby German and the phone recording. Everything after that is what has happened SINCE: the October 2022 arrest of Richard Allen, the 2024 trial, the prison statements the defence attributed to psychosis, the November 2024 conviction, the 130-year sentence, and the appeal argued before the Indiana Court of Appeals on September 21 2026. He is convicted and appealing; say so, and do not treat the appeal as proof either way.",
       "years": "2017-2026",
       "status": "closed",
@@ -322,7 +322,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "the-menendez-brothers-parole-years",
@@ -339,7 +339,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-19T10:46:49.066069+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "scott-peterson",
@@ -356,7 +356,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "ted-bundy-escape",
@@ -373,7 +373,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "jonbenet-ramsey-dna",
@@ -390,7 +390,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "adnan-syed",
@@ -407,7 +407,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "amanda-knox",
@@ -424,7 +424,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "kohberger-trial",
@@ -441,7 +441,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "delphi-richard-allen",
@@ -458,7 +458,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "casey-anthony",
@@ -475,7 +475,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "steven-avery",
@@ -492,7 +492,24 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
+    },
+    {
+      "slug": "menendez-the-parole-years",
+      "title": "Erik and Lyle: The Parole Years",
+      "summary": "A follow-up to the 2024 episode: the habeas petition and new-evidence claims, the May 2025 resentencing to 50 years to life that made Erik and Lyle Menendez eligible for parole, the August 2025 hearings that denied both brothers for three years, and the board's September 2026 decision to advance the next hearing to March 2027.",
+      "angle": "A follow-up to the 2024 episode, for listeners who already know the case. ONE short chapter recapping August 20 1989, the killings of Jose and Kitty Menendez, the two trials and the 1996 conviction and life-without-parole sentence. The rest is what has happened since: the habeas petition and the new evidence claims, the May 2025 resentencing to 50 years to life that made them parole eligible, the August 2025 parole hearings that denied both brothers for three years, and the board's September 2026 decision to advance the next hearing to March 2027.",
+      "years": "1989-2026",
+      "status": "closed",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "",
+      "episode_slug": "",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-17T23:01:46.405034+00:00",
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "madeleine-mccann",
@@ -509,7 +526,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "tylenol-murders",
@@ -526,7 +543,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "dnd-mcstay-family",
@@ -543,24 +560,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
-    },
-    {
-      "slug": "menendez-the-parole-years",
-      "title": "Erik and Lyle: The Parole Years",
-      "summary": "A follow-up to the 2024 episode, for listeners who already know the case. ONE short chapter recapping August 20 1989, the killings of Jose and Kitty Menendez, the two trials and the 1996 conviction and life-without-parole sentence. The rest is what has happened since: the habeas petition and the new evidence claims, the May 2025 resentencing to 50 years to life that made them parole eligible, the August 2025 parole hearings that denied both brothers for three years, and the board's September 2026 decision to advance the next hearing to March 2027.",
-      "angle": "A follow-up to the 2024 episode, for listeners who already know the case. ONE short chapter recapping August 20 1989, the killings of Jose and Kitty Menendez, the two trials and the 1996 conviction and life-without-parole sentence. The rest is what has happened since: the habeas petition and the new evidence claims, the May 2025 resentencing to 50 years to life that made them parole eligible, the August 2025 parole hearings that denied both brothers for three years, and the board's September 2026 decision to advance the next hearing to March 2027.",
-      "years": "1989-2026",
-      "status": "closed",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "",
-      "episode_slug": "",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "the-delphi-murder-case-2017",
@@ -577,7 +577,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "the-miami-apartment-stabbing",
@@ -594,7 +594,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-21T02:23:51.906377+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "the-interrogation-of-chris-watts",
@@ -611,7 +611,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-18T12:30:03.688863+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "watts-family-murders",
@@ -628,7 +628,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "jonbenet-ramsey-the-facts-96-22",
@@ -645,7 +645,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     },
     {
       "slug": "jonbenet-ramsey-americas-child-beauty-queen",
@@ -662,7 +662,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-09-24T05:44:46.08741+00:00"
+      "updated_at": "2026-09-25T02:44:24.530689+00:00"
     }
   ],
   "updates": [

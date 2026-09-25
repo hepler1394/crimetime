@@ -65,14 +65,21 @@ function shortCard(v) {
             </div>`;
 }
 
-const shortsBody = shorts.length
-  ? `        <div class="shorts-rail">
+// No shorts, no Shorts section: an empty rail promising that clips "drop here automatically"
+// is a placeholder, and the page had one for months. The section and its filter button come
+// back on their own the first time videos.json carries a short.
+const shortsSection = shorts.length
+  ? `    <section class="container format-shorts">
+        <div class="section-head">
+            <span class="file-no">Vertical</span>
+            <h2>Shorts</h2>
+            <span class="rule" aria-hidden="true"></span>
+        </div>
+        <div class="shorts-rail">
 ${shorts.map(shortCard).join("\n")}
-        </div>`
-  : `        <div class="shorts-empty">
-            <i class="fas fa-bolt" aria-hidden="true"></i>
-            <p>Shorts drop here automatically. New vertical clips appear the moment they're posted to the channel.</p>
-        </div>`;
+        </div>
+    </section>`
+  : "";
 
 const fullSection = longs.length
   ? `
@@ -110,11 +117,6 @@ const extraCss = `
             display: flex; gap: 1.25rem; overflow-x: auto; padding: 1rem 0 1.5rem;
             scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
         }
-        .shorts-empty {
-            text-align: center; color: var(--cts-muted); background: linear-gradient(180deg, var(--cts-panel), var(--cts-ink));
-            border: 1px solid var(--cts-line); border-radius: 14px; padding: 3rem 2rem; max-width: 620px; margin: 0 auto;
-        }
-        .shorts-empty i { color: var(--cts-red); font-size: 2rem; margin-bottom: 0.75rem; }
         .format-filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.7rem; margin: 0.5rem 0 1.5rem; }
     </style>`;
 
@@ -135,22 +137,15 @@ ${header("videos")}
 ${data.meta.channelUrl ? `            <p style="margin-top:1.6rem;"><a href="${esc(data.meta.channelUrl)}" target="_blank" rel="noopener" class="btn btn-primary">${mark("youtube", 16)} Subscribe on YouTube</a></p>\n` : ""}        </div>
     </section>
 
-    <section class="container">
+${shorts.length && longs.length ? `    <section class="container">
         <div class="format-filters">
             <button class="category-btn format-btn active" data-filter="all">All</button>
             <button class="category-btn format-btn" data-filter="shorts">Shorts</button>
             <button class="category-btn format-btn" data-filter="full">Full Videos</button>
         </div>
     </section>
-
-    <section class="container format-shorts">
-        <div class="section-head">
-            <span class="file-no">Vertical</span>
-            <h2>Shorts</h2>
-            <span class="rule" aria-hidden="true"></span>
-        </div>
-${shortsBody}
-    </section>
+` : ""}
+${shortsSection}
 ${fullSection}
     </main>
 

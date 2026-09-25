@@ -3,7 +3,7 @@
 //   1. Pull latest podcast episodes (Anchor RSS)        [network]
 //   2. Pull latest YouTube uploads + Shorts (YT RSS)    [network]
 //   3. Write one researched long-form blog post, checked against its notes (ai-write.mjs)
-//   4. Add one new merch design                         [local LLM, offline-safe]
+//   4. Add one new quiz, unless the case already has one
 //   5. Rebuild the whole site (feed, episodes, blog, videos, merch, meta, sitemap)
 //   6. QA internal links
 //   7. (optional) commit + push -> Vercel auto-deploys
@@ -61,8 +61,9 @@ run("import-fbi.mjs");         // live case board (FBI public data)
 // 4: fresh blog post (best-effort; needs an LLM — local first)
 run("ai-write.mjs", ["--auto"]);
 
-// 5: new merch design (best-effort LLM, falls back to the offline pool)
-run("gen-merch.mjs", ["--ai", "1"]);
+// 5: merch used to get a new AI slogan here every run. Stopped 2026-09-24: thirty-four
+// designs with prices on a page with no store is a catalogue of nothing. Designs are added
+// by hand now (gen-merch.mjs still works when Cory wants one).
 
 // 6: new quiz in Cory's voice (best-effort LLM)
 run("gen-quiz.mjs");
@@ -77,7 +78,7 @@ run("check-links.mjs");
 if (doCommit) {
   git(["add", "-A"]);
   const stamp = new Date().toISOString().slice(0, 10);
-  const committed = git(["commit", "-m", `Weekly auto-update (${stamp}): episodes, videos, blog, merch`]);
+  const committed = git(["commit", "-m", `Weekly auto-update (${stamp}): episodes, videos, blog, quiz`]);
   if (committed && doPush) {
     // Rebase onto anything CI pushed while this run was building. Without this
     // the push is rejected and the commit strands here forever.

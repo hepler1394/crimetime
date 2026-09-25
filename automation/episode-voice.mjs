@@ -14,8 +14,9 @@
 //
 // Output in the draft folder: episode.mp3 (128k, -16 LUFS, music mixed in),
 // voice.wav (the dry voice, kept for re-mixing), transcript.json (timed
-// segments; from the TTS word boundaries for edge, from faster-whisper for the
-// clone and recordings), and duration/size written into episode.json.
+// segments: the SCRIPT laid over the clock of the render for the clone and edge -
+// see script-transcript.mjs - and faster-whisper only for a recording, which has
+// no script), and duration/size written into episode.json.
 //
 // Requires: ffmpeg + ffprobe, edge-tts (pip, Python 3.13), and for the clone the
 // venv in automation/studio/.venv with chatterbox-tts plus voice/cory-reference.wav.
@@ -26,6 +27,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { mixEpisode, probeSeconds } from "./episode-music.mjs";
 import { normalizeTheme } from "./episode-format.mjs";
+import { segmentsFromSpans, SCRIPT_NOTE, SCRIPT_MODEL } from "./script-transcript.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const STUDIO = join(__dirname, "studio");
@@ -164,7 +166,10 @@ if (from) {
     }
   } catch (e) { die("clone", e.message); }
   const parts = paras.map((_, i) => join(work, `p${String(i).padStart(3, "0")}.wav`));
-  const [joined] = await joinParts(parts, work);
+  const [joined, offsets] = await joinParts(parts, work);
+  // The transcript is the script on the exact clock the join just made, not a transcriber's
+  // guess at the names in it (which put "Maggie Murdoff" on a public page, 2026-09-24).
+  transcript = segmentsFromSpans(paras, parts.map((p, i) => [offsets[i], offsets[i] + probeSeconds(p)]), 0);
   voiceWav = join(work, "voice.wav");
   run("ffmpeg", ["-y", "-v", "error", "-i", joined, "-af", "highpass=f=70,acompressor=threshold=-20dB:ratio=2:attack=8:release=120:makeup=2", voiceWav], "ffmpeg voice");
   voiceUsed = `cloned (chatterbox, exaggeration ${exaggeration}, cfg ${cfg})${falRender ? ", rendered on fal" : remoteRender ? ", rendered on the GPU host" : ""}`;
@@ -206,7 +211,8 @@ await copyFile(voiceWav, join(dir, "voice.wav"));
 const seconds = probeSeconds(finalMp3);
 const bytes = (await stat(finalMp3)).size;
 
-// Transcript: shift TTS timings by the intro offset, or transcribe the dry voice.
+// Transcript: shift the script's timings by the intro offset, or, for a recording that has
+// no script, transcribe the dry voice.
 if (!transcript) {
   say("Transcribing with faster-whisper...");
   const tj = join(work, "whisper.json");
@@ -219,8 +225,8 @@ if (!transcript) {
 }
 if (transcript) {
   await writeFile(join(dir, "transcript.json"), JSON.stringify({
-    slug: ep.slug, title: ep.title, language: "en", duration: +seconds.toFixed(1), model: engine === "edge" ? "edge-tts word boundaries" : "faster-whisper small (int8)",
-    generated: new Date().toISOString().slice(0, 10), note: engine === "recording" ? "Auto-transcribed; may contain minor errors." : "Transcript generated from the episode script.", segments: transcript,
+    slug: ep.slug, title: ep.title, language: "en", duration: +seconds.toFixed(1), model: engine === "edge" ? "edge-tts word boundaries" : engine === "clone" ? SCRIPT_MODEL : "faster-whisper small (int8)",
+    generated: new Date().toISOString().slice(0, 10), note: engine === "recording" ? "Auto-transcribed; may contain minor errors." : SCRIPT_NOTE, segments: transcript,
   }, null, 1), "utf8");
 }
 

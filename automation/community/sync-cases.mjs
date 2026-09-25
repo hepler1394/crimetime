@@ -30,7 +30,11 @@ for (const c of cases) {
   const ep = eps.find((e) => e.caseSlug === c.slug) || eps.find((e) => e.title.toLowerCase().includes(c.title.toLowerCase().replace(/^the /, "")));
   rows.push({
     slug: c.slug, title: c.title, angle: c.angle || "", years: c.year || "",
-    summary: ex.summary || c.angle || "",
+    // `angle` is the brief the drafter writes from; `summary` is what the public reads. A
+    // brief that is really an instruction ("DO NOT RETELL THE MURDERS. Chapter 1 and ONLY
+    // chapter 1...") went onto the Moscow case page as its description, so a case whose
+    // brief is not fit to print carries its own summary in cases.json, and that wins.
+    summary: c.summary || ex.summary || c.angle || "",
     status: ex.status || (/present/.test(c.year || "") ? "open" : "closed"),
     episode_slug: ex.episode_slug || ep?.slug || "",
     image: ex.image || ep?.image || "",

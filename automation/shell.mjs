@@ -56,7 +56,9 @@ export function head(opts = {}) {
     opts.description ||
     "CrimeTimeSnacks is a true crime podcast exploring unsolved cases, murders, and mysteries with detailed analysis and compelling storytelling.";
   const canonical = `${SITE}${opts.canonicalPath || "/"}`;
-  const ogImage = opts.ogImage || `${SITE}/images/logo.png`;
+  // Share cards need an absolute image URL. Episode pages passed "/images/episodes/x.jpg"
+  // and every social crawler dropped the card.
+  const ogImage = /^https?:\/\//.test(opts.ogImage || "") ? opts.ogImage : `${SITE}${opts.ogImage ? (opts.ogImage.startsWith("/") ? "" : "/") + opts.ogImage : "/images/logo.png"}`;
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -135,7 +137,7 @@ export function footer(opts = {}) {
             <div class="footer-content">
                 <div>
                     <img src="/images/logo-256.jpg" alt="CrimeTimeSnacks Logo" class="footer-logo" width="120" height="120" loading="lazy">
-                    <p>A true crime podcast exploring unsolved cases and mysteries with detailed analysis and compelling storytelling. Researched, written, and hosted by Cory.</p>
+                    <p>A true crime podcast on the cases people argue about, built from the public record. Hosted by Cory. Every episode has a full transcript, and <a href="/corrections.html" style="color:inherit;">corrections are published</a>.</p>
                     <div class="footer-social">
                         <a href="${spotify}" aria-label="CrimeTimeSnacks on Spotify" target="_blank" rel="noopener">${mark("spotify")}</a>
                         <a href="${APPLE}" aria-label="CrimeTimeSnacks on Apple Podcasts" target="_blank" rel="noopener">${mark("applepodcasts")}</a>
@@ -148,6 +150,7 @@ export function footer(opts = {}) {
                     <h3 class="footer-heading">Case Files</h3>
                     <ul class="footer-links">
                         <li><a href="/episodes.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Episodes</a></li>
+                        <li><a href="/cases.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Cases</a></li>
                         <li><a href="/videos.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Videos</a></li>
                         <li><a href="/blog.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Crime Blog</a></li>
                         <li><a href="/live.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Live Cases</a></li>
@@ -162,6 +165,7 @@ export function footer(opts = {}) {
                         <li><a href="${spotify}" target="_blank" rel="noopener">${mark("spotify", 16)} Spotify</a></li>
                         <li><a href="/merch.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Merch</a></li>
                         <li><a href="/about.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> About</a></li>
+                        <li><a href="/corrections.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Corrections</a></li>
                         <li><a href="mailto:${EMAIL}?subject=Case%20suggestion%20for%20CrimeTimeSnacks"><i class="fas fa-folder-plus" aria-hidden="true"></i> Suggest a Case</a></li>
                     </ul>
                 </div>

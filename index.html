@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>CrimeTimeSnacks • A True Crime Podcast | Snack-Sized Cases, Fully Examined</title>
-    <meta name="description" content="CrimeTimeSnacks is a true crime podcast exploring unsolved cases, murders, and mysteries — snack-sized episodes, fully researched, zero sensationalism. A new episode every week.">
+    <meta name="description" content="CrimeTimeSnacks is a true crime podcast exploring unsolved cases, murders, and mysteries — snack-sized episodes built from the public record, with a full transcript on every one. Zero sensationalism.">
     <meta name="author" content="Cory">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://www.crimetimesnacks.com/">
@@ -14,13 +14,13 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="CrimeTimeSnacks">
     <meta property="og:title" content="CrimeTimeSnacks • A True Crime Podcast">
-    <meta property="og:description" content="Snack-sized true crime, fully examined. The facts, theories, and evidence behind the cases — without the sensationalism. A new episode every week.">
+    <meta property="og:description" content="Snack-sized true crime, fully examined. The facts, theories, and evidence behind the cases, without the sensationalism. Full transcripts, corrections in the open.">
     <meta property="og:url" content="https://www.crimetimesnacks.com/">
     <meta property="og:image" content="https://www.crimetimesnacks.com/images/logo.png">
     <meta property="og:image:alt" content="CrimeTimeSnacks logo">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="CrimeTimeSnacks • A True Crime Podcast">
-    <meta name="twitter:description" content="Snack-sized true crime, fully examined. A new episode every week.">
+    <meta name="twitter:description" content="Snack-sized true crime, fully examined. Full transcripts on every episode.">
     <meta name="twitter:image" content="https://www.crimetimesnacks.com/images/logo.png">
     <meta name="twitter:image:alt" content="CrimeTimeSnacks logo">
 
@@ -78,7 +78,6 @@
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <!-- Header & Navigation -->
     <header>
         <div class="nav-container container">
             <div class="logo-container">
@@ -92,6 +91,7 @@
                 <ul class="nav-menu">
                     <li><a href="/index.html" class="active" aria-current="page">Home</a></li>
                     <li><a href="/episodes.html">Episodes</a></li>
+                    <li><a href="/cases.html">Cases</a></li>
                     <li><a href="/videos.html">Videos</a></li>
                     <li><a href="/blog.html">Blog</a></li>
                     <li><a href="/live.html">Live</a></li>
@@ -103,6 +103,7 @@
             </nav>
             <div class="utility-nav">
                 <a href="/search.html" aria-label="Search the site" style="color:var(--cts-muted);font-size:1.05rem;padding:0.6rem;display:inline-flex;"><i class="fas fa-magnifying-glass" aria-hidden="true"></i></a>
+                <a class="nav-account" href="/signin" data-account="out">Sign in</a>
                 <a class="nav-cta" href="/listen.html"><i class="fas fa-headphones" aria-hidden="true"></i> Listen</a>
             </div>
         </div>
@@ -112,9 +113,9 @@
     <section class="hero">
         <div class="container hero-flex">
             <div class="hero-content">
-                <p class="hero-eyebrow"><span class="live-dot" aria-hidden="true"></span> A True Crime Podcast &middot; New Episode Every Week</p>
+                <p class="hero-eyebrow"><span class="live-dot" aria-hidden="true"></span> A True Crime Podcast &middot; Built From the Public Record</p>
                 <h1>True Crime,<br><span class="rotator" data-rotate='["Snack-Sized.","Examined.","Unfiltered.","Obsessive."]'>Snack-Sized.</span></h1>
-                <p class="hero-sub">The facts, theories, and evidence behind unsolved cases and infamous crimes &mdash; researched, written, and hosted by Cory. No sensationalism. No filler. Just the case.</p>
+                <p class="hero-sub">The facts, theories, and evidence behind unsolved cases and infamous crimes &mdash; researched from the public record and hosted by Cory. No sensationalism. No filler. Just the case.</p>
                 <div class="hero-buttons">
                     <a href="#latest-episode" class="btn btn-primary"><i class="fas fa-play" aria-hidden="true"></i> Play the Latest Case</a>
                     <a href="/episodes.html" class="btn btn-secondary"><i class="fas fa-folder-open" aria-hidden="true"></i> Open the Case Files</a>
@@ -128,10 +129,10 @@
                 </div>
                 <!-- HOME-STATS:START (auto-filled by automation/build-episodes.mjs) -->
                 <div class="stat-row">
-                    <div class="stat"><div class="stat-num"><span>17</span><em>+</em></div><div class="stat-label">Cases Covered</div></div>
                     <div class="stat"><div class="stat-num"><span>17</span></div><div class="stat-label">Episodes</div></div>
-                    <div class="stat"><div class="stat-num">5.0<em>★</em></div><div class="stat-label">Listener Rated</div></div>
-                    <div class="stat"><div class="stat-num">1<em>×</em>/wk</div><div class="stat-label">New Episode</div></div>
+                    <div class="stat"><div class="stat-num"><span>17</span></div><div class="stat-label">Full Transcripts</div></div>
+                    <div class="stat"><div class="stat-num"><span>2022</span></div><div class="stat-label">On the Air Since</div></div>
+                    <div class="stat"><div class="stat-num"><span>0</span></div><div class="stat-label">Ads</div></div>
                 </div>
                 <!-- HOME-STATS:END -->
             </div>
@@ -151,11 +152,11 @@
     <div class="proof-strip" aria-hidden="true">
         <div class="marquee">
             <div class="marquee-track">
-                <span class="marquee-item"><span class="stars">★★★★★</span> Listener-rated on Spotify</span>
+                <span class="marquee-item"><i class="fas fa-file-lines"></i> Full transcript on every episode</span>
                 <span class="marquee-item"><svg class="mark mark--inline mark--applepodcasts" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M5.34 0A5.328 5.328 0 000 5.34v13.32A5.328 5.328 0 005.34 24h13.32A5.328 5.328 0 0024 18.66V5.34A5.328 5.328 0 0018.66 0zm6.525 2.568c2.336 0 4.448.902 6.056 2.587 1.224 1.272 1.912 2.619 2.264 4.392.12.59.12 2.2.007 2.864a8.506 8.506 0 01-3.24 5.296c-.608.46-2.096 1.261-2.336 1.261-.088 0-.096-.091-.056-.46.072-.592.144-.715.48-.856.536-.224 1.448-.874 2.008-1.435a7.644 7.644 0 002.008-3.536c.208-.824.184-2.656-.048-3.504-.728-2.696-2.928-4.792-5.624-5.352-.784-.16-2.208-.16-3 0-2.728.56-4.984 2.76-5.672 5.528-.184.752-.184 2.584 0 3.336.456 1.832 1.64 3.512 3.192 4.512.304.2.672.408.824.472.336.144.408.264.472.856.04.36.03.464-.056.464-.056 0-.464-.176-.896-.384l-.04-.03c-2.472-1.216-4.056-3.274-4.632-6.012-.144-.706-.168-2.392-.03-3.04.36-1.74 1.048-3.1 2.192-4.304 1.648-1.737 3.768-2.656 6.128-2.656zm.134 2.81c.409.004.803.04 1.106.106 2.784.62 4.76 3.408 4.376 6.174-.152 1.114-.536 2.03-1.216 2.88-.336.43-1.152 1.15-1.296 1.15-.023 0-.048-.272-.048-.603v-.605l.416-.496c1.568-1.878 1.456-4.502-.256-6.224-.664-.67-1.432-1.064-2.424-1.246-.64-.118-.776-.118-1.448-.008-1.02.167-1.81.562-2.512 1.256-1.72 1.704-1.832 4.342-.264 6.222l.413.496v.608c0 .336-.027.608-.06.608-.03 0-.264-.16-.512-.36l-.034-.011c-.832-.664-1.568-1.842-1.872-2.997-.184-.698-.184-2.024.008-2.72.504-1.878 1.888-3.335 3.808-4.019.41-.145 1.133-.22 1.814-.211zm-.13 2.99c.31 0 .62.06.844.178.488.253.888.745 1.04 1.259.464 1.578-1.208 2.96-2.72 2.254h-.015c-.712-.331-1.096-.956-1.104-1.77 0-.733.408-1.371 1.112-1.745.224-.117.534-.176.844-.176zm-.011 4.728c.988-.004 1.706.349 1.97.97.198.464.124 1.932-.218 4.302-.232 1.656-.36 2.074-.68 2.356-.44.39-1.064.498-1.656.288h-.003c-.716-.257-.87-.605-1.164-2.644-.341-2.37-.416-3.838-.218-4.302.262-.616.974-.966 1.97-.97z"/></svg> Apple Podcasts &middot; Spotify &middot; Everywhere</span>
-                <span class="marquee-item"><i class="fas fa-microphone"></i> Researched, written &amp; hosted by Cory</span>
-                <span class="marquee-item"><i class="fas fa-stopwatch"></i> Snack-sized cases &middot; 10&ndash;25 min</span>
-                <span class="marquee-item"><i class="fas fa-bolt"></i> A new episode every week</span>
+                <span class="marquee-item"><i class="fas fa-microphone"></i> Hosted by Cory &middot; on the air since 2022</span>
+                <span class="marquee-item"><i class="fas fa-stopwatch"></i> Snack-sized cases &middot; 10&ndash;30 min</span>
+                <span class="marquee-item"><i class="fas fa-pen-to-square"></i> Corrections published, never buried</span>
                 <span class="marquee-item"><i class="fas fa-scale-balanced"></i> Facts first &middot; zero sensationalism</span>
             </div>
         </div>
@@ -400,7 +401,7 @@ Alex Murdaugh claimed he was visiting his mother who had dementia when the murde
             <span class="rule" aria-hidden="true"></span>
         </div>
         <div style="max-width: 760px;">
-            <p style="margin-bottom: 1.4rem; color: var(--cts-muted);">CrimeTimeSnacks is a true crime podcast that delves into a variety of unsolved cases, exploring the facts, theories, and evidence surrounding each mystery. The podcast aims to provide listeners with a comprehensive understanding of these cases, encouraging them to engage with the content and form their own conclusions.</p>
+            <p style="margin-bottom: 1.4rem; color: var(--cts-muted);">CrimeTimeSnacks is a true crime podcast about the cases people argue about, built from the public record: court filings, released case files and years of reporting. Each episode lays out the facts, the theories and the evidence, says what is still unknown, and leaves the conclusion to you.</p>
             <p style="margin-bottom: 2rem; color: var(--cts-muted);">Hosted by Cory, each episode is meticulously researched to bring you the most accurate information about some of the most intriguing criminal cases in history.</p>
             <a href="/about.html" class="btn btn-secondary">Meet Your Host</a>
         </div>

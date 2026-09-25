@@ -3,1329 +3,1539 @@
  "title": "The Interrogation of Chris Watts",
  "language": "en",
  "duration": 1210,
- "model": "faster-whisper small (int8)",
- "generated": "2026-09-19",
- "note": "Transcript generated from the episode script.",
+ "model": "episode script, timed to the recording (paragraphs read against the audit transcript)",
+ "generated": "2026-09-25",
+ "note": "This transcript is the episode script as written and fact-checked, timed to the recording. Timestamps are approximate within a sentence.",
  "segments": [
   {
    "start": 5,
-   "end": 9.6,
-   "text": "What's up guys welcome back to Crimetime Snacks. Each child's body had been pushed through a"
+   "end": 7.6,
+   "text": "What's up guys, welcome back to CrimeTimeSnacks."
   },
   {
-   "start": 9.6,
-   "end": 14,
-   "text": "hatch at the top of a crude oil tank and that hatch measured only 8 inches in diameter."
+   "start": 7.6,
+   "end": 14.4,
+   "text": "Each child's body had been pushed through a hatch at the top of a crude-oil tank, and that hatch measured only 8 inches in diameter."
   },
   {
-   "start": 14.6,
-   "end": 19.5,
+   "start": 14.4,
+   "end": 19.2,
    "text": "That is what investigators were dealing with at a remote oil site in Colorado in August 2018."
   },
   {
-   "start": 20.1,
-   "end": 24.2,
+   "start": 19.2,
+   "end": 24.6,
    "text": "Four-year-old Bella Watts and three-year-old Celeste Watts were recovered from two separate tanks."
   },
   {
-   "start": 24.8,
-   "end": 28,
+   "start": 24.6,
+   "end": 28.1,
    "text": "Their mother, Shanann, was found buried in a shallow grave nearby."
   },
   {
-   "start": 28.6,
-   "end": 32.4,
-   "text": "The man who put them there was Christopher Watts, the girl's father and Shanann's husband."
+   "start": 28.7,
+   "end": 33.5,
+   "text": "The man who put them there was Christopher Watts, the girls' father and Shanann's husband."
   },
   {
-   "start": 32.9,
-   "end": 36.6,
-   "text": "Two days earlier he had been standing on his own front porch in front of a television camera"
+   "start": 33.5,
+   "end": 40.2,
+   "text": "Two days earlier he had been standing on his own front porch, in front of a television camera, asking for his family to come home."
   },
   {
-   "start": 36.6,
-   "end": 41.7,
-   "text": "asking for his family to come home. This episode is about those two days. Not the murders as a"
+   "start": 40.2,
+   "end": 42.1,
+   "text": "This episode is about those two days."
   },
   {
-   "start": 41.7,
-   "end": 47.6,
-   "text": "spectacle but the 48 hours in which a story told to a patrol officer, a reporter, an FBI agent,"
+   "start": 42.1,
+   "end": 51.9,
+   "text": "Not the murders as a spectacle, but the forty-eight hours in which a story told to a patrol officer, a reporter, an FBI agent and a polygraph examiner came apart, piece by piece, on camera."
   },
   {
-   "start": 47.6,
-   "end": 53.4,
-   "text": "and a polygraph examiner came apart piece by piece on camera. You've probably heard the"
+   "start": 52.5,
+   "end": 54.7,
+   "text": "You've probably heard the headline version."
   },
   {
-   "start": 53.4,
-   "end": 58.6,
-   "text": "headline version. Here is what I want to do instead. I want to walk the timeline in order."
+   "start": 54.7,
+   "end": 56.3,
+   "text": "Here is what I want to do instead."
   },
   {
-   "start": 58.6,
-   "end": 62.8,
-   "text": "From the moment Shanann got home to the moment her husband marked the locations of the bodies on"
+   "start": 56.3,
+   "end": 64.1,
+   "text": "I want to walk the timeline in order, from the moment Shanann got home to the moment her husband marked the locations of the bodies on a photograph of an oil field."
   },
   {
-   "start": 62.8,
-   "end": 67.4,
-   "text": "a photograph of an oil field. Where the published accounts disagree with each other and they do in"
+   "start": 64.1,
+   "end": 71.4,
+   "text": "Where the published accounts disagree with each other, and they do in a couple of places, I am going to tell you that rather than pick one and pretend."
   },
   {
-   "start": 67.4,
-   "end": 72.1,
-   "text": "a couple of places, I am going to tell you that rather than pick one and pretend, let's unpack it."
+   "start": 71.4,
+   "end": 72.2,
+   "text": "Let's unpack it."
   },
   {
-   "start": 72.7,
-   "end": 78.1,
-   "text": "Christopher Lee Watts was born on May 16, 1985. Shanann Catherine Rizukek was born on January"
+   "start": 72.8,
+   "end": 75.4,
+   "text": "Christopher Lee Watts was born on May 16, 1985."
   },
   {
-   "start": 78.1,
-   "end": 82.8,
-   "text": "10, 1984. Both of them were originally from North Carolina. He was from Spring Lake and she"
+   "start": 75.4,
+   "end": 78.4,
+   "text": "Shanann Cathryn Rzucek was born on January 10, 1984."
   },
   {
-   "start": 82.8,
-   "end": 87.7,
-   "text": "was from Aberdeen. They met in 2010 due Facebook and they married in Mecklenburg County on"
+   "start": 78.4,
+   "end": 81.3,
+   "text": "Both of them were originally from North Carolina."
   },
   {
-   "start": 87.8,
-   "end": 95.2,
-   "text": "November 3, 2012. In 2013 they bought a five bedroom home at 2825 Saratoga Trail in Frederick,"
+   "start": 81.3,
+   "end": 84.1,
+   "text": "He was from Spring Lake, and she was from Aberdeen."
   },
   {
-   "start": 95.2,
-   "end": 100.4,
-   "text": "Colorado, a community about 30 miles north of Denver. Their first daughter Bella Marie was born on"
+   "start": 84.1,
+   "end": 89.5,
+   "text": "They met in 2010 through Facebook, and they married in Mecklenburg County on November 3, 2012."
   },
   {
-   "start": 100.4,
-   "end": 106.8,
-   "text": "December 17, 2013. The family called her Bells. Their second daughter Celeste Catherine was born"
+   "start": 90,
+   "end": 98.6,
+   "text": "In 2013 they bought a five-bedroom home at 2825 Saratoga Trail in Frederick, Colorado, a community about 30 miles north of Denver."
   },
   {
-   "start": 106.8,
-   "end": 114.7,
-   "text": "on July 17, 2015. She was CC. Watts worked for Anadarko Petroleum. Hold on to that name"
+   "start": 98.6,
+   "end": 103,
+   "text": "Their first daughter, Bella Marie, was born on December 17, 2013."
   },
   {
-   "start": 114.7,
-   "end": 119.5,
-   "text": "because the oil site where his family was found was Anadarko site, a place he knew from his job."
+   "start": 103,
+   "end": 104.9,
+   "text": "The family called her Bells."
   },
   {
-   "start": 119.5,
-   "end": 124.1,
-   "text": "Shanann worked from home. She sold a product called Thrive for a multi-level marketing company"
+   "start": 104.9,
+   "end": 109.3,
+   "text": "Their second daughter, Celeste Cathryn, was born on July 17, 2015."
   },
   {
-   "start": 124.1,
-   "end": 129.9,
-   "text": "called LaVelle. By the summer of 2018 she was pregnant again, 15 weeks along, with a boy who was"
+   "start": 109.3,
+   "end": 110.2,
+   "text": "She was CeCe."
   },
   {
-   "start": 129.9,
-   "end": 134.9,
-   "text": "going to be named Nico. From the outside this was a marriage that looked healthy on Facebook."
+   "start": 110.7,
+   "end": 112.8,
+   "text": "Watts worked for Anadarko Petroleum."
   },
   {
-   "start": 134.9,
-   "end": 139.2,
-   "text": "That phrase comes from one of the case profiles I read for this episode and it is a careful"
+   "start": 112.8,
+   "end": 119.1,
+   "text": "Hold on to that name, because the oil site where his family was found was an Anadarko site, a place he knew from his job."
   },
   {
-   "start": 139.2,
-   "end": 143.7,
-   "text": "one. It looked healthy on Facebook. Shanann sold Thrive from home and had a social media"
+   "start": 119.1,
+   "end": 120.5,
+   "text": "Shanann worked from home."
   },
   {
-   "start": 143.7,
-   "end": 147.5,
-   "text": "presence and what that presence showed was a happy family in a five bedroom house."
+   "start": 120.5,
+   "end": 125.1,
+   "text": "She sold a product called Thrive for a multi-level marketing company called Le-Vel."
+  },
+  {
+   "start": 125.1,
+   "end": 131,
+   "text": "And by the summer of 2018 she was pregnant again, fifteen weeks along, with a boy who was going to be named Nico."
+  },
+  {
+   "start": 131.6,
+   "end": 135,
+   "text": "From the outside, this was a marriage that looked healthy on Facebook."
+  },
+  {
+   "start": 135,
+   "end": 139.6,
+   "text": "That phrase comes from one of the case profiles I read for this episode, and it is a careful one."
+  },
+  {
+   "start": 139.6,
+   "end": 141.1,
+   "text": "It looked healthy on Facebook."
+  },
+  {
+   "start": 141.1,
+   "end": 147.7,
+   "text": "Shanann sold Thrive from home and had a social media presence, and what that presence showed was a happy family in a five-bedroom house."
   },
   {
    "start": 148.3,
-   "end": 152.5,
-   "text": "Underneath that was money trouble. The Watts's filed for bankruptcy in 2015,"
+   "end": 150.1,
+   "text": "Underneath that was money trouble."
   },
   {
-   "start": 152.5,
-   "end": 157.8,
-   "text": "the same year Celeste was born. One account of the finances puts the debt at about $70,000"
+   "start": 150.1,
+   "end": 153.7,
+   "text": "The Wattses filed for bankruptcy in 2015, the same year Celeste was born."
   },
   {
-   "start": 157.8,
-   "end": 162.3,
-   "text": "and describes a Chapter 7 filing. The same account talks about a widening gap between"
+   "start": 153.7,
+   "end": 158.8,
+   "text": "One account of the finances puts the debt at about 70 thousand dollars and describes a Chapter 7 filing."
   },
   {
-   "start": 162.3,
-   "end": 166.8,
-   "text": "the life Shanann's social media presence showed and the pressure that presence papered over."
+   "start": 158.8,
+   "end": 166,
+   "text": "The same account talks about a widening gap between the life Shanann's social media presence showed and the pressure that presence papered over."
   },
   {
-   "start": 166.8,
-   "end": 170.3,
-   "text": "I am not going to tell you more about their finances than that because that is all the"
+   "start": 166,
+   "end": 172,
+   "text": "I am not going to tell you more about their finances than that, because that is all the record I have in front of me supports."
   },
   {
-   "start": 170.3,
-   "end": 175.4,
-   "text": "record I have in front of me supports. Then there was the affair. In mid-2018,"
+   "start": 172.5,
+   "end": 173.8,
+   "text": "Then there was the affair."
   },
   {
-   "start": 175.4,
-   "end": 180.1,
-   "text": "Watts began an extramarital relationship with a coworker. It started that summer while his wife"
+   "start": 173.8,
+   "end": 177.6,
+   "text": "In mid 2018, Watts began an extramarital relationship with a co-worker."
   },
   {
-   "start": 180.1,
-   "end": 184.5,
-   "text": "was pregnant with their third child. I am not going to name the coworker here. The only thing"
+   "start": 177.6,
+   "end": 181.4,
+   "text": "It started that summer, while his wife was pregnant with their third child."
   },
   {
-   "start": 184.5,
-   "end": 188.4,
-   "text": "that matters for this timeline is that the relationship existed and that Watts was going"
+   "start": 181.4,
+   "end": 183.5,
+   "text": "I am not going to name the co-worker here."
   },
   {
-   "start": 188.4,
-   "end": 192.8,
-   "text": "to lie to the FBI about it. So by August you have a man with a bankruptcy behind him,"
+   "start": 183.5,
+   "end": 190,
+   "text": "The only thing that matters for this timeline is that the relationship existed and that Watts was going to lie to the FBI about it."
   },
   {
-   "start": 192.8,
-   "end": 197.2,
-   "text": "a baby on the way and a second life he was keeping from his wife. Researchers who study"
+   "start": 190.6,
+   "end": 196.3,
+   "text": "So by August you have a man with a bankruptcy behind him, a baby on the way, and a second life he was keeping from his wife."
   },
   {
-   "start": 197.2,
-   "end": 200.6,
-   "text": "men who kill their families talk about a triggering crisis, something that"
+   "start": 196.3,
+   "end": 202.9,
+   "text": "Researchers who study men who kill their families talk about a triggering crisis, something that threatens the image the man has built."
   },
   {
-   "start": 200.6,
-   "end": 204.8,
-   "text": "threatens the image the man has built. We will come back to that research near the end."
+   "start": 202.9,
+   "end": 205.2,
+   "text": "We will come back to that research near the end."
   },
   {
-   "start": 204.8,
-   "end": 208.4,
+   "start": 205.2,
+   "end": 208.6,
    "text": "For now, just notice how much of this household ran on how things looked."
   },
   {
-   "start": 209.1,
-   "end": 214.5,
-   "text": "Let's look at the timeline for Monday, August 13, 2018. Shanann had been in Arizona on a business"
+   "start": 209.2,
+   "end": 211.9,
+   "text": "Let's look at the timeline for Monday, August 13, 2018."
   },
   {
-   "start": 214.5,
-   "end": 219.6,
-   "text": "trip. At approximately 48 in the morning, her friend and colleague Nicole Utoft-Akanson drove"
+   "start": 211.9,
+   "end": 214.2,
+   "text": "Shanann had been in Arizona on a business trip."
   },
   {
-   "start": 219.6,
-   "end": 223.2,
-   "text": "her home from the airport and dropped her at the house in Frederick. Watts had been home"
+   "start": 214.2,
+   "end": 222.1,
+   "text": "At approximately 1:48 in the morning, her friend and colleague Nickole Utoft Atkinson drove her home from the airport and dropped her at the house in Frederick."
   },
   {
-   "start": 223.2,
-   "end": 227.4,
-   "text": "over the weekend with Bella and Celeste. Later that morning, Shanann had a scheduled"
+   "start": 222.1,
+   "end": 225.1,
+   "text": "Watts had been home over the weekend with Bella and Celeste."
   },
   {
-   "start": 227.4,
-   "end": 232.2,
-   "text": "obstetrics and gynecology appointment. She did not show up. She was not answering text messages."
+   "start": 225.6,
+   "end": 229.7,
+   "text": "Later that morning, Shanann had a scheduled obstetrics and gynecology appointment."
   },
   {
-   "start": 232.2,
-   "end": 237.2,
-   "text": "Then she missed a business meeting. Atkanson had been calling and texting for hours by that point"
+   "start": 229.7,
+   "end": 230.7,
+   "text": "She did not show up."
   },
   {
-   "start": 237.2,
-   "end": 241.9,
-   "text": "and one account of that morning puts it simply, Shanann, 15 weeks pregnant, never went silent like"
+   "start": 230.7,
+   "end": 232.4,
+   "text": "She was not answering text messages."
   },
   {
-   "start": 241.9,
-   "end": 247.6,
-   "text": "this. At about 12,010 in the afternoon, Atkanson went to the Watts residence herself."
+   "start": 232.4,
+   "end": 234.2,
+   "text": "Then she missed a business meeting."
   },
   {
-   "start": 247.6,
-   "end": 252.4,
-   "text": "She knocked. She rang the doorbell. She did it repeatedly and nobody came to the door,"
+   "start": 234.2,
+   "end": 242.4,
+   "text": "Atkinson had been calling and texting for hours by that point, and one account of that morning puts it simply: Shanann, fifteen weeks pregnant, never went silent like this."
   },
   {
-   "start": 252.4,
-   "end": 257,
-   "text": "so she did two things. She contacted Watts, who was at work, and she notified the Frederick"
+   "start": 242.9,
+   "end": 247.3,
+   "text": "At about 12:10 in the afternoon, Atkinson went to the Watts residence herself."
   },
   {
-   "start": 257,
-   "end": 261.7,
-   "text": "Police Department. I want to stop on that for a second, because it matters to everything that"
+   "start": 247.3,
+   "end": 248,
+   "text": "She knocked."
   },
   {
-   "start": 261.7,
-   "end": 266.2,
-   "text": "follows. The clock on this case did not start because a husband reported his family missing."
+   "start": 248,
+   "end": 249.3,
+   "text": "She rang the doorbell."
   },
   {
-   "start": 266.2,
-   "end": 270.4,
-   "text": "It started because a friend would not leave a doorstep. Watts did not make that call."
+   "start": 249.3,
+   "end": 252.1,
+   "text": "She did it repeatedly, and nobody came to the door."
   },
   {
-   "start": 270.4,
-   "end": 273.3,
-   "text": "By the time police were on their way to his house, he had already been told that someone"
+   "start": 252.1,
+   "end": 253.2,
+   "text": "So she did two things."
   },
   {
-   "start": 273.3,
-   "end": 278.7,
-   "text": "was looking. A Frederick police officer arrived at approximately 14 that afternoon to conduct a"
+   "start": 253.2,
+   "end": 258.1,
+   "text": "She contacted Watts, who was at work, and she notified the Frederick Police Department."
   },
   {
-   "start": 278.7,
-   "end": 284.7,
-   "text": "welfare check. His name was Scott Coons. Here is the first place the published account split."
+   "start": 258.7,
+   "end": 262.3,
+   "text": "I want to stop on that for a second, because it matters to everything that follows."
   },
   {
-   "start": 285.3,
-   "end": 289.2,
-   "text": "One summary of the case says Watts would not give the officer permission to search the home until"
+   "start": 262.3,
+   "end": 266,
+   "text": "The clock on this case did not start because a husband reported his family missing."
   },
   {
-   "start": 289.2,
-   "end": 294.3,
-   "text": "he got there himself. A detailed account of the interrogation says that when Coons arrived,"
+   "start": 266,
+   "end": 268.5,
+   "text": "It started because a friend would not leave a doorstep."
   },
   {
-   "start": 294.3,
-   "end": 298,
-   "text": "Watts was already home, having told Anna Darko he had a family emergency,"
+   "start": 268.5,
+   "end": 269.8,
+   "text": "Watts did not make that call."
   },
   {
-   "start": 298,
-   "end": 302.4,
-   "text": "and that he let the officer inside without hesitation. I can't settle that from here,"
+   "start": 269.8,
+   "end": 274.2,
+   "text": "By the time police were on their way to his house, he had already been told that someone was looking."
   },
   {
-   "start": 302.4,
+   "start": 274.7,
+   "end": 280,
+   "text": "A Frederick police officer arrived at approximately 1:40 that afternoon to conduct a welfare check."
+  },
+  {
+   "start": 280,
+   "end": 281.4,
+   "text": "His name was Scott Coonts."
+  },
+  {
+   "start": 281.4,
+   "end": 284.2,
+   "text": "Here is the first place the published accounts split."
+  },
+  {
+   "start": 284.2,
+   "end": 290.3,
+   "text": "One summary of the case says Watts would not give the officer permission to search the home until he got there himself."
+  },
+  {
+   "start": 290.3,
+   "end": 300.6,
+   "text": "A detailed account of the interrogation says that when Coonts arrived, Watts was already home, having told Anadarko he had a family emergency, and that he let the officer inside without hesitation."
+  },
+  {
+   "start": 301.1,
+   "end": 304.2,
+   "text": "I can't settle that from here, and I am not going to pretend to."
+  },
+  {
+   "start": 304.2,
    "end": 306.7,
-   "text": "and I am not going to pretend to. What both versions agree on is what happened next."
+   "text": "What both versions agree on is what happened next."
   },
   {
    "start": 306.7,
-   "end": 311.2,
-   "text": "The officer went through the house with Watts present. The family dog was inside, unharmed."
+   "end": 309.5,
+   "text": "The officer went through the house with Watts present."
   },
   {
-   "start": 311.2,
-   "end": 315.7,
-   "text": "There was no trace of Shanann or the children. What was in the house was almost everything"
+   "start": 309.5,
+   "end": 311.4,
+   "text": "The family dog was inside, unharmed."
   },
   {
-   "start": 315.7,
-   "end": 318.7,
-   "text": "Shanann would have needed to leave it. Her purse was on the kitchen island,"
+   "start": 311.4,
+   "end": 313.6,
+   "text": "There was no trace of Shanann or the children."
   },
   {
-   "start": 318.7,
-   "end": 323.1,
-   "text": "with her keys and her medication inside. One account specifies that it was her lupus medication."
+   "start": 314.2,
+   "end": 317.9,
+   "text": "What was in the house was almost everything Shanann would have needed to leave it."
   },
   {
-   "start": 323.1,
-   "end": 327.3,
-   "text": "Her shoes were by the door. Her phone turned up, wedged between the couch cushions in the"
+   "start": 317.9,
+   "end": 321.4,
+   "text": "Her purse was on the kitchen island, with her keys and her medication inside."
   },
   {
-   "start": 327.3,
-   "end": 331.4,
-   "text": "living room. Her car was parked in the garage with the girl's car seat still in it,"
+   "start": 321.4,
+   "end": 323.9,
+   "text": "One account specifies that it was her lupus medication."
   },
   {
-   "start": 331.4,
-   "end": 336.4,
-   "text": "and her wedding ring was on the bedside table. Watts had an explanation. He told Coons that"
+   "start": 323.9,
+   "end": 325.1,
+   "text": "Her shoes were by the door."
   },
   {
-   "start": 336.4,
-   "end": 341.1,
-   "text": "Shanann had come home from her trip, that the two of them had an emotional conversation about separating,"
+   "start": 325.1,
+   "end": 328.4,
+   "text": "Her phone turned up wedged between the couch cushions in the living room."
   },
   {
-   "start": 341.1,
-   "end": 346.3,
-   "text": "and that she left with the girls around 5,015 that morning. He said he did not know where she went."
+   "start": 328.4,
+   "end": 331.5,
+   "text": "Her car was parked in the garage with the girls' car seats still in it."
   },
   {
-   "start": 346.9,
-   "end": 352,
-   "text": "He said he left for work at his usual time. The same account describes how he came across."
+   "start": 331.5,
+   "end": 333.6,
+   "text": "And her wedding ring was on the bedside table."
   },
   {
-   "start": 352,
-   "end": 356.2,
-   "text": "For a man whose pregnant wife and two daughters had been missing for hours, he appeared notably"
+   "start": 334.2,
+   "end": 335.5,
+   "text": "Watts had an explanation."
   },
   {
-   "start": 356.2,
-   "end": 360.4,
-   "text": "composed. He answered questions calmly. He did not ask the officer what steps would be taken"
+   "start": 335.5,
+   "end": 344.9,
+   "text": "He told Coonts that Shanann had come home from her trip, that the two of them had an emotional conversation about separating, and that she left with the girls around 5:15 that morning."
   },
   {
-   "start": 360.4,
-   "end": 365.5,
-   "text": "to find them. He did not press for urgency. That flatness registered with Coons. At that"
+   "start": 344.9,
+   "end": 346.8,
+   "text": "He said he did not know where she went."
   },
   {
-   "start": 365.5,
-   "end": 369.2,
-   "text": "stage it was just a note, not an accusation. But he noticed."
+   "start": 346.8,
+   "end": 348.9,
+   "text": "He said he left for work at his usual time."
+  },
+  {
+   "start": 349.5,
+   "end": 351.9,
+   "text": "The same account describes how he came across."
+  },
+  {
+   "start": 351.9,
+   "end": 357.5,
+   "text": "For a man whose pregnant wife and two daughters had been missing for hours, he appeared notably composed."
+  },
+  {
+   "start": 357.5,
+   "end": 359.1,
+   "text": "He answered questions calmly."
+  },
+  {
+   "start": 359.1,
+   "end": 362.4,
+   "text": "He did not ask the officer what steps would be taken to find them."
+  },
+  {
+   "start": 362.4,
+   "end": 364,
+   "text": "He did not press for urgency."
+  },
+  {
+   "start": 364,
+   "end": 366,
+   "text": "That flatness registered with Coonts."
+  },
+  {
+   "start": 366,
+   "end": 368.7,
+   "text": "At that stage it was just a note, not an accusation."
+  },
+  {
+   "start": 368.7,
+   "end": 369.5,
+   "text": "But he noticed."
   },
   {
    "start": 370.1,
-   "end": 374.7,
-   "text": "Hours after the welfare check, a Denver 7 reporter named Thomas Hoppow arrived at the house."
+   "end": 375.3,
+   "text": "Hours after the welfare check, a Denver7 reporter named Tomas Hoppough arrived at the house."
   },
   {
-   "start": 375.8,
-   "end": 379.3,
-   "text": "Watts agreed to talk on camera. He stood on his front porch in a gray,"
+   "start": 375.3,
+   "end": 377,
+   "text": "Watts agreed to talk on camera."
   },
   {
-   "start": 379.3,
-   "end": 383.8,
-   "text": "in a darko shirt and asked for his family to come back. He gave interviews to two Denver"
+   "start": 377,
+   "end": 381.9,
+   "text": "He stood on his front porch in a gray Anadarko shirt and asked for his family to come back."
   },
   {
-   "start": 383.8,
-   "end": 389.2,
-   "text": "stations, KMGH-TV and KUSATV. The porch segment aired that evening, and it became one of the"
+   "start": 381.9,
+   "end": 385.6,
+   "text": "He gave interviews to two Denver stations, KMGH-TV and KUSA-TV."
   },
   {
-   "start": 389.2,
-   "end": 393.9,
-   "text": "most analyzed pieces of footage in modern true crime. People have cataloged what he did"
+   "start": 385.6,
+   "end": 392,
+   "text": "The porch segment aired that evening, and it became one of the most analyzed pieces of footage in modern true crime."
   },
   {
-   "start": 393.9,
-   "end": 398.7,
-   "text": "in that interview. He rocked back and forth on his heels. He could not hold consistent eye contact"
+   "start": 392.6,
+   "end": 395.3,
+   "text": "People have catalogued what he did in that interview."
   },
   {
-   "start": 398.7,
-   "end": 403.1,
-   "text": "with the reporter. When he was asked what he would say to Shanann, he looked away,"
+   "start": 395.3,
+   "end": 397.1,
+   "text": "He rocked back and forth on his heels."
   },
   {
-   "start": 403.1,
-   "end": 406.5,
-   "text": "and a thin smile crossed his face for less than a second before he caught it."
+   "start": 397.1,
+   "end": 400.1,
+   "text": "He could not hold consistent eye contact with the reporter."
+  },
+  {
+   "start": 400.1,
+   "end": 406.8,
+   "text": "When he was asked what he would say to Shanann, he looked away, and a thin smile crossed his face for less than a second before he caught it."
   },
   {
    "start": 407.3,
-   "end": 411.5,
-   "text": "Then there were the words. He used the past tense when he talked about his wife and daughters,"
+   "end": 408.6,
+   "text": "Then there were the words."
   },
   {
-   "start": 411.5,
-   "end": 416.3,
-   "text": "and he said this, Shanann Bella Celeste. If they're anywhere out there, just come back."
+   "start": 408.6,
+   "end": 411.9,
+   "text": "He used the past tense when he talked about his wife and daughters."
   },
   {
-   "start": 416.3,
-   "end": 420.2,
-   "text": "If they're anywhere out there. One analysis points out that a desperate husband"
+   "start": 411.9,
+   "end": 414.1,
+   "text": "And he said this: Shanann, Bella, Celeste."
   },
   {
-   "start": 420.2,
-   "end": 423.5,
-   "text": "usually demands something. Call me, come home. Somebody help me."
+   "start": 414.1,
+   "end": 416.4,
+   "text": "If they're anywhere out there, just come back."
   },
   {
-   "start": 424,
-   "end": 426.8,
+   "start": 416.4,
+   "end": 417.9,
+   "text": "If they're anywhere out there."
+  },
+  {
+   "start": 417.9,
+   "end": 421.8,
+   "text": "One analysis points out that a desperate husband usually demands something."
+  },
+  {
+   "start": 421.8,
+   "end": 422.2,
+   "text": "Call me."
+  },
+  {
+   "start": 422.2,
+   "end": 422.8,
+   "text": "Come home."
+  },
+  {
+   "start": 422.8,
+   "end": 423.7,
+   "text": "Somebody help me."
+  },
+  {
+   "start": 423.7,
+   "end": 427,
    "text": "Watts sounded like he was reading lines he had not quite memorized."
   },
   {
-   "start": 427.7,
-   "end": 431.3,
-   "text": "None of that is evidence in any legal sense, and I want to be careful here because people"
+   "start": 427.6,
+   "end": 433.9,
+   "text": "None of that is evidence in any legal sense, and I want to be careful here, because people read body language wrong all the time."
   },
   {
-   "start": 431.3,
-   "end": 435.6,
-   "text": "read body language wrong all the time. What the interview actually did was simpler and more"
+   "start": 433.9,
+   "end": 437.8,
+   "text": "What the interview actually did was simpler and more useful to investigators."
   },
   {
-   "start": 435.6,
-   "end": 441.4,
-   "text": "useful to investigators. It put Chris Watts on the record, on video, committed to one specific"
+   "start": 437.8,
+   "end": 442.2,
+   "text": "It put Chris Watts on the record, on video, committed to one specific version of events."
   },
   {
-   "start": 441.4,
-   "end": 446.1,
-   "text": "version of events. And there is a gripping detail in the background. During one of those"
+   "start": 442.2,
+   "end": 444.7,
+   "text": "And there is a gripping detail in the background."
   },
   {
-   "start": 446.1,
-   "end": 450,
-   "text": "interviews, you can hear investigators with search dogs working on the property while he talks."
+   "start": 444.7,
+   "end": 450.4,
+   "text": "During one of those interviews you can hear investigators with search dogs working on the property while he talks."
   },
   {
-   "start": 450.9,
-   "end": 454.7,
+   "start": 451,
+   "end": 454.6,
    "text": "One more thing about that Monday, and this comes from the prosecution files."
   },
   {
-   "start": 454.7,
-   "end": 458.3,
-   "text": "On the same day his family disappeared, Watts called his daughter's school to tell them the"
+   "start": 454.6,
+   "end": 460.6,
+   "text": "On the same day his family disappeared, Watts called his daughters' school to tell them the girls would no longer be attending."
   },
   {
-   "start": 458.3,
-   "end": 463.2,
-   "text": "girls would no longer be attending. He also contacted a realtor about selling the house."
+   "start": 460.6,
+   "end": 463.1,
+   "text": "He also contacted a realtor about selling the house."
   },
   {
-   "start": 463.2,
-   "end": 466.4,
+   "start": 463.1,
+   "end": 466.7,
    "text": "Those are not the phone calls of a man who expects his family home for dinner."
   },
   {
-   "start": 467.2,
-   "end": 470.5,
-   "text": "What Watts did not know when he opened his front door to Officer Coons was that his"
+   "start": 467.3,
+   "end": 476.1,
+   "text": "What Watts did not know when he opened his front door to Officer Coonts was that his next-door neighbor, Nate Trinastich, had a Vivint security system with a camera covering the front of the Watts home."
   },
   {
-   "start": 470.5,
-   "end": 474.7,
-   "text": "next door neighbor, Nate Trinastich, had a Vivint security system with a camera covering"
+   "start": 476.1,
+   "end": 482.4,
+   "text": "Trinastich had been watching the news coverage of the missing family that afternoon, and he realized his system might have caught something."
   },
   {
-   "start": 474.7,
-   "end": 478.7,
-   "text": "the front of the Watts home. Trinastich had been watching the news coverage of the missing"
+   "start": 482.4,
+   "end": 484.9,
+   "text": "He flagged the footage to investigators that same day."
   },
   {
-   "start": 478.7,
-   "end": 482.2,
-   "text": "family that afternoon, and he realized his system might have caught something."
+   "start": 485.4,
+   "end": 486.7,
+   "text": "Here is what it showed."
   },
   {
-   "start": 482.2,
-   "end": 486.5,
-   "text": "He flagged the footage to investigators that same day. Here is what it showed."
+   "start": 486.7,
+   "end": 493.7,
+   "text": "In the early morning of August 13, Watts backed his work truck up to his garage, which was a departure from his normal routine."
   },
   {
-   "start": 487.2,
-   "end": 491.5,
-   "text": "In the early morning of August 13, Watts backed his work truck up to his garage,"
+   "start": 493.7,
+   "end": 501.9,
+   "text": "The detailed interrogation account puts that at 5:27 a.m. Another account puts it at approximately 5:15, so treat the exact minute as unsettled."
   },
   {
-   "start": 491.5,
-   "end": 495.9,
-   "text": "which was a departure from his normal routine. The detailed interrogation account puts that at"
+   "start": 501.9,
+   "end": 504.8,
+   "text": "He spent more than five minutes loading the truck."
   },
   {
-   "start": 495.9,
-   "end": 502.8,
-   "text": "5.27 a.m. Another account puts it at approximately 5,005, so treat the exact minute as unsettled."
+   "start": 504.8,
+   "end": 509.7,
+   "text": "The official description of the video says he loaded a gas can into the bed of the pickup."
   },
   {
-   "start": 502.8,
-   "end": 507,
-   "text": "He spent more than five minutes loading the truck. The official description of the video"
+   "start": 510.3,
+   "end": 513.7,
+   "text": "The camera's resolution could not show exactly what else he was moving."
   },
   {
-   "start": 507,
-   "end": 512,
-   "text": "says he loaded a gas can into the bed of the pickup. The camera's resolution could not show"
+   "start": 513.7,
+   "end": 518.8,
+   "text": "But the movements were deliberate and repeated, and they looked like someone handling heavy, awkward loads."
   },
   {
-   "start": 512,
-   "end": 516.1,
-   "text": "exactly what else he was moving, but the movements were deliberate and repeated,"
+   "start": 518.8,
+   "end": 525.1,
+   "text": "Investigators later concluded that he was transporting his daughters and his wife's body to the remote oil site where they were found."
   },
   {
-   "start": 516.1,
-   "end": 518.7,
-   "text": "and they looked like someone handling heavy, awkward loads."
+   "start": 525.7,
+   "end": 527.7,
+   "text": "Now put that next to what he told Coonts."
   },
   {
-   "start": 519.5,
-   "end": 522.8,
-   "text": "Investigators later concluded that he was transporting his daughters and his wife's"
+   "start": 527.7,
+   "end": 530.1,
+   "text": "He said Shanann left with the girls around 5:15."
   },
   {
-   "start": 522.8,
-   "end": 527.6,
-   "text": "body to the remote oil site where they were found. Now put that next to what he told Coons."
+   "start": 530.1,
+   "end": 537.3,
+   "text": "The footage showed him loading his truck at or after that time, with no sign of Shanann or the children leaving the house under their own power."
   },
   {
-   "start": 527.6,
-   "end": 532.4,
-   "text": "He said Shanann left with the girls around 5,015. The footage showed him loading his truck at"
+   "start": 537.3,
+   "end": 540.6,
+   "text": "This single piece of evidence reframed the whole investigation."
   },
   {
-   "start": 532.4,
-   "end": 536.1,
-   "text": "or after that time with no sign of Shanann or the children leaving the house under their"
+   "start": 540.6,
+   "end": 542.4,
+   "text": "He was no longer a worried husband."
   },
   {
-   "start": 536.1,
-   "end": 541.9,
-   "text": "own power. This single piece of evidence reframed the whole investigation. He was no longer a worried"
+   "start": 542.4,
+   "end": 545.6,
+   "text": "He was a suspect whose story did not match the physical record."
   },
   {
-   "start": 541.9,
-   "end": 547.1,
-   "text": "husband, he was a suspect whose story did not match the physical record, and the investigators did"
+   "start": 546.1,
+   "end": 548.6,
+   "text": "And the investigators did something smart with it."
   },
   {
-   "start": 547.1,
-   "end": 552,
-   "text": "something smart with it. According to the interrogation analysis, Agent Coder made a decision"
+   "start": 548.6,
+   "end": 555.4,
+   "text": "According to the interrogation analysis, Agent Coder made a decision to withhold the footage while Watts kept committing to his timeline."
   },
   {
-   "start": 552,
-   "end": 556.2,
-   "text": "to withhold the footage while Watts kept committing to his timeline. They did not confront"
+   "start": 555.4,
+   "end": 557.1,
+   "text": "They did not confront him with it."
   },
   {
-   "start": 556.2,
-   "end": 561.6,
-   "text": "him with it. They let him keep talking. The day after the disappearance, the FBI and the Colorado"
+   "start": 557.1,
+   "end": 558.4,
+   "text": "They let him keep talking."
   },
   {
-   "start": 561.9,
-   "end": 566.7,
-   "text": "Bureau of Investigation joined the case. On August 14, FBI Special Agent Graham Coder sat down with"
+   "start": 558.9,
+   "end": 563.6,
+   "text": "The day after the disappearance, the FBI and the Colorado Bureau of Investigation joined the case."
   },
   {
-   "start": 566.7,
-   "end": 571.5,
-   "text": "Watts at the Frederick Police Department for a lengthy first interview. Watts denied any involvement,"
+   "start": 563.6,
+   "end": 569.7,
+   "text": "On August 14, FBI Special Agent Grahm Coder sat down with Watts at the Frederick Police Department for a lengthy first interview."
   },
   {
-   "start": 571.5,
-   "end": 575.7,
-   "text": "he talked about his family in the past tense again, and he denied having an affair, which was"
+   "start": 569.7,
+   "end": 571.2,
+   "text": "Watts denied any involvement."
   },
   {
-   "start": 575.7,
-   "end": 579.2,
-   "text": "a lie investigators uncovered that same night through phone and computer records."
+   "start": 571.2,
+   "end": 573.6,
+   "text": "He talked about his family in the past tense again."
   },
   {
-   "start": 580.2,
-   "end": 584.9,
+   "start": 573.6,
+   "end": 579.5,
+   "text": "And he denied having an affair, which was a lie investigators uncovered that same night through phone and computer records."
+  },
+  {
+   "start": 580,
+   "end": 584.2,
    "text": "Hours of those interrogation tapes were later released, and ABC reported on what is in them."
   },
   {
-   "start": 584.9,
-   "end": 588.4,
-   "text": "Watts admits to detectives that the marriage was in trouble. He says he told his wife"
+   "start": 584.2,
+   "end": 587,
+   "text": "Watts admits to detectives that the marriage was in trouble."
   },
   {
-   "start": 588.4,
-   "end": 592.7,
-   "text": "the morning she disappeared that he was leaving her. He describes that conversation like this,"
+   "start": 587,
+   "end": 590.6,
+   "text": "He says he told his wife, the morning she disappeared, that he was leaving her."
   },
   {
-   "start": 592.7,
-   "end": 596.8,
-   "text": "obviously it's getting pretty emotional, we're talking about we felt the disconnection was there,"
+   "start": 590.6,
+   "end": 594.5,
+   "text": "He describes that conversation like this: Obviously it's getting pretty emotional."
   },
   {
-   "start": 596.8,
-   "end": 602,
-   "text": "we're falling out of love. The lead detective does not hide what he thinks of that, he tells"
+   "start": 594.5,
+   "end": 597.1,
+   "text": "We're talking about we felt the disconnection was there."
   },
   {
-   "start": 602,
-   "end": 607.1,
-   "text": "Watts, the day Shenan goes missing is the day you guys have marital discord, you can understand"
+   "start": 597.1,
+   "end": 598.3,
+   "text": "We're falling out of love."
   },
   {
-   "start": 607.1,
-   "end": 613,
-   "text": "what I'm thinking about you. And Watts holds the line. He says, it honestly just makes me"
+   "start": 598.9,
+   "end": 601.7,
+   "text": "The lead detective does not hide what he thinks of that."
   },
   {
-   "start": 613,
-   "end": 617.1,
-   "text": "sick to my stomach because this is something that I would never do. There's no way I would harm"
+   "start": 601.7,
+   "end": 606,
+   "text": "He tells Watts: The day Shanann goes missing is the day you guys have marital discord."
   },
   {
-   "start": 617.1,
-   "end": 622.4,
-   "text": "anybody in my family at all. I am telling you the absolute truth. The ABC report makes an"
+   "start": 606,
+   "end": 608.4,
+   "text": "You can understand what I'm thinking about you."
   },
   {
-   "start": 622.4,
-   "end": 626.6,
-   "text": "observation about those tapes that stuck with me. The sense you get, watching them,"
+   "start": 609,
+   "end": 610.3,
+   "text": "And Watts holds the line."
   },
   {
-   "start": 626.6,
-   "end": 629.8,
-   "text": "is that the Colorado detectives never really believed his story at any point."
+   "start": 610.3,
+   "end": 615.5,
+   "text": "He says: It honestly just makes me sick to my stomach because this is something that I would never do."
   },
   {
-   "start": 630.6,
-   "end": 634.4,
+   "start": 615.5,
+   "end": 618.3,
+   "text": "There's no way I would harm anybody in my family at all."
+  },
+  {
+   "start": 618.3,
+   "end": 620.2,
+   "text": "I am telling you the absolute truth."
+  },
+  {
+   "start": 620.2,
+   "end": 624.1,
+   "text": "The ABC report makes an observation about those tapes that stuck with me."
+  },
+  {
+   "start": 624.1,
+   "end": 629.9,
+   "text": "The sense you get, watching them, is that the Colorado detectives never really believed his story at any point."
+  },
+  {
+   "start": 630.5,
+   "end": 634.7,
    "text": "On August 15, two days after the disappearance, Watts agreed to take a polygraph."
   },
   {
-   "start": 635.3,
-   "end": 640,
-   "text": "CBI agent Tammy Lee administered it. One analysis of that decision says it reflected"
+   "start": 634.7,
+   "end": 636.6,
+   "text": "CBI Agent Tammy Lee administered it."
   },
   {
-   "start": 640,
-   "end": 644.6,
-   "text": "either extraordinary confidence in his ability to beat the instrument, or more likely,"
+   "start": 636.6,
+   "end": 649.4,
+   "text": "One analysis of that decision says it reflected either extraordinary confidence in his ability to beat the instrument or, more likely, the kind of magical thinking you see in people who believe their own performance is more convincing than it is."
   },
   {
-   "start": 644.6,
-   "end": 648.7,
-   "text": "the kind of magical thinking you see in people who believe their own performance is more convincing"
+   "start": 649.9,
+   "end": 651.2,
+   "text": "He scored a negative 18."
   },
   {
-   "start": 648.7,
-   "end": 654.3,
-   "text": "than it is. He scored a negative 18. The threshold for deception is negative four."
+   "start": 651.2,
+   "end": 653.6,
+   "text": "The threshold for deception is negative 4."
   },
   {
-   "start": 654.3,
-   "end": 658.3,
+   "start": 653.6,
+   "end": 657.8,
    "text": "The examiner told him he had shown clear deception on every relevant question."
   },
   {
-   "start": 659.2,
-   "end": 663.1,
-   "text": "On the tapes, the detective puts it to him directly. It is completely clear that you were not"
+   "start": 657.8,
+   "end": 664.1,
+   "text": "On the tapes, a detective puts it to him directly: It is completely clear that you were not honest during the testing."
   },
   {
-   "start": 663.1,
-   "end": 667.7,
-   "text": "honest during the testing, and I think you already know that. You did not pass the polygraph test."
+   "start": 664.1,
+   "end": 666,
+   "text": "And I think you already know that."
+  },
+  {
+   "start": 666,
+   "end": 667.9,
+   "text": "You did not pass the polygraph test."
   },
   {
    "start": 668.5,
-   "end": 672.6,
-   "text": "Here is what I think people get wrong about this moment. The polygraph results were not"
+   "end": 671.3,
+   "text": "Here is what I think people get wrong about this moment."
   },
   {
-   "start": 672.6,
-   "end": 677.7,
-   "text": "admissible in court, and the investigators knew that. The value of a polygraph in an interrogation"
+   "start": 671.3,
+   "end": 675.8,
+   "text": "The polygraph results were not admissible in court, and the investigators knew that."
   },
   {
-   "start": 677.7,
-   "end": 683.2,
-   "text": "is not scientific, it is psychological. It gives the investigators a lever. We know you're lying,"
+   "start": 675.8,
+   "end": 679.1,
+   "text": "The value of a polygraph in an interrogation is not scientific."
   },
   {
-   "start": 683.2,
-   "end": 687.5,
-   "text": "the machine confirmed it, and now we need to talk about why. For two days,"
+   "start": 679.1,
+   "end": 680.3,
+   "text": "It is psychological."
   },
   {
-   "start": 687.5,
-   "end": 691.3,
-   "text": "Watts had been playing a worried husband cooperating with the people looking for his family."
+   "start": 680.3,
+   "end": 682.1,
+   "text": "It gives the investigators a lever."
   },
   {
-   "start": 691.3,
-   "end": 695.1,
-   "text": "A failed polygraph ends that performance. The polite fiction that everyone in the room"
+   "start": 682.1,
+   "end": 686.3,
+   "text": "We know you're lying, the machine confirmed it, and now we need to talk about why."
   },
   {
-   "start": 695.1,
-   "end": 699.8,
-   "text": "is on the same team is gone. He walked out of the polygraph room and into an interrogation"
+   "start": 686.9,
+   "end": 691.7,
+   "text": "For two days Watts had been playing a worried husband cooperating with the people looking for his family."
   },
   {
-   "start": 699.8,
+   "start": 691.7,
+   "end": 693.7,
+   "text": "A failed polygraph ends that performance."
+  },
+  {
+   "start": 693.7,
+   "end": 697,
+   "text": "The polite fiction that everyone in the room is on the same team is gone."
+  },
+  {
+   "start": 697,
+   "end": 701.2,
+   "text": "He walked out of the polygraph room and into an interrogation where the rules had changed."
+  },
+  {
+   "start": 701.7,
    "end": 704.4,
-   "text": "where the rules had changed. What Coder and Lee did next is the part worth studying."
+   "text": "What Coder and Lee did next is the part worth studying."
   },
   {
    "start": 704.4,
-   "end": 709.2,
-   "text": "They did not yell. They did not slam their hands on the table. They did not call him a murderer."
+   "end": 705.2,
+   "text": "They did not yell."
   },
   {
-   "start": 709.2,
-   "end": 712.9,
-   "text": "The approach is built around what interrogation specialists call minimization,"
+   "start": 705.2,
+   "end": 707.3,
+   "text": "They did not slam their hands on the table."
   },
   {
-   "start": 712.9,
-   "end": 716,
-   "text": "and it is about timing and sequencing rather than confrontation."
+   "start": 707.3,
+   "end": 708.9,
+   "text": "They did not call him a murderer."
+  },
+  {
+   "start": 708.9,
+   "end": 716.2,
+   "text": "The approach is built around what interrogation specialists call minimization, and it is about timing and sequencing rather than confrontation."
   },
   {
    "start": 716.8,
-   "end": 720.9,
+   "end": 720.6,
    "text": "The idea is that a guilty suspect already knows the interrogator suspects him."
   },
   {
-   "start": 720.9,
-   "end": 724.9,
-   "text": "Push him with proof and he tends to dig in, so instead you offer him a psychologically"
+   "start": 720.6,
+   "end": 722.6,
+   "text": "Push him with proof and he tends to dig in."
   },
   {
-   "start": 724.9,
-   "end": 729.1,
-   "text": "manageable version of events. A way to confess without having to say the worst thing about"
+   "start": 722.6,
+   "end": 726.1,
+   "text": "So instead you offer him a psychologically manageable version of events."
   },
   {
-   "start": 729.1,
-   "end": 733.6,
-   "text": "himself. Agent Lee made a calculated offer of exactly that, a narrative out that would let"
+   "start": 726.1,
+   "end": 729.4,
+   "text": "A way to confess without having to say the worst thing about himself."
   },
   {
-   "start": 733.6,
-   "end": 738.2,
-   "text": "Watts confess without admitting he had killed his daughters. Then police brought his father,"
+   "start": 729.4,
+   "end": 736.3,
+   "text": "Agent Lee made a calculated offer of exactly that, a narrative out that would let Watts confess without admitting he had killed his daughters."
   },
   {
-   "start": 738.2,
-   "end": 742.2,
-   "text": "Ronnie, into the interrogation room. That conversation is on the tapes too,"
+   "start": 736.9,
+   "end": 741,
+   "text": "Then police brought his father, Ronnie, into the interrogation room."
   },
   {
-   "start": 742.8,
-   "end": 747.8,
-   "text": "and Watts confessed to his father first. He told his dad that Shnann had strangled the girls."
+   "start": 741,
+   "end": 743.2,
+   "text": "That conversation is on the tapes too."
   },
   {
-   "start": 748.6,
-   "end": 753.7,
-   "text": "His words on the tape are, they were, they were blue. When the detectives came back in,"
+   "start": 743.2,
+   "end": 745.6,
+   "text": "And Watts confessed to his father first."
   },
   {
-   "start": 753.7,
-   "end": 757.5,
-   "text": "that was his story for them too. He claimed he had discovered Bella's body,"
+   "start": 745.6,
+   "end": 748.7,
+   "text": "He told his dad that Shanann had strangled the girls."
   },
   {
-   "start": 757.5,
-   "end": 761.8,
-   "text": "that he found Shnann strangling Celeste, and that he strangled Shnann in a rage."
+   "start": 748.7,
+   "end": 751.6,
+   "text": "His words on the tape are: They were, they were blue."
   },
   {
-   "start": 761.8,
+   "start": 752.2,
+   "end": 755.4,
+   "text": "When the detectives came back in, that was his story for them too."
+  },
+  {
+   "start": 755.4,
+   "end": 761.7,
+   "text": "He claimed he had discovered Bella's body, that he found Shanann strangling Celeste, and that he strangled Shanann in a rage."
+  },
+  {
+   "start": 761.7,
    "end": 765.1,
-   "text": "On the tape he says, the evil that I saw when I walked behind Shnann,"
+   "text": "On the tape he says: The evil that I saw when I walked behind Shanann."
   },
   {
    "start": 765.1,
-   "end": 770.7,
-   "text": "I didn't know what to do, none of this made sense. It was false. He had taken the way out that the"
+   "end": 766.3,
+   "text": "I didn't know what to do."
   },
   {
-   "start": 770.7,
-   "end": 774.4,
-   "text": "agents left open, and he had used it to put the debts of two children on their mother."
+   "start": 766.3,
+   "end": 767.5,
+   "text": "None of this made sense."
+  },
+  {
+   "start": 768,
+   "end": 768.7,
+   "text": "It was false."
+  },
+  {
+   "start": 768.7,
+   "end": 774.9,
+   "text": "He had taken the way out that the agents left open, and he had used it to put the deaths of two children on their mother."
   },
   {
    "start": 774.9,
-   "end": 779.6,
-   "text": "But inside that lie was the admission investigators needed. He had killed Shnann,"
+   "end": 778.1,
+   "text": "But inside that lie was the admission investigators needed."
   },
   {
-   "start": 779.6,
-   "end": 783,
-   "text": "and he had driven all three of them to an Anadarko oil site where he worked."
+   "start": 778.1,
+   "end": 783.3,
+   "text": "He had killed Shanann, and he had driven all three of them to an Anadarko oil site where he worked."
   },
   {
-   "start": 783.5,
-   "end": 787.2,
+   "start": 783.3,
+   "end": 787,
    "text": "He marked the locations of the bodies on a photograph of the oil field."
   },
   {
-   "start": 787.2,
-   "end": 791,
+   "start": 787,
+   "end": 791.2,
    "text": "He was arrested that day, and Anadarko terminated his employment the same day."
   },
   {
-   "start": 791.9,
-   "end": 795.2,
-   "text": "Investigators arrived at the oil site at 11,000 that night."
+   "start": 791.8,
+   "end": 794.9,
+   "text": "Investigators arrived at the oil site at 11:00 that night."
   },
   {
-   "start": 795.2,
-   "end": 799.3,
-   "text": "It was a work site called Servi 319. They had the photograph Watts had marked,"
+   "start": 794.9,
+   "end": 796.8,
+   "text": "It was a worksite called Cervi 319."
   },
   {
-   "start": 799.3,
-   "end": 800.2,
-   "text": "so they knew where to look."
+   "start": 796.8,
+   "end": 800.4,
+   "text": "They had the photograph Watts had marked, so they knew where to look."
   },
   {
    "start": 801,
-   "end": 804.7,
-   "text": "Bella and Celeste were recovered from separate crude oil storage tanks."
+   "end": 804.5,
+   "text": "Bella and Celeste were recovered from separate crude-oil storage tanks."
   },
   {
-   "start": 804.7,
-   "end": 808.3,
-   "text": "Each child's body had been pushed through a hatch at the top of a different tank,"
+   "start": 804.5,
+   "end": 810,
+   "text": "Each child's body had been pushed through a hatch at the top of a different tank, through that opening 8 inches across."
   },
   {
-   "start": 808.3,
-   "end": 812.2,
-   "text": "through that opening eight inches across. The medical examiner wrote that Bella had"
+   "start": 810,
+   "end": 818.5,
+   "text": "The medical examiner wrote that Bella had scratches on her left buttock from being shoved through the hole, and that a tuft of blonde hair was found on the edge of one of the hatches."
   },
   {
-   "start": 812.3,
-   "end": 815.6,
-   "text": "scratches on her left buttock from being shoved through the hole, and that a tough"
+   "start": 818.5,
+   "end": 819.9,
+   "text": "The girls had been smothered."
   },
   {
-   "start": 815.6,
-   "end": 819.6,
-   "text": "to blonde hair was found on the edge of one of the hatches. The girls had been smothered."
+   "start": 819.9,
+   "end": 822.3,
+   "text": "Shanann was found buried in a shallow grave nearby."
   },
   {
-   "start": 820.1,
-   "end": 823.2,
-   "text": "Shnann was found buried in a shallow grave nearby. She had been strangled."
+   "start": 822.3,
+   "end": 823.5,
+   "text": "She had been strangled."
   },
   {
    "start": 824,
-   "end": 827.9,
-   "text": "A short, flippant piece I read about the investigators in this case makes one point"
+   "end": 829.9,
+   "text": "A short, flippant piece I read about the investigators in this case makes one point that I think deserves to be said straight."
   },
   {
-   "start": 827.9,
+   "start": 829.9,
    "end": 831.6,
-   "text": "that I think deserves to be said straight. Somebody had to search those tanks."
+   "text": "Somebody had to search those tanks."
   },
   {
    "start": 831.6,
-   "end": 834.8,
+   "end": 834.7,
    "text": "Somebody had to sit in a room and listen to a father describe this."
   },
   {
-   "start": 834.8,
-   "end": 838.8,
-   "text": "The people who do that work carry at home, and they do not get documentaries made about them."
+   "start": 834.7,
+   "end": 839,
+   "text": "The people who do that work carry it home, and they do not get documentaries made about them."
   },
   {
-   "start": 839.4,
-   "end": 843.6,
-   "text": "From the welfare check to the recovery, the case had gone from a missing person's report"
+   "start": 839.5,
+   "end": 846.6,
+   "text": "From the welfare check to the recovery, the case had gone from a missing persons report to a solved triple homicide in about 48 hours."
   },
   {
-   "start": 843.6,
-   "end": 849.4,
-   "text": "to a solved triple homicide in about 48 hours. One profile of the case says that speed obscured"
+   "start": 846.6,
+   "end": 853.4,
+   "text": "One profile of the case says that speed obscured the depth of what the evidence actually revealed about the man and the method."
   },
   {
-   "start": 849.4,
-   "end": 852.9,
-   "text": "the depth of what the evidence actually revealed about the man and the method."
+   "start": 853.4,
+   "end": 854.1,
+   "text": "That is fair."
   },
   {
-   "start": 852.9,
-   "end": 858.1,
-   "text": "That is fair, because the confession he gave on August 15 was only the first of several versions."
+   "start": 854.1,
+   "end": 858.5,
+   "text": "Because the confession he gave on August 15 was only the first of several versions."
   },
   {
    "start": 859.1,
-   "end": 863.4,
-   "text": "On August 21, prosecutors charged Watts with three counts of first degree murder,"
+   "end": 869.6,
+   "text": "On August 21, prosecutors charged Watts with three counts of first-degree murder, plus an additional count for each child under a provision covering the death of a child under 12 by a person in a position of trust."
   },
   {
-   "start": 863.4,
-   "end": 867.4,
-   "text": "plus an additional count for each child under provision covering the death of a child under"
+   "start": 869.6,
+   "end": 875.7,
+   "text": "He was also charged with unlawful termination of a pregnancy and with three counts of tampering with a deceased human body."
   },
   {
-   "start": 867.4,
-   "end": 872.8,
-   "text": "12 by a person in a position of trust. He was also charged with unlawful termination of a pregnancy"
+   "start": 875.7,
+   "end": 878.2,
+   "text": "He was denied bail at his first court appearance."
   },
   {
-   "start": 872.8,
-   "end": 877.4,
-   "text": "and with three counts of tampering with a deceased human body. He was denied bail at his first court"
+   "start": 878.7,
+   "end": 880.1,
+   "text": "The case never went to trial."
   },
   {
-   "start": 877.4,
-   "end": 883.4,
-   "text": "appearance. The case never went to trial. On November 6, 2018, Watts pleaded guilty to multiple"
-  },
-  {
-   "start": 883.4,
+   "start": 880.1,
    "end": 887.3,
-   "text": "counts of first degree murder under a plea agreement that took the death penalty off the table."
+   "text": "On November 6, 2018, Watts pleaded guilty to multiple counts of first-degree murder under a plea agreement that took the death penalty off the table."
   },
   {
-   "start": 887.9,
-   "end": 891.9,
-   "text": "The district attorney of Weld County did not pursue it at the request of Shnann's family."
+   "start": 887.3,
+   "end": 891.6,
+   "text": "The District Attorney of Weld County did not pursue it at the request of Shanann's family."
   },
   {
-   "start": 891.9,
-   "end": 896,
-   "text": "They said they did not wish for any further deaths, and they supported the plea. Colorado"
+   "start": 891.6,
+   "end": 895.4,
+   "text": "They said they did not wish for any further deaths, and they supported the plea."
   },
   {
-   "start": 896,
-   "end": 901.2,
-   "text": "abolished the death penalty altogether in 2020. On November 19, he was sentenced to five life terms"
+   "start": 895.4,
+   "end": 898.3,
+   "text": "Colorado abolished the death penalty altogether in 2020."
   },
   {
-   "start": 901.2,
-   "end": 906.2,
-   "text": "without the possibility of parole, three of them consecutive and two concurrent. He got an additional"
+   "start": 898.8,
+   "end": 905.7,
+   "text": "On November 19 he was sentenced to five life terms without the possibility of parole, three of them consecutive and two concurrent."
   },
   {
-   "start": 906.2,
-   "end": 911.6,
-   "text": "48 years for the unlawful termination of Shnann's pregnancy and 36 years for the three tampering"
+   "start": 905.7,
+   "end": 912.3,
+   "text": "He got an additional 48 years for the unlawful termination of Shanann's pregnancy and 36 years for the three tampering counts."
   },
   {
-   "start": 911.6,
-   "end": 917.4,
-   "text": "counts. On December 3, 2018, he was transferred out of state because of what officials called"
+   "start": 912.8,
+   "end": 918.7,
+   "text": "On December 3, 2018, he was transferred out of state because of what officials called security concerns."
   },
   {
-   "start": 917.4,
-   "end": 922.6,
-   "text": "security concerns. Two days later, he arrived at Dodge Correctional Institution, a maximum"
+   "start": 918.7,
+   "end": 924.9,
+   "text": "Two days later he arrived at Dodge Correctional Institution, a maximum-security prison in Waupun, Wisconsin."
   },
   {
-   "start": 922.7,
-   "end": 927.1,
-   "text": "security prison in Waupoon, Wisconsin. That is where he is serving those sentences."
+   "start": 924.9,
+   "end": 927.4,
+   "text": "That is where he is serving those sentences."
   },
   {
-   "start": 927.9,
-   "end": 932.4,
-   "text": "So what actually happened inside that house? The version he gave his father was a lie."
+   "start": 928,
+   "end": 930.2,
+   "text": "So what actually happened inside that house?"
   },
   {
-   "start": 932.4,
-   "end": 936.5,
-   "text": "The second version came through his attorney in an interview on Dr. Phil. In that account,"
+   "start": 930.2,
+   "end": 932.1,
+   "text": "The version he gave his father was a lie."
   },
   {
-   "start": 936.5,
-   "end": 940.8,
-   "text": "Watts killed Shnann following an argument about divorce. During the attack,"
+   "start": 932.1,
+   "end": 935.7,
+   "text": "The second version came through his attorney, in an interview on Dr. Phil."
   },
   {
-   "start": 940.8,
-   "end": 944.9,
-   "text": "Bella came into the room and he told her that her mother was ill. Then, according to the"
+   "start": 935.7,
+   "end": 939.4,
+   "text": "In that account, Watts killed Shanann following an argument about divorce."
   },
   {
-   "start": 944.9,
-   "end": 949.1,
-   "text": "attorney, he loaded Shnann's body and the two girls without their car seats into the back"
+   "start": 939.4,
+   "end": 943.5,
+   "text": "During the attack, Bella came into the room, and he told her that her mother was ill."
   },
   {
-   "start": 949.1,
-   "end": 954.1,
-   "text": "seat of his work truck. The girls were alive for that drive. He smothered them at the oil site,"
+   "start": 944,
+   "end": 950.6,
+   "text": "Then, according to the attorney, he loaded Shanann's body and the two girls, without their car seats, into the back seat of his work truck."
   },
   {
-   "start": 954.1,
-   "end": 958.2,
-   "text": "one after the other. That lines up with the car seats left in Shnann's car,"
+   "start": 950.6,
+   "end": 952.4,
+   "text": "The girls were alive for that drive."
   },
   {
-   "start": 958.2,
-   "end": 961,
-   "text": "and it lines up with the investigators' reading of the neighbor's footage."
+   "start": 952.4,
+   "end": 955,
+   "text": "He smothered them at the oil site, one after the other."
+  },
+  {
+   "start": 955,
+   "end": 961.2,
+   "text": "That lines up with the car seats left in Shanann's car, and it lines up with the investigators' reading of the neighbor's footage."
   },
   {
    "start": 961.7,
-   "end": 966.4,
-   "text": "In February 2019, he gave a prison interview to investigators, and the interrogation"
+   "end": 971.8,
+   "text": "In February 2019 he gave a prison interview to investigators, and the interrogation analysis describes that interview as the one that finally produced an account consistent with the physical evidence."
   },
   {
-   "start": 966.4,
-   "end": 970.2,
-   "text": "analysis describes that interview as the one that finally produced an account consistent with"
+   "start": 971.8,
+   "end": 975.8,
+   "text": "A Colorado Bureau of Investigation report documents that follow-up interview."
   },
   {
-   "start": 970.2,
-   "end": 975.2,
-   "text": "the physical evidence. The Colorado Bureau of Investigation Report documents that follow-up"
+   "start": 976.4,
+   "end": 980.6,
+   "text": "And then in June 2021, Inside Edition reported on letters he had written to a pen pal."
   },
   {
-   "start": 975.2,
-   "end": 981.6,
-   "text": "interview. And then in June 2021, Inside Edition reported on letters he had written to a pen pal."
+   "start": 980.6,
+   "end": 984.4,
+   "text": "In those letters he claimed he had planned the murders for several weeks."
   },
   {
-   "start": 981.6,
-   "end": 985.8,
-   "text": "In those letters, he claimed he had planned the murders for several weeks. He claimed he had"
+   "start": 984.4,
+   "end": 991.9,
+   "text": "He claimed he had given Shanann oxycontin in an attempt to end her pregnancy, because he thought that would make it easier to be with his girlfriend."
   },
   {
-   "start": 985.8,
-   "end": 990,
-   "text": "given Shnann OxyContin in an attempt to enter pregnancy because he thought that would make"
+   "start": 991.9,
+   "end": 996.6,
+   "text": "And he wrote that he had first tried to smother his daughters in their beds at home, and failed."
   },
   {
-   "start": 990,
-   "end": 994.3,
-   "text": "it easier to be with his girlfriend. And he wrote that he had first tried to smother his"
+   "start": 997.2,
+   "end": 999.1,
+   "text": "I want to be careful with that last set."
   },
   {
-   "start": 994.3,
-   "end": 999.5,
-   "text": "daughters in their beds at home and failed. I want to be careful with that last set. Those"
+   "start": 999.1,
+   "end": 1006.4,
+   "text": "Those are the claims of a man who has now told this story at least four different ways, and each time the version has been shaped by who was listening."
   },
   {
-   "start": 999.5,
-   "end": 1003.3,
-   "text": "are the claims of a man who has now told this story at least four different ways,"
-  },
-  {
-   "start": 1003.3,
-   "end": 1006,
-   "text": "and each time the version has been shaped by who was listening."
-  },
-  {
-   "start": 1006.5,
-   "end": 1011.3,
+   "start": 1006.4,
+   "end": 1011.2,
    "text": "What the record shows for certain is the plea, the medical examiner's findings, and the footage."
   },
   {
-   "start": 1011.3,
-   "end": 1016,
-   "text": "Everything else comes from him. The public side of this case was enormous. On November"
+   "start": 1011.2,
+   "end": 1012.8,
+   "text": "Everything else comes from him."
   },
   {
-   "start": 1016,
-   "end": 1020.7,
-   "text": "29, 2018, Colorado authorities released the neighbor's surveillance footage. In December,"
+   "start": 1013.4,
+   "end": 1015.5,
+   "text": "The public side of this case was enormous."
   },
   {
-   "start": 1020.7,
-   "end": 1024.8,
-   "text": "the ABC series 2020 interviewed Shnann's parents for the first time since the murders."
+   "start": 1015.5,
+   "end": 1020.3,
+   "text": "On November 29, 2018, Colorado authorities released the neighbor's surveillance footage."
   },
   {
-   "start": 1025.6,
-   "end": 1029.9,
-   "text": "The same month, HLN aired a special that included previously unreleased police body"
+   "start": 1020.3,
+   "end": 1025.5,
+   "text": "In December, the ABC series 20/20 interviewed Shanann's parents for the first time since the murders."
   },
   {
-   "start": 1029.9,
-   "end": 1033.3,
-   "text": "camera video and footage from inside the police station's interview rooms."
+   "start": 1025.5,
+   "end": 1033.7,
+   "text": "The same month, HLN aired a special that included previously unreleased police body camera video and footage from inside the police station's interview rooms."
   },
   {
    "start": 1034.2,
-   "end": 1039.7,
-   "text": "Also that December, Dr. Phil put four analysts on a stage to examine Watts' motivations and"
+   "end": 1049.2,
+   "text": "Also that December, Dr. Phil put four analysts on a stage to examine Watts's motivations and psychological profile: Nancy Grace, the former FBI profiler Candice DeLong, the law enforcement consultant Steve Kardian, and the body-language expert Susan Constantine."
   },
   {
-   "start": 1039.7,
-   "end": 1044.5,
-   "text": "psychological profile. Nancy Grace, the former FBI profiler, Candice DeLong,"
+   "start": 1049.2,
+   "end": 1055.2,
+   "text": "In January 2019, The Dr. Oz Show did an in-studio interview with the neighbor who had helped investigators."
   },
   {
-   "start": 1044.5,
-   "end": 1049.6,
-   "text": "the law enforcement consultant Steve Cardian, and the body language expert Susan Constantine."
+   "start": 1055.7,
+   "end": 1057.6,
+   "text": "Not all of that attention did any good."
   },
   {
-   "start": 1049.6,
-   "end": 1053.9,
-   "text": "In January 2019, the Dr. Oz Show did an in-studio interview with the neighbor who had"
+   "start": 1057.6,
+   "end": 1062.1,
+   "text": "In January 2020, Lifetime premiered a film called Chris Watts: Confessions of a Killer."
   },
   {
-   "start": 1053.9,
-   "end": 1059.5,
-   "text": "helped investigators. Not all of that attention did any good. In January 2020, lifetime"
+   "start": 1062.1,
+   "end": 1064,
+   "text": "Shanann's family publicly objected."
   },
   {
-   "start": 1059.5,
-   "end": 1064.9,
-   "text": "premiere of film called Chris Watts, Confessions of a Killer, Shnann's family publicly objected."
+   "start": 1064,
+   "end": 1072.3,
+   "text": "They said they had not been consulted, that they did not know about the film until it was already in development, and that they were receiving no compensation from it."
   },
   {
-   "start": 1064.9,
-   "end": 1068.5,
-   "text": "They said they had not been consulted, that they did not know about the film until it was"
+   "start": 1072.3,
+   "end": 1077.5,
+   "text": "They also said they were worried it would make worse the online harassment they were already living with."
   },
   {
-   "start": 1068.5,
-   "end": 1072.5,
-   "text": "already in development and that they were receiving no compensation from it. They also"
+   "start": 1077.5,
+   "end": 1078.4,
+   "text": "Think about that."
   },
   {
-   "start": 1072.5,
-   "end": 1076.5,
-   "text": "said they were worried it would make worse the online harassment they were already living with."
+   "start": 1078.4,
+   "end": 1081.4,
+   "text": "The family of three murder victims, being harassed online."
   },
   {
-   "start": 1076.5,
-   "end": 1080,
-   "text": "Think about that, the family of three murder victims being harassed online."
-  },
-  {
-   "start": 1080.6,
-   "end": 1085.6,
-   "text": "In September 2020, Netflix released American Murder, the family next door, built from"
-  },
-  {
-   "start": 1085.6,
-   "end": 1089.6,
-   "text": "home videos, social media posts, text messages, and law enforcement recordings."
+   "start": 1081.4,
+   "end": 1089.9,
+   "text": "In September 2020, Netflix released American Murder: The Family Next Door, built from home videos, social media posts, text messages and law enforcement recordings."
   },
   {
    "start": 1090.4,
-   "end": 1094.5,
-   "text": "Coverage has widely tied this case to what criminologists call family annihilation or"
+   "end": 1095.5,
+   "text": "Coverage has widely tied this case to what criminologists call family annihilation, or familicide."
   },
   {
-   "start": 1094.5,
-   "end": 1098.5,
-   "text": "famlicide. Many of these crimes happen in August before the school year starts,"
+   "start": 1095.5,
+   "end": 1100.7,
+   "text": "Many of these crimes happen in August, before the school year starts, which can delay anyone noticing."
   },
   {
-   "start": 1098.5,
+   "start": 1100.7,
    "end": 1103.5,
-   "text": "which can delay anyone noticing. Candice DeLong pointed out what makes this one unusual."
+   "text": "Candice DeLong pointed out what makes this one unusual."
   },
   {
    "start": 1103.5,
-   "end": 1107.9,
+   "end": 1107.4,
    "text": "In her words, family annihilators usually commit suicide after the murders."
   },
   {
-   "start": 1107.9,
-   "end": 1110.9,
+   "start": 1107.4,
+   "end": 1111.1,
    "text": "Watts did not, though he later claimed he had thought about it out of guilt."
   },
   {
    "start": 1111.8,
-   "end": 1115.4,
-   "text": "One profile puts him in a line with John List, who killed five family members in"
+   "end": 1117.9,
+   "text": "One profile puts him in a line with John List, who killed five family members in Westfield, New Jersey, in 1971."
   },
   {
-   "start": 1115.4,
-   "end": 1120.5,
-   "text": "Westfield, New Jersey in 1971, with Bradford Bishop, a State Department diplomat who killed"
+   "start": 1117.9,
+   "end": 1124.8,
+   "text": "With Bradford Bishop, a State Department diplomat who killed his wife, his mother and his three sons in 1976 and vanished."
   },
   {
-   "start": 1120.5,
-   "end": 1126.3,
-   "text": "his wife, his mother, and his three sons in 1976 and vanished, and with Robert Fisher,"
+   "start": 1124.8,
+   "end": 1130.9,
+   "text": "And with Robert Fisher, who killed his wife and two children in Scottsdale, Arizona, in 2001 and disappeared."
   },
   {
-   "start": 1126.3,
-   "end": 1130.7,
-   "text": "who killed his wife and two children in Scottsdale, Arizona in 2001 and disappeared."
+   "start": 1131.5,
+   "end": 1136.1,
+   "text": "The researchers Neil Websdale and David Wilson describe what men like this share."
   },
   {
-   "start": 1131.4,
-   "end": 1135.4,
-   "text": "The researchers, Neil Webbsdale and David Wilson describe what men like this share,"
+   "start": 1136.1,
+   "end": 1138,
+   "text": "A sense of owning the family unit."
   },
   {
-   "start": 1135.4,
-   "end": 1137.2,
-   "text": "a sense of owning the family unit."
+   "start": 1138,
+   "end": 1139.7,
+   "text": "Obsessive image management."
   },
   {
-   "start": 1137.5,
-   "end": 1141.8,
-   "text": "Obsessive image management. A triggering crisis that"
+   "start": 1139.7,
+   "end": 1142.6,
+   "text": "A triggering crisis that threatens the public self."
   },
   {
-   "start": 1141.8,
-   "end": 1146.3,
-   "text": "threatens the public self. And a way of thinking that frames killing is a solution rather than a"
+   "start": 1142.6,
+   "end": 1146.8,
+   "text": "And a way of thinking that frames killing as a solution rather than a crime."
   },
   {
-   "start": 1146.3,
-   "end": 1151.8,
-   "text": "crime. A bankruptcy, a pregnancy, an affair, and a household that ran on how things lived."
+   "start": 1146.8,
+   "end": 1151.5,
+   "text": "A bankruptcy, a pregnancy, an affair, and a household that ran on how things looked."
   },
   {
-   "start": 1151.8,
-   "end": 1157.5,
-   "text": "According to that profile, Watts fits every category. So here's what I take from those 48 hours."
+   "start": 1151.5,
+   "end": 1154.6,
+   "text": "According to that profile, Watts fits every category."
   },
   {
-   "start": 1157.5,
-   "end": 1161.6,
-   "text": "The agents who got the confession did not yell and they did not slam their hands on the table."
+   "start": 1155.1,
+   "end": 1157.6,
+   "text": "So here is what I take from those forty-eight hours."
   },
   {
-   "start": 1162.3,
-   "end": 1166,
-   "text": "It started with a friend, Nicola Atkinson, who knocked and rang the doorbell until she"
+   "start": 1157.6,
+   "end": 1162.2,
+   "text": "The agents who got the confession did not yell, and they did not slam their hands on the table."
   },
   {
-   "start": 1166,
-   "end": 1170.4,
-   "text": "was sure nobody was coming and then called the police. A patrol officer noticed that a husband"
+   "start": 1162.2,
+   "end": 1169.2,
+   "text": "It started with a friend, Nickole Atkinson, who knocked and rang the doorbell until she was sure nobody was coming, and then called the police."
   },
   {
-   "start": 1170.4,
-   "end": 1175.2,
-   "text": "seemed too calm. A neighbor checked his camera. An agent sat on the best evidence he had and"
+   "start": 1169.2,
+   "end": 1171.9,
+   "text": "A patrol officer noticed that a husband seemed too calm."
   },
   {
-   "start": 1175.2,
-   "end": 1179.5,
-   "text": "let a man keep lying. A polygraph examiner gave him a number and then offered him a door."
+   "start": 1171.9,
+   "end": 1173.5,
+   "text": "A neighbor checked his camera."
+  },
+  {
+   "start": 1173.5,
+   "end": 1176.5,
+   "text": "An agent sat on the best evidence he had and let a man keep lying."
+  },
+  {
+   "start": 1176.5,
+   "end": 1179.8,
+   "text": "A polygraph examiner gave him a number, and then offered him a door."
   },
   {
    "start": 1180.4,
-   "end": 1184.3,
-   "text": "He walked through it and he lied on the way through, but he also gave up the one thing"
+   "end": 1182.9,
+   "text": "He walked through it, and he lied on the way through."
   },
   {
-   "start": 1184.3,
-   "end": 1188.6,
-   "text": "they needed which was where his family was. Bella was four, Celeste was three,"
+   "start": 1182.9,
+   "end": 1186.7,
+   "text": "But he also gave up the one thing they needed, which was where his family was."
   },
   {
-   "start": 1188.6,
-   "end": 1193.5,
-   "text": "Shanann was 34 and 15 weeks pregnant with Nico. The interrogation tapes,"
+   "start": 1186.7,
+   "end": 1187.5,
+   "text": "Bella was four."
   },
   {
-   "start": 1193.5,
-   "end": 1198,
-   "text": "the neighbor's footage and the court record are all public. Read the file. Form your own conclusion."
+   "start": 1187.5,
+   "end": 1188.5,
+   "text": "Celeste was three."
   },
   {
-   "start": 1199.7,
-   "end": 1203.6,
-   "text": "That's it for this one. Thanks for hanging out with me. This has been Crime Time Snacks and I'll"
+   "start": 1188.5,
+   "end": 1191.6,
+   "text": "Shanann was thirty-four and fifteen weeks pregnant with Nico."
   },
   {
-   "start": 1203.6,
-   "end": 1204.6,
-   "text": "catch you next time."
+   "start": 1192.2,
+   "end": 1196.6,
+   "text": "The interrogation tapes, the neighbor's footage and the court record are all public."
+  },
+  {
+   "start": 1196.6,
+   "end": 1197.4,
+   "text": "Read the file."
+  },
+  {
+   "start": 1197.4,
+   "end": 1198.7,
+   "text": "Form your own conclusion."
+  },
+  {
+   "start": 1198.7,
+   "end": 1199.9,
+   "text": "That's it for this one."
+  },
+  {
+   "start": 1199.9,
+   "end": 1201.5,
+   "text": "Thanks for hanging out with me."
+  },
+  {
+   "start": 1201.5,
+   "end": 1204.7,
+   "text": "This has been CrimeTimeSnacks, and I'll catch you next time."
   }
  ]
 }
