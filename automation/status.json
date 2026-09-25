@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-25T02:54:24.075Z",
-  "improvementsShipped": 511,
+  "generated": "2026-09-25T03:07:42.653Z",
+  "improvementsShipped": 519,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
     "content": [
@@ -37,7 +37,7 @@
   },
   "freshness": {
     "episodesJson": "2026-09-25T02:53:47.901Z",
-    "blogJson": "2026-09-18T23:59:23.269Z",
+    "blogJson": "2026-09-25T03:07:34.001Z",
     "merchJson": "2026-09-22T14:02:22.646Z",
     "quizzesJson": "2026-09-15T14:02:30.387Z",
     "fbiJson": "2026-09-24T21:35:29.372Z",

@@ -27,7 +27,7 @@ That single command does all of this, in order:
 2. **YouTube** — pulls your latest uploads + Shorts (`import-youtube.mjs`).
 3. **Live board** — refreshes FBI Most Wanted + missing persons (`import-fbi.mjs`).
 4. **Blog** — writes one fresh post in Cory's voice (`ai-write.mjs --auto`).
-5. **Merch** — drops one new print-ready design (`gen-merch.mjs --ai`).
+5. **Merch** — no longer automatic (stopped 2026-09-24: designs are added by hand with `gen-merch.mjs` when there is a reason to).
 6. **Quiz** — writes a new 5-question case quiz (`gen-quiz.mjs`).
 7. **Rebuild** — regenerates every page from the JSON (`build-all.mjs`).
 8. **QA** — checks internal links (`check-links.mjs`).
@@ -133,7 +133,7 @@ above already gives you the weekly hands-off loop.
 | (nothing — your channel)| `import-youtube.mjs`         | Videos page + Shorts rail       |
 | (nothing — your feed)  | `import-feed.mjs`             | Episodes page + podcast RSS     |
 | a topic / `blog.json`  | `ai-write.mjs` / `build-blog` | Blog post + homepage preview    |
-| (nothing — auto)       | `gen-merch.mjs`              | Merch designs (real SVG files)  |
+| by hand                | `gen-merch.mjs`              | Merch designs (real SVG files)  |
 | —                      | `build-all.mjs`              | Rebuilds everything + sitemap   |
 | —                      | `weekly-update.mjs`          | **All of the above + publish**  |
 

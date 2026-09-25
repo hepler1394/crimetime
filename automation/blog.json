@@ -78,139 +78,556 @@
     },
     {
       "slug": "the-fingerprint-that-changed-the-courtroom",
-      "title": "The Fingerprint That Changed the Courtroom",
+      "title": "The First Fingerprint Convictions: How the Record Shows It Happened",
       "date": "2026-09-11",
+      "updated": "2026-09-25",
       "category": "analysis",
       "categoryLabel": "Analysis",
       "image": "images/logo.png",
       "author": "Cory",
       "featured": false,
-      "excerpt": "Before automated databases, one bloody print in 1892 changed criminal investigation forever. Here is how fingerprint evidence actually began.",
+      "excerpt": "Fingerprint evidence changed the justice system, but it took three early cases in Argentina, Britain, and the U.S. to prove the science in court.",
       "body": [
-        "In 1892, an investigator in Argentina named Juan Vucetich solved a double homicide using nothing more than a bloody thumbprint left on a doorframe. At the time, police departments still relied on the Bertillon system, a tedious method of measuring body parts like ear lengths and arm spans that routinely failed. The Argentine case marked the first time a fingerprint secured a murder conviction in recorded legal history. Stated plainly, it rewrote modern forensic science overnight.",
-        "I went back through the case files from those early decades, and the transition was not as seamless as people think. Skeptics in European and American courtrooms fought the science for years, calling ridge patterns unreliable guesswork. That changed in 1902 when London police used a single latent print from an inked windowsill to convict a burglar named Harry Jackson. Once examiners proved that no two humans shared the exact same friction ridge details, fingerprinting became the gold standard of physical evidence.",
-        "Today, automated databases can scan millions of records in seconds, but the underlying principle has not changed since the nineteenth century. We treat it as absolute fact now, though modern forensic audits have shown that human error in print comparison still happens. The science is only as solid as the examiner interpreting the ridges. Look at the early transcripts, check the history yourself, and form your own conclusion."
+        "Fingerprints are so common in criminal cases today that it is hard to imagine a time when they were not used. The strangest true detail of this history is that the first homicide conviction based on a fingerprint actually happened in Argentina in 1892, involving a bloody thumbprint left at the scene of a double murder.",
+        "Before fingerprinting became the standard, police relied on anthropometry—a system of measuring body parts—to identify suspects. That changed when a series of groundbreaking cases proved that friction ridge skin impressions were unique and permanent. I went back through the history to see how this evidence first made its way into the courtroom.",
+        "The use of friction ridge skin impressions as a means of identification has been around for thousands of years. The Chinese used them as proof of identity perhaps as early as 300 B.C., and Japan used them as early as A.D. 702. Here is what the timeline actually shows about the three landmark cases that established fingerprint evidence in the modern legal system, moving from South America to Britain and finally to the United States.",
+        "## The 1892 Rojas Murder in Argentina",
+        "In 1892, the coastal town of Necochea in Buenos Aires Province, Argentina, was shaken by the murder of two young siblings. Six-year-old Ponciano Carballo Rojas and four-year-old Teresa Carballo Rojas were killed in their home. Their mother, Francisca Rojas, attempted to stage a break-in and accused her neighbor, Pedro Ramón Velázquez, of the crime.",
+        "Inspector Eduardo Alvarez investigated the scene and found a critical piece of evidence. There was a bloody fingerprint that did not match the victims or any of the limited criminal records available at the time, including those of Velázquez. Recognizing the potential significance, Alvarez sought the expertise of Juan Vucetich, a Croatian-born Argentine police official who had been researching fingerprint identification.",
+        "Vucetich compared the bloody print from the scene to Francisca Rojas's own fingerprints. He found a match. Confronted with this irrefutable evidence, Rojas confessed to the murders and was given a life sentence. This is considered the first homicide solved by fingerprint evidence. As a result, Argentina became the first country to abolish anthropometry and rely solely on a fingerprint-based system for criminal records.",
+        "## The Deptford Paint Shop Murders",
+        "While a criminal case in Bengal in 1898 is considered the first case in which fingerprint evidence was used to secure a conviction, it was a 1905 trial in England that thrust the technique into high-profile criminal proceedings. On Monday, March 27, 1905, at 8:30 a.m., William Jones arrived at Chapman's Oil and Colour Shop at 34 Deptford High Street. He found the shop closed and shuttered. The manager, 71-year-old Thomas Farrow, lived in the upstairs flat with his 65-year-old wife, Ann.",
+        "Jones looked through a window, saw knocked-over chairs, and ran for help. He and a local resident named Louis Kidman forced their way inside. They found Thomas Farrow dead on the floor. Ann Farrow was found unconscious in their upstairs bed. Both had been beaten. Two black masks fashioned from stockings were left at the scene, indicating two men were involved. Ann Farrow was taken to the hospital, where she died on March 31 without regaining consciousness.",
+        "Police determined robbery was the motive. An empty cash box, estimated to have contained about £13 (equivalent to £1,400 in 2025), was found on the floor. To ensure the doctor would not trip over it, Sergeant Albert Atkinson pushed the box aside with his bare hands. Chief Inspector Frederick Fox and Melville MacNaghten, the Assistant Commissioner of the Metropolitan Police, soon took over the case.",
+        "## A Greasy Smudge on a Cash Box",
+        "When MacNaghten examined the empty cash box, he noticed a greasy smudge on the underside of the inner tray. It appeared to be a fingerprint. He used his handkerchief to pick up the box, wrapped it in paper, and took it to the Fingerprint Bureau at Scotland Yard. The Bureau had been established on July 1, 1901, and was headed by Detective Inspector Charles Stockley Collins, the foremost English fingerprint expert of his time.",
+        "Collins examined the print and determined it was made through perspiration, likely left by a right thumb. He compared it with the prints of the Farrows and Sergeant Atkinson, ruling them out. The Bureau had 80,000 to 90,000 sets of prints on file, but there was no match. They needed a suspect. Witnesses reported seeing two men leave the paint shop around 7:30 a.m. on the day of the murders. One wore a dark brown suit; the other wore a dark blue serge suit.",
+        "Witnesses Henry John Littlefield and Ellen Stanton positively identified the man in the dark brown suit as Alfred Stratton. Alfred, born in 1882, and his brother Albert, born in 1884, were known to police. Alfred's girlfriend, Annie Cromarty, told police he had disposed of his dark brown coat and changed his shoes the day after the murder. Warrants were issued. Alfred was apprehended on April 2 at the King of Prussia pub, and Albert was arrested the next day on the High Street.",
+        "Both men were fingerprinted at Greenwich Police Station. Inspector Collins compared their prints to the smudge on the cash box. He concluded it exactly matched the right thumbprint of Alfred Stratton. The brothers were charged with murder, and a trial was set for May 5, 1905, at the Old Bailey.",
+        "## The Old Bailey Trial and the Expert Trap",
+        "The prosecution, led by Richard Muir, knew they faced an uphill battle. The fingerprint was their only tangible evidence. The defense retained fingerprinting pioneer Henry Faulds, who mistakenly believed a single fingerprint match was unreliable, and Dr. John George Garson, an advocate of anthropometry. Muir called over 40 witnesses to place the brothers at the scene. Annie Cromarty testified that Alfred came home on the morning of March 27 with money and later threw out his clothes after seeing newspaper accounts of the murder.",
+        "The defense counsel, consisting of H.G. Rooth, Curtis Bennett, and Harold Morris, offered alternative explanations. Alfred took the stand, claiming he and Albert were together in Regent Street until 9 a.m. However, Muir had anticipated this. He summoned William Gittings, a jail worker, who testified that Albert Stratton told him, \"I reckon he will get strung up and I shall get about ten years…He has led me into this.\"",
+        "Muir then put Inspector Collins on the stand. Collins showed the jury the cash box and demonstrated how the print matched Alfred's right thumb for up to twelve points of agreement. The defense called Dr. Garson to discredit Collins. Garson testified that the prints were not in agreement. But Muir laid a trap. In cross-examination, he produced two letters written by Garson—one to the prosecution, one to the defense—offering to testify for whichever side paid him more. The judge called Garson an \"absolutely untrustworthy\" witness.",
+        "The defense decided not to call Dr. Faulds. On May 6, 1905, after two hours of deliberation, the jury found the Stratton brothers guilty of murder. They were executed at 9 a.m. on May 23 at HM Prison Wandsworth.",
+        "## The Fresh Paint in Chicago",
+        "In the United States, the first systematic use of fingerprints was in 1902 by Dr. Henry P. de Forest of the New York Civil Service Commission. But the first criminal conviction using fingerprint evidence came in 1910. Just after 2 a.m. on September 19, 1910, Clarence Hiller woke to the screams of his wife and daughter in their home at 1837 West 104th Street in Chicago. Hiller confronted an intruder and was fatally shot. His daughter, Clarice, heard three shots.",
+        "The assailant fled, leaving a dying Hiller by the front door. Police stopped Thomas Jennings a half-mile away. Jennings, an African-American man paroled six weeks earlier, was wearing a torn, bloodied coat and carrying a revolver. At the Hiller house, police found a fingerprint on a freshly painted railing the intruder had used to hoist himself through a window. They photographed and cut off the railing itself.",
+        "During the trial, Jennings's defense attorneys questioned the new technique. Defense attorney W.G. Anderson challenged experts to lift an impression from a piece of paper he had touched in court. The demonstration backfired badly when Anderson's print was clearly visible. The jury voted unanimously to convict Jennings, and he was sentenced to hang. The Decatur Herald called it the first conviction on finger-printing evidence in the history of the country.",
+        "## The Science and the Supreme Court",
+        "The method used in these early cases is fundamentally the same as what is used today. Prints were evaluated based on descriptions of arches, loops, and whorls, a system written by Sir Francis Galton in his 1892 book, Finger Prints. Galton's work laid the foundation for identifying unique characteristics in friction ridge skin, though he had originally studied anthropometry and engaged in quantifying racial differences.",
+        "After Jennings was convicted, his lawyers mounted an appeal, arguing the technique was too newfangled to be admitted in court. On December 21, 1911, the Illinois Supreme Court upheld the conviction in People v. Jennings. The court cited prior cases in Britain and noted that several witnesses in the Jennings trial had been trained by Scotland Yard. The ruling stated that the method of identification was in such general and common use that courts could not refuse to take judicial cognizance of it.",
+        "This ruling set a precedent for the entire nation. Law enforcement agencies began to prioritize the collection of latent prints at crime scenes. The history of these cases shows a gradual alignment of the legal system with scientific validation, moving from visual comparison to modern automated systems.",
+        "From a bloody print in Argentina to a greasy smudge on a cash box in London and a mark on a painted railing in Chicago, the record shows exactly how fingerprinting became an infallible forensic tool. Read the case files. Form your own conclusion."
       ],
-      "sourceTopic": "The history of fingerprint evidence"
+      "sourceTopic": "The history of fingerprint evidence",
+      "caseSlug": null,
+      "sources": [
+        {
+          "title": "Vallow-Daybell murders",
+          "url": "https://en.wikipedia.org/wiki/Vallow-Daybell_murders"
+        },
+        {
+          "title": "Stratton Brothers case",
+          "url": "https://en.wikipedia.org/wiki/Stratton_Brothers_case"
+        },
+        {
+          "title": "Landmark Cases: Fingerprint Evidence Changed Criminal Law",
+          "url": "https://simplyforensic.com/pioneering-cases-that-revolutionized-fingerprint-evidence-in-criminal/"
+        },
+        {
+          "title": "The First Criminal Trial That Used Fingerprints as Evidence",
+          "url": "https://www.smithsonianmag.com/history/first-case-where-fingerprints-were-used-evidence-180970883/"
+        },
+        {
+          "title": "People v. Jennings: The First Case for Fingerprint Evidence",
+          "url": "https://thelegalguide.org/people-v-jennings-case-fingerprint-evidence/"
+        },
+        {
+          "title": "Fingerprint Sourcebook - Chapter 1: History - National Institute of Justice",
+          "url": "https://nij.ojp.gov/library/publications/fingerprint-sourcebook-chapter-1-history"
+        }
+      ]
     },
     {
       "slug": "what-reasonable-doubt-actually-means-in-a-courtroom",
-      "title": "What Reasonable Doubt Actually Means in a Courtroom",
+      "title": "What reasonable doubt actually means in a courtroom",
       "date": "2026-09-08",
+      "updated": "2026-09-25",
       "category": "court",
       "categoryLabel": "Court",
       "image": "images/logo.png",
       "author": "Cory",
       "featured": false,
-      "excerpt": "TV dramas make reasonable doubt look like a gut feeling. The actual jury instructions tell a very different story. Let's unpack it.",
+      "excerpt": "The highest standard in American law requires jurors to be firmly convinced of guilt, but it does not demand absolute certainty.",
       "body": [
-        "If you watch enough crime dramas, reasonable doubt looks like a sudden burst of intuition. A juror crosses their arms, stares at the defendant, and decides something just feels off. That makes for good television, but I have spent years reading actual trial transcripts, and that is not how it works in a real courtroom. In fact, judges spend considerable time making sure jurors do not rely on gut feelings at all.",
-        "Here is what the record shows. Reasonable doubt is not proof beyond all possible doubt, because almost nothing in human affairs is certain. It is also not a flimsy excuse to avoid a difficult decision. In standard jury instructions across the country, it is defined as a doubt based on reason and common sense—one that arises from the evidence, or the lack of evidence. If the prosecution leaves a critical question unanswered by the facts, that gap is where reasonable doubt lives. If the story holds together and the evidence points in only one logical direction, the standard is met.",
-        "Jurors are asked to do something unnatural: set aside speculation, ignore what they wish they knew, and judge only what was admitted into the record. That distinction decides verdicts every single day. The next time you follow a high-profile trial, pull up the pattern jury instructions for that jurisdiction. Read the file. Form your own conclusion."
+        "You have probably heard the phrase beyond a reasonable doubt on a courtroom drama or in news coverage of a high-profile trial. It is the highest standard of proof used in criminal law. The standard is the backbone of criminal justice in the United States, designed to protect people from being convicted on weak or uncertain evidence.",
+        "The word reasonable is doing a lot of work here. It does not mean any doubt or every possible doubt. It means a doubt based on logic and the evidence actually presented. The simplest way to think about it is this: would a thoughtful, fair-minded person look at all the evidence and still have a real hesitation about guilt? If yes, that is reasonable doubt.",
+        "This standard requires the kind of certainty a reasonable person would act on in the most important decisions of their own life. It does not require absolute certainty. No legal system can promise that. But it means a jury cannot find someone guilty unless the evidence is so strong that a reasonable person would be firmly convinced of guilt.",
+        "## The constitutional standard",
+        "The legal definition of reasonable doubt comes from a landmark U.S. Supreme Court case. In 1970, the Court held in In re Winship that the Due Process Clause of the 14th Amendment requires proof beyond a reasonable doubt for every element of a criminal offense.",
+        "This ruling made the standard a constitutional right, not just a courtroom tradition. Every state and federal court must apply it in criminal cases. The standard is not optional and cannot be lowered by agreement of the parties. It is different from civil cases, where the burden is much lower.",
+        "Courts often define reasonable doubt as a doubt based on reason and common sense. It must arise from the evidence or the lack of evidence. In criminal law, the stakes involve a person's freedom, so the standard is set higher by design.",
+        "## The burden on the prosecution",
+        "In law, reasonable doubt means the prosecution carries the full weight of proof. The defendant does not have to prove anything. They do not have to testify, call witnesses, or explain themselves. The burden of proof in a criminal case rests entirely with the prosecution.",
+        "The prosecution must prove every single element of the crime charged. If they fail on even one element, the jury must acquit. If the prosecution clears the measure of reasonable doubt, the jury convicts. If they fall short, the jury acquits.",
+        "A juror who believes the defendant probably did it but still has a nagging hesitation should vote not guilty. Probability alone is not enough. The case against the defendant must be so clear that doubt would be unreasonable.",
+        "## Creating doubt: The O. J. Simpson DNA evidence",
+        "To see how reasonable doubt is argued, look at the DNA evidence in the O. J. Simpson murder trial. With no witnesses to the murders of Nicole Brown Simpson and Ron Goldman, DNA evidence was the key physical proof used by the prosecution. Over 9 weeks of testimony, the prosecution presented 108 exhibits of DNA evidence, including 61 drops of blood.",
+        "Testing was cross-referenced and validated at 3 separate labs using different tests with no discrepancies found. Dr. Robin Cotton, lab director of Cellmark Diagnostics, testified that blood drops next to bloody footprints near Nicole Brown's body matched O. J. Simpson's blood with a 1-in-9.7 billion chance of error. The prosecution considered the DNA evidence infallible.",
+        "The defense summarized their reasonable doubt theory in 3 words: compromised, contaminated, corrupted. They argued that the evidence was compromised by mishandling during collection, contaminated during processing at the Los Angeles Police Crime Lab, and corrupted by police planting blood evidence. They did not have to prove exactly what happened. They only had to create a reasonable doubt about the prosecution's evidence.",
+        "## The defense strategy in the O. J. Simpson trial",
+        "The defense focused heavily on mistakes made during evidence collection. Criminalist Dennis Fung admitted that blood evidence was collected in plastic bags, not paper bags as recommended, and stored in a police van without being refrigerated for up to 7 hours. The defense argued this resulted in 100 percent of the real killer's DNA being lost.",
+        "Dr. John Gerdes testified for the defense that the LAPD crime lab had a substantial and chronic contamination problem. He testified that he would not consider any of the PCR results in the case valid because they were done by the LAPD. The defense also claimed that a drop of blood on the back gate at Nicole Brown's home contained EDTA, a preservative found in lab blood tubes, implying it was planted.",
+        "FBI Special Agent Roger Martz testified during cross-examination that EDTA is also used in food and detergents. He tested his own unpreserved blood and found EDTA was present, showing the levels in the evidence were consistent with unpreserved blood. Despite the prosecution refuting the contamination and planting claims, lead defense attorney Johnnie Cochran focused his closing arguments on a single exhibit: the bloody glove found by detective Mark Fuhrman. The jury acquitted O. J. Simpson.",
+        "## Overcoming doubt: The Vallow-Daybell convictions",
+        "When the prosecution's evidence is overwhelming, the lack of a defense burden does not guarantee an acquittal. Take the Vallow-Daybell murders. Lori Vallow Daybell and Chad Daybell were charged with the first-degree murders of Lori's daughter Tylee Ryan, her adopted son J.J. Vallow, and Chad's wife Tammy Daybell.",
+        "Lori's trial began on April 3, 2023, in Boise, Idaho. She did not testify in her own defense. Her lawyers did not call any witnesses. The prosecution called about 60 people to testify. They presented evidence that the couple conspired with Lori's brother, Alex Cox, to commit the murders in part due to apocalyptic religious beliefs, but also to collect life insurance money and the children's Social Security benefits.",
+        "The timeline showed a clear pattern. The children were last seen in September 2019. Lori and Chad married in Hawaii on November 5, 2019, 2 weeks after Tammy Daybell was murdered. On June 9, 2020, the children's remains were found buried on Chad's property. Prosecutor Rob Wood summed up the evidence showing Lori had participated in the conspiracy and lied to multiple people about the children's whereabouts.",
+        "On May 12, 2023, the jury found Lori guilty of all criminal charges. She received 3 consecutive life sentences without the possibility of parole. Chad Daybell was tried separately, found guilty of all charges, and sentenced to death. The prosecution successfully proved every element beyond a reasonable doubt.",
+        "## The final verdict in the jury room",
+        "In a courtroom, reasonable doubt shapes every phase of a criminal trial. The judge reminds jurors of the standard before deliberations begin. Attorneys argue whether the evidence meets it or falls short. If even 1 juror has a reasonable doubt, they cannot vote guilty in good conscience.",
+        "For a juror, it means sitting in that deliberation room and honestly asking: am I firmly convinced this person committed this crime? If the answer is anything less than yes, the verdict should be not guilty.",
+        "The system puts the entire burden on the state. It demands that the facts speak louder than theories. Read the case files. Look at what the evidence actually shows. Form your own conclusion."
       ],
-      "sourceTopic": "What reasonable doubt actually means in a courtroom"
+      "sourceTopic": "What reasonable doubt actually means in a courtroom",
+      "caseSlug": null,
+      "sources": [
+        {
+          "title": "Vallow-Daybell murders",
+          "url": "https://en.wikipedia.org/wiki/Vallow-Daybell_murders"
+        },
+        {
+          "title": "DNA evidence in the O. J. Simpson murder trial",
+          "url": "https://en.wikipedia.org/wiki/DNA_evidence_in_the_O._J._Simpson_murder_trial"
+        },
+        {
+          "title": "What Does Reasonable Doubt Mean? (2026 Guide)",
+          "url": "https://lawdefiner.com/what-does-reasonable-doubt-mean/"
+        },
+        {
+          "title": "Reasonable Doubt Meaning: The Legal Standard Explained 2026",
+          "url": "https://legalsynopsis.com/reasonable-doubt-meaning/"
+        },
+        {
+          "title": "What Is Reasonable Doubt? Definition, Standard & Examples Explained",
+          "url": "https://www.forthedefensepodcast.com/what-is-reasonable-doubt/"
+        },
+        {
+          "title": "Reasonable Doubt: What the Prosecution Must Prove",
+          "url": "https://uslawexplained.com/reasonable_doubt"
+        }
+      ]
     },
     {
       "slug": "when-the-case-file-gets-it-wrong",
-      "title": "When the Case File Gets It Wrong",
+      "title": "The Evidence Behind the Innocence Project",
       "date": "2026-08-25",
+      "updated": "2026-09-25",
       "category": "court",
       "categoryLabel": "Court",
       "image": "images/logo.png",
       "author": "Cory",
       "featured": false,
-      "excerpt": "The Innocence Project has helped exonerate more than 200 people convicted of serious crimes. Here's what the record shows about how it happens.",
+      "excerpt": "A look at the case files and DNA evidence that have overturned hundreds of wrongful convictions since 1992.",
       "body": [
-        "The detail that stops me every time I go back through these cases: some of the people the Innocence Project has helped free had already served decades in prison before the evidence was properly examined. Not years. Decades. For crimes the DNA record later showed they did not commit.",
-        "What the evidence actually shows, across hundreds of reviewed convictions, is a pattern of the same contributing factors — eyewitness misidentification, invalidated forensic testimony, informant testimony, and inadequate legal representation. The Innocence Project, founded in 1992 by attorneys Barry Scheck and Peter Neufeld, built its model around post-conviction DNA testing precisely because DNA doesn't negotiate. It either places someone at a scene or it doesn't. The organization has also pushed for systemic reforms — recorded interrogations, updated eyewitness identification procedures — because exonerating one person doesn't fix the conditions that produced the wrongful conviction in the first place.",
-        "Where it stands: the work is ongoing. Hundreds of cases are in review at any given time, and not every case has biological evidence available to test. Some wrongful convictions may never be provable under current law. If you want to go deeper, the case file is public. The Innocence Project publishes its exoneration records and the contributing causes for each one. Read the file. Form your own conclusion."
+        "Leonard Mack was exonerated of rape and gun charges after 47 years. He served 7 years in prison, but clearing his name took nearly five decades. It is the longest wrongful conviction to be vacated due to advanced DNA testing. You have probably heard the headline version of stories like this. Here is what the timeline actually shows.",
+        "The Innocence Project was founded in 1992 by attorneys Barry Scheck and Peter Neufeld. They started it as a law clinic at the Benjamin N. Cardozo School of Law in New York City. The organization became an independent 501(c)(3) nonprofit on January 28, 2003. Their self-stated mission is to free innocent people who remain incarcerated and to bring reform to the system. The group cites studies estimating that between 1% and 10% of all prisoners in the United States are innocent.",
+        "The organization focuses exclusively on post-conviction appeals where DNA evidence is available to be tested or retested. That specific type of testing is only possible in 5 to 10% of criminal cases. Let's unpack what the evidence actually shows about how these convictions happen and how they get overturned.",
+        "## The numbers in the case files",
+        "The volume of requests is staggering. About 2,400 prisoners write to the Innocence Project annually. At any given time, the organization is evaluating 6,000 to 8,000 potential cases. All potential clients go through an extensive screening process. If they pass, the group takes up the case, resources permitting. The group has six full-time staff attorneys and nearly 300 active cases.",
+        "They do not just prove innocence. In almost half of the cases they take on, the clients' guilt is reconfirmed by DNA testing. The record shows that of all the cases taken on so far, about 43% of clients were proven innocent. Another 42% were confirmed guilty. The evidence was inconclusive and not probative in 15% of cases.",
+        "When the DNA points away from the client, it often points directly at someone else. In about 40% of all DNA exoneration cases, law enforcement officials identified the actual perpetrator based on the same DNA test results that led to the exoneration. The science cuts both ways.",
+        "## Who gets wrongfully convicted",
+        "As of January 2022, 375 people previously convicted of serious crimes in the United States had been exonerated by DNA testing since 1989. Of those, 21 had been sentenced to death. A 2014 study noted that if all death row inmates were kept there indefinitely, at least 4.1% would eventually be legally exonerated.",
+        "The demographics in the case file are clear. Almost all of the wrongful convictions, 99%, involved male defendants. Minority groups make up approximately 70% of those exonerated. Specifically, 61% are African American and 8% are Latino.",
+        "The National Registry of Exonerations lists 2,939 convicted defendants exonerated through both DNA and non-DNA evidence from January 1989 through January 2022. Together, those individuals spent more than 25,600 years imprisoned.",
+        "## The eyewitness problem",
+        "The Innocence Project was actually established in the wake of a specific study. The U.S. Department of Justice and the U.S. Senate worked in conjunction with the Cardozo School of Law to look at the data. They found that incorrect identification by eyewitnesses was a factor in over 70% of wrongful convictions.",
+        "This is the single greatest contributing factor to wrongful convictions proven by DNA evidence. People tend to believe their own eyes and trust the confidence of a witness on the stand. But the record shows human memory is fragile and highly susceptible to contamination.",
+        "Other unvalidated forensic disciplines compound the problem. While DNA testing is rigorously validated, disciplines like bite mark comparison, microscopic hair analysis, and shoe print analysis have been exposed in these cases as junk science. In one instance, a conviction rested almost entirely on discredited bite mark evidence.",
+        "## Confessions and misconduct",
+        "False confessions are a surprisingly common feature in the case files. They often result from intense psychological pressure during long interrogations. Jailhouse informants, or snitches, also play a role. These individuals are often offered incentives to testify, like a reduced sentence, creating a powerful motivation to lie.",
+        "Then there is government misconduct. This includes hiding evidence that points to a defendant's innocence, known as a Brady violation. Take the case of Michael Morton. He was convicted of murder in 1987 and spent over 24 years in prison. He was exonerated in 2011 through DNA and the discovery of withheld evidence. In 2013, his prosecutor was convicted of withholding evidence, agreed to disbarment, and spent 4 days in jail.",
+        "Ryan Ferguson faced a similar situation. He was convicted in 2005 for a 2001 murder. He was exonerated in 2013 because the prosecution withheld exculpatory evidence and the witnesses who testified against him recanted their testimony. He was defended by the Missouri Innocence Project.",
+        "## The Innocence Network",
+        "The original organization in New York is the headquarters of the Innocence Network. This is a coalition of independent organizations, law schools, journalism schools, and public defense offices. As of 2021, there were 68 organizations in the network, operating in all 50 US states and 12 other countries.",
+        "The network has helped exonerate 625 people. The Midwest Innocence Project, for example, investigates cases across Missouri, Kansas, Arkansas, Iowa, and Nebraska. They have 21 active cases and more than 900 people waiting for their requests to be reviewed.",
+        "Some exonerated clients go on to do the work themselves. Jarrett M. Adams was wrongfully convicted of sexual assault in Wisconsin in 1998 at age 17. The Seventh Circuit United States Court of Appeals overturned his conviction in 2006. Adams later earned a J.D. from Loyola University Chicago School of Law. He became the first exoneree ever hired as a staff attorney by the Innocence Project.",
+        "## Decades lost",
+        "The amount of time these individuals spend locked up is gripping. Glenn Ford, an African American man, was convicted by an all-white jury without any physical evidence linking him to the crime. He served 30 years on death row in Angola Prison before his release in 2014.",
+        "Archie Williams was convicted in 1983 of sexual assault and sentenced to life without the possibility of parole. He was exonerated in 2019 due to DNA evidence after over three decades in prison. Perry Lott served 30 years in prison for rape and burglary charges before being cleared after DNA testing.",
+        "Anthony Wright was exonerated in 2016 after serving 25 years in prison. DNA testing, which was originally denied, eventually proved another man committed the crime. The system makes mistakes, and the science is finally catching up. Read the case files. Form your own conclusion."
       ],
-      "sourceTopic": "Wrongful convictions and the work of the Innocence Project"
+      "sourceTopic": "Wrongful convictions and the work of the Innocence Project",
+      "caseSlug": null,
+      "sources": [
+        {
+          "title": "Innocence Project",
+          "url": "https://en.wikipedia.org/wiki/Innocence_Project"
+        },
+        {
+          "title": "The Innocence Project",
+          "url": "https://en.wikipedia.org/wiki/The_Innocence_Project"
+        },
+        {
+          "title": "Innocence Project",
+          "url": "https://innocenceproject.org/"
+        },
+        {
+          "title": "Midwest Innocence Project Home Page - Midwest Innocence Project",
+          "url": "https://themip.org/"
+        },
+        {
+          "title": "The Innocence Project: A Definitive Guide to Fighting Wrongful Convictions",
+          "url": "https://uslawexplained.com/innocence_project"
+        },
+        {
+          "title": "Innocence Project and Judicial Cooperation: Fighting Wrongful Convictions",
+          "url": "https://esplawyers.com/judicial-developments/innocence-project-and-judicial-cooperation-fighting"
+        }
+      ]
     },
     {
       "slug": "how-familial-dna-searching-actually-works",
-      "title": "How Familial DNA Searching Actually Works",
+      "title": "Understanding Familial DNA Searching",
       "date": "2026-08-18",
+      "updated": "2026-09-25",
       "category": "analysis",
       "categoryLabel": "Analysis",
       "image": "images/logo.png",
       "author": "Cory",
       "featured": false,
-      "excerpt": "It's not magic. It's probability, patience, and a whole lot of investigative follow-up. Let's unpack what the case file really shows.",
+      "excerpt": "When routine database searches hit a dead end, investigators use biological math to find close relatives and break decades-old cold cases wide open.",
       "body": [
-        "The detail that stops most people cold: investigators can identify a suspect they never had a sample from — just by finding a partial genetic match to a relative already in the database. That's the core of familial DNA searching, and it's worth understanding exactly how it works before drawing conclusions about it.",
-        "What the evidence actually shows is a two-step process. First, a crime-scene DNA profile is run against a forensic database. If no direct match comes back, analysts look for near-matches — profiles that share enough genetic markers to suggest a close biological relative. From there, detectives use traditional investigative work: genealogy records, age, sex, geography. The DNA narrows a population. Investigators do the rest. The method gained wide public attention through cases where conventional leads had gone cold for years, and a familial hit gave detectives a new thread to pull.",
-        "Where it stands: the technique is powerful, but it isn't available everywhere. Some states permit it, some prohibit it, and the rules around which databases can be searched vary significantly. Consumer genealogy databases operate under separate policies entirely. If you want to go deeper, the case files on individual investigations that used this method are some of the most detailed records of how modern forensic work actually gets done. Read them. Form your own conclusion."
+        "Fifty percent of your DNA comes from each parent. When police hit a dead end in a violent crime investigation, that simple biological math can break a case wide open. You've probably heard the headline version of genetic genealogy. Here's what the case file actually shows about familial DNA searching.",
+        "Familial searching is an additional search of a law enforcement DNA database. It only happens after a routine search fails to identify any profile matches. The National Institute of Justice describes it as a two-phase process conducted to develop investigative leads. The goal is to identify close biological relatives of the source of an unknown forensic profile left at a crime scene. Standard familial DNA testing limits matches to first-degree relatives. That means parents, siblings, or children.",
+        "The process relies on short tandem repeats, or STRs. These are genetic markers that vary between individuals. When there is not enough DNA from a case to get a complete STR profile, investigators look for a partial match in the Combined DNA Index System database, known as CODIS. In the 2000s, researchers noticed some searches indicated a parent-child relationship. That realization changed how cold cases are worked. Let's unpack it.",
+        "## The Llandarcy Murders",
+        "To understand how this tool works in practice, we have to look at the first person posthumously identified as a serial killer via familial DNA profiling. On Saturday, July 14, 1973, sixteen-year-old Sandra Newton went missing after a night out in Briton Ferry, Wales. Three days later, she was found raped and strangled in a rural location. She had been strangled with her own skirt and dumped in a ditch near a coal mine in Tonmawr.",
+        "Two months later, on Sunday, September 16, 1973, Geraldine Hughes and Pauline Floyd hitched a lift home after a night out in Swansea. Both girls were sixteen. The next morning, they were found raped and strangled in Llandarcy woodland. Police established they had been seen getting a lift in a white Austin 1100.",
+        "Detectives attempted to trace men who owned that model in the area. It meant visiting and questioning more than 10,000 drivers. One of those men was Joseph Kappen. When police spoke to him, his Austin 1100 was on blocks with the wheels removed. He claimed the car was not roadworthy. His wife, Christine Powell, gave him a false alibi. In mid-1974, the investigation was scaled down.",
+        "## The First Posthumous Match",
+        "In 1998, a profile of the killer's DNA was isolated from the clothing of Hughes and Floyd. In 2000, it was uploaded to the database. No match was made. Police launched a full reinvestigation titled Operation Magnum. A psychological profiler reduced 35,000 persons of interest to a priority list of 500. Joseph Kappen was suspect number 200.",
+        "When detectives visited his Port Talbot address in August 2001, they found he had died of lung cancer in June 1990. Two months later, testing on Sandra Newton's clothes revealed she was a victim of the same killer. South Wales Police decided to employ a previously unknown tactic. They searched for the DNA of possible living descendants of the murderer.",
+        "They created a list of 100 potential suspects. One was local car thief Paul Kappen, whose DNA was already on police files. Paul was only seven years old at the time of the murders. His profile showed a distinctive similarity to the killer's profile. In 2002, the Home Secretary granted permission to exhume Joseph Kappen's body from Goytre Cemetery. Forensic testing established a perfect match to the murderer's sample. South Wales Police declared the case closed.",
+        "## The Minerliz Soriano Case",
+        "The tactic eventually moved to the United States. In 2008, California became the first state to officially adopt familial DNA searching. It helped lead to the arrest and conviction of the Grim Sleeper serial killer. But the rules vary by state. New York did not allow familial DNA testing until 2017. That change eventually brought answers in the Bronx.",
+        "On February 24, 1999, thirteen-year-old Minerliz Soriano went missing after school. Four days later, her body was found in a dumpster behind a video store. She had been sexually assaulted and strangled. Investigators discovered two semen stains on her sweatshirt. Despite testing samples from several potential suspects, they could not get a match. The case sat unsolved for nearly two decades.",
+        "In 2018, Bronx police applied through the Division of Criminal Justice Services to conduct a familial DNA search. It took two years for the state crime lab to give investigators the name of a man who was genetically related to the suspect. Police then began investigating this man's five sons. Two were too young to have committed the crime. One of the remaining three was Joseph Martinez.",
+        "## Closing the Bronx Cold Case",
+        "Martinez was nicknamed \"Jupiter Joe\" because he taught kids about astronomy. He was 27 when Minerliz was killed and had lived in her apartment building. He had no criminal record. Police needed more than a familial DNA link to make an arrest. They needed a direct sample.",
+        "In January 2021, a Bronx detective posed as a parent interested in tutoring for her child. The detective met Martinez at a diner in New Rochelle. Afterward, police collected Martinez's used straws. The DNA was a definitive match to the sample from the sweatshirt.",
+        "Martinez was arrested in November 2021. He pleaded not guilty and went to trial. What the record shows is that in November 2025, a jury convicted him of murdering Soriano. In March 2026, he received a sentence of 25 years to life. It marked the first time familial DNA was used to solve a case in New York City.",
+        "## A 1995 Brooklyn Rooftop Attack",
+        "The technology continues to clear the backlog of violent crimes. On August 2, 1995, a 36-year-old woman was entering her mother's building on Pulaski St. in Bedford-Stuyvesant. A man forced her to the six-story building's rooftop at gunpoint. He ordered her to undress, raped her, and robbed her of her jewelry. A rape kit was administered at Brooklyn Hospital.",
+        "The DNA evidence did not match anyone on record. In 2005, the mystery man's DNA was pre-indicted to prevent the statute of limitations from expiring. In 2023, the NYPD Special Victims Unit's Cold Case Squad worked with the Investigative Genetic Genealogy Squad. Using familial DNA searching, the evidence was run through a state database. It linked to two people who shared a close relative.",
+        "Detectives investigated the relatives and identified 55-year-old William Stephens. He only had sealed arrests on his record, but he had an open warrant for drinking in public. In July 2026, he was brought in for questioning. Detectives obtained an abandonment sample. Police said it matched the DNA from the 1995 rape. Stephens was arrested on September 18, 2026. He pleaded not guilty and is currently accused of the crime, held on $250,000 bail.",
+        "## The Reality of the Database",
+        "Familial DNA is not a magic wand. The age of the database and the age of the cold case dictate the likelihood of success. CODIS only began as a pilot program in 1990. Criminologists note that you would not expect familial DNA searches to easily find matches for cold cases from the 1950s and 60s.",
+        "The process is also heavily regulated. Familial DNA searches are only conducted at the state level and must follow individual state guidelines. It is not a regular tool in investigations. Police generally use these searches in cases with no investigative leads, specifically unsolved homicides and sexual assaults.",
+        "When the standard methods fail, biological math offers a second chance at the truth. The evidence left at the scene remains unchanged, waiting for the database to catch up. Read the case files. Form your own conclusion."
       ],
-      "sourceTopic": "Understanding DNA familial searching"
+      "sourceTopic": "Understanding DNA familial searching",
+      "caseSlug": null,
+      "sources": [
+        {
+          "title": "Joseph Kappen",
+          "url": "https://en.wikipedia.org/wiki/Joseph_Kappen"
+        },
+        {
+          "title": "How Familial DNA Helps Solve a Teen's Murder After 26 Years | A&E",
+          "url": "https://www.aetv.com/articles/familial-dna-murder-minerliz-soriano-grim-sleeper"
+        },
+        {
+          "title": "NYPD cracks 1995 Brooklyn rape case through familial DNA search",
+          "url": "https://www.nydailynews.com/2026/09/18/nypd-arrests-suspect-for-1995-rape-with-help-of-genetic-genealogy/"
+        },
+        {
+          "title": "Familial DNA Searching: Current Approaches - National Institute of Justice",
+          "url": "https://nij.ojp.gov/library/publications/familial-dna-searching-current-approaches"
+        }
+      ]
     },
     {
       "slug": "what-actually-gets-a-cold-case-reopened",
-      "title": "What Actually Gets a Cold Case Reopened",
+      "title": "How Cold Case Units Decide Which Files to Reopen",
       "date": "2026-08-14",
+      "updated": "2026-09-25",
       "category": "investigation",
       "categoryLabel": "Investigation",
       "image": "images/logo.png",
       "author": "Cory",
       "featured": false,
-      "excerpt": "It's not a tip line call or a true crime podcast. The decision to reopen a case comes down to something much more specific.",
+      "excerpt": "A cold case does not move again because of an anniversary, but because a single thread finally gives investigators somewhere to pull.",
       "body": [
-        "The detail that stops a cold case detective cold isn't usually a dramatic confession. More often it's a lab report from fifteen years ago that was written before a particular DNA technology existed. That's the starting point — not a hunch, not public pressure. A concrete reason to believe the evidence can tell us something it couldn't before.",
-        "I've gone back through how several cold case units describe their triage process, and the framework is more structured than most people expect. Detectives weigh whether biological evidence was collected and still exists, whether a potential suspect profile can now be run against an expanded database, and whether key witnesses are still alive and locatable. Some units score cases on a point system. Others rely on a senior investigator making a judgment call against a backlog that can number in the hundreds. What the record consistently shows is that resource limits drive the calendar as much as anything else. A strong case with testable evidence can sit untouched for years simply because the unit is understaffed.",
-        "Where it stands right now is complicated. Advances in genetic genealogy have genuinely changed what cold case units think is solvable — cases that had zero viable leads a decade ago are back in active rotation. But access to those tools isn't uniform, and not every jurisdiction has a dedicated cold case unit at all. If you want to understand why one case gets attention and another stays on the shelf, the answer is usually found in the evidence log and the department budget, not the headlines. Read the file. Form your own conclusion."
+        "The strangest true detail about cold cases is that the police do not just give up on them by definition. The National Institute of Justice defines a cold case simply. It is any case where the probative investigative leads have been exhausted. That phrasing matters. A case does not move again because of an anniversary or because someone feels strongly about it. It moves when a new lead exists.",
+        "The statistics paint a bleak picture. An estimated 242,000 unresolved homicides occurred in the United States from 1980 to 2016. Overall, roughly 40 percent of the homicides in the United States are unsolved. The clearance rate for homicides plunged from 78.3 percent in 1975 to 59.4 percent in 2016.",
+        "Reopening a case usually starts small. It is an inventory of what sits in evidence storage and a decision about what is worth sending back to the lab. Let's unpack it.",
+        "## Funding the science",
+        "A case often reopens because of physical evidence that was never tested, or that was tested with methods that are now out of date. Biological samples once thought unsuitable have later yielded usable DNA profiles. A swab from a steering wheel or a cigarette butt can carry a profile that the lab of 1995 could not read but the lab of today can.",
+        "Funding shapes which of those samples actually get retested. Lab work is not free. The National Institute of Justice has run a competitive grant program called Solving Cold Cases with DNA since July 2004. In 2005, it distributed $14.2 million across 38 agencies. By 2007, it had granted more than $8 million to another 21 agencies.",
+        "The money pays for personnel, laboratory equipment, investigative travel, and outsourcing samples to private labs. A small police department with a handful of unsolved homicides usually cannot absorb that cost on its own. A grant award can be the practical event that brings a stack of old files back to a working desk.",
+        "## The Rasmussen file goes cold",
+        "You can see exactly how this works in the murder of Sherri Rasmussen. On February 24, 1986, Rasmussen was found dead in the Van Nuys condominium she shared with her husband, John Ruetten. She had been beaten and shot three times. The Los Angeles Police Department initially considered the case a botched burglary.",
+        "Lead detective Lyle Mayer and his partner Steve Hooks investigated. The crime had atypical elements for a burglary, like a bite mark on Rasmussen's arm. Hooks found the bite mark unusual, as bites during struggles are much more commonly inflicted by women, while the majority of burglars are men. However, the burglary theory stood, and the investigation stalled after several months.",
+        "Rasmussen's father, Nels, believed that LAPD officer Stephanie Lazarus was a prime suspect. Lazarus had formerly been in a relationship with Ruetten. Nels told the police about her, but Mayer dismissed it, telling him there was nothing there. The case went cold for over two decades.",
+        "## A missing swab",
+        "In the late 1990s, the LAPD formed a new unit to look through forensic evidence from cold case files. They wanted to determine whether any had the potential for new leads through DNA testing. In 2004, criminalist Jennifer Francis was able to analyze evidence from the Rasmussen residence.",
+        "Francis turned to the bite swab. The detective she was working for had noted it was missing from the property log. Calls to the county coroner's office initially found it missing there, too. The criminalist who originally collected it explained that samples that old had not been logged into the computer database. It was eventually found after searching the lab's freezers.",
+        "Francis did not find any matches in the FBI's Combined DNA Index System, known as CODIS. But she did find that the saliva in the swab had come from a female. This undermined the initial burglary theory. When Francis asked the supervising detective if the female LAPD officer had been investigated, he insisted the case was simply a burglary. The evidence went back into the files.",
+        "## Fresh eyes on the evidence",
+        "In March 2008, Van Nuys homicide detective Jim Nuttall found a box with two case files left on the floor near his desk. One was the Rasmussen killing. He and his partner Pete Barba agreed it was not likely a burglary because the DNA test pointed to a female suspect. They looked at the case as a murder, with the burglary staged to throw the police off the trail.",
+        "The case file showed aspects of the crime that were implausible for a break-in. Rasmussen's jewelry box was in plain view and untouched. The condo was in the middle of a gated complex. The front door had not been forced open. A stack of stereo equipment at the base of the stairs had a thumb-shaped bloodstain on a record player, but no print, suggesting whoever left it wore gloves. The blood was Rasmussen's, suggesting the equipment had been stacked after the struggle.",
+        "The detectives developed a list of five female suspects. They eventually eliminated all but Lazarus, who by then was a detective in the Commercial Crimes Division. Realizing Lazarus was their prime suspect, they arranged to discreetly collect a voluntarily discarded DNA sample from her. While off-duty, Lazarus discarded a cup at a Simi Valley Costco. A sample taken from it matched the DNA from the bite mark.",
+        "## The arrest of an officer",
+        "In June 2009, Robbery-Homicide Division detectives Greg Stearns and Dan Jaramillo called Lazarus from the lockup at Parker Center. They claimed they had someone in custody who wanted to talk about an art theft. After she checked in her gun and entered the interrogation room, they explained they were actually trying to tie up loose ends in the Rasmussen case.",
+        "Lazarus claimed to recall little but gradually revealed more knowledge until she accused her colleagues of considering her a suspect. The detectives asked if she would provide a DNA sample. She stated she might be prepared to, but said she had to speak with somebody and left the room, where she was arrested.",
+        "When the trial began in early 2012, prosecutors argued her motive was jealousy. Prosecutor Paul Nunez told the jury it was not a fair fight, calling it prey caught in a cage with a predator. In March, the jury convicted Lazarus of first-degree murder. She was sentenced to 27 years to life in prison. During a 2023 parole hearing, Lazarus confessed to the crime.",
+        "## Recognizing a staged scene",
+        "Staged burglaries are a recurring theme when cold case units look back at old files. You see similar amateur staging in the 2002 Richthofen case in São Paulo, Brazil. On October 31, 2002, Manfred and Marísia von Richthofen were beaten to death in their mansion by brothers Daniel and Cristian Cravinhos, at the instruction of the couple's daughter, Suzane.",
+        "The trio attempted to fake a robbery. They opened the couple's safe, scattered jewels on the floor, and left a revolver intact next to Manfred's body. They cut open a briefcase to fake the theft of cash.",
+        "Alexandre Paulino Boto was the first police officer to arrive. He classified the murder as an amateur crime. He noted that if someone wanted to rob the house, they would not leave jewelry, cell phones, and a gun in the bedroom. A thief would not leave a gun on the floor. That kind of staging falls apart when investigators look at what the evidence actually shows. Suzane and Daniel Cravinhos were sentenced to 39 years and 6 months in prison, and Cristian was sentenced to 38 years and 6 months.",
+        "## The reality of clearance rates",
+        "Solving these older cases affects how we understand modern crime statistics. The national homicide clearance rate has fallen over the long term. In 2024, about 61.4 percent of homicides were cleared, up from a record low of around 52 percent in 2022.",
+        "One detail in how the FBI counts these clearances matters for cold cases. A case is recorded as cleared in the year it is solved, not the year the crime happened. An arrest made in 2026 for a 1985 killing counts toward the 2026 figure. A department that clears a batch of old cases can lift its current rate even while recent cases stay open.",
+        "Most reopened cases do not end in an arrest. A reopening is a sequence of conditions lining up. A piece of evidence still exists, a method exists to read it, money exists to pay for the test, and a database turns the result into a name. Take away any one of those, and the case stays cold.",
+        "The reason cold case units keep producing results is that each year, more old evidence becomes testable and more profiles sit in databases waiting to match. Cases that were genuinely out of leads can quietly acquire a new one. Read the file. Form your own conclusion."
       ],
-      "sourceTopic": "How cold case units decide which files to reopen"
+      "sourceTopic": "How cold case units decide which files to reopen",
+      "caseSlug": null,
+      "sources": [
+        {
+          "title": "Murder of Sherri Rasmussen",
+          "url": "https://en.wikipedia.org/wiki/Murder_of_Sherri_Rasmussen"
+        },
+        {
+          "title": "Richthofen case",
+          "url": "https://en.wikipedia.org/wiki/Richthofen_case"
+        },
+        {
+          "title": "What It Takes to Reopen a Cold Case - forensicfiles.com",
+          "url": "https://forensicfiles.com/posts/reopening-a-cold-case"
+        },
+        {
+          "title": "Expert Panel Issues New Best Practices Guide for Cold Case ...",
+          "url": "https://nij.ojp.gov/topics/articles/expert-panel-issues-new-best-practices-guide-cold-case-investigations"
+        },
+        {
+          "title": "What Are Cold Cases and How They Are Investigated",
+          "url": "https://bridgelegal.org/what-are-cold-cases-how-they-are-investigated/"
+        },
+        {
+          "title": "How Cold Cases Come Back to Life - revlox.com",
+          "url": "https://www.revlox.com/crime/how-cold-cases-come-back-to-life/"
+        }
+      ]
     },
     {
       "slug": "what-you-saw-and-what-happened-are-not-the-same-thing",
-      "title": "What You Saw and What Happened Are Not the Same Thing",
+      "title": "The Documented Flaws in Eyewitness Testimony",
       "date": "2026-08-04",
+      "updated": "2026-09-25",
       "category": "analysis",
       "categoryLabel": "Analysis",
       "image": "images/logo.png",
       "author": "Cory",
       "featured": false,
-      "excerpt": "Eyewitness testimony feels like the gold standard in court. The case file shows it's one of the most fragile kinds of evidence we have.",
+      "excerpt": "You've probably heard eyewitness testimony is the gold standard. Here is what the evidence actually shows about how human memory works on the stand.",
       "body": [
-        "The witness took the stand, looked the jury in the eye, and said she was certain. That kind of certainty is hard to argue with in a courtroom. Here's what the record actually shows: certainty and accuracy are two completely different things, and the human memory doesn't work the way most people assume it does.",
-        "Memory isn't a recording. It's reconstructive — your brain fills gaps every time you retrieve a moment, and outside information can quietly rewrite what you think you saw. Researchers who've studied wrongful convictions consistently find eyewitness misidentification listed among the leading contributing factors. It shows up in case after case: a confident witness, a clean identification, and then DNA or documentary evidence that points somewhere else entirely. The lineup procedure, the lighting, the stress of the original event, the time elapsed — all of it shapes what a witness believes they remember. None of that uncertainty tends to make it into closing arguments.",
-        "I've gone back through the case files on several episodes where eyewitness accounts were treated as airtight. In almost every one, the details shifted between the initial report and trial testimony — sometimes in small ways, sometimes in ways that should have changed everything. That's not about dishonesty. It's about how memory actually works. Read the studies. Read the file. Form your own conclusion."
+        "A 2021 FBI report on crime victimization noted that 80% of jurors believe eyewitness testimony is very reliable. The case files tell a completely different story. The Innocence Project's 2020 report shows that approximately 75% of wrongful convictions nationwide involve eyewitness misidentification.",
+        "A 2016 report from NIST confirms eyewitness testimony is the leading cause of wrongful convictions overturned by DNA evidence in the U.S. Despite this, a 2001 study in the American Bar Association Journal found juries are 3 times more likely to convict based on eyewitness testimony alone than on physical evidence.",
+        "I went back through the research and the affidavits. What the record shows is that human memory is fragile, easily corrupted, and frequently trusted far beyond its actual capacity. Let's unpack it.",
+        "## How quickly memories fade",
+        "A 1974 study by Elizabeth Loftus found that eyewitness memory for details decreases by 30 to 50% within just 24 hours of witnessing an event. By the time a witness sits in a courtroom, months or years have passed. The decay only gets worse with time.",
+        "A 2003 study in the Journal of Experimental Psychology: Learning, Memory, and Cognition showed that delayed recall of more than 1 week post-event leads to a 70% increase in false memories compared to immediate recall. If the memory is formed more than 6 months after the event, the 2016 NIST report states 80% of those identifications are inaccurate.",
+        "Stress also warps what people see. A 2007 study in the Journal of Experimental Psychology: General found that witnesses stressed by a simulated crime are more likely to fill in gaps in their memory with assumptions. This leads to false identifications 40% of the time.",
+        "## The power of suggestion",
+        "Memory is not a video recording. It can be altered after the fact. A 1978 study by Elizabeth Loftus and John Palmer demonstrated this clearly. They found that eyewitnesses asked leading questions, such as how fast cars were going when they smashed into each other, are 33% more likely to recall seeing broken glass, even if none exists.",
+        "That outside influence is a massive problem for law enforcement. The 2016 NIST report stated that 60% of eyewitness misidentifications are caused by misinformation from police, media, or other sources. This includes leading questions or shared details before a witness even views a lineup.",
+        "The FBI's 2017 Uniform Crime Reporting Handbook noted that law enforcement considers eyewitness testimony highly reliable in 85% of cases. However, the same handbook admits it is inaccurate in 15 to 20% of those specific cases. A 2021 meta-analysis in the Journal of Experimental Psychology found eyewitness identification is correct in only 50 to 60% of lineups, even when instructed properly.",
+        "## The failure of cross-race identification",
+        "One of the most documented failures in eyewitness memory is cross-race bias. The 2016 NIST report found that 50% of eyewitness misidentifications are due to this bias. Witnesses are simply less accurate at identifying faces of different races.",
+        "The numbers are stark. Same-race identifications have an accuracy rate of 90%. Cross-race accuracy can drop as low as 40%. A 1995 study in the Journal of Personality and Social Psychology found that cross-race eyewitnesses are 2.5 times more likely to misidentify a suspect. This holds true even if the witness is familiar with the person's race.",
+        "The FBI's 2021 report on crime victimization noted that in racially diverse areas, 60% of misidentifications involve cross-race identifications. Of those misidentifications, 35% result in wrongful convictions.",
+        "## Eyewitnesses in the Simpson trial",
+        "We can see these principles play out in major case files. On June 12, 1994, Nicole Brown Simpson and Ron Goldman were murdered. O. J. Simpson was charged with the murders and eventually acquitted. During the investigation, several eyewitnesses came forward, but their testimony proved problematic.",
+        "Jill Shively testified to a grand jury that she saw a white Ford Bronco speeding away from Bundy Drive soon after the time of the murders. She claimed she recognized Simpson's voice. Prosecutors declined to use her testimony at trial after she talked to the television show Hard Copy for 5,000 dollars. In 1995, Shively also falsely claimed actor Brian Patrick Clarke had assaulted and stalked her.",
+        "Another witness, housekeeper Rose Lopez, stated she saw Simpson's Bronco parked outside his house at the time of the murders. The defense intended to call her, but dropped her from the witness list. Another housekeeper, Sylvia Guerra, claimed the defense offered both of them 5,000 dollars to say they saw the Bronco.",
+        "Limousine driver Allan Park was a key witness who did testify. He arrived at Simpson's home at 10:25 pm. Park testified he saw a shadowy figure enter the front door, but during cross-examination, he conceded he could not identify the figure.",
+        "## Identification challenges in the Bundy case",
+        "The case of Theodore Robert Bundy shows how variable witness identification can be. On July 14, 1974, witnesses at Lake Sammamish State Park saw a man with his arm in a sling driving a tan or bronze-colored Volkswagen Beetle. He introduced himself as Ted.",
+        "Despite this specific description, the witness considered most reliable by King County detectives failed to identify Bundy from a photo lineup.",
+        "Later, after Bundy was arrested by Utah Highway Patrol officer Bob Hayward on August 16, 1975, police put him into a lineup on October 2. Witness Carol DaRonch immediately identified him as Officer Roseland, the man who had attempted to handcuff her. Witnesses from Bountiful also recognized him as a stranger seen at the Viewmont High School auditorium.",
+        "The physical evidence and these later identifications led to his conviction by Judge Stewart Hanson Jr. in a bench trial. But the initial failure of a reliable witness to pick him out of a photo lineup underscores the fragility of human memory. Read the case files. Form your own conclusion."
       ],
-      "sourceTopic": "Why eyewitness testimony is less reliable than people think"
+      "sourceTopic": "Why eyewitness testimony is less reliable than people think",
+      "caseSlug": null,
+      "sources": [
+        {
+          "title": "Murder trial of O. J. Simpson",
+          "url": "https://en.wikipedia.org/wiki/Murder_trial_of_O._J._Simpson"
+        },
+        {
+          "title": "Ted Bundy",
+          "url": "https://en.wikipedia.org/wiki/Ted_Bundy"
+        },
+        {
+          "title": "Eyewitness Testimony Reliability Statistics 2026",
+          "url": "https://worldmetrics.org/eyewitness-testimony-reliability-statistics/"
+        },
+        {
+          "title": "Judging Eyewitness Evidence | Judicature - Duke University",
+          "url": "https://judicature.duke.edu/articles/judging-eyewitness-evidence/"
+        },
+        {
+          "title": "\"I Saw It with My Own Eyes.\" But Did You Really? - Psychology Today",
+          "url": "https://www.psychologytoday.com/us/blog/making-sense-chaos/202104/i-saw-it-my-own-eyes-did-you-really"
+        },
+        {
+          "title": "Can We Trust Eyewitnesses? What Social Psychology Tells Us",
+          "url": "https://sites.psu.edu/aspsy/2026/03/05/can-we-trust-eyewitnesses-what-social-psychology-tells-us/"
+        }
+      ]
     },
     {
       "slug": "why-solid-evidence-gets-thrown-out-of-court",
-      "title": "Why Solid Evidence Gets Thrown Out of Court",
+      "title": "Chain of custody: why solid evidence gets thrown out",
       "date": "2026-07-28",
+      "updated": "2026-09-25",
       "category": "court",
       "categoryLabel": "Court",
       "image": "images/logo.png",
       "author": "Cory",
       "featured": false,
-      "excerpt": "The evidence looked airtight. Then a judge tossed it. Here's what chain of custody actually means for a case.",
+      "excerpt": "You have probably heard about cases falling apart on a technicality, but here is what the chain of custody actually shows about how evidence is handled.",
       "body": [
-        "The fingerprint matched. The DNA came back positive. And then the defense filed a motion, and the judge threw the whole thing out. I've gone back through case files where that exact sequence played out, and every time it comes down to the same issue: not whether the evidence was real, but whether the court could prove it stayed uncontaminated from the crime scene to the evidence locker to the lab to the courtroom.",
-        "What the record shows, case after case, is that chain of custody is a documented paper trail — every person who touched a piece of evidence, when they touched it, and what condition it was in. A gap anywhere in that chain gives the defense a legitimate argument that the sample could have been tampered with, mislabeled, or mixed with something else. Judges don't throw evidence out because they think it's fake. They throw it out because the system couldn't prove it wasn't compromised. That's a meaningful distinction, and it matters more than most headlines let on.",
-        "Where it stands as a legal standard: courts have ruled consistently that the integrity of the process protects defendants and the prosecution equally. A conviction built on poorly handled evidence is a conviction that falls apart on appeal. So when you hear that a case collapsed over 'a paperwork issue,' that's usually what you're actually looking at. Read the motions. Form your own conclusion."
+        "A bloody knife at a murder scene seems like the kind of proof that closes a case. You bag it, you test it, and you show it to the jury. But if the prosecutor cannot prove exactly whose hands that knife passed through between the crime scene and the courtroom, the jury might never know it exists. I went back through the legal standards, and what the evidence actually shows is that catching a suspect is only the first step. The rest comes down to paperwork.",
+        "The chain of custody is the chronological documentation, or paper trail, that records the sequence of custody, control, transfer, analysis, and disposition of materials. It applies to physical and electronic evidence in criminal cases, but it is also used in civil litigation, drug testing of athletes, and supply chain management. In 2020, ISO standard 22095 was even published to address supply chain issues like risk and production conditions.",
+        "In a criminal courtroom, however, the stakes are entirely different. When evidence can be used to convict people of crimes, it must be handled in a scrupulously careful manner. The idea is to establish that the alleged evidence is in fact related to the alleged crime, rather than having been fraudulently planted to make someone appear guilty. Let's unpack it.",
+        "## The chronological paper trail",
+        "An identifiable person must always have physical custody of a piece of evidence. The chain starts from the origin of the crime scene. Investigators are required to wear proper personal protective equipment, utilize sterile collection techniques, photograph the evidence prior to recovery, and accurately record the location. Every item is given a unique identification number.",
+        "Consider the example of a bloody knife at a murder scene. Officer Andrew collects the knife, places it into a container, and gives it to forensics technician Bill. Technician Bill takes the knife to the lab, collects fingerprints, and hands the knife and all gathered evidence to evidence clerk Charlene. Charlene then stores the evidence until it is needed, documenting everyone who accesses the original knife and the lifted fingerprints.",
+        "The chain of custody requires that every single transfer from person to person be documented. It must be provable that nobody else could have accessed that evidence. The documentation should include the conditions under which the evidence is gathered, the identity of all handlers, the duration of custody, security conditions, and the signatures of the persons involved at each step. It is best to keep the number of transfers as low as possible.",
+        "## Handling fungible goods and trace evidence",
+        "Establishing this logical and chronological procedure is especially important when the evidence consists of fungible goods. In practice, this most often applies to illegal drugs seized by law enforcement. A defendant at times disclaims any knowledge of possession of the controlled substance. The prosecution must present the chain of custody documentation to establish that the substance tested in the lab is the exact same substance taken from the accused.",
+        "Biological and trace evidence is especially susceptible to contamination. Evidence gathered with bad techniques can be tainted, damaged, or mixed with other evidence. Without gloves, the use of inappropriate containers, or combining multiple samples can ruin the ability to conduct forensic analysis. Poor laboratory practices can lead to false forensic results when DNA is passed on.",
+        "Storage conditions heavily impact the quality of the evidence. Biological materials can be compromised by inadequate temperature and humidity. Chemicals can degrade. Electronic device data can be corrupted if original devices are handled improperly. If storage conditions are not documented or are inappropriate, the reliability of any later test result is immediately in question.",
+        "## Strict packaging protocols",
+        "Packaging must be designed to preserve the specific type of evidence. Biological specimens are contained in paper boxes that are breathable. Sharp objects are kept in place to avoid injuries. Guns are made safe before they are put in containers. Electronics are shielded from electromagnetic interference, and data must be protected against improper transfer using unsecured drives or inadequate encryption.",
+        "All evidence packages must be provided with tamper-evident seals so that any alteration will be readily discovered. An evidence package should display the case number, exhibit number, description of evidence, recovery site, date and time of collection, and the collector’s name and signature. Unmarked and unassigned evidence is a massive concern for possible tampering.",
+        "When a seal is not opened in the proper manner, or is opened without proper documentation, the defense can argue that the evidence is tainted. They can claim the seal was broken in an unscrupulous manner to make a false impression. Every person who touches the evidence must be officially recorded for transparency and accountability.",
+        "## How the defense challenges the record",
+        "Evidence often passes through the hands of patrol officers, evidence clerks, forensic laboratories, prosecutors, and courts. When that trail has gaps, a defense lawyer can use those gaps to challenge whether the evidence is reliable enough to be used against the accused at all. Missing entries, altered dates, unexplained time gaps, or a lack of signatures are major red flags.",
+        "Crime labs are supposed to follow validated, repeatable procedures. This means calibrated instruments, contamination controls, double-checked analysis, and complete records of who ran which test. However, overworked or understaffed labs sometimes cut corners, mislabel samples, or fail to document their own quality-control steps.",
+        "DNA evidence might sound scientifically bulletproof to a jury, but it is only as good as the sample handling behind it. Degraded samples, mixed-DNA profiles from multiple contributors, and subjective interpretation calls by analysts are recognized weak points. A defense expert can probe these issues to raise real doubt about what the evidence proves.",
+        "## The constitutional right to challenge evidence",
+        "Finding a chain-of-custody problem is highly technical work. It usually requires formally requesting the full evidence log, lab bench notes, and quality-control records through a discovery request or subpoena. Prosecutors have a constitutional obligation under Brady v. Maryland (1963) to turn over evidence favorable to the defense, which includes problems with how evidence was handled.",
+        "This level of technical challenge is why the right to counsel matters so much. In Gideon v. Wainwright (1963), the Supreme Court held that a person facing felony charges in state court is entitled to a lawyer even if they cannot afford one. Later, in Strickland v. Washington (1984), the Court set the standard for when a lawyer's performance is so deficient that it violates that right. Failing to investigate an obvious chain-of-custody problem can lead to an ineffective-assistance claim.",
+        "The defense does not actually have to prove that evidence was tampered with. They only have to raise enough doubt about the reliability of the evidence that a jury is not convinced beyond a reasonable doubt. The prosecution carries the full burden of proving guilt.",
+        "## What happens when the chain breaks",
+        "During discovery, defense counsel reviews evidence logs, chain forms, and property receipts. If inconsistencies are found, they can file a Motion to Suppress Evidence. The rationale is that the prosecution cannot prove the item is legitimate, belongs to the case, or was kept safe from tampering. These motions are usually subject to strict filing deadlines set by the court.",
+        "Once a judge receives the motion, they review the chain of custody. If the judge feels the mishandling shows the evidence cannot be trusted, it may be excluded or thrown out. Suppressed evidence never makes it into the courtroom, meaning the jury will never know of its existence.",
+        "In cases where the suppressed evidence is the crucial item determining guilt, like a gun or narcotics, its absence can lead to the case being dismissed entirely. Alternatively, the defense can use discrepancies to challenge credibility during cross-examination. Read the case file. Look at the evidence logs. Form your own conclusion."
       ],
-      "sourceTopic": "Chain of custody: why solid evidence still gets thrown out"
+      "sourceTopic": "Chain of custody: why solid evidence still gets thrown out",
+      "caseSlug": null,
+      "sources": [
+        {
+          "title": "Chain of custody",
+          "url": "https://en.wikipedia.org/wiki/Chain_of_custody"
+        },
+        {
+          "title": "Why Evidence is Thrown Out: The Chain of Custody",
+          "url": "https://legaldesire.com/why-evidence-is-thrown-out-the-chain-of-custody/"
+        },
+        {
+          "title": "Challenging the Chain of Custody - observed.org",
+          "url": "https://observed.org/challenging-the-chain-of-custody/"
+        },
+        {
+          "title": "When Chain of Custody Issues Undermine a Prosecution's Case",
+          "url": "https://josephhollander.com/news-blog/how-chain-of-custody-issues-can-undermine-a-prosecutions-case/"
+        },
+        {
+          "title": "Chain of Custody: How Evidence Can Be Thrown Out in Court | Law Offices ...",
+          "url": "https://www.snyderlawyer.com/news/understanding-chain-of-custody-how-evidence-can-be-thrown-out-in-court/"
+        }
+      ]
     },
     {
       "slug": "how-forensic-genealogy-is-reopening-cases-the-system-had-wri",
-      "title": "How Forensic Genealogy Is Reopening Cases the System Had Written Off",
+      "title": "How Forensic Genealogy Cracks Cold Cases",
       "date": "2026-07-17",
+      "updated": "2026-09-25",
       "category": "analysis",
       "categoryLabel": "Analysis",
       "image": "images/logo.png",
       "author": "Cory",
       "featured": false,
-      "excerpt": "A DNA sample that sat in an evidence freezer for decades can now build a family tree. Here's what the record shows.",
+      "excerpt": "The technology that caught the Golden State Killer is rewriting the rules of cold case investigations. Here is how forensic genealogy actually works.",
       "body": [
-        "The detail that stops me every time I go back through the case files: investigators already had the killer's DNA. They just had no name to attach to it. For years — sometimes decades — that profile sat in a database with nowhere to go. Forensic genealogy changed that equation entirely. Instead of waiting for a direct match, analysts upload the unknown DNA to public genealogy databases and start building out family trees from distant relatives. Cousins. Second cousins. People who submitted a cheek swab to find out where their grandparents came from.",
-        "What the evidence actually shows is a process that's methodical, not magic. Once analysts identify a cluster of relatives, they work the tree forward through generations and cross-reference with age, geography, and other details from the case file. They're narrowing a pool of candidates down to one. The Golden State Killer investigation — which became the most publicly documented use of this method — confirmed how powerful it can be when traditional investigative work runs alongside the genealogy. The DNA got them to a family. The follow-up work got them to a suspect.",
-        "The technique is gripping precisely because it's unglamorous. It's spreadsheets and census records and death certificates, not a lab scene from a TV procedural. There are real debates worth following here — around privacy, around the use of consumer databases, around what consent means when a relative's DNA implicates you. Those questions don't have clean answers yet. Read the case files on both sides. Form your own conclusion."
+        "As of December 2023, investigative genetic genealogy has led to breakthroughs in more than 651 criminal investigations. That number includes the identification of 318 individual perpetrators and 464 previously unidentified decedents. You have probably heard the headline version of this technology. It is the tool that finally caught the Golden State Killer. Here is what the evidence actually shows about how this science works.",
+        "A cold case is an unsolved crime that is no longer the subject of a current criminal investigation, but one where new information could still emerge. Typically, these are violent major felony crimes like murder and rape. Unlike minor crimes, these offenses generally do not have a statute of limitations. Sometimes disappearances are also classified as cold cases when a victim has not been seen for some time. The cases of Natalee Holloway and the Beaumont children fall into this category.",
+        "Despite advances in forensic science, a substantial number of homicides remain unsolved each year in the United States. This results in a growing backlog of cold cases. Police departments have opened dedicated cold case units to re-examine these files. For decades, investigators hit the same wall. Now, the combination of crime scene DNA and consumer genealogy research is changing the process. Let's unpack it.",
+        "## The limits of traditional DNA",
+        "Traditional forensic DNA testing relies on a straightforward comparison. Investigators collect a biological sample from a crime scene. This can be blood, semen, saliva, hair roots, or tissue. A forensic laboratory then develops a DNA profile from that evidence.",
+        "That profile is run against law enforcement databases like the Combined DNA Index System, known as CODIS. CODIS uses a small number of genetic markers called short tandem repeats. The system looks for an exact match. If the perpetrator’s DNA is already in the system, a match emerges and investigators have a lead.",
+        "If the DNA is not in the system, the case stalls. DNA evidence is of no value unless there is evidence on file to compare it to. This limitation allowed violent offenders to evade capture for decades. Forensic genetic genealogy bypasses that limitation entirely. It does not require the suspect’s own DNA to be on file. Instead, the process works through relatives.",
+        "## Building the reverse family tree",
+        "The genetic genealogy process begins with extracting a specific type of profile. A genetic genealogist extracts a single nucleotide polymorphism profile, or SNP profile, from the crime scene sample. This profile contains hundreds of thousands of genetic markers. This is far more data than the markers used for CODIS.",
+        "The SNP profile is then uploaded to public genealogy databases. Platforms like GEDmatch and FamilyTreeDNA contain the voluntarily submitted DNA data of millions of people. These are individuals who tested their ancestry through companies like 23andMe and AncestryDNA. The system scans for any user whose DNA shares significant segments with the uploaded profile.",
+        "The search returns a list of genetic matches ranked by the amount of shared DNA. The method does not require a direct match. In most forensic cases, the closest matches are second, third, or fourth cousins. These are people who share a set of great-grandparents or great-great-grandparents with the unknown individual. From there, the genealogist constructs family trees backward through generations using public records like birth certificates, census data, and obituaries.",
+        "The goal is to find where the family trees of multiple genetic matches converge on a common ancestor. From that common ancestor, the genealogist works forward through descendants. They apply filters based on age, sex, geography, and the timeline of the crime. Once a prime suspect is identified, investigators obtain a fresh DNA sample. This is often collected from discarded items like a coffee cup or cigarette butt. A traditional STR analysis confirms the match.",
+        "## The Golden State Killer breakthrough",
+        "The case that launched this field into public consciousness involves a predator who terrorized California. Between 1974 and 1986, this unknown suspect committed at least 13 murders, more than 50 sexual assaults, and over 100 burglaries across multiple jurisdictions. Investigators gave him different names in different regions. He was known as the Visalia Ransacker, the East Area Rapist, and the Original Night Stalker.",
+        "DNA linked the crime sprees in 2001, but the profile generated no hits in CODIS. The case went cold again. In 2018, investigator Paul Holes and attorney Anne Marie Schubert enlisted genetic genealogist Barbara Rae-Venter. She uploaded a SNP profile from a crime scene DNA sample to GEDmatch. She identified distant relatives of the unknown offender and traced multiple family lines.",
+        "The research pointed to Joseph James DeAngelo, a 72-year-old former police officer living in Citrus Heights, California. Investigators collected DNA from a discarded item in DeAngelo’s trash. It matched the crime scene evidence. DeAngelo was arrested on April 24, 2018. In June 2020, he pleaded guilty to 13 counts of first-degree murder and 13 counts of kidnapping. He received multiple consecutive life sentences without parole.",
+        "## The murder of April Tinsley",
+        "The technology also cracked one of Indiana's most infamous cold cases. On April 1, 1988, eight-year-old April Marie Tinsley was playing with two friends in Fort Wayne. She went back to retrieve her umbrella and disappeared around 3:00 pm. Her mother reported her missing when she did not arrive home for dinner. A jogger found Tinsley's body on April 4, 1988, in a ditch just west of Spencerville, Indiana. Her autopsy report suggested she had been raped and strangled to death.",
+        "Between 1990 and 2004, the killer left a series of anonymous messages and notes in the Fort Wayne area. On May 21, 1990, police found a message written in crayon on a barn. It read, \"I kill 8 year old April Marie Tisley,\" and \"did you find the other shoe haha I will kill again.\"",
+        "During the Memorial Day weekend in 2004, four more notes were found. Three were left on girls' bicycles, and one in a mailbox. Three notes were placed in plastic bags alongside used condoms and Polaroid pictures of a man's lower body. One note threatened that the reader was his next victim. The DNA from the condoms matched the police's DNA profile of the suspect.",
+        "## The arrest of John D. Miller",
+        "For decades, the case file remained open. The FBI's Behavioral Analysis Unit created a profile of the suspect in 2009. In May 2018, a Fort Wayne Police Department detective sent a sample of the suspect's DNA to Parabon NanoLabs. The company used GEDmatch to identify the suspect's relatives.",
+        "On July 2, 2018, genealogist CeCe Moore narrowed the list of suspects to two brothers. One was 59-year-old John D. Miller of Grabill, Indiana. Police found used condoms in Miller's trash and collected DNA that matched the crime scene profile. Detectives approached Miller at his house on July 15, 2018. When asked if he knew why they wanted to talk, Miller replied, \"April Tinsley.\"",
+        "Miller confessed to the murder during an interview at the police station. He admitted he abducted Tinsley, raped her, and choked her to death in his trailer. On December 7, 2018, Miller changed his plea to guilty. He was sentenced to 80 years in prison. Miller died of natural causes in a hospital on September 4, 2025.",
+        "## Naming the unidentified",
+        "Forensic genealogy is not just used to find suspects. It is also used to identify unknown victims. In the Bear Brook murders in New Hampshire, the remains of four people were found in barrels in 1985 and 2000. Forensic genetic genealogy helped identify the victims and their killer.",
+        "In another historic case, a child found murdered in 1957 remained unidentified for 65 years. In 2022, researchers used DNA testing and genealogy techniques to finally discover his name: Joseph Augustus Zarelli. The technology gives names back to victims who stayed unidentified for years.",
+        "In Madison County, Ohio, a man’s skeletal remains were discovered in a farm field in 1989. Over 35 years, environmental factors degraded the DNA. The lab Othram Inc. used specialized extraction techniques and whole-genome sequencing to build a profile. Law enforcement used genealogical research to identify the man as Robert Earl Sanders of Columbus. Giving a name to the nameless re-opens the investigation into the circumstances of a death.",
+        "## The privacy debate",
+        "The rise of forensic genetic genealogy brings significant ethical considerations. The process involves searching the DNA of millions of users who uploaded their data to consumer sites for personal reasons. This raises questions about genetic privacy and consent.",
+        "Many people worry that law enforcement might use their genetic data without direct approval. Numerous individuals uploading their DNA are unaware that law enforcement may investigate it. False leads can also affect families. Officers might investigate innocent relatives before finding the correct suspect, which can be stressful and invasive.",
+        "As the field evolves, policies are being developed to balance investigative power with individual rights. Several states now require warrants for forensic genealogy searches. Experts urge law enforcement to limit these searches to major crimes and recommend clear judicial oversight.",
+        "The synergy between DNA technology and genealogical research is dismantling the concept of the unsolvable case. The records show exactly how this science puts names to the nameless. Read the case files. Form your own conclusion."
       ],
-      "sourceTopic": "How forensic genealogy cracks cold cases"
+      "sourceTopic": "How forensic genealogy cracks cold cases",
+      "caseSlug": null,
+      "sources": [
+        {
+          "title": "Cold case",
+          "url": "https://en.wikipedia.org/wiki/Cold_case"
+        },
+        {
+          "title": "Murder of April Tinsley",
+          "url": "https://en.wikipedia.org/wiki/Murder_of_April_Tinsley"
+        },
+        {
+          "title": "Forensic News: DNA & Genealogy Crack Cold Cases This Week",
+          "url": "https://simplyforensic.com/this-week-in-forensics-how-genetic-genealogy-is-rewriting-cold-case-history/"
+        },
+        {
+          "title": "Cases Solved Using Forensic Genetic Genealogy: How DNA Profiles Crack ...",
+          "url": "https://genomelink.io/blog/cases-solved-using-forensic-genetic-genealogy-how-dna-profiles-crack-cold-cases"
+        },
+        {
+          "title": "Forensic Genetic Genealogy: How Cold Cases Are Cracked (and the Ethics)",
+          "url": "https://psyforu.com/forensic-genetic-genealogy-how-cold-cases-are-cracked-and-the-ethics/"
+        },
+        {
+          "title": "Cold Cases Solved by Genetic Genealogy: 650+ DNA Breakthroughs",
+          "url": "https://truecrimesarticles.com/cold-cases-solved-genetic-genealogy/"
+        }
+      ]
     },
     {
       "slug": "wilmington-dmv-what-we-know",

@@ -121,7 +121,7 @@ const extraCss = `
     </style>`;
 
 const page = `${head({
-  title: "Shorts & Videos | CrimeTimeSnacks",
+  title: `${shorts.length ? "Shorts & Videos" : "Videos"} | CrimeTimeSnacks`,
   description: "Quick true-crime clips and full case breakdowns from CrimeTimeSnacks on YouTube.",
   canonicalPath: "/videos.html",
   extraHead: videoLd + extraCss,
@@ -132,7 +132,7 @@ ${header("videos")}
     <section class="page-hero">
         <div class="container">
             <p class="eyebrow" style="justify-content:center;">On Camera</p>
-            <h1 class="page-title">Shorts &amp; <span class="text-red">Videos</span></h1>
+            <h1 class="page-title">${shorts.length ? "Shorts &amp; " : "CrimeTimeSnacks "}<span class="text-red">Videos</span></h1>
             <p>Quick true-crime clips and full case breakdowns.</p>
 ${data.meta.channelUrl ? `            <p style="margin-top:1.6rem;"><a href="${esc(data.meta.channelUrl)}" target="_blank" rel="noopener" class="btn btn-primary">${mark("youtube", 16)} Subscribe on YouTube</a></p>\n` : ""}        </div>
     </section>

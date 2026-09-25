@@ -56,7 +56,7 @@ const LEGACY = {
 };
 
 // Applied to every legacy episode after its own list.
-const GLOBAL_FIXES = [[/\bCrime Time Snacks\b/g, "CrimeTimeSnacks"], [/\bCrimeTime Snacks\b/g, "CrimeTimeSnacks"]];
+const GLOBAL_FIXES = [[/\bCrime ?Time ?Snacks\b/gi, "CrimeTimeSnacks"], [/\bcrimetimesnacks\.com\b/gi, "CrimeTimeSnacks.com"]];
 
 const NOTE = "Transcribed from the recording by faster-whisper (medium.en), primed with the names in the case and checked for their spelling. Wording may contain minor errors.";
 

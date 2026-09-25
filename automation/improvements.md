@@ -575,3 +575,11 @@ with an [auto] tag — the counter on Mission Control reads this file.
 509. [auto 2026-09-22] Dropped 1 new merch design into the vault
 510. [auto 2026-09-23] Published podcast episode from the studio: "Elisa Lam and the Cecil Hotel" (00:24:40)
 511. [auto 2026-09-24] Published podcast episode from the studio: "The Murdaugh Family Murders" (00:28:21)
+512. [auto 2026-09-25] Expanded blog post from research notes: "What reasonable doubt actually means in a courtroom" (1171 words, 6 sources)
+513. [auto 2026-09-25] Expanded blog post from research notes: "The Evidence Behind the Innocence Project" (1073 words, 6 sources)
+514. [auto 2026-09-25] Expanded blog post from research notes: "Understanding Familial DNA Searching" (1257 words, 4 sources)
+515. [auto 2026-09-25] Expanded blog post from research notes: "How Cold Case Units Decide Which Files to Reopen" (1447 words, 6 sources)
+516. [auto 2026-09-25] Expanded blog post from research notes: "The Documented Flaws in Eyewitness Testimony" (938 words, 6 sources)
+517. [auto 2026-09-25] Expanded blog post from research notes: "Chain of custody: why solid evidence gets thrown out" (1255 words, 5 sources)
+518. [auto 2026-09-25] Expanded blog post from research notes: "How Forensic Genealogy Cracks Cold Cases" (1493 words, 6 sources)
+519. [auto 2026-09-25] Expanded blog post from research notes: "The First Fingerprint Convictions: How the Record Shows It Happened" (1610 words, 6 sources)

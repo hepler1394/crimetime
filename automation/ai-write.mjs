@@ -163,7 +163,20 @@ if (missing.length) {
   } catch (e) { console.log(`Rewrite failed: ${e.message}`); }
   missing = unsupportedInPost(draft, notes);
 }
-const words = postWords(draft);
+// A short draft gets one expansion pass before it is held. Gemini Pro handed back 769 words
+// on an 80k-character research file (2026-09-24, the fingerprint post), which is a model
+// stopping early, not a shortage of material; asking again with the count in front of it is
+// cheaper than holding a post that is otherwise clean.
+let words = postWords(draft);
+if (words < MIN_WORDS && draft.body.length) {
+  console.log(`Check: ${words} words, under ${MIN_WORDS}. One expansion.`);
+  try {
+    const r = await chat(SYSTEM, `${user}\n\nYOUR PREVIOUS DRAFT\n${JSON.stringify(draft)}\n\nThis draft is ${words} words. The post must be 1,100 to 1,500 words. Expand it with more of what the RESEARCH NOTES contain: more of the record, more specifics, more sections where the notes support them. Add nothing that is not in the notes. Keep the title. Same JSON shape.`, cfg);
+    const bigger = toPost(JSON.parse(r.text));
+    if (postWords(bigger) > words) { draft = bigger; missing = unsupportedInPost(draft, notes); }
+  } catch (e) { console.log(`Expansion failed: ${e.message}`); }
+  words = postWords(draft);
+}
 const problems = [...(missing.length ? [`not in the notes: ${missing.join(", ")}`] : []), ...(words < MIN_WORDS ? [`only ${words} words`] : []), ...(!draft.title ? ["no title"] : [])];
 console.log(`Draft: "${draft.title}", ${words} words, via ${provider}. ${problems.length ? `Held: ${problems.join("; ")}` : "Check passed."}`);
 
