@@ -39,7 +39,7 @@ const LEGACY = {
   },
   "watts-family-murders": {
     prompt: "Chris Watts, Christopher Watts. Shanann Watts. Bella and Celeste, CeCe. Nico. Frederick, Colorado. Nickole Atkinson, Nikki. Nichol Kessinger. Anadarko Petroleum. Thrive, Le-Vel. Cervi Ranch. Sandra Rzucek, Frank Rzucek. Weld County. North Carolina.",
-    fixes: [[/\bShanaen(?='s|\b)/g, "Shanann"], [/\bShanaan(?='s|\b)/g, "Shanann"], [/\bShanan(?='s|\b)/g, "Shanann"], [/\bCadel\b/g, "CeCe"]],
+    fixes: [[/\bShanaen(?='s|\b)/g, "Shanann"], [/\bShanaan(?='s|\b)/g, "Shanann"], [/\bShanan(?='s|\b)/g, "Shanann"], [/\b(?:Cheryl|Sheryln|Cheryln|Sherylin) (?:CeCe|Cadel|Cadle|Kadel)\b/g, "Cheryln Cadle"], [/\bCadel\b/g, "Cadle"], [/\bCeCe\b/g, "Cadle"]],
   },
   "erik-and-lyle-the-menendez-brothers": {
     prompt: "Erik Menendez and Lyle Menendez. Jose Menendez, Kitty Menendez. Beverly Hills. Dr. L. Jerome Oziel. Judalon Smyth. Princeton. LIVE Entertainment. Leslie Abramson. Judge Stanley Weisberg. Calabasas. Elm Drive.",
@@ -47,11 +47,11 @@ const LEGACY = {
   },
   "jonbenet-ramsey-the-facts-96-22-part-1": {
     prompt: "JonBenet Ramsey. John Ramsey, Patsy Ramsey, Burke Ramsey. Boulder, Colorado. Boulder Police Department. Lou Smit. Fleet White. Linda Arndt. Alex Hunter. Mary Lacy. Governor Bill Owens. John Mark Karr. Access Graphics. SBTC. CODIS. Touch DNA. Bode Technology. Ancestry.com, 23andMe. Golden State Killer. CNN.",
-    fixes: [[/\bJean[- ]?Benet(?='s|\b)/g, "JonBenét"], [/\bJonBenet(?='s|\b)/g, "JonBenét"], [/\bRamses\b/g, "Ramseys"], [/\bLou Smith\b/g, "Lou Smit"], [/\bancestryinme\.com\b/gi, "Ancestry.com"], [/\bancestryinme\b/gi, "Ancestry"], [/\b123inme\.com\b/gi, "23andMe.com"], [/\b123inme\b/gi, "23andMe"], [/\b23 and me\b/gi, "23andMe"], [/\bMark Carr\b/g, "Mark Karr"]],
+    fixes: [[/\bJean[- ]?Benet(?='s|\b)/g, "JonBenét"], [/\bJonBenet(?='s|\b)/g, "JonBenét"], [/\bRamses\b/g, "Ramseys"], [/\bLou Smith\b/g, "Lou Smit"], [/\bancestryinme\.com\b/gi, "Ancestry.com"], [/\bancestryinme\b/gi, "Ancestry"], [/\b123inme\.com\b/gi, "23andMe.com"], [/\b123inme\b/gi, "23andMe"], [/\b23 and me\b/gi, "23andMe"], [/\bMark Carr\b/g, "Mark Karr"], [/\bJon ?Benet(?='s|\b)/g, "JonBenét"], [/\bAncestryandMe\.com\b/gi, "Ancestry.com"], [/\bAncestryandMe\b/gi, "Ancestry"], [/\b123andMe\b/gi, "23andMe"], [/\bJon\b(?! ?Ben)/g, "John"], [/\bPat\b(?= Ramsey|,| and)/g, "Patsy"]],
   },
   "jonbenet-ramsey-americas-child-beauty-queen": {
     prompt: "JonBenet Ramsey. John Ramsey, Patsy Ramsey, Burke Ramsey. Boulder, Colorado. CrimeTimeSnacks.",
-    fixes: [[/\bJean[- ]?Benet(?='s|\b)/g, "JonBenét"], [/\bJonBenet(?='s|\b)/g, "JonBenét"]],
+    fixes: [[/\bJean[- ]?Benet(?='s|\b)/g, "JonBenét"], [/\bJonBenet(?='s|\b)/g, "JonBenét"], [/\bJon ?Benet(?='s|\b)/g, "JonBenét"], [/\bJon\b(?! ?Ben)/g, "John"]],
   },
 };
 

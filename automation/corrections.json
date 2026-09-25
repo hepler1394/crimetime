@@ -19,7 +19,7 @@
       "date": "2026-09-24",
       "where": "Transcripts: the episodes recorded before the studio (2022 to 2025)",
       "url": "/episodes.html",
-      "wrong": "Names were misspelled throughout: \"Jean-Benet\" for JonBenet across the 2022 episode, \"Coburger\" for Kohberger, \"Zana Cronodal\" for Xana Kernodle, \"Shanaen\" for Shanann, \"Oseol\" for Oziel, and \"ancestryinme and 123inme\" for Ancestry and 23andMe.",
+      "wrong": "Names were misspelled throughout: \"Jean-Benet\" for JonBenet across the 2022 episode, \"Coburger\" for Kohberger, \"Zana Cronodal\" for Xana Kernodle, \"Leyta\" for Latah, \"Shanaen\" for Shanann, \"Oseol\" for Oziel, \"Cadel\" for the author Cheryln Cadle, \"Rossi\" for Rozzi, and \"ancestryinme and 123inme\" for Ancestry and 23andMe.",
       "fixed": "Re-transcribed with a larger model primed with the names in each case, then corrected by hand. These are recordings without a script, so the page still says the wording may contain minor errors."
     },
     {
