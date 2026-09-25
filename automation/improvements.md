@@ -583,3 +583,5 @@ with an [auto] tag — the counter on Mission Control reads this file.
 517. [auto 2026-09-25] Expanded blog post from research notes: "Chain of custody: why solid evidence gets thrown out" (1255 words, 5 sources)
 518. [auto 2026-09-25] Expanded blog post from research notes: "How Forensic Genealogy Cracks Cold Cases" (1493 words, 6 sources)
 519. [auto 2026-09-25] Expanded blog post from research notes: "The First Fingerprint Convictions: How the Record Shows It Happened" (1610 words, 6 sources)
+520. [auto 2026-09-25] Published blog post from research notes: "How the FBI ViCAP Database Links Violent Crimes" (1441 words, 4 sources)
+521. [auto 2026-09-25] Published new quiz: "The Murdaugh Murders" (5 questions)

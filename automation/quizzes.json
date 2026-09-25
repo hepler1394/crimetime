@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-09-15T14:02:30.387Z"
+    "updated": "2026-09-25T14:01:51.070Z"
   },
   "quizzes": [
+    {
+      "slug": "the-murdaugh-murders",
+      "title": "The Murdaugh Murders",
+      "tag": "Episode Case",
+      "description": "You know the headlines out of Colleton County. Let's look at what the digital evidence and trial records actually proved.",
+      "created": "2026-09-25",
+      "sourceTopic": "The Murdaugh Family Murders",
+      "questions": [
+        {
+          "q": "What key piece of digital evidence placed Alex Murdaugh at the dog kennels minutes before the murders?",
+          "options": [
+            "A dashboard camera recording",
+            "A Snapchat video taken by his son Paul",
+            "An Apple Watch heart-rate alert",
+            "A home security motion sensor log"
+          ],
+          "answer": 1,
+          "explain": "Paul recorded a video of a friend's dog at 8:44 p.m. In the background, multiple witnesses identified Alex's voice, directly contradicting his claim that he never visited the kennels that evening."
+        },
+        {
+          "q": "In which South Carolina county were Maggie and Paul Murdaugh murdered on June 7, 2021?",
+          "options": [
+            "Hampton County",
+            "Charleston County",
+            "Colleton County",
+            "Beaufort County"
+          ],
+          "answer": 2,
+          "explain": "The family home, Moselle, sat along the border of Hampton and Colleton counties, but the murders occurred on the Colleton County portion of the property where the trial was later held."
+        },
+        {
+          "q": "What was the primary motive presented by state prosecutors during the murder trial?",
+          "options": [
+            "A disputed life insurance policy",
+            "Imminent exposure of decades of financial crimes",
+            "An impending bitter divorce settlement",
+            "Retaliation by local drug traffickers"
+          ],
+          "answer": 1,
+          "explain": "Lead prosecutor Creighton Waters argued Murdaugh was facing financial ruin and professional exposure, using the murders to create sympathy and stall inquiries into millions in missing funds."
+        },
+        {
+          "q": "What specific step data helped prosecutors dismantle Murdaugh's timeline between 9:00 p.m. and 9:07 p.m.?",
+          "options": [
+            "A sudden spike in phone steps while he claimed to be resting",
+            "No steps recorded for three consecutive hours",
+            "Steps matching a running pace toward the woods",
+            "Steps recorded on a treadmill inside the house"
+          ],
+          "answer": 0,
+          "explain": "State analysts showed Murdaugh's iPhone logged roughly 283 steps in just a few minutes after a long period of inactivity, right when he claimed he was taking a nap inside the main house."
+        },
+        {
+          "q": "In March 2023, what sentence did Judge Clifton Newman impose following the jury's guilty verdict?",
+          "options": [
+            "Life in prison without parole on each count, served consecutively",
+            "Death penalty by lethal injection",
+            "Thirty years for each count, served concurrently",
+            "Life with the possibility of parole after thirty years"
+          ],
+          "answer": 0,
+          "explain": "The jury deliberated for less than three hours before convicting Murdaugh. Judge Newman handed down two consecutive life sentences without the possibility of parole."
+        }
+      ]
+    },
     {
       "slug": "the-gabby-petito-case",
       "title": "The Gabby Petito Case",
