@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-25T17:18:26.779Z",
+  "generated": "2026-09-26T16:30:01.750Z",
   "improvementsShipped": 521,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
@@ -36,12 +36,12 @@
     }
   },
   "freshness": {
-    "episodesJson": "2026-09-25T17:17:56.372Z",
-    "blogJson": "2026-09-25T17:17:50.026Z",
+    "episodesJson": "2026-09-26T16:29:31.035Z",
+    "blogJson": "2026-09-26T16:29:26.354Z",
     "merchJson": "2026-09-22T14:02:22.646Z",
     "quizzesJson": "2026-09-25T14:01:51.070Z",
-    "fbiJson": "2026-09-25T17:17:56.858Z",
-    "css": "2026-09-25T17:17:50.114Z"
+    "fbiJson": "2026-09-26T16:29:31.481Z",
+    "css": "2026-09-26T16:29:26.437Z"
   },
   "nextTopics": [
     "Why some cases stay cold for decades",
