@@ -1,11 +1,117 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1252,
+    "totalOnFile": 1253,
     "baked": 150,
-    "updated": "2026-09-28T14:07:33.591Z"
+    "updated": "2026-09-28T23:21:13.472Z"
   },
   "items": [
+    {
+      "uid": "b38a849f5f9644a48e03b4153b85df97",
+      "title": "STEFANIE DAMRON",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/stefanie-damron/@@images/image/large",
+      "office": "Boston",
+      "reward": "Reward up to $15,000 for information leading to the safe return of Stefanie Damron and/or information leading to the arrest and prosecution of anyone involved in her disappearance.",
+      "url": "https://www.fbi.gov/wanted/kidnap/stefanie-damron",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2024-10-01T06:48:00"
+    },
+    {
+      "uid": "043a2834e80848099aa61394cc54f9f9",
+      "title": "JULIOUS GEORGE KHALID",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/additional/julious-george-khalid/@@images/image/large",
+      "office": "Atlanta",
+      "reward": "Reward up to $10,000 for information leading to the arrest and conviction of Julious George Khalid.",
+      "url": "https://www.fbi.gov/wanted/additional/julious-george-khalid",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Additional Violent Crimes",
+        "Case of the Week"
+      ],
+      "publication": "2026-09-23T10:25:00"
+    },
+    {
+      "uid": "ee0a85adb7414de487ec6afd941efd74",
+      "title": "ARMED JEWELRY STORE ROBBERY",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/armed-jewelry-store-robbery/@@images/image/large",
+      "office": "Richmond",
+      "reward": "Reward up to $25,000 for information leading to the identification, arrest, and conviction of these unknown suspects.  Additional reward money may be available.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/armed-jewelry-store-robbery",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2025-10-29T09:49:00"
+    },
+    {
+      "uid": "4a9ead29d24c4f6fb80a9d28a40c9bde",
+      "title": "AHMED ABDALLAH TAHA KANDIL",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/parental-kidnappings/ahmed-abdallah-taha-kandil/@@images/image/large",
+      "office": "Richmond",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/parental-kidnappings/ahmed-abdallah-taha-kandil",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Parental Kidnapping"
+      ],
+      "publication": "2020-03-24T12:58:00"
+    },
+    {
+      "uid": "402ee4b4f18a429cbb808cfc3b04ba25",
+      "title": "AMINA AND BELEL KANDIL",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/amina-and-belel-kandil/@@images/image/large",
+      "office": "Richmond",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/kidnap/amina-and-belel-kandil",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2018-04-10T07:26:00"
+    },
+    {
+      "uid": "095373f57d6640c6b53169e2cd848216",
+      "title": "JOSE ONAIRAM MEDINA-MARRERO",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/jose-onairam-medina-marrero/@@images/image/large",
+      "office": "Sanjuan",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/jose-onairam-medina-marrero",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-08-31T14:00:00"
+    },
+    {
+      "uid": "275136bf2d134228a086aaedc4ec231f",
+      "title": "CHRISTIAN ONEIL MELENDEZ-LOPEZ",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/christian-oneil-melendez-lopez/@@images/image/large",
+      "office": "Sanjuan",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/christian-oneil-melendez-lopez",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-09-10T08:13:00"
+    },
     {
       "uid": "e1a7c6ebec5c4a3685554779122af36f",
       "title": "TAMIKA CROSS - CHICAGO, ILLINOIS",
@@ -22,21 +128,6 @@
       "publication": "2026-09-24T13:09:00"
     },
     {
-      "uid": "043a2834e80848099aa61394cc54f9f9",
-      "title": "JULIOUS GEORGE KHALID",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/additional/julious-george-khalid/@@images/image/large",
-      "office": "Atlanta",
-      "reward": "Reward up to $10,000 for information leading to the arrest and conviction of Julious George Khalid.",
-      "url": "https://www.fbi.gov/wanted/additional/julious-george-khalid",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Additional Violent Crimes"
-      ],
-      "publication": "2026-09-23T10:25:00"
-    },
-    {
       "uid": "2e973b825a0f4a6aa65f0883e9b354dc",
       "title": "NA'RYAH ADAMS",
       "kind": "victim",
@@ -50,22 +141,6 @@
         "Seeking Information"
       ],
       "publication": "2026-09-10T10:57:00"
-    },
-    {
-      "uid": "b38a849f5f9644a48e03b4153b85df97",
-      "title": "STEFANIE DAMRON",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/stefanie-damron/@@images/image/large",
-      "office": "Boston",
-      "reward": "Reward up to $15,000 for information leading to the safe return of Stefanie Damron and/or information leading to the arrest and prosecution of anyone involved in her disappearance.",
-      "url": "https://www.fbi.gov/wanted/kidnap/stefanie-damron",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons",
-        "Case of the Week"
-      ],
-      "publication": "2024-10-01T06:48:00"
     },
     {
       "uid": "23a89046e8df431aaa665cbceafd0c8b",
@@ -328,19 +403,19 @@
       "publication": "2026-08-25T07:53:00"
     },
     {
-      "uid": "275136bf2d134228a086aaedc4ec231f",
-      "title": "CHRISTIAN ONEIL MELENDEZ-LOPEZ",
+      "uid": "750dfe8158974c2b84a9bef2e64f2843",
+      "title": "SATINDERJEET SINGH",
       "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/christian-oneil-melendez-lopez/@@images/image/large",
-      "office": "Sanjuan",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cei/christian-oneil-melendez-lopez",
+      "image": "https://www.fbi.gov/wanted/topten/satinderjeet-singh/@@images/image/large",
+      "office": "Losangeles",
+      "reward": "Reward up to $1,000,000 for information leading to the arrest of Satinderjeet Singh.",
+      "url": "https://www.fbi.gov/wanted/topten/satinderjeet-singh",
       "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN ESCAPE RISK",
       "subjects": [
-        "Criminal Enterprise Investigations"
+        "Ten Most Wanted Fugitives"
       ],
-      "publication": "2026-09-10T08:13:00"
+      "publication": "2026-07-06T08:18:00"
     },
     {
       "uid": "3992cf07e26848bab7fd7b6bb58f60a2",
@@ -479,21 +554,6 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2026-08-18T10:47:00"
-    },
-    {
-      "uid": "095373f57d6640c6b53169e2cd848216",
-      "title": "JOSE ONAIRAM MEDINA-MARRERO",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/jose-onairam-medina-marrero/@@images/image/large",
-      "office": "Sanjuan",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cei/jose-onairam-medina-marrero",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-08-31T14:00:00"
     },
     {
       "uid": "5c53990e4e3e4d758eea28c51c1f1cd9",
@@ -2233,67 +2293,6 @@
         "Seeking Information"
       ],
       "publication": "2026-05-11T10:52:00"
-    },
-    {
-      "uid": "8047423326854f4082604c1111320665",
-      "title": "JANE DOE - MEDFORD, NEW YORK",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/vicap/unidentified-persons/jane-doe---medford-new-york/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/unidentified-persons/jane-doe---medford-new-york",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Unidentified Persons"
-      ],
-      "publication": "2026-05-11T09:42:00"
-    },
-    {
-      "uid": "2e3067a9450449cb80b783a64a43f78f",
-      "title": "ROLAND PLAINFEATHER",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/roland-plainfeather/@@images/image/large",
-      "office": "Billings",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/kidnap/roland-plainfeather",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons",
-        "Indian Country"
-      ],
-      "publication": "2026-04-29T10:32:00"
-    },
-    {
-      "uid": "b8d1ffebc82a4a76b915c338a1a0c4cc",
-      "title": "RICKY VARGAS",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/murders/ricky-vargas/@@images/image/large",
-      "office": "Newark",
-      "reward": "Reward up to $15,000 for information leading to the arrest and conviction of Ricky Vargas.",
-      "url": "https://www.fbi.gov/wanted/murders/ricky-vargas",
-      "status": "captured",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Violent Crime - Murders"
-      ],
-      "publication": "2025-02-24T08:47:00"
-    },
-    {
-      "uid": "a248e9c538cc4e5ba9ccd272bd9224c9",
-      "title": "UNKNOWN INDIVIDUAL - JOHN DOE 47",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/ecap/unknown-individual---john-doe-47/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/ecap/unknown-individual---john-doe-47",
-      "status": "captured",
-      "warning": "",
-      "subjects": [
-        "Endangered Child Alert Program"
-      ],
-      "publication": "2023-08-23T07:33:00"
     }
   ]
 }
