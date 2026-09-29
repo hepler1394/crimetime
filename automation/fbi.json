@@ -1,11 +1,26 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1253,
+    "totalOnFile": 1254,
     "baked": 150,
-    "updated": "2026-09-29T14:00:15.260Z"
+    "updated": "2026-09-29T22:22:02.752Z"
   },
   "items": [
+    {
+      "uid": "e68a2cd0426f44e0965dc7f92ca95a3b",
+      "title": "TAVIS LAMAR CHENAULT",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/tavis-lamar-chenault/@@images/image/large",
+      "office": "Louisville",
+      "reward": "Reward up to $20,000 for information leading to the arrest and conviction of Tavis Lamar Chenault.",
+      "url": "https://www.fbi.gov/wanted/cei/tavis-lamar-chenault",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-09-09T08:31:00"
+    },
     {
       "uid": "b38a849f5f9644a48e03b4153b85df97",
       "title": "STEFANIE DAMRON",
@@ -156,6 +171,21 @@
         "ViCAP Missing Persons"
       ],
       "publication": "2026-09-22T09:22:00"
+    },
+    {
+      "uid": "13a6324e72db43638761ec2d24f54e3b",
+      "title": "CHARLES JOHNATHEN HARRIS",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cac/charles-johnathen-harris/@@images/image/large",
+      "office": "Sanfrancisco",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cac/charles-johnathen-harris",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Crimes Against Children"
+      ],
+      "publication": "2026-09-17T13:22:00"
     },
     {
       "uid": "38f8fc6d4abe4733b8f8226cb8b5de83",
@@ -371,21 +401,6 @@
         "Most Wanted Fraudster"
       ],
       "publication": "2026-06-18T08:22:00"
-    },
-    {
-      "uid": "e68a2cd0426f44e0965dc7f92ca95a3b",
-      "title": "TAVIS LAMAR CHENAULT",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/tavis-lamar-chenault/@@images/image/large",
-      "office": "Louisville",
-      "reward": "Reward up to $20,000 for information leading to the arrest and conviction of Tavis Lamar Chenault.",
-      "url": "https://www.fbi.gov/wanted/cei/tavis-lamar-chenault",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-09-09T08:31:00"
     },
     {
       "uid": "62dba83f492e470182712dfb20fc4439",
@@ -2278,21 +2293,6 @@
         "Violent Crime - Murders"
       ],
       "publication": "2025-11-24T08:52:00"
-    },
-    {
-      "uid": "3ada77dd2c484422a89c9cf66cc0071f",
-      "title": "JEMARLO TISDALE AND RUFUS WITCHER",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/jemarlo-tisdale-and-rufus-witcher/rhninemiletisdale.jpg/@@images/image/large",
-      "office": "Richmond",
-      "reward": "Reward up to $10,000 for information leading to the arrest and conviction of the individual(s) responsible for the murders of Jemarlo Tisdale and Rufus Witcher.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/jemarlo-tisdale-and-rufus-witcher",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2026-05-11T10:52:00"
     }
   ]
 }
