@@ -4,10 +4,10 @@
 // lines of the episode in his voice with the words landing on screen, then
 // "New episode. Link in bio." and the plug.
 //
-//   node automation/episode-trailer.mjs <draft-id> [--seconds 40] [--json]
+//   node automation/episode-trailer.mjs <draft-id> [--seconds 40] [--picks 12,87,119] [--json]
 //
 // Inputs from the episode folder: episode.mp3 + transcript.json (the lines),
-// cover.jpg / card.jpg / any art-*.jpg or saved-*.jpg (backgrounds), and an
+// any saved-*.jpg photographs (backgrounds; never generated), and an
 // OPTIONAL cold open: coldopen.mp3|wav|m4a|mp4 (public-record audio such as a
 // 911 call or a body-cam clip, max 8 s used) with coldopen.txt holding one label
 // line ("911 call, December 26, 1996. Public record."). No cold open file means
@@ -57,21 +57,15 @@ const plug = cases.find((c) => c.slug === ep.caseSlug)?.plug || null;
 const names = await readdir(dir);
 const coldFile = names.find((n) => /^coldopen\.(mp3|wav|m4a|mp4|webm|ogg)$/i.test(n));
 const coldLabel = existsSync(join(dir, "coldopen.txt")) ? (await readFile(join(dir, "coldopen.txt"), "utf8")).trim().split(/\r?\n/) : [];
-// Backgrounds: generated or saved photos only. The cover and card carry their own
-// type, and type under type reads as a mistake.
-let bgs = names.filter((n) => /^(art-.*|saved-.*|test-art.*|bg-.*)\.(jpe?g|png)$/i.test(n));
-// Fewer than two photos in the folder: generate scene stills from the episode
-// (Gemini Flash Image, cents each) so every quote gets its own frame.
-if (bgs.length < 2 && process.env.GEMINI_API_KEY) {
-  const scenes = (ep.chapters || []).slice(1, 4).map((c) => c.title).filter(Boolean);
-  const prompts = scenes.length ? scenes : [ep.hook || ep.title];
-  for (const [k, sc] of prompts.slice(0, 3 - bgs.length).entries()) {
-    const name = `bg-${k + 1}`;
-    const r = spawnSync(process.execPath, [join(__dirname, "gen-image.mjs"), "--draft", id, "--name", name, "--prompt", `Scene still for a true crime episode about ${ep.caseTitle || ep.title}: ${sc}. Empty location, period-accurate, night or overcast, no people, no text.`, "--json"], { encoding: "utf8", windowsHide: true });
-    const last = (r.stdout || "").trim().split("\n").reverse().find((l) => l.startsWith("{"));
-    try { const j = JSON.parse(last || "{}"); if (j.ok) { bgs.push(j.file.split(/[\\/]/).pop()); say(`  generated ${j.file.split(/[\\/]/).pop()}`); } else say(`  background skipped: ${j.message || ""}`); } catch { /* skip */ }
-  }
-}
+// Backgrounds: photographs a person saved to the folder (saved-*.jpg), nothing else.
+// The cover and card carry their own type, and type under type reads as a mistake.
+// Nothing is generated. This used to fill a thin folder with Gemini scene stills
+// (bg-*, art-*), and every trailer through 2026-09-24 went out that way: an
+// invented "period-accurate" hotel corridor behind a line about Elisa Lam reads as
+// the place itself. Cory rejected generated backgrounds on 2026-09-07 ("ai slop"),
+// and photographs of a real case are never invented. No photograph means the dark
+// ground the template already draws; real footage, when the case has it, still wins.
+let bgs = names.filter((n) => /^saved-.*\.(jpe?g|png)$/i.test(n));
 const bgUrl = (n) => pathToFileURL(join(dir, n)).href;
 
 /* --------------------------------------------------- footage for this case */
@@ -99,10 +93,20 @@ const opener = segs.findIndex((s) => /thanks for tuning in|crime time snacks/i.t
 const closer = segs.findIndex((s) => /form your own conclusion|read the file/i.test(s.text));
 const candidates = segs.filter((s) => s.i !== (opener > -1 ? segs[opener].i : -1) && s.i !== (closer > -1 ? segs[closer].i : -1) && s.dur <= 14);
 let picks = [];
-try {
+// --picks 12,87,119 chooses the lines by hand (transcript segment numbers, hook first).
+// A line lifted out of a script loses the sentence around it, and a picker cannot be
+// trusted to see what that does: on 2026-09-27 it chose "the state would be forced to take
+// the prosecution back to square one", a what-if that reads as news on its own, and a
+// defence theory posed as a premise. When the picker gets it wrong, a person picks.
+const handPicked = opt("--picks", "").split(",").map((n) => parseInt(n, 10)).filter(Number.isFinite);
+if (handPicked.length) {
+  picks = handPicked.map((n) => segs.find((s) => s.i === n)).filter(Boolean).slice(0, coldFile ? 2 : 3);
+  if (picks.length !== Math.min(handPicked.length, coldFile ? 2 : 3)) die("picks", `--picks names a segment that is missing or under 1.5 s: ${handPicked.join(",")}`);
+  say(`  hand-picked ${picks.map((p) => p.i).join(", ")}`);
+} else try {
   const cfg = { ...(await loadConfig()), timeoutMs: 90000, jsonMode: true };
   const { text } = await chat(
-    `You cut trailers for a true crime podcast. From the numbered transcript lines, pick the ${coldFile ? "TWO" : "THREE"} most gripping, self-contained lines to tease the episode: concrete, documented, surprising, emotionally clear; each must make sense alone. Prefer lines under 11 seconds. Never the show opener, never the closing hand-off, no lines that spoil the ending. Order them for a trailer (hook first, escalate). Output ONLY a JSON object: {"picks":[{"i": number}], "why": string}.`,
+    `You cut trailers for a true crime podcast. From the numbered transcript lines, pick the ${coldFile ? "TWO" : "THREE"} most gripping, self-contained lines to tease the episode: concrete, documented, surprising, emotionally clear; each must make sense alone. Prefer lines under 11 seconds. Never the show opener, never the closing hand-off, no lines that spoil the ending. Each line will be heard with nothing around it, so it must still be true on its own: no what-ifs or conditionals ("would be", "could"), no contested claim or defence theory stated as if it were settled, nothing that points at a person who was never charged, and nothing that feeds a theory the episode itself rejects. Order them for a trailer (hook first, escalate). Output ONLY a JSON object: {"picks":[{"i": number}], "why": string}.`,
     `EPISODE: ${ep.title}\nHOOK: ${ep.hook}\n\nLINES:\n${candidates.map((s) => `[${s.i}] (${s.dur}s) ${s.text}`).join("\n")}`, cfg);
   const j = JSON.parse(text);
   picks = (j.picks || []).map((p) => segs.find((s) => s.i === p.i)).filter(Boolean).slice(0, coldFile ? 2 : 3);

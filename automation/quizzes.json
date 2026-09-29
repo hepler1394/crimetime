@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-09-25T14:01:51.070Z"
+    "updated": "2026-09-29T14:01:44.187Z"
   },
   "quizzes": [
+    {
+      "slug": "elisa-lam-at-the-cecil-hotel",
+      "title": "Elisa Lam at the Cecil Hotel",
+      "tag": "Episode Case",
+      "description": "You know the viral elevator clip. Let's look at what the official case file and coroner's report actually documented.",
+      "created": "2026-09-29",
+      "sourceTopic": "Elisa Lam and the Cecil Hotel",
+      "questions": [
+        {
+          "q": "In what year did Elisa Lam disappear while staying at the Cecil Hotel in Los Angeles?",
+          "options": [
+            "2011",
+            "2013",
+            "2015",
+            "2017"
+          ],
+          "answer": 1,
+          "explain": "Lam arrived in Los Angeles on January 26, 2013, and was reported missing by her parents on January 31 after she stopped making daily calls home."
+        },
+        {
+          "q": "What prompted hotel staff to finally check the rooftop water supply tanks where Lam was discovered?",
+          "options": [
+            "A rooftop security alarm tripped",
+            "A routine monthly maintenance check",
+            "Guests complained about low water pressure",
+            "A maintenance worker spotted an open hatch"
+          ],
+          "answer": 2,
+          "explain": "Maintenance worker Santiago Lopez checked the tanks on February 19 after multiple guests reported low water pressure and discolored water."
+        },
+        {
+          "q": "What was the official cause of death determined by the Los Angeles County coroner?",
+          "options": [
+            "Accidental drowning",
+            "Undetermined trauma",
+            "Acute drug toxicity",
+            "Hypothermia"
+          ],
+          "answer": 0,
+          "explain": "The coroner ruled the death an accidental drowning, noting that bipolar disorder was a significant contributing factor. Full toxicology showed no lethal substances."
+        },
+        {
+          "q": "What persistent rumor about the water tank hatch was debunked during the inquest?",
+          "options": [
+            "The hatch was locked from the outside",
+            "The hatch was open when Lam was found",
+            "The hatch required two people to lift",
+            "The hatch was welded completely shut"
+          ],
+          "answer": 1,
+          "explain": "Internet theories insisted the hatch was closed and latched from the outside, but the maintenance worker testified he found the access hatch wide open."
+        },
+        {
+          "q": "Under what alternative brand name was part of the Cecil Hotel operating when Lam stayed there?",
+          "options": [
+            "Stay on Main",
+            "The Standard DTLA",
+            "The Rosslyn Annex",
+            "Pod LA"
+          ],
+          "answer": 0,
+          "explain": "To attract budget-conscious tourists and students, several floors of the historic Cecil had been rebranded with a separate entrance as Stay on Main."
+        }
+      ]
+    },
     {
       "slug": "the-murdaugh-murders",
       "title": "The Murdaugh Murders",

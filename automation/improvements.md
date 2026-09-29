@@ -585,3 +585,5 @@ with an [auto] tag — the counter on Mission Control reads this file.
 519. [auto 2026-09-25] Expanded blog post from research notes: "The First Fingerprint Convictions: How the Record Shows It Happened" (1610 words, 6 sources)
 520. [auto 2026-09-25] Published blog post from research notes: "How the FBI ViCAP Database Links Violent Crimes" (1441 words, 4 sources)
 521. [auto 2026-09-25] Published new quiz: "The Murdaugh Murders" (5 questions)
+522. [auto 2026-09-29] Published blog post from research notes: "Murders in Moscow: The Kohberger Plea Deal" (1448 words, 5 sources)
+523. [auto 2026-09-29] Published new quiz: "Elisa Lam at the Cecil Hotel" (5 questions)

@@ -721,14 +721,19 @@ Cory actually wants: the shape of his JonBenet trailer.
    episode title, and the tape.
 3. **The lines.** Gemini Flash reads the transcript and picks the two or three
    most gripping self-contained lines (never the opener, never the ending). Each
-   plays in Cory's voice over a slow push on a generated or saved photo from the
-   folder (`art-*.jpg`, `saved-*.jpg`; never the cover or card, which carry their
-   own type), the words landing on screen as they are spoken, a faint drone under.
+   plays in Cory's voice over the case's real footage, a slow push on a photograph
+   saved to the folder (`saved-*.jpg`; never the cover or card, which carry their
+   own type), or the dark ground, the words landing on screen as they are spoken,
+   a faint drone under. Nothing is generated: until 2026-09-27 a thin folder was
+   filled with Gemini scene stills (`bg-*`), so every trailer before then shows an
+   invented place behind a real case. The words on screen are the script's, since
+   `transcript.json` became the script timed to the recording on 2026-09-24; before
+   that they were the transcriber's, which put "Murdoch" and "Polanyuk" on screen.
 4. **End card.** "New episode. Link in bio.", the site, and the case's plug if
    `cases.json` has one (the Zodiac episode plugs thezodiacarchive.com).
 
 Rendered by recording `studio/templates/trailer.html` in Playwright at 1080x1920,
-then muxed with the audio timeline in ffmpeg at -14 LUFS. About 40 seconds.
+then muxed with the audio timeline in ffmpeg at -14 LUFS. About 20 to 30 seconds.
 `trailer.mp4` is what Post sends to Instagram; `reel.mp4` (the audiogram) stays
 as the fallback.
 
