@@ -1,11 +1,58 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1254,
+    "totalOnFile": 1256,
     "baked": 150,
-    "updated": "2026-09-30T12:44:33.813Z"
+    "updated": "2026-09-30T22:21:51.114Z"
   },
   "items": [
+    {
+      "uid": "c034fc96d059474f97acdbeed3dd20c9",
+      "title": "MARY VIRGINIA GARCIA WEBB - BILLINGS, MONTANA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/mary-virginia-garcia-webb---billings-montana/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/mary-virginia-garcia-webb---billings-montana",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Homicides and Sexual Assaults"
+      ],
+      "publication": "2026-09-30T09:26:00"
+    },
+    {
+      "uid": "98df11f3903d4ecab8940693471cbca8",
+      "title": "CARLOTTA MARIA SANCHEZ",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/carlotta-maria-sanchez/@@images/image/large",
+      "office": "Seattle",
+      "reward": "Reward up to $25,000 for information leading to the recovery of Carlotta Maria Sanchez and the arrest or conviction of those responsible for her disappearance.",
+      "url": "https://www.fbi.gov/wanted/kidnap/carlotta-maria-sanchez",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons",
+        "Indian Country"
+      ],
+      "publication": "2023-08-25T07:57:00"
+    },
+    {
+      "uid": "fca89f1133a74259b4a0f944cd238343",
+      "title": "ELSIE ELDORA LUSCIER",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/elsie-eldora-luscier/@@images/image/large",
+      "office": "Seattle",
+      "reward": "Reward up to $25,000 for information leading to the recovery of Elsie Eldora Luscier and the arrest or conviction of those responsible for her disappearance.",
+      "url": "https://www.fbi.gov/wanted/kidnap/elsie-eldora-luscier",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons",
+        "Indian Country"
+      ],
+      "publication": "2023-08-25T08:05:00"
+    },
     {
       "uid": "e68a2cd0426f44e0965dc7f92ca95a3b",
       "title": "TAVIS LAMAR CHENAULT",
@@ -171,6 +218,22 @@
         "ViCAP Missing Persons"
       ],
       "publication": "2026-09-22T09:22:00"
+    },
+    {
+      "uid": "486ad3fee18f4f9c889cf76c61fddb18",
+      "title": "RAYMOND NARCIA",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/raymond-narcia/@@images/image/large",
+      "office": "Phoenix",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of those responsible for the death of Raymond Narcia.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/raymond-narcia",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country"
+      ],
+      "publication": "2026-09-15T13:14:00"
     },
     {
       "uid": "13a6324e72db43638761ec2d24f54e3b",
@@ -698,6 +761,21 @@
         "Seeking Information"
       ],
       "publication": "2022-10-05T12:41:00"
+    },
+    {
+      "uid": "8b2461d815d5493886832689c2ef538d",
+      "title": "DONALD STEVEN LANG",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/donald-steven-lang/@@images/image/large",
+      "office": "Honolulu, Saltlakecity",
+      "reward": "Reward up to $5,000 for information leading to the arrest of Donald Steven Lang.",
+      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/donald-steven-lang",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
+      "subjects": [
+        "Law Enforcement Assistance"
+      ],
+      "publication": "2026-02-09T10:58:00"
     },
     {
       "uid": "8b2461d815d5493886832689c2ef538d",
@@ -1460,21 +1538,6 @@
       "publication": "2022-04-11T08:06:00"
     },
     {
-      "uid": "4984047ee7ec42eeb3c92a9cb9261565",
-      "title": "NITISH KAUSHAL",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/nitish-kaushal/@@images/image/large",
-      "office": "Losangeles",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cei/nitish-kaushal",
-      "status": "captured",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN ESCAPE RISK",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-07-13T10:17:00"
-    },
-    {
       "uid": "a81ed57d9ae641b793c292902a3800ec",
       "title": "FRONTA LONTRELL MILLER",
       "kind": "wanted",
@@ -2233,66 +2296,6 @@
         "Additional Violent Crimes"
       ],
       "publication": "2026-05-15T08:47:00"
-    },
-    {
-      "uid": "5b941f892c8744b89fccb4a234fa3c6e",
-      "title": "CAMRON LEE",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/murders/camron-lee/@@images/image/large",
-      "office": "Sacramento",
-      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of Camron Lee.",
-      "url": "https://www.fbi.gov/wanted/murders/camron-lee",
-      "status": "captured",
-      "warning": "",
-      "subjects": [
-        "Violent Crime - Murders"
-      ],
-      "publication": "2025-12-01T13:02:00"
-    },
-    {
-      "uid": "f2f247224152479483519098b56ade7f",
-      "title": "BOB TANG",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/murders/bob-tang/@@images/image/large",
-      "office": "Sanfrancisco",
-      "reward": "Reward up to $10,000 for information leading directly to the arrest of Bob Tang.",
-      "url": "https://www.fbi.gov/wanted/murders/bob-tang",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Violent Crime - Murders"
-      ],
-      "publication": "2020-03-26T08:29:00"
-    },
-    {
-      "uid": "341de1cfaa774a158f1ea78815e76d30",
-      "title": "VANESSA O'ROURKE",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/wcc/vanessa-orourke/@@images/image/large",
-      "office": "Philadelphia",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/wcc/vanessa-orourke",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "White-Collar Crime"
-      ],
-      "publication": "2020-10-13T08:16:00"
-    },
-    {
-      "uid": "1e95dff036d440b1a0a8fd25649ccfa7",
-      "title": "NAZEER HAMEED",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/murders/nazeer-hameed/@@images/image/large",
-      "office": "Newark",
-      "reward": "Reward up to $50,000 for information leading to the arrest and/or conviction of Nazeer Hameed.",
-      "url": "https://www.fbi.gov/wanted/murders/nazeer-hameed",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Violent Crime - Murders"
-      ],
-      "publication": "2025-11-24T08:52:00"
     }
   ]
 }
