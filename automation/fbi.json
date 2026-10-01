@@ -3,9 +3,24 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1257,
     "baked": 150,
-    "updated": "2026-10-01T13:28:52.942Z"
+    "updated": "2026-10-01T22:45:43.694Z"
   },
   "items": [
+    {
+      "uid": "b4db60d7ed14449cb73ba39564ef9e19",
+      "title": "JAMES S. RULAND - NORTH FOND du LAC, WISCONSIN",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/james-s-ruland---north-fond-du-lac-wisconsin/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/james-s-ruland---north-fond-du-lac-wisconsin",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Missing Persons"
+      ],
+      "publication": "2021-02-23T08:02:00"
+    },
     {
       "uid": "c034fc96d059474f97acdbeed3dd20c9",
       "title": "MARY VIRGINIA GARCIA WEBB - BILLINGS, MONTANA",
@@ -744,6 +759,23 @@
         "Navajo"
       ],
       "publication": "2019-08-06T10:04:00"
+    },
+    {
+      "uid": "5342f633-76b9-4b46-bed9-32599702b86d",
+      "title": "ANTHONETTE CHRISTINE CAYEDITO",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/anthonette-christine-cayedito/@@images/image/large",
+      "office": "Albuquerque",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the subject(s) related to the disappearance of Anthonette Cayedito.",
+      "url": "https://www.fbi.gov/wanted/kidnap/anthonette-christine-cayedito",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons",
+        "Indian Country",
+        "Navajo"
+      ],
+      "publication": "2014-07-01T07:00:00"
     },
     {
       "uid": "5342f633-76b9-4b46-bed9-32599702b86d",
@@ -1508,21 +1540,6 @@
       "publication": "2026-07-20T10:39:00"
     },
     {
-      "uid": "1582e7db343a44508dd4e52490c1b80d",
-      "title": "UNKNOWN BANK ROBBER - ALABAMA",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/unknown-bank-robber---alabama/@@images/image/large",
-      "office": "Birmingham",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/seeking-info/unknown-bank-robber---alabama",
-      "status": "captured",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2026-07-14T12:42:00"
-    },
-    {
       "uid": "e63638197b2a4a8499e2bae569be603d",
       "title": "RAJAH ADRIANA MCQUEEN",
       "kind": "missing",
@@ -2281,21 +2298,6 @@
         "Additional Violent Crimes"
       ],
       "publication": "2026-05-15T08:00:00"
-    },
-    {
-      "uid": "8e6090152d6640929912f934a8611f5b",
-      "title": "JHON ALEXANDER QUINTERO-CADENA",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/additional/jhon-alexander-quintero-cadena/@@images/image/large",
-      "office": "Portland",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/additional/jhon-alexander-quintero-cadena",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
-      "subjects": [
-        "Additional Violent Crimes"
-      ],
-      "publication": "2026-05-15T10:15:00"
     }
   ]
 }
