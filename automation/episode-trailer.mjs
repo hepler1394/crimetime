@@ -147,6 +147,90 @@ const work = join(dir, "trailer-work");
 await rm(work, { recursive: true, force: true });
 await mkdir(work, { recursive: true });
 const beds = await ensureBeds();
+
+/* ------------------------------------------- where each line really is in the audio */
+// Since 2026-09-24 transcript.json is the script timed to the recording, and inside a
+// paragraph those times are an estimate. Cut on them and a line starts a word late or ends
+// on the first word of the next sentence: the first trailers cut that way opened Elisa
+// Lam's on "...Los Angeles." and ran Murdaugh's hook into "A few hours later". So each line
+// is found in the audio itself. A window around it is transcribed with word timings by the
+// audit's model (asr_words.py), the script's words are aligned against what was heard, and
+// the cut runs from just before the first word to just after the last, stopping short of
+// whatever is said either side. The same timings place the words on screen.
+const LOOK = 3;
+const norm = (s) => String(s).toLowerCase().replace(/[‘’]/g, "'").replace(/(\d),(\d)/g, "$1$2")
+  .replace(/[^a-z0-9' ]+/g, " ").split(/\s+/).filter(Boolean).map((w) => w.replace(/^'+|'+$/g, "")).filter(Boolean);
+const lcsPairs = (a, b) => {
+  const m = Array.from({ length: a.length + 1 }, () => new Array(b.length + 1).fill(0));
+  for (let i = a.length - 1; i >= 0; i--) for (let j = b.length - 1; j >= 0; j--) m[i][j] = a[i] === b[j] ? m[i + 1][j + 1] + 1 : Math.max(m[i + 1][j], m[i][j + 1]);
+  const pairs = []; let i = 0, j = 0;
+  while (i < a.length && j < b.length) { if (a[i] === b[j]) { pairs.push([i, j]); i++; j++; } else if (m[i + 1][j] >= m[i][j + 1]) i++; else j++; }
+  return pairs;
+};
+const locate = (p, heard, ws) => {
+  const shown = p.text.split(/\s+/).filter(Boolean);
+  const exp = []; shown.forEach((w, di) => norm(w).forEach((t) => exp.push({ t, di })));
+  const toks = []; heard.forEach((h, wi) => norm(h.w).forEach((t) => toks.push({ t, wi })));
+  const pairs = lcsPairs(exp.map((x) => x.t), toks.map((x) => x.t));
+  // A common word ("the", "a", "on") also matches its twin in the sentence either side, and
+  // the alignment takes the first twin it meets: Moscow's line opened on "...claims of
+  // coercion. The court" and Watts's on "...let a man keep lying. A polygraph". A match
+  // stranded away from the rest of the run is dropped.
+  const stranded = (a, b) => (b[1] - a[1]) - (b[0] - a[0]) > 2;
+  while (pairs.length > 2 && stranded(pairs[0], pairs[1])) pairs.shift();
+  while (pairs.length > 2 && stranded(pairs[pairs.length - 2], pairs[pairs.length - 1])) pairs.pop();
+  if (!exp.length || pairs.length < Math.max(3, Math.ceil(exp.length * 0.6))) return null;
+  const [i0, j0] = pairs[0], [i1, j1] = pairs[pairs.length - 1];
+  // Words of the line the transcriber heard differently sit just outside the matched run.
+  // Take them, but never across a breath long enough to be the gap between two sentences
+  // (0.48 to 0.76 s in this voice; a comma is 0.16 to 0.32).
+  const BREATH = 0.42;
+  let wFirst = toks[j0].wi, wLast = toks[j1].wi;
+  for (let n = 0; n < i0 && wFirst > 0 && heard[wFirst].s - heard[wFirst - 1].e < BREATH; n++) wFirst--;
+  for (let n = 0; n < exp.length - 1 - i1 && wLast < heard.length - 1 && heard[wLast + 1].s - heard[wLast].e < BREATH; n++) wLast++;
+  const before = wFirst > 0 ? heard[wFirst - 1].e : 0, after = wLast < heard.length - 1 ? heard[wLast + 1].s : Infinity;
+  // A transcriber puts a word's start late when it opens on a soft consonant, so the cut
+  // leads in by a quarter second, never reaching back into the word before.
+  const start = Math.max(before + 0.05, heard[wFirst].s - 0.25), end = Math.min(after - 0.03, heard[wLast].e + 0.3);
+  if (!(end - start > 0.8)) return null;
+  // Each word shown on screen lands when it is heard; words the transcriber spelled
+  // differently are placed between their neighbours.
+  const at = new Array(shown.length).fill(null);
+  for (const [i, j] of pairs) { const di = exp[i].di; if (at[di] === null) at[di] = Math.max(0, heard[toks[j].wi].s - start); }
+  for (let di = 0; di < at.length; di++) if (at[di] === null) {
+    let a = di - 1; while (a >= 0 && at[a] === null) a--;
+    let b = di + 1; while (b < at.length && at[b] === null) b++;
+    const ta = a >= 0 ? at[a] : 0.05, tb = b < at.length ? at[b] : Math.max(ta + 0.3, end - start - 0.4);
+    at[di] = ta + ((tb - ta) * (di - a)) / (b - a);
+  }
+  return { start: ws + start, end: ws + end, words: at.map((t) => +t.toFixed(2)), matched: +(pairs.length / exp.length).toFixed(2) };
+};
+const lines = picks;
+const wins = lines.map((p, k) => {
+  const ws = Math.max(0, p.start - LOOK), f = join(work, `win${k}.wav`);
+  ff(["-ss", String(ws), "-i", audio, "-t", String(p.dur + 2 * LOOK), "-ac", "1", "-ar", "16000", f], `window ${k}`);
+  return { ws, f };
+});
+const asr = spawnSync("python", [join(__dirname, "studio", "asr_words.py"), "--batch", join(work, "windows.json"), ...wins.map((w) => w.f)], { encoding: "utf8", windowsHide: true, env: { ...process.env, PYTHONIOENCODING: "utf-8" }, maxBuffer: 64 * 1024 * 1024 });
+let heardBy = {};
+try { heardBy = JSON.parse(await readFile(join(work, "windows.json"), "utf8")); }
+catch { say(`  could not listen for the lines (${(asr.stderr || asr.error?.message || "").trim().slice(-160)}); cutting on the transcript's estimates`); }
+lines.forEach((p, k) => {
+  p.cut = heardBy[wins[k].f] ? locate(p, heardBy[wins[k].f], wins[k].ws) : null;
+  say(p.cut ? `  line ${p.i}: heard at ${p.cut.start.toFixed(2)}-${p.cut.end.toFixed(2)}s (${Math.round(p.cut.matched * 100)}% of its words)` : `  line ${p.i}: not found in the audio, cutting on the estimate`);
+});
+const cutsRecord = lines.map((p) => ({ i: p.i, start: p.cut ? +p.cut.start.toFixed(2) : null, end: p.cut ? +p.cut.end.toFixed(2) : null, matched: p.cut ? p.cut.matched : 0 }));
+// One cut for every spoken line: the located span with short fades, or the old padded
+// estimate when the line could not be found.
+const cutLine = (p, f, label) => {
+  if (p.cut) {
+    const len = p.cut.end - p.cut.start;
+    ff(["-ss", p.cut.start.toFixed(3), "-i", audio, "-t", len.toFixed(3), "-af", `asetpts=PTS-STARTPTS,afade=t=in:st=0:d=0.04,afade=t=out:st=${Math.max(0, len - 0.12).toFixed(3)}:d=0.12`, "-ac", "2", "-ar", "48000", f], label);
+  } else {
+    ff(["-ss", String(Math.max(0, p.start - 0.12)), "-i", audio, "-t", String(p.dur + 0.45), "-af", `asetpts=PTS-STARTPTS,afade=t=in:st=0:d=0.12,afade=t=out:st=${p.dur + 0.1}:d=0.35`, "-ac", "2", "-ar", "48000", f], label);
+  }
+};
+
 const parts = []; // { file, type, ...meta }
 if (coldFile) {
   const f = join(work, "cold.wav");
@@ -159,8 +243,8 @@ if (coldFile) {
   // -ss before -i and asetpts: the fades must count from the cut's own zero, not
   // the episode's timeline, or the fade-out fires before the clip starts and the
   // whole cut is silence.
-  ff(["-ss", String(Math.max(0, h.start - 0.15)), "-i", audio, "-t", String(h.dur + 0.4), "-af", "asetpts=PTS-STARTPTS,afade=t=in:st=0:d=0.15,afade=t=out:st=" + (h.dur + 0.05) + ":d=0.35", "-ac", "2", "-ar", "48000", f], "hook cut");
-  parts.push({ file: f, type: "quote", text: h.text, cold: true });
+  cutLine(h, f, "hook cut");
+  parts.push({ file: f, type: "quote", text: h.text, cold: true, at: h.cut?.words });
 }
 // Title slam: the theme's first 3 seconds.
 const slam = join(work, "slam.wav");
@@ -168,8 +252,8 @@ ff(["-i", beds.intro, "-t", "3.2", "-af", "afade=t=out:st=2.4:d=0.8", "-ac", "2"
 parts.push({ file: slam, type: "title" });
 for (const [k, p] of picks.entries()) {
   const f = join(work, `q${k}.wav`);
-  ff(["-ss", String(Math.max(0, p.start - 0.12)), "-i", audio, "-t", String(p.dur + 0.45), "-af", `asetpts=PTS-STARTPTS,afade=t=in:st=0:d=0.12,afade=t=out:st=${p.dur + 0.1}:d=0.35`, "-ac", "2", "-ar", "48000", f], `quote ${k}`);
-  parts.push({ file: f, type: "quote", text: p.text });
+  cutLine(p, f, `quote ${k}`);
+  parts.push({ file: f, type: "quote", text: p.text, at: p.cut?.words });
 }
 const outroF = join(work, "outro.wav");
 ff(["-i", beds.outro, "-t", "4.5", "-ac", "2", "-ar", "48000", outroF], "outro");
@@ -186,7 +270,8 @@ for (const p of parts) {
     p.text = fixNames(p.text);
     const words = p.text.split(/\s+/).filter(Boolean);
     const speak = Math.max(0.5, d - 0.6);
-    p.words = words.map((w, i) => ({ w, t: +(0.1 + (speak * i) / words.length).toFixed(2) }));
+    const heardAt = Array.isArray(p.at) && p.at.length === words.length ? p.at : null;
+    p.words = words.map((w, i) => ({ w, t: heardAt ? heardAt[i] : +(0.1 + (speak * i) / words.length).toFixed(2) }));
   }
   sections.push(p);
   t += d + GAP;
@@ -283,7 +368,7 @@ if (shots.length) {
 }
 await rm(work, { recursive: true, force: true });
 ep.files = { ...(ep.files || {}), trailer: "trailer.mp4" };
-ep.trailer = { seconds: +total.toFixed(1), coldOpen: coldFile || null, lines: sections.filter((s) => s.type === "quote").map((s) => s.text), footage: shots.map((x) => ({ clip: x.shot.id, label: x.shot.label, rights: x.shot.rights, channel: x.shot.channel })), generated: new Date().toISOString() };
+ep.trailer = { seconds: +total.toFixed(1), coldOpen: coldFile || null, lines: sections.filter((s) => s.type === "quote").map((s) => s.text), cuts: cutsRecord, timeline: sections.map((s) => ({ type: s.type, start: +s.start.toFixed(2), dur: +s.dur.toFixed(2) })), footage: shots.map((x) => ({ clip: x.shot.id, label: x.shot.label, rights: x.shot.rights, channel: x.shot.channel })), generated: new Date().toISOString() };
 await writeFile(join(dir, "episode.json"), JSON.stringify(ep, null, 2) + "\n", "utf8");
 const bytes = (await stat(mp4)).size;
 out({ ok: true, id, file: mp4, seconds: +total.toFixed(1), coldOpen: !!coldFile, lines: ep.trailer.lines.length, footage: shots.length, message: `Trailer ${total.toFixed(0)}s -> trailer.mp4 (${(bytes / 1048576).toFixed(1)} MB), ${coldFile ? "cold open from " + coldFile : "hook line opens"}, ${ep.trailer.lines.length} lines, ${shots.length ? shots.length + " over real footage" : "stills"}${plug ? ", plug: " + plug.label : ""}` });
