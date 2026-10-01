@@ -1,9 +1,9 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1256,
+    "totalOnFile": 1257,
     "baked": 150,
-    "updated": "2026-09-30T22:21:51.114Z"
+    "updated": "2026-10-01T06:05:58.771Z"
   },
   "items": [
     {
@@ -52,6 +52,21 @@
         "Indian Country"
       ],
       "publication": "2023-08-25T08:05:00"
+    },
+    {
+      "uid": "461a97c6a7214afeb22c8b70d83a5fee",
+      "title": "SEAN E. BROWN",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/sean-e-brown/@@images/image/large",
+      "office": "Chicago",
+      "reward": "Reward up to $5,000 for information leading to the arrest and conviction of Sean E. Brown.",
+      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/sean-e-brown",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Law Enforcement Assistance"
+      ],
+      "publication": "2026-09-16T12:02:00"
     },
     {
       "uid": "e68a2cd0426f44e0965dc7f92ca95a3b",
@@ -761,21 +776,6 @@
         "Seeking Information"
       ],
       "publication": "2022-10-05T12:41:00"
-    },
-    {
-      "uid": "8b2461d815d5493886832689c2ef538d",
-      "title": "DONALD STEVEN LANG",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/donald-steven-lang/@@images/image/large",
-      "office": "Honolulu, Saltlakecity",
-      "reward": "Reward up to $5,000 for information leading to the arrest of Donald Steven Lang.",
-      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/donald-steven-lang",
-      "status": "captured",
-      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
-      "subjects": [
-        "Law Enforcement Assistance"
-      ],
-      "publication": "2026-02-09T10:58:00"
     },
     {
       "uid": "8b2461d815d5493886832689c2ef538d",
@@ -1538,6 +1538,21 @@
       "publication": "2022-04-11T08:06:00"
     },
     {
+      "uid": "4984047ee7ec42eeb3c92a9cb9261565",
+      "title": "NITISH KAUSHAL",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/nitish-kaushal/@@images/image/large",
+      "office": "Losangeles",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/nitish-kaushal",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN ESCAPE RISK",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-07-13T10:17:00"
+    },
+    {
       "uid": "a81ed57d9ae641b793c292902a3800ec",
       "title": "FRONTA LONTRELL MILLER",
       "kind": "wanted",
@@ -2281,21 +2296,6 @@
         "Additional Violent Crimes"
       ],
       "publication": "2026-05-15T10:15:00"
-    },
-    {
-      "uid": "a7878502656446b8bc479b6347f0fe09",
-      "title": "JESSON QUINTERO",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/additional/jesson-quintero/@@images/image/large",
-      "office": "Portland",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/additional/jesson-quintero",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
-      "subjects": [
-        "Additional Violent Crimes"
-      ],
-      "publication": "2026-05-15T08:47:00"
     }
   ]
 }
