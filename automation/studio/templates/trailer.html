@@ -111,8 +111,15 @@
     requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
+  // A three-line title runs past the tape's fixed place, and the tape used to cross its last
+  // line ("THIRTY YEARS" half covered). Hang the tape under the title instead, once the webfont
+  // has given the title its real height; the tape tilts up about 60px across the frame.
+  const placeTape = () => {
+    const ep = document.getElementById("ep-title"), tape = document.querySelector(".title .tape");
+    if (ep && tape) tape.style.top = Math.max(1180, ep.offsetTop + ep.offsetHeight + 90) + "px";
+  };
   // Nothing moves until the recorder says so (webfonts loaded). Returns seconds into the recording.
-  window.__start = () => { t0 = performance.now(); return performance.timeOrigin ? (performance.now() / 1000) : 0; };
+  window.__start = () => { placeTape(); t0 = performance.now(); return performance.timeOrigin ? (performance.now() / 1000) : 0; };
 </script>
 </body>
 </html>
