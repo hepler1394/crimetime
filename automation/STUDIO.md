@@ -737,6 +737,23 @@ then muxed with the audio timeline in ffmpeg at -14 LUFS. About 20 to 30 seconds
 `trailer.mp4` is what Post sends to Instagram; `reel.mp4` (the audiogram) stays
 as the fallback.
 
+**Each line is found in the audio before it is cut.** The script-timed transcript
+is exact in its words and approximate in its times, and cutting on those times
+started lines a word late or ran them into the next sentence. So a window around
+each line is transcribed with word timings (`asr_words.py`, the audit's model, about
+a minute per trailer on this CPU), the script is aligned against what was heard,
+and the cut runs from just before the first word to just after the last. A common
+word ("the", "a") also matches its twin in the sentence next door, so a match
+stranded away from the rest is dropped, and the cut never reaches back across a
+breath long enough to be a sentence break. The words land on screen at the times
+they were heard. `episode.json` keeps `trailer.cuts` and `trailer.timeline`.
+
+**A person can choose the lines:** `--picks 12,87,119` (transcript segment numbers,
+hook first). The picker is told that a line will be heard with nothing around it,
+so no what-ifs, no defence theory posed as settled, nothing that points at someone
+never charged, and nothing that feeds a theory the episode rejects. It still gets
+that wrong sometimes, so read the lines before posting.
+
 ## Projects (research that is not an episode yet)
 
 Projects live in `automation/studio/projects/<id>/`: `notes.md` (every clipping
