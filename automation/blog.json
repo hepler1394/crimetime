@@ -5,6 +5,75 @@
   },
   "posts": [
     {
+      "slug": "why-some-cases-stay-cold-for-decades",
+      "title": "Why some cases stay cold for decades",
+      "date": "2026-10-02",
+      "category": "analysis",
+      "categoryLabel": "Analysis",
+      "image": "images/logo.png",
+      "author": "Cory",
+      "featured": false,
+      "excerpt": "You have probably heard the headline version of how cases go cold, but here is what the evidence actually shows about why investigations stall.",
+      "body": [
+        "Since 1965, there are an estimated 350,000 unsolved homicides in the United States. That number grows by roughly 6,000 unsolved murders and abductions every single year. A cold case is an unsolved crime that is not the subject of a current criminal investigation, but for which new information could emerge.",
+        "Typically, these are violent and major felony crimes, like murder and rape, which are generally not subject to a statute of limitations. Disappearances can also be considered cold cases if the victim has not been seen or heard from for some time. We see this in the cases of Natalee Holloway or the Beaumont children.",
+        "The public is fascinated by these mysteries, but the reality of why a case stalls is deeply practical. It often comes down to lost evidence, fading memories, and investigative dead ends. Let's unpack what the case files actually show about why some investigations freeze, and how they eventually get solved.",
+        "## The memory problem and the golden hours",
+        "Memory decay is a major obstacle in cold case work. Research shows eyewitness memory is highly fallible, especially as months and years pass. Witnesses may unconsciously fill in gaps in their memory. Trauma or stress can make their recollections completely unreliable.",
+        "Even the best detectives are vulnerable to what is known as memory drift, where case details become distorted over time. Investigators often speak of the golden hours. That is the crucial window immediately following a disappearance when evidence is fresh and memories are sharp.",
+        "When time passes, the narrative gets muddy. Take the 1989 abduction of Jacob Wetterling in Minnesota. Key witness memories became contradictory within weeks of the crime. It took DNA and a confession nearly 27 years later to finally solve the case.",
+        "## Physical evidence and technological gaps",
+        "Physical evidence does not wait patiently for investigators. It degrades, is lost, or was simply never collected to modern standards. For example, DNA evidence was not routinely preserved before the 1990s. Many cold cases predate DNA testing, digital forensics, and networked criminal databases.",
+        "Forensic science is always evolving to catch up. The FBI is switching from using the Integrated Automated Fingerprint Identification System to a newer technology called Next Generation Identification. Digital forensics can now recover hidden or deleted data, and forensic anthropology analyzes skeletal remains to determine cause of death.",
+        "But even with these tools, overwhelmed or underfunded police departments may lack access to new technology. DNA evidence is of no value unless there is evidence on file to compare it to. Without a match in the system, the physical evidence just sits in a box.",
+        "## Human factors and tunnel vision",
+        "Human error plays a massive role in why cases stay cold. Detective workload, internal bias, and changes in personnel all impact the fate of an investigation. Studies show that investigative bias can lead police to dismiss alternative suspects early on.",
+        "This leads to tunnel vision. Sometimes, a viable suspect has been overlooked or simply ignored due to flimsy circumstantial evidence at the time. In other instances, police focus on a likelier suspect who is later proven to be innocent. The focus itself excludes other possibilities.",
+        "Resource allocation also dictates what gets solved. High-profile crimes often take priority. If a case does not get media attention or political will, it is at a much greater risk of going cold. Lesser-known cases may be handled by overstretched police departments juggling multiple priorities.",
+        "## The Black Dahlia investigation",
+        "Look at one of the most famous unsolved murders in United States history. Elizabeth Short, posthumously known as the Black Dahlia, was found murdered in the Leimert Park neighborhood of Los Angeles on January 15, 1947. Her severely mutilated body was completely severed at the waist and drained of blood.",
+        "A total of 750 investigators from the Los Angeles Police Department and other departments worked on the Short case during its initial stages. The LAPD interviewed over 150 men in the ensuing weeks who they believed to be potential suspects. Despite this massive allocation of resources, the case ran into a wall.",
+        "The media circus actively complicated the investigation. Reporters from the Los Angeles Examiner called Short's mother, Phoebe Short, in Boston. Reporter Wain Sutton intentionally deceived Phoebe, telling her that her daughter had won a beauty contest to pry personal information from her before revealing the murder. Sergeant Finis Brown, a lead detective, blamed the press for compromising the investigation through unverified reporting. Over 500 people have confessed to the crime over the years, but it remains unsolved.",
+        "## The confession factor",
+        "When cold cases do get solved, Joe Kennedy, a former North Carolina police officer, notes three common paths: physical evidence, witness testimony, and confessions. Time changes relationships. Marriages end, friends grow apart, and witnesses who once stayed silent may finally talk.",
+        "Confessions play a much larger role than many people realize. Investigators examine what happened to a suspect after a crime. Many struggle with guilt, turn to alcohol or drugs, and have nightmares. Eventually, they admit it to someone.",
+        "That is exactly what happened in the 1994 killing of Robin Warr Lawrence, a 37-year-old mother found dead in her Springfield, Virginia, home. Investigators collected blood evidence at the scene, but it was not until 2023 that detectives found Stephan Smerk through DNA evidence. Hours after providing a DNA sample, Smerk confessed to the crime. He told investigators he knew he was going to kill somebody, but did not know who.",
+        "## The cost of modern forensics",
+        "When investigators cannot find a direct match through law enforcement databases, they turn to forensic genetic genealogy. This uses DNA matches and family trees from consumer DNA services to find relatives and narrow potential suspects. This technique identified Joseph James DeAngelo as the Golden State Killer in 2018. It also solved the 1976 murder of Karen Klaas in California in 2017.",
+        "But this breakthrough technology comes at a steep price. Michael Coble, executive director of the Center for Human Identification at the University of North Texas Health Science Center, states these investigations can cost anywhere from $8,000 to $10,000.",
+        "For smaller police departments, that price tag puts some cases out of reach. Police chiefs have to decide whether to buy a new police cruiser or fund testing for one case. The government subsidizes standard DNA testing protocols, but newer technology is not as heavily subsidized.",
+        "For families, a cold case is a wound that never heals. Psychologists call this ambiguous loss. Read the file. Look at the resource constraints and the human errors. Form your own conclusion."
+      ],
+      "sourceTopic": "Why some cases stay cold for decades",
+      "caseSlug": null,
+      "sources": [
+        {
+          "title": "Cold case",
+          "url": "https://en.wikipedia.org/wiki/Cold_case"
+        },
+        {
+          "title": "Black Dahlia",
+          "url": "https://en.wikipedia.org/wiki/Black_Dahlia"
+        },
+        {
+          "title": "The Psychology of Cold Case Investigations: Why Mysteries Stay Unsolved ...",
+          "url": "https://coldcaseinc.com/the-psychology-of-cold-case-investigations-why-do-mysteries-stay-unsolved/"
+        },
+        {
+          "title": "How cold cases are solved decades later - USA TODAY",
+          "url": "https://www.usatoday.com/story/news/crime/2026/07/25/how-investigators-solve-cold-cases/90525211007/"
+        },
+        {
+          "title": "What Are Cold Cases and How Are They Investigated",
+          "url": "https://thelegalguide.org/what-are-cold-cases-how-are-they-investigated/"
+        },
+        {
+          "title": "Why Some Missing Persons Cases Stay Open for Decades While Others Are ...",
+          "url": "https://calibrebooks.com/why-some-missing-persons-cases-stay-open-for-decad/"
+        }
+      ]
+    },
+    {
       "slug": "murders-in-moscow-the-kohberger-plea-deal",
       "title": "Murders in Moscow: The Kohberger Plea Deal",
       "date": "2026-09-29",

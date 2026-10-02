@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-09-29T14:01:44.187Z"
+    "updated": "2026-10-02T14:02:19.408Z"
   },
   "quizzes": [
+    {
+      "slug": "the-miami-luxury-tower-case",
+      "title": "The Miami Luxury Tower Case",
+      "tag": "Episode Case",
+      "description": "You know the viral headlines from Edgewater. Let's see what you actually know about the case file and the physical evidence.",
+      "created": "2026-10-02",
+      "sourceTopic": "The Miami Apartment Stabbing",
+      "questions": [
+        {
+          "q": "In what Miami neighborhood was the One Paraiso luxury high-rise located where Christian Obumseli was fatally stabbed?",
+          "options": [
+            "Brickell",
+            "Edgewater",
+            "Coconut Grove",
+            "Wynwood"
+          ],
+          "answer": 1,
+          "explain": "The incident took place in Edgewater, a bayside neighborhood in Miami where the couple had leased an apartment."
+        },
+        {
+          "q": "What specific criminal charge did prosecutors file against Courtney Clenney in August 2022?",
+          "options": [
+            "First-degree premeditated murder",
+            "Second-degree murder with a deadly weapon",
+            "Voluntary manslaughter",
+            "Aggravated battery"
+          ],
+          "answer": 1,
+          "explain": "Prosecutors filed second-degree murder charges with a deadly weapon after reviewing forensic evidence and prior disturbance reports."
+        },
+        {
+          "q": "Where was Clenney taken into custody several months after the stabbing occurred?",
+          "options": [
+            "A rehab facility in Hawaii",
+            "Her parents' home in Texas",
+            "An apartment in Los Angeles",
+            "A hotel in New York City"
+          ],
+          "answer": 0,
+          "explain": "Clenney was arrested in August 2022 at a rehabilitation center in Hawaii, where she was undergoing treatment for trauma and substance abuse."
+        },
+        {
+          "q": "What key surveillance footage did the Miami-Dade State Attorney's Office release to the public shortly after her arrest?",
+          "options": [
+            "Building lobby footage from the morning of the 911 call",
+            "Elevator footage from February 2022 showing a physical altercation",
+            "Parking garage footage from the night before the incident",
+            "Balcony footage recorded by a neighboring high-rise"
+          ],
+          "answer": 1,
+          "explain": "The state released elevator video from February 2022 documenting Clenney repeatedly striking Obumseli, which prosecutors used to establish a history of domestic aggression."
+        },
+        {
+          "q": "What defense has Clenney's legal team consistently maintained regarding the stabbing?",
+          "options": [
+            "Accidental weapon discharge",
+            "Self-defense under Florida law",
+            "Alibi of an unknown intruder",
+            "Temporary insanity"
+          ],
+          "answer": 1,
+          "explain": "Her defense team has argued self-defense from the start, claiming she threw the knife to defend herself during a physical confrontation."
+        }
+      ]
+    },
     {
       "slug": "elisa-lam-at-the-cecil-hotel",
       "title": "Elisa Lam at the Cecil Hotel",
