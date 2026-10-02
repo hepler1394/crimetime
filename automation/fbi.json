@@ -1,11 +1,26 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1258,
+    "totalOnFile": 1259,
     "baked": 150,
-    "updated": "2026-10-02T14:00:18.581Z"
+    "updated": "2026-10-02T22:19:49.880Z"
   },
   "items": [
+    {
+      "uid": "8020a28b1746429a994f4435d1d60259",
+      "title": "GORDON MONTANEZ",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/additional/gordon-montanez/@@images/image/large",
+      "office": "Newyork",
+      "reward": "Reward up to $25,000 for information leading to the location and apprehension of Gordon Montanez.",
+      "url": "https://www.fbi.gov/wanted/additional/gordon-montanez",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Additional Violent Crimes"
+      ],
+      "publication": "2026-10-02T09:39:00"
+    },
     {
       "uid": "0e58396ec6e647faa18982b3df634b7f",
       "title": "KEMONDRE TRAVIS DAILY",
@@ -1523,6 +1538,21 @@
       "publication": "2026-07-20T10:09:00"
     },
     {
+      "uid": "45c00e77c43249f3b9d2e5901553eeac",
+      "title": "SHAQUANNA “KITA” RUTHERFORD",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/shaquanna-kita-rutherford/@@images/image/large",
+      "office": "Baltimore",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/kidnap/shaquanna-kita-rutherford",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2026-07-20T10:09:00"
+    },
+    {
       "uid": "12b0a5aa363c4167a9b2327f3d328d32",
       "title": "ADRIAN DEON GOLDEN-RODRIGUEZ - HOMICIDE SUSPECT - HOLIDAY, FLORIDA",
       "kind": "wanted",
@@ -2265,37 +2295,6 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2026-05-11T08:51:00"
-    },
-    {
-      "uid": "57cb7d60cd5643eebb6ce8f7b285917d",
-      "title": "MONICA ELFRIEDE WITT",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/counterintelligence/monica-elfriede-witt/@@images/image/large",
-      "office": "Washingtondc",
-      "reward": "Reward up to $200,000 for information leading to the arrest and conviction of Monica Witt.",
-      "url": "https://www.fbi.gov/wanted/counterintelligence/monica-elfriede-witt",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED AN INTERNATIONAL FLIGHT RISK",
-      "subjects": [
-        "Counterintelligence",
-        "Iran"
-      ],
-      "publication": "2014-03-24T07:00:00"
-    },
-    {
-      "uid": "7d7e51ca02504387be5e7ee0cadb11ce",
-      "title": "JENNIFER LIN",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/jennifer-lin/@@images/image/large",
-      "office": "Sanfrancisco",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/seeking-info/jennifer-lin",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2017-05-23T09:25:00"
     }
   ]
 }
