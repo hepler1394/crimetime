@@ -1,0 +1,2181 @@
+{
+ "slug": "the-btk-floppy-disk",
+ "title": "The BTK Floppy Disk",
+ "language": "en",
+ "duration": 1692.9,
+ "model": "episode script, timed to the recording",
+ "generated": "2026-10-03",
+ "note": "This transcript is the episode script as written and fact-checked, timed to the recording. Timestamps are approximate within a sentence.",
+ "segments": [
+  {
+   "start": 5,
+   "end": 7.5,
+   "text": "What's up guys, welcome back to CrimeTimeSnacks."
+  },
+  {
+   "start": 7.5,
+   "end": 13.1,
+   "text": "The man who terrorized Wichita for decades was finally caught because of a metadata slip on a church computer."
+  },
+  {
+   "start": 13.1,
+   "end": 17.7,
+   "text": "For thirty-one years, law enforcement hunted a ghost who seemed to vanish without a trace."
+  },
+  {
+   "start": 17.7,
+   "end": 21.5,
+   "text": "The case grew into one of the most infamous cold cases in American history."
+  },
+  {
+   "start": 21.5,
+   "end": 24.7,
+   "text": "But in the end, it was a purple floppy disk that broke it wide open."
+  },
+  {
+   "start": 25.3,
+   "end": 26.8,
+   "text": "His name is Dennis Rader."
+  },
+  {
+   "start": 26.8,
+   "end": 32.5,
+   "text": "Between 1974 and 1991, he murdered at least ten people across Wichita and Park City, Kansas."
+  },
+  {
+   "start": 32.5,
+   "end": 36.8,
+   "text": "He actually named himself in his very first communication to the media."
+  },
+  {
+   "start": 36.8,
+   "end": 44.1,
+   "text": "In a 1974 letter to The Wichita Eagle, he laid out his method and called himself BTK, which stood for bind, torture, kill."
+  },
+  {
+   "start": 44.7,
+   "end": 47.2,
+   "text": "The scale of his crimes paralyzed the community."
+  },
+  {
+   "start": 47.2,
+   "end": 48.4,
+   "text": "Rader was methodical."
+  },
+  {
+   "start": 48.4,
+   "end": 53,
+   "text": "He stalked his victims and learned their daily routines before breaking into their homes."
+  },
+  {
+   "start": 53,
+   "end": 56.6,
+   "text": "He targeted men, women, and children, though he mostly focused on women."
+  },
+  {
+   "start": 56.6,
+   "end": 62.3,
+   "text": "Once inside, he bound them and strangled them, sometimes using objects he found lying around their own houses."
+  },
+  {
+   "start": 62.8,
+   "end": 65.2,
+   "text": "He did not just commit the murders and disappear."
+  },
+  {
+   "start": 65.2,
+   "end": 67.8,
+   "text": "He actively taunted the police and local news outlets."
+  },
+  {
+   "start": 67.8,
+   "end": 73.4,
+   "text": "Rader sent letters bragging about his crimes and complaining that he was not getting enough national attention."
+  },
+  {
+   "start": 73.4,
+   "end": 78.8,
+   "text": "He also stole keepsakes from his female victims, including underwear, driver's licenses and personal items."
+  },
+  {
+   "start": 79.3,
+   "end": 80.8,
+   "text": "Then he suddenly went quiet."
+  },
+  {
+   "start": 80.8,
+   "end": 86.3,
+   "text": "Rader took long breaks between his attacks, sometimes waiting up to eight years before striking again."
+  },
+  {
+   "start": 86.3,
+   "end": 90,
+   "text": "While the city lived in fear, he was living an intensely ordinary life."
+  },
+  {
+   "start": 90,
+   "end": 95.2,
+   "text": "He was a married father, a Boy Scout leader, and ironically, an installer for ADT security systems."
+  },
+  {
+   "start": 95.8,
+   "end": 100.5,
+   "text": "In early 2004, the local paper ran a story on the thirtieth anniversary of his first murders."
+  },
+  {
+   "start": 100.5,
+   "end": 103.2,
+   "text": "Rader later admitted that the coverage stirred him up."
+  },
+  {
+   "start": 103.2,
+   "end": 108,
+   "text": "After a thirteen-year hiatus, he resumed sending letters and packages to the police and media."
+  },
+  {
+   "start": 108,
+   "end": 113.6,
+   "text": "He dropped off word puzzles, fictitious autobiography chapters, and actual mementos from the crime scenes."
+  },
+  {
+   "start": 114.1,
+   "end": 116.7,
+   "text": "Eventually, his need to brag overrode his caution."
+  },
+  {
+   "start": 116.7,
+   "end": 121.2,
+   "text": "He asked the police in a message if a floppy disk could be traced back to a specific computer."
+  },
+  {
+   "start": 121.2,
+   "end": 124.4,
+   "text": "The police lied and placed a newspaper ad telling him it was safe."
+  },
+  {
+   "start": 124.4,
+   "end": 132.6,
+   "text": "When Rader mailed a disk to a local TV station, forensic investigators immediately pulled up the deleted files and found the metadata that would finally end his run."
+  },
+  {
+   "start": 133.2,
+   "end": 136.6,
+   "text": "Dennis Lynn Rader was born on March 9, 1945, in Pittsburg, Kansas."
+  },
+  {
+   "start": 136.6,
+   "end": 138.1,
+   "text": "He was the oldest of four boys."
+  },
+  {
+   "start": 138.1,
+   "end": 142.6,
+   "text": "His family belonged to the Zion Lutheran Church in Pittsburg, where Rader was baptized."
+  },
+  {
+   "start": 142.6,
+   "end": 146.7,
+   "text": "Eventually, the family moved to a modest house on North Seneca Street in Wichita."
+  },
+  {
+   "start": 147.3,
+   "end": 148.8,
+   "text": "His parents were busy people."
+  },
+  {
+   "start": 148.8,
+   "end": 151,
+   "text": "His mother, Dorothea, worked as a bookkeeper."
+  },
+  {
+   "start": 151,
+   "end": 156.3,
+   "text": "His father, William, was a former Marine who worked for the Kansas Gas Service and a local electric utility."
+  },
+  {
+   "start": 156.3,
+   "end": 158.8,
+   "text": "They worked long hours and were often distracted."
+  },
+  {
+   "start": 158.8,
+   "end": 162.2,
+   "text": "Rader later claimed he felt completely ignored and neglected at home."
+  },
+  {
+   "start": 162.2,
+   "end": 168.5,
+   "text": "His father ran a strict, God-fearing household, though investigators never found any definitive evidence of physical abuse."
+  },
+  {
+   "start": 169,
+   "end": 172,
+   "text": "To the outside world, Rader looked like a perfectly normal kid."
+  },
+  {
+   "start": 172,
+   "end": 173.5,
+   "text": "He read novels and comic books."
+  },
+  {
+   "start": 173.5,
+   "end": 177,
+   "text": "He went fishing and was active in the Cub Scouts and church youth groups."
+  },
+  {
+   "start": 177,
+   "end": 182.6,
+   "text": "His classmates just thought of him as a quiet, studious boy who lacked a sense of humor and preferred to be left alone."
+  },
+  {
+   "start": 183.2,
+   "end": 186.8,
+   "text": "But the case file shows a much darker reality beneath the surface."
+  },
+  {
+   "start": 186.8,
+   "end": 190,
+   "text": "From a very young age, Rader harbored sadistic fantasies."
+  },
+  {
+   "start": 190,
+   "end": 193.5,
+   "text": "He obsessed over the idea of keeping women trapped and helpless."
+  },
+  {
+   "start": 193.5,
+   "end": 195.5,
+   "text": "He needed to feel totally in control."
+  },
+  {
+   "start": 195.5,
+   "end": 201.5,
+   "text": "He started acting out these violent impulses by torturing and hanging small animals, including cats and dogs."
+  },
+  {
+   "start": 202.1,
+   "end": 205,
+   "text": "As he grew up, those fantasies escalated into voyeurism."
+  },
+  {
+   "start": 205,
+   "end": 208.1,
+   "text": "He spied on his female neighbors and stole women's underwear."
+  },
+  {
+   "start": 208.1,
+   "end": 215.9,
+   "text": "Forensic psychologist Dr. Tony Ruark later suggested that some childhood event must have permanently linked pleasure with suffering in Rader's mind."
+  },
+  {
+   "start": 215.9,
+   "end": 221.6,
+   "text": "Another researcher theorized he might have suffered abuse at home, but we have no actual evidence to prove that."
+  },
+  {
+   "start": 222.2,
+   "end": 225,
+   "text": "During high school, Rader largely kept his head down."
+  },
+  {
+   "start": 225,
+   "end": 231.6,
+   "text": "He spent his free time working as a bag boy and shelf stocker at a local grocery store, just trying to save up enough money for a car."
+  },
+  {
+   "start": 231.6,
+   "end": 237.3,
+   "text": "After graduating from Wichita Heights High School in 1963, he briefly attended Kansas Wesleyan University."
+  },
+  {
+   "start": 237.3,
+   "end": 240.7,
+   "text": "He pulled in mediocre grades and dropped out after a single year."
+  },
+  {
+   "start": 241.2,
+   "end": 245.4,
+   "text": "You have to wonder how a kid at Riverview Elementary hides that kind of darkness."
+  },
+  {
+   "start": 245.4,
+   "end": 249,
+   "text": "We already talked about the stolen clothing and the animal cruelty."
+  },
+  {
+   "start": 249,
+   "end": 250.9,
+   "text": "Those were not just passing phases."
+  },
+  {
+   "start": 250.9,
+   "end": 255.6,
+   "text": "The case file shows that his obsession with bondage started right there in grade school."
+  },
+  {
+   "start": 255.6,
+   "end": 257.8,
+   "text": "It was never just about the physical acts."
+  },
+  {
+   "start": 257.8,
+   "end": 259.6,
+   "text": "It was entirely about dominance."
+  },
+  {
+   "start": 259.6,
+   "end": 263.2,
+   "text": "He built a solid wall between his public face and his private reality."
+  },
+  {
+   "start": 263.2,
+   "end": 266.9,
+   "text": "On one side, he was the reserved student who stocked grocery shelves."
+  },
+  {
+   "start": 266.9,
+   "end": 271.6,
+   "text": "On the other, he was feeding a compulsion that would eventually terrorize an entire city."
+  },
+  {
+   "start": 272.3,
+   "end": 274.4,
+   "text": "That terror officially started in 1974."
+  },
+  {
+   "start": 274.4,
+   "end": 279.6,
+   "text": "Police first became aware of this killer after the brutal quadruple homicide of the Otero family."
+  },
+  {
+   "start": 279.6,
+   "end": 283.7,
+   "text": "He murdered thirty-eight-year-old Joseph and thirty-three-year-old Julie."
+  },
+  {
+   "start": 283.7,
+   "end": 289,
+   "text": "He also killed two of their five children, nine-year-old Joseph Jr. and eleven-year-old Josephine."
+  },
+  {
+   "start": 289,
+   "end": 290.5,
+   "text": "He struck again that April."
+  },
+  {
+   "start": 290.5,
+   "end": 295.3,
+   "text": "He killed twenty-one-year-old Kathryn Bright and shot her brother, who actually survived."
+  },
+  {
+   "start": 295.3,
+   "end": 298.5,
+   "text": "For months, the police had no idea who they were looking for."
+  },
+  {
+   "start": 298.5,
+   "end": 303.9,
+   "text": "Then, about ten months after his first murders, Rader made an anonymous phone call to The Wichita Eagle."
+  },
+  {
+   "start": 303.9,
+   "end": 307.8,
+   "text": "He told them a letter was hidden inside a book at the Wichita Public Library."
+  },
+  {
+   "start": 307.8,
+   "end": 311,
+   "text": "Investigators found the note describing the Otero murders."
+  },
+  {
+   "start": 311,
+   "end": 312.9,
+   "text": "He signed it, YOURS, TRULY GUILTILY."
+  },
+  {
+   "start": 312.9,
+   "end": 317.5,
+   "text": "The paper and the Wichita Police Department decided to sit on the letter to avoid a panic."
+  },
+  {
+   "start": 317.5,
+   "end": 321.5,
+   "text": "But a reporter for the rival Wichita Sun received a copy and broke the story."
+  },
+  {
+   "start": 321.5,
+   "end": 324.6,
+   "text": "That is how the city found out a serial killer was on the loose."
+  },
+  {
+   "start": 325.2,
+   "end": 327.2,
+   "text": "For decades, he left no fingerprints."
+  },
+  {
+   "start": 327.2,
+   "end": 328.8,
+   "text": "There were no eyewitnesses."
+  },
+  {
+   "start": 328.8,
+   "end": 330.3,
+   "text": "There were zero solid leads."
+  },
+  {
+   "start": 330.3,
+   "end": 331.6,
+   "text": "Rader blended right in."
+  },
+  {
+   "start": 331.6,
+   "end": 333,
+   "text": "He was an Air Force veteran."
+  },
+  {
+   "start": 333,
+   "end": 334.9,
+   "text": "He was a church council president."
+  },
+  {
+   "start": 334.9,
+   "end": 338.1,
+   "text": "But when he resumed communication in 2004, he made mistakes."
+  },
+  {
+   "start": 338.1,
+   "end": 344.5,
+   "text": "Over the course of eleven letters and packages sent during 2004 and 2005, law enforcement slowly filled in the blanks."
+  },
+  {
+   "start": 344.5,
+   "end": 347,
+   "text": "His first new message went to The Wichita Eagle."
+  },
+  {
+   "start": 347,
+   "end": 351.6,
+   "text": "It included crime scene photos and a driver's license belonging to a victim from 1986."
+  },
+  {
+   "start": 351.6,
+   "end": 355.4,
+   "text": "That specific victim had never been definitively linked to him before."
+  },
+  {
+   "start": 355.4,
+   "end": 360.6,
+   "text": "Armed with that new connection, police collected DNA from under the 1986 victim's fingernails."
+  },
+  {
+   "start": 360.6,
+   "end": 365.2,
+   "text": "They launched a massive campaign and tested hundreds of local men looking for a match."
+  },
+  {
+   "start": 365.7,
+   "end": 369.2,
+   "text": "Then his need for attention pushed him further out of the shadows."
+  },
+  {
+   "start": 369.2,
+   "end": 373.6,
+   "text": "In January 2005, Rader left a package for the KAKE-TV station inside a cereal box."
+  },
+  {
+   "start": 373.6,
+   "end": 377.9,
+   "text": "He dropped it in the back of a pickup truck in the parking lot of a local Home Depot."
+  },
+  {
+   "start": 377.9,
+   "end": 381.1,
+   "text": "The truck owner thought it was just garbage and threw it out."
+  },
+  {
+   "start": 381.1,
+   "end": 384.6,
+   "text": "Rader actually contacted the station to ask if they received it."
+  },
+  {
+   "start": 384.6,
+   "end": 386.1,
+   "text": "Police found it in the trash."
+  },
+  {
+   "start": 386.1,
+   "end": 389.9,
+   "text": "More importantly, they pulled security camera footage from the store."
+  },
+  {
+   "start": 389.9,
+   "end": 393.7,
+   "text": "The grainy video showed a blurry figure driving a black Jeep Cherokee."
+  },
+  {
+   "start": 394.3,
+   "end": 395.6,
+   "text": "Then came the floppy disk."
+  },
+  {
+   "start": 395.6,
+   "end": 399.1,
+   "text": "He asked police if he could communicate with a disk and not be traced."
+  },
+  {
+   "start": 399.1,
+   "end": 403.1,
+   "text": "He told them to place an ad in the paper saying, Rex, it will be OK, if it was safe."
+  },
+  {
+   "start": 403.1,
+   "end": 404.2,
+   "text": "The police ran the ad."
+  },
+  {
+   "start": 404.2,
+   "end": 407.9,
+   "text": "Two weeks later, a package arrived at KSAS-TV containing a purple disk."
+  },
+  {
+   "start": 407.9,
+   "end": 412.2,
+   "text": "Officer Randy Stone used a forensic software program to call up the deleted files."
+  },
+  {
+   "start": 412.2,
+   "end": 417.1,
+   "text": "The metadata showed the disk was last modified at Christ Lutheran Church by a user named Dennis."
+  },
+  {
+   "start": 417.1,
+   "end": 422.6,
+   "text": "Investigators looked up the church website and found Dennis Rader listed as the congregation president."
+  },
+  {
+   "start": 422.6,
+   "end": 423.8,
+   "text": "They drove by his house."
+  },
+  {
+   "start": 423.8,
+   "end": 426.7,
+   "text": "A black Jeep Cherokee was sitting right in the driveway."
+  },
+  {
+   "start": 427.3,
+   "end": 431.2,
+   "text": "Strong circumstantial evidence is one thing, but they needed a lock."
+  },
+  {
+   "start": 431.2,
+   "end": 434.7,
+   "text": "Investigators got a warrant to test the DNA of Rader's daughter."
+  },
+  {
+   "start": 434.7,
+   "end": 438.7,
+   "text": "She had a pap smear done at the Kansas State University medical clinic."
+  },
+  {
+   "start": 438.7,
+   "end": 440.5,
+   "text": "A lab in Topeka tested the sample."
+  },
+  {
+   "start": 440.5,
+   "end": 445,
+   "text": "It was a familial match to the DNA found under the fingernails of the 1986 victim."
+  },
+  {
+   "start": 445,
+   "end": 447,
+   "text": "The chain of evidence was complete."
+  },
+  {
+   "start": 447,
+   "end": 449.8,
+   "text": "Police arrested Dennis Rader on February 25, 2005."
+  },
+  {
+   "start": 449.8,
+   "end": 453.1,
+   "text": "During his interrogation, he confessed to all ten murders."
+  },
+  {
+   "start": 453.1,
+   "end": 455.6,
+   "text": "He was furious that the police had lied to him."
+  },
+  {
+   "start": 455.6,
+   "end": 459.6,
+   "text": "He looked at Lieutenant Ken Landwehr and asked, How come you lied to me?"
+  },
+  {
+   "start": 459.6,
+   "end": 461.8,
+   "text": "He told detectives, The floppy did me in."
+  },
+  {
+   "start": 461.8,
+   "end": 464.9,
+   "text": "Dennis Rader was given ten consecutive life sentences."
+  },
+  {
+   "start": 465.5,
+   "end": 468.7,
+   "text": "After dropping out of college, Rader needed a new direction."
+  },
+  {
+   "start": 468.7,
+   "end": 471.7,
+   "text": "In June 1966, he enlisted in the United States Air Force."
+  },
+  {
+   "start": 471.7,
+   "end": 476.2,
+   "text": "He packed up and headed to Texas to complete his basic training and technical school."
+  },
+  {
+   "start": 476.2,
+   "end": 484.1,
+   "text": "From there, the military sent him to Brookley Air Force Base in Mobile, Alabama, where he worked as an antenna installer and maintenance specialist."
+  },
+  {
+   "start": 484.7,
+   "end": 489,
+   "text": "His service eventually took him far away from his quiet life in the Midwest."
+  },
+  {
+   "start": 489,
+   "end": 493.7,
+   "text": "The Air Force deployed him on assignments across Turkey, Greece, and South Korea."
+  },
+  {
+   "start": 493.7,
+   "end": 496.3,
+   "text": "In January 1968, he was transferred to Japan."
+  },
+  {
+   "start": 496.3,
+   "end": 503.1,
+   "text": "He spent six months at Kadena Air Base in Okinawa before moving to Tachikawa Airfield in Tokyo for twenty-five months."
+  },
+  {
+   "start": 503.7,
+   "end": 506.7,
+   "text": "To his commanding officers, he was just a reliable airman."
+  },
+  {
+   "start": 506.7,
+   "end": 509.3,
+   "text": "His military record was completely unremarkable."
+  },
+  {
+   "start": 509.3,
+   "end": 512.6,
+   "text": "He earned a medal for good conduct and a ribbon for marksmanship."
+  },
+  {
+   "start": 512.6,
+   "end": 518,
+   "text": "He also received a National Defense Service Medal because his enlistment coincided with the Vietnam War."
+  },
+  {
+   "start": 518.5,
+   "end": 522.9,
+   "text": "But the case file shows that his time overseas actively shaped his darker compulsions."
+  },
+  {
+   "start": 522.9,
+   "end": 529.5,
+   "text": "Rader later admitted that he engaged with prostitutes during his deployments, crediting the military with teaching him about sex."
+  },
+  {
+   "start": 529.5,
+   "end": 532.5,
+   "text": "This period is also when he started what he called trolling."
+  },
+  {
+   "start": 532.5,
+   "end": 538,
+   "text": "He would stalk women in these foreign cities, watching them without acting on his violent impulses just yet."
+  },
+  {
+   "start": 538.6,
+   "end": 541.4,
+   "text": "He kept those urges entirely hidden while in uniform."
+  },
+  {
+   "start": 541.4,
+   "end": 544.3,
+   "text": "On August 12, 1970, Rader earned an honorable discharge."
+  },
+  {
+   "start": 544.3,
+   "end": 547.6,
+   "text": "He left the active duty military at the rank of staff sergeant."
+  },
+  {
+   "start": 547.6,
+   "end": 553.7,
+   "text": "He returned to Wichita and officially joined the Air Force Reserve Command, where he served until the summer of 1972."
+  },
+  {
+   "start": 554.2,
+   "end": 557,
+   "text": "Back in Kansas, he tried to build a normal adult life."
+  },
+  {
+   "start": 557,
+   "end": 560.9,
+   "text": "He married Paula Dietz in 1971 and bought a house in the suburb of Park City."
+  },
+  {
+   "start": 560.9,
+   "end": 562.3,
+   "text": "He also went back to school."
+  },
+  {
+   "start": 562.3,
+   "end": 568.4,
+   "text": "He enrolled at Butler County Community College and earned an associate degree in electronics engineering in 1973."
+  },
+  {
+   "start": 568.9,
+   "end": 571.9,
+   "text": "He bounced around a few different jobs during this time."
+  },
+  {
+   "start": 571.9,
+   "end": 577.3,
+   "text": "He initially worked in the meat department of an IGA supermarket where his mother was a bookkeeper."
+  },
+  {
+   "start": 577.3,
+   "end": 581.9,
+   "text": "Then, from mid-1972 to mid-1973, he took a job as an assembler for the Coleman Company."
+  },
+  {
+   "start": 582.5,
+   "end": 585.6,
+   "text": "The pressure of civilian life started to crack his facade."
+  },
+  {
+   "start": 585.6,
+   "end": 587.5,
+   "text": "He lost a job at Cessna in late 1973."
+  },
+  {
+   "start": 587.5,
+   "end": 592.9,
+   "text": "Investigators believe his sudden unemployment pushed him much deeper into his violent fantasies."
+  },
+  {
+   "start": 592.9,
+   "end": 601.1,
+   "text": "He began actively trolling for victims in his own city, fixating on Julie Otero and setting the stage for that brutal first strike we discussed earlier."
+  },
+  {
+   "start": 601.7,
+   "end": 604.3,
+   "text": "You already know he married Paula Dietz in 1971."
+  },
+  {
+   "start": 604.3,
+   "end": 606.8,
+   "text": "The case file gives us the exact date as May 22."
+  },
+  {
+   "start": 606.8,
+   "end": 612.6,
+   "text": "Paula worked as a secretary for the American Legion, and they held the ceremony at Christ Lutheran Church."
+  },
+  {
+   "start": 612.6,
+   "end": 618.2,
+   "text": "That is the exact same church where his digital footprint would eventually give him away decades later."
+  },
+  {
+   "start": 618.8,
+   "end": 622.1,
+   "text": "They moved into that house in Park City and started a family."
+  },
+  {
+   "start": 622.1,
+   "end": 626.2,
+   "text": "Their son Brian was born in 1975, and their daughter Kerri followed in 1978."
+  },
+  {
+   "start": 626.2,
+   "end": 629.9,
+   "text": "To the outside world, they were a perfectly quiet, ordinary family."
+  },
+  {
+   "start": 629.9,
+   "end": 634.8,
+   "text": "But the timeline shows that every single one of his murders took place while he was married."
+  },
+  {
+   "start": 635.5,
+   "end": 639.2,
+   "text": "Neither Paula nor the children ever suspected his involvement in the killings."
+  },
+  {
+   "start": 639.2,
+   "end": 640.8,
+   "text": "The facade was completely solid."
+  },
+  {
+   "start": 640.8,
+   "end": 644.7,
+   "text": "He was just a husband and a father who went to work and tried to further his education."
+  },
+  {
+   "start": 644.7,
+   "end": 650.2,
+   "text": "After getting his associate degree from Butler County Community College, he enrolled at Wichita State University."
+  },
+  {
+   "start": 650.8,
+   "end": 654.6,
+   "text": "But the record shows he struggled academically once he got to the university level."
+  },
+  {
+   "start": 654.6,
+   "end": 659,
+   "text": "He kept his family entirely in the dark, even when the violence crept right up to their front door."
+  },
+  {
+   "start": 659.6,
+   "end": 661.5,
+   "text": "In April 1985, he murdered Marine Hedge."
+  },
+  {
+   "start": 661.5,
+   "end": 663.9,
+   "text": "She was a neighbor who lived near their Park City home."
+  },
+  {
+   "start": 663.9,
+   "end": 665.7,
+   "text": "Kerri was just six years old at the time."
+  },
+  {
+   "start": 665.7,
+   "end": 670.3,
+   "text": "She later said she started having night terrors, telling her mother there was a bad man in the house."
+  },
+  {
+   "start": 670.3,
+   "end": 674,
+   "text": "When the family talked about the murder, Rader calmly blamed Hedge's boyfriend."
+  },
+  {
+   "start": 674.6,
+   "end": 678.8,
+   "text": "He integrated his crimes into their daily routine without them ever knowing."
+  },
+  {
+   "start": 678.8,
+   "end": 682.4,
+   "text": "When Kerri was in high school, he gave her his car to drive to class."
+  },
+  {
+   "start": 682.4,
+   "end": 686.4,
+   "text": "It was only after his arrest that she learned the truth about that vehicle."
+  },
+  {
+   "start": 686.4,
+   "end": 692.6,
+   "text": "He had used the trunk of that exact car to hide the body of his last known victim, sixty-two-year-old Dolores Davis."
+  },
+  {
+   "start": 693.2,
+   "end": 694.8,
+   "text": "The deception was absolute."
+  },
+  {
+   "start": 694.8,
+   "end": 701.6,
+   "text": "Paula eventually filed for an emergency divorce in July 2005, and the judge waived the normal sixty-day waiting period."
+  },
+  {
+   "start": 701.6,
+   "end": 706.3,
+   "text": "In March 2007, the family's former Park City residence was completely demolished."
+  },
+  {
+   "start": 706.8,
+   "end": 710.2,
+   "text": "We already established his stint in the IGA supermarket meat department."
+  },
+  {
+   "start": 710.2,
+   "end": 714.9,
+   "text": "It was just another clock-punching job to pay the bills while he tried to figure out his civilian life."
+  },
+  {
+   "start": 714.9,
+   "end": 720.1,
+   "text": "He was working right under the same roof as his mother, blending into the background of a totally normal routine."
+  },
+  {
+   "start": 720.7,
+   "end": 722.4,
+   "text": "Then there is the Coleman Company."
+  },
+  {
+   "start": 722.4,
+   "end": 724.7,
+   "text": "You know he took an assembler job there in 1972."
+  },
+  {
+   "start": 725.3,
+   "end": 728.6,
+   "text": "Two of his victims, Julie Otero and Kathryn Bright, also worked at Coleman."
+  },
+  {
+   "start": 728.6,
+   "end": 731.8,
+   "text": "They were just people trying to earn a living and go home to their families."
+  },
+  {
+   "start": 732.4,
+   "end": 738.2,
+   "text": "Less than three months after the Otero murders, he focused entirely on twenty-one-year-old Kathryn Bright."
+  },
+  {
+   "start": 738.2,
+   "end": 741.8,
+   "text": "He actually referred to this planned attack as Project Lights Out."
+  },
+  {
+   "start": 741.8,
+   "end": 745.8,
+   "text": "He spotted her entering her house with a friend and decided to make his move."
+  },
+  {
+   "start": 745.8,
+   "end": 749.2,
+   "text": "On April 4, 1974, he broke in through a rear sliding glass door."
+  },
+  {
+   "start": 749.2,
+   "end": 753.2,
+   "text": "He even swept up the broken glass to avoid raising any immediate suspicion."
+  },
+  {
+   "start": 753.2,
+   "end": 754.9,
+   "text": "But he made a mistake right away."
+  },
+  {
+   "start": 754.9,
+   "end": 761.5,
+   "text": "His pistol accidentally discharged inside the empty house, and he panicked that the smell of gunpowder would give him away."
+  },
+  {
+   "start": 762.2,
+   "end": 765.2,
+   "text": "He also missed a crucial detail during his planning phase."
+  },
+  {
+   "start": 765.2,
+   "end": 769.4,
+   "text": "He had no idea Kathryn's nineteen-year-old brother, Kevin, was staying over."
+  },
+  {
+   "start": 769.4,
+   "end": 774,
+   "text": "Rader later admitted he specifically wanted to avoid males to make the killings easier."
+  },
+  {
+   "start": 774,
+   "end": 777.4,
+   "text": "When Kathryn and Kevin walked in, he confronted them at gunpoint."
+  },
+  {
+   "start": 777.4,
+   "end": 782.3,
+   "text": "He spun a lie, claiming he was a wanted man from California who just needed money and a vehicle."
+  },
+  {
+   "start": 782.3,
+   "end": 785,
+   "text": "He forced the siblings into the southeast bedroom."
+  },
+  {
+   "start": 785,
+   "end": 788.5,
+   "text": "He made Kevin tie up Kathryn first, and then he bound Kevin himself."
+  },
+  {
+   "start": 789,
+   "end": 791.9,
+   "text": "He used household supplies like bandanas as restraints."
+  },
+  {
+   "start": 791.9,
+   "end": 796.1,
+   "text": "He did this intentionally to make the crime scene look different from the Otero house."
+  },
+  {
+   "start": 796.1,
+   "end": 798.6,
+   "text": "He separated the siblings into different rooms."
+  },
+  {
+   "start": 798.6,
+   "end": 801.7,
+   "text": "He tied Kevin's feet to a bedpost and secured Kathryn to a chair."
+  },
+  {
+   "start": 801.7,
+   "end": 804.9,
+   "text": "Then he went out to the living room and turned on the stereo system."
+  },
+  {
+   "start": 804.9,
+   "end": 807.7,
+   "text": "He wanted the music to drown out any sounds of a struggle."
+  },
+  {
+   "start": 807.7,
+   "end": 811.9,
+   "text": "He later claimed he picked up that specific trick from reading detective magazines."
+  },
+  {
+   "start": 812.4,
+   "end": 816.3,
+   "text": "When he went back to strangle Kevin, the teenager had managed to free himself."
+  },
+  {
+   "start": 816.3,
+   "end": 819.2,
+   "text": "A struggle broke out, and Rader shot Kevin in the forehead."
+  },
+  {
+   "start": 819.2,
+   "end": 822,
+   "text": "He tried to strangle him again, but Kevin kept fighting."
+  },
+  {
+   "start": 822,
+   "end": 823.4,
+   "text": "Rader fired two more shots."
+  },
+  {
+   "start": 823.4,
+   "end": 826.3,
+   "text": "One hit just above Kevin's mouth, and the other grazed him."
+  },
+  {
+   "start": 826.3,
+   "end": 829,
+   "text": "Kevin smartly played dead until Rader left the room."
+  },
+  {
+   "start": 829,
+   "end": 832.4,
+   "text": "Then he managed to run from the house and flag down neighbors for help."
+  },
+  {
+   "start": 833,
+   "end": 834.9,
+   "text": "Rader went back into Kathryn's room."
+  },
+  {
+   "start": 834.9,
+   "end": 839,
+   "text": "She asked him about the gunshots, and he bluntly told her he had shot her brother."
+  },
+  {
+   "start": 839,
+   "end": 840.6,
+   "text": "She immediately fought back."
+  },
+  {
+   "start": 840.6,
+   "end": 845.5,
+   "text": "The record shows her resistance was too strong for him to strangle her as he originally planned."
+  },
+  {
+   "start": 845.5,
+   "end": 848.8,
+   "text": "Instead, he stabbed her two or three times just under her ribcage."
+  },
+  {
+   "start": 848.8,
+   "end": 850.9,
+   "text": "He heard Kevin yelling for help outside."
+  },
+  {
+   "start": 850.9,
+   "end": 854.4,
+   "text": "Rader grabbed Kathryn's keys, ran out, and tried to steal her truck."
+  },
+  {
+   "start": 854.4,
+   "end": 860.4,
+   "text": "When the engine would not turn over, he fled on foot to his own car parked over at the Wichita State University campus."
+  },
+  {
+   "start": 860.4,
+   "end": 862.7,
+   "text": "Kathryn was still alive when police arrived."
+  },
+  {
+   "start": 862.7,
+   "end": 865.3,
+   "text": "She was holding a telephone but could barely speak."
+  },
+  {
+   "start": 865.3,
+   "end": 867.5,
+   "text": "She died later during emergency surgery."
+  },
+  {
+   "start": 868,
+   "end": 871.8,
+   "text": "After fleeing the Bright house, Rader went right back to his daily routine."
+  },
+  {
+   "start": 871.8,
+   "end": 874.7,
+   "text": "The case file shows he found a new way to hide in plain sight."
+  },
+  {
+   "start": 874.7,
+   "end": 877.2,
+   "text": "He took a job installing security systems for ADT."
+  },
+  {
+   "start": 877.2,
+   "end": 880.4,
+   "text": "It is one of the darkest ironies of this entire investigation."
+  },
+  {
+   "start": 880.9,
+   "end": 883.7,
+   "text": "The city was absolutely paralyzed by the BTK murders."
+  },
+  {
+   "start": 883.7,
+   "end": 887.4,
+   "text": "People were terrified, so they bought alarms to protect their families."
+  },
+  {
+   "start": 887.4,
+   "end": 890.6,
+   "text": "And the man they paid to install those alarms was Dennis Rader."
+  },
+  {
+   "start": 891.2,
+   "end": 895.4,
+   "text": "He spent his days walking through the houses of people who were actively hiding from him."
+  },
+  {
+   "start": 895.4,
+   "end": 896.8,
+   "text": "It gave him the perfect cover."
+  },
+  {
+   "start": 896.8,
+   "end": 900.4,
+   "text": "To his clients, he was just a helpful security technician keeping them safe."
+  },
+  {
+   "start": 900.4,
+   "end": 904.4,
+   "text": "Later on, he transitioned into a role as a compliance officer and a city dogcatcher."
+  },
+  {
+   "start": 904.9,
+   "end": 908.7,
+   "text": "He used these jobs to maintain a feeling of authority over his neighbors."
+  },
+  {
+   "start": 908.7,
+   "end": 912,
+   "text": "As a compliance officer, he enforced the rules overzealously."
+  },
+  {
+   "start": 912,
+   "end": 916.1,
+   "text": "The New York Times actually described his daily life as intensely ordinary."
+  },
+  {
+   "start": 916.1,
+   "end": 919,
+   "text": "He was even a Scout Leader for his son's Boy Scout troop."
+  },
+  {
+   "start": 919.5,
+   "end": 922.2,
+   "text": "Nobody looked twice at the local compliance officer."
+  },
+  {
+   "start": 922.2,
+   "end": 923.7,
+   "text": "Nobody suspected the ADT guy."
+  },
+  {
+   "start": 923.7,
+   "end": 927.3,
+   "text": "He built a solid wall between his brutal crimes and his public persona."
+  },
+  {
+   "start": 927.3,
+   "end": 933.2,
+   "text": "He used complex knots to bind his victims, torturing them mentally and physically, then went right back to his day job."
+  },
+  {
+   "start": 933.7,
+   "end": 937.1,
+   "text": "The record shows he continued this balancing act for years."
+  },
+  {
+   "start": 937.1,
+   "end": 939.7,
+   "text": "In 1977, he murdered Shirley Vian and Nancy Fox."
+  },
+  {
+   "start": 939.7,
+   "end": 943.4,
+   "text": "He followed those killings with more letters to the press in 1978."
+  },
+  {
+   "start": 943.4,
+   "end": 946.6,
+   "text": "He was furious that he was not getting enough recognition."
+  },
+  {
+   "start": 946.6,
+   "end": 953.2,
+   "text": "One of those letters flatly asked, How many do I have to kill before I get my name in the paper or some national attention?"
+  },
+  {
+   "start": 953.8,
+   "end": 956.6,
+   "text": "That desperate need for validation never went away."
+  },
+  {
+   "start": 956.6,
+   "end": 960,
+   "text": "When he resumed his taunts in 2004, he introduced new aliases."
+  },
+  {
+   "start": 960,
+   "end": 964.4,
+   "text": "In March of that year, the newspaper received a letter from a Bill Thomas Killman."
+  },
+  {
+   "start": 964.4,
+   "end": 966,
+   "text": "The initials spelled out BTK."
+  },
+  {
+   "start": 966.6,
+   "end": 971.5,
+   "text": "Throughout the rest of 2004, he sent packages to the police and local media almost every single month."
+  },
+  {
+   "start": 971.5,
+   "end": 973.8,
+   "text": "The case file details exactly what was inside."
+  },
+  {
+   "start": 973.8,
+   "end": 977.3,
+   "text": "He mailed dolls that were bound up in manners similar to his real victims."
+  },
+  {
+   "start": 977.3,
+   "end": 979.3,
+   "text": "He wanted to prove he was still in control."
+  },
+  {
+   "start": 979.3,
+   "end": 982.7,
+   "text": "He was completely convinced he could keep playing this game forever."
+  },
+  {
+   "start": 983.3,
+   "end": 986.9,
+   "text": "We know his active timeline stretched from 1974 all the way to 1991."
+  },
+  {
+   "start": 986.9,
+   "end": 994.8,
+   "text": "While he killed men and children too, like Joseph Otero and two of his children, the case file shows his primary targets were almost always women."
+  },
+  {
+   "start": 994.8,
+   "end": 996.8,
+   "text": "He did not snatch them off the street."
+  },
+  {
+   "start": 996.8,
+   "end": 999.4,
+   "text": "He attacked them right inside their own homes."
+  },
+  {
+   "start": 999.4,
+   "end": 1003.1,
+   "text": "After 1979, his known attacks seemed to stop, and the trail went cold."
+  },
+  {
+   "start": 1003.1,
+   "end": 1007.1,
+   "text": "But the record shows he murdered three more women between 1985 and 1991."
+  },
+  {
+   "start": 1007.1,
+   "end": 1010.2,
+   "text": "Those later cases were not initially linked to him at all."
+  },
+  {
+   "start": 1010.2,
+   "end": 1017.8,
+   "text": "It was only after his arrest that investigators confirmed he was responsible, using DNA and the stolen items they found in his possession."
+  },
+  {
+   "start": 1018.3,
+   "end": 1021.9,
+   "text": "We already talked about his use of complex knots and household restraints."
+  },
+  {
+   "start": 1021.9,
+   "end": 1025.1,
+   "text": "But the official record gets much more specific about his methods."
+  },
+  {
+   "start": 1025.1,
+   "end": 1030.1,
+   "text": "He typically suffocated his victims using a plastic bag, or he manually strangled them with a ligature."
+  },
+  {
+   "start": 1030.1,
+   "end": 1033.8,
+   "text": "It was a deliberate, hands-on approach designed to maximize their terror."
+  },
+  {
+   "start": 1033.8,
+   "end": 1038.8,
+   "text": "The case file notes that he targeted women and families with a brutal mix of strangulation and stabbing."
+  },
+  {
+   "start": 1039.3,
+   "end": 1042.3,
+   "text": "He made sure to torture them mentally as well as physically."
+  },
+  {
+   "start": 1042.3,
+   "end": 1044.8,
+   "text": "He wanted them to know exactly what was happening."
+  },
+  {
+   "start": 1044.8,
+   "end": 1048,
+   "text": "Sometimes, he even left notes or poems behind at the crime scenes."
+  },
+  {
+   "start": 1048,
+   "end": 1051.7,
+   "text": "It was just another way to taunt the police and show he was the one in control."
+  },
+  {
+   "start": 1051.7,
+   "end": 1055,
+   "text": "He followed up these attacks by contacting authorities directly."
+  },
+  {
+   "start": 1055,
+   "end": 1060.8,
+   "text": "When he sent his first letter to the newspaper in October 1974 claiming the Otero murders, the police had to verify it."
+  },
+  {
+   "start": 1060.8,
+   "end": 1068,
+   "text": "They confirmed that the specific details in his poorly typed, misspelled letter could only have come from the person standing inside that house."
+  },
+  {
+   "start": 1068.5,
+   "end": 1070.1,
+   "text": "He also made sure to take souvenirs."
+  },
+  {
+   "start": 1070.1,
+   "end": 1074,
+   "text": "During these attacks, Rader stole personal items directly from his female victims."
+  },
+  {
+   "start": 1074,
+   "end": 1078.7,
+   "text": "We already mentioned the driver's licenses, but he also took their underwear and other small keepsakes."
+  },
+  {
+   "start": 1078.7,
+   "end": 1082.8,
+   "text": "He treated these objects as physical proof of his dominance over the people he terrorized."
+  },
+  {
+   "start": 1083.4,
+   "end": 1085.8,
+   "text": "Most serial killers accelerate their timelines."
+  },
+  {
+   "start": 1085.8,
+   "end": 1090.1,
+   "text": "They kill more frequently as time goes on because the urge becomes impossible to ignore."
+  },
+  {
+   "start": 1090.1,
+   "end": 1091.1,
+   "text": "Rader was different."
+  },
+  {
+   "start": 1091.1,
+   "end": 1094.1,
+   "text": "He maintained those long, quiet periods between his victims."
+  },
+  {
+   "start": 1094.1,
+   "end": 1098.3,
+   "text": "After he murdered Dolores Davis in 1991, he went completely silent for thirteen years."
+  },
+  {
+   "start": 1098.3,
+   "end": 1104.1,
+   "text": "The investigation was exhaustive, but the case still grew into one of the most infamous cold cases in American history."
+  },
+  {
+   "start": 1104.1,
+   "end": 1110.1,
+   "text": "Because of that massive gap, many people in law enforcement believed he had either permanently stopped killing or had died."
+  },
+  {
+   "start": 1110.7,
+   "end": 1114.2,
+   "text": "Those stolen items explain how he managed his urges during the gaps."
+  },
+  {
+   "start": 1114.2,
+   "end": 1115.7,
+   "text": "To Rader, they were trophies."
+  },
+  {
+   "start": 1115.7,
+   "end": 1119.8,
+   "text": "The case file notes that these items fed his sexual fantasies between killings."
+  },
+  {
+   "start": 1119.8,
+   "end": 1125.4,
+   "text": "They allowed him to safely relive the murders in his own mind while he played the role of a normal suburban dad."
+  },
+  {
+   "start": 1125.9,
+   "end": 1128.8,
+   "text": "You remember his desperate letters to the media in 1978."
+  },
+  {
+   "start": 1128.8,
+   "end": 1131.6,
+   "text": "He was practically begging for national attention."
+  },
+  {
+   "start": 1131.6,
+   "end": 1140,
+   "text": "In those communications, he actually claimed to be driven by the exact same dark energy that guided Jack the Ripper, the Son of Sam, and the Hillside Strangler."
+  },
+  {
+   "start": 1140,
+   "end": 1142.9,
+   "text": "He wanted to be viewed on that exact same level of infamy."
+  },
+  {
+   "start": 1142.9,
+   "end": 1145.2,
+   "text": "Then, in 1979, the taunts suddenly ceased."
+  },
+  {
+   "start": 1145.8,
+   "end": 1148.4,
+   "text": "The Wichita police were left completely empty-handed."
+  },
+  {
+   "start": 1148.4,
+   "end": 1152,
+   "text": "The case file shows they had no usable fingerprints and zero eyewitnesses."
+  },
+  {
+   "start": 1152,
+   "end": 1153.1,
+   "text": "The trail just vanished."
+  },
+  {
+   "start": 1153.1,
+   "end": 1157.5,
+   "text": "The authorities were dealing with an offender who took a lot of time off between his attacks."
+  },
+  {
+   "start": 1157.5,
+   "end": 1161.2,
+   "text": "Sometimes he would wait as long as eight years before he decided to strike again."
+  },
+  {
+   "start": 1161.2,
+   "end": 1167.8,
+   "text": "He was a deliberate and methodical killer who stalked his victims and learned their daily routines before gaining entrance to their homes."
+  },
+  {
+   "start": 1168.3,
+   "end": 1170.4,
+   "text": "Years passed without a single solid lead."
+  },
+  {
+   "start": 1170.4,
+   "end": 1174.8,
+   "text": "The investigation stalled out, turning the hunt into an infamous American cold case."
+  },
+  {
+   "start": 1174.8,
+   "end": 1178.4,
+   "text": "It left a jagged rip of loss and fear across the entire metropolitan area."
+  },
+  {
+   "start": 1178.4,
+   "end": 1182.4,
+   "text": "This would eventually become one of the longest manhunts in American history."
+  },
+  {
+   "start": 1182.4,
+   "end": 1187.1,
+   "text": "For over three decades, the police waited doggedly for a break that just never seemed to come."
+  },
+  {
+   "start": 1187.7,
+   "end": 1192.8,
+   "text": "Many people in law enforcement assumed the killer had either died or been locked up for an unrelated crime."
+  },
+  {
+   "start": 1192.8,
+   "end": 1195.6,
+   "text": "The city slowly started to believe the nightmare was over."
+  },
+  {
+   "start": 1195.6,
+   "end": 1197.8,
+   "text": "Between his crimes, he just hid in plain sight."
+  },
+  {
+   "start": 1197.8,
+   "end": 1205.1,
+   "text": "He was living that intensely ordinary life we discussed, working as a compliance officer and serving as a church leader while the police chased shadows."
+  },
+  {
+   "start": 1205.1,
+   "end": 1210,
+   "text": "He successfully evaded law enforcement by simply blending into the background of the Kansas suburbs."
+  },
+  {
+   "start": 1210.6,
+   "end": 1213.1,
+   "text": "But the record shows he was still out there."
+  },
+  {
+   "start": 1213.1,
+   "end": 1216.5,
+   "text": "We already talked about his victims between 1985 and 1991."
+  },
+  {
+   "start": 1216.5,
+   "end": 1220.8,
+   "text": "He committed those three murders while flying completely under the radar."
+  },
+  {
+   "start": 1220.8,
+   "end": 1224.1,
+   "text": "His last known victim was Dolores Davis, in January 1991."
+  },
+  {
+   "start": 1224.1,
+   "end": 1228.1,
+   "text": "After he murdered her, he went completely silent for thirteen years."
+  },
+  {
+   "start": 1228.6,
+   "end": 1233.8,
+   "text": "Because he stopped bragging to the press, nobody connected those new crimes to his earlier timeline."
+  },
+  {
+   "start": 1233.8,
+   "end": 1237.1,
+   "text": "He managed to keep his violent double life entirely undetected."
+  },
+  {
+   "start": 1237.1,
+   "end": 1241.1,
+   "text": "He just let his stolen trophies feed his fantasies during those quiet periods."
+  },
+  {
+   "start": 1241.1,
+   "end": 1246,
+   "text": "It was not until 2004 that his egotistical need to gloat finally drew him back out of the shadows."
+  },
+  {
+   "start": 1246,
+   "end": 1251.1,
+   "text": "When he resurfaced, he introduced digital evidence into the investigation for the very first time."
+  },
+  {
+   "start": 1251.1,
+   "end": 1256,
+   "text": "He would eventually send a one point four four megabyte floppy disk to a local Fox TV affiliate."
+  },
+  {
+   "start": 1256,
+   "end": 1258.3,
+   "text": "He was totally convinced it was untraceable."
+  },
+  {
+   "start": 1258.3,
+   "end": 1262.7,
+   "text": "But digital forensic experts used specialized tools to extract hidden information."
+  },
+  {
+   "start": 1262.7,
+   "end": 1266.1,
+   "text": "They analyzed the metadata, which is often called data about data."
+  },
+  {
+   "start": 1266.1,
+   "end": 1273.2,
+   "text": "Even though he tried to remain anonymous, he completely overlooked the fact that digital files automatically store identifying details."
+  },
+  {
+   "start": 1273.2,
+   "end": 1278.8,
+   "text": "From the moment investigators received that disk, it took them just nine days to put the entire case together."
+  },
+  {
+   "start": 1279.4,
+   "end": 1283.1,
+   "text": "You know he went completely dark after his last known murder in 1991."
+  },
+  {
+   "start": 1283.1,
+   "end": 1288.9,
+   "text": "For thirteen long years, the police and the public assumed he was either dead or locked up for something else."
+  },
+  {
+   "start": 1288.9,
+   "end": 1293,
+   "text": "But that 2004 newspaper anniversary article woke something up inside him."
+  },
+  {
+   "start": 1293,
+   "end": 1298.4,
+   "text": "In a 2005 interview, Rader said he saw the story and was kind of bored, so he decided to resurface as BTK."
+  },
+  {
+   "start": 1299,
+   "end": 1302.8,
+   "text": "He broke his silence because he desperately needed attention and validation."
+  },
+  {
+   "start": 1302.8,
+   "end": 1307.3,
+   "text": "He reached out to the local media and the police to remind everyone exactly who was in charge."
+  },
+  {
+   "start": 1307.3,
+   "end": 1309.9,
+   "text": "The new letters did not just brag about the cold cases."
+  },
+  {
+   "start": 1309.9,
+   "end": 1313.1,
+   "text": "He actively hinted that he was preparing to commit further crimes."
+  },
+  {
+   "start": 1313.7,
+   "end": 1317.9,
+   "text": "Over the course of 2004 and 2005, he initiated a massive wave of communication."
+  },
+  {
+   "start": 1317.9,
+   "end": 1323.4,
+   "text": "He mailed physical items directly to law enforcement and news stations practically every single month."
+  },
+  {
+   "start": 1324,
+   "end": 1325.7,
+   "text": "These were not just quick notes."
+  },
+  {
+   "start": 1325.7,
+   "end": 1330.6,
+   "text": "He was sending packages designed to prove his identity and mock the ongoing investigation."
+  },
+  {
+   "start": 1330.6,
+   "end": 1333.1,
+   "text": "The psychological dimension here is gripping."
+  },
+  {
+   "start": 1333.1,
+   "end": 1338,
+   "text": "He was interacting with law enforcement as if they were playing a game that only he could win."
+  },
+  {
+   "start": 1338.5,
+   "end": 1341,
+   "text": "His need for recognition completely blinded him."
+  },
+  {
+   "start": 1341,
+   "end": 1346.2,
+   "text": "He was so focused on taunting the authorities that he forgot he was dealing with modern forensic science."
+  },
+  {
+   "start": 1346.2,
+   "end": 1350.2,
+   "text": "That constant stream of physical mail was entirely driven by his own egomania."
+  },
+  {
+   "start": 1350.2,
+   "end": 1355.8,
+   "text": "It pushed him right out of the shadows and set the stage for the digital mistake that would finally bring him down."
+  },
+  {
+   "start": 1356.4,
+   "end": 1359.7,
+   "text": "We already know the purple floppy disk ended his thirty-year run."
+  },
+  {
+   "start": 1359.7,
+   "end": 1364.3,
+   "text": "But the case file reveals exactly what investigators found buried in that digital space."
+  },
+  {
+   "start": 1364.3,
+   "end": 1367.8,
+   "text": "The forensic software pulled up a deleted Microsoft Word document."
+  },
+  {
+   "start": 1367.8,
+   "end": 1369.6,
+   "text": "It was not a manifesto or a hit list."
+  },
+  {
+   "start": 1369.6,
+   "end": 1371.5,
+   "text": "It was just a church meeting agenda."
+  },
+  {
+   "start": 1371.5,
+   "end": 1373.5,
+   "text": "Rader had written and edited it himself."
+  },
+  {
+   "start": 1373.5,
+   "end": 1378.9,
+   "text": "That completely mundane file held the hidden metadata pointing straight to the Christ Lutheran Church."
+  },
+  {
+   "start": 1379.5,
+   "end": 1383.8,
+   "text": "Once that familial DNA match came back, law enforcement did not wait."
+  },
+  {
+   "start": 1383.8,
+   "end": 1385.9,
+   "text": "They moved in on February 25, 2005."
+  },
+  {
+   "start": 1385.9,
+   "end": 1389.6,
+   "text": "The record shows they intercepted him shortly after noon."
+  },
+  {
+   "start": 1389.6,
+   "end": 1392.8,
+   "text": "He was just driving in his car near his Park City home."
+  },
+  {
+   "start": 1392.8,
+   "end": 1397.8,
+   "text": "An officer walked up and asked, Mr. Rader, do you know why you are going downtown?"
+  },
+  {
+   "start": 1397.8,
+   "end": 1400.8,
+   "text": "Rader calmly replied, Oh, I have suspicions why."
+  },
+  {
+   "start": 1401.4,
+   "end": 1404.1,
+   "text": "A massive coordinated search kicked off immediately."
+  },
+  {
+   "start": 1404.1,
+   "end": 1409.2,
+   "text": "The Wichita Police Department teamed up with the Kansas Bureau of Investigation, the FBI, and the ATF."
+  },
+  {
+   "start": 1409.2,
+   "end": 1411.3,
+   "text": "They tore through his house and his vehicle."
+  },
+  {
+   "start": 1411.3,
+   "end": 1414.6,
+   "text": "They seized his computer equipment and a cylindrical container."
+  },
+  {
+   "start": 1414.6,
+   "end": 1418.3,
+   "text": "Out in a shed on the property, they also retrieved a pair of black pantyhose."
+  },
+  {
+   "start": 1418.8,
+   "end": 1421.6,
+   "text": "The dragnet extended across his entire daily routine."
+  },
+  {
+   "start": 1421.6,
+   "end": 1425.3,
+   "text": "Agents searched his office and the main branch of the Park City library."
+  },
+  {
+   "start": 1425.3,
+   "end": 1429.2,
+   "text": "They even went through the church where he served as congregation president."
+  },
+  {
+   "start": 1429.2,
+   "end": 1431.7,
+   "text": "The city had been holding its breath for decades."
+  },
+  {
+   "start": 1431.7,
+   "end": 1435.9,
+   "text": "The very next morning, Wichita Police Chief Norman Williams stepped up to a podium."
+  },
+  {
+   "start": 1435.9,
+   "end": 1438.4,
+   "text": "He delivered one simple sentence to the public."
+  },
+  {
+   "start": 1438.4,
+   "end": 1440.5,
+   "text": "He said, The bottom line: BTK is arrested."
+  },
+  {
+   "start": 1441,
+   "end": 1445.8,
+   "text": "We talked about his confession and how furious he was that the police lied about tracing the disk."
+  },
+  {
+   "start": 1445.8,
+   "end": 1449.7,
+   "text": "But the interrogation transcripts show he never dropped his arrogant facade."
+  },
+  {
+   "start": 1449.7,
+   "end": 1452.9,
+   "text": "He casually asked detectives about the death penalty in Kansas."
+  },
+  {
+   "start": 1452.9,
+   "end": 1456.3,
+   "text": "He repeatedly inquired about what his potential sentence would be."
+  },
+  {
+   "start": 1456.3,
+   "end": 1462.7,
+   "text": "He wanted to know if he would get a special section in prison, or if he would be housed among the loonies in the general population."
+  },
+  {
+   "start": 1463.2,
+   "end": 1466.2,
+   "text": "He was still completely obsessed with his own twisted celebrity."
+  },
+  {
+   "start": 1466.2,
+   "end": 1470.4,
+   "text": "At one point during the interview, he asked an officer to put his drink in the refrigerator."
+  },
+  {
+   "start": 1470.4,
+   "end": 1473,
+   "text": "He explicitly told the cop not to write his real name on it."
+  },
+  {
+   "start": 1473,
+   "end": 1474.2,
+   "text": "He wanted the lid to say BTK."
+  },
+  {
+   "start": 1474.8,
+   "end": 1479.3,
+   "text": "You already know the police and the local paper initially tried to sit on that first communication."
+  },
+  {
+   "start": 1479.3,
+   "end": 1481,
+   "text": "They wanted to avoid a mass hysteria."
+  },
+  {
+   "start": 1481,
+   "end": 1483.7,
+   "text": "But once the rival paper broke the story, the whole city knew."
+  },
+  {
+   "start": 1484.3,
+   "end": 1489.2,
+   "text": "Residents were terrified because the killer was attacking families right inside their own homes."
+  },
+  {
+   "start": 1489.2,
+   "end": 1492.1,
+   "text": "The media outlets were caught in a twisted feedback loop."
+  },
+  {
+   "start": 1492.1,
+   "end": 1498.9,
+   "text": "Papers and local TV stations were receiving direct, taunting letters from the killer, making them reluctant participants in his game."
+  },
+  {
+   "start": 1499.4,
+   "end": 1502.9,
+   "text": "The public demanded answers that law enforcement simply did not have."
+  },
+  {
+   "start": 1502.9,
+   "end": 1510.2,
+   "text": "At a lecture at Wichita State University, former FBI agent Robert Ressler assumed the killer was a graduate student in the criminal justice field."
+  },
+  {
+   "start": 1510.8,
+   "end": 1516,
+   "text": "When the arrest finally happened in 2005, the public shock was entirely about how normal he appeared."
+  },
+  {
+   "start": 1516,
+   "end": 1518.7,
+   "text": "People expected a monster who lived in the shadows."
+  },
+  {
+   "start": 1518.7,
+   "end": 1524.1,
+   "text": "Instead, the news coverage revealed a suburban dad, a Cub Scout leader, and a church council president."
+  },
+  {
+   "start": 1524.1,
+   "end": 1528.4,
+   "text": "The national media pointed out just how intensely ordinary his daily life had been."
+  },
+  {
+   "start": 1529,
+   "end": 1534.1,
+   "text": "The community had to grapple with the fact that the man who terrorized them was hiding in plain sight."
+  },
+  {
+   "start": 1534.1,
+   "end": 1538.6,
+   "text": "He was the guy installing their security systems and enforcing local compliance rules."
+  },
+  {
+   "start": 1538.6,
+   "end": 1541.7,
+   "text": "The reaction was a mix of profound relief and total disbelief."
+  },
+  {
+   "start": 1542.2,
+   "end": 1545.7,
+   "text": "The coverage highlighted the terrifying reality of his double life."
+  },
+  {
+   "start": 1545.7,
+   "end": 1547.7,
+   "text": "The monster was not a phantom after all."
+  },
+  {
+   "start": 1547.7,
+   "end": 1552.4,
+   "text": "He was just a regular guy who lived right down the street, completely undetected for decades."
+  },
+  {
+   "start": 1553,
+   "end": 1557.2,
+   "text": "When his scheduled trial date arrived on June 27, Rader changed his plea to guilty."
+  },
+  {
+   "start": 1557.2,
+   "end": 1560.7,
+   "text": "He stood in the courtroom and coldly described his crimes in detail."
+  },
+  {
+   "start": 1560.7,
+   "end": 1563.2,
+   "text": "He actually referred to the murders as projects."
+  },
+  {
+   "start": 1563.2,
+   "end": 1569.4,
+   "text": "He laid out exactly how he stalked the Otero family for two to three weeks just because he saw Julie taking her kids to school."
+  },
+  {
+   "start": 1569.4,
+   "end": 1574.5,
+   "text": "He told the court how he scaled their fence and cut the telephone lines before forcing his way inside."
+  },
+  {
+   "start": 1574.5,
+   "end": 1579.1,
+   "text": "He admitted he carried a point-two-two caliber pistol loaded with hollow-point bullets."
+  },
+  {
+   "start": 1579.1,
+   "end": 1586.4,
+   "text": "He even noted that when Joseph Otero complained about a cracked rib from a previous car accident, he placed a pillow under him before killing him."
+  },
+  {
+   "start": 1586.4,
+   "end": 1594.7,
+   "text": "He explained how he drove the stolen family car to a Dillons grocery store, then went all the way back to the crime scene just to retrieve a knife he dropped in the yard."
+  },
+  {
+   "start": 1594.7,
+   "end": 1597.5,
+   "text": "He offered absolutely no apologies for what he had done."
+  },
+  {
+   "start": 1598.1,
+   "end": 1601.2,
+   "text": "The sentencing hearing took place a few weeks later on August 18."
+  },
+  {
+   "start": 1601.2,
+   "end": 1604.9,
+   "text": "The victims' families finally got their chance to make statements in court."
+  },
+  {
+   "start": 1604.9,
+   "end": 1608.8,
+   "text": "After they finished, Rader launched into a rambling thirty-minute monologue."
+  },
+  {
+   "start": 1608.8,
+   "end": 1613,
+   "text": "The prosecutor actually likened the bizarre speech to an Academy Awards acceptance."
+  },
+  {
+   "start": 1613.6,
+   "end": 1618.7,
+   "text": "The case file notes that his statement perfectly illustrated a specific psychological phenomenon."
+  },
+  {
+   "start": 1618.7,
+   "end": 1624,
+   "text": "Experts described it as the inability of a psychopath to understand the emotional content of language."
+  },
+  {
+   "start": 1624,
+   "end": 1627.2,
+   "text": "You already know he was handed ten consecutive life sentences."
+  },
+  {
+   "start": 1627.2,
+   "end": 1634.9,
+   "text": "The judge ordered that he serve at least one hundred and seventy-five years, because Kansas did not enforce the death penalty when the murders occurred."
+  },
+  {
+   "start": 1635.6,
+   "end": 1640.4,
+   "text": "We talked earlier about how his wife Paula secured an emergency divorce right after his arrest."
+  },
+  {
+   "start": 1640.4,
+   "end": 1643.9,
+   "text": "You also know their former Park City home was demolished in March 2007."
+  },
+  {
+   "start": 1644.5,
+   "end": 1648.8,
+   "text": "His daughter Kerri had to reconcile the monster in the courtroom with the man who raised her."
+  },
+  {
+   "start": 1648.8,
+   "end": 1653.2,
+   "text": "She had gone on to earn two degrees from Kansas State University, including one in education."
+  },
+  {
+   "start": 1653.2,
+   "end": 1657.4,
+   "text": "When she married in 2003, Rader actually walked her down the aisle at the church ceremony."
+  },
+  {
+   "start": 1657.4,
+   "end": 1659,
+   "text": "She eventually moved to Michigan."
+  },
+  {
+   "start": 1659,
+   "end": 1664.6,
+   "text": "She had to process the fact that her father maintained frequent contact with her family while hiding a brutal reality."
+  },
+  {
+   "start": 1665.1,
+   "end": 1669.3,
+   "text": "The day after his sentencing, the state permanently removed him from Wichita."
+  },
+  {
+   "start": 1669.3,
+   "end": 1673.9,
+   "text": "On August 19, authorities transferred him to the El Dorado Correctional Facility."
+  },
+  {
+   "start": 1673.9,
+   "end": 1677.8,
+   "text": "The prison is located in Prospect Township within Butler County, Kansas."
+  },
+  {
+   "start": 1677.8,
+   "end": 1680.3,
+   "text": "That is where he remains incarcerated today."
+  },
+  {
+   "start": 1680.8,
+   "end": 1681.4,
+   "text": "Read the file."
+  },
+  {
+   "start": 1681.4,
+   "end": 1682.6,
+   "text": "Form your own conclusion."
+  },
+  {
+   "start": 1682.6,
+   "end": 1683.6,
+   "text": "That's it for this one."
+  },
+  {
+   "start": 1683.6,
+   "end": 1685,
+   "text": "Thanks for hanging out with me."
+  },
+  {
+   "start": 1685,
+   "end": 1687.6,
+   "text": "This has been CrimeTimeSnacks, and I'll catch you next time."
+  }
+ ]
+}

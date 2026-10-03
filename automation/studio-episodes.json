@@ -271,6 +271,31 @@
         "Islandton hunting lodge",
         "Murdaugh trial"
       ]
+    },
+    {
+      "guid": "cts-studio-the-btk-floppy-disk",
+      "title": "The BTK Floppy Disk",
+      "slug": "the-btk-floppy-disk",
+      "date": "2026-10-03",
+      "pubDate": "Sat, 03 Oct 2026 03:40:29 GMT",
+      "duration": "00:28:13",
+      "description": "Welcome back to CrimeTimeSnacks, I'm Cory. Today we're looking at one of the most infamous cold cases in American history, the BTK killer. For decades, a phantom haunted Wichita, Kansas, binding and suffocating victims while sending taunting letters to the police and media.\n\nBut after going completely silent for thirteen years, the killer made a fatal mistake. He decided to reach out one more time, mailing items to law enforcement that would finally unravel his double life as a family man and security alarm installer. We'll trace the timeline from his chilling childhood fantasies to the digital footprint that brought him down.",
+      "audio": "/audio/the-btk-floppy-disk.mp3",
+      "audioType": "audio/mpeg",
+      "audioBytes": 27088081,
+      "image": "/images/episodes/the-btk-floppy-disk.jpg",
+      "link": "",
+      "explicit": false,
+      "source": "studio",
+      "keywords": [
+        "Dennis Rader",
+        "BTK killer",
+        "Wichita Kansas",
+        "true crime",
+        "cold case",
+        "serial killer",
+        "metadata"
+      ]
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "fetched": "2026-10-02T22:20:18.796Z",
+  "fetched": "2026-10-03T03:40:45.260Z",
   "cases": [
     {
       "slug": "maura-murray",
@@ -16,7 +16,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "moscow-idaho-the-plea",
@@ -33,7 +33,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "jonbenet-thirty-years",
@@ -50,24 +50,24 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
-      "slug": "the-murdaugh-family-murders",
-      "title": "The Murdaugh Family Murders",
-      "summary": "Hey everyone, Cory here. Today we are looking at a case that completely consumed the South Carolina Lowcountry. The Murdaugh family was a legal dynasty, but everything started to unravel on a June night in 2021 when Maggie and Paul Murdaugh were found dead near the dog kennels of their hunting lodge.\n\nAlex Murdaugh claimed he was visiting his mother who had dementia when the murders happened. But as investigators dug deeper, cellphone data and a crucial video started telling a very different story. We are diving into the timeline, the botched crime scene, and the massive trial that followed.",
+      "slug": "the-btk-floppy-disk",
+      "title": "The BTK Floppy Disk",
+      "summary": "Welcome back to CrimeTimeSnacks, I'm Cory. Today we're looking at one of the most infamous cold cases in American history, the BTK killer. For decades, a phantom haunted Wichita, Kansas, binding and suffocating victims while sending taunting letters to the police and media.\n\nBut after going completely silent for thirteen years, the killer made a fatal mistake. He decided to reach out one more time, mailing items to law enforcement that would finally unravel his double life as a family man and security alarm installer. We'll trace the timeline from his chilling childhood fantasies to the digital footprint that brought him down.",
       "angle": "",
       "years": "2026",
       "status": "open",
       "category": "case",
       "next_date": null,
       "next_label": "",
-      "image": "/images/episodes/the-murdaugh-family-murders.jpg",
-      "episode_slug": "the-murdaugh-family-murders",
+      "image": "/images/episodes/the-btk-floppy-disk.jpg",
+      "episode_slug": "the-btk-floppy-disk",
       "sources": [],
       "featured": false,
-      "created_at": "2026-09-24T05:44:46.08741+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "created_at": "2026-10-03T03:40:30.155714+00:00",
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "golden-state-killer",
@@ -84,7 +84,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "gabby-petito",
@@ -101,7 +101,24 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
+    },
+    {
+      "slug": "the-murdaugh-family-murders",
+      "title": "The Murdaugh Family Murders",
+      "summary": "Hey everyone, Cory here. Today we are looking at a case that completely consumed the South Carolina Lowcountry. The Murdaugh family was a legal dynasty, but everything started to unravel on a June night in 2021 when Maggie and Paul Murdaugh were found dead near the dog kennels of their hunting lodge.\n\nAlex Murdaugh claimed he was visiting his mother who had dementia when the murders happened. But as investigators dug deeper, cellphone data and a crucial video started telling a very different story. We are diving into the timeline, the botched crime scene, and the massive trial that followed.",
+      "angle": "",
+      "years": "2026",
+      "status": "open",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "/images/episodes/the-murdaugh-family-murders.jpg",
+      "episode_slug": "the-murdaugh-family-murders",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-24T05:44:46.08741+00:00",
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "gilgo-beach-eight-names",
@@ -118,7 +135,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-20T17:04:47.335399+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "murders-in-moscow",
@@ -135,7 +152,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "long-island-serial-killer",
@@ -152,7 +169,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "chris-watts-confession",
@@ -169,7 +186,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "elisa-lam",
@@ -186,7 +203,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "alex-murdaugh",
@@ -203,7 +220,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "btk-dennis-rader",
@@ -220,7 +237,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "zodiac-killer",
@@ -237,7 +254,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "lori-vallow",
@@ -254,7 +271,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "brian-laundrie-notebook",
@@ -271,7 +288,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "kendrick-johnson",
@@ -288,7 +305,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "erik-and-lyle-the-menendez-brothers",
@@ -305,58 +322,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
-    },
-    {
-      "slug": "scott-peterson",
-      "title": "Scott Peterson",
-      "summary": "The Christmas Eve disappearance of Laci Peterson, the Berkeley Marina, and what the LA Innocence Project is now arguing.",
-      "angle": "The Christmas Eve disappearance of Laci Peterson, the Berkeley Marina, and what the LA Innocence Project is now arguing.",
-      "years": "2002-present",
-      "status": "open",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "",
-      "episode_slug": "",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
-    },
-    {
-      "slug": "ted-bundy-escape",
-      "title": "Ted Bundy: The Two Escapes",
-      "summary": "The courthouse window in Aspen, the ceiling in Glenwood Springs, and the Florida murders that followed.",
-      "angle": "The courthouse window in Aspen, the ceiling in Glenwood Springs, and the Florida murders that followed.",
-      "years": "1977-1978",
-      "status": "closed",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "",
-      "episode_slug": "",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
-    },
-    {
-      "slug": "jonbenet-ramsey-dna",
-      "title": "JonBenet Ramsey: The DNA",
-      "summary": "What the touch DNA tested in 2008 did and did not prove, and why Boulder reopened testing in 2023.",
-      "angle": "What the touch DNA tested in 2008 did and did not prove, and why Boulder reopened testing in 2023.",
-      "years": "1996-present",
-      "status": "open",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "",
-      "episode_slug": "",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "delphi-the-appeal",
@@ -373,7 +339,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "the-menendez-brothers-parole-years",
@@ -390,7 +356,58 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-19T10:46:49.066069+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
+    },
+    {
+      "slug": "scott-peterson",
+      "title": "Scott Peterson",
+      "summary": "The Christmas Eve disappearance of Laci Peterson, the Berkeley Marina, and what the LA Innocence Project is now arguing.",
+      "angle": "The Christmas Eve disappearance of Laci Peterson, the Berkeley Marina, and what the LA Innocence Project is now arguing.",
+      "years": "2002-present",
+      "status": "open",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "",
+      "episode_slug": "",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
+    },
+    {
+      "slug": "ted-bundy-escape",
+      "title": "Ted Bundy: The Two Escapes",
+      "summary": "The courthouse window in Aspen, the ceiling in Glenwood Springs, and the Florida murders that followed.",
+      "angle": "The courthouse window in Aspen, the ceiling in Glenwood Springs, and the Florida murders that followed.",
+      "years": "1977-1978",
+      "status": "closed",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "",
+      "episode_slug": "",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
+    },
+    {
+      "slug": "jonbenet-ramsey-dna",
+      "title": "JonBenet Ramsey: The DNA",
+      "summary": "What the touch DNA tested in 2008 did and did not prove, and why Boulder reopened testing in 2023.",
+      "angle": "What the touch DNA tested in 2008 did and did not prove, and why Boulder reopened testing in 2023.",
+      "years": "1996-present",
+      "status": "open",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "",
+      "episode_slug": "",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "adnan-syed",
@@ -407,7 +424,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "amanda-knox",
@@ -424,7 +441,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "kohberger-trial",
@@ -441,7 +458,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "delphi-richard-allen",
@@ -458,7 +475,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "casey-anthony",
@@ -475,7 +492,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "steven-avery",
@@ -492,7 +509,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "madeleine-mccann",
@@ -509,7 +526,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "tylenol-murders",
@@ -526,7 +543,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "dnd-mcstay-family",
@@ -543,7 +560,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "menendez-the-parole-years",
@@ -560,7 +577,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "the-delphi-murder-case-2017",
@@ -577,7 +594,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "the-miami-apartment-stabbing",
@@ -594,7 +611,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-21T02:23:51.906377+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "the-interrogation-of-chris-watts",
@@ -611,7 +628,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-18T12:30:03.688863+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "watts-family-murders",
@@ -628,7 +645,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "jonbenet-ramsey-the-facts-96-22",
@@ -645,7 +662,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     },
     {
       "slug": "jonbenet-ramsey-americas-child-beauty-queen",
@@ -662,7 +679,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-10-01T10:54:50.55396+00:00"
+      "updated_at": "2026-10-03T03:40:30.155714+00:00"
     }
   ],
   "updates": [
@@ -737,6 +754,7 @@
     "the-miami-apartment-stabbing": 0,
     "golden-state-killer": 1,
     "dnd-mcstay-family": 0,
+    "the-btk-floppy-disk": 0,
     "kohberger-trial": 0,
     "steven-avery": 0,
     "the-interrogation-of-chris-watts": 0,
