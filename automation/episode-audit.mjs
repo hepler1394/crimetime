@@ -47,6 +47,7 @@ import { dirname, join } from "node:path";
 import { existsSync } from "node:fs";
 import { VOICE_STARTS_AT } from "./episode-music.mjs";
 import { compareWords } from "./audio-compare.mjs";
+import { spoken, pronounceOk } from "./pronounce.mjs";
 import { paragraphSpans, paragraphAt } from "./audio-paragraphs.mjs";
 import { confirmFindings } from "./audio-confirm.mjs";
 import { measure, delivery, repeats, LIMITS } from "./audio-delivery.mjs";
@@ -110,9 +111,12 @@ if (opt("--asr")) {
 // moment a paragraph is heard as the moment its last word BEGAN.
 const heardWords = (asr.words || (Array.isArray(asr) ? asr.flatMap((s) => s.words || []) : [])).map((w) => ({ raw: w.w, s: w.s, e: w.e ?? w.s, p: w.p }));
 
-const paras = (ep.script || []).filter(Boolean);
+// What the clone was asked to say: names respelled by pronunciations.json, so "Murdock" on
+// tape is not a finding against "Murdaugh" in the script.
+const paras = (ep.script || []).filter(Boolean).map(spoken);
+const audioOk = [...(ep.audioOk || []), ...pronounceOk()];
 const asrWords = heardWords.map((h) => ({ w: h.raw, s: h.s, e: h.e, p: h.p }));
-const cmp = compareWords(paras, asrWords, ep.audioOk || []);
+const cmp = compareWords(paras, asrWords, audioOk);
 const A = { length: cmp.scriptWords }, B = { length: cmp.heardWordCount };
 
 // Where each paragraph actually sits in the voice track, read from the transcript.
@@ -133,7 +137,7 @@ let candidates = cmp.findings.map((f) => {
 let unstable = [];
 if (!args.includes("--no-confirm") && candidates.length && sp.spans.length) {
   const res = await confirmFindings(voice, candidates, paras, sp.spans, {
-    work: join(dir, "audit-confirm"), asr: join(STUDIO, "asr_words.py"), audioOk: ep.audioOk || [], say });
+    work: join(dir, "audit-confirm"), asr: join(STUDIO, "asr_words.py"), audioOk, say });
   if (res.ran) { candidates = res.kept; unstable = res.dropped; }
 }
 for (const f of candidates) findings.push({ ...f, at: f.at + VOICE_STARTS_AT });

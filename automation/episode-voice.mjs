@@ -27,6 +27,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { mixEpisode, probeSeconds } from "./episode-music.mjs";
 import { normalizeTheme } from "./episode-format.mjs";
+import { spoken } from "./pronounce.mjs";
 import { segmentsFromSpans, SCRIPT_NOTE, SCRIPT_MODEL } from "./script-transcript.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -101,7 +102,9 @@ async function joinParts(parts, work, gap = 0.55) {
 // render has to be resumable: tts_clone.py skips paragraphs it has already voiced.
 const work = join(dir, "tts");
 const planPath = join(work, "paragraphs.jsonl");
-const plan = (ep.script || []).filter(Boolean).map((text, i) => JSON.stringify({ i, text })).join("\n");
+// The clone gets names respelled the way they are said (pronunciations.json); the script
+// and the transcript keep the real spelling.
+const plan = (ep.script || []).filter(Boolean).map((text, i) => JSON.stringify({ i, text: spoken(text) })).join("\n");
 const samePlan = await readFile(planPath, "utf8").then((t) => t === plan).catch(() => false);
 if (!samePlan) await rm(work, { recursive: true, force: true });
 await mkdir(work, { recursive: true });

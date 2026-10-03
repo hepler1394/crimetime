@@ -1,0 +1,10 @@
+{
+  "_about": "Names the voice clone says wrong, mapped to a spelling it says right. Only the voice sees the right-hand side; scripts, transcripts and the site keep the real spelling. See automation/pronounce.mjs.",
+  "words": {
+    "Murdaugh": "Murdock",
+    "Murdaughs": "Murdocks",
+    "Goncalves": "Gonsalvez",
+    "Laundrie": "Lawndree",
+    "Laundries": "Lawndrees"
+  }
+}

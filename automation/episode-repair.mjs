@@ -24,6 +24,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { existsSync } from "node:fs";
 import { compareWords } from "./audio-compare.mjs";
+import { spoken, pronounceOk } from "./pronounce.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const STUDIO = join(here, "studio");
@@ -50,7 +51,7 @@ const want = new Set([...(opt("--paragraphs") ? opt("--paragraphs").split(",").m
   ...Object.keys(edits).filter((k) => edits[k].script).map(Number)]);
 for (const k of Object.keys(edits)) if (edits[k].drop) want.delete(+k);
 if (!want.size && !Object.values(edits).some((e) => e.drop)) die("nothing", `${id} has nothing flagged. Run episode-audit.mjs first.`);
-const textOf = (i) => ({ script: edits[i]?.script || paras[i], spoken: edits[i]?.spoken || edits[i]?.script || paras[i] });
+const textOf = (i) => ({ script: edits[i]?.script || paras[i], spoken: edits[i]?.spoken || spoken(edits[i]?.script || paras[i]) });
 
 // --recheck: judge the attempts a previous run kept (repair/roundN) again, without rendering or
 // transcribing anything. For when the checker was wrong, not the audio: on 2026-09-19 it held the
@@ -97,7 +98,7 @@ for (let r = 1; r <= rounds && remaining.length; r++) {
   const next = [];
   for (const i of remaining) {
     const f = join(rdir, pName(i));
-    const { findings } = compareWords([textOf(i).spoken], words[f] || [], ep.audioOk || []);
+    const { findings } = compareWords([textOf(i).spoken], words[f] || [], [...(ep.audioOk || []), ...pronounceOk()]);
     (history[i] ||= []).push({ round: r, findings: findings.map((x) => `${x.kind}: ${x.text}`) });
     if (findings.length) { next.push(i); say(`  paragraph ${i}: still wrong (${findings[0].text})`); }
     else { accepted[i] = f; await copyFile(f, join(work, "accepted", pName(i))); say(`  paragraph ${i}: clean`); }
