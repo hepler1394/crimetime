@@ -2,9 +2,9 @@
  "slug": "murders-in-moscow-the-plea",
  "title": "Murders in Moscow: The Plea",
  "language": "en",
- "duration": 1345.6,
- "model": "episode script, timed to the recording (paragraphs read against the audit transcript)",
- "generated": "2026-09-25",
+ "duration": 1347.4,
+ "model": "episode script, timed to the recording",
+ "generated": "2026-10-03",
  "note": "This transcript is the episode script as written and fact-checked, timed to the recording. Timestamps are approximate within a sentence.",
  "segments": [
   {
@@ -29,1397 +29,1397 @@
   },
   {
    "start": 25,
-   "end": 29,
+   "end": 28.9,
    "text": "You've probably heard the headline version of what happened in Moscow, Idaho."
   },
   {
-   "start": 29,
-   "end": 36.5,
+   "start": 28.9,
+   "end": 36.4,
    "text": "In the early morning hours of November 13, 2022, four University of Idaho students were fatally stabbed in their off-campus rental house on King Road."
   },
   {
-   "start": 36.5,
-   "end": 43.2,
+   "start": 36.4,
+   "end": 43,
    "text": "Ethan Chapin, Madison Mogen, Xana Kernodle, and Kaylee Goncalves were all killed in an attack that lasted roughly fifteen minutes."
   },
   {
-   "start": 43.2,
-   "end": 49.3,
+   "start": 43,
+   "end": 49,
    "text": "The coroner stated they were likely asleep when the intruder entered, though some fought back and had defensive wounds."
   },
   {
-   "start": 49.8,
-   "end": 52.4,
+   "start": 49.6,
+   "end": 52.1,
    "text": "Two other roommates were inside the house that night."
   },
   {
-   "start": 52.4,
-   "end": 57.2,
+   "start": 52.1,
+   "end": 56.9,
    "text": "The case file shows they remained in the home during the attacks but were left completely unharmed."
   },
   {
-   "start": 57.2,
-   "end": 62.6,
+   "start": 56.9,
+   "end": 62.4,
    "text": "When authorities responded to a 911 call just before noon, they found a brutal scene with no signs of forced entry."
   },
   {
-   "start": 62.6,
-   "end": 66.9,
+   "start": 62.4,
+   "end": 66.6,
    "text": "They also found a massive piece of evidence left behind on a bed next to one of the victims."
   },
   {
-   "start": 67.4,
-   "end": 71.6,
+   "start": 67.2,
+   "end": 71.3,
    "text": "Investigators discovered a leather knife sheath right there at the crime scene."
   },
   {
-   "start": 71.6,
-   "end": 74.8,
+   "start": 71.3,
+   "end": 74.5,
    "text": "That sheath yielded touch DNA matching a single male profile."
   },
   {
-   "start": 74.8,
-   "end": 84.8,
+   "start": 74.5,
+   "end": 84.6,
    "text": "Police used investigative genetic genealogy to link that DNA to public databases, which pointed them straight to a Washington State University criminology student living just eight miles away."
   },
   {
-   "start": 84.8,
-   "end": 92.5,
+   "start": 84.6,
+   "end": 92.3,
    "text": "On December 30, authorities arrested Bryan Kohberger at his parents' house in Pennsylvania and charged him with four counts of first-degree murder."
   },
   {
-   "start": 93.1,
-   "end": 97.3,
+   "start": 92.8,
+   "end": 97,
    "text": "He eventually took a plea deal that put him in prison for four consecutive life sentences."
   },
   {
-   "start": 97.3,
-   "end": 100.2,
+   "start": 97,
+   "end": 100,
    "text": "Now he wants to take that plea back and claims actual innocence."
   },
   {
-   "start": 100.2,
-   "end": 106.1,
+   "start": 100,
+   "end": 105.9,
    "text": "To understand how we got to this massive reversal, we need to look at what the evidence actually shows from the very beginning."
   },
   {
-   "start": 106.1,
-   "end": 109.3,
+   "start": 105.9,
+   "end": 109,
    "text": "The record starts with the timeline of that frigid November night."
   },
   {
-   "start": 109.8,
-   "end": 113.1,
+   "start": 109.5,
+   "end": 112.9,
    "text": "At 1:45 a.m., Xana and Ethan returned to the King Road house."
   },
   {
-   "start": 113.1,
-   "end": 117.7,
+   "start": 112.9,
+   "end": 117.5,
    "text": "Eleven minutes later, Madison and Kaylee got a ride home from a private individual."
   },
   {
-   "start": 117.7,
-   "end": 124.6,
+   "start": 117.5,
+   "end": 124.3,
    "text": "At 4:00 a.m., Xana received a DoorDash order, and phone records show she was using the TikTok app twelve minutes after that."
   },
   {
-   "start": 124.6,
-   "end": 132,
+   "start": 124.3,
+   "end": 131.8,
    "text": "Detectives believe all four murders occurred between 4:00 and 4:25 a.m. Madison and Kaylee were killed in a bedroom on the third floor."
   },
   {
-   "start": 132,
-   "end": 135.4,
+   "start": 131.8,
+   "end": 135.1,
    "text": "Xana and Ethan were murdered in a bedroom on the second floor."
   },
   {
-   "start": 135.4,
-   "end": 139.2,
+   "start": 135.1,
+   "end": 138.9,
    "text": "Investigators believe the killer used a fixed-blade KA-BAR knife."
   },
   {
-   "start": 139.2,
-   "end": 141.3,
+   "start": 138.9,
+   "end": 141,
    "text": "That weapon has never been recovered."
   },
   {
-   "start": 141.8,
-   "end": 146.3,
+   "start": 141.6,
+   "end": 146.4,
    "text": "When a massive case like this breaks, the public reaction is always a major part of the story."
   },
   {
-   "start": 146.3,
-   "end": 150.1,
+   "start": 146.4,
+   "end": 150.4,
    "text": "The limited flow of information from authorities frustrated a lot of people."
   },
   {
-   "start": 150.1,
-   "end": 157.4,
+   "start": 150.4,
+   "end": 158.4,
    "text": "The fathers of Kaylee Goncalves and Ethan Chapin openly criticized the lack of communication from police and the university to the victims' families."
   },
   {
-   "start": 157.4,
-   "end": 159.1,
+   "start": 158.4,
+   "end": 160.1,
    "text": "The fear on campus was immediate."
   },
   {
-   "start": 159.1,
-   "end": 161.5,
+   "start": 160.1,
+   "end": 162.8,
    "text": "The university canceled classes for November 14."
   },
   {
-   "start": 161.5,
-   "end": 166.9,
+   "start": 162.8,
+   "end": 168.5,
    "text": "From the very day of the killings, investigators initially told the public there was no risk to the community."
   },
   {
-   "start": 166.9,
-   "end": 170.7,
+   "start": 168.5,
+   "end": 172.6,
    "text": "But just three days later, Moscow Police Chief James Fry had to reverse course."
   },
   {
-   "start": 170.7,
-   "end": 174.5,
+   "start": 172.6,
+   "end": 176.7,
    "text": "He stood in front of the press and stated they could not say there was no threat."
   },
   {
-   "start": 174.5,
-   "end": 178.9,
+   "start": 176.7,
+   "end": 181.4,
    "text": "That sudden shift completely fractured the community's trust in those early assurances."
   },
   {
-   "start": 179.4,
-   "end": 184,
+   "start": 182,
+   "end": 186.5,
    "text": "Fall break was scheduled to begin after November 18, with classes resuming ten days later."
   },
   {
-   "start": 184,
-   "end": 186.6,
+   "start": 186.5,
+   "end": 189,
    "text": "But students and Moscow residents were terrified."
   },
   {
-   "start": 186.6,
-   "end": 190.5,
+   "start": 189,
+   "end": 192.8,
    "text": "They started an early Thanksgiving holiday exodus just to get out of the area."
   },
   {
-   "start": 190.5,
-   "end": 196.5,
+   "start": 192.8,
+   "end": 198.7,
    "text": "The people who stayed behind were incredibly anxious, and some professors simply canceled their remaining classes."
   },
   {
-   "start": 196.5,
-   "end": 201.9,
+   "start": 198.7,
+   "end": 204,
    "text": "The university tried to organize a candlelight vigil on the administration building lawn for November 16."
   },
   {
-   "start": 201.9,
-   "end": 204,
+   "start": 204,
+   "end": 206.1,
    "text": "They ended up postponing it for two weeks."
   },
   {
-   "start": 204,
-   "end": 210.1,
+   "start": 206.1,
+   "end": 212,
    "text": "Due to weather concerns, grieving families and classmates finally gathered indoors at the Kibbie Dome on November 30."
   },
   {
-   "start": 210.1,
-   "end": 215.5,
+   "start": 212,
+   "end": 217.3,
    "text": "Ethan's mother, Stacy Chapin, cried as she told the mourners that time is precious and you cannot get it back."
   },
   {
-   "start": 215.5,
-   "end": 221.5,
+   "start": 217.3,
+   "end": 223.1,
    "text": "Kaylee's dad, Steve Goncalves, spoke about how his daughter and Madison had been inseparable since the sixth grade."
   },
   {
-   "start": 221.5,
-   "end": 227.4,
+   "start": 223.1,
+   "end": 228.9,
    "text": "He shared the heartbreaking detail that the two lifelong best friends died together in the same room, in the same bed."
   },
   {
-   "start": 227.9,
-   "end": 231.7,
+   "start": 229.5,
+   "end": 233.2,
    "text": "Let's unpack the staggering administrative details of the investigation."
   },
   {
-   "start": 231.7,
-   "end": 235,
+   "start": 233.2,
+   "end": 236.5,
    "text": "The Moscow Police Department didn't work this massive case alone."
   },
   {
-   "start": 235,
-   "end": 238.5,
+   "start": 236.5,
+   "end": 240,
    "text": "They relied heavily on support from the Idaho State Police and the FBI."
   },
   {
-   "start": 238.5,
-   "end": 243.2,
+   "start": 240,
+   "end": 244.8,
    "text": "Nearly one hundred and thirty law enforcement personnel were assigned to work on the homicides."
   },
   {
-   "start": 243.8,
-   "end": 248.5,
+   "start": 245.3,
+   "end": 250.1,
    "text": "The sheer volume of public input they had to manage was unprecedented for the small department."
   },
   {
-   "start": 248.5,
-   "end": 253.8,
+   "start": 250.1,
+   "end": 255.4,
    "text": "Investigators set up dedicated phone lines and email addresses through the FBI just to handle the influx."
   },
   {
-   "start": 253.8,
-   "end": 259.8,
+   "start": 255.4,
+   "end": 261.3,
    "text": "By early December, they had already logged over two thousand six hundred emails and twenty-seven hundred phone calls."
   },
   {
-   "start": 259.8,
-   "end": 264.1,
+   "start": 261.3,
+   "end": 265.6,
    "text": "They also processed a thousand digital media submissions from people trying to help."
   },
   {
-   "start": 264.6,
-   "end": 267.1,
+   "start": 266.2,
+   "end": 268.7,
    "text": "The tips just kept pouring in as the weeks went on."
   },
   {
-   "start": 267.1,
-   "end": 272.2,
+   "start": 268.7,
+   "end": 273.7,
    "text": "On December 24, investigators reported receiving over fifteen thousand tips regarding the case."
   },
   {
-   "start": 272.2,
-   "end": 276.9,
+   "start": 273.7,
+   "end": 278.5,
    "text": "Every single one of those leads had to be cataloged, assigned, and tracked by that task force."
   },
   {
-   "start": 276.9,
-   "end": 280.3,
+   "start": 278.5,
+   "end": 281.8,
    "text": "Investigators were chasing down everything, even early rumors."
   },
   {
-   "start": 280.8,
-   "end": 285.4,
+   "start": 282.3,
+   "end": 286.9,
    "text": "For example, the police chief had previously mentioned receiving tips that Kaylee had a stalker."
   },
   {
-   "start": 285.4,
-   "end": 289.9,
+   "start": 286.9,
+   "end": 291.4,
    "text": "Investigators chased that down but could not verify the claim or identify any such individual."
   },
   {
-   "start": 289.9,
-   "end": 293.4,
+   "start": 291.4,
+   "end": 294.9,
    "text": "They also initially left open the possibility of multiple perpetrators."
   },
   {
-   "start": 293.4,
-   "end": 300.4,
+   "start": 294.9,
+   "end": 302,
    "text": "Early on, police stated they believed it was a targeted attack, but they hadn't concluded if the target was the house itself or the specific occupants."
   },
   {
-   "start": 301,
-   "end": 304,
+   "start": 302.5,
+   "end": 305.6,
    "text": "That information vacuum was quickly filled by the internet."
   },
   {
-   "start": 304,
-   "end": 308.6,
+   "start": 305.6,
+   "end": 310.2,
    "text": "TikTokers, self-proclaimed psychics, and social media users began to speculate wildly."
   },
   {
-   "start": 308.6,
-   "end": 314.4,
+   "start": 310.2,
+   "end": 315.9,
    "text": "Rampant rumors and misinformation started spreading online as people tried to solve the case from their couches."
   },
   {
-   "start": 314.4,
-   "end": 318.8,
+   "start": 315.9,
+   "end": 320.3,
    "text": "The Moscow Police Department had to step in and push back against the internet sleuths."
   },
   {
-   "start": 318.8,
-   "end": 322.7,
+   "start": 320.3,
+   "end": 324.3,
    "text": "They criticized these online investigators for creating a huge distraction."
   },
   {
-   "start": 322.7,
-   "end": 331.1,
+   "start": 324.3,
+   "end": 332.7,
    "text": "Police warned that spreading false facts and speculation without factual backing was stoking community fears and threatening the integrity of the investigation."
   },
   {
-   "start": 331.1,
-   "end": 340.3,
+   "start": 332.7,
+   "end": 341.9,
    "text": "Moscow Police Captain Roger Lanier publicly stated that tracking down and quelling rumors about events that never even happened was pulling resources away from the actual manhunt."
   },
   {
-   "start": 340.3,
-   "end": 345.5,
+   "start": 341.9,
+   "end": 347.1,
    "text": "He explained they were keeping specific details quiet because they did not want to compromise the case."
   },
   {
-   "start": 345.5,
-   "end": 348.1,
+   "start": 347.1,
+   "end": 349.6,
    "text": "The department even had to issue a formal warning."
   },
   {
-   "start": 348.1,
-   "end": 354.9,
+   "start": 349.6,
+   "end": 356.4,
    "text": "They made it clear that people harassing or threatening those potentially involved with the case could face actual criminal charges."
   },
   {
-   "start": 355.4,
-   "end": 359.2,
+   "start": 357,
+   "end": 360.8,
    "text": "The legal battle started before the ink on the charging documents was even dry."
   },
   {
-   "start": 359.2,
-   "end": 367.3,
+   "start": 360.8,
+   "end": 368.8,
    "text": "The case file shows Pennsylvania State Police and the FBI coordinated a pre-dawn raid at his parents' home in Albrightsville, where he had traveled for winter break."
   },
   {
-   "start": 367.3,
-   "end": 373,
+   "start": 368.8,
+   "end": 374.5,
    "text": "Investigators executed search warrants and seized personal electronics, clothing, and the white Hyundai Elantra."
   },
   {
-   "start": 373,
-   "end": 377.4,
+   "start": 374.5,
+   "end": 378.9,
    "text": "After his arrest in Pennsylvania, he was held at the Monroe County Correctional Facility."
   },
   {
-   "start": 377.4,
-   "end": 380.1,
+   "start": 378.9,
+   "end": 381.6,
    "text": "Kohberger waived his right to extradition on January 3."
   },
   {
-   "start": 380.1,
-   "end": 384.6,
+   "start": 381.6,
+   "end": 386.1,
    "text": "He was flown back to Idaho the very next day and remanded to the Latah County jail without bail."
   },
   {
-   "start": 384.6,
-   "end": 390.6,
+   "start": 386.1,
+   "end": 392.2,
    "text": "A judge quickly issued a strict gag order that barred attorneys and law enforcement from discussing the case with the public."
   },
   {
-   "start": 391.2,
-   "end": 397,
+   "start": 392.7,
+   "end": 398.5,
    "text": "Kohberger was appointed a public defender to navigate what was shaping up to be a massive capital murder trial."
   },
   {
-   "start": 397,
-   "end": 401.7,
+   "start": 398.5,
+   "end": 403.3,
    "text": "His defense team, which included attorney Anne Taylor, immediately went on the offensive."
   },
   {
-   "start": 401.7,
-   "end": 411.6,
+   "start": 403.3,
+   "end": 413.1,
    "text": "They filed a wave of pretrial motions asking the court to dismiss the indictment, to suppress the biological evidence, and to challenge the state's use of investigative genetic genealogy."
   },
   {
-   "start": 411.6,
-   "end": 417.5,
+   "start": 413.1,
+   "end": 419,
    "text": "Before the arrest, authorities had collected trash from the Pennsylvania home and sent it to the Idaho State Lab."
   },
   {
-   "start": 417.5,
-   "end": 423.3,
+   "start": 419,
+   "end": 424.8,
    "text": "That trash yielded a familial DNA match to Kohberger's father, which investigators used to secure the warrant."
   },
   {
-   "start": 423.9,
-   "end": 429.8,
+   "start": 425.4,
+   "end": 431.3,
    "text": "By May 2023, a grand jury indicted Kohberger on four counts of first-degree murder and one count of felony burglary."
   },
   {
-   "start": 429.8,
-   "end": 433.5,
+   "start": 431.3,
+   "end": 435.1,
    "text": "Prosecutors built their case on more than just the DNA on the knife sheath."
   },
   {
-   "start": 433.5,
-   "end": 440.2,
+   "start": 435.1,
+   "end": 441.8,
    "text": "Surveillance footage showed a white Hyundai Elantra driving near the house multiple times during the exact window of the attacks."
   },
   {
-   "start": 440.2,
-   "end": 450.6,
+   "start": 441.8,
+   "end": 452.1,
    "text": "Cell network records also indicated Kohberger's phone registered near the residence at least twelve times in the months before the murders, though the signal vanished during the hours of the slayings."
   },
   {
-   "start": 450.6,
-   "end": 452.9,
+   "start": 452.1,
+   "end": 454.4,
    "text": "At his arraignment, he chose to stand silent."
   },
   {
-   "start": 452.9,
-   "end": 456.8,
+   "start": 454.4,
+   "end": 458.3,
    "text": "This prompted the presiding judge to enter a plea of not guilty on his behalf."
   },
   {
-   "start": 456.8,
-   "end": 462.4,
+   "start": 458.3,
+   "end": 463.9,
    "text": "On June 26, the Latah County Prosecutor's office officially declared their intent to seek the death penalty."
   },
   {
-   "start": 463,
-   "end": 468.1,
+   "start": 464.5,
+   "end": 469.7,
    "text": "Prosecutors cited the aggravating circumstances of the murders to justify the ultimate punishment."
   },
   {
-   "start": 468.1,
-   "end": 471.7,
+   "start": 469.7,
+   "end": 473.2,
    "text": "That decision raised the stakes of the upcoming trial significantly."
   },
   {
-   "start": 471.7,
-   "end": 473.3,
+   "start": 473.2,
+   "end": 474.9,
    "text": "It was a full-blown capital case."
   },
   {
-   "start": 473.3,
-   "end": 478.1,
+   "start": 474.9,
+   "end": 479.6,
    "text": "For a small college town that had not seen a single murder since 2015, the pressure was immense."
   },
   {
-   "start": 478.1,
-   "end": 482.2,
+   "start": 479.6,
+   "end": 483.8,
    "text": "Even with the charges filed, a motive for the crimes remained completely unknown."
   },
   {
-   "start": 482.8,
-   "end": 487.5,
+   "start": 484.3,
+   "end": 489.1,
    "text": "As they prepared for trial, his attorneys offered an alternate explanation for his whereabouts."
   },
   {
-   "start": 487.5,
-   "end": 491.6,
+   "start": 489.1,
+   "end": 493.2,
    "text": "They stated that Kohberger was simply out driving alone on the night of the killings."
   },
   {
-   "start": 491.6,
-   "end": 496.7,
+   "start": 493.2,
+   "end": 498.2,
    "text": "The defense also successfully pushed to transfer the case to Ada County due to intense local publicity."
   },
   {
-   "start": 496.7,
-   "end": 502.6,
+   "start": 498.2,
+   "end": 504.1,
    "text": "On September 9, the Idaho Supreme Court officially moved the trial to Boise and assigned Judge Steven Hippler to take over."
   },
   {
-   "start": 502.6,
-   "end": 505.6,
+   "start": 504.1,
+   "end": 507.1,
    "text": "Kohberger was flown south and booked into the Ada County jail."
   },
   {
-   "start": 505.6,
-   "end": 508.8,
+   "start": 507.1,
+   "end": 510.3,
    "text": "The battle lines for a death penalty trial were officially drawn."
   },
   {
-   "start": 509.3,
-   "end": 513.7,
+   "start": 510.9,
+   "end": 515.2,
    "text": "The calendar just kept shifting as both sides argued over the rules of engagement."
   },
   {
-   "start": 513.7,
-   "end": 518,
+   "start": 515.2,
+   "end": 519.5,
    "text": "A preliminary probable cause hearing was originally put on the docket for June 26."
   },
   {
-   "start": 518,
-   "end": 523.4,
+   "start": 519.5,
+   "end": 524.9,
    "text": "That hearing ended up being canceled entirely once the grand jury handed down their indictment in May."
   },
   {
-   "start": 523.4,
-   "end": 531.3,
+   "start": 524.9,
+   "end": 532.9,
    "text": "That indictment included the four murder charges plus one count of felony burglary, which meant breaking into a home with the intent to commit a felony."
   },
   {
-   "start": 531.3,
-   "end": 538.4,
+   "start": 532.9,
+   "end": 539.9,
    "text": "As the motions piled up, the judge tentatively set jury selection to start on August 4, 2025, with the trial beginning two weeks later."
   },
   {
-   "start": 538.9,
-   "end": 543.7,
+   "start": 540.5,
+   "end": 545.3,
    "text": "The defense team knew the touch DNA on that tan leather sheath was the state's most powerful weapon."
   },
   {
-   "start": 543.7,
-   "end": 545.4,
+   "start": 545.3,
+   "end": 546.9,
    "text": "They made it their primary target."
   },
   {
-   "start": 545.4,
-   "end": 547.5,
+   "start": 546.9,
+   "end": 549,
    "text": "They didn't just question the swab itself."
   },
   {
-   "start": 547.5,
-   "end": 551.9,
+   "start": 549,
+   "end": 553.4,
    "text": "They went after the entire method investigators used to put a name to that genetic profile."
   },
   {
-   "start": 552.4,
-   "end": 556.8,
+   "start": 554,
+   "end": 558.3,
    "text": "The arguments centered entirely around the use of investigative genetic genealogy."
   },
   {
-   "start": 556.8,
-   "end": 562,
+   "start": 558.3,
+   "end": 563.6,
    "text": "The record shows local police originally handed the DNA sample to Othram, a private forensic company."
   },
   {
-   "start": 562,
-   "end": 565,
+   "start": 563.6,
+   "end": 566.5,
    "text": "Othram started building family trees, but they hit a wall."
   },
   {
-   "start": 565,
-   "end": 569.7,
+   "start": 566.5,
+   "end": 571.2,
    "text": "The closest match they found shared just over seventy centimorgans of DNA with the suspect."
   },
   {
-   "start": 569.7,
-   "end": 573.3,
+   "start": 571.2,
+   "end": 574.8,
    "text": "That is the genetic equivalent of sharing a great-great-grandparent."
   },
   {
-   "start": 573.3,
-   "end": 580.1,
+   "start": 574.8,
+   "end": 581.6,
    "text": "The company suggested contacting potential relatives to narrow the pool, but the FBI stepped in and took over the search completely."
   },
   {
-   "start": 580.6,
-   "end": 584,
+   "start": 582.2,
+   "end": 585.5,
    "text": "That handoff became the cornerstone of the defense's challenge."
   },
   {
-   "start": 584,
-   "end": 589.3,
+   "start": 585.5,
+   "end": 590.8,
    "text": "To find a closer match, the FBI ran the profile through ancestral websites like GEDmatch and MyHeritage."
   },
   {
-   "start": 589.3,
-   "end": 594.7,
+   "start": 590.8,
+   "end": 596.3,
    "text": "The Bureau later acknowledged those searches included users who had not opted in to law enforcement access."
   },
   {
-   "start": 594.7,
-   "end": 600.5,
+   "start": 596.3,
+   "end": 602.1,
    "text": "The defense pointed out this went directly against a Justice Department policy regarding explicit user consent."
   },
   {
-   "start": 600.5,
-   "end": 602.5,
+   "start": 602.1,
+   "end": 604,
    "text": "But the controversial search worked."
   },
   {
-   "start": 602.5,
-   "end": 608.4,
+   "start": 604,
+   "end": 609.9,
    "text": "The FBI found a relative sharing two hundred and fifty centimorgans of DNA, drastically narrowing the suspect pool."
   },
   {
-   "start": 608.9,
-   "end": 614.1,
+   "start": 610.5,
+   "end": 615.7,
    "text": "The family tree data just gave them a name to look at, which led them to the trash outside the Pennsylvania home."
   },
   {
-   "start": 614.1,
-   "end": 616,
+   "start": 615.7,
+   "end": 617.5,
    "text": "The actual legal proof came even later."
   },
   {
-   "start": 616,
-   "end": 621.7,
+   "start": 617.5,
+   "end": 623.2,
    "text": "Later samples taken from Kohberger after he was apprehended provided a statistical match to the DNA on the knife sheath."
   },
   {
-   "start": 622.3,
-   "end": 628.7,
+   "start": 623.8,
+   "end": 630.3,
    "text": "With the DNA battle raging, intense scrutiny shifted to the cellular network records to track the accused's movements."
   },
   {
-   "start": 628.7,
-   "end": 634.9,
+   "start": 630.3,
+   "end": 636.5,
    "text": "Cell phone data shows his phone stopped connecting to the network in Pullman at 2:47 a.m. on the night of the murders."
   },
   {
-   "start": 634.9,
-   "end": 639.4,
+   "start": 636.5,
+   "end": 640.9,
    "text": "It did not reconnect until 4:48 a.m. near Blaine, Idaho, which sits south of Moscow."
   },
   {
-   "start": 639.4,
-   "end": 646.2,
+   "start": 640.9,
+   "end": 647.7,
    "text": "Investigators argue the device was intentionally turned off or put into airplane mode during the exact window of the attacks."
   },
   {
-   "start": 646.7,
-   "end": 649.6,
+   "start": 648.3,
+   "end": 651.1,
    "text": "But the timeline didn't just focus on that single night."
   },
   {
-   "start": 649.6,
-   "end": 656.9,
+   "start": 651.1,
+   "end": 658.5,
    "text": "Historical location data indicated the phone pinged from the tower nearest the residence at least twelve times between June 2022 and November 13."
   },
   {
-   "start": 657.5,
-   "end": 659.3,
+   "start": 659,
+   "end": 660.8,
    "text": "There was one more digital detail."
   },
   {
-   "start": 659.3,
-   "end": 665.8,
+   "start": 660.8,
+   "end": 667.3,
    "text": "Cell phone data showed the phone connected to a cell tower near the victims' residence again at roughly 9:00 a.m. on November 13."
   },
   {
-   "start": 665.8,
-   "end": 671.3,
+   "start": 667.3,
+   "end": 672.9,
    "text": "That is about five hours after the slayings, but still hours before the surviving roommates ever called 911."
   },
   {
-   "start": 671.9,
-   "end": 677.3,
+   "start": 673.4,
+   "end": 678.9,
    "text": "The court calendar was locked for a massive capital trial, with jury selection set for August 2025."
   },
   {
-   "start": 677.3,
-   "end": 682.6,
+   "start": 678.9,
+   "end": 684.1,
    "text": "Both sides had spent years arguing over cellular data, genetic genealogy, and police tactics."
   },
   {
-   "start": 682.6,
-   "end": 685.4,
+   "start": 684.1,
+   "end": 686.9,
    "text": "Then, on June 30, everything came to an abrupt halt."
   },
   {
-   "start": 685.4,
-   "end": 689.2,
+   "start": 686.9,
+   "end": 690.7,
    "text": "An announcement confirmed a sudden shift in the legal proceedings."
   },
   {
-   "start": 689.7,
-   "end": 694.7,
+   "start": 691.2,
+   "end": 696.2,
    "text": "The prosecution and the defense had reached a comprehensive plea agreement behind closed doors."
   },
   {
-   "start": 694.7,
-   "end": 698,
+   "start": 696.2,
+   "end": 699.6,
    "text": "Kohberger agreed to plead guilty to all five charges against him."
   },
   {
-   "start": 698,
-   "end": 703.2,
+   "start": 699.6,
+   "end": 704.7,
    "text": "That meant accepting the four counts of first-degree murder and the single count of felony burglary."
   },
   {
-   "start": 703.2,
-   "end": 705.7,
+   "start": 704.7,
+   "end": 707.3,
    "text": "In exchange, the death penalty came off the table."
   },
   {
-   "start": 706.3,
-   "end": 710.1,
+   "start": 707.8,
+   "end": 711.7,
    "text": "The deal was specifically structured for Kohberger to avoid the death penalty."
   },
   {
-   "start": 710.1,
-   "end": 714.6,
+   "start": 711.7,
+   "end": 716.1,
    "text": "State prosecutors formally agreed to withdraw capital punishment from the table entirely."
   },
   {
-   "start": 714.6,
-   "end": 719.8,
+   "start": 716.1,
+   "end": 721.3,
    "text": "The terms dictated that he would accept four consecutive life sentences without the possibility of parole."
   },
   {
-   "start": 719.8,
-   "end": 723.4,
+   "start": 721.3,
+   "end": 725,
    "text": "He also agreed to serve an additional ten years for the burglary conviction."
   },
   {
-   "start": 724,
-   "end": 728.3,
+   "start": 725.5,
+   "end": 729.8,
    "text": "To finalize this arrangement, Kohberger had to waive his right to any future appeals."
   },
   {
-   "start": 728.3,
-   "end": 731.5,
+   "start": 729.8,
+   "end": 733.1,
    "text": "The agreement guaranteed he would remain in prison until he dies."
   },
   {
-   "start": 732.1,
-   "end": 736.7,
+   "start": 733.6,
+   "end": 738.2,
    "text": "Two days later, on July 2, Kohberger walked into the Ada County Courthouse to make it official."
   },
   {
-   "start": 736.7,
-   "end": 741.1,
+   "start": 738.2,
+   "end": 742.6,
    "text": "The judge still needed to formally accept the terms and conduct the change of plea hearing."
   },
   {
-   "start": 741.1,
-   "end": 743.2,
+   "start": 742.6,
+   "end": 744.7,
    "text": "We know exactly what happened in that room."
   },
   {
-   "start": 743.2,
-   "end": 747,
+   "start": 744.7,
+   "end": 748.6,
    "text": "For the very first time, the defendant publicly admitted to the four killings."
   },
   {
-   "start": 747,
-   "end": 752.1,
+   "start": 748.6,
+   "end": 753.6,
    "text": "Judge Hippler looked directly at him and asked if he was pleading guilty because he was actually guilty."
   },
   {
-   "start": 752.6,
-   "end": 756.3,
+   "start": 754.2,
+   "end": 757.8,
    "text": "When prompted by the court, Kohberger officially entered his guilty plea."
   },
   {
-   "start": 756.3,
-   "end": 761.6,
+   "start": 757.8,
+   "end": 763.1,
    "text": "He confirmed out loud that he was waiving his right to a trial and giving up all future appeals to secure the deal."
   },
   {
-   "start": 761.6,
-   "end": 766.7,
+   "start": 763.1,
+   "end": 768.2,
    "text": "All the previous battles over cellular data and forensic evidence were suddenly in the rearview mirror."
   },
   {
-   "start": 767.2,
-   "end": 770.1,
+   "start": 768.7,
+   "end": 771.6,
    "text": "He pleaded guilty to all four counts of first-degree murder."
   },
   {
-   "start": 770.1,
-   "end": 774.2,
+   "start": 771.6,
+   "end": 775.7,
    "text": "That meant formally admitting to the fatal stabbings of the four students on the record."
   },
   {
-   "start": 774.2,
-   "end": 780.2,
+   "start": 775.7,
+   "end": 781.8,
    "text": "There would be no jury selection, no cross-examination, and no need for the state to present their timeline in front of a gallery."
   },
   {
-   "start": 780.8,
-   "end": 784.7,
+   "start": 782.3,
+   "end": 786.2,
    "text": "The judge then moved to the final charge listed on the grand jury indictment."
   },
   {
-   "start": 784.7,
-   "end": 788.3,
+   "start": 786.2,
+   "end": 789.8,
    "text": "Kohberger also pleaded guilty to the single count of felony burglary."
   },
   {
-   "start": 788.3,
-   "end": 795.7,
+   "start": 789.8,
+   "end": 797.2,
    "text": "By legally admitting he entered that off-campus rental house with the intent to commit a crime, he cemented the final piece of the state's case."
   },
   {
-   "start": 795.7,
-   "end": 797.4,
+   "start": 797.2,
+   "end": 799,
    "text": "The plea was officially accepted."
   },
   {
-   "start": 797.4,
-   "end": 801.8,
+   "start": 799,
+   "end": 803.4,
    "text": "Judge Hippler then formally scheduled the sentencing hearing for July 23 at 9:00 a.m."
   },
   {
-   "start": 802.4,
-   "end": 807.8,
+   "start": 803.9,
+   "end": 809.4,
    "text": "Immediately following the hearing, the emotional toll of the morning spilled out onto the courthouse steps."
   },
   {
-   "start": 807.8,
-   "end": 812.2,
+   "start": 809.4,
+   "end": 813.7,
    "text": "Attorney Leander James issued a public statement on behalf of Madison Mogen's family."
   },
   {
-   "start": 812.2,
-   "end": 817.3,
+   "start": 813.7,
+   "end": 818.9,
    "text": "He told the press that the family was turning from tragedy and the dark uncertainty of the legal process."
   },
   {
-   "start": 817.3,
-   "end": 821.6,
+   "start": 818.9,
+   "end": 823.2,
    "text": "James stated they finally had closure and were embarking on a path of hope and healing."
   },
   {
-   "start": 821.6,
-   "end": 824.4,
+   "start": 823.2,
+   "end": 825.9,
    "text": "At that moment, the case appeared completely resolved."
   },
   {
-   "start": 825,
-   "end": 830.6,
+   "start": 826.5,
+   "end": 832.1,
    "text": "The calendar flipped to July 23, 2025, the date Judge Hippler had set aside to finalize the punishment."
   },
   {
-   "start": 830.6,
-   "end": 837,
+   "start": 832.1,
+   "end": 838.6,
    "text": "The families of Ethan, Madison, Xana, and Kaylee gathered inside the Ada County Courthouse for the sentencing phase."
   },
   {
-   "start": 837,
-   "end": 842.7,
+   "start": 838.6,
+   "end": 844.2,
    "text": "You have to remember that for years, this case was dominated by pretrial motions and forensic debates."
   },
   {
-   "start": 842.7,
-   "end": 846.2,
+   "start": 844.2,
+   "end": 847.7,
    "text": "Now, the legal arguments over cell towers and DNA were finished."
   },
   {
-   "start": 846.2,
-   "end": 849.6,
+   "start": 847.7,
+   "end": 851.1,
    "text": "The focus of the proceedings shifted entirely to the victims."
   },
   {
-   "start": 850.1,
-   "end": 854,
+   "start": 851.7,
+   "end": 855.6,
    "text": "The judge dedicated a full, day-long hearing strictly for the families to speak."
   },
   {
-   "start": 854,
-   "end": 858,
+   "start": 855.6,
+   "end": 859.5,
    "text": "One by one, relatives took the podium to deliver their victim impact statements."
   },
   {
-   "start": 858,
-   "end": 862.1,
+   "start": 859.5,
+   "end": 863.6,
    "text": "They stood just feet away from the defendant to put their pain on the official record."
   },
   {
-   "start": 862.1,
-   "end": 866.6,
+   "start": 863.6,
+   "end": 868.1,
    "text": "The courtroom listened as they described the devastating reality of losing their children."
   },
   {
-   "start": 867.1,
-   "end": 870.1,
+   "start": 868.7,
+   "end": 871.6,
    "text": "These statements are a crucial part of the justice system."
   },
   {
-   "start": 870.1,
-   "end": 875.6,
+   "start": 871.6,
+   "end": 877.2,
    "text": "They ensure the human cost of a crime is documented forever, separate from the sterile facts of an indictment."
   },
   {
-   "start": 875.6,
-   "end": 880.7,
+   "start": 877.2,
+   "end": 882.2,
    "text": "The families spoke about the bright futures of four college students that were violently cut short."
   },
   {
-   "start": 880.7,
-   "end": 883.1,
+   "start": 882.2,
+   "end": 884.6,
    "text": "Madison and Xana were both studying marketing."
   },
   {
-   "start": 883.1,
-   "end": 886.3,
+   "start": 884.6,
+   "end": 887.8,
    "text": "Kaylee had just moved out and was only visiting for the weekend."
   },
   {
-   "start": 886.3,
-   "end": 890,
+   "start": 887.8,
+   "end": 891.6,
    "text": "Ethan was just twenty years old, and the girls were twenty and twenty-one."
   },
   {
-   "start": 890,
-   "end": 895.4,
+   "start": 891.6,
+   "end": 896.9,
    "text": "The record shows a sign hanging in the window of their rental house simply read, Saturday is for the girls."
   },
   {
-   "start": 895.4,
-   "end": 899.8,
+   "start": 896.9,
+   "end": 901.4,
    "text": "They detailed the massive void left in their own lives and the broader Moscow community."
   },
   {
-   "start": 900.4,
-   "end": 905.3,
+   "start": 901.9,
+   "end": 906.9,
    "text": "For hours, the gallery heard exactly what was taken from the world in that brief window on King Road."
   },
   {
-   "start": 905.3,
-   "end": 909.9,
+   "start": 906.9,
+   "end": 911.4,
    "text": "The loved ones of the victims made sure the court understood the true weight of the tragedy."
   },
   {
-   "start": 909.9,
-   "end": 915,
+   "start": 911.4,
+   "end": 916.5,
    "text": "It was a grueling, emotional day that brought the human element of this massive case into sharp focus."
   },
   {
-   "start": 915,
-   "end": 920.2,
+   "start": 916.5,
+   "end": 921.7,
    "text": "When the statements finally concluded, Judge Hippler officially imposed the sentence on the record."
   },
   {
-   "start": 920.2,
-   "end": 926.4,
+   "start": 921.7,
+   "end": 927.9,
    "text": "He handed down the four consecutive life terms in prison without the possibility of parole, plus the ten years for burglary."
   },
   {
-   "start": 926.9,
-   "end": 933.2,
+   "start": 928.5,
+   "end": 934.7,
    "text": "The court also ordered a combined fine of two hundred and fifty thousand dollars, which breaks down to fifty thousand per count."
   },
   {
-   "start": 933.2,
-   "end": 938.3,
+   "start": 934.7,
+   "end": 939.8,
    "text": "And he was ordered to pay twenty thousand dollars in restitution, five thousand dollars for each victim."
   },
   {
-   "start": 938.8,
-   "end": 942,
+   "start": 940.4,
+   "end": 943.5,
    "text": "The judge formally handed down four consecutive life terms."
   },
   {
-   "start": 942,
-   "end": 946.3,
+   "start": 943.5,
+   "end": 947.8,
    "text": "That specific structure is incredibly important in a case with multiple victims."
   },
   {
-   "start": 946.3,
-   "end": 950.4,
+   "start": 947.8,
+   "end": 952,
    "text": "It means the punishment for each student's murder must be served back-to-back."
   },
   {
-   "start": 950.4,
-   "end": 954.4,
+   "start": 952,
+   "end": 956,
    "text": "The court ensured the penalty reflected four distinct and separate crimes."
   },
   {
-   "start": 955,
-   "end": 958.8,
+   "start": 956.5,
+   "end": 960.4,
    "text": "This sentence ensures imprisonment without the possibility of parole."
   },
   {
-   "start": 958.8,
-   "end": 962.8,
+   "start": 960.4,
+   "end": 964.3,
    "text": "There is no future date where a review board will ever evaluate his release."
   },
   {
-   "start": 962.8,
-   "end": 966.1,
+   "start": 964.3,
+   "end": 967.7,
    "text": "He is incarcerated at the Idaho Maximum Security Institution."
   },
   {
-   "start": 966.1,
-   "end": 971.2,
+   "start": 967.7,
+   "end": 972.7,
    "text": "Under the strict terms accepted by the court, he will remain behind bars for the rest of his life."
   },
   {
-   "start": 971.7,
-   "end": 978.3,
+   "start": 973.3,
+   "end": 979.8,
    "text": "Before his arrest, he was a twenty-eight-year-old criminology student completing his first semester at Washington State University."
   },
   {
-   "start": 978.3,
-   "end": 981.7,
+   "start": 979.8,
+   "end": 983.2,
    "text": "He lived in Pullman, less than eight miles away from the King Road house."
   },
   {
-   "start": 981.7,
-   "end": 986,
+   "start": 983.2,
+   "end": 987.5,
    "text": "Now, at thirty-one years old, his reality is completely confined to a state penitentiary."
   },
   {
-   "start": 986,
-   "end": 990.1,
+   "start": 987.5,
+   "end": 991.6,
    "text": "The transition from a university classroom to a maximum-security cell was absolute."
   },
   {
-   "start": 990.6,
-   "end": 992.7,
+   "start": 992.2,
+   "end": 994.3,
    "text": "The plea agreement seemed entirely ironclad."
   },
   {
-   "start": 992.7,
-   "end": 998.2,
+   "start": 994.3,
+   "end": 999.8,
    "text": "The state had officially withdrawn the death penalty, and in exchange, Kohberger explicitly waived his right to appeal."
   },
   {
-   "start": 998.8,
-   "end": 1001.9,
+   "start": 1000.3,
+   "end": 1003.5,
    "text": "You might think a signed waiver means the legal fight is over."
   },
   {
-   "start": 1001.9,
-   "end": 1002.5,
+   "start": 1003.5,
+   "end": 1004.1,
    "text": "It doesn't."
   },
   {
-   "start": 1002.5,
-   "end": 1009.3,
+   "start": 1004.1,
+   "end": 1010.9,
    "text": "Waiving an appeal does not legally prevent a defendant from filing a new case to challenge the validity of the plea agreement itself."
   },
   {
-   "start": 1009.3,
-   "end": 1014.4,
+   "start": 1010.9,
+   "end": 1016,
    "text": "In July 2026, Kohberger filed a petition for post-conviction relief in Ada County District Court."
   },
   {
-   "start": 1015,
-   "end": 1019.7,
+   "start": 1016.5,
+   "end": 1021.3,
    "text": "The handwritten court documents outline his specific complaints against his former defense team."
   },
   {
-   "start": 1019.7,
-   "end": 1025.9,
+   "start": 1021.3,
+   "end": 1027.4,
    "text": "Citing ineffective assistance of counsel, Kohberger claims his attorneys failed to disclose or review exculpatory evidence."
   },
   {
-   "start": 1025.9,
-   "end": 1032,
+   "start": 1027.4,
+   "end": 1033.5,
    "text": "He also wrote that he was given a gross misrepresentation of what a life sentence and death row in Idaho would actually look like."
   },
   {
-   "start": 1032,
-   "end": 1034.9,
+   "start": 1033.5,
+   "end": 1036.5,
    "text": "Anne Taylor's office declined to comment on the accusations."
   },
   {
-   "start": 1035.5,
-   "end": 1040.6,
+   "start": 1037,
+   "end": 1042.2,
    "text": "The New York Times first reported on this petition after conducting an interview with Kohberger in prison."
   },
   {
-   "start": 1040.6,
-   "end": 1044.7,
+   "start": 1042.2,
+   "end": 1046.2,
    "text": "In a statement provided to the paper, he claimed he was convinced to falsely confess."
   },
   {
-   "start": 1044.7,
-   "end": 1050.5,
+   "start": 1046.2,
+   "end": 1052.1,
    "text": "He stated his actual innocence is his truth, and argued the plea was hinged on false promises and blatant disinformation."
   },
   {
-   "start": 1051.1,
-   "end": 1052.6,
+   "start": 1052.6,
+   "end": 1054.1,
    "text": "The state is not backing down."
   },
   {
-   "start": 1052.6,
-   "end": 1059.3,
+   "start": 1054.1,
+   "end": 1060.8,
    "text": "Officials and legal counsel representing the victims' families publicly affirmed their confidence in the original conviction."
   },
   {
-   "start": 1059.3,
-   "end": 1062.8,
+   "start": 1060.8,
+   "end": 1064.3,
    "text": "They stated their readiness to challenge the new petition in court."
   },
   {
-   "start": 1062.8,
-   "end": 1069.3,
+   "start": 1064.3,
+   "end": 1070.9,
    "text": "Meanwhile, on August 29, 2026, Kohberger formally asked the court to disqualify Judge Hippler from presiding over the new case."
   },
   {
-   "start": 1069.9,
-   "end": 1072.9,
+   "start": 1071.4,
+   "end": 1074.5,
    "text": "The timing of this reversal was impossible to ignore."
   },
   {
-   "start": 1072.9,
-   "end": 1080.5,
+   "start": 1074.5,
+   "end": 1082,
    "text": "He publicly revealed his petition to rescind the plea the exact same week a major documentary about the murders premiered on Netflix."
   },
   {
-   "start": 1080.5,
-   "end": 1085.7,
+   "start": 1082,
+   "end": 1087.2,
    "text": "That project, titled \"The Idaho Murders: College Nightmare,\" was set to release on July 29."
   },
   {
-   "start": 1085.7,
-   "end": 1089,
+   "start": 1087.2,
+   "end": 1090.5,
    "text": "The media spotlight on this case is only getting brighter."
   },
   {
-   "start": 1089,
-   "end": 1097.2,
+   "start": 1090.5,
+   "end": 1098.8,
    "text": "A new book by Christopher Whitcomb titled \"Broken Plea: The Explosive Search for Truth Behind the Idaho Murders\" is set to be published on April 28."
   },
   {
-   "start": 1097.2,
-   "end": 1103.9,
+   "start": 1098.8,
+   "end": 1105.5,
    "text": "ABC also scheduled a special 20/20 episode called \"Idaho Justice\" to air on September 5 and stream the next day on Hulu."
   },
   {
-   "start": 1103.9,
-   "end": 1110.5,
+   "start": 1105.5,
+   "end": 1112.1,
    "text": "Just as the public was revisiting the tragedy, the man convicted of the crimes forced his way back into the headlines."
   },
   {
-   "start": 1111.1,
-   "end": 1116,
+   "start": 1112.6,
+   "end": 1117.6,
    "text": "The case file shows some of the strategies that original defense team tried to use before the plea."
   },
   {
-   "start": 1116,
-   "end": 1120.6,
+   "start": 1117.6,
+   "end": 1122.1,
    "text": "At one point, his attorneys alleged that he was diagnosed with autism spectrum disorder."
   },
   {
-   "start": 1120.6,
-   "end": 1123.1,
+   "start": 1122.1,
+   "end": 1124.7,
    "text": "The judge pushed back hard on that specific claim."
   },
   {
-   "start": 1123.1,
-   "end": 1128.3,
+   "start": 1124.7,
+   "end": 1129.8,
    "text": "Judge Hippler stated he had never seen any odd behavior from the defendant across months of hearings."
   },
   {
-   "start": 1128.8,
-   "end": 1132.7,
+   "start": 1130.4,
+   "end": 1134.3,
    "text": "The judge noted that by all accounts, the defendant is highly-functioning."
   },
   {
-   "start": 1132.7,
-   "end": 1139.6,
+   "start": 1134.3,
+   "end": 1141.2,
    "text": "He ruled that a jury would not be allowed to hear testimony about an autism diagnosis unless Kohberger actually took the stand himself."
   },
   {
-   "start": 1139.6,
-   "end": 1143.9,
+   "start": 1141.2,
+   "end": 1145.5,
    "text": "Now, the defendant is arguing the legal guidance he received was completely flawed."
   },
   {
-   "start": 1143.9,
-   "end": 1150.4,
+   "start": 1145.5,
+   "end": 1152,
    "text": "He claims the false promises from his counsel led to a gross misrepresentation of what a life sentence would actually look like."
   },
   {
-   "start": 1151,
-   "end": 1155.4,
+   "start": 1152.5,
+   "end": 1156.9,
    "text": "We also know the original defense team made moves that significantly extended the timeline."
   },
   {
-   "start": 1155.4,
-   "end": 1158.5,
+   "start": 1156.9,
+   "end": 1160.1,
    "text": "Early in the process, Kohberger waived his right to a speedy trial."
   },
   {
-   "start": 1158.5,
-   "end": 1162.4,
+   "start": 1160.1,
+   "end": 1164,
    "text": "His attorney at the time cited the need for additional time to prepare the defense."
   },
   {
-   "start": 1162.4,
-   "end": 1165.9,
+   "start": 1164,
+   "end": 1167.4,
    "text": "Now, the new filing argues that preparation was completely inadequate."
   },
   {
-   "start": 1165.9,
-   "end": 1170.5,
+   "start": 1167.4,
+   "end": 1172,
    "text": "Read the file, and you see a defendant trying to dismantle his own defense strategy piece by piece."
   },
   {
-   "start": 1171,
-   "end": 1175.7,
+   "start": 1172.6,
+   "end": 1177.2,
    "text": "The handwritten petition goes far beyond just complaining about bad legal advice."
   },
   {
-   "start": 1175.7,
-   "end": 1179.4,
+   "start": 1177.2,
+   "end": 1180.9,
    "text": "The motion further alleges that the plea was not made voluntarily."
   },
   {
-   "start": 1179.4,
-   "end": 1184.5,
+   "start": 1180.9,
+   "end": 1186,
    "text": "In the criminal justice system, an admission of guilt has to be a free and independent choice."
   },
   {
-   "start": 1184.5,
-   "end": 1189.7,
+   "start": 1186,
+   "end": 1191.3,
    "text": "If a judge determines that standard was not met, the entire agreement is thrown into question."
   },
   {
-   "start": 1190.3,
-   "end": 1193.5,
+   "start": 1191.8,
+   "end": 1195.1,
    "text": "The ultimate goal of this post-conviction maneuver is absolute."
   },
   {
-   "start": 1193.5,
-   "end": 1197.1,
+   "start": 1195.1,
+   "end": 1198.6,
    "text": "The defense requests the court to invalidate the guilty plea entirely."
   },
   {
-   "start": 1197.1,
-   "end": 1202.1,
+   "start": 1198.6,
+   "end": 1203.6,
    "text": "They are not asking for a modified sentence or a transfer to a different maximum-security facility."
   },
   {
-   "start": 1202.1,
-   "end": 1206.5,
+   "start": 1203.6,
+   "end": 1208,
    "text": "They want the judge to completely erase the admission of guilt from the official record."
   },
   {
-   "start": 1207,
-   "end": 1211.3,
+   "start": 1208.6,
+   "end": 1212.8,
    "text": "If the court actually agrees to grant this request, the legal landscape shifts overnight."
   },
   {
-   "start": 1211.3,
-   "end": 1214.5,
+   "start": 1212.8,
+   "end": 1216.1,
    "text": "The four consecutive life sentences would immediately disappear."
   },
   {
-   "start": 1214.5,
-   "end": 1218.9,
+   "start": 1216.1,
+   "end": 1220.5,
    "text": "The waiver of appeals he signed would be tossed out right along with the rest of the paperwork."
   },
   {
-   "start": 1218.9,
-   "end": 1223.3,
+   "start": 1220.5,
+   "end": 1224.9,
    "text": "The state of Idaho would be forced to take the entire homicide prosecution back to square one."
   },
   {
-   "start": 1223.9,
-   "end": 1228.4,
+   "start": 1225.4,
+   "end": 1229.9,
    "text": "That means prosecutors would have to prepare for the massive capital trial they thought they avoided."
   },
   {
-   "start": 1228.4,
-   "end": 1233,
+   "start": 1229.9,
+   "end": 1234.6,
    "text": "The victims' families would have to sit in a courtroom and listen to weeks of grueling cross-examinations."
   },
   {
-   "start": 1233,
-   "end": 1237.3,
+   "start": 1234.6,
+   "end": 1238.8,
    "text": "The legal finality they were promised after the sentencing hearing would be completely undone."
   },
   {
-   "start": 1237.8,
-   "end": 1241.2,
+   "start": 1239.3,
+   "end": 1242.7,
    "text": "A finalized capital murder case does not just reopen quietly."
   },
   {
-   "start": 1241.2,
-   "end": 1247.3,
+   "start": 1242.7,
+   "end": 1248.9,
    "text": "State prosecutors now have to defend a conviction they thought was permanently locked in place by a signed waiver."
   },
   {
-   "start": 1247.3,
-   "end": 1251.2,
+   "start": 1248.9,
+   "end": 1252.7,
    "text": "The scrutiny has shifted away from the touch DNA and the cellular data."
   },
   {
-   "start": 1251.2,
-   "end": 1257.6,
+   "start": 1252.7,
+   "end": 1259.1,
    "text": "Now, the microscope is pointed directly at the closed-door negotiations and the actions of the original defense team."
   },
   {
-   "start": 1258.1,
-   "end": 1262.6,
+   "start": 1259.7,
+   "end": 1264.1,
    "text": "The presiding judge now has to weigh the signed waiver against these new claims of coercion."
   },
   {
-   "start": 1262.6,
-   "end": 1268.8,
+   "start": 1264.1,
+   "end": 1270.4,
    "text": "The court will have to determine if the original defense team actually crossed a line, or if the defendant simply changed his mind."
   },
   {
-   "start": 1268.8,
-   "end": 1272.6,
+   "start": 1270.4,
+   "end": 1274.1,
    "text": "We are waiting to see if the legal system will actually let him take it all back."
   },
   {
-   "start": 1273.1,
-   "end": 1277.3,
+   "start": 1274.7,
+   "end": 1278.8,
    "text": "That July 2026 motion to withdraw the plea remains pending on the court docket."
   },
   {
-   "start": 1277.3,
-   "end": 1283.6,
+   "start": 1278.8,
+   "end": 1285.2,
    "text": "The legal system moves slowly, especially when a defendant tries to completely unravel a finalized capital agreement."
   },
   {
-   "start": 1283.6,
-   "end": 1287.5,
+   "start": 1285.2,
+   "end": 1289,
    "text": "The state is standing its ground and defending the original conviction."
   },
   {
-   "start": 1287.5,
-   "end": 1291.8,
+   "start": 1289,
+   "end": 1293.3,
    "text": "Prosecutors are absolutely refusing to let the admission of guilt just slip away."
   },
   {
-   "start": 1292.3,
-   "end": 1296.6,
+   "start": 1293.9,
+   "end": 1298.1,
    "text": "The court has not yet ruled on the specific claims of coercion and ineffective counsel."
   },
   {
-   "start": 1296.6,
-   "end": 1301.7,
+   "start": 1298.1,
+   "end": 1303.2,
    "text": "A judge still needs to evaluate the serious accusations leveled against the original defense attorneys."
   },
   {
-   "start": 1301.7,
-   "end": 1306.9,
+   "start": 1303.2,
+   "end": 1308.4,
    "text": "They have to weigh the handwritten petition against the official transcript of the change of plea hearing."
   },
   {
-   "start": 1306.9,
-   "end": 1310.4,
+   "start": 1308.4,
+   "end": 1312,
    "text": "Until a formal ruling is handed down, the convictions are locked in place."
   },
   {
-   "start": 1311,
-   "end": 1315.6,
+   "start": 1312.5,
+   "end": 1317.2,
    "text": "The final legal resolution of the King Road homicides now rests entirely in the hands of the judge."
   },
   {
-   "start": 1315.6,
-   "end": 1319.7,
+   "start": 1317.2,
+   "end": 1321.4,
    "text": "They have the authority to uphold the waiver or throw the entire plea deal out the window."
   },
   {
-   "start": 1319.7,
-   "end": 1324.2,
+   "start": 1321.4,
+   "end": 1326,
    "text": "The Goncalves family has expressed confidence he will get the death penalty if there is a trial."
   },
   {
-   "start": 1324.7,
-   "end": 1329.2,
+   "start": 1326.5,
+   "end": 1331,
    "text": "We will just have to wait and see how the justice system handles this unprecedented reversal."
   },
   {
-   "start": 1329.2,
-   "end": 1332.8,
+   "start": 1331,
+   "end": 1334.6,
    "text": "The documents are out there for anyone willing to look past the headlines."
   },
   {
-   "start": 1332.8,
-   "end": 1333.5,
+   "start": 1334.6,
+   "end": 1335.3,
    "text": "Read the file."
   },
   {
-   "start": 1333.5,
-   "end": 1334.7,
+   "start": 1335.3,
+   "end": 1336.5,
    "text": "Form your own conclusion."
   },
   {
-   "start": 1335.3,
-   "end": 1336.3,
+   "start": 1337.1,
+   "end": 1338.1,
    "text": "That's it for this one."
   },
   {
-   "start": 1336.3,
-   "end": 1337.6,
+   "start": 1338.1,
+   "end": 1339.4,
    "text": "Thanks for hanging out with me."
   },
   {
-   "start": 1337.6,
-   "end": 1340.3,
+   "start": 1339.4,
+   "end": 1342.1,
    "text": "This has been CrimeTimeSnacks, and I'll catch you next time."
   }
  ]

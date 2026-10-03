@@ -592,3 +592,4 @@ with an [auto] tag — the counter on Mission Control reads this file.
 526. [auto 2026-10-02] Published new quiz: "The Miami Luxury Tower Case" (5 questions)
 527. [auto 2026-10-03] Published podcast episode from the studio: "The BTK Floppy Disk" (00:28:13)
 528. [auto 2026-10-03] Published podcast episode from the studio: "The Murdaugh Family Murders" (00:28:22)
+529. [auto 2026-10-03] Published podcast episode from the studio: "Murders in Moscow: The Plea" (00:22:27)

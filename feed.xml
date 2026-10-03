@@ -7,7 +7,7 @@
     <title>CrimeTimeSnacks • A True Crime Podcast</title>
     <link>https://www.crimetimesnacks.com/</link>
     <atom:link href="https://www.crimetimesnacks.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sat, 03 Oct 2026 05:26:21 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 05:40:13 GMT</lastBuildDate>
     <language>en</language>
     <copyright>&#169; 2026 Cory</copyright>
     <description>CrimeTimeSnacks is a true crime podcast about the cases people argue about, built from the public record: court filings, released case files and years of reporting. Each episode lays out the facts, the theories and the evidence, says what is still unknown, and leaves the conclusion to you.</description>
@@ -128,8 +128,8 @@ We will walk through the grueling pre-trial motions, the intense battles over DN
 
 We will walk through the grueling pre-trial motions, the intense battles over DNA and cell-site evidence, and the sudden pivot to a plea agreement in the summer of 2025. It is a complex look at the justice system, the weight of capital punishment, and the legal maneuvering that followed the initial shock of the crimes.</itunes:summary>
       <itunes:author>Cory</itunes:author>
-      <itunes:duration>00:22:26</itunes:duration>
-      <enclosure url="https://www.crimetimesnacks.com/audio/murders-in-moscow-the-plea.mp3" length="21530486" type="audio/mpeg" />
+      <itunes:duration>00:22:27</itunes:duration>
+      <enclosure url="https://www.crimetimesnacks.com/audio/murders-in-moscow-the-plea.mp3" length="21558907" type="audio/mpeg" />
       <itunes:image href="https://www.crimetimesnacks.com/images/episodes/murders-in-moscow-the-plea.jpg" />
       <itunes:explicit>false</itunes:explicit>
     </item>
