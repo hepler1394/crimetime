@@ -20,7 +20,10 @@ const NUMS = { zero: "0", one: "1", two: "2", three: "3", four: "4", five: "5", 
 // held the Murdaugh episode on four findings the clone said perfectly. "iv" is left out on
 // purpose: in this show it is far more often an IV line than a fourth.
 const SUFFIX = { ii: ["the", "second"], iii: ["the", "third"], jr: ["junior"], sr: ["senior"] };
-export const tokens = (s) => String(s).toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "").replace(/[’']/g, "").replace(/(\d),(\d)/g, "$1$2").replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter(Boolean).flatMap((w) => SUFFIX[w] || [w]).map((w) => NUMS[w] || w.replace(/(\d+)(st|nd|rd|th)$/, "$1"));
+// Titles a transcriber abbreviates whatever was said: the clone reads "Doctor Tony Ruark" and
+// faster-whisper writes "Dr. Tony Ruark", which is the same word, not a mispronunciation.
+const ABBR = { dr: "doctor", mr: "mister", lt: "lieutenant", sgt: "sergeant", capt: "captain", det: "detective", gov: "governor", sen: "senator", supt: "superintendent" };
+export const tokens = (s) => String(s).toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "").replace(/[’']/g, "").replace(/(\d),(\d)/g, "$1$2").replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter(Boolean).flatMap((w) => SUFFIX[w] || [w]).map((w) => ABBR[w] || w).map((w) => NUMS[w] || w.replace(/(\d+)(st|nd|rd|th)$/, "$1"));
 
 // A number however it is written. tokens() already turns "twenty" into "20", but not the forms
 // it has no digit for - "twenties", "forties", "fifteenth" - and those have to count as numbers
