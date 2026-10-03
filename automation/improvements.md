@@ -591,3 +591,4 @@ with an [auto] tag — the counter on Mission Control reads this file.
 525. [auto 2026-10-02] Published blog post from research notes: "Why some cases stay cold for decades" (1054 words, 6 sources)
 526. [auto 2026-10-02] Published new quiz: "The Miami Luxury Tower Case" (5 questions)
 527. [auto 2026-10-03] Published podcast episode from the studio: "The BTK Floppy Disk" (00:28:13)
+528. [auto 2026-10-03] Published podcast episode from the studio: "The Murdaugh Family Murders" (00:28:22)

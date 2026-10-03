@@ -7,7 +7,7 @@
     <title>CrimeTimeSnacks • A True Crime Podcast</title>
     <link>https://www.crimetimesnacks.com/</link>
     <atom:link href="https://www.crimetimesnacks.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sat, 03 Oct 2026 03:40:32 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 04:59:24 GMT</lastBuildDate>
     <language>en</language>
     <copyright>&#169; 2026 Cory</copyright>
     <description>CrimeTimeSnacks is a true crime podcast about the cases people argue about, built from the public record: court filings, released case files and years of reporting. Each episode lays out the facts, the theories and the evidence, says what is still unknown, and leaves the conclusion to you.</description>
@@ -51,8 +51,8 @@ Alex Murdaugh claimed he was visiting his mother who had dementia when the murde
 
 Alex Murdaugh claimed he was visiting his mother who had dementia when the murders happened. But as investigators dug deeper, cellphone data and a crucial video started telling a very different story. We are diving into the timeline, the botched crime scene, and the massive trial that followed.</itunes:summary>
       <itunes:author>Cory</itunes:author>
-      <itunes:duration>00:28:21</itunes:duration>
-      <enclosure url="https://www.crimetimesnacks.com/audio/the-murdaugh-family-murders.mp3" length="27220582" type="audio/mpeg" />
+      <itunes:duration>00:28:22</itunes:duration>
+      <enclosure url="https://www.crimetimesnacks.com/audio/the-murdaugh-family-murders.mp3" length="27234793" type="audio/mpeg" />
       <itunes:image href="https://www.crimetimesnacks.com/images/episodes/the-murdaugh-family-murders.jpg" />
       <itunes:explicit>false</itunes:explicit>
     </item>
