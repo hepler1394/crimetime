@@ -3,9 +3,24 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1260,
     "baked": 150,
-    "updated": "2026-10-06T18:36:00.598Z"
+    "updated": "2026-10-06T23:19:08.611Z"
   },
   "items": [
+    {
+      "uid": "35638a66dc2d4ce89f6a6735e3c2659f",
+      "title": "ILYA VIKTOROVICH BALAKAEV",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/counterintelligence/ilya-viktorovich-balakaev/@@images/image/large",
+      "office": "New York",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/counterintelligence/ilya-viktorovich-balakaev",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Counterintelligence"
+      ],
+      "publication": "2023-06-08T07:09:00"
+    },
     {
       "uid": "043a2834e80848099aa61394cc54f9f9",
       "title": "JULIOUS GEORGE KHALID",
@@ -2280,21 +2295,6 @@
         "Law Enforcement Assistance"
       ],
       "publication": "2026-05-31T10:03:00"
-    },
-    {
-      "uid": "4ff6d3cd2681485c812169495867e088",
-      "title": "ARTHUR LEE COFIELD",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/arthur-lee-cofield/@@images/image/large",
-      "office": "Atlanta",
-      "reward": "Reward up to $10,000 for information leading to the arrest of Arthur Lee Cofield.",
-      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/arthur-lee-cofield",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Law Enforcement Assistance"
-      ],
-      "publication": "2026-05-29T13:45:00"
     }
   ]
 }
