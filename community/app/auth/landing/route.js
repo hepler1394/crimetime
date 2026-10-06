@@ -20,7 +20,13 @@ export async function GET(request) {
     const { member: m } = await linkMember(restStore(), { authUserId: user.id, email: user.email });
     member = m;
   } catch (e) {
-    return NextResponse.redirect(new URL(`/signin?error=${encodeURIComponent(e.message.replace(/^linkMember: /, ""))}`, origin));
+    // The message names the address, and a URL is the wrong place for one: it lands in
+    // request logs and browser history. The sentence shown says what happened without it.
+    console.error("landing:", e.message.replace(/\S+@\S+/g, "<address>"));
+    const said = /already linked/.test(e.message)
+      ? "That address already belongs to another account here. Sign in the way you did before."
+      : "We could not finish signing you in. Try again in a minute.";
+    return NextResponse.redirect(new URL(`/signin?error=${encodeURIComponent(said)}`, origin));
   }
 
   if (!member.handle) {

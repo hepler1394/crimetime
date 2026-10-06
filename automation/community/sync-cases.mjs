@@ -2,7 +2,8 @@
 // Pushes the case list into Supabase (cts_cases): every entry in cases.json,
 // plus one case per published episode, linked to that episode. Upsert by slug,
 // so hand edits made in the studio or the database are kept (only the fields
-// below are written, and summary/status only when empty).
+// below are written, and summary/status only when empty), except that status and
+// years in case-facts.json always win.
 //
 //   node automation/community/sync-cases.mjs [--json]
 // Env from automation/.env.community (local) or the process (CI/Vercel).
@@ -48,6 +49,14 @@ for (const e of eps) {
   if (rows.some((r) => r.slug === slug)) continue;
   const ex = existing[slug] || {};
   rows.push({ slug, title: e.title.replace(/^CrimeTimeSnacks:\s*/i, "").replace(/\s*\|.*$/, "").trim(), angle: "", years: (e.date || "").slice(0, 4), summary: ex.summary || e.description || "", status: ex.status || "open", episode_slug: e.slug, image: ex.image || e.image || "", sources: [] });
+}
+// Status and years that have been checked (case-facts.json) win over everything above: the
+// episode's publish year, the "present" guess, and whatever status the first sync wrote.
+const facts = (await readJson(join(here, "case-facts.json"), { cases: {} })).cases || {};
+for (const r of rows) {
+  const f = facts[r.slug];
+  if (f?.status) r.status = f.status;
+  if (f?.years) r.years = f.years;
 }
 await sb("cts_cases?on_conflict=slug", { method: "POST", body: rows, prefer: "resolution=merge-duplicates,return=minimal" });
 const msg = `Synced ${rows.length} cases to Supabase (${rows.filter((r) => r.episode_slug).length} linked to episodes).`;

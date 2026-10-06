@@ -9,7 +9,7 @@ function fakeStore(rows = []) {
     db,
     async findByAuthId(id) { return db.find((r) => r.auth_user_id === id) || null; },
     async findByEmail(email) { return db.find((r) => r.email.toLowerCase() === String(email).trim().toLowerCase()) || null; },
-    async setAuthId(memberId, authUserId) { const r = db.find((x) => x.id === memberId); r.auth_user_id = authUserId; return r; },
+    async setAuthId(memberId, authUserId, { confirm = false } = {}) { const r = db.find((x) => x.id === memberId); r.auth_user_id = authUserId; if (confirm) r.confirmed_at = "now"; return r; },
     async insertMember({ auth_user_id, email }) { const r = { id: `new-${db.length + 1}`, auth_user_id, email }; db.push(r); return r; },
   };
 }
@@ -30,6 +30,18 @@ test("an existing email follower keeps their member row, so their follows surviv
   assert.equal(r.created, false);
   assert.equal(store.db.length, 1);
   assert.equal(store.db[0].auth_user_id, "auth-1");
+});
+
+test("signing in confirms an email follower who never clicked their confirm link", async () => {
+  const store = fakeStore([{ id: "m1", email: "kate@example.com", auth_user_id: null, confirmed_at: null }]);
+  await linkMember(store, { authUserId: "auth-1", email: "kate@example.com" });
+  assert.equal(store.db[0].confirmed_at, "now", "the digest only mails confirmed members");
+});
+
+test("an already-confirmed follower keeps their original confirmation date", async () => {
+  const store = fakeStore([{ id: "m1", email: "kate@example.com", auth_user_id: null, confirmed_at: "2026-09-01" }]);
+  await linkMember(store, { authUserId: "auth-1", email: "kate@example.com" });
+  assert.equal(store.db[0].confirmed_at, "2026-09-01");
 });
 
 test("a brand new person gets a row", async () => {

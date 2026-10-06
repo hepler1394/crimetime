@@ -14,7 +14,9 @@
       state(form, "You follow this case. Click again to stop.", "");
     } else if (me.signedIn) {
       btn.textContent = "Follow this case"; btn.classList.remove("following"); btn.dataset.mode = "follow"; input.style.display = "none";
-      state(form, "Signed in as " + me.email + ".", "");
+      // Following turns email back on for someone who had unsubscribed (follow.js clears it),
+      // so say so before they press the button rather than surprise them on Sunday.
+      state(form, "Signed in as " + me.email + "." + (me.emailOff ? " Your email updates are off; following a case turns them back on." : ""), "");
     } else {
       btn.textContent = "Follow this case"; btn.classList.remove("following"); btn.dataset.mode = "email"; input.style.display = "";
     }
@@ -28,6 +30,7 @@
   var q = new URLSearchParams(location.search);
   if (q.get("follow") === "confirmed") forms.forEach(function (f) { state(f, "Confirmed. You will get an email when something happens in this case.", "ok"); });
   if (q.get("follow") === "invalid") forms.forEach(function (f) { state(f, "That link was not valid. Enter your email to get a fresh one.", "err"); });
+  if (q.get("follow") === "error") forms.forEach(function (f) { state(f, "Something broke on our side confirming that. Try the link again in a minute.", "err"); });
 
   // js/account.js already asked, on every page. Reuse its answer rather than making
   // the same request a second time; fall back to asking if that script is not there.

@@ -107,24 +107,33 @@ export async function memberByToken(token) {
 //
 // The token in a cookie is a claim, not a fact. Supabase is asked to verify it on every
 // request: an expired or edited one comes back 401 and the caller is simply signed out.
-export async function memberFromSession(req) {
+//
+// sessionMember also says whether a session cookie was there but its access token had run
+// out (stale). Access tokens last an hour and only the community zone can renew one, so
+// /api/community/me passes that on and js/account.js asks the zone to refresh, rather than
+// a member who signed in this morning finding every case page treating them as a stranger.
+export async function sessionMember(req) {
   const key = storageKeyFor(env("SUPABASE_URL"));
   const token = accessTokenFromCookieHeader(req?.headers?.cookie, key);
-  if (!token) return null;
+  if (!token) return { member: null, stale: false };
 
   let res;
   try {
     res = await fetch(`${env("SUPABASE_URL")}/auth/v1/user`, {
       headers: { apikey: env("SUPABASE_ANON_KEY"), Authorization: `Bearer ${token}` },
     });
-  } catch { return null; }
-  if (!res.ok) return null;
+  } catch { return { member: null, stale: false }; }
+  if (res.status === 401 || res.status === 403) return { member: null, stale: true };
+  if (!res.ok) return { member: null, stale: false };
 
   const user = await res.json().catch(() => null);
-  if (!user?.id) return null;
+  if (!user?.id) return { member: null, stale: false };
 
   const rows = await sb(`cts_members?select=*&auth_user_id=eq.${encodeURIComponent(user.id)}&limit=1`);
-  return rows?.[0] || null;
+  return { member: rows?.[0] || null, stale: false };
+}
+export async function memberFromSession(req) {
+  return (await sessionMember(req)).member;
 }
 
 // Whoever is signed in, by either cookie.
@@ -175,11 +184,14 @@ export function confirmEmail({ caseTitle, link }) {
     text: `You asked to follow ${caseTitle} on CrimeTimeSnacks. Confirm here: ${link}\nIf you did not ask for this, ignore this email.`,
   };
 }
+// For an address that is already a member. Nothing is followed until the link is clicked,
+// so it asks rather than announces: the request may not have come from them.
 export function signinEmail({ caseTitle, link }) {
   return {
-    subject: `Your CrimeTimeSnacks follows`,
-    html: shell(`Now following ${esc(caseTitle)}`, p(`We added <b>${esc(caseTitle)}</b> to your follows. Open the link below on this device to manage them without another email.`) + btn(link, "Open my follows")),
-    text: `We added ${caseTitle} to your CrimeTimeSnacks follows. Manage them here: ${link}`,
+    subject: `Follow ${caseTitle} on CrimeTimeSnacks?`,
+    html: shell(`Follow ${esc(caseTitle)}?`, p(`Someone asked to add <b>${esc(caseTitle)}</b> to the cases this address follows. If it was you, click below. It also signs this device in, so your next follow takes one click.`) + btn(link, "Yes, follow this case") + p(`If you did not ask for this, ignore this email and nothing changes.`)),
+    text: `Someone asked to add ${caseTitle} to the cases this address follows on CrimeTimeSnacks. If it was you: ${link}
+If not, ignore this email and nothing changes.`,
   };
 }
 export function newsletterEmail({ link }) {

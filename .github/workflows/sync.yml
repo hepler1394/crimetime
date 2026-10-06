@@ -28,10 +28,13 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           CTS_RELAY_KEY: ${{ secrets.CTS_RELAY_KEY }}
+          # Paid news search for the case watcher. Without it the watcher falls back to
+          # DuckDuckGo, which refuses automated queries (nothing was filed 2026-09-19 to 10-05).
+          BRAVE_API_KEY: ${{ secrets.BRAVE_API_KEY }}
         run: |
           node automation/import-feed.mjs || true
           node automation/import-fbi.mjs || true
-          node automation/case-watch.mjs || true
+          node automation/case-watch.mjs --daily || true
           node automation/build-all.mjs
       - name: Commit & push if changed
         run: |

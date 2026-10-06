@@ -8,7 +8,7 @@ export const metadata = {
   description: "Sign in to follow cases and keep them in one place.",
 };
 
-// Google, or a six-digit code to your email. No passwords: there is nothing to steal here
+// Google, or a code to your email. No passwords: there is nothing to steal here
 // and nothing for anyone to forget.
 export default async function SignIn({ searchParams }) {
   const sp = await searchParams;
@@ -73,7 +73,8 @@ export default async function SignIn({ searchParams }) {
         <form action={checkCode} className="stack">
           <input type="hidden" name="email" value={email} />
           <p className="note">
-            We sent a six-digit code to <strong>{email}</strong>. It is good for an hour.
+            We sent a sign-in code to <strong>{email}</strong>. If it is not there in a minute,
+            look in spam, or go back and check the address.
           </p>
           <label className="label" htmlFor="code">Your code</label>
           <input
@@ -81,7 +82,7 @@ export default async function SignIn({ searchParams }) {
             pattern="[0-9]*" maxLength={10} required autoFocus
             className="field code" placeholder="123456" aria-describedby="code-help"
           />
-          <p id="code-help" className="note">Six digits, from the email that just arrived.</p>
+          <p id="code-help" className="note">The number in the email. Codes run out, so use the newest one.</p>
           <button className="btn primary" type="submit">Sign in</button>
           <a className="quiet" href={`/signin?next=${encodeURIComponent(next)}`}>Use a different address</a>
         </form>
@@ -102,7 +103,7 @@ export default async function SignIn({ searchParams }) {
               id="email" name="email" type="email" inputMode="email" autoComplete="email"
               required className="field" placeholder="you@example.com" aria-describedby="email-help"
             />
-            <p id="email-help" className="note">We send a six-digit code. No password to set or forget.</p>
+            <p id="email-help" className="note">We email you a code. No password to set or forget.</p>
             <button className="btn primary" type="submit">Email me a code</button>
           </form>
         </>

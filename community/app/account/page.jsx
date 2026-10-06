@@ -77,7 +77,9 @@ export default async function Account({ searchParams }) {
       </Section>
 
       <Section title="Settings">
-        <Preferences initial={{ newsletter: member.newsletter, show_follows: member.show_follows }} />
+        {/* The unsubscribe link in an email stops all mail without touching newsletter, so
+            the switch reads both: on only when the Sunday email is really going out. */}
+        <Preferences initial={{ newsletter: member.newsletter && !member.unsubscribed_at, show_follows: member.show_follows }} />
       </Section>
 
       <Section title="Leaving">

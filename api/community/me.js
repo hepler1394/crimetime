@@ -7,7 +7,14 @@
 // It never returns the raw address. The masking rule is the one from the community zone,
 // so this endpoint and the account page cannot drift into masking the same person's
 // address two different ways.
-import { sb, memberFrom } from "../../automation/community/lib.js";
+//
+// refresh: true means a session cookie was there but its hour was up. Only the community
+// zone can renew it (POST /auth/refresh); js/account.js does that once and asks again.
+//
+// Unsubscribing from email is not signing out. Until 2026-10-05 a member who had used the
+// unsubscribe link was answered as signed out here, so the header said "Sign in" to someone
+// who was, and the follow form asked them for an email address.
+import { sb, sessionMember, memberByToken, memberTokenFrom } from "../../automation/community/lib.js";
 import { maskEmail } from "../../community/lib/profile.mjs";
 
 const SIGNED_OUT = { signedIn: false, follows: [] };
@@ -15,8 +22,9 @@ const SIGNED_OUT = { signedIn: false, follows: [] };
 export default async function handler(req, res) {
   res.setHeader("Cache-Control", "no-store");
   try {
-    const member = await memberFrom(req);
-    if (!member || member.unsubscribed_at) return res.status(200).json(SIGNED_OUT);
+    const session = await sessionMember(req);
+    const member = session.member || (await memberByToken(memberTokenFrom(req)));
+    if (!member) return res.status(200).json(session.stale ? { ...SIGNED_OUT, refresh: true } : SIGNED_OUT);
 
     const rows = await sb(`cts_follows?select=case_slug&member_id=eq.${member.id}`);
     return res.status(200).json({
@@ -25,6 +33,7 @@ export default async function handler(req, res) {
       displayName: member.display_name || null,
       email: maskEmail(member.email),
       confirmed: !!member.confirmed_at,
+      emailOff: !!member.unsubscribed_at,
       follows: rows.map((r) => r.case_slug),
     });
   } catch (e) {

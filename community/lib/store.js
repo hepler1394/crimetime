@@ -62,9 +62,10 @@ export function restStore() {
       const rows = await sb(`cts_members?select=*&email=ilike.${q(String(email).trim())}&limit=1`);
       return rows?.[0] || null;
     },
-    async setAuthId(memberId, authUserId) {
+    async setAuthId(memberId, authUserId, { confirm = false } = {}) {
+      const body = { auth_user_id: authUserId, ...(confirm ? { confirmed_at: new Date().toISOString() } : {}) };
       const rows = await sb(`cts_members?id=eq.${q(memberId)}`, {
-        method: "PATCH", body: { auth_user_id: authUserId }, prefer: "return=representation",
+        method: "PATCH", body, prefer: "return=representation",
       });
       return rows?.[0] || null;
     },

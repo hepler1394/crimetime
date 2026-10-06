@@ -43,9 +43,38 @@ const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) CrimeTimeSnacksWatcher/1.0
 const strip = (h) => h.replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"').replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
 const SKIP = /duckduckgo\.com|wikipedia\.org|youtube\.com|facebook\.com|tiktok\.com|instagram\.com|reddit\.com|amazon\.com|pinterest\.|imdb\.com/;
 
-async function search(q) {
+// Search. From 2026-09-19 to 2026-10-05 the watcher filed nothing at all: DuckDuckGo answers
+// all but the first query of a run with a 202 "anomaly" challenge page, which parsed as zero
+// results, and a case with zero results was skipped without a word. 39 of 40 cases went
+// unsearched every six hours and the log said "0 developments". So now:
+//   - With BRAVE_API_KEY set (a paid API, made for this), Brave's news search is used.
+//   - DuckDuckGo stays as the key-free fallback, and its challenge page is recognised as a
+//     refusal, not an empty result. After the first refusal the run stops asking it rather
+//     than hammering a service that has said no; it is not something to work around.
+//   - Every case that could not be searched is counted, printed, and Cory hears about it.
+const BRAVE_KEY = process.env.BRAVE_API_KEY || "";
+class SearchRefused extends Error {}
+let ddgRefused = false;
+const pauseMs = (ms) => new Promise((r) => setTimeout(r, ms));
+
+async function braveSearch(q) {
   const c = new AbortController(); setTimeout(() => c.abort(), 20000).unref();
-  const html = await (await fetch(`https://html.duckduckgo.com/html/?q=${encodeURIComponent(q)}&df=m`, { signal: c.signal, headers: { "User-Agent": UA } })).text();
+  const r = await fetch(`https://api.search.brave.com/res/v1/news/search?q=${encodeURIComponent(q)}&count=12&freshness=pm`, { signal: c.signal, headers: { Accept: "application/json", "X-Subscription-Token": BRAVE_KEY } });
+  if (r.status === 401 || r.status === 403 || r.status === 429) throw new SearchRefused(`brave HTTP ${r.status}`);
+  if (!r.ok) throw new Error(`brave HTTP ${r.status}`);
+  const j = await r.json();
+  return (j.results || []).filter((x) => x?.url && !SKIP.test(x.url)).slice(0, 12)
+    .map((x) => ({ title: strip(String(x.title || "")), url: String(x.url).split("#")[0], snippet: strip(String(x.description || "")) }));
+}
+
+async function search(q) {
+  if (BRAVE_KEY) return braveSearch(q);
+  if (ddgRefused) throw new SearchRefused("duckduckgo refused an earlier query this run");
+  const c = new AbortController(); setTimeout(() => c.abort(), 20000).unref();
+  const res = await fetch(`https://html.duckduckgo.com/html/?q=${encodeURIComponent(q)}&df=m`, { signal: c.signal, headers: { "User-Agent": UA } });
+  const html = await res.text();
+  if (res.status === 202 || /anomaly-modal|challenge-form|bots use DuckDuckGo/i.test(html)) { ddgRefused = true; throw new SearchRefused(`duckduckgo answered with a bot challenge (HTTP ${res.status})`); }
+  if (!res.ok) throw new Error(`duckduckgo HTTP ${res.status}`);
   const items = []; const re = /<a[^>]+class="result__a"[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>[\s\S]*?class="result__snippet"[^>]*>([\s\S]*?)<\/a>/g;
   let m; while ((m = re.exec(html)) && items.length < 12) {
     let url = m[1]; const u = url.match(/uddg=([^&]+)/); if (u) url = decodeURIComponent(u[1]);
@@ -100,6 +129,19 @@ async function gate(update, articleText, existing, caseTitle) {
 
 let found = 0, considered = 0, cases = [];
 const report = [];
+const unsearched = [];
+const searchErrors = new Set();
+
+// --daily (the six-hourly CI sync passes it): with a paid search key, search only on the first
+// run of the UTC day. GitHub starts the 00:17 schedule late, between 05:00 and 06:05 UTC across
+// late September 2026, so "first run" means before 09:00 UTC rather than before 06:00. Forty cases four times a day is 4,800 paid queries a month for news that
+// moves at the pace of a court calendar; once a day is 1,200. Key-free search is unaffected.
+const FIRST_RUN_BEFORE_UTC_HOUR = 9;
+const dailySkip = args.includes("--daily") && BRAVE_KEY && new Date().getUTCHours() >= FIRST_RUN_BEFORE_UTC_HOUR && !pendingMode;
+if (dailySkip) {
+  console.log("Case watch: searched already today (paid search runs on the first sync of the UTC day).");
+  process.exit(0);
+}
 
 if (pendingMode) {
   // Updates filed before the gate existed, or held by an earlier run: read the article again
@@ -118,10 +160,13 @@ if (pendingMode) {
   }
 } else {
   cases = await sb(`cts_cases?select=slug,title,years,status${only ? `&slug=eq.${only}` : ""}`);
-  for (const c of cases) {
+  for (const [n, c] of cases.entries()) {
     let items = [];
-    try { items = await search(`"${c.title.replace(/^The /, "")}" (trial OR sentenced OR verdict OR arrested OR charged OR appeal OR hearing OR ruling OR released) ${new Date().getFullYear()}`); } catch (e) { say(`  ${c.slug}: search failed ${e.message}`); continue; }
-    if (!items.length) continue;
+    // Brave allows one query a second on the plans Cory has used; DuckDuckGo gets more room.
+    if (n) await pauseMs(BRAVE_KEY ? 1100 : 2500);
+    try { items = await search(`"${c.title.replace(/^The /, "")}" (trial OR sentenced OR verdict OR arrested OR charged OR appeal OR hearing OR ruling OR released) ${new Date().getFullYear()}`); }
+    catch (e) { unsearched.push(c.slug); searchErrors.add(e.message); if (!(e instanceof SearchRefused) || unsearched.length === 1) say(`  ${c.slug}: search failed ${e.message}`); continue; }
+    if (!items.length) { say(`  ${c.slug}: no search results`); continue; }
     const have = new Set((await sb(`cts_case_updates?select=url&case_slug=eq.${c.slug}`)).map((r) => normUrl(r.url)));
     const seen = new Set();
     const unseen = items.filter((i) => { const k = normUrl(i.url); if (have.has(k) || seen.has(k)) return false; seen.add(k); return true; }).slice(0, 6);
@@ -185,7 +230,17 @@ if (published.length || held.length) {
   await notifyCory(lines.join("\n"), say);
 }
 
+// A watcher that cannot search looks exactly like a quiet week unless it says so. Cory hears
+// once a day (the first run of the UTC day), not on every sync.
+if (unsearched.length && new Date().getUTCHours() < FIRST_RUN_BEFORE_UTC_HOUR) {
+  await notifyCory([
+    `CrimeTimeSnacks case watch could not search ${unsearched.length} of ${cases.length} cases: ${[...searchErrors][0]}.`,
+    BRAVE_KEY ? "Check the Brave key and its quota." : "No BRAVE_API_KEY is set, so it used DuckDuckGo, which refuses automated queries. Add BRAVE_API_KEY to the GitHub Actions secrets.",
+  ].join("\n"), say);
+}
+
+const notSearched = unsearched.length ? ` ${unsearched.length} case(s) NOT SEARCHED (${[...searchErrors][0]}).` : "";
 const msg = pendingMode
   ? `Case gate: ${considered} pending update(s) re-checked: ${tally.approved} approved, ${tally.held} held, ${tally.rejected} rejected.`
-  : `Case watch: ${cases.length} cases, ${considered} new results, ${found} development(s) filed: ${tally.approved} approved, ${tally.held} held, ${tally.rejected} rejected as duplicates.`;
-console.log(asJson ? JSON.stringify({ ok: true, cases: cases.length, considered, found, ...tally, report, outcomes, message: msg }) : msg);
+  : `Case watch: ${cases.length} cases, ${considered} new results, ${found} development(s) filed: ${tally.approved} approved, ${tally.held} held, ${tally.rejected} rejected as duplicates.${notSearched}`;
+console.log(asJson ? JSON.stringify({ ok: true, cases: cases.length, considered, found, ...tally, unsearched, report, outcomes, message: msg }) : msg);

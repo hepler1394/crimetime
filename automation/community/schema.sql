@@ -43,6 +43,10 @@ create table if not exists public.cts_case_updates (
   approved_at   timestamptz
 );
 create unique index if not exists cts_case_updates_url_uq on public.cts_case_updates (case_slug, url) where url <> '';
+-- Why the update gate held or rejected an update (automation/community/update-gate.mjs), or the
+-- sentence that carried an approved one. Added in production 2026-09-13 without reaching this
+-- file; recorded here 2026-10-05 so a fresh install matches.
+alter table public.cts_case_updates add column if not exists gate_note text not null default '';
 create index if not exists cts_case_updates_case_status_idx on public.cts_case_updates (case_slug, status, happened_on desc);
 
 create table if not exists public.cts_members (

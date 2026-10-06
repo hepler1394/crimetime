@@ -18,7 +18,7 @@ export default function LinkEmail({ initial }) {
 
   async function send(event) {
     event.preventDefault();
-    setBusy(true); setError(""); setResult("");
+    setBusy(true); setError("");
     const res = await post("/api/account/email", { step: "start", email });
     setBusy(false);
     if (res.error) return setError(res.error);
@@ -40,7 +40,7 @@ export default function LinkEmail({ initial }) {
   }
 
   async function remove(address) {
-    setBusy(true); setError(""); setResult("");
+    setBusy(true); setError("");
     const res = await post("/api/account/email", { step: "remove", email: address });
     setBusy(false);
     if (res.error) return setError(res.error);

@@ -9,9 +9,22 @@
 (function () {
   var SIGNED_OUT = { signedIn: false, follows: [] };
 
-  window.__ctsMe = fetch("/api/community/me", { credentials: "same-origin" })
-    .then(function (r) { return r.ok ? r.json() : SIGNED_OUT; })
-    .catch(function () { return SIGNED_OUT; });
+  function ask() {
+    return fetch("/api/community/me", { credentials: "same-origin" })
+      .then(function (r) { return r.ok ? r.json() : SIGNED_OUT; })
+      .catch(function () { return SIGNED_OUT; });
+  }
+
+  // A sign-in lasts an hour before it has to be renewed, and only the community zone can
+  // renew it. When /me says the session it found had run out, ask the zone once and then
+  // ask /me again. Once only: if the refresh fails too, signed out is the honest answer.
+  window.__ctsMe = ask().then(function (me) {
+    if (!me || !me.refresh) return me;
+    return fetch("/auth/refresh", { method: "POST", credentials: "same-origin" })
+      .then(function (r) { return r.ok ? r.json() : { signedIn: false }; })
+      .then(function (j) { return j && j.signedIn ? ask() : SIGNED_OUT; })
+      .catch(function () { return SIGNED_OUT; });
+  });
 
   var link = document.querySelector("[data-account]");
 

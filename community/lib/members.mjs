@@ -21,7 +21,10 @@ export async function linkMember(store, { authUserId, email }) {
     if (byEmail.auth_user_id && byEmail.auth_user_id !== authUserId) {
       throw new Error(`linkMember: ${address} is already linked to another account`);
     }
-    const member = await store.setAuthId(byEmail.id, authUserId);
+    // Arriving through Supabase Auth proves the address. An email follower who never clicked
+    // their confirm link is confirmed by this, or the digest, which only mails confirmed
+    // members, would go on skipping someone who has just signed in as that address.
+    const member = await store.setAuthId(byEmail.id, authUserId, { confirm: !byEmail.confirmed_at });
     return { member: member || byEmail, created: false, linked: true };
   }
 

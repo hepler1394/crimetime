@@ -6,7 +6,7 @@
 // else gets one email with a confirm link; the newsletter flag is set only when that link
 // is clicked (confirm.js with n=1). The answer is the same whether or not the address is
 // already a member, and the send shares the follow endpoint's ten-minute cooldown.
-import { sb, sendMail, isEmail, memberTokenFrom, memberByToken, readJsonBody, claimMailSlot, newsletterEmail, SITE } from "../../automation/community/lib.js";
+import { sb, sendMail, isEmail, memberFrom, readJsonBody, claimMailSlot, newsletterEmail, SITE } from "../../automation/community/lib.js";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "POST only" });
@@ -14,7 +14,9 @@ export default async function handler(req, res) {
     const body = await readJsonBody(req);
     const email = String(body.email || "").trim().toLowerCase();
 
-    const cookieMember = await memberByToken(memberTokenFrom(req));
+    // Either cookie, as in follow.js: the account session or the old email-link one. Reading
+    // only cts_m sent a member signed in with Google off to check an inbox for nothing.
+    const cookieMember = await memberFrom(req);
     if (cookieMember?.confirmed_at && (!email || cookieMember.email === email)) {
       await sb(`cts_members?id=eq.${cookieMember.id}`, { method: "PATCH", body: { newsletter: true, unsubscribed_at: null }, prefer: "return=minimal" });
       return res.status(200).json({ ok: true, state: "subscribed" });

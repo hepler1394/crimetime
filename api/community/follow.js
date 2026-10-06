@@ -1,8 +1,14 @@
 // POST /api/community/follow  { email, case }
 // Follow a case by email. A member with the cookie follows at once; anyone else
-// gets one email: a confirmation link (new member) or a sign-in link (known
+// gets one email: a confirmation link (new member) or a follow link (known
 // member) that also sets the cookie. Never reveals whether an email exists.
 // One mail per address per ten minutes: see claimMailSlot in lib.js.
+//
+// Without a cookie, nothing is followed until the link is clicked (confirm.js writes the
+// follow). Until 2026-10-05 the follow was written here, at request time, so anyone who knew
+// an address could add cases to that member's Sunday email, and a confirm click switched on
+// every case anyone had added for them. The cost: two cases asked for inside the ten-minute
+// mail window get one email, for the first; the second is asked for again once signed in.
 import { sb, sendMail, isEmail, isSlug, memberFrom, readJsonBody, claimMailSlot, confirmEmail, signinEmail, SITE } from "../../automation/community/lib.js";
 
 export default async function handler(req, res) {
@@ -32,7 +38,6 @@ export default async function handler(req, res) {
     await sb("cts_members?on_conflict=email", { method: "POST", body: { email }, prefer: "resolution=ignore-duplicates,return=minimal" });
     const member = (await sb(`cts_members?select=*&email=eq.${encodeURIComponent(email)}&limit=1`))?.[0];
     if (!member) throw new Error("member upsert failed");
-    await sb("cts_follows", { method: "POST", body: { member_id: member.id, case_slug: slug }, prefer: "resolution=ignore-duplicates,return=minimal" });
 
     if (await claimMailSlot(member.id)) {
       const link = `${SITE()}/api/community/confirm?t=${member.token}&c=${slug}`;

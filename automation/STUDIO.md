@@ -672,8 +672,11 @@ update gate (below); nothing the gate held goes out.
   `/api/community/*` Vercel functions with the service role key.
 - **Cases** come from `cases.json` plus published episodes:
   `node automation/community/sync-cases.mjs` (also the Sync cases button).
-- **Updates** are found by `automation/case-watch.mjs` every 6 hours in CI and on
-  demand from the studio ("check cases"): DuckDuckGo results, each page fetched and
+- **Updates** are found by `automation/case-watch.mjs` in CI (once a day with a paid key,
+  `--daily`) and on demand from the studio ("check cases"): Brave news search when
+  `BRAVE_API_KEY` is set, else DuckDuckGo, which refuses automated queries after the first
+  (nothing was filed 2026-09-19 to 10-05 because of it; the watcher now prints "NOT
+  SEARCHED" and tells Cory). Each page is fetched and
   dropped if it never names the case, the article text screened by Gemini Flash,
   drafted as an update. The page read is what stopped it filing a Heuermann sentencing
   sourced to a listicle that never mentions him.
@@ -867,9 +870,10 @@ with one conditional UPDATE on `cts_members.last_mail_at`: one mail per address 
 minutes, and two simultaneous requests cannot both win the row. The answer to the caller
 is the same either way, so nothing is revealed about who is already a member.
 
-    npm run test:community      # writes one throwaway .invalid member and deletes it
+    node automation/community/test-cooldown.mjs   # writes one throwaway .invalid member and deletes it
 
 That test hits the live database, so it is deliberately not part of `npm test`.
+(`npm run test:community` is the community zone's unit tests, which touch no database.)
 
 ## Recovering from the two failures that actually happen
 
