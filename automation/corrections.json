@@ -3,6 +3,13 @@
   "corrections": [
     {
       "date": "2026-10-05",
+      "where": "Episode: The Menendez Brothers: The Parole Years",
+      "url": "/episodes/the-menendez-brothers-parole-years.html",
+      "wrong": "The episode said Governor Gavin Newsom announced on his podcast on March 24, 2025 a June 13 deadline for the brothers' resentencing. June 13 was the date set for parole board risk-assessment hearings on the brothers' clemency request, not a resentencing deadline, and Newsom announced it on March 11. The error came from our research notes, which have also been corrected. The episode also said there would be no third trial, a prediction rather than a fact.",
+      "fixed": "The passages were re-voiced. The episode now says the brothers had separately asked the governor for clemency and that he said the parole board would hold risk-assessment hearings for each brother on June 13 to help him decide, and that the convictions stand and no court has granted a new trial."
+    },
+    {
+      "date": "2026-10-05",
       "where": "Blog post: How Investigators Tied Bryan Kohberger to the Moscow Murders",
       "url": "/blog-posts/bryan-kohberger-from-arrest-to-courtroom.html",
       "wrong": "The post said the Idaho Supreme Court granted the change of venue on Sept. 9, 2024, that Kohberger was ordered to pay $20,000 in restitution, and that Ethan Chapin was a sophomore.",
