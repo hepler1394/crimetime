@@ -56,3 +56,44 @@ export function unsupportedInPost(post, notes) {
 }
 
 export const postWords = (post) => (post.body || []).filter((b) => !b.startsWith("## ")).join(" ").split(/\s+/).filter(Boolean).length;
+
+// Quotations: a quoted run of four or more words must be in the notes, letters and digits
+// compared, so curly quotes and dashes do not matter. The name-and-number check cannot see an
+// invented quote made of ordinary words; this can. Shorter quoted runs are usually a term
+// ("touch DNA", "Bridge Guy") and are left to the name check.
+const flatText = (s) => String(s || "").normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+export function quotesIn(text) {
+  const out = [];
+  for (const m of String(text || "").matchAll(/["“]([^"“”]{3,400})["”]/g)) {
+    const q = m[1].trim();
+    if (q.split(/\s+/).length >= 4) out.push(q);
+  }
+  return out;
+}
+export function unsupportedQuotes(post, notes) {
+  const page = flatText(notes);
+  const missing = [];
+  for (const block of post.body || []) for (const q of quotesIn(block)) if (!page.includes(flatText(q))) missing.push(q);
+  return missing;
+}
+
+// Stock lines. On 2026-10-05, 13 of 20 posts opened "You have probably heard the headline
+// version", 10 ended "Read the file. Form your own conclusion." and 12 said "I went back
+// through the case file", which Cory did not: the posts are written from research notes.
+// The voice guide's examples were being copied as templates. Each of these sends the draft
+// back for one rewrite; a post's opening must also not repeat a recent post's opening.
+export const STOCK_PHRASES = [
+  "headline version", "strangest true detail", "read the file. form your own conclusion", "form your own conclusion",
+  "i went back through", "let's unpack", "let us unpack", "delve", "in conclusion", "in this article", "in this post",
+  "shockwaves", "gripped the nation", "gripped the entire country", "sent ripples", "tapestry", "it's important to note",
+  "it is important to note", "today, we are going to", "today we are going to", "our episode", "stay tuned",
+];
+const opening = (post) => flatText((post.body || []).find((b) => !b.startsWith("## ")) || "").split(" ").slice(0, 6).join(" ");
+export function stockLines(post, recent = []) {
+  const text = flatText([post.title, ...(post.body || [])].join(" \n "));
+  const hits = STOCK_PHRASES.filter((p) => text.includes(flatText(p)));
+  const mine = opening(post);
+  const clash = mine && recent.find((r) => opening(r) === mine);
+  if (clash) hits.push(`opens with the same words as "${clash.title}"`);
+  return hits;
+}

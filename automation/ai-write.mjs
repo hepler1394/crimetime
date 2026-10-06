@@ -27,7 +27,7 @@ import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { chat, loadConfig } from "./llm.mjs";
-import { unsupportedInPost, postWords } from "./blog-check.mjs";
+import { unsupportedInPost, unsupportedQuotes, stockLines, STOCK_PHRASES, postWords } from "./blog-check.mjs";
 import { notifyCory } from "./notify-cory.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -119,15 +119,21 @@ ${VOICE}
 For this post, these rules override the format defaults in the voice guide:
 - 1,100 to 1,500 words. An opening of two or three paragraphs with no heading, then 5 to 7 sections, each with a plain, descriptive heading and 2 to 4 paragraphs.
 - Use ONLY facts in the RESEARCH NOTES. Every name, date, number and quotation must appear in the notes. If the notes do not say it, leave it out. Do not add anything you remember about the case.
+- A quotation goes in quote marks only when the notes contain those exact words. Otherwise paraphrase it without quote marks. Never make up something a person said.
 - Write numbers as digits and give full names the way the notes give them.
-- Presumption of innocence: anyone the notes do not show convicted is "accused", "charged" or "suspected". Say what the record shows, never what you believe.
+- Presumption of innocence: anyone the notes do not show convicted is "accused", "charged" or "suspected". Say what the record shows, never what you believe. Someone acquitted, cleared or never charged is never written as if they did it.
+- Where the case stands: date it. Write "As of <month year in the notes>, ..." for the latest event the notes give, never "today" or "recently", and do not say a court "has not ruled" unless the notes say so; the post will be read for months.
+- You are a writer working from research notes. Do not claim Cory personally read files, interviewed anyone or went back through anything. This is a blog post, not a podcast script: no "today we're going to", no "our episode", no "stay tuned".
+- The voice guide's example lines are illustrations of tone. Do not copy them. Never use these phrases: ${STOCK_PHRASES.map((p) => `"${p}"`).join(", ")}. Open with a specific, true detail from the notes, said plainly, and make the opening unlike the RECENT OPENINGS listed after the notes. Vary sentence shapes.
 - The title names the case or subject plainly, the way a person would search for it. Under 70 characters. No clickbait.
 - No emojis, no "in this article", no "delve", no strings of rhetorical questions. End by handing the case to the reader, never with a lecture.
-Output ONLY a JSON object: {"title": string, "excerpt": string (one sentence, under 155 characters), "intro": [string], "sections": [{"heading": string, "paragraphs": [string]}]}`;
+Output ONLY a JSON object: {"title": string, "excerpt": string (one factual sentence, under 155 characters; it is the meta description), "intro": [string], "sections": [{"heading": string, "paragraphs": [string]}]}`;
 
+// Meta descriptions over ~155 characters are cut off in search results: trim on a word.
+const clip = (t, n = 155) => { t = String(t || "").trim(); if (t.length <= n) return t; const c = t.slice(0, n - 1); return c.slice(0, c.lastIndexOf(" ")).replace(/[,;:.\s]+$/, "") + "."; };
 const toPost = (o) => ({
   title: String(o.title || "").trim(),
-  excerpt: String(o.excerpt || "").trim().slice(0, 200),
+  excerpt: clip(o.excerpt),
   body: [...(o.intro || []), ...(o.sections || []).flatMap((s) => [`## ${String(s.heading || "").trim()}`, ...(s.paragraphs || [])])].map((t) => String(t).trim()).filter((t) => t && t !== "##"),
 });
 
@@ -144,7 +150,11 @@ if (!subject) finish("No subject had enough research to write from. Nothing publ
 const category = subject.category;
 const notes = notesPack.notes.slice(0, 90000);
 console.log(`Writing: ${subject.subject} (${CATEGORIES[category]}), notes ${Math.round(notes.length / 1000)}k chars, ${notesPack.sources.length} sources`);
-const user = `SUBJECT: ${subject.subject}\nCATEGORY: ${CATEGORIES[category]}\n\nRESEARCH NOTES\n${notes}`;
+// Recent openings, so the writer does not reuse one: the posts of September 2026 opened the
+// same way thirteen times.
+const recent = blog.posts.filter((p) => p.slug !== existing?.slug).slice(0, 12);
+const openings = recent.map((p) => (p.body.find((b) => !b.startsWith("## ")) || "").split(/(?<=[.!?])\s/)[0]).filter(Boolean);
+const user = `TODAY: ${today}\nSUBJECT: ${subject.subject}\nCATEGORY: ${CATEGORIES[category]}\n\nRESEARCH NOTES\n${notes}\n\nRECENT OPENINGS (do not echo these)\n${openings.map((o) => `- ${o}`).join("\n")}`;
 
 let draft, provider;
 try {
@@ -153,16 +163,27 @@ try {
   draft = toPost(JSON.parse(r.text));
 } catch (e) { finish(`Writer failed: ${e.message}`, 1); }
 
-let missing = unsupportedInPost(draft, notes);
-if (missing.length) {
-  console.log(`Check: not in the notes: ${missing.join(", ")}. One rewrite.`);
+// Three checks, one rewrite: names and numbers not in the notes, quotations not in the notes
+// word for word, and stock lines (blog-check.mjs). The first two hold a post; stock lines only
+// send it back once, and any left are logged.
+const check = (d) => ({ missing: unsupportedInPost(d, notes), quotes: unsupportedQuotes(d, notes), stock: stockLines(d, recent) });
+const factIssues = (f) => [...f.missing, ...f.quotes.map((q) => `quote "${q.slice(0, 60)}"`)];
+let found = check(draft);
+if (found.missing.length || found.quotes.length || found.stock.length) {
+  const asks = [
+    ...(found.missing.length ? [`These names and numbers in your draft are not in the research notes: ${found.missing.join(", ")}. Remove each one or correct it to exactly what the notes say.`] : []),
+    ...(found.quotes.length ? [`These quotations are not in the research notes word for word: ${found.quotes.map((q) => `"${q}"`).join("; ")}. Use the exact words from the notes or paraphrase without quote marks.`] : []),
+    ...(found.stock.length ? [`Remove these stock lines and write those sentences fresh: ${found.stock.join("; ")}.`] : []),
+  ];
+  console.log(`Check: ${asks.join(" ")} One rewrite.`);
   try {
-    const r = await chat(SYSTEM, `${user}\n\nYOUR PREVIOUS DRAFT\n${JSON.stringify(draft)}\n\nThese names and numbers in your draft are not in the research notes: ${missing.join(", ")}.\nRewrite the post so each one is removed or corrected to exactly what the notes say. Keep everything else. Same JSON shape.`, cfg);
+    const r = await chat(SYSTEM, `${user}\n\nYOUR PREVIOUS DRAFT\n${JSON.stringify(draft)}\n\n${asks.join("\n")}\nKeep everything else. Same JSON shape.`, cfg);
     const second = toPost(JSON.parse(r.text));
     if (second.body.length) draft = second;
   } catch (e) { console.log(`Rewrite failed: ${e.message}`); }
-  missing = unsupportedInPost(draft, notes);
+  found = check(draft);
 }
+let missing = factIssues(found);
 // A short draft gets one expansion pass before it is held. Gemini Pro handed back 769 words
 // on an 80k-character research file (2026-09-24, the fingerprint post), which is a model
 // stopping early, not a shortage of material; asking again with the count in front of it is
@@ -173,12 +194,12 @@ if (words < MIN_WORDS && draft.body.length) {
   try {
     const r = await chat(SYSTEM, `${user}\n\nYOUR PREVIOUS DRAFT\n${JSON.stringify(draft)}\n\nThis draft is ${words} words. The post must be 1,100 to 1,500 words. Expand it with more of what the RESEARCH NOTES contain: more of the record, more specifics, more sections where the notes support them. Add nothing that is not in the notes. Keep the title. Same JSON shape.`, cfg);
     const bigger = toPost(JSON.parse(r.text));
-    if (postWords(bigger) > words) { draft = bigger; missing = unsupportedInPost(draft, notes); }
+    if (postWords(bigger) > words) { draft = bigger; found = check(draft); missing = factIssues(found); }
   } catch (e) { console.log(`Expansion failed: ${e.message}`); }
   words = postWords(draft);
 }
 const problems = [...(missing.length ? [`not in the notes: ${missing.join(", ")}`] : []), ...(words < MIN_WORDS ? [`only ${words} words`] : []), ...(!draft.title ? ["no title"] : [])];
-console.log(`Draft: "${draft.title}", ${words} words, via ${provider}. ${problems.length ? `Held: ${problems.join("; ")}` : "Check passed."}`);
+console.log(`Draft: "${draft.title}", ${words} words, via ${provider}. ${problems.length ? `Held: ${problems.join("; ")}` : "Check passed."}${found.stock.length ? ` Stock lines left in: ${found.stock.join("; ")}.` : ""}`);
 
 if (dry) { console.log(JSON.stringify(draft, null, 2)); finish("Dry run: nothing written."); }
 
@@ -193,6 +214,12 @@ if (problems.length) {
 if (!existing && blog.posts.some((p) => p.slug === slug)) finish(`A post with slug "${slug}" already exists. Nothing published.`, 1);
 
 const kase = live.find((c) => c.slug === subject.caseSlug);
+function relatedCasesFor(d) {
+  const text = [d.title, ...d.body].join(" ").toLowerCase();
+  return live.filter((c) => c.episode_slug && episodes.some((e) => e.slug === c.episode_slug))
+    .filter((c) => { const name = c.title.split(":")[0].replace(/^the\s+/i, "").trim().toLowerCase(); return name.length > 4 && text.includes(name); })
+    .map((c) => c.slug).slice(0, 4);
+}
 const post = {
   slug,
   title: draft.title,
@@ -203,10 +230,13 @@ const post = {
   image: existing && existing.image !== "images/logo.png" ? existing.image : (kase?.image || "images/logo.png"),
   author: blog.meta?.author || "Cory",
   featured: false,
-  excerpt: draft.excerpt || draft.body[0].slice(0, 155),
+  excerpt: draft.excerpt || clip(draft.body.find((b) => !b.startsWith("## ")) || ""),
   body: draft.body,
   sourceTopic: subject.sourceTopic || null,
   caseSlug: subject.caseSlug || null,
+  // A topic post links the cases it names that the show has an episode for (build-blog.mjs
+  // renders them under "On the show").
+  ...(!subject.caseSlug ? { relatedCases: relatedCasesFor(draft) } : {}),
   sources: notesPack.sources,
 };
 if (existing) blog.posts[blog.posts.indexOf(existing)] = post; else blog.posts.unshift(post);

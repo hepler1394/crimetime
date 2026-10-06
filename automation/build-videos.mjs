@@ -120,9 +120,15 @@ const extraCss = `
         .format-filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.7rem; margin: 0.5rem 0 1.5rem; }
     </style>`;
 
+// Say what is actually on the page. "Quick true-crime clips and full case breakdowns" sat
+// over a single full-length video and no clips at all.
+const plural = (n, one, many) => (n === 1 ? `one ${one}` : `${n} ${many}`);
+const lede = [shorts.length ? plural(shorts.length, "short clip", "short clips") : "", longs.length ? plural(longs.length, "full-length video", "full-length videos") : ""].filter(Boolean).join(" and ");
+const blurb = lede ? `${lede.charAt(0).toUpperCase()}${lede.slice(1)} from CrimeTimeSnacks on YouTube.` : "CrimeTimeSnacks videos on YouTube.";
+
 const page = `${head({
   title: `${shorts.length ? "Shorts & Videos" : "Videos"} | CrimeTimeSnacks`,
-  description: "Quick true-crime clips and full case breakdowns from CrimeTimeSnacks on YouTube.",
+  description: blurb,
   canonicalPath: "/videos.html",
   extraHead: videoLd + extraCss,
 })}
@@ -133,7 +139,7 @@ ${header("videos")}
         <div class="container">
             <p class="eyebrow" style="justify-content:center;">On Camera</p>
             <h1 class="page-title">${shorts.length ? "Shorts &amp; " : "CrimeTimeSnacks "}<span class="text-red">Videos</span></h1>
-            <p>Quick true-crime clips and full case breakdowns.</p>
+            <p>${esc(blurb)}</p>
 ${data.meta.channelUrl ? `            <p style="margin-top:1.6rem;"><a href="${esc(data.meta.channelUrl)}" target="_blank" rel="noopener" class="btn btn-primary">${mark("youtube", 16)} Subscribe on YouTube</a></p>\n` : ""}        </div>
     </section>
 

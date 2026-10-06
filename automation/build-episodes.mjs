@@ -7,7 +7,7 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { SITE, APPLE, esc, head, header, footer, tape, scripts, mark } from "./shell.mjs";
+import { SITE, APPLE, esc, head, header, footer, tape, scripts, mark, summaryOf } from "./shell.mjs";
 import { thumb } from "./thumbs.mjs";
 
 // Transcript for a slug (automation/transcripts/<slug>.json), if it exists.
@@ -60,6 +60,27 @@ const fmtDur = (d) => (d ? d.replace(/^00:/, "") : "");
 const epUrl = (ep) => `/episodes/${ep.slug}.html`;
 const trunc = (s, n) => (s.length > n ? s.slice(0, n).replace(/\s+\S*$/, "") + "…" : s);
 
+// summaryOf (shell.mjs) drops the "Hey everyone, Cory here." opening from cards, meta
+// descriptions and JSON-LD. The episode page itself still prints the description whole.
+// Cut on a word boundary for a meta description; .slice(0, 200) ended mid-word.
+function clip(t, n = 155) {
+  if (t.length <= n) return t;
+  const cut = t.slice(0, n), sp = cut.lastIndexOf(" ");
+  return `${(sp > n * 0.6 ? cut.slice(0, sp) : cut).replace(/[\s,;:.–-]+$/, "")}…`;
+}
+
+// Case pages, from the snapshot build-cases.mjs keeps. Only a case whose episode exists is
+// published (indexed, linked); the same rule as build-cases.mjs.
+let caseByEpisode = {};
+try {
+  const live = JSON.parse(await readFile(join(dirname(fileURLToPath(import.meta.url)), "cases-live.json"), "utf8"));
+  for (const c of live.cases || []) if (c.episode_slug) caseByEpisode[c.episode_slug] = c;
+} catch { /* no snapshot: no case links */ }
+
+// Words that say which case an episode is about, for "More from this case" ordering.
+const STOP = new Set("the a an and of in on at to for from with family murder murders case cases update part years thirty eight names brothers disappearance interrogation apartment".split(" "));
+const keyWords = (t) => new Set(String(t).toLowerCase().normalize("NFD").replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter((w) => w.length > 2 && !STOP.has(w)));
+
 /* ---------------------------------------------------------- episode cards */
 const durSeconds = (d) => {
   if (!d) return 0;
@@ -81,7 +102,7 @@ function gridCard(p, ep) {
                         </div>
                         <h3 class="episode-title"><a href="${epUrl(ep)}" style="color:inherit;text-decoration:none;">${esc(ep.title)}</a></h3>
                         <p class="episode-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> ${esc(fmtDate(ep.date))}</p>
-                        <p class="episode-description">${esc(trunc(ep.description, 220))}</p>
+                        <p class="episode-description">${esc(trunc(summaryOf(ep.description), 220))}</p>
                         <audio preload="none" controls>
                             <source src="${esc(ep.audio)}" type="${esc(ep.audioType)}">
                         </audio>
@@ -151,6 +172,7 @@ ${tape()}
                 </select>
             </div>
         </div>
+        <h2 class="sr-only">All episodes</h2>
         <div class="episode-grid" id="episode-grid">
 ${sorted.map((ep) => gridCard(p, ep)).join("\n")}
         </div>
@@ -203,10 +225,14 @@ function episodeLd(p, ep) {
     "@type": "PodcastEpisode",
     name: ep.title,
     datePublished: ep.date,
-    description: ep.excerpt || ep.description,
+    description: clip(summaryOf(ep.excerpt || ep.description), 300),
     timeRequired: durISO(ep.duration),
-    associatedMedia: { "@type": "MediaObject", contentUrl: ep.audio },
-    partOfSeries: { "@type": "PodcastSeries", name: "CrimeTimeSnacks", url: `${SITE}/` },
+    image: /^https?:/.test(ep.image || "") ? ep.image : `${SITE}${ep.image}`,
+    // Absolute: a bare "/audio/x.mp3" is not a URL to a structured-data reader.
+    associatedMedia: { "@type": "MediaObject", contentUrl: /^https?:/.test(ep.audio || "") ? ep.audio : `${SITE}${ep.audio}`, encodingFormat: ep.audioType || "audio/mpeg", duration: durISO(ep.duration) },
+    partOfSeries: { "@type": "PodcastSeries", name: "CrimeTimeSnacks", url: `${SITE}/`, webFeed: `${SITE}/feed.xml` },
+    author: { "@type": "Person", name: p.author || "Cory" },
+    inLanguage: "en",
     url: `${SITE}${epUrl(ep)}`,
   };
   const crumbs = {
@@ -233,7 +259,7 @@ function shareRow(url, title) {
 
 function relatedCard(ep) {
   return `                <a class="episode-card" href="${epUrl(ep)}" style="text-decoration:none;color:inherit;">
-                    <img src="${esc(ep.card || ep.image)}" alt="${esc(ep.title)}" class="episode-image" loading="lazy" decoding="async" style="height:150px;">
+                    <img src="${esc(ep.card || ep.image)}" alt="" class="episode-image" loading="lazy" decoding="async" style="height:150px;">
                     <div class="episode-content" style="padding:1rem 1.1rem;">
                         <h3 class="episode-title" style="font-size:1rem;">${esc(ep.title)}</h3>
                         <p class="episode-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> ${esc(fmtDate(ep.date))}</p>
@@ -242,14 +268,24 @@ function relatedCard(ep) {
 }
 
 function episodePage(p, ep, sorted, transcript) {
-  const desc = (ep.excerpt || ep.description || "").slice(0, 200);
+  const desc = clip(summaryOf(ep.excerpt || ep.description || ""));
   const idx = sorted.findIndex((e) => e.slug === ep.slug);
   const prev = sorted[idx + 1]; // older
   const next = sorted[idx - 1]; // newer
-  const related = sorted.filter((e) => e.slug !== ep.slug).slice(0, 3);
+  // Other episodes on the same case first (three JonBenet, two each on Moscow, Watts,
+  // Menendez and Delphi), then the newest. It used to be the newest three regardless.
+  const mine = keyWords(ep.title);
+  const others = sorted.filter((e) => e.slug !== ep.slug);
+  const same = others.filter((e) => [...keyWords(e.title)].some((w) => mine.has(w)));
+  const related = [...same, ...others.filter((e) => !same.includes(e))].slice(0, 3);
+  const kase = caseByEpisode[ep.slug];
+  // Search titles: the bare episode name says nothing about what the page is. Keep it
+  // under about 60 characters, where Google cuts.
+  const bare = ep.title.replace(/^CrimeTimeSnacks:\s*/i, "");
+  const longTitle = `${bare} | CrimeTimeSnacks True Crime Podcast`;
 
   return `${head({
-    title: `${ep.title} | CrimeTimeSnacks`,
+    title: longTitle.length <= 62 ? longTitle : `${bare} | CrimeTimeSnacks`,
     description: desc,
     canonicalPath: epUrl(ep),
     ogImage: ep.image,
@@ -271,7 +307,7 @@ ${header("episodes")}
     </section>
 
     <div class="container" style="max-width:820px;margin:2.6rem auto;">
-        <img src="${esc(ep.hero || ep.image)}" alt="${esc(ep.title)}" width="960" height="960" decoding="async" style="width:100%;height:auto;max-width:440px;display:block;margin:0 auto 2rem;border-radius:16px;border:1px solid var(--cts-line-strong);box-shadow:var(--shadow-2);">
+        <img src="${esc(ep.hero || ep.image)}" alt="Cover art: ${esc(ep.title)}" width="960" height="960" decoding="async" style="width:100%;height:auto;max-width:440px;display:block;margin:0 auto 2rem;border-radius:16px;border:1px solid var(--cts-line-strong);box-shadow:var(--shadow-2);">
         <audio preload="none" controls>
             <source src="${esc(ep.audio)}" type="${esc(ep.audioType)}">
         </audio>
@@ -280,7 +316,8 @@ ${header("episodes")}
             <a href="${APPLE}" target="_blank" rel="noopener" class="btn btn-secondary">${mark("applepodcasts", 16)} Apple Podcasts</a>
         </div>
         <p style="color:var(--cts-muted);line-height:1.85;font-size:1.02rem;">${esc(ep.description)}</p>
-${transcriptBlock(transcript)}
+${kase ? `        <p class="episode-case-link"><a href="/cases/${esc(kase.slug)}.html"><i class="fas fa-folder-open" aria-hidden="true"></i> Follow this case</a> <span>Court dates, rulings and arrests by email, each checked against the article that reports it.</span></p>
+` : ""}${transcriptBlock(transcript)}
 ${shareRow(`${SITE}${epUrl(ep)}`, `${ep.title} — CrimeTimeSnacks`)}
         <div style="display:flex;justify-content:space-between;gap:0.8rem;flex-wrap:wrap;margin-top:2.6rem;">
             ${prev ? `<a href="${epUrl(prev)}" class="btn btn-secondary btn-sm"><i class="fas fa-arrow-left" aria-hidden="true"></i> ${esc(trunc(prev.title, 26))}</a>` : "<span></span>"}
@@ -320,7 +357,7 @@ function homeRecentCard(p, ep) {
                         </div>
                         <h3 class="episode-title">${esc(ep.title)}</h3>
                         <p class="episode-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> ${esc(fmtDate(ep.date))}</p>
-                        <p class="episode-description">${esc(trunc(ep.description, 150))}</p>
+                        <p class="episode-description">${esc(trunc(summaryOf(ep.description), 150))}</p>
                         <div class="episode-actions">
                             <a href="${epUrl(ep)}" class="btn btn-primary btn-sm">Listen Now</a>
                             <div class="episode-stats"><span><i class="far fa-clock" aria-hidden="true"></i> ${esc(fmtDur(ep.duration))}</span></div>
@@ -400,6 +437,29 @@ function statsBlock(data, transcribed) {
                 <!-- HOME-STATS:END -->`;
 }
 
+// File 01 on the homepage. Until 2026-10-06 it was a row of category filters (Murder,
+// Unsolved, Serial Killers...) wired to cards that carried no categories: every button hid
+// all three recent episodes and showed nothing in their place. A plain index of every
+// episode does what the row promised and gives each episode page a link from the homepage.
+const shortDate = (iso) => (iso ? new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" }) : "");
+function indexBlock({ episodes }) {
+  const sorted = [...episodes].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+  return `        <!-- HOME-INDEX:START (auto-filled by automation/build-episodes.mjs) -->
+        <ol class="case-index" reversed style="counter-reset:docket ${sorted.length + 1}">
+${sorted.map((ep) => `            <li><a href="${epUrl(ep)}"><span class="ci-title">${esc(ep.title)}</span><span class="ci-meta"><time datetime="${esc(ep.date || "")}">${esc(shortDate(ep.date))}</time>${ep.duration ? ` &middot; ${esc(fmtDur(ep.duration))}` : ""}</span></a></li>`).join("\n")}
+        </ol>
+        <p class="case-index-more"><a href="/episodes.html">All ${sorted.length} episodes, with search and sort <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
+        <!-- HOME-INDEX:END -->`;
+}
+
+// The proof strip's runtime line, from the feed rather than a number typed once. It said
+// "10-30 min" over an archive that runs from 0:57 to 28:22.
+function lengthFact({ episodes }) {
+  const mins = Math.max(...episodes.map((e) => durSeconds(e.duration) / 60).filter(Boolean));
+  if (!Number.isFinite(mins)) return null;
+  return `Snack-sized cases &middot; every one under ${Math.ceil(mins / 5) * 5 + (mins % 5 === 0 ? 5 : 0)} minutes`;
+}
+
 function replaceRegion(html, startMark, endMark, block) {
   const i = html.indexOf(startMark);
   const j = html.indexOf(endMark);
@@ -428,6 +488,17 @@ async function updateHome(data, transcribed = 0) {
     statsBlock(data, transcribed)
   );
   if (stats) html = stats;
+
+  const idx = replaceRegion(
+    html,
+    "<!-- HOME-INDEX:START (auto-filled by automation/build-episodes.mjs) -->",
+    "<!-- HOME-INDEX:END -->",
+    indexBlock(data)
+  );
+  if (idx) html = idx;
+
+  const fact = lengthFact(data);
+  if (fact) html = html.replace(/(<span class="marquee-item" data-fact="length">(?:<i[^>]*><\/i>)?\s*)[^<]*(<\/span>)/, `$1${fact}$2`);
 
   if (!epi && !stats) return false;
   await writeFile(indexPath, html, "utf8");

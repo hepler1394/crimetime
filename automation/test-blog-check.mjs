@@ -52,3 +52,25 @@ test("the host and the show are never treated as claims", () => {
 test("word count ignores headings", () => {
   assert.equal(postWords({ body: ["## A Heading Here", "one two three"] }), 3);
 });
+
+import { unsupportedQuotes, stockLines } from "./blog-check.mjs";
+
+test("an invented quotation is caught; one in the notes passes whatever the quote marks", () => {
+  const notes = `The judge asked, "Are you pleading guilty because you are guilty?" He said yes.`;
+  const ok = { body: ["Hippler asked him: “Are you pleading guilty because you are guilty?”"] };
+  const bad = { body: ["He told reporters \"I never wanted any of this to happen\" outside."] };
+  assert.deepEqual(unsupportedQuotes(ok, notes), []);
+  assert.deepEqual(unsupportedQuotes(bad, notes), ["I never wanted any of this to happen"]);
+  assert.deepEqual(unsupportedQuotes({ body: ["It was called \"touch DNA\" then."] }, notes), []);
+});
+
+test("stock lines and a copied opening are flagged", () => {
+  const post = { title: "x", body: ["You have probably heard the headline version of this case.", "Read the file. Form your own conclusion."] };
+  const hits = stockLines(post);
+  assert.ok(hits.includes("headline version"));
+  assert.ok(hits.includes("form your own conclusion"));
+  const a = { title: "A", body: ["## H", "On a cold night in 1996 the call came in."] };
+  const b = { title: "B", body: ["On a cold night in 1996 a different call."] };
+  assert.ok(stockLines(b, [a]).some((h) => h.includes('"A"')));
+  assert.deepEqual(stockLines({ title: "x", body: ["Plain opening here."] }), []);
+});

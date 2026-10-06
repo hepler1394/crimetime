@@ -56,6 +56,7 @@ ${header("quiz")}
 ${tape()}
 
     <section class="container" style="max-width:1000px;">
+        <h2 class="sr-only">Pick a quiz</h2>
         <div id="quiz-picker" class="quiz-picker">
 ${quizzes.map(pickerCard).join("\n")}
         </div>

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Generates blog.html + blog-posts/*.html from blog.json and refreshes the
 // homepage BLOG-PREVIEW region. Uses the shared 2026 shell (shell.mjs).
-// Run: node automation/build-blog.mjs
+// Run: node automation/build-blog.mjs [--no-home]
 
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
@@ -17,6 +17,9 @@ const postUrl = (p) => `/blog-posts/${p.slug}.html`;
 const img = (p) => (p.image.startsWith("/") ? p.image : `/${p.image}`);
 const readingTime = (p) =>
   Math.max(1, Math.round(p.body.join(" ").split(/\s+/).length / 220));
+
+// Filter-button labels, in display order. ai-write.mjs writes the same category keys.
+const CATEGORY_LABELS = { breaking: "Breaking", court: "Court", investigation: "Investigations", analysis: "Analysis", updates: "Case Updates" };
 
 const readJson = async (p, fb) => { try { return JSON.parse(await readFile(p, "utf8")); } catch { return fb; } };
 const liveCases = Object.fromEntries(((await readJson(join(__dirname, "cases-live.json"), {})).cases || []).map((c) => [c.slug, c]));
@@ -69,9 +72,12 @@ function blogPage(posts) {
     })),
   }, null, 2)}\n    </script>`;
 
+  // Only the categories that have posts get a filter button: a "Breaking" button over no
+  // breaking posts filtered the page to nothing.
+  const present = Object.keys(CATEGORY_LABELS).filter((c) => posts.some((p) => p.category === c));
   return `${head({
     title: "Crime Blog | CrimeTimeSnacks",
-    description: "The latest true crime news, case updates, and analysis from CrimeTimeSnacks.",
+    description: "True crime case explainers and court updates from CrimeTimeSnacks, written from research notes and published with their sources.",
     canonicalPath: "/blog.html",
     extraHead: blogLd,
   })}
@@ -91,10 +97,7 @@ ${tape()}
     <section class="container">
         <div class="category-filters" style="display:flex;justify-content:center;flex-wrap:wrap;gap:0.7rem;margin-bottom:2rem;">
             <button class="category-btn active" data-category="all">All Posts</button>
-            <button class="category-btn" data-category="breaking">Breaking</button>
-            <button class="category-btn" data-category="court">Court</button>
-            <button class="category-btn" data-category="investigation">Investigations</button>
-            <button class="category-btn" data-category="analysis">Analysis</button>
+${present.map((c) => `            <button class="category-btn" data-category="${c}">${CATEGORY_LABELS[c]}</button>`).join("\n")}
         </div>
     </section>
 
@@ -123,8 +126,8 @@ ${rest.map(card).join("\n")}
             <p class="eyebrow">The Case File</p>
             <h2>Get Case Updates in Your Inbox</h2>
             <p style="color:var(--cts-muted);max-width:52ch;margin-top:0.8rem;">The week's new episodes and posts, plus updates on the cases you follow. One email, Sundays.</p>
-            <form class="newsletter-form" onsubmit="return false;">
-                <input type="email" inputmode="email" autocomplete="email" placeholder="Your email address" aria-label="Email address">
+            <form class="newsletter-form">
+                <input type="email" inputmode="email" autocomplete="email" required placeholder="Your email address" aria-label="Email address">
                 <button type="submit" class="btn btn-primary" style="white-space:nowrap;">Get the Case File</button>
             </form>
         </div>
@@ -156,7 +159,7 @@ ${scripts()}
 function articleLd(p) {
   const ld = {
     "@context": "https://schema.org",
-    "@type": "NewsArticle",
+    "@type": "BlogPosting",
     headline: p.title,
     description: p.excerpt,
     image: `${SITE}${img(p)}`,
@@ -196,7 +199,7 @@ function shareRow(url, title) {
 // sources, and the case they are about; older posts are plain paragraphs and render as before.
 function caseBlock(p) {
   const kase = p.caseSlug && liveCases[p.caseSlug];
-  if (!kase) return "";
+  if (!kase) return relatedBlock(p, "On the show");
   const ep = kase.episode_slug && epBySlug[kase.episode_slug];
   return `        <aside style="margin:2.4rem 0;padding:1.3rem 1.4rem;border:1px solid var(--cts-line-strong);border-radius:var(--radius);background:var(--cts-panel);">
             <p class="eyebrow" style="margin:0 0 .5rem;">The case file</p>
@@ -205,6 +208,25 @@ function caseBlock(p) {
                 <a class="btn btn-primary btn-sm" href="/cases/${esc(kase.slug)}.html">Follow this case</a>
                 ${ep ? `<a class="btn btn-secondary btn-sm" href="/episodes/${esc(ep.slug)}.html">Listen: ${esc(ep.title)}</a>` : ""}
             </div>
+        </aside>
+${relatedBlock(p, "Also on the show")}`;
+}
+// relatedCases is a list of case slugs a post names besides its own: a topic post (fingerprints,
+// genealogy) is about no single case but cites ones the show has covered, and a case post can
+// point at the follow-up episode (Delphi to the appeal). Rendered as links to the case page and
+// its episode; unknown slugs are skipped rather than linked.
+function relatedBlock(p, label) {
+  const kases = (p.relatedCases || []).filter((s) => s !== p.caseSlug).map((s) => liveCases[s]).filter(Boolean);
+  if (!kases.length) return "";
+  const items = kases.map((k) => {
+    const ep = k.episode_slug && epBySlug[k.episode_slug];
+    return `                <li style="margin-bottom:.4rem;"><a href="/cases/${esc(k.slug)}.html">${esc(k.title)}</a>${ep ? ` &middot; <a href="/episodes/${esc(ep.slug)}.html">Listen to the episode</a>` : ""}</li>`;
+  }).join("\n");
+  return `        <aside style="margin:2.4rem 0;padding:1.3rem 1.4rem;border:1px solid var(--cts-line-strong);border-radius:var(--radius);background:var(--cts-panel);">
+            <p class="eyebrow" style="margin:0 0 .5rem;">${label}</p>
+            <ul style="margin:0;padding-left:1.1rem;color:var(--cts-muted);line-height:1.7;">
+${items}
+            </ul>
         </aside>`;
 }
 function sourcesBlock(p) {
@@ -212,7 +234,18 @@ function sourcesBlock(p) {
   return `        <h2 style="font-family:var(--font-display);font-size:1.6rem;letter-spacing:.02em;margin:2.6rem 0 .8rem;">Sources</h2>
         <ol style="color:var(--cts-muted);line-height:1.7;padding-left:1.2rem;margin:0 0 1.6rem;">
 ${p.sources.map((s) => `            <li><a href="${esc(s.url)}" rel="noopener" target="_blank" style="color:var(--cts-muted);">${esc(s.title || s.url)}</a></li>`).join("\n")}
-        </ol>`;
+        </ol>
+        <p style="color:var(--cts-muted);font-size:.92rem;margin:0 0 1.6rem;">Found an error? <a href="/contact.html" style="color:var(--cts-muted);">Tell us</a>. Corrections are dated and listed on the <a href="/corrections.html" style="color:var(--cts-muted);">corrections page</a>.</p>`;
+}
+
+// Keep Reading: posts that share a case (own or related) first, then the same category, then
+// the newest.
+const casesOf = (x) => new Set([x.caseSlug, ...(x.relatedCases || [])].filter(Boolean));
+function relatedPosts(p, posts) {
+  const others = posts.filter((x) => x.slug !== p.slug);
+  const mine = casesOf(p);
+  const rank = (x) => ([...casesOf(x)].some((c) => mine.has(c)) ? 0 : x.category === p.category ? 1 : 2);
+  return others.map((x, i) => ({ x, i })).sort((a, b) => rank(a.x) - rank(b.x) || a.i - b.i).slice(0, 3).map((o) => o.x);
 }
 
 function postPage(p, posts) {
@@ -220,7 +253,7 @@ function postPage(p, posts) {
     ? `        <h2 style="font-family:var(--font-display);font-size:clamp(1.6rem,3vw,2.1rem);letter-spacing:.02em;margin:2.6rem 0 1rem;color:var(--cts-white);">${esc(t.slice(3))}</h2>`
     : `        <p style="color:var(--cts-muted);line-height:1.9;font-size:1.03rem;margin-bottom:1.3rem;">${esc(t)}</p>`).join("\n");
   const articleMeta = `\n    <meta property="article:published_time" content="${p.date}">${p.updated ? `\n    <meta property="article:modified_time" content="${p.updated}">` : ""}\n    <meta property="article:author" content="${esc(p.author)}">`;
-  const more = posts.filter((x) => x.slug !== p.slug).slice(0, 3);
+  const more = relatedPosts(p, posts);
   return `${head({
     title: `${p.title} | CrimeTimeSnacks Blog`,
     description: p.excerpt,
@@ -313,8 +346,11 @@ await mkdir(join(ROOT, "blog-posts"), { recursive: true });
 for (const p of posts) {
   await writeFile(join(ROOT, "blog-posts", `${p.slug}.html`), postPage(p, posts), "utf8");
 }
-const homeUpdated = await updateHomePreview(posts);
+// --no-home rebuilds the blog without rewriting index.html (for a blog-only rebuild while
+// someone else is working on the homepage; build-all.mjs refreshes the preview).
+const skipHome = process.argv.includes("--no-home");
+const homeUpdated = skipHome ? false : await updateHomePreview(posts);
 console.log(
   `blog.html + ${posts.length} post pages generated.` +
-    (homeUpdated ? " Homepage preview refreshed." : " (homepage markers not found)")
+    (skipHome ? " Homepage preview left alone (--no-home)." : homeUpdated ? " Homepage preview refreshed." : " (homepage markers not found)")
 );

@@ -23,6 +23,35 @@ async function loadDates(file, prefix) {
 await loadDates("blog.json", "/blog-posts/");
 await loadDates("episodes.json", "/episodes/");
 
+// Until 2026-10-06 every page without a dated item got today's date, so all forty-odd of
+// them claimed a change on every six-hourly CI build. Google stops trusting a sitemap's
+// lastmod when it is always "now". Index pages take the date of their newest item; a page
+// with nothing to date it by gets no lastmod rather than a made-up one.
+const json = async (f) => { try { return JSON.parse(await readFile(join(__dirname, f), "utf8")); } catch { return {}; } };
+const newest = (dates) => dates.filter(Boolean).map((d) => String(d).slice(0, 10)).sort().pop();
+{
+  const eps = (await json("episodes.json")).episodes || [];
+  const posts = (await json("blog.json")).posts || [];
+  const live = await json("cases-live.json");
+  const epDate = Object.fromEntries(eps.map((e) => [e.slug, e.date]));
+  const caseDates = [];
+  for (const c of live.cases || []) {
+    const d = newest([epDate[c.episode_slug], ...(live.updates || []).filter((u) => u.case_slug === c.slug).map((u) => u.happened_on)]);
+    if (d) { dateBySlug[`/cases/${c.slug}.html`] = d; if (epDate[c.episode_slug]) caseDates.push(d); }
+  }
+  const latestEp = newest(eps.map((e) => e.date));
+  Object.assign(dateBySlug, {
+    "/": newest([latestEp, newest(posts.map((p) => p.date))]),
+    "/episodes.html": latestEp,
+    "/blog.html": newest(posts.map((p) => p.date)),
+    "/cases.html": newest(caseDates),
+    "/corrections.html": newest(((await json("corrections.json")).corrections || []).map((c) => c.date)),
+    "/videos.html": newest(((await json("videos.json")).videos || []).map((v) => v.published)),
+    "/quiz.html": newest(((await json("quizzes.json")).quizzes || []).map((q) => q.created)),
+  });
+  for (const k of Object.keys(dateBySlug)) if (!dateBySlug[k]) delete dateBySlug[k];
+}
+
 // Canonical site pages live at the root. The episode DETAIL pages are canonical
 // under /episodes/. Everything else under /episodes/ (and the root copies of the
 // case pages) are orphaned duplicates with broken paths — keep them out of the
@@ -94,8 +123,8 @@ function hints(u) {
 const body = urls
   .map((u) => {
     const { p, c } = hints(u);
-    const lastmod = dateBySlug[u] || today;
-    return `  <url>\n    <loc>${SITE}${encodeURI(u)}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${c}</changefreq>\n    <priority>${p}</priority>\n  </url>`;
+    const lastmod = dateBySlug[u] && dateBySlug[u] <= today ? `\n    <lastmod>${dateBySlug[u]}</lastmod>` : "";
+    return `  <url>\n    <loc>${SITE}${encodeURI(u)}</loc>${lastmod}\n    <changefreq>${c}</changefreq>\n    <priority>${p}</priority>\n  </url>`;
   })
   .join("\n");
 

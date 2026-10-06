@@ -24,15 +24,23 @@ export async function thumb(webPath, size = 640) {
   const src = join(ROOT, rel);
   const srcTime = await mtime(src);
   if (!srcTime) return webPath;
-  const probe = spawnSync("ffprobe", ["-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width", "-of", "csv=p=0", src], { encoding: "utf8", windowsHide: true });
-  const width = parseInt(probe.stdout, 10);
-  if (!width || width <= size * 1.15) return webPath;
   const name = `${rel.split("/").pop().replace(/\.[^.]+$/, "")}-${size}.jpg`;
   const out = join(OUT, name);
-  if ((await mtime(out)) < srcTime) {
+  const probe = spawnSync("ffprobe", ["-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width", "-of", "csv=p=0", src], { encoding: "utf8", windowsHide: true });
+  // No ffprobe (the GitHub Actions runner that rebuilds the site every six hours): use the
+  // thumbnail already committed. Until 2026-10-06 this returned the original, so every CI
+  // sync put the 0.5 to 2.5 MB covers back on the live homepage and episode list.
+  if (probe.error || probe.status !== 0) return (await mtime(out)) ? `/images/thumbs/${name}` : webPath;
+  const width = parseInt(probe.stdout, 10);
+  if (!width || width <= size * 1.15) return webPath;
+  const have = await mtime(out);
+  if (have < srcTime) {
     await mkdir(OUT, { recursive: true });
     const r = spawnSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", "-i", src, "-vf", `scale=${size}:-2:flags=lanczos`, "-q:v", "4", out], { windowsHide: true });
-    if (r.status !== 0) { console.warn(`thumbs: could not size ${webPath}, using the original`); return webPath; }
+    if (r.status !== 0) {
+      if (have) return `/images/thumbs/${name}`;
+      console.warn(`thumbs: could not size ${webPath}, using the original`); return webPath;
+    }
   }
   return `/images/thumbs/${name}`;
 }

@@ -29,7 +29,9 @@
     --cts-tape: #f4c20d;
     --cts-white: #f7f7f8;
     --cts-muted: #a3a3ad;
-    --cts-faint: #6b6b74;
+    /* Was #6b6b74: 3.8:1 on the black, under WCAG AA for the dates, captions and meta
+       lines it is used for. #85858e is 5.5:1 on --cts-black and 5.1:1 on --cts-panel. */
+    --cts-faint: #85858e;
 
     /* legacy aliases (older markup + JS still reference these) */
     --cts-dark-gray: #101013;
@@ -60,7 +62,12 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+/* The caution tape is drawn 108% wide and rotated. overflow-x: hidden on body alone was
+   handed to the viewport, which hides the scrollbar but still lets the page be panned 41px
+   sideways (and iOS Safari pans it by touch). clip on both clips the tape at the body
+   edge, so there is no overflow to pan, and unlike hidden it does not make body a scroll
+   container, so the sticky header keeps working. hidden stays as the fallback. */
+html { scroll-behavior: smooth; overflow-x: clip; }
 
 body {
     font-family: var(--font-body);
@@ -68,6 +75,7 @@ body {
     color: var(--cts-white);
     line-height: 1.65;
     overflow-x: hidden;
+    overflow-x: clip;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
@@ -797,6 +805,80 @@ section[id] { scroll-margin-top: 96px; }
 }
 
 .btn-sm { padding: 0.5rem 1rem; font-size: 0.72rem; }
+
+/* Homepage File 01: every episode as a docket line, newest first and numbered by its place
+   in the archive (the generator sets counter-reset to count + 1). Title left, date and
+   runtime right; on a phone the meta drops under the title. */
+.case-index {
+    list-style: none;
+    margin: 0.4rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    column-gap: 2.4rem;
+}
+.case-index li { border-top: 1px solid var(--cts-line); counter-increment: docket -1; }
+.case-index a {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    padding: 0.8rem 0.2rem;
+    color: var(--cts-white);
+    text-decoration: none;
+    min-height: 44px;
+}
+.case-index a::before {
+    content: counter(docket, decimal-leading-zero);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    color: var(--cts-tape);
+    min-width: 1.6rem;
+}
+.case-index .ci-title { font-weight: 600; flex: 1; min-width: 0; }
+.case-index .ci-meta { font-size: 0.8rem; color: var(--cts-faint); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.case-index a:hover .ci-title, .case-index a:focus-visible .ci-title { color: var(--cts-red-hot); }
+.case-index-more { margin-top: 1rem; border-top: 1px solid var(--cts-line); padding-top: 0.9rem; font-size: 0.9rem; }
+.case-index-more a { color: var(--cts-red-hot); font-weight: 700; text-decoration: none; }
+.case-index-more a:hover, .case-index-more a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 560px) {
+    .case-index { grid-template-columns: 1fr; }
+    /* One column on a phone: the newest eight, then the link to the full list, so the
+       latest episode is not a thousand pixels further down. */
+    .case-index li:nth-child(n+9) { display: none; }
+    .case-index a { flex-wrap: wrap; row-gap: 0.15rem; }
+    .case-index .ci-meta { flex-basis: 100%; padding-left: 2.5rem; }
+}
+
+/* A heading for screen readers and outline order where the design shows none. */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Episode page: the way from an episode to the case page that tracks it. */
+.episode-case-link {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.4rem 0.9rem;
+    margin: 1.6rem 0 0;
+    padding: 1rem 0;
+    border-top: 1px solid var(--cts-line);
+    border-bottom: 1px solid var(--cts-line);
+    font-size: 0.92rem;
+    color: var(--cts-muted);
+}
+.episode-case-link a { color: var(--cts-tape); font-weight: 700; text-decoration: none; white-space: nowrap; }
+.episode-case-link a:hover, .episode-case-link a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.episode-case-link span { flex: 1; min-width: 14rem; }
 
 /* category chips (compat: .category-btn kept for category-ai.js) */
 .category-btn {
@@ -1716,6 +1798,11 @@ html.js .animate-on-scroll.animated { opacity: 1; transform: translateY(0); }
     .hero-flex { grid-template-columns: 1fr; gap: 2.2rem; text-align: center; }
     .hero .hero-content { text-align: center; }
     .hero-buttons, .hero-platforms { justify-content: center; }
+    /* Centered and wrapping, the eyebrow ran to four lines with its rule and dot stranded
+       at the left edge of the second. Tighter tracking, no rule, dot inline. */
+    .hero-eyebrow { display: block; letter-spacing: 0.2em; line-height: 1.7; }
+    .hero-eyebrow::before { display: none; }
+    .hero-eyebrow .live-dot { margin-right: 0.5rem; vertical-align: 0.1em; }
     .hero-visual { order: -1; }
     .hero-phones { max-width: 460px; margin: 0 auto; }
     .stat-row { justify-content: center; }

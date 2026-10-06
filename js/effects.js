@@ -304,14 +304,19 @@
         document.querySelectorAll('[data-copy]').forEach(function (btn) {
             btn.addEventListener('click', function () {
                 var text = btn.getAttribute('data-copy');
-                var done = function () {
-                    var old = btn.textContent;
-                    btn.textContent = 'Copied';
-                    setTimeout(function () { btn.textContent = old; }, 1400);
+                // innerHTML, not textContent: the share button carries an icon that the
+                // old restore threw away. A failed copy says so instead of "Copied".
+                var say = function (label) {
+                    if (btn.getAttribute('data-busy')) return;
+                    var old = btn.innerHTML;
+                    btn.setAttribute('data-busy', '1');
+                    btn.textContent = label;
+                    setTimeout(function () { btn.innerHTML = old; btn.removeAttribute('data-busy'); }, 1600);
                 };
+                var fail = function () { say('Copy failed: ' + text); };
                 if (navigator.clipboard && navigator.clipboard.writeText) {
-                    navigator.clipboard.writeText(text).then(done, done);
-                } else { done(); }
+                    navigator.clipboard.writeText(text).then(function () { say('Copied'); }, fail);
+                } else { fail(); }
             });
         });
     }

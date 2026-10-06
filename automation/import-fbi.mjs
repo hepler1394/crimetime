@@ -44,6 +44,25 @@ function classify(item) {
   return "wanted";
 }
 
+// The API names field offices by squashed id ("kansascity", "saltlakecity"); title-casing
+// that put "Kansascity" on the homepage. These are the 55 field offices by their names.
+const OFFICES = {
+  albany: "Albany", albuquerque: "Albuquerque", anchorage: "Anchorage", atlanta: "Atlanta", baltimore: "Baltimore",
+  birmingham: "Birmingham", boston: "Boston", buffalo: "Buffalo", charlotte: "Charlotte", chicago: "Chicago",
+  cincinnati: "Cincinnati", cleveland: "Cleveland", columbia: "Columbia", dallas: "Dallas", denver: "Denver",
+  detroit: "Detroit", elpaso: "El Paso", honolulu: "Honolulu", houston: "Houston", indianapolis: "Indianapolis",
+  jackson: "Jackson", jacksonville: "Jacksonville", kansascity: "Kansas City", knoxville: "Knoxville",
+  lasvegas: "Las Vegas", littlerock: "Little Rock", losangeles: "Los Angeles", louisville: "Louisville",
+  memphis: "Memphis", miami: "Miami", milwaukee: "Milwaukee", minneapolis: "Minneapolis", mobile: "Mobile",
+  newark: "Newark", newhaven: "New Haven", neworleans: "New Orleans", newyork: "New York", norfolk: "Norfolk",
+  oklahomacity: "Oklahoma City", omaha: "Omaha", philadelphia: "Philadelphia", phoenix: "Phoenix",
+  pittsburgh: "Pittsburgh", portland: "Portland", richmond: "Richmond", sacramento: "Sacramento",
+  saltlakecity: "Salt Lake City", sanantonio: "San Antonio", sandiego: "San Diego", sanfrancisco: "San Francisco",
+  sanjuan: "San Juan", seattle: "Seattle", springfield: "Springfield", stlouis: "St. Louis", tampa: "Tampa",
+  washingtondc: "Washington D.C.",
+};
+const officeName = (o) => OFFICES[String(o).toLowerCase()] || String(o).replace(/\b\w/g, (c) => c.toUpperCase());
+
 function slim(item) {
   const img = (item.images || []).find((i) => i.large || i.original || i.thumb) || {};
   return {
@@ -51,7 +70,7 @@ function slim(item) {
     title: item.title || "",
     kind: classify(item),
     image: img.large || img.original || img.thumb || "",
-    office: (item.field_offices || []).map((o) => String(o).replace(/\b\w/g, (c) => c.toUpperCase())).join(", ") || "FBI",
+    office: (item.field_offices || []).map(officeName).join(", ") || "FBI",
     reward: item.reward_text ? String(item.reward_text).replace(/^The FBI is offering a?\s*/i, "").replace(/^reward of up to/i, "Reward up to") : "",
     url: item.url || "",
     status: item.status || "",

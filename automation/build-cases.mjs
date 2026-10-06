@@ -10,7 +10,7 @@ import { spawnSync } from "node:child_process";
 import { existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { SITE, esc, head, header, footer, tape, scripts } from "./shell.mjs";
+import { SITE, esc, head, header, footer, tape, scripts, summaryOf } from "./shell.mjs";
 import { loadEnv } from "./community/env.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -68,10 +68,17 @@ async function cardArt(webPath) {
   if (!(await mtime(src))) return "";
   const name = `${webPath.split("/").pop().replace(/\.[^.]+$/, "")}-600.jpg`;
   const out = join(THUMBS, name);
-  if ((await mtime(out)) < (await mtime(src))) {
+  const have = await mtime(out);
+  if (have < (await mtime(src))) {
     const r = spawnSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", "-i", src,
       "-vf", "scale=600:600:force_original_aspect_ratio=increase,crop=600:600", "-q:v", "4", out], { windowsHide: true });
-    if (r.status !== 0) { console.warn(`cases: no thumb for ${webPath}, using the full-size cover`); return webPath; }
+    // The CI runner has no ffmpeg, and a fresh checkout gives source and thumb the same
+    // mtime give or take a millisecond, so it landed here on every sync and shipped the
+    // full-size covers (about 13 MB on cases.html) until 2026-10-06. A committed thumb wins.
+    if (r.status !== 0) {
+      if (have) return `/images/cases/${name}`;
+      console.warn(`cases: no thumb for ${webPath}, using the full-size cover`); return webPath;
+    }
   }
   return `/images/cases/${name}`;
 }
@@ -115,7 +122,7 @@ const css = `
 .timeline li{padding:0 0 1.2rem 1.2rem;position:relative}
 .timeline li::before{content:"";position:absolute;left:-7px;top:.45rem;width:12px;height:12px;border-radius:50%;background:var(--cts-red);box-shadow:0 0 0 4px var(--cts-black)}
 .timeline time{display:block;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cts-tape);margin-bottom:.2rem}
-.timeline h4{margin:0 0 .25rem;font-size:1.05rem}
+.timeline h3{margin:0 0 .25rem;font-size:1.05rem}
 .timeline p{margin:0;color:var(--cts-muted);line-height:1.55}
 .timeline a{color:var(--cts-muted)}
 .case-hero{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(280px,1fr);gap:2rem;align-items:start}
@@ -149,7 +156,7 @@ async function indexPage() {
       <div class="case-body">
         <div class="case-meta"><span class="st">${esc(STATUS[c.status] || c.status)}</span>${c.years ? `<span>${esc(c.years)}</span>` : ""}${ups.length ? `<span class="up">${ups.length} update${ups.length === 1 ? "" : "s"}</span>` : ""}${c.episode_slug ? `<span>Episode</span>` : ""}</div>
         <h3><a href="/cases/${esc(c.slug)}.html">${esc(c.title)}</a></h3>
-        <p>${esc(clip(c.summary || c.angle, 180))}</p>
+        <p>${esc(clip(summaryOf(c.summary), 180))}</p>
         ${c.next_date ? `<p><b style="color:var(--cts-white)">${esc(c.next_label || "Next")}:</b> ${esc(fmtDate(c.next_date))}</p>` : ""}
         <div class="case-foot"><span>${n ? `${n} following` : "Be the first to follow"}</span><a class="btn btn-sm" href="/cases/${esc(c.slug)}.html">Open</a></div>
       </div>
@@ -168,6 +175,7 @@ ${header("cases")}
     </section>
 ${tape()}
     <section class="container" style="padding-top:1rem;">
+        <h2 class="sr-only">Cases on file</h2>
         <div class="case-grid">
 ${cards}
         </div>
@@ -190,12 +198,15 @@ function casePhoto(c) {
   if (!meta || !existsSync(join(ROOT, "images", "cases", `${c.slug}-photo.jpg`))) return "";
   return `<figure class="case-photo"><img src="/images/cases/${esc(c.slug)}-photo.jpg" alt="${esc(meta.alt)}" loading="lazy" decoding="async" width="1600" height="910"><figcaption>${esc(meta.caption)}</figcaption></figure>`;
 }
+// The page text and description are the case's public summary only. The writer's brief
+// (angle) is an instruction to the script model and never goes on a public page; it used
+// to be the fallback here.
 function casePage(c) {
   const ups = updatesFor(c.slug);
   const ep = epBySlug[c.episode_slug];
   const n = live.counts[c.slug] || 0;
-  const ld = { "@context": "https://schema.org", "@type": "WebPage", name: `${c.title} | CrimeTimeSnacks`, url: `${SITE}/cases/${c.slug}.html`, description: c.summary || c.angle };
-  return `${head({ title: `${c.title} | Cases | CrimeTimeSnacks`, description: (c.summary || c.angle || `Follow ${c.title} on CrimeTimeSnacks.`).slice(0, 160), canonicalPath: `/cases/${c.slug}.html`, noindex: !published(c), extraHead: css + `\n<script type="application/ld+json">${JSON.stringify(ld)}</script>` })}
+  const ld = { "@context": "https://schema.org", "@type": "WebPage", name: `${c.title} | CrimeTimeSnacks`, url: `${SITE}/cases/${c.slug}.html`, description: summaryOf(c.summary) };
+  return `${head({ title: `${c.title} | Cases | CrimeTimeSnacks`, description: clip(`Follow the case by email; every update links its source. ${summaryOf(c.summary)}`, 158), canonicalPath: `/cases/${c.slug}.html`, noindex: !published(c), extraHead: css + `\n<script type="application/ld+json">${JSON.stringify(ld)}</script>` })}
 <body>
 ${header("cases")}
     <main id="main-content">
@@ -203,7 +214,7 @@ ${header("cases")}
         <div class="container">
             <p class="eyebrow" style="justify-content:center;">${esc(STATUS[c.status] || c.status)}${c.years ? ` &middot; ${esc(c.years)}` : ""}</p>
             <h1 class="page-title">${esc(c.title)}</h1>
-            <p>${esc(c.summary || c.angle || "")}</p>
+            <p>${esc(summaryOf(c.summary))}</p>
         </div>
     </section>
 ${tape()}
@@ -213,7 +224,7 @@ ${tape()}
             <h2 style="font-family:var(--font-display);font-size:2rem;letter-spacing:.02em;margin:0 0 .4rem;">Case <span class="text-red">Updates</span></h2>
             <p style="color:var(--cts-muted);margin:0;">What has happened, newest first, each with the article it comes from. An entry goes up only after that article is read and found to report it.</p>
             ${ups.length ? `<ol class="timeline">
-${ups.map((u) => `                <li><time datetime="${esc(u.happened_on)}">${esc(fmtDate(u.happened_on))}</time><h4>${esc(u.title)}</h4>${u.summary ? `<p>${esc(u.summary)}</p>` : ""}${u.url ? `<p><a href="${esc(u.url)}" rel="noopener nofollow" target="_blank">${esc(u.source || new URL(u.url).hostname)}</a></p>` : ""}</li>`).join("\n")}
+${ups.map((u) => `                <li><time datetime="${esc(u.happened_on)}">${esc(fmtDate(u.happened_on))}</time><h3>${esc(u.title)}</h3>${u.summary ? `<p>${esc(u.summary)}</p>` : ""}${u.url ? `<p><a href="${esc(u.url)}" rel="noopener nofollow" target="_blank">${esc(u.source || new URL(u.url).hostname)}</a></p>` : ""}</li>`).join("\n")}
             </ol>` : `<p class="empty-note" style="margin-top:1.2rem;">Nothing logged yet. Follow the case and you will hear about the first update.</p>`}
         </div>
         <aside class="case-side">

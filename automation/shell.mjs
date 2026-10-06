@@ -6,7 +6,7 @@ export const SITE = "https://www.crimetimesnacks.com";
 export const APPLE = "https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400";
 export const SPOTIFY = "https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ";
 export const EMAIL = "crimetimesnacks@gmail.com";
-export const CSS = "/css/style.css?v=2026w";
+export const CSS = "/css/style.css?v=2026x";
 export const FA = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css";
 export const FONTS = "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap";
 
@@ -34,6 +34,23 @@ export const mark = (key, size = 22) => {
 
 export const esc = (s) =>
   String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+// A studio episode's feed description is the opening of its script, so it starts "Hey
+// everyone, Cory here." Read aloud that is fine; as a search snippet, a card or a case-page
+// summary it is wasted space (Google showed "Welcome back to CrimeTimeSnacks, I'm Cory.
+// Today we're..." for every episode). This drops greeting sentences and the "this week on
+// CrimeTimeSnacks:" lead-in and keeps everything else as written.
+const cap = (t) => t.charAt(0).toUpperCase() + t.slice(1);
+export function summaryOf(text) {
+  const out = [];
+  for (let s of String(text || "").replace(/\s+/g, " ").trim().split(/(?<=[.!?])\s+(?=[A-Z"'])/)) {
+    if (s.length < 90 && /^(hey|hi|hello) (everyone|there|all)\b|^welcome (back )?to\b|^(i'm|i am|it's|this is) (your host )?cory\b|^cory here\b/i.test(s)) continue;
+    let m = s.match(/^(?:i'm|it's) (?:your host )?cory,? and (.+)$/i); if (m) s = cap(m[1]);
+    m = s.match(/^this (?:time|week) on crimetimesnacks[:,]\s*(.+)$/i); if (m) s = cap(m[1]);
+    out.push(s);
+  }
+  return out.join(" ") || String(text || "");
+}
 
 const NAV = [
   ["/index.html", "home", "Home"],
@@ -147,7 +164,7 @@ export function footer(opts = {}) {
                     </div>
                 </div>
                 <div>
-                    <h3 class="footer-heading">Case Files</h3>
+                    <h2 class="footer-heading">Case Files</h2>
                     <ul class="footer-links">
                         <li><a href="/episodes.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Episodes</a></li>
                         <li><a href="/cases.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Cases</a></li>
@@ -159,7 +176,7 @@ export function footer(opts = {}) {
                     </ul>
                 </div>
                 <div>
-                    <h3 class="footer-heading">The Show</h3>
+                    <h2 class="footer-heading">The Show</h2>
                     <ul class="footer-links">
                         <li><a href="${APPLE}" target="_blank" rel="noopener">${mark("applepodcasts", 16)} Apple Podcasts</a></li>
                         <li><a href="${spotify}" target="_blank" rel="noopener">${mark("spotify", 16)} Spotify</a></li>
@@ -170,7 +187,7 @@ export function footer(opts = {}) {
                     </ul>
                 </div>
                 <div class="footer-newsletter">
-                    <h3 class="footer-heading">The Case File</h3>
+                    <h2 class="footer-heading">The Case File</h2>
                     <p>Every new episode and post, plus updates on the cases you follow. One email, Sundays.</p>
                     <input type="email" inputmode="email" autocomplete="email" aria-label="Email address" placeholder="Your email address">
                     <button type="button" class="btn btn-primary" style="width: 100%;">Get the Case File</button>

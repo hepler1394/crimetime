@@ -54,6 +54,7 @@ ${header("about")}
 ${tape()}
     <section class="container" style="margin-top:1rem;max-width:860px;">
         <p style="color:var(--cts-muted);">A true crime show gets things wrong sometimes. The rule here is that a mistake in a published episode, transcript, post or page is fixed and then logged on this page with the date, so anyone who heard or read the wrong version can find out. If you have found one, write to <a href="mailto:${EMAIL}?subject=Correction">${EMAIL}</a>.</p>
+        <h2 class="sr-only">Corrections log</h2>
         ${items.length ? `<ol class="corr">
 ${items.map((c) => `            <li>
                 <time datetime="${esc(c.date)}">${esc(fmtDate(c.date))}</time>
