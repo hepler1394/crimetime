@@ -7,7 +7,7 @@
     <title>CrimeTimeSnacks • A True Crime Podcast</title>
     <link>https://www.crimetimesnacks.com/</link>
     <atom:link href="https://www.crimetimesnacks.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 06 Oct 2026 23:29:17 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 23:37:40 GMT</lastBuildDate>
     <language>en</language>
     <copyright>&#169; 2026 Cory</copyright>
     <description>CrimeTimeSnacks is a true crime podcast about the cases people argue about, built from the public record: court filings, released case files and years of reporting. Each episode lays out the facts, the theories and the evidence, says what is still unknown, and leaves the conclusion to you.</description>
@@ -176,7 +176,7 @@ I covered the murders and the trials in an earlier episode, so this one tells 19
       <itunes:summary>Hey everyone, it&apos;s Cory. This time on CrimeTimeSnacks: the forty-eight hours in which Chris Watts&apos;s story came apart on camera. A friend who would not leave a doorstep, a patrol officer who noticed a husband was too calm, a neighbor&apos;s security camera, an FBI agent who held back his best evidence, a polygraph score of negative 18, and the way out that investigators offered him. Where the published accounts disagree, I say so. From the welfare check on August 13, 2018 to the oil site at 11 that night two days later, then the plea, the sentence, and the versions of the story he has told since.</itunes:summary>
       <itunes:author>Cory</itunes:author>
       <itunes:duration>00:20:10</itunes:duration>
-      <enclosure url="https://www.crimetimesnacks.com/audio/the-interrogation-of-chris-watts.mp3" length="19361283" type="audio/mpeg" />
+      <enclosure url="https://www.crimetimesnacks.com/audio/the-interrogation-of-chris-watts-r2.mp3" length="19366716" type="audio/mpeg" />
       <itunes:image href="https://www.crimetimesnacks.com/images/episodes/the-interrogation-of-chris-watts.jpg" />
       <itunes:explicit>false</itunes:explicit>
     </item>
