@@ -38,6 +38,15 @@ export const BED_SECONDS = 60;      // one loop of the body bed
 // further under the words from there. Measured, not guessed: 0.045 was 12dB too quiet
 // to hear at all.
 export const BED_GAIN = 0.16;
+// The pad bed (below) is gentler than the drone it replaced and sits audibly under the voice:
+// about -30 LUFS against a voice that masters to -16, ducking a little when he speaks. Cory,
+// 2026-10-02: the episodes "sound like me but are loud 'out there' with no background sound
+// soothing". The drone at 0.16 measured -28 dBFS and then ducked out of hearing entirely.
+export const PAD_GAIN = 1.25;
+// The dry clone read is close and bright. A little de-essing, a touch of low-mid, less top
+// and a very small room put it in a space instead of in the listener's ear. Same words; only
+// the colour changes, so the audit's word pass on voice.wav is unaffected.
+export const VOICE_CHAIN = "highpass=f=70,deesser=i=0.35,bass=g=1.5:f=180,treble=g=-2.5:f=7500,acompressor=threshold=-22dB:ratio=2:attack=15:release=250:makeup=1.5,aecho=0.85:0.9:24|41:0.06|0.04";
 export { THEMES };
 
 // Per theme numbers. Every frequency has at most one decimal place, so each one
@@ -92,21 +101,20 @@ function synthOutro(out, t) {
     "-filter_complex", `[0:a][1:a]amix=inputs=2:normalize=0[m];[m]afade=t=in:st=0:d=${OUTRO_OVERLAP},afade=t=out:st=${T - 2.5}:d=2.5,alimiter=limit=0.9[a]`,
     "-map", "[a]", "-ac", "2", "-ar", "44100", out], "outro synth");
 }
-// The body bed. Purely tonal on purpose: noise would not loop seamlessly, and a click
-// every sixty seconds under a twenty minute read is exactly the kind of fault nobody
-// notices in a test and everybody notices in a podcast.
-function synthBed(out, t) {
-  const T = BED_SECONDS;
-  const drone = `0.5*sin(2*PI*${t.drone}*t)*(0.75+0.25*sin(2*PI*0.05*t))+0.22*sin(2*PI*${t.partial}*t)*(0.6+0.4*sin(2*PI*0.1*t))`;
-  // missing-person sits on an unresolved interval and never lands on the root.
-  const colour = t.bedOpen ? `+0.18*sin(2*PI*${(t.drone * 1.5).toFixed(1)}*t)` : "";
-  const layers = [`aevalsrc=exprs='${drone}${colour}':s=44100:d=${T}`];
-  if (t.bedPulse) layers.push(`aevalsrc=exprs='0.3*sin(2*PI*${t.kick}*t)*exp(-6*mod(t,${t.bedPulse}))':s=44100:d=${T}`);
-  if (t.bedTick) layers.push(`aevalsrc=exprs='0.05*sin(2*PI*${t.bedTick}*t)*exp(-70*mod(t,${t.bedTickEvery}))':s=44100:d=${T}`);
-  const inputs = layers.flatMap((l) => ["-f", "lavfi", "-i", l]);
-  const mix = layers.map((_, i) => `[${i}:a]`).join("");
-  ff([...inputs, "-filter_complex", `${mix}amix=inputs=${layers.length}:normalize=0[m];[m]lowpass=f=1600,alimiter=limit=0.9[a]`,
-    "-map", "[a]", "-ac", "2", "-ar", "44100", out], "bed synth");
+// A soft chord under the read: the theme's drone an octave up, its fifth, the octave, a
+// minor third above that (a suspended second for missing-person, which never resolves) and
+// the twelfth, each doubled 0.1 Hz sharp so it breathes. Every frequency is a whole number of
+// cycles in 60 s, and the room is rendered over two cycles with the second kept, so the
+// echo tail at the loop point is the tail of the same chord and the loop has no seam.
+function synthPad(out, t) {
+  const q = (f) => Math.round(f * 60) / 60;
+  const root = q(t.drone * 2);
+  const third = t.bedOpen ? root * 2 * 1.1225 : root * 2 * 1.1892;
+  const voices = [[root, 0.05], [root * 1.5, 0.035], [root * 2, 0.03], [third, 0.022], [root * 3, 0.012]];
+  const expr = voices.map(([f, a]) => `${a}*(sin(2*PI*${q(f).toFixed(4)}*t)+sin(2*PI*${(q(f) + 0.1).toFixed(4)}*t))`).join("+");
+  ff(["-f", "lavfi", "-i", `aevalsrc=exprs='(${expr})*(0.7+0.3*sin(2*PI*t/30))':s=44100:d=${BED_SECONDS * 2}`,
+    "-af", `lowpass=f=1100,aecho=0.8:0.6:180|370:0.25|0.18,atrim=start=${BED_SECONDS},asetpts=PTS-STARTPTS`,
+    "-ac", "2", "-ar", "44100", out], "pad synth");
 }
 
 // Returns { intro, outro, bed, source } as wav paths ready to mix.
@@ -115,7 +123,7 @@ export async function ensureBeds(theme = DEFAULT_THEME) {
   const t = THEME_SYNTH[name];
   await mkdir(CACHE, { recursive: true });
   const uIntro = await userTrack("intro", name), uOutro = await userTrack("outro", name), uBed = await userTrack("bed", name);
-  const intro = join(CACHE, `${name}-intro.wav`), outro = join(CACHE, `${name}-outro.wav`), bed = join(CACHE, `${name}-bed.wav`);
+  const intro = join(CACHE, `${name}-intro.wav`), outro = join(CACHE, `${name}-outro.wav`), bed = join(CACHE, uBed ? `${name}-bed.wav` : `${name}-pad.wav`);
 
   if (uIntro) {
     ff(["-i", uIntro, "-t", String(INTRO_SECONDS), "-af", `afade=t=in:st=0:d=0.3,afade=t=out:st=${VOICE_STARTS_AT + 0.8}:d=${INTRO_SECONDS - VOICE_STARTS_AT - 0.8},loudnorm=I=-18:TP=-2`, "-ac", "2", "-ar", "44100", intro], "intro trim");
@@ -125,7 +133,7 @@ export async function ensureBeds(theme = DEFAULT_THEME) {
   } else if (!(await exists(outro))) synthOutro(outro, t);
   if (uBed) {
     ff(["-i", uBed, "-t", String(BED_SECONDS), "-af", "loudnorm=I=-24:TP=-6", "-ac", "2", "-ar", "44100", bed], "bed trim");
-  } else if (!(await exists(bed))) synthBed(bed, t);
+  } else if (!(await exists(bed))) synthPad(bed, t);
 
   return { theme: name, intro, outro, bed, source: uIntro || uOutro || uBed ? "cory" : "synth", introFile: uIntro, outroFile: uOutro, bedFile: uBed };
 }
@@ -141,7 +149,7 @@ export async function mixEpisode(voiceWav, out, { music = true, bed = true, them
 
   if (!bed) {
     ff(["-i", beds.intro, "-i", voiceWav, "-i", beds.outro,
-      "-filter_complex", `[1:a]aformat=channel_layouts=stereo,adelay=${ms(VOICE_STARTS_AT)}|${ms(VOICE_STARTS_AT)}[v];[2:a]adelay=${ms(outroAt)}|${ms(outroAt)}[o];[0:a][v][o]amix=inputs=3:normalize=0:duration=longest[a]`,
+      "-filter_complex", `[1:a]${VOICE_CHAIN},aformat=channel_layouts=stereo,adelay=${ms(VOICE_STARTS_AT)}|${ms(VOICE_STARTS_AT)}[v];[2:a]adelay=${ms(outroAt)}|${ms(outroAt)}[o];[0:a][v][o]amix=inputs=3:normalize=0:duration=longest[a]`,
       "-map", "[a]", "-ac", "2", "-ar", "44100", out], "mix");
     return VOICE_STARTS_AT;
   }
@@ -149,11 +157,11 @@ export async function mixEpisode(voiceWav, out, { music = true, bed = true, them
   // way under the words instead of sitting at one level and fighting them.
   ff(["-i", beds.intro, "-i", voiceWav, "-i", beds.outro, "-stream_loop", "-1", "-t", String(total), "-i", beds.bed,
     "-filter_complex", [
-      `[1:a]aformat=channel_layouts=stereo,adelay=${ms(VOICE_STARTS_AT)}|${ms(VOICE_STARTS_AT)}[vd]`,
+      `[1:a]${VOICE_CHAIN},aformat=channel_layouts=stereo,adelay=${ms(VOICE_STARTS_AT)}|${ms(VOICE_STARTS_AT)}[vd]`,
       `[vd]asplit=2[v][vkey]`,
       `[2:a]adelay=${ms(outroAt)}|${ms(outroAt)}[o]`,
-      `[3:a]aformat=channel_layouts=stereo,volume=${BED_GAIN}[b0]`,
-      `[b0][vkey]sidechaincompress=threshold=0.02:ratio=8:attack=20:release=400[bc]`,
+      `[3:a]aformat=channel_layouts=stereo,volume=${beds.bedFile ? BED_GAIN : PAD_GAIN}[b0]`,
+      `[b0][vkey]sidechaincompress=threshold=0.03:ratio=3:attack=40:release=700[bc]`,
       `[bc]afade=t=in:st=0:d=2,afade=t=out:st=${Math.max(0, total - 3).toFixed(2)}:d=3[b]`,
       `[0:a][v][o][b]amix=inputs=4:normalize=0:duration=longest[a]`,
     ].join(";"),
