@@ -1,5 +1,5 @@
 {
-  "fetched": "2026-10-06T06:32:26.922Z",
+  "fetched": "2026-10-06T18:39:05.504Z",
   "cases": [
     {
       "slug": "maura-murray",
@@ -683,6 +683,38 @@
     }
   ],
   "updates": [
+    {
+      "case_slug": "golden-state-killer",
+      "happened_on": "2026-10-02",
+      "title": "Ex-fiancée of Golden State Killer gives first media interview",
+      "summary": "Bonnie Ueltzen gave her first media interview in the docuseries \"The Golden State Killer: Unmasking A Monster,\" recounting an incident where Joseph DeAngelo appeared outside her home with a gun after she broke off their engagement. She expressed regret over never reporting the confrontation to police.",
+      "url": "https://www.dailymail.com/crime-desk/article-16179135/Golden-State-Killer-ex-fiancee-interview-reveal-moment-foreshadow-crime-spree.html",
+      "source": "Daily Mail"
+    },
+    {
+      "case_slug": "golden-state-killer",
+      "happened_on": "2026-09-24",
+      "title": "Fox Nation releases documentary series re-examining Golden State Killer timeline",
+      "summary": "Fox Nation launched a four-part docuseries, \"Golden State Killer: Unmasking a Monster,\" exploring whether Joseph DeAngelo committed crimes earlier than previously known and left additional victims. The series features new accounts from survivors and re-examines unsolved cases.",
+      "url": "https://www.wfmd.com/2026/09/24/unmasking-a-monster-golden-state-killer-series-challenges-timeline-of-joseph-deangelos-crimes/",
+      "source": "930 WFMD"
+    },
+    {
+      "case_slug": "murders-in-moscow",
+      "happened_on": "2026-09-19",
+      "title": "Bryan Kohberger files petition to withdraw guilty plea",
+      "summary": "Bryan Kohberger filed a handwritten motion seeking to withdraw his guilty plea for the 2022 Moscow murders, claiming coercion, threats, and ineffective assistance from his defense team.",
+      "url": "https://www.crimetimesnacks.com/episodes/murders-in-moscow-the-plea.html",
+      "source": "CrimeTimeSnacks"
+    },
+    {
+      "case_slug": "moscow-idaho-the-plea",
+      "happened_on": "2026-09-19",
+      "title": "Bryan Kohberger files motion to withdraw guilty plea",
+      "summary": "Bryan Kohberger has filed a handwritten motion seeking to withdraw his guilty plea, alleging coercion, threats, and ineffective counsel from his defense team. He is requesting to reopen the case and proceed to trial.",
+      "url": "https://www.crimetimesnacks.com/episodes/murders-in-moscow-the-plea.html",
+      "source": "CrimeTimeSnacks"
+    },
     {
       "case_slug": "jonbenet-ramsey-the-facts-96-22",
       "happened_on": "2026-09-16",

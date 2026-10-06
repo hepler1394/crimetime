@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-06T06:32:27.222Z",
+  "generated": "2026-10-06T18:39:05.842Z",
   "improvementsShipped": 532,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
@@ -36,12 +36,12 @@
     }
   },
   "freshness": {
-    "episodesJson": "2026-10-06T06:30:09.435Z",
-    "blogJson": "2026-10-06T06:30:04.991Z",
+    "episodesJson": "2026-10-06T18:35:59.967Z",
+    "blogJson": "2026-10-06T18:35:55.428Z",
     "merchJson": "2026-09-22T14:02:22.646Z",
     "quizzesJson": "2026-10-02T14:02:19.408Z",
-    "fbiJson": "2026-10-06T06:30:09.993Z",
-    "css": "2026-10-06T06:30:05.084Z"
+    "fbiJson": "2026-10-06T18:36:00.598Z",
+    "css": "2026-10-06T18:35:55.514Z"
   },
   "nextTopics": [
     "How digital forensics changed modern investigations",
