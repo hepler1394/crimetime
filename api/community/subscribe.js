@@ -6,7 +6,7 @@
 // else gets one email with a confirm link; the newsletter flag is set only when that link
 // is clicked (confirm.js with n=1). The answer is the same whether or not the address is
 // already a member, and the send shares the follow endpoint's ten-minute cooldown.
-import { sb, sendMail, isEmail, memberFrom, readJsonBody, claimMailSlot, newsletterEmail, SITE } from "../../automation/community/lib.js";
+import { sb, sendMail, isEmail, memberFrom, readJsonBody, claimMailSlot, newsletterEmail, rateOk, SITE } from "../../automation/community/lib.js";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "POST only" });
@@ -23,6 +23,7 @@ export default async function handler(req, res) {
     }
 
     if (!isEmail(email)) return res.status(400).json({ error: "Enter a valid email." });
+    if (!(await rateOk(req, "mail"))) return res.status(429).json({ error: "Too many requests from here. Try again in an hour." });
     // on_conflict=email: see follow.js; without it a returning member gets a 409.
     await sb("cts_members?on_conflict=email", { method: "POST", body: { email }, prefer: "resolution=ignore-duplicates,return=minimal" });
     const member = (await sb(`cts_members?select=id,token&email=eq.${encodeURIComponent(email)}&limit=1`))?.[0];

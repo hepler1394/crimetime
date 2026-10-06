@@ -6,6 +6,7 @@
 //   SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, SUPABASE_ANON_KEY,
 //   RESEND_API_KEY, MAIL_FROM, SITE_URL, CRON_SECRET
 
+import { createHash } from "node:crypto";
 import { storageKeyFor, accessTokenFromCookieHeader } from "../../community/lib/session-cookie.mjs";
 
 export const env = (k, d) => process.env[k] ?? d;
@@ -76,6 +77,25 @@ export async function claimMailSlot(memberId) {
     { method: "PATCH", body: { last_mail_at: new Date().toISOString() }, prefer: "return=representation" },
   );
   return Array.isArray(won) && won.length > 0;
+}
+
+// One visitor, many addresses: claimMailSlot stops one inbox getting mail twice in ten
+// minutes, but not one machine asking for mail to a hundred inboxes. This caps the mail
+// paths at RATE_LIMIT requests an hour per client address, counted in cts_rate_hits by
+// cts_rate_hit() (schema.sql). The address is stored as a hash, never as itself. If the
+// limiter itself fails the request goes through: a broken counter should not lock out
+// every reader.
+export const RATE_LIMIT = 8;
+export async function rateOk(req, scope) {
+  const ip = String(req.headers["x-forwarded-for"] || req.headers["x-real-ip"] || "").split(",")[0].trim();
+  if (!ip) return true;
+  const bucket = `${scope}:${createHash("sha256").update(`cts-rate:${ip}`).digest("hex").slice(0, 32)}`;
+  try {
+    return (await sb("rpc/cts_rate_hit", { method: "POST", body: { p_bucket: bucket, p_limit: RATE_LIMIT, p_window_seconds: 3600 } })) !== false;
+  } catch (e) {
+    console.error("rate:", e.message);
+    return true;
+  }
 }
 
 export const isEmail = (s) => typeof s === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(s) && s.length < 200;

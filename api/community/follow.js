@@ -9,7 +9,7 @@
 // an address could add cases to that member's Sunday email, and a confirm click switched on
 // every case anyone had added for them. The cost: two cases asked for inside the ten-minute
 // mail window get one email, for the first; the second is asked for again once signed in.
-import { sb, sendMail, isEmail, isSlug, memberFrom, readJsonBody, claimMailSlot, confirmEmail, signinEmail, SITE } from "../../automation/community/lib.js";
+import { sb, sendMail, isEmail, isSlug, memberFrom, readJsonBody, claimMailSlot, confirmEmail, signinEmail, rateOk, SITE } from "../../automation/community/lib.js";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "POST only" });
@@ -33,6 +33,7 @@ export default async function handler(req, res) {
     }
 
     if (!isEmail(email)) return res.status(400).json({ error: "enter a valid email" });
+    if (!(await rateOk(req, "mail"))) return res.status(429).json({ error: "Too many requests from here. Try again in an hour." });
     // on_conflict=email is required: id is the primary key, so without naming the email
     // constraint PostgREST cannot write ON CONFLICT and a returning member gets a 409.
     await sb("cts_members?on_conflict=email", { method: "POST", body: { email }, prefer: "resolution=ignore-duplicates,return=minimal" });

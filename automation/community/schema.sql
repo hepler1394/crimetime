@@ -150,3 +150,28 @@ create table if not exists public.cts_member_emails (
 create index if not exists cts_member_emails_member on public.cts_member_emails (member_id);
 alter table public.cts_member_emails enable row level security;
 -- No policies: only the service role touches it, same as members and follows.
+
+-- Per-client cap on the mail-sending endpoints (follow, subscribe): rateOk in lib.js.
+-- bucket is "<scope>:<hash of the client address>"; raw addresses are never stored.
+-- cts_rate_hit counts, refuses at the limit, and records the hit under an advisory lock so
+-- two requests at once cannot both slip under it. Rows older than a day are swept on call.
+create table if not exists public.cts_rate_hits (
+  bucket text not null,
+  at     timestamptz not null default now()
+);
+create index if not exists cts_rate_hits_bucket_at on public.cts_rate_hits (bucket, at);
+alter table public.cts_rate_hits enable row level security;
+
+create or replace function public.cts_rate_hit(p_bucket text, p_limit int, p_window_seconds int)
+returns boolean language plpgsql security definer set search_path = public as $$
+declare n int;
+begin
+  perform pg_advisory_xact_lock(hashtext(p_bucket));
+  delete from cts_rate_hits where at < now() - make_interval(secs => greatest(p_window_seconds, 86400));
+  select count(*) into n from cts_rate_hits where bucket = p_bucket and at > now() - make_interval(secs => p_window_seconds);
+  if n >= p_limit then return false; end if;
+  insert into cts_rate_hits (bucket) values (p_bucket);
+  return true;
+end $$;
+revoke all on function public.cts_rate_hit(text, int, int) from public, anon, authenticated;
+grant execute on function public.cts_rate_hit(text, int, int) to service_role;
