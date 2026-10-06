@@ -7,7 +7,7 @@
     <title>CrimeTimeSnacks • A True Crime Podcast</title>
     <link>https://www.crimetimesnacks.com/</link>
     <atom:link href="https://www.crimetimesnacks.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 06 Oct 2026 05:01:40 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 05:12:49 GMT</lastBuildDate>
     <language>en</language>
     <copyright>&#169; 2026 Cory</copyright>
     <description>CrimeTimeSnacks is a true crime podcast about the cases people argue about, built from the public record: court filings, released case files and years of reporting. Each episode lays out the facts, the theories and the evidence, says what is still unknown, and leaves the conclusion to you.</description>
@@ -99,7 +99,7 @@ Eventually, a gruesome discovery on the roof would answer where she went, but it
       <itunes:summary>Thirty years on, two investigations are still running: Boulder police, and a volunteer team working from the spreadsheet a dead detective left behind. Hey everyone, it&apos;s Cory. This time on CrimeTimeSnacks: what the record in the JonBenet Ramsey case actually shows at thirty years. The morning the scene was lost, the ransom note two courts read two ways, the grand jury vote that stayed secret for fourteen years, the unknown male DNA, and where both investigations stand now. No one has ever been charged.</itunes:summary>
       <itunes:author>Cory</itunes:author>
       <itunes:duration>00:20:43</itunes:duration>
-      <enclosure url="https://www.crimetimesnacks.com/audio/jonbenet-ramsey-thirty-years-r2.mp3" length="19882057" type="audio/mpeg" />
+      <enclosure url="https://www.crimetimesnacks.com/audio/jonbenet-ramsey-thirty-years-r3.mp3" length="19882057" type="audio/mpeg" />
       <itunes:image href="https://www.crimetimesnacks.com/images/episodes/jonbenet-ramsey-thirty-years.jpg" />
       <itunes:explicit>false</itunes:explicit>
     </item>
