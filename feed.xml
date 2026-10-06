@@ -7,7 +7,7 @@
     <title>CrimeTimeSnacks • A True Crime Podcast</title>
     <link>https://www.crimetimesnacks.com/</link>
     <atom:link href="https://www.crimetimesnacks.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 06 Oct 2026 23:19:28 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 23:29:17 GMT</lastBuildDate>
     <language>en</language>
     <copyright>&#169; 2026 Cory</copyright>
     <description>CrimeTimeSnacks is a true crime podcast about the cases people argue about, built from the public record: court filings, released case files and years of reporting. Each episode lays out the facts, the theories and the evidence, says what is still unknown, and leaves the conclusion to you.</description>
@@ -149,8 +149,8 @@ Then the part that is still moving: one district attorney who asked for resenten
 
 I covered the murders and the trials in an earlier episode, so this one tells 1989 once and spends its time on everything since.</itunes:summary>
       <itunes:author>Cory</itunes:author>
-      <itunes:duration>00:21:15</itunes:duration>
-      <enclosure url="https://www.crimetimesnacks.com/audio/the-menendez-brothers-parole-years.mp3" length="20403262" type="audio/mpeg" />
+      <itunes:duration>00:21:20</itunes:duration>
+      <enclosure url="https://www.crimetimesnacks.com/audio/the-menendez-brothers-parole-years-r2.mp3" length="20474733" type="audio/mpeg" />
       <itunes:image href="https://www.crimetimesnacks.com/images/episodes/the-menendez-brothers-parole-years.jpg" />
       <itunes:explicit>false</itunes:explicit>
     </item>

@@ -596,3 +596,4 @@ with an [auto] tag — the counter on Mission Control reads this file.
 530. [auto 2026-10-06] Published podcast episode from the studio: "JonBenet Ramsey: Thirty Years" (00:20:43)
 531. [auto 2026-10-06] Published podcast episode from the studio: "JonBenet Ramsey: Thirty Years" (00:20:43)
 532. [auto 2026-10-06] Published podcast episode from the studio: "Elisa Lam and the Cecil Hotel" (00:24:40)
+533. [auto 2026-10-06] Published podcast episode from the studio: "The Menendez Brothers: The Parole Years" (00:21:20)
