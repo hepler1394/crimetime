@@ -25,7 +25,7 @@
 //   3. The episode is only marked "published" once the push actually succeeded.
 //      A failed push leaves it "committed" and exits non-zero, so the studio says so.
 
-import { readFile, writeFile, copyFile, mkdir, stat } from "node:fs/promises";
+import { readFile, writeFile, copyFile, mkdir, stat, rm } from "node:fs/promises";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
@@ -119,7 +119,13 @@ await gitPreflight();
 
 const date = opt("--date", ep.publishDate || new Date().toISOString().slice(0, 10));
 const slug = ep.slug;
-const audioRel = `/audio/${slug}.mp3`, imageRel = `/images/episodes/${slug}.jpg`;
+const imageRel = `/images/episodes/${slug}.jpg`;
+// Replaced audio goes out under a new file name, same guid. Spotify's own guidance is a new
+// URL when the audio changes: it caches by enclosure URL, so a corrected file at the old
+// address can keep playing the old take (on 2026-10-05 five corrected episodes had been
+// replaced in place). The previous file is removed; the feed points at the new one.
+const prevAudio = replaceAudio ? ((await loadStudioEpisodes()).find((e) => e.slug === slug)?.audio || "") : "";
+const audioRel = replaceAudio ? `/audio/${slug}-r${((prevAudio.match(/-r(\d+)\.mp3$/) || [])[1] | 0 || 1) + 1}.mp3` : `/audio/${slug}.mp3`;
 let bytes = 0, hasTranscript = false;
 
 /* ---------------------------------------------------------------- the work */
@@ -128,6 +134,7 @@ if (!pushOnly) {
   await mkdir(join(ROOT, "images", "episodes"), { recursive: true });
   await mkdir(join(__dirname, "transcripts"), { recursive: true });
   await copyFile(join(dir, "episode.mp3"), join(ROOT, audioRel));
+  if (prevAudio && prevAudio !== audioRel) await rm(join(ROOT, prevAudio), { force: true });
   await copyFile(join(dir, "cover.jpg"), join(ROOT, imageRel));
   // The public transcript of a synthesized episode is the script, never a transcriber's guess
   // (script-transcript.mjs). A draft voiced before 2026-09-24 still carries the old whisper

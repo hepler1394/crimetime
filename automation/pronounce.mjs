@@ -30,7 +30,10 @@ const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 export function spoken(text) {
   let out = String(text ?? "");
   for (const [word, say] of Object.entries(table())) {
-    out = out.replace(new RegExp(`\\b${esc(word)}\\b`, "gi"), (m) => (m === m.toUpperCase() && m.length > 1 ? say.toUpperCase() : say));
+    // Letter boundaries rather than \b, which does not count an accented letter as part of a
+    // word ("Rosselló"). The respelling is voiced as written: in capitals it can be read out
+    // letter by letter.
+    out = out.replace(new RegExp(`(?<![\\p{L}\\p{N}])${esc(word)}(?![\\p{L}\\p{N}])`, "giu"), () => say);
   }
   return out;
 }
