@@ -1,11 +1,42 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1259,
+    "totalOnFile": 1260,
     "baked": 150,
-    "updated": "2026-10-05T14:53:57.269Z"
+    "updated": "2026-10-06T00:08:25.303Z"
   },
   "items": [
+    {
+      "uid": "043a2834e80848099aa61394cc54f9f9",
+      "title": "JULIOUS GEORGE KHALID",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/additional/julious-george-khalid/@@images/image/large",
+      "office": "Atlanta",
+      "reward": "Reward up to $10,000 for information leading to the arrest and conviction of Julious George Khalid.",
+      "url": "https://www.fbi.gov/wanted/additional/julious-george-khalid",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Additional Violent Crimes"
+      ],
+      "publication": "2026-09-23T10:25:00"
+    },
+    {
+      "uid": "3a3ec6ff4ecd1c5aac9a7f2380eccd47",
+      "title": "THOMAS CRANE WALES",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/thomas-crane-wales/@@images/image/large",
+      "office": "Seattle",
+      "reward": "The United States Department of Justice is offering a reward of up to $2,000,000 for information leading to the arrest and conviction of the person or persons responsible for the murder of AUSA Thomas Crane Wales.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/thomas-crane-wales",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Case of the Week"
+      ],
+      "publication": "2010-09-21T19:40:00"
+    },
     {
       "uid": "610d8fa337874ea7b7f09b992c4ea0b9",
       "title": "ANIBAL ALEXANDER CANELON AGUIRRE",
@@ -20,6 +51,21 @@
         "Ten Most Wanted Fugitives"
       ],
       "publication": "2026-02-17T11:44:00"
+    },
+    {
+      "uid": "7e03eb689c954265ada44259ccbccfd2",
+      "title": "YLVA ANNIKA HAGNER",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/ylva-annika-hagner/@@images/image/large",
+      "office": "Sanfrancisco",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/kidnap/ylva-annika-hagner",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2026-09-24T10:03:00"
     },
     {
       "uid": "8020a28b1746429a994f4435d1d60259",
@@ -157,22 +203,6 @@
         "Kidnappings and Missing Persons"
       ],
       "publication": "2024-10-01T06:48:00"
-    },
-    {
-      "uid": "043a2834e80848099aa61394cc54f9f9",
-      "title": "JULIOUS GEORGE KHALID",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/additional/julious-george-khalid/@@images/image/large",
-      "office": "Atlanta",
-      "reward": "Reward up to $10,000 for information leading to the arrest and conviction of Julious George Khalid.",
-      "url": "https://www.fbi.gov/wanted/additional/julious-george-khalid",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Additional Violent Crimes",
-        "Case of the Week"
-      ],
-      "publication": "2026-09-23T10:25:00"
     },
     {
       "uid": "ee0a85adb7414de487ec6afd941efd74",
@@ -661,21 +691,6 @@
         "Seeking Information"
       ],
       "publication": "2026-09-02T17:49:00"
-    },
-    {
-      "uid": "3a3ec6ff4ecd1c5aac9a7f2380eccd47",
-      "title": "THOMAS CRANE WALES",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/thomas-crane-wales/@@images/image/large",
-      "office": "Seattle",
-      "reward": "The United States Department of Justice is offering a reward of up to $2,000,000 for information leading to the arrest and conviction of the person or persons responsible for the murder of AUSA Thomas Crane Wales.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/thomas-crane-wales",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2010-09-21T19:40:00"
     },
     {
       "uid": "a61357c6083b4953b31ec6e848922780",
@@ -2280,21 +2295,6 @@
         "Law Enforcement Assistance"
       ],
       "publication": "2026-05-29T13:45:00"
-    },
-    {
-      "uid": "d99179c57542474fa21de4cd5d589b6a",
-      "title": "LEOBARDO PENA GUTIERREZ",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/leobardo-pena-gutierrez/@@images/image/large",
-      "office": "Billings, Saltlakecity",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cei/leobardo-pena-gutierrez",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-05-11T08:51:00"
     }
   ]
 }
