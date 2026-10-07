@@ -1,5 +1,5 @@
 {
-  "fetched": "2026-10-07T00:14:20.130Z",
+  "fetched": "2026-10-07T06:19:07.376Z",
   "cases": [
     {
       "slug": "maura-murray",
@@ -684,12 +684,68 @@
   ],
   "updates": [
     {
+      "case_slug": "alex-murdaugh",
+      "happened_on": "2026-10-06",
+      "title": "Prosecutors oppose Murdaugh motion over cellphone files",
+      "summary": "South Carolina prosecutors filed a response asking the judge to deny Alex Murdaugh's motion to compel underlying cellphone extraction files. The state maintained that complete extraction files were provided to defense experts multiple times prior to the 2023 trial.",
+      "url": "https://www.wjcl.com/article/alex-murdaugh-cellphone-evidence-dispute/74055671",
+      "source": "WJCL"
+    },
+    {
+      "case_slug": "alex-murdaugh",
+      "happened_on": "2026-10-06",
+      "title": "State opposes Murdaugh motion to compel cell evidence",
+      "summary": "South Carolina prosecutors filed a response asking Judge Debra McCaslin to deny Alex Murdaugh's motion to compel cellphone extraction files, stating the defense was already provided all raw data in 2022. The state accused the defense of brazen falsehoods ahead of an October 16, 2026 hearing.",
+      "url": "https://fitsnews.com/2026/10/06/murdaugh-retrial",
+      "source": "FITSNews"
+    },
+    {
+      "case_slug": "alex-murdaugh",
+      "happened_on": "2026-10-06",
+      "title": "Prosecutors dispute Murdaugh defense claims on cell phone data",
+      "summary": "State prosecutors asked Judge Debra R. McCaslin to deny Alex Murdaugh's motion to compel cellphone extraction files ahead of his 2027 retrial. The state argued that the unredacted raw files were already turned over multiple times before his first trial.",
+      "url": "https://yahoo.com/news/us/articles/state-disputes-alex-murdaugh-defense-164554708.html",
+      "source": "Yahoo"
+    },
+    {
+      "case_slug": "the-murdaugh-family-murders",
+      "happened_on": "2026-10-06",
+      "title": "State accuses Murdaugh defense of falsehoods regarding phone data",
+      "summary": "South Carolina prosecutors filed a response accusing Alex Murdaugh's defense of 'brazen falsehoods' in their motion seeking raw cellphone extraction files. The state maintained that the requested digital evidence had already been provided to the defense multiple times prior to the original trial.",
+      "url": "https://fitsnews.com/2026/10/06/murdaugh-retrial",
+      "source": "FITSNews"
+    },
+    {
+      "case_slug": "the-murdaugh-family-murders",
+      "happened_on": "2026-10-02",
+      "title": "Hearing set for October 16 on Murdaugh defense motions",
+      "summary": "Circuit Court Judge Debra McCaslin scheduled a defense motions hearing and status conference for October 16, 2026, to address disputes over alleged withheld discovery. The proceeding follows multiple defense motions filed in September seeking cellphone extractions, DNA, ballistics, and scene data.",
+      "url": "https://yahoo.com/news/us/articles/judge-sets-alex-murdaugh-hearing-170321644.html",
+      "source": "Yahoo News"
+    },
+    {
       "case_slug": "golden-state-killer",
       "happened_on": "2026-10-02",
       "title": "Ex-fiancée of Golden State Killer gives first media interview",
       "summary": "Bonnie Ueltzen gave her first media interview in the docuseries \"The Golden State Killer: Unmasking A Monster,\" recounting an incident where Joseph DeAngelo appeared outside her home with a gun after she broke off their engagement. She expressed regret over never reporting the confrontation to police.",
       "url": "https://www.dailymail.com/crime-desk/article-16179135/Golden-State-Killer-ex-fiancee-interview-reveal-moment-foreshadow-crime-spree.html",
       "source": "Daily Mail"
+    },
+    {
+      "case_slug": "the-murdaugh-family-murders",
+      "happened_on": "2026-10-02",
+      "title": "Judge schedules October 16 evidentiary hearing in Murdaugh retrial",
+      "summary": "Judge Debra McCaslin scheduled an in-person hearing for October 16, 2026, to address urgent evidentiary disputes concerning DNA, cell phone data, ballistics, and FARO scans ahead of Alex Murdaugh's retrial. Prosecutors were ordered to submit their responses to pending motions by October 8.",
+      "url": "https://abcnews4.com/news/murdaugh-murders/hearing-on-dna-ballistics-evidence-in-murdaugh-case-scheduled-for-oct-16-alex-murdaugh-crime-retrial-defense-prosecution-landmark-case-on-the-lawyer-accused-of-murdering-family-and-federal-financial-crimes",
+      "source": "WCIV"
+    },
+    {
+      "case_slug": "alex-murdaugh",
+      "happened_on": "2026-10-01",
+      "title": "Murdaugh defense asks judge to compel evidence production",
+      "summary": "Alex Murdaugh's defense attorney Dick Harpootlian sent a letter to Circuit Court Judge Debra McCaslin urging the court to force prosecutors to produce outstanding discovery materials. Harpootlian noted that three motions to compel remain pending and the state has produced almost nothing ahead of the April 2027 retrial.",
+      "url": "https://yahoo.com/news/us/articles/murdaugh-defense-team-asks-judge-121239889.html",
+      "source": "Yahoo"
     },
     {
       "case_slug": "golden-state-killer",
@@ -700,12 +756,36 @@
       "source": "930 WFMD"
     },
     {
-      "case_slug": "murders-in-moscow",
-      "happened_on": "2026-09-19",
-      "title": "Bryan Kohberger files petition to withdraw guilty plea",
-      "summary": "Bryan Kohberger filed a handwritten motion seeking to withdraw his guilty plea for the 2022 Moscow murders, claiming coercion, threats, and ineffective assistance from his defense team.",
-      "url": "https://www.crimetimesnacks.com/episodes/murders-in-moscow-the-plea.html",
-      "source": "CrimeTimeSnacks"
+      "case_slug": "delphi-the-appeal",
+      "happened_on": "2026-09-21",
+      "title": "Indiana appellate judges question state over Richard Allen's pretrial confinement",
+      "summary": "The Indiana Court of Appeals heard oral arguments on Richard Allen's appeal seeking a new trial. Allen's defense argued his pretrial solitary confinement drove him into psychosis to extract confessions, leading appellate judges to question the state's treatment of Allen prior to trial.",
+      "url": "https://www.21alivenews.com/2026/09/21/delphi-murders-appeal-judge-tells-state-you-protected-him-into-psychosis-richard-allen-seeks-new-trial/",
+      "source": "21Alive News"
+    },
+    {
+      "case_slug": "delphi-the-appeal",
+      "happened_on": "2026-09-21",
+      "title": "Indiana Court of Appeals hears oral arguments in Richard Allen appeal",
+      "summary": "A three-judge panel of the Indiana Court of Appeals heard oral arguments regarding whether Richard Allen received a fair trial in his 2024 murder conviction. Allen's defense argued that evidence pointing to other suspects was suppressed and that his mental state during his confessions while in solitary confinement was not fully presented to jurors.",
+      "url": "https://abc7chicago.com/post/richard-allen-case-indiana-court-hears-appeal-convicted-delphi-killings-abigail-williams-liberty-german-2017/19854904/",
+      "source": "ABC7 Chicago"
+    },
+    {
+      "case_slug": "the-delphi-murder-case-2017",
+      "happened_on": "2026-09-21",
+      "title": "Indiana Court of Appeals hears appeal in Richard Allen's Delphi murder conviction",
+      "summary": "The Indiana Court of Appeals heard oral arguments regarding whether Richard Allen received a fair trial in his 2024 double murder conviction. Defense attorneys argued that key evidence was suppressed at trial, including evidence of other possible suspects and Allen's mental state when he confessed.",
+      "url": "https://abc7news.com/post/richard-allen-case-indiana-court-hears-appeal-convicted-delphi-killings-abigail-williams-liberty-german-2017/19854904",
+      "source": "ABC7 San Francisco"
+    },
+    {
+      "case_slug": "delphi-richard-allen",
+      "happened_on": "2026-09-21",
+      "title": "Indiana appellate judges hear oral arguments in Richard Allen's Delphi murders appeal",
+      "summary": "A three-judge panel of the Indiana Court of Appeals heard arguments regarding whether Richard Allen received a fair trial in the 2017 Delphi murders. Allen's defense challenged the admissibility of his confessions and search evidence, while the state defended his conviction.",
+      "url": "https://wndu.com/2026/09/21/indiana-court-hears-appeal-richard-allen-delphi-murders-case",
+      "source": "WNDU"
     },
     {
       "case_slug": "moscow-idaho-the-plea",
@@ -716,12 +796,92 @@
       "source": "CrimeTimeSnacks"
     },
     {
+      "case_slug": "murders-in-moscow",
+      "happened_on": "2026-09-19",
+      "title": "Bryan Kohberger files petition to withdraw guilty plea",
+      "summary": "Bryan Kohberger filed a handwritten motion seeking to withdraw his guilty plea for the 2022 Moscow murders, claiming coercion, threats, and ineffective assistance from his defense team.",
+      "url": "https://www.crimetimesnacks.com/episodes/murders-in-moscow-the-plea.html",
+      "source": "CrimeTimeSnacks"
+    },
+    {
+      "case_slug": "lori-vallow",
+      "happened_on": "2026-09-18",
+      "title": "Idaho Supreme Court sets oral arguments on Lori Vallow Daybell appeal",
+      "summary": "The Idaho Supreme Court is scheduled to hear oral arguments on Lori Vallow Daybell's appeal on November 2. Her appeal centers on the claim that her hired attorney was unconstitutionally removed over a conflict of interest.",
+      "url": "https://truecrimetodaypod.com/lori-vallow-believes-this-happens-after-her-appeal",
+      "source": "True Crime Today Podcast"
+    },
+    {
+      "case_slug": "the-murdaugh-family-murders",
+      "happened_on": "2026-09-18",
+      "title": "Murdaugh defense files motion to compel DNA, ballistics, and scan data",
+      "summary": "Attorneys for Alex Murdaugh filed a motion asking a judge to order prosecutors to turn over additional DNA testing, ballistics records, and raw FARO crime scene scan data. The defense requested the production of materials ahead of an expected November hearing and the April 2027 retrial.",
+      "url": "https://wpde.com/news/local/murdaugh-defense-seeks-dna-ballistics-and-crime-scene-data-before-november-hearing",
+      "source": "ABC NEWS 4 STAFF"
+    },
+    {
+      "case_slug": "menendez-the-parole-years",
+      "happened_on": "2026-09-18",
+      "title": "Menendez brothers' next parole hearings tentatively set for February 2027",
+      "summary": "The California Board of Parole tentatively scheduled Lyle Menendez's next hearing for February 23, 2027, and Erik Menendez's for February 24, 2027, advancing their dates under Proposition 9.",
+      "url": "https://www.nbclosangeles.com/news/local/menendez-brothers-next-parole-hearings-february-2027/3944572/",
+      "source": "NBC Los Angeles"
+    },
+    {
+      "case_slug": "kohberger-trial",
+      "happened_on": "2026-09-18",
+      "title": "Hearing scheduled for October 15 on motion to remove Judge Hippler in Kohberger case",
+      "summary": "Bryan Kohberger is scheduled to return to court on October 15 for a hearing regarding his legal team's efforts to disqualify Judge Steven Hippler from his post-conviction proceedings.",
+      "url": "https://ar.newcarsz.com/%F0%9F%9A%A8-bryan-kohberger-heading-back-to-court-sooner-than-expected-new-hearing-set-for-october-15",
+      "source": "ar.newcarsz.com"
+    },
+    {
+      "case_slug": "the-menendez-brothers-parole-years",
+      "happened_on": "2026-09-18",
+      "title": "Menendez brothers' parole hearings scheduled for February 2027",
+      "summary": "Lyle and Erik Menendez have had their next parole hearings tentatively scheduled for February 23 and February 24, 2027, respectively. The advanced hearings were granted by the California Board of Parole under provisions of Proposition 9.",
+      "url": "https://www.nbclosangeles.com/news/local/menendez-brothers-next-parole-hearings-february-2027/3944572/",
+      "source": "NBC Los Angeles"
+    },
+    {
+      "case_slug": "erik-and-lyle-the-menendez-brothers",
+      "happened_on": "2026-09-18",
+      "title": "Menendez brothers' next parole hearings scheduled for February 2027",
+      "summary": "The California Board of Parole tentatively scheduled Lyle Menendez's parole hearing for February 23, 2027, and Erik Menendez's hearing for February 24, 2027, moving up their hearings under Proposition 9.",
+      "url": "https://nbclosangeles.com/news/local/menendez-brothers-next-parole-hearings-february-2027/3944572",
+      "source": "NBC Los Angeles"
+    },
+    {
       "case_slug": "jonbenet-ramsey-the-facts-96-22",
       "happened_on": "2026-09-16",
       "title": "Netflix schedules premiere date for The Murder of JonBenét Ramsey limited series",
       "summary": "Netflix announced that its upcoming limited series, \"The Murder of JonBenét Ramsey\" starring Melissa McCarthy and Clive Owen, will premiere globally on December 10, 2026.",
       "url": "https://www.usatoday.com/story/news/state/georgia/atlanta/2026/09/16/the-murder-of-jonbent-ramsey-is-coming-to-netflix-who-was-she/91789285007/",
       "source": "USA TODAY"
+    },
+    {
+      "case_slug": "jonbenet-ramsey-americas-child-beauty-queen",
+      "happened_on": "2026-09-15",
+      "title": "Netflix sets December 10 release date for 'The Murder of JonBenét Ramsey'",
+      "summary": "Netflix announced that its limited series 'The Murder of JonBenét Ramsey', starring Melissa McCarthy and Clive Owen, will premiere on December 10.",
+      "url": "https://radaronline.com/p/jonbenet-ramsey-netflix-series-first-look-melissa-mccarthy-clive-owen/",
+      "source": "RadarOnline"
+    },
+    {
+      "case_slug": "jonbenet-ramsey-dna",
+      "happened_on": "2026-09-15",
+      "title": "Netflix sets December 10 premiere for 'The Murder of JonBenét Ramsey'",
+      "summary": "Netflix announced that its limited series 'The Murder of JonBenét Ramsey' will premiere on December 10.",
+      "url": "https://variety.com/2026/tv/news/netflix-murder-of-jonbenet-ramsey-release-date-1236861705/",
+      "source": "Variety"
+    },
+    {
+      "case_slug": "long-island-serial-killer",
+      "happened_on": "2026-09-13",
+      "title": "Rex Heuermann disciplined after drugs found under his prison bed",
+      "summary": "Rex Heuermann was placed in an isolated cellblock and had privileges restricted after officers at Clinton Correctional Facility found synthetic marijuana hidden under his bed. A disciplinary hearing concluded on August 18 following the discovery.",
+      "url": "https://www.dailymail.com/crime-desk/article-16127403/gilgo-beach-killer-rex-heuermann-drugs-prison-eight-women.html",
+      "source": "Daily Mail"
     },
     {
       "case_slug": "long-island-serial-killer",
@@ -738,6 +898,46 @@
       "summary": "Attorneys representing Gabby Petito's family expect oral arguments soon in their lawsuit alleging a Utah police department failed to prevent her murder.",
       "url": "https://patch.com/new-york/patchogue/gaby-petito-5th-anniv-her-slaying-nears-lawyers-expect-oral-arguments-suit-be",
       "source": "Patch"
+    },
+    {
+      "case_slug": "jonbenet-ramsey-the-facts-96-22",
+      "happened_on": "2026-09-08",
+      "title": "Former CBI DNA analyst Yvonne Woods sentenced to 10 years in prison",
+      "summary": "Former Colorado Bureau of Investigation DNA analyst Yvonne 'Missy' Woods was sentenced to 10 years in prison after pleading guilty to tampering with evidence in over 1,000 cases. Her conviction has prompted renewed scrutiny of DNA evidence handled during the JonBenét Ramsey investigation.",
+      "url": "https://www.yahoo.com/news/us/articles/dna-analyst-linked-jonbenet-ramsey-185445005.html",
+      "source": "Yahoo"
+    },
+    {
+      "case_slug": "erik-and-lyle-the-menendez-brothers",
+      "happened_on": "2026-09-08",
+      "title": "Menendez brothers granted early parole hearing for March 2027",
+      "summary": "Lyle and Erik Menendez have been granted an advanced parole hearing tentatively scheduled for March 2027, over a year earlier than previously anticipated.",
+      "url": "https://www.today.com/video/menendez-brothers-granted-early-parole-hearing-for-march-2027-269489221680",
+      "source": "TODAY"
+    },
+    {
+      "case_slug": "the-menendez-brothers-parole-years",
+      "happened_on": "2026-09-08",
+      "title": "Menendez brothers granted early parole hearing for March 2027",
+      "summary": "Erik and Lyle Menendez were granted an early parole suitability hearing tentatively scheduled for March 2027. They were previously not eligible to seek a hearing until August 2028.",
+      "url": "https://globalnews.ca/news/12051117/menendez-brothers-granted-2027-parole-hearing-family-says/",
+      "source": "Global News"
+    },
+    {
+      "case_slug": "menendez-the-parole-years",
+      "happened_on": "2026-09-04",
+      "title": "Erik and Lyle Menendez granted early parole suitability hearings",
+      "summary": "The California parole board granted requests by Erik and Lyle Menendez to advance their parole suitability hearings to March, roughly 17 months earlier than expected.",
+      "url": "https://www.theguardian.com/us-news/2026/sep/08/erik-lyle-menendez-parole",
+      "source": "The Guardian"
+    },
+    {
+      "case_slug": "the-menendez-brothers-parole-years",
+      "happened_on": "2026-09-04",
+      "title": "Parole board advances Menendez brothers' hearings to March",
+      "summary": "The California parole board approved requests by Erik and Lyle Menendez to advance their parole suitability hearings to March, approximately 17 months earlier than scheduled. The decision followed their previous parole denial in August 2025.",
+      "url": "https://www.theguardian.com/us-news/2026/sep/08/erik-lyle-menendez-parole",
+      "source": "The Guardian"
     },
     {
       "case_slug": "gabby-petito",
