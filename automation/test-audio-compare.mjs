@@ -4,6 +4,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { compareWords, tokens } from "./audio-compare.mjs";
+import { spoken } from "./pronounce.mjs";
 
 // Turn a sentence into the word list the ASR helper returns. "[x]" marks a low-confidence word.
 const heard = (s) => s.split(/\s+/).map((w, i) => ({ w: w.replace(/[\[\]]/g, ""), s: i * 0.3, p: /^\[/.test(w) ? 0.01 : 0.95 }));
@@ -122,4 +123,18 @@ test("an accented name stays one word", () => {
   assert.deepEqual(tokens("JonBenét's"), ["jonbenets"]);
   assert.deepEqual(tokens("JonBenét"), ["jonbenet"]);
   assert.deepEqual(kinds("The DNA came from JonBenét's underwear", "The DNA came from JonBenet's underwear"), []);
+});
+test("a respelled name passes only as itself", () => {
+  // Until 2026-10-06 every name in pronunciations.json went on the blanket allow list, so it
+  // passed however it was heard: Golden State Killer audited clean saying "Rockland" for Rocklin.
+  // The script is voiced as spoken(text), so that is what the audit compares against.
+  const line = (name) => `He studied police science at Sierra College in ${name} and graduated with honors that spring`;
+  const k = (said) => compareWords([spoken(line("Rocklin"))], heard(line(said))).findings.map((f) => f.kind);
+  assert.deepEqual(k("Rocklin"), []);
+  assert.deepEqual(k("Rocklinn"), []);
+  assert.deepEqual(k("Rockland"), ["MISHEARD"]);
+  const m = (said) => compareWords([spoken("They drove out to the Murdaugh property at Moselle that night")], heard(`They drove out to the ${said} property at Moselle that night`)).findings.map((f) => f.kind);
+  assert.deepEqual(m("Murdaugh"), []);
+  assert.deepEqual(m("Murdock"), []);
+  assert.deepEqual(m("Murdaw"), ["MISHEARD"]);
 });

@@ -8,6 +8,7 @@
 // by listening to the spot again, which is why each finding carries the seconds it covers.
 
 import { sameSound, isElision } from "./audio-phonetics.mjs";
+import { pronounceAliases } from "./pronounce.mjs";
 
 const NUMS = { zero: "0", one: "1", two: "2", three: "3", four: "4", five: "5", six: "6", seven: "7", eight: "8", nine: "9", ten: "10", eleven: "11", twelve: "12", thirteen: "13", fourteen: "14", fifteen: "15", sixteen: "16", seventeen: "17", eighteen: "18", nineteen: "19", twenty: "20", thirty: "30", forty: "40", fifty: "50", sixty: "60", seventy: "70", eighty: "80", ninety: "90", hundred: "100", thousand: "1000" };
 // Accents fold to their base letter BEFORE the strip below, which turns anything
@@ -78,6 +79,20 @@ export function compareWords(paras, heardWords, audioOk = []) {
   if (j < B.length) diffs.push({ pi: A.length ? A[A.length - 1].pi : 0, at: B[j].s, script: [], heard: B.slice(j), next: "", nextScript: "" });
 
   const okNames = new Set(audioOk.flatMap((n) => tokens(n)));
+  // A respelled name (automation/pronunciations.json) is right when it is heard as the
+  // respelling or as the real name, and wrong otherwise: "rocklinn" heard as "rocklin" is the
+  // clone saying it right, heard as "rockland" is the clone saying it wrong.
+  const alias = new Map();
+  for (const [say, real] of pronounceAliases()) {
+    const st = tokens(say), rt = tokens(real);
+    if (st.length === 1 && rt.length === 1) alias.set(st[0], [...(alias.get(st[0]) || []), rt[0]]);
+  }
+  // Stricter than same(): the respelling exists because the real spelling reads as the wrong
+  // sound ("Murdaugh" sounds like "murdaw" by the rules, which is the mistake), and sameSound
+  // calls "rocklinn" and "rockland" one word. So the real name counts only as the exact word a
+  // transcriber writes for a famous name, and the respelling only by its consonant skeleton.
+  const aliasOk = (w, h) => w === h || skel(w) === skel(h) || alias.get(w).includes(h);
+  const pairOk = (w, h) => alias.has(w) ? aliasOk(w, h) : (w === h || same(w, h) || allowed(w) || (SMALL.has(w) && SMALL.has(h)));
   // A name on the allow list covers the possessive and the plural of itself: the script token is
   // "jonbenets" where the list says "JonBenet", and an allow list that misses that is no list.
   const allowed = (w) => okNames.has(w) || [...okNames].some((n) => n.length > 3 && sameSound(w, n));
@@ -115,6 +130,13 @@ export function compareWords(paras, heardWords, audioOk = []) {
       continue;
     }
     if (!d.heard.length) { if (d.script.length >= 3) findings.push({ kind: "DROPPED", at: d.at, pi: d.pi, ...ev(d), text: `"${d.script.join(" ")}" is in the script and was not heard` }); continue; }
+    // A respelled name is judged here and nowhere else: every rule below forgives by sound.
+    if (d.script.some((w) => alias.has(w))) {
+      const realJoin = d.script.map((w) => alias.has(w) ? alias.get(w)[0] : w).join("");
+      if (hJoin === realJoin || (d.script.length === d.heard.length && d.script.every((w, n) => pairOk(w, d.heard[n].w)))) continue;
+      findings.push({ kind: "MISHEARD", at: d.at, pi: d.pi, ...ev(d), text: `script says "${d.script.map((w) => alias.has(w) ? alias.get(w)[0] : w).join(" ")}", it sounds like "${d.heard.map((x) => x.w).join(" ")}"` });
+      continue;
+    }
     if (same(sJoin, hJoin)) continue;
     // "because" read as "cause" is how the word is said, not a defect in the render.
     if (isElision(d.script, d.heard.map((x) => x.w))) continue;

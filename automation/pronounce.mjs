@@ -38,7 +38,18 @@ export function spoken(text) {
   return out;
 }
 
-// Both spellings of every listed name, for the audit's allow list.
+// What a respelling may be heard as: [respelling, real spelling] for every listed name.
+// audio-compare.mjs accepts a respelled word only when the transcriber wrote that word or the
+// real name, never anything at all. Until 2026-10-06 both spellings went on the audit's blanket
+// allow list instead, and a name on that list passes however it is heard: Golden State Killer
+// went through clean with the clone still saying "Rockland" for Rocklin, and the audit could
+// never have caught a bad "Murdaugh" either - the failure this file was written for.
+export function pronounceAliases() {
+  return Object.entries(table()).map(([w, s]) => [s, w]);
+}
+
+// Kept for callers that still spread it into an allow list: names are judged by
+// pronounceAliases() in audio-compare.mjs now, so nothing goes on the blanket list.
 export function pronounceOk() {
-  return Object.entries(table()).flatMap(([w, s]) => [w, s]);
+  return [];
 }
