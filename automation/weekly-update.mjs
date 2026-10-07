@@ -45,6 +45,25 @@ const git = (gitArgs) => {
 
 console.log("CrimeTimeSnacks content update —", new Date().toISOString());
 
+// What this run may commit: files it changed, never files that were already dirty when it
+// started. Until 2026-10-06 the commit was `git add -A`, and a content run swept a session's
+// half-finished work into "Weekly auto-update". audio/ and automation/studio/ belong to the
+// episode pipeline and are never staged from here.
+const OFF_LIMITS = /^(audio\/|automation\/studio\/)/;
+const dirty = () => {
+  const out = spawnSync("git", ["status", "--porcelain", "-z", "--untracked-files=all"], { cwd: ROOT, encoding: "utf8" }).stdout || "";
+  const paths = new Set();
+  const parts = out.split("\0");
+  for (let i = 0; i < parts.length; i++) {
+    const e = parts[i];
+    if (!e) continue;
+    paths.add(e.slice(3));
+    if (e[0] === "R" || e[0] === "C") i++; // a rename carries its old path as the next field
+  }
+  return paths;
+};
+const dirtyAtStart = dirty();
+
 // 0: start from the latest published state. The CI feed sync
 // (.github/workflows/sync.yml) pushes every 6 hours, so building on a stale
 // tree regenerates the whole site from old JSON and reverts its work.
@@ -76,7 +95,10 @@ run("check-links.mjs");
 
 // 7: publish
 if (doCommit) {
-  git(["add", "-A"]);
+  const mine = [...dirty()].filter((f) => !dirtyAtStart.has(f) && !OFF_LIMITS.test(f));
+  const left = [...dirtyAtStart].filter((f) => !OFF_LIMITS.test(f));
+  if (left.length) console.log(`\nLeaving ${left.length} file(s) changed before this run started: ${left.slice(0, 8).join(", ")}${left.length > 8 ? ", ..." : ""}`);
+  if (mine.length) git(["add", "--", ...mine]);
   const stamp = new Date().toISOString().slice(0, 10);
   const committed = git(["commit", "-m", `Weekly auto-update (${stamp}): episodes, videos, blog, quiz`]);
   if (committed && doPush) {

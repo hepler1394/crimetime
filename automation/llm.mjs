@@ -134,7 +134,10 @@ const sleep = (ms, signal) => new Promise((resolve, reject) => {
 // Answering a burst of 503s by quietly swapping in a weaker checker would give the gate
 // a worse opinion of the same episode and never say so.
 async function withRetry(cfg, name, fn) {
-  const tries = Math.max(1, Number(cfg.retries) || 1);
+  // The local box is not shedding load the way Gemini does: when it drops a stream it is
+  // because the prompt is too big for it, and it will drop it again. On 2026-10-06 the
+  // content run spent six minutes retrying it nineteen times on 61k of notes. Two tries.
+  const tries = Math.max(1, name.startsWith("local") ? Math.min(2, Number(cfg.retries) || 1) : Number(cfg.retries) || 1);
   for (let attempt = 1; ; attempt++) {
     try { return await fn(); } catch (err) {
       if (cfg.signal?.aborted) throw err;
