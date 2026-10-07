@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.crimetimesnacks.com/</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -84,6 +84,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.crimetimesnacks.com/blog-posts/the-murdaugh-murders-from-conviction-to-a-2027-retrial.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.crimetimesnacks.com/blog-posts/watts-family-reading-the-warning-signs.html</loc>
     <lastmod>2025-11-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -133,7 +139,7 @@
   </url>
   <url>
     <loc>https://www.crimetimesnacks.com/blog.html</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -40,12 +40,19 @@ const MIN_NOTES = 6000;
 const MIN_WORDS = 900;
 
 const args = process.argv.slice(2);
+// What git already had dirty before this run: --commit stages only what the run itself
+// changed, never another job's half-written work in the same tree.
+const gitDirty = () => new Set((spawnSync("git", ["status", "--porcelain", "-uall"], { cwd: ROOT, encoding: "utf8" }).stdout || "")
+  .split("\n").filter(Boolean).map((l) => l.slice(3).replace(/^"|"$/g, "").replace(/^.* -> /, "")));
+const dirtyBefore = args.includes("--commit") ? gitDirty() : new Set();
 const opt = (n) => { const i = args.indexOf(n); return i > -1 && args[i + 1] && !args[i + 1].startsWith("--") ? args[i + 1] : null; };
 const dry = args.includes("--dry");
 const commit = args.includes("--commit");
 const rewriteSlug = opt("--rewrite");
 const positional = args.filter((a, i) => !a.startsWith("--") && !["--rewrite", "--topic", "--case"].includes(args[i - 1]));
-const today = new Date().toISOString().slice(0, 10);
+// Local date, not UTC: the Tuesday run that finished after 7 p.m. Central on 2026-10-06 dated
+// its post October 7.
+const today = new Date().toLocaleDateString("en-CA");
 
 const slugify = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60);
 const readJson = async (p, fb) => { try { return JSON.parse(await readFile(p, "utf8")); } catch { return fb; } };
@@ -137,7 +144,10 @@ const toPost = (o) => ({
   body: [...(o.intro || []), ...(o.sections || []).flatMap((s) => [`## ${String(s.heading || "").trim()}`, ...(s.paragraphs || [])])].map((t) => String(t).trim()).filter((t) => t && t !== "##"),
 });
 
-const cfg = { ...(await loadConfig()), role: "writer", jsonMode: true, timeoutMs: 240000 };
+// maxOutputTokens: the cap counts Gemini Pro's hidden reasoning, and on this brief it has
+// thought for about 6,500 tokens before writing. At the old 8192 the 2026-10-06 post was cut
+// off 1,630 tokens into its answer. A 1,500-word post is about 2,500 tokens of JSON.
+const cfg = { ...(await loadConfig()), role: "writer", jsonMode: true, timeoutMs: 300000, maxOutputTokens: 32768 };
 let subject = null, notesPack = null;
 for (const s of subjects.slice(0, 3)) {
   const pack = await research(s);
@@ -250,7 +260,16 @@ try {
 const r = spawnSync(process.execPath, [join(__dirname, "build-all.mjs")], { stdio: "inherit", cwd: ROOT });
 if (r.status !== 0) process.exit(r.status ?? 1);
 if (commit) {
-  spawnSync("git", ["add", "-A"], { cwd: ROOT, stdio: "inherit" });
-  spawnSync("git", ["commit", "-m", `Blog: ${existing ? "expand" : "add"} "${post.title}"`], { cwd: ROOT, stdio: "inherit" });
+  // Until 2026-10-06 this was "git add -A", which swept in whatever else was dirty: an
+  // episode publish half-way through, another session's edits. Now: the post's own data,
+  // plus files this run's rebuild changed that were clean when it started. Audio and studio
+  // working files are never staged from here.
+  const mine = new Set(["automation/blog.json", "automation/improvements.md"]);
+  for (const f of gitDirty()) if (!dirtyBefore.has(f) && !/^(audio\/|automation\/studio\/)/.test(f)) mine.add(f);
+  const paths = [...mine].filter((f) => gitDirty().has(f));
+  if (paths.length) {
+    spawnSync("git", ["add", "--", ...paths], { cwd: ROOT, stdio: "inherit" });
+    spawnSync("git", ["commit", "-m", `Blog: ${existing ? "expand" : "add"} "${post.title}"`, "--", ...paths], { cwd: ROOT, stdio: "inherit" });
+  }
 }
 console.log("Done.");

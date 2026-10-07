@@ -20,9 +20,18 @@ export async function loadConfig() {
   } catch {
     /* no config.json — fall back to env only */
   }
-  cfg = await unlockConfig(cfg);
+  // The protected keys in config.json are the studio's (Deepgram, ElevenLabs); the writer
+  // and checker keys come from env vars. So a DPAPI failure costs those two keys, not the
+  // whole run: on 2026-10-06 one took gen-quiz down although its key was in GEMINI_API_KEY.
+  try {
+    cfg = await unlockConfig(cfg);
+  } catch (err) {
+    process.stderr.write(`llm: protected keys in config.json not unlocked (${err.message}); using env and plain config keys.\n`);
+  }
   const e = process.env;
-  cfg.order = cfg.order || ["gemini", "deepseek", "anthropic", "openai", "local"];
+  // LLM_ORDER=gemini,anthropic keeps a run off a provider without editing config.json, e.g.
+  // off the local model while an audio render has every core.
+  cfg.order = (e.LLM_ORDER && e.LLM_ORDER.split(",").map((x) => x.trim()).filter(Boolean)) || cfg.order || ["gemini", "deepseek", "anthropic", "openai", "local"];
   cfg.gemini = cfg.gemini || {};
   // CTS_GEMINI_API_KEY lets the show bill to a key of its own. GEMINI_API_KEY is set
   // machine-wide and every other program on this PC reads it too, so on the shared key
@@ -85,7 +94,18 @@ const HTTP_NOTE = { 401: 'Replace the invalid or expired provider key.', 403: 'C
 // the next one will fail the same way. 401/403/404 and an output-limit truncation are
 // facts about the request, so they are not here.
 const TRANSIENT = new Set([408, 425, 429, 500, 502, 503, 504, 529]);
-const httpError = (status) => Object.assign(new Error('HTTP ' + status + '. ' + (HTTP_NOTE[status] || 'The provider request did not finish.')), { status, retryable: TRANSIENT.has(status) });
+const httpError = (status, detail = '') => Object.assign(new Error('HTTP ' + status + '. ' + (HTTP_NOTE[status] || 'The provider request did not finish.') + (detail ? ' ' + detail : '')), { status, retryable: TRANSIENT.has(status) });
+// The provider's own words, because "HTTP 400" alone hid "Your credit balance is too low"
+// for a whole content run (2026-10-06). Trimmed, and scrubbed of anything shaped like a key.
+async function failure(res) {
+  let detail = '';
+  try {
+    const body = await res.text();
+    try { const j = JSON.parse(body); detail = j.error?.message || j[0]?.error?.message || j.message || ''; } catch { detail = body; }
+  } catch { /* body unreadable */ }
+  detail = String(detail).replace(/(sk-[A-Za-z0-9_-]{8,}|AIza[0-9A-Za-z_-]{20,}|Bearer\s+\S+)/g, '<redacted>').replace(/\s+/g, ' ').trim().slice(0, 240);
+  return httpError(res.status, detail ? `Provider says: ${detail}` : '');
+}
 
 function isRetryable(err) {
   // Half a streamed answer is already on the reader's screen; sending a second one
@@ -156,13 +176,14 @@ async function openAiCompatible({ baseUrl, apiKey, model, maxOutputTokens }, sys
       // parse. maxOutputTokens raises it for that case without touching the default.
       max_tokens: maxOutputTokens || (local ? 2500 : 8192),
       stream: true,
+      ...(!local ? { stream_options: { include_usage: true } } : {}),
       ...(local ? { chat_template_kwargs: { enable_thinking: false } } : {}), // Qwen3 in LM Studio: answer, do not think for 10 minutes first
       ...(/generativelanguage\.googleapis\.com/.test(baseUrl) ? { reasoning_effort: "low" } : {}), // Gemini 3.x: write, do not deliberate
       ...(jsonMode && !local ? { response_format: { type: "json_object" } } : {}), // guaranteed-valid JSON object from cloud models
     }),
   });
-  if (!res.ok) { await res.body?.cancel(); throw httpError(res.status); }
-  let text = "", buf = "", truncated = false, completed = false, emitted = false;
+  if (!res.ok) throw await failure(res);
+  let text = "", buf = "", truncated = false, completed = false, emitted = false, usage = null;
   const decoder = new TextDecoder();
   try {
     for await (const chunk of res.body) {
@@ -173,13 +194,13 @@ async function openAiCompatible({ baseUrl, apiKey, model, maxOutputTokens }, sys
         if (!line.startsWith("data:")) continue;
         const payload = line.slice(5).trim();
         if (payload === "[DONE]") { completed=true;continue; }
-        try { const choice=JSON.parse(payload).choices?.[0],delta=choice?.delta?.content ?? ""; text += delta; if(delta){emitted=emitted||!!onToken;onToken?.(delta);} if(choice?.finish_reason)completed=true;if(choice?.finish_reason==='length')truncated=true; } catch { /* keep-alive noise */ }
+        try { const obj=JSON.parse(payload); if(obj.usage)usage=obj.usage; const choice=obj.choices?.[0],delta=choice?.delta?.content ?? ""; text += delta; if(delta){emitted=emitted||!!onToken;onToken?.(delta);} if(choice?.finish_reason)completed=true;if(choice?.finish_reason==='length')truncated=true; } catch { /* keep-alive noise */ }
       }
     }
   } catch (err) { throw Object.assign(err, { emitted }); } // the connection died mid-answer
-  // Deterministic: the same request would be cut off at the same place.
-  // Deterministic: the same request would be cut off at the same place.
-  if(truncated)throw Object.assign(new Error('The model reached its output limit. Ask for a shorter section.'),{retryable:false});
+  // Deterministic: the same request would be cut off at the same place. The token counts say
+  // whether the answer or the hidden reasoning ate the cap.
+  if(truncated){const cap=maxOutputTokens || (local ? 2500 : 8192);const thought=usage?.completion_tokens_details?.reasoning_tokens ?? (usage?.total_tokens!=null&&usage?.prompt_tokens!=null&&usage?.completion_tokens!=null?usage.total_tokens-usage.prompt_tokens-usage.completion_tokens:null);const used=usage?` (${usage.completion_tokens ?? '?'} answer tokens${thought?`, ${thought} hidden reasoning`:''}; cap ${cap})`:` (cap ${cap})`;throw Object.assign(new Error(`The model reached its output limit${used}. Ask for a shorter section or raise maxOutputTokens.`),{retryable:false});}
   // Checked whether or not anyone is watching the tokens go by. It used to be guarded on
   // onToken, so a batch job - which passes no callback - was handed the first half of an
   // answer as if it were the whole thing. On 2026-09-22 that ended a stream inside a JSON
@@ -201,7 +222,7 @@ async function anthropic({ apiKey, model, maxOutputTokens = 2000 }, system, user
     },
     body: JSON.stringify({ model, max_tokens: maxOutputTokens, system, messages: [{ role: "user", content: user }], ...(onToken?{stream:true}:{}) }),
   });
-  if (!res.ok) { await res.body?.cancel(); throw httpError(res.status); }
+  if (!res.ok) throw await failure(res);
   if(onToken){let buffer='',text='',truncated=false,completed=false,emitted=false;const decoder=new TextDecoder();try{for await(const c of res.body){buffer+=decoder.decode(c,{stream:true});let nl;while((nl=buffer.indexOf('\n'))>=0){const line=buffer.slice(0,nl).trim();buffer=buffer.slice(nl+1);if(!line.startsWith('data:'))continue;let data;try{data=JSON.parse(line.slice(5));}catch{continue;}if(data.type==='message_stop')completed=true;if(data.type==='error')throw new Error('The provider stream stopped.');const delta=data.delta?.text;if(delta){text+=delta;emitted=true;onToken(delta);}if(data.delta?.stop_reason==='max_tokens')truncated=true;}}}catch(err){throw Object.assign(err,{emitted});}if(truncated)throw Object.assign(new Error('The model reached its output limit. Ask for a shorter section.'),{retryable:false});if(!completed)throw Object.assign(new Error('The provider stream ended before completion.'),{emitted,retryable:!emitted});return text;}
   const data = await res.json();
   if(data.stop_reason==='max_tokens')throw Object.assign(new Error('The model reached its output limit. Ask for a shorter section.'),{retryable:false});
@@ -213,6 +234,13 @@ async function anthropic({ apiKey, model, maxOutputTokens = 2000 }, system, user
 // return one JSON object. cfg.role === "writer": use the stronger Gemini model.
 // Each provider is retried on a transient failure before the next one is tried at all
 // (cfg.retries, cfg.onRetry); see withRetry above for why that order matters.
+// The cap a cloud call gets. It counts the model's hidden reasoning as well as its answer,
+// and until 2026-10-06 cfg.maxOutputTokens reached only the local and Claude calls: Gemini
+// always got 8192. Gemini 3.1 Pro on a 61k-character blog brief sometimes thinks for about
+// 6,500 of those and is cut off 1,630 tokens into the answer, which is how the Tuesday content
+// run lost its post. A caller can raise the cap; nothing lowers a cloud model below 8192.
+const cloudCap = (cfg, name) => Math.max(8192, Number(cfg.maxOutputTokens) || 0, Number(cfg[name]?.maxOutputTokens) || 0);
+
 export async function chat(system, user, cfg) {
   cfg = cfg || (await loadConfig());
   const errors = [];
@@ -242,7 +270,7 @@ export async function chat(system, user, cfg) {
       } else if (name === "gemini" && cfg.gemini.apiKey) {
         const model = cfg.role === "writer" ? cfg.gemini.writerModel : cfg.gemini.model;
         const text = await withRetry(cfg, `gemini (${model})`, async () => {
-          const t = await openAiCompatible({ ...cfg.gemini, model }, system, user, cfg.timeoutMs || 120000, opts);
+          const t = await openAiCompatible({ ...cfg.gemini, model, maxOutputTokens: cloudCap(cfg, "gemini") }, system, user, cfg.timeoutMs || 120000, opts);
           // A cloud model answering nothing at all is another shape of shed load, not a
           // verdict on the prompt; the local one below means it by "empty".
           if (!t.trim()) throw Object.assign(new Error("returned empty text"), { retryable: true });
@@ -250,13 +278,13 @@ export async function chat(system, user, cfg) {
         });
         return { text, provider: `gemini (${model})` };
       } else if (name === "deepseek" && cfg.deepseek.apiKey) {
-        return { text: await withRetry(cfg, "deepseek", () => openAiCompatible(cfg.deepseek, system, user, cfg.timeoutMs || 60000, opts)), provider: "deepseek" };
+        return { text: await withRetry(cfg, "deepseek", () => openAiCompatible({ ...cfg.deepseek, maxOutputTokens: Math.min(8192, cloudCap(cfg, "deepseek")) }, system, user, cfg.timeoutMs || 60000, opts)), provider: "deepseek" };
       } else if (name === "anthropic" && cfg.anthropic.apiKey) {
-        return { text: await withRetry(cfg, "anthropic", () => anthropic({ ...cfg.anthropic, maxOutputTokens: cfg.maxOutputTokens || 2000 }, system, user, cfg.timeoutMs || 60000, opts)), provider: "anthropic" };
+        return { text: await withRetry(cfg, "anthropic", () => anthropic({ ...cfg.anthropic, maxOutputTokens: Math.min(16000, cfg.maxOutputTokens || 2000) }, system, user, cfg.timeoutMs || 60000, opts)), provider: "anthropic" };
       } else if (name === "xai" && cfg.xai.apiKey && cfg.xai.model) {
-        return { text: await withRetry(cfg, "xai", () => openAiCompatible(cfg.xai, system, user, cfg.timeoutMs || 60000, opts)), provider: "xai" };
+        return { text: await withRetry(cfg, "xai", () => openAiCompatible({ ...cfg.xai, maxOutputTokens: cloudCap(cfg, "xai") }, system, user, cfg.timeoutMs || 60000, opts)), provider: "xai" };
       } else if (name === "openai" && cfg.openai.apiKey) {
-        return { text: await withRetry(cfg, "openai", () => openAiCompatible(cfg.openai, system, user, cfg.timeoutMs || 60000, opts)), provider: "openai" };
+        return { text: await withRetry(cfg, "openai", () => openAiCompatible({ ...cfg.openai, maxOutputTokens: Math.min(16384, cloudCap(cfg, "openai")) }, system, user, cfg.timeoutMs || 60000, opts)), provider: "openai" };
       }
     } catch (err) {
       if(cfg.signal?.aborted)throw new Error('Generation stopped.');
