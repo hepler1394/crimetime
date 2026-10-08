@@ -1,11 +1,58 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1260,
+    "totalOnFile": 1262,
     "baked": 150,
-    "updated": "2026-10-08T13:43:58.408Z"
+    "updated": "2026-10-08T23:26:11.370Z"
   },
   "items": [
+    {
+      "uid": "f6c686d4fbe446a9b4d4af620880073d",
+      "title": "STOLEN FIREFIGHTER EQUIPMENT",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/stolen-firefighter-equipment/@@images/image/large",
+      "office": "Billings",
+      "reward": "Reward up to $5,000 for information leading to the identification, arrest, and conviction of those responsible for this theft.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/stolen-firefighter-equipment",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Indian Country",
+        "Seeking Information"
+      ],
+      "publication": "2026-10-07T10:37:00"
+    },
+    {
+      "uid": "750dfe8158974c2b84a9bef2e64f2843",
+      "title": "SATINDERJEET SINGH",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/topten/satinderjeet-singh/@@images/image/large",
+      "office": "Los Angeles",
+      "reward": "Reward up to $1,000,000 for information leading to the arrest of Satinderjeet Singh.",
+      "url": "https://www.fbi.gov/wanted/topten/satinderjeet-singh",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN ESCAPE RISK",
+      "subjects": [
+        "Ten Most Wanted Fugitives"
+      ],
+      "publication": "2026-07-06T08:18:00"
+    },
+    {
+      "uid": "9fe8f12927114cd9a3bfc5b441c6a29c",
+      "title": "UNKNOWN ROBBERY SUSPECT — UTAH",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/unknown-robbery-suspect---utah/@@images/image/large",
+      "office": "Salt Lake City",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/seeking-info/unknown-robbery-suspect---utah",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country"
+      ],
+      "publication": "2026-10-05T12:49:00"
+    },
     {
       "uid": "043a2834e80848099aa61394cc54f9f9",
       "title": "JULIOUS GEORGE KHALID",
@@ -599,21 +646,6 @@
         "Most Wanted Fraudster"
       ],
       "publication": "2026-08-25T07:53:00"
-    },
-    {
-      "uid": "750dfe8158974c2b84a9bef2e64f2843",
-      "title": "SATINDERJEET SINGH",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/topten/satinderjeet-singh/@@images/image/large",
-      "office": "Los Angeles",
-      "reward": "Reward up to $1,000,000 for information leading to the arrest of Satinderjeet Singh.",
-      "url": "https://www.fbi.gov/wanted/topten/satinderjeet-singh",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN ESCAPE RISK",
-      "subjects": [
-        "Ten Most Wanted Fugitives"
-      ],
-      "publication": "2026-07-06T08:18:00"
     },
     {
       "uid": "3992cf07e26848bab7fd7b6bb58f60a2",
@@ -2265,36 +2297,6 @@
         "Most Wanted Fraudster"
       ],
       "publication": "2020-12-09T09:56:00"
-    },
-    {
-      "uid": "614d1c1b76924007a092c1b22cc923d8",
-      "title": "SHAARE TEFILA SYNAGOGUE VANDALISM",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/shaare-tefila-synagogue-vandalism/@@images/image/large",
-      "office": "Baltimore",
-      "reward": "Reward up to $4,000 for information leading to the identification, arrest, or conviction of the individual(s) responsible for the vandalism.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/shaare-tefila-synagogue-vandalism",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2026-05-07T10:02:00"
-    },
-    {
-      "uid": "0917f41cd1cb4429bb6bfbc9ed0902cf",
-      "title": "MICHAEL TIMOTHY PUCKETT",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/michael-timothy-puckett/@@images/image/large",
-      "office": "Richmond",
-      "reward": "Reward up to $50,000 for information leading to the location and capture of Michael Timothy Puckett.",
-      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/michael-timothy-puckett",
-      "status": "captured",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Law Enforcement Assistance"
-      ],
-      "publication": "2026-05-31T10:03:00"
     }
   ]
 }
