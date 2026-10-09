@@ -5,6 +5,80 @@
   },
   "posts": [
     {
+      "slug": "how-digital-forensics-changed-modern-investigations",
+      "title": "How digital forensics changed modern investigations",
+      "date": "2026-10-09",
+      "category": "analysis",
+      "categoryLabel": "Analysis",
+      "image": "images/logo.png",
+      "author": "Cory",
+      "featured": false,
+      "excerpt": "Digital evidence went from a niche hobby in the 1980s to a cornerstone of modern criminal investigations.",
+      "body": [
+        "In 2004, the serial killer known as BTK sent a floppy disk to police in Kansas. Dennis Rader had killed ten people between 1974 and 1991. He believed the disk was untraceable. He was wrong. Digital forensics experts recovered deleted data from that disk. It led them directly to a computer at a local church, ending a decades-long mystery.",
+        "That case shows exactly how the investigative landscape shifted. For most of history, police work relied entirely on physical evidence. Blood, hair, tire marks, and witness statements built the timeline. Now, a massive share of the record sits inside phones, laptops, and the logs that devices keep automatically.",
+        "The term digital forensics was originally a synonym for computer forensics. It expanded to cover the recovery, investigation, examination, and analysis of material found in any device capable of storing digital data. The discipline has roots in the personal computing revolution of the late 1970s and early 1980s. It evolved in a haphazard manner during the 1990s. Today, it is a primary tool for establishing the facts of a case.",
+        "## From physical traces to digital records",
+        "Forensic science is the application of science principles and methods to validate decision-making related to criminal and civil law. The ancient world lacked standardized forensic practices. Criminal investigations relied heavily on forced confessions and witness testimony.",
+        "The first written account of using medicine and entomology to solve criminal cases came from China in 1248. Song Ci wrote a book translated as Washing Away of Wrongs. He described how to wash and examine a dead body to ascertain the reason for death. In one account, an investigator solved a murder by instructing suspects to bring their sickles to one location. Flies gathered on a single sickle, attracted by the smell of blood, and the owner confessed.",
+        "By the 20th century, physical forensics had matured. Edmond Locard formulated the basic principle of forensic science, stating that every contact leaves a trace. For decades, investigators looked for physical traces like fingerprints, bloodstains, and toolmarks. Now, the traces left behind are digital.",
+        "## The early days and the first laws",
+        "Prior to the 1970s, crimes involving computers were handled under existing laws. The first specific computer crimes were recognized in the 1978 Florida Computer Crimes Act. That legislation targeted the unauthorized modification or deletion of data on a computer system. Canada passed legislation in 1983, followed by the US Federal Computer Fraud and Abuse Act in 1986.",
+        "The growth in computer crime pushed law enforcement to establish specialized groups. In 1984, the FBI launched a Computer Analysis and Response Team. The British Metropolitan Police set up a computer crime department within their fraud squad the following year.",
+        "Many early members of these groups were computer hobbyists. They directed the field's initial research. One of the first publicized examples of digital forensics happened in 1986. Cliff Stoll pursued hacker Markus Hess using computer and network forensic techniques. Stoll was not a specialized examiner. Many early forensic examinations followed that exact profile.",
+        "## Building the tools",
+        "During the 1980s, very few specialized digital forensic tools existed. Investigators often performed live analysis on media. They examined computers from within the operating system using existing sysadmin tools to extract evidence. This practice carried the risk of modifying data on the disk. That led to claims of evidence tampering.",
+        "The need for dedicated software was recognized in 1989 at the Federal Law Enforcement Training Center. This resulted in the creation of IMDUMP by Michael White. In 1990, Sydex developed SafeBack. These tools allowed examiners to create an exact sector-level duplicate of a piece of digital media.",
+        "Creating this forensic duplicate meant the original disk remained intact for verification. By the end of the 1990s, more advanced commercial tools like EnCase and FTK were developed. Analysts could examine copies of media without using any live forensics. Today, investigators often use a write blocking device to prevent any modification of the original. Both the acquired image and the original data are hashed using algorithms like SHA-1 or MD5. The values are compared to verify the copy is accurate.",
+        "## Proving intent and breaking alibis",
+        "Digital forensics does more than identify direct evidence. It can attribute actions to specific individuals and evaluate the source of a document. It is also used to prove intent, known in the legal system as mens rea. The internet history of convicted killer Neil Entwistle included references to a site discussing how to kill people.",
+        "In 2007, prosecutors used a spreadsheet recovered from the computer of Joseph Edward Duncan to show premeditation. This evidence helped secure the death penalty. Sharon Lopatka's killer was identified in 2006 after email messages detailing torture and death fantasies were found on her computer.",
+        "Digital records also confirm or refute statements. During the investigation into the Soham murders, the offender claimed an alibi. That alibi was disproved when mobile phone records showed the person he claimed to be with was out of town. SMS data from a mobile device also helped to exonerate Patrick Lumumba in the murder of Meredith Kercher.",
+        "## Tracking movement through networks and devices",
+        "Mobile devices and network traffic provide a different kind of record. Network forensics monitors and analyzes computer network traffic for information gathering or evidence collection. Traffic is usually intercepted at the packet level. Unlike other areas of digital forensics, network data is often volatile and rarely logged.",
+        "In 2000, the FBI lured computer hackers Aleksey Ivanov and Gorshkov to the United States for a fake job interview. By monitoring network traffic from the pair's computers, the FBI identified passwords. This allowed them to collect evidence directly from Russian-based computers.",
+        "Mobile devices provide location information through inbuilt GPS tracking or cell site logs. These logs track devices within their range. This specific information was used to track down the kidnappers of Thomas Onofri in 2006.",
+        "## The branches of digital forensics",
+        "Digital forensics is branched into various types depending on the devices and media. Computer forensics explains the current state of a digital artifact like a storage medium or electronic document. It covers computers, embedded systems, and static memory like USB pen drives.",
+        "Mobile device forensics focuses on the recovery of evidence from devices with inbuilt communication systems and proprietary storage mechanisms. Investigations usually focus on call data and communications rather than the in-depth recovery of deleted data.",
+        "Other branches include database forensics, which uses database contents and log files to build a timeline. Cloud forensics applies these principles to cloud computing environments, addressing challenges like multi-tenancy and jurisdictional issues. The National Institute of Standards and Technology published a guide outlining cloud forensic science challenges.",
+        "## Legal boundaries and ongoing challenges",
+        "The examination of digital media is covered by national and international legislation. In the United States, the Federal Rules of Evidence evaluate the admissibility of digital evidence. The US Electronic Communications Privacy Act places limitations on the ability of law enforcement to intercept and access evidence. It makes a distinction between stored communication, like email archives, and transmitted communication.",
+        "The admissibility of digital evidence relies heavily on the tools used to extract it. In the US, forensic tools are subjected to the Daubert standard. The judge is responsible for ensuring that the processes and software used were acceptable. In 2003, researcher Brian Carrier argued that the Daubert guidelines required the code of forensic tools to be published and peer-reviewed.",
+        "The field still faces unresolved issues. One major limitation is the use of encryption. This disrupts initial examination where evidence might be located using keywords. It is estimated that about 60 percent of cases involving encrypted devices go unprocessed because there is no way to access the potential evidence.",
+        "As of October 2026, the only framework that addresses the use of remote agents by forensic tools for distributed processing is one developed by Adams. The standards continue to evolve as devices grow larger and more complex. The digital record is now a permanent fixture of the justice system. Look at the data. Review the timelines. See where the evidence points."
+      ],
+      "sourceTopic": "How digital forensics changed modern investigations",
+      "caseSlug": null,
+      "relatedCases": [],
+      "sources": [
+        {
+          "title": "Digital forensics",
+          "url": "https://en.wikipedia.org/wiki/Digital_forensics"
+        },
+        {
+          "title": "Forensic science",
+          "url": "https://en.wikipedia.org/wiki/Forensic_science"
+        },
+        {
+          "title": "Forensic Investigations in the Digital Age: Tools, Techniques, and ...",
+          "url": "https://innefu.com/forensic-investigations-in-the-digital-age-tools-techniques-and-trends/"
+        },
+        {
+          "title": "How Digital Evidence Is Changing Criminal Investigations",
+          "url": "https://www.lawyer-monthly.com/2026/07/how-digital-evidence-is-reshaping-modern-criminal-investigations/"
+        },
+        {
+          "title": "Unveiling the Truth: The Role of Digital Forensics in Modern Investigations",
+          "url": "https://hawkeyeforensic.com/unveiling-the-truth-the-role-of-digital-forensics-in-modern-investigations/"
+        },
+        {
+          "title": "7 Real-Life Cases Solved Using Digital Forensics [References]",
+          "url": "https://www.ticktechtold.com/cases-using-digital-forensics/"
+        }
+      ]
+    },
+    {
       "slug": "the-murdaugh-murders-from-conviction-to-a-2027-retrial",
       "title": "The Murdaugh Murders: From Conviction to a 2027 Retrial",
       "date": "2026-10-06",

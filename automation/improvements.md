@@ -599,3 +599,5 @@ with an [auto] tag — the counter on Mission Control reads this file.
 533. [auto 2026-10-06] Published podcast episode from the studio: "The Menendez Brothers: The Parole Years" (00:21:20)
 534. [auto 2026-10-06] Published podcast episode from the studio: "The Interrogation of Chris Watts" (00:20:10)
 535. [auto 2026-10-06] Published blog post from research notes: "The Murdaugh Murders: From Conviction to a 2027 Retrial" (1259 words, 9 sources, fact-checked against opened sources)
+536. [auto 2026-10-09] Published blog post from research notes: "How digital forensics changed modern investigations" (1295 words, 6 sources)
+537. [auto 2026-10-09] Published new quiz: "The BTK Floppy Disk" (5 questions)

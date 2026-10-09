@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-10-02T14:02:19.408Z"
+    "updated": "2026-10-09T14:01:51.473Z"
   },
   "quizzes": [
+    {
+      "slug": "the-btk-floppy-disk",
+      "title": "The BTK Floppy Disk",
+      "tag": "Episode Case",
+      "description": "He evaded police for thirty years until a single 1.44 MB floppy disk cracked the case file wide open. Let's unpack it.",
+      "created": "2026-10-09",
+      "sourceTopic": "The BTK Floppy Disk",
+      "questions": [
+        {
+          "q": "What question did Dennis Rader ask police in a newspaper classified ad before sending the floppy disk?",
+          "options": [
+            "Can you trace a floppy disk to a computer?",
+            "Will you publish my letters in full?",
+            "Can I send a VHS tape safely?",
+            "How long until my crimes expire?"
+          ],
+          "answer": 0,
+          "explain": "Rader genuinely trusted police when they ran a classified response in The Wichita Eagle stating a disk could not be traced."
+        },
+        {
+          "q": "Which deleted software document did police find when examining the metadata on Rader's floppy disk?",
+          "options": [
+            "A WordPerfect essay",
+            "A Microsoft Word template",
+            "An Excel spreadsheet",
+            "A Lotus 1-2-3 ledger"
+          ],
+          "answer": 1,
+          "explain": "Forensic investigators recovered a deleted file that showed the document was modified using Microsoft Word."
+        },
+        {
+          "q": "The disk metadata pointed directly to which specific location where Rader served as congregation president?",
+          "options": [
+            "St. Mark Lutheran Church",
+            "Christ the King Catholic Church",
+            "Wichita First Baptist Church",
+            "Grace United Methodist Church"
+          ],
+          "answer": 0,
+          "explain": "The metadata identified the last user as 'Dennis' and tied the software license to Christ Lutheran Church, later corrected in reports to Christ Lutheran Church, operating under St. Mark Lutheran Church."
+        },
+        {
+          "q": "What color was the 3.5-inch floppy disk Rader mailed to television station KSAS-TV?",
+          "options": [
+            "Black",
+            "Blue",
+            "Purple",
+            "Gray"
+          ],
+          "answer": 2,
+          "explain": "The package sent to KSAS-TV in February 2005 contained a purple 1.44 MB Memorex floppy disk."
+        },
+        {
+          "q": "Whose DNA sample did law enforcement obtain to confirm Rader's identity before his arrest?",
+          "options": [
+            "His brother's hospital biopsy",
+            "His daughter's Pap smear specimen",
+            "His son's military medical records",
+            "His own DMV fingerprint card"
+          ],
+          "answer": 1,
+          "explain": "Detectives secured a warrant for a medical specimen belonging to his daughter at Kansas State University, finding a familial DNA match."
+        }
+      ]
+    },
     {
       "slug": "the-miami-luxury-tower-case",
       "title": "The Miami Luxury Tower Case",
