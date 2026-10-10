@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-10T06:07:53.097Z",
+  "generated": "2026-10-10T12:42:11.912Z",
   "improvementsShipped": 537,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
@@ -36,12 +36,12 @@
     }
   },
   "freshness": {
-    "episodesJson": "2026-10-10T06:01:03.873Z",
-    "blogJson": "2026-10-10T06:00:59.714Z",
+    "episodesJson": "2026-10-10T12:41:50.060Z",
+    "blogJson": "2026-10-10T12:41:45.165Z",
     "merchJson": "2026-09-22T14:02:22.646Z",
     "quizzesJson": "2026-10-09T14:01:51.473Z",
-    "fbiJson": "2026-10-10T06:01:04.286Z",
-    "css": "2026-10-10T06:00:59.777Z"
+    "fbiJson": "2026-10-10T12:41:50.452Z",
+    "css": "2026-10-10T12:41:45.226Z"
   },
   "nextTopics": [
     "The role of the public and tip lines in solving crimes",
