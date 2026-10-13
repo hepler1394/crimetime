@@ -1,11 +1,56 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1262,
+    "totalOnFile": 1263,
     "baked": 150,
-    "updated": "2026-10-13T14:21:50.052Z"
+    "updated": "2026-10-13T22:53:10.020Z"
   },
   "items": [
+    {
+      "uid": "797da62e52c24d1e98fe200ec175ff79",
+      "title": "ROGELIO GUERRA VASQUEZ",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/murders/rogelio-guerra-vasquez/@@images/image/large",
+      "office": "Houston",
+      "reward": "Reward up to $10,000 for information leading to the arrest and conviction of Rogelio Guerra Vasquez.",
+      "url": "https://www.fbi.gov/wanted/murders/rogelio-guerra-vasquez",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN ESCAPE RISK",
+      "subjects": [
+        "Violent Crime - Murders"
+      ],
+      "publication": "2022-08-02T09:00:00"
+    },
+    {
+      "uid": "0186b0d7648846c0b3454bf3037403ee",
+      "title": "IMER GOMEZ",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/imer-gomez/@@images/image/large",
+      "office": "San Antonio",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Imer Gomez.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/imer-gomez",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2026-10-05T08:01:00"
+    },
+    {
+      "uid": "7e03eb689c954265ada44259ccbccfd2",
+      "title": "YLVA ANNIKA HAGNER",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/ylva-annika-hagner/@@images/image/large",
+      "office": "San Francisco",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/kidnap/ylva-annika-hagner",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2026-09-24T10:03:00"
+    },
     {
       "uid": "f6c686d4fbe446a9b4d4af620880073d",
       "title": "STOLEN FIREFIGHTER EQUIPMENT",
@@ -113,21 +158,6 @@
         "Ten Most Wanted Fugitives"
       ],
       "publication": "2026-02-17T11:44:00"
-    },
-    {
-      "uid": "7e03eb689c954265ada44259ccbccfd2",
-      "title": "YLVA ANNIKA HAGNER",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/ylva-annika-hagner/@@images/image/large",
-      "office": "San Francisco",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/kidnap/ylva-annika-hagner",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons"
-      ],
-      "publication": "2026-09-24T10:03:00"
     },
     {
       "uid": "8020a28b1746429a994f4435d1d60259",
@@ -2267,36 +2297,6 @@
         "Additional Violent Crimes"
       ],
       "publication": "2026-05-13T13:17:00"
-    },
-    {
-      "uid": "650c7a28eb26846598ea425244513814",
-      "title": "STEVEN EUGENE CLIFFORD",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/additional/steven-eugene-clifford/@@images/image/large",
-      "office": "Sacramento",
-      "reward": "Reward up to $10,000 for information leading to the apprehension and conviction of Steven Eugene Clifford.",
-      "url": "https://www.fbi.gov/wanted/additional/steven-eugene-clifford",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Additional Violent Crimes"
-      ],
-      "publication": "2010-08-31T04:55:00"
-    },
-    {
-      "uid": "15529f5e35374063b38ba56984e73f77",
-      "title": "CHRISTOPHER W. BURNS",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/christopher-w-burns/@@images/image/large",
-      "office": "Atlanta",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Christopher W. Burns.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/christopher-w-burns",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Most Wanted Fraudster"
-      ],
-      "publication": "2020-12-09T09:56:00"
     }
   ]
 }
