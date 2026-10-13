@@ -601,3 +601,5 @@ with an [auto] tag — the counter on Mission Control reads this file.
 535. [auto 2026-10-06] Published blog post from research notes: "The Murdaugh Murders: From Conviction to a 2027 Retrial" (1259 words, 9 sources, fact-checked against opened sources)
 536. [auto 2026-10-09] Published blog post from research notes: "How digital forensics changed modern investigations" (1295 words, 6 sources)
 537. [auto 2026-10-09] Published new quiz: "The BTK Floppy Disk" (5 questions)
+538. [auto 2026-10-13] Published blog post from research notes: "JonBenet Ramsey: Thirty Years" (928 words, 6 sources)
+539. [auto 2026-10-13] Published new quiz: "Gilgo Beach: Eight Names" (5 questions)

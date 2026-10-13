@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-10-09T14:01:51.473Z"
+    "updated": "2026-10-13T14:00:59.402Z"
   },
   "quizzes": [
+    {
+      "slug": "gilgo-beach-eight-names",
+      "title": "Gilgo Beach: Eight Names",
+      "tag": "The Case File",
+      "description": "I went through the Gilgo Beach files to separate verified evidence from headline hype. Test what you actually know about the timeline.",
+      "created": "2026-10-13",
+      "sourceTopic": "Gilgo Beach: Eight Names",
+      "questions": [
+        {
+          "q": "What triggered the initial December 2010 police search along Ocean Parkway?",
+          "options": [
+            "A canine training exercise",
+            "The disappearance of Shannan Gilbert",
+            "A tip from an anonymous informant",
+            "Routine highway maintenance work"
+          ],
+          "answer": 1,
+          "explain": "Suffolk County police were searching the brush near Oak Beach specifically for Shannan Gilbert when an officer and his K-9 located the first set of remains."
+        },
+        {
+          "q": "How many victims were initially found wrapped in burlap, later referred to as the 'Gilgo Four'?",
+          "options": [
+            "Three",
+            "Four",
+            "Five",
+            "Eight"
+          ],
+          "answer": 1,
+          "explain": "The first four victims discovered along that quarter-mile stretch were Megan Waterman, Melissa Barthelemy, Maureen Brainard-Barnes, and Amber Lynn Costello."
+        },
+        {
+          "q": "What key vehicle description helped investigators link the suspect to the disappearance of Amber Lynn Costello?",
+          "options": [
+            "A dark green Ford Explorer",
+            "A first-generation Chevrolet Avalanche",
+            "A white box van",
+            "A silver Toyota Camry"
+          ],
+          "answer": 1,
+          "explain": "A witness reported seeing a client driving a dark-colored first-generation Chevy Avalanche. That vehicle registration proved crucial when investigators revisited the file years later."
+        },
+        {
+          "q": "What piece of discarded evidence yielded the male DNA profile matching evidence from the victims?",
+          "options": [
+            "A coffee cup",
+            "A pizza crust",
+            "A cigarette butt",
+            "An envelope seal"
+          ],
+          "answer": 1,
+          "explain": "Investigators shadowed the suspect in Manhattan and retrieved a discarded pizza crust from a sidewalk trash can to run the comparative mitochondrial DNA analysis."
+        },
+        {
+          "q": "Which profession did the primary suspect accused in the killings actively practice in Manhattan?",
+          "options": [
+            "Criminal defense attorney",
+            "Architectural consultant",
+            "Real estate broker",
+            "Civil engineer"
+          ],
+          "answer": 1,
+          "explain": "Rex Heuermann worked as an architectural consultant running his own firm in midtown Manhattan while commuting daily from Massapequa Park."
+        }
+      ]
+    },
     {
       "slug": "the-btk-floppy-disk",
       "title": "The BTK Floppy Disk",

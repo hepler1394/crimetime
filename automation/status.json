@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-13T00:54:56.738Z",
-  "improvementsShipped": 537,
+  "generated": "2026-10-13T14:01:03.542Z",
+  "improvementsShipped": 539,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
     "content": [
@@ -11,11 +11,11 @@
   },
   "counts": {
     "episodes": 18,
-    "posts": 22,
+    "posts": 23,
     "merchDesigns": 34,
     "merchCollection": 0,
-    "quizzes": 17,
-    "quizQuestions": 85,
+    "quizzes": 18,
+    "quizQuestions": 90,
     "fbiCases": 150,
     "videos": 1,
     "topicsQueued": 115,
@@ -27,21 +27,21 @@
       "date": "2026-10-03"
     },
     "post": {
-      "title": "How digital forensics changed modern investigations",
-      "date": "2026-10-09"
+      "title": "JonBenet Ramsey: Thirty Years",
+      "date": "2026-10-13"
     },
     "quiz": {
-      "title": "The BTK Floppy Disk",
-      "created": "2026-10-09"
+      "title": "Gilgo Beach: Eight Names",
+      "created": "2026-10-13"
     }
   },
   "freshness": {
-    "episodesJson": "2026-10-13T00:48:31.239Z",
-    "blogJson": "2026-10-13T00:48:26.366Z",
+    "episodesJson": "2026-10-13T14:00:09.417Z",
+    "blogJson": "2026-10-13T14:00:46.061Z",
     "merchJson": "2026-09-22T14:02:22.646Z",
-    "quizzesJson": "2026-10-09T14:01:51.473Z",
-    "fbiJson": "2026-10-13T00:48:31.665Z",
-    "css": "2026-10-13T00:48:26.440Z"
+    "quizzesJson": "2026-10-13T14:00:59.402Z",
+    "fbiJson": "2026-10-13T14:00:10.704Z",
+    "css": "2026-10-06T04:47:48.161Z"
   },
   "nextTopics": [
     "The role of the public and tip lines in solving crimes",
