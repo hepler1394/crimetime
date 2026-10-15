@@ -3,9 +3,24 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1264,
     "baked": 150,
-    "updated": "2026-10-15T17:08:43.769Z"
+    "updated": "2026-10-15T21:30:11.001Z"
   },
   "items": [
+    {
+      "uid": "c3e0262b3b8c4daaaba9f3399884944f",
+      "title": "LAMAR T. BROWNING",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/lamar-t-browning/@@images/image/large",
+      "office": "Indianapolis",
+      "reward": "Reward up to $10,000 for information leading to the arrest of Lamar T. Browning.",
+      "url": "https://www.fbi.gov/wanted/cei/lamar-t-browning",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-06-09T15:51:00"
+    },
     {
       "uid": "185dbfaa3f434bab98c3ca6e5fd1af65",
       "title": "MARY CAROLE MCDONNELL",
@@ -752,22 +767,6 @@
         "Indian Country"
       ],
       "publication": "2024-07-02T09:58:00"
-    },
-    {
-      "uid": "9456ffa8-08fa-49fa-a811-e7c895014963",
-      "title": "ROBERT GARRETT STEWART, JR.",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/robert-garrett-stewart-jr/@@images/image/large",
-      "office": "Billings",
-      "reward": "Reward up to $25,000 for information that leads to the resolution of this case.",
-      "url": "https://www.fbi.gov/wanted/kidnap/robert-garrett-stewart-jr",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons",
-        "Indian Country"
-      ],
-      "publication": "2016-02-04T07:00:00"
     },
     {
       "uid": "62c1223838c7432dac7333877515bf80",
