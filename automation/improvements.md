@@ -603,3 +603,5 @@ with an [auto] tag — the counter on Mission Control reads this file.
 537. [auto 2026-10-09] Published new quiz: "The BTK Floppy Disk" (5 questions)
 538. [auto 2026-10-13] Published blog post from research notes: "JonBenet Ramsey: Thirty Years" (928 words, 6 sources)
 539. [auto 2026-10-13] Published new quiz: "Gilgo Beach: Eight Names" (5 questions)
+540. [auto 2026-10-16] Published blog post from research notes: "The Arrest of Danilo Restivo" (1590 words, 6 sources)
+541. [auto 2026-10-16] Published new quiz: "Hunting the Golden State Killer" (5 questions)

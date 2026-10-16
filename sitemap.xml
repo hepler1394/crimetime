@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.crimetimesnacks.com/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -84,6 +84,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.crimetimesnacks.com/blog-posts/the-arrest-of-danilo-restivo.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.crimetimesnacks.com/blog-posts/the-fingerprint-that-changed-the-courtroom.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -151,7 +157,7 @@
   </url>
   <url>
     <loc>https://www.crimetimesnacks.com/blog.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -421,7 +427,7 @@
   </url>
   <url>
     <loc>https://www.crimetimesnacks.com/quiz.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

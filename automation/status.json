@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-16T11:34:45.947Z",
-  "improvementsShipped": 539,
+  "generated": "2026-10-16T14:02:20.464Z",
+  "improvementsShipped": 541,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
     "content": [
@@ -11,14 +11,14 @@
   },
   "counts": {
     "episodes": 18,
-    "posts": 23,
+    "posts": 24,
     "merchDesigns": 34,
     "merchCollection": 0,
-    "quizzes": 18,
-    "quizQuestions": 90,
+    "quizzes": 19,
+    "quizQuestions": 95,
     "fbiCases": 150,
     "videos": 1,
-    "topicsQueued": 115,
+    "topicsQueued": 114,
     "topicsTotal": 126
   },
   "latest": {
@@ -27,28 +27,28 @@
       "date": "2026-10-03"
     },
     "post": {
-      "title": "JonBenet Ramsey: Thirty Years",
-      "date": "2026-10-13"
+      "title": "The Arrest of Danilo Restivo",
+      "date": "2026-10-16"
     },
     "quiz": {
-      "title": "Gilgo Beach: Eight Names",
-      "created": "2026-10-13"
+      "title": "Hunting the Golden State Killer",
+      "created": "2026-10-16"
     }
   },
   "freshness": {
-    "episodesJson": "2026-10-16T11:34:23.928Z",
-    "blogJson": "2026-10-16T11:34:19.184Z",
+    "episodesJson": "2026-10-16T14:00:11.767Z",
+    "blogJson": "2026-10-16T14:02:03.592Z",
     "merchJson": "2026-09-22T14:02:22.646Z",
-    "quizzesJson": "2026-10-13T14:00:59.402Z",
-    "fbiJson": "2026-10-16T11:34:24.350Z",
-    "css": "2026-10-16T11:34:19.269Z"
+    "quizzesJson": "2026-10-16T14:02:16.502Z",
+    "fbiJson": "2026-10-16T14:00:14.724Z",
+    "css": "2026-10-06T04:47:48.161Z"
   },
   "nextTopics": [
-    "The role of the public and tip lines in solving crimes",
     "Forensic odontology: solving cases with dental records",
     "How behavioral profilers build a sketch of an offender",
     "Understanding the criminal appeals process",
     "The evolution of crime scene photography",
-    "How podcasts have helped reopen cold cases"
+    "How podcasts have helped reopen cold cases",
+    "Bloodstain pattern analysis, explained"
   ]
 }

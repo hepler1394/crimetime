@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-10-13T14:00:59.402Z"
+    "updated": "2026-10-16T14:02:16.502Z"
   },
   "quizzes": [
+    {
+      "slug": "hunting-the-golden-state-killer",
+      "title": "Hunting the Golden State Killer",
+      "tag": "Case File",
+      "description": "Four decades on the run. Test your knowledge on how investigators finally identified Joseph James DeAngelo.",
+      "created": "2026-10-16",
+      "sourceTopic": "Hunting the Golden State Killer",
+      "questions": [
+        {
+          "q": "Before investigators tied all the crimes together, what early moniker was given to the offender operating around Visalia?",
+          "options": [
+            "The East Area Rapist",
+            "The Visalia Ransacker",
+            "The Night Stalker",
+            "The Diamond Knot Killer"
+          ],
+          "answer": 1,
+          "explain": "Between 1974 and 1975, he committed over a hundred burglaries in Visalia. The case file confirmed the link years later."
+        },
+        {
+          "q": "What profession did Joseph James DeAngelo hold while committing dozens of his crimes in the 1970s?",
+          "options": [
+            "Police officer",
+            "Postal carrier",
+            "Paramedic",
+            "Auto mechanic"
+          ],
+          "answer": 0,
+          "explain": "He served as a police officer in Exeter and Auburn before being fired in 1979 for shoplifting."
+        },
+        {
+          "q": "Which investigative breakthrough directly led detectives to DeAngelo in 2018?",
+          "options": [
+            "A fingerprint match in AFIS",
+            "Investigative genetic genealogy via GEDmatch",
+            "An anonymous tip to a hotline",
+            "A confession letter sent to the media"
+          ],
+          "answer": 1,
+          "explain": "Investigators uploaded crime scene DNA to open-source genealogy databases, eventually building family trees that pointed directly to him."
+        },
+        {
+          "q": "Which author helped reignite national public interest in the case with her book 'I'll Be Gone in the Dark'?",
+          "options": [
+            "Ann Rule",
+            "Michelle McNamara",
+            "Maureen Callahan",
+            "Sondra London"
+          ],
+          "answer": 1,
+          "explain": "Michelle McNamara popularized the moniker Golden State Killer. She passed away before seeing him brought to justice."
+        },
+        {
+          "q": "How did investigators legally secure DeAngelo's direct DNA sample to confirm the match in April 2018?",
+          "options": [
+            "A court-ordered blood draw",
+            "Discarded items from his car door and trash",
+            "A routine swabbing during a traffic stop",
+            "A sample obtained from his brother"
+          ],
+          "answer": 1,
+          "explain": "Detectives tailed him and retrieved surreptitious DNA from the handle of his car door and trash outside his home."
+        }
+      ]
+    },
     {
       "slug": "gilgo-beach-eight-names",
       "title": "Gilgo Beach: Eight Names",
