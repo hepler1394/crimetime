@@ -3,9 +3,24 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1264,
     "baked": 150,
-    "updated": "2026-10-17T04:37:45.279Z"
+    "updated": "2026-10-17T10:54:06.804Z"
   },
   "items": [
+    {
+      "uid": "0e58396ec6e647faa18982b3df634b7f",
+      "title": "KEMONDRE TRAVIS DAILY",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/kemondre-travis-daily/@@images/image/large",
+      "office": "Richmond",
+      "reward": "Reward up to $15,000 for information leading to the location and arrest of Kemondre Travis Daily.",
+      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/kemondre-travis-daily",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Law Enforcement Assistance"
+      ],
+      "publication": "2026-10-01T09:43:00"
+    },
     {
       "uid": "9bcf6e6250d11973078abf2417cca400",
       "title": "FRANCINA DACANAY FERNANDEZ",
@@ -218,21 +233,6 @@
         "Additional Violent Crimes"
       ],
       "publication": "2026-10-02T09:39:00"
-    },
-    {
-      "uid": "0e58396ec6e647faa18982b3df634b7f",
-      "title": "KEMONDRE TRAVIS DAILY",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/kemondre-travis-daily/@@images/image/large",
-      "office": "Richmond",
-      "reward": "Reward up to $15,000 for information leading to the location and arrest of Kemondre Travis Daily.",
-      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/kemondre-travis-daily",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Law Enforcement Assistance"
-      ],
-      "publication": "2026-10-01T09:43:00"
     },
     {
       "uid": "b4db60d7ed14449cb73ba39564ef9e19",
