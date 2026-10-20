@@ -1,11 +1,57 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1264,
+    "totalOnFile": 1266,
     "baked": 150,
-    "updated": "2026-10-20T17:17:25.880Z"
+    "updated": "2026-10-20T21:42:55.535Z"
   },
   "items": [
+    {
+      "uid": "3a3e0bd9a11349fb8453252ae9f959e0",
+      "title": "CAITLYN SANDT - BRADENTON, FLORIDA",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/caitlyn-sandt---bradenton-florida/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/caitlyn-sandt---bradenton-florida",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Missing Persons"
+      ],
+      "publication": "2026-10-20T11:57:00"
+    },
+    {
+      "uid": "3a3ec6ff4ecd1c5aac9a7f2380eccd47",
+      "title": "THOMAS CRANE WALES",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/thomas-crane-wales/@@images/image/large",
+      "office": "Seattle",
+      "reward": "The United States Department of Justice is offering a reward of up to $2,000,000 for information leading to the arrest and conviction of the person or persons responsible for the murder of AUSA Thomas Crane Wales.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/thomas-crane-wales",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2010-09-21T19:40:00"
+    },
+    {
+      "uid": "909b855201e94a20af669a209375ce51",
+      "title": "JOSEPH MATOS",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/topten/joseph-matos/@@images/image/large",
+      "office": "Chicago",
+      "reward": "Reward up to $1,000,000 for information leading to the arrest of Joseph Matos.",
+      "url": "https://www.fbi.gov/wanted/topten/joseph-matos",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Ten Most Wanted Fugitives",
+        "Case of the Week"
+      ],
+      "publication": "2024-06-25T15:30:00"
+    },
     {
       "uid": "185dbfaa3f434bab98c3ca6e5fd1af65",
       "title": "MARY CAROLE MCDONNELL",
@@ -187,22 +233,6 @@
         "Counterintelligence"
       ],
       "publication": "2023-06-08T07:09:00"
-    },
-    {
-      "uid": "3a3ec6ff4ecd1c5aac9a7f2380eccd47",
-      "title": "THOMAS CRANE WALES",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/thomas-crane-wales/@@images/image/large",
-      "office": "Seattle",
-      "reward": "The United States Department of Justice is offering a reward of up to $2,000,000 for information leading to the arrest and conviction of the person or persons responsible for the murder of AUSA Thomas Crane Wales.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/thomas-crane-wales",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information",
-        "Case of the Week"
-      ],
-      "publication": "2010-09-21T19:40:00"
     },
     {
       "uid": "610d8fa337874ea7b7f09b992c4ea0b9",
@@ -2267,36 +2297,6 @@
         "Law Enforcement Assistance"
       ],
       "publication": "2026-06-03T19:44:00"
-    },
-    {
-      "uid": "ff91fb2cc2594920ab8409261951e3d7",
-      "title": "NAVY YARD ASSAULT",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/navy-yard-assault/@@images/image/large",
-      "office": "Washington D.C.",
-      "reward": "Reward up to $5,000 for information leading to the identification, arrest, and conviction of the unknown individual.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/navy-yard-assault",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2026-05-19T14:37:00"
-    },
-    {
-      "uid": "018bb42836e046179c77d8fd0ccea555",
-      "title": "RAYMOND LAWRENCE GONZALES",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/raymond-lawrence-gonzales/@@images/image/large",
-      "office": "Albuquerque",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cei/raymond-lawrence-gonzales",
-      "status": "na",
-      "warning": "IS KNOWN TO HAVE VIOLENT TENDENCIES",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-05-27T07:55:00"
     }
   ]
 }
