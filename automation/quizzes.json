@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-10-16T14:02:16.502Z"
+    "updated": "2026-10-20T14:01:45.099Z"
   },
   "quizzes": [
+    {
+      "slug": "the-arrest-of-danilo-restivo",
+      "title": "The Arrest of Danilo Restivo",
+      "tag": "Case File",
+      "description": "Two countries and seventeen years apart. Test what you know about the trail that caught Danilo Restivo.",
+      "created": "2026-10-20",
+      "sourceTopic": "The Arrest of Danilo Restivo",
+      "questions": [
+        {
+          "q": "In which English town was Danilo Restivo living when British police arrested him for murder?",
+          "options": [
+            "Bournemouth",
+            "Southampton",
+            "Brighton",
+            "Bristol"
+          ],
+          "answer": 0,
+          "explain": "Restivo settled in the Charminster area of Bournemouth in 2002, living directly across the road from victim Heather Barnett."
+        },
+        {
+          "q": "What specific calling card linked Restivo to his crimes years before formal charges were filed?",
+          "options": [
+            "Leaving carved wooden coins",
+            "Cutting locks of women's hair",
+            "Leaving untied shoelaces",
+            "Stealing wristwatches"
+          ],
+          "answer": 1,
+          "explain": "Restivo had a documented history of snipping hair from women and girls on buses and in cinemas, a signature found at Barnett's crime scene."
+        },
+        {
+          "q": "Where were the remains of Elisa Claps finally discovered in March 2010?",
+          "options": [
+            "In an abandoned vineyard",
+            "Beneath a railway bridge",
+            "In the roof space of a church",
+            "Inside a sealed storm drain"
+          ],
+          "answer": 2,
+          "explain": "Claps vanished in 1993 in Potenza, Italy, after meeting Restivo. Her body remained hidden in the loft of the Church of the Most Holy Trinity for nearly 17 years."
+        },
+        {
+          "q": "What critical physical evidence recovered from Elisa Claps' clothing matched Restivo's profile?",
+          "options": [
+            "Saliva on a stamp",
+            "Fingerprints on a rosary",
+            "DNA from blood on her shirt",
+            "A palm print on her coat"
+          ],
+          "answer": 2,
+          "explain": "Forensic scientists recovered Restivo's DNA from bloodstains on the back of Claps' cut shirt, confirming he was present when she was attacked."
+        },
+        {
+          "q": "What sentence did the UK court hand Restivo in 2011 for the murder of Heather Barnett?",
+          "options": [
+            "A 25-year minimum term",
+            "A whole life order",
+            "Life with parole after 30 years",
+            "A 40-year determinate sentence"
+          ],
+          "answer": 1,
+          "explain": "The trial judge handed down a whole life order, ensuring Restivo would never be released from prison under British law."
+        }
+      ]
+    },
     {
       "slug": "hunting-the-golden-state-killer",
       "title": "Hunting the Golden State Killer",

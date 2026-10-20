@@ -3,9 +3,24 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1264,
     "baked": 150,
-    "updated": "2026-10-20T11:48:32.637Z"
+    "updated": "2026-10-20T14:00:06.770Z"
   },
   "items": [
+    {
+      "uid": "185dbfaa3f434bab98c3ca6e5fd1af65",
+      "title": "MARY CAROLE MCDONNELL",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/mary-carole-mcdonnell/@@images/image/large",
+      "office": "Los Angeles",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Mary Carole McDonnell.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/mary-carole-mcdonnell",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2025-12-02T10:53:00"
+    },
     {
       "uid": "0e58396ec6e647faa18982b3df634b7f",
       "title": "KEMONDRE TRAVIS DAILY",
@@ -50,21 +65,6 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2026-06-09T15:51:00"
-    },
-    {
-      "uid": "185dbfaa3f434bab98c3ca6e5fd1af65",
-      "title": "MARY CAROLE MCDONNELL",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/mary-carole-mcdonnell/@@images/image/large",
-      "office": "Los Angeles",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Mary Carole McDonnell.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/mary-carole-mcdonnell",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Most Wanted Fraudster"
-      ],
-      "publication": "2025-12-02T10:53:00"
     },
     {
       "uid": "797da62e52c24d1e98fe200ec175ff79",
