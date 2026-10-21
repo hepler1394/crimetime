@@ -1,11 +1,26 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1266,
+    "totalOnFile": 1268,
     "baked": 150,
-    "updated": "2026-10-21T17:20:27.702Z"
+    "updated": "2026-10-21T21:48:50.206Z"
   },
   "items": [
+    {
+      "uid": "f49b1470d77241b2bc2906b8e8aaac0f",
+      "title": "BANK ROBBERY - TOPPENISH, WASHINGTON",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/bank-robbery---toppenish-washington/@@images/image/large",
+      "office": "Seattle",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/seeking-info/bank-robbery---toppenish-washington",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-10-20T12:34:00"
+    },
     {
       "uid": "3a3e0bd9a11349fb8453252ae9f959e0",
       "title": "CAITLYN SANDT - BRADENTON, FLORIDA",
@@ -736,6 +751,21 @@
         "Most Wanted Fraudster"
       ],
       "publication": "2026-06-18T08:22:00"
+    },
+    {
+      "uid": "62dba83f492e470182712dfb20fc4439",
+      "title": "BERNHARD EUGEN FRITSCH",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/bernhard-eugen-fritsch/@@images/image/large",
+      "office": "Los Angeles",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Bernhard Eugen Fritsch.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/bernhard-eugen-fritsch",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2026-08-25T07:53:00"
     },
     {
       "uid": "62dba83f492e470182712dfb20fc4439",
@@ -2267,36 +2297,6 @@
         "Kidnappings and Missing Persons"
       ],
       "publication": "2023-12-01T10:19:00"
-    },
-    {
-      "uid": "6d45f47a2ccf4d36aaf7de7d201715e4",
-      "title": "SALLY TULLOS - AUSTIN, TEXAS",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/sally-tullos---austin-texas/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/sally-tullos---austin-texas",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Homicides and Sexual Assaults"
-      ],
-      "publication": "2026-06-10T10:12:00"
-    },
-    {
-      "uid": "164f161ed09445dc83d64bae7daba524",
-      "title": "MICHAEL LEWIS MILES, JR. AND LISHAWN KNOTT",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/michael-lewis-miles-and-lishawn-knott/vancemiles.jpg/@@images/image/large",
-      "office": "Charlotte",
-      "reward": "reward up to $15,000 each for information leading to the location and capture of Michael Lewis Miles, Jr. and Lishawn Knott.",
-      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/michael-lewis-miles-and-lishawn-knott",
-      "status": "captured",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Law Enforcement Assistance"
-      ],
-      "publication": "2026-06-03T19:44:00"
     }
   ]
 }
