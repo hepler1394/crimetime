@@ -3,9 +3,24 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1269,
     "baked": 150,
-    "updated": "2026-10-23T17:15:33.818Z"
+    "updated": "2026-10-23T21:29:58.091Z"
   },
   "items": [
+    {
+      "uid": "a1d5eec49628415bbfbdb9cc5c9479d1",
+      "title": "MASS SHOOTING - BALTIMORE, MARYLAND",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/mass-shooting-baltimore-maryland/@@images/image/large",
+      "office": "Baltimore",
+      "reward": "Reward up to $10,000 for information leading to the identification and arrest of the individual(s) responsible for this incident.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/mass-shooting-baltimore-maryland",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-10-22T11:49:00"
+    },
     {
       "uid": "8020a28b1746429a994f4435d1d60259",
       "title": "GORDON MONTANEZ",
@@ -751,21 +766,6 @@
         "Seeking Information"
       ],
       "publication": "2026-09-13T17:26:00"
-    },
-    {
-      "uid": "cb829c4b9cdd4c7aa63e855ca92b2812",
-      "title": "EMYLEE THAI",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/emylee-thai/@@images/image/large",
-      "office": "Houston",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Emylee Thai.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/emylee-thai",
-      "status": "captured",
-      "warning": "SHOULD BE CONSIDERED A FLIGHT RISK",
-      "subjects": [
-        "Most Wanted Fraudster"
-      ],
-      "publication": "2026-06-18T08:22:00"
     },
     {
       "uid": "cb829c4b9cdd4c7aa63e855ca92b2812",
