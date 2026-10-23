@@ -1,9 +1,9 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1268,
+    "totalOnFile": 1269,
     "baked": 150,
-    "updated": "2026-10-23T14:00:10.900Z"
+    "updated": "2026-10-23T17:15:33.818Z"
   },
   "items": [
     {
@@ -751,6 +751,21 @@
         "Seeking Information"
       ],
       "publication": "2026-09-13T17:26:00"
+    },
+    {
+      "uid": "cb829c4b9cdd4c7aa63e855ca92b2812",
+      "title": "EMYLEE THAI",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/emylee-thai/@@images/image/large",
+      "office": "Houston",
+      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Emylee Thai.",
+      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/emylee-thai",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED A FLIGHT RISK",
+      "subjects": [
+        "Most Wanted Fraudster"
+      ],
+      "publication": "2026-06-18T08:22:00"
     },
     {
       "uid": "cb829c4b9cdd4c7aa63e855ca92b2812",
@@ -2282,21 +2297,6 @@
         "Most Wanted Fraudster"
       ],
       "publication": "2026-06-03T09:54:00"
-    },
-    {
-      "uid": "2fd9cbe842c64f2ba7a63aeee2978e21",
-      "title": "SHELBIE LYNN DWYER",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/shelbie-lynn-dwyer/@@images/image/large",
-      "office": "Seattle",
-      "reward": "Reward up to $20,000 for information leading to the recovery of Shelbie Lynn Dwyer.",
-      "url": "https://www.fbi.gov/wanted/kidnap/shelbie-lynn-dwyer",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons"
-      ],
-      "publication": "2023-12-01T10:19:00"
     }
   ]
 }
