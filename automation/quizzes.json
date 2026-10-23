@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-10-20T14:01:45.099Z"
+    "updated": "2026-10-23T14:02:03.581Z"
   },
   "quizzes": [
+    {
+      "slug": "why-cases-go-cold",
+      "title": "Why Cases Go Cold",
+      "tag": "Detective Skills",
+      "description": "I went through the case files to see why investigations stall. Test your knowledge on how cases freeze and how they break.",
+      "created": "2026-10-23",
+      "sourceTopic": "Why Some Cases Stay Cold for Decades",
+      "questions": [
+        {
+          "q": "What is the standard law enforcement definition of a cold case?",
+          "options": [
+            "A case older than exactly five years",
+            "An investigation where all viable investigative leads are exhausted",
+            "Any homicide lacking physical DNA evidence",
+            "A file transferred out of local jurisdiction to the FBI"
+          ],
+          "answer": 1,
+          "explain": "A case does not go cold simply because time passes. By definition in most departments, it goes cold when detectives run out of actionable leads."
+        },
+        {
+          "q": "Which federal database, launched in 1999, fundamentally changed cold case reviews by automating fingerprint comparisons?",
+          "options": [
+            "IAFIS",
+            "VICAP",
+            "NCIC",
+            "CODIS"
+          ],
+          "answer": 0,
+          "explain": "IAFIS cut fingerprint search times from months to hours. CODIS handles DNA, but IAFIS was the breakthrough for legacy fingerprint cards sitting in storage."
+        },
+        {
+          "q": "What is the primary procedural reason physical evidence from older cases cannot be tested with modern technology?",
+          "options": [
+            "Statutes of limitations prohibit retesting",
+            "Improper storage or chain-of-custody gaps",
+            "Federal regulations mandate discarding biological swabs after 10 years",
+            "State labs charge investigative fees to local departments"
+          ],
+          "answer": 1,
+          "explain": "Modern labs can extract profiles from microscopic samples, but if evidence degraded in humid storage or lacks a clean chain of custody, it cannot be used in court."
+        },
+        {
+          "q": "What investigative technique broke the decades-old Golden State Killer case in 2018?",
+          "options": [
+            "Retesting latent ballistic markings",
+            "Investigative genetic genealogy",
+            "Cell phone tower dump historical analysis",
+            "Voice stress analysis on old phone recordings"
+          ],
+          "answer": 1,
+          "explain": "Detectives uploaded a crime scene DNA profile to public genealogy database GEDmatch. It led them to a family tree, not an existing criminal offender database."
+        },
+        {
+          "q": "Passed in 2004, which federal legislation provided significant funding to reduce DNA backlogs and re-examine cold cases?",
+          "options": [
+            "The Brady Handgun Violence Prevention Act",
+            "The Justice for All Act (including the Debbie Smith Act)",
+            "The Omnibus Crime Control Act",
+            "The Violent Crime Control and Law Enforcement Act"
+          ],
+          "answer": 1,
+          "explain": "The Debbie Smith Act within that legislation directed hundreds of millions of dollars toward clearing biological evidence backlogs in untested rape kits and cold cases."
+        }
+      ]
+    },
     {
       "slug": "the-arrest-of-danilo-restivo",
       "title": "The Arrest of Danilo Restivo",

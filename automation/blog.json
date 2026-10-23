@@ -5,6 +5,70 @@
   },
   "posts": [
     {
+      "slug": "the-btk-floppy-disk",
+      "title": "The BTK Floppy Disk",
+      "date": "2026-10-23",
+      "category": "investigation",
+      "categoryLabel": "Investigation",
+      "image": "/images/episodes/the-btk-floppy-disk.jpg",
+      "author": "Cory",
+      "featured": false,
+      "excerpt": "In 2004, Dennis Rader asked police if a floppy disk could be traced. Their answer led to the digital metadata that ended a 31-year manhunt.",
+      "body": [
+        "Before sending a 1.44 megabyte purple floppy disk to a local Fox TV affiliate in 2005, a serial killer known as BTK wrote to investigators with a specific question. He asked, \"Can I communicate with Floppy [disk] and not be traced to a computer. Be honest.\"",
+        "Investigators coordinated a response through a classified advertisement in the Wichita Eagle, signaling that a floppy disk could not be traced. That answer was deliberately incorrect, a calculated tactic designed to give the killer the confidence to take a risk he otherwise might have avoided.",
+        "He took the risk. The disk he sent contained metadata that pointed directly to his identity, ending a manhunt that began with the brutal quadruple homicide of the Otero family on January 15, 1974.",
+        "## The Early Years and Escalation",
+        "Dennis Rader was born on March 9, 1945, in Pittsburg, Kansas, the eldest of four sons to William and Dorothea Rader. His family moved to Wichita, where he grew up in a modest home on N. Seneca Street. Raised in a religious Lutheran household, he joined the Boy Scouts and attended Riverview Elementary. Classmates described him as a quiet, studious, and reserved child who preferred solitude over socializing and lacked a sense of humor.",
+        "Beneath the surface, Rader harbored dark impulses. He later admitted to developing sadistic fantasies about bondage, control, and torture while in grade school. He engaged in disturbing behaviors, including hanging cats and dogs, voyeurism, autoerotic asphyxiation, and spying on neighbors while wearing stolen women's clothing. Forensic psychologist Dr. Tony Ruark suggests a childhood event may have linked sexual pleasure with suffering in Rader's mind, while researcher Dr. Terence G. Leary theorizes possible exposure to horrific abuse within the family, though no definitive evidence exists.",
+        "After graduating from Wichita Heights High School in 1963 and briefly attending Kansas Wesleyan College in 1965, Rader joined the U.S. Air Force. He served from 1966 to 1970 in places like Korea and Greece, earning medals for good conduct. During this time, he engaged with prostitutes and began trolling—stalking women without acting on his impulses. Returning to Wichita in 1970, he married Paula Dietz in 1971 and worked various jobs before losing a position at Cessna in late 1973, which pushed him deeper into his fantasies.",
+        "## The Projects",
+        "Rader began actively trolling for victims, fixating on Julie Otero and her daughter. On January 15, 1974, he murdered Joseph Otero, his wife Julie, and their two children, 11-year-old Josephine and 9-year-old Joseph Jr. He bound his victims with complex knots, tortured them, and killed them by strangulation. This brutal quadruple homicide set the tone for his subsequent crimes, which targeted women and families with a mix of strangulation and stabbing.",
+        "He committed additional murders over the years. He killed Kathryn Bright on April 4, 1974, Shirley Vian on March 17, 1977, and Nancy Fox on December 8, 1977. He later killed Marine Hedge on April 27, 1985, Vicki Wegerle on September 16, 1986, and Dolores Davis on January 19, 1991. Unlike most serial killers who kill more frequently over time, Rader had long, quiet periods between his victims.",
+        "He stole personal items from his female victims during attacks, including underwear, driver's licenses, and other keepsakes. These trophies fed his sexual fantasies between killings. He also left notes or poems at the scenes to taunt the police.",
+        "Rader felt compelled to contact authorities. He sent his first letter to The Wichita Eagle in October 1974, claiming he killed the Oteros. Police confirmed the poorly typed, misspelled letter contained details only someone at the crime scene would know. In this correspondence, he proudly called himself the one who would Bind, Torture, Kill, establishing the BTK moniker. He referred to his murders as projects, implying methodical execution. In a 1978 letter to KAKE-TV, he asked, \"How many do I have to kill before I get my name in the paper or some national attention?\"",
+        "## The Profile and the Double Life",
+        "After the murder of Dolores Davis in 1991, Rader went silent for 13 years. To the outside world, he was an unremarkable man. He was a husband, father, Boy Scout leader, and the elected congregation president at Christ Lutheran Church in Park City, Kansas. He worked as a compliance officer for the city, a job that gave him authority and regular access to residential neighborhoods. Neighbors described him as rigid and by-the-book.",
+        "Before identifying any suspect, behavioral analysts developed a profile predicting an organized offender. They determined the killer was likely a white male between 30 and 50, with a stable household, a structured routine, a job involving authority or discipline, and strong geographic ties to the crime scenes. The profile also flagged a possible religious connection based on references in his communications.",
+        "The murders were clearly planned. Victims were selected in advance, scenes were managed carefully, and the killer consistently reinserted himself into the investigation through his communications. Every letter and package became forensic evidence. His language was formal and procedural, and he signed every communication the same way: BTK.",
+        "## The 21st Century Resurgence",
+        "Rader resumed his communication with the media in 2004, seeking attention and validation. Over the course of 11 letters and packages sent during 2004 and 2005, law enforcement officials slowly began filling in the blanks. He overlooked a critical fact: law enforcement officers were becoming increasingly adept at forensic science.",
+        "His first 21st-century communique was a letter sent to The Wichita Eagle that included crime scene photos and a driver's license belonging to Vicki Wegerle. This victim had not been definitively linked to BTK until then. Armed with the new connection, police collected DNA from under Wegerle's fingernails and launched a campaign testing hundreds of local men for a possible match.",
+        "In another package intended for law enforcement, Rader used a drop-off point that was within view of a nearby store's surveillance camera. Grainy footage showed a blurry figure dropping off the package and leaving in a black Jeep Cherokee. He also sent a cryptic word puzzle to the media that contained hidden letters spelling D. Rader alongside his street address.",
+        "## The Floppy Disk Metadata",
+        "The final piece of the puzzle came when Rader sent the purple 1.44 megabyte floppy disk to the local Fox TV affiliate. When digital forensic experts analyzed the disk, they looked past the visible content. They focused on metadata, often called data about data, which includes hidden information such as file creation dates and system user profiles.",
+        "Investigators extracted this hidden information from a deleted document on the disk. The metadata contained the words Christ Lutheran Church and attributed the last edits made to someone named Dennis. Rader controlled the message on the disk, but his lack of technical knowledge meant he overlooked the fact that digital files automatically store identifying details.",
+        "From the time investigators received the floppy disk, it took just nine days to put the case together. They learned that Christ Lutheran Church had a council president named Dennis Rader. Further reconnaissance found a black Jeep Cherokee outside of Rader's home, matching the one caught on surveillance from the earlier drop-off.",
+        "## The DNA Match and Arrest",
+        "Digital forensics had identified a suspect, but investigators needed scientific confirmation. Biological evidence had been collected at multiple crime scenes over the years, but Rader had never been formally considered a suspect, so no direct DNA sample existed in any database. Investigators obtained a warrant to test the DNA of a close relative.",
+        "They secured a tissue sample from his daughter Kerri's medical records. She had a pap smear done at Kansas State University's medical clinic, and investigators obtained the sample without her knowledge to avoid alerting Rader. DNA tests done at a lab in Topeka revealed a familial match to the DNA under Vicki Wegerle's fingernails. The chain of evidence was clear, justifying a direct sample from Rader himself, which confirmed the match conclusively.",
+        "Dennis Rader was arrested on February 25, 2005, over 30 years after the investigation had begun. During his interrogation, he confessed to all 10 murders, telling investigators, \"The floppy did me in.\" In June 2005, he pleaded guilty to all 10 counts of murder, referring to his victims in court as his projects.",
+        "## Where the Case Stands",
+        "As of February 2023, the capture of Dennis Rader stands as a landmark moment in forensic history. The investigation shows how modern forensic work operates in layers, across time, with each discipline reinforcing the others. Digital forensics identified a suspect, behavioral analysis confirmed the profile fit, linguistic patterns showed consistency across decades of letters, and DNA provided the final scientific confirmation.",
+        "The metadata on a single floppy disk generated the lead that ended a three-decade manhunt. Look through the case files and the digital evidence logs. Review the facts for yourself."
+      ],
+      "sourceTopic": null,
+      "caseSlug": "the-btk-floppy-disk",
+      "sources": [
+        {
+          "title": "How a Floppy Disk Solved the BTK Killer Mystery",
+          "url": "https://simplyforensic.com/the-btk-killer/"
+        },
+        {
+          "title": "How Digital Forensics Caught the BTK Strangler - Case Study & Programs",
+          "url": "https://www.forensicscolleges.com/blog/forensics-casefile-btk-strangler"
+        },
+        {
+          "title": "BTK Killer Case Study",
+          "url": "https://hawkeyeforensic.com/btk-killer-case/"
+        },
+        {
+          "title": "BTK Forensic Case: How Evidence Caught Dennis Rader",
+          "url": "https://jenniferdornbush.com/btk-forensic-case-dennis-rader/"
+        }
+      ]
+    },
+    {
       "slug": "the-arrest-of-danilo-restivo",
       "title": "The Arrest of Danilo Restivo",
       "date": "2026-10-16",

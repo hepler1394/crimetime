@@ -606,3 +606,5 @@ with an [auto] tag — the counter on Mission Control reads this file.
 540. [auto 2026-10-16] Published blog post from research notes: "The Arrest of Danilo Restivo" (1590 words, 6 sources)
 541. [auto 2026-10-16] Published new quiz: "Hunting the Golden State Killer" (5 questions)
 542. [auto 2026-10-20] Published new quiz: "The Arrest of Danilo Restivo" (5 questions)
+543. [auto 2026-10-23] Published blog post from research notes: "The BTK Floppy Disk" (1427 words, 4 sources)
+544. [auto 2026-10-23] Published new quiz: "Why Cases Go Cold" (5 questions)

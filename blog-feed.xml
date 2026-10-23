@@ -6,7 +6,15 @@
     <atom:link href="https://www.crimetimesnacks.com/blog-feed.xml" rel="self" type="application/rss+xml"/>
     <description>True crime case updates, analysis, and the stories behind the headlines.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Oct 2026 11:48:34 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 14:02:05 GMT</lastBuildDate>
+    <item>
+      <title>The BTK Floppy Disk</title>
+      <link>https://www.crimetimesnacks.com/blog-posts/the-btk-floppy-disk.html</link>
+      <guid isPermaLink="true">https://www.crimetimesnacks.com/blog-posts/the-btk-floppy-disk.html</guid>
+      <category>Investigation</category>
+      <pubDate>Fri, 23 Oct 2026 12:00:00 GMT</pubDate>
+      <description>In 2004, Dennis Rader asked police if a floppy disk could be traced. Their answer led to the digital metadata that ended a 31-year manhunt.</description>
+    </item>
     <item>
       <title>The Arrest of Danilo Restivo</title>
       <link>https://www.crimetimesnacks.com/blog-posts/the-arrest-of-danilo-restivo.html</link>

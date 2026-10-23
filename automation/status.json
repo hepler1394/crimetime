@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-23T11:48:35.650Z",
-  "improvementsShipped": 542,
+  "generated": "2026-10-23T14:02:07.284Z",
+  "improvementsShipped": 544,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
     "content": [
@@ -11,11 +11,11 @@
   },
   "counts": {
     "episodes": 18,
-    "posts": 24,
+    "posts": 25,
     "merchDesigns": 34,
     "merchCollection": 0,
-    "quizzes": 20,
-    "quizQuestions": 100,
+    "quizzes": 21,
+    "quizQuestions": 105,
     "fbiCases": 150,
     "videos": 1,
     "topicsQueued": 114,
@@ -27,21 +27,21 @@
       "date": "2026-10-03"
     },
     "post": {
-      "title": "The Arrest of Danilo Restivo",
-      "date": "2026-10-16"
+      "title": "The BTK Floppy Disk",
+      "date": "2026-10-23"
     },
     "quiz": {
-      "title": "The Arrest of Danilo Restivo",
-      "created": "2026-10-20"
+      "title": "Why Cases Go Cold",
+      "created": "2026-10-23"
     }
   },
   "freshness": {
-    "episodesJson": "2026-10-23T11:48:13.352Z",
-    "blogJson": "2026-10-23T11:48:08.611Z",
+    "episodesJson": "2026-10-23T14:00:10.112Z",
+    "blogJson": "2026-10-23T14:01:16.261Z",
     "merchJson": "2026-09-22T14:02:22.646Z",
-    "quizzesJson": "2026-10-20T14:01:45.099Z",
-    "fbiJson": "2026-10-23T11:48:13.810Z",
-    "css": "2026-10-23T11:48:08.707Z"
+    "quizzesJson": "2026-10-23T14:02:03.581Z",
+    "fbiJson": "2026-10-23T14:00:10.900Z",
+    "css": "2026-10-06T04:47:48.161Z"
   },
   "nextTopics": [
     "Forensic odontology: solving cases with dental records",
