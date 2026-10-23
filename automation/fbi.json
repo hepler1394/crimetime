@@ -3,9 +3,24 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1268,
     "baked": 150,
-    "updated": "2026-10-22T21:43:36.961Z"
+    "updated": "2026-10-23T05:01:11.165Z"
   },
   "items": [
+    {
+      "uid": "8020a28b1746429a994f4435d1d60259",
+      "title": "GORDON MONTANEZ",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/additional/gordon-montanez/@@images/image/large",
+      "office": "New York",
+      "reward": "Reward up to $25,000 for information leading to the location and apprehension of Gordon Montanez.",
+      "url": "https://www.fbi.gov/wanted/additional/gordon-montanez",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Additional Violent Crimes"
+      ],
+      "publication": "2026-10-02T09:39:00"
+    },
     {
       "uid": "3a591367821842dd9494420897b32621",
       "title": "ATTEMPTED ARSON - ATLANTA, GEORGIA",
@@ -278,21 +293,6 @@
         "Ten Most Wanted Fugitives"
       ],
       "publication": "2026-02-17T11:44:00"
-    },
-    {
-      "uid": "8020a28b1746429a994f4435d1d60259",
-      "title": "GORDON MONTANEZ",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/additional/gordon-montanez/@@images/image/large",
-      "office": "New York",
-      "reward": "Reward up to $25,000 for information leading to the location and apprehension of Gordon Montanez.",
-      "url": "https://www.fbi.gov/wanted/additional/gordon-montanez",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Additional Violent Crimes"
-      ],
-      "publication": "2026-10-02T09:39:00"
     },
     {
       "uid": "b4db60d7ed14449cb73ba39564ef9e19",
