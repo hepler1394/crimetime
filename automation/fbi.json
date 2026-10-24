@@ -3,9 +3,24 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1269,
     "baked": 150,
-    "updated": "2026-10-23T21:29:58.091Z"
+    "updated": "2026-10-24T04:46:06.856Z"
   },
   "items": [
+    {
+      "uid": "3a591367821842dd9494420897b32621",
+      "title": "ATTEMPTED ARSON - ATLANTA, GEORGIA",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/attempted-arson---atlanta-georgia/@@images/image/large",
+      "office": "Atlanta",
+      "reward": "Reward up to $20,000 for information leading to the identification and arrest of the unknown individual responsible for this incident.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/attempted-arson---atlanta-georgia",
+      "status": "captured",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-10-21T13:16:00"
+    },
     {
       "uid": "a1d5eec49628415bbfbdb9cc5c9479d1",
       "title": "MASS SHOOTING - BALTIMORE, MARYLAND",
@@ -35,21 +50,6 @@
         "Additional Violent Crimes"
       ],
       "publication": "2026-10-02T09:39:00"
-    },
-    {
-      "uid": "3a591367821842dd9494420897b32621",
-      "title": "ATTEMPTED ARSON - ATLANTA, GEORGIA",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/attempted-arson---atlanta-georgia/@@images/image/large",
-      "office": "Atlanta",
-      "reward": "Reward up to $20,000 for information leading to the identification and arrest of the unknown individual responsible for this incident.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/attempted-arson---atlanta-georgia",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2026-10-21T13:16:00"
     },
     {
       "uid": "f49b1470d77241b2bc2906b8e8aaac0f",
