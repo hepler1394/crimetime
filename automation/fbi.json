@@ -3,9 +3,40 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1269,
     "baked": 150,
-    "updated": "2026-10-26T13:15:46.732Z"
+    "updated": "2026-10-26T22:45:08.076Z"
   },
   "items": [
+    {
+      "uid": "909b855201e94a20af669a209375ce51",
+      "title": "JOSEPH MATOS",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/topten/joseph-matos/@@images/image/large",
+      "office": "Chicago",
+      "reward": "Reward up to $1,000,000 for information leading to the arrest of Joseph Matos.",
+      "url": "https://www.fbi.gov/wanted/topten/joseph-matos",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Ten Most Wanted Fugitives"
+      ],
+      "publication": "2024-06-25T15:30:00"
+    },
+    {
+      "uid": "dba519cb1e9a46f9a49710155ed83270",
+      "title": "VICTOR JULIAN DUQUE",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/wcc/victor-julian-duque/@@images/image/large",
+      "office": "Miami",
+      "reward": "Reward up to $10,000 for information leading to the location and apprehension of Victor Julian Duque.",
+      "url": "https://www.fbi.gov/wanted/wcc/victor-julian-duque",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "White-Collar Crime",
+        "Case of the Week"
+      ],
+      "publication": "2026-10-15T11:15:00"
+    },
     {
       "uid": "3a591367821842dd9494420897b32621",
       "title": "ATTEMPTED ARSON - ATLANTA, GEORGIA",
@@ -95,22 +126,6 @@
         "Seeking Information"
       ],
       "publication": "2010-09-21T19:40:00"
-    },
-    {
-      "uid": "909b855201e94a20af669a209375ce51",
-      "title": "JOSEPH MATOS",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/topten/joseph-matos/@@images/image/large",
-      "office": "Chicago",
-      "reward": "Reward up to $1,000,000 for information leading to the arrest of Joseph Matos.",
-      "url": "https://www.fbi.gov/wanted/topten/joseph-matos",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Ten Most Wanted Fugitives",
-        "Case of the Week"
-      ],
-      "publication": "2024-06-25T15:30:00"
     },
     {
       "uid": "185dbfaa3f434bab98c3ca6e5fd1af65",
@@ -2282,21 +2297,6 @@
         "Seeking Information"
       ],
       "publication": "2026-06-15T08:23:00"
-    },
-    {
-      "uid": "a418b52def5d49feb7a72066788e3119",
-      "title": "SAID ABDULLAHI EREG",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/said-abdullahi-ereg/@@images/image/large",
-      "office": "Minneapolis",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Said Abdullahi Ereg.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/said-abdullahi-ereg",
-      "status": "surrendered",
-      "warning": "",
-      "subjects": [
-        "Most Wanted Fraudster"
-      ],
-      "publication": "2026-06-03T09:54:00"
     }
   ]
 }
