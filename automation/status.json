@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-26T05:03:05.039Z",
+  "generated": "2026-10-26T13:16:08.621Z",
   "improvementsShipped": 544,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
@@ -36,12 +36,12 @@
     }
   },
   "freshness": {
-    "episodesJson": "2026-10-26T04:57:08.411Z",
-    "blogJson": "2026-10-26T04:57:03.923Z",
+    "episodesJson": "2026-10-26T13:15:46.159Z",
+    "blogJson": "2026-10-26T13:15:41.329Z",
     "merchJson": "2026-09-22T14:02:22.646Z",
     "quizzesJson": "2026-10-23T14:02:03.581Z",
-    "fbiJson": "2026-10-26T04:57:08.735Z",
-    "css": "2026-10-26T04:57:04.017Z"
+    "fbiJson": "2026-10-26T13:15:46.732Z",
+    "css": "2026-10-26T13:15:41.429Z"
   },
   "nextTopics": [
     "Forensic odontology: solving cases with dental records",
