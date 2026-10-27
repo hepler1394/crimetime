@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-10-23T14:02:03.581Z"
+    "updated": "2026-10-27T14:02:49.001Z"
   },
   "quizzes": [
+    {
+      "slug": "vicap-inside-the-fbi-s-crime-database",
+      "title": "ViCAP: Inside the FBI's Crime Database",
+      "tag": "Detective Skills",
+      "description": "I went through the FBI files on ViCAP. Test what you know about the system built to catch serial offenders across state lines.",
+      "created": "2026-10-27",
+      "sourceTopic": "How the FBI's ViCAP Database Links Violent Crimes",
+      "questions": [
+        {
+          "q": "What does the acronym ViCAP actually stand for?",
+          "options": [
+            "Violent Crime Apprehension Program",
+            "Victim Identification and Profiling Database",
+            "Visual Criminal Analysis Platform",
+            "Violent Incident Case Assessment Protocol"
+          ],
+          "answer": 0,
+          "explain": "The FBI established the Violent Crime Apprehension Program in 1985. It was designed to link serial crimes across different jurisdictions."
+        },
+        {
+          "q": "Which former LAPD homicide detective is widely credited with conceptualizing ViCAP?",
+          "options": [
+            "William Bratton",
+            "Pierce Brooks",
+            "Joe Kenda",
+            "Gil Carrillo"
+          ],
+          "answer": 1,
+          "explain": "Pierce Brooks spent years hunting cross-jurisdiction killers before proposing a centralized national database to track recurring behavioral patterns."
+        },
+        {
+          "q": "Where is ViCAP physically headquartered within the FBI's infrastructure?",
+          "options": [
+            "J. Edgar Hoover Building in Washington, D.C.",
+            "Criminal Justice Information Services Division in Clarksburg, West Virginia",
+            "National Academy in Quantico, Virginia",
+            "FBI Field Office in Los Angeles, California"
+          ],
+          "answer": 2,
+          "explain": "ViCAP operates out of Quantico, Virginia, as part of the FBI's National Center for the Analysis of Violent Crime (NCAVC)."
+        },
+        {
+          "q": "Which of the following is NOT a standard criterion for submitting a case to ViCAP?",
+          "options": [
+            "Solved or unsolved homicides involving abduction",
+            "Unidentified human remains where manner of death is known or suspected to be homicide",
+            "White-collar financial fraud exceeding one million dollars",
+            "Missing persons cases where circumstances indicate foul play"
+          ],
+          "answer": 2,
+          "explain": "ViCAP is strictly reserved for violent serial offenses, including homicides, sexual assaults, missing persons with suspected foul play, and unidentified remains."
+        },
+        {
+          "q": "Which notorious serial killer's historic confessions did ViCAP analysts famously verify through nationwide case matching starting in 2018?",
+          "options": [
+            "Samuel Little",
+            "Ted Bundy",
+            "Gary Ridgway",
+            "Dennis Rader"
+          ],
+          "answer": 0,
+          "explain": "Samuel Little confessed to 93 murders before his death. ViCAP crime analysts spent years corroborating dozens of those claims against cold cases nationwide."
+        }
+      ]
+    },
     {
       "slug": "why-cases-go-cold",
       "title": "Why Cases Go Cold",

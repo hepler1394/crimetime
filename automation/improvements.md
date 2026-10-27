@@ -608,3 +608,5 @@ with an [auto] tag — the counter on Mission Control reads this file.
 542. [auto 2026-10-20] Published new quiz: "The Arrest of Danilo Restivo" (5 questions)
 543. [auto 2026-10-23] Published blog post from research notes: "The BTK Floppy Disk" (1427 words, 4 sources)
 544. [auto 2026-10-23] Published new quiz: "Why Cases Go Cold" (5 questions)
+545. [auto 2026-10-27] Published blog post from research notes: "Forensic Odontology: Using Dental Records to Solve Cases" (1429 words, 6 sources)
+546. [auto 2026-10-27] Published new quiz: "ViCAP: Inside the FBI's Crime Database" (5 questions)

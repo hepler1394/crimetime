@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-27T12:23:52.704Z",
-  "improvementsShipped": 544,
+  "generated": "2026-10-27T14:03:05.777Z",
+  "improvementsShipped": 546,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
     "content": [
@@ -11,14 +11,14 @@
   },
   "counts": {
     "episodes": 18,
-    "posts": 25,
+    "posts": 26,
     "merchDesigns": 34,
     "merchCollection": 0,
-    "quizzes": 21,
-    "quizQuestions": 105,
+    "quizzes": 22,
+    "quizQuestions": 110,
     "fbiCases": 150,
     "videos": 1,
-    "topicsQueued": 114,
+    "topicsQueued": 113,
     "topicsTotal": 126
   },
   "latest": {
@@ -27,28 +27,28 @@
       "date": "2026-10-03"
     },
     "post": {
-      "title": "The BTK Floppy Disk",
-      "date": "2026-10-23"
+      "title": "Forensic Odontology: Using Dental Records to Solve Cases",
+      "date": "2026-10-27"
     },
     "quiz": {
-      "title": "Why Cases Go Cold",
-      "created": "2026-10-23"
+      "title": "ViCAP: Inside the FBI's Crime Database",
+      "created": "2026-10-27"
     }
   },
   "freshness": {
-    "episodesJson": "2026-10-27T12:23:30.664Z",
-    "blogJson": "2026-10-27T12:23:26.275Z",
+    "episodesJson": "2026-10-27T14:00:18.344Z",
+    "blogJson": "2026-10-27T14:02:13.908Z",
     "merchJson": "2026-09-22T14:02:22.646Z",
-    "quizzesJson": "2026-10-23T14:02:03.581Z",
-    "fbiJson": "2026-10-27T12:23:30.963Z",
-    "css": "2026-10-27T12:23:26.368Z"
+    "quizzesJson": "2026-10-27T14:02:49.001Z",
+    "fbiJson": "2026-10-27T14:00:20.207Z",
+    "css": "2026-10-06T04:47:48.161Z"
   },
   "nextTopics": [
-    "Forensic odontology: solving cases with dental records",
     "How behavioral profilers build a sketch of an offender",
     "Understanding the criminal appeals process",
     "The evolution of crime scene photography",
     "How podcasts have helped reopen cold cases",
-    "Bloodstain pattern analysis, explained"
+    "Bloodstain pattern analysis, explained",
+    "How true crime fans can help cases responsibly"
   ]
 }

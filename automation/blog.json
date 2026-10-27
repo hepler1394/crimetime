@@ -5,6 +5,73 @@
   },
   "posts": [
     {
+      "slug": "forensic-odontology-using-dental-records-to-solve-cases",
+      "title": "Forensic Odontology: Using Dental Records to Solve Cases",
+      "date": "2026-10-27",
+      "category": "investigation",
+      "categoryLabel": "Investigation",
+      "image": "images/logo.png",
+      "author": "Cory",
+      "featured": false,
+      "excerpt": "Forensic dentists identify human remains and analyze bite marks, but scientific reviews have recently questioned the reliability of dental evidence.",
+      "body": [
+        "Human teeth can withstand temperatures up to 1600°C. This durability makes them the most resilient evidence in forensic investigations. When investigators recover skeletal remains or victims of severe fires, the dental structures are often the last biological material to disintegrate. Inside the center of a tooth, protected by layers of dentin and enamel, the dental pulp houses nerves, blood supply, and extractable genomic and mitochondrial DNA.",
+        "You might know forensic odontology, or forensic dentistry, entirely from television shows. The actual discipline involves the handling and evaluation of dental evidence in criminal and civil law, operating on the principle that no two oral cavities are exactly alike. Dental experts look at tooth morphology, variations in shape and size, restorations, missing teeth, wear patterns, and crowding to identify unknown individuals. They also assist investigators in estimating the age and sex of human remains.",
+        "The practice relies heavily on comparing post-mortem evidence to ante-mortem dental records. The American Dental Association noted that computer usage for record-keeping in dental offices rose from 11% in 1984 to over 85% by 2009. Identifying remains through dental records is a widely accepted science. Another application of forensic dentistry—bite mark analysis—has faced intense scientific scrutiny.",
+        "## The earliest dental evidence in court",
+        "The use of dental evidence in legal proceedings goes back centuries. In 1692, during the Salem Witch Trials, Rev. George Burroughs was accused of witchcraft. His bite marks were compared to marks found on victims. The judges accepted this as evidence, marking the first time bite marks were used to solve a crime in what would become the United States. Burroughs was convicted and hanged, though the State exonerated him decades later and compensated his children for the wrongful execution.",
+        "The field gained more formal recognition in the nineteenth century. In 1814, Dr. James Alexander pioneered dental evidence in a courtroom by presenting testimony about a maxillary denture match in Scotland. Decades later, in 1898, Dr. Oscar Amoëdo published a landmark text on the subject. Amoëdo is recognized today as the founding father of forensic odontology.",
+        "Modern bite mark convictions began appearing in the mid-twentieth century. In 1948, pathologist Keith Simpson used bite marks on a victim's breast to secure a murder conviction against Robert Gorringe. In 1954, a Texas case called Doyle v. State involved a bite mark left on a piece of cheese at a burglary scene. A dentist and a firearms examiner independently concluded the defendant made the mark, setting a precedent for using bite marks on objects and skin as evidence.",
+        "## How forensic dentists identify remains",
+        "When a forensic dentist attempts to identify a body, they typically compare post-mortem radiographs to ante-mortem records collected from a dentist's files. Digital radiography has made this process safer and more precise, cutting radiation exposure by 90% compared to older type D film. In mass disaster scenarios, response teams often use NOMAD hand-held X-ray units that operate at 60 kV peak potential and a 2.3 mA anode current.",
+        "Modern investigators also use three-dimensional scanning. Scientific studies confirm that 3D CBCT imaging provides superior accuracy over traditional 2D CT reconstruction. Artificial intelligence systems are now trained to identify specific tooth types on radiographs and support facial reconstruction through 3D modeling. Research validates that AI accuracy rates match trained examiners while removing human bias from the process.",
+        "If a victim never visited a dentist, investigators can sometimes use smile photographs. This method compares ante-mortem photos of the presumed victim's smile to post-mortem photos. The expert might perform a direct comparison of characteristics or use software to outline and compare the incisal edges of the teeth. The post-mortem photograph must be taken at the same angle of incidence as the ante-mortem image for this to work.",
+        "Another identification method is palatal rugoscopy, which analyzes the ridges on the roof of the mouth, known as palatal rugae. Researchers categorize these patterns by length—primary, secondary, and fragmentary—and by shape, such as straight, curvy, circular, or wavy. Investigators can compare a mold of the deceased's upper arch to an old complete upper denture provided by the family.",
+        "## Estimating age and sex from teeth",
+        "Teeth provide highly reliable markers for estimating an individual's age because their development is consistent and less affected by nutritional changes than bone mineralization. For children and adolescents, the number and sequence of erupted teeth offer a baseline age. Researchers like Demirjian mapped out specific developmental stages of teeth for this purpose.",
+        "Estimating the age of adult remains requires looking at regressive changes. In 1950, a researcher named Gustafson developed a method using a single tooth, examining factors like occlusal attrition, cementum apposition, and root transparency. Later, researchers like Kvaal developed methods to estimate age by measuring pulp size from periapical radiographs. As of 2026, Springer Publishers released a volume called Dental Age Assessment: A Global Perspective, reflecting current international practices and the emerging use of machine learning algorithms in chronological age estimation.",
+        "Estimating sex from dentition remains experimental, but it offers potential clues when skeletal elements like the pelvis are fragmented. Human teeth exhibit sexual dimorphism, with male teeth generally being slightly larger, particularly the canines. Research using microtomographic scans shows that male teeth consist of significantly greater quantities of dentine, while female teeth have thicker enamel on average.",
+        "## The controversy over bite mark analysis",
+        "While identifying remains through dental records is standard practice, matching a suspect's teeth to a bite mark on human skin is highly controversial. Bites can occur on both the victim and the suspect. Teeth are used as a weapon by the aggressor and in self-defense by the victim. But skin is a poor medium for dental impressions due to its viscoelasticity. A bite mark can be altered by stretching, movement, or environmental changes after the bite occurs.",
+        "Most bite mark studies use pigskin because it is histologically similar to human skin, though the two behave differently due to elasticity. Researchers Kouble and Craig suggested standardizing experimental bite marks by using a G-clamp on an articulator to apply pressure, rather than manual pressure. They also compared direct and indirect methods of analysis. The direct method compared a model of the suspect's teeth to a life-size photograph or a fingerprint powder lift model, where black fingerprint powder and tape transfer the mark to an acetate sheet.",
+        "The researchers found that digital tools provided better results than hand-traced transparent overlays. They tested a 2D polyline method in Adobe Photoshop, drawing straight lines between fixed points to indicate tooth width. They also tested a painting method, coating the incisal edges of a dental model with red glossy paint and photographing it. Identification was based on 13 variables, including canine-to-canine distance and rotational angles of the incisors. While both methods were reliable, the 2D polyline method gave more objective results.",
+        "Despite attempts to standardize the process, the theoretical foundation of bite mark analysis has been severely challenged. In 1999, a study by a member of the American Board of Forensic Odontology found a 63% rate of false identifications during an informal workshop. Critics point to wrongful convictions, such as the case of Ray Krone. An Arizona jury convicted Krone of murder based on bite mark evidence left on a victim's breast, but DNA testing later exonerated him and implicated another man. Roy Brown was similarly convicted of murder due in part to bite marks, and was later freed when DNA from saliva in the wounds matched someone else.",
+        "## Where the science stands",
+        "Several scientific bodies have condemned bite mark analysis. The National Academy of Sciences raised questions in a 2009 report that led several courts to restrict bite-mark testimony. In 2016, the President's Council of Advisors on Science and Technology declared that bite mark analysis had no scientific validity. That same year, the Texas Forensic Science Commission recommended that bite mark evidence not be used in criminal prosecutions until it established a firmer scientific basis.",
+        "The critique centers on three main points: human anterior dental patterns have not been proven unique at the individual level, those patterns do not transfer accurately or consistently to human skin, and experts have not shown they can accurately analyze these marks to include or exclude individuals. An investigative series by the Chicago Tribune noted that no rigorous experimentation has established error rates for bite mark comparisons.",
+        "To reduce bias, organizations like the Bureau of Legal Dentistry support creating a database of dental records to verify uniqueness. They also encourage using a dental lineup of multiple impressions, rather than comparing crime scene evidence to a single suspect's teeth. While the courts continue to evaluate the admissibility of bite marks, the use of dental records to identify the unknown remains a vital tool for investigators. The documentation is publicly available. Look at the forensic reports and see what the evidence supports."
+      ],
+      "sourceTopic": "Forensic odontology: solving cases with dental records",
+      "caseSlug": null,
+      "relatedCases": [],
+      "sources": [
+        {
+          "title": "Forensic dentistry",
+          "url": "https://en.wikipedia.org/wiki/Forensic_dentistry"
+        },
+        {
+          "title": "Forensic biology",
+          "url": "https://en.wikipedia.org/wiki/Forensic_biology"
+        },
+        {
+          "title": "Forensic Odontology: Techniques and Applications",
+          "url": "https://simplyforensic.com/forensic-odontology/"
+        },
+        {
+          "title": "Forensic Odontology: Solving Crimes One Tooth at a Time by ... - Dentaltown",
+          "url": "https://www.dentaltown.com/magazine/article/5393/forensic-odontology-solving-crimes-one-tooth-at-a-time"
+        },
+        {
+          "title": "Dental Evidence in Forensic Identification - An Overview, Methodology ...",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4541412/"
+        },
+        {
+          "title": "Forensic Odontology: Identifying Victims with Dental Records",
+          "url": "https://www.lawyersclubindia.com/articles/forensic-odontology-identifying-victims-through-dental-records-16682.asp"
+        }
+      ]
+    },
+    {
       "slug": "the-btk-floppy-disk",
       "title": "The BTK Floppy Disk",
       "date": "2026-10-23",
