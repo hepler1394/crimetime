@@ -610,3 +610,4 @@ with an [auto] tag — the counter on Mission Control reads this file.
 544. [auto 2026-10-23] Published new quiz: "Why Cases Go Cold" (5 questions)
 545. [auto 2026-10-27] Published blog post from research notes: "Forensic Odontology: Using Dental Records to Solve Cases" (1429 words, 6 sources)
 546. [auto 2026-10-27] Published new quiz: "ViCAP: Inside the FBI's Crime Database" (5 questions)
+547. [auto 2026-10-30] Published new quiz: "When the System Gets It Wrong" (5 questions)

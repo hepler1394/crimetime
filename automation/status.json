@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-30T13:08:00.621Z",
-  "improvementsShipped": 546,
+  "generated": "2026-10-30T14:03:06.322Z",
+  "improvementsShipped": 547,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
     "content": [
@@ -14,8 +14,8 @@
     "posts": 26,
     "merchDesigns": 34,
     "merchCollection": 0,
-    "quizzes": 22,
-    "quizQuestions": 110,
+    "quizzes": 23,
+    "quizQuestions": 115,
     "fbiCases": 150,
     "videos": 1,
     "topicsQueued": 113,
@@ -31,17 +31,17 @@
       "date": "2026-10-27"
     },
     "quiz": {
-      "title": "ViCAP: Inside the FBI's Crime Database",
-      "created": "2026-10-27"
+      "title": "When the System Gets It Wrong",
+      "created": "2026-10-30"
     }
   },
   "freshness": {
-    "episodesJson": "2026-10-30T13:07:38.471Z",
-    "blogJson": "2026-10-30T13:07:34.635Z",
+    "episodesJson": "2026-10-30T14:00:14.185Z",
+    "blogJson": "2026-10-27T14:02:13.908Z",
     "merchJson": "2026-09-22T14:02:22.646Z",
-    "quizzesJson": "2026-10-27T14:02:49.001Z",
-    "fbiJson": "2026-10-30T13:07:38.824Z",
-    "css": "2026-10-30T13:07:34.703Z"
+    "quizzesJson": "2026-10-30T14:02:46.312Z",
+    "fbiJson": "2026-10-30T14:00:15.748Z",
+    "css": "2026-10-06T04:47:48.161Z"
   },
   "nextTopics": [
     "How behavioral profilers build a sketch of an offender",

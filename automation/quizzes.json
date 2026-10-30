@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-10-27T14:02:49.001Z"
+    "updated": "2026-10-30T14:02:46.312Z"
   },
   "quizzes": [
+    {
+      "slug": "when-the-system-gets-it-wrong",
+      "title": "When the System Gets It Wrong",
+      "tag": "Justice Examined",
+      "description": "Wrongful convictions don't come from nowhere. Here's what the case files actually show about how innocent people end up behind bars — and how they get out.",
+      "created": "2026-10-30",
+      "sourceTopic": "How Wrongful Convictions Happen and How They Get Undone",
+      "questions": [
+        {
+          "q": "Which type of evidence has been identified as the single leading contributing factor in wrongful convictions later overturned by DNA evidence, according to innocence organizations?",
+          "options": [
+            "False confessions",
+            "Eyewitness misidentification",
+            "Jailhouse informant testimony",
+            "Flawed forensic science"
+          ],
+          "answer": 1,
+          "explain": "Eyewitness misidentification shows up in a striking majority of DNA exoneration cases. Memory isn't a recording — it's reconstructive, and lineup procedures, lighting, stress, and cross-racial identification all affect what a witness genuinely believes they saw. The Innocence Project has documented this pattern across hundreds of cases."
+        },
+        {
+          "q": "The Innocence Project was co-founded in 1992 at which law school?",
+          "options": [
+            "Yale Law School",
+            "Harvard Law School",
+            "Cardozo School of Law",
+            "Georgetown Law Center"
+          ],
+          "answer": 2,
+          "explain": "Barry Scheck and Peter Neufeld launched the Innocence Project at Cardozo School of Law in New York. The model — law students working live cases under faculty supervision — has since spread to innocence organizations in dozens of states and several other countries."
+        },
+        {
+          "q": "A false confession contributing to a wrongful conviction is often categorized by researchers as one of three types. Which of the following is a recognized category?",
+          "options": [
+            "Retracted confession",
+            "Coerced-compliant confession",
+            "Recorded confession",
+            "Partial confession"
+          ],
+          "answer": 1,
+          "explain": "Researchers Richard Leo and Gisli Gudjonsson identified three core types: voluntary, coerced-compliant, and coerced-internalized. A coerced-compliant confession happens when a person knows they're innocent but confesses anyway — often after prolonged interrogation — calculating that cooperating is the only way out of the immediate pressure."
+        },
+        {
+          "q": "What is a 'Brady violation' in the context of wrongful convictions?",
+          "options": [
+            "A juror who lies during selection to influence a verdict",
+            "A defense attorney who fails to investigate alibi witnesses",
+            "A prosecutor who withholds evidence favorable to the defendant",
+            "A judge who refuses to allow expert testimony at trial"
+          ],
+          "answer": 2,
+          "explain": "Brady v. Maryland (1963) established that prosecutors must disclose any material evidence favorable to the defense. When that evidence is hidden — whether exculpatory facts or information that undercuts a key witness — it's called a Brady violation. It turns up repeatedly when wrongful conviction cases are later reviewed."
+        },
+        {
+          "q": "Which U.S. federal law, passed in 2004, created a process allowing convicted individuals to petition for post-conviction DNA testing in federal cases?",
+          "options": [
+            "The Justice for All Act",
+            "The Exoneration Reform Act",
+            "The Wrongful Conviction Relief Act",
+            "The Criminal Evidence Modernization Act"
+          ],
+          "answer": 0,
+          "explain": "The Justice for All Act of 2004 expanded access to post-conviction DNA testing and also strengthened protections for crime victims. It's one of the clearest examples of legislation directly shaped by what exoneration cases revealed about gaps in the system. Read the record on how rarely the testing gets used even when it's available — that part of the story is still unfolding."
+        }
+      ]
+    },
     {
       "slug": "vicap-inside-the-fbi-s-crime-database",
       "title": "ViCAP: Inside the FBI's Crime Database",
