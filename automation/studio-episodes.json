@@ -296,6 +296,30 @@
         "serial killer",
         "metadata"
       ]
+    },
+    {
+      "guid": "cts-studio-the-doomsday-mom",
+      "title": "The Doomsday Mom",
+      "slug": "the-doomsday-mom",
+      "date": "2026-11-01",
+      "pubDate": "Sun, 01 Nov 2026 04:41:20 GMT",
+      "duration": "00:28:54",
+      "description": "I'm Cory, and today on CrimeTimeSnacks we are looking into the deeply disturbing case of Lori Vallow Daybell and Chad Daybell. What began with the disappearance of two children in Rexburg, Idaho, quickly unraveled into a complex web of extreme fringe beliefs, suspicious deaths, and a sudden flight to Hawaii.\n\nWe will trace the timeline of how a religious fiction author and a mother of three crossed paths, forming a small apocalyptic group. From the initial police inquiries to the discovery of a tragic crime scene, we will explore the documented evidence of how doomsday ideologies and financial motives merged into a series of unthinkable acts.",
+      "audio": "/audio/the-doomsday-mom.mp3",
+      "audioType": "audio/mpeg",
+      "audioBytes": 27749708,
+      "image": "/images/episodes/the-doomsday-mom.jpg",
+      "link": "",
+      "explicit": false,
+      "source": "studio",
+      "keywords": [
+        "Lori Vallow Daybell",
+        "Chad Daybell",
+        "Rexburg Idaho",
+        "Doomsday Mom",
+        "Tylee Ryan",
+        "JJ Vallow"
+      ]
     }
   ]
 }

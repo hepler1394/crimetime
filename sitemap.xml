@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.crimetimesnacks.com/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -175,7 +175,7 @@
   </url>
   <url>
     <loc>https://www.crimetimesnacks.com/cases.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -258,6 +258,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.crimetimesnacks.com/cases/the-doomsday-mom.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.crimetimesnacks.com/cases/the-interrogation-of-chris-watts.html</loc>
     <lastmod>2026-09-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -300,7 +306,7 @@
   </url>
   <url>
     <loc>https://www.crimetimesnacks.com/episodes.html</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -373,6 +379,12 @@
   <url>
     <loc>https://www.crimetimesnacks.com/episodes/the-disappearance-of-gabby-petito.html</loc>
     <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.crimetimesnacks.com/episodes/the-doomsday-mom.html</loc>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
