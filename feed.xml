@@ -7,7 +7,7 @@
     <title>CrimeTimeSnacks • A True Crime Podcast</title>
     <link>https://www.crimetimesnacks.com/</link>
     <atom:link href="https://www.crimetimesnacks.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 01 Nov 2026 04:41:23 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2026 05:16:55 GMT</lastBuildDate>
     <language>en</language>
     <copyright>&#169; 2026 Cory</copyright>
     <description>CrimeTimeSnacks is a true crime podcast about the cases people argue about, built from the public record: court filings, released case files and years of reporting. Each episode lays out the facts, the theories and the evidence, says what is still unknown, and leaves the conclusion to you.</description>
@@ -37,6 +37,23 @@ We will trace the timeline of how a religious fiction author and a mother of thr
       <itunes:duration>00:28:54</itunes:duration>
       <enclosure url="https://www.crimetimesnacks.com/audio/the-doomsday-mom.mp3" length="27749708" type="audio/mpeg" />
       <itunes:image href="https://www.crimetimesnacks.com/images/episodes/the-doomsday-mom.jpg" />
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>The Disappearance of Maura Murray</title>
+      <link>https://www.crimetimesnacks.com/episodes/the-disappearance-of-maura-murray.html</link>
+      <guid isPermaLink="false">cts-studio-the-disappearance-of-maura-murray</guid>
+      <pubDate>Sun, 01 Nov 2026 05:16:52 GMT</pubDate>
+      <description>I&apos;m Cory, and today we&apos;re looking at a case that has baffled investigators for two decades. In 2004, a nursing student packed up her dorm room, emailed her professors a fake excuse, and drove north into the White Mountains.
+
+When she crashed her car on Route 112, a passing driver offered help, but she refused. By the time police arrived minutes later, she was gone. We&apos;ll walk through her final days, the strange decisions she made before leaving, and the massive online mystery her disappearance became.</description>
+      <itunes:summary>I&apos;m Cory, and today we&apos;re looking at a case that has baffled investigators for two decades. In 2004, a nursing student packed up her dorm room, emailed her professors a fake excuse, and drove north into the White Mountains.
+
+When she crashed her car on Route 112, a passing driver offered help, but she refused. By the time police arrived minutes later, she was gone. We&apos;ll walk through her final days, the strange decisions she made before leaving, and the massive online mystery her disappearance became.</itunes:summary>
+      <itunes:author>Cory</itunes:author>
+      <itunes:duration>00:23:11</itunes:duration>
+      <enclosure url="https://www.crimetimesnacks.com/audio/the-disappearance-of-maura-murray.mp3" length="22255651" type="audio/mpeg" />
+      <itunes:image href="https://www.crimetimesnacks.com/images/episodes/the-disappearance-of-maura-murray.jpg" />
       <itunes:explicit>false</itunes:explicit>
     </item>
     <item>

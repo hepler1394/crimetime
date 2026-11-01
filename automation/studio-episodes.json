@@ -320,6 +320,30 @@
         "Tylee Ryan",
         "JJ Vallow"
       ]
+    },
+    {
+      "guid": "cts-studio-the-disappearance-of-maura-murray",
+      "title": "The Disappearance of Maura Murray",
+      "slug": "the-disappearance-of-maura-murray",
+      "date": "2026-11-01",
+      "pubDate": "Sun, 01 Nov 2026 05:16:52 GMT",
+      "duration": "00:23:11",
+      "description": "I'm Cory, and today we're looking at a case that has baffled investigators for two decades. In 2004, a nursing student packed up her dorm room, emailed her professors a fake excuse, and drove north into the White Mountains.\n\nWhen she crashed her car on Route 112, a passing driver offered help, but she refused. By the time police arrived minutes later, she was gone. We'll walk through her final days, the strange decisions she made before leaving, and the massive online mystery her disappearance became.",
+      "audio": "/audio/the-disappearance-of-maura-murray.mp3",
+      "audioType": "audio/mpeg",
+      "audioBytes": 22255651,
+      "image": "/images/episodes/the-disappearance-of-maura-murray.jpg",
+      "link": "",
+      "explicit": false,
+      "source": "studio",
+      "keywords": [
+        "Maura Murray",
+        "Route 112",
+        "UMass Amherst",
+        "missing person",
+        "New Hampshire cold case",
+        "true crime podcast"
+      ]
     }
   ]
 }
