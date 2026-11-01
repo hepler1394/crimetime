@@ -1,0 +1,48 @@
+{
+  "title": "Murdaugh: the verdict is gone, the retrial is set",
+  "status": "rejected",
+  "created": "2026-10-06T20:10:00-05:00",
+  "case": "murdaugh-family-murders",
+  "episode": "the-murdaugh-family-murders",
+  "caption": "The verdict is gone. The case is not.\n\nMarch 2, 2023: a Colleton County jury convicted Alex Murdaugh of murdering his wife, Maggie, and their son, Paul. He was sentenced to two consecutive life terms.\n\nMay 13, 2026: the South Carolina Supreme Court unanimously threw out the murder convictions and ordered a new trial, citing jury interference by the county clerk of court, Becky Hill.\n\nHe is still in prison on his state and federal sentences for financial crimes, which he pleaded guilty to. On the murders he is presumed innocent again unless a new jury finds otherwise. He has denied killing Maggie and Paul from the start.\n\nThe retrial is set for April 5, 2027, moved to Sumter County.\n\nThe full timeline is on the blog. Link in bio.\n\n#murdaugh #alexmurdaugh #murdaughmurders #southcarolina #truecrime #truecrimepodcast #truecrimecommunity #crimetimesnacks",
+  "slides": [
+    {
+      "kind": "line",
+      "eyebrow": "Murdaugh  /  May 13, 2026",
+      "big": "The verdict is gone. <span class=\"r\">The case is not.</span>",
+      "bigSize": 132
+    },
+    {
+      "kind": "text",
+      "eyebrow": "What happened",
+      "bodySize": 48,
+      "body": [
+        "March 2, 2023: a Colleton County jury convicted Alex Murdaugh of murdering his wife, Maggie, and their son, Paul. Two consecutive life terms.",
+        "May 13, 2026: the South Carolina Supreme Court unanimously threw out the murder convictions and ordered a new trial.",
+        "<span class=\"q\">The court cited jury interference by the county clerk of court, Becky Hill.</span>"
+      ]
+    },
+    {
+      "kind": "end",
+      "eyebrow": "Where it stands",
+      "bodySize": 48,
+      "body": [
+        "He is still in prison for financial crimes he pleaded guilty to. On the murders he is presumed innocent again.",
+        "Retrial: <span class=\"r\">April 5, 2027</span>, moved to Sumter County."
+      ],
+      "kicker": "The full timeline,<br><span class=\"r\">link in bio.</span>",
+      "foot": [
+        "@crimetimesnacks",
+        "crimetimesnacks.com"
+      ]
+    }
+  ],
+  "art": "Cory's episode cover, reformatted for Instagram. No generated imagery.",
+  "rendered": "2026-10-07T01:05:09.002Z",
+  "files": [
+    "slide-1.jpg",
+    "slide-2.jpg",
+    "slide-3.jpg"
+  ],
+  "note": "Ready 2026-10-06 but never posted (the browser was signed out of @crimetimesnacks). Superseded 2026-10-31: the autopilot posted two Murdaugh retrial carousels itself (DfDy15ulBVY on Oct 28, DfLqIgfDsR2 on Oct 31), so this three-week-old card is retired rather than posted late."
+}
