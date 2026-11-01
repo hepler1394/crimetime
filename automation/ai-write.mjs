@@ -56,6 +56,9 @@ const today = new Date().toLocaleDateString("en-CA");
 
 const slugify = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60);
 const readJson = async (p, fb) => { try { return JSON.parse(await readFile(p, "utf8")); } catch { return fb; } };
+// Models wrap the JSON in a code fence now and then: the 2026-10-30 content run lost its post to
+// "Unexpected token '`'". Same strip gen-quiz.mjs and episode-draft.mjs already apply.
+const stripFence = (s) => String(s).replace(/<think>[\s\S]*?<\/think>/gi, "").replace(/^\s*```(?:json)?\s*/i, "").replace(/\s*```\s*$/i, "").trim();
 const finish = (message, code = 0) => { console.log(message); process.exit(code); };
 
 const blogPath = join(__dirname, "blog.json");
@@ -170,7 +173,7 @@ let draft, provider;
 try {
   const r = await chat(SYSTEM, user, cfg);
   provider = r.provider;
-  draft = toPost(JSON.parse(r.text));
+  draft = toPost(JSON.parse(stripFence(r.text)));
 } catch (e) { finish(`Writer failed: ${e.message}`, 1); }
 
 // Three checks, one rewrite: names and numbers not in the notes, quotations not in the notes
@@ -188,7 +191,7 @@ if (found.missing.length || found.quotes.length || found.stock.length) {
   console.log(`Check: ${asks.join(" ")} One rewrite.`);
   try {
     const r = await chat(SYSTEM, `${user}\n\nYOUR PREVIOUS DRAFT\n${JSON.stringify(draft)}\n\n${asks.join("\n")}\nKeep everything else. Same JSON shape.`, cfg);
-    const second = toPost(JSON.parse(r.text));
+    const second = toPost(JSON.parse(stripFence(r.text)));
     if (second.body.length) draft = second;
   } catch (e) { console.log(`Rewrite failed: ${e.message}`); }
   found = check(draft);
@@ -203,7 +206,7 @@ if (words < MIN_WORDS && draft.body.length) {
   console.log(`Check: ${words} words, under ${MIN_WORDS}. One expansion.`);
   try {
     const r = await chat(SYSTEM, `${user}\n\nYOUR PREVIOUS DRAFT\n${JSON.stringify(draft)}\n\nThis draft is ${words} words. The post must be 1,100 to 1,500 words. Expand it with more of what the RESEARCH NOTES contain: more of the record, more specifics, more sections where the notes support them. Add nothing that is not in the notes. Keep the title. Same JSON shape.`, cfg);
-    const bigger = toPost(JSON.parse(r.text));
+    const bigger = toPost(JSON.parse(stripFence(r.text)));
     if (postWords(bigger) > words) { draft = bigger; found = check(draft); missing = factIssues(found); }
   } catch (e) { console.log(`Expansion failed: ${e.message}`); }
   words = postWords(draft);
