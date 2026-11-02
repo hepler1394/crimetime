@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-02T06:30:02.072Z",
+  "generated": "2026-11-02T21:46:46.692Z",
   "improvementsShipped": 549,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
@@ -36,12 +36,12 @@
     }
   },
   "freshness": {
-    "episodesJson": "2026-11-02T06:21:51.753Z",
-    "blogJson": "2026-11-02T06:21:47.712Z",
+    "episodesJson": "2026-11-02T21:46:23.972Z",
+    "blogJson": "2026-11-02T21:46:18.933Z",
     "merchJson": "2026-09-22T14:02:22.646Z",
     "quizzesJson": "2026-10-30T14:02:46.312Z",
-    "fbiJson": "2026-11-02T06:21:52.141Z",
-    "css": "2026-11-02T06:21:47.789Z"
+    "fbiJson": "2026-11-02T21:46:24.736Z",
+    "css": "2026-11-02T21:46:19.034Z"
   },
   "nextTopics": [
     "How behavioral profilers build a sketch of an offender",
