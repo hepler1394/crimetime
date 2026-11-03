@@ -613,3 +613,5 @@ with an [auto] tag — the counter on Mission Control reads this file.
 547. [auto 2026-10-30] Published new quiz: "When the System Gets It Wrong" (5 questions)
 548. [auto 2026-11-01] Published podcast episode from the studio: "The Doomsday Mom" (00:28:54)
 549. [auto 2026-11-01] Published podcast episode from the studio: "The Disappearance of Maura Murray" (00:23:11)
+550. [auto 2026-11-03] Published blog post from research notes: "The Disappearance of Maura Murray" (1647 words, 5 sources)
+551. [auto 2026-11-03] Published new quiz: "The Lori Vallow Daybell Case" (5 questions)

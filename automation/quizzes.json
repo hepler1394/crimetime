@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-10-30T14:02:46.312Z"
+    "updated": "2026-11-03T15:02:50.977Z"
   },
   "quizzes": [
+    {
+      "slug": "the-lori-vallow-daybell-case",
+      "title": "The Lori Vallow Daybell Case",
+      "tag": "Episode Case",
+      "description": "You know the headlines about Lori Vallow. Let's see how well you actually know the documented timeline in the case file.",
+      "created": "2026-11-03",
+      "sourceTopic": "The Doomsday Mom",
+      "questions": [
+        {
+          "q": "Where were Lori Vallow and Chad Daybell staying when police first served a search warrant on them in January 2020?",
+          "options": [
+            "Kauai, Hawaii",
+            "Rexburg, Idaho",
+            "Chandler, Arizona",
+            "Salt Lake City, Utah"
+          ],
+          "answer": 0,
+          "explain": "Authorities tracked Lori and Chad to a resort pool in Princeville, Kauai. Police served Lori with an order to produce her children within five days, which she ignored."
+        },
+        {
+          "q": "Which family member was shot and killed by Lori's brother Alex Cox in Chandler, Arizona, in July 2019?",
+          "options": [
+            "Tammy Daybell",
+            "Charles Vallow",
+            "Joseph Ryan",
+            "Kay Woodcock"
+          ],
+          "answer": 1,
+          "explain": "Alex Cox claimed self-defense when he shot Charles Vallow. Later, Arizona prosecutors reviewed text messages and officially indicted Lori with conspiracy to commit first-degree murder."
+        },
+        {
+          "q": "On whose property did investigators ultimately locate the remains of JJ Vallow and Tylee Ryan in June 2020?",
+          "options": [
+            "Alex Cox",
+            "Melanie Gibb",
+            "Chad Daybell",
+            "Charles Vallow"
+          ],
+          "answer": 2,
+          "explain": "The case file shows investigators used cell site data from Alex Cox's phone to pinpoint the exact search areas in Chad Daybell's Rexburg, Idaho backyard."
+        },
+        {
+          "q": "What was the official cause of death ruled for Chad Daybell's first wife, Tammy Daybell, following her exhumation?",
+          "options": [
+            "Carbon monoxide poisoning",
+            "Asphyxiation",
+            "Blunt force trauma",
+            "Drug overdose"
+          ],
+          "answer": 1,
+          "explain": "Tammy's death was originally recorded as natural causes in her sleep. After investigators exhumed her body for an autopsy, the medical examiner determined she died of asphyxiation."
+        },
+        {
+          "q": "In May 2023, what was the verdict at Lori Vallow Daybell's trial in Boise, Idaho?",
+          "options": [
+            "Guilty on all counts",
+            "Acquitted by reason of insanity",
+            "Hung jury on murder charges",
+            "Guilty plea agreement before verdict"
+          ],
+          "answer": 0,
+          "explain": "Jurors deliberated for roughly seven hours before finding Lori guilty on all counts, including the first-degree murders of JJ Vallow and Tylee Ryan."
+        }
+      ]
+    },
     {
       "slug": "when-the-system-gets-it-wrong",
       "title": "When the System Gets It Wrong",
