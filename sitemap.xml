@@ -258,6 +258,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.crimetimesnacks.com/cases/ted-bundy-and-the-murder-of-kimberly-leach.html</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.crimetimesnacks.com/cases/the-btk-floppy-disk.html</loc>
     <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
@@ -391,6 +397,12 @@
   <url>
     <loc>https://www.crimetimesnacks.com/episodes/murders-in-moscow.html</loc>
     <lastmod>2025-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.crimetimesnacks.com/episodes/ted-bundy-and-the-murder-of-kimberly-leach.html</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

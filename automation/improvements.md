@@ -617,3 +617,4 @@ with an [auto] tag — the counter on Mission Control reads this file.
 551. [auto 2026-11-03] Published new quiz: "The Lori Vallow Daybell Case" (5 questions)
 552. [auto 2026-11-06] Published podcast episode from the studio: "The Disappearance of Laci Peterson" (00:28:57)
 553. [auto 2026-11-06] Published podcast episode from the studio: "The Zodiac Ciphers" (00:26:22)
+554. [auto 2026-11-06] Published podcast episode from the studio: "Ted Bundy and the Murder of Kimberly Leach" (00:28:08)

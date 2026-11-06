@@ -1,5 +1,5 @@
 {
-  "fetched": "2026-11-06T08:12:42.465Z",
+  "fetched": "2026-11-06T08:37:13.523Z",
   "cases": [
     {
       "slug": "maura-murray",
@@ -16,7 +16,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "moscow-idaho-the-plea",
@@ -33,7 +33,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "jonbenet-thirty-years",
@@ -50,24 +50,24 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
-      "slug": "the-doomsday-mom",
-      "title": "The Doomsday Mom",
-      "summary": "I'm Cory, and today on CrimeTimeSnacks we are looking into the deeply disturbing case of Lori Vallow Daybell and Chad Daybell. What began with the disappearance of two children in Rexburg, Idaho, quickly unraveled into a complex web of extreme fringe beliefs, suspicious deaths, and a sudden flight to Hawaii.\n\nWe will trace the timeline of how a religious fiction author and a mother of three crossed paths, forming a small apocalyptic group. From the initial police inquiries to the discovery of a tragic crime scene, we will explore the documented evidence of how doomsday ideologies and financial motives merged into a series of unthinkable acts.",
+      "slug": "ted-bundy-and-the-murder-of-kimberly-leach",
+      "title": "Ted Bundy and the Murder of Kimberly Leach",
+      "summary": "I'm Cory, and this week on CrimeTimeSnacks, we are looking at the devastating timeline of Ted Bundy's crimes and his eventual capture in Florida.\n\nFrom his early murders in Washington and Utah to his brazen escape from a Colorado jail, Bundy left a trail of terror across the country. He used a fake arm sling and a charming demeanor to lure young women to his Volkswagen Beetle, vanishing them into the night.\n\nBut his arrival in Florida in 1978 brought a new level of horror when a twelve-year-old girl disappeared from her school. We'll walk through the timeline, the escapes, and the stolen car in Pensacola that finally brought his cross-country reign to a halt.",
       "angle": "",
       "years": "2026",
       "status": "open",
       "category": "case",
       "next_date": null,
       "next_label": "",
-      "image": "/images/episodes/the-doomsday-mom.jpg",
-      "episode_slug": "the-doomsday-mom",
+      "image": "/images/episodes/ted-bundy-and-the-murder-of-kimberly-leach.jpg",
+      "episode_slug": "ted-bundy-and-the-murder-of-kimberly-leach",
       "sources": [],
       "featured": false,
-      "created_at": "2026-11-01T04:41:16.685548+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "created_at": "2026-11-06T08:36:40.767069+00:00",
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "golden-state-killer",
@@ -84,7 +84,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "gabby-petito",
@@ -101,7 +101,24 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+    },
+    {
+      "slug": "the-doomsday-mom",
+      "title": "The Doomsday Mom",
+      "summary": "I'm Cory, and today on CrimeTimeSnacks we are looking into the deeply disturbing case of Lori Vallow Daybell and Chad Daybell. What began with the disappearance of two children in Rexburg, Idaho, quickly unraveled into a complex web of extreme fringe beliefs, suspicious deaths, and a sudden flight to Hawaii.\n\nWe will trace the timeline of how a religious fiction author and a mother of three crossed paths, forming a small apocalyptic group. From the initial police inquiries to the discovery of a tragic crime scene, we will explore the documented evidence of how doomsday ideologies and financial motives merged into a series of unthinkable acts.",
+      "angle": "",
+      "years": "2026",
+      "status": "open",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "/images/episodes/the-doomsday-mom.jpg",
+      "episode_slug": "the-doomsday-mom",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-11-01T04:41:16.685548+00:00",
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "the-btk-floppy-disk",
@@ -118,7 +135,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-10-03T03:40:30.155714+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "the-murdaugh-family-murders",
@@ -135,7 +152,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-24T05:44:46.08741+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "gilgo-beach-eight-names",
@@ -152,24 +169,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-20T17:04:47.335399+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
-    },
-    {
-      "slug": "murders-in-moscow",
-      "title": "Murders in Moscow",
-      "summary": "In this gripping episode of Crime Time Snacks , we delve into the harrowing case of the Idaho student murders that rocked the nation. On November 13, 2022, four University of Idaho students — Ethan Chapin, Madison Mogen, Xana Kernodle, and Kaylee Goncalves — were tragically murdered in their off-campus rental home in Moscow, Idaho. This episode unpacks the chilling events, the ongoing investigation, and the complexities surrounding the case.",
-      "angle": "",
-      "years": "2022-2025",
-      "status": "convicted",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "/images/episodes/murders-in-moscow.jpg",
-      "episode_slug": "murders-in-moscow",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "long-island-serial-killer",
@@ -186,7 +186,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "chris-watts-confession",
@@ -203,7 +203,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "menendez-the-parole-years",
@@ -220,228 +220,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
-    },
-    {
-      "slug": "brian-laundrie-notebook",
-      "title": "The Laundrie Notebook",
-      "summary": "What the FBI released about the notebook found in the Carlton Reserve and how it closed the Petito case.",
-      "angle": "What the FBI released about the notebook found in the Carlton Reserve and how it closed the Petito case.",
-      "years": "2021-2022",
-      "status": "closed",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "",
-      "episode_slug": "",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
-    },
-    {
-      "slug": "kendrick-johnson",
-      "title": "Kendrick Johnson",
-      "summary": "The gym mat in Valdosta, two autopsies with different findings, and the case that was reopened and closed again.",
-      "angle": "The gym mat in Valdosta, two autopsies with different findings, and the case that was reopened and closed again.",
-      "years": "2013-present",
-      "status": "open",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "",
-      "episode_slug": "",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
-    },
-    {
-      "slug": "the-disappearance-of-laci-peterson",
-      "title": "The Disappearance of Laci Peterson",
-      "summary": "Hey everyone, it's Cory. Today we are looking at a case that completely took over the news cycle in late 2002. Laci Peterson was twenty-seven years old and eight months pregnant with her first child when she vanished from her home in Modesto, California, on Christmas Eve.\n\nThe search for Laci and her unborn son Conner brought in massive numbers of volunteers and national headlines. We are going to walk through Laci and Scott's early lives, their meeting in college, and the secrets that were hiding just beneath the surface of their seemingly perfect life.",
-      "angle": "",
-      "years": "2026",
-      "status": "open",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "/images/episodes/the-disappearance-of-laci-peterson.jpg",
-      "episode_slug": "the-disappearance-of-laci-peterson",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-11-06T07:44:08.268988+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
-    },
-    {
-      "slug": "elisa-lam",
-      "title": "Elisa Lam and the Cecil Hotel",
-      "summary": "The elevator footage, what the coroner actually concluded, and how the internet built a case that was never there.",
-      "angle": "The elevator footage, what the coroner actually concluded, and how the internet built a case that was never there.",
-      "years": "2013",
-      "status": "closed",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "/images/episodes/elisa-lam-and-the-cecil-hotel.jpg",
-      "episode_slug": "elisa-lam-and-the-cecil-hotel",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
-    },
-    {
-      "slug": "alex-murdaugh",
-      "title": "Alex Murdaugh",
-      "summary": "The kennel video timestamp, the financial crimes underneath the murders, and the 2023 verdict.",
-      "angle": "The kennel video timestamp, the financial crimes underneath the murders, and the 2023 verdict.",
-      "years": "2021-present",
-      "status": "open",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "",
-      "episode_slug": "",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
-    },
-    {
-      "slug": "btk-dennis-rader",
-      "title": "BTK: The Floppy Disk",
-      "summary": "How a metadata slip on a church computer ended thirty years of letters from Dennis Rader.",
-      "angle": "How a metadata slip on a church computer ended thirty years of letters from Dennis Rader.",
-      "years": "1974-2005",
-      "status": "convicted",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "",
-      "episode_slug": "",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
-    },
-    {
-      "slug": "zodiac-killer",
-      "title": "The Zodiac Killer",
-      "summary": "The confirmed attacks, the ciphers that were solved and the ones that were not, and why the case is still open.",
-      "angle": "The confirmed attacks, the ciphers that were solved and the ones that were not, and why the case is still open.",
-      "years": "1968-1969",
-      "status": "cold",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "",
-      "episode_slug": "",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
-    },
-    {
-      "slug": "erik-and-lyle-the-menendez-brothers",
-      "title": "ERIK AND LYLE: The Menendez Brothers",
-      "summary": "The Menendez brothers, Lyle and Erik, have been in prison for over 35 years. They were convicted in 1996 for the 1989 murders of their parents and sentenced to life in prison without the possibility of parole. This is their story.",
-      "angle": "",
-      "years": "1989-present",
-      "status": "convicted",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "/images/episodes/erik-and-lyle-the-menendez-brothers.jpg",
-      "episode_slug": "erik-and-lyle-the-menendez-brothers",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
-    },
-    {
-      "slug": "delphi-the-appeal",
-      "title": "Delphi: The Appeal",
-      "summary": "A follow-up to the 2022 episode: the October 2022 arrest of Richard Allen, the 2024 trial, the November 2024 conviction and 130-year sentence, and the appeal argued before the Indiana Court of Appeals in September 2026. He is convicted and appealing.",
-      "angle": "A follow-up to the 2022 episode, for listeners who already know the case. Spend ONE short chapter recapping February 13 2017, the Monon High Bridge, Abby Williams, Libby German and the phone recording. Everything after that is what has happened SINCE: the October 2022 arrest of Richard Allen, the 2024 trial, the prison statements the defence attributed to psychosis, the November 2024 conviction, the 130-year sentence, and the appeal argued before the Indiana Court of Appeals on September 21 2026. He is convicted and appealing; say so, and do not treat the appeal as proof either way.",
-      "years": "2017-present",
-      "status": "convicted",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "/images/episodes/delphi-update-the-richard-allen-appeal.jpg",
-      "episode_slug": "delphi-update-the-richard-allen-appeal",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
-    },
-    {
-      "slug": "the-zodiac-ciphers",
-      "title": "The Zodiac Ciphers",
-      "summary": "I've covered a lot of cold cases, but nothing gets under my skin quite like the Zodiac. Between 1968 and 1969, a phantom stalked the San Francisco Bay Area, targeting couples on lonely roads and a cab driver in the city. But the murders were only half the story. The killer craved the spotlight, taunting police and the public with a bizarre trail of letters, bomb threats, and complex cryptograms sent directly to local newspapers.\n\nIn this episode, we are walking through the confirmed timeline of the Zodiac's terrifying reign. We will look at the brutal attacks that left five dead and two wounded, the desperate race to decode his ciphers before he struck again, and the chilling reality that some of those messages remained unsolved for over fifty years. Grab your snacks and settle in, because we are diving into one of the most infamous mysteries in American history.",
-      "angle": "",
-      "years": "2026",
-      "status": "open",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "/images/episodes/the-zodiac-ciphers.jpg",
-      "episode_slug": "the-zodiac-ciphers",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-11-06T08:12:07.439942+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
-    },
-    {
-      "slug": "lori-vallow",
-      "title": "Lori Vallow Daybell",
-      "summary": "The missing-children timeline in Rexburg, the doomsday beliefs entered into evidence, and the 2023 conviction.",
-      "angle": "The missing-children timeline in Rexburg, the doomsday beliefs entered into evidence, and the 2023 conviction.",
-      "years": "2019-2023",
-      "status": "convicted",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "",
-      "episode_slug": "",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
-    },
-    {
-      "slug": "scott-peterson",
-      "title": "Scott Peterson",
-      "summary": "The Christmas Eve disappearance of Laci Peterson, the Berkeley Marina, and what the LA Innocence Project is now arguing.",
-      "angle": "The Christmas Eve disappearance of Laci Peterson, the Berkeley Marina, and what the LA Innocence Project is now arguing.",
-      "years": "2002-present",
-      "status": "convicted",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "",
-      "episode_slug": "",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
-    },
-    {
-      "slug": "ted-bundy-escape",
-      "title": "Ted Bundy: The Two Escapes",
-      "summary": "The courthouse window in Aspen, the ceiling in Glenwood Springs, and the Florida murders that followed.",
-      "angle": "The courthouse window in Aspen, the ceiling in Glenwood Springs, and the Florida murders that followed.",
-      "years": "1977-1978",
-      "status": "closed",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "",
-      "episode_slug": "",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "the-menendez-brothers-parole-years",
@@ -458,7 +237,211 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-19T10:46:49.066069+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+    },
+    {
+      "slug": "murders-in-moscow",
+      "title": "Murders in Moscow",
+      "summary": "In this gripping episode of Crime Time Snacks , we delve into the harrowing case of the Idaho student murders that rocked the nation. On November 13, 2022, four University of Idaho students — Ethan Chapin, Madison Mogen, Xana Kernodle, and Kaylee Goncalves — were tragically murdered in their off-campus rental home in Moscow, Idaho. This episode unpacks the chilling events, the ongoing investigation, and the complexities surrounding the case.",
+      "angle": "",
+      "years": "2022-2025",
+      "status": "convicted",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "/images/episodes/murders-in-moscow.jpg",
+      "episode_slug": "murders-in-moscow",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+    },
+    {
+      "slug": "elisa-lam",
+      "title": "Elisa Lam and the Cecil Hotel",
+      "summary": "The elevator footage, what the coroner actually concluded, and how the internet built a case that was never there.",
+      "angle": "The elevator footage, what the coroner actually concluded, and how the internet built a case that was never there.",
+      "years": "2013",
+      "status": "closed",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "/images/episodes/elisa-lam-and-the-cecil-hotel.jpg",
+      "episode_slug": "elisa-lam-and-the-cecil-hotel",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+    },
+    {
+      "slug": "alex-murdaugh",
+      "title": "Alex Murdaugh",
+      "summary": "The kennel video timestamp, the financial crimes underneath the murders, and the 2023 verdict.",
+      "angle": "The kennel video timestamp, the financial crimes underneath the murders, and the 2023 verdict.",
+      "years": "2021-present",
+      "status": "open",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "",
+      "episode_slug": "",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+    },
+    {
+      "slug": "btk-dennis-rader",
+      "title": "BTK: The Floppy Disk",
+      "summary": "How a metadata slip on a church computer ended thirty years of letters from Dennis Rader.",
+      "angle": "How a metadata slip on a church computer ended thirty years of letters from Dennis Rader.",
+      "years": "1974-2005",
+      "status": "convicted",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "",
+      "episode_slug": "",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+    },
+    {
+      "slug": "zodiac-killer",
+      "title": "The Zodiac Killer",
+      "summary": "The confirmed attacks, the ciphers that were solved and the ones that were not, and why the case is still open.",
+      "angle": "The confirmed attacks, the ciphers that were solved and the ones that were not, and why the case is still open.",
+      "years": "1968-1969",
+      "status": "cold",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "",
+      "episode_slug": "",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+    },
+    {
+      "slug": "brian-laundrie-notebook",
+      "title": "The Laundrie Notebook",
+      "summary": "What the FBI released about the notebook found in the Carlton Reserve and how it closed the Petito case.",
+      "angle": "What the FBI released about the notebook found in the Carlton Reserve and how it closed the Petito case.",
+      "years": "2021-2022",
+      "status": "closed",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "",
+      "episode_slug": "",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+    },
+    {
+      "slug": "kendrick-johnson",
+      "title": "Kendrick Johnson",
+      "summary": "The gym mat in Valdosta, two autopsies with different findings, and the case that was reopened and closed again.",
+      "angle": "The gym mat in Valdosta, two autopsies with different findings, and the case that was reopened and closed again.",
+      "years": "2013-present",
+      "status": "open",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "",
+      "episode_slug": "",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+    },
+    {
+      "slug": "the-disappearance-of-laci-peterson",
+      "title": "The Disappearance of Laci Peterson",
+      "summary": "Hey everyone, it's Cory. Today we are looking at a case that completely took over the news cycle in late 2002. Laci Peterson was twenty-seven years old and eight months pregnant with her first child when she vanished from her home in Modesto, California, on Christmas Eve.\n\nThe search for Laci and her unborn son Conner brought in massive numbers of volunteers and national headlines. We are going to walk through Laci and Scott's early lives, their meeting in college, and the secrets that were hiding just beneath the surface of their seemingly perfect life.",
+      "angle": "",
+      "years": "2026",
+      "status": "open",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "/images/episodes/the-disappearance-of-laci-peterson.jpg",
+      "episode_slug": "the-disappearance-of-laci-peterson",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-11-06T07:44:08.268988+00:00",
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+    },
+    {
+      "slug": "erik-and-lyle-the-menendez-brothers",
+      "title": "ERIK AND LYLE: The Menendez Brothers",
+      "summary": "The Menendez brothers, Lyle and Erik, have been in prison for over 35 years. They were convicted in 1996 for the 1989 murders of their parents and sentenced to life in prison without the possibility of parole. This is their story.",
+      "angle": "",
+      "years": "1989-present",
+      "status": "convicted",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "/images/episodes/erik-and-lyle-the-menendez-brothers.jpg",
+      "episode_slug": "erik-and-lyle-the-menendez-brothers",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+    },
+    {
+      "slug": "lori-vallow",
+      "title": "Lori Vallow Daybell",
+      "summary": "The missing-children timeline in Rexburg, the doomsday beliefs entered into evidence, and the 2023 conviction.",
+      "angle": "The missing-children timeline in Rexburg, the doomsday beliefs entered into evidence, and the 2023 conviction.",
+      "years": "2019-2023",
+      "status": "convicted",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "",
+      "episode_slug": "",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+    },
+    {
+      "slug": "scott-peterson",
+      "title": "Scott Peterson",
+      "summary": "The Christmas Eve disappearance of Laci Peterson, the Berkeley Marina, and what the LA Innocence Project is now arguing.",
+      "angle": "The Christmas Eve disappearance of Laci Peterson, the Berkeley Marina, and what the LA Innocence Project is now arguing.",
+      "years": "2002-present",
+      "status": "convicted",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "",
+      "episode_slug": "",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+    },
+    {
+      "slug": "ted-bundy-escape",
+      "title": "Ted Bundy: The Two Escapes",
+      "summary": "The courthouse window in Aspen, the ceiling in Glenwood Springs, and the Florida murders that followed.",
+      "angle": "The courthouse window in Aspen, the ceiling in Glenwood Springs, and the Florida murders that followed.",
+      "years": "1977-1978",
+      "status": "closed",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "",
+      "episode_slug": "",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "jonbenet-ramsey-dna",
@@ -475,7 +458,41 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+    },
+    {
+      "slug": "delphi-the-appeal",
+      "title": "Delphi: The Appeal",
+      "summary": "A follow-up to the 2022 episode: the October 2022 arrest of Richard Allen, the 2024 trial, the November 2024 conviction and 130-year sentence, and the appeal argued before the Indiana Court of Appeals in September 2026. He is convicted and appealing.",
+      "angle": "A follow-up to the 2022 episode, for listeners who already know the case. Spend ONE short chapter recapping February 13 2017, the Monon High Bridge, Abby Williams, Libby German and the phone recording. Everything after that is what has happened SINCE: the October 2022 arrest of Richard Allen, the 2024 trial, the prison statements the defence attributed to psychosis, the November 2024 conviction, the 130-year sentence, and the appeal argued before the Indiana Court of Appeals on September 21 2026. He is convicted and appealing; say so, and do not treat the appeal as proof either way.",
+      "years": "2017-present",
+      "status": "convicted",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "/images/episodes/delphi-update-the-richard-allen-appeal.jpg",
+      "episode_slug": "delphi-update-the-richard-allen-appeal",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-17T23:01:46.405034+00:00",
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+    },
+    {
+      "slug": "the-zodiac-ciphers",
+      "title": "The Zodiac Ciphers",
+      "summary": "I've covered a lot of cold cases, but nothing gets under my skin quite like the Zodiac. Between 1968 and 1969, a phantom stalked the San Francisco Bay Area, targeting couples on lonely roads and a cab driver in the city. But the murders were only half the story. The killer craved the spotlight, taunting police and the public with a bizarre trail of letters, bomb threats, and complex cryptograms sent directly to local newspapers.\n\nIn this episode, we are walking through the confirmed timeline of the Zodiac's terrifying reign. We will look at the brutal attacks that left five dead and two wounded, the desperate race to decode his ciphers before he struck again, and the chilling reality that some of those messages remained unsolved for over fifty years. Grab your snacks and settle in, because we are diving into one of the most infamous mysteries in American history.",
+      "angle": "",
+      "years": "2026",
+      "status": "open",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "/images/episodes/the-zodiac-ciphers.jpg",
+      "episode_slug": "the-zodiac-ciphers",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-11-06T08:12:07.439942+00:00",
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "adnan-syed",
@@ -492,7 +509,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "amanda-knox",
@@ -509,7 +526,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "kohberger-trial",
@@ -526,7 +543,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "delphi-richard-allen",
@@ -543,7 +560,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "casey-anthony",
@@ -560,7 +577,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "steven-avery",
@@ -577,7 +594,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "madeleine-mccann",
@@ -594,7 +611,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "tylenol-murders",
@@ -611,7 +628,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "dnd-mcstay-family",
@@ -628,7 +645,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "the-delphi-murder-case-2017",
@@ -645,7 +662,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "the-miami-apartment-stabbing",
@@ -662,7 +679,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-21T02:23:51.906377+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "the-interrogation-of-chris-watts",
@@ -679,7 +696,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-18T12:30:03.688863+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "watts-family-murders",
@@ -696,7 +713,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "jonbenet-ramsey-the-facts-96-22",
@@ -713,7 +730,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     },
     {
       "slug": "jonbenet-ramsey-americas-child-beauty-queen",
@@ -730,7 +747,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:12:07.439942+00:00"
+      "updated_at": "2026-11-06T08:36:40.767069+00:00"
     }
   ],
   "updates": [
@@ -1854,6 +1871,7 @@
     "maura-murray": 0,
     "murders-in-moscow": 0,
     "adnan-syed": 0,
+    "ted-bundy-and-the-murder-of-kimberly-leach": 0,
     "brian-laundrie-notebook": 0,
     "delphi-the-appeal": 0,
     "gilgo-beach-eight-names": 1,
