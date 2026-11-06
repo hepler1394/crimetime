@@ -344,6 +344,30 @@
         "New Hampshire cold case",
         "true crime podcast"
       ]
+    },
+    {
+      "guid": "cts-studio-the-disappearance-of-laci-peterson",
+      "title": "The Disappearance of Laci Peterson",
+      "slug": "the-disappearance-of-laci-peterson",
+      "date": "2026-11-06",
+      "pubDate": "Fri, 06 Nov 2026 07:44:14 GMT",
+      "duration": "00:28:57",
+      "description": "Hey everyone, it's Cory. Today we are looking at a case that completely took over the news cycle in late 2002. Laci Peterson was twenty-seven years old and eight months pregnant with her first child when she vanished from her home in Modesto, California, on Christmas Eve.\n\nThe search for Laci and her unborn son Conner brought in massive numbers of volunteers and national headlines. We are going to walk through Laci and Scott's early lives, their meeting in college, and the secrets that were hiding just beneath the surface of their seemingly perfect life.",
+      "audio": "/audio/the-disappearance-of-laci-peterson.mp3",
+      "audioType": "audio/mpeg",
+      "audioBytes": 27789014,
+      "image": "/images/episodes/the-disappearance-of-laci-peterson.jpg",
+      "link": "",
+      "explicit": false,
+      "source": "studio",
+      "keywords": [
+        "Laci Peterson",
+        "Scott Peterson",
+        "Modesto",
+        "Amber Frey",
+        "San Francisco Bay",
+        "true crime podcast"
+      ]
     }
   ]
 }
