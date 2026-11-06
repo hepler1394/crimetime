@@ -66,7 +66,9 @@ try {
     await render(browser, { ...base, mode: "cover", titleScale: 0.15, titleMaxH: 0.38 }, cover, { w: 1500, h: 1500, scale: 2, quality: 90 });
     await render(browser, { ...base, mode: "card", titleScale: 0.16, titleMaxH: 0.32 }, card, { w: 1080, h: 1350, quality: 94 });
     await render(browser, { ...base, mode: "reel", titleScale: 0.17, titleMaxH: 0.30 }, reel, { w: 1080, h: 1920, quality: 94 });
-    ep.files = { ...(ep.files || {}), cover: "cover.jpg", card: "card.jpg", reelStill: "reel.jpg" };
+    // artDate is the date printed on the stills; episode-publish.mjs renders them again when
+    // the episode goes out on a different day.
+    ep.files = { ...(ep.files || {}), cover: "cover.jpg", card: "card.jpg", reelStill: "reel.jpg", artDate: date };
     if (ep.status === "voiced" || ep.status === "scripted") ep.status = ep.status === "voiced" ? "designed" : ep.status;
     await writeFile(epPath, JSON.stringify(ep, null, 2) + "\n", "utf8");
     out({ ok: true, id, files: [cover, card, reel], message: `Art for ${id}: cover.jpg (3000x3000), card.jpg (1080x1350), reel.jpg (1080x1920)` });

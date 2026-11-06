@@ -135,6 +135,18 @@ if (!pushOnly) {
   await mkdir(join(__dirname, "transcripts"), { recursive: true });
   await copyFile(join(dir, "episode.mp3"), join(ROOT, audioRel));
   if (prevAudio && prevAudio !== audioRel) await rm(join(ROOT, prevAudio), { force: true });
+  // The art is rendered at draft time with the planned date. An episode that goes out later
+  // (the four held through October 2026 went out on Nov 1 with "Oct 12" on the cover) must
+  // not carry a date its own page contradicts, so the stills are rendered again with the real
+  // date, and the reel that was cut from the old still is cut again with them.
+  const artDate = ep.files?.artDate || ep.created?.slice(0, 10);
+  if (artDate && artDate !== date) {
+    ep.publishDate = date;
+    await writeFile(epPath, JSON.stringify(ep, null, 2) + "\n", "utf8");
+    sh(process.execPath, [join(__dirname, "episode-art.mjs"), id, "--json"], `episode-art (re-dating the art from ${artDate} to ${date})`);
+    if (ep.files?.reel) sh(process.execPath, [join(__dirname, "episode-social.mjs"), id, "--json"], "episode-social (re-cutting the reel from the new still)");
+    ep = JSON.parse(await readFile(epPath, "utf8"));
+  }
   await copyFile(join(dir, "cover.jpg"), join(ROOT, imageRel));
   // The public transcript of a synthesized episode is the script, never a transcriber's guess
   // (script-transcript.mjs). A draft voiced before 2026-09-24 still carries the old whisper
