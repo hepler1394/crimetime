@@ -1,0 +1,1866 @@
+{
+ "slug": "the-zodiac-ciphers",
+ "title": "The Zodiac Ciphers",
+ "language": "en",
+ "duration": 1582.4,
+ "model": "episode script, timed to the recording",
+ "generated": "2026-11-06",
+ "note": "This transcript is the episode script as written and fact-checked, timed to the recording. Timestamps are approximate within a sentence.",
+ "segments": [
+  {
+   "start": 5,
+   "end": 7.4,
+   "text": "What's up guys, welcome back to CrimeTimeSnacks."
+  },
+  {
+   "start": 7.4,
+   "end": 12.9,
+   "text": "The killer mailed pieces of a murdered taxi driver's bloodstained shirt to newspapers to prove he was the killer."
+  },
+  {
+   "start": 12.9,
+   "end": 20.4,
+   "text": "Two days after a cab driver named Paul Stine was shot in San Francisco, the killer mailed a letter to the San Francisco Chronicle taking credit for the crime."
+  },
+  {
+   "start": 20.4,
+   "end": 23.5,
+   "text": "Tucked inside that envelope was a bloody scrap of Stine's shirt."
+  },
+  {
+   "start": 23.5,
+   "end": 28.4,
+   "text": "It was undeniable proof that the person writing the letters was the person standing at the crime scene."
+  },
+  {
+   "start": 29.1,
+   "end": 34.3,
+   "text": "We are looking at the case of an unidentified serial killer who terrorized the San Francisco Bay Area."
+  },
+  {
+   "start": 34.3,
+   "end": 37.4,
+   "text": "The official record shows he murdered at least five people."
+  },
+  {
+   "start": 37.4,
+   "end": 44.2,
+   "text": "He claimed in his letters to have killed thirty-seven, but investigators have only definitively linked him to a handful of victims."
+  },
+  {
+   "start": 44.2,
+   "end": 50.5,
+   "text": "The confirmed, fatal attacks spanned a relatively short timeline, starting in December 1968 and ending in October 1969."
+  },
+  {
+   "start": 51,
+   "end": 55.9,
+   "text": "The evidence shows the killer targeted three young couples and one lone male cab driver."
+  },
+  {
+   "start": 55.9,
+   "end": 61.5,
+   "text": "He did not stay in one jurisdiction, operating instead across rural, urban, and suburban settings."
+  },
+  {
+   "start": 61.5,
+   "end": 67.7,
+   "text": "The attacks were spread across Benicia, Vallejo, unincorporated Napa County, and the city of San Francisco."
+  },
+  {
+   "start": 67.7,
+   "end": 73.3,
+   "text": "While five people tragically lost their lives, two of the victims actually survived their injuries."
+  },
+  {
+   "start": 73.9,
+   "end": 78,
+   "text": "The case became infamous because of how the killer communicated with the public."
+  },
+  {
+   "start": 78,
+   "end": 84.7,
+   "text": "On August 1, 1969, three different Bay Area newspapers received near-identical handwritten letters without return addresses."
+  },
+  {
+   "start": 84.7,
+   "end": 89.2,
+   "text": "The writer took credit for the local attacks and included three parts of a complex cipher."
+  },
+  {
+   "start": 89.2,
+   "end": 96.8,
+   "text": "He demanded the codes be printed on the front pages, threatening to cruise around all weekend killing lone people in the night if the papers refused."
+  },
+  {
+   "start": 97.3,
+   "end": 103.3,
+   "text": "A Vallejo police chief publicly doubted the letters were written by the actual murderer and asked for more facts."
+  },
+  {
+   "start": 103.3,
+   "end": 104.8,
+   "text": "The killer happily obliged."
+  },
+  {
+   "start": 104.8,
+   "end": 111.4,
+   "text": "On August 4, a newspaper received a second letter that started with the greeting, \"Dear Editor This is the Zodiac speaking.\""
+  },
+  {
+   "start": 111.4,
+   "end": 116.8,
+   "text": "That was the debut of the Zodiac persona, and the first time the killer called himself by that nickname."
+  },
+  {
+   "start": 117.4,
+   "end": 122.9,
+   "text": "In that follow-up letter, he provided minute details about the crime scenes that only the perpetrator could have known."
+  },
+  {
+   "start": 122.9,
+   "end": 126.6,
+   "text": "He explained exactly how he taped a flashlight to his gun to aim easily in the dark."
+  },
+  {
+   "start": 126.6,
+   "end": 130,
+   "text": "We are going to look at what the case file actually shows about those nights."
+  },
+  {
+   "start": 130.6,
+   "end": 134.2,
+   "text": "The first confirmed attack happened five nights before Christmas."
+  },
+  {
+   "start": 134.2,
+   "end": 141,
+   "text": "On December 20, 1968, high school students Betty Lou Jensen and David Arthur Faraday went on their first official date together."
+  },
+  {
+   "start": 141,
+   "end": 143.7,
+   "text": "Betty Lou was sixteen and went to Hogan High School."
+  },
+  {
+   "start": 143.7,
+   "end": 146.5,
+   "text": "David was seventeen and went to Vallejo High School."
+  },
+  {
+   "start": 146.5,
+   "end": 149.8,
+   "text": "They promised Betty Lou's parents they would be home by 11 p.m."
+  },
+  {
+   "start": 150.3,
+   "end": 154.3,
+   "text": "David picked Betty Lou up at 8:30 p.m. The couple visited one of her friends first."
+  },
+  {
+   "start": 154.3,
+   "end": 157.5,
+   "text": "Sometime after 9 p.m., they drove out to the outskirts of Vallejo."
+  },
+  {
+   "start": 157.5,
+   "end": 162.3,
+   "text": "They parked at a well-known lover's lane on Lake Herman Road, right inside the Benicia city limits."
+  },
+  {
+   "start": 162.9,
+   "end": 168.4,
+   "text": "They pulled Faraday's Rambler onto a gravel runoff near the gate to a water pumping station."
+  },
+  {
+   "start": 168.4,
+   "end": 170.5,
+   "text": "We know they sat there for a while."
+  },
+  {
+   "start": 170.5,
+   "end": 175.7,
+   "text": "Between 10:15 and 10:30 p.m., a passing motorist noticed their car parked in that spot."
+  },
+  {
+   "start": 175.7,
+   "end": 180.1,
+   "text": "Another driver spotted the couple parked in that exact same spot at 11 p.m."
+  },
+  {
+   "start": 180.6,
+   "end": 183.3,
+   "text": "The timeline gets incredibly tight right here."
+  },
+  {
+   "start": 183.3,
+   "end": 186.3,
+   "text": "Between 11:05 and 11:10 p.m., someone attacked them."
+  },
+  {
+   "start": 186.3,
+   "end": 193.4,
+   "text": "Investigators determined the assailant parked his vehicle about ten feet away, alongside the passenger side of David's car."
+  },
+  {
+   "start": 193.4,
+   "end": 198.4,
+   "text": "He got out and fired several shots at the Rambler as he walked around to the driver's side."
+  },
+  {
+   "start": 199,
+   "end": 204.4,
+   "text": "Bullet holes in the roof and back window show the killer likely fired warning shots to force the teenagers out."
+  },
+  {
+   "start": 204.4,
+   "end": 206.9,
+   "text": "None of those initial shots hit David or Betty Lou."
+  },
+  {
+   "start": 206.9,
+   "end": 209.8,
+   "text": "The couple scrambled to escape through the passenger door."
+  },
+  {
+   "start": 209.8,
+   "end": 210.9,
+   "text": "Betty Lou made it out."
+  },
+  {
+   "start": 211.5,
+   "end": 215.6,
+   "text": "As David was exiting, the killer shot him in the head with a .22-caliber pistol."
+  },
+  {
+   "start": 215.6,
+   "end": 218.5,
+   "text": "The shooter then chased Betty Lou as she ran for her life."
+  },
+  {
+   "start": 218.5,
+   "end": 221.3,
+   "text": "He fired six shots at her back, and five of them hit her."
+  },
+  {
+   "start": 221.3,
+   "end": 224.9,
+   "text": "Police theorized this entire attack took just two to three minutes."
+  },
+  {
+   "start": 225.4,
+   "end": 229.2,
+   "text": "At 11:10 p.m., another motorist spotted the bodies and called the police."
+  },
+  {
+   "start": 229.2,
+   "end": 230.5,
+   "text": "Betty Lou was already dead."
+  },
+  {
+   "start": 230.5,
+   "end": 234.7,
+   "text": "David was found next to the car, still breathing, but he died later at the hospital."
+  },
+  {
+   "start": 234.7,
+   "end": 239.8,
+   "text": "The killer left shell casings identified as Winchester Western Super X copper-coated ammunition."
+  },
+  {
+   "start": 240.4,
+   "end": 243.2,
+   "text": "Ballistics indicated the weapon was possibly a J.C."
+  },
+  {
+   "start": 243.2,
+   "end": 245.3,
+   "text": "Higgins Model 80 semiautomatic pistol."
+  },
+  {
+   "start": 245.3,
+   "end": 246.7,
+   "text": "There were no witnesses."
+  },
+  {
+   "start": 246.7,
+   "end": 249.6,
+   "text": "The scene yielded no usable tire tracks or footprints."
+  },
+  {
+   "start": 249.6,
+   "end": 254.9,
+   "text": "Police had no viable suspects and could only guess that a stranger targeted the teenagers at random."
+  },
+  {
+   "start": 255.4,
+   "end": 260,
+   "text": "The police investigation into the Lake Herman Road murders hit a wall almost immediately."
+  },
+  {
+   "start": 260,
+   "end": 263.5,
+   "text": "The attacker left no usable tire tracks or footprints in the gravel."
+  },
+  {
+   "start": 263.5,
+   "end": 267.9,
+   "text": "Investigators could only deduce that a stranger had targeted the teenagers at random."
+  },
+  {
+   "start": 267.9,
+   "end": 272,
+   "text": "Despite an intense search in the following months, no viable suspects emerged."
+  },
+  {
+   "start": 272.6,
+   "end": 276.2,
+   "text": "The media covered the murders extensively, but the case went cold."
+  },
+  {
+   "start": 276.2,
+   "end": 278,
+   "text": "That changed seven months later."
+  },
+  {
+   "start": 278.5,
+   "end": 281.1,
+   "text": "Around midnight on July 4, 1969, he struck again."
+  },
+  {
+   "start": 281.1,
+   "end": 286.1,
+   "text": "The victims were twenty-two-year-old Darlene Ferrin and nineteen-year-old Michael Mageau."
+  },
+  {
+   "start": 286.1,
+   "end": 289.4,
+   "text": "Darlene was married, but the two went on a date that night anyway."
+  },
+  {
+   "start": 289.4,
+   "end": 292.9,
+   "text": "They knew each other from a local restaurant where Darlene worked."
+  },
+  {
+   "start": 293.4,
+   "end": 295.4,
+   "text": "The timeline that night started late."
+  },
+  {
+   "start": 295.4,
+   "end": 298.7,
+   "text": "After 11:30 p.m., Darlene received a phone call at her house."
+  },
+  {
+   "start": 298.7,
+   "end": 307.7,
+   "text": "She left and arrived at Michael's place around 11:50 p.m. Immediately after they drove away from his house, the couple noticed a man following them in a light-colored car."
+  },
+  {
+   "start": 308.3,
+   "end": 312,
+   "text": "Darlene drove out of Vallejo, heading in the direction of Lake Herman Road."
+  },
+  {
+   "start": 312,
+   "end": 316.2,
+   "text": "Just before midnight, she turned into an empty parking lot at Blue Rock Springs Park."
+  },
+  {
+   "start": 316.2,
+   "end": 318.1,
+   "text": "This was another known lover's lane."
+  },
+  {
+   "start": 318.1,
+   "end": 321.9,
+   "text": "It was located just two miles from where David and Betty Lou had been murdered."
+  },
+  {
+   "start": 322.4,
+   "end": 325,
+   "text": "Darlene parked about seventy feet from the lot entrance."
+  },
+  {
+   "start": 325,
+   "end": 327.9,
+   "text": "Another vehicle pulled in and parked eighty feet to their left."
+  },
+  {
+   "start": 327.9,
+   "end": 331.5,
+   "text": "The driver turned his headlights off and sat completely motionless in the dark."
+  },
+  {
+   "start": 332.1,
+   "end": 335,
+   "text": "Michael asked who the man was, but Darlene told him not to worry."
+  },
+  {
+   "start": 335,
+   "end": 337.3,
+   "text": "Suddenly, the stranger tore out of the parking lot."
+  },
+  {
+   "start": 337.3,
+   "end": 339.5,
+   "text": "Five minutes later, that same driver returned."
+  },
+  {
+   "start": 340.1,
+   "end": 343.3,
+   "text": "He shined a flashlight directly into Darlene's vehicle as he walked up."
+  },
+  {
+   "start": 343.3,
+   "end": 347.3,
+   "text": "Thinking he was a police officer, the couple rolled down Michael's window to speak with him."
+  },
+  {
+   "start": 347.9,
+   "end": 349.4,
+   "text": "The stranger never said a word."
+  },
+  {
+   "start": 349.4,
+   "end": 352.6,
+   "text": "He raised a nine-millimeter pistol and fired directly into the car."
+  },
+  {
+   "start": 352.6,
+   "end": 356.2,
+   "text": "One bullet hit Michael in the right arm, and another struck Darlene in the neck."
+  },
+  {
+   "start": 356.8,
+   "end": 359.9,
+   "text": "Michael desperately tried to get out, but his door handle was missing."
+  },
+  {
+   "start": 359.9,
+   "end": 364,
+   "text": "The shooter walked back to his own car, opened the door, and did something Michael could not see."
+  },
+  {
+   "start": 364.6,
+   "end": 368.1,
+   "text": "While Michael was still struggling to exit, the stranger returned."
+  },
+  {
+   "start": 368.1,
+   "end": 372.3,
+   "text": "He shot both victims two more times each, then hurried back to his car and sped off."
+  },
+  {
+   "start": 372.9,
+   "end": 381.2,
+   "text": "A caretaker at a nearby golf course reported hearing the gunshots around 12:10 a.m. The perpetrator left no clues at the scene that could be traced back to him."
+  },
+  {
+   "start": 381.2,
+   "end": 384.6,
+   "text": "Darlene was fatally wounded, but Michael survived his injuries."
+  },
+  {
+   "start": 385.2,
+   "end": 389,
+   "text": "Right after the shooter sped off, three teenagers pulled into the lot."
+  },
+  {
+   "start": 389,
+   "end": 392.5,
+   "text": "They saw the bullet-riddled car and immediately went for help."
+  },
+  {
+   "start": 392.5,
+   "end": 394.7,
+   "text": "Police arrived at the scene at 12:20 a.m."
+  },
+  {
+   "start": 395.2,
+   "end": 399.3,
+   "text": "Darlene was rushed to Kaiser Foundation Hospital, but she did not make it."
+  },
+  {
+   "start": 399.3,
+   "end": 401.3,
+   "text": "She was pronounced dead at 12:38 a.m."
+  },
+  {
+   "start": 401.9,
+   "end": 403.4,
+   "text": "Michael survived the attack."
+  },
+  {
+   "start": 403.4,
+   "end": 406.9,
+   "text": "That made him one of only two people to survive the confirmed attacks."
+  },
+  {
+   "start": 406.9,
+   "end": 410.2,
+   "text": "Because he lived, investigators finally had a living eyewitness."
+  },
+  {
+   "start": 410.9,
+   "end": 415.1,
+   "text": "Michael described the shooter as a heavyset White man, standing about five foot eight."
+  },
+  {
+   "start": 415.1,
+   "end": 417.8,
+   "text": "He estimated the man weighed around two hundred pounds."
+  },
+  {
+   "start": 417.8,
+   "end": 422.3,
+   "text": "The attacker had a large face, curly light brown hair, and wore dark clothing without glasses."
+  },
+  {
+   "start": 422.9,
+   "end": 427.5,
+   "text": "Those details gave police a basic profile, but it was not enough to zero in on a suspect."
+  },
+  {
+   "start": 427.5,
+   "end": 431.2,
+   "text": "Then, the killer made a move that changed the entire investigation."
+  },
+  {
+   "start": 431.2,
+   "end": 437.8,
+   "text": "At 12:40 a.m., just two minutes after Darlene was pronounced dead, the Vallejo Police Department received another call."
+  },
+  {
+   "start": 438.3,
+   "end": 442.2,
+   "text": "The call came from a payphone located just two blocks from police headquarters."
+  },
+  {
+   "start": 442.2,
+   "end": 445.3,
+   "text": "The man on the line stated he wanted to report a double murder."
+  },
+  {
+   "start": 445.3,
+   "end": 450.5,
+   "text": "He gave directions to the park and told the dispatcher the victims were shot with a nine-millimeter Luger."
+  },
+  {
+   "start": 451.1,
+   "end": 454.3,
+   "text": "Before hanging up, the caller added one final chilling sentence."
+  },
+  {
+   "start": 454.3,
+   "end": 456.4,
+   "text": "He said he also killed those kids last year."
+  },
+  {
+   "start": 456.9,
+   "end": 460.6,
+   "text": "The connection between the victims might have gone deeper than a random targeting."
+  },
+  {
+   "start": 460.6,
+   "end": 462.5,
+   "text": "Darlene actually knew Betty Lou and David."
+  },
+  {
+   "start": 462.5,
+   "end": 464.5,
+   "text": "She lived less than two blocks from Betty Lou."
+  },
+  {
+   "start": 465.1,
+   "end": 468.9,
+   "text": "There is also debate in the case file about whether Darlene knew the man who shot her."
+  },
+  {
+   "start": 468.9,
+   "end": 471.3,
+   "text": "Michael gave conflicting accounts to the police."
+  },
+  {
+   "start": 471.3,
+   "end": 473.9,
+   "text": "At the hospital, he claimed he did not know the murderer."
+  },
+  {
+   "start": 474.4,
+   "end": 477.1,
+   "text": "Later on, Michael said the assailant's name was Richard."
+  },
+  {
+   "start": 477.1,
+   "end": 480.5,
+   "text": "Darlene's sister said one of Darlene's boyfriends was named Richard."
+  },
+  {
+   "start": 480.5,
+   "end": 485.2,
+   "text": "Investigators have never proven a definitive prior relationship between Darlene and the killer."
+  },
+  {
+   "start": 485.9,
+   "end": 489.8,
+   "text": "There is a surviving photograph of Darlene posing with an unknown man."
+  },
+  {
+   "start": 489.8,
+   "end": 493.7,
+   "text": "Police believe the picture was taken in San Francisco in 1966 or 1967."
+  },
+  {
+   "start": 493.7,
+   "end": 499.4,
+   "text": "The man in that photo closely resembles the composite sketch of the killer that was generated later."
+  },
+  {
+   "start": 500,
+   "end": 508,
+   "text": "The first letters were dated July 31, 1969, and they reached the San Francisco Chronicle, the San Francisco Examiner, and the Vallejo Times-Herald on August 1."
+  },
+  {
+   "start": 508,
+   "end": 512.8,
+   "text": "The writer explicitly stated he was the killer of the two teenagers from the previous Christmas."
+  },
+  {
+   "start": 513.4,
+   "end": 517.2,
+   "text": "He also took responsibility for the recent July 4 attack at Blue Rock Springs."
+  },
+  {
+   "start": 517.2,
+   "end": 522.8,
+   "text": "To prove he was the actual shooter, the letters contained specific details about the crimes known only to police."
+  },
+  {
+   "start": 522.8,
+   "end": 527,
+   "text": "But the most infamous part of the mailing was the puzzle tucked inside each envelope."
+  },
+  {
+   "start": 527.6,
+   "end": 530.3,
+   "text": "Each contained one-third of a dense, handwritten code."
+  },
+  {
+   "start": 530.3,
+   "end": 535.3,
+   "text": "When investigators combined the pieces, they formed a massive block of strange characters and shapes."
+  },
+  {
+   "start": 535.3,
+   "end": 540.1,
+   "text": "This is known in the case file as the Z408 cryptogram, named for its four hundred and eight symbols."
+  },
+  {
+   "start": 540.1,
+   "end": 543.5,
+   "text": "The killer claimed his actual identity was hidden inside this cipher."
+  },
+  {
+   "start": 544.1,
+   "end": 548.9,
+   "text": "The authorities realized they were dealing with someone who treated murder as a public game."
+  },
+  {
+   "start": 548.9,
+   "end": 553.5,
+   "text": "In his August 4 letter, the writer said that when they cracked the code, they would have him."
+  },
+  {
+   "start": 553.5,
+   "end": 557.4,
+   "text": "The Z408 cipher was decrypted in 1969, just days after the papers printed it."
+  },
+  {
+   "start": 558,
+   "end": 560.9,
+   "text": "The decoded message did not give the authorities a suspect."
+  },
+  {
+   "start": 560.9,
+   "end": 565.2,
+   "text": "Instead, it revealed a deeply disturbing manifesto about why he committed the murders."
+  },
+  {
+   "start": 565.2,
+   "end": 570.3,
+   "text": "The writer stated that he liked killing people because it was more fun than hunting wild game in the forest."
+  },
+  {
+   "start": 570.3,
+   "end": 572.5,
+   "text": "He called man the most dangerous animal of all."
+  },
+  {
+   "start": 573.1,
+   "end": 576.5,
+   "text": "The translation exposed a highly delusional motive for the violence."
+  },
+  {
+   "start": 576.5,
+   "end": 579.8,
+   "text": "The killer wrote that when he died, he would be reborn in paradise."
+  },
+  {
+   "start": 579.8,
+   "end": 583.9,
+   "text": "He claimed that all the people he murdered would become his slaves in the afterlife."
+  },
+  {
+   "start": 583.9,
+   "end": 587.7,
+   "text": "That was his stated reason for refusing to reveal his true identity in the text."
+  },
+  {
+   "start": 588.3,
+   "end": 592.5,
+   "text": "He wrote that giving his name would allow the police to stop his collection of slaves."
+  },
+  {
+   "start": 592.5,
+   "end": 596.8,
+   "text": "The decoded message was deliberately strange and riddled with bizarre spelling errors."
+  },
+  {
+   "start": 596.8,
+   "end": 600.3,
+   "text": "He spelled the word paradise with a 'c' and the word forest with two 'r's."
+  },
+  {
+   "start": 600.9,
+   "end": 606.5,
+   "text": "The case file shows the follow-up letter on August 4 was specifically mailed to the San Francisco Examiner."
+  },
+  {
+   "start": 606.5,
+   "end": 611.8,
+   "text": "That was the first time the writer introduced himself with the phrase, \"This is the Zodiac speaking.\""
+  },
+  {
+   "start": 611.8,
+   "end": 615.7,
+   "text": "But he also included a visual signature that would become just as infamous."
+  },
+  {
+   "start": 616.3,
+   "end": 621.7,
+   "text": "He had signed every letter, from the very first ones, with a symbol resembling the crosshairs of a gunsight."
+  },
+  {
+   "start": 621.7,
+   "end": 624.8,
+   "text": "It was a simple circle with a cross drawn straight through it."
+  },
+  {
+   "start": 624.8,
+   "end": 627.2,
+   "text": "That crosshair mark became his official stamp."
+  },
+  {
+   "start": 627.2,
+   "end": 631.4,
+   "text": "He used it to sign off on a string of taunting messages that would continue for years."
+  },
+  {
+   "start": 631.9,
+   "end": 635.2,
+   "text": "Between 1969 and 1974, the killer mailed over twenty letters."
+  },
+  {
+   "start": 635.2,
+   "end": 642.7,
+   "text": "He sent them to local newspapers, police departments, a Chronicle reporter named Paul Avery, and a prominent attorney named Melvin Belli."
+  },
+  {
+   "start": 642.7,
+   "end": 647.5,
+   "text": "Most of the envelopes were postmarked in San Francisco or a nearby town called Pleasanton."
+  },
+  {
+   "start": 647.5,
+   "end": 652.5,
+   "text": "Four of those mailings included complex cryptograms, and two of them remain unsolved today."
+  },
+  {
+   "start": 653.1,
+   "end": 655.3,
+   "text": "I told you the first cipher was cracked quickly."
+  },
+  {
+   "start": 655.3,
+   "end": 659.9,
+   "text": "The people who actually solved it were a high school teacher named Donald Harden and his wife, Bettye."
+  },
+  {
+   "start": 659.9,
+   "end": 664.1,
+   "text": "They figured out the killer's twisted manifesto just days after the papers printed the code."
+  },
+  {
+   "start": 664.1,
+   "end": 665.8,
+   "text": "Neither of them was a cryptologist."
+  },
+  {
+   "start": 666.4,
+   "end": 668.8,
+   "text": "As the months went on, the letters grew stranger."
+  },
+  {
+   "start": 668.8,
+   "end": 674.1,
+   "text": "In July 1970, he wrote to the Chronicle complaining that people were not wearing Zodiac-themed buttons."
+  },
+  {
+   "start": 674.1,
+   "end": 678.5,
+   "text": "Two days later, he mailed another letter parodying a song from the comic opera The Mikado."
+  },
+  {
+   "start": 678.5,
+   "end": 686.2,
+   "text": "He started keeping a running score at the bottom of his notes, writing that the Zodiac had thirteen points and the San Francisco Police Department had zero."
+  },
+  {
+   "start": 686.8,
+   "end": 691.9,
+   "text": "By March 1971, he sent a letter to the Los Angeles Times claiming he had killed seventeen people."
+  },
+  {
+   "start": 691.9,
+   "end": 694.9,
+   "text": "Then he went completely silent for almost three years."
+  },
+  {
+   "start": 694.9,
+   "end": 697.6,
+   "text": "The next confirmed letter arrived in January 1974."
+  },
+  {
+   "start": 697.6,
+   "end": 704,
+   "text": "He praised the movie The Exorcist, calling it a satirical comedy, and updated his score to claim thirty-seven victims."
+  },
+  {
+   "start": 704.6,
+   "end": 713.7,
+   "text": "That 1974 note was his last confirmed message, but newspapers received suspicious letters, before it and for decades after it, that were never confirmed as his."
+  },
+  {
+   "start": 713.7,
+   "end": 719.4,
+   "text": "In 1973, a letter sent to an Albany, New York paper promised another killing and included a short code."
+  },
+  {
+   "start": 719.4,
+   "end": 723.4,
+   "text": "The FBI deciphered it, but the handwriting was not a definitive match."
+  },
+  {
+   "start": 723.4,
+   "end": 733.1,
+   "text": "In 2007, an American Greetings Christmas card postmarked in 1990 in Eureka was discovered in the Chronicle's photo files, with a photocopy of two post office keys enclosed."
+  },
+  {
+   "start": 733.1,
+   "end": 740.3,
+   "text": "A forensic document examiner ruled the handwriting was inauthentic, but letters like these kept the investigation chaotic."
+  },
+  {
+   "start": 740.8,
+   "end": 743.4,
+   "text": "The killer's next move happened in broad daylight."
+  },
+  {
+   "start": 743.4,
+   "end": 750.9,
+   "text": "On September 27, 1969, twenty-year-old Bryan Calvin Hartnell and twenty-two-year-old Cecelia Ann Shepard were picnicking at Lake Berryessa."
+  },
+  {
+   "start": 750.9,
+   "end": 753.5,
+   "text": "That is a reservoir in unincorporated Napa County."
+  },
+  {
+   "start": 753.5,
+   "end": 758.6,
+   "text": "They were sitting on a small island connected by a sand spit when Cecelia noticed a man watching them."
+  },
+  {
+   "start": 759.2,
+   "end": 763.5,
+   "text": "The stranger stepped out from behind a tree and put on a black executioner's hood."
+  },
+  {
+   "start": 763.5,
+   "end": 769.5,
+   "text": "He had clip-on sunglasses over the eye holes and wore a bib with that white crosshair symbol printed on the chest."
+  },
+  {
+   "start": 769.5,
+   "end": 772.6,
+   "text": "He pulled a gun and told the couple he was an escaped convict."
+  },
+  {
+   "start": 772.6,
+   "end": 775.7,
+   "text": "He claimed he needed their car and money to flee to Mexico."
+  },
+  {
+   "start": 776.2,
+   "end": 778.9,
+   "text": "Bryan actually believed they were just being robbed."
+  },
+  {
+   "start": 778.9,
+   "end": 783.9,
+   "text": "The assailant handed Cecelia precut lengths of plastic clothesline and ordered her to bind Bryan."
+  },
+  {
+   "start": 783.9,
+   "end": 789,
+   "text": "After she finished, the man checked the knots and tightened them himself before tying Cecelia up too."
+  },
+  {
+   "start": 789,
+   "end": 791.8,
+   "text": "Then the record shows he put the gun away and drew a knife."
+  },
+  {
+   "start": 792.4,
+   "end": 795.5,
+   "text": "He brutally stabbed the couple right there on the ground."
+  },
+  {
+   "start": 795.5,
+   "end": 798.4,
+   "text": "Bryan suffered six stab wounds, and Cecelia took ten."
+  },
+  {
+   "start": 798.4,
+   "end": 802.7,
+   "text": "The attacker left them there and hiked five hundred yards back to Knoxville Road."
+  },
+  {
+   "start": 802.7,
+   "end": 806.2,
+   "text": "He walked right up to Bryan's car and took out a black felt-tip pen."
+  },
+  {
+   "start": 806.8,
+   "end": 810.2,
+   "text": "He drew his crosshair symbol on the door and wrote something underneath it."
+  },
+  {
+   "start": 810.2,
+   "end": 814.1,
+   "text": "Back at the water, a fisherman and his son heard the couple screaming and went for help."
+  },
+  {
+   "start": 814.1,
+   "end": 817.5,
+   "text": "Bryan managed to loosen Cecelia's ropes with his teeth, and she freed him."
+  },
+  {
+   "start": 818.1,
+   "end": 821.4,
+   "text": "Napa County deputies arrived to find them both bleeding terribly."
+  },
+  {
+   "start": 821.4,
+   "end": 826.3,
+   "text": "Cecelia was fully conscious and gave the officers a detailed description of the hooded attacker."
+  },
+  {
+   "start": 826.3,
+   "end": 829.9,
+   "text": "Ambulances rushed both victims to Queen of the Valley Hospital in Napa."
+  },
+  {
+   "start": 830.5,
+   "end": 832.6,
+   "text": "Cecelia slipped into a coma during the transport."
+  },
+  {
+   "start": 832.6,
+   "end": 835.9,
+   "text": "She never regained consciousness and died from her injuries two days later."
+  },
+  {
+   "start": 835.9,
+   "end": 840.4,
+   "text": "Bryan Hartnell survived the brutal stabbing and was able to tell investigators exactly what happened."
+  },
+  {
+   "start": 841,
+   "end": 842.6,
+   "text": "The killer was not done for the day."
+  },
+  {
+   "start": 842.6,
+   "end": 846.4,
+   "text": "He drove twenty-seven miles from the crime scene to a payphone in downtown Napa."
+  },
+  {
+   "start": 846.4,
+   "end": 851.4,
+   "text": "At 7:40 p.m., he called the local sheriff's department to report a double murder and confessed to the crime."
+  },
+  {
+   "start": 851.4,
+   "end": 854.1,
+   "text": "He left the receiver dangling off the hook and vanished."
+  },
+  {
+   "start": 854.7,
+   "end": 859.2,
+   "text": "Detectives lifted a wet palm print from that receiver, but they could never match it to a suspect."
+  },
+  {
+   "start": 859.2,
+   "end": 864.7,
+   "text": "Investigators also learned that other people at the lake had seen a suspicious, heavyset man earlier that afternoon."
+  },
+  {
+   "start": 864.7,
+   "end": 871.6,
+   "text": "Three women who had seen a strange man there, possibly the killer without his hood, worked with a newspaper photographer to create a composite sketch."
+  },
+  {
+   "start": 871.6,
+   "end": 875.2,
+   "text": "It was a solid lead, but the case file shows it was not enough to make an arrest."
+  },
+  {
+   "start": 875.9,
+   "end": 881.6,
+   "text": "The last confirmed murder in the case file happened exactly two weeks after the Lake Berryessa stabbings."
+  },
+  {
+   "start": 881.6,
+   "end": 886.6,
+   "text": "On October 11, 1969, the killer struck in the Presidio Heights neighborhood of San Francisco."
+  },
+  {
+   "start": 886.6,
+   "end": 889.5,
+   "text": "His target was twenty-nine-year-old Paul Lee Stine."
+  },
+  {
+   "start": 889.5,
+   "end": 891.9,
+   "text": "Paul was a doctoral student who drove a taxi."
+  },
+  {
+   "start": 892.4,
+   "end": 894.7,
+   "text": "Around 9:40 p.m., the killer hailed the cab."
+  },
+  {
+   "start": 894.7,
+   "end": 898.6,
+   "text": "He asked to be taken to Washington and Maple streets in Presidio Heights."
+  },
+  {
+   "start": 898.6,
+   "end": 903.8,
+   "text": "When they arrived, the passenger asked Paul to drive one block further to Washington and Cherry."
+  },
+  {
+   "start": 903.8,
+   "end": 906.8,
+   "text": "At 9:55 p.m., the man shot Paul in the head with a handgun."
+  },
+  {
+   "start": 906.8,
+   "end": 909.2,
+   "text": "He then took the driver's wallet and car keys."
+  },
+  {
+   "start": 909.8,
+   "end": 913.1,
+   "text": "Three teenagers were watching from a house directly across the street."
+  },
+  {
+   "start": 913.1,
+   "end": 915.9,
+   "text": "The streetlights gave them a clear view of the killer's face."
+  },
+  {
+   "start": 915.9,
+   "end": 919.3,
+   "text": "They watched the man wipe down the cab and rifle through Paul's clothes."
+  },
+  {
+   "start": 919.3,
+   "end": 922.9,
+   "text": "The record shows he left behind two partial fingerprints from his right hand."
+  },
+  {
+   "start": 922.9,
+   "end": 924.8,
+   "text": "The kids immediately called the police."
+  },
+  {
+   "start": 925.4,
+   "end": 929.1,
+   "text": "They described the suspect as a husky White man wearing a dark jacket."
+  },
+  {
+   "start": 929.1,
+   "end": 933,
+   "text": "The dispatcher mistakenly alerted patrol cars to look for a Black suspect."
+  },
+  {
+   "start": 933,
+   "end": 936.6,
+   "text": "Just two minutes after the call, two officers responded to the area."
+  },
+  {
+   "start": 936.6,
+   "end": 941.5,
+   "text": "They spotted a White man in dark clothes walking north toward the nearby Presidio army base."
+  },
+  {
+   "start": 942,
+   "end": 946.6,
+   "text": "Because of the dispatcher's error, the officers did not consider this man a suspect."
+  },
+  {
+   "start": 946.6,
+   "end": 948.3,
+   "text": "What happened next is disputed."
+  },
+  {
+   "start": 948.3,
+   "end": 956.3,
+   "text": "By the killer's own later account, they pulled up alongside him, asked if he had seen anything unusual, and he sent them east after a man waving a gun."
+  },
+  {
+   "start": 956.3,
+   "end": 959.4,
+   "text": "Officer Fouke's memo says the man was never stopped at all."
+  },
+  {
+   "start": 960,
+   "end": 962.6,
+   "text": "When police got to the cab, Paul Stine was declared dead."
+  },
+  {
+   "start": 962.6,
+   "end": 965.8,
+   "text": "They canvassed the area, but the shooter had already slipped away."
+  },
+  {
+   "start": 965.8,
+   "end": 969,
+   "text": "Investigators initially assumed the motive was a simple robbery."
+  },
+  {
+   "start": 969,
+   "end": 970.8,
+   "text": "That theory fell apart two days later."
+  },
+  {
+   "start": 971.4,
+   "end": 977.5,
+   "text": "On October 13, the killer mailed a letter to the San Francisco Chronicle claiming responsibility for killing the taxi driver."
+  },
+  {
+   "start": 977.5,
+   "end": 980.4,
+   "text": "To prove it, he included that bloody swatch of Paul's shirt."
+  },
+  {
+   "start": 980.4,
+   "end": 983.5,
+   "text": "The killer also used the letter to make a terrifying new threat."
+  },
+  {
+   "start": 984.1,
+   "end": 988.7,
+   "text": "He claimed he was going to shoot out the tire of a school bus and kill the children as they exited."
+  },
+  {
+   "start": 988.7,
+   "end": 994.1,
+   "text": "Meanwhile, the teenage witnesses helped a police artist make a composite sketch of the man they saw at the cab."
+  },
+  {
+   "start": 994.1,
+   "end": 1000.4,
+   "text": "The two patrol officers realized the man they had seen near the scene may have been the killer, and they helped develop a sketch too."
+  },
+  {
+   "start": 1001,
+   "end": 1006,
+   "text": "San Francisco detectives Bill Armstrong and Dave Toschi were assigned to investigate the murder."
+  },
+  {
+   "start": 1006,
+   "end": 1008.5,
+   "text": "Toschi eventually took over the case by himself."
+  },
+  {
+   "start": 1008.5,
+   "end": 1013.3,
+   "text": "He spent years tracking down leads and filled eight filing cabinets with potential suspects."
+  },
+  {
+   "start": 1013.3,
+   "end": 1017.4,
+   "text": "Despite the sketches and the fingerprints, the killer remained unidentified."
+  },
+  {
+   "start": 1017.9,
+   "end": 1021.4,
+   "text": "The police were drowning in suspects, but the killer just kept writing."
+  },
+  {
+   "start": 1021.4,
+   "end": 1025.3,
+   "text": "On November 8, 1969, the San Francisco Chronicle received another piece of mail."
+  },
+  {
+   "start": 1025.3,
+   "end": 1029.5,
+   "text": "Inside the envelope was a greeting card that investigators call the Dripping Pen card."
+  },
+  {
+   "start": 1029.5,
+   "end": 1032.7,
+   "text": "The sender wrote that he thought the police would need a good laugh."
+  },
+  {
+   "start": 1033.2,
+   "end": 1038.2,
+   "text": "Along with that card was a brand new cipher made up of three hundred and forty characters."
+  },
+  {
+   "start": 1038.2,
+   "end": 1041,
+   "text": "It is known in the case file as the Z340 cryptogram."
+  },
+  {
+   "start": 1041,
+   "end": 1047.6,
+   "text": "The killer wanted to prove he was smarter than the authorities, and this puzzle proved incredibly difficult to crack."
+  },
+  {
+   "start": 1048.1,
+   "end": 1053,
+   "text": "Law enforcement and amateur cryptologists tried to decode that message for decades."
+  },
+  {
+   "start": 1053,
+   "end": 1055.7,
+   "text": "It sat completely unsolved for over fifty years."
+  },
+  {
+   "start": 1055.7,
+   "end": 1058.6,
+   "text": "The Z340 cryptogram was finally decrypted in 2020."
+  },
+  {
+   "start": 1058.6,
+   "end": 1063.9,
+   "text": "But back in the fall of 1969, the authorities had absolutely no idea what the message contained."
+  },
+  {
+   "start": 1064.5,
+   "end": 1066.7,
+   "text": "They did not have to wait long for more taunts."
+  },
+  {
+   "start": 1066.7,
+   "end": 1069,
+   "text": "The very next day, the killer reached out again."
+  },
+  {
+   "start": 1069,
+   "end": 1072.4,
+   "text": "On November 9, the Chronicle received a massive, seven-page letter."
+  },
+  {
+   "start": 1072.4,
+   "end": 1077.1,
+   "text": "The writer bragged that the police would never catch him because he had been too clever for them."
+  },
+  {
+   "start": 1077.7,
+   "end": 1084.8,
+   "text": "In it, he claimed two policemen stopped and questioned him just three minutes after he shot Paul Stine, and that he sent them off after a man waving a gun."
+  },
+  {
+   "start": 1084.8,
+   "end": 1088.5,
+   "text": "Two patrol officers had in fact seen a man walking away from the area that night."
+  },
+  {
+   "start": 1088.5,
+   "end": 1094,
+   "text": "But Officer Fouke's memo says they never stopped him, so the only account of that conversation is the killer's own."
+  },
+  {
+   "start": 1094.5,
+   "end": 1097.1,
+   "text": "The letter also contained a terrifying new visual."
+  },
+  {
+   "start": 1097.1,
+   "end": 1099.4,
+   "text": "The killer drew a detailed diagram of a bomb."
+  },
+  {
+   "start": 1099.4,
+   "end": 1101.7,
+   "text": "He threatened to use it to blow up a school bus."
+  },
+  {
+   "start": 1101.7,
+   "end": 1107.1,
+   "text": "Three days later, on November 12, the Chronicle printed an edited version of the letter to warn the public."
+  },
+  {
+   "start": 1107.7,
+   "end": 1111.2,
+   "text": "The writer also used that mailing to update his supposed body count."
+  },
+  {
+   "start": 1111.2,
+   "end": 1113.2,
+   "text": "He claimed to have killed seven people."
+  },
+  {
+   "start": 1113.2,
+   "end": 1117.6,
+   "text": "The official record links him to five deaths and two survivors, across four attacks."
+  },
+  {
+   "start": 1117.6,
+   "end": 1119,
+   "text": "And he was not done writing."
+  },
+  {
+   "start": 1119.5,
+   "end": 1125.2,
+   "text": "Exactly one year after the Lake Herman Road murders, on December 20, 1969, he reached out again."
+  },
+  {
+   "start": 1125.2,
+   "end": 1126.8,
+   "text": "He mailed a letter to Belli."
+  },
+  {
+   "start": 1127.4,
+   "end": 1129.3,
+   "text": "The note itself was strangely desperate."
+  },
+  {
+   "start": 1129.3,
+   "end": 1133.8,
+   "text": "The writer pleaded for help, claiming he was drowning and could not remain in control for much longer."
+  },
+  {
+   "start": 1134.4,
+   "end": 1137.8,
+   "text": "By the spring, the Zodiac was back to taunting the press with puzzles."
+  },
+  {
+   "start": 1137.8,
+   "end": 1142.8,
+   "text": "In April 1970, he sent a letter to the San Francisco Chronicle that started with the phrase, 'My name is.'"
+  },
+  {
+   "start": 1142.8,
+   "end": 1146.1,
+   "text": "He followed that opening with a short, thirteen-character cipher."
+  },
+  {
+   "start": 1146.7,
+   "end": 1149.1,
+   "text": "The case file calls this the Z13 cryptogram."
+  },
+  {
+   "start": 1149.1,
+   "end": 1158,
+   "text": "Because it is so short, experts say it is practically impossible to determine if any proposed solution is correct, and it has never been definitively solved."
+  },
+  {
+   "start": 1158,
+   "end": 1162.7,
+   "text": "In that same letter, he denied responsibility for a recent police station bombing."
+  },
+  {
+   "start": 1163.3,
+   "end": 1166.2,
+   "text": "He also included another diagram of a school bus bomb."
+  },
+  {
+   "start": 1166.2,
+   "end": 1168.5,
+   "text": "He updated his score to claim ten victims."
+  },
+  {
+   "start": 1169.1,
+   "end": 1173.3,
+   "text": "Two months later, in June 1970, the Chronicle received another unsolved code."
+  },
+  {
+   "start": 1173.3,
+   "end": 1175.8,
+   "text": "The killer mailed them a Phillips 66 roadmap."
+  },
+  {
+   "start": 1175.8,
+   "end": 1182.3,
+   "text": "He drew his crosshair symbol over Mount Diablo to act as a compass rose, instructing police to set zero to magnetic north."
+  },
+  {
+   "start": 1182.8,
+   "end": 1186.4,
+   "text": "He included a thirty-two-character cipher, known as the Z32."
+  },
+  {
+   "start": 1186.4,
+   "end": 1191,
+   "text": "The Zodiac claimed the map and the code would reveal where he had buried a bomb."
+  },
+  {
+   "start": 1191,
+   "end": 1193.7,
+   "text": "Investigators never located any explosives."
+  },
+  {
+   "start": 1194.3,
+   "end": 1196.3,
+   "text": "The bizarre mailings just kept coming."
+  },
+  {
+   "start": 1196.3,
+   "end": 1201.1,
+   "text": "Throughout 1970, the Zodiac sent a steady stream of greeting cards and letters to the press."
+  },
+  {
+   "start": 1201.1,
+   "end": 1207.6,
+   "text": "On October 7, the Chronicle received a card with thirteen holes punched across it and a small cross reportedly drawn in blood."
+  },
+  {
+   "start": 1208.1,
+   "end": 1212.8,
+   "text": "On October 27, Avery received a Halloween card signed with the killer's crosshair symbol."
+  },
+  {
+   "start": 1212.8,
+   "end": 1216.1,
+   "text": "A handwritten note inside read, 'Peek-a-boo, you are doomed.'"
+  },
+  {
+   "start": 1216.7,
+   "end": 1220.4,
+   "text": "The threat was taken seriously, and the Chronicle covered it on their front page."
+  },
+  {
+   "start": 1220.4,
+   "end": 1224.2,
+   "text": "Avery actually refused police protection and started carrying a pistol himself."
+  },
+  {
+   "start": 1224.2,
+   "end": 1228.1,
+   "text": "His colleagues at the paper even started wearing buttons that read, 'I Am Not Avery.'"
+  },
+  {
+   "start": 1228.7,
+   "end": 1232.1,
+   "text": "The killer's correspondence took a strange turn in March 1971."
+  },
+  {
+   "start": 1232.1,
+   "end": 1238.3,
+   "text": "We already know he used that note to claim seventeen victims, but he also included a direct taunt to law enforcement."
+  },
+  {
+   "start": 1238.3,
+   "end": 1240.7,
+   "text": "He explicitly wrote that he was crack proof."
+  },
+  {
+   "start": 1241.4,
+   "end": 1244.1,
+   "text": "The envelope itself might have contained a hidden joke."
+  },
+  {
+   "start": 1244.1,
+   "end": 1247.4,
+   "text": "The case file shows it was postmarked from Pleasanton, California."
+  },
+  {
+   "start": 1247.4,
+   "end": 1251.2,
+   "text": "Zodiac expert Tom Voigt theorized this was a deliberate choice by the sender."
+  },
+  {
+   "start": 1251.2,
+   "end": 1256.2,
+   "text": "The killer likely thought it was funny to mail an unpleasant threat from a town with that specific name."
+  },
+  {
+   "start": 1256.8,
+   "end": 1260.7,
+   "text": "After that Los Angeles mailing, the Zodiac vanished from the public eye."
+  },
+  {
+   "start": 1260.7,
+   "end": 1267.5,
+   "text": "Investigators had to wonder if the man behind the crosshair symbol was dead, incarcerated, or simply done with his twisted game."
+  },
+  {
+   "start": 1267.5,
+   "end": 1270.1,
+   "text": "The answer finally arrived in the winter of 1974."
+  },
+  {
+   "start": 1270.7,
+   "end": 1275.4,
+   "text": "In a letter to the Chronicle postmarked January 29, 1974, he finally resurfaced."
+  },
+  {
+   "start": 1275.4,
+   "end": 1281.3,
+   "text": "It is now known as the Exorcist letter, and it marked the official end of his verified correspondence."
+  },
+  {
+   "start": 1281.3,
+   "end": 1286.4,
+   "text": "He used this final confirmed message to update his murder count to thirty-seven people."
+  },
+  {
+   "start": 1286.4,
+   "end": 1290.3,
+   "text": "But the rest of the page was just as bizarre as his earlier mailings."
+  },
+  {
+   "start": 1291,
+   "end": 1294.8,
+   "text": "At the very bottom of the page, he drew an unusual, unexplained symbol."
+  },
+  {
+   "start": 1294.8,
+   "end": 1299.3,
+   "text": "It was a cryptic final signature from a phantom who was about to disappear for good."
+  },
+  {
+   "start": 1299.9,
+   "end": 1304.8,
+   "text": "The abrupt end to the confirmed letters left investigators with a massive psychological puzzle."
+  },
+  {
+   "start": 1304.8,
+   "end": 1309,
+   "text": "Psychiatrist David Van Nuys reviewed the case and proposed a fascinating theory."
+  },
+  {
+   "start": 1309,
+   "end": 1313.1,
+   "text": "He suggested the killer might have suffered from multiple personality disorder."
+  },
+  {
+   "start": 1313.1,
+   "end": 1319.6,
+   "text": "Van Nuys theorized that this condition can actually lessen over time, which would explain the reduced intensity of the letters."
+  },
+  {
+   "start": 1320.2,
+   "end": 1326.3,
+   "text": "Even though that was the last verified contact, the Chronicle kept receiving strange mail that year."
+  },
+  {
+   "start": 1326.3,
+   "end": 1333.5,
+   "text": "On February 14, a letter arrived claiming the Symbionese Liberation Army's initials spelled an Old Norse word for kill."
+  },
+  {
+   "start": 1333.5,
+   "end": 1338,
+   "text": "On May 8, another note complained that the movie Badlands glorified murder."
+  },
+  {
+   "start": 1338,
+   "end": 1340.4,
+   "text": "That one was simply signed by a citizen."
+  },
+  {
+   "start": 1340.9,
+   "end": 1346.8,
+   "text": "Two months later, another anonymous letter complained about an antifeminist columnist named Marco Spinelli."
+  },
+  {
+   "start": 1346.8,
+   "end": 1349.7,
+   "text": "The writer signed off as the Red Phantom, red with rage."
+  },
+  {
+   "start": 1349.7,
+   "end": 1354.9,
+   "text": "The handwriting, tone, and sarcasm in these notes felt incredibly similar to the Zodiac's style."
+  },
+  {
+   "start": 1354.9,
+   "end": 1361.5,
+   "text": "But forensic experts could never definitively authenticate them, leaving the true end of the killer's timeline a mystery."
+  },
+  {
+   "start": 1362.1,
+   "end": 1367.8,
+   "text": "When those first two teenagers were killed on Lake Herman Road, local newspapers covered the murders extensively."
+  },
+  {
+   "start": 1367.8,
+   "end": 1370.7,
+   "text": "The police had no viable suspects and no usable footprints."
+  },
+  {
+   "start": 1371.2,
+   "end": 1376.4,
+   "text": "That coverage completely exploded when the killer started mailing his demands directly to the newsrooms."
+  },
+  {
+   "start": 1376.4,
+   "end": 1381.6,
+   "text": "You have to look at the timeline to understand why the editors actually published those bizarre messages."
+  },
+  {
+   "start": 1381.6,
+   "end": 1384.8,
+   "text": "The newspapers printed the killer's letters and his cryptograms."
+  },
+  {
+   "start": 1384.8,
+   "end": 1390.4,
+   "text": "He explicitly threatened bombings and weekend murder sprees if the papers refused to put his words on the front page."
+  },
+  {
+   "start": 1391,
+   "end": 1400.2,
+   "text": "The combination of cold-blooded murders, taunting letters, and those complex cryptograms made the case one of the most famous unsolved mysteries in American history."
+  },
+  {
+   "start": 1400.2,
+   "end": 1402.2,
+   "text": "It was no longer just a local tragedy."
+  },
+  {
+   "start": 1402.8,
+   "end": 1407.6,
+   "text": "The killer's terrifying persona quickly became a permanent fixture of popular culture."
+  },
+  {
+   "start": 1407.6,
+   "end": 1413.3,
+   "text": "The ongoing mystery has been the subject of numerous books, documentaries, and movies over the decades."
+  },
+  {
+   "start": 1413.3,
+   "end": 1418.9,
+   "text": "It actually inspired the 1971 action film Dirty Harry right in the middle of the active investigation."
+  },
+  {
+   "start": 1418.9,
+   "end": 1423.5,
+   "text": "Decades later, the case was the subject of the critically acclaimed 2007 film Zodiac."
+  },
+  {
+   "start": 1424.1,
+   "end": 1429.4,
+   "text": "This intense public fascination created a completely new dynamic for local law enforcement to manage."
+  },
+  {
+   "start": 1429.4,
+   "end": 1434.7,
+   "text": "The massive media exposure led to amateur detectives all over the world trying to uncover his identity."
+  },
+  {
+   "start": 1434.7,
+   "end": 1440.4,
+   "text": "People became obsessed with cracking the unsolved ciphers and finding the man behind that crosshair symbol."
+  },
+  {
+   "start": 1440.4,
+   "end": 1444,
+   "text": "The search for his real name continues to be pursued by citizens today."
+  },
+  {
+   "start": 1444.6,
+   "end": 1449.1,
+   "text": "Despite the intense public scrutiny, the case remains open in multiple jurisdictions."
+  },
+  {
+   "start": 1449.1,
+   "end": 1456,
+   "text": "The California Department of Justice, the FBI, the city of Vallejo, and the Napa and Solano county sheriffs all maintain active files."
+  },
+  {
+   "start": 1456,
+   "end": 1460.8,
+   "text": "More than half a century on, there are letters, sketches, and partial prints, and still no name."
+  },
+  {
+   "start": 1461.4,
+   "end": 1466.2,
+   "text": "Thousands of men have been put forward as possible suspects over the last half-century."
+  },
+  {
+   "start": 1466.2,
+   "end": 1471.3,
+   "text": "One researcher noted that fifty to a hundred new names are still suggested every single year."
+  },
+  {
+   "start": 1471.3,
+   "end": 1476.7,
+   "text": "Despite that massive volume of theories, police have only ever publicly named one man as a suspect."
+  },
+  {
+   "start": 1477.3,
+   "end": 1478.9,
+   "text": "That man was Arthur Leigh Allen."
+  },
+  {
+   "start": 1478.9,
+   "end": 1482.4,
+   "text": "He was a former elementary school teacher and a convicted sex offender."
+  },
+  {
+   "start": 1482.4,
+   "end": 1488.8,
+   "text": "Some of his friends claimed he called himself by the killer's nickname and talked about shooting young couples in lover's lanes."
+  },
+  {
+   "start": 1488.8,
+   "end": 1494.9,
+   "text": "People who suspected him also argued that the timing of his imprisonment lined up with the pattern of the Zodiac's letters."
+  },
+  {
+   "start": 1494.9,
+   "end": 1497.6,
+   "text": "Police pursued him more than any other lead, for years."
+  },
+  {
+   "start": 1497.6,
+   "end": 1499.3,
+   "text": "None of it was ever tested in court."
+  },
+  {
+   "start": 1499.9,
+   "end": 1503.9,
+   "text": "Police searched Allen's property several times, but they never arrested him."
+  },
+  {
+   "start": 1503.9,
+   "end": 1508.1,
+   "text": "His fingerprints and handwriting could not be definitively linked to the Zodiac."
+  },
+  {
+   "start": 1508.1,
+   "end": 1513.9,
+   "text": "A retired police handwriting expert, Lloyd Cunningham, said in 2009 that none of Allen's writing even came close."
+  },
+  {
+   "start": 1513.9,
+   "end": 1523.7,
+   "text": "In the early two thousands, investigators developed a partial DNA profile from Zodiac letters that possibly belongs to the killer, and in 2002 San Francisco police said Allen did not match it."
+  },
+  {
+   "start": 1523.7,
+   "end": 1528.4,
+   "text": "True crime author Robert Graysmith wrote two books strongly suggesting Allen was the killer."
+  },
+  {
+   "start": 1528.4,
+   "end": 1529.8,
+   "text": "Allen died in August 1992."
+  },
+  {
+   "start": 1529.8,
+   "end": 1532.3,
+   "text": "He was never charged with any of the Zodiac crimes."
+  },
+  {
+   "start": 1533.1,
+   "end": 1537.2,
+   "text": "With no new definitive leads, the investigation eventually stalled."
+  },
+  {
+   "start": 1537.2,
+   "end": 1542,
+   "text": "In 2004, the San Francisco Police Department officially marked the case inactive."
+  },
+  {
+   "start": 1542,
+   "end": 1544.6,
+   "text": "It sat in that dormant status for two years."
+  },
+  {
+   "start": 1544.6,
+   "end": 1548.7,
+   "text": "Then, in 2006, the department reversed course and reopened its files."
+  },
+  {
+   "start": 1549.3,
+   "end": 1553.8,
+   "text": "That decision brought San Francisco back in line with the other investigating agencies."
+  },
+  {
+   "start": 1553.8,
+   "end": 1557.1,
+   "text": "They are all still waiting for that one piece of undeniable proof."
+  },
+  {
+   "start": 1557.7,
+   "end": 1562.4,
+   "text": "The search for the perpetrator's true identity continues well into the twenty-first century."
+  },
+  {
+   "start": 1562.4,
+   "end": 1564.5,
+   "text": "No one has ever been arrested for the crimes."
+  },
+  {
+   "start": 1564.5,
+   "end": 1569.7,
+   "text": "The confirmed victims, the bizarre ciphers, and the taunting letters are all part of the official record."
+  },
+  {
+   "start": 1570.3,
+   "end": 1570.9,
+   "text": "Read the file."
+  },
+  {
+   "start": 1570.9,
+   "end": 1572.1,
+   "text": "Form your own conclusion."
+  },
+  {
+   "start": 1572.1,
+   "end": 1573.1,
+   "text": "That's it for this one."
+  },
+  {
+   "start": 1573.1,
+   "end": 1574.4,
+   "text": "Thanks for hanging out with me."
+  },
+  {
+   "start": 1574.4,
+   "end": 1577.1,
+   "text": "This has been CrimeTimeSnacks, and I'll catch you next time."
+  }
+ ]
+}

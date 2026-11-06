@@ -368,6 +368,31 @@
         "San Francisco Bay",
         "true crime podcast"
       ]
+    },
+    {
+      "guid": "cts-studio-the-zodiac-ciphers",
+      "title": "The Zodiac Ciphers",
+      "slug": "the-zodiac-ciphers",
+      "date": "2026-11-06",
+      "pubDate": "Fri, 06 Nov 2026 08:12:14 GMT",
+      "duration": "00:26:22",
+      "description": "I've covered a lot of cold cases, but nothing gets under my skin quite like the Zodiac. Between 1968 and 1969, a phantom stalked the San Francisco Bay Area, targeting couples on lonely roads and a cab driver in the city. But the murders were only half the story. The killer craved the spotlight, taunting police and the public with a bizarre trail of letters, bomb threats, and complex cryptograms sent directly to local newspapers.\n\nIn this episode, we are walking through the confirmed timeline of the Zodiac's terrifying reign. We will look at the brutal attacks that left five dead and two wounded, the desperate race to decode his ciphers before he struck again, and the chilling reality that some of those messages remained unsolved for over fifty years. Grab your snacks and settle in, because we are diving into one of the most infamous mysteries in American history.",
+      "audio": "/audio/the-zodiac-ciphers.mp3",
+      "audioType": "audio/mpeg",
+      "audioBytes": 25319695,
+      "image": "/images/episodes/the-zodiac-ciphers.jpg",
+      "link": "",
+      "explicit": false,
+      "source": "studio",
+      "keywords": [
+        "Zodiac Killer",
+        "San Francisco Bay Area",
+        "unsolved murders",
+        "true crime podcast",
+        "cryptograms",
+        "Arthur Leigh Allen",
+        "Lake Herman Road"
+      ]
     }
   ]
 }
