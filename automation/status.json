@@ -1,6 +1,6 @@
 {
-  "generated": "2026-11-06T08:37:18.920Z",
-  "improvementsShipped": 553,
+  "generated": "2026-11-06T15:03:18.183Z",
+  "improvementsShipped": 556,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
     "content": [
@@ -11,14 +11,14 @@
   },
   "counts": {
     "episodes": 23,
-    "posts": 27,
+    "posts": 28,
     "merchDesigns": 34,
     "merchCollection": 0,
-    "quizzes": 24,
-    "quizQuestions": 120,
+    "quizzes": 25,
+    "quizQuestions": 125,
     "fbiCases": 150,
     "videos": 1,
-    "topicsQueued": 113,
+    "topicsQueued": 112,
     "topicsTotal": 126
   },
   "latest": {
@@ -27,28 +27,28 @@
       "date": "2026-11-06"
     },
     "post": {
-      "title": "The Disappearance of Maura Murray",
-      "date": "2026-11-03"
+      "title": "How Behavioral Profilers Build a Sketch of an Offender",
+      "date": "2026-11-06"
     },
     "quiz": {
-      "title": "The Lori Vallow Daybell Case",
-      "created": "2026-11-03"
+      "title": "The Laci Peterson Case File",
+      "created": "2026-11-06"
     }
   },
   "freshness": {
-    "episodesJson": "2026-11-06T08:36:47.508Z",
-    "blogJson": "2026-11-03T15:02:22.494Z",
+    "episodesJson": "2026-11-06T15:00:18.564Z",
+    "blogJson": "2026-11-06T15:02:22.825Z",
     "merchJson": "2026-09-22T14:02:22.646Z",
-    "quizzesJson": "2026-11-03T15:02:50.977Z",
-    "fbiJson": "2026-11-06T06:58:13.768Z",
+    "quizzesJson": "2026-11-06T15:02:49.242Z",
+    "fbiJson": "2026-11-06T15:00:19.662Z",
     "css": "2026-10-06T04:47:48.161Z"
   },
   "nextTopics": [
-    "How behavioral profilers build a sketch of an offender",
     "Understanding the criminal appeals process",
     "The evolution of crime scene photography",
     "How podcasts have helped reopen cold cases",
     "Bloodstain pattern analysis, explained",
-    "How true crime fans can help cases responsibly"
+    "How true crime fans can help cases responsibly",
+    "What a medical examiner determines and what they don't"
   ]
 }

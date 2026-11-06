@@ -42,6 +42,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.crimetimesnacks.com/blog-posts/how-behavioral-profilers-build-a-sketch-of-an-offender.html</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.crimetimesnacks.com/blog-posts/how-digital-forensics-changed-modern-investigations.html</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -175,7 +181,7 @@
   </url>
   <url>
     <loc>https://www.crimetimesnacks.com/blog.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -505,7 +511,7 @@
   </url>
   <url>
     <loc>https://www.crimetimesnacks.com/quiz.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

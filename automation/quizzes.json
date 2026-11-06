@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-11-03T15:02:50.977Z"
+    "updated": "2026-11-06T15:02:49.242Z"
   },
   "quizzes": [
+    {
+      "slug": "the-laci-peterson-case-file",
+      "title": "The Laci Peterson Case File",
+      "tag": "Episode Case",
+      "description": "You know the headlines from 2002. Let's look at what the case file actually shows about the investigation and timeline.",
+      "created": "2026-11-06",
+      "sourceTopic": "The Disappearance of Laci Peterson",
+      "questions": [
+        {
+          "q": "On what date was Laci Peterson reported missing from her Modesto home?",
+          "options": [
+            "December 24, 2002",
+            "December 31, 2002",
+            "November 28, 2002",
+            "January 1, 2003"
+          ],
+          "answer": 0,
+          "explain": "Scott Peterson called his mother-in-law on Christmas Eve evening to say Laci was missing, triggering the initial search."
+        },
+        {
+          "q": "Where did Scott Peterson claim he had spent the morning Laci disappeared?",
+          "options": [
+            "Playing golf at Del Rio Country Club",
+            "Fishing at the Berkeley Marina",
+            "Working at his warehouse office",
+            "Visiting family in San Diego"
+          ],
+          "answer": 1,
+          "explain": "Scott told investigators he went solo fishing for sturgeon at the Berkeley Marina, roughly 90 miles from their Modesto home."
+        },
+        {
+          "q": "Who came forward to police in January 2003, revealing she had been dating Scott Peterson?",
+          "options": [
+            "Amber Frey",
+            "Amy Rocha",
+            "Kristen Reed",
+            "Lori Davies"
+          ],
+          "answer": 0,
+          "explain": "Frey contacted the Modesto Police Department after seeing news coverage, learning Scott was married and his pregnant wife was missing."
+        },
+        {
+          "q": "Where were the remains of Laci Peterson and baby Conner discovered in April 2003?",
+          "options": [
+            "Along the Stanislaus River",
+            "Near the shore of San Francisco Bay",
+            "In a remote section of Yosemite",
+            "Near the Don Pedro Reservoir"
+          ],
+          "answer": 1,
+          "explain": "A passerby discovered Conner's remains on April 13, and Laci was found the next day along the shoreline, just miles from where Scott launched his boat."
+        },
+        {
+          "q": "What notable item did investigators find in Scott Peterson's car when he was arrested in La Jolla?",
+          "options": [
+            "His brother's identification and roughly $15,000 in cash",
+            "A plane ticket to Paris and a fake passport",
+            "A handwritten confession letter",
+            "Concrete mix and anchor molds"
+          ],
+          "answer": 0,
+          "explain": "When police took him into custody near a golf course, Scott had dyed his hair blond, was carrying his brother's ID, survival gear, and nearly $15,000 in cash."
+        }
+      ]
+    },
     {
       "slug": "the-lori-vallow-daybell-case",
       "title": "The Lori Vallow Daybell Case",

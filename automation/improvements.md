@@ -618,3 +618,5 @@ with an [auto] tag — the counter on Mission Control reads this file.
 552. [auto 2026-11-06] Published podcast episode from the studio: "The Disappearance of Laci Peterson" (00:28:57)
 553. [auto 2026-11-06] Published podcast episode from the studio: "The Zodiac Ciphers" (00:26:22)
 554. [auto 2026-11-06] Published podcast episode from the studio: "Ted Bundy and the Murder of Kimberly Leach" (00:28:08)
+555. [auto 2026-11-06] Published blog post from research notes: "How Behavioral Profilers Build a Sketch of an Offender" (1315 words, 4 sources)
+556. [auto 2026-11-06] Published new quiz: "The Laci Peterson Case File" (5 questions)
