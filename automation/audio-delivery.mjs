@@ -35,6 +35,8 @@ export const LIMITS = {
   paceMinWords: 25,    // below this a paragraph's pace is about its punctuation, not its reading
   flat: 0.78,          // share of the episode's median pitch movement
   seamDb: 3.0,         // a step this big across a splice join is audible
+  seamMinSeconds: 2.5, // a neighbour shorter than this is a beat, not a level to compare against
+  seamMinWords: 6,
   repeatsHold: 0.08,   // script-repeats.mjs's own "edit before voicing"
   repeatsNote: 0.04,
 };
@@ -76,11 +78,18 @@ export function delivery(paras, meas, { joins = [], spliced = [] } = {}) {
   // paragraph after it, and checking the wrong paragraph is worse than not checking.
   const everDropped = spliced.some((s) => (s.changes || []).some((c) => c.action === "dropped"));
   const swapped = everDropped ? new Set() : new Set(spliced.flatMap((s) => (s.changes || []).filter((c) => c.action === "replaced").map((c) => c.i)));
+  // A neighbour has to be long enough to have a level of its own. "Let's unpack it." is one
+  // second of speech read softly as a beat; it sat 5 dB under both the paragraphs around it on
+  // the 2026-11-02 Bundy episode, and the swapped-in paragraph after it was within half a
+  // decibel of the three long paragraphs around them. So a short neighbour is skipped and the
+  // next one out on that side is compared instead.
+  const steady = (nb) => nb && nb.db != null && nb.seconds >= LIMITS.seamMinSeconds && nb.words >= LIMITS.seamMinWords;
+  const neighbour = (i, dir) => { for (let k = i + dir; k >= 0 && k < rows.length && Math.abs(k - i) <= 2; k += dir) if (steady(rows[k])) return rows[k]; return null; };
   for (const i of [...swapped].sort((a, b) => a - b)) {
     const r = rows[i]; if (!r || r.db == null) continue;
     let worst = null;
-    for (const [side, nb] of [["before", rows[i - 1]], ["after", rows[i + 1]]]) {
-      if (!nb || nb.db == null) continue;
+    for (const [side, nb] of [["before", neighbour(i, -1)], ["after", neighbour(i, 1)]]) {
+      if (!nb) continue;
       const step = Math.abs(r.db - nb.db);
       if (step > LIMITS.seamDb && (!worst || step > worst.step)) worst = { step, side, louder: r.db > nb.db };
     }
