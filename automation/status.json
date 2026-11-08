@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-08T13:40:15.796Z",
+  "generated": "2026-11-08T22:15:36.454Z",
   "improvementsShipped": 556,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
@@ -36,12 +36,12 @@
     }
   },
   "freshness": {
-    "episodesJson": "2026-11-08T13:39:53.504Z",
-    "blogJson": "2026-11-08T13:39:49.639Z",
+    "episodesJson": "2026-11-08T22:15:14.045Z",
+    "blogJson": "2026-11-08T22:15:10.108Z",
     "merchJson": "2026-09-22T14:02:22.646Z",
     "quizzesJson": "2026-11-06T15:02:49.242Z",
-    "fbiJson": "2026-11-08T13:39:54.153Z",
-    "css": "2026-11-08T13:39:49.727Z"
+    "fbiJson": "2026-11-08T22:15:14.519Z",
+    "css": "2026-11-08T22:15:10.195Z"
   },
   "nextTopics": [
     "Understanding the criminal appeals process",
