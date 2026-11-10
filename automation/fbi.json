@@ -3,7 +3,7 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1269,
     "baked": 150,
-    "updated": "2026-11-09T06:48:59.344Z"
+    "updated": "2026-11-10T15:00:24.454Z"
   },
   "items": [
     {
@@ -750,6 +750,22 @@
         "Crimes Against Children"
       ],
       "publication": "2010-08-27T17:55:00"
+    },
+    {
+      "uid": "69bfe3c5c4e34b77a37b6593d4f81206",
+      "title": "BESALYNN MARY JAMES",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/besalynn-mary-james/@@images/image/large",
+      "office": "Seattle",
+      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the individual(s) involved in the disappearance of Besalynn Mary James.",
+      "url": "https://www.fbi.gov/wanted/kidnap/besalynn-mary-james",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons",
+        "Indian Country"
+      ],
+      "publication": "2026-01-16T07:41:00"
     },
     {
       "uid": "69bfe3c5c4e34b77a37b6593d4f81206",
@@ -1521,21 +1537,6 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2025-11-06T10:24:00"
-    },
-    {
-      "uid": "6432636baed2441c9a4c0ae9b4bc4323",
-      "title": "CARLOS ANDRES RENDON-BERMUDEZ",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/wcc/carlos-andres-rendon-bermudez/@@images/image/large",
-      "office": "San Juan",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/wcc/carlos-andres-rendon-bermudez",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
-      "subjects": [
-        "White-Collar Crime"
-      ],
-      "publication": "2026-07-23T10:57:00"
     },
     {
       "uid": "a9c83daab608499a95ee547a51d55231",

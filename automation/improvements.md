@@ -620,3 +620,4 @@ with an [auto] tag — the counter on Mission Control reads this file.
 554. [auto 2026-11-06] Published podcast episode from the studio: "Ted Bundy and the Murder of Kimberly Leach" (00:28:08)
 555. [auto 2026-11-06] Published blog post from research notes: "How Behavioral Profilers Build a Sketch of an Offender" (1315 words, 4 sources)
 556. [auto 2026-11-06] Published new quiz: "The Laci Peterson Case File" (5 questions)
+557. [auto 2026-11-10] Published blog post from research notes: "Ted Bundy and the Murder of Kimberly Leach" (1480 words, 6 sources)
