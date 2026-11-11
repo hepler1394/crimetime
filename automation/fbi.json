@@ -1,11 +1,26 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1269,
+    "totalOnFile": 1274,
     "baked": 150,
-    "updated": "2026-11-10T15:00:24.454Z"
+    "updated": "2026-11-11T06:41:05.834Z"
   },
   "items": [
+    {
+      "uid": "9520d2075f0347aaae5aa86b01546d0f",
+      "title": "HECTOR VICENTE PAGUADA PAGUADA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/murders/hector-vicente-paguada-paguada/@@images/image/large",
+      "office": "Dallas",
+      "reward": "Reward up to $50,000 for information leading to the arrest and conviction of Hector Vicente Paguada Paguada.",
+      "url": "https://www.fbi.gov/wanted/murders/hector-vicente-paguada-paguada",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Violent Crime - Murders"
+      ],
+      "publication": "2026-07-27T10:56:00"
+    },
     {
       "uid": "909b855201e94a20af669a209375ce51",
       "title": "JOSEPH MATOS",
@@ -96,6 +111,21 @@
         "Seeking Information"
       ],
       "publication": "2026-10-20T12:34:00"
+    },
+    {
+      "uid": "a561edd4ebb244e1ab5338333120d06d",
+      "title": "MOHAMMAD REZA ANSARI",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/terrorinfo/mohammad-reza-ansari/@@images/image/large",
+      "office": "Washington D.C.",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/terrorinfo/mohammad-reza-ansari",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information - Terrorism"
+      ],
+      "publication": "2025-04-22T07:55:00"
     },
     {
       "uid": "3a3e0bd9a11349fb8453252ae9f959e0",
@@ -598,6 +628,21 @@
       "publication": "2025-11-21T13:09:00"
     },
     {
+      "uid": "772061eddf0a4ddcae165cb32d88c75b",
+      "title": "JOSE DEL CARMEN GARCIA MARTINEZ",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cac/jose-del-carmen-garcia-martinez/@@images/image/large",
+      "office": "Denver",
+      "reward": "Reward up to $20,000 for information leading to the arrest of Jose Del Carmen Garcia Martinez.",
+      "url": "https://www.fbi.gov/wanted/cac/jose-del-carmen-garcia-martinez",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
+      "subjects": [
+        "Crimes Against Children"
+      ],
+      "publication": "2026-09-03T08:26:00"
+    },
+    {
       "uid": "fcce63ed6b9e49d98f88a4a4dbd502c4",
       "title": "ZE'KEVIOUS ZENARD PERRY",
       "kind": "wanted",
@@ -750,22 +795,6 @@
         "Crimes Against Children"
       ],
       "publication": "2010-08-27T17:55:00"
-    },
-    {
-      "uid": "69bfe3c5c4e34b77a37b6593d4f81206",
-      "title": "BESALYNN MARY JAMES",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/besalynn-mary-james/@@images/image/large",
-      "office": "Seattle",
-      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the individual(s) involved in the disappearance of Besalynn Mary James.",
-      "url": "https://www.fbi.gov/wanted/kidnap/besalynn-mary-james",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons",
-        "Indian Country"
-      ],
-      "publication": "2026-01-16T07:41:00"
     },
     {
       "uid": "69bfe3c5c4e34b77a37b6593d4f81206",
@@ -1433,21 +1462,6 @@
       "publication": "2026-01-22T11:43:00"
     },
     {
-      "uid": "9520d2075f0347aaae5aa86b01546d0f",
-      "title": "HECTOR VICENTE PAGUADA PAGUADA",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/murders/hector-vicente-paguada-paguada/@@images/image/large",
-      "office": "Dallas",
-      "reward": "Reward up to $50,000 for information leading to the arrest and conviction of Hector Vicente Paguada Paguada.",
-      "url": "https://www.fbi.gov/wanted/murders/hector-vicente-paguada-paguada",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Violent Crime - Murders"
-      ],
-      "publication": "2026-07-27T10:56:00"
-    },
-    {
       "uid": "e142f8a3a1af4525819897aaf1abe5b3",
       "title": "MURDERS IN ROSWELL, NEW MEXICO",
       "kind": "victim",
@@ -1537,6 +1551,21 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2025-11-06T10:24:00"
+    },
+    {
+      "uid": "6432636baed2441c9a4c0ae9b4bc4323",
+      "title": "CARLOS ANDRES RENDON-BERMUDEZ",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/wcc/carlos-andres-rendon-bermudez/@@images/image/large",
+      "office": "San Juan",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/wcc/carlos-andres-rendon-bermudez",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
+      "subjects": [
+        "White-Collar Crime"
+      ],
+      "publication": "2026-07-23T10:57:00"
     },
     {
       "uid": "a9c83daab608499a95ee547a51d55231",
@@ -1749,6 +1778,52 @@
         "Most Wanted Fraudster"
       ],
       "publication": "2023-01-04T13:18:00"
+    },
+    {
+      "uid": "f7e7f98cdefe4af3a5a1091aa5b06fbd",
+      "title": "MOHAMMAD HOSSEIN SHAMORADIZADEH",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/terrorinfo/mohammad-hossein-shamoradizadeh/@@images/image/large",
+      "office": "Washington D.C.",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/terrorinfo/mohammad-hossein-shamoradizadeh",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information - Terrorism"
+      ],
+      "publication": "2025-04-22T08:52:00"
+    },
+    {
+      "uid": "952a1a715a27466786debbffac0b8d49",
+      "title": "ABOLFAZL ALIZADEH",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/terrorinfo/abolfazl-alizadeh/@@images/image/large",
+      "office": "Washington D.C.",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/terrorinfo/abolfazl-alizadeh",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information - Terrorism"
+      ],
+      "publication": "2025-04-22T07:44:00"
+    },
+    {
+      "uid": "0452a29f8d3c4b06874958f614d51c44",
+      "title": "SHAHRAM POURSAFI",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/wanted_terrorists/shahram-poursafi/@@images/image/large",
+      "office": "Washington D.C.",
+      "reward": "The Rewards For Justice Program, United States Department of State, is offering a reward of up to $20 million for information leading to the arrest or conviction of Shahram Poursafi.",
+      "url": "https://www.fbi.gov/wanted/wanted_terrorists/shahram-poursafi",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Iran",
+        "Most Wanted Terrorist"
+      ],
+      "publication": "2022-08-01T11:49:00"
     },
     {
       "uid": "2be9ee7b46594e648c8bb06c4b7bf36e",
@@ -2222,82 +2297,6 @@
         "Additional Violent Crimes"
       ],
       "publication": "2024-09-06T12:26:00"
-    },
-    {
-      "uid": "56ebce0db8b5486c9a3923484fbd55c9",
-      "title": "HOLLIS C. VANLEER, JR.",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/hollis-c-vanleer-jr/@@images/image/large",
-      "office": "Kansas City",
-      "reward": "Reward up to $5,000 for information leading to the arrest of Hollis C. Vanleer, Jr.",
-      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/hollis-c-vanleer-jr",
-      "status": "captured",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Law Enforcement Assistance"
-      ],
-      "publication": "2026-06-10T13:10:00"
-    },
-    {
-      "uid": "728fb58961164a6d95fdee463fbd2540",
-      "title": "LOGAN WARRIOR GOINGS",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/logan-warrior-goings/@@images/image/large",
-      "office": "Minneapolis",
-      "reward": "Reward up to $50,000 for information leading to the arrest and conviction of those responsible for the death of Logan Warrior Goings.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/logan-warrior-goings",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information",
-        "Indian Country"
-      ],
-      "publication": "2026-06-08T12:16:00"
-    },
-    {
-      "uid": "41b9ba902de54bd589b9e14c8b42bbb0",
-      "title": "HERBERT LEON KIMBLE",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/herbert-leon-kimble/@@images/image/large",
-      "office": "Columbia",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Herbert Leon Kimble.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/herbert-leon-kimble",
-      "status": "captured",
-      "warning": "",
-      "subjects": [
-        "Most Wanted Fraudster"
-      ],
-      "publication": "2026-06-01T11:37:00"
-    },
-    {
-      "uid": "d078deee25ea4b9aa6f4ac4a681e2f65",
-      "title": "YULAN ADONAY ARCHAGA CARIAS",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/topten/yulan-adonay-archaga-carias/@@images/image/large",
-      "office": "Houston",
-      "reward": "The United States Government is offering a reward of up to $10,000,000 for information leading to the arrest and/or conviction of Yulan Adonay Archaga Carias.",
-      "url": "https://www.fbi.gov/wanted/topten/yulan-adonay-archaga-carias",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND EXTREMELY DANGEROUS",
-      "subjects": [
-        "Ten Most Wanted Fugitives"
-      ],
-      "publication": "2021-10-20T07:20:00"
-    },
-    {
-      "uid": "9adc7219d3ea4d5c8b76a65cfca045e1",
-      "title": "SHOOTING OF MINOR VICTIM",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/shooting-of-minor-victim/@@images/image/large",
-      "office": "Dallas",
-      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the individuals involved in this shooting.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/shooting-of-minor-victim",
-      "status": "na",
-      "warning": "SUSPECTS SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2026-06-15T08:23:00"
     }
   ]
 }
