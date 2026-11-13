@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-11-06T15:02:49.242Z"
+    "updated": "2026-11-13T15:02:36.607Z"
   },
   "quizzes": [
+    {
+      "slug": "the-zodiac-ciphers",
+      "title": "The Zodiac Ciphers",
+      "tag": "Episode Case",
+      "description": "Four coded messages sent to Bay Area papers. Only two were ever solved. Let's unpack what the case file actually shows.",
+      "created": "2026-11-13",
+      "sourceTopic": "The Zodiac Ciphers",
+      "questions": [
+        {
+          "q": "How many total ciphers did the Zodiac killer send to newspapers and police?",
+          "options": [
+            "Three",
+            "Four",
+            "Five",
+            "Six"
+          ],
+          "answer": 1,
+          "explain": "The killer sent four ciphers in total: the Z408, Z340, Z13, and Z32. To this day, only two have been definitively solved."
+        },
+        {
+          "q": "Who successfully solved the killer's first cipher, the Z408, in August 1969?",
+          "options": [
+            "The FBI Cryptanalysis Unit",
+            "Codebreakers at the NSA",
+            "A local high school teacher and his wife",
+            "Reporters at the San Francisco Chronicle"
+          ],
+          "answer": 2,
+          "explain": "Donald and Betty Harden cracked it over a weekend using basic substitution methods. The federal codebreakers hadn't managed to break it yet."
+        },
+        {
+          "q": "What was the first line of the decrypted Z408 message?",
+          "options": [
+            "I LIKE KILLING PEOPLE BECAUSE IT IS SO MUCH FUN",
+            "THIS IS THE ZODIAC SPEAKING",
+            "MY NAME IS CIPHER AND YOU WILL NEVER CATCH ME",
+            "I AM WAITING FOR YOU AT LAKE BERRYESSA"
+          ],
+          "answer": 0,
+          "explain": "The message opened with that exact line, misspelled words included. It offered no real identity, despite the killer's earlier claim that it would."
+        },
+        {
+          "q": "How many years elapsed before amateur codebreakers finally solved the infamous Z340 cipher?",
+          "options": [
+            "17 years",
+            "31 years",
+            "51 years",
+            "It remains unsolved"
+          ],
+          "answer": 2,
+          "explain": "The Z340 arrived in November 1969 and resisted every attack until December 2020, when a three-person civilian team finally cracked its diagonal transposition scheme."
+        },
+        {
+          "q": "Which short cipher was introduced with the phrase 'My name is —'?",
+          "options": [
+            "Z408",
+            "Z340",
+            "Z32",
+            "Z13"
+          ],
+          "answer": 3,
+          "explain": "The Z13 was sent in April 1970. Because it is only 13 characters long, cryptographers consider it mathematically impossible to verify a unique solution without a key."
+        }
+      ]
+    },
     {
       "slug": "the-laci-peterson-case-file",
       "title": "The Laci Peterson Case File",

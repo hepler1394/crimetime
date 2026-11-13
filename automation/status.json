@@ -1,6 +1,6 @@
 {
-  "generated": "2026-11-13T07:03:12.227Z",
-  "improvementsShipped": 557,
+  "generated": "2026-11-13T15:02:40.707Z",
+  "improvementsShipped": 559,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
     "content": [
@@ -11,14 +11,14 @@
   },
   "counts": {
     "episodes": 23,
-    "posts": 29,
+    "posts": 30,
     "merchDesigns": 34,
     "merchCollection": 0,
-    "quizzes": 25,
-    "quizQuestions": 125,
+    "quizzes": 26,
+    "quizQuestions": 130,
     "fbiCases": 150,
     "videos": 1,
-    "topicsQueued": 112,
+    "topicsQueued": 111,
     "topicsTotal": 126
   },
   "latest": {
@@ -27,28 +27,28 @@
       "date": "2026-11-06"
     },
     "post": {
-      "title": "Ted Bundy and the Murder of Kimberly Leach",
-      "date": "2026-11-10"
+      "title": "Joseph Corcoran and the criminal appeals process",
+      "date": "2026-11-13"
     },
     "quiz": {
-      "title": "The Laci Peterson Case File",
-      "created": "2026-11-06"
+      "title": "The Zodiac Ciphers",
+      "created": "2026-11-13"
     }
   },
   "freshness": {
-    "episodesJson": "2026-11-13T06:55:40.899Z",
-    "blogJson": "2026-11-13T06:55:36.761Z",
+    "episodesJson": "2026-11-13T15:00:14.061Z",
+    "blogJson": "2026-11-13T15:02:21.807Z",
     "merchJson": "2026-09-22T14:02:22.646Z",
-    "quizzesJson": "2026-11-06T15:02:49.242Z",
-    "fbiJson": "2026-11-13T06:55:41.504Z",
-    "css": "2026-11-13T06:55:36.844Z"
+    "quizzesJson": "2026-11-13T15:02:36.607Z",
+    "fbiJson": "2026-11-13T15:00:14.831Z",
+    "css": "2026-10-06T04:47:48.161Z"
   },
   "nextTopics": [
-    "Understanding the criminal appeals process",
     "The evolution of crime scene photography",
     "How podcasts have helped reopen cold cases",
     "Bloodstain pattern analysis, explained",
     "How true crime fans can help cases responsibly",
-    "What a medical examiner determines and what they don't"
+    "What a medical examiner determines and what they don't",
+    "How polygraph results are used and why courts distrust them"
   ]
 }
