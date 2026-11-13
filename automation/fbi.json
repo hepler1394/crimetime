@@ -3,9 +3,234 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1274,
     "baked": 150,
-    "updated": "2026-11-13T15:00:14.831Z"
+    "updated": "2026-11-13T19:51:03.163Z"
   },
   "items": [
+    {
+      "uid": "350e0a8a347540d88691d50a68c38fff",
+      "title": "FU QIANG",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cyber/fu-qiang/@@images/image/large",
+      "office": "Washington D.C.",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cyber/fu-qiang",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Cyber's Most Wanted"
+      ],
+      "publication": "2020-10-26T08:14:00"
+    },
+    {
+      "uid": "c32c616d-b523-4b85-99b2-7e0638739c0e",
+      "title": "SUN KAILIANG",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cyber/sun-kailiang/@@images/image/large",
+      "office": "Pittsburgh",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cyber/sun-kailiang",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Cyber's Most Wanted"
+      ],
+      "publication": "2014-05-19T07:00:00"
+    },
+    {
+      "uid": "589af581-8560-4261-b961-1f7d1f8e655c",
+      "title": "HUANG ZHENYU",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cyber/huang-zhenyu/@@images/image/large",
+      "office": "Pittsburgh",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cyber/huang-zhenyu",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Cyber's Most Wanted"
+      ],
+      "publication": "2014-05-19T07:00:00"
+    },
+    {
+      "uid": "86fa31ff-c38c-4dc9-a9f6-e5c897016442",
+      "title": "WEN XINYU",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cyber/wen-xinyu/@@images/image/large",
+      "office": "Pittsburgh",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cyber/wen-xinyu",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Cyber's Most Wanted"
+      ],
+      "publication": "2014-05-19T07:00:00"
+    },
+    {
+      "uid": "33c12401-5a14-41c0-b41e-92b5f8912f46",
+      "title": "WANG DONG",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cyber/wang-dong/@@images/image/large",
+      "office": "Pittsburgh",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cyber/wang-dong",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Cyber's Most Wanted"
+      ],
+      "publication": "2014-05-19T07:00:00"
+    },
+    {
+      "uid": "25ac0020-30cb-44d3-b8d5-22225cbc7fe4",
+      "title": "GU CHUNHUI",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cyber/gu-chunhui/@@images/image/large",
+      "office": "Pittsburgh",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cyber/gu-chunhui",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Cyber's Most Wanted"
+      ],
+      "publication": "2014-05-19T07:00:00"
+    },
+    {
+      "uid": "7c46aaa49bcc41f6957f7d8faaa385c8",
+      "title": "ZHU HUA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cyber/zhu-hua/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cyber/zhu-hua",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Cyber's Most Wanted"
+      ],
+      "publication": "2018-11-15T08:57:00"
+    },
+    {
+      "uid": "f30dda7744994945b6fabe615bf7745a",
+      "title": "ZHANG SHILONG",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cyber/zhang-shilong/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cyber/zhang-shilong",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Cyber's Most Wanted"
+      ],
+      "publication": "2018-12-06T11:02:00"
+    },
+    {
+      "uid": "1970e6ef6b13414c89124abf472bc0b2",
+      "title": "APT 10 GROUP",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cyber/apt-10-group/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cyber/apt-10-group",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Cyber's Most Wanted"
+      ],
+      "publication": "2018-12-07T07:26:00"
+    },
+    {
+      "uid": "fbbbee48617f43069c64962f338a0a3d",
+      "title": "FUJIE WANG",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cyber/fujie-wang/@@images/image/large",
+      "office": "Indianapolis",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cyber/fujie-wang",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Cyber's Most Wanted"
+      ],
+      "publication": "2019-05-03T09:51:00"
+    },
+    {
+      "uid": "162cde0da895484886d2b315812c3c82",
+      "title": "BOYUSEC HACKERS",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cyber/boyusec-hackers/@@images/image/large",
+      "office": "Pittsburgh",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cyber/boyusec-hackers",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Cyber's Most Wanted"
+      ],
+      "publication": "2020-01-13T09:04:00"
+    },
+    {
+      "uid": "32eeba50d906400786c23ed38133fd04",
+      "title": "APT 41 GROUP",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cyber/apt-41-group/@@images/image/large",
+      "office": "Washington D.C.",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cyber/apt-41-group",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Cyber's Most Wanted"
+      ],
+      "publication": "2020-09-03T09:18:00"
+    },
+    {
+      "uid": "3022c4ccc1c445a5b84a26749d37226a",
+      "title": "TAN DAILIN",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cyber/tan-dailin/@@images/image/large",
+      "office": "Washington D.C.",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cyber/tan-dailin",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Cyber's Most Wanted"
+      ],
+      "publication": "2020-10-21T12:52:00"
+    },
+    {
+      "uid": "7797c418a3cb4a5b9dcf0fb16c8262ff",
+      "title": "QIAN CHUAN",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cyber/qian-chuan/@@images/image/large",
+      "office": "Washington D.C.",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cyber/qian-chuan",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Cyber's Most Wanted"
+      ],
+      "publication": "2020-10-22T09:41:00"
+    },
+    {
+      "uid": "5db813cd32f24925a61702123ce02722",
+      "title": "JIANG LIZHI",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cyber/jiang-lizhi/@@images/image/large",
+      "office": "Washington D.C.",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cyber/jiang-lizhi",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Cyber's Most Wanted"
+      ],
+      "publication": "2020-10-23T09:22:00"
+    },
     {
       "uid": "9520d2075f0347aaae5aa86b01546d0f",
       "title": "HECTOR VICENTE PAGUADA PAGUADA",
@@ -1311,172 +1536,6 @@
       "publication": "2026-04-21T10:40:00"
     },
     {
-      "uid": "7d54d3dc154843ddaae748d03fb8f375",
-      "title": "VICTOR EDUARDO MORALES ZELAYA",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/victor-eduardo-morales-zelaya/@@images/image/large",
-      "office": "Houston",
-      "reward": "The United States Department of State's Transnational Organized Crime Rewards Program is offering a reward of up to $5,000,000 for information leading to the arrest and/or conviction of Victor Eduardo Morales Zelaya.",
-      "url": "https://www.fbi.gov/wanted/cei/victor-eduardo-morales-zelaya",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-06-15T11:09:00"
-    },
-    {
-      "uid": "b4ba813f6a2048cf8008726178dbb40e",
-      "title": "GURPREET SINGH",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/gurpreet-singh/@@images/image/large",
-      "office": "Los Angeles",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cei/gurpreet-singh",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-07-30T08:43:00"
-    },
-    {
-      "uid": "2a19f6cd74ad405f81af8f79fda32aed",
-      "title": "MICHAEL LIZASO MARASIGAN",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/michael-lizaso-marasigan/@@images/image/large",
-      "office": "Honolulu",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Michael Lizaso Marasigan.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/michael-lizaso-marasigan",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED AN ESCAPE RISK",
-      "subjects": [
-        "Most Wanted Fraudster"
-      ],
-      "publication": "2026-01-12T14:02:00"
-    },
-    {
-      "uid": "27f6739b638b437192b1bb4fdb0426d3",
-      "title": "JOHN MICHAEL DIMITRION",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/john-michael-dimitrion/@@images/image/large",
-      "office": "Honolulu",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of John Michael Dimitrion.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/john-michael-dimitrion",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Most Wanted Fraudster"
-      ],
-      "publication": "2010-10-29T16:10:00"
-    },
-    {
-      "uid": "82bcacf074974ee1879fa227815cd13c",
-      "title": "JULIEANNE BALDUEZA DIMITRION",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/julieanne-baldueza-dimitrion/@@images/image/large",
-      "office": "Honolulu",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Julieanne Baldueza Dimitrion.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/julieanne-baldueza-dimitrion",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Most Wanted Fraudster"
-      ],
-      "publication": "2010-10-29T16:10:00"
-    },
-    {
-      "uid": "2f842fd0b2cf4449806ab4c68813e563",
-      "title": "GREGORY HENDERSON, JR.",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/topten/gregory-henderson-jr/@@images/image/large",
-      "office": "Indianapolis",
-      "reward": "Reward up to $1,000,000 for information leading to the arrest of Gregory Henderson, Jr.",
-      "url": "https://www.fbi.gov/wanted/topten/gregory-henderson-jr",
-      "status": "captured",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Ten Most Wanted Fugitives"
-      ],
-      "publication": "2026-07-14T10:03:00"
-    },
-    {
-      "uid": "60a95a13a258419981877b5e638c6545",
-      "title": "MARY JOHNSON (DAVIS)",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/mary-johnson-davis/@@images/image/large",
-      "office": "Seattle",
-      "reward": "Reward up to $25,000 for information leading to the identification, arrest, and conviction of person(s) responsible for the death of Mary Johnson (Davis).",
-      "url": "https://www.fbi.gov/wanted/seeking-info/mary-johnson-davis",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Indian Country",
-        "Seeking Information"
-      ],
-      "publication": "2021-09-14T06:37:00"
-    },
-    {
-      "uid": "b1b38bae7e1a4411b1bce5455ee18641",
-      "title": "ETERNAL LIFE HARVEST CENTER ARSON",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/eternal-life-harvest-center-arson/@@images/image/large",
-      "office": "Nashville",
-      "reward": "Reward up to $2,500 for information leading to the identification, arrest, and conviction of the individual responsible for the arson.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/eternal-life-harvest-center-arson",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2026-08-13T11:36:00"
-    },
-    {
-      "uid": "ffc971d4a49048bd891663a295da570f",
-      "title": "JIMMY DOLLISON - GARNETT, KANSAS",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/jimmy-dollison---garnett-kansas/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/jimmy-dollison---garnett-kansas",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Homicides and Sexual Assaults"
-      ],
-      "publication": "2026-08-13T11:26:00"
-    },
-    {
-      "uid": "cbcf79b08004491e9f395edc6a8ef823",
-      "title": "AMBERLY MENDOZA",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/amberly-mendoza/@@images/image/large",
-      "office": "Phoenix",
-      "reward": "Reward up to $30,000 for information leading to the arrest and conviction of the individual(s) involved in the death of Amberly Mendoza.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/amberly-mendoza",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2026-01-22T11:43:00"
-    },
-    {
-      "uid": "e142f8a3a1af4525819897aaf1abe5b3",
-      "title": "MURDERS IN ROSWELL, NEW MEXICO",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/murders-in-roswell-new-mexico/roswellhoffmann.jpg/@@images/image/large",
-      "office": "Albuquerque",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/seeking-info/murders-in-roswell-new-mexico",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2026-08-11T07:51:00"
-    },
-    {
       "uid": "2995d2f2225945088aa35c11995a95f9",
       "title": "BANK ROBBERY - CLARKSVILLE, VIRGINIA",
       "kind": "victim",
@@ -2236,67 +2295,6 @@
         "ECAP"
       ],
       "publication": "2012-06-27T11:00:00"
-    },
-    {
-      "uid": "6b928b0ee94f4605b9546fa0ae0fe4c6",
-      "title": "JANE DOE - DESERT CENTER, CALIFORNIA",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/vicap/unidentified-persons/jane-doe---desert-center-california/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/unidentified-persons/jane-doe---desert-center-california",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Unidentified Persons"
-      ],
-      "publication": "2026-06-25T13:31:00"
-    },
-    {
-      "uid": "d27eea10-9fa4-4f8a-93f0-21449e0f944e",
-      "title": "SARA NICOLE GRAHAM",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/sara-graham/@@images/image/large",
-      "office": "Charlotte",
-      "reward": "Reward up to $5,000 for information leading to the location of Sara Nicole Graham's body.",
-      "url": "https://www.fbi.gov/wanted/kidnap/sara-graham",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Indian Country",
-        "Kidnappings and Missing Persons"
-      ],
-      "publication": "2015-03-06T07:00:00"
-    },
-    {
-      "uid": "84586a26a7224fda8094cf451a29fc0b",
-      "title": "JOSE ANGEL FRIAS - ALBUQUERQUE, NEW MEXICO",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/jose-angel-frias---albuquerque-new-mexico/@@images/image/large",
-      "office": "FBI",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/jose-angel-frias---albuquerque-new-mexico",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "ViCAP Missing Persons"
-      ],
-      "publication": "2026-06-25T10:17:00"
-    },
-    {
-      "uid": "f93e5b48c4dd4369848dc8f104cd8ac8",
-      "title": "GARY LUELLEN",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/additional/gary-luellen/@@images/image/large",
-      "office": "Chicago",
-      "reward": "Reward up to $10,000 for information leading to the arrest of Gary Luellen.",
-      "url": "https://www.fbi.gov/wanted/additional/gary-luellen",
-      "status": "captured",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN ESCAPE RISK",
-      "subjects": [
-        "Additional Violent Crimes"
-      ],
-      "publication": "2024-09-06T12:26:00"
     }
   ]
 }
