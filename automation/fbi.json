@@ -3,9 +3,24 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1275,
     "baked": 150,
-    "updated": "2026-11-14T18:15:15.280Z"
+    "updated": "2026-11-14T22:35:13.339Z"
   },
   "items": [
+    {
+      "uid": "5ba23a18352b41289dbd81e9cff2395b",
+      "title": "GADSDEN ISLAMIC CENTER ARSON",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/gadsden-islamic-center-arson/@@images/image/large",
+      "office": "Birmingham",
+      "reward": "Reward up to $20,000 for information leading to the identification, arrest, and conviction of those responsible for this incident.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/gadsden-islamic-center-arson",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-11-13T15:39:00"
+    },
     {
       "uid": "dba519cb1e9a46f9a49710155ed83270",
       "title": "VICTOR JULIAN DUQUE",
@@ -20,21 +35,6 @@
         "White-Collar Crime"
       ],
       "publication": "2026-10-15T11:15:00"
-    },
-    {
-      "uid": "5ba23a18352b41289dbd81e9cff2395b",
-      "title": "GADSDEN ISLAMIC CENTER ARSON",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/gadsden-islamic-center-arson/@@images/image/large",
-      "office": "Birmingham",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/seeking-info/gadsden-islamic-center-arson",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2026-11-13T15:39:00"
     },
     {
       "uid": "350e0a8a347540d88691d50a68c38fff",
