@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-15T06:56:09.159Z",
+  "generated": "2026-11-15T18:57:52.389Z",
   "improvementsShipped": 559,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
@@ -36,12 +36,12 @@
     }
   },
   "freshness": {
-    "episodesJson": "2026-11-15T06:46:27.135Z",
-    "blogJson": "2026-11-15T06:46:22.369Z",
+    "episodesJson": "2026-11-15T18:57:30.197Z",
+    "blogJson": "2026-11-15T18:57:26.677Z",
     "merchJson": "2026-09-22T14:02:22.646Z",
     "quizzesJson": "2026-11-13T15:02:36.607Z",
-    "fbiJson": "2026-11-15T06:46:27.684Z",
-    "css": "2026-11-15T06:46:22.475Z"
+    "fbiJson": "2026-11-15T18:57:30.713Z",
+    "css": "2026-11-15T18:57:26.761Z"
   },
   "nextTopics": [
     "The evolution of crime scene photography",

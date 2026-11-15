@@ -3,7 +3,7 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1275,
     "baked": 150,
-    "updated": "2026-11-15T06:46:27.684Z"
+    "updated": "2026-11-15T18:57:30.713Z"
   },
   "items": [
     {
@@ -14,7 +14,7 @@
       "office": "Birmingham",
       "reward": "Reward up to $20,000 for information leading to the identification, arrest, and conviction of those responsible for this incident.",
       "url": "https://www.fbi.gov/wanted/seeking-info/gadsden-islamic-center-arson",
-      "status": "na",
+      "status": "captured",
       "warning": "",
       "subjects": [
         "Seeking Information"
