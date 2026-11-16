@@ -1,11 +1,117 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1275,
+    "totalOnFile": 1279,
     "baked": 150,
-    "updated": "2026-11-16T06:44:39.341Z"
+    "updated": "2026-11-16T22:17:03.455Z"
   },
   "items": [
+    {
+      "uid": "7d53833371174f21b8daa905c4bd1fdd",
+      "title": "HYON CHOL SONG",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cyber/hyon-chol-song/@@images/image/large",
+      "office": "St. Louis",
+      "reward": "The Rewards For Justice Program, United States Department of State, is offering a reward of up to $5 million for information that leads to the disruption of financial mechanisms of persons engaged in certain activities that support North Korea (Democratic People’s Republic of Korea, DPRK), including the exportation of workers from North Korea to generate revenue, money laundering, and specified cyber-activity and actions that support North Korea’s weapons of mass destruction proliferation.",
+      "url": "https://www.fbi.gov/wanted/cyber/hyon-chol-song",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Cyber's Most Wanted"
+      ],
+      "publication": "2024-11-12T12:25:00"
+    },
+    {
+      "uid": "32d84a28415f4cf6929ab1d94e10b3a5",
+      "title": "ROBERTO GOMEZ",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cei/roberto-gomez/@@images/image/large",
+      "office": "Los Angeles",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/cei/roberto-gomez",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Criminal Enterprise Investigations"
+      ],
+      "publication": "2026-11-16T09:29:00"
+    },
+    {
+      "uid": "9fe8f12927114cd9a3bfc5b441c6a29c",
+      "title": "UNKNOWN ROBBERY SUSPECT — UTAH",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/unknown-robbery-suspect---utah/@@images/image/large",
+      "office": "Salt Lake City",
+      "reward": "Reward up to $5,000 for information leading to the identification, arrest, or conviction of the individual responsible for this robbery.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/unknown-robbery-suspect---utah",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country"
+      ],
+      "publication": "2026-10-05T12:49:00"
+    },
+    {
+      "uid": "32f6d7fa6f2a437dab0f4126d237b3cb",
+      "title": "DPRK IT WORKERS",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cyber/dprk-it-workers/@@images/image/large",
+      "office": "St. Louis",
+      "reward": "The Rewards For Justice Program, United States Department of State, is offering a reward of up to $5 million for information that leads to the disruption of financial mechanisms of persons engaged in certain activities that support North Korea (Democratic People’s Republic of Korea, DPRK), including the exportation of workers from North Korea to generate revenue, money laundering, and specified cyber-activity and actions that support North Korea’s weapons of mass destruction proliferation.",
+      "url": "https://www.fbi.gov/wanted/cyber/dprk-it-workers",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Cyber's Most Wanted"
+      ],
+      "publication": "2024-11-19T10:41:00"
+    },
+    {
+      "uid": "4f420a569f064cc586926b90f6a01c61",
+      "title": "DOROTHY MAE DAVISON - SPRINGFIELD, MISSOURI",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/dorothy-mae-davison---springfield-missouri/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/dorothy-mae-davison---springfield-missouri",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Homicides and Sexual Assaults"
+      ],
+      "publication": "2026-11-16T08:08:00"
+    },
+    {
+      "uid": "0c9c3300dff54e6e816bb2c1c07ef493",
+      "title": "JOHN DOE - CLARKSVILLE, VIRGINIA",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/vicap/unidentified-persons/john-doe---clarksville-virginia/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/unidentified-persons/john-doe---clarksville-virginia",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Unidentified Persons"
+      ],
+      "publication": "2026-11-16T07:29:00"
+    },
+    {
+      "uid": "0f2d43190700454e9ad82e7209bbaf1b",
+      "title": "NICOLE ELIZABETH MCCARTNEY - HARRISBURG, PENNSYLVANIA",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/nicole-elizabeth-mccartney---harrisburg-pennsylvania/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/nicole-elizabeth-mccartney---harrisburg-pennsylvania",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Missing Persons"
+      ],
+      "publication": "2026-01-22T08:15:00"
+    },
     {
       "uid": "5ba23a18352b41289dbd81e9cff2395b",
       "title": "GADSDEN ISLAMIC CENTER ARSON",
@@ -35,6 +141,21 @@
         "White-Collar Crime"
       ],
       "publication": "2026-10-15T11:15:00"
+    },
+    {
+      "uid": "b2e1154cba5244fc86cf5eb433c1db8c",
+      "title": "DRONE IN RESTRICTED AIRSPACE",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/drone-in-restricted-airspace/@@images/image/large",
+      "office": "Washington D.C.",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/seeking-info/drone-in-restricted-airspace",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information"
+      ],
+      "publication": "2026-11-09T08:23:00"
     },
     {
       "uid": "350e0a8a347540d88691d50a68c38fff",
@@ -533,22 +654,6 @@
       "publication": "2026-07-06T08:18:00"
     },
     {
-      "uid": "9fe8f12927114cd9a3bfc5b441c6a29c",
-      "title": "UNKNOWN ROBBERY SUSPECT — UTAH",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/unknown-robbery-suspect---utah/@@images/image/large",
-      "office": "Salt Lake City",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/seeking-info/unknown-robbery-suspect---utah",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information",
-        "Indian Country"
-      ],
-      "publication": "2026-10-05T12:49:00"
-    },
-    {
       "uid": "043a2834e80848099aa61394cc54f9f9",
       "title": "JULIOUS GEORGE KHALID",
       "kind": "wanted",
@@ -654,21 +759,6 @@
         "Indian Country"
       ],
       "publication": "2023-08-25T08:05:00"
-    },
-    {
-      "uid": "461a97c6a7214afeb22c8b70d83a5fee",
-      "title": "SEAN E. BROWN",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/sean-e-brown/@@images/image/large",
-      "office": "Chicago",
-      "reward": "Reward up to $5,000 for information leading to the arrest and conviction of Sean E. Brown.",
-      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/sean-e-brown",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Law Enforcement Assistance"
-      ],
-      "publication": "2026-09-16T12:02:00"
     },
     {
       "uid": "e68a2cd0426f44e0965dc7f92ca95a3b",
@@ -1440,6 +1530,21 @@
       "publication": "2024-06-28T12:24:00"
     },
     {
+      "uid": "a219b9f0500740f3908e853a7761ca1b",
+      "title": "ABIGAIL BERNSTEIN",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/abigail-bernstein/@@images/image/large",
+      "office": "Honolulu",
+      "reward": "Reward up to $10,000 for information leading to the safe recovery of Abigail, Kush, or Koa Bernstein.",
+      "url": "https://www.fbi.gov/wanted/kidnap/abigail-bernstein",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons"
+      ],
+      "publication": "2024-06-28T12:24:00"
+    },
+    {
       "uid": "36715efc74c94930a5cc5e30d52ab0f8",
       "title": "KOA KAI BERNSTEIN",
       "kind": "missing",
@@ -2183,118 +2288,6 @@
         "Seeking Information"
       ],
       "publication": "2026-07-16T11:30:00"
-    },
-    {
-      "uid": "11f73d916ebf4a6aa5c9b464623e86b6",
-      "title": "ALTON MESTETH",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/alton-mesteth/@@images/image/large",
-      "office": "Minneapolis",
-      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the individual(s) responsible for the death of Alton Mesteth.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/alton-mesteth",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information",
-        "Indian Country"
-      ],
-      "publication": "2026-07-14T07:44:00"
-    },
-    {
-      "uid": "cfde8833515d4906b01fc5f269f59e83",
-      "title": "CARLOS ALBERTO PAEZ PEREDA",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/carlos-alberto-paez-pereda/@@images/image/large",
-      "office": "San Diego",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cei/carlos-alberto-paez-pereda",
-      "status": "na",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-07-06T14:13:00"
-    },
-    {
-      "uid": "cdb8134918884264bee2a5c1296c3750",
-      "title": "PATRICK CARLOW, SR.",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/patrick-carlow-sr/@@images/image/large",
-      "office": "Minneapolis",
-      "reward": "Reward up to $25,000 for information leading to the arrest and conviction of the individual(s) responsible for the death of Patrick Carlow, Sr.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/patrick-carlow-sr",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information",
-        "Indian Country",
-        "Pine Ridge"
-      ],
-      "publication": "2024-10-01T12:12:00"
-    },
-    {
-      "uid": "c4edcb95f655818fc436cec4826fd85f",
-      "title": "RONALD OWEN HARD HEART",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/ronald-owen-hard-heart/@@images/image/large",
-      "office": "Minneapolis",
-      "reward": "Reward up to $50,000 for information leading to the arrest and conviction of the person or persons responsible for the murders of Wilson Edison Black Elk, Jr. and Ronald Owen Hard Heart.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/ronald-owen-hard-heart",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information",
-        "Indian Country",
-        "Pine Ridge"
-      ],
-      "publication": "2010-09-15T11:05:00"
-    },
-    {
-      "uid": "fbe2ac6171f1c41e7aeae919d89ab3c7",
-      "title": "WILSON EDISON BLACK ELK, JR.",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/wilson-edison-black-elk-jr/@@images/image/large",
-      "office": "Minneapolis",
-      "reward": "Reward up to $50,000 for information leading to the arrest and conviction of the person or persons responsible for the murders of Wilson Edison Black Elk, Jr. and Ronald Owen Hard Heart.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/wilson-edison-black-elk-jr",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information",
-        "Indian Country",
-        "Pine Ridge"
-      ],
-      "publication": "2010-09-15T11:05:00"
-    },
-    {
-      "uid": "72aed64ec0e640f696d9e7d97cc56d80",
-      "title": "FAHAD MOHAMED NUR",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/fahad-mohamed-nur/@@images/image/large",
-      "office": "Minneapolis",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Fahad Mohamed Nur.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/fahad-mohamed-nur",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Most Wanted Fraudster"
-      ],
-      "publication": "2026-06-10T10:43:00"
-    },
-    {
-      "uid": "d196e0d48ec64f2abb2ff1b28f2bf160",
-      "title": "INFANT DEATH - MICHIGAN",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/infant-death---michigan/@@images/image/large",
-      "office": "Detroit",
-      "reward": "Reward up to $15,000 for information leading to the identification, arrest, and conviction of the individual or individuals involved in the death of the infant.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/infant-death---michigan",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2026-07-10T12:46:00"
     }
   ]
 }
