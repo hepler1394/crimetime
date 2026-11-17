@@ -3,7 +3,7 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1279,
     "baked": 150,
-    "updated": "2026-11-16T22:17:03.455Z"
+    "updated": "2026-11-17T08:04:30.495Z"
   },
   "items": [
     {
@@ -761,6 +761,21 @@
       "publication": "2023-08-25T08:05:00"
     },
     {
+      "uid": "461a97c6a7214afeb22c8b70d83a5fee",
+      "title": "SEAN E. BROWN",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/law-enforcement-assistance/sean-e-brown/@@images/image/large",
+      "office": "Chicago",
+      "reward": "Reward up to $5,000 for information leading to the arrest and conviction of Sean E. Brown.",
+      "url": "https://www.fbi.gov/wanted/law-enforcement-assistance/sean-e-brown",
+      "status": "na",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS",
+      "subjects": [
+        "Law Enforcement Assistance"
+      ],
+      "publication": "2026-09-16T12:02:00"
+    },
+    {
       "uid": "e68a2cd0426f44e0965dc7f92ca95a3b",
       "title": "TAVIS LAMAR CHENAULT",
       "kind": "wanted",
@@ -1513,21 +1528,6 @@
         "Kidnappings and Missing Persons"
       ],
       "publication": "2024-07-01T10:02:00"
-    },
-    {
-      "uid": "a219b9f0500740f3908e853a7761ca1b",
-      "title": "ABIGAIL BERNSTEIN",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/abigail-bernstein/@@images/image/large",
-      "office": "Honolulu",
-      "reward": "Reward up to $10,000 for information leading to the safe recovery of Abigail, Kush, or Koa Bernstein.",
-      "url": "https://www.fbi.gov/wanted/kidnap/abigail-bernstein",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons"
-      ],
-      "publication": "2024-06-28T12:24:00"
     },
     {
       "uid": "a219b9f0500740f3908e853a7761ca1b",
