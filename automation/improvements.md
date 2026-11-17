@@ -623,3 +623,5 @@ with an [auto] tag — the counter on Mission Control reads this file.
 557. [auto 2026-11-10] Published blog post from research notes: "Ted Bundy and the Murder of Kimberly Leach" (1480 words, 6 sources)
 558. [auto 2026-11-13] Published blog post from research notes: "Joseph Corcoran and the criminal appeals process" (1519 words, 5 sources)
 559. [auto 2026-11-13] Published new quiz: "The Zodiac Ciphers" (5 questions)
+560. [auto 2026-11-17] Published blog post from research notes: "The Golden State Killer: How DNA Caught Joseph DeAngelo" (1623 words, 4 sources)
+561. [auto 2026-11-17] Published new quiz: "Bundy: The Kimberly Leach Case" (5 questions)

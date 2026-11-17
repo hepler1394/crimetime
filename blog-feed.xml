@@ -6,7 +6,15 @@
     <atom:link href="https://www.crimetimesnacks.com/blog-feed.xml" rel="self" type="application/rss+xml"/>
     <description>True crime case updates, analysis, and the stories behind the headlines.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Nov 2026 08:13:29 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2026 15:02:20 GMT</lastBuildDate>
+    <item>
+      <title>The Golden State Killer: How DNA Caught Joseph DeAngelo</title>
+      <link>https://www.crimetimesnacks.com/blog-posts/the-golden-state-killer-how-dna-caught-joseph-deangelo.html</link>
+      <guid isPermaLink="true">https://www.crimetimesnacks.com/blog-posts/the-golden-state-killer-how-dna-caught-joseph-deangelo.html</guid>
+      <category>Investigation</category>
+      <pubDate>Tue, 17 Nov 2026 12:00:00 GMT</pubDate>
+      <description>Joseph DeAngelo evaded capture for decades until investigative genetic genealogy connected crime scene DNA to his distant relatives in 2018.</description>
+    </item>
     <item>
       <title>Joseph Corcoran and the criminal appeals process</title>
       <link>https://www.crimetimesnacks.com/blog-posts/joseph-corcoran-and-the-criminal-appeals-process.html</link>
@@ -238,14 +246,6 @@
       <category>Investigation</category>
       <pubDate>Mon, 10 Feb 2025 12:00:00 GMT</pubDate>
       <description>Richard Allen was convicted in 2024 of killing Abby Williams and Libby German. The evidence, the trial, and where his appeal stands in October 2026.</description>
-    </item>
-    <item>
-      <title>Genetic Genealogy Cases: What It Has Solved and What It Cannot Do</title>
-      <link>https://www.crimetimesnacks.com/blog-posts/genetic-genealogy-changing-cold-cases.html</link>
-      <guid isPermaLink="true">https://www.crimetimesnacks.com/blog-posts/genetic-genealogy-changing-cold-cases.html</guid>
-      <category>Analysis</category>
-      <pubDate>Mon, 20 Jan 2025 12:00:00 GMT</pubDate>
-      <description>From Angie Dodge to the Boy in the Box: cases genetic genealogy solved, the wrong turns along the way, and the limits courts and families still face.</description>
     </item>
   </channel>
 </rss>

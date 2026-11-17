@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-11-13T15:02:36.607Z"
+    "updated": "2026-11-17T15:02:10.289Z"
   },
   "quizzes": [
+    {
+      "slug": "bundy-the-kimberly-leach-case",
+      "title": "Bundy: The Kimberly Leach Case",
+      "tag": "Case File",
+      "description": "You know the headlines about Ted Bundy. Let's look at what the physical evidence actually proved in his final trial.",
+      "created": "2026-11-17",
+      "sourceTopic": "Ted Bundy and the Murder of Kimberly Leach",
+      "questions": [
+        {
+          "q": "In what Florida town was 12-year-old Kimberly Leach abducted on February 9, 1978?",
+          "options": [
+            "Lake City",
+            "Tallahassee",
+            "Pensacola",
+            "Gainesville"
+          ],
+          "answer": 0,
+          "explain": "She disappeared from Lake City Junior High School. Bundy had driven there after fleeing Tallahassee following the Chi Omega attacks."
+        },
+        {
+          "q": "What vehicle was Bundy driving when eyewitnesses spotted him near Kimberly Leach's school?",
+          "options": [
+            "A stolen orange Datsun B210",
+            "A white Dodge van stolen from FSU",
+            "His original tan Volkswagen Beetle",
+            "A blue Chevrolet pickup truck"
+          ],
+          "answer": 1,
+          "explain": "The white van had been stolen from the Florida State University motor pool. Tire and shoe impressions near the scene tied back to it."
+        },
+        {
+          "q": "Which key piece of transfer evidence directly linked Bundy's clothing to Kimberly Leach?",
+          "options": [
+            "Red acrylic fibers from his jacket",
+            "Soil samples from his work boots",
+            "Traces of cat hair from his rental room",
+            "Paint transfer from a stolen vehicle"
+          ],
+          "answer": 0,
+          "explain": "FBI microscopic analysis matched red fibers from Bundy's jacket to fibers found on Leach's clothing and inside the stolen FSU van."
+        },
+        {
+          "q": "Where was Ted Bundy finally apprehended by police just days after the murder?",
+          "options": [
+            "Pensacola",
+            "Mobile",
+            "Jacksonville",
+            "Atlanta"
+          ],
+          "answer": 0,
+          "explain": "Pensacola patrol officer David Lee stopped Bundy in a stolen VW Bug early on February 15, 1978, completely unaware of who was behind the wheel."
+        },
+        {
+          "q": "In which city was Bundy tried and convicted specifically for Kimberly Leach's murder?",
+          "options": [
+            "Orlando",
+            "Miami",
+            "Tallahassee",
+            "Tampa"
+          ],
+          "answer": 0,
+          "explain": "Due to intense pretrial publicity, the venue was moved to Orlando. Judge Wallace E. Sturgis Jr. presided over the 1980 trial."
+        }
+      ]
+    },
     {
       "slug": "the-zodiac-ciphers",
       "title": "The Zodiac Ciphers",

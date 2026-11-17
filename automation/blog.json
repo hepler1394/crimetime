@@ -5,6 +5,70 @@
   },
   "posts": [
     {
+      "slug": "the-golden-state-killer-how-dna-caught-joseph-deangelo",
+      "title": "The Golden State Killer: How DNA Caught Joseph DeAngelo",
+      "date": "2026-11-17",
+      "category": "investigation",
+      "categoryLabel": "Investigation",
+      "image": "/images/episodes/the-golden-state-killer.jpg",
+      "author": "Cory",
+      "featured": false,
+      "excerpt": "Joseph DeAngelo evaded capture for decades until investigative genetic genealogy connected crime scene DNA to his distant relatives in 2018.",
+      "body": [
+        "In 1980, a pathologist meticulously prepared and froze a pristine sample from a duplicate rape kit. That biological evidence sat dormant for decades. In the 1970s and 1980s, the most advanced technique for analyzing such evidence was forensic serology, specifically ABO blood typing. This method could only exclude suspects, narrowing a suspect pool to millions of men, but it could never point to a single individual.",
+        "The man ultimately identified as Joseph James DeAngelo operated across California for 12 years. He committed at least 13 murders, more than 50 rapes, and over 100 burglaries between 1974 and 1986. For decades, the widespread geography of the crimes suggested multiple separate predators were responsible. Law enforcement agencies were siloed, and the lack of widespread surveillance systems, cell phones, or DNA databases allowed a forensically aware offender to thrive.",
+        "In 2013, true crime writer Michelle McNamara coined the name the Golden State Killer to encompass the different monikers given to this criminal. The case remained a ghost story until a fusion of genetic science and traditional detective work reached back through generations. The 2018 arrest and the 2020 plea hearing put the full scope of the timeline on the public record.",
+        "## The Visalia Ransacker",
+        "From April 1974 to December 1975, a burglar targeted Visalia, a small town located halfway between Sacramento and Los Angeles. The perpetrator committed more than 100 burglaries in the area. He mostly rummaged through homeowners' belongings, taking low-value items, coins, and women's undergarments. He actively ignored major valuables left in plain sight and often scattered the stolen underwear around the houses he targeted.",
+        "On September 11, 1975, the burglar broke into the home of Claude Snelling in an attempt to kidnap Snelling's daughter. The intruder shot Snelling twice. He then kicked the daughter three times in the face and fled the scene. Snelling died from his injuries.",
+        "Following another attempted break-in and shooting in December 1975, the burglar evaded police once again. After this December attack, the burglaries in Visalia stopped entirely. The perpetrator, known at the time as the Visalia Ransacker, moved his hunting grounds further north.",
+        "## The East Area Rapist",
+        "By the summer of 1976, burglaries and rapes began terrorizing the eastern district of Sacramento County. The perpetrator stalked women in the area, conducting lengthy surveillance to memorize their routines, and peeped through their windows. He targeted single-story homes, typically located near escape routes like large fields or forests. He would often break into the homes beforehand to unload any guns, unlock windows, and leave ligatures laying around for later use.",
+        "On June 18, 1976, he broke into the home of a single woman in Rancho Cordova and raped her at knifepoint. He went on to commit at least 49 more rapes in the East Sacramento Area and surrounding cities. Victims typically awoke to the glare of a flashlight and a masked gunman in their faces. When attacking couples, he tied up the man and raped the woman repeatedly. He sometimes stacked dishes on the man's back, threatening to murder the couple if the dishes fell off during the assault. During these attacks, he sometimes ate food and drank beer in the kitchen.",
+        "The perpetrator eluded capture by scaling fences or escaping on a bicycle. In February 1978, the East Area Rapist escalated to murder in Northern California. Brian and Katie Maggiore were walking their dog in the Sacramento area when they were attacked. After Brian Maggiore was shot, Katie Maggiore ran away and yelled for help. The killer caught up with her and shot her in the head. The last known rape attributed to the East Area Rapist occurred on June 11, 1979, in Danville, just outside San Francisco. After this, the crimes shifted entirely to a new region of the state.",
+        "## The Original Night Stalker",
+        "From 1979 to 1986, a new series of murders occurred in Southern California. The press dubbed the killer the Original Night Stalker to differentiate him from Richard Ramirez, who later received the Night Stalker moniker. On December 30, 1979, Debra Manning and Robert Offerman were killed in Goleta. In March 1980, Lyman and Charlene Smith were murdered in their Ventura home. Charlene Smith was bound and raped, and the couple was later found dead by Lyman Smith's 12-year-old son. They were bound with a diamond knot, a knot typically used in interior design or for nautical purposes.",
+        "In August 1980, Keith and Patrice Harrington were slain in their home in Dana Point. On February 5, 1981, 28-year-old Manuela Witthuhn was bound, raped, and bludgeoned to death while home alone in Irvine. Her body was found by her mother. In another attack, Sanchez was shot and then beaten to death, bludgeoned in the head two dozen times. The killer then bound Domingo, raped her, and beat her in the head more than 10 times.",
+        "No crimes were attributed to the killer from July 1981 until May 1986. Then, 18-year-old Janelle Cruz was killed. Cruz was bound, raped, and bludgeoned in the face and head at her home. During the investigations into these southern murders, police found a neighborhood map with the word \"punishment\" misspelled on the back. They also discovered notebook sheets recounting a sixth-grade classroom experience. Despite these clues, the East Area Rapist and the Original Night Stalker cases were not officially connected for decades.",
+        "## A Career in Law Enforcement",
+        "For much of his crime spree, Joseph DeAngelo was a police officer. From 1973 to 1976, he served with the Exeter Police Department, a small town not far from Visalia. In 1976, he joined the police department in Auburn, which is about a 30-minute drive from Sacramento.",
+        "This professional background provided DeAngelo with an intimate understanding of police procedure, investigative techniques, and jurisdictional boundaries. He knew exactly how to avoid leaving fingerprints and how to exploit the lack of communication between different county agencies. He lived as a husband and father, hiding in plain sight within the very system that was hunting him.",
+        "DeAngelo was fired from the Auburn Police Department in 1979 when he was caught shoplifting dog repellent and a hammer from a local convenience store. In 1980, he moved to Citrus Heights, where he lived until his arrest.",
+        "## The Evolution of DNA Evidence",
+        "The first major forensic revolution in the case occurred in 2001 with the application of Short Tandem Repeat analysis. Unlike ABO blood typing, STR profiling creates a unique genetic fingerprint using about 20 genetic markers. By generating STR profiles from crime scenes in both Northern and Southern California, investigators proved scientifically that the East Area Rapist and the Original Night Stalker were the exact same man.",
+        "This breakthrough unified the case, but it immediately led to a dead end. The killer's STR profile was uploaded to CODIS, the national criminal DNA database. No match was ever found. This indicated that the perpetrator had never been convicted of a felony that required a DNA sample submission.",
+        "The killer continued to taunt past victims with threatening phone calls until at least 2001, but his identity remained unknown. A 2016 reinvestigation centered on DNA evidence would eventually provide the final breakthrough.",
+        "## Investigative Genetic Genealogy",
+        "The final revolution was Investigative Genetic Genealogy. Genealogy databases use Single Nucleotide Polymorphisms, which consist of hundreds of thousands of genetic markers that provide a roadmap of a person's ancestry. Because the 20-marker STR profiles in CODIS are incompatible with SNP profiles, investigators had to go back to the original evidence.",
+        "The pristine sample from the duplicate rape kit frozen in 1980 provided the high-quality DNA needed for SNP analysis. In 2018, police uploaded this new SNP profile to the free DNA sharing site GEDmatch. The upload reduced almost a million profiles to a single family by matching the DNA to distant relatives, likely third or fourth cousins.",
+        "Over four months, genealogists painstakingly built family trees from these matches. They narrowed the search based on approximate age, geographic proximity, and other characteristics. This process eventually pointed directly to Joseph James DeAngelo. To confirm the lead, investigators placed the 72-year-old under surveillance. Police collected DeAngelo's discarded DNA from a tissue left in the trash and from the door handle of his car. A standard STR profile was generated from these samples. It was a perfect match to the profile from the crime scenes that had sat in CODIS for years.",
+        "## The 2020 Plea Hearing",
+        "On April 24, 2018, Joseph James DeAngelo was arrested. After he was taken into custody, he sat alone in an interview room and spoke to himself. Prosecutors later revealed in court that he said, \"I did all those things. I destroyed all those lives.\" On June 29, 2020, DeAngelo pleaded guilty to 13 counts of first-degree murder. The statute of limitations for the rapes had passed, so he was not formally charged with them. However, the plea deal required DeAngelo to admit to multiple uncharged acts, including the rapes, which prosecutors described in horrific detail. In exchange, the death penalty was taken off the table.",
+        "From August 18, 2020, to August 20, 2020, DeAngelo was confronted in court by rape survivors and the relatives of those he had killed. Jane Carson-Sandler, who was raped in 1976, told the court she was frozen in fear beyond description during the attack. She said her focus was fully on where the attacker had put her son when he removed him from the bed, and what he was going to do to him.",
+        "As of August 2020, DeAngelo received multiple life sentences without parole. During the hearing, he sat in a wheelchair covered by a white face mask. After the victims spoke, he rose out of the wheelchair, removed the mask, and told the court that he had listened to all of their statements. He apologized to everyone he had hurt and thanked the judge. Read the timeline of the investigation. Look at the forensic record. See how the evidence finally caught up with him."
+      ],
+      "sourceTopic": null,
+      "caseSlug": "golden-state-killer",
+      "sources": [
+        {
+          "title": "The Golden State Killer: A Definitive Forensic Case Study",
+          "url": "https://simplyforensic.com/golden-state-killer-forensic-case-study/"
+        },
+        {
+          "title": "Golden State Killer - Crime Museum",
+          "url": "https://www.crimemuseum.org/crime-library/famous-murders/golden-state-killer/"
+        },
+        {
+          "title": "The 'Golden State Killer': Inside the timeline of crimes",
+          "url": "https://abcnews.com/US/inside-timeline-crimes-golden-state-killer/story?id=54744307"
+        },
+        {
+          "title": "Inside The Golden State Killer's Crimes — And How He Was Caught",
+          "url": "https://allthatsinteresting.com/golden-state-killer"
+        }
+      ]
+    },
+    {
       "slug": "joseph-corcoran-and-the-criminal-appeals-process",
       "title": "Joseph Corcoran and the criminal appeals process",
       "date": "2026-11-13",

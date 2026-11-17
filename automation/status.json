@@ -1,6 +1,6 @@
 {
-  "generated": "2026-11-17T08:13:29.842Z",
-  "improvementsShipped": 559,
+  "generated": "2026-11-17T15:02:23.243Z",
+  "improvementsShipped": 561,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
     "content": [
@@ -11,11 +11,11 @@
   },
   "counts": {
     "episodes": 23,
-    "posts": 30,
+    "posts": 31,
     "merchDesigns": 34,
     "merchCollection": 0,
-    "quizzes": 26,
-    "quizQuestions": 130,
+    "quizzes": 27,
+    "quizQuestions": 135,
     "fbiCases": 150,
     "videos": 1,
     "topicsQueued": 111,
@@ -27,21 +27,21 @@
       "date": "2026-11-06"
     },
     "post": {
-      "title": "Joseph Corcoran and the criminal appeals process",
-      "date": "2026-11-13"
+      "title": "The Golden State Killer: How DNA Caught Joseph DeAngelo",
+      "date": "2026-11-17"
     },
     "quiz": {
-      "title": "The Zodiac Ciphers",
-      "created": "2026-11-13"
+      "title": "Bundy: The Kimberly Leach Case",
+      "created": "2026-11-17"
     }
   },
   "freshness": {
-    "episodesJson": "2026-11-17T08:04:30.166Z",
-    "blogJson": "2026-11-17T08:04:26.293Z",
+    "episodesJson": "2026-11-17T15:00:14.038Z",
+    "blogJson": "2026-11-17T15:01:41.725Z",
     "merchJson": "2026-09-22T14:02:22.646Z",
-    "quizzesJson": "2026-11-13T15:02:36.607Z",
-    "fbiJson": "2026-11-17T08:04:30.495Z",
-    "css": "2026-11-17T08:04:26.376Z"
+    "quizzesJson": "2026-11-17T15:02:10.289Z",
+    "fbiJson": "2026-11-17T15:00:15.431Z",
+    "css": "2026-10-06T04:47:48.161Z"
   },
   "nextTopics": [
     "The evolution of crime scene photography",
