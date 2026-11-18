@@ -3,24 +3,9 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1279,
     "baked": 150,
-    "updated": "2026-11-18T07:40:48.870Z"
+    "updated": "2026-11-18T20:40:24.029Z"
   },
   "items": [
-    {
-      "uid": "7d53833371174f21b8daa905c4bd1fdd",
-      "title": "HYON CHOL SONG",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cyber/hyon-chol-song/@@images/image/large",
-      "office": "St. Louis",
-      "reward": "The Rewards For Justice Program, United States Department of State, is offering a reward of up to $5 million for information that leads to the disruption of financial mechanisms of persons engaged in certain activities that support North Korea (Democratic People’s Republic of Korea, DPRK), including the exportation of workers from North Korea to generate revenue, money laundering, and specified cyber-activity and actions that support North Korea’s weapons of mass destruction proliferation.",
-      "url": "https://www.fbi.gov/wanted/cyber/hyon-chol-song",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Cyber's Most Wanted"
-      ],
-      "publication": "2024-11-12T12:25:00"
-    },
     {
       "uid": "32d84a28415f4cf6929ab1d94e10b3a5",
       "title": "ROBERTO GOMEZ",
@@ -35,6 +20,21 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2026-11-16T09:29:00"
+    },
+    {
+      "uid": "7d53833371174f21b8daa905c4bd1fdd",
+      "title": "HYON CHOL SONG",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/cyber/hyon-chol-song/@@images/image/large",
+      "office": "St. Louis",
+      "reward": "The Rewards For Justice Program, United States Department of State, is offering a reward of up to $5 million for information that leads to the disruption of financial mechanisms of persons engaged in certain activities that support North Korea (Democratic People’s Republic of Korea, DPRK), including the exportation of workers from North Korea to generate revenue, money laundering, and specified cyber-activity and actions that support North Korea’s weapons of mass destruction proliferation.",
+      "url": "https://www.fbi.gov/wanted/cyber/hyon-chol-song",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Cyber's Most Wanted"
+      ],
+      "publication": "2024-11-12T12:25:00"
     },
     {
       "uid": "9fe8f12927114cd9a3bfc5b441c6a29c",
