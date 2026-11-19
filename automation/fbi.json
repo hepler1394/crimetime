@@ -1,11 +1,42 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1279,
+    "totalOnFile": 1281,
     "baked": 150,
-    "updated": "2026-11-19T07:36:59.611Z"
+    "updated": "2026-11-19T20:46:49.315Z"
   },
   "items": [
+    {
+      "uid": "ceadf1465d684e8981434bbe8edf86ad",
+      "title": "ARSON - FLORA, INDIANA",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/arson---flora-indiana/@@images/image/large",
+      "office": "Indianapolis",
+      "reward": "Reward up to $50,000 for information leading to the arrest of the individual(s) responsible for this arson.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/arson---flora-indiana",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Case of the Week"
+      ],
+      "publication": "2026-11-16T10:56:00"
+    },
+    {
+      "uid": "9b3f81b1f5fd4283a2af7d0a34813756",
+      "title": "EMUOBOSAN EMMANUELLA HALL",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/wcc/emuobosan-emmanuella-hall/@@images/image/large",
+      "office": "New Orleans",
+      "reward": "Reward up to $5,000 for information leading to the arrest of Emuobosan Emanuella Hall.",
+      "url": "https://www.fbi.gov/wanted/wcc/emuobosan-emmanuella-hall",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "White-Collar Crime"
+      ],
+      "publication": "2026-10-27T15:43:00"
+    },
     {
       "uid": "32d84a28415f4cf6929ab1d94e10b3a5",
       "title": "ROBERTO GOMEZ",
@@ -2258,36 +2289,6 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2026-07-13T10:17:00"
-    },
-    {
-      "uid": "a81ed57d9ae641b793c292902a3800ec",
-      "title": "FRONTA LONTRELL MILLER",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/fronta-lontrell-miller/@@images/image/large",
-      "office": "Minneapolis",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cei/fronta-lontrell-miller",
-      "status": "captured",
-      "warning": "",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-06-30T09:35:00"
-    },
-    {
-      "uid": "3dbb2a1b320d4d819d80830869f5945f",
-      "title": "KINGSTON CAMPBELL",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/kingston-campbell/@@images/image/large",
-      "office": "Richmond",
-      "reward": "Reward up to $30,000 for information leading to the arrest and conviction of the individual(s) responsible for the death of Kingston Campbell.",
-      "url": "https://www.fbi.gov/wanted/seeking-info/kingston-campbell",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2026-07-16T11:30:00"
     }
   ]
 }
