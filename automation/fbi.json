@@ -1,11 +1,41 @@
 {
   "meta": {
     "source": "FBI Wanted API (api.fbi.gov) — public data",
-    "totalOnFile": 1281,
+    "totalOnFile": 1282,
     "baked": 150,
-    "updated": "2026-11-20T15:00:10.422Z"
+    "updated": "2026-11-20T20:30:15.668Z"
   },
   "items": [
+    {
+      "uid": "060b1a01b1a44649b88ef536824e0876",
+      "title": "ROBIN M. LATHAM  - EAU CLAIRE, WISCONSIN",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/vicap/missing-persons/robin-m-latham----eau-claire-wisconsin/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/robin-m-latham----eau-claire-wisconsin",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Missing Persons"
+      ],
+      "publication": "2026-11-20T09:12:00"
+    },
+    {
+      "uid": "c01829f02bb63ff8f51d1d33a79a6aa3",
+      "title": "VICTIM - LINDA MUEGGE - FREDERICKSBURG, TEXAS",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/linda-muegge/@@images/image/large",
+      "office": "FBI",
+      "reward": "",
+      "url": "https://www.fbi.gov/wanted/vicap/homicides-and-sexual-assaults/linda-muegge",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "ViCAP Homicides and Sexual Assaults"
+      ],
+      "publication": "2011-05-13T15:25:00"
+    },
     {
       "uid": "ceadf1465d684e8981434bbe8edf86ad",
       "title": "ARSON - FLORA, INDIANA",
@@ -2259,36 +2289,6 @@
         "Seeking Information"
       ],
       "publication": "2026-07-14T12:42:00"
-    },
-    {
-      "uid": "e63638197b2a4a8499e2bae569be603d",
-      "title": "RAJAH ADRIANA MCQUEEN",
-      "kind": "missing",
-      "image": "https://www.fbi.gov/wanted/kidnap/rajah-adriana-mcqueen/@@images/image/large",
-      "office": "Cleveland",
-      "reward": "Reward up to $25,000 for information leading to the recovery of Rajah Adriana McQueen and/or her missing 2018 Nissan Sentra.",
-      "url": "https://www.fbi.gov/wanted/kidnap/rajah-adriana-mcqueen",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Kidnappings and Missing Persons"
-      ],
-      "publication": "2022-04-11T08:06:00"
-    },
-    {
-      "uid": "4984047ee7ec42eeb3c92a9cb9261565",
-      "title": "NITISH KAUSHAL",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/cei/nitish-kaushal/@@images/image/large",
-      "office": "Los Angeles",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/cei/nitish-kaushal",
-      "status": "captured",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN ESCAPE RISK",
-      "subjects": [
-        "Criminal Enterprise Investigations"
-      ],
-      "publication": "2026-07-13T10:17:00"
     }
   ]
 }
