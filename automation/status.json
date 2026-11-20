@@ -1,6 +1,6 @@
 {
-  "generated": "2026-11-20T07:36:10.576Z",
-  "improvementsShipped": 561,
+  "generated": "2026-11-20T15:03:02.581Z",
+  "improvementsShipped": 563,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
     "content": [
@@ -11,14 +11,14 @@
   },
   "counts": {
     "episodes": 23,
-    "posts": 31,
+    "posts": 32,
     "merchDesigns": 34,
     "merchCollection": 0,
-    "quizzes": 27,
-    "quizQuestions": 135,
+    "quizzes": 28,
+    "quizQuestions": 140,
     "fbiCases": 150,
     "videos": 1,
-    "topicsQueued": 111,
+    "topicsQueued": 110,
     "topicsTotal": 126
   },
   "latest": {
@@ -27,28 +27,28 @@
       "date": "2026-11-06"
     },
     "post": {
-      "title": "The Golden State Killer: How DNA Caught Joseph DeAngelo",
-      "date": "2026-11-17"
+      "title": "The evolution of crime scene photography",
+      "date": "2026-11-20"
     },
     "quiz": {
-      "title": "Bundy: The Kimberly Leach Case",
-      "created": "2026-11-17"
+      "title": "Maura Murray: What the Record Shows",
+      "created": "2026-11-20"
     }
   },
   "freshness": {
-    "episodesJson": "2026-11-20T07:28:25.049Z",
-    "blogJson": "2026-11-20T07:28:19.872Z",
+    "episodesJson": "2026-11-20T15:00:09.370Z",
+    "blogJson": "2026-11-20T15:02:35.804Z",
     "merchJson": "2026-09-22T14:02:22.646Z",
-    "quizzesJson": "2026-11-17T15:02:10.289Z",
-    "fbiJson": "2026-11-20T07:28:25.341Z",
-    "css": "2026-11-20T07:28:19.963Z"
+    "quizzesJson": "2026-11-20T15:02:58.548Z",
+    "fbiJson": "2026-11-20T15:00:10.422Z",
+    "css": "2026-10-06T04:47:48.161Z"
   },
   "nextTopics": [
-    "The evolution of crime scene photography",
     "How podcasts have helped reopen cold cases",
     "Bloodstain pattern analysis, explained",
     "How true crime fans can help cases responsibly",
     "What a medical examiner determines and what they don't",
-    "How polygraph results are used and why courts distrust them"
+    "How polygraph results are used and why courts distrust them",
+    "The role of a grand jury, explained"
   ]
 }

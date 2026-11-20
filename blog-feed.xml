@@ -6,7 +6,15 @@
     <atom:link href="https://www.crimetimesnacks.com/blog-feed.xml" rel="self" type="application/rss+xml"/>
     <description>True crime case updates, analysis, and the stories behind the headlines.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Nov 2026 07:36:09 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 15:03:01 GMT</lastBuildDate>
+    <item>
+      <title>The evolution of crime scene photography</title>
+      <link>https://www.crimetimesnacks.com/blog-posts/the-evolution-of-crime-scene-photography.html</link>
+      <guid isPermaLink="true">https://www.crimetimesnacks.com/blog-posts/the-evolution-of-crime-scene-photography.html</guid>
+      <category>Analysis</category>
+      <pubDate>Fri, 20 Nov 2026 12:00:00 GMT</pubDate>
+      <description>From 1841 daguerreotypes to digital imaging, crime scene photography has shaped investigations and courtrooms for nearly two centuries.</description>
+    </item>
     <item>
       <title>The Golden State Killer: How DNA Caught Joseph DeAngelo</title>
       <link>https://www.crimetimesnacks.com/blog-posts/the-golden-state-killer-how-dna-caught-joseph-deangelo.html</link>
@@ -238,14 +246,6 @@
       <category>Court</category>
       <pubDate>Sun, 02 Mar 2025 12:00:00 GMT</pubDate>
       <description>How the 1989 Beverly Hills killings led to two trials, a 1996 life sentence, a 2025 resentencing, a parole denial and a March 2027 hearing.</description>
-    </item>
-    <item>
-      <title>The Delphi Murders: Bridge Guy, Richard Allen and the Appeal</title>
-      <link>https://www.crimetimesnacks.com/blog-posts/delphi-case-from-bridge-guy-to-trial.html</link>
-      <guid isPermaLink="true">https://www.crimetimesnacks.com/blog-posts/delphi-case-from-bridge-guy-to-trial.html</guid>
-      <category>Investigation</category>
-      <pubDate>Mon, 10 Feb 2025 12:00:00 GMT</pubDate>
-      <description>Richard Allen was convicted in 2024 of killing Abby Williams and Libby German. The evidence, the trial, and where his appeal stands in October 2026.</description>
     </item>
   </channel>
 </rss>

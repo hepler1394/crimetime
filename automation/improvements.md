@@ -625,3 +625,5 @@ with an [auto] tag — the counter on Mission Control reads this file.
 559. [auto 2026-11-13] Published new quiz: "The Zodiac Ciphers" (5 questions)
 560. [auto 2026-11-17] Published blog post from research notes: "The Golden State Killer: How DNA Caught Joseph DeAngelo" (1623 words, 4 sources)
 561. [auto 2026-11-17] Published new quiz: "Bundy: The Kimberly Leach Case" (5 questions)
+562. [auto 2026-11-20] Published blog post from research notes: "The evolution of crime scene photography" (1435 words, 6 sources)
+563. [auto 2026-11-20] Published new quiz: "Maura Murray: What the Record Shows" (5 questions)

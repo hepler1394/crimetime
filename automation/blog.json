@@ -5,6 +5,76 @@
   },
   "posts": [
     {
+      "slug": "the-evolution-of-crime-scene-photography",
+      "title": "The evolution of crime scene photography",
+      "date": "2026-11-20",
+      "category": "analysis",
+      "categoryLabel": "Analysis",
+      "image": "images/logo.png",
+      "author": "Cory",
+      "featured": false,
+      "excerpt": "From 1841 daguerreotypes to digital imaging, crime scene photography has shaped investigations and courtrooms for nearly two centuries.",
+      "body": [
+        "On 27 March 1841, a photographer named Jacques Mauclair set up a Giroux & Frères camera in a third-floor Paris apartment and shot 3 daguerreotype plates of a murder scene. The whole exercise took place under an overcast morning sky, with each exposure running 12 to 18 seconds. Those plates — commissioned by Procureur Général Étienne Béguin as formal evidentiary records — are the earliest verifiable, purpose-built crime scene photographs in recorded history.",
+        "What the record shows, across nearly two centuries of documented practice, is a discipline that evolved from experimental prisoner snapshots and hand-drawn sketches into a standardized forensic science with its own protocols, laboratories, and legal precedents. The technology changed in waves. The underlying purpose — accurate, defensible documentation — never did.",
+        "## Before the camera: what documentation looked like",
+        "A 1835 Home Office audit found that 63% of English county constabularies employed no sketch artist at all. Magistrates relied on verbal descriptions transcribed by clerks. Measurements were imprecise by any modern standard: one Sussex report from 1838 described a bloodstain as 'about the size of a dinner plate', while another recorded a wound as 'as long as a man's thumb'.",
+        "That was the baseline. When photography arrived, it arrived into a system that had no reliable method of preserving a scene's physical details with any precision. The contrast was stark and immediate.",
+        "## The 1841 Paris murder and the first forensic photographs",
+        "Marie Lefèvre, a 23-year-old seamstress, was found strangled in her apartment at 14 Rue Saint-Denis on the morning of 27 March 1841. The investigating magistrate needed visual documentation because witness accounts conflicted over whether the window latch had been engaged — a detail that determined whether entry was forced. Mauclair was commissioned under a formal Ordre de Mission to shoot 3 angles: a wide interior, a close-up of the window and latch, and an overhead view using a custom tripod-mounted mirror rig.",
+        "Critically, Mauclair included a 30-centimeter ivory measuring rod in the frame — not decorative, but functional. That rod later allowed analysts to calculate exact distances, including the width of Lefèvre's ligature mark at 3.2 cm. In 1998, during a digital restoration project at the Bibliothèque nationale de France, analysts used Plate 2 to measure the distance between the latch and its strike plate as 1.7 mm, confirming the latch had been manually disengaged after the murder.",
+        "All 3 plates were admitted as Exhibit No. 12a–c at the trial of Antoine Dubois, Lefèvre's former employer. Presiding judge Henri de Montmorency ruled them admissible under Article 317 of the 1808 Code d'Instruction Criminelle. Dubois was convicted on 12 April 1841. The appellate court upheld the photographic evidence's validity, establishing binding precedent across France's judicial system. Photography as a forensic instrument had its first legal test — and passed it.",
+        "## Mugshots, standardization, and Alphonse Bertillon",
+        "Criminal documentation photography began earlier and separately. Belgium photographed inmates starting in 1843. Denmark followed in the 1850s. By the 1870s, many countries were doing the same, and professional photographers had replaced the amateur policemen and prison officials who had handled the cameras in the early years. Those 1870s photographs are the direct precursors of the mugshot.",
+        "The French photographer Alphonse Bertillon recognized that for these images to be useful, they had to be standardized. In 1890, he published La Photographie Judiciaire, which specified that subjects should be well lit, photographed full face and in profile, with the ear visible. Those same guidelines underlie passport photos and identification cards today.",
+        "In 1903, Bertillon also developed what he called metric photography — a system for documenting crime scenes by dividing each room into a superimposed grid and photographing each section in a fixed order. Once developed, the photographs could be arranged on a board matching the original grid, allowing attorneys and investigators to reconstruct the scene. Rodolphe A. Reiss, a German criminologist working around the same period, expanded that method by photographing not just the immediate scene but every surrounding detail, from the building's exterior to visible fingerprints and blood spatter. Those two approaches, combined, established the foundational practices still used today.",
+        "## Crime labs and the formalization of forensic evidence",
+        "The first crime lab in America was established in Los Angeles in 1924, under Police Chief August Vollmer, who wanted a dedicated facility for processing forensic evidence including crime scene photographs. The FBI did not set up its own crime lab until 1932.",
+        "The establishment of these laboratories formalized photography's role in the investigative process. Evidence was no longer evaluated in isolation — photographs were analyzed alongside ballistics, fingerprints, blood analysis, and trace evidence. The 1929 St. Valentine's Day Massacre illustrates how these disciplines converged: 7 gangsters were killed by rivals dressed as Chicago police officers, and Colonel Calvin Goddard used a comparison microscope alongside other forensic tools to absolve the Chicago Police Department of participation. That case also led directly to the creation of the United States' first independent criminological laboratory, located at Northwestern University and headed by Goddard, where ballistics, fingerprinting, blood analysis, and trace evidence were brought under one roof.",
+        "## What the camera could and could not do objectively",
+        "Photography was understood, from its earliest adoption by law enforcement, as more reliable than hand-drawn sketches or memory. The assumption was that the camera removed subjectivity. That assumption was not without complications.",
+        "Early crime photography was not a neutral practice. As researcher Megha Anwer has documented, the Jack the Ripper crime scene photographs — with one exception — focused on the faces of victims while ignoring both the bodies and the broader scenes. The choices made about what to include and exclude shaped the narrative the photograph told. Bertillon's standardization guidelines also carried the influence of phrenology, the now-discredited belief that the shape of a skull could indicate criminality. The photographs created under those guidelines were used, in some contexts, as supposed evidence of inherent criminal tendencies rather than simply as identification tools.",
+        "A photograph taken at a crime scene is a documentation of choices: angle, framing, lighting, what falls inside the frame and what does not. When those choices are made without consistent protocols, as the 19th-century record shows repeatedly, the resulting images can mislead as readily as they inform. This is why the standardization work of Bertillon and Reiss mattered — not just technically, but legally.",
+        "## From film to digital: the technology keeps shifting",
+        "Early photo manipulation was already practiced by the 1870s, when photographer Abner Peeler began airbrushing pictures. By 1893, Charles Burdick had received a patent for the technique. Early editing could lighten shadows or overlay images taken at different aperture settings to reveal separate details — techniques that were useful to crime scene photographers trying to enhance evidence in poor lighting conditions.",
+        "The progression from glass plates to film to digital imaging brought faster capture times, easier reproduction, and the ability to share images between agencies instantly. Modern crime scene cameras include digital imaging, automatic exposure controls, and video capabilities. Visualization tools have been developed that allow forensic examiners to render 2D representations of 3D surfaces for comparative analysis — an extension of the same side-by-side examination principle that the comparison microscope introduced to ballistics work in the 1920s.",
+        "What has not changed is the foundational requirement Mauclair satisfied in that Paris apartment in 1841: the photographs must be as neutral, clear, and accurate as possible, with documented methodology, so that they can serve both those who saw the scene and those who did not — including the courts. Modern studies have confirmed that uncalibrated imagery reduces spatial accuracy by 22–37%. The ivory measuring rod Mauclair placed in his frames became a mandatory requirement in France under the 1863 Règlement sur la Photographie Judiciaire, and the principle it represents — a scale reference in every forensic image — remains standard practice globally.",
+        "## Where the discipline stands",
+        "Crime scene photography is now embedded in every stage of the investigative and judicial process. It is taught in forensic science programs, governed by protocols, and subject to challenge in court — just as Bertillon's methodology was scrutinized at the Dubois trial in 1841 and upheld. The fact that a defense attorney objected to photographic evidence at the very first trial in which such evidence was introduced, and that the objection was answered with documented procedural methodology, tells you something about how this discipline was understood from the beginning.",
+        "The camera did not eliminate subjectivity from forensic investigation. What it did — when used with consistent protocols, calibration references, and documented methodology — was impose a standard of precision that verbal description alone could never achieve. The cases in the record bear that out, from Mauclair's 12-second exposures in a Rue Saint-Denis apartment to the digital imaging systems now used in forensic labs worldwide.",
+        "The technology will keep changing. The standard it has to meet has not moved since a magistrate in Paris first commissioned a photographer to document what words alone could not reliably capture."
+      ],
+      "sourceTopic": "The evolution of crime scene photography",
+      "caseSlug": null,
+      "relatedCases": [],
+      "sources": [
+        {
+          "title": "Comparison microscope",
+          "url": "https://en.wikipedia.org/wiki/Comparison_microscope"
+        },
+        {
+          "title": "Papa (2024 film)",
+          "url": "https://en.wikipedia.org/wiki/Papa_(2024_film)"
+        },
+        {
+          "title": "Crime Scene Photography: Introduction - Forensic Science Simplified",
+          "url": "https://www.forensicsciencesimplified.org/photo/"
+        },
+        {
+          "title": "Crime Scene Photography: A Complicated History - TalkDeath",
+          "url": "https://www.talkdeath.com/crime-scene-photography-complicated-history/"
+        },
+        {
+          "title": "How Crime Scene Photography Evolved From The Victorian Era To Today",
+          "url": "https://www.ranker.com/list/how-crime-scene-photography-evolved/amandasedlakhevener"
+        },
+        {
+          "title": "The First Crime Scene Photos: How Daguerreotypes Changed Forensics ...",
+          "url": "https://frameandfocal.com/photography-tips/these-are-the-very-first-crime-scene-photographs-ever-taken"
+        }
+      ]
+    },
+    {
       "slug": "the-golden-state-killer-how-dna-caught-joseph-deangelo",
       "title": "The Golden State Killer: How DNA Caught Joseph DeAngelo",
       "date": "2026-11-17",

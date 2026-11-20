@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-11-17T15:02:10.289Z"
+    "updated": "2026-11-20T15:02:58.548Z"
   },
   "quizzes": [
+    {
+      "slug": "maura-murray-what-the-record-shows",
+      "title": "Maura Murray: What the Record Shows",
+      "tag": "Cold Case",
+      "description": "You've heard the theories. Here's what the case file actually shows about the night Maura Murray vanished on Route 112.",
+      "created": "2026-11-20",
+      "sourceTopic": "The Disappearance of Maura Murray",
+      "questions": [
+        {
+          "q": "On what date did Maura Murray's car go off the road on Route 112 in New Hampshire?",
+          "options": [
+            "January 23, 2004",
+            "February 9, 2004",
+            "March 2, 2004",
+            "December 14, 2003"
+          ],
+          "answer": 1,
+          "explain": "February 9, 2004 is the documented date. It's easy to misremember because the case didn't gain wide public attention until years later, but the incident report is specific."
+        },
+        {
+          "q": "What was Maura Murray studying at the University of Massachusetts Amherst at the time of her disappearance?",
+          "options": [
+            "Criminal Justice",
+            "Psychology",
+            "Nursing",
+            "Education"
+          ],
+          "answer": 2,
+          "explain": "Maura was a nursing student at UMass Amherst. That detail matters because she had reportedly researched and booked time off from her nursing program in the days before she disappeared."
+        },
+        {
+          "q": "What type of vehicle was Maura driving when it left the road on Route 112?",
+          "options": [
+            "1996 Honda Civic",
+            "2001 Saturn Vue",
+            "1996 Saturn SL2",
+            "1999 Toyota Corolla"
+          ],
+          "answer": 2,
+          "explain": "The car was a 1996 Saturn SL2. Investigators documented front-end damage consistent with hitting a snowbank. The vehicle was found, but Maura was not."
+        },
+        {
+          "q": "Which local resident was first on the scene and offered to call for help before emergency services arrived?",
+          "options": [
+            "A passing state trooper",
+            "A school bus driver named Butch Atwood",
+            "A neighboring farmer",
+            "A delivery driver"
+          ],
+          "answer": 1,
+          "explain": "Bus driver Butch Atwood stopped and spoke with Maura. She told him not to call police — she said she had already called. When he got home and called anyway, responding officers found the car empty. That gap in time is one of the most examined details in the case file."
+        },
+        {
+          "q": "Before leaving campus the day she disappeared, Maura sent an email to her professors. What did the email generally indicate?",
+          "options": [
+            "She was transferring to another school",
+            "She would be away from school for a week due to a family emergency",
+            "She was requesting a leave of absence for medical reasons",
+            "She planned to withdraw from the nursing program"
+          ],
+          "answer": 1,
+          "explain": "Maura emailed her professors saying there had been a death in the family and she'd be gone for about a week. Investigators later confirmed there was no family death at the time. What she actually planned to do remains one of the central unknowns in this case."
+        }
+      ]
+    },
     {
       "slug": "bundy-the-kimberly-leach-case",
       "title": "Bundy: The Kimberly Leach Case",
