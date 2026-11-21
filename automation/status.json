@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-20T20:30:37.613Z",
+  "generated": "2026-11-21T07:28:41.213Z",
   "improvementsShipped": 563,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
@@ -36,12 +36,12 @@
     }
   },
   "freshness": {
-    "episodesJson": "2026-11-20T20:30:15.167Z",
-    "blogJson": "2026-11-20T20:30:10.658Z",
+    "episodesJson": "2026-11-21T07:22:42.767Z",
+    "blogJson": "2026-11-21T07:22:38.614Z",
     "merchJson": "2026-09-22T14:02:22.646Z",
     "quizzesJson": "2026-11-20T15:02:58.548Z",
-    "fbiJson": "2026-11-20T20:30:15.668Z",
-    "css": "2026-11-20T20:30:10.741Z"
+    "fbiJson": "2026-11-21T07:22:43.374Z",
+    "css": "2026-11-21T07:22:38.720Z"
   },
   "nextTopics": [
     "How podcasts have helped reopen cold cases",
