@@ -3,6 +3,27 @@
   "corrections": [
     {
       "date": "2026-11-21",
+      "where": "Episode: The BTK Floppy Disk",
+      "url": "/episodes/the-btk-floppy-disk.html",
+      "wrong": "The episode twice said police had no eyewitnesses, while also telling, correctly, how Kevin Bright survived being attacked and shot by Rader in 1974.",
+      "fixed": "Both passages were re-voiced to say police had no usable fingerprints and no name, and that Kathryn Bright's brother had survived a face-to-face attack without anything leading back to Rader."
+    },
+    {
+      "date": "2026-11-21",
+      "where": "Episode: The Miami Apartment Stabbing",
+      "url": "/episodes/the-miami-apartment-stabbing.html",
+      "wrong": "Near the end, the episode said Christian Obumseli died in his own apartment twenty-five minutes after he came home. Earlier the same episode, correctly, said he was taken to the Ryder Trauma Center at Jackson Memorial and died. The apartment was the one he shared with Courtney Clenney.",
+      "fixed": "The passage was re-voiced to say he was fatally stabbed in the apartment they shared, less than half an hour after he came home."
+    },
+    {
+      "date": "2026-11-21",
+      "where": "Episode: Hunting the Golden State Killer",
+      "url": "/episodes/the-golden-state-killer.html",
+      "wrong": "The original recording told several scenes more than once, including the killing of Claude Snelling, and placed Joseph DeAngelo's firing from police work at the wrong department. It also dated his murders from 1974; Claude Snelling was killed in 1975.",
+      "fixed": "The episode was rewritten and re-recorded so each event is told once, in order, with DeAngelo's 1979 firing placed at the Auburn Police Department and the murders dated from 1975."
+    },
+    {
+      "date": "2026-11-21",
       "where": "Case pages: The Zodiac Ciphers, Ted Bundy and the Murder of Kimberly Leach, The Doomsday Mom, The Disappearance of Laci Peterson",
       "url": "/cases.html",
       "wrong": "Each of these four case pages was headed \"Open, 2026\". That was the year the episode was published and a default status, not the case's own.",
