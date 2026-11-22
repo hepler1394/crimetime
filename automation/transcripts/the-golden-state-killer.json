@@ -2,1114 +2,1584 @@
  "slug": "the-golden-state-killer",
  "title": "Hunting the Golden State Killer",
  "language": "en",
- "duration": 1360,
- "model": "episode script, timed to the recording (paragraphs read against the audit transcript)",
- "generated": "2026-09-25",
+ "duration": 1476.7,
+ "model": "episode script, timed to the recording",
+ "generated": "2026-10-06",
  "note": "This transcript is the episode script as written and fact-checked, timed to the recording. Timestamps are approximate within a sentence.",
  "segments": [
   {
    "start": 5,
-   "end": 7.6,
+   "end": 7.5,
    "text": "What's up guys, welcome back to CrimeTimeSnacks."
   },
   {
-   "start": 7.6,
-   "end": 10.8,
+   "start": 7.5,
+   "end": 10.7,
    "text": "Here is the strangest detail in the case file, stated plainly."
   },
   {
-   "start": 10.8,
-   "end": 18.2,
+   "start": 10.7,
+   "end": 18,
    "text": "For decades, California police hunted three distinct monsters: the Visalia Ransacker, the East Area Rapist, and the Original Night Stalker."
   },
   {
-   "start": 18.2,
-   "end": 24.2,
+   "start": 18,
+   "end": 23.9,
    "text": "They turned out to be one single man, and while he was committing his earliest attacks, he was wearing a police badge."
   },
   {
-   "start": 24.7,
-   "end": 34.4,
-   "text": "His name is Joseph James DeAngelo Jr. Between 1974 and 1986, he terrorized California, committing thirteen murders, more than fifty rapes, and well over one hundred burglaries."
+   "start": 24.4,
+   "end": 30.2,
+   "text": "His name is Joseph James DeAngelo Jr. He has admitted to thirteen murders, committed between 1975 and 1986."
   },
   {
-   "start": 34.4,
-   "end": 41.6,
-   "text": "Law enforcement agencies were completely siloed at the time, unable to easily share information across the county lines he crossed."
+   "start": 30.2,
+   "end": 38.1,
+   "text": "As part of his plea deal in 2020, he also admitted in open court to dozens of sexual assaults that the law no longer allowed anyone to charge him with."
   },
   {
-   "start": 41.6,
-   "end": 51.9,
-   "text": "It took decades of dead ends before investigators realized the predator attacking suburban homes in Northern California was the exact same person murdering couples in Southern California."
+   "start": 38.1,
+   "end": 43.7,
+   "text": "He is believed to be the man behind roughly a hundred and twenty burglaries in and around Visalia as well."
   },
   {
-   "start": 51.9,
-   "end": 63.9,
-   "text": "The offender moved from breaking into houses in Visalia to assaulting victims in East Sacramento, Modesto, Stockton, and Contra Costa County, before escalating to murders in Santa Barbara, Ventura, and Orange counties."
+   "start": 43.7,
+   "end": 45,
+   "text": "He is not an accused man."
   },
   {
-   "start": 63.9,
-   "end": 72.9,
-   "text": "He pried open doors and windows while victims slept, took personal souvenirs like coins and identification, and even taunted victims and police over the telephone."
+   "start": 45,
+   "end": 49.9,
+   "text": "He is a convicted one, serving life without parole, and I am going to talk about him that way."
   },
   {
-   "start": 73.5,
-   "end": 80.2,
-   "text": "The turning point came in 2001 when DNA testing finally linked the East Area Rapist to the Original Night Stalker crimes."
+   "start": 50.5,
+   "end": 52.2,
+   "text": "This episode is about two things."
   },
   {
-   "start": 80.2,
-   "end": 86.9,
-   "text": "In 2013, author Michelle McNamara coined the name Golden State Killer to unite those scattered monikers under one roof."
+   "start": 52.2,
+   "end": 62.1,
+   "text": "The first is how he was finally identified after more than four decades: not through a tip, not through a confession, but through a family tree, built out of the DNA of his distant relatives."
   },
   {
-   "start": 86.9,
-   "end": 97.8,
-   "text": "Then in 2018, investigators uploaded a profile built from a preserved Ventura County rape kit to the open-source site GEDmatch, narrowing almost a million profiles down to a single family tree."
+   "start": 62.1,
+   "end": 69.2,
+   "text": "The second is what the record says, as investigators and prosecutors later laid it out, and what was said to him in court in August 2020."
   },
   {
-   "start": 97.8,
-   "end": 105.2,
-   "text": "After watching his movements, authorities gathered DNA from the door handle of his car and a discarded tissue to confirm the match."
+   "start": 69.7,
+   "end": 72.7,
+   "text": "Before any of that, though, he was a young man training to be a cop."
   },
   {
-   "start": 105.2,
+   "start": 72.7,
+   "end": 74.3,
+   "text": "Let's unpack it from the beginning."
+  },
+  {
+   "start": 74.8,
+   "end": 77.7,
+   "text": "DeAngelo was born on November 8, 1945, in Bath, New York."
+  },
+  {
+   "start": 77.7,
+   "end": 85.8,
+   "text": "His father, Joseph Senior, was a sergeant in the United States Army, and for part of his childhood the family lived in West Germany, where his father was stationed."
+  },
+  {
+   "start": 85.8,
+   "end": 88.6,
+   "text": "The record says he was regularly beaten by both parents."
+  },
+  {
+   "start": 88.6,
+   "end": 98.5,
+   "text": "As a teenager he went to Mills Junior High in Rancho Cordova and then to Folsom High School, where he played junior varsity baseball, and he later earned a high school equivalency certificate in 1964."
+  },
+  {
+   "start": 98.5,
+   "end": 105.6,
+   "text": "Prosecutors say that in those teenage years he was already committing burglaries and stealing mail, and that he tortured and killed animals."
+  },
+  {
+   "start": 106.2,
    "end": 108.1,
-   "text": "He was arrested outside his home at age seventy-two."
+   "text": "In September 1964 he joined the Navy."
   },
   {
-   "start": 108.7,
-   "end": 117.4,
-   "text": "In 2020, DeAngelo pleaded guilty to thirteen counts of murder and multiple kidnappings to avoid the death penalty, ultimately receiving multiple life sentences without parole."
+   "start": 108.1,
+   "end": 114.4,
+   "text": "He served twenty-two months during the Vietnam War as a damage controlman, aboard a cruiser and then a destroyer tender."
   },
   {
-   "start": 117.4,
-   "end": 124,
-   "text": "What the evidence actually shows is that this entire wave of violence started years earlier, in a quiet farming town in the Central Valley."
+   "start": 114.4,
+   "end": 119.7,
+   "text": "Back in California, he studied police science at Sierra College in Rocklin and graduated with honors."
   },
   {
-   "start": 124,
-   "end": 125.8,
-   "text": "That is where we pick up the timeline."
+   "start": 119.7,
+   "end": 131.5,
+   "text": "He went on to a bachelor's degree in criminal justice at Sacramento State, took more police training at the College of the Sequoias in Visalia, and completed a thirty-two-week internship with the Roseville Police Department."
   },
   {
-   "start": 126.4,
-   "end": 130.7,
-   "text": "The case file takes us to Visalia, halfway between Sacramento and Los Angeles."
+   "start": 131.5,
+   "end": 134.6,
+   "text": "On paper, he was qualified for exactly the job he took next."
   },
   {
-   "start": 130.7,
-   "end": 136.9,
-   "text": "Between April 1974 and December 1975, this farming community became the target of over one hundred burglaries."
+   "start": 135.1,
+   "end": 138.1,
+   "text": "One more piece of his early adult life matters later."
   },
   {
-   "start": 136.9,
-   "end": 141.6,
-   "text": "The prowler, dubbed the Visalia Ransacker, bypassed major valuables in plain sight."
+   "start": 138.1,
+   "end": 143.5,
+   "text": "In May 1970 he got engaged to a nursing student he had met at Sierra College, Bonnie Jean Colwell."
   },
   {
-   "start": 141.6,
-   "end": 149.5,
-   "text": "Instead, he rifled through personal belongings, scattered women's undergarments around rooms, and pocketed coins and low-value souvenirs."
+   "start": 143.5,
+   "end": 147,
+   "text": "She ended it in 1971, after he became manipulative and abusive."
   },
   {
-   "start": 150,
-   "end": 153.1,
-   "text": "At the very same time, Joseph DeAngelo was wearing a badge."
+   "start": 147,
+   "end": 151.5,
+   "text": "After the breakup he tried to force her to marry him by threatening her with a gun."
   },
   {
-   "start": 153.1,
-   "end": 156.5,
-   "text": "From 1973 to 1976, he worked as a police officer in nearby Exeter."
+   "start": 151.5,
+   "end": 153,
+   "text": "Hold on to her first name."
   },
   {
-   "start": 156.5,
-   "end": 161.9,
-   "text": "Law enforcement back then lacked cell phones, surveillance cameras, and shared computer databases."
+   "start": 153,
+   "end": 160.7,
+   "text": "Years later, police reported that during a 1978 attack, the thirty-seventh in the series, DeAngelo repeatedly said, I hate you, Bonnie."
   },
   {
-   "start": 161.9,
-   "end": 170.2,
-   "text": "In an era where agencies were heavily siloed, an offender with badge access and forensic awareness could operate across town lines with complete impunity."
+   "start": 161.3,
+   "end": 166.2,
+   "text": "In November 1973 he married Sharon Marie Huddle, in a ceremony held in Auburn."
   },
   {
-   "start": 170.8,
-   "end": 173.1,
-   "text": "The ransacking quickly turned deadly."
+   "start": 166.2,
+   "end": 169,
+   "text": "By then he already had his first police job."
   },
   {
-   "start": 173.1,
-   "end": 180.9,
-   "text": "On September 11, 1975, an intruder broke into the Visalia home of professor Claude Snelling in an attempt to kidnap Snelling's daughter."
+   "start": 169,
+   "end": 178.6,
+   "text": "From May 1973 to August 1976, he was an officer in Exeter, a small town not far from Visalia in the Central Valley, and he was assigned to the burglary unit."
   },
   {
-   "start": 180.9,
-   "end": 188.1,
-   "text": "When the father intervened, the intruder shot him twice, kicked the daughter three times in the face, and fled into the night."
+   "start": 179.1,
+   "end": 183.1,
+   "text": "Visalia is a small town about halfway between Sacramento and Los Angeles."
   },
   {
-   "start": 188.1,
-   "end": 192.6,
-   "text": "Snelling died from his wounds, marking the ransacker's first known homicide."
+   "start": 183.1,
+   "end": 188.4,
+   "text": "On March 19, 1974, someone broke into a house there and took fifty dollars in coins from a piggy bank."
   },
   {
-   "start": 193.2,
-   "end": 198.5,
-   "text": "Three months later, in December 1975, another attempted break-in and shooting occurred in Visalia."
+   "start": 188.4,
+   "end": 193,
+   "text": "It was the first recorded break-in of a spree that would run for about twenty months."
   },
   {
-   "start": 198.5,
+   "start": 193,
+   "end": 197.1,
+   "text": "On a single night, November 30, 1974, there were twelve separate incidents."
+  },
+  {
+   "start": 197.6,
+   "end": 199.7,
+   "text": "The burglar was strange from the start."
+  },
+  {
+   "start": 199.7,
    "end": 204.2,
-   "text": "The ransacker slipped away from police once again, and just like that, the break-ins in town abruptly stopped."
+   "text": "He rifled through possessions and scattered women's underclothes around the rooms."
   },
   {
    "start": 204.2,
-   "end": 209.6,
-   "text": "What nobody realized then was that the prowler had simply packed up and moved his hunting grounds north."
+   "end": 212.4,
+   "text": "He took low-value things, single earrings, cuff links, coin jars, Blue Chip Stamps, and he often left banknotes and expensive items sitting in plain sight."
   },
   {
-   "start": 210.1,
-   "end": 215.7,
-   "text": "By the summer of 1976, burglaries and rapes began terrorizing the eastern district of Sacramento County."
+   "start": 212.4,
+   "end": 215.6,
+   "text": "He climbed fences and moved along parks, ditches and trails."
   },
   {
-   "start": 215.7,
-   "end": 223,
-   "text": "Prowling suburban single-story homes near open fields, an assailant known as the East Area Rapist began forcing open doors and windows."
+   "start": 215.6,
+   "end": 220.7,
+   "text": "He pried at several windows before picking one, and he left more than one way out open behind him."
   },
   {
-   "start": 223,
-   "end": 229.4,
-   "text": "The ransacker had evolved into something far more dangerous, bringing a brand new wave of fear to Northern California."
+   "start": 220.7,
+   "end": 225.3,
+   "text": "He set dishes or bottles against doors as warning items, so he would hear anyone coming."
   },
   {
-   "start": 229.9,
-   "end": 232.6,
-   "text": "The case file shows that this was not random violence."
+   "start": 225.3,
+   "end": 226.1,
+   "text": "He wore gloves."
   },
   {
-   "start": 232.6,
-   "end": 237.7,
-   "text": "Joseph DeAngelo conducted extensive surveillance on his victims, memorizing their daily routines."
+   "start": 226.1,
+   "end": 228.6,
+   "text": "Investigators found no fingerprint evidence."
   },
   {
-   "start": 237.7,
-   "end": 247,
-   "text": "He would break into their houses beforehand to unlock windows, unload any firearms he found, and leave ligatures made of shoelaces or cords from the house lying ready for when he came back."
+   "start": 228.6,
+   "end": 230.8,
+   "text": "He became known as the Visalia Ransacker."
   },
   {
-   "start": 247,
-   "end": 252.3,
-   "text": "He telephoned some of them too, sometimes for months, learning when they were home and when they were alone."
+   "start": 231.4,
+   "end": 236,
+   "text": "Claude Snelling was forty-five, a journalism professor at the College of the Sequoias."
   },
   {
-   "start": 252.9,
-   "end": 258.1,
-   "text": "At first, he targeted single women or mothers with young children, but soon he began targeting couples."
+   "start": 236,
+   "end": 241.6,
+   "text": "In February 1975 he had chased off a prowler he found under his sixteen-year-old daughter's bedroom window."
   },
   {
-   "start": 258.1,
-   "end": 263.6,
-   "text": "Victims would wake up to the blinding glare of a flashlight and a masked gunman standing right over their beds."
+   "start": 241.6,
+   "end": 245.6,
+   "text": "On September 11, 1975, at around two in the morning, he woke to strange noises."
   },
   {
-   "start": 263.6,
-   "end": 269.6,
-   "text": "He tied up the man, often stacking dishes on his back with a direct threat: if those plates fell, he would kill them both."
+   "start": 245.6,
+   "end": 251,
+   "text": "He ran out the open back door and found a man in a ski mask in the carport, trying to take his daughter, Beth."
   },
   {
-   "start": 269.6,
-   "end": 277.4,
-   "text": "Then he would assault the woman repeatedly, sometimes raiding the refrigerator for beer and food in between attacks before vanishing back into the dark."
+   "start": 251,
+   "end": 254.1,
+   "text": "The man had subdued her by threatening to stab or shoot her."
   },
   {
-   "start": 277.9,
-   "end": 283.5,
-   "text": "The FBI noted that he routinely took cash, coins, jewelry, and identification from the residences he hit."
+   "start": 254.6,
+   "end": 257.8,
+   "text": "When the professor confronted him, the intruder shot him twice."
   },
   {
-   "start": 283.5,
-   "end": 289.7,
-   "text": "On the rare occasion someone spotted him, he escaped on a bicycle or scaled suburban fences, easily evading capture."
+   "start": 257.8,
+   "end": 261.4,
+   "text": "Claude Snelling staggered back into the house to his wife, and he died."
   },
   {
-   "start": 289.7,
-   "end": 297.8,
-   "text": "Between the lack of home surveillance, no cell phones, and the complete absence of DNA technology at the time, law enforcement was operating in the dark."
+   "start": 261.4,
+   "end": 267.4,
+   "text": "The attacker punched and kicked Beth, three times in the face according to prosecutors, left her on the ground, and ran."
   },
   {
-   "start": 297.8,
-   "end": 304.8,
-   "text": "Agencies remained siloed, unable to track his movements across jurisdictional lines as his attacks continued across the East Bay."
+   "start": 267.4,
+   "end": 271.3,
+   "text": "Police later found a stolen bicycle linked to him nearby, on Redwood Street."
   },
   {
-   "start": 305.4,
-   "end": 308.4,
-   "text": "Then came the night of February 1978 in the Sacramento area."
+   "start": 271.3,
+   "end": 274.7,
+   "text": "Joseph DeAngelo was a serving police officer in Exeter that night."
   },
   {
-   "start": 308.4,
-   "end": 314.8,
-   "text": "Brian and Katie Maggiore were simply out walking their dog through the neighborhood when they crossed paths with the prowler."
+   "start": 274.7,
+   "end": 277.8,
+   "text": "Forty-five years later, he would plead guilty to this murder."
   },
   {
-   "start": 314.8,
-   "end": 321.5,
-   "text": "Prosecutors later revealed that DeAngelo shot Brian before chasing Katie down as she screamed for help, shooting her in the head."
+   "start": 278.3,
+   "end": 280.8,
+   "text": "Visalia police put more resources into the case."
   },
   {
-   "start": 321.5,
-   "end": 327,
-   "text": "The East Area Rapist had crossed the line into murder, and he was about to shift his hunting grounds entirely."
+   "start": 280.8,
+   "end": 283,
+   "text": "A four-thousand-dollar reward was posted."
+  },
+  {
+   "start": 283,
+   "end": 286.3,
+   "text": "Beth Snelling underwent hypnosis to try to recover more details."
+  },
+  {
+   "start": 286.3,
+   "end": 290.5,
+   "text": "Police set up nighttime stakeouts near houses the Ransacker had already prowled."
+  },
+  {
+   "start": 290.5,
+   "end": 292.2,
+   "text": "The break-ins kept coming anyway."
+  },
+  {
+   "start": 292.8,
+   "end": 301.2,
+   "text": "On December 12, 1975, at about eight-thirty at night, a masked man came into the back yard of a house in a neighborhood the Ransacker had been reported to frequent."
+  },
+  {
+   "start": 301.2,
+   "end": 304.2,
+   "text": "Detective William McGowen was waiting inside the garage."
+  },
+  {
+   "start": 304.2,
+   "end": 310.4,
+   "text": "When he tried to detain the man and fired a warning shot, the man shrieked, pulled off his mask and pretended to surrender."
+  },
+  {
+   "start": 310.4,
+   "end": 317.5,
+   "text": "Then he jumped a fence, pulled a revolver with his left hand, and fired once near McGowen's face, shattering the detective's flashlight."
+  },
+  {
+   "start": 317.5,
+   "end": 320,
+   "text": "Other officers rushed in, and he got away anyway."
+  },
+  {
+   "start": 320.6,
+   "end": 325.3,
+   "text": "He left tennis shoe tracks and dropped loot behind him, Blue Chip Stamps and a sock full of coins."
+  },
+  {
+   "start": 325.3,
+   "end": 327.6,
+   "text": "McGowen said later he had seen the man before."
   },
   {
    "start": 327.6,
-   "end": 331.4,
-   "text": "The murders of the Maggiores did not end the Northern California attacks."
+   "end": 329.3,
+   "text": "The likely reason is in the record."
   },
   {
-   "start": 331.4,
-   "end": 335.9,
-   "text": "They carried on around Sacramento and out into the East Bay through the middle of 1979."
+   "start": 329.3,
+   "end": 333,
+   "text": "As an Exeter officer, DeAngelo had helped in the search for the Ransacker."
   },
   {
-   "start": 335.9,
-   "end": 344.5,
-   "text": "Then, shortly after a rape that summer, the attacks shifted hundreds of miles south along the California coast, striking first in Santa Barbara County that October."
+   "start": 333,
+   "end": 334.6,
+   "text": "He had been looking for himself."
   },
   {
-   "start": 344.5,
-   "end": 350.5,
-   "text": "Between 1979 and 1986, a lethal new spree took hold in Southern California, eventually claiming at least ten lives."
+   "start": 334.6,
+   "end": 338.5,
+   "text": "After the December shooting, the Ransacker's burglaries in Visalia stopped."
   },
   {
-   "start": 350.5,
-   "end": 358.8,
-   "text": "Because the location changed and the primary outcome was now murder rather than sexual assault, investigators treated this as an entirely separate predator."
+   "start": 339.1,
+   "end": 346.3,
+   "text": "In August 1976, DeAngelo left Exeter for the police department in Auburn, about a thirty-minute drive from Sacramento."
   },
   {
-   "start": 359.4,
-   "end": 362.6,
-   "text": "The press dubbed this new menace the Original Night Stalker."
+   "start": 346.3,
+   "end": 348.4,
+   "text": "He would keep that badge until 1979."
   },
   {
-   "start": 362.6,
-   "end": 370,
-   "text": "That moniker was created to distinguish him from Richard Ramirez, the Night Stalker who terrorized the Los Angeles area during that same era."
+   "start": 348.4,
+   "end": 357.9,
+   "text": "And the same year he moved, 1976, a new series of attacks began in the unincorporated suburbs east of Sacramento: Carmichael, Citrus Heights, Rancho Cordova."
   },
   {
-   "start": 370,
-   "end": 378.9,
-   "text": "In Ventura, the killer was also briefly known as the Diamond Knot Killer after victims Charlene and Lyman Smith were found bound with an unusual decorative nautical knot."
+   "start": 358.5,
+   "end": 365.1,
+   "text": "On June 18, 1976, a man broke into the home of a woman who lived alone in Rancho Cordova and sexually assaulted her at knifepoint."
   },
   {
-   "start": 378.9,
-   "end": 386.3,
-   "text": "Across many of these Southern California scenes, ligatures were recovered, and victims were assaulted before being beaten to death or shot."
+   "start": 365.1,
+   "end": 376.4,
+   "text": "Over the next three years there would be at least forty-nine more attacks like it, spreading out of Sacramento County to Stockton, Modesto and Contra Costa County, and as far as Danville, just outside San Francisco."
   },
   {
-   "start": 386.9,
-   "end": 389,
-   "text": "Back then, nobody put the pieces together."
+   "start": 376.4,
+   "end": 379.1,
+   "text": "The press called the attacker the East Area Rapist."
   },
   {
-   "start": 389,
-   "end": 397.4,
-   "text": "Law enforcement agencies across different counties didn't communicate effectively, and the sheer geography of the crimes suggested independent offenders at work."
+   "start": 379.6,
+   "end": 387.3,
+   "text": "He chose middle-class neighborhoods and single-story houses that sat near a school, a creek, a trail or open ground, somewhere he could leave fast."
   },
   {
-   "start": 397.4,
-   "end": 406.4,
-   "text": "Without centralized tracking or DNA analysis to connect physical evidence across hundreds of miles, detectives found themselves running down false leads and hitting dead ends."
+   "start": 387.3,
+   "end": 392.6,
+   "text": "Most victims had seen or heard a prowler before they were attacked, and many had already had break-ins."
   },
   {
-   "start": 406.4,
-   "end": 414.8,
-   "text": "The killer effectively vanished into the suburban landscape between attacks, leaving behind taunting phone calls that continued to haunt past victims as late as 2001."
+   "start": 392.6,
+   "end": 400.9,
+   "text": "Police came to believe he sometimes went into a home ahead of time to unlock windows, unload any guns he found, and leave ligatures where he could reach them later."
   },
   {
-   "start": 415.4,
-   "end": 417.5,
-   "text": "The case did not sit entirely still."
+   "start": 400.9,
+   "end": 405.9,
+   "text": "He phoned future victims too, sometimes for months beforehand, learning their daily routines."
   },
   {
-   "start": 417.5,
-   "end": 426.2,
-   "text": "In 2001, DNA testing proved the East Area Rapist and the Original Night Stalker were the same man, and the two files became one under the acronym EARONS."
+   "start": 406.5,
+   "end": 409,
+   "text": "At first he went after women alone or with their children."
   },
   {
-   "start": 426.2,
-   "end": 427.6,
-   "text": "Then it went quiet again."
+   "start": 409,
+   "end": 415.9,
+   "text": "Then he started choosing couples, and investigators believe that change was a direct response to news reports saying he only attacked women who were alone."
   },
   {
-   "start": 427.6,
-   "end": 442.3,
-   "text": "That changed when true crime writer Michelle McNamara began digging into the evidence, coining the name the Golden State Killer in 2013 to connect the Visalia Ransacker, the East Area Rapist, and the Original Night Stalker into one unified narrative."
+   "start": 415.9,
+   "end": 421,
+   "text": "He came in through a window or a sliding glass door and woke the couple with a flashlight in their eyes and a handgun."
   },
   {
-   "start": 442.3,
-   "end": 448.2,
-   "text": "By 2016, authorities launched a formal reinvestigation centered on modern forensic capabilities."
+   "start": 421,
+   "end": 423.2,
+   "text": "He made the woman tie up the man before he bound her."
   },
   {
-   "start": 448.2,
-   "end": 455.2,
-   "text": "The physical evidence had survived decades in storage, and science was finally catching up to the man who left it behind."
+   "start": 423.2,
+   "end": 428,
+   "text": "He stacked dishes on the man's back and said that if he heard them rattle, he would kill everyone in the house."
   },
   {
-   "start": 455.7,
-   "end": 459.7,
-   "text": "Here is where the investigation turned into something unprecedented."
+   "start": 428,
+   "end": 431.4,
+   "text": "Then he took the woman to another room and assaulted her, often more than once."
   },
   {
-   "start": 459.7,
-   "end": 464.7,
-   "text": "The national database, CODIS, uses about twenty STR markers to match identical profiles."
+   "start": 431.4,
+   "end": 435.2,
+   "text": "He could stay for hours, going through drawers, eating in the kitchen, drinking beer."
   },
   {
-   "start": 464.7,
-   "end": 471.4,
-   "text": "But solving this case required Investigative Genetic Genealogy, which uses single nucleotide polymorphisms, or SNPs."
+   "start": 435.2,
+   "end": 439.1,
+   "text": "Victims sometimes thought he had left, and then he would jump out of the darkness again."
   },
   {
-   "start": 471.4,
-   "end": 480.1,
-   "text": "That meant investigators needed hundreds of thousands of genetic markers, and their standard STR profiles could not translate over to genealogy systems."
+   "start": 439.7,
+   "end": 442.4,
+   "text": "One survivor who has spoken publicly is Kris Pedretti."
   },
   {
-   "start": 480.1,
-   "end": 487.9,
-   "text": "STR and SNP profiles are completely incompatible, so detectives could not just port the old forensic files over into commercial databases."
+   "start": 442.4,
+   "end": 449,
+   "text": "On December 18, 1976, she was fifteen, home alone while her parents were at a Christmas party, playing the piano at six in the evening."
   },
   {
-   "start": 488.4,
-   "end": 492.4,
-   "text": "To get the data, detectives had to pull physical evidence from cold storage."
+   "start": 449,
+   "end": 453.2,
+   "text": "He put a knife to her throat and said, Do what I say or I'll kill you and be gone in the dark."
   },
   {
-   "start": 492.4,
-   "end": 499.8,
-   "text": "They turned to a duplicate rape kit from 1980 that had been meticulously prepared, frozen, and preserved by a forward-thinking pathologist."
+   "start": 453.2,
+   "end": 457.6,
+   "text": "Michelle McNamara later took the end of that sentence as the title of her book on the case."
   },
   {
-   "start": 499.8,
-   "end": 505.6,
-   "text": "That preserved sample yielded the pristine, high-quality DNA required to build a completely new SNP profile."
+   "start": 457.6,
+   "end": 464.8,
+   "text": "Kris Pedretti has also described what came after: the intimate questions police asked a fifteen-year-old, and the evidence exam that followed."
   },
   {
-   "start": 505.6,
-   "end": 515.1,
-   "text": "In 2018, investigators uploaded that genetic data to the public sharing website GEDmatch, where users freely share profiles originally processed by commercial testing services."
+   "start": 464.8,
+   "end": 468.1,
+   "text": "She called those the second and third victimizations of that night."
   },
   {
-   "start": 515.6,
-   "end": 518,
-   "text": "The search did not return the killer directly."
+   "start": 468.7,
+   "end": 472.5,
+   "text": "When neighbors or patrols spotted him, he went over fences or rode off on a bicycle."
   },
   {
-   "start": 518,
-   "end": 520.9,
-   "text": "Instead, it surfaced distant third and fourth cousins."
+   "start": 472.5,
+   "end": 475.4,
+   "text": "Once, he shot and seriously wounded a young man who chased him."
   },
   {
-   "start": 520.9,
-   "end": 527.8,
-   "text": "For four months, genealogists built out massive family trees, tracing separate ancestral lines backwards to find where they crossed."
+   "start": 475.4,
+   "end": 477.8,
+   "text": "He was seen a number of times, and he always got away."
   },
   {
-   "start": 527.8,
-   "end": 540.8,
-   "text": "By combining that genetic roadmap with traditional detective work, such as approximate age and geographic proximity, authorities narrowed almost a million profiles down to one family, and then to one man: former police officer Joseph James DeAngelo."
+   "start": 478.3,
+   "end": 479.2,
+   "text": "He also talked."
   },
   {
-   "start": 541.4,
-   "end": 547.8,
-   "text": "On April 19, 2018, police formally identified DeAngelo as their suspect and placed him under direct surveillance."
+   "start": 479.2,
+   "end": 485.4,
+   "text": "On March 18, 1977, the Sacramento County Sheriff's Office took three calls from a man claiming to be the attacker."
   },
   {
-   "start": 547.8,
-   "end": 555.5,
-   "text": "Investigators followed him, quietly collecting discarded items, including a swab from his car door handle and a used tissue he threw away."
+   "start": 485.4,
+   "end": 491.6,
+   "text": "In the third he said, I'm the East Side Rapist and I have my next victim already stalked and you guys can't catch me."
   },
   {
-   "start": 555.5,
-   "end": 559,
-   "text": "The crime lab ran a standard STR test on that discarded sample."
+   "start": 491.6,
+   "end": 493.5,
+   "text": "None of those calls were recorded."
   },
   {
-   "start": 559,
-   "end": 564.8,
-   "text": "It produced a flawless, direct match to the crime scene profile that had been waiting in CODIS for decades."
+   "start": 494,
+   "end": 495.5,
+   "text": "That December he got bolder."
   },
   {
-   "start": 565.3,
-   "end": 570.1,
-   "text": "On April 24, 2018, authorities officially arrested and charged Joseph James DeAngelo."
+   "start": 495.5,
+   "end": 500.7,
+   "text": "On the ninth, a woman he had attacked answered her phone and heard a hoarse whisper: Merry Christmas."
   },
   {
-   "start": 570.1,
-   "end": 578.3,
-   "text": "After more than forty years of dead ends and terror across California, the predator who had stalked suburbs under multiple names was finally in handcuffs."
+   "start": 500.7,
+   "end": 501.5,
+   "text": "It's me again."
   },
   {
-   "start": 578.3,
-   "end": 589,
-   "text": "The sheer scale of what he left behind was staggering: at least thirteen murders, more than fifty rapes, and over one hundred burglaries stretching from Sacramento all the way to Santa Barbara County."
+   "start": 501.5,
+   "end": 504.5,
+   "text": "She told investigators she would never forget his voice."
   },
   {
-   "start": 589.5,
-   "end": 592.4,
-   "text": "That arrest sparked an immediate national debate."
+   "start": 504.5,
+   "end": 510.5,
+   "text": "The next night, Sacramento authorities got two identical calls, and both were recorded: I am going to hit tonight."
   },
   {
-   "start": 592.4,
-   "end": 597,
-   "text": "The genetic genealogy method that caught him broke new legal and ethical ground."
+   "start": 510.5,
+   "end": 511.2,
+   "text": "Watt Avenue."
   },
   {
-   "start": 597,
-   "end": 606.1,
-   "text": "Investigators had tracked DeAngelo down using GEDmatch, a public site where everyday users upload raw data from consumer services like 23andMe and MyHeritage."
+   "start": 511.2,
+   "end": 512.5,
+   "text": "Patrols were stepped up."
   },
   {
-   "start": 606.1,
-   "end": 608.7,
-   "text": "DeAngelo himself had never submitted his DNA."
+   "start": 512.5,
+   "end": 519,
+   "text": "At two-thirty in the morning, a masked man on a bicycle was seen on the Watt Avenue bridge, and he slipped past the officers."
   },
   {
-   "start": 608.7,
-   "end": 611.8,
-   "text": "He was exposed entirely because distant relatives did."
+   "start": 519,
+   "end": 522.7,
+   "text": "Spotted again two hours later, he dropped the bike and escaped on foot."
   },
   {
-   "start": 612.3,
-   "end": 620.1,
-   "text": "Privacy advocates raised sharp alarms about government overreach, arguing that trawling through public genetic databases amounts to a breach of basic privacy."
+   "start": 523.2,
+   "end": 531.7,
+   "text": "Around the same time, someone claiming to be the rapist sent a poem called Excitement's Crave to the Sacramento Bee, the mayor's office, and a television station."
   },
   {
-   "start": 620.1,
-   "end": 621.8,
-   "text": "The reach of that science is immense."
+   "start": 531.7,
+   "end": 537.9,
+   "text": "Then, on January 6, 1978, a man who said he was the East Area Rapist called a counseling service and said, I have a problem."
   },
   {
-   "start": 621.8,
-   "end": 632.7,
-   "text": "A study published in Science Magazine showed that roughly sixty percent of Americans of European descent, and forty percent of those of Sub-Saharan African descent, can be identified through a database like MyHeritage alone."
+   "start": 537.9,
+   "end": 540.6,
+   "text": "I need help because I don't want to do this anymore."
   },
   {
-   "start": 632.7,
-   "end": 638.3,
-   "text": "Yet for investigators and victims, the method answered questions that traditional policing simply could not crack."
+   "start": 540.6,
+   "end": 545,
+   "text": "After a short conversation he said, I believe you are tracing this call, and he hung up."
+  },
+  {
+   "start": 545.6,
+   "end": 555.1,
+   "text": "Less than a month later, on the night of February 2, 1978, Brian and Katie Maggiore were walking their dog in Rancho Cordova, close to where five of these attacks had happened."
+  },
+  {
+   "start": 555.1,
+   "end": 558.9,
+   "text": "Brian was twenty-one, a soldier stationed at Mather Air Force Base."
+  },
+  {
+   "start": 558.9,
+   "end": 559.9,
+   "text": "Katie was twenty."
+  },
+  {
+   "start": 559.9,
+   "end": 562.8,
+   "text": "There was a confrontation in the street, and they ran."
+  },
+  {
+   "start": 562.8,
+   "end": 569.8,
+   "text": "Prosecutors say DeAngelo shot Brian, and that Katie ran and yelled for help before he caught up with her and shot her in the head."
+  },
+  {
+   "start": 569.8,
+   "end": 571.3,
+   "text": "A shoelace was found nearby."
+  },
+  {
+   "start": 571.3,
+   "end": 573.4,
+   "text": "For decades this was only a suspicion."
+  },
+  {
+   "start": 573.4,
+   "end": 580.3,
+   "text": "In 2016 the FBI said it was confident the East Area Rapist had killed them, and in 2020 DeAngelo pleaded guilty to both murders."
+  },
+  {
+   "start": 580.8,
+   "end": 588.9,
+   "text": "In December 1978, after the forty-second attack, in Danville, investigators found three sheets of notebook paper near where a suspicious car had been parked."
+  },
+  {
+   "start": 588.9,
+   "end": 592.1,
+   "text": "One was a homework essay about General George Armstrong Custer."
+  },
+  {
+   "start": 592.1,
+   "end": 600,
+   "text": "One was a journal-style entry about sixth grade, about a teacher who made the writer copy out sentences for hours until his hand ached, and how mad it made him."
+  },
+  {
+   "start": 600,
+   "end": 602.9,
+   "text": "The writer said that anger would scar his memory for life."
+  },
+  {
+   "start": 602.9,
+   "end": 609,
+   "text": "The third was a hand-drawn map of a neighborhood nobody could identify, with the word punishment written across the back."
+  },
+  {
+   "start": 609,
+   "end": 614,
+   "text": "Detective Larry Pool believed the map was a fantasy, the place the attacker wished he could strike."
+  },
+  {
+   "start": 614.6,
+   "end": 618.6,
+   "text": "All this time, the agencies chasing him were barely talking to each other."
+  },
+  {
+   "start": 618.6,
+   "end": 625.9,
+   "text": "Sharing was territorial; one deputy said the Sacramento Sheriff's Department wanted the glory of catching him, and egos got in the way."
+  },
+  {
+   "start": 625.9,
+   "end": 632.5,
+   "text": "By September 1976 that department had linked four attacks, but it asked the media to hold off reporting it until October."
+  },
+  {
+   "start": 632.5,
+   "end": 638.9,
+   "text": "In May 1977, Detective McGowen, the man shot at in Visalia, went to Sacramento to see whether this was the same offender."
   },
   {
    "start": 638.9,
-   "end": 644.9,
-   "text": "When you look back at the case file, the true timeline of DeAngelo's crimes reveals a calculated, escalating pattern."
+   "end": 641.4,
+   "text": "By then there had been twenty-three attacks."
   },
   {
-   "start": 644.9,
-   "end": 651,
-   "text": "Long before the public knew him as a killer, he operated as the Visalia Ransacker between April 1974 and December 1975."
+   "start": 641.4,
+   "end": 649.6,
+   "text": "After the Maggiore murders, the Sacramento sheriff's office flatly denied any link, and accused the Visalia investigators of looking for publicity."
   },
   {
-   "start": 651,
-   "end": 655.6,
-   "text": "During those early months, he served as an active police officer in Exeter, California."
+   "start": 650.1,
+   "end": 652.8,
+   "text": "The northern attacks went on into the summer of 1979."
   },
   {
-   "start": 655.6,
-   "end": 665.2,
-   "text": "While wearing a badge by day, he broke into more than a hundred homes at night, rifling through personal belongings, stealing small souvenirs and coins, and leaving valuables untouched."
+   "start": 652.8,
+   "end": 658.7,
+   "text": "In July 1979, Auburn police officer Joseph DeAngelo was arrested for shoplifting a hammer and a can of dog repellent."
   },
   {
-   "start": 665.8,
-   "end": 668.6,
-   "text": "That ransacking phase served as his training ground."
+   "start": 658.7,
+   "end": 661.8,
+   "text": "He fought store security and pretended to have a heart attack."
   },
   {
-   "start": 668.6,
-   "end": 670.3,
-   "text": "It also quickly turned lethal."
+   "start": 661.8,
+   "end": 667.8,
+   "text": "When deputies arrived, he rolled around on the chair he was tied to, acting out madness, and then admitted it was an act."
   },
   {
-   "start": 670.8,
-   "end": 675.8,
-   "text": "On September 11, 1975, the ransacker broke into the Visalia home of professor Claude Snelling."
+   "start": 667.8,
+   "end": 671.2,
+   "text": "He got six months of probation, and that October, Auburn fired him."
   },
   {
-   "start": 675.8,
-   "end": 680.3,
-   "text": "Prosecutors documented that the intruder attempted to kidnap Snelling's daughter."
+   "start": 671.7,
+   "end": 676.4,
+   "text": "The same month he lost his badge, the attacks reappeared hundreds of miles to the south."
   },
   {
-   "start": 680.3,
-   "end": 685.3,
-   "text": "When Snelling intervened, DeAngelo shot him twice, killing him right in front of the young girl."
+   "start": 676.4,
+   "end": 682.7,
+   "text": "On October 1, 1979, an intruder broke into a home in Goleta, near Santa Barbara, and tied up the couple who lived there."
   },
   {
-   "start": 685.3,
-   "end": 689.5,
-   "text": "Before fleeing the scene, DeAngelo kicked the daughter three times in the face."
+   "start": 682.7,
+   "end": 689.6,
+   "text": "They were alarmed to hear him say, I'll kill 'em, to himself, and when he left the room they tried to get out, and the woman screamed."
   },
   {
-   "start": 690,
-   "end": 692.6,
-   "text": "That fatal encounter marked a brutal shift."
+   "start": 689.6,
+   "end": 690.7,
+   "text": "He fled on a bicycle."
   },
   {
-   "start": 692.6,
-   "end": 699.9,
-   "text": "There was another attempted break-in and shooting in December of 1975, but the intruder slipped away from police once again."
+   "start": 690.7,
+   "end": 697.7,
+   "text": "A neighbor who happened to be an FBI agent chased him, and he dropped the bicycle and a knife and escaped through backyards on foot."
   },
   {
-   "start": 699.9,
-   "end": 703.8,
-   "text": "After that close call, the break-ins in Visalia abruptly stopped."
+   "start": 697.7,
+   "end": 701.9,
+   "text": "That couple were the only people attacked in the southern series who survived."
   },
   {
-   "start": 703.8,
-   "end": 707.1,
-   "text": "But the predator was simply moving his territory north."
+   "start": 702.5,
+   "end": 713.6,
+   "text": "On December 30, 1979, two doctors were found shot to death in a condominium in Goleta: Robert Offerman, a forty-four-year-old orthopedic surgeon, and Debra Manning, a thirty-five-year-old clinical psychologist."
   },
   {
-   "start": 707.6,
-   "end": 713.9,
-   "text": "By the summer of 1976, burglaries and sexual assaults began terrorizing the eastern district of Sacramento County."
+   "start": 713.6,
+   "end": 718,
+   "text": "Offerman's bindings had been untied, which suggested he had lunged at the attacker."
   },
   {
-   "start": 713.9,
-   "end": 721.1,
-   "text": "The public did not know it then, but the Visalia Ransacker had evolved into what northern California came to dread as the East Area Rapist."
+   "start": 718,
+   "end": 721.7,
+   "text": "The killer had eaten leftover Christmas turkey from the refrigerator."
   },
   {
-   "start": 721.1,
-   "end": 725.4,
-   "text": "Law enforcement had no way of connecting the dots across county lines back then."
+   "start": 722.2,
+   "end": 730.7,
+   "text": "On March 13, 1980, in Ventura, Charlene Smith, a thirty-three-year-old interior designer, and her husband Lyman, a forty-three-year-old attorney, were killed in their home."
   },
   {
-   "start": 726,
-   "end": 728.6,
-   "text": "The case file shows how methodically he operated."
-  },
-  {
-   "start": 728.6,
+   "start": 730.7,
    "end": 734,
-   "text": "He scouted single-story homes near open fields or forests, learning the daily routines of his targets."
+   "text": "They were beaten with a log taken from the woodpile beside the house."
   },
   {
    "start": 734,
-   "end": 741.2,
-   "text": "Often, he broke in ahead of time to unlock windows, unload stored firearms, and stage ligatures like shoelaces or cords around the house."
+   "end": 740.4,
+   "text": "Three days later, Lyman's twelve-year-old son came by to mow the lawn and found them, and the bedroom alarm clock was still going off."
   },
   {
-   "start": 741.7,
-   "end": 746.5,
-   "text": "Victims woke up in the dark to the blinding glare of a flashlight and a masked man holding a weapon."
+   "start": 740.4,
+   "end": 748.2,
+   "text": "Charlene's wrists had been tied with an unusual diamond knot, a knot also seen in the northern attacks, and for a while the killer was called the Diamond Knot Killer."
   },
   {
-   "start": 746.5,
-   "end": 751.3,
-   "text": "He started by targeting single women or mothers with small children, but soon moved on to couples."
+   "start": 748.2,
+   "end": 755,
+   "text": "Charlene had been sexually assaulted, and the evidence collected from her would matter, decades later, more than anyone could have known."
   },
   {
-   "start": 751.3,
-   "end": 759.5,
-   "text": "He would tie up the male partner, stack household dishes on the man's back, and threaten to murder both of them if he heard the plates clatter while he assaulted the woman."
+   "start": 755.6,
+   "end": 761.8,
+   "text": "On August 19, 1980, in a gated community in Dana Point, Keith and Patrice Harrington were beaten to death in their home."
   },
   {
-   "start": 760.1,
-   "end": 766.2,
-   "text": "He lingered inside the homes, casually raiding kitchens for food and beer while his victims lay bound and terrified."
+   "start": 761.8,
+   "end": 766.8,
+   "text": "Keith was twenty-four, a fourth-year medical student at UC Irvine, on course to graduate early."
   },
   {
-   "start": 766.2,
-   "end": 772,
-   "text": "When spotted outside by neighbors or patrols, he vanished by leaping over fences or speeding away on a bicycle."
+   "start": 766.8,
+   "end": 769.3,
+   "text": "Patrice was twenty-seven, a pediatric nurse."
   },
   {
-   "start": 772,
-   "end": 779.7,
-   "text": "By February 1978, his northern campaign escalated to documented murder when Brian and Katie Maggiore were shot and killed while walking their dog."
+   "start": 769.3,
+   "end": 771.2,
+   "text": "They had been married three months."
   },
   {
-   "start": 780.3,
-   "end": 784.4,
-   "text": "The case file shows that after the Maggiore murders, the attacks shifted."
+   "start": 771.2,
+   "end": 781.1,
+   "text": "Keith's brother, Bruce Harrington, would later spend nearly two million dollars supporting California's Proposition 69, which authorized collecting DNA from every felon in the state."
   },
   {
-   "start": 784.4,
-   "end": 791,
-   "text": "The burglaries spread through the East Bay area of Northern California, but soon the violence escalated down the coast."
+   "start": 781.6,
+   "end": 786.5,
+   "text": "In February 1981, in Irvine, twenty-eight-year-old Manuela Witthuhn was killed in her home."
   },
   {
-   "start": 791,
-   "end": 799,
-   "text": "Between 1979 and 1986, the predator moved his hunting ground into Southern California, carrying out a brutal new series of assaults and murders."
+   "start": 786.5,
+   "end": 790.3,
+   "text": "Her husband, David, was in the hospital with an illness, so she was alone."
   },
   {
-   "start": 799.6,
-   "end": 803.1,
-   "text": "At the time, investigators had no idea they were dealing with the same man."
+   "start": 790.3,
+   "end": 792.6,
+   "text": "The killer kept calling the house afterward."
   },
   {
-   "start": 803.1,
-   "end": 807.3,
-   "text": "The geography was completely different, and the violence had turned explicitly lethal."
+   "start": 792.6,
+   "end": 798.6,
+   "text": "Police and neighbors suspected David, and he lived under that suspicion for years, until DNA testing cleared him."
   },
   {
-   "start": 807.3,
-   "end": 815.2,
-   "text": "The press dubbed this southern predator the Original Night Stalker, a title meant to set him apart from Richard Ramirez, who terrorized Los Angeles around the same era."
+   "start": 798.6,
+   "end": 799.4,
+   "text": "He died in 2008."
   },
   {
-   "start": 815.8,
-   "end": 819.5,
-   "text": "At least ten people were murdered across Southern California during this window."
+   "start": 800,
+   "end": 810.9,
+   "text": "On July 27, 1981, back in Goleta, a few blocks from the Offerman condominium, Cheri Domingo, thirty-five, and Gregory Sanchez, twenty-seven, were killed in a house Domingo was staying in while it was up for sale."
   },
   {
-   "start": 819.5,
-   "end": 824.4,
-   "text": "Many of the victims were found bound with ligatures, assaulted, and beaten to death, while others were shot."
+   "start": 810.9,
+   "end": 813.6,
+   "text": "The killer came in through a small bathroom window."
   },
   {
-   "start": 824.4,
-   "end": 834,
-   "text": "Briefly, investigators even called him the Diamond Knot Killer after two victims in Ventura, Charlene and Lyman Smith, were found tied with an intricate knot typically reserved for interior design or sailing."
+   "start": 813.6,
+   "end": 815.1,
+   "text": "Sanchez was shot and beaten."
   },
   {
-   "start": 834.5,
-   "end": 840.3,
-   "text": "What the evidence actually shows is that law enforcement in the late 1970s and 1980s was severely handicapped."
+   "start": 815.1,
+   "end": 825.5,
+   "text": "Paul Holes, an investigator we will hear a lot more about, later speculated that fighting with Sanchez, a significantly larger man, may have frightened the killer and deterred him from more murders."
   },
   {
-   "start": 840.3,
-   "end": 846.8,
-   "text": "Departments were completely siloed, operating without cell phones, widespread surveillance, or shared digital databases."
+   "start": 826.1,
+   "end": 828.3,
+   "text": "Only one more was ever attributed to him."
   },
   {
-   "start": 846.8,
-   "end": 854.5,
-   "text": "Information did not travel easily across county lines, and without DNA profiling, linking crimes across hundreds of miles was nearly impossible."
+   "start": 828.3,
+   "end": 835.3,
+   "text": "On May 5, 1986, eighteen-year-old Janelle Cruz was killed in her family's home in Irvine while her family was on vacation in Mexico."
   },
   {
-   "start": 855,
-   "end": 859,
-   "text": "Detectives were forced to chase conflicting leads that repeatedly ended nowhere."
+   "start": 835.3,
+   "end": 838.8,
+   "text": "The house was for sale, and a realtor who came by to show it found her."
   },
   {
-   "start": 859,
-   "end": 869.9,
-   "text": "Evidence found in areas of interest—like a discarded neighborhood map with the word punishment misspelled on the back, or notebook pages recounting a sixth-grade classroom—offered tantalizing clues but no solid suspect."
+   "start": 838.8,
+   "end": 842.9,
+   "text": "A pipe wrench her stepfather reported missing was thought to be the weapon."
   },
   {
-   "start": 869.9,
-   "end": 878.3,
-   "text": "The East Area Rapist and the Original Night Stalker remained two separate ghosts on paper, while one forensically aware offender continued to slip directly through the seams."
+   "start": 842.9,
+   "end": 846.3,
+   "text": "After Janelle Cruz, there were no more crimes attributed to him."
   },
   {
-   "start": 878.9,
-   "end": 883.3,
-   "text": "The turning point did not come from an old field interrogation card or a sudden confession."
+   "start": 846.3,
+   "end": 847.2,
+   "text": "He went dormant."
   },
   {
-   "start": 883.3,
-   "end": 886.7,
-   "text": "It came from the emerging field of Investigative Genetic Genealogy."
+   "start": 847.8,
+   "end": 850.9,
+   "text": "In Santa Barbara County he was known simply as the Night Stalker."
   },
   {
-   "start": 886.7,
-   "end": 892.2,
-   "text": "For decades, cold cases relied on the national CODIS database, which looks at about twenty specific STR markers."
+   "start": 850.9,
+   "end": 856.6,
+   "text": "When Richard Ramirez was given that name in Los Angeles, the southern killer was renamed the Original Night Stalker."
   },
   {
-   "start": 892.2,
-   "end": 895.6,
-   "text": "But forensic genealogy searches for something entirely different."
+   "start": 856.6,
+   "end": 858.7,
+   "text": "And the agencies failed each other again."
   },
   {
-   "start": 896.2,
-   "end": 900.2,
-   "text": "Genealogy databases rely on Single Nucleotide Polymorphisms, or SNPs."
+   "start": 858.7,
+   "end": 868.9,
+   "text": "After the Offerman and Manning murders, Sergeant Jim Bevins, who headed the Sacramento task force, believed it was the same man and called the Santa Barbara sheriff's office, which denied the murders outright."
   },
   {
-   "start": 900.2,
-   "end": 905.7,
-   "text": "These encompass hundreds of thousands of genetic markers that chart a detailed ancestral roadmap."
+   "start": 868.9,
+   "end": 873.2,
+   "text": "Larry Crompton of the Contra Costa County task force tried next and got the same answer."
   },
   {
-   "start": 905.7,
-   "end": 909.1,
-   "text": "STR profiles and SNP profiles are completely incompatible."
+   "start": 873.2,
+   "end": 875.2,
+   "text": "He learned about them three months later."
   },
   {
-   "start": 909.1,
-   "end": 915.2,
-   "text": "If detectives wanted to run a genealogical search, they had to start over with preserved crime scene evidence."
+   "start": 875.2,
+   "end": 881.2,
+   "text": "When Santa Barbara did try to link its couple murders together, Ventura and Orange County authorities were not convinced."
   },
   {
-   "start": 915.8,
-   "end": 922.9,
-   "text": "Investigators retrieved a duplicate rape kit from 1980 that had been frozen and preserved by a forward-thinking pathologist."
+   "start": 881.7,
+   "end": 886.2,
+   "text": "For most of those years, the best a lab could do with biological evidence was blood typing."
   },
   {
-   "start": 922.9,
-   "end": 928.4,
-   "text": "That pristine sample gave them the high-quality DNA required to build a comprehensive SNP profile."
+   "start": 886.2,
+   "end": 889.3,
+   "text": "Typing could exclude a suspect, but it could never point to one."
   },
   {
-   "start": 928.4,
-   "end": 937.1,
-   "text": "In 2018, law enforcement uploaded that profile to GEDmatch, a public website where people voluntarily share genetic files from commercial testing services."
+   "start": 889.3,
+   "end": 891.2,
+   "text": "Then came DNA, and even that took time."
   },
   {
-   "start": 937.7,
-   "end": 940.1,
-   "text": "The search did not produce the killer directly."
+   "start": 891.2,
+   "end": 898.5,
+   "text": "In 1997, Paul Holes, by then a Contra Costa County investigator, heard Crompton's theory that the Goleta murders belonged to the northern series."
   },
   {
-   "start": 940.1,
-   "end": 943.8,
-   "text": "Instead, it matched distant relatives, likely third or fourth cousins."
+   "start": 898.5,
+   "end": 904.8,
+   "text": "Santa Barbara told him its cases were unrelated, but steered him toward the Irvine police, who were doing something with DNA."
   },
   {
-   "start": 943.8,
-   "end": 947.9,
-   "text": "That data narrowed roughly a million users down to a single extended family line."
+   "start": 904.8,
+   "end": 911.2,
+   "text": "Holes' lab used older technology than Irvine's, so the two results could not be compared, and the connection slipped away again."
+  },
+  {
+   "start": 911.7,
+   "end": 913.6,
+   "text": "In 2001 it finally came together."
+  },
+  {
+   "start": 913.6,
+   "end": 920.2,
+   "text": "DNA evidence proved that the East Area Rapist in the north and the Original Night Stalker in the south were the same man."
+  },
+  {
+   "start": 920.2,
+   "end": 930,
+   "text": "On April 6, 2001, one day after the Sacramento Bee reported the link, one of the women he had attacked in the seventies answered the phone and heard him ask, Remember when we played?"
+  },
+  {
+   "start": 930.6,
+   "end": 932.7,
+   "text": "That was not the only time he reached back."
+  },
+  {
+   "start": 932.7,
+   "end": 937.6,
+   "text": "In October 1982, a woman he had attacked got a threatening call at work, at a Denny's restaurant."
+  },
+  {
+   "start": 937.6,
+   "end": 941.6,
+   "text": "Holes believed the caller must have walked in as a customer and recognized her."
+  },
+  {
+   "start": 941.6,
+   "end": 947.3,
+   "text": "In 1991, another survivor stayed on the line with him for a minute and heard a woman and children in the background."
   },
   {
    "start": 947.9,
-   "end": 950.1,
-   "text": "From there, the real detective work began."
+   "end": 949.7,
+   "text": "Here is what 2001 could not solve."
   },
   {
-   "start": 950.7,
-   "end": 957.5,
-   "text": "For four months, genealogists mapped sprawling family trees, tracing disparate branches to find a single point of intersection."
+   "start": 949.7,
+   "end": 955.7,
+   "text": "Investigators now had a DNA profile of the killer, and it went into CODIS, the national criminal DNA database."
   },
   {
-   "start": 957.5,
-   "end": 961,
-   "text": "They factored in approximate age and geographic ties to California."
+   "start": 955.7,
+   "end": 956.8,
+   "text": "There was no match."
   },
   {
-   "start": 961,
-   "end": 968.4,
-   "text": "The branches converged on one specific individual: Joseph James DeAngelo, who had quietly flown beneath law enforcement radar for decades."
+   "start": 956.8,
+   "end": 961.4,
+   "text": "That meant he had never been convicted of a felony that required him to give a sample."
   },
   {
-   "start": 969,
-   "end": 973,
-   "text": "Investigators quickly initiated covert surveillance to confirm the match."
+   "start": 961.4,
+   "end": 965.1,
+   "text": "A decade later, DNA tied the Domingo and Sanchez murders to him too."
   },
   {
-   "start": 973,
-   "end": 978.1,
-   "text": "They collected discarded DNA samples, including swabs from his car door handle and a used tissue."
+   "start": 965.1,
+   "end": 977.4,
+   "text": "The case became one of the reasons California built its own DNA database, which collects samples from everyone accused or convicted of a felony in the state and has been called second only to Virginia's for solving cold cases."
   },
   {
-   "start": 978.1,
-   "end": 984,
-   "text": "Crime labs generated a standard STR profile from that discarded sample and ran it against the cold-case evidence."
+   "start": 977.4,
+   "end": 978.8,
+   "text": "Still, nobody had a name."
   },
   {
-   "start": 984,
+   "start": 979.3,
    "end": 986.7,
-   "text": "The profile matched the crime scene DNA perfectly."
+   "text": "In 2013, the writer Michelle McNamara gave him the one that stuck, the Golden State Killer, to tie all of his earlier nicknames together."
   },
   {
-   "start": 987.3,
-   "end": 994.3,
-   "text": "On April 24, 2018, California authorities officially moved in and charged Joseph James DeAngelo with the Golden State Killer crimes."
+   "start": 986.7,
+   "end": 996.6,
+   "text": "On June 15, 2016, the FBI and local agencies announced a renewed national effort, with new composite sketches, new details about the crimes, and a fifty-thousand-dollar reward."
   },
   {
-   "start": 994.3,
-   "end": 1002.9,
-   "text": "Forty-four years after the Visalia ransackings began, the elusive predator who had terrorized the state under three different monikers was finally in handcuffs."
+   "start": 997.1,
+   "end": 1003.1,
+   "text": "The work that finally found him started in December 2017, led by Paul Holes and an FBI lawyer named Steve Kramer."
   },
   {
-   "start": 1002.9,
-   "end": 1008.1,
-   "text": "He was arraigned in a Sacramento courtroom, exposed after spending decades living in plain sight."
+   "start": 1003.1,
+   "end": 1004.6,
+   "text": "It hit a wall almost at once."
   },
   {
-   "start": 1008.6,
-   "end": 1013.5,
-   "text": "When you look into the case file, his background makes the whole spree even more chilling."
+   "start": 1004.6,
+   "end": 1011.2,
+   "text": "The district attorney at the time refused their request for a DNA sample and told the Irvine police not to release theirs."
   },
   {
-   "start": 1013.5,
-   "end": 1018.5,
-   "text": "From 1973 to 1976, DeAngelo had actually served as a police officer in Exeter, California."
+   "start": 1011.2,
+   "end": 1012.6,
+   "text": "So they turned to Ventura."
   },
   {
-   "start": 1018.5,
-   "end": 1021.9,
-   "text": "While wearing a badge, he was operating as an active predator."
+   "start": 1012.6,
+   "end": 1020.7,
+   "text": "The medical examiner there had done something no one else did, preparing a duplicate evidence kit in the Smith case, and it had been frozen since 1980."
   },
   {
-   "start": 1021.9,
-   "end": 1035,
-   "text": "Prosecutors documented that on September 11, 1975, while still employed as an officer, he broke into Claude Snelling's Visalia home, shot Snelling twice, killed him, and kicked Snelling's daughter in the face three times before fleeing."
+   "start": 1020.7,
+   "end": 1022.2,
+   "text": "That sample was pristine."
   },
   {
-   "start": 1035.5,
+   "start": 1022.8,
+   "end": 1024.5,
+   "text": "Here is why pristine mattered."
+  },
+  {
+   "start": 1024.5,
+   "end": 1029.8,
+   "text": "CODIS compares about twenty genetic markers, enough to make a unique fingerprint for a match."
+  },
+  {
+   "start": 1029.8,
+   "end": 1032,
+   "text": "Genealogy websites work differently."
+  },
+  {
+   "start": 1032,
    "end": 1037.9,
-   "text": "That badge gave him an incredible advantage."
+   "text": "They read hundreds of thousands of genetic markers, which together give a rich map of a person's ancestry."
   },
   {
    "start": 1037.9,
-   "end": 1047,
-   "text": "He knew police procedures, he knew how to keep from leaving fingerprints, and he knew how to exploit the fact that local jurisdictions were siloed and rarely shared intelligence."
+   "end": 1040.3,
+   "text": "The two kinds of profile are incompatible."
   },
   {
-   "start": 1047,
-   "end": 1050.7,
-   "text": "He was eventually fired from police work, but not for murder or burglary."
+   "start": 1040.3,
+   "end": 1044.5,
+   "text": "You cannot turn one into the other, so the old database profile was no help."
   },
   {
-   "start": 1050.7,
-   "end": 1054.8,
-   "text": "He was terminated after being caught stealing a can of dog repellent and a hammer."
+   "start": 1044.5,
+   "end": 1051.9,
+   "text": "Investigators needed to build a brand new genealogy profile from the original evidence, and for that they needed high-quality DNA."
   },
   {
-   "start": 1055.4,
-   "end": 1059.3,
-   "text": "The capture sparked an immediate nationwide debate over genetic privacy."
+   "start": 1052.5,
+   "end": 1060,
+   "text": "They uploaded that new profile to GEDmatch, a free public website where people share raw results from consumer DNA testing services."
   },
   {
-   "start": 1059.3,
-   "end": 1068.8,
-   "text": "Investigators had cracked the cold case by uploading a crime scene profile to GEDmatch, using distant family members to identify a suspect who had never personally submitted DNA."
+   "start": 1060,
+   "end": 1063.2,
+   "text": "DeAngelo himself had never submitted his DNA anywhere."
   },
   {
-   "start": 1068.8,
-   "end": 1079.7,
-   "text": "A study published in Science Magazine noted that databases like MyHeritage could identify roughly sixty percent of Americans of European descent, raising major questions about government surveillance."
+   "start": 1063.2,
+   "end": 1069.3,
+   "text": "The site turned up ten to twenty people who shared a set of great-great-great-grandparents with the killer."
   },
   {
-   "start": 1080.3,
-   "end": 1082.3,
-   "text": "Yet the physical evidence had spoken."
+   "start": 1069.3,
+   "end": 1070.3,
+   "text": "Distant cousins."
   },
   {
-   "start": 1082.3,
-   "end": 1087.3,
-   "text": "The discarded tissue and car door handle provided the exact STR match investigators needed."
+   "start": 1070.3,
+   "end": 1077.5,
+   "text": "A team of five investigators, working with the genealogist Barbara Rae-Venter, used that list to start building family trees."
   },
   {
-   "start": 1087.3,
-   "end": 1095.9,
-   "text": "At seventy-two years old, DeAngelo was behind bars, ending forty years of unanswered questions for dozens of families across Northern and Southern California."
+   "start": 1078.1,
+   "end": 1080.7,
+   "text": "In the end they built about twenty-five trees."
   },
   {
-   "start": 1096.5,
-   "end": 1101.4,
-   "text": "Looking back across the entire case file, you can clearly see how the era itself protected him."
+   "start": 1080.7,
+   "end": 1085.9,
+   "text": "The one that led to DeAngelo held about a thousand people and reached back more than a century."
   },
   {
-   "start": 1101.4,
-   "end": 1108.1,
-   "text": "In the 1970s and 1980s, California suburbs were rapidly expanding, yet law enforcement agencies remained entirely siloed."
+   "start": 1085.9,
+   "end": 1094.6,
+   "text": "Over a few months, using clues like age, sex and where people lived, they ruled people out one by one, narrowing almost a million profiles to a single family."
   },
   {
-   "start": 1108.1,
-   "end": 1113.6,
-   "text": "Detectives had no centralized DNA databases, no cell phones, and no widespread surveillance footage."
+   "start": 1094.6,
+   "end": 1096,
+   "text": "Two suspects were left."
   },
   {
-   "start": 1113.6,
-   "end": 1120.5,
-   "text": "A forensically aware offender could simply cross a county line, leaving local investigators completely cut off from one another."
+   "start": 1096,
+   "end": 1098.5,
+   "text": "A relative's DNA test eliminated one of them."
   },
   {
-   "start": 1121,
-   "end": 1124.4,
-   "text": "That fragmentation created three separate legends for the same man."
+   "start": 1098.5,
+   "end": 1102.7,
+   "text": "On March 14, 2018, Joseph DeAngelo was identified as a potential suspect."
   },
   {
-   "start": 1124.4,
-   "end": 1128.4,
-   "text": "Visalia police chased a burglar who scattered undergarments and stole trinkets."
+   "start": 1103.2,
+   "end": 1109.1,
+   "text": "Paul Holes then called Nick Willick, who had known DeAngelo as an officer in Auburn and later became chief of police there."
   },
   {
-   "start": 1128.4,
-   "end": 1135.3,
-   "text": "Sacramento detectives hunted the East Area Rapist, who pried open windows and terrorized sleeping couples with ligatures and flashlights."
+   "start": 1109.1,
+   "end": 1114.3,
+   "text": "Willick remembered him as unremarkable, a man who stood too close to people and sulked when he was corrected."
   },
   {
-   "start": 1135.3,
-   "end": 1142.8,
-   "text": "Years later, Southern California authorities were tracking the Original Night Stalker, trying to figure out nautical diamond knots at homicide scenes."
+   "start": 1114.3,
+   "end": 1115.3,
+   "text": "Then he told a story."
   },
   {
-   "start": 1142.8,
-   "end": 1145.8,
-   "text": "Nobody realized these were all the work of a single predator."
+   "start": 1115.3,
+   "end": 1120.9,
+   "text": "When DeAngelo was being fired, he accused Willick of harassing him and brought a work-stress claim against the city."
   },
   {
-   "start": 1146.4,
-   "end": 1149.9,
-   "text": "The geographic spread led police straight into dead ends for decades."
+   "start": 1120.9,
+   "end": 1126.6,
+   "text": "Around that time, Willick's daughter told him a man had shone a flashlight into her bedroom, and Willick dismissed it."
   },
   {
-   "start": 1149.9,
-   "end": 1162.5,
-   "text": "The evidence seemed entirely contradictory because his methods kept evolving, moving from petty burglaries in Visalia to coordinated attacks across the East Bay, and ultimately escalating to fatal bludgeonings and shootings along the coast."
+   "start": 1126.6,
+   "end": 1134.7,
+   "text": "As part of his claim, DeAngelo had to see a therapist, and he told the therapist he had gone to Willick's house intending to kill him, but could not find Willick's window."
   },
   {
-   "start": 1162.5,
-   "end": 1171.5,
-   "text": "It took true crime writer Michelle McNamara coining the umbrella name in 2013 to finally help the public and modern investigators connect every phase of that forty-year trail."
+   "start": 1134.7,
+   "end": 1137.1,
+   "text": "Willick had taken it as a ploy for disability pay."
   },
   {
-   "start": 1172,
-   "end": 1178.8,
-   "text": "When Joseph DeAngelo was formally charged on April 24, 2018, the full scope of his double life began to emerge in the public record."
+   "start": 1137.1,
+   "end": 1139.6,
+   "text": "When Holes heard that, he knew they had the right man."
   },
   {
-   "start": 1178.8,
-   "end": 1186.9,
-   "text": "Investigators learned he had actually served as an Exeter police officer from 1973 to 1976, wearing a badge while the Visalia ransackings were underway."
+   "start": 1140.2,
+   "end": 1142.7,
+   "text": "They still needed proof that would stand up."
   },
   {
-   "start": 1186.9,
-   "end": 1194,
-   "text": "That official career had quietly ended after he was caught and fired for stealing a can of dog repellent and a hammer from an Auburn store."
+   "start": 1142.7,
+   "end": 1147.4,
+   "text": "On April 18, 2018, investigators quietly swabbed the door handle of DeAngelo's car."
   },
   {
-   "start": 1194.6,
+   "start": 1147.4,
+   "end": 1150.4,
+   "text": "Later they took a tissue from his curbside garbage can."
+  },
+  {
+   "start": 1150.4,
+   "end": 1154.1,
+   "text": "Both were matched to samples from the Golden State Killer crimes."
+  },
+  {
+   "start": 1154.7,
+   "end": 1162.2,
+   "text": "On the afternoon of April 24, 2018, Sacramento County sheriff's deputies arrested Joseph DeAngelo in the side yard of his home in Citrus Heights."
+  },
+  {
+   "start": 1162.2,
+   "end": 1163.3,
+   "text": "He was seventy-two."
+  },
+  {
+   "start": 1163.3,
+   "end": 1170.6,
+   "text": "He and Sharon had bought that house in 1980, and the family had also kept a second home in Long Beach, where they lived for much of the eighties."
+  },
+  {
+   "start": 1170.6,
+   "end": 1173.5,
+   "text": "They had three daughters, and the couple had separated."
+  },
+  {
+   "start": 1173.5,
+   "end": 1177.3,
+   "text": "At the time of the arrest he was living with a daughter and a granddaughter."
+  },
+  {
+   "start": 1177.3,
+   "end": 1183.4,
+   "text": "From 1990 until he retired in 2017, he had worked as a truck mechanic at a Save Mart distribution center in Roseville."
+  },
+  {
+   "start": 1183.9,
+   "end": 1185.6,
+   "text": "His family had not suspected him."
+  },
+  {
+   "start": 1185.6,
+   "end": 1191.7,
+   "text": "His eldest daughter called him a perfect father, and his wife had accepted his explanations for being away from home."
+  },
+  {
+   "start": 1191.7,
    "end": 1200.1,
-   "text": "By the summer of 2020, the seventy-four-year-old former officer finally faced the reality of what he had done."
+   "text": "Neighbors remembered loud, profane outbursts, and one family said he left them a phone message threatening to deliver a load of death because their dog barked."
   },
   {
    "start": 1200.1,
-   "end": 1205.6,
-   "text": "DeAngelo agreed to plead guilty to thirteen counts of first-degree murder and thirteen counts of kidnapping."
+   "end": 1206.6,
+   "text": "His brother-in-law said that back in the seventies, DeAngelo would casually bring up the East Area Rapist in conversation."
   },
   {
-   "start": 1205.6,
-   "end": 1212.7,
-   "text": "California's statute of limitations had already run out on the rapes he committed in the 1970s, so he was never charged with a single one of them."
+   "start": 1206.6,
+   "end": 1208.6,
+   "text": "In July 2018, Sharon filed for divorce."
   },
   {
-   "start": 1212.7,
-   "end": 1218.5,
-   "text": "Instead, as part of the bargain that spared him the death penalty, he admitted to those uncharged crimes in open court."
+   "start": 1209.2,
+   "end": 1217.4,
+   "text": "He was charged that first day with eight counts of first-degree murder, and the announcement was the first time anyone publicly connected him to the Visalia Ransacker."
   },
   {
-   "start": 1218.5,
-   "end": 1227.7,
-   "text": "That August, after sitting silent for nearly half a century, he was brought into a Sacramento courtroom to face the survivors and families who had waited forty years to look him in the eye."
+   "start": 1217.4,
+   "end": 1225.2,
+   "text": "Visalia's police chief said there was no DNA linking him to the Central Valley cases, but that other evidence made him confident the Ransacker had been caught."
   },
   {
-   "start": 1228.3,
-   "end": 1231.4,
-   "text": "In August 2020, the formal legal proceedings came to a close."
+   "start": 1225.2,
+   "end": 1228.2,
+   "text": "In May, Santa Barbara County filed four more murder counts."
   },
   {
-   "start": 1231.4,
-   "end": 1237.3,
-   "text": "Joseph DeAngelo was sentenced to more than twelve life terms, ensuring he will spend the rest of his life behind bars."
+   "start": 1228.2,
+   "end": 1232.4,
+   "text": "In August came a murder charge for Claude Snelling and thirteen counts of kidnapping."
   },
   {
-   "start": 1237.3,
-   "end": 1243.4,
-   "text": "The 74-year-old former police officer sat in court and was confronted directly by his victims and their family members."
+   "start": 1232.4,
+   "end": 1239.1,
+   "text": "The sexual assaults could not be charged at all, because California's statute of limitations on those cases from before 2017 had run out."
   },
   {
-   "start": 1243.4,
-   "end": 1249.2,
-   "text": "He had pleaded guilty to twenty-six counts in total: thirteen of first-degree murder, and thirteen of kidnapping."
+   "start": 1239.7,
+   "end": 1245.8,
+   "text": "Alone in an interview room after the arrest, according to a Sacramento County prosecutor, DeAngelo talked to himself."
   },
   {
-   "start": 1249.2,
-   "end": 1263.7,
-   "text": "The statute of limitations had long expired on the dozens of rapes he was accused of committing, but his guilty pleas provided an official resolution on the record, accounting for a violent spree that left at least thirteen dead, more than fifty raped, and over a hundred homes ransacked."
+   "start": 1245.8,
+   "end": 1248.4,
+   "text": "He said, I didn't have the strength to push him out."
   },
   {
-   "start": 1264.3,
-   "end": 1270.9,
-   "text": "Looking back across the decades, it is clear how deeply the technological limits of the 1970s and 1980s shaped this investigation."
+   "start": 1248.4,
+   "end": 1248.9,
+   "text": "He made me."
   },
   {
-   "start": 1270.9,
-   "end": 1276.9,
-   "text": "Law enforcement agencies were siloed, working without cell phones, surveillance networks, or modern DNA databases."
+   "start": 1248.9,
+   "end": 1249.7,
+   "text": "He went with me."
   },
   {
-   "start": 1276.9,
-   "end": 1287.8,
-   "text": "A cunning offender could exploit those invisible county borders, leaving detectives to chase contradictory clues across Northern and Southern California while believing they were hunting entirely different men."
+   "start": 1249.7,
+   "end": 1252,
+   "text": "It was like in my head, I mean, he's a part of me."
   },
   {
-   "start": 1287.8,
-   "end": 1292.3,
-   "text": "In Visalia, they chased a burglar who scattered undergarments and shot Claude Snelling."
+   "start": 1252,
+   "end": 1253.7,
+   "text": "I didn't want to do those things."
   },
   {
-   "start": 1292.3,
-   "end": 1297.6,
-   "text": "In Sacramento, they searched for a prowler who pried open windows and murdered Brian and Katie Maggiore."
+   "start": 1253.7,
+   "end": 1255.6,
+   "text": "I pushed Jerry out and had a happy life."
   },
   {
-   "start": 1297.6,
-   "end": 1301.1,
-   "text": "Along the southern coast, they looked for a killer tying diamond knots."
+   "start": 1255.6,
+   "end": 1256.8,
+   "text": "I did all those things."
   },
   {
-   "start": 1301.1,
-   "end": 1304.8,
-   "text": "The case files were separated by hundreds of miles and years of dead ends."
+   "start": 1256.8,
+   "end": 1258.2,
+   "text": "I destroyed all their lives."
   },
   {
-   "start": 1305.4,
-   "end": 1309.7,
-   "text": "The breakthrough only came when investigators stepped outside conventional tools."
+   "start": 1258.2,
+   "end": 1259.8,
+   "text": "So now I've got to pay the price."
   },
   {
-   "start": 1309.7,
-   "end": 1322.1,
-   "text": "By pulling pristine genetic material frozen by a forward-thinking pathologist in 1980 and utilizing investigative genetic genealogy through GEDmatch, they navigated from distant cousins down to a single door handle and a discarded tissue."
+   "start": 1259.8,
+   "end": 1265.2,
+   "text": "Prosecutors believe it was a tactic, to manipulate the police or to lay the ground for an insanity defense."
   },
   {
-   "start": 1322.1,
-   "end": 1329.9,
-   "text": "That science solved a forty-year cold case, but it also ignited an ongoing national debate about privacy, government reach, and familial DNA searching."
+   "start": 1265.2,
+   "end": 1268.7,
+   "text": "He had admitted to a similar act after the shoplifting arrest in 1979."
   },
   {
-   "start": 1329.9,
-   "end": 1336.9,
-   "text": "Studies noted that vast portions of the population could now be identified through public databases by relatives they had never even met."
+   "start": 1268.7,
+   "end": 1275.6,
+   "text": "Detectives had ignored his first requests for a lawyer, on the understanding that the interview could not be used against him in court."
   },
   {
-   "start": 1337.5,
-   "end": 1346,
+   "start": 1276.1,
+   "end": 1281.1,
+   "text": "His was the first public arrest made through genetic genealogy, and it set off a national argument."
+  },
+  {
+   "start": 1281.1,
+   "end": 1282.7,
+   "text": "He never handed his DNA to anyone."
+  },
+  {
+   "start": 1282.7,
+   "end": 1285.8,
+   "text": "His relatives did, for their own reasons, and that was enough."
+  },
+  {
+   "start": 1285.8,
+   "end": 1289.8,
+   "text": "Some critics call government searches of those databases a breach of privacy."
+  },
+  {
+   "start": 1289.8,
+   "end": 1301.7,
+   "text": "According to a study published in Science Magazine, about sixty percent of people of European descent in America, and about forty percent of people of Sub-Saharan African descent, can be identified through the MyHeritage database alone."
+  },
+  {
+   "start": 1301.7,
+   "end": 1306.3,
+   "text": "Since his arrest, more than a hundred and fifty suspects have been identified the same way."
+  },
+  {
+   "start": 1306.8,
+   "end": 1309,
+   "text": "The prosecution was going to be enormous."
+  },
+  {
+   "start": 1309,
+   "end": 1315.9,
+   "text": "In November 2018, prosecutors from six counties estimated the case could cost taxpayers twenty million dollars and last ten years."
+  },
+  {
+   "start": 1315.9,
+   "end": 1323.6,
+   "text": "In April 2019 they announced they would seek the death penalty, and the judge ruled that cameras could be allowed in the courtroom during the trial."
+  },
+  {
+   "start": 1324.2,
+   "end": 1325.2,
+   "text": "There was no trial."
+  },
+  {
+   "start": 1325.2,
+   "end": 1332.9,
+   "text": "On June 29, 2020, in Sacramento, Joseph DeAngelo pleaded guilty to thirteen counts of first-degree murder and thirteen counts of kidnapping."
+  },
+  {
+   "start": 1332.9,
+   "end": 1335.8,
+   "text": "In exchange, the death penalty was taken off the table."
+  },
+  {
+   "start": 1335.8,
+   "end": 1344.7,
+   "text": "The deal also required him to admit to crimes he had never been charged with, including the sexual assaults, and prosecutors described them in court in horrific detail."
+  },
+  {
+   "start": 1345.4,
+   "end": 1348.9,
+   "text": "From August 18 to August 20, 2020, the people he hurt got their turn."
+  },
+  {
+   "start": 1348.9,
+   "end": 1353.6,
+   "text": "Survivors, their relatives, and the families of the people he killed spoke to him in court."
+  },
+  {
+   "start": 1353.6,
+   "end": 1356.4,
+   "text": "He sat in a wheelchair, his face covered by a white mask."
+  },
+  {
+   "start": 1357,
+   "end": 1360.6,
+   "text": "Jane Carson-Sandler was attacked in 1976, at home with her young son."
+  },
+  {
+   "start": 1360.6,
+   "end": 1364.3,
+   "text": "She told the court that her attention that night was fully on her child."
+  },
+  {
+   "start": 1364.3,
+   "end": 1367.9,
+   "text": "Where did you put my son when you removed him from the bed, she asked him."
+  },
+  {
+   "start": 1367.9,
+   "end": 1370.8,
+   "text": "Where did you put him and what were you going to do to him?"
+  },
+  {
+   "start": 1370.8,
+   "end": 1375.8,
+   "text": "She said that decades later, a ski mask or someone yelling shut up will forever cause her anxiety."
+  },
+  {
+   "start": 1375.8,
+   "end": 1382.1,
+   "text": "And she said her comfort at those times is remembering that he is finally going to prison and will remain there until he dies."
+  },
+  {
+   "start": 1382.7,
+   "end": 1387.5,
+   "text": "When the statements were done, DeAngelo rose out of the wheelchair and spoke without the face covering."
+  },
+  {
+   "start": 1387.5,
+   "end": 1389.7,
+   "text": "I've listened to all your statements, he said."
+  },
+  {
+   "start": 1389.7,
+   "end": 1390.4,
+   "text": "Each one of them."
+  },
+  {
+   "start": 1390.4,
+   "end": 1392.4,
+   "text": "And I'm truly sorry to everyone I have hurt."
+  },
+  {
+   "start": 1392.4,
+   "end": 1393.4,
+   "text": "Thank you, your honor."
+  },
+  {
+   "start": 1394,
+   "end": 1402,
+   "text": "On August 21, 2020, Joseph James DeAngelo was sentenced to life in prison without the possibility of parole, more than twelve life sentences in all."
+  },
+  {
+   "start": 1402,
+   "end": 1406.4,
+   "text": "No court will ever convict him of the attacks that gave the East Area Rapist his name."
+  },
+  {
+   "start": 1406.4,
+   "end": 1410.8,
+   "text": "His own admission of them, made in open court, is what stands on the record instead."
+  },
+  {
+   "start": 1411.4,
+   "end": 1413.4,
+   "text": "So what does the evidence actually show?"
+  },
+  {
+   "start": 1413.4,
+   "end": 1420,
+   "text": "It shows a man who carried a badge through the first years of his crimes, who knew how police worked and how little their departments shared."
+  },
+  {
+   "start": 1420,
+   "end": 1424.3,
+   "text": "It shows agencies that guarded their own cases and denied links that turned out to be real."
+  },
+  {
+   "start": 1424.3,
+   "end": 1431.6,
+   "text": "And it shows evidence that outlasted every one of those failures, because someone in a Ventura medical examiner's office took the trouble to freeze it."
+  },
+  {
+   "start": 1432.1,
+   "end": 1434.6,
+   "text": "It also shows what the long hunt cost along the way."
+  },
+  {
+   "start": 1434.6,
+   "end": 1437.7,
+   "text": "David Witthuhn is not the only man who lived under suspicion."
+  },
+  {
+   "start": 1437.7,
+   "end": 1443.1,
+   "text": "Several others were looked at over the years and cleared, by DNA, by alibis, or by other investigative work."
+  },
+  {
+   "start": 1443.1,
+   "end": 1447.9,
+   "text": "And a method that can find a killer through his distant cousins can find almost anyone that way."
+  },
+  {
+   "start": 1447.9,
+   "end": 1453.6,
+   "text": "Since the arrest, people have kept raising questions about the ethics of using that kind of personal information."
+  },
+  {
+   "start": 1454.2,
+   "end": 1462.7,
    "text": "The file is closed on Joseph DeAngelo, yet the forensic precedent his capture established continues to reshape criminal investigations nationwide."
   },
   {
-   "start": 1346,
-   "end": 1346.8,
+   "start": 1462.7,
+   "end": 1463.5,
    "text": "Read the file."
   },
   {
-   "start": 1346.8,
-   "end": 1348.3,
+   "start": 1463.5,
+   "end": 1465,
    "text": "Form your own conclusion."
   },
   {
-   "start": 1348.3,
-   "end": 1349.5,
+   "start": 1465,
+   "end": 1466.3,
    "text": "That's it for this one."
   },
   {
-   "start": 1349.5,
-   "end": 1351.3,
+   "start": 1466.3,
+   "end": 1468,
    "text": "Thanks for hanging out with me."
   },
   {
-   "start": 1351.3,
-   "end": 1354.7,
+   "start": 1468,
+   "end": 1471.4,
    "text": "This has been CrimeTimeSnacks, and I'll catch you next time."
   }
  ]
