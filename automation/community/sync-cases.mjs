@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Pushes the case list into Supabase (cts_cases): every entry in cases.json,
-// plus one case per published episode, linked to that episode. Upsert by slug,
+// plus a case for each published episode that no existing case covers. Upsert by slug,
 // so hand edits made in the studio or the database are kept (only the fields
 // below are written, and summary/status only when empty), except that status and
 // years in case-facts.json always win.
@@ -43,8 +43,19 @@ for (const c of cases) {
   });
 }
 // Episodes with no backlog entry become cases of their own.
+//
+// Only those. Until 2026-11-21 an episode drafted from a backlog case still got a second
+// row here whenever its title did not contain the case's (the "The Murdaugh Family
+// Murders" episode and the "Alex Murdaugh" case), and the site ended up with 44 case pages
+// for about 22 cases. An episode that names the case it was drafted from (caseSlug, written
+// by episode-publish.mjs) is linked above when that case has no episode yet; when the case
+// already has one, there is nothing to write, because the generators read caseSlug
+// (case-canon.mjs) and put the episode on that case's page. Either way no row is made.
+// Rows that earlier runs made are still written below, so nothing already in the database
+// changes or goes stale; no row is ever deleted here.
 for (const e of eps) {
   if (rows.some((r) => r.episode_slug === e.slug)) continue;
+  if (e.caseSlug && (rows.some((r) => r.slug === e.caseSlug) || existing[e.caseSlug])) continue;
   const slug = e.caseSlug || e.slug.replace(/^crimetimesnacks-/, "").replace(/-part-\d+$/, "");
   if (rows.some((r) => r.slug === slug)) continue;
   const ex = existing[slug] || {};

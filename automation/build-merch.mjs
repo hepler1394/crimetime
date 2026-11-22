@@ -93,6 +93,9 @@ const page = `${head({
   title: "Merch | CrimeTimeSnacks",
   description: "CrimeTimeSnacks designs: original print-ready art from the studio, free to download. There is no store yet; leave an email to hear when there is.",
   canonicalPath: "/merch.html",
+  // There is no store. The page says so, and it stays out of the index and the sitemap
+  // until there is one; remove this line then.
+  noindex: true,
   ogImage: `${SITE}/images/merch/logo-classic-web.jpg`,
   extraHead: merchLd,
 })}

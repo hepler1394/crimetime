@@ -27,5 +27,10 @@ export async function loadStudioEpisodes() {
 export function mergeEpisodes(feedEpisodes, studioEpisodes) {
   const feedSlugs = new Set(feedEpisodes.map((e) => e.slug));
   const extra = studioEpisodes.filter((e) => e.slug && !feedSlugs.has(e.slug));
-  return [...feedEpisodes, ...extra].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+  // Newest first by the moment of publication. Sorting on the calendar day alone left three
+  // episodes published on one day in oldest-first order, so "the latest episode" on the
+  // homepage was the first of the three rather than the last. Every later sort in the
+  // generators is by day and stable, so this order is the one that survives within a day.
+  const stamp = (e) => Date.parse(e.pubDate || `${e.date || ""}T12:00:00Z`) || 0;
+  return [...feedEpisodes, ...extra].sort((a, b) => (b.date || "").localeCompare(a.date || "") || stamp(b) - stamp(a));
 }

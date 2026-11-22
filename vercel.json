@@ -190,6 +190,216 @@
       ],
       "destination": "https://www.crimetimesnacks.com/$1",
       "permanent": true
+    },
+    {
+      "source": "/cases/alex-murdaugh.html",
+      "destination": "/cases/the-murdaugh-family-murders.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/alex-murdaugh",
+      "destination": "/cases/the-murdaugh-family-murders.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/moscow-idaho-the-plea.html",
+      "destination": "/cases/murders-in-moscow.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/moscow-idaho-the-plea",
+      "destination": "/cases/murders-in-moscow.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/kohberger-trial.html",
+      "destination": "/cases/murders-in-moscow.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/kohberger-trial",
+      "destination": "/cases/murders-in-moscow.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/delphi-the-appeal.html",
+      "destination": "/cases/the-delphi-murder-case-2017.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/delphi-the-appeal",
+      "destination": "/cases/the-delphi-murder-case-2017.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/delphi-richard-allen.html",
+      "destination": "/cases/the-delphi-murder-case-2017.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/delphi-richard-allen",
+      "destination": "/cases/the-delphi-murder-case-2017.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/the-menendez-brothers-parole-years.html",
+      "destination": "/cases/erik-and-lyle-the-menendez-brothers.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/the-menendez-brothers-parole-years",
+      "destination": "/cases/erik-and-lyle-the-menendez-brothers.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/menendez-the-parole-years.html",
+      "destination": "/cases/erik-and-lyle-the-menendez-brothers.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/menendez-the-parole-years",
+      "destination": "/cases/erik-and-lyle-the-menendez-brothers.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/jonbenet-thirty-years.html",
+      "destination": "/cases/jonbenet-ramsey-the-facts-96-22.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/jonbenet-thirty-years",
+      "destination": "/cases/jonbenet-ramsey-the-facts-96-22.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/jonbenet-ramsey-americas-child-beauty-queen.html",
+      "destination": "/cases/jonbenet-ramsey-the-facts-96-22.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/jonbenet-ramsey-americas-child-beauty-queen",
+      "destination": "/cases/jonbenet-ramsey-the-facts-96-22.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/jonbenet-ramsey-dna.html",
+      "destination": "/cases/jonbenet-ramsey-the-facts-96-22.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/jonbenet-ramsey-dna",
+      "destination": "/cases/jonbenet-ramsey-the-facts-96-22.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/long-island-serial-killer.html",
+      "destination": "/cases/gilgo-beach-eight-names.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/long-island-serial-killer",
+      "destination": "/cases/gilgo-beach-eight-names.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/the-interrogation-of-chris-watts.html",
+      "destination": "/cases/watts-family-murders.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/the-interrogation-of-chris-watts",
+      "destination": "/cases/watts-family-murders.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/chris-watts-confession.html",
+      "destination": "/cases/watts-family-murders.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/chris-watts-confession",
+      "destination": "/cases/watts-family-murders.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/btk-dennis-rader.html",
+      "destination": "/cases/the-btk-floppy-disk.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/btk-dennis-rader",
+      "destination": "/cases/the-btk-floppy-disk.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/zodiac-killer.html",
+      "destination": "/cases/the-zodiac-ciphers.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/zodiac-killer",
+      "destination": "/cases/the-zodiac-ciphers.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/lori-vallow.html",
+      "destination": "/cases/the-doomsday-mom.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/lori-vallow",
+      "destination": "/cases/the-doomsday-mom.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/scott-peterson.html",
+      "destination": "/cases/the-disappearance-of-laci-peterson.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/scott-peterson",
+      "destination": "/cases/the-disappearance-of-laci-peterson.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/ted-bundy-escape.html",
+      "destination": "/cases/ted-bundy-and-the-murder-of-kimberly-leach.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/ted-bundy-escape",
+      "destination": "/cases/ted-bundy-and-the-murder-of-kimberly-leach.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/brian-laundrie-notebook.html",
+      "destination": "/cases/gabby-petito.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/brian-laundrie-notebook",
+      "destination": "/cases/gabby-petito.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/episodes/:slug([a-z0-9][a-z0-9-]*)",
+      "destination": "/episodes/:slug.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/:slug([a-z0-9][a-z0-9-]*)",
+      "destination": "/cases/:slug.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog-posts/:slug([a-z0-9][a-z0-9-]*)",
+      "destination": "/blog-posts/:slug.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/:page(episodes|cases|blog|about|listen|contact|quiz|glossary|live|corrections|privacy|terms|search|videos|merch)",
+      "destination": "/:page.html",
+      "statusCode": 301
     }
   ],
   "crons": [

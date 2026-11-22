@@ -130,6 +130,9 @@ const page = `${head({
   title: `${shorts.length ? "Shorts & Videos" : "Videos"} | CrimeTimeSnacks`,
   description: blurb,
   canonicalPath: "/videos.html",
+  // One video, from 2025. Kept out of the index and the sitemap until the channel has
+  // enough on it to be worth arriving at; remove this line then.
+  noindex: true,
   extraHead: videoLd + extraCss,
 })}
 <body>

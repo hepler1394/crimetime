@@ -2,6 +2,13 @@
   "_README": "The public corrections log, rendered to /corrections.html by build-corrections.mjs. Newest first. Every entry is dated and says what was wrong, where, and what changed. Add one whenever a published episode, transcript, post or page is corrected; do not edit the record quietly.",
   "corrections": [
     {
+      "date": "2026-11-21",
+      "where": "Case pages: The Zodiac Ciphers, Ted Bundy and the Murder of Kimberly Leach, The Doomsday Mom, The Disappearance of Laci Peterson",
+      "url": "/cases.html",
+      "wrong": "Each of these four case pages was headed \"Open, 2026\". That was the year the episode was published and a default status, not the case's own.",
+      "fixed": "The pages now carry the status and years already on file for each case: the Zodiac, a cold case, 1968-1969; Ted Bundy, closed, 1977-1978; Lori Vallow Daybell, convicted, 2019-2023; Scott Peterson, convicted, 2002-present."
+    },
+    {
       "date": "2026-10-05",
       "where": "Episode: The Interrogation of Chris Watts",
       "url": "/episodes/the-interrogation-of-chris-watts.html",

@@ -6,6 +6,7 @@
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { DEFAULT_SHARE_IMAGE, SHARE_W, SHARE_H, SHARE_ALT } from "./shell.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -22,6 +23,17 @@ for (const f of (await readdir(ROOT)).filter((x) => x.endsWith(".html"))) {
   if (html.includes('property="og:title"')) {
     // Already has OG — just back-fill image alt tags if they're missing.
     let touched = false;
+    // The hand-written pages named the square logo as their share image (a WebP file under
+    // a .png name, announced as a wide card). They take the site's 1200x630 card, with its
+    // size, so a crawler does not have to fetch it to lay the preview out.
+    const before = html;
+    html = html
+      .replace(/(<meta\s+(?:property="og:image"|name="twitter:image")\s+content=")[^"]*\/images\/logo\.png(">)/gi, `$1${SITE}${DEFAULT_SHARE_IMAGE}$2`)
+      .replace(/(<meta\s+(?:property="og:image:alt"|name="twitter:image:alt")\s+content=")CrimeTimeSnacks logo(">)/gi, `$1${SHARE_ALT}$2`);
+    if (html.includes(`property="og:image" content="${SITE}${DEFAULT_SHARE_IMAGE}"`) && !html.includes('property="og:image:width"')) {
+      html = html.replace(/(<meta\s+property="og:image"\s+content="[^"]*">)/i, `$1\n    <meta property="og:image:width" content="${SHARE_W}">\n    <meta property="og:image:height" content="${SHARE_H}">`);
+    }
+    if (html !== before) touched = true;
     if (html.includes('property="og:image"') && !html.includes('property="og:image:alt"')) {
       html = html.replace(
         /(<meta\s+property="og:image"\s+content="[^"]*">)/i,
@@ -56,13 +68,15 @@ for (const f of (await readdir(ROOT)).filter((x) => x.endsWith(".html"))) {
     <meta property="og:title" content="${t}">
     <meta property="og:description" content="${d}">
     <meta property="og:url" content="${SITE}${encodeURI(path)}">
-    <meta property="og:image" content="${SITE}/images/logo.png">
-    <meta property="og:image:alt" content="CrimeTimeSnacks logo">
+    <meta property="og:image" content="${SITE}${DEFAULT_SHARE_IMAGE}">
+    <meta property="og:image:width" content="${SHARE_W}">
+    <meta property="og:image:height" content="${SHARE_H}">
+    <meta property="og:image:alt" content="${SHARE_ALT}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${t}">
     <meta name="twitter:description" content="${d}">
-    <meta name="twitter:image" content="${SITE}/images/logo.png">
-    <meta name="twitter:image:alt" content="CrimeTimeSnacks logo">
+    <meta name="twitter:image" content="${SITE}${DEFAULT_SHARE_IMAGE}">
+    <meta name="twitter:image:alt" content="${SHARE_ALT}">
     <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Podcast" href="/feed.xml">`;
 
   html = html.replace(/<\/title>/i, `</title>${block}`);

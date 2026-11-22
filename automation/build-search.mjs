@@ -74,6 +74,9 @@ const page = `${head({
   title: "Search | CrimeTimeSnacks",
   description: "Search everything CrimeTimeSnacks — episodes, full transcripts (jump to the exact second), blog posts, quizzes, and the glossary.",
   canonicalPath: "/search.html",
+  // A search box is a tool, not a page to land on from a search engine: 31 words. Out of
+  // the index and the sitemap (build-sitemap.mjs skips noindex pages) since 2026-11-21.
+  noindex: true,
   extraHead: `
     <style>
         .result { display:block; text-decoration:none; color:inherit; padding:1.1rem 1.3rem; border:1px solid var(--cts-line); border-radius: var(--radius-sm); background: linear-gradient(180deg, var(--cts-panel), var(--cts-ink)); margin-bottom: 0.8rem; transition: var(--cts-transition); }

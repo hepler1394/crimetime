@@ -31,6 +31,8 @@
     "test:gate": "node --test automation/test-update-gate.mjs",
     "test:blog": "node --test automation/test-blog-check.mjs",
     "test:audio": "node --test automation/test-audio-compare.mjs automation/test-audio-paragraphs.mjs",
-    "test:links": "node --test automation/test-check-links.mjs"
+    "test:links": "node --test automation/test-check-links.mjs",
+    "test:cases": "node --test automation/test-case-canon.mjs",
+    "indexnow": "node automation/indexnow.mjs"
   }
 }

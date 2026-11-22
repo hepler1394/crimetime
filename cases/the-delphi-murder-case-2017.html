@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>The Delphi Murder Case 2017 | Cases | CrimeTimeSnacks</title>
+    <title>The Delphi Murders | Cases | CrimeTimeSnacks</title>
     <meta name="description" content="Follow the case by email; every update links its source. On February 14, 2017, the bodies of Abigail Williams (June 23, 2003 – February 13, 2017) and Liberty…">
     <meta name="author" content="Cory">
     <meta name="robots" content="index, follow, max-image-preview:large">
@@ -11,15 +11,15 @@
     <meta name="theme-color" content="#050505">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="CrimeTimeSnacks">
-    <meta property="og:title" content="The Delphi Murder Case 2017 | Cases | CrimeTimeSnacks">
+    <meta property="og:title" content="The Delphi Murders | Cases | CrimeTimeSnacks">
     <meta property="og:description" content="Follow the case by email; every update links its source. On February 14, 2017, the bodies of Abigail Williams (June 23, 2003 – February 13, 2017) and Liberty…">
     <meta property="og:url" content="https://www.crimetimesnacks.com/cases/the-delphi-murder-case-2017.html">
-    <meta property="og:image" content="https://www.crimetimesnacks.com/images/logo.png">
+    <meta property="og:image" content="https://www.crimetimesnacks.com/images/episodes/delphi-update-the-richard-allen-appeal.jpg">
     <meta property="og:image:alt" content="CrimeTimeSnacks — A True Crime Podcast">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="The Delphi Murder Case 2017 | Cases | CrimeTimeSnacks">
+    <meta name="twitter:title" content="The Delphi Murders | Cases | CrimeTimeSnacks">
     <meta name="twitter:description" content="Follow the case by email; every update links its source. On February 14, 2017, the bodies of Abigail Williams (June 23, 2003 – February 13, 2017) and Liberty…">
-    <meta name="twitter:image" content="https://www.crimetimesnacks.com/images/logo.png">
+    <meta name="twitter:image" content="https://www.crimetimesnacks.com/images/episodes/delphi-update-the-richard-allen-appeal.jpg">
     <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Podcast" href="/feed.xml">
     <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Blog" href="/blog-feed.xml">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -32,7 +32,7 @@
     <meta name="format-detection" content="telephone=no">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="/css/style.css?v=2026x">
+    <link rel="stylesheet" href="/css/style.css?v=2026y">
 <style>
 .case-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem;margin-top:1.4rem}
 .case-card{background:var(--cts-panel);border:1px solid var(--cts-line);border-radius:var(--radius);display:flex;flex-direction:column;position:relative;isolation:isolate;overflow:hidden;transition:var(--cts-transition)}
@@ -60,13 +60,6 @@
 .case-meta .st{color:var(--cts-tape)}
 .case-meta .up{color:var(--cts-red-hot)}
 .case-foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:.6rem;border-top:1px solid var(--cts-line);font-size:.85rem;color:var(--cts-muted)}
-.follow{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
-.follow input[type=email]{background:var(--cts-black);border:1px solid var(--cts-line-strong);border-radius:var(--radius-sm);padding:.7rem .9rem;color:var(--cts-white);min-width:230px;flex:1}
-.follow .btn{white-space:nowrap}
-.follow-state{font-size:.9rem;color:var(--cts-muted);min-height:1.4em}
-.follow-state.ok{color:#9fe3b8}
-.follow-state.err{color:var(--cts-red-hot)}
-.btn.following{background:#123d24;border-color:#1d6b3f;color:#9fe3b8}
 .timeline{list-style:none;margin:1.2rem 0 0;padding:0;border-left:2px solid var(--cts-red);}
 .timeline li{padding:0 0 1.2rem 1.2rem;position:relative}
 .timeline li::before{content:"";position:absolute;left:-7px;top:.45rem;width:12px;height:12px;border-radius:50%;background:var(--cts-red);box-shadow:0 0 0 4px var(--cts-black)}
@@ -74,8 +67,12 @@
 .timeline h3{margin:0 0 .25rem;font-size:1.05rem}
 .timeline p{margin:0;color:var(--cts-muted);line-height:1.55}
 .timeline a{color:var(--cts-muted)}
+.timeline .also{font-size:.85rem;color:var(--cts-faint)}
+.timeline .also a{color:var(--cts-faint)}
 .case-hero{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(280px,1fr);gap:2rem;align-items:start}
-@media(max-width:820px){.case-hero{grid-template-columns:1fr}}
+/* One column on a phone, and the follow form first: under the timeline it sat below every
+   update the case has, 96 percent of the way down the Murdaugh page. */
+@media(max-width:820px){.case-hero{grid-template-columns:1fr}.case-side{order:-1}}
 .case-side{background:var(--cts-panel);border:1px solid var(--cts-line);border-radius:var(--radius);padding:1.3rem}
 .case-side h3{font-family:var(--font-display);font-size:1.5rem;letter-spacing:.02em;margin:0 0 .6rem}
 .case-side .kv{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem;font-size:.9rem;color:var(--cts-muted)}
@@ -85,7 +82,8 @@
 .case-photo img{display:block;width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--cts-line)}
 .case-photo figcaption{margin-top:.5rem;font-size:.8rem;color:var(--cts-faint)}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"The Delphi Murder Case 2017 | CrimeTimeSnacks","url":"https://www.crimetimesnacks.com/cases/the-delphi-murder-case-2017.html","description":"On February 14, 2017, the bodies of Abigail Williams (June 23, 2003 – February 13, 2017) and Liberty German (December 27, 2002 – February 13, 2017) were discovered near the Monon High Bridge Trail. The case has had no prominent suspects until recently. On October 28th police announced they had made an arrest in the case. A 50 year old Delphi Resident was arrested and charged with two felony counts of murder. Listen while we dive into the case starting over 5 years ago in on a beautiful hiking trail."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"The Delphi Murders | CrimeTimeSnacks","url":"https://www.crimetimesnacks.com/cases/the-delphi-murder-case-2017.html","description":"On February 14, 2017, the bodies of Abigail Williams (June 23, 2003 – February 13, 2017) and Liberty German (December 27, 2002 – February 13, 2017) were discovered near the Monon High Bridge Trail. The case has had no prominent suspects until recently. On October 28th police announced they had made an arrest in the case. A 50 year old Delphi Resident was arrested and charged with two felony counts of murder. Listen while we dive into the case starting over 5 years ago in on a beautiful hiking trail."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.crimetimesnacks.com/"},{"@type":"ListItem","position":2,"name":"Cases","item":"https://www.crimetimesnacks.com/cases.html"},{"@type":"ListItem","position":3,"name":"The Delphi Murders","item":"https://www.crimetimesnacks.com/cases/the-delphi-murder-case-2017.html"}]}</script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -103,11 +101,9 @@
                     <li><a href="/index.html">Home</a></li>
                     <li><a href="/episodes.html">Episodes</a></li>
                     <li><a href="/cases.html" class="active" aria-current="page">Cases</a></li>
-                    <li><a href="/videos.html">Videos</a></li>
                     <li><a href="/blog.html">Blog</a></li>
                     <li><a href="/live.html">Live</a></li>
                     <li><a href="/quiz.html">Quizzes</a></li>
-                    <li><a href="/merch.html">Merch</a></li>
                     <li><a href="/about.html">About</a></li>
                     <li><a href="/contact.html">Contact</a></li>
                 </ul>
@@ -123,7 +119,7 @@
     <section class="page-hero">
         <div class="container">
             <p class="eyebrow" style="justify-content:center;">Convicted &middot; 2017-2024</p>
-            <h1 class="page-title">The Delphi Murder Case 2017</h1>
+            <h1 class="page-title">The Delphi Murders</h1>
             <p>On February 14, 2017, the bodies of Abigail Williams (June 23, 2003 – February 13, 2017) and Liberty German (December 27, 2002 – February 13, 2017) were discovered near the Monon High Bridge Trail. The case has had no prominent suspects until recently. On October 28th police announced they had made an arrest in the case. A 50 year old Delphi Resident was arrested and charged with two felony counts of murder. Listen while we dive into the case starting over 5 years ago in on a beautiful hiking trail.</p>
         </div>
     </section>
@@ -135,20 +131,26 @@
             <p style="color:var(--cts-muted);margin:0;">What has happened, newest first, each with the article it comes from. An entry goes up only after that article is read and found to report it.</p>
             <ol class="timeline">
                 <li><time datetime="2026-10-17">October 17, 2026</time><h3>Indiana Court of Appeals sets oral arguments in Richard Allen's appeal</h3><p>The Indiana Court of Appeals is scheduled to hear one hour of oral arguments regarding Richard Allen's appeal of his convictions and 130-year sentence. Allen's attorneys argue he confessed under psychological crisis and was improperly barred from presenting an alternative theory of the killings.</p><p><a href="https://the-independent.com/news/world/americas/crime/richard-allen-delphi-murders-appeal-b3053410.html" rel="noopener nofollow" target="_blank">The Independent</a></p></li>
-                <li><time datetime="2026-09-21">September 21, 2026</time><h3>Indiana Court of Appeals hears appeal in Richard Allen's Delphi murder conviction</h3><p>The Indiana Court of Appeals heard oral arguments regarding whether Richard Allen received a fair trial in his 2024 double murder conviction. Defense attorneys argued that key evidence was suppressed at trial, including evidence of other possible suspects and Allen's mental state when he confessed.</p><p><a href="https://abc7news.com/post/richard-allen-case-indiana-court-hears-appeal-convicted-delphi-killings-abigail-williams-liberty-german-2017/19854904" rel="noopener nofollow" target="_blank">ABC7 San Francisco</a></p></li>
-                <li><time datetime="2026-09-21">September 21, 2026</time><h3>Indiana appellate court hears oral arguments in Richard Allen appeal</h3><p>The Indiana Court of Appeals heard oral arguments regarding whether Richard Allen received a fair trial in his 2024 murder conviction for the Delphi killings. His defense argued that evidence of alternative suspects was improperly excluded and details of his mental state during confessions were suppressed.</p><p><a href="https://abc7chicago.com/post/richard-allen-case-indiana-court-hears-appeal-convicted-delphi-killings-abigail-williams-liberty-german-2017/19854904" rel="noopener nofollow" target="_blank">ABC7 Chicago</a></p></li>
+                <li><time datetime="2026-09-23">September 23, 2026</time><h3>Court holds appeal hearing for Richard Allen in Delphi murders case</h3><p>An appeal hearing was held for convicted Delphi murderer Richard Allen as he seeks a new trial to overturn his conviction. Allen, serving a 130-year sentence, argued issues surrounding his confessions and whether he received a fair trial.</p><p><a href="https://foxbaltimore.com/criminally-obsessed/richard-allen-appeal-court-insider-reveals-defense-tactics-and-victim-family-reaction" rel="noopener nofollow" target="_blank">WBFF Fox 45 Baltimore</a></p></li>
+                <li><time datetime="2026-09-23">September 23, 2026</time><h3>Richard Allen appeals 130-year sentence and seeks new trial</h3><p>Richard Allen is seeking a new trial on appeal, arguing that his repeated confessions to killing Abigail Williams and Liberty German occurred while he was experiencing severe psychosis in solitary confinement.</p><p><a href="https://radio.foxnews.com/2026/09/23/delphi-murderer-appeals-130-year-sentence-true-crime-minute" rel="noopener nofollow" target="_blank">FOX News Radio</a></p></li>
+                <li><time datetime="2026-09-21">September 21, 2026</time><h3>Appellate judges take Richard Allen's conviction appeal under advisement</h3><p>Attorneys for Richard Allen and the State of Indiana presented oral arguments before an appellate court panel regarding whether Allen's murder convictions should be overturned. The court took the arguments under advisement and will issue a written opinion at a later date.</p><p><a href="https://wlfi.com/2026/09/21/delphi-murders-appeal-defense-state-clash-over-confessions-excluded-evidence" rel="noopener nofollow" target="_blank">WLFI</a></p></li>
+                <li><time datetime="2026-09-21">September 21, 2026</time><h3>Indiana appeals court hears Richard Allen's challenge to 130-year sentence</h3><p>The Indiana Court of Appeals held a hearing where Richard Allen's attorney argued that solitary confinement induced psychosis leading to false confessions, seeking to overturn his conviction.</p><p><a href="https://frontpagedetectives.com/p/delphi-murders-convict-appeals-130-year-sentence-claims-solitary-confinement-led-to-false-confessions" rel="noopener nofollow" target="_blank">Front Page Detectives</a></p></li>
+                <li><time datetime="2026-09-21">September 21, 2026</time><h3>Indiana Court of Appeals hears appeal in Richard Allen's Delphi murder conviction</h3><p>The Indiana Court of Appeals heard oral arguments regarding whether Richard Allen received a fair trial in his 2024 double murder conviction. Defense attorneys argued that key evidence was suppressed at trial, including evidence of other possible suspects and Allen's mental state when he confessed.</p><p><a href="https://abc7news.com/post/richard-allen-case-indiana-court-hears-appeal-convicted-delphi-killings-abigail-williams-liberty-german-2017/19854904" rel="noopener nofollow" target="_blank">ABC7 San Francisco</a> <span class="also">&middot; also reported by <a href="https://ca.style.yahoo.com/delphi-killer-richard-allen-appeals-222000962.html" rel="noopener nofollow" target="_blank">Yahoo Style Canada</a>, <a href="https://abc7chicago.com/post/richard-allen-case-indiana-court-hears-appeal-convicted-delphi-killings-abigail-williams-liberty-german-2017/19854904" rel="noopener nofollow" target="_blank">ABC7 Chicago</a></span></p></li>
+                <li><time datetime="2026-09-21">September 21, 2026</time><h3>Appeals judges hear oral arguments in Delphi murder case</h3><p>An Indiana appeals panel convened to hear arguments in Richard Allen's appeal challenging his 2024 conviction and 130-year sentence. The appeal disputes the legality of the home search warrant and the exclusion of alternate-suspect theories and solitary-confinement context.</p><p><a href="https://yahoo.com/news/us/articles/convicted-delphi-killer-presents-arguments-123949589.html" rel="noopener nofollow" target="_blank">Yahoo News</a></p></li>
+                <li><time datetime="2026-09-21">September 21, 2026</time><h3>Indiana appellate judges hear oral arguments in Richard Allen's Delphi murders appeal</h3><p>A three-judge panel of the Indiana Court of Appeals heard arguments regarding whether Richard Allen received a fair trial in the 2017 Delphi murders. Allen's defense challenged the admissibility of his confessions and search evidence, while the state defended his conviction.</p><p><a href="https://wndu.com/2026/09/21/indiana-court-hears-appeal-richard-allen-delphi-murders-case" rel="noopener nofollow" target="_blank">WNDU</a></p></li>
+                <li><time datetime="2026-09-21">September 21, 2026</time><h3>Indiana appellate judges question state over Richard Allen's pretrial confinement</h3><p>The Indiana Court of Appeals heard oral arguments on Richard Allen's appeal seeking a new trial. Allen's defense argued his pretrial solitary confinement drove him into psychosis to extract confessions, leading appellate judges to question the state's treatment of Allen prior to trial.</p><p><a href="https://www.21alivenews.com/2026/09/21/delphi-murders-appeal-judge-tells-state-you-protected-him-into-psychosis-richard-allen-seeks-new-trial/" rel="noopener nofollow" target="_blank">21Alive News</a></p></li>
             </ol>
         </div>
         <aside class="case-side">
             <h3>Follow this case</h3>
-            <p style="color:var(--cts-muted);font-size:.95rem;margin:0 0 .9rem;">Be the first to follow. We email you when something happens. Confirm once, unsubscribe any time.</p>
-            <form class="follow" data-case="the-delphi-murder-case-2017" novalidate>
+            <p style="color:var(--cts-muted);font-size:.95rem;margin:0 0 .9rem;">1 person is following. We email you when something happens. Confirm once, unsubscribe any time.</p>
+            <form class="follow" data-case="the-delphi-murder-case-2017" data-aliases="delphi-the-appeal,delphi-richard-allen" novalidate>
     <input type="email" name="email" placeholder="you@email.com" aria-label="Your email" autocomplete="email" required>
     <button class="btn btn-primary" type="submit">Follow this case</button>
     <div class="follow-state" role="status"></div>
   </form>
             
-            <hr style="border:0;border-top:1px solid var(--cts-line);margin:1.2rem 0;"><h3>The episode</h3><p style="margin:0 0 .6rem;"><a href="/episodes/crimetimesnacks-the-delphi-murder-case-2017.html" style="color:var(--cts-white);">CrimeTimeSnacks: The Delphi Murder Case 2017</a> <span style="color:var(--cts-faint);">09:25</span></p><audio controls preload="none" style="width:100%"><source src="/audio/crimetimesnacks-the-delphi-murder-case-2017.m4a" type="audio/x-m4a"></audio>
+            <hr style="border:0;border-top:1px solid var(--cts-line);margin:1.2rem 0;"><h3>The episodes</h3><p style="margin:0 0 .6rem;"><a href="/episodes/delphi-update-the-richard-allen-appeal.html" style="color:var(--cts-white);">Delphi: The Appeal</a> <span style="color:var(--cts-faint);">20:11</span></p><audio controls preload="none" style="width:100%"><source src="/audio/delphi-update-the-richard-allen-appeal.mp3" type="audio/mpeg"></audio><p style="margin:.7rem 0 0;"><a href="/episodes/crimetimesnacks-the-delphi-murder-case-2017.html" style="color:var(--cts-white);">CrimeTimeSnacks: The Delphi Murder Case 2017</a> <span style="color:var(--cts-faint);">09:25</span></p>
         </aside>
     </section>
     </main>
@@ -207,5 +209,7 @@
     <script src="/js/effects.js"></script>
     <script src="/js/account.js"></script>
     <script src="/js/community.js"></script>
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

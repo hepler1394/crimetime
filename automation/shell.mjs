@@ -6,8 +6,15 @@ export const SITE = "https://www.crimetimesnacks.com";
 export const APPLE = "https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400";
 export const SPOTIFY = "https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ";
 export const EMAIL = "crimetimesnacks@gmail.com";
-export const CSS = "/css/style.css?v=2026x";
+export const CSS = "/css/style.css?v=2026y";
 export const FA = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css";
+// The image a link to the site shows when it is shared: 1200x630, made from the show cover
+// and the homepage headline by make-share-card.mjs. A page with a picture of its own (an
+// episode's cover, a post's photograph) passes that instead.
+export const DEFAULT_SHARE_IMAGE = "/images/share-card.jpg";
+export const SHARE_W = 1200;
+export const SHARE_H = 630;
+export const SHARE_ALT = "CrimeTimeSnacks: a true crime podcast built from the public record";
 export const FONTS = "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap";
 
 // The real brand marks, not a glyph font standing in for them.
@@ -52,18 +59,39 @@ export function summaryOf(text) {
   return out.join(" ") || String(text || "");
 }
 
+// Videos and Merch are in the footer only. One video from 2025 and a page of print files
+// with no store behind it were two of the ten things a first-time visitor was offered
+// (2026-11-21); both pages are still built and linked, and are noindex until there is more
+// on them.
 const NAV = [
   ["/index.html", "home", "Home"],
   ["/episodes.html", "episodes", "Episodes"],
   ["/cases.html", "cases", "Cases"],
-  ["/videos.html", "videos", "Videos"],
   ["/blog.html", "blog", "Blog"],
   ["/live.html", "live", "Live"],
   ["/quiz.html", "quiz", "Quizzes"],
-  ["/merch.html", "merch", "Merch"],
   ["/about.html", "about", "About"],
   ["/contact.html", "contact", "Contact"],
 ];
+
+// Follow a case by email. js/community.js drives every form.follow[data-case] and posts to
+// /api/community/follow. aliases: the other slugs that are the same case (case-canon.mjs),
+// so a member who followed one of those sees "Following" here and can stop from here.
+export function followForm(slug, aliases = []) {
+  return `<form class="follow" data-case="${esc(slug)}"${aliases.length ? ` data-aliases="${esc(aliases.join(","))}"` : ""} novalidate>
+    <input type="email" name="email" placeholder="you@email.com" aria-label="Your email" autocomplete="email" required>
+    <button class="btn btn-primary" type="submit">Follow this case</button>
+    <div class="follow-state" role="status"></div>
+  </form>`;
+}
+// The Case File: the Sunday email. js/main.js drives every .newsletter-form and posts to
+// /api/community/subscribe.
+export function caseFileForm() {
+  return `<form class="newsletter-form">
+    <input type="email" inputmode="email" autocomplete="email" required aria-label="Email address" placeholder="Your email address">
+    <button type="submit" class="btn btn-primary" style="white-space: nowrap;">Get the Case File</button>
+  </form>`;
+}
 
 // <head> block. opts: { title, description, canonicalPath, ogImage, ogType,
 //                       extraHead, noindex }
@@ -75,7 +103,9 @@ export function head(opts = {}) {
   const canonical = `${SITE}${opts.canonicalPath || "/"}`;
   // Share cards need an absolute image URL. Episode pages passed "/images/episodes/x.jpg"
   // and every social crawler dropped the card.
-  const ogImage = /^https?:\/\//.test(opts.ogImage || "") ? opts.ogImage : `${SITE}${opts.ogImage ? (opts.ogImage.startsWith("/") ? "" : "/") + opts.ogImage : "/images/logo.png"}`;
+  const ogImage = /^https?:\/\//.test(opts.ogImage || "") ? opts.ogImage : `${SITE}${opts.ogImage ? (opts.ogImage.startsWith("/") ? "" : "/") + opts.ogImage : DEFAULT_SHARE_IMAGE}`;
+  // The size is stated only for the site's own card, whose size is known.
+  const ogSize = ogImage === `${SITE}${DEFAULT_SHARE_IMAGE}` ? `\n    <meta property="og:image:width" content="${SHARE_W}">\n    <meta property="og:image:height" content="${SHARE_H}">` : "";
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,7 +122,7 @@ export function head(opts = {}) {
     <meta property="og:title" content="${esc(title)}">
     <meta property="og:description" content="${esc(description)}">
     <meta property="og:url" content="${canonical}">
-    <meta property="og:image" content="${esc(ogImage)}">
+    <meta property="og:image" content="${esc(ogImage)}">${ogSize}
     <meta property="og:image:alt" content="CrimeTimeSnacks — A True Crime Podcast">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${esc(title)}">
@@ -201,6 +231,15 @@ export function footer(opts = {}) {
     </footer>`;
 }
 
+// Vercel Web Analytics. The script is served by Vercel itself at /_vercel/insights/ once
+// Web Analytics is switched on for the project; until then the request is a 404 and the
+// page is unaffected. It sets no cookies. The site had no visitor count of any kind until
+// 2026-11-21, so nothing about reach could be measured. Set to "" to turn it off.
+export const ANALYTICS_SRC = "/_vercel/insights/script.js";
+export const analyticsTag = () => ANALYTICS_SRC
+  ? `    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>\n    <script defer src="${ANALYTICS_SRC}"></script>`
+  : "";
+
 // Script tags. extras: array of additional script srcs.
 export function scripts(extras = []) {
   // account.js is on every page: it swaps "Sign in" in the header for the member's handle,
@@ -208,5 +247,6 @@ export function scripts(extras = []) {
   const tags = ["/js/main.js", "/js/effects.js", "/js/account.js", ...extras]
     .map((s) => `    <script src="${s}"></script>`)
     .join("\n");
-  return tags;
+  const va = analyticsTag();
+  return va ? `${tags}\n${va}` : tags;
 }

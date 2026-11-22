@@ -14,12 +14,14 @@
     <meta property="og:title" content="Cases | CrimeTimeSnacks">
     <meta property="og:description" content="Follow the cases CrimeTimeSnacks covers and get an email when something happens: a court date, a verdict, an arrest. Free.">
     <meta property="og:url" content="https://www.crimetimesnacks.com/cases.html">
-    <meta property="og:image" content="https://www.crimetimesnacks.com/images/logo.png">
+    <meta property="og:image" content="https://www.crimetimesnacks.com/images/share-card.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="CrimeTimeSnacks — A True Crime Podcast">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Cases | CrimeTimeSnacks">
     <meta name="twitter:description" content="Follow the cases CrimeTimeSnacks covers and get an email when something happens: a court date, a verdict, an arrest. Free.">
-    <meta name="twitter:image" content="https://www.crimetimesnacks.com/images/logo.png">
+    <meta name="twitter:image" content="https://www.crimetimesnacks.com/images/share-card.jpg">
     <meta name="twitter:image:alt" content="CrimeTimeSnacks logo">
     <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Podcast" href="/feed.xml">
     <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Blog" href="/blog-feed.xml">
@@ -33,7 +35,7 @@
     <meta name="format-detection" content="telephone=no">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="/css/style.css?v=2026x">
+    <link rel="stylesheet" href="/css/style.css?v=2026y">
 <style>
 .case-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem;margin-top:1.4rem}
 .case-card{background:var(--cts-panel);border:1px solid var(--cts-line);border-radius:var(--radius);display:flex;flex-direction:column;position:relative;isolation:isolate;overflow:hidden;transition:var(--cts-transition)}
@@ -61,13 +63,6 @@
 .case-meta .st{color:var(--cts-tape)}
 .case-meta .up{color:var(--cts-red-hot)}
 .case-foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:.6rem;border-top:1px solid var(--cts-line);font-size:.85rem;color:var(--cts-muted)}
-.follow{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
-.follow input[type=email]{background:var(--cts-black);border:1px solid var(--cts-line-strong);border-radius:var(--radius-sm);padding:.7rem .9rem;color:var(--cts-white);min-width:230px;flex:1}
-.follow .btn{white-space:nowrap}
-.follow-state{font-size:.9rem;color:var(--cts-muted);min-height:1.4em}
-.follow-state.ok{color:#9fe3b8}
-.follow-state.err{color:var(--cts-red-hot)}
-.btn.following{background:#123d24;border-color:#1d6b3f;color:#9fe3b8}
 .timeline{list-style:none;margin:1.2rem 0 0;padding:0;border-left:2px solid var(--cts-red);}
 .timeline li{padding:0 0 1.2rem 1.2rem;position:relative}
 .timeline li::before{content:"";position:absolute;left:-7px;top:.45rem;width:12px;height:12px;border-radius:50%;background:var(--cts-red);box-shadow:0 0 0 4px var(--cts-black)}
@@ -75,8 +70,12 @@
 .timeline h3{margin:0 0 .25rem;font-size:1.05rem}
 .timeline p{margin:0;color:var(--cts-muted);line-height:1.55}
 .timeline a{color:var(--cts-muted)}
+.timeline .also{font-size:.85rem;color:var(--cts-faint)}
+.timeline .also a{color:var(--cts-faint)}
 .case-hero{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(280px,1fr);gap:2rem;align-items:start}
-@media(max-width:820px){.case-hero{grid-template-columns:1fr}}
+/* One column on a phone, and the follow form first: under the timeline it sat below every
+   update the case has, 96 percent of the way down the Murdaugh page. */
+@media(max-width:820px){.case-hero{grid-template-columns:1fr}.case-side{order:-1}}
 .case-side{background:var(--cts-panel);border:1px solid var(--cts-line);border-radius:var(--radius);padding:1.3rem}
 .case-side h3{font-family:var(--font-display);font-size:1.5rem;letter-spacing:.02em;margin:0 0 .6rem}
 .case-side .kv{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem;font-size:.9rem;color:var(--cts-muted)}
@@ -103,11 +102,9 @@
                     <li><a href="/index.html">Home</a></li>
                     <li><a href="/episodes.html">Episodes</a></li>
                     <li><a href="/cases.html" class="active" aria-current="page">Cases</a></li>
-                    <li><a href="/videos.html">Videos</a></li>
                     <li><a href="/blog.html">Blog</a></li>
                     <li><a href="/live.html">Live</a></li>
                     <li><a href="/quiz.html">Quizzes</a></li>
-                    <li><a href="/merch.html">Merch</a></li>
                     <li><a href="/about.html">About</a></li>
                     <li><a href="/contact.html">Contact</a></li>
                 </ul>
@@ -122,7 +119,7 @@
     <main id="main-content">
     <section class="page-hero">
         <div class="container">
-            <p class="eyebrow" style="justify-content:center;">23 cases on file</p>
+            <p class="eyebrow" style="justify-content:center;">17 cases on file</p>
             <h1 class="page-title">Follow the <span class="text-red">Case</span></h1>
             <p>Trials take years. Updates get buried. Follow a case and we email you when something actually happens: a court date set, a verdict, a filing, an arrest. One note a week at most, nothing else, free.</p>
         </div>
@@ -138,37 +135,37 @@
         <h3><a href="/cases/maura-murray.html">Maura Murray</a></h3>
         <p>A crashed car on Route 112 in New Hampshire, a disappearance in under ten minutes, and twenty years of no answers.</p>
         
-        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/maura-murray.html">Open</a></div>
+        <div class="case-foot"><span>Updates by email</span><a class="btn btn-sm" href="/cases/maura-murray.html">Open</a></div>
       </div>
     </article>
 <article class="case-card has-art">
-      <div class="art-wrap"><img class="art" src="/images/cases/murders-in-moscow-the-plea-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
+      <div class="art-wrap"><img class="art" src="/images/cases/murders-in-moscow-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
       <div class="case-body">
-        <div class="case-meta"><span class="st">Convicted</span><span>2022-2025</span><span class="up">2 updates</span><span>Episode</span></div>
-        <h3><a href="/cases/moscow-idaho-the-plea.html">Murders in Moscow: The Plea</a></h3>
-        <p>A follow-up to the 2025 episode on the King Road murders: the capital case against Bryan Kohberger, the June 2025 plea agreement, the July 2025 guilty plea to all five counts and…</p>
+        <div class="case-meta"><span class="st">Convicted</span><span>2022-2025</span><span class="up">18 updates</span><span>2 episodes</span></div>
+        <h3><a href="/cases/murders-in-moscow.html">Murders in Moscow</a></h3>
+        <p>The Idaho student murders. On November 13, 2022, four University of Idaho students, Ethan Chapin, Madison Mogen, Xana Kernodle and Kaylee Goncalves, were killed in their…</p>
         
-        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/moscow-idaho-the-plea.html">Open</a></div>
+        <div class="case-foot"><span>Updates by email</span><a class="btn btn-sm" href="/cases/murders-in-moscow.html">Open</a></div>
       </div>
     </article>
 <article class="case-card has-art">
-      <div class="art-wrap"><img class="art" src="/images/cases/jonbenet-ramsey-thirty-years-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
+      <div class="art-wrap"><img class="art" src="/images/cases/jonbenet-ramsey-the-facts-96-22-part-1-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
       <div class="case-body">
-        <div class="case-meta"><span class="st">Open</span><span>1996-present</span><span class="up">3 updates</span><span>Episode</span></div>
-        <h3><a href="/cases/jonbenet-thirty-years.html">JonBenet Ramsey: Thirty Years</a></h3>
-        <p>Thirty years after December 26, 1996: the 2008 touch-DNA testing and the exoneration letter, the grand jury documents, Boulder Police's annual updates, and the department's…</p>
+        <div class="case-meta"><span class="st">Open</span><span>1996-present</span><span class="up">7 updates</span><span>3 episodes</span></div>
+        <h3><a href="/cases/jonbenet-ramsey-the-facts-96-22.html">JonBenét Ramsey</a></h3>
+        <p>JonBenét Patricia Ramsey was murdered. That is the only certain thing about this case after 26 years. There is key evidence in this case, as well as more theories than there are…</p>
         
-        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/jonbenet-thirty-years.html">Open</a></div>
+        <div class="case-foot"><span>Updates by email</span><a class="btn btn-sm" href="/cases/jonbenet-ramsey-the-facts-96-22.html">Open</a></div>
       </div>
     </article>
 <article class="case-card has-art">
       <div class="art-wrap"><img class="art" src="/images/cases/ted-bundy-and-the-murder-of-kimberly-leach-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
       <div class="case-body">
-        <div class="case-meta"><span class="st">Open</span><span>2026</span><span class="up">1 update</span><span>Episode</span></div>
+        <div class="case-meta"><span class="st">Closed</span><span>1977-1978</span><span class="up">1 update</span><span>Episode</span></div>
         <h3><a href="/cases/ted-bundy-and-the-murder-of-kimberly-leach.html">Ted Bundy and the Murder of Kimberly Leach</a></h3>
-        <p>We are looking at the devastating timeline of Ted Bundy's crimes and his eventual capture in Florida. From his early murders in Washington and Utah to his brazen escape from a…</p>
+        <p>Ted Bundy's crimes ran from his early murders in Washington and Utah, through his escape from a Colorado jail, to Florida in 1978, where twelve-year-old Kimberly Leach disappeared…</p>
         
-        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/ted-bundy-and-the-murder-of-kimberly-leach.html">Open</a></div>
+        <div class="case-foot"><span>Updates by email</span><a class="btn btn-sm" href="/cases/ted-bundy-and-the-murder-of-kimberly-leach.html">Open</a></div>
       </div>
     </article>
 <article class="case-card has-art">
@@ -194,11 +191,11 @@
 <article class="case-card has-art">
       <div class="art-wrap"><img class="art" src="/images/cases/the-doomsday-mom-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
       <div class="case-body">
-        <div class="case-meta"><span class="st">Open</span><span>2026</span><span class="up">2 updates</span><span>Episode</span></div>
+        <div class="case-meta"><span class="st">Convicted</span><span>2019-2023</span><span class="up">3 updates</span><span>Episode</span></div>
         <h3><a href="/cases/the-doomsday-mom.html">The Doomsday Mom</a></h3>
-        <p>Today on CrimeTimeSnacks we are looking into the deeply disturbing case of Lori Vallow Daybell and Chad Daybell. What began with the disappearance of two children in Rexburg…</p>
+        <p>The case of Lori Vallow Daybell and Chad Daybell began with the disappearance of two children in Rexburg, Idaho. The episode traces how a religious fiction author and a mother of…</p>
         
-        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/the-doomsday-mom.html">Open</a></div>
+        <div class="case-foot"><span>Updates by email</span><a class="btn btn-sm" href="/cases/the-doomsday-mom.html">Open</a></div>
       </div>
     </article>
 <article class="case-card has-art">
@@ -206,25 +203,25 @@
       <div class="case-body">
         <div class="case-meta"><span class="st">Convicted</span><span>1974-2005</span><span>Episode</span></div>
         <h3><a href="/cases/the-btk-floppy-disk.html">The BTK Floppy Disk</a></h3>
-        <p>Today we're looking at one of the most infamous cold cases in American history, the BTK killer. For decades, a phantom haunted Wichita, Kansas, binding and suffocating victims…</p>
+        <p>For decades the BTK killer bound and suffocated victims in Wichita, Kansas, while sending taunting letters to the police and media. After thirteen years of silence he reached out…</p>
         
-        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/the-btk-floppy-disk.html">Open</a></div>
+        <div class="case-foot"><span>Updates by email</span><a class="btn btn-sm" href="/cases/the-btk-floppy-disk.html">Open</a></div>
       </div>
     </article>
 <article class="case-card has-art">
       <div class="art-wrap"><img class="art" src="/images/cases/the-murdaugh-family-murders-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
       <div class="case-body">
-        <div class="case-meta"><span class="st">Open</span><span>2021-present</span><span class="up">29 updates</span><span>Episode</span></div>
+        <div class="case-meta"><span class="st">Open</span><span>2021-present</span><span class="up">53 updates</span><span>Episode</span></div>
         <h3><a href="/cases/the-murdaugh-family-murders.html">The Murdaugh Family Murders</a></h3>
-        <p>Today we are looking at a case that completely consumed the South Carolina Lowcountry. The Murdaugh family was a legal dynasty, but everything started to unravel on a June night…</p>
+        <p>On a June night in 2021, Maggie and Paul Murdaugh were found dead near the dog kennels of the family's hunting lodge in the South Carolina Lowcountry. Alex Murdaugh told…</p>
         
-        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/the-murdaugh-family-murders.html">Open</a></div>
+        <div class="case-foot"><span>Updates by email</span><a class="btn btn-sm" href="/cases/the-murdaugh-family-murders.html">Open</a></div>
       </div>
     </article>
 <article class="case-card has-art">
       <div class="art-wrap"><img class="art" src="/images/cases/gilgo-beach-eight-names-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
       <div class="case-body">
-        <div class="case-meta"><span class="st">Convicted</span><span>2010-2026</span><span class="up">4 updates</span><span>Episode</span></div>
+        <div class="case-meta"><span class="st">Convicted</span><span>2010-2026</span><span class="up">7 updates</span><span>Episode</span></div>
         <h3><a href="/cases/gilgo-beach-eight-names.html">Gilgo Beach: Eight Names</a></h3>
         <p>In April 2026, Rex Heuermann was asked how he killed eight women. He gave the same one-word answer each time. The Gilgo Beach murders from the 911 call that started the search to…</p>
         
@@ -232,23 +229,23 @@
       </div>
     </article>
 <article class="case-card has-art">
-      <div class="art-wrap"><img class="art" src="/images/cases/the-menendez-brothers-parole-years-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
+      <div class="art-wrap"><img class="art" src="/images/cases/watts-family-murders-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
       <div class="case-body">
-        <div class="case-meta"><span class="st">Convicted</span><span>1989-present</span><span class="up">4 updates</span><span>Episode</span></div>
-        <h3><a href="/cases/the-menendez-brothers-parole-years.html">The Menendez Brothers: The Parole Years</a></h3>
-        <p>What happened to Lyle and Erik Menendez after the verdict. Thirty years of appeals that went nowhere, the marriages inside prison walls, the TikTok generation that heard the abuse…</p>
+        <div class="case-meta"><span class="st">Convicted</span><span>2018</span><span>2 episodes</span></div>
+        <h3><a href="/cases/watts-family-murders.html">The Watts Family Murders</a></h3>
+        <p>The Watts family murders occurred in August 2018 in Frederick, Colorado. Chris Watts, the father, killed his pregnant wife, Shanann, and their two young daughters, Bella and…</p>
         
-        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/the-menendez-brothers-parole-years.html">Open</a></div>
+        <div class="case-foot"><span>Updates by email</span><a class="btn btn-sm" href="/cases/watts-family-murders.html">Open</a></div>
       </div>
     </article>
 <article class="case-card has-art">
-      <div class="art-wrap"><img class="art" src="/images/cases/murders-in-moscow-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
+      <div class="art-wrap"><img class="art" src="/images/cases/erik-and-lyle-the-menendez-brothers-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
       <div class="case-body">
-        <div class="case-meta"><span class="st">Convicted</span><span>2022-2025</span><span class="up">4 updates</span><span>Episode</span></div>
-        <h3><a href="/cases/murders-in-moscow.html">Murders in Moscow</a></h3>
-        <p>In this gripping episode of Crime Time Snacks , we delve into the harrowing case of the Idaho student murders that rocked the nation. On November 13, 2022, four University of…</p>
+        <div class="case-meta"><span class="st">Convicted</span><span>1989-present</span><span class="up">7 updates</span><span>2 episodes</span></div>
+        <h3><a href="/cases/erik-and-lyle-the-menendez-brothers.html">The Menendez Brothers</a></h3>
+        <p>The Menendez brothers, Lyle and Erik, have been in prison for over 35 years. They were convicted in 1996 for the 1989 murders of their parents and sentenced to life in prison…</p>
         
-        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/murders-in-moscow.html">Open</a></div>
+        <div class="case-foot"><span>Updates by email</span><a class="btn btn-sm" href="/cases/erik-and-lyle-the-menendez-brothers.html">Open</a></div>
       </div>
     </article>
 <article class="case-card has-art">
@@ -258,57 +255,37 @@
         <h3><a href="/cases/elisa-lam.html">Elisa Lam and the Cecil Hotel</a></h3>
         <p>The elevator footage, what the coroner actually concluded, and how the internet built a case that was never there.</p>
         
-        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/elisa-lam.html">Open</a></div>
-      </div>
-    </article>
-<article class="case-card has-art">
-      <div class="art-wrap"><img class="art" src="/images/cases/the-disappearance-of-laci-peterson-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
-      <div class="case-body">
-        <div class="case-meta"><span class="st">Open</span><span>2026</span><span>Episode</span></div>
-        <h3><a href="/cases/the-disappearance-of-laci-peterson.html">The Disappearance of Laci Peterson</a></h3>
-        <p>Today we are looking at a case that completely took over the news cycle in late 2002. Laci Peterson was twenty-seven years old and eight months pregnant with her first child when…</p>
-        
-        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/the-disappearance-of-laci-peterson.html">Open</a></div>
-      </div>
-    </article>
-<article class="case-card has-art">
-      <div class="art-wrap"><img class="art" src="/images/cases/erik-and-lyle-the-menendez-brothers-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
-      <div class="case-body">
-        <div class="case-meta"><span class="st">Convicted</span><span>1989-present</span><span class="up">5 updates</span><span>Episode</span></div>
-        <h3><a href="/cases/erik-and-lyle-the-menendez-brothers.html">ERIK AND LYLE: The Menendez Brothers</a></h3>
-        <p>The Menendez brothers, Lyle and Erik, have been in prison for over 35 years. They were convicted in 1996 for the 1989 murders of their parents and sentenced to life in prison…</p>
-        
-        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/erik-and-lyle-the-menendez-brothers.html">Open</a></div>
-      </div>
-    </article>
-<article class="case-card has-art">
-      <div class="art-wrap"><img class="art" src="/images/cases/delphi-update-the-richard-allen-appeal-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
-      <div class="case-body">
-        <div class="case-meta"><span class="st">Convicted</span><span>2017-present</span><span class="up">6 updates</span><span>Episode</span></div>
-        <h3><a href="/cases/delphi-the-appeal.html">Delphi: The Appeal</a></h3>
-        <p>A follow-up to the 2022 episode: the October 2022 arrest of Richard Allen, the 2024 trial, the November 2024 conviction and 130-year sentence, and the appeal argued before the…</p>
-        
-        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/delphi-the-appeal.html">Open</a></div>
+        <div class="case-foot"><span>Updates by email</span><a class="btn btn-sm" href="/cases/elisa-lam.html">Open</a></div>
       </div>
     </article>
 <article class="case-card has-art">
       <div class="art-wrap"><img class="art" src="/images/cases/the-zodiac-ciphers-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
       <div class="case-body">
-        <div class="case-meta"><span class="st">Open</span><span>2026</span><span>Episode</span></div>
+        <div class="case-meta"><span class="st">Cold case</span><span>1968-1969</span><span>Episode</span></div>
         <h3><a href="/cases/the-zodiac-ciphers.html">The Zodiac Ciphers</a></h3>
-        <p>I've covered a lot of cold cases, but nothing gets under my skin quite like the Zodiac. Between 1968 and 1969, a phantom stalked the San Francisco Bay Area, targeting couples on…</p>
+        <p>Between 1968 and 1969, the Zodiac targeted couples on lonely roads and a cab driver in the San Francisco Bay Area, then taunted police and the public with letters, bomb threats…</p>
         
-        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/the-zodiac-ciphers.html">Open</a></div>
+        <div class="case-foot"><span>Updates by email</span><a class="btn btn-sm" href="/cases/the-zodiac-ciphers.html">Open</a></div>
+      </div>
+    </article>
+<article class="case-card has-art">
+      <div class="art-wrap"><img class="art" src="/images/cases/the-disappearance-of-laci-peterson-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
+      <div class="case-body">
+        <div class="case-meta"><span class="st">Convicted</span><span>2002-present</span><span class="up">1 update</span><span>Episode</span></div>
+        <h3><a href="/cases/the-disappearance-of-laci-peterson.html">The Disappearance of Laci Peterson</a></h3>
+        <p>Laci Peterson was twenty-seven years old and eight months pregnant with her first child when she vanished from her home in Modesto, California, on Christmas Eve in 2002. The…</p>
+        
+        <div class="case-foot"><span>Updates by email</span><a class="btn btn-sm" href="/cases/the-disappearance-of-laci-peterson.html">Open</a></div>
       </div>
     </article>
 <article class="case-card has-art">
       <div class="art-wrap"><img class="art" src="/images/cases/crimetimesnacks-the-delphi-murder-case-2017-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
       <div class="case-body">
-        <div class="case-meta"><span class="st">Convicted</span><span>2017-2024</span><span class="up">3 updates</span><span>Episode</span></div>
-        <h3><a href="/cases/the-delphi-murder-case-2017.html">The Delphi Murder Case 2017</a></h3>
+        <div class="case-meta"><span class="st">Convicted</span><span>2017-2024</span><span class="up">9 updates</span><span>2 episodes</span></div>
+        <h3><a href="/cases/the-delphi-murder-case-2017.html">The Delphi Murders</a></h3>
         <p>On February 14, 2017, the bodies of Abigail Williams (June 23, 2003 – February 13, 2017) and Liberty German (December 27, 2002 – February 13, 2017) were discovered near the Monon…</p>
         
-        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/the-delphi-murder-case-2017.html">Open</a></div>
+        <div class="case-foot"><span>1 following</span><a class="btn btn-sm" href="/cases/the-delphi-murder-case-2017.html">Open</a></div>
       </div>
     </article>
 <article class="case-card has-art">
@@ -318,47 +295,7 @@
         <h3><a href="/cases/the-miami-apartment-stabbing.html">The Miami Apartment Stabbing</a></h3>
         <p>Courtney Clenney was arrested on August 10, 2022. She pleaded guilty on August 10, 2026. Four years, to the day, and the case still did not answer its own question. The killing of…</p>
         
-        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/the-miami-apartment-stabbing.html">Open</a></div>
-      </div>
-    </article>
-<article class="case-card has-art">
-      <div class="art-wrap"><img class="art" src="/images/cases/the-interrogation-of-chris-watts-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
-      <div class="case-body">
-        <div class="case-meta"><span class="st">Convicted</span><span>2018</span><span>Episode</span></div>
-        <h3><a href="/cases/the-interrogation-of-chris-watts.html">The Interrogation of Chris Watts</a></h3>
-        <p>The forty-eight hours in which Chris Watts's story came apart on camera. A friend who would not leave a doorstep, a patrol officer who noticed a husband was too calm, a neighbor's…</p>
-        
-        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/the-interrogation-of-chris-watts.html">Open</a></div>
-      </div>
-    </article>
-<article class="case-card has-art">
-      <div class="art-wrap"><img class="art" src="/images/cases/watts-family-murders-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
-      <div class="case-body">
-        <div class="case-meta"><span class="st">Convicted</span><span>2018</span><span>Episode</span></div>
-        <h3><a href="/cases/watts-family-murders.html">Watts Family Murders</a></h3>
-        <p>The Watts family murders occurred in August 2018 in Frederick, Colorado. Chris Watts, the father, killed his pregnant wife, Shanann, and their two young daughters, Bella and…</p>
-        
-        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/watts-family-murders.html">Open</a></div>
-      </div>
-    </article>
-<article class="case-card has-art">
-      <div class="art-wrap"><img class="art" src="/images/cases/jonbenet-ramsey-the-facts-96-22-part-1-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
-      <div class="case-body">
-        <div class="case-meta"><span class="st">Open</span><span>1996-present</span><span class="up">4 updates</span><span>Episode</span></div>
-        <h3><a href="/cases/jonbenet-ramsey-the-facts-96-22.html">JonBenét Ramsey</a></h3>
-        <p>JonBenét Patricia Ramsey was murdered. That is the only certain thing about this case after 26 years. There is key evidence in this case, as well as more theories than there are…</p>
-        
-        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/jonbenet-ramsey-the-facts-96-22.html">Open</a></div>
-      </div>
-    </article>
-<article class="case-card has-art">
-      <div class="art-wrap"><img class="art" src="/images/cases/jonbenet-ramsey-americas-child-beauty-queen-600.jpg" alt="" loading="lazy" decoding="async" width="600" height="600"></div>
-      <div class="case-body">
-        <div class="case-meta"><span class="st">Open</span><span>1996-present</span><span class="up">3 updates</span><span>Episode</span></div>
-        <h3><a href="/cases/jonbenet-ramsey-americas-child-beauty-queen.html">JonBenét Ramsey Americas Child Beauty Queen</a></h3>
-        <p>In Boulder, Colorado, just a day after Christmas in 1996, JonBenét Ramsey, a six-year-old child pageant star, was found dead in her basement. She had been beaten and strangled…</p>
-        
-        <div class="case-foot"><span>Be the first to follow</span><a class="btn btn-sm" href="/cases/jonbenet-ramsey-americas-child-beauty-queen.html">Open</a></div>
+        <div class="case-foot"><span>Updates by email</span><a class="btn btn-sm" href="/cases/the-miami-apartment-stabbing.html">Open</a></div>
       </div>
     </article>
         </div>
@@ -419,5 +356,7 @@
     <script src="/js/effects.js"></script>
     <script src="/js/account.js"></script>
     <script src="/js/community.js"></script>
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

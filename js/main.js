@@ -58,6 +58,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// A link marked data-play="#section" plays the episode in that section and scrolls to it.
+// The homepage hero's "Play the Latest Case" was a bare #latest-episode anchor until
+// 2026-11-21: it scrolled to a player and left the visitor to find the play button. The
+// click is the user gesture browsers require before audio may start. With no script, or
+// no audio in the section, the link is still an ordinary anchor.
+document.addEventListener('click', function (e) {
+    var link = e.target.closest ? e.target.closest('a[data-play]') : null;
+    if (!link) return;
+    var section = document.querySelector(link.getAttribute('data-play'));
+    var audio = section && section.querySelector('audio');
+    if (!audio) return;
+    e.preventDefault();
+    var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    section.scrollIntoView({ behavior: calm ? 'auto' : 'smooth', block: 'start' });
+    var started = audio.play();
+    if (started && started.catch) started.catch(function () { /* blocked or no network: the player is on screen */ });
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Navigation Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');

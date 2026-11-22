@@ -5,6 +5,7 @@
 import { readdir, writeFile, readFile, stat } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { canonicalCases } from "./case-canon.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -35,9 +36,11 @@ const newest = (dates) => dates.filter(Boolean).map((d) => String(d).slice(0, 10
   const live = await json("cases-live.json");
   const epDate = Object.fromEntries(eps.map((e) => [e.slug, e.date]));
   const caseDates = [];
-  for (const c of live.cases || []) {
-    const d = newest([epDate[c.episode_slug], ...(live.updates || []).filter((u) => u.case_slug === c.slug).map((u) => u.happened_on)]);
-    if (d) { dateBySlug[`/cases/${c.slug}.html`] = d; if (epDate[c.episode_slug]) caseDates.push(d); }
+  // One page per case (case-canon.mjs): its date is the newest episode or update of any of
+  // the rows that make it up.
+  for (const c of canonicalCases(live.cases || [], eps).subjects) {
+    const d = newest([...c.episodeSlugs.map((e) => epDate[e]), ...(live.updates || []).filter((u) => c.memberSlugs.includes(u.case_slug)).map((u) => u.happened_on)]);
+    if (d) { dateBySlug[`/cases/${c.slug}.html`] = d; if (c.episodeSlugs.length) caseDates.push(d); }
   }
   const latestEp = newest(eps.map((e) => e.date));
   Object.assign(dateBySlug, {
@@ -85,7 +88,11 @@ async function isNoindex(file) {
 async function collect() {
   const urls = [];
   for (const f of await htmlIn(ROOT)) {
-    if (CANONICAL_ROOT.has(f) && !EXCLUDE.has(f)) urls.push("/" + f);
+    if (!CANONICAL_ROOT.has(f) || EXCLUDE.has(f)) continue;
+    // search, videos and merch are built noindex (2026-11-21). The rule below for case
+    // pages holds for any page: noindex and a sitemap entry contradict each other.
+    if (await isNoindex(join(ROOT, f))) continue;
+    urls.push("/" + f);
   }
   for (const f of await htmlIn(join(ROOT, "blog-posts"))) {
     if (!EXCLUDE.has(f)) urls.push("/blog-posts/" + f);

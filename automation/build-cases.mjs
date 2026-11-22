@@ -1,16 +1,20 @@
 #!/usr/bin/env node
 // Generates cases.html and /cases/<slug>.html from Supabase (cts_cases, approved
 // cts_case_updates, follower counts) using the anon key: public data only.
+// One page per case: rows that are the same subject (case-canon.mjs) are built as a single
+// page carrying the updates of all of them, and the other slugs' pages are removed here and
+// redirected in vercel.json by build-redirects.mjs.
 // Falls back to the last good snapshot (automation/cases-live.json) when the
 // database is unreachable, so a build never fails because of the network.
 // Run: node automation/build-cases.mjs   (part of build-all)
 
-import { readFile, writeFile, mkdir, stat } from "node:fs/promises";
+import { readFile, writeFile, mkdir, stat, rm } from "node:fs/promises";
 import { spawnSync } from "node:child_process";
 import { existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { SITE, esc, head, header, footer, tape, scripts, summaryOf } from "./shell.mjs";
+import { SITE, esc, head, header, footer, tape, scripts, summaryOf, followForm } from "./shell.mjs";
+import { canonicalCases, mergeUpdates, aliasPairs } from "./case-canon.mjs";
 import { loadEnv } from "./community/env.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -37,14 +41,25 @@ const eps = JSON.parse(await readFile(join(__dirname, "episodes.json"), "utf8"))
 const epBySlug = Object.fromEntries(eps.map((e) => [e.slug, e]));
 const fmtDate = (iso) => (iso ? new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }) : "");
 const STATUS = { open: "Open", trial: "At trial", convicted: "Convicted", cold: "Cold case", closed: "Closed" };
-const updatesFor = (slug) => live.updates.filter((u) => u.case_slug === slug);
+const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return "source"; } };
+// The pages: one per subject. A subject's updates are those of every row in it, with the
+// same article counted once and same-day repeats folded together (mergeUpdates).
+const { subjects } = canonicalCases(live.cases, eps);
+const updatesFor = (c) => mergeUpdates(live.updates.filter((u) => c.memberSlugs.includes(u.case_slug)));
+const followersOf = (c) => c.memberSlugs.reduce((n, slug) => n + (live.counts[slug] || 0), 0);
+// Newest first. A case can have more than one episode (three on JonBenet Ramsey).
+const episodesOf = (c) => c.episodeSlugs.map((slug) => epBySlug[slug]).filter(Boolean).sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+// What the public reads about the case. A row made from an episode carries a copy of that
+// episode's show notes as they stood on the day it was synced; the episode's notes as they
+// are now are the better source, so an edit to them reaches the case page.
+const summaryFor = (c) => summaryOf((!c.angle && epBySlug[c.episode_slug]?.description) || c.summary);
 
 // A case earns its place on the site by having an episode behind it. Listing a
 // case we have not covered sends people to a page with nothing on it but a form,
 // so the unbacked ones are built noindex, kept out of the sitemap and left off
 // the index. Their URLs still resolve - they have been live and may be linked -
 // but nothing on the site points at them until the episode exists.
-const published = (c) => Boolean(c.episode_slug && epBySlug[c.episode_slug]);
+const published = (c) => c.episodeSlugs.length > 0;
 
 // Cut on a word boundary. The old .slice(0,180) chopped mid-word and shipped
 // "sentenced to life in prison witho" to the card.
@@ -111,13 +126,6 @@ const css = `
 .case-meta .st{color:var(--cts-tape)}
 .case-meta .up{color:var(--cts-red-hot)}
 .case-foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:.6rem;border-top:1px solid var(--cts-line);font-size:.85rem;color:var(--cts-muted)}
-.follow{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
-.follow input[type=email]{background:var(--cts-black);border:1px solid var(--cts-line-strong);border-radius:var(--radius-sm);padding:.7rem .9rem;color:var(--cts-white);min-width:230px;flex:1}
-.follow .btn{white-space:nowrap}
-.follow-state{font-size:.9rem;color:var(--cts-muted);min-height:1.4em}
-.follow-state.ok{color:#9fe3b8}
-.follow-state.err{color:var(--cts-red-hot)}
-.btn.following{background:#123d24;border-color:#1d6b3f;color:#9fe3b8}
 .timeline{list-style:none;margin:1.2rem 0 0;padding:0;border-left:2px solid var(--cts-red);}
 .timeline li{padding:0 0 1.2rem 1.2rem;position:relative}
 .timeline li::before{content:"";position:absolute;left:-7px;top:.45rem;width:12px;height:12px;border-radius:50%;background:var(--cts-red);box-shadow:0 0 0 4px var(--cts-black)}
@@ -125,8 +133,12 @@ const css = `
 .timeline h3{margin:0 0 .25rem;font-size:1.05rem}
 .timeline p{margin:0;color:var(--cts-muted);line-height:1.55}
 .timeline a{color:var(--cts-muted)}
+.timeline .also{font-size:.85rem;color:var(--cts-faint)}
+.timeline .also a{color:var(--cts-faint)}
 .case-hero{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(280px,1fr);gap:2rem;align-items:start}
-@media(max-width:820px){.case-hero{grid-template-columns:1fr}}
+/* One column on a phone, and the follow form first: under the timeline it sat below every
+   update the case has, 96 percent of the way down the Murdaugh page. */
+@media(max-width:820px){.case-hero{grid-template-columns:1fr}.case-side{order:-1}}
 .case-side{background:var(--cts-panel);border:1px solid var(--cts-line);border-radius:var(--radius);padding:1.3rem}
 .case-side h3{font-family:var(--font-display);font-size:1.5rem;letter-spacing:.02em;margin:0 0 .6rem}
 .case-side .kv{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem;font-size:.9rem;color:var(--cts-muted)}
@@ -138,27 +150,21 @@ const css = `
 </style>`;
 
 /* ------------------------------------------------------------- index */
-function followBlock(slug, compact = false) {
-  return `<form class="follow" data-case="${esc(slug)}" novalidate>
-    <input type="email" name="email" placeholder="you@email.com" aria-label="Your email" autocomplete="email" required>
-    <button class="btn btn-primary${compact ? " btn-sm" : ""}" type="submit">Follow this case</button>
-    <div class="follow-state" role="status"></div>
-  </form>`;
-}
 async function indexPage() {
-  const shown = live.cases.filter(published);
+  const shown = subjects.filter(published);
   const cards = (await Promise.all(shown.map(async (c) => {
-    const ups = updatesFor(c.slug);
-    const n = live.counts[c.slug] || 0;
+    const ups = updatesFor(c);
+    const n = followersOf(c);
     const art = await cardArt(c.image);
+    const epCount = c.episodeSlugs.length;
     return `<article class="case-card ${art ? "has-art" : "no-art"}">
       ${art ? `<div class="art-wrap"><img class="art" src="${esc(art)}" alt="" loading="lazy" decoding="async" width="600" height="600"></div>` : ""}
       <div class="case-body">
-        <div class="case-meta"><span class="st">${esc(STATUS[c.status] || c.status)}</span>${c.years ? `<span>${esc(c.years)}</span>` : ""}${ups.length ? `<span class="up">${ups.length} update${ups.length === 1 ? "" : "s"}</span>` : ""}${c.episode_slug ? `<span>Episode</span>` : ""}</div>
+        <div class="case-meta"><span class="st">${esc(STATUS[c.status] || c.status)}</span>${c.years ? `<span>${esc(c.years)}</span>` : ""}${ups.length ? `<span class="up">${ups.length} update${ups.length === 1 ? "" : "s"}</span>` : ""}<span>${epCount === 1 ? "Episode" : `${epCount} episodes`}</span></div>
         <h3><a href="/cases/${esc(c.slug)}.html">${esc(c.title)}</a></h3>
-        <p>${esc(clip(summaryOf(c.summary), 180))}</p>
+        <p>${esc(clip(summaryFor(c), 180))}</p>
         ${c.next_date ? `<p><b style="color:var(--cts-white)">${esc(c.next_label || "Next")}:</b> ${esc(fmtDate(c.next_date))}</p>` : ""}
-        <div class="case-foot"><span>${n ? `${n} following` : "Be the first to follow"}</span><a class="btn btn-sm" href="/cases/${esc(c.slug)}.html">Open</a></div>
+        <div class="case-foot"><span>${n ? `${n} following` : "Updates by email"}</span><a class="btn btn-sm" href="/cases/${esc(c.slug)}.html">Open</a></div>
       </div>
     </article>`;
   }))).join("\n");
@@ -202,11 +208,24 @@ function casePhoto(c) {
 // (angle) is an instruction to the script model and never goes on a public page; it used
 // to be the fallback here.
 function casePage(c) {
-  const ups = updatesFor(c.slug);
-  const ep = epBySlug[c.episode_slug];
-  const n = live.counts[c.slug] || 0;
-  const ld = { "@context": "https://schema.org", "@type": "WebPage", name: `${c.title} | CrimeTimeSnacks`, url: `${SITE}/cases/${c.slug}.html`, description: summaryOf(c.summary) };
-  return `${head({ title: `${c.title} | Cases | CrimeTimeSnacks`, description: clip(`Follow the case by email; every update links its source. ${summaryOf(c.summary)}`, 158), canonicalPath: `/cases/${c.slug}.html`, noindex: !published(c), extraHead: css + `\n<script type="application/ld+json">${JSON.stringify(ld)}</script>` })}
+  const ups = updatesFor(c);
+  const episodes = episodesOf(c);
+  const ep = episodes[0];
+  const n = followersOf(c);
+  const summary = summaryFor(c);
+  const url = `${SITE}/cases/${c.slug}.html`;
+  const ld = { "@context": "https://schema.org", "@type": "WebPage", name: `${c.title} | CrimeTimeSnacks`, url, description: summary };
+  const crumbs = {
+    "@context": "https://schema.org", "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "Cases", item: `${SITE}/cases.html` },
+      { "@type": "ListItem", position: 3, name: c.title, item: url },
+    ],
+  };
+  // The share card is the cover Cory drew for the newest episode on the case; a case with no
+  // episode falls back to the site's card (shell.mjs).
+  return `${head({ title: `${c.title} | Cases | CrimeTimeSnacks`, description: clip(`Follow the case by email; every update links its source. ${summary}`, 158), canonicalPath: `/cases/${c.slug}.html`, ogImage: ep?.image || "", noindex: !published(c), extraHead: css + `\n<script type="application/ld+json">${JSON.stringify(ld)}</script>\n<script type="application/ld+json">${JSON.stringify(crumbs)}</script>` })}
 <body>
 ${header("cases")}
     <main id="main-content">
@@ -214,7 +233,7 @@ ${header("cases")}
         <div class="container">
             <p class="eyebrow" style="justify-content:center;">${esc(STATUS[c.status] || c.status)}${c.years ? ` &middot; ${esc(c.years)}` : ""}</p>
             <h1 class="page-title">${esc(c.title)}</h1>
-            <p>${esc(summaryOf(c.summary))}</p>
+            <p>${esc(summary)}</p>
         </div>
     </section>
 ${tape()}
@@ -224,15 +243,15 @@ ${tape()}
             <h2 style="font-family:var(--font-display);font-size:2rem;letter-spacing:.02em;margin:0 0 .4rem;">Case <span class="text-red">Updates</span></h2>
             <p style="color:var(--cts-muted);margin:0;">What has happened, newest first, each with the article it comes from. An entry goes up only after that article is read and found to report it.</p>
             ${ups.length ? `<ol class="timeline">
-${ups.map((u) => `                <li><time datetime="${esc(u.happened_on)}">${esc(fmtDate(u.happened_on))}</time><h3>${esc(u.title)}</h3>${u.summary ? `<p>${esc(u.summary)}</p>` : ""}${u.url ? `<p><a href="${esc(u.url)}" rel="noopener nofollow" target="_blank">${esc(u.source || new URL(u.url).hostname)}</a></p>` : ""}</li>`).join("\n")}
+${ups.map((u) => `                <li><time datetime="${esc(u.happened_on)}">${esc(fmtDate(u.happened_on))}</time><h3>${esc(u.title)}</h3>${u.summary ? `<p>${esc(u.summary)}</p>` : ""}${u.url ? `<p><a href="${esc(u.url)}" rel="noopener nofollow" target="_blank">${esc(u.source || host(u.url))}</a>${u.also.length ? ` <span class="also">&middot; also reported by ${u.also.map((a) => `<a href="${esc(a.url)}" rel="noopener nofollow" target="_blank">${esc(a.source || host(a.url))}</a>`).join(", ")}</span>` : ""}</p>` : ""}</li>`).join("\n")}
             </ol>` : `<p class="empty-note" style="margin-top:1.2rem;">Nothing logged yet. Follow the case and you will hear about the first update.</p>`}
         </div>
         <aside class="case-side">
             <h3>Follow this case</h3>
-            <p style="color:var(--cts-muted);font-size:.95rem;margin:0 0 .9rem;">${n ? `${n} ${n === 1 ? "person is" : "people are"} following.` : "Be the first to follow."} We email you when something happens. Confirm once, unsubscribe any time.</p>
-            ${followBlock(c.slug)}
+            <p style="color:var(--cts-muted);font-size:.95rem;margin:0 0 .9rem;">${n ? `${n} ${n === 1 ? "person is" : "people are"} following. ` : ""}We email you when something happens. Confirm once, unsubscribe any time.</p>
+            ${followForm(c.slug, c.aliases)}
             ${c.next_date ? `<div class="kv" style="margin-top:1.2rem;"><span>${esc(c.next_label || "Next")}</span><b>${esc(fmtDate(c.next_date))}</b></div>` : ""}
-            ${ep ? `<hr style="border:0;border-top:1px solid var(--cts-line);margin:1.2rem 0;"><h3>The episode</h3><p style="margin:0 0 .6rem;"><a href="/episodes/${esc(ep.slug)}.html" style="color:var(--cts-white);">${esc(ep.title)}</a> <span style="color:var(--cts-faint);">${esc((ep.duration || "").replace(/^00:/, ""))}</span></p><audio controls preload="none" style="width:100%"><source src="${esc(ep.audio)}" type="${esc(ep.audioType || "audio/mpeg")}"></audio>` : `<hr style="border:0;border-top:1px solid var(--cts-line);margin:1.2rem 0;"><p style="color:var(--cts-faint);font-size:.9rem;margin:0;">No episode on this case yet. Following it is the fastest way to know when one drops.</p>`}
+            ${ep ? `<hr style="border:0;border-top:1px solid var(--cts-line);margin:1.2rem 0;"><h3>${episodes.length > 1 ? "The episodes" : "The episode"}</h3><p style="margin:0 0 .6rem;"><a href="/episodes/${esc(ep.slug)}.html" style="color:var(--cts-white);">${esc(ep.title)}</a> <span style="color:var(--cts-faint);">${esc((ep.duration || "").replace(/^00:/, ""))}</span></p><audio controls preload="none" style="width:100%"><source src="${esc(ep.audio)}" type="${esc(ep.audioType || "audio/mpeg")}"></audio>${episodes.slice(1).map((e) => `<p style="margin:.7rem 0 0;"><a href="/episodes/${esc(e.slug)}.html" style="color:var(--cts-white);">${esc(e.title)}</a> <span style="color:var(--cts-faint);">${esc((e.duration || "").replace(/^00:/, ""))}</span></p>`).join("")}` : `<hr style="border:0;border-top:1px solid var(--cts-line);margin:1.2rem 0;"><p style="color:var(--cts-faint);font-size:.9rem;margin:0;">No episode on this case yet. Following it is the fastest way to know when one drops.</p>`}
         </aside>
     </section>
     </main>
@@ -246,5 +265,10 @@ ${scripts(["/js/community.js"])}
 await mkdir(join(ROOT, "cases"), { recursive: true });
 await mkdir(THUMBS, { recursive: true });
 await writeFile(join(ROOT, "cases.html"), await indexPage(), "utf8");
-for (const c of live.cases) await writeFile(join(ROOT, "cases", `${c.slug}.html`), casePage(c), "utf8");
-console.log(`cases.html + ${live.cases.length} case pages generated (${live.updates.length} approved updates).`);
+for (const c of subjects) await writeFile(join(ROOT, "cases", `${c.slug}.html`), casePage(c), "utf8");
+// A slug that is now part of another page has no page of its own: vercel.json sends its URL
+// to the subject (build-redirects.mjs), and a file left here would still be walked by the
+// sitemap, the search index and the link check as if it were a page.
+let folded = 0;
+for (const [alias] of aliasPairs()) { await rm(join(ROOT, "cases", `${alias}.html`), { force: true }); folded++; }
+console.log(`cases.html + ${subjects.length} case pages generated from ${live.cases.length} rows (${folded} slugs folded into another page, ${live.updates.length} approved updates).`);

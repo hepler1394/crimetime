@@ -9,9 +9,9 @@
    2026-09-13 that meant the new Case File signup did nothing for them. Scripts
    and styles now revalidate with the server on every load, and the precache
    bypasses the HTTP cache. */
-const VERSION = 'cts-v3';
+const VERSION = 'cts-v4';
 const OFFLINE_URL = '/offline.html';
-const PRECACHE = [OFFLINE_URL, '/css/style.css?v=2026s', '/js/main.js', '/js/effects.js', '/images/logo.png'];
+const PRECACHE = [OFFLINE_URL, '/css/style.css?v=2026y', '/js/main.js', '/js/effects.js', '/images/logo.png'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(
@@ -42,7 +42,7 @@ self.addEventListener('fetch', (e) => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== location.origin) return; // never touch cross-origin (audio CDNs, YouTube, FBI API)
-  if (url.pathname === '/sw.js' || url.pathname.startsWith('/api/')) return;
+  if (url.pathname === '/sw.js' || url.pathname.startsWith('/api/') || url.pathname.startsWith('/_vercel/')) return; // analytics goes straight to the network
 
   if (req.mode === 'navigate') {
     e.respondWith(networkFirst(req, () => caches.match(OFFLINE_URL)));

@@ -29,6 +29,7 @@ import { dirname, join } from "node:path";
 import { chat, loadConfig } from "./llm.mjs";
 import { unsupportedInPost, unsupportedQuotes, stockLines, STOCK_PHRASES, postWords } from "./blog-check.mjs";
 import { notifyCory } from "./notify-cory.mjs";
+import { canonicalSlug } from "./case-canon.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -72,11 +73,13 @@ const topics = (await readJson(join(__dirname, "topics.json"), {})).topics || []
 // --auto alternates a case post and a topic post. Case posts go first to cases with an
 // episode to link, then the backlog; a case already carrying a post (caseSlug) is skipped.
 function autoSubjects() {
-  const covered = new Set(blog.posts.map((p) => p.caseSlug).filter(Boolean));
+  // One post per case, not per database row: a case with two slugs (case-canon.mjs) that
+  // already has a post under either is covered.
+  const covered = new Set(blog.posts.map((p) => p.caseSlug).filter(Boolean).map(canonicalSlug));
   const usedTopics = new Set(blog.posts.map((p) => p.sourceTopic).filter(Boolean));
   const withEpisode = live.filter((c) => c.episode_slug && episodes.some((e) => e.slug === c.episode_slug)).map((c) => ({ slug: c.slug, title: c.title }));
   const cases = [...withEpisode, ...backlog.map((c) => ({ slug: c.slug, title: c.title.split(":")[0].trim() }))]
-    .filter((c, i, a) => a.findIndex((x) => x.slug === c.slug) === i && !covered.has(c.slug))
+    .filter((c, i, a) => a.findIndex((x) => canonicalSlug(x.slug) === canonicalSlug(c.slug)) === i && !covered.has(canonicalSlug(c.slug)))
     .map((c) => ({ subject: c.title, caseSlug: c.slug, category: "investigation" }));
   const tops = topics.filter((t) => !usedTopics.has(t.topic))
     .map((t) => ({ subject: t.topic, sourceTopic: t.topic, category: CATEGORIES[t.category] ? t.category : "analysis" }));

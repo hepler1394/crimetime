@@ -4,12 +4,21 @@
   if (!forms.length) return;
   var me = { signedIn: false, follows: [] };
 
+  // One case can have more than one slug in the database (automation/case-canon.mjs). The
+  // form follows data-case, the page's own slug; data-aliases lists the others, so a member
+  // who followed one of those is shown as following here, and stopping removes them all.
+  function slugsOf(form) {
+    var extra = (form.getAttribute("data-aliases") || "").split(",").filter(Boolean);
+    return [form.getAttribute("data-case")].concat(extra);
+  }
+  function followed(form) { return slugsOf(form).filter(function (s) { return me.follows.indexOf(s) > -1; }); }
+
   function state(form, text, cls) { var el = form.querySelector(".follow-state"); el.textContent = text; el.className = "follow-state" + (cls ? " " + cls : ""); }
   function paint(form) {
     var slug = form.getAttribute("data-case");
     var btn = form.querySelector("button");
     var input = form.querySelector("input[type=email]");
-    if (me.signedIn && me.follows.indexOf(slug) > -1) {
+    if (me.signedIn && followed(form).length) {
       btn.textContent = "Following"; btn.classList.add("following"); btn.dataset.mode = "unfollow"; input.style.display = "none";
       state(form, "You follow this case. Click again to stop.", "");
     } else if (me.signedIn) {
@@ -47,11 +56,14 @@
       var mode = btn.dataset.mode || "email";
       if (mode === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(input.value.trim())) { state(form, "Enter a valid email.", "err"); input.focus(); return; }
       btn.disabled = true; state(form, mode === "unfollow" ? "Removing..." : "One moment...", "");
-      var req = mode === "unfollow" ? api("/api/community/unfollow", { case: slug }) : api("/api/community/follow", { case: slug, email: input.value.trim() });
+      var gone = followed(form);
+      var req = mode === "unfollow"
+        ? Promise.all(gone.map(function (s) { return api("/api/community/unfollow", { case: s }); })).then(function () { return { state: "unfollowed" }; })
+        : api("/api/community/follow", { case: slug, email: input.value.trim() });
       req.then(function (j) {
         if (j.state === "check-email") { state(form, "Check your email and click the link to confirm. Then you are set.", "ok"); input.value = ""; }
         else if (j.state === "following") { me.follows.push(slug); me.signedIn = true; paint(form); state(form, "Following. We will email you when something happens.", "ok"); }
-        else if (j.state === "unfollowed") { me.follows = me.follows.filter(function (s) { return s !== slug; }); paint(form); state(form, "Unfollowed.", ""); }
+        else if (j.state === "unfollowed") { me.follows = me.follows.filter(function (s) { return gone.indexOf(s) === -1; }); paint(form); state(form, "Unfollowed.", ""); }
       }).catch(function (err) { state(form, err.message, "err"); }).then(function () { btn.disabled = false; });
     });
   });

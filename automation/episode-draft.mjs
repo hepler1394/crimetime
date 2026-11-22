@@ -25,6 +25,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { chat, loadConfig } from "./llm.mjs";
 import { OPENER, OUTRO, enforceShowFormat, pickTheme } from "./episode-format.mjs";
+import { summaryOf } from "./shell.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DRAFTS = join(__dirname, "studio", "drafts");
@@ -151,7 +152,7 @@ let outline = null, provider = "";
 try {
   const { text, provider: p } = await ask(
     `You are the showrunner for CrimeTimeSnacks, a true crime podcast hosted by Cory. Plan one episode from research notes. Output ONLY valid JSON, no markdown fences:
-{"title": string (max 60 chars, no colon-stacked subtitles), "hook": string (one sentence: the strangest documented detail, stated plainly), "description": string (show notes, 2 or 3 short paragraphs separated by \\n\\n, in Cory's first-person voice, no spoilers of the ending), "instagramCaption": string (3 short lines, then a final line "New episode. Link in bio.", no hashtags, no emojis), "keywords": [5 to 8 search terms], "chapters": [{"title": string, "beats": [3 to 6 short strings: the specific documented facts and events this chapter covers, in order]}]}
+{"title": string (max 60 chars, no colon-stacked subtitles), "hook": string (one sentence: the strangest documented detail, stated plainly), "description": string (show notes as podcast apps and search results display them: ONE paragraph of 2 or 3 sentences. The first words name the case, by the person, the place or the event. Sentence one says what happened; the rest say what the episode covers. No greeting and no host introduction: never "Hey everyone", "I'm Cory", "Welcome back", "this week on CrimeTimeSnacks", "today we are looking at". Plain statements from the notes, no words like chilling, shocking, gripping or infamous, presumption of innocence for anyone not convicted, no spoilers of the ending), "instagramCaption": string (3 short lines, then a final line "New episode. Link in bio.", no hashtags, no emojis), "keywords": [5 to 8 search terms], "chapters": [{"title": string, "beats": [3 to 6 short strings: the specific documented facts and events this chapter covers, in order]}]}
 Rules: exactly ${N} chapters, chronological where the story allows. Every event belongs to exactly ONE chapter: never plan two chapters around the same hearing, the same search, the same filing or the same sentence, and do not give the ending away in a middle chapter and then tell it again at the end. If the notes do not hold ${N} chapters of distinct material, make the later chapters about what the notes DO still hold (the people, the investigation's scale, the coverage, the aftermath), not a second pass over earlier events. Chapter 1 opens the show and states the hook, then introduces the people. Middle chapters walk the timeline, the investigation, the arrest, the trial. The SECOND TO LAST chapter is the public reaction: what people said about the case while it was happening, the coverage it drew or failed to draw, and any documented criticism of that coverage. Build it only from what the notes actually record about reaction, commentary and coverage; if the notes carry nothing on that, make it an ordinary story chapter instead rather than inventing one. The last chapter is where the case stands today and hands it to the listener. Use ONLY facts from the notes. No emojis.`,
     `Case: ${kase.title}\nAngle: ${kase.angle || "the documented facts in order, and where the case stands now"}\nYears: ${kase.year || "unknown"}\n\nRESEARCH NOTES (overview):\n${overview}`,
     "outline", "writer");
@@ -257,7 +258,10 @@ await mkdir(dir, { recursive: true });
 const draft = {
   id, status: "scripted", created: new Date().toISOString(),
   caseSlug: kase.slug, caseTitle: kase.title, title, slug,
-  hook: outline.hook || "", description: outline.description || "", script,
+  // The show notes are what Apple, Spotify and a search result print under the title, so
+  // they lead with the case. The prompt asks for that; summaryOf is the net under it, and
+  // drops a greeting sentence or a "this week on CrimeTimeSnacks:" lead-in if one comes back.
+  hook: outline.hook || "", description: summaryOf(outline.description || ""), script,
   chapters: chapterMarks,
   factsToVerify, factCheck: { checked, unsupported },
   instagramCaption: outline.instagramCaption || "", keywords: Array.isArray(outline.keywords) ? outline.keywords : [],

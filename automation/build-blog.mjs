@@ -6,7 +6,9 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { SITE, esc, head, header, footer, tape, scripts } from "./shell.mjs";
+import { SITE, APPLE, SPOTIFY, DEFAULT_SHARE_IMAGE, esc, head, header, footer, tape, scripts, mark, followForm, caseFileForm } from "./shell.mjs";
+import { canonicalCases } from "./case-canon.mjs";
+import { thumb } from "./thumbs.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -22,13 +24,19 @@ const readingTime = (p) =>
 const CATEGORY_LABELS = { breaking: "Breaking", court: "Court", investigation: "Investigations", analysis: "Analysis", updates: "Case Updates" };
 
 const readJson = async (p, fb) => { try { return JSON.parse(await readFile(p, "utf8")); } catch { return fb; } };
-const liveCases = Object.fromEntries(((await readJson(join(__dirname, "cases-live.json"), {})).cases || []).map((c) => [c.slug, c]));
 const epBySlug = Object.fromEntries(((await readJson(join(__dirname, "episodes.json"), {})).episodes || []).map((e) => [e.slug, e]));
+// A post names its case by whichever slug it was written under; the page it links to is the
+// one page that case has (case-canon.mjs).
+const liveCases = canonicalCases((await readJson(join(__dirname, "cases-live.json"), {})).cases || [], Object.values(epBySlug)).bySlug;
+const newestEpisode = (kase) => kase.episodeSlugs.map((e) => epBySlug[e]).filter(Boolean).sort((a, b) => (b.date || "").localeCompare(a.date || ""))[0];
+// The site's logo standing in for a picture is not a share image: those posts take the
+// site's card.
+const shareImage = (p) => (/(^|\/)images\/logo\.png$/.test(p.image) ? DEFAULT_SHARE_IMAGE : img(p));
 
 /* ------------------------------------------------------------------ cards */
 function card(p) {
   return `                <div class="blog-card" data-category="${esc(p.category)}">
-                    <a href="${postUrl(p)}"><img src="${esc(img(p))}" alt="${esc(p.title)}" class="blog-image" loading="lazy" decoding="async" width="640" height="360"></a>
+                    <a href="${postUrl(p)}"><img src="${esc(p.card || img(p))}" alt="${esc(p.title)}" class="blog-image" loading="lazy" decoding="async" width="640" height="360"></a>
                     <div class="blog-content">
                         <div class="blog-tags"><span class="blog-tag">${esc(p.categoryLabel)}</span><span class="blog-tag">${readingTime(p)} min read</span></div>
                         <h3 class="blog-title"><a href="${postUrl(p)}" style="color:inherit;text-decoration:none;">${esc(p.title)}</a></h3>
@@ -42,7 +50,7 @@ function card(p) {
 function featured(p) {
   return `        <article class="spotlight">
             <div class="spotlight-media">
-                <img src="${esc(img(p))}" alt="${esc(p.title)}" loading="lazy">
+                <img src="${esc(p.hero || img(p))}" alt="${esc(p.title)}" loading="lazy" decoding="async">
             </div>
             <div class="spotlight-body">
                 <div class="blog-tags"><span class="blog-tag">${esc(p.categoryLabel)}</span><span class="blog-tag">${readingTime(p)} min read</span></div>
@@ -162,7 +170,7 @@ function articleLd(p) {
     "@type": "BlogPosting",
     headline: p.title,
     description: p.excerpt,
-    image: `${SITE}${img(p)}`,
+    image: `${SITE}${shareImage(p)}`,
     datePublished: p.date,
     dateModified: p.updated || p.date,
     author: { "@type": "Person", name: p.author },
@@ -197,29 +205,47 @@ function shareRow(url, title) {
 
 // Posts written from research notes (ai-write.mjs) carry "## " section headings, their
 // sources, and the case they are about; older posts are plain paragraphs and render as before.
+// Every post ends in the same box: where to hear the show, and a form. A post about a case
+// the show has an episode on names that episode and follows that case by email, in place;
+// any other post offers the show itself and the Sunday email. Until 2026-11-21 half the
+// posts had no way from the post to the podcast at all, and none had a form.
+const BOX = "margin:2.4rem 0;padding:1.3rem 1.4rem;border:1px solid var(--cts-line-strong);border-radius:var(--radius);background:var(--cts-panel);";
 function caseBlock(p) {
   const kase = p.caseSlug && liveCases[p.caseSlug];
-  if (!kase) return relatedBlock(p, "On the show");
-  const ep = kase.episode_slug && epBySlug[kase.episode_slug];
-  return `        <aside style="margin:2.4rem 0;padding:1.3rem 1.4rem;border:1px solid var(--cts-line-strong);border-radius:var(--radius);background:var(--cts-panel);">
-            <p class="eyebrow" style="margin:0 0 .5rem;">The case file</p>
-            <p style="margin:0 0 1rem;color:var(--cts-muted);">Follow ${esc(kase.title)} and we email you when something happens: a court date, a ruling, an arrest.${ep ? ` Or hear the whole case in the episode.` : ""}</p>
-            <div style="display:flex;gap:.7rem;flex-wrap:wrap;">
-                <a class="btn btn-primary btn-sm" href="/cases/${esc(kase.slug)}.html">Follow this case</a>
-                ${ep ? `<a class="btn btn-secondary btn-sm" href="/episodes/${esc(ep.slug)}.html">Listen: ${esc(ep.title)}</a>` : ""}
-            </div>
-        </aside>
-${relatedBlock(p, "Also on the show")}`;
+  const ep = kase && newestEpisode(kase);
+  const listen = `            <div style="display:flex;gap:.7rem;flex-wrap:wrap;margin:0 0 1.2rem;">
+                ${ep ? `<a class="btn btn-primary btn-sm" href="/episodes/${esc(ep.slug)}.html"><i class="fas fa-play" aria-hidden="true"></i> Play the episode</a>` : `<a class="btn btn-primary btn-sm" href="/episodes.html"><i class="fas fa-play" aria-hidden="true"></i> All episodes</a>`}
+                <a class="btn btn-secondary btn-sm" href="${APPLE}" target="_blank" rel="noopener">${mark("applepodcasts", 16)} Apple Podcasts</a>
+                <a class="btn btn-secondary btn-sm" href="${SPOTIFY}" target="_blank" rel="noopener">${mark("spotify", 16)} Spotify</a>
+            </div>`;
+  const box = kase
+    ? `        <aside style="${BOX}">
+            <p class="eyebrow" style="margin:0 0 .5rem;">Listen and follow</p>
+            <p style="margin:0 0 .9rem;color:var(--cts-muted);">${ep ? `The episode on this case is <a href="/episodes/${esc(ep.slug)}.html" style="color:var(--cts-white);">${esc(ep.title)}</a>${ep.duration ? `, ${esc(ep.duration.replace(/^00:/, ""))}` : ""}, free here with a full transcript.` : `CrimeTimeSnacks is a true crime podcast built from the public record. Every episode streams free on this site with a full transcript.`}</p>
+${listen}
+            <p style="margin:0 0 .7rem;color:var(--cts-muted);font-size:.92rem;">Follow ${esc(kase.title)} and we email you when something happens: a court date, a ruling, an arrest. <a href="/cases/${esc(kase.slug)}.html" style="color:var(--cts-white);">Open the case file</a></p>
+            ${followForm(kase.slug, kase.aliases)}
+        </aside>`
+    : `        <aside style="${BOX}">
+            <p class="eyebrow" style="margin:0 0 .5rem;">The podcast</p>
+            <p style="margin:0 0 .9rem;color:var(--cts-muted);">CrimeTimeSnacks is a true crime podcast built from the public record. Every episode streams free on this site with a full transcript.</p>
+${listen}
+            <p style="margin:0 0 .2rem;color:var(--cts-muted);font-size:.92rem;">The Case File: new episodes and posts in one email on Sunday. Nothing else, and one click to leave.</p>
+            ${caseFileForm()}
+        </aside>`;
+  return `${box}
+${relatedBlock(p, kase ? "Also on the show" : "On the show")}`;
 }
 // relatedCases is a list of case slugs a post names besides its own: a topic post (fingerprints,
 // genealogy) is about no single case but cites ones the show has covered, and a case post can
 // point at the follow-up episode (Delphi to the appeal). Rendered as links to the case page and
 // its episode; unknown slugs are skipped rather than linked.
 function relatedBlock(p, label) {
-  const kases = (p.relatedCases || []).filter((s) => s !== p.caseSlug).map((s) => liveCases[s]).filter(Boolean);
+  const own = p.caseSlug && liveCases[p.caseSlug];
+  const kases = [...new Set((p.relatedCases || []).map((s) => liveCases[s]).filter((k) => k && k !== own))];
   if (!kases.length) return "";
   const items = kases.map((k) => {
-    const ep = k.episode_slug && epBySlug[k.episode_slug];
+    const ep = newestEpisode(k);
     return `                <li style="margin-bottom:.4rem;"><a href="/cases/${esc(k.slug)}.html">${esc(k.title)}</a>${ep ? ` &middot; <a href="/episodes/${esc(ep.slug)}.html">Listen to the episode</a>` : ""}</li>`;
   }).join("\n");
   return `        <aside style="margin:2.4rem 0;padding:1.3rem 1.4rem;border:1px solid var(--cts-line-strong);border-radius:var(--radius);background:var(--cts-panel);">
@@ -258,7 +284,7 @@ function postPage(p, posts) {
     title: `${p.title} | CrimeTimeSnacks Blog`,
     description: p.excerpt,
     canonicalPath: postUrl(p),
-    ogImage: `${SITE}${img(p)}`,
+    ogImage: `${SITE}${shareImage(p)}`,
     ogType: "article",
     extraHead: articleMeta + articleLd(p),
   })}
@@ -274,7 +300,7 @@ ${header("blog")}
     </section>
 
     <div class="container" style="max-width:780px;margin:3rem auto;">
-        <img src="${esc(img(p))}" alt="${esc(p.title)}" decoding="async" style="width:100%;border-radius:16px;margin-bottom:2.2rem;border:1px solid var(--cts-line-strong);box-shadow:var(--shadow-2);">
+        <img src="${esc(p.hero || img(p))}" alt="${esc(p.title)}" decoding="async" style="width:100%;border-radius:16px;margin-bottom:2.2rem;border:1px solid var(--cts-line-strong);box-shadow:var(--shadow-2);">
 ${paras}
 ${caseBlock(p)}
 ${sourcesBlock(p)}
@@ -298,7 +324,7 @@ ${more.map(card).join("\n")}
 
 ${footer()}
 
-${scripts()}
+${scripts(p.caseSlug && liveCases[p.caseSlug] ? ["/js/community.js"] : [])}
 </body>
 </html>
 `;
@@ -307,7 +333,7 @@ ${scripts()}
 /* ------------------------------------------------------- homepage preview */
 function previewCard(p) {
   return `            <div class="blog-card">
-                <a href="${postUrl(p)}"><img src="${esc(img(p))}" alt="${esc(p.title)}" class="blog-image" loading="lazy"></a>
+                <a href="${postUrl(p)}"><img src="${esc(p.card || img(p))}" alt="${esc(p.title)}" class="blog-image" loading="lazy" decoding="async"></a>
                 <div class="blog-content">
                     <div class="blog-tags"><span class="blog-tag">${esc(p.categoryLabel)}</span></div>
                     <h3 class="blog-title">${esc(p.title)}</h3>
@@ -340,6 +366,9 @@ async function updateHomePreview(posts) {
 
 const data = JSON.parse(await readFile(join(__dirname, "blog.json"), "utf8"));
 const posts = [...data.posts].sort((a, b) => b.date.localeCompare(a.date));
+// Cards are shown at 640px and the picture at the top of a post at 780. Thirteen posts use
+// a 3000x3000 episode cover, half a megabyte each: blog.html referenced 5.4 MB of pictures.
+for (const p of posts) { p.card = await thumb(img(p), 640); p.hero = await thumb(img(p), 960); }
 
 await writeFile(join(ROOT, "blog.html"), blogPage(posts), "utf8");
 await mkdir(join(ROOT, "blog-posts"), { recursive: true });

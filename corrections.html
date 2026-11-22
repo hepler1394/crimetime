@@ -14,12 +14,14 @@
     <meta property="og:title" content="Corrections | CrimeTimeSnacks">
     <meta property="og:description" content="Every correction made to a CrimeTimeSnacks episode, transcript, post or page: the date, what was wrong, and what changed.">
     <meta property="og:url" content="https://www.crimetimesnacks.com/corrections.html">
-    <meta property="og:image" content="https://www.crimetimesnacks.com/images/logo.png">
+    <meta property="og:image" content="https://www.crimetimesnacks.com/images/share-card.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="CrimeTimeSnacks — A True Crime Podcast">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Corrections | CrimeTimeSnacks">
     <meta name="twitter:description" content="Every correction made to a CrimeTimeSnacks episode, transcript, post or page: the date, what was wrong, and what changed.">
-    <meta name="twitter:image" content="https://www.crimetimesnacks.com/images/logo.png">
+    <meta name="twitter:image" content="https://www.crimetimesnacks.com/images/share-card.jpg">
     <meta name="twitter:image:alt" content="CrimeTimeSnacks logo">
     <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Podcast" href="/feed.xml">
     <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Blog" href="/blog-feed.xml">
@@ -33,7 +35,7 @@
     <meta name="format-detection" content="telephone=no">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="/css/style.css?v=2026x">
+    <link rel="stylesheet" href="/css/style.css?v=2026y">
 <style>
 .corr{list-style:none;margin:1.6rem 0 0;padding:0;border-left:2px solid var(--cts-red)}
 .corr li{position:relative;padding:0 0 1.8rem 1.4rem}
@@ -65,11 +67,9 @@
                     <li><a href="/index.html">Home</a></li>
                     <li><a href="/episodes.html">Episodes</a></li>
                     <li><a href="/cases.html">Cases</a></li>
-                    <li><a href="/videos.html">Videos</a></li>
                     <li><a href="/blog.html">Blog</a></li>
                     <li><a href="/live.html">Live</a></li>
                     <li><a href="/quiz.html">Quizzes</a></li>
-                    <li><a href="/merch.html">Merch</a></li>
                     <li><a href="/about.html" class="active" aria-current="page">About</a></li>
                     <li><a href="/contact.html">Contact</a></li>
                 </ul>
@@ -94,6 +94,14 @@
         <p style="color:var(--cts-muted);">A true crime show gets things wrong sometimes. The rule here is that a mistake in a published episode, transcript, post or page is fixed and then logged on this page with the date, so anyone who heard or read the wrong version can find out. If you have found one, write to <a href="mailto:crimetimesnacks@gmail.com?subject=Correction">crimetimesnacks@gmail.com</a>.</p>
         <h2 class="sr-only">Corrections log</h2>
         <ol class="corr">
+            <li>
+                <time datetime="2026-11-21">November 21, 2026</time>
+                <h3><a href="/cases.html">Case pages: The Zodiac Ciphers, Ted Bundy and the Murder of Kimberly Leach, The Doomsday Mom, The Disappearance of Laci Peterson</a></h3>
+                <dl>
+                    <dt>Wrong</dt><dd>Each of these four case pages was headed &quot;Open, 2026&quot;. That was the year the episode was published and a default status, not the case's own.</dd>
+                    <dt>Fixed</dt><dd>The pages now carry the status and years already on file for each case: the Zodiac, a cold case, 1968-1969; Ted Bundy, closed, 1977-1978; Lori Vallow Daybell, convicted, 2019-2023; Scott Peterson, convicted, 2002-present.</dd>
+                </dl>
+            </li>
             <li>
                 <time datetime="2026-10-05">October 5, 2026</time>
                 <h3><a href="/episodes/the-interrogation-of-chris-watts.html">Episode: The Interrogation of Chris Watts</a></h3>
@@ -248,7 +256,7 @@
             </li>
             <li>
                 <time datetime="2026-09-24">September 24, 2026</time>
-                <h3><a href="/cases/moscow-idaho-the-plea.html">Case page: Murders in Moscow: The Plea</a></h3>
+                <h3><a href="/cases/murders-in-moscow.html">Case page: Murders in Moscow: The Plea</a></h3>
                 <dl>
                     <dt>Wrong</dt><dd>The page description showed the internal writing brief for the episode (&quot;DO NOT RETELL THE MURDERS...&quot;) instead of a description of the case.</dd>
                     <dt>Fixed</dt><dd>The brief was replaced with a plain summary of what the episode covers. The same fix was applied to the three other follow-up case pages (Delphi, Menendez, JonBenet) whose descriptions were writing instructions.</dd>
@@ -359,5 +367,7 @@
     <script src="/js/main.js"></script>
     <script src="/js/effects.js"></script>
     <script src="/js/account.js"></script>
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

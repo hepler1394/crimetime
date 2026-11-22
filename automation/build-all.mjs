@@ -11,7 +11,7 @@ const here = dirname(fileURLToPath(import.meta.url));
 // normalize-shell runs first so the hand-written root pages (index, about, contact, listen,
 // live, 404) carry the same header as the generated ones. Until 2026-09-24 it was a one-off,
 // and the homepage nav had been missing "Cases" since that item was added to the shell.
-for (const script of ["normalize-shell.mjs", "build-feed.mjs", "build-episodes.mjs", "build-blog.mjs", "build-blog-rss.mjs", "build-videos.mjs", "build-merch.mjs", "build-quiz.mjs", "build-glossary.mjs", "build-cases.mjs", "build-corrections.mjs", "build-search.mjs", "build-meta.mjs", "build-sitemap.mjs", "build-status.mjs"]) {
+for (const script of ["normalize-shell.mjs", "build-feed.mjs", "build-episodes.mjs", "build-blog.mjs", "build-blog-rss.mjs", "build-videos.mjs", "build-merch.mjs", "build-quiz.mjs", "build-glossary.mjs", "build-cases.mjs", "build-redirects.mjs", "build-corrections.mjs", "build-search.mjs", "build-meta.mjs", "build-sitemap.mjs", "build-status.mjs"]) {
   const r = spawnSync(process.execPath, [join(here, script)], { stdio: "inherit" });
   if (r.status !== 0) process.exit(r.status ?? 1);
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Murders in Moscow | Cases | CrimeTimeSnacks</title>
-    <meta name="description" content="Follow the case by email; every update links its source. In this gripping episode of Crime Time Snacks , we delve into the harrowing case of the Idaho…">
+    <meta name="description" content="Follow the case by email; every update links its source. The Idaho student murders. On November 13, 2022, four University of Idaho students, Ethan Chapin…">
     <meta name="author" content="Cory">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://www.crimetimesnacks.com/cases/murders-in-moscow.html">
@@ -12,14 +12,14 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="CrimeTimeSnacks">
     <meta property="og:title" content="Murders in Moscow | Cases | CrimeTimeSnacks">
-    <meta property="og:description" content="Follow the case by email; every update links its source. In this gripping episode of Crime Time Snacks , we delve into the harrowing case of the Idaho…">
+    <meta property="og:description" content="Follow the case by email; every update links its source. The Idaho student murders. On November 13, 2022, four University of Idaho students, Ethan Chapin…">
     <meta property="og:url" content="https://www.crimetimesnacks.com/cases/murders-in-moscow.html">
-    <meta property="og:image" content="https://www.crimetimesnacks.com/images/logo.png">
+    <meta property="og:image" content="https://www.crimetimesnacks.com/images/episodes/murders-in-moscow-the-plea.jpg">
     <meta property="og:image:alt" content="CrimeTimeSnacks — A True Crime Podcast">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Murders in Moscow | Cases | CrimeTimeSnacks">
-    <meta name="twitter:description" content="Follow the case by email; every update links its source. In this gripping episode of Crime Time Snacks , we delve into the harrowing case of the Idaho…">
-    <meta name="twitter:image" content="https://www.crimetimesnacks.com/images/logo.png">
+    <meta name="twitter:description" content="Follow the case by email; every update links its source. The Idaho student murders. On November 13, 2022, four University of Idaho students, Ethan Chapin…">
+    <meta name="twitter:image" content="https://www.crimetimesnacks.com/images/episodes/murders-in-moscow-the-plea.jpg">
     <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Podcast" href="/feed.xml">
     <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Blog" href="/blog-feed.xml">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -32,7 +32,7 @@
     <meta name="format-detection" content="telephone=no">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="/css/style.css?v=2026x">
+    <link rel="stylesheet" href="/css/style.css?v=2026y">
 <style>
 .case-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem;margin-top:1.4rem}
 .case-card{background:var(--cts-panel);border:1px solid var(--cts-line);border-radius:var(--radius);display:flex;flex-direction:column;position:relative;isolation:isolate;overflow:hidden;transition:var(--cts-transition)}
@@ -60,13 +60,6 @@
 .case-meta .st{color:var(--cts-tape)}
 .case-meta .up{color:var(--cts-red-hot)}
 .case-foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:.6rem;border-top:1px solid var(--cts-line);font-size:.85rem;color:var(--cts-muted)}
-.follow{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
-.follow input[type=email]{background:var(--cts-black);border:1px solid var(--cts-line-strong);border-radius:var(--radius-sm);padding:.7rem .9rem;color:var(--cts-white);min-width:230px;flex:1}
-.follow .btn{white-space:nowrap}
-.follow-state{font-size:.9rem;color:var(--cts-muted);min-height:1.4em}
-.follow-state.ok{color:#9fe3b8}
-.follow-state.err{color:var(--cts-red-hot)}
-.btn.following{background:#123d24;border-color:#1d6b3f;color:#9fe3b8}
 .timeline{list-style:none;margin:1.2rem 0 0;padding:0;border-left:2px solid var(--cts-red);}
 .timeline li{padding:0 0 1.2rem 1.2rem;position:relative}
 .timeline li::before{content:"";position:absolute;left:-7px;top:.45rem;width:12px;height:12px;border-radius:50%;background:var(--cts-red);box-shadow:0 0 0 4px var(--cts-black)}
@@ -74,8 +67,12 @@
 .timeline h3{margin:0 0 .25rem;font-size:1.05rem}
 .timeline p{margin:0;color:var(--cts-muted);line-height:1.55}
 .timeline a{color:var(--cts-muted)}
+.timeline .also{font-size:.85rem;color:var(--cts-faint)}
+.timeline .also a{color:var(--cts-faint)}
 .case-hero{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(280px,1fr);gap:2rem;align-items:start}
-@media(max-width:820px){.case-hero{grid-template-columns:1fr}}
+/* One column on a phone, and the follow form first: under the timeline it sat below every
+   update the case has, 96 percent of the way down the Murdaugh page. */
+@media(max-width:820px){.case-hero{grid-template-columns:1fr}.case-side{order:-1}}
 .case-side{background:var(--cts-panel);border:1px solid var(--cts-line);border-radius:var(--radius);padding:1.3rem}
 .case-side h3{font-family:var(--font-display);font-size:1.5rem;letter-spacing:.02em;margin:0 0 .6rem}
 .case-side .kv{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem;font-size:.9rem;color:var(--cts-muted)}
@@ -85,7 +82,8 @@
 .case-photo img{display:block;width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--cts-line)}
 .case-photo figcaption{margin-top:.5rem;font-size:.8rem;color:var(--cts-faint)}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Murders in Moscow | CrimeTimeSnacks","url":"https://www.crimetimesnacks.com/cases/murders-in-moscow.html","description":"In this gripping episode of Crime Time Snacks , we delve into the harrowing case of the Idaho student murders that rocked the nation. On November 13, 2022, four University of Idaho students — Ethan Chapin, Madison Mogen, Xana Kernodle, and Kaylee Goncalves — were tragically murdered in their off-campus rental home in Moscow, Idaho. This episode unpacks the chilling events, the ongoing investigation, and the complexities surrounding the case."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Murders in Moscow | CrimeTimeSnacks","url":"https://www.crimetimesnacks.com/cases/murders-in-moscow.html","description":"The Idaho student murders. On November 13, 2022, four University of Idaho students, Ethan Chapin, Madison Mogen, Xana Kernodle and Kaylee Goncalves, were killed in their off-campus rental home in Moscow, Idaho. This episode goes through what happened that night, the investigation that followed, and where the case against Bryan Kohberger stood in March 2025, before his plea."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.crimetimesnacks.com/"},{"@type":"ListItem","position":2,"name":"Cases","item":"https://www.crimetimesnacks.com/cases.html"},{"@type":"ListItem","position":3,"name":"Murders in Moscow","item":"https://www.crimetimesnacks.com/cases/murders-in-moscow.html"}]}</script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -103,11 +101,9 @@
                     <li><a href="/index.html">Home</a></li>
                     <li><a href="/episodes.html">Episodes</a></li>
                     <li><a href="/cases.html" class="active" aria-current="page">Cases</a></li>
-                    <li><a href="/videos.html">Videos</a></li>
                     <li><a href="/blog.html">Blog</a></li>
                     <li><a href="/live.html">Live</a></li>
                     <li><a href="/quiz.html">Quizzes</a></li>
-                    <li><a href="/merch.html">Merch</a></li>
                     <li><a href="/about.html">About</a></li>
                     <li><a href="/contact.html">Contact</a></li>
                 </ul>
@@ -124,7 +120,7 @@
         <div class="container">
             <p class="eyebrow" style="justify-content:center;">Convicted &middot; 2022-2025</p>
             <h1 class="page-title">Murders in Moscow</h1>
-            <p>In this gripping episode of Crime Time Snacks , we delve into the harrowing case of the Idaho student murders that rocked the nation. On November 13, 2022, four University of Idaho students — Ethan Chapin, Madison Mogen, Xana Kernodle, and Kaylee Goncalves — were tragically murdered in their off-campus rental home in Moscow, Idaho. This episode unpacks the chilling events, the ongoing investigation, and the complexities surrounding the case.</p>
+            <p>The Idaho student murders. On November 13, 2022, four University of Idaho students, Ethan Chapin, Madison Mogen, Xana Kernodle and Kaylee Goncalves, were killed in their off-campus rental home in Moscow, Idaho. This episode goes through what happened that night, the investigation that followed, and where the case against Bryan Kohberger stood in March 2025, before his plea.</p>
         </div>
     </section>
     <div class="crime-scene-tape" aria-hidden="true"></div>
@@ -134,22 +130,36 @@
             <h2 style="font-family:var(--font-display);font-size:2rem;letter-spacing:.02em;margin:0 0 .4rem;">Case <span class="text-red">Updates</span></h2>
             <p style="color:var(--cts-muted);margin:0;">What has happened, newest first, each with the article it comes from. An entry goes up only after that article is read and found to report it.</p>
             <ol class="timeline">
+                <li><time datetime="2026-11-12">November 12, 2026</time><h3>Survivor Dylan Mortensen reveals threats during emergency court hearing</h3><p>During a November 12 emergency hearing, an attorney for surviving roommate Dylan Mortensen revealed she has received kidnapping and death threats following Bryan Kohberger's conviction.</p><p><a href="https://oxygen.com/videos/idaho-murders-survivor-dylan-mortensen-reveals-threats-to-kill-kidnap-her" rel="noopener nofollow" target="_blank">Oxygen Videos</a></p></li>
                 <li><time datetime="2026-11-02">November 2, 2026</time><h3>Defense asks judge to recuse himself from Kohberger post-conviction relief petition</h3><p>Bryan Kohberger's public defender has asked Judge Steven Hippler to disqualify himself from hearing the petition to withdraw Kohberger's guilty plea. A hearing regarding the recusal issue has reportedly been scheduled for December 10.</p><p><a href="https://tag24.com/en/justice/murder/bryan-kohberger-judge-should-recuse-himself-from-appeal-former-fbi-agent-says-3545079" rel="noopener nofollow" target="_blank">TAG24</a></p></li>
+                <li><time datetime="2026-10-29">October 29, 2026</time><h3>Surviving roommate files motion to protect privacy ahead of record release</h3><p>Surviving roommate Dylan Mortensen filed a motion to intervene asking a judge to preserve redactions blurring her face in unreleased investigative footage. In an affidavit dated October 29, she detailed safety concerns, harassment, and having moved nine times since the murders.</p><p><a href="https://www.usmagazine.com/crime-news/news/idaho-roommate-faces-threats-after-bryan-kohberger-murders/" rel="noopener nofollow" target="_blank">Us Magazine</a></p></li>
+                <li><time datetime="2026-10-19">October 19, 2026</time><h3>Bryan Kohberger files motion seeking judge's removal over alleged bias</h3><p>Bryan Kohberger's defense filed court documents arguing Judge Steven Hippler should be removed from his post-conviction proceedings due to emotional reactions and remarks during sentencing. The filing also notes Kohberger's post-conviction arguments have been postponed by at least two months.</p><p><a href="https://yahoo.com/news/us/articles/bryan-kohberger-demands-judge-removal-214037437.html" rel="noopener nofollow" target="_blank">Yahoo News</a></p></li>
+                <li><time datetime="2026-10-18">October 18, 2026</time><h3>Judge cancels hearings in Kohberger post-conviction proceedings</h3><p>Judge Steven Hippler issued an order canceling a hearing assessing Bryan Kohberger's request to disqualify him, as well as vacating status and evidentiary hearings previously scheduled for June 2027. Kohberger, seeking to withdraw his guilty plea, was instructed to schedule new dates with the clerk by August 2, 2027.</p><p><a href="https://yahoo.com/news/us/articles/judge-called-bryan-kohberger-faceless-114200021.html" rel="noopener nofollow" target="_blank">Yahoo News</a></p></li>
                 <li><time datetime="2026-10-17">October 17, 2026</time><h3>Bryan Kohberger's hearing canceled as court sets new deadline to appeal plea</h3><p>A court docket filing established a new deadline of January 13, 2027, for Bryan Kohberger to file an amended petition seeking a new trial. A scheduled hearing was canceled as Kohberger seeks to withdraw his guilty plea and disqualify Judge Steven Hippler.</p><p><a href="https://dailymail.com/crime-desk/article-16208833/bryan-kohberger-hearing-canceled-idaho-murders.html" rel="noopener nofollow" target="_blank">Daily Mail Online</a></p></li>
                 <li><time datetime="2026-10-15">October 15, 2026</time><h3>Bryan Kohberger court hearing vacated amid bid for new trial</h3><p>Bryan Kohberger's scheduled court hearing was vacated following his post-conviction relief request seeking to withdraw his guilty plea. Kohberger claims ineffective legal counsel and coercion led to his initial plea agreement.</p><p><a href="https://ktul.com/news/nation-world/bryan-kohbergers-court-hearing-vacated-amid-bid-for-new-trial-after-murder-conviction-kill-homicide-university-of-iowa-college-students-stabbed-to-death-penalty-execution-capital-punishment-true-crime" rel="noopener nofollow" target="_blank">KTUL</a></p></li>
+                <li><time datetime="2026-10-15">October 15, 2026</time><h3>Judge vacates Bryan Kohberger hearing and sets revised deadlines</h3><p>Judge Hippler filed an order vacating Bryan Kohberger's October 15 virtual court hearing to reset it for a later date. The order also vacated scheduled June 2027 hearings and set a deadline of January 13, 2027, for Kohberger to file a petition for a new trial.</p><p><a href="https://radaronline.com/p/bryan-kohberger-court-appearance-abruptly-canceled-withdrew-guilty-plea" rel="noopener nofollow" target="_blank">RadarOnline</a></p></li>
+                <li><time datetime="2026-10-14">October 14, 2026</time><h3>Hearing to disqualify judge removed from Bryan Kohberger's post-conviction schedule</h3><p>An October 14 order canceled Bryan Kohberger's October 15 hearing regarding his motion to remove Judge Steven Hippler, as well as previously set June 2027 dates. The court set a revised schedule giving Kohberger until January 13, 2027, to amend his post-conviction petition.</p><p><a href="https://truecrimetodaypod.com/bryan-kohberger-lost-which-hearing-before-it-began" rel="noopener nofollow" target="_blank">True Crime Today Podcast</a></p></li>
+                <li><time datetime="2026-10-14">October 14, 2026</time><h3>Bryan Kohberger court hearings vacated amid bid for new trial</h3><p>A court hearing on Bryan Kohberger's motion to disqualify Judge Steven Hippler and a subsequent hearing scheduled for June were vacated. Kohberger is seeking to withdraw his guilty plea and receive a new trial, alleging ineffective counsel and judicial bias.</p><p><a href="https://foxbaltimore.com/news/nation-world/bryan-kohbergers-court-hearing-vacated-amid-bid-for-new-trial-after-murder-conviction-kill-homicide-university-of-iowa-college-students-stabbed-to-death-penalty-execution-capital-punishment-true-crime" rel="noopener nofollow" target="_blank">Fox Baltimore</a></p></li>
+                <li><time datetime="2026-10-13">October 13, 2026</time><h3>Judge cancels Bryan Kohberger hearing on motion to disqualify</h3><p>Judge Steven Hippler vacated an upcoming court appearance regarding Bryan Kohberger's bid to disqualify the judge from presiding over his post-conviction relief proceedings. The order also vacated a status hearing and evidentiary hearing previously slated for June 2027.</p><p><a href="https://usmagazine.com/crime-news/news/bryan-kohberger-court-hearing-canceled-after-judges-filing" rel="noopener nofollow" target="_blank">Us Weekly</a></p></li>
+                <li><time datetime="2026-10-13">October 13, 2026</time><h3>Bryan Kohberger post-conviction hearings vacated</h3><p>A hearing scheduled for October 15, 2026, as well as another scheduled for June, have been vacated in Bryan Kohberger's post-conviction challenge. Kohberger is seeking a new judge and a retrial after pleading guilty to avoid the death penalty.</p><p><a href="https://idahonews.com/news/local/kohbergers-thursday-hearing-vacated" rel="noopener nofollow" target="_blank">CBS2 News</a></p></li>
+                <li><time datetime="2026-10-12">October 12, 2026</time><h3>Hearing scheduled on Kohberger's motion to remove judge</h3><p>The court scheduled a hearing for Thursday, October 15, to address Bryan Kohberger's motion to disqualify Judge Steven Hippler and move his post-conviction proceedings back to Latah County. Kohberger is seeking to withdraw his guilty plea claiming ineffective assistance of counsel.</p><p><a href="https://idahonews.com/news/local/bryan-kohberger-seeks-new-judge-in-post-conviction-hearing" rel="noopener nofollow" target="_blank">CBS2 News</a></p></li>
+                <li><time datetime="2026-09-25">September 25, 2026</time><h3>Bryan Kohberger's lawyer argues he struggled to comprehend rulings before plea</h3><p>An affidavit filed by attorney Gregory Rauch claims Bryan Kohberger struggled to understand court rulings and was pressured by prior counsel to enter a guilty plea.</p><p><a href="https://radaronline.com/p/idaho-4-killer-bryan-kohberger-lawyer-struggled-comprehend-court-appeals-guilty-plea" rel="noopener nofollow" target="_blank">RadarOnline</a></p></li>
                 <li><time datetime="2026-09-19">September 19, 2026</time><h3>Bryan Kohberger files petition to withdraw guilty plea</h3><p>Bryan Kohberger filed a handwritten motion seeking to withdraw his guilty plea for the 2022 Moscow murders, claiming coercion, threats, and ineffective assistance from his defense team.</p><p><a href="https://www.crimetimesnacks.com/episodes/murders-in-moscow-the-plea.html" rel="noopener nofollow" target="_blank">CrimeTimeSnacks</a></p></li>
+                <li><time datetime="2026-09-18">September 18, 2026</time><h3>Hearing scheduled for October 15 on motion to remove Judge Hippler in Kohberger case</h3><p>Bryan Kohberger is scheduled to return to court on October 15 for a hearing regarding his legal team's efforts to disqualify Judge Steven Hippler from his post-conviction proceedings.</p><p><a href="https://ar.newcarsz.com/%F0%9F%9A%A8-bryan-kohberger-heading-back-to-court-sooner-than-expected-new-hearing-set-for-october-15" rel="noopener nofollow" target="_blank">ar.newcarsz.com</a></p></li>
+                <li><time datetime="2026-09-01">September 1, 2026</time><h3>Unsealed filing questions Kohberger's mental state before guilty plea</h3><p>A newly unsealed court filing reveals Kohberger's defense argued he was struggling to understand key rulings weeks before pleading guilty, supporting his current effort to withdraw his plea deal.</p><p><a href="https://thoughtcatalog.com/xstockton/2026/09/bryan-kohberger-may-be-following-in-lindsay-clancys-footsteps-his-lawyer-says-he-couldnt-make-rational-decisions" rel="noopener nofollow" target="_blank">Thought Catalog</a></p></li>
+                <li><time datetime="2026-07-29">July 29, 2026</time><h3>Netflix releases documentary series on Idaho murders</h3><p>Netflix released 'The Idaho Murders: College Nightmare', a three-episode documentary examining the 2022 stabbings and the case against Bryan Kohberger.</p><p><a href="https://slaycation.wtf/most-popular-murder-documentries" rel="noopener nofollow" target="_blank">Slaycation</a></p></li>
             </ol>
         </div>
         <aside class="case-side">
             <h3>Follow this case</h3>
-            <p style="color:var(--cts-muted);font-size:.95rem;margin:0 0 .9rem;">Be the first to follow. We email you when something happens. Confirm once, unsubscribe any time.</p>
-            <form class="follow" data-case="murders-in-moscow" novalidate>
+            <p style="color:var(--cts-muted);font-size:.95rem;margin:0 0 .9rem;">We email you when something happens. Confirm once, unsubscribe any time.</p>
+            <form class="follow" data-case="murders-in-moscow" data-aliases="moscow-idaho-the-plea,kohberger-trial" novalidate>
     <input type="email" name="email" placeholder="you@email.com" aria-label="Your email" autocomplete="email" required>
     <button class="btn btn-primary" type="submit">Follow this case</button>
     <div class="follow-state" role="status"></div>
   </form>
             
-            <hr style="border:0;border-top:1px solid var(--cts-line);margin:1.2rem 0;"><h3>The episode</h3><p style="margin:0 0 .6rem;"><a href="/episodes/murders-in-moscow.html" style="color:var(--cts-white);">Murders in Moscow</a> <span style="color:var(--cts-faint);">11:41</span></p><audio controls preload="none" style="width:100%"><source src="/audio/murders-in-moscow.mp3" type="audio/mpeg"></audio>
+            <hr style="border:0;border-top:1px solid var(--cts-line);margin:1.2rem 0;"><h3>The episodes</h3><p style="margin:0 0 .6rem;"><a href="/episodes/murders-in-moscow-the-plea.html" style="color:var(--cts-white);">Murders in Moscow: The Plea</a> <span style="color:var(--cts-faint);">22:27</span></p><audio controls preload="none" style="width:100%"><source src="/audio/murders-in-moscow-the-plea.mp3" type="audio/mpeg"></audio><p style="margin:.7rem 0 0;"><a href="/episodes/murders-in-moscow.html" style="color:var(--cts-white);">Murders in Moscow</a> <span style="color:var(--cts-faint);">11:41</span></p>
         </aside>
     </section>
     </main>
@@ -208,5 +218,7 @@
     <script src="/js/effects.js"></script>
     <script src="/js/account.js"></script>
     <script src="/js/community.js"></script>
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

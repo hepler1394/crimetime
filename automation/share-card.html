@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- The site's default share image, 1200x630. Rendered to images/share-card.jpg by
+     automation/make-share-card.mjs. Everything on it is the site's own: the show cover
+     (images/episodes/show.jpg), the homepage headline, the type and the colours from
+     css/style.css. Not a page: nothing links here and it is not deployed as one. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<title>CrimeTimeSnacks share card</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --black: #050505; --line: rgba(255, 255, 255, 0.14); --red: #e50914; --tape: #f4c20d; --white: #f7f7f8; --muted: #a3a3ad; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; background: var(--black); overflow: hidden; }
+  .card { display: grid; grid-template-columns: 570px 630px; width: 1200px; height: 630px; }
+  .words { display: flex; flex-direction: column; padding: 64px 40px 56px 64px; border-right: 1px solid var(--line); }
+  .eyebrow { font: 700 17px/1.4 Inter, sans-serif; letter-spacing: 0.3em; text-transform: uppercase; color: var(--tape); }
+  h1 { margin-top: 30px; white-space: nowrap; font: 400 100px/0.94 "Bebas Neue", Impact, sans-serif; letter-spacing: 0.015em; text-transform: uppercase; color: var(--white); }
+  h1 span { color: var(--red); }
+  .sub { margin-top: 30px; font: 400 25px/1.45 Inter, sans-serif; color: var(--muted); }
+  .foot { margin-top: auto; padding-top: 22px; border-top: 1px solid var(--line); font: 600 23px/1 Inter, sans-serif; letter-spacing: 0.01em; color: var(--white); }
+  .cover { width: 630px; height: 630px; display: block; object-fit: cover; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="words">
+      <p class="eyebrow">Built from the public record</p>
+      <h1>True crime,<br><span>snack-sized.</span></h1>
+      <p class="sub">Court filings, case files and reporting. Full transcript on every episode.</p>
+      <p class="foot">crimetimesnacks.com</p>
+    </div>
+    <img class="cover" src="../images/episodes/show.jpg" alt="">
+  </div>
+</body>
+</html>

@@ -7,7 +7,8 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { SITE, APPLE, esc, head, header, footer, tape, scripts, mark, summaryOf } from "./shell.mjs";
+import { SITE, APPLE, esc, head, header, footer, tape, scripts, mark, summaryOf, followForm, caseFileForm } from "./shell.mjs";
+import { canonicalCases } from "./case-canon.mjs";
 import { thumb } from "./thumbs.mjs";
 
 // Transcript for a slug (automation/transcripts/<slug>.json), if it exists.
@@ -71,10 +72,14 @@ function clip(t, n = 155) {
 
 // Case pages, from the snapshot build-cases.mjs keeps. Only a case whose episode exists is
 // published (indexed, linked); the same rule as build-cases.mjs.
+// A case with several rows in the database is one page (case-canon.mjs): the episode points
+// at that page, whichever row it was linked to.
 let caseByEpisode = {};
 try {
-  const live = JSON.parse(await readFile(join(dirname(fileURLToPath(import.meta.url)), "cases-live.json"), "utf8"));
-  for (const c of live.cases || []) if (c.episode_slug) caseByEpisode[c.episode_slug] = c;
+  const here = dirname(fileURLToPath(import.meta.url));
+  const live = JSON.parse(await readFile(join(here, "cases-live.json"), "utf8"));
+  const published = JSON.parse(await readFile(join(here, "episodes.json"), "utf8")).episodes || [];
+  caseByEpisode = canonicalCases(live.cases || [], published).byEpisode;
 } catch { /* no snapshot: no case links */ }
 
 // Words that say which case an episode is about, for "More from this case" ordering.
@@ -150,7 +155,7 @@ ${header("episodes")}
         <div class="container">
             <p class="eyebrow" style="justify-content:center;">${esc(String(episodes.length))} Episodes on File</p>
             <h1 class="page-title">The Case <span class="text-red">Files</span></h1>
-            <p>Every case, explored in detail. Press play right here, or take it to your favorite app.</p>
+            <p>Every case, explored in detail. Press play right here, or take it to Apple Podcasts or Spotify.</p>
         </div>
     </section>
 
@@ -227,6 +232,7 @@ function episodeLd(p, ep) {
     datePublished: ep.date,
     description: clip(summaryOf(ep.excerpt || ep.description), 300),
     timeRequired: durISO(ep.duration),
+    duration: durISO(ep.duration),
     image: /^https?:/.test(ep.image || "") ? ep.image : `${SITE}${ep.image}`,
     // Absolute: a bare "/audio/x.mp3" is not a URL to a structured-data reader.
     associatedMedia: { "@type": "MediaObject", contentUrl: /^https?:/.test(ep.audio || "") ? ep.audio : `${SITE}${ep.audio}`, encodingFormat: ep.audioType || "audio/mpeg", duration: durISO(ep.duration) },
@@ -265,6 +271,19 @@ function relatedCard(ep) {
                         <p class="episode-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> ${esc(fmtDate(ep.date))}</p>
                     </div>
                 </a>`;
+}
+
+// Under the player and the show notes: follow this case by email, in place, rather than a
+// link to a page with a form on it. An episode with no case page gets the Sunday email.
+function followBand(kase) {
+  if (kase) return `        <div class="follow-band">
+            <p class="follow-band-lead"><strong>Follow this case.</strong> Court dates, rulings and arrests by email, each checked against the article that reports it. One email a week at most. <a href="/cases/${esc(kase.slug)}.html">Open the case file</a></p>
+            ${followForm(kase.slug, kase.aliases)}
+        </div>`;
+  return `        <div class="follow-band">
+            <p class="follow-band-lead"><strong>The Case File.</strong> New episodes and blog posts in one email on Sunday. Nothing else, and one click to leave.</p>
+            ${caseFileForm()}
+        </div>`;
 }
 
 function episodePage(p, ep, sorted, transcript) {
@@ -316,8 +335,8 @@ ${header("episodes")}
             <a href="${APPLE}" target="_blank" rel="noopener" class="btn btn-secondary">${mark("applepodcasts", 16)} Apple Podcasts</a>
         </div>
         <p style="color:var(--cts-muted);line-height:1.85;font-size:1.02rem;">${esc(ep.description)}</p>
-${kase ? `        <p class="episode-case-link"><a href="/cases/${esc(kase.slug)}.html"><i class="fas fa-folder-open" aria-hidden="true"></i> Follow this case</a> <span>Court dates, rulings and arrests by email, each checked against the article that reports it.</span></p>
-` : ""}${transcriptBlock(transcript)}
+${followBand(kase)}
+${transcriptBlock(transcript)}
 ${shareRow(`${SITE}${epUrl(ep)}`, `${ep.title} — CrimeTimeSnacks`)}
         <div style="display:flex;justify-content:space-between;gap:0.8rem;flex-wrap:wrap;margin-top:2.6rem;">
             ${prev ? `<a href="${epUrl(prev)}" class="btn btn-secondary btn-sm"><i class="fas fa-arrow-left" aria-hidden="true"></i> ${esc(trunc(prev.title, 26))}</a>` : "<span></span>"}
@@ -340,7 +359,7 @@ ${related.map(relatedCard).join("\n")}
 
 ${footer({ spotifyUrl: p.spotifyUrl })}
 
-${scripts()}
+${scripts(kase ? ["/js/community.js"] : [])}
 </body>
 </html>
 `;
@@ -366,15 +385,16 @@ function homeRecentCard(p, ep) {
                 </div>`;
 }
 
-function homeBlock({ podcast: p, episodes }) {
-  const sorted = [...episodes].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
-  const latest = sorted[0];
-  const recent = sorted.slice(1, 4);
-  return `    <!-- HOME-EPISODES:START (auto-filled by automation/build-episodes.mjs) -->
+// The latest episode sits directly under the hero, where the hero's play button starts it
+// (js/main.js, data-play). Until 2026-11-21 it came after the 23-row episode index, and the
+// button only scrolled to it.
+function latestBlock({ podcast: p, episodes }) {
+  const latest = [...episodes].sort((a, b) => (b.date || "").localeCompare(a.date || ""))[0];
+  return `    <!-- HOME-LATEST:START (auto-filled by automation/build-episodes.mjs) -->
     <!-- Latest Episode Section -->
-    <section id="latest-episode" class="container" style="margin-top:1.5rem;">
+    <section id="latest-episode" class="container" style="margin-top:4.2rem;scroll-margin-top:6rem;">
         <div class="section-head">
-            <span class="file-no">File 02</span>
+            <span class="file-no">File 01</span>
             <h2>Latest Episode</h2>
             <span class="rule" aria-hidden="true"></span>
         </div>
@@ -400,7 +420,13 @@ function homeBlock({ podcast: p, episodes }) {
             </div>
         </article>
     </section>
+    <!-- HOME-LATEST:END -->`;
+}
 
+function homeBlock({ podcast: p, episodes }) {
+  const sorted = [...episodes].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+  const recent = sorted.slice(1, 4);
+  return `    <!-- HOME-EPISODES:START (auto-filled by automation/build-episodes.mjs) -->
     <!-- Crime Scene Tape -->
     <div class="crime-scene-tape" aria-hidden="true"></div>
 
@@ -480,6 +506,15 @@ async function updateHome(data, transcribed = 0) {
     homeBlock(data)
   );
   if (epi) html = epi;
+
+  const latest = replaceRegion(
+    html,
+    "<!-- HOME-LATEST:START (auto-filled by automation/build-episodes.mjs) -->",
+    "<!-- HOME-LATEST:END -->",
+    latestBlock(data)
+  );
+  if (latest) html = latest;
+  else console.warn("home: no HOME-LATEST markers in index.html; the latest episode is not on the homepage");
 
   const stats = replaceRegion(
     html,

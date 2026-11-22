@@ -7,7 +7,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { header, footer, CSS } from "./shell.mjs";
+import { header, footer, CSS, ANALYTICS_SRC, analyticsTag } from "./shell.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -61,6 +61,11 @@ for (const [file, active] of Object.entries(PAGES)) {
   if (!/src="\/?js\/account\.js"/.test(out)) {
     out = out.replace(/<\/body>/i, '    <script src="/js/account.js"></script>\n</body>');
   }
+
+  // Web Analytics, the same tag scripts() puts on every generated page. Any earlier copy is
+  // removed first so turning ANALYTICS_SRC off, or changing it, reaches these pages too.
+  out = out.replace(/[ \t]*<script>window\.va = [^\n]*<\/script>\n[ \t]*<script defer src="[^"]*"><\/script>\n/g, "");
+  if (ANALYTICS_SRC) out = out.replace(/<\/body>/i, `${analyticsTag()}\n</body>`);
 
   if (out !== html) { await writeFile(path, out, "utf8"); changed++; console.log(`normalized ${file}`); }
 }

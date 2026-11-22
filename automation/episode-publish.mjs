@@ -112,6 +112,7 @@ if (!pushOnly) {
   const audited = audit?.at && Date.parse(audit.at) >= mp3Time - 5000;
   if (!args.includes("--skip-audio")) {
     if (!audited) die("audio", `The audio has not been audited since it was rendered. Run: node automation/episode-audit.mjs ${id}`);
+    if (audit.partial) die("audio", `Paragraphs were re-voiced and spliced in, and the file that resulted has not been listened to as a whole. Run: node automation/episode-audit.mjs ${id}`);
     if (!audit.clean) die("audio", `The audio audit found ${audit.findings} problem(s) (paragraphs ${(audit.paragraphs || []).join(", ") || "n/a"}). See audio-audit.md, then: node automation/episode-repair.mjs ${id}`);
   } else process.stderr.write("WARNING: publishing without an audio audit because --skip-audio was passed.\n");
 }
@@ -177,6 +178,9 @@ if (!pushOnly) {
     explicit: false,
     source: "studio",
     keywords: ep.keywords || [],
+    // The backlog case this episode was drafted from. sync-cases.mjs links the episode to
+    // that case with it instead of making a second case row for the same subject.
+    caseSlug: ep.caseSlug || "",
   };
 
   // Register in the studio list (source of truth for studio episodes).
@@ -220,7 +224,7 @@ if (!pushOnly) {
 
 // Stage what publishing produces, not the whole tree: an episode commit should
 // never sweep up whatever else is in flight in the working copy.
-const STAGE = ["audio", "images/episodes", "images/thumbs", "images/cases", "automation/transcripts", "automation/studio-episodes.json", "automation/episodes.json",
+const STAGE = ["audio", "images/episodes", "images/thumbs", "images/cases", "automation/transcripts", "transcripts","automation/studio-episodes.json", "automation/episodes.json",
   "automation/cases-live.json", "automation/search-index.json", "automation/status.json", "automation/improvements.md",
   "episodes.html", "episodes", "cases.html", "cases", "blog.html", "blog-feed.xml", "feed.xml", "sitemap.xml", "index.html"];
 

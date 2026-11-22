@@ -13,6 +13,7 @@
 // DIGEST_MAX_AGE_DAYS are mailed; older ones still go on the case page timeline.
 import { sb, sendMail, digestEmail, publishedSince, SITE } from "../../automation/community/lib.js";
 import { DIGEST_MAX_AGE_DAYS } from "../../automation/community/update-gate.mjs";
+import { groupOf, canonicalSlug, subjectTitle, mergeUpdates } from "../../automation/case-canon.mjs";
 
 const DAY = 864e5;
 
@@ -36,16 +37,24 @@ export default async function handler(req, res) {
         const follows = (await sb(`cts_follows?select=case_slug&member_id=eq.${m.id}`)).map((f) => f.case_slug);
         if (!follows.length && !m.newsletter) { report.skipped++; continue; }
         const updatesSince = m.last_digest_at || new Date(Date.now() - 30 * DAY).toISOString();
-        const updates = follows.length
-          ? await sb(`cts_case_updates?select=case_slug,happened_on,title,summary,url,source&status=eq.approved&approved_at=gt.${encodeURIComponent(updatesSince)}&happened_on=gte.${recentFrom}&case_slug=in.(${follows.map(encodeURIComponent).join(",")})&order=happened_on.desc&limit=60`)
+        // A case can have more than one row (automation/case-canon.mjs), and the watcher
+        // files news under whichever it was looking at. Someone who follows any of them is
+        // following the case, so the updates of all of them are theirs, once each.
+        const watched = [...new Set(follows.flatMap(groupOf))];
+        const raw = follows.length
+          ? await sb(`cts_case_updates?select=case_slug,happened_on,title,summary,url,source&status=eq.approved&approved_at=gt.${encodeURIComponent(updatesSince)}&happened_on=gte.${recentFrom}&case_slug=in.(${watched.map(encodeURIComponent).join(",")})&order=happened_on.desc&limit=60`)
           : [];
+        const groups = [];
+        for (const slug of [...new Set(follows.map(canonicalSlug))]) {
+          const us = mergeUpdates(raw.filter((u) => canonicalSlug(u.case_slug) === slug));
+          if (us.length) groups.push({ slug, title: subjectTitle(slug) || cases[slug]?.title || slug, updates: us });
+        }
+        const updates = groups.flatMap((g) => g.updates);
         const fresh = m.newsletter
           ? await publishedSince(m.last_digest_at || new Date(Date.now() - 7 * DAY).toISOString(), { fetchJson })
           : { episodes: [], posts: [] };
         const freshCount = fresh.episodes.length + fresh.posts.length;
         if (!updates.length && !freshCount) { report.skipped++; continue; }
-        const groups = [];
-        for (const slug of follows) { const us = updates.filter((u) => u.case_slug === slug); if (us.length) groups.push({ slug, title: cases[slug]?.title || slug, updates: us }); }
         const mail = digestEmail({ groups, fresh, unsubLink: `${SITE()}/api/community/unsubscribe?t=${m.token}`, manageLink: `${SITE()}/api/community/confirm?t=${m.token}` });
         if (dry) { report.sent++; report.preview = { to: m.email, subject: mail.subject, updates: updates.length, fresh: freshCount }; continue; }
         const id = await sendMail({ to: m.email, ...mail, unsubToken: m.token });

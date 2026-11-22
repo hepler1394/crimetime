@@ -863,22 +863,40 @@ section[id] { scroll-margin-top: 96px; }
     border: 0;
 }
 
-/* Episode page: the way from an episode to the case page that tracks it. */
-.episode-case-link {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.4rem 0.9rem;
+/* Follow a case by email: the form on case pages, episode pages and blog posts
+   (shell.mjs followForm, driven by js/community.js). These rules lived in the case pages'
+   own <style> until 2026-11-21, when the form went onto the other two. */
+.follow { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+.follow input[type=email] {
+    background: var(--cts-black);
+    border: 1px solid var(--cts-line-strong);
+    border-radius: var(--radius-sm);
+    padding: 0.7rem 0.9rem;
+    color: var(--cts-white);
+    font-size: 16px; /* under 16px, iOS zooms the page on focus */
+    min-width: 230px;
+    flex: 1;
+}
+.follow input[type=email]:focus { outline: none; border-color: var(--cts-red); box-shadow: var(--glow-red); }
+.follow .btn { white-space: nowrap; }
+.follow-state { flex-basis: 100%; font-size: 0.9rem; color: var(--cts-muted); min-height: 1.4em; }
+.follow-state.ok { color: #9fe3b8; }
+.follow-state.err { color: var(--cts-red-hot); }
+.btn.following { background: #123d24; border-color: #1d6b3f; color: #9fe3b8; }
+
+/* Episode page and blog post: the same form in a ruled band, with one line saying what
+   following is. It replaced a text link to the case page, which nobody had to notice. */
+.follow-band {
     margin: 1.6rem 0 0;
-    padding: 1rem 0;
+    padding: 1.1rem 0 0.7rem;
     border-top: 1px solid var(--cts-line);
     border-bottom: 1px solid var(--cts-line);
-    font-size: 0.92rem;
-    color: var(--cts-muted);
 }
-.episode-case-link a { color: var(--cts-tape); font-weight: 700; text-decoration: none; white-space: nowrap; }
-.episode-case-link a:hover, .episode-case-link a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
-.episode-case-link span { flex: 1; min-width: 14rem; }
+.follow-band-lead { margin: 0 0 0.85rem; font-size: 0.92rem; line-height: 1.6; color: var(--cts-muted); }
+.follow-band-lead strong { color: var(--cts-tape); font-weight: 700; }
+.follow-band-lead a { color: var(--cts-white); text-underline-offset: 3px; }
+.follow-band .newsletter-form { margin-top: 0; margin-bottom: 0.7rem; }
+.follow-band .listen-row { display: flex; gap: 0.7rem; flex-wrap: wrap; margin: 0 0 1rem; }
 
 /* category chips (compat: .category-btn kept for category-ai.js) */
 .category-btn {
@@ -1803,7 +1821,9 @@ html.js .animate-on-scroll.animated { opacity: 1; transform: translateY(0); }
     .hero-eyebrow { display: block; letter-spacing: 0.2em; line-height: 1.7; }
     .hero-eyebrow::before { display: none; }
     .hero-eyebrow .live-dot { margin-right: 0.5rem; vertical-align: 0.1em; }
-    .hero-visual { order: -1; }
+    /* The phone mock-ups follow the words on a narrow screen. Until 2026-11-21 they were
+       ordered first, so a phone's first screen was three pictures of the show inside other
+       apps and the headline, the play button and the Apple and Spotify links were below it. */
     .hero-phones { max-width: 460px; margin: 0 auto; }
     .stat-row { justify-content: center; }
 }

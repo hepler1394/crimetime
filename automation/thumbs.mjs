@@ -24,7 +24,13 @@ export async function thumb(webPath, size = 640) {
   const src = join(ROOT, rel);
   const srcTime = await mtime(src);
   if (!srcTime) return webPath;
-  const name = `${rel.split("/").pop().replace(/\.[^.]+$/, "")}-${size}.jpg`;
+  // Named after the file, and after its folder too when that is not images/episodes. Two
+  // pictures share a filename: images/watts-family-murders.jpg (a blog post's photograph)
+  // and images/episodes/watts-family-murders.jpg (the episode cover). Named by file alone,
+  // the first to be sized was served for both.
+  const dir = rel.split("/").slice(0, -1).join("/");
+  const prefix = dir === "images/episodes" ? "" : `${dir.replace(/^images\/?/, "").replace(/\//g, "-") || "site"}-`;
+  const name = `${prefix}${rel.split("/").pop().replace(/\.[^.]+$/, "")}-${size}.jpg`;
   const out = join(OUT, name);
   const probe = spawnSync("ffprobe", ["-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width", "-of", "csv=p=0", src], { encoding: "utf8", windowsHide: true });
   // No ffprobe (the GitHub Actions runner that rebuilds the site every six hours): use the

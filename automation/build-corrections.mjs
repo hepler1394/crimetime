@@ -8,6 +8,12 @@ import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { SITE, EMAIL, esc, head, header, footer, tape, scripts } from "./shell.mjs";
+import { canonicalSlug } from "./case-canon.mjs";
+
+// A correction records the page it was made on. Where that was a case page that has since
+// become part of another page (case-canon.mjs), the link goes to the page it is part of;
+// the entry in corrections.json keeps the address as it was on the day.
+const pageUrl = (url) => String(url).replace(/^\/cases\/([a-z0-9-]+)\.html$/, (m, slug) => `/cases/${canonicalSlug(slug)}.html`);
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -58,7 +64,7 @@ ${tape()}
         ${items.length ? `<ol class="corr">
 ${items.map((c) => `            <li>
                 <time datetime="${esc(c.date)}">${esc(fmtDate(c.date))}</time>
-                <h3>${c.url ? `<a href="${esc(c.url)}">${esc(c.where)}</a>` : esc(c.where)}</h3>
+                <h3>${c.url ? `<a href="${esc(pageUrl(c.url))}">${esc(c.where)}</a>` : esc(c.where)}</h3>
                 <dl>
                     <dt>Wrong</dt><dd>${esc(c.wrong)}</dd>
                     <dt>Fixed</dt><dd>${esc(c.fixed)}</dd>

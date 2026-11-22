@@ -16,13 +16,15 @@
     <meta property="og:title" content="CrimeTimeSnacks • A True Crime Podcast">
     <meta property="og:description" content="Snack-sized true crime, fully examined. The facts, theories, and evidence behind the cases, without the sensationalism. Full transcripts, corrections in the open.">
     <meta property="og:url" content="https://www.crimetimesnacks.com/">
-    <meta property="og:image" content="https://www.crimetimesnacks.com/images/logo.png">
-    <meta property="og:image:alt" content="CrimeTimeSnacks logo">
+    <meta property="og:image" content="https://www.crimetimesnacks.com/images/share-card.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="CrimeTimeSnacks: a true crime podcast built from the public record">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="CrimeTimeSnacks • A True Crime Podcast">
     <meta name="twitter:description" content="Snack-sized true crime, fully examined. Full transcripts on every episode.">
-    <meta name="twitter:image" content="https://www.crimetimesnacks.com/images/logo.png">
-    <meta name="twitter:image:alt" content="CrimeTimeSnacks logo">
+    <meta name="twitter:image" content="https://www.crimetimesnacks.com/images/share-card.jpg">
+    <meta name="twitter:image:alt" content="CrimeTimeSnacks: a true crime podcast built from the public record">
 
     <!-- Podcast RSS feed -->
     <link rel="alternate" type="application/rss+xml" title="CrimeTimeSnacks Podcast" href="/feed.xml">
@@ -71,7 +73,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css?v=2026x">
+    <link rel="stylesheet" href="/css/style.css?v=2026y">
 
     <!-- Hero renders load first -->
     <link rel="preload" href="/images/phone-center.png?v=4" as="image">
@@ -92,11 +94,9 @@
                     <li><a href="/index.html" class="active" aria-current="page">Home</a></li>
                     <li><a href="/episodes.html">Episodes</a></li>
                     <li><a href="/cases.html">Cases</a></li>
-                    <li><a href="/videos.html">Videos</a></li>
                     <li><a href="/blog.html">Blog</a></li>
                     <li><a href="/live.html">Live</a></li>
                     <li><a href="/quiz.html">Quizzes</a></li>
-                    <li><a href="/merch.html">Merch</a></li>
                     <li><a href="/about.html">About</a></li>
                     <li><a href="/contact.html">Contact</a></li>
                 </ul>
@@ -117,14 +117,13 @@
                 <h1>True Crime,<br><span class="rotator" data-rotate='["Snack-Sized.","Examined.","Unfiltered.","Obsessive."]'>Snack-Sized.</span></h1>
                 <p class="hero-sub">The facts, theories, and evidence behind unsolved cases and infamous crimes &mdash; researched from the public record and hosted by Cory. No sensationalism. No filler. Just the case.</p>
                 <div class="hero-buttons">
-                    <a href="#latest-episode" class="btn btn-primary"><i class="fas fa-play" aria-hidden="true"></i> Play the Latest Case</a>
+                    <a href="#latest-episode" class="btn btn-primary" data-play="#latest-episode"><i class="fas fa-play" aria-hidden="true"></i> Play the Latest Case</a>
                     <a href="/episodes.html" class="btn btn-secondary"><i class="fas fa-folder-open" aria-hidden="true"></i> Open the Case Files</a>
                 </div>
                 <div class="hero-platforms">
                     <span>Listen on</span>
                     <a class="platform-pill" href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener"><svg class="mark mark--inline mark--applepodcasts" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M5.34 0A5.328 5.328 0 000 5.34v13.32A5.328 5.328 0 005.34 24h13.32A5.328 5.328 0 0024 18.66V5.34A5.328 5.328 0 0018.66 0zm6.525 2.568c2.336 0 4.448.902 6.056 2.587 1.224 1.272 1.912 2.619 2.264 4.392.12.59.12 2.2.007 2.864a8.506 8.506 0 01-3.24 5.296c-.608.46-2.096 1.261-2.336 1.261-.088 0-.096-.091-.056-.46.072-.592.144-.715.48-.856.536-.224 1.448-.874 2.008-1.435a7.644 7.644 0 002.008-3.536c.208-.824.184-2.656-.048-3.504-.728-2.696-2.928-4.792-5.624-5.352-.784-.16-2.208-.16-3 0-2.728.56-4.984 2.76-5.672 5.528-.184.752-.184 2.584 0 3.336.456 1.832 1.64 3.512 3.192 4.512.304.2.672.408.824.472.336.144.408.264.472.856.04.36.03.464-.056.464-.056 0-.464-.176-.896-.384l-.04-.03c-2.472-1.216-4.056-3.274-4.632-6.012-.144-.706-.168-2.392-.03-3.04.36-1.74 1.048-3.1 2.192-4.304 1.648-1.737 3.768-2.656 6.128-2.656zm.134 2.81c.409.004.803.04 1.106.106 2.784.62 4.76 3.408 4.376 6.174-.152 1.114-.536 2.03-1.216 2.88-.336.43-1.152 1.15-1.296 1.15-.023 0-.048-.272-.048-.603v-.605l.416-.496c1.568-1.878 1.456-4.502-.256-6.224-.664-.67-1.432-1.064-2.424-1.246-.64-.118-.776-.118-1.448-.008-1.02.167-1.81.562-2.512 1.256-1.72 1.704-1.832 4.342-.264 6.222l.413.496v.608c0 .336-.027.608-.06.608-.03 0-.264-.16-.512-.36l-.034-.011c-.832-.664-1.568-1.842-1.872-2.997-.184-.698-.184-2.024.008-2.72.504-1.878 1.888-3.335 3.808-4.019.41-.145 1.133-.22 1.814-.211zm-.13 2.99c.31 0 .62.06.844.178.488.253.888.745 1.04 1.259.464 1.578-1.208 2.96-2.72 2.254h-.015c-.712-.331-1.096-.956-1.104-1.77 0-.733.408-1.371 1.112-1.745.224-.117.534-.176.844-.176zm-.011 4.728c.988-.004 1.706.349 1.97.97.198.464.124 1.932-.218 4.302-.232 1.656-.36 2.074-.68 2.356-.44.39-1.064.498-1.656.288h-.003c-.716-.257-.87-.605-1.164-2.644-.341-2.37-.416-3.838-.218-4.302.262-.616.974-.966 1.97-.97z"/></svg> Apple Podcasts</a>
                     <a class="platform-pill" href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" target="_blank" rel="noopener"><svg class="mark mark--inline mark--spotify" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg> Spotify</a>
-                    <a class="platform-pill" href="/videos.html"><svg class="mark mark--inline mark--youtube" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> YouTube</a>
                     <a class="platform-pill" href="/feed.xml"><svg class="mark mark--inline mark--rss" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/></svg> RSS</a>
                 </div>
                 <!-- HOME-STATS:START (auto-filled by automation/build-episodes.mjs) -->
@@ -153,7 +152,7 @@
         <div class="marquee">
             <div class="marquee-track">
                 <span class="marquee-item"><i class="fas fa-file-lines"></i> Full transcript on every episode</span>
-                <span class="marquee-item"><svg class="mark mark--inline mark--applepodcasts" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M5.34 0A5.328 5.328 0 000 5.34v13.32A5.328 5.328 0 005.34 24h13.32A5.328 5.328 0 0024 18.66V5.34A5.328 5.328 0 0018.66 0zm6.525 2.568c2.336 0 4.448.902 6.056 2.587 1.224 1.272 1.912 2.619 2.264 4.392.12.59.12 2.2.007 2.864a8.506 8.506 0 01-3.24 5.296c-.608.46-2.096 1.261-2.336 1.261-.088 0-.096-.091-.056-.46.072-.592.144-.715.48-.856.536-.224 1.448-.874 2.008-1.435a7.644 7.644 0 002.008-3.536c.208-.824.184-2.656-.048-3.504-.728-2.696-2.928-4.792-5.624-5.352-.784-.16-2.208-.16-3 0-2.728.56-4.984 2.76-5.672 5.528-.184.752-.184 2.584 0 3.336.456 1.832 1.64 3.512 3.192 4.512.304.2.672.408.824.472.336.144.408.264.472.856.04.36.03.464-.056.464-.056 0-.464-.176-.896-.384l-.04-.03c-2.472-1.216-4.056-3.274-4.632-6.012-.144-.706-.168-2.392-.03-3.04.36-1.74 1.048-3.1 2.192-4.304 1.648-1.737 3.768-2.656 6.128-2.656zm.134 2.81c.409.004.803.04 1.106.106 2.784.62 4.76 3.408 4.376 6.174-.152 1.114-.536 2.03-1.216 2.88-.336.43-1.152 1.15-1.296 1.15-.023 0-.048-.272-.048-.603v-.605l.416-.496c1.568-1.878 1.456-4.502-.256-6.224-.664-.67-1.432-1.064-2.424-1.246-.64-.118-.776-.118-1.448-.008-1.02.167-1.81.562-2.512 1.256-1.72 1.704-1.832 4.342-.264 6.222l.413.496v.608c0 .336-.027.608-.06.608-.03 0-.264-.16-.512-.36l-.034-.011c-.832-.664-1.568-1.842-1.872-2.997-.184-.698-.184-2.024.008-2.72.504-1.878 1.888-3.335 3.808-4.019.41-.145 1.133-.22 1.814-.211zm-.13 2.99c.31 0 .62.06.844.178.488.253.888.745 1.04 1.259.464 1.578-1.208 2.96-2.72 2.254h-.015c-.712-.331-1.096-.956-1.104-1.77 0-.733.408-1.371 1.112-1.745.224-.117.534-.176.844-.176zm-.011 4.728c.988-.004 1.706.349 1.97.97.198.464.124 1.932-.218 4.302-.232 1.656-.36 2.074-.68 2.356-.44.39-1.064.498-1.656.288h-.003c-.716-.257-.87-.605-1.164-2.644-.341-2.37-.416-3.838-.218-4.302.262-.616.974-.966 1.97-.97z"/></svg> Apple Podcasts &middot; Spotify &middot; Everywhere</span>
+                <span class="marquee-item"><svg class="mark mark--inline mark--applepodcasts" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M5.34 0A5.328 5.328 0 000 5.34v13.32A5.328 5.328 0 005.34 24h13.32A5.328 5.328 0 0024 18.66V5.34A5.328 5.328 0 0018.66 0zm6.525 2.568c2.336 0 4.448.902 6.056 2.587 1.224 1.272 1.912 2.619 2.264 4.392.12.59.12 2.2.007 2.864a8.506 8.506 0 01-3.24 5.296c-.608.46-2.096 1.261-2.336 1.261-.088 0-.096-.091-.056-.46.072-.592.144-.715.48-.856.536-.224 1.448-.874 2.008-1.435a7.644 7.644 0 002.008-3.536c.208-.824.184-2.656-.048-3.504-.728-2.696-2.928-4.792-5.624-5.352-.784-.16-2.208-.16-3 0-2.728.56-4.984 2.76-5.672 5.528-.184.752-.184 2.584 0 3.336.456 1.832 1.64 3.512 3.192 4.512.304.2.672.408.824.472.336.144.408.264.472.856.04.36.03.464-.056.464-.056 0-.464-.176-.896-.384l-.04-.03c-2.472-1.216-4.056-3.274-4.632-6.012-.144-.706-.168-2.392-.03-3.04.36-1.74 1.048-3.1 2.192-4.304 1.648-1.737 3.768-2.656 6.128-2.656zm.134 2.81c.409.004.803.04 1.106.106 2.784.62 4.76 3.408 4.376 6.174-.152 1.114-.536 2.03-1.216 2.88-.336.43-1.152 1.15-1.296 1.15-.023 0-.048-.272-.048-.603v-.605l.416-.496c1.568-1.878 1.456-4.502-.256-6.224-.664-.67-1.432-1.064-2.424-1.246-.64-.118-.776-.118-1.448-.008-1.02.167-1.81.562-2.512 1.256-1.72 1.704-1.832 4.342-.264 6.222l.413.496v.608c0 .336-.027.608-.06.608-.03 0-.264-.16-.512-.36l-.034-.011c-.832-.664-1.568-1.842-1.872-2.997-.184-.698-.184-2.024.008-2.72.504-1.878 1.888-3.335 3.808-4.019.41-.145 1.133-.22 1.814-.211zm-.13 2.99c.31 0 .62.06.844.178.488.253.888.745 1.04 1.259.464 1.578-1.208 2.96-2.72 2.254h-.015c-.712-.331-1.096-.956-1.104-1.77 0-.733.408-1.371 1.112-1.745.224-.117.534-.176.844-.176zm-.011 4.728c.988-.004 1.706.349 1.97.97.198.464.124 1.932-.218 4.302-.232 1.656-.36 2.074-.68 2.356-.44.39-1.064.498-1.656.288h-.003c-.716-.257-.87-.605-1.164-2.644-.341-2.37-.416-3.838-.218-4.302.262-.616.974-.966 1.97-.97z"/></svg> Apple Podcasts &middot; Spotify &middot; RSS for any other app</span>
                 <span class="marquee-item"><i class="fas fa-microphone"></i> Hosted by Cory &middot; on the air since 2022</span>
                 <span class="marquee-item" data-fact="length"><i class="fas fa-stopwatch"></i> Snack-sized cases &middot; every one under 30 minutes</span>
                 <span class="marquee-item"><i class="fas fa-pen-to-square"></i> Corrections published, never buried</span>
@@ -161,6 +160,51 @@
             </div>
         </div>
     </div>
+
+    <!-- HOME-LATEST:START (auto-filled by automation/build-episodes.mjs) -->
+    <!-- Latest Episode Section -->
+    <section id="latest-episode" class="container" style="margin-top:4.2rem;scroll-margin-top:6rem;">
+        <div class="section-head">
+            <span class="file-no">File 01</span>
+            <h2>Latest Episode</h2>
+            <span class="rule" aria-hidden="true"></span>
+        </div>
+        <article class="spotlight">
+            <div class="spotlight-media">
+                <img src="/images/thumbs/ted-bundy-and-the-murder-of-kimberly-leach-960.jpg" alt="Ted Bundy and the Murder of Kimberly Leach" loading="lazy" decoding="async">
+            </div>
+            <div class="spotlight-body">
+                <div class="episode-badges">
+                    <span class="episode-badge">True Crime</span>
+                    <span class="episode-badge"><i class="far fa-clock" aria-hidden="true"></i> 28:08</span>
+                </div>
+                <h3>Ted Bundy and the Murder of Kimberly Leach</h3>
+                <p class="episode-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> November 6, 2026</p>
+                <p class="episode-description">Ted Bundy's crimes ran from his early murders in Washington and Utah, through his escape from a Colorado jail, to Florida in 1978, where twelve-year-old Kimberly Leach disappeared from her school. He used a fake arm sling and a charming demeanor to lure young women to his Volkswagen Beetle. The episode walks through the timeline, the escapes, and the stolen car in Pensacola that ended his run across the country.</p>
+                <audio preload="none" controls>
+                    <source src="/audio/ted-bundy-and-the-murder-of-kimberly-leach.mp3" type="audio/mpeg">
+                </audio>
+                <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+                    <a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" target="_blank" rel="noopener" class="btn btn-primary"><svg class="mark mark--spotify" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg> Listen on Spotify</a>
+                    <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener" class="btn btn-secondary"><svg class="mark mark--applepodcasts" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M5.34 0A5.328 5.328 0 000 5.34v13.32A5.328 5.328 0 005.34 24h13.32A5.328 5.328 0 0024 18.66V5.34A5.328 5.328 0 0018.66 0zm6.525 2.568c2.336 0 4.448.902 6.056 2.587 1.224 1.272 1.912 2.619 2.264 4.392.12.59.12 2.2.007 2.864a8.506 8.506 0 01-3.24 5.296c-.608.46-2.096 1.261-2.336 1.261-.088 0-.096-.091-.056-.46.072-.592.144-.715.48-.856.536-.224 1.448-.874 2.008-1.435a7.644 7.644 0 002.008-3.536c.208-.824.184-2.656-.048-3.504-.728-2.696-2.928-4.792-5.624-5.352-.784-.16-2.208-.16-3 0-2.728.56-4.984 2.76-5.672 5.528-.184.752-.184 2.584 0 3.336.456 1.832 1.64 3.512 3.192 4.512.304.2.672.408.824.472.336.144.408.264.472.856.04.36.03.464-.056.464-.056 0-.464-.176-.896-.384l-.04-.03c-2.472-1.216-4.056-3.274-4.632-6.012-.144-.706-.168-2.392-.03-3.04.36-1.74 1.048-3.1 2.192-4.304 1.648-1.737 3.768-2.656 6.128-2.656zm.134 2.81c.409.004.803.04 1.106.106 2.784.62 4.76 3.408 4.376 6.174-.152 1.114-.536 2.03-1.216 2.88-.336.43-1.152 1.15-1.296 1.15-.023 0-.048-.272-.048-.603v-.605l.416-.496c1.568-1.878 1.456-4.502-.256-6.224-.664-.67-1.432-1.064-2.424-1.246-.64-.118-.776-.118-1.448-.008-1.02.167-1.81.562-2.512 1.256-1.72 1.704-1.832 4.342-.264 6.222l.413.496v.608c0 .336-.027.608-.06.608-.03 0-.264-.16-.512-.36l-.034-.011c-.832-.664-1.568-1.842-1.872-2.997-.184-.698-.184-2.024.008-2.72.504-1.878 1.888-3.335 3.808-4.019.41-.145 1.133-.22 1.814-.211zm-.13 2.99c.31 0 .62.06.844.178.488.253.888.745 1.04 1.259.464 1.578-1.208 2.96-2.72 2.254h-.015c-.712-.331-1.096-.956-1.104-1.77 0-.733.408-1.371 1.112-1.745.224-.117.534-.176.844-.176zm-.011 4.728c.988-.004 1.706.349 1.97.97.198.464.124 1.932-.218 4.302-.232 1.656-.36 2.074-.68 2.356-.44.39-1.064.498-1.656.288h-.003c-.716-.257-.87-.605-1.164-2.644-.341-2.37-.416-3.838-.218-4.302.262-.616.974-.966 1.97-.97z"/></svg> Apple Podcasts</a>
+                </div>
+            </div>
+        </article>
+    </section>
+    <!-- HOME-LATEST:END -->
+
+    <!-- The Case File sign-up: directly under the latest episode, not at the foot of the page -->
+    <section class="container" id="the-case-file" style="margin-top: 3rem; scroll-margin-top: 6rem;">
+        <div class="newsletter-block">
+            <p class="eyebrow">The Case File</p>
+            <h2>Every Episode.<br>One Sunday Email.</h2>
+            <p style="color:var(--cts-muted);max-width:52ch;margin-top:0.8rem;">The week's new episodes and crime blog posts, in your inbox on Sunday. Follow a case and its court dates, rulings and arrests arrive in the same email. Nothing else, and one click to leave.</p>
+            <form class="newsletter-form">
+                <input type="email" inputmode="email" autocomplete="email" required aria-label="Email address" placeholder="Your email address">
+                <button type="submit" class="btn btn-primary" style="white-space: nowrap;">Get the Case File</button>
+            </form>
+        </div>
+    </section>
 
     <!-- Continue Listening Section (shows only if there's saved progress) -->
     <section id="continue-listening" class="container" style="margin-top: 3rem; display: none;">
@@ -173,29 +217,29 @@
     <!-- Categories Section -->
     <section id="categories" class="container" style="margin-top: 4.2rem;">
         <div class="section-head">
-            <span class="file-no">File 01</span>
+            <span class="file-no">File 02</span>
             <h2>Browse the Case Files</h2>
             <span class="rule" aria-hidden="true"></span>
         </div>
         <!-- HOME-INDEX:START (auto-filled by automation/build-episodes.mjs) -->
         <ol class="case-index" reversed style="counter-reset:docket 24">
-            <li><a href="/episodes/the-disappearance-of-laci-peterson.html"><span class="ci-title">The Disappearance of Laci Peterson</span><span class="ci-meta"><time datetime="2026-11-06">Nov 6, 2026</time> &middot; 28:57</span></a></li>
-            <li><a href="/episodes/the-zodiac-ciphers.html"><span class="ci-title">The Zodiac Ciphers</span><span class="ci-meta"><time datetime="2026-11-06">Nov 6, 2026</time> &middot; 26:22</span></a></li>
             <li><a href="/episodes/ted-bundy-and-the-murder-of-kimberly-leach.html"><span class="ci-title">Ted Bundy and the Murder of Kimberly Leach</span><span class="ci-meta"><time datetime="2026-11-06">Nov 6, 2026</time> &middot; 28:08</span></a></li>
-            <li><a href="/episodes/the-doomsday-mom.html"><span class="ci-title">The Doomsday Mom</span><span class="ci-meta"><time datetime="2026-11-01">Nov 1, 2026</time> &middot; 28:54</span></a></li>
+            <li><a href="/episodes/the-zodiac-ciphers.html"><span class="ci-title">The Zodiac Ciphers</span><span class="ci-meta"><time datetime="2026-11-06">Nov 6, 2026</time> &middot; 26:22</span></a></li>
+            <li><a href="/episodes/the-disappearance-of-laci-peterson.html"><span class="ci-title">The Disappearance of Laci Peterson</span><span class="ci-meta"><time datetime="2026-11-06">Nov 6, 2026</time> &middot; 28:57</span></a></li>
             <li><a href="/episodes/the-disappearance-of-maura-murray.html"><span class="ci-title">The Disappearance of Maura Murray</span><span class="ci-meta"><time datetime="2026-11-01">Nov 1, 2026</time> &middot; 23:11</span></a></li>
+            <li><a href="/episodes/the-doomsday-mom.html"><span class="ci-title">The Doomsday Mom</span><span class="ci-meta"><time datetime="2026-11-01">Nov 1, 2026</time> &middot; 28:54</span></a></li>
             <li><a href="/episodes/the-btk-floppy-disk.html"><span class="ci-title">The BTK Floppy Disk</span><span class="ci-meta"><time datetime="2026-10-03">Oct 3, 2026</time> &middot; 28:13</span></a></li>
             <li><a href="/episodes/the-murdaugh-family-murders.html"><span class="ci-title">The Murdaugh Family Murders</span><span class="ci-meta"><time datetime="2026-09-24">Sep 24, 2026</time> &middot; 28:22</span></a></li>
             <li><a href="/episodes/elisa-lam-and-the-cecil-hotel.html"><span class="ci-title">Elisa Lam and the Cecil Hotel</span><span class="ci-meta"><time datetime="2026-09-23">Sep 23, 2026</time> &middot; 24:40</span></a></li>
-            <li><a href="/episodes/the-miami-apartment-stabbing.html"><span class="ci-title">The Miami Apartment Stabbing</span><span class="ci-meta"><time datetime="2026-09-21">Sep 21, 2026</time> &middot; 21:12</span></a></li>
             <li><a href="/episodes/jonbenet-ramsey-thirty-years.html"><span class="ci-title">JonBenet Ramsey: Thirty Years</span><span class="ci-meta"><time datetime="2026-09-21">Sep 21, 2026</time> &middot; 20:43</span></a></li>
+            <li><a href="/episodes/the-miami-apartment-stabbing.html"><span class="ci-title">The Miami Apartment Stabbing</span><span class="ci-meta"><time datetime="2026-09-21">Sep 21, 2026</time> &middot; 21:12</span></a></li>
             <li><a href="/episodes/gilgo-beach-eight-names.html"><span class="ci-title">Gilgo Beach: Eight Names</span><span class="ci-meta"><time datetime="2026-09-20">Sep 20, 2026</time> &middot; 20:53</span></a></li>
-            <li><a href="/episodes/murders-in-moscow-the-plea.html"><span class="ci-title">Murders in Moscow: The Plea</span><span class="ci-meta"><time datetime="2026-09-19">Sep 19, 2026</time> &middot; 22:27</span></a></li>
-            <li><a href="/episodes/the-menendez-brothers-parole-years.html"><span class="ci-title">The Menendez Brothers: The Parole Years</span><span class="ci-meta"><time datetime="2026-09-19">Sep 19, 2026</time> &middot; 21:20</span></a></li>
             <li><a href="/episodes/delphi-update-the-richard-allen-appeal.html"><span class="ci-title">Delphi: The Appeal</span><span class="ci-meta"><time datetime="2026-09-19">Sep 19, 2026</time> &middot; 20:11</span></a></li>
+            <li><a href="/episodes/the-menendez-brothers-parole-years.html"><span class="ci-title">The Menendez Brothers: The Parole Years</span><span class="ci-meta"><time datetime="2026-09-19">Sep 19, 2026</time> &middot; 21:20</span></a></li>
+            <li><a href="/episodes/murders-in-moscow-the-plea.html"><span class="ci-title">Murders in Moscow: The Plea</span><span class="ci-meta"><time datetime="2026-09-19">Sep 19, 2026</time> &middot; 22:27</span></a></li>
             <li><a href="/episodes/the-interrogation-of-chris-watts.html"><span class="ci-title">The Interrogation of Chris Watts</span><span class="ci-meta"><time datetime="2026-09-18">Sep 18, 2026</time> &middot; 20:10</span></a></li>
-            <li><a href="/episodes/the-disappearance-of-gabby-petito.html"><span class="ci-title">The Disappearance of Gabby Petito</span><span class="ci-meta"><time datetime="2026-09-12">Sep 12, 2026</time> &middot; 20:21</span></a></li>
             <li><a href="/episodes/the-golden-state-killer.html"><span class="ci-title">Hunting the Golden State Killer</span><span class="ci-meta"><time datetime="2026-09-12">Sep 12, 2026</time> &middot; 22:40</span></a></li>
+            <li><a href="/episodes/the-disappearance-of-gabby-petito.html"><span class="ci-title">The Disappearance of Gabby Petito</span><span class="ci-meta"><time datetime="2026-09-12">Sep 12, 2026</time> &middot; 20:21</span></a></li>
             <li><a href="/episodes/murders-in-moscow.html"><span class="ci-title">Murders in Moscow</span><span class="ci-meta"><time datetime="2025-03-16">Mar 16, 2025</time> &middot; 11:41</span></a></li>
             <li><a href="/episodes/watts-family-murders.html"><span class="ci-title">Watts Family Murders</span><span class="ci-meta"><time datetime="2024-11-17">Nov 17, 2024</time> &middot; 21:42</span></a></li>
             <li><a href="/episodes/erik-and-lyle-the-menendez-brothers.html"><span class="ci-title">ERIK AND LYLE: The Menendez Brothers</span><span class="ci-meta"><time datetime="2024-11-17">Nov 17, 2024</time> &middot; 19:38</span></a></li>
@@ -208,38 +252,6 @@
     </section>
 
     <!-- HOME-EPISODES:START (auto-filled by automation/build-episodes.mjs) -->
-    <!-- Latest Episode Section -->
-    <section id="latest-episode" class="container" style="margin-top:1.5rem;">
-        <div class="section-head">
-            <span class="file-no">File 02</span>
-            <h2>Latest Episode</h2>
-            <span class="rule" aria-hidden="true"></span>
-        </div>
-        <article class="spotlight">
-            <div class="spotlight-media">
-                <img src="/images/thumbs/the-disappearance-of-laci-peterson-960.jpg" alt="The Disappearance of Laci Peterson" loading="lazy" decoding="async">
-            </div>
-            <div class="spotlight-body">
-                <div class="episode-badges">
-                    <span class="episode-badge">True Crime</span>
-                    <span class="episode-badge"><i class="far fa-clock" aria-hidden="true"></i> 28:57</span>
-                </div>
-                <h3>The Disappearance of Laci Peterson</h3>
-                <p class="episode-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> November 6, 2026</p>
-                <p class="episode-description">Hey everyone, it's Cory. Today we are looking at a case that completely took over the news cycle in late 2002. Laci Peterson was twenty-seven years old and eight months pregnant with her first child when she vanished from her home in Modesto, California, on Christmas Eve.
-
-The search for Laci and her unborn son Conner brought in massive numbers of volunteers and national headlines. We are going to walk through Laci and Scott's early lives, their meeting in college, and the secrets that were hiding just beneath the surface of their seemingly perfect life.</p>
-                <audio preload="none" controls>
-                    <source src="/audio/the-disappearance-of-laci-peterson.mp3" type="audio/mpeg">
-                </audio>
-                <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-                    <a href="https://open.spotify.com/show/6wbA1mrLHjEegphMPnsAiZ" target="_blank" rel="noopener" class="btn btn-primary"><svg class="mark mark--spotify" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg> Listen on Spotify</a>
-                    <a href="https://podcasts.apple.com/us/podcast/crimetimesnacks-a-true-crime-podcast/id1655384400" target="_blank" rel="noopener" class="btn btn-secondary"><svg class="mark mark--applepodcasts" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M5.34 0A5.328 5.328 0 000 5.34v13.32A5.328 5.328 0 005.34 24h13.32A5.328 5.328 0 0024 18.66V5.34A5.328 5.328 0 0018.66 0zm6.525 2.568c2.336 0 4.448.902 6.056 2.587 1.224 1.272 1.912 2.619 2.264 4.392.12.59.12 2.2.007 2.864a8.506 8.506 0 01-3.24 5.296c-.608.46-2.096 1.261-2.336 1.261-.088 0-.096-.091-.056-.46.072-.592.144-.715.48-.856.536-.224 1.448-.874 2.008-1.435a7.644 7.644 0 002.008-3.536c.208-.824.184-2.656-.048-3.504-.728-2.696-2.928-4.792-5.624-5.352-.784-.16-2.208-.16-3 0-2.728.56-4.984 2.76-5.672 5.528-.184.752-.184 2.584 0 3.336.456 1.832 1.64 3.512 3.192 4.512.304.2.672.408.824.472.336.144.408.264.472.856.04.36.03.464-.056.464-.056 0-.464-.176-.896-.384l-.04-.03c-2.472-1.216-4.056-3.274-4.632-6.012-.144-.706-.168-2.392-.03-3.04.36-1.74 1.048-3.1 2.192-4.304 1.648-1.737 3.768-2.656 6.128-2.656zm.134 2.81c.409.004.803.04 1.106.106 2.784.62 4.76 3.408 4.376 6.174-.152 1.114-.536 2.03-1.216 2.88-.336.43-1.152 1.15-1.296 1.15-.023 0-.048-.272-.048-.603v-.605l.416-.496c1.568-1.878 1.456-4.502-.256-6.224-.664-.67-1.432-1.064-2.424-1.246-.64-.118-.776-.118-1.448-.008-1.02.167-1.81.562-2.512 1.256-1.72 1.704-1.832 4.342-.264 6.222l.413.496v.608c0 .336-.027.608-.06.608-.03 0-.264-.16-.512-.36l-.034-.011c-.832-.664-1.568-1.842-1.872-2.997-.184-.698-.184-2.024.008-2.72.504-1.878 1.888-3.335 3.808-4.019.41-.145 1.133-.22 1.814-.211zm-.13 2.99c.31 0 .62.06.844.178.488.253.888.745 1.04 1.259.464 1.578-1.208 2.96-2.72 2.254h-.015c-.712-.331-1.096-.956-1.104-1.77 0-.733.408-1.371 1.112-1.745.224-.117.534-.176.844-.176zm-.011 4.728c.988-.004 1.706.349 1.97.97.198.464.124 1.932-.218 4.302-.232 1.656-.36 2.074-.68 2.356-.44.39-1.064.498-1.656.288h-.003c-.716-.257-.87-.605-1.164-2.644-.341-2.37-.416-3.838-.218-4.302.262-.616.974-.966 1.97-.97z"/></svg> Apple Podcasts</a>
-                </div>
-            </div>
-        </article>
-    </section>
-
     <!-- Crime Scene Tape -->
     <div class="crime-scene-tape" aria-hidden="true"></div>
 
@@ -260,7 +272,7 @@ The search for Laci and her unborn son Conner brought in massive numbers of volu
                         </div>
                         <h3 class="episode-title">The Zodiac Ciphers</h3>
                         <p class="episode-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> November 6, 2026</p>
-                        <p class="episode-description">I've covered a lot of cold cases, but nothing gets under my skin quite like the Zodiac. Between 1968 and 1969, a phantom stalked the San Francisco…</p>
+                        <p class="episode-description">Between 1968 and 1969, the Zodiac targeted couples on lonely roads and a cab driver in the San Francisco Bay Area, then taunted police and the public…</p>
                         <div class="episode-actions">
                             <a href="/episodes/the-zodiac-ciphers.html" class="btn btn-primary btn-sm">Listen Now</a>
                             <div class="episode-stats"><span><i class="far fa-clock" aria-hidden="true"></i> 26:22</span></div>
@@ -268,34 +280,34 @@ The search for Laci and her unborn son Conner brought in massive numbers of volu
                     </div>
                 </div>
                 <div class="episode-card" data-categories="true-crime">
-                    <a href="/episodes/ted-bundy-and-the-murder-of-kimberly-leach.html" aria-label="Ted Bundy and the Murder of Kimberly Leach"><img src="/images/thumbs/ted-bundy-and-the-murder-of-kimberly-leach-640.jpg" alt="Ted Bundy and the Murder of Kimberly Leach" class="episode-image" loading="lazy" decoding="async"></a>
+                    <a href="/episodes/the-disappearance-of-laci-peterson.html" aria-label="The Disappearance of Laci Peterson"><img src="/images/thumbs/the-disappearance-of-laci-peterson-640.jpg" alt="The Disappearance of Laci Peterson" class="episode-image" loading="lazy" decoding="async"></a>
                     <div class="episode-content">
                         <div class="episode-badges">
                             <span class="episode-badge">True Crime</span>
-                            <span class="episode-badge"><i class="far fa-clock" aria-hidden="true"></i> 28:08</span>
+                            <span class="episode-badge"><i class="far fa-clock" aria-hidden="true"></i> 28:57</span>
                         </div>
-                        <h3 class="episode-title">Ted Bundy and the Murder of Kimberly Leach</h3>
+                        <h3 class="episode-title">The Disappearance of Laci Peterson</h3>
                         <p class="episode-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> November 6, 2026</p>
-                        <p class="episode-description">We are looking at the devastating timeline of Ted Bundy's crimes and his eventual capture in Florida. From his early murders in Washington and Utah…</p>
+                        <p class="episode-description">Laci Peterson was twenty-seven years old and eight months pregnant with her first child when she vanished from her home in Modesto, California, on…</p>
                         <div class="episode-actions">
-                            <a href="/episodes/ted-bundy-and-the-murder-of-kimberly-leach.html" class="btn btn-primary btn-sm">Listen Now</a>
-                            <div class="episode-stats"><span><i class="far fa-clock" aria-hidden="true"></i> 28:08</span></div>
+                            <a href="/episodes/the-disappearance-of-laci-peterson.html" class="btn btn-primary btn-sm">Listen Now</a>
+                            <div class="episode-stats"><span><i class="far fa-clock" aria-hidden="true"></i> 28:57</span></div>
                         </div>
                     </div>
                 </div>
                 <div class="episode-card" data-categories="true-crime">
-                    <a href="/episodes/the-doomsday-mom.html" aria-label="The Doomsday Mom"><img src="/images/thumbs/the-doomsday-mom-640.jpg" alt="The Doomsday Mom" class="episode-image" loading="lazy" decoding="async"></a>
+                    <a href="/episodes/the-disappearance-of-maura-murray.html" aria-label="The Disappearance of Maura Murray"><img src="/images/thumbs/the-disappearance-of-maura-murray-640.jpg" alt="The Disappearance of Maura Murray" class="episode-image" loading="lazy" decoding="async"></a>
                     <div class="episode-content">
                         <div class="episode-badges">
                             <span class="episode-badge">True Crime</span>
-                            <span class="episode-badge"><i class="far fa-clock" aria-hidden="true"></i> 28:54</span>
+                            <span class="episode-badge"><i class="far fa-clock" aria-hidden="true"></i> 23:11</span>
                         </div>
-                        <h3 class="episode-title">The Doomsday Mom</h3>
+                        <h3 class="episode-title">The Disappearance of Maura Murray</h3>
                         <p class="episode-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> November 1, 2026</p>
-                        <p class="episode-description">Today on CrimeTimeSnacks we are looking into the deeply disturbing case of Lori Vallow Daybell and Chad Daybell. What began with the disappearance of…</p>
+                        <p class="episode-description">In 2004, nursing student Maura Murray packed up her dorm room, emailed her professors a fake excuse, and drove north into the White Mountains. She…</p>
                         <div class="episode-actions">
-                            <a href="/episodes/the-doomsday-mom.html" class="btn btn-primary btn-sm">Listen Now</a>
-                            <div class="episode-stats"><span><i class="far fa-clock" aria-hidden="true"></i> 28:54</span></div>
+                            <a href="/episodes/the-disappearance-of-maura-murray.html" class="btn btn-primary btn-sm">Listen Now</a>
+                            <div class="episode-stats"><span><i class="far fa-clock" aria-hidden="true"></i> 23:11</span></div>
                         </div>
                     </div>
                 </div>
@@ -365,7 +377,7 @@ The search for Laci and her unborn son Conner brought in massive numbers of volu
         <div class="blog-grid">
             <!-- BLOG-PREVIEW:START (auto-filled by automation/build-blog.mjs) -->
             <div class="blog-card">
-                <a href="/blog-posts/the-evolution-of-crime-scene-photography.html"><img src="/images/logo.png" alt="The evolution of crime scene photography" class="blog-image" loading="lazy"></a>
+                <a href="/blog-posts/the-evolution-of-crime-scene-photography.html"><img src="/images/thumbs/site-logo-640.jpg" alt="The evolution of crime scene photography" class="blog-image" loading="lazy" decoding="async"></a>
                 <div class="blog-content">
                     <div class="blog-tags"><span class="blog-tag">Analysis</span></div>
                     <h3 class="blog-title">The evolution of crime scene photography</h3>
@@ -375,7 +387,7 @@ The search for Laci and her unborn son Conner brought in massive numbers of volu
                 </div>
             </div>
             <div class="blog-card">
-                <a href="/blog-posts/the-golden-state-killer-how-dna-caught-joseph-deangelo.html"><img src="/images/episodes/the-golden-state-killer.jpg" alt="The Golden State Killer: How DNA Caught Joseph DeAngelo" class="blog-image" loading="lazy"></a>
+                <a href="/blog-posts/the-golden-state-killer-how-dna-caught-joseph-deangelo.html"><img src="/images/thumbs/the-golden-state-killer-640.jpg" alt="The Golden State Killer: How DNA Caught Joseph DeAngelo" class="blog-image" loading="lazy" decoding="async"></a>
                 <div class="blog-content">
                     <div class="blog-tags"><span class="blog-tag">Investigation</span></div>
                     <h3 class="blog-title">The Golden State Killer: How DNA Caught Joseph DeAngelo</h3>
@@ -385,7 +397,7 @@ The search for Laci and her unborn son Conner brought in massive numbers of volu
                 </div>
             </div>
             <div class="blog-card">
-                <a href="/blog-posts/joseph-corcoran-and-the-criminal-appeals-process.html"><img src="/images/logo.png" alt="Joseph Corcoran and the criminal appeals process" class="blog-image" loading="lazy"></a>
+                <a href="/blog-posts/joseph-corcoran-and-the-criminal-appeals-process.html"><img src="/images/thumbs/site-logo-640.jpg" alt="Joseph Corcoran and the criminal appeals process" class="blog-image" loading="lazy" decoding="async"></a>
                 <div class="blog-content">
                     <div class="blog-tags"><span class="blog-tag">Court</span></div>
                     <h3 class="blog-title">Joseph Corcoran and the criminal appeals process</h3>
@@ -427,18 +439,6 @@ The search for Laci and her unborn son Conner brought in massive numbers of volu
         </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="container" id="the-case-file" style="margin-top: 4.6rem; scroll-margin-top: 6rem;">
-        <div class="newsletter-block">
-            <p class="eyebrow">The Case File</p>
-            <h2>Every Episode.<br>One Sunday Email.</h2>
-            <p style="color:var(--cts-muted);max-width:52ch;margin-top:0.8rem;">The week's new episodes and crime blog posts, in your inbox on Sunday. Follow a case and its court dates, rulings and arrests arrive in the same email. Nothing else, and one click to leave.</p>
-            <form class="newsletter-form">
-                <input type="email" inputmode="email" autocomplete="email" required aria-label="Email address" placeholder="Your email address">
-                <button type="submit" class="btn btn-primary" style="white-space: nowrap;">Get the Case File</button>
-            </form>
-        </div>
-    </section>
     </main>
 
     <!-- Footer -->
@@ -578,5 +578,7 @@ The search for Laci and her unborn son Conner brought in massive numbers of volu
     <script src="/js/main.js"></script>
     <script src="/js/effects.js"></script>
     <script src="/js/account.js"></script>
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
