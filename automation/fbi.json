@@ -3,9 +3,24 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1282,
     "baked": 150,
-    "updated": "2026-11-21T19:26:39.208Z"
+    "updated": "2026-11-22T07:02:26.026Z"
   },
   "items": [
+    {
+      "uid": "882c8ec2d7134a0189e08173f915243f",
+      "title": "FAUSTO ISIDRO MEZA-FLORES",
+      "kind": "wanted",
+      "image": "https://www.fbi.gov/wanted/topten/fausto-isidro-meza-flores/@@images/image/large",
+      "office": "Washington D.C.",
+      "reward": "The United States Department of State's Narcotics Rewards Program is offering a reward of up to $5 million for information leading directly to the arrest and/or conviction of Fausto Isidro Meza-Flores.",
+      "url": "https://www.fbi.gov/wanted/topten/fausto-isidro-meza-flores",
+      "status": "captured",
+      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN INTERNATIONAL FLIGHT RISK",
+      "subjects": [
+        "Ten Most Wanted Fugitives"
+      ],
+      "publication": "2017-09-27T08:29:00"
+    },
     {
       "uid": "060b1a01b1a44649b88ef536824e0876",
       "title": "ROBIN M. LATHAM  - EAU CLAIRE, WISCONSIN",
@@ -2274,21 +2289,6 @@
         "ViCAP Homicides and Sexual Assaults"
       ],
       "publication": "2026-07-20T10:39:00"
-    },
-    {
-      "uid": "1582e7db343a44508dd4e52490c1b80d",
-      "title": "UNKNOWN BANK ROBBER - ALABAMA",
-      "kind": "victim",
-      "image": "https://www.fbi.gov/wanted/seeking-info/unknown-bank-robber---alabama/@@images/image/large",
-      "office": "Birmingham",
-      "reward": "",
-      "url": "https://www.fbi.gov/wanted/seeking-info/unknown-bank-robber---alabama",
-      "status": "captured",
-      "warning": "",
-      "subjects": [
-        "Seeking Information"
-      ],
-      "publication": "2026-07-14T12:42:00"
     }
   ]
 }
