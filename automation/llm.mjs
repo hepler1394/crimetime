@@ -7,11 +7,24 @@
 // use must never be written into a repo file.
 
 import { readFile } from "node:fs/promises";
+import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { unlockConfig } from './studio/credential-store.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+
+// A key kept in another of Cory's projects' env files, read in place.
+const SHARED_ENV_FILES = ["D:/Dev/GitHub/the-baseline/.env.local"];
+function sharedKey(name) {
+  for (const f of SHARED_ENV_FILES) {
+    try {
+      const m = readFileSync(f, "utf8").match(new RegExp("^\s*" + name + "\s*=\s*(.+)\s*$", "m"));
+      if (m) return m[1].trim().replace(/^["']|["']$/g, "");
+    } catch { /* not on this machine */ }
+  }
+  return "";
+}
 
 export async function loadConfig() {
   let cfg = {};
@@ -67,8 +80,13 @@ export async function loadConfig() {
   cfg.deepseek.baseUrl = cfg.deepseek.baseUrl || "https://api.deepseek.com/v1";
   cfg.deepseek.model = cfg.deepseek.model || "deepseek-chat";
   cfg.anthropic = cfg.anthropic || {};
-  cfg.anthropic.apiKey = e.ANTHROPIC_API_KEY || cfg.anthropic.apiKey || "";
-  cfg.anthropic.model = cfg.anthropic.model || "claude-sonnet-4-6";
+  // Cory's Anthropic key lives in the-baseline/.env.local, which is where ig-studio's writer reads
+  // it too. Until 2026-11-21 nothing here looked there, so the studio had exactly one working
+  // provider, and when Gemini's prepaid credit ran out that night ("HTTP 402 ... prepayment credits
+  // are depleted") every draft, revision and fact list had nowhere to go. Read, never copied.
+  cfg.anthropic.apiKey = e.ANTHROPIC_API_KEY || cfg.anthropic.apiKey || sharedKey("ANTHROPIC_API_KEY") || "";
+  cfg.anthropic.model = e.ANTHROPIC_MODEL || cfg.anthropic.model || "claude-sonnet-5-5";
+  cfg.anthropic.writerModel = e.ANTHROPIC_WRITER_MODEL || cfg.anthropic.writerModel || "claude-opus-5-5";
   cfg.openai = cfg.openai || {};
   cfg.openai.apiKey = e.OPENAI_API_KEY || cfg.openai.apiKey || "";
   cfg.openai.baseUrl = cfg.openai.baseUrl || "https://api.openai.com/v1";
@@ -229,7 +247,10 @@ async function anthropic({ apiKey, model, maxOutputTokens = 2000 }, system, user
   if(onToken){let buffer='',text='',truncated=false,completed=false,emitted=false;const decoder=new TextDecoder();try{for await(const c of res.body){buffer+=decoder.decode(c,{stream:true});let nl;while((nl=buffer.indexOf('\n'))>=0){const line=buffer.slice(0,nl).trim();buffer=buffer.slice(nl+1);if(!line.startsWith('data:'))continue;let data;try{data=JSON.parse(line.slice(5));}catch{continue;}if(data.type==='message_stop')completed=true;if(data.type==='error')throw new Error('The provider stream stopped.');const delta=data.delta?.text;if(delta){text+=delta;emitted=true;onToken(delta);}if(data.delta?.stop_reason==='max_tokens')truncated=true;}}}catch(err){throw Object.assign(err,{emitted});}if(truncated)throw Object.assign(new Error('The model reached its output limit. Ask for a shorter section.'),{retryable:false});if(!completed)throw Object.assign(new Error('The provider stream ended before completion.'),{emitted,retryable:!emitted});return text;}
   const data = await res.json();
   if(data.stop_reason==='max_tokens')throw Object.assign(new Error('The model reached its output limit. Ask for a shorter section.'),{retryable:false});
-  return data.content?.[0]?.text ?? "";
+  // The answer is every text block, not the first block: current Claude models think before a
+  // long answer, and then content[0] is a thinking block with no text in it. Read as content[0],
+  // a complete fact check came back as "" and looked like a chapter with no claims.
+  return (data.content || []).filter((b) => b.type === "text").map((b) => b.text).join("");
 }
 
 // Returns { text, provider } using the first provider that works, in config order.
@@ -283,7 +304,8 @@ export async function chat(system, user, cfg) {
       } else if (name === "deepseek" && cfg.deepseek.apiKey) {
         return { text: await withRetry(cfg, "deepseek", () => openAiCompatible({ ...cfg.deepseek, maxOutputTokens: Math.min(8192, cloudCap(cfg, "deepseek")) }, system, user, cfg.timeoutMs || 60000, opts)), provider: "deepseek" };
       } else if (name === "anthropic" && cfg.anthropic.apiKey) {
-        return { text: await withRetry(cfg, "anthropic", () => anthropic({ ...cfg.anthropic, maxOutputTokens: Math.min(16000, cfg.maxOutputTokens || 2000) }, system, user, cfg.timeoutMs || 60000, opts)), provider: "anthropic" };
+        const model = cfg.role === "writer" ? cfg.anthropic.writerModel : cfg.anthropic.model;
+        return { text: await withRetry(cfg, `anthropic (${model})`, () => anthropic({ ...cfg.anthropic, model, maxOutputTokens: Math.min(16000, cloudCap(cfg, "anthropic")) }, system, user, cfg.timeoutMs || 120000, opts)), provider: `anthropic (${model})` };
       } else if (name === "xai" && cfg.xai.apiKey && cfg.xai.model) {
         return { text: await withRetry(cfg, "xai", () => openAiCompatible({ ...cfg.xai, maxOutputTokens: cloudCap(cfg, "xai") }, system, user, cfg.timeoutMs || 60000, opts)), provider: "xai" };
       } else if (name === "openai" && cfg.openai.apiKey) {
