@@ -88,4 +88,24 @@ repo, push to main deploys) plus the automation that runs the show. Read
   it, no rating built on one review, no prices over a store that does not exist, no writer's
   brief (`cases.json` `angle`) on a public page: a case whose brief is an instruction carries a
   `summary`. Corrections go in `automation/corrections.json`, which renders `/corrections.html`.
+- A held episode is retried, not left. Changed 2026-11-21: the Monday job had drafted and voiced an
+  episode every week since October and published none of them on its own; two finished episodes
+  sat for one and two weeks, one on a single misheard word and one on a name the comparer could
+  never pass ("JonBenet" heard as "John Benet"). `episode-weekly.mjs` now re-runs the fact gate
+  after the repetition cut, does up to three audit and repair rounds, starts each run by giving
+  recent held drafts another go at both gates (`--retry-only`), and exits 3 (logged EPISODE HELD)
+  when it built something it could not publish. A repair marks the render `partial` until
+  `episode-audit.mjs` has listened to the whole spliced file, and publish refuses a partial one.
+  A claim the gate still holds needs its sentence rewritten and re-voiced with
+  `episode-repair.mjs --edits`; that stays an edit, never a tick.
+- A replaced recording gets a line in `automation/corrections.json` the day it goes out, not
+  before. Corrected audio is published with `episode-publish.mjs <id> --replace-audio --push`.
+- One page per case. `automation/case-canon.mjs` names each subject's surviving slug and its
+  aliases; the build folds every alias's approved updates onto the survivor and
+  `build-redirects.mjs` writes the 301s into `vercel.json`. Add a new duplicate there, never as a
+  second page.
+- The site is measured: the Vercel Web Analytics tag is in `automation/shell.mjs`
+  (`ANALYTICS_SRC`) and feed enclosures go through OP3 (`ENCLOSURE_PREFIX` in
+  `automation/build-feed.mjs`; download numbers are public at op3.dev). `privacy.html` says both.
+  After a deploy that adds pages, `node automation/indexnow.mjs --submit`.
 - Test with `npm test` (build + link check) before pushing.
