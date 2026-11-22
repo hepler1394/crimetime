@@ -8,7 +8,7 @@
     <title>CrimeTimeSnacks • A True Crime Podcast</title>
     <link>https://www.crimetimesnacks.com/</link>
     <atom:link href="https://www.crimetimesnacks.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 22 Nov 2026 05:01:03 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 22 Nov 2026 05:10:08 GMT</lastBuildDate>
     <language>en</language>
     <copyright>&#169; 2026 Cory</copyright>
     <description>CrimeTimeSnacks is a true crime podcast about the cases people argue about, built from the public record: court filings, released case files and years of reporting. Each episode lays out the facts, the theories and the evidence, says what is still unknown, and leaves the conclusion to you.</description>
@@ -124,16 +124,21 @@
       <link>https://www.crimetimesnacks.com/episodes/the-btk-floppy-disk.html</link>
       <guid isPermaLink="false">cts-studio-the-btk-floppy-disk</guid>
       <pubDate>Sat, 03 Oct 2026 03:40:29 GMT</pubDate>
-      <description>For decades the BTK killer bound and suffocated victims in Wichita, Kansas, while sending taunting letters to the police and media. After thirteen years of silence he reached out one more time, mailing items to law enforcement that unraveled his double life as a family man and security alarm installer. The episode traces the timeline from his childhood fantasies to the digital footprint that brought him down.</description>
-      <content:encoded><![CDATA[<p>For decades the BTK killer bound and suffocated victims in Wichita, Kansas, while sending taunting letters to the police and media. After thirteen years of silence he reached out one more time, mailing items to law enforcement that unraveled his double life as a family man and security alarm installer. The episode traces the timeline from his childhood fantasies to the digital footprint that brought him down.</p>
+      <description>Welcome back to CrimeTimeSnacks, I&apos;m Cory. Today we&apos;re looking at one of the most infamous cold cases in American history, the BTK killer. For decades, a phantom haunted Wichita, Kansas, binding and suffocating victims while sending taunting letters to the police and media.
+
+But after going completely silent for thirteen years, the killer made a fatal mistake. He decided to reach out one more time, mailing items to law enforcement that would finally unravel his double life as a family man and security alarm installer. We&apos;ll trace the timeline from his chilling childhood fantasies to the digital footprint that brought him down.</description>
+      <content:encoded><![CDATA[<p>Welcome back to CrimeTimeSnacks, I'm Cory. Today we're looking at one of the most infamous cold cases in American history, the BTK killer. For decades, a phantom haunted Wichita, Kansas, binding and suffocating victims while sending taunting letters to the police and media.</p>
+<p>But after going completely silent for thirteen years, the killer made a fatal mistake. He decided to reach out one more time, mailing items to law enforcement that would finally unravel his double life as a family man and security alarm installer. We'll trace the timeline from his chilling childhood fantasies to the digital footprint that brought him down.</p>
 <p><a href="https://www.crimetimesnacks.com/episodes/the-btk-floppy-disk.html">Read the full transcript of this episode</a></p>
 <p><a href="https://www.crimetimesnacks.com/cases/the-btk-floppy-disk.html">Follow this case by email</a>: court dates, rulings and arrests, each checked against the article that reports it.</p>]]></content:encoded>
-      <itunes:summary>For decades the BTK killer bound and suffocated victims in Wichita, Kansas, while sending taunting letters to the police and media. After thirteen years of silence he reached out one more time, mailing items to law enforcement that unraveled his double life as a family man and security alarm installer. The episode traces the timeline from his childhood fantasies to the digital footprint that brought him down.</itunes:summary>
+      <itunes:summary>Welcome back to CrimeTimeSnacks, I&apos;m Cory. Today we&apos;re looking at one of the most infamous cold cases in American history, the BTK killer. For decades, a phantom haunted Wichita, Kansas, binding and suffocating victims while sending taunting letters to the police and media.
+
+But after going completely silent for thirteen years, the killer made a fatal mistake. He decided to reach out one more time, mailing items to law enforcement that would finally unravel his double life as a family man and security alarm installer. We&apos;ll trace the timeline from his chilling childhood fantasies to the digital footprint that brought him down.</itunes:summary>
       <itunes:author>Cory</itunes:author>
-      <itunes:duration>00:28:13</itunes:duration>
+      <itunes:duration>00:28:18</itunes:duration>
       <itunes:episode>18</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <enclosure url="https://op3.dev/e/www.crimetimesnacks.com/audio/the-btk-floppy-disk.mp3" length="27088081" type="audio/mpeg" />
+      <enclosure url="https://op3.dev/e/www.crimetimesnacks.com/audio/the-btk-floppy-disk-r2.mp3" length="27175017" type="audio/mpeg" />
       <itunes:image href="https://www.crimetimesnacks.com/images/episodes/the-btk-floppy-disk.jpg" />
       <podcast:transcript url="https://www.crimetimesnacks.com/transcripts/the-btk-floppy-disk.vtt" type="text/vtt" language="en" />
       <itunes:explicit>false</itunes:explicit>

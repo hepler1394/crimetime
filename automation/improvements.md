@@ -627,3 +627,4 @@ with an [auto] tag — the counter on Mission Control reads this file.
 561. [auto 2026-11-17] Published new quiz: "Bundy: The Kimberly Leach Case" (5 questions)
 562. [auto 2026-11-20] Published blog post from research notes: "The evolution of crime scene photography" (1435 words, 6 sources)
 563. [auto 2026-11-20] Published new quiz: "Maura Murray: What the Record Shows" (5 questions)
+564. [auto 2026-11-22] Published podcast episode from the studio: "The BTK Floppy Disk" (00:28:18)

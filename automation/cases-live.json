@@ -1,22 +1,22 @@
 {
-  "fetched": "2026-11-22T05:01:23.673Z",
+  "fetched": "2026-11-22T05:10:34.155Z",
   "cases": [
     {
-      "slug": "maura-murray",
-      "title": "Maura Murray",
-      "summary": "A crashed car on Route 112 in New Hampshire, a disappearance in under ten minutes, and twenty years of no answers.",
-      "angle": "A crashed car on Route 112 in New Hampshire, a disappearance in under ten minutes, and twenty years of no answers.",
-      "years": "2004-present",
-      "status": "cold",
+      "slug": "jonbenet-ramsey-americas-child-beauty-queen",
+      "title": "JonBenét Ramsey Americas Child Beauty Queen",
+      "summary": "In Boulder, Colorado, just a day after Christmas in 1996, JonBenét Ramsey, a six-year-old child pageant star, was found dead in her basement. She had been beaten and strangled. That was hours after her parents, John and Patsy, reported her missing, and hours after her mom found a ransom note on a staircase in the house. Nobody has ever been convicted in this case, even 26 years later. This is the lead-in to a two-part special where we go back to Christmas 1996 and look again at all the facts in this case.",
+      "angle": "",
+      "years": "1996-present",
+      "status": "open",
       "category": "case",
       "next_date": null,
       "next_label": "",
-      "image": "/images/episodes/the-disappearance-of-maura-murray.jpg",
-      "episode_slug": "the-disappearance-of-maura-murray",
+      "image": "/images/episodes/jonbenet-ramsey-americas-child-beauty-queen.jpg",
+      "episode_slug": "jonbenet-ramsey-americas-child-beauty-queen",
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "moscow-idaho-the-plea",
@@ -33,7 +33,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "jonbenet-thirty-years",
@@ -50,7 +50,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "ted-bundy-and-the-murder-of-kimberly-leach",
@@ -67,7 +67,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-11-06T08:36:40.767069+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "golden-state-killer",
@@ -84,7 +84,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "gabby-petito",
@@ -101,7 +101,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "the-doomsday-mom",
@@ -118,24 +118,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-11-01T04:41:16.685548+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
-    },
-    {
-      "slug": "the-btk-floppy-disk",
-      "title": "The BTK Floppy Disk",
-      "summary": "Welcome back to CrimeTimeSnacks, I'm Cory. Today we're looking at one of the most infamous cold cases in American history, the BTK killer. For decades, a phantom haunted Wichita, Kansas, binding and suffocating victims while sending taunting letters to the police and media.\n\nBut after going completely silent for thirteen years, the killer made a fatal mistake. He decided to reach out one more time, mailing items to law enforcement that would finally unravel his double life as a family man and security alarm installer. We'll trace the timeline from his chilling childhood fantasies to the digital footprint that brought him down.",
-      "angle": "",
-      "years": "1974-2005",
-      "status": "convicted",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "/images/episodes/the-btk-floppy-disk.jpg",
-      "episode_slug": "the-btk-floppy-disk",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-10-03T03:40:30.155714+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "the-murdaugh-family-murders",
@@ -152,7 +135,24 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-24T05:44:46.08741+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
+    },
+    {
+      "slug": "maura-murray",
+      "title": "Maura Murray",
+      "summary": "A crashed car on Route 112 in New Hampshire, a disappearance in under ten minutes, and twenty years of no answers.",
+      "angle": "A crashed car on Route 112 in New Hampshire, a disappearance in under ten minutes, and twenty years of no answers.",
+      "years": "2004-present",
+      "status": "cold",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "/images/episodes/the-disappearance-of-maura-murray.jpg",
+      "episode_slug": "the-disappearance-of-maura-murray",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "gilgo-beach-eight-names",
@@ -169,7 +169,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-20T17:04:47.335399+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "long-island-serial-killer",
@@ -186,7 +186,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "chris-watts-confession",
@@ -203,7 +203,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "menendez-the-parole-years",
@@ -220,7 +220,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "the-menendez-brothers-parole-years",
@@ -237,7 +237,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-19T10:46:49.066069+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "murders-in-moscow",
@@ -254,75 +254,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
-    },
-    {
-      "slug": "elisa-lam",
-      "title": "Elisa Lam and the Cecil Hotel",
-      "summary": "The elevator footage, what the coroner actually concluded, and how the internet built a case that was never there.",
-      "angle": "The elevator footage, what the coroner actually concluded, and how the internet built a case that was never there.",
-      "years": "2013",
-      "status": "closed",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "/images/episodes/elisa-lam-and-the-cecil-hotel.jpg",
-      "episode_slug": "elisa-lam-and-the-cecil-hotel",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
-    },
-    {
-      "slug": "alex-murdaugh",
-      "title": "Alex Murdaugh",
-      "summary": "The kennel video timestamp, the financial crimes underneath the murders, and the 2023 verdict.",
-      "angle": "The kennel video timestamp, the financial crimes underneath the murders, and the 2023 verdict.",
-      "years": "2021-present",
-      "status": "open",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "",
-      "episode_slug": "",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
-    },
-    {
-      "slug": "btk-dennis-rader",
-      "title": "BTK: The Floppy Disk",
-      "summary": "How a metadata slip on a church computer ended thirty years of letters from Dennis Rader.",
-      "angle": "How a metadata slip on a church computer ended thirty years of letters from Dennis Rader.",
-      "years": "1974-2005",
-      "status": "convicted",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "",
-      "episode_slug": "",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
-    },
-    {
-      "slug": "zodiac-killer",
-      "title": "The Zodiac Killer",
-      "summary": "The confirmed attacks, the ciphers that were solved and the ones that were not, and why the case is still open.",
-      "angle": "The confirmed attacks, the ciphers that were solved and the ones that were not, and why the case is still open.",
-      "years": "1968-1969",
-      "status": "cold",
-      "category": "case",
-      "next_date": null,
-      "next_label": "",
-      "image": "",
-      "episode_slug": "",
-      "sources": [],
-      "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "brian-laundrie-notebook",
@@ -339,7 +271,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "kendrick-johnson",
@@ -356,7 +288,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "the-disappearance-of-laci-peterson",
@@ -373,7 +305,24 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-11-06T07:44:08.268988+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
+    },
+    {
+      "slug": "elisa-lam",
+      "title": "Elisa Lam and the Cecil Hotel",
+      "summary": "The elevator footage, what the coroner actually concluded, and how the internet built a case that was never there.",
+      "angle": "The elevator footage, what the coroner actually concluded, and how the internet built a case that was never there.",
+      "years": "2013",
+      "status": "closed",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "/images/episodes/elisa-lam-and-the-cecil-hotel.jpg",
+      "episode_slug": "elisa-lam-and-the-cecil-hotel",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "erik-and-lyle-the-menendez-brothers",
@@ -390,7 +339,58 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
+    },
+    {
+      "slug": "alex-murdaugh",
+      "title": "Alex Murdaugh",
+      "summary": "The kennel video timestamp, the financial crimes underneath the murders, and the 2023 verdict.",
+      "angle": "The kennel video timestamp, the financial crimes underneath the murders, and the 2023 verdict.",
+      "years": "2021-present",
+      "status": "open",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "",
+      "episode_slug": "",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
+    },
+    {
+      "slug": "btk-dennis-rader",
+      "title": "BTK: The Floppy Disk",
+      "summary": "How a metadata slip on a church computer ended thirty years of letters from Dennis Rader.",
+      "angle": "How a metadata slip on a church computer ended thirty years of letters from Dennis Rader.",
+      "years": "1974-2005",
+      "status": "convicted",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "/images/episodes/the-btk-floppy-disk.jpg",
+      "episode_slug": "the-btk-floppy-disk",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
+    },
+    {
+      "slug": "zodiac-killer",
+      "title": "The Zodiac Killer",
+      "summary": "The confirmed attacks, the ciphers that were solved and the ones that were not, and why the case is still open.",
+      "angle": "The confirmed attacks, the ciphers that were solved and the ones that were not, and why the case is still open.",
+      "years": "1968-1969",
+      "status": "cold",
+      "category": "case",
+      "next_date": null,
+      "next_label": "",
+      "image": "",
+      "episode_slug": "",
+      "sources": [],
+      "featured": false,
+      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "lori-vallow",
@@ -407,7 +407,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "scott-peterson",
@@ -424,7 +424,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "ted-bundy-escape",
@@ -441,7 +441,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "jonbenet-ramsey-dna",
@@ -458,7 +458,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "delphi-the-appeal",
@@ -475,7 +475,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-17T23:01:46.405034+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "the-zodiac-ciphers",
@@ -492,7 +492,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-11-06T08:12:07.439942+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "adnan-syed",
@@ -509,7 +509,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "amanda-knox",
@@ -526,7 +526,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "kohberger-trial",
@@ -543,7 +543,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "delphi-richard-allen",
@@ -560,7 +560,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "casey-anthony",
@@ -577,7 +577,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "steven-avery",
@@ -594,7 +594,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "madeleine-mccann",
@@ -611,7 +611,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "tylenol-murders",
@@ -628,7 +628,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "dnd-mcstay-family",
@@ -645,7 +645,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "the-delphi-murder-case-2017",
@@ -662,7 +662,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "the-miami-apartment-stabbing",
@@ -679,7 +679,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-21T02:23:51.906377+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "the-interrogation-of-chris-watts",
@@ -696,7 +696,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-18T12:30:03.688863+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "watts-family-murders",
@@ -713,7 +713,7 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
       "slug": "jonbenet-ramsey-the-facts-96-22",
@@ -730,23 +730,23 @@
       "sources": [],
       "featured": false,
       "created_at": "2026-09-05T23:28:46.665401+00:00",
-      "updated_at": "2026-11-06T08:36:40.767069+00:00"
+      "updated_at": "2026-11-22T05:10:08.510777+00:00"
     },
     {
-      "slug": "jonbenet-ramsey-americas-child-beauty-queen",
-      "title": "JonBenét Ramsey Americas Child Beauty Queen",
-      "summary": "In Boulder, Colorado, just a day after Christmas in 1996, JonBenét Ramsey, a six-year-old child pageant star, was found dead in her basement. She had been beaten and strangled. That was hours after her parents, John and Patsy, reported her missing, and hours after her mom found a ransom note on a staircase in the house. Nobody has ever been convicted in this case, even 26 years later. This is the lead-in to a two-part special where we go back to Christmas 1996 and look again at all the facts in this case.",
+      "slug": "the-btk-floppy-disk",
+      "title": "The BTK Floppy Disk",
+      "summary": "Welcome back to CrimeTimeSnacks, I'm Cory. Today we're looking at one of the most infamous cold cases in American history, the BTK killer. For decades, a phantom haunted Wichita, Kansas, binding and suffocating victims while sending taunting letters to the police and media.\n\nBut after going completely silent for thirteen years, the killer made a fatal mistake. He decided to reach out one more time, mailing items to law enforcement that would finally unravel his double life as a family man and security alarm installer. We'll trace the timeline from his chilling childhood fantasies to the digital footprint that brought him down.",
       "angle": "",
-      "years": "1996-present",
-      "status": "open",
+      "years": "1974-2005",
+      "status": "convicted",
       "category": "case",
       "next_date": null,
       "next_label": "",
-      "image": "/images/episodes/jonbenet-ramsey-americas-child-beauty-queen.jpg",
-      "episode_slug": "jonbenet-ramsey-americas-child-beauty-queen",
+      "image": "/images/episodes/the-btk-floppy-disk.jpg",
+      "episode_slug": "the-btk-floppy-disk",
       "sources": [],
       "featured": false,
-      "created_at": "2026-09-05T23:28:46.665401+00:00",
+      "created_at": "2026-10-03T03:40:30.155714+00:00",
       "updated_at": "2026-11-06T08:36:40.767069+00:00"
     }
   ],

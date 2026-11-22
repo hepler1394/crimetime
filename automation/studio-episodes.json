@@ -278,11 +278,11 @@
       "slug": "the-btk-floppy-disk",
       "date": "2026-10-03",
       "pubDate": "Sat, 03 Oct 2026 03:40:29 GMT",
-      "duration": "00:28:13",
-      "description": "For decades the BTK killer bound and suffocated victims in Wichita, Kansas, while sending taunting letters to the police and media. After thirteen years of silence he reached out one more time, mailing items to law enforcement that unraveled his double life as a family man and security alarm installer. The episode traces the timeline from his childhood fantasies to the digital footprint that brought him down.",
-      "audio": "/audio/the-btk-floppy-disk.mp3",
+      "duration": "00:28:18",
+      "description": "Welcome back to CrimeTimeSnacks, I'm Cory. Today we're looking at one of the most infamous cold cases in American history, the BTK killer. For decades, a phantom haunted Wichita, Kansas, binding and suffocating victims while sending taunting letters to the police and media.\n\nBut after going completely silent for thirteen years, the killer made a fatal mistake. He decided to reach out one more time, mailing items to law enforcement that would finally unravel his double life as a family man and security alarm installer. We'll trace the timeline from his chilling childhood fantasies to the digital footprint that brought him down.",
+      "audio": "/audio/the-btk-floppy-disk-r2.mp3",
       "audioType": "audio/mpeg",
-      "audioBytes": 27088081,
+      "audioBytes": 27175017,
       "image": "/images/episodes/the-btk-floppy-disk.jpg",
       "link": "",
       "explicit": false,
@@ -295,7 +295,8 @@
         "cold case",
         "serial killer",
         "metadata"
-      ]
+      ],
+      "caseSlug": "btk-dennis-rader"
     },
     {
       "guid": "cts-studio-the-doomsday-mom",
