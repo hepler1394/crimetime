@@ -138,3 +138,17 @@ test("a respelled name passes only as itself", () => {
   assert.deepEqual(m("Murdock"), []);
   assert.deepEqual(m("Murdaw"), ["MISHEARD"]);
 });
+
+// 2026-11-09: The Touch DNA of JonBenet sat unpublished for two weeks on three of these. The
+// pronunciation list maps "JonBenet" to "JonBenét", which is the same token, and registering
+// that as an alias sent the name down the strict branch where "John Benet" can never pass.
+test("JonBenet written as John Benet by the transcriber is not a finding", () => {
+  assert.deepEqual(kinds("the night JonBenet was found in the basement of the house", "the night John Benet was found in the basement of the house"), []);
+  assert.deepEqual(kinds("investigators on the JonBenet Ramsey case said that Smit was wrong", "investigators on the John Benet Ramsey case said that Smit was wrong"), []);
+});
+test("half of JonBenet going missing is still caught", () => {
+  assert.deepEqual(kinds("it had no effect on the JonBenet investigation. The State Bureau took over", "it had no effect on the Jon The State Bureau took over"), ["MISHEARD"]);
+});
+test("a real respelling stays strict: Murdaugh said as Murdaw is still wrong", () => {
+  assert.deepEqual(kinds(spoken("Alex Murdaugh was at the kennels that night"), "Alex Murdaw was at the kennels that night"), ["MISHEARD"]);
+});

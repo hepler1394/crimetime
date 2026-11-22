@@ -85,7 +85,12 @@ export function compareWords(paras, heardWords, audioOk = []) {
   const alias = new Map();
   for (const [say, real] of pronounceAliases()) {
     const st = tokens(say), rt = tokens(real);
-    if (st.length === 1 && rt.length === 1) alias.set(st[0], [...(alias.get(st[0]) || []), rt[0]]);
+    // A respelling that only adds an accent ("JonBenet" -> "JonBenét") is the same token as the
+    // real name, so it is not an alias at all. Registered as one, it sent every "JonBenet" down
+    // the strict branch below, where the transcriber's "John Benet" - two words for a name said
+    // correctly - can never pass and audioOk is not consulted. That held The Touch DNA of
+    // JonBenet for two weeks on a name the clone was saying right.
+    if (st.length === 1 && rt.length === 1 && st[0] !== rt[0]) alias.set(st[0], [...(alias.get(st[0]) || []), rt[0]]);
   }
   // Stricter than same(): the respelling exists because the real spelling reads as the wrong
   // sound ("Murdaugh" sounds like "murdaw" by the rules, which is the mistake), and sameSound

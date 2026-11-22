@@ -14,6 +14,10 @@
 //   node automation/episode-weekly.mjs --minutes 3
 //   node automation/episode-weekly.mjs --engine edge   skip the voice clone (fast)
 //   node automation/episode-weekly.mjs --no-publish    build it, do not publish whatever the gate says
+//   node automation/episode-weekly.mjs --retry-only    only give held drafts another go at the gates
+//   node automation/episode-weekly.mjs --no-retry      skip that and go straight to the next case
+//
+// Exit codes: 0 published (or nothing asked for), 3 built but held, 1 the run failed.
 //
 // Scheduled by cron/cts-episode.ps1 (Windows task "CTS Episode Draft", Mondays 08:00).
 // When it finishes it tells Cory over Telegram through the Hermes bridge on this PC.
@@ -80,8 +84,47 @@ async function nextCase() {
   return cases.find((c) => !used.has(c.slug)) || null;
 }
 
+// A draft that was built and held stays held until something tries again, and nothing did: on
+// 2026-11-21 two finished episodes had been sitting for one and two weeks, one of them on a
+// single misheard word. So each Monday starts by giving every recent held draft another go at
+// the same two gates. Only what needs no new words is attempted here: a claim the gate still
+// holds needs the sentence rewritten and re-voiced, which stays a person's (or Claude's) edit.
+async function retryHeld() {
+  const { readdir, stat } = await import("node:fs/promises");
+  const dir = join(here, "studio", "drafts");
+  const out = [];
+  let names = []; try { names = await readdir(dir); } catch { return out; }
+  for (const d of names.sort()) {
+    let ep; try { ep = JSON.parse(await readFile(join(dir, d, "episode.json"), "utf8")); } catch { continue; }
+    if (ep.status !== "ready") continue;
+    let mp3; try { mp3 = await stat(join(dir, d, "episode.mp3")); } catch { continue; }
+    if (Date.now() - mp3.mtimeMs > 35 * 86400000) continue;           // older than five weeks: leave it for a person
+    try {
+      console.log(`\n--- Held draft ${d}: trying the gates again ---`);
+      const check = step("episode-verify.mjs", [d]);
+      if (!check.publishable) { out.push(`"${ep.title}" still has ${check.held} claim(s) the notes do not carry (fact-check.md in ${d}).`); continue; }
+      let audio = step("episode-audit.mjs", [d]);
+      for (let round = 1; round <= 3 && !audio.clean && (audio.paragraphs || []).length; round++) {
+        const fixed = step("episode-repair.mjs", [d]);
+        if (!(fixed.repaired || fixed.dropped)) { audio = fixed; break; }
+        audio = step("episode-audit.mjs", [d]);
+      }
+      if (!audio.clean) { out.push(`"${ep.title}" still fails the audio audit (audio-audit.md in ${d}).`); continue; }
+      if (!publish) { out.push(`"${ep.title}" now passes both gates; publishing is off for this run.`); continue; }
+      const pub = step("episode-publish.mjs", [d, "--push"]);
+      out.push(`"${ep.title}" was held and is now published: ${pub.page}.`);
+    } catch (e) { out.push(`"${ep.title}": the retry failed (${String(e.message).slice(0, 160)}).`); }
+  }
+  return out;
+}
+
 const t0 = Date.now();
 try {
+  if (!process.argv.includes("--draft") && !args.includes("--no-retry")) {
+    const retried = await retryHeld();
+    if (retried.length) await notify(`CrimeTimeSnacks, held episodes:\n${retried.map((l) => `- ${l}`).join("\n")}`);
+    if (args.includes("--retry-only")) process.exit(0);
+  }
   // --draft <id>: take a script that already exists (re-drafted, revised or edited by hand) and
   // run it through the rest of the line: gate, voice, audio audit and repair, art, kit, publish.
   const given = (() => { const i = process.argv.indexOf("--draft"); return i > -1 ? process.argv[i + 1] : null; })();
@@ -100,7 +143,7 @@ try {
   // not stop the render: the checker being literal about a name leaves the script, and so
   // the audio, perfectly good, so the episode is built either way and the gate decides only
   // whether it goes out. The exception is directly below.
-  const check = step("episode-verify.mjs", [draft.id]);
+  let check = step("episode-verify.mjs", [draft.id]);
 
   // With one exception, and it is the one that cost a night. The reasoning above holds for a
   // gate being literal - a name or a figure the notes phrase differently leaves the script,
@@ -112,13 +155,29 @@ try {
   //
   // So those stop the run here, while the fix is still a text edit. Every other kind of hold
   // still builds, exactly as before.
-  const unsupported = (check.heldClaims || []).filter((h) => /fact-checker/.test(h.reason || ""));
-  if (unsupported.length) {
+  const unsupportedIn = (c) => (c.heldClaims || []).filter((h) => /fact-checker/.test(h.reason || ""));
+  // Called here and again after the repetition cut. The cut rebuilds the claim list, and until
+  // 2026-11-21 the gate was never asked again: five episodes in a row (Zodiac, Doomsday Mom,
+  // Maura Murray, Laci Peterson, Adnan Syed) carried new UNSUPPORTED claims into the render that
+  // this stop exists to prevent, and the last two drafts reached the publish step with none of
+  // their claims ticked. The script is still unvoiced at both call sites, so the writer gets one
+  // more pass at cutting or correcting what is unsupported before the run gives up.
+  const stopOnUnsupported = async (when) => {
+    let unsupported = unsupportedIn(check);
+    if (unsupported.length) {
+      console.log(`\n${unsupported.length} unsupported claim(s) ${when}. Revising before anything is voiced...`);
+      if (step("episode-revise.mjs", [draft.id], { optional: true })) {
+        check = step("episode-verify.mjs", [draft.id]);
+        unsupported = unsupportedIn(check);
+      }
+    }
+    if (!unsupported.length) return;
     const lines = unsupported.map((h) => `  - ${String(h.claim).replace(/^UNSUPPORTED:\s*/, "").split(" (notes:")[0]}`).join("\n");
-    const msg = `${draft.id} has ${unsupported.length} claim(s) the drafter's own fact-checker marked unsupported. Each has to be cut or sourced, which rewrites the paragraph and means re-voicing it, so nothing was rendered:\n${lines}\nFix them in the draft and run it again.`;
+    const msg = `${draft.id} has ${unsupported.length} claim(s) the drafter's own fact-checker marked unsupported ${when}, and a revision pass did not clear them. Each has to be cut or sourced, which rewrites the paragraph and means re-voicing it, so nothing was rendered:\n${lines}\nFix them in the draft and run it again.`;
     await notify(`CrimeTimeSnacks: ${msg}`);
     throw new Error(msg);
-  }
+  };
+  await stopOnUnsupported("at the fact gate");
 
   // Length preflight. episode-publish.mjs refuses a render under twenty minutes, and
   // finding that out afterwards costs the whole render. Measure the script against the
@@ -155,6 +214,9 @@ try {
       throw new Error(msg);
     }
     console.log(`  Now ${(rep.share * 100).toFixed(1)}% (${rep.verdict}).`);
+    // The cut replaced the claim list. Ask the gate again about the script that will be voiced.
+    check = step("episode-verify.mjs", [draft.id]);
+    await stopOnUnsupported("after the repetition cut");
     // Cutting repetition takes words out, and the floor is judged on words. Ask again.
     const after = step("episode-length.mjs", [draft.id], { optional: true });
     if (after?.willFail) {
@@ -174,12 +236,17 @@ try {
   // The audio gate: listen to the render, re-voice the paragraphs the clone got wrong, and only
   // then cut the reel and trailer from it. episode-publish.mjs refuses an unaudited render.
   let audio = step("episode-audit.mjs", [draft.id]);
-  if (!audio.clean && (audio.paragraphs || []).length) {
+  // Up to three rounds. One was not enough: every full listen is a new transcriber draw, so the
+  // re-audit of a clean repair can flag a paragraph the first listen passed (Adnan Syed, 11-16:
+  // 7, 14 and 82 repaired, then 8 flagged), and with a single round that left a finished episode
+  // held on one word. Six Monday runs in a row ended that way.
+  for (let round = 1; round <= 3 && !audio.clean && (audio.paragraphs || []).length; round++) {
     const fixed = step("episode-repair.mjs", [draft.id, ...remote]);
     // A splice makes a different file, and the rule is that the audio that goes out is the audio
     // that was audited. Re-audit the render the repair produced rather than trusting the
     // paragraph-by-paragraph check that built it; that is also what cuts the digest for it.
-    audio = (fixed.repaired || fixed.dropped) ? step("episode-audit.mjs", [draft.id]) : fixed;
+    if (!(fixed.repaired || fixed.dropped)) { audio = fixed; break; }
+    audio = step("episode-audit.mjs", [draft.id]);
   }
   step("episode-art.mjs", [draft.id]);
   step("episode-social.mjs", [draft.id]);
@@ -200,6 +267,9 @@ try {
         `\nThe full list is in automation/studio/drafts/${draft.id}/fact-check.md. Clear them in the studio and press Publish, or tell Claude to. Took ${mins} min.`;
   console.log(`\n${msg}`);
   await notify(msg);
+  // Built and held is not a success. This used to exit 0, so Task Scheduler showed Last Result 0
+  // and cron.log said EPISODE OK for seven Mondays in which nothing was published.
+  if (publish && !pub) process.exit(3);
 } catch (e) {
   const msg = `CrimeTimeSnacks: the weekly episode job failed. ${e.message}`.slice(0, 600);
   console.error(`\n${msg}`);

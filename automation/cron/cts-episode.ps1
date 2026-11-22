@@ -28,6 +28,10 @@ cmd /c "node automation\episode-weekly.mjs $flag >> ""$log"" 2>&1"
 $code = $LASTEXITCODE
 if ($code -eq 0) {
     Add-Content -Path $log -Value "$(Get-Date -Format o)  EPISODE OK" -Encoding UTF8
+} elseif ($code -eq 3) {
+    # Built, audited and NOT published: a claim or the audio is held. Not a crash, not a success.
+    Add-Content -Path $log -Value "$(Get-Date -Format o)  EPISODE HELD  built but not published (read the lines above)" -Encoding UTF8
+    exit $code
 } else {
     Add-Content -Path $log -Value "$(Get-Date -Format o)  EPISODE ERROR  node exited $code (read the lines above)" -Encoding UTF8
     exit $code

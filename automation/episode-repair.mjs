@@ -123,7 +123,12 @@ const drops = Object.keys(spliceEdits).filter((k) => spliceEdits[k].drop).map(Nu
 const renum = (i) => i - drops.filter((d) => d < i).length;
 const fresh = JSON.parse(await readFile(epPath, "utf8"));
 fresh.audioAudit = { ...(fresh.audioAudit || {}), at: new Date().toISOString(), repaired: Object.keys(accepted).map(Number).map(renum), unresolved: remaining.map(renum),
-  paragraphs: remaining.map(renum), findings: remaining.length, clean: remaining.length === 0, seconds: spliced?.seconds ?? fresh.audioAudit?.seconds, history };
+  paragraphs: remaining.map(renum), findings: remaining.length, clean: remaining.length === 0,
+  // Only the re-voiced paragraphs were listened to. The spliced file as a whole has not been:
+  // episode-audit.mjs clears this, and episode-publish.mjs will not take a render that carries it.
+  // Without it a repair stamped the episode clean at a time newer than the mp3, which is exactly
+  // what the publish gate checks, and Miami sat "clean" on a file nobody had listened to.
+  partial: Object.keys(accepted).length > 0 || drops.length > 0, seconds: spliced?.seconds ?? fresh.audioAudit?.seconds, history };
 await writeFile(epPath, JSON.stringify(fresh, null, 2) + "\n", "utf8");
 // Keep the attempts when something is still unresolved: they are minutes of CPU each, and a
 // person (or a tuned checker) may find one of them was fine all along.
