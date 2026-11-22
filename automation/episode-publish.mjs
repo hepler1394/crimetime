@@ -27,6 +27,7 @@
 
 import { readFile, writeFile, copyFile, mkdir, stat, rm } from "node:fs/promises";
 import { spawnSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { loadStudioEpisodes, mergeEpisodes, STUDIO_EPISODES } from "./episodes-merge.mjs";
@@ -102,7 +103,23 @@ if (!pushOnly) {
   if (!ep.title || !ep.description) die("meta", "Title and show notes are required before publishing.");
   const facts = ep.factsToVerify || [], ticked = ep.factsChecked || [];
   const open = facts.filter((_, i) => !ticked[i]).length;
-  if (open && !skipFacts) die("facts", `${open} claim${open === 1 ? " is" : "s are"} still unticked in the studio. Read the Facts tab, tick what you have confirmed, then publish.`);
+  // A correction to an episode that is already out is judged on the paragraphs it changed.
+  // Cory, 2026-11-21: "Yes, changed parts only". Everything else in the script is word for word
+  // what is already public, so a claim held there cannot make the replacement worse than the
+  // recording it replaces, and holding the replacement keeps a known error live. The check is
+  // episode-delta-check.mjs, and it only counts if it was run on exactly this script.
+  let deltaOk = false;
+  if (open && replaceAudio && !skipFacts) {
+    try {
+      const dc = JSON.parse(await readFile(join(dir, "delta-check.json"), "utf8"));
+      const now = createHash("sha256").update((ep.script || []).filter(Boolean).map((t) => String(t).replace(/\s+/g, " ").trim()).join("\n")).digest("hex");
+      deltaOk = dc.ok === true && dc.scriptHash === now;
+      if (deltaOk) process.stderr.write(`NOTE: ${open} claim(s) are unticked in paragraphs this correction did not change; the ${dc.paragraphs.length} changed paragraph(s) passed the delta check (${dc.claims} claims, ${dc.checkedBy}).\n`);
+    } catch { /* no delta check: the ordinary rule applies */ }
+  }
+  if (open && !skipFacts && !deltaOk) die("facts", replaceAudio
+    ? `${open} claim${open === 1 ? " is" : "s are"} unticked and the changed paragraphs have not passed a delta check on this script. Run: node automation/episode-delta-check.mjs ${id}`
+    : `${open} claim${open === 1 ? " is" : "s are"} still unticked in the studio. Read the Facts tab, tick what you have confirmed, then publish.`);
   if (open && skipFacts) process.stderr.write(`WARNING: publishing with ${open} unticked claim(s) because --skip-facts was passed.\n`);
   // The audio gate. Cory, 2026-09-18: "always..always audit the audio". The fact gate reads
   // text; the Petito episode passed it and went out saying "Capra One". Nothing publishes

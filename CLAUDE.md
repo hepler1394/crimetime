@@ -98,6 +98,17 @@ repo, push to main deploys) plus the automation that runs the show. Read
   `episode-audit.mjs` has listened to the whole spliced file, and publish refuses a partial one.
   A claim the gate still holds needs its sentence rewritten and re-voiced with
   `episode-repair.mjs --edits`; that stays an edit, never a tick.
+- A correction to a published episode is judged on the paragraphs it changed. Cory, 2026-11-21,
+  asked whether a correction should publish when only its changed paragraphs pass the strict
+  check: "Yes, changed parts only". Gemini's credit ran out that night, Claude took over the
+  fact check (`automation/llm.mjs` reads the Anthropic key in place from
+  the-baseline/.env.local), and it is stricter: 46 of 273 claims held in a script Gemini had
+  passed whole, many of them invented colour ("she waited for hours"). Held to the whole
+  script, no correction could replace a live recording, the Murdaugh one that says he is
+  presumed innocent included. `episode-delta-check.mjs` checks every paragraph that is not word
+  for word in the published transcript, and `episode-publish.mjs --replace-audio` accepts
+  that result only for exactly the script it was run on. A new episode still needs every
+  claim on its list; nothing about this applies to one.
 - A replaced recording gets a line in `automation/corrections.json` the day it goes out, not
   before. Corrected audio is published with `episode-publish.mjs <id> --replace-audio --push`.
 - One page per case. `automation/case-canon.mjs` names each subject's surviving slug and its
