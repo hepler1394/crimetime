@@ -49,6 +49,7 @@ automation/cron/cron.log.old
 automation/studio/.venv/
 automation/studio/models/
 automation/studio/research/
+automation/studio/render.lock
 
 .vercel
 .env*

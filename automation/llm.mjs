@@ -8,6 +8,8 @@
 
 import { readFile } from "node:fs/promises";
 import { readFileSync } from "node:fs";
+import { spawn } from "node:child_process";
+import { tmpdir } from "node:os";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { unlockConfig } from './studio/credential-store.mjs';
@@ -19,7 +21,7 @@ const SHARED_ENV_FILES = ["D:/Dev/GitHub/the-baseline/.env.local"];
 function sharedKey(name) {
   for (const f of SHARED_ENV_FILES) {
     try {
-      const m = readFileSync(f, "utf8").match(new RegExp("^\s*" + name + "\s*=\s*(.+)\s*$", "m"));
+      const m = readFileSync(f, "utf8").match(new RegExp("^\\s*" + name + "\\s*=\\s*(.+?)\\s*$", "m"));
       if (m) return m[1].trim().replace(/^["']|["']$/g, "");
     } catch { /* not on this machine */ }
   }
@@ -44,7 +46,14 @@ export async function loadConfig() {
   const e = process.env;
   // LLM_ORDER=gemini,anthropic keeps a run off a provider without editing config.json, e.g.
   // off the local model while an audio render has every core.
-  cfg.order = (e.LLM_ORDER && e.LLM_ORDER.split(",").map((x) => x.trim()).filter(Boolean)) || cfg.order || ["gemini", "deepseek", "anthropic", "openai", "local"];
+  cfg.order = (e.LLM_ORDER && e.LLM_ORDER.split(",").map((x) => x.trim()).filter(Boolean)) || cfg.order || ["gemini", "deepseek", "anthropic", "claude-cli", "openai", "local"];
+  // A config.json written before 2026-11-22 lists its own order without the signed-in CLI. Put it
+  // straight after the API key it stands in for, unless the order was set by hand for this run.
+  if (!e.LLM_ORDER && !cfg.order.includes("claude-cli")) { const at = cfg.order.indexOf("anthropic"); cfg.order = [...cfg.order]; cfg.order.splice(at < 0 ? cfg.order.length : at + 1, 0, "claude-cli"); }
+  cfg.claudeCli = cfg.claudeCli || {};
+  cfg.claudeCli.bin = e.CLAUDE_CLI || cfg.claudeCli.bin || "claude";
+  cfg.claudeCli.model = cfg.claudeCli.model || "sonnet";
+  cfg.claudeCli.writerModel = cfg.claudeCli.writerModel || "opus";
   cfg.gemini = cfg.gemini || {};
   // CTS_GEMINI_API_KEY lets the show bill to a key of its own. GEMINI_API_KEY is set
   // machine-wide and every other program on this PC reads it too, so on the shared key
@@ -253,6 +262,50 @@ async function anthropic({ apiKey, model, maxOutputTokens = 2000 }, system, user
   return (data.content || []).filter((b) => b.type === "text").map((b) => b.text).join("");
 }
 
+// Claude through the Claude Code CLI Cory is signed in to, not through an API key. On 2026-11-22
+// at 02:36 the Anthropic key shared with the-baseline answered "You have reached your specified
+// API usage limits. You will regain access on 2026-12-01", five hours after Gemini's prepaid
+// credit ran out, and from then on every fact list, revision and draft had no model at all: nine
+// overnight corrections stopped there and the Monday episode would not have been written. The
+// CLI bills to the Claude subscription, so it is still there when both keys are spent.
+// No tools, no MCP servers, no hooks, no project files: one prompt in, one answer out.
+function claudeCli({ bin, model }, system, user, ms, { signal } = {}) {
+  return new Promise((resolve, reject) => {
+    // The system prompt rides on the command line, and Windows caps that near 32k characters.
+    const long = system.length > 6000;
+    const args = ["-p", "--safe-mode", "--strict-mcp-config", "--tools", "", "--model", model, "--output-format", "json", "--no-session-persistence",
+      "--system-prompt", long ? "Follow the INSTRUCTIONS section of the message exactly. Answer with the requested output only." : system];
+    // Without the key in its environment the CLI uses the signed-in account. With it, it would go
+    // straight back to the key that is out of credit.
+    const env = { ...process.env }; for (const k of ["ANTHROPIC_API_KEY", "CLAUDECODE", "CLAUDE_CODE_ENTRYPOINT"]) delete env[k];
+    let child;
+    try { child = spawn(bin, args, { cwd: tmpdir(), env, windowsHide: true, stdio: ["pipe", "pipe", "pipe"] }); }
+    catch (err) { reject(Object.assign(err, { retryable: false })); return; }
+    let out = "", errText = "", done = false;
+    const finish = (fn, v) => { if (done) return; done = true; clearTimeout(timer); signal?.removeEventListener("abort", stop); fn(v); };
+    const stop = () => { child.kill(); finish(reject, new Error("Generation stopped.")); };
+    const timer = setTimeout(() => { child.kill(); finish(reject, Object.assign(new Error(`no answer from the Claude CLI in ${Math.round(ms / 1000)}s`), { name: "TimeoutError" })); }, ms);
+    if (signal?.aborted) { stop(); return; }
+    signal?.addEventListener("abort", stop, { once: true });
+    child.stdout.on("data", (d) => { out += d; });
+    child.stderr.on("data", (d) => { errText += d; });
+    child.on("error", (err) => finish(reject, Object.assign(new Error(`could not start the Claude CLI (${err.code || err.message})`), { retryable: false })));
+    child.on("close", (code) => {
+      let j = null; try { j = JSON.parse(out.trim().split(/\r?\n/).pop()); } catch { /* not JSON: reported below */ }
+      const said = String(j?.result ?? "").replace(/\s+/g, " ").trim();
+      if (!j || j.is_error || code !== 0) {
+        const why = (said || errText.replace(/\s+/g, " ").trim() || `exit ${code}`).slice(0, 240);
+        // A usage limit or a signed-out CLI will say the same thing a second later.
+        return finish(reject, Object.assign(new Error(`Claude CLI: ${why}`), { retryable: !/limit|log ?in|auth|credit|not found/i.test(why) }));
+      }
+      if (j.stop_reason === "max_tokens") return finish(reject, Object.assign(new Error("The model reached its output limit. Ask for a shorter section."), { retryable: false }));
+      finish(resolve, String(j.result ?? ""));
+    });
+    child.stdin.on("error", () => { /* the child went away first; close reports why */ });
+    child.stdin.end(long ? ["INSTRUCTIONS:", system, "", user].join("\n") : user);
+  });
+}
+
 // Returns { text, provider } using the first provider that works, in config order.
 // cfg.timeoutMs: deadline for long generations. cfg.jsonMode: cloud models must
 // return one JSON object. cfg.role === "writer": use the stronger Gemini model.
@@ -306,6 +359,14 @@ export async function chat(system, user, cfg) {
       } else if (name === "anthropic" && cfg.anthropic.apiKey) {
         const model = cfg.role === "writer" ? cfg.anthropic.writerModel : cfg.anthropic.model;
         return { text: await withRetry(cfg, `anthropic (${model})`, () => anthropic({ ...cfg.anthropic, model, maxOutputTokens: Math.min(16000, cloudCap(cfg, "anthropic")) }, system, user, cfg.timeoutMs || 120000, opts)), provider: `anthropic (${model})` };
+      } else if (name === "claude-cli") {
+        const model = cfg.role === "writer" ? cfg.claudeCli.writerModel : cfg.claudeCli.model;
+        const text = await withRetry(cfg, `claude-cli (${model})`, async () => {
+          const t = await claudeCli({ ...cfg.claudeCli, model }, system, user, cfg.timeoutMs || 300000, opts);
+          if (!t.trim()) throw Object.assign(new Error("returned empty text"), { retryable: true });
+          return t;
+        });
+        return { text, provider: `claude-cli (${model})` };
       } else if (name === "xai" && cfg.xai.apiKey && cfg.xai.model) {
         return { text: await withRetry(cfg, "xai", () => openAiCompatible({ ...cfg.xai, maxOutputTokens: cloudCap(cfg, "xai") }, system, user, cfg.timeoutMs || 60000, opts)), provider: "xai" };
       } else if (name === "openai" && cfg.openai.apiKey) {

@@ -119,4 +119,18 @@ repo, push to main deploys) plus the automation that runs the show. Read
   (`ANALYTICS_SRC`) and feed enclosures go through OP3 (`ENCLOSURE_PREFIX` in
   `automation/build-feed.mjs`; download numbers are public at op3.dev). `privacy.html` says both.
   After a deploy that adds pages, `node automation/indexnow.mjs --submit`.
+- The fact check always has a model. `automation/llm.mjs` tries gemini, deepseek, anthropic,
+  claude-cli, openai, local, in that order. `claude-cli` is the Claude Code CLI Cory is signed in
+  to (`claude -p`, no tools, no MCP), so it bills to his Claude subscription and not to a key.
+  Added 2026-11-22: Gemini's prepaid credit ran out on 11-21, the Anthropic key shared with
+  the-baseline hit its monthly usage limit at 02:36 the next morning (strict fact checks send the
+  whole research file with every chapter), and nine overnight corrections stopped with no checker.
+- One clone render or audio audit at a time on this PC. The scheduled weekly job waits
+  (`waitForIdle` in `episode-weekly.mjs`) while a clone, voice, audit or repair step is running,
+  or while `automation/studio/render.lock` holds a live pid. A queue of renders started by hand
+  writes that lock for its whole life.
+- A rewritten script goes back to `status: "scripted"` and through the ordinary line with
+  `node automation/episode-weekly.mjs --draft <id>`: claim list, gate, length, repetition, voice,
+  audit and repair, art, kit, publish. A call to action for the site ("follow this case at
+  crimetimesnacks.com") is not in any research file, so the gate holds it; leave it out of scripts.
 - Test with `npm test` (build + link check) before pushing.

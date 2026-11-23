@@ -118,8 +118,41 @@ async function retryHeld() {
   return out;
 }
 
+// One clone render or audio audit at a time on this PC. Both want every core, and two at once
+// are slow enough to look hung and can run the machine out of commit ("the paging file is too
+// small", os error 1455, 2026-11-21). The scheduled run is the one that can wait: on 2026-11-22
+// a re-voice of two rewritten episodes was still going on the Sunday night before a Monday 08:00
+// start. --draft runs are started by hand, in order, and do not wait on each other.
+// A process is busy if it is the clone, a voice, audit or repair step, or another weekly run
+// working on a named draft. automation/studio/render.lock holding a live pid counts too, for a
+// queue that has a gap between two renders.
+async function waitForIdle(maxHours = 14) {
+  if (process.platform !== "win32") return;
+  const { existsSync, readFileSync } = await import("node:fs");
+  const lock = join(here, "studio", "render.lock");
+  const busy = () => {
+    try {
+      const pid = Number(JSON.parse(readFileSync(lock, "utf8")).pid);
+      if (pid && pid !== process.pid) { process.kill(pid, 0); return `render.lock held by pid ${pid}`; }
+    } catch { /* no lock, or the process that wrote it is gone */ }
+    const ps = "Get-CimInstance Win32_Process | Where-Object { $_.Name -notmatch 'powershell|pwsh' -and $_.ProcessId -ne " + process.pid +
+      " -and $_.CommandLine -match 'tts_clone[.]py|episode-(voice|audit|repair)[.]mjs|episode-weekly[.]mjs.+--draft' } | ForEach-Object { $_.CommandLine }";
+    const r = spawnSync("powershell", ["-NoProfile", "-NonInteractive", "-Command", ps], { encoding: "utf8", windowsHide: true });
+    const first = (r.stdout || "").trim().split(/\r?\n/).filter(Boolean)[0];
+    return first ? first.replace(/\s+/g, " ").slice(-90) : "";
+  };
+  const until = Date.now() + maxHours * 3600000;
+  let told = 0;
+  for (let what = busy(); what; what = busy()) {
+    if (Date.now() > until) throw new Error(`another render or audit was still running after ${maxHours} hours (${what}); this run did not start.`);
+    if (Date.now() - told > 30 * 60000) { console.log(`${new Date().toISOString()} waiting: a render or audit is already running (${what}).`); told = Date.now(); }
+    await new Promise((r) => setTimeout(r, 5 * 60000));
+  }
+}
+
 const t0 = Date.now();
 try {
+  if (!process.argv.includes("--draft")) await waitForIdle();
   if (!process.argv.includes("--draft") && !args.includes("--no-retry")) {
     const retried = await retryHeld();
     if (retried.length) await notify(`CrimeTimeSnacks, held episodes:\n${retried.map((l) => `- ${l}`).join("\n")}`);
