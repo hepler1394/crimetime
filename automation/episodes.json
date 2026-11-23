@@ -296,11 +296,11 @@
       "slug": "delphi-update-the-richard-allen-appeal",
       "date": "2026-09-19",
       "pubDate": "Sat, 19 Sep 2026 13:00:00 GMT",
-      "duration": "00:20:11",
-      "description": "Three judges, thirty minutes a side. On September 21, 2026, the Indiana Court of Appeals hears Richard Allen's challenge to his conviction for the murders of Abby Williams and Libby German. Hey everyone, it's Cory. This time on CrimeTimeSnacks: everything that has happened in the Delphi case since my 2022 episode. The misfiled tip, the arrest, the confessions from a prison cell, the trial, the 130-year sentence, and the three questions now in front of the appeals court, with the state's answer to each. He is convicted and he is appealing. Both of those are true.",
-      "audio": "/audio/delphi-update-the-richard-allen-appeal.mp3",
+      "duration": "00:20:24",
+      "description": "Three judges, one question. On September 21, 2026, the Indiana Court of Appeals heard Richard Allen's challenge to his conviction for the murders of Abby Williams and Libby German. As of early October 2026, it has not ruled. Hey everyone, it's Cory. This time on CrimeTimeSnacks: everything that has happened in the Delphi case since my 2022 episode. The misfiled tip, the arrest, the confessions from a prison cell, the trial, the 130-year sentence, and the three questions in front of the appeals court, with the state's answer to each. He is convicted and he is appealing. Both of those are true.",
+      "audio": "/audio/delphi-update-the-richard-allen-appeal-r2.mp3",
       "audioType": "audio/mpeg",
-      "audioBytes": 19373808,
+      "audioBytes": 19592400,
       "image": "/images/episodes/delphi-update-the-richard-allen-appeal.jpg",
       "link": "",
       "explicit": false,
@@ -312,7 +312,8 @@
         "Richard Allen",
         "Monon High Bridge",
         "Indiana Court of Appeals"
-      ]
+      ],
+      "caseSlug": "delphi-the-appeal"
     },
     {
       "guid": "cts-studio-the-menendez-brothers-parole-years",

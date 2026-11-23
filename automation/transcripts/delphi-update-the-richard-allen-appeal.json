@@ -2,1459 +2,1464 @@
  "slug": "delphi-update-the-richard-allen-appeal",
  "title": "Delphi: The Appeal",
  "language": "en",
- "duration": 1210.8,
- "model": "episode script, timed to the recording (paragraphs read against the audit transcript)",
- "generated": "2026-09-25",
+ "duration": 1224.4,
+ "model": "episode script, timed to the recording",
+ "generated": "2026-11-22",
  "note": "This transcript is the episode script as written and fact-checked, timed to the recording. Timestamps are approximate within a sentence.",
  "segments": [
   {
    "start": 5,
-   "end": 7.6,
+   "end": 7.8,
    "text": "What's up guys, welcome back to CrimeTimeSnacks."
   },
   {
-   "start": 7.6,
-   "end": 16.6,
-   "text": "On Monday, September 21, 2026, at ten in the morning, three judges of the Indiana Court of Appeals are scheduled to sit in the Supreme Court Courtroom at the Indiana Statehouse."
+   "start": 7.8,
+   "end": 13.6,
+   "text": "On Monday, September 21, 2026, three judges of the Indiana Court of Appeals heard Richard Allen's appeal."
   },
   {
-   "start": 16.6,
-   "end": 18.2,
-   "text": "Each side gets thirty minutes."
+   "start": 13.6,
+   "end": 16.4,
+   "text": "The argument ran about an hour and fifteen minutes."
   },
   {
-   "start": 18.2,
-   "end": 21.9,
+   "start": 16.4,
+   "end": 20.3,
    "text": "The question in front of them is whether Richard Allen got a fair trial."
   },
   {
-   "start": 22.4,
-   "end": 27.1,
+   "start": 20.3,
+   "end": 22.7,
+   "text": "As of early October 2026, they had not ruled."
+  },
+  {
+   "start": 23.2,
+   "end": 27.2,
    "text": "If you listened to my Delphi episode back in 2022, you know where we left it."
   },
   {
-   "start": 27.1,
-   "end": 30.7,
-   "text": "Two girls, a bridge, a few seconds of video, and no arrest."
+   "start": 27.2,
+   "end": 34.7,
+   "text": "Richard Allen had just been arrested, he had pleaded not guilty, and the judge had sealed the document explaining why police arrested him."
   },
   {
-   "start": 30.7,
-   "end": 32.5,
+   "start": 34.7,
+   "end": 36.4,
    "text": "A lot has happened since then."
   },
   {
-   "start": 32.5,
-   "end": 33.8,
-   "text": "There was an arrest."
-  },
-  {
-   "start": 33.8,
-   "end": 34.9,
+   "start": 36.4,
+   "end": 37.3,
    "text": "There was a trial."
   },
   {
-   "start": 34.9,
-   "end": 37.9,
+   "start": 37.3,
+   "end": 39.9,
    "text": "There was a verdict, and a sentence of 130 years."
   },
   {
-   "start": 38.5,
-   "end": 41.6,
+   "start": 40.5,
+   "end": 43.6,
    "text": "So let me be clear about where things stand before we start."
   },
   {
-   "start": 41.6,
-   "end": 44,
+   "start": 43.6,
+   "end": 45.9,
    "text": "Richard Allen is not an accused man anymore."
   },
   {
-   "start": 44,
-   "end": 47.4,
+   "start": 45.9,
+   "end": 49.4,
    "text": "A jury convicted him of murdering Abby Williams and Libby German."
   },
   {
-   "start": 47.4,
-   "end": 51.1,
+   "start": 49.4,
+   "end": 53,
    "text": "He is also a man with an appeal pending, and he has the right to make it."
   },
   {
-   "start": 51.1,
-   "end": 55.8,
+   "start": 53,
+   "end": 57.7,
    "text": "An appeal is not proof that the jury got it wrong, and it is not proof that they got it right."
   },
   {
-   "start": 55.8,
-   "end": 57,
+   "start": 57.7,
+   "end": 59,
    "text": "It is a set of questions."
   },
   {
-   "start": 57,
-   "end": 63.5,
+   "start": 59,
+   "end": 65.5,
    "text": "Today I want to walk you through how this case got to a verdict, and then through the three questions his lawyers are asking."
   },
   {
-   "start": 63.5,
-   "end": 64.4,
+   "start": 65.5,
+   "end": 66.4,
    "text": "Let's unpack it."
   },
   {
-   "start": 65,
-   "end": 68.4,
+   "start": 66.9,
+   "end": 70.4,
    "text": "I am going to keep the recap short, because most of you know it."
   },
   {
-   "start": 68.4,
-   "end": 77.7,
+   "start": 70.4,
+   "end": 79.6,
    "text": "At one thirty in the afternoon on February 13, 2017, Libby German's older sister, Kelsi, dropped two girls off on County Road 300 North, outside Delphi, Indiana."
   },
   {
-   "start": 77.7,
-   "end": 78.8,
+   "start": 79.6,
+   "end": 80.8,
    "text": "Libby was fourteen."
   },
   {
-   "start": 78.8,
-   "end": 81.2,
+   "start": 80.8,
+   "end": 83.2,
    "text": "Her friend, Abby Williams, was thirteen."
   },
   {
-   "start": 81.2,
-   "end": 88.3,
+   "start": 83.2,
+   "end": 90.2,
    "text": "They had the day off from school, and they were going to walk the Monon High Bridge, an abandoned rail bridge over Deer Creek."
   },
   {
-   "start": 88.8,
-   "end": 91.8,
+   "start": 90.8,
+   "end": 93.8,
    "text": "At 2:07, Libby posted a photo of Abby walking the bridge."
   },
   {
-   "start": 91.8,
-   "end": 94.1,
+   "start": 93.8,
+   "end": 96.1,
    "text": "After that, nobody heard from them again."
   },
   {
-   "start": 94.1,
-   "end": 96.8,
+   "start": 96.1,
+   "end": 98.8,
    "text": "They were supposed to meet Libby's father at 3:15."
   },
   {
-   "start": 96.8,
-   "end": 97.9,
+   "start": 98.8,
+   "end": 99.9,
    "text": "They did not show up."
   },
   {
-   "start": 97.9,
-   "end": 102.6,
+   "start": 99.9,
+   "end": 104.5,
    "text": "The families searched on their own first, and at 5:30 the girls were reported missing."
   },
   {
-   "start": 102.6,
-   "end": 107.9,
+   "start": 104.5,
+   "end": 109.8,
    "text": "Around noon the next day, Valentine's Day, their bodies were found on the north bank of Deer Creek."
   },
   {
-   "start": 108.4,
-   "end": 111.6,
+   "start": 110.4,
+   "end": 113.6,
    "text": "What made this case different from the start was Libby's phone."
   },
   {
-   "start": 111.6,
-   "end": 115.1,
+   "start": 113.6,
+   "end": 117,
    "text": "When a man came up behind them on that bridge, she started recording."
   },
   {
-   "start": 115.1,
-   "end": 123.2,
+   "start": 117,
+   "end": 125.1,
    "text": "Two days after the murders, Indiana State Police were already circulating a grainy still image of a man walking the rail bridge, hands in his pockets, head down."
   },
   {
-   "start": 123.2,
-   "end": 125.1,
+   "start": 125.1,
+   "end": 127.1,
    "text": "People started calling him Bridge Guy."
   },
   {
-   "start": 125.1,
-   "end": 128.6,
+   "start": 127.1,
+   "end": 130.6,
    "text": "On February 22, police released a piece of audio from the same phone."
   },
   {
-   "start": 128.6,
-   "end": 131.1,
+   "start": 130.6,
+   "end": 133,
    "text": "It is a man's voice, muffled, saying three words."
   },
   {
-   "start": 131.1,
-   "end": 131.8,
+   "start": 133,
+   "end": 133.8,
    "text": "Down the hill."
   },
   {
-   "start": 132.3,
-   "end": 135.6,
+   "start": 134.3,
+   "end": 137.6,
    "text": "Police called Libby a hero for having the presence of mind to record it."
   },
   {
-   "start": 135.6,
-   "end": 141.2,
+   "start": 137.6,
+   "end": 143.1,
    "text": "They also said there was more on the phone, and that they were holding it back so they would not compromise a future trial."
   },
   {
-   "start": 141.2,
-   "end": 143.4,
+   "start": 143.1,
+   "end": 145.4,
    "text": "At that point the reward stood at 41,000 dollars."
   },
   {
-   "start": 144,
-   "end": 145.1,
+   "start": 146,
+   "end": 147.1,
    "text": "Then the years went by."
   },
   {
-   "start": 145.1,
-   "end": 147,
+   "start": 147.1,
+   "end": 149,
    "text": "A composite sketch came out that July."
   },
   {
-   "start": 147,
-   "end": 152,
+   "start": 149,
+   "end": 154,
    "text": "In April 2019, State Police announced what they called a new direction and released a second sketch."
   },
   {
-   "start": 152,
-   "end": 160.6,
+   "start": 154,
+   "end": 162.6,
    "text": "They told the public the killer might be hiding in plain sight, and that he was almost certainly familiar with Delphi, from living there, working there, or some other reason."
   },
   {
-   "start": 160.6,
-   "end": 162,
+   "start": 162.6,
+   "end": 163.9,
    "text": "They were right about that."
   },
   {
-   "start": 162,
-   "end": 164.3,
+   "start": 163.9,
+   "end": 166.3,
    "text": "They just did not know they already had his name."
   },
   {
-   "start": 164.9,
-   "end": 168.7,
+   "start": 166.8,
+   "end": 170.6,
    "text": "In that same 2019 announcement, police asked for help with one more thing."
   },
   {
-   "start": 168.7,
-   "end": 178.3,
+   "start": 170.6,
+   "end": 180.3,
    "text": "They wanted to identify the driver of a vehicle that had been left at the former Child Services office, just off the Hoosier Heartland Highway, between noon and five on the day of the murders."
   },
   {
-   "start": 178.3,
-   "end": 181.4,
+   "start": 180.3,
+   "end": 183.4,
    "text": "Over the years, investigators ran down thousands of leads."
   },
   {
-   "start": 181.4,
-   "end": 183,
+   "start": 183.4,
+   "end": 185,
    "text": "None of them ended in an arrest."
   },
   {
-   "start": 183.5,
-   "end": 188.8,
+   "start": 185.5,
+   "end": 190.8,
    "text": "Three days after the murders, a man walked up to an Indiana conservation officer who was helping on the case."
   },
   {
-   "start": 188.8,
-   "end": 190.9,
+   "start": 190.8,
+   "end": 192.9,
    "text": "They talked in a grocery store parking lot."
   },
   {
-   "start": 190.9,
-   "end": 196.9,
+   "start": 192.9,
+   "end": 198.8,
    "text": "The man said he had been on the trails the afternoon the girls disappeared, and that he had passed three girls along the way."
   },
   {
-   "start": 196.9,
-   "end": 198.2,
+   "start": 198.8,
+   "end": 200.2,
    "text": "His name was Richard Allen."
   },
   {
-   "start": 198.8,
-   "end": 201.3,
+   "start": 200.7,
+   "end": 203.2,
    "text": "The officer typed up his notes and turned them in."
   },
   {
-   "start": 201.3,
-   "end": 203.1,
+   "start": 203.2,
+   "end": 205.1,
    "text": "And then the paperwork went nowhere."
   },
   {
-   "start": 203.1,
-   "end": 207.6,
+   "start": 205.1,
+   "end": 209.6,
    "text": "Allen's last name was recorded incorrectly on the tip, and the file was marked cleared."
   },
   {
-   "start": 207.6,
-   "end": 209.2,
+   "start": 209.6,
+   "end": 211.1,
    "text": "It sat like that for five years."
   },
   {
-   "start": 209.7,
-   "end": 215.8,
+   "start": 211.7,
+   "end": 217.7,
    "text": "In September 2022, a volunteer file clerk named Kathy Shank was helping investigators organize thousands of old tips."
   },
   {
-   "start": 215.8,
-   "end": 222.8,
+   "start": 217.7,
+   "end": 224.8,
    "text": "She found the conservation officer's notes, worked out that the tip was about Richard Allen, and brought it to the investigator on the case."
   },
   {
-   "start": 222.8,
-   "end": 226,
+   "start": 224.8,
+   "end": 227.9,
    "text": "At trial, Carroll County Sheriff Tony Liggett put it this way."
   },
   {
-   "start": 226,
-   "end": 229.5,
+   "start": 227.9,
+   "end": 231.5,
    "text": "The tip fell in the cracks, he said, and Allen was hiding in plain sight."
   },
   {
-   "start": 230.1,
-   "end": 231.7,
+   "start": 232,
+   "end": 233.6,
    "text": "Things moved fast after that."
   },
   {
-   "start": 231.7,
-   "end": 234.5,
+   "start": 233.6,
+   "end": 236.5,
    "text": "On October 13, 2022, police interviewed Allen again."
   },
   {
-   "start": 234.5,
-   "end": 240.5,
+   "start": 236.5,
+   "end": 242.4,
    "text": "He told them he had worn jeans and a black or blue jacket that day, and that he had gone out to the bridge to watch fish."
   },
   {
-   "start": 240.5,
-   "end": 243,
+   "start": 242.4,
+   "end": 245,
    "text": "Police searched his home and recovered a pistol."
   },
   {
-   "start": 243,
-   "end": 246.9,
+   "start": 245,
+   "end": 248.9,
    "text": "Remember that pistol, because it becomes the center of the physical case."
   },
   {
-   "start": 247.5,
-   "end": 250.7,
+   "start": 249.5,
+   "end": 252.7,
    "text": "On October 26, 2022, Richard Allen was taken into custody."
   },
   {
-   "start": 250.7,
-   "end": 255.4,
+   "start": 252.7,
+   "end": 257.4,
    "text": "On October 31, State Police announced he had been charged with two counts of murder."
   },
   {
-   "start": 255.4,
-   "end": 256.6,
+   "start": 257.4,
+   "end": 258.6,
    "text": "He pleaded not guilty."
   },
   {
-   "start": 256.6,
-   "end": 263.1,
+   "start": 258.6,
+   "end": 265.1,
    "text": "Time magazine called it the first major break in a case that had captivated national attention for nearly six years."
   },
   {
-   "start": 263.6,
-   "end": 268.6,
+   "start": 265.6,
+   "end": 270.5,
    "text": "A month later, Judge Frances Gull unsealed the probable cause affidavit, with redactions."
   },
   {
-   "start": 268.6,
-   "end": 277.8,
+   "start": 270.5,
+   "end": 279.8,
    "text": "According to that document, the video from Libby's phone showed one of the girls mentioning a gun as a man in a dark jacket and jeans approached and ordered them down the hill."
   },
   {
-   "start": 277.8,
-   "end": 284.2,
+   "start": 279.8,
+   "end": 286.2,
    "text": "Investigators had found an unspent forty caliber round less than two feet from one of the bodies, between the two girls."
   },
   {
-   "start": 284.2,
-   "end": 289.9,
+   "start": 286.2,
+   "end": 291.8,
    "text": "One witness described a man walking away from the bridge in a blue jacket and blue jeans, muddy and bloody."
   },
   {
-   "start": 289.9,
-   "end": 293.6,
+   "start": 291.8,
+   "end": 295.5,
    "text": "Another described a car parked oddly, as if to hide its license plate."
   },
   {
-   "start": 293.6,
-   "end": 297.4,
+   "start": 295.5,
+   "end": 299.3,
    "text": "Investigators said the description matched a car Allen owned in 2017."
   },
   {
-   "start": 297.9,
-   "end": 298.6,
+   "start": 299.9,
+   "end": 300.6,
    "text": "So who was he?"
   },
   {
-   "start": 298.6,
-   "end": 303,
+   "start": 300.6,
+   "end": 304.9,
    "text": "Richard Matthew Allen was born in September 1972 and grew up in Mexico, Indiana."
   },
   {
-   "start": 303,
-   "end": 312,
+   "start": 304.9,
+   "end": 313.9,
    "text": "He played football and ran track in high school, graduated in 1991, studied accounting at a community college, and had short stints in the Army and the National Guard."
   },
   {
-   "start": 312,
-   "end": 313.7,
+   "start": 313.9,
+   "end": 315.7,
    "text": "He married and had one daughter."
   },
   {
-   "start": 314.3,
-   "end": 317.3,
+   "start": 316.2,
+   "end": 319.3,
    "text": "From 2003 to 2013 he managed a Walmart in Logansport."
   },
   {
-   "start": 317.3,
-   "end": 319.4,
+   "start": 319.3,
+   "end": 321.4,
    "text": "In December 2006 he moved to Delphi."
   },
   {
-   "start": 319.4,
-   "end": 325.2,
+   "start": 321.4,
+   "end": 327.2,
    "text": "After Walmart, he went to work for CVS, and he got his pharmacy technician license in February 2018."
   },
   {
-   "start": 325.2,
-   "end": 327.2,
+   "start": 327.2,
+   "end": 329.2,
    "text": "That is one year after the murders."
   },
   {
-   "start": 327.8,
-   "end": 329.8,
+   "start": 329.8,
+   "end": 331.8,
    "text": "Delphi is a town of about 3,000 people."
   },
   {
-   "start": 329.8,
-   "end": 333.5,
+   "start": 331.8,
+   "end": 335.5,
    "text": "One resident told A&E that he was a familiar face if you went into the CVS."
   },
   {
-   "start": 333.5,
-   "end": 337.6,
+   "start": 335.5,
+   "end": 339.5,
    "text": "And there is one detail that people in town could not get past after the arrest."
   },
   {
-   "start": 337.6,
-   "end": 344.4,
+   "start": 339.5,
+   "end": 346.3,
    "text": "Libby's grandmother, Becky Patty, told reporters that Allen had printed photos of the two girls, at no charge, for their funerals."
   },
   {
-   "start": 344.4,
-   "end": 346.6,
+   "start": 346.3,
+   "end": 348.6,
    "text": "Years later, in court, she said it this way."
   },
   {
-   "start": 346.6,
-   "end": 349.6,
+   "start": 348.6,
+   "end": 351.6,
    "text": "He developed photos with no remorse, and he didn't blink."
   },
   {
-   "start": 350.2,
-   "end": 352.4,
+   "start": 352.1,
+   "end": 354.4,
    "text": "Allen never hid the fact that he was out there."
   },
   {
-   "start": 352.4,
-   "end": 356.2,
+   "start": 354.4,
+   "end": 358.1,
    "text": "Shortly after the murders he told his wife he had been on the trail that day."
   },
   {
-   "start": 356.2,
-   "end": 367.8,
+   "start": 358.1,
+   "end": 369.8,
    "text": "After his arrest, he told investigators he had been at his mother's house in Peru, Indiana, that morning, got to the trail around midday, saw three girls pass by, saw nobody else, and watched a stock ticker on his phone while he walked."
   },
   {
-   "start": 368.5,
-   "end": 370.6,
+   "start": 370.4,
+   "end": 372.5,
    "text": "His defense would later point at all of this."
   },
   {
-   "start": 370.6,
-   "end": 373.6,
+   "start": 372.5,
+   "end": 375.5,
    "text": "He lived in Delphi for more than five years after the killings."
   },
   {
-   "start": 373.6,
-   "end": 374.9,
+   "start": 375.5,
+   "end": 376.8,
    "text": "He went to police on his own."
   },
   {
-   "start": 374.9,
-   "end": 381.3,
+   "start": 376.8,
+   "end": 383.3,
    "text": "The prosecution pointed at the same facts and saw something else: a man who put himself on that trail at the time the girls disappeared."
   },
   {
-   "start": 381.8,
-   "end": 384.8,
+   "start": 383.8,
+   "end": 386.8,
    "text": "The trial was originally set for March 20, 2023."
   },
   {
-   "start": 384.8,
-   "end": 389.2,
+   "start": 386.8,
+   "end": 391.2,
    "text": "It did not start until October 2024, and the road in between was rough."
   },
   {
-   "start": 389.7,
-   "end": 392.5,
+   "start": 391.7,
+   "end": 394.5,
    "text": "In December 2022, Judge Gull put a gag order on the case."
   },
   {
-   "start": 392.5,
-   "end": 399.3,
+   "start": 394.5,
+   "end": 401.3,
    "text": "The defense asked to move the trial out of Carroll County, arguing that the extensive media attention made a fair local jury impossible."
   },
   {
-   "start": 399.3,
-   "end": 407.9,
+   "start": 401.3,
+   "end": 409.8,
    "text": "Two public defenders, Brad Rozzi and Andrew Baldwin, were appointed to represent Allen, and the first trial date was pushed back so they could get through the discovery."
   },
   {
-   "start": 408.4,
-   "end": 412.4,
+   "start": 410.4,
+   "end": 414.3,
    "text": "Then, in October 2023, crime scene photos leaked from the defense team's office."
   },
   {
-   "start": 412.4,
-   "end": 416,
+   "start": 414.3,
+   "end": 418,
    "text": "Judge Gull removed both attorneys from the case, citing gross negligence."
   },
   {
-   "start": 416,
-   "end": 420.3,
+   "start": 418,
+   "end": 422.2,
    "text": "The attorneys took that to the Indiana Supreme Court, and the justices reinstated them."
   },
   {
-   "start": 420.3,
-   "end": 422.1,
+   "start": 422.2,
+   "end": 424.1,
    "text": "Those photos never went away, either."
   },
   {
-   "start": 422.1,
-   "end": 430,
+   "start": 424.1,
+   "end": 432,
    "text": "After sentencing, the prosecutor said they were still out there, and he asked anyone who receives them to delete them rather than put the families through it again."
   },
   {
-   "start": 430.6,
-   "end": 433.4,
+   "start": 432.5,
+   "end": 435.4,
    "text": "The other fight was over what the defense wanted to argue."
   },
   {
-   "start": 433.4,
-   "end": 440,
+   "start": 435.4,
+   "end": 442,
    "text": "Allen's lawyers suggested the girls were killed as part of a pagan ritual sacrifice, by followers of Odinism, a Norse pagan religion."
   },
   {
-   "start": 440,
-   "end": 449.8,
+   "start": 442,
+   "end": 451.8,
    "text": "They accused police of ignoring evidence from the crime scene, and they pointed to a search warrant request from March 2017 in which an FBI agent said the bodies appeared to have been moved and staged."
   },
   {
-   "start": 449.8,
-   "end": 453.8,
+   "start": 451.8,
+   "end": 455.8,
    "text": "Judge Gull repeatedly rejected motions to bring that theory in front of the jury."
   },
   {
-   "start": 453.8,
-   "end": 455,
+   "start": 455.8,
+   "end": 456.9,
    "text": "Hold on to that ruling."
   },
   {
-   "start": 455,
-   "end": 458.4,
+   "start": 456.9,
+   "end": 460.4,
    "text": "It is one of the three things the Court of Appeals is being asked about."
   },
   {
-   "start": 459,
-   "end": 462.5,
+   "start": 460.9,
+   "end": 464.5,
    "text": "While all of that was going on, Richard Allen was not sitting in a county jail."
   },
   {
-   "start": 462.5,
-   "end": 470.4,
+   "start": 464.5,
+   "end": 472.4,
    "text": "He was being held at Westville Correctional Facility, a state prison, and his lawyers say he spent thirteen months in solitary confinement before he got his day in court."
   },
   {
-   "start": 471,
-   "end": 473.2,
+   "start": 472.9,
+   "end": 475.2,
    "text": "Here is what the jury heard about that time."
   },
   {
-   "start": 473.2,
-   "end": 476,
+   "start": 475.2,
+   "end": 478,
    "text": "Monica Wala was the lead psychologist at Westville."
   },
   {
-   "start": 476,
-   "end": 479,
+   "start": 478,
+   "end": 481,
    "text": "She testified that Allen first told her he was innocent."
   },
   {
-   "start": 479,
-   "end": 483,
+   "start": 481,
+   "end": 485,
    "text": "In April 2023, around the time he was put back on suicide watch, that changed."
   },
   {
-   "start": 483,
-   "end": 484.6,
+   "start": 485,
+   "end": 486.6,
    "text": "He was on suicide watch twice."
   },
   {
-   "start": 484.6,
-   "end": 493.9,
+   "start": 486.6,
+   "end": 495.9,
    "text": "According to her testimony, he showed bizarre behavior, including eating his own feces and banging his head, and at one point he was diagnosed with a brief psychotic disorder."
   },
   {
-   "start": 494.5,
-   "end": 495.8,
+   "start": 496.4,
+   "end": 497.8,
    "text": "And he started confessing."
   },
   {
-   "start": 495.8,
-   "end": 500,
+   "start": 497.8,
+   "end": 501.9,
    "text": "On April 3, 2023, on a recorded call to his wife, Kathy, he said, I killed Abby and Libby."
   },
   {
-   "start": 500,
-   "end": 502,
+   "start": 501.9,
+   "end": 504,
    "text": "When she pushed back, he said, I think I did."
   },
   {
-   "start": 502,
-   "end": 502.7,
+   "start": 504,
+   "end": 504.6,
    "text": "I don't know."
   },
   {
-   "start": 502.7,
-   "end": 505.6,
+   "start": 504.6,
+   "end": 507.6,
    "text": "I wish they would kill me and let me apologize to the families."
   },
   {
-   "start": 505.6,
-   "end": 511.6,
+   "start": 507.6,
+   "end": 513.5,
    "text": "On a call with his mother the following month he said, I'm just worried you guys aren't going to love me because I said I did it."
   },
   {
-   "start": 512.2,
-   "end": 514.9,
+   "start": 514.1,
+   "end": 516.9,
    "text": "Wala testified that Allen told her, I killed Abby and Libby."
   },
   {
-   "start": 514.9,
-   "end": 515.4,
+   "start": 516.9,
+   "end": 517.4,
    "text": "I'm sorry."
   },
   {
-   "start": 515.4,
-   "end": 523.6,
+   "start": 517.4,
+   "end": 525.5,
    "text": "She said he told her he had originally planned to sexually assault the girls, that he ran when he saw a van nearby, and that he cut their throats and covered their bodies with sticks."
   },
   {
-   "start": 524.1,
-   "end": 527.1,
+   "start": 526.1,
+   "end": 529.1,
    "text": "Prosecutors counted more than sixty of these statements."
   },
   {
-   "start": 527.1,
-   "end": 527.7,
+   "start": 529.1,
+   "end": 529.7,
    "text": "To his wife."
   },
   {
-   "start": 527.7,
-   "end": 528.4,
+   "start": 529.7,
+   "end": 530.4,
    "text": "To his mother."
   },
   {
-   "start": 528.4,
-   "end": 532.4,
+   "start": 530.4,
+   "end": 534.3,
    "text": "To the psychologist, the warden, other prison employees, and other inmates."
   },
   {
-   "start": 532.4,
-   "end": 534.4,
+   "start": 534.3,
+   "end": 536.3,
    "text": "In person, on the phone, and in writing."
   },
   {
-   "start": 534.9,
-   "end": 541.5,
+   "start": 536.9,
+   "end": 543.4,
    "text": "The defense called Deanna Dwenger, a clinical psychologist who worked for the Department of Correction's behavioral health service."
   },
   {
-   "start": 541.5,
-   "end": 551.4,
+   "start": 543.4,
+   "end": 553.4,
    "text": "She testified that in April 2023, the same month the confessions began, Allen was diagnosed with a serious mental illness, and that a team of mental health professionals concluded he had a grave disability."
   },
   {
-   "start": 551.4,
-   "end": 555.4,
+   "start": 553.4,
+   "end": 557.4,
    "text": "A neuropsychologist hired by the defense testified to pretty severe depression."
   },
   {
-   "start": 555.9,
-   "end": 557.7,
+   "start": 557.9,
+   "end": 559.7,
    "text": "So both sides agree that he said it."
   },
   {
-   "start": 557.7,
-   "end": 562.2,
+   "start": 559.7,
+   "end": 564.2,
    "text": "What they disagree about is what state he was in when he said it, and whose fault that was."
   },
   {
-   "start": 562.2,
-   "end": 564.3,
+   "start": 564.2,
+   "end": 566.3,
    "text": "That is the second question in the appeal."
   },
   {
-   "start": 564.9,
-   "end": 570.4,
+   "start": 566.9,
+   "end": 572.4,
    "text": "The trial began on October 18, 2024, in Delphi, in front of a sequestered jury of seven women and five men."
   },
   {
-   "start": 570.4,
-   "end": 572.6,
+   "start": 572.4,
+   "end": 574.6,
    "text": "There were seventeen days of testimony."
   },
   {
-   "start": 572.6,
-   "end": 581.7,
+   "start": 574.6,
+   "end": 583.6,
    "text": "People were so desperate to get in that, according to one resident, podcasters and YouTubers were paying people to sit in lawn chairs overnight to hold their place in line."
   },
   {
-   "start": 582.2,
-   "end": 583.5,
+   "start": 584.2,
+   "end": 585.5,
    "text": "The first day set the tone."
   },
   {
-   "start": 583.5,
-   "end": 589.1,
+   "start": 585.5,
+   "end": 591.1,
    "text": "Becky Patty, Libby's grandmother, took the stand and described her last conversation with her granddaughter."
   },
   {
-   "start": 589.1,
-   "end": 590.8,
+   "start": 591.1,
+   "end": 592.8,
    "text": "She had told Libby to take a jacket."
   },
   {
-   "start": 590.8,
-   "end": 592.7,
+   "start": 592.8,
+   "end": 594.6,
    "text": "Libby answered, Grandma, I'll be OK."
   },
   {
-   "start": 593.3,
-   "end": 595.6,
+   "start": 595.3,
+   "end": 597.6,
    "text": "Prosecutor Nick McLeland's theory was simple."
   },
   {
-   "start": 595.6,
-   "end": 597,
+   "start": 597.6,
+   "end": 599,
    "text": "Richard Allen is Bridge Guy."
   },
   {
-   "start": 597,
-   "end": 600.2,
+   "start": 599,
+   "end": 602.2,
    "text": "He forced the girls down the hill at gunpoint, and he killed them."
   },
   {
-   "start": 600.2,
-   "end": 603.1,
+   "start": 602.2,
+   "end": 605.1,
    "text": "Prosecutors told the jury both girls had their throats cut."
   },
   {
-   "start": 603.1,
-   "end": 605.7,
+   "start": 605.1,
+   "end": 607.6,
    "text": "Abby was found fully clothed, in Libby's clothing."
   },
   {
-   "start": 605.7,
-   "end": 606.7,
+   "start": 607.6,
+   "end": 608.7,
    "text": "Libby was found nude."
   },
   {
-   "start": 606.7,
-   "end": 613.3,
+   "start": 608.7,
+   "end": 615.2,
    "text": "The phone was found underneath Abby's body, and McLeland later praised Abby for hiding it from the killer so that police could find it."
   },
   {
-   "start": 613.8,
-   "end": 617.9,
+   "start": 615.8,
+   "end": 619.9,
    "text": "The state showed jurors a digitally enhanced, 43-second version of Libby's video."
   },
   {
-   "start": 617.9,
-   "end": 627.5,
+   "start": 619.9,
+   "end": 629.5,
    "text": "State Police Master Trooper Brian Harshman testified that he had listened to more than 700 of Allen's prison phone calls, and that in his opinion the voice of Bridge Guy is the voice of Richard Allen."
   },
   {
-   "start": 627.5,
-   "end": 632,
+   "start": 629.5,
+   "end": 634,
    "text": "Witnesses said they saw a man on the trail that day whose clothes matched the man in the video."
   },
   {
-   "start": 632,
-   "end": 635.6,
+   "start": 634,
+   "end": 637.6,
    "text": "Investigators testified that Allen was off work that day and had no alibi."
   },
   {
-   "start": 636.2,
-   "end": 637.1,
+   "start": 638.2,
+   "end": 639,
    "text": "Then the round."
   },
   {
-   "start": 637.1,
-   "end": 649,
+   "start": 639,
+   "end": 651,
    "text": "A State Police firearms examiner testified that the unspent forty caliber cartridge found between the girls had been cycled through Allen's pistol, a Sig Sauer P226, based on the quality and quantity of the marks on it."
   },
   {
-   "start": 649,
-   "end": 651.9,
+   "start": 651,
+   "end": 653.9,
    "text": "That was the state's key piece of physical evidence."
   },
   {
-   "start": 652.5,
-   "end": 656.6,
+   "start": 654.5,
+   "end": 658.6,
    "text": "And the jury heard the confessions, including the phone calls, in Allen's own voice."
   },
   {
-   "start": 656.6,
-   "end": 662,
+   "start": 658.6,
+   "end": 664,
    "text": "A journalist who sat through the trial, Susan Hendricks, said he did not sound psychotic or manic on those calls."
   },
   {
-   "start": 662,
-   "end": 664.3,
+   "start": 664,
+   "end": 666.3,
    "text": "She said it sounded like a casual conversation."
   },
   {
-   "start": 664.9,
-   "end": 668.9,
+   "start": 666.9,
+   "end": 670.8,
    "text": "Brad Rozzi's closing argument for the defense came down to three things."
   },
   {
-   "start": 668.9,
-   "end": 669.9,
+   "start": 670.8,
+   "end": 671.9,
    "text": "A broken timeline."
   },
   {
-   "start": 669.9,
-   "end": 671,
+   "start": 671.9,
+   "end": 673,
    "text": "False confessions."
   },
   {
-   "start": 671,
-   "end": 672.3,
+   "start": 673,
+   "end": 674.3,
    "text": "And no DNA and no weapon."
   },
   {
-   "start": 672.8,
-   "end": 677.9,
+   "start": 674.8,
+   "end": 679.8,
    "text": "On the physical evidence, the defense had a real point, and the state's own witness made it for them."
   },
   {
-   "start": 677.9,
-   "end": 682.3,
+   "start": 679.8,
+   "end": 684.3,
    "text": "A DNA expert testifying for the prosecution found none of Allen's DNA at the crime scene."
   },
   {
-   "start": 682.3,
-   "end": 686.1,
+   "start": 684.3,
+   "end": 688.1,
    "text": "None of Abby's or Libby's DNA was found on anything recovered from his home."
   },
   {
-   "start": 686.1,
-   "end": 687.9,
+   "start": 688.1,
+   "end": 689.8,
    "text": "The murder weapon was never found."
   },
   {
-   "start": 688.4,
-   "end": 696.4,
+   "start": 690.4,
+   "end": 698.4,
    "text": "On the round, the defense asked why more images had not been taken of the cartridge, and suggested it could have come from a law enforcement officer's weapon."
   },
   {
-   "start": 697,
-   "end": 704.1,
+   "start": 698.9,
+   "end": 706.1,
    "text": "On identification, Rozzi told jurors that no witness clearly identified Allen as the man on the trail or on the bridge that afternoon."
   },
   {
-   "start": 704.6,
-   "end": 711.2,
+   "start": 706.6,
+   "end": 713.2,
    "text": "And on the confessions, the defense said they were false, the product of months in solitary confinement while his mental health fell apart."
   },
   {
-   "start": 711.2,
-   "end": 716.5,
+   "start": 713.2,
+   "end": 718.4,
    "text": "Their argument was that you cannot take the words of a man in that condition and treat them like a calm admission."
   },
   {
-   "start": 717,
-   "end": 719.9,
+   "start": 719,
+   "end": 721.8,
    "text": "Rozzi closed with the fact that Allen never left town."
   },
   {
-   "start": 719.9,
-   "end": 724.2,
+   "start": 721.8,
+   "end": 726.2,
    "text": "He had every chance to run, he told the jury, but he did not, because he didn't do it."
   },
   {
-   "start": 724.7,
-   "end": 730.2,
+   "start": 726.7,
+   "end": 732.2,
    "text": "Nick McLeland had already walked the jury through the evidence, the photos, the video, and the recorded calls."
   },
   {
-   "start": 730.2,
-   "end": 736.2,
+   "start": 732.2,
+   "end": 738.1,
    "text": "He told them he believed the evidence was firmly convincing that Richard Allen is Bridge Guy, and he killed Abby and Libby."
   },
   {
-   "start": 736.7,
-   "end": 738.8,
+   "start": 738.7,
+   "end": 740.8,
    "text": "The jury got the case on Thursday, November 7."
   },
   {
-   "start": 738.8,
-   "end": 743.1,
+   "start": 740.8,
+   "end": 745.1,
    "text": "Before the verdict came in, Judge Gull said something from the bench that turned out to be true."
   },
   {
-   "start": 743.1,
-   "end": 746.7,
+   "start": 745.1,
+   "end": 748.6,
    "text": "Regardless of what the verdict is, she said, people aren't going to be happy."
   },
   {
-   "start": 747.2,
-   "end": 750.3,
+   "start": 749.2,
+   "end": 752.2,
    "text": "They deliberated for about nineteen hours over three days."
   },
   {
-   "start": 750.3,
-   "end": 759.9,
+   "start": 752.2,
+   "end": 761.8,
    "text": "On November 11, 2024, they found Richard Allen guilty on all four counts: two counts of murder and two counts of felony murder, for killing each girl while attempting to commit kidnapping."
   },
   {
-   "start": 760.4,
-   "end": 762.4,
+   "start": 762.4,
+   "end": 764.4,
    "text": "Allen sat without emotion as it was read."
   },
   {
-   "start": 762.4,
-   "end": 765.1,
+   "start": 764.4,
+   "end": 767.1,
    "text": "Outside the courthouse the crowd broke into applause."
   },
   {
-   "start": 765.1,
-   "end": 768,
+   "start": 767.1,
+   "end": 770,
    "text": "Some people out there were holding signs supporting him."
   },
   {
-   "start": 768,
-   "end": 771.4,
+   "start": 770,
+   "end": 773.4,
    "text": "His wife, Kathy, told a reporter on her way out, this isn't over at all."
   },
   {
-   "start": 772,
-   "end": 774,
+   "start": 773.9,
+   "end": 776,
    "text": "Sentencing was December 20, 2024."
   },
   {
-   "start": 774,
-   "end": 776.9,
+   "start": 776,
+   "end": 778.9,
    "text": "The seats reserved for Allen's family were empty."
   },
   {
-   "start": 776.9,
-   "end": 778.6,
+   "start": 778.9,
+   "end": 780.5,
    "text": "None of his relatives came."
   },
   {
-   "start": 778.6,
-   "end": 787.7,
+   "start": 780.5,
+   "end": 789.6,
    "text": "Judge Gull gave him sixty-five years for each murder, to be served one after the other, 130 years in total, with credit for the 760 days he had already served."
   },
   {
-   "start": 788.2,
-   "end": 792.2,
+   "start": 790.2,
+   "end": 794.2,
    "text": "The gag order came off that day, and for the first time the families could talk."
   },
   {
-   "start": 792.2,
-   "end": 797.3,
+   "start": 794.2,
+   "end": 799.3,
    "text": "Becky Patty told the court, I can never change my choice to let Libby and Abby go to the trails that day."
   },
   {
-   "start": 797.3,
-   "end": 806.9,
+   "start": 799.3,
+   "end": 808.9,
    "text": "Abby's grandmother, Diane Erskin, said she never let herself leave the courtroom, even during the worst testimony, because Abby's last words on the recording were, don't leave me up here."
   },
   {
-   "start": 807.5,
-   "end": 810.7,
+   "start": 809.5,
+   "end": 812.7,
    "text": "Libby's grandfather, Mike Patty, spoke directly to Allen."
   },
   {
-   "start": 810.7,
-   "end": 813.1,
+   "start": 812.7,
+   "end": 815.1,
    "text": "You need to stand up, he said, and not appeal."
   },
   {
-   "start": 813.6,
-   "end": 821.3,
+   "start": 815.6,
+   "end": 823.3,
    "text": "And Judge Gull told him, I've spent 27 years as a judge, and you rank right up there with the most heinous crimes in the state of Indiana."
   },
   {
-   "start": 821.3,
-   "end": 825,
+   "start": 823.3,
+   "end": 827,
    "text": "These families, she said, will deal with your carnage forever."
   },
   {
-   "start": 825.6,
-   "end": 832,
+   "start": 827.5,
+   "end": 834,
    "text": "State Police Lieutenant Jerry Holeman told the judge the girls had been stalked, kidnapped, humiliated, and treated like animals."
   },
   {
-   "start": 832,
-   "end": 836,
+   "start": 834,
+   "end": 838,
    "text": "He called Allen manipulative and persuasive, and said he showed a lack of remorse."
   },
   {
-   "start": 836,
-   "end": 840.5,
+   "start": 838,
+   "end": 842.4,
    "text": "Libby's mother, Carrie Timmons, said Allen's decisions had created a path of destruction."
   },
   {
-   "start": 841,
-   "end": 845,
+   "start": 843,
+   "end": 847.3,
    "text": "Afterward, Sheriff Liggett apologized to the families for how long it had taken."
   },
   {
-   "start": 845,
-   "end": 847.6,
+   "start": 847.3,
+   "end": 850,
    "text": "There will never be any closure in this case, he said."
   },
   {
-   "start": 847.6,
-   "end": 851,
+   "start": 850,
+   "end": 853.6,
    "text": "A form of justice was served, but it does not bring Abby or Libby back."
   },
   {
-   "start": 851,
-   "end": 857.3,
+   "start": 853.6,
+   "end": 860.4,
    "text": "And under Indiana law, a person convicted of more than one murder who receives a sentence like this one is not eligible for parole."
   },
   {
-   "start": 857.3,
-   "end": 860.1,
-   "text": "Unless a court steps in, Richard Allen will die in prison."
+   "start": 860.4,
+   "end": 864.1,
+   "text": "Richard Allen was 52 years old when he was sentenced to those 130 years."
   },
   {
-   "start": 860.7,
-   "end": 861.3,
+   "start": 864.6,
+   "end": 865.3,
    "text": "He appealed."
   },
   {
-   "start": 861.3,
-   "end": 865.3,
+   "start": 865.3,
+   "end": 869.2,
    "text": "Allen went first to Westville and then to Pendleton Correctional Facility."
   },
   {
-   "start": 865.3,
-   "end": 873,
+   "start": 869.2,
+   "end": 877,
    "text": "On July 18, 2025, Indiana moved him out of state, to the Lexington Assessment and Reception Center, a maximum-security prison in Lexington, Oklahoma."
   },
   {
-   "start": 873,
-   "end": 876.4,
+   "start": 877,
+   "end": 880.4,
    "text": "The Department of Correction described the move as a precaution."
   },
   {
-   "start": 876.4,
-   "end": 885.3,
+   "start": 880.4,
+   "end": 889.2,
    "text": "That April, the interrogation videos and the recorded confession calls that had been played at trial were released to the public, so anyone can now hear what the jury heard."
   },
   {
-   "start": 885.8,
-   "end": 889.7,
+   "start": 889.8,
+   "end": 893.7,
    "text": "His appellate lawyers asked for more time more than once."
   },
   {
-   "start": 889.7,
-   "end": 893.8,
+   "start": 893.7,
+   "end": 897.8,
    "text": "On December 17, 2025, they filed their brief, 113 pages long."
   },
   {
-   "start": 893.8,
-   "end": 898.4,
+   "start": 897.8,
+   "end": 902.4,
    "text": "The Indiana Attorney General's office answered on March 25, 2026."
   },
   {
-   "start": 898.4,
-   "end": 905.2,
+   "start": 902.4,
+   "end": 909.2,
    "text": "The defense filed a reply on April 27, along with a motion asking the judges to hear the case in person."
   },
   {
-   "start": 905.2,
-   "end": 907.2,
+   "start": 909.2,
+   "end": 911.1,
    "text": "On May 14, the court said yes."
   },
   {
-   "start": 907.7,
-   "end": 911.6,
+   "start": 911.7,
+   "end": 915.5,
    "text": "The panel is Judges Nancy Vaidik, Elaine Brown, and Robert Altice."
   },
   {
-   "start": 911.6,
-   "end": 916.6,
+   "start": 915.5,
+   "end": 920.6,
    "text": "The record in front of them is 22 volumes of trial transcript and 15 volumes of exhibits."
   },
   {
-   "start": 916.6,
-   "end": 918.6,
+   "start": 920.6,
+   "end": 922.6,
    "text": "And the brief raises three issues."
   },
   {
-   "start": 918.6,
-   "end": 924.1,
+   "start": 922.6,
+   "end": 928,
    "text": "I will take them one at a time, with the state's answer to each, because you deserve to hear both."
   },
   {
-   "start": 924.6,
-   "end": 927.6,
+   "start": 928.6,
+   "end": 931.6,
    "text": "The first issue is the search of Allen's home in October 2022."
   },
   {
-   "start": 927.6,
-   "end": 931.5,
+   "start": 931.6,
+   "end": 935.5,
    "text": "That search produced the pistol, and the pistol produced the match to the round."
   },
   {
-   "start": 931.5,
-   "end": 934.9,
+   "start": 935.5,
+   "end": 938.9,
    "text": "If the search falls, the state's key physical evidence is in trouble."
   },
   {
-   "start": 935.4,
-   "end": 940.5,
+   "start": 939.4,
+   "end": 944.5,
    "text": "Allen's lawyers say the document police used to get that warrant mischaracterized what witnesses had said."
   },
   {
-   "start": 940.5,
-   "end": 950.3,
+   "start": 944.5,
+   "end": 954.3,
    "text": "Their claim is that law enforcement omitted and altered witness descriptions to make Allen seem like the man in the Bridge Guy video, and that the trial court should never have admitted what came out of the house."
   },
   {
-   "start": 950.9,
-   "end": 955.1,
+   "start": 954.8,
+   "end": 959,
    "text": "The state's answer is that the warrant was obtained properly and that it contained no false statements."
   },
   {
-   "start": 955.6,
-   "end": 958.8,
+   "start": 959.6,
+   "end": 962.7,
    "text": "The second issue is the one that could matter beyond this case."
   },
   {
-   "start": 958.8,
-   "end": 961.8,
+   "start": 962.7,
+   "end": 965.7,
    "text": "The defense argues that the confessions were involuntary."
   },
   {
-   "start": 961.8,
-   "end": 970,
+   "start": 965.7,
+   "end": 973.9,
    "text": "They say Allen was deeply ill, held in what they call unprecedented confinement, and that what he said in that condition was the result of psychological coercion."
   },
   {
-   "start": 970,
-   "end": 977.6,
+   "start": 973.9,
+   "end": 981.6,
    "text": "They argue that using those statements violated federal due process, and also a protection in Indiana's own constitution against unnecessary rigor."
   },
   {
-   "start": 978.1,
-   "end": 985.4,
+   "start": 982.1,
+   "end": 989.4,
    "text": "In their request for oral argument, his lawyers called this an issue of first impression, meaning a question the court has not squarely answered before."
   },
   {
-   "start": 985.4,
-   "end": 990.7,
+   "start": 989.4,
+   "end": 994.7,
    "text": "Can statements made during a psychosis, caused by prolonged solitary confinement, be considered voluntary?"
   },
   {
-   "start": 991.3,
-   "end": 993,
+   "start": 995.2,
+   "end": 997,
    "text": "The state says yes, in this case."
   },
   {
-   "start": 993,
-   "end": 996.7,
+   "start": 997,
+   "end": 1000.7,
    "text": "The Attorney General's office argues that nobody coerced anything."
   },
   {
-   "start": 996.7,
-   "end": 1003.4,
+   "start": 1000.7,
+   "end": 1007.4,
    "text": "In its telling, the sixty-plus confessions were voluntary, they were unprompted, and they were unrelated to his psychosis."
   },
   {
-   "start": 1004,
-   "end": 1006.4,
+   "start": 1007.9,
+   "end": 1010.3,
    "text": "The third issue is about what the jury never heard."
   },
   {
-   "start": 1006.4,
-   "end": 1012.3,
+   "start": 1010.3,
+   "end": 1016.2,
    "text": "Allen's lawyers argue he was denied his right to present a complete defense, and they tie that to the Fourteenth Amendment."
   },
   {
-   "start": 1012.8,
-   "end": 1017,
+   "start": 1016.8,
+   "end": 1021,
    "text": "They wanted to tell the jury that Odinists committed these murders as a ritual killing."
   },
   {
-   "start": 1017,
-   "end": 1019.1,
+   "start": 1021,
+   "end": 1023.1,
    "text": "They wanted to offer alternative suspects."
   },
   {
-   "start": 1019.1,
-   "end": 1024,
+   "start": 1023.1,
+   "end": 1028,
    "text": "They wanted to show the jury one of the early police sketches, which they say looks nothing like Allen."
   },
   {
-   "start": 1024,
-   "end": 1025.6,
+   "start": 1028,
+   "end": 1029.6,
    "text": "The trial court kept all of it out."
   },
   {
-   "start": 1025.6,
-   "end": 1033,
+   "start": 1029.6,
+   "end": 1037,
    "text": "They also say the court let the prosecution use inadmissible hearsay while blocking the defense from showing the full circumstances of the confessions."
   },
   {
-   "start": 1033.6,
-   "end": 1036.3,
+   "start": 1037.6,
+   "end": 1040.3,
    "text": "The state's answer is that the judge ruled correctly."
   },
   {
-   "start": 1036.3,
-   "end": 1042.9,
+   "start": 1040.3,
+   "end": 1046.9,
    "text": "It says the defense wanted to point at two third-party suspects but offered no evidence putting either of them at the crime scene."
   },
   {
-   "start": 1042.9,
-   "end": 1048.7,
+   "start": 1046.9,
+   "end": 1052.7,
    "text": "It says the opinion of the defense's ritual expert, Dawn Perlmutter, was formed before she had seen any evidence."
   },
   {
-   "start": 1048.7,
-   "end": 1055.2,
+   "start": 1052.7,
+   "end": 1059.2,
    "text": "On the ritual theory itself, the state wrote, it was a speculative motive, and there is no history of human sacrifice in Odinism."
   },
   {
-   "start": 1055.2,
-   "end": 1064,
+   "start": 1059.2,
+   "end": 1068,
    "text": "One local station added that police did look into the Odinism angle early on, with input from the FBI's behavioral analysis unit, and never found evidence to take it further."
   },
   {
-   "start": 1064.6,
-   "end": 1067.1,
+   "start": 1068.5,
+   "end": 1071,
    "text": "And the state comes back to the fact it started with."
   },
   {
-   "start": 1067.1,
-   "end": 1072.7,
+   "start": 1071,
+   "end": 1076.7,
    "text": "Whatever else is argued, Richard Allen put himself on the Monon High Bridge trail at the time the girls disappeared."
   },
   {
-   "start": 1073.3,
-   "end": 1074.6,
-   "text": "So what should you expect?"
+   "start": 1077.3,
+   "end": 1078.3,
+   "text": "So what happens now?"
   },
   {
-   "start": 1074.6,
-   "end": 1075.3,
+   "start": 1078.3,
+   "end": 1079,
    "text": "Not a verdict."
   },
   {
-   "start": 1075.3,
-   "end": 1079.9,
-   "text": "Monday is thirty minutes a side, in front of three judges who have had the briefs for months."
+   "start": 1079,
+   "end": 1085.3,
+   "text": "The argument on September 21 ran about an hour and fifteen minutes, in front of three judges who had had the briefs for months."
   },
   {
-   "start": 1079.9,
-   "end": 1082.4,
-   "text": "The Court of Appeals will rule later, in writing."
+   "start": 1085.3,
+   "end": 1090.7,
+   "text": "Mark Leeman argued for Allen, and Ellen Meilaender of the Attorney General's office argued for the state."
   },
   {
-   "start": 1082.4,
-   "end": 1084.6,
+   "start": 1090.7,
+   "end": 1094.5,
+   "text": "The Court of Appeals will rule later, in writing, and that can take months."
+  },
+  {
+   "start": 1094.5,
+   "end": 1096.7,
    "text": "Allen's lawyers are asking for a new trial."
   },
   {
-   "start": 1084.6,
-   "end": 1088.3,
+   "start": 1096.7,
+   "end": 1100.4,
    "text": "The state is asking the court to leave the conviction exactly where it is."
   },
   {
-   "start": 1088.9,
-   "end": 1092.7,
+   "start": 1101,
+   "end": 1104.8,
    "text": "One legal analyst quoted by CBS after the sentencing put the stakes plainly."
   },
   {
-   "start": 1092.7,
-   "end": 1098.4,
+   "start": 1104.8,
+   "end": 1110.6,
    "text": "The conviction could be reversed, he said, if an appeal finds that the jury did not hear a fair amount of the evidence."
   },
   {
-   "start": 1098.4,
-   "end": 1103.4,
+   "start": 1110.6,
+   "end": 1115.6,
    "text": "That is the third question, and it is why the defense has spent so much of its brief on what was kept out."
   },
   {
-   "start": 1104,
-   "end": 1106.1,
+   "start": 1116.1,
+   "end": 1118.3,
    "text": "I will tell you how I am thinking about it."
   },
   {
-   "start": 1106.1,
-   "end": 1109,
+   "start": 1118.3,
+   "end": 1121.2,
    "text": "Each of these three questions is a real legal question."
   },
   {
-   "start": 1109,
-   "end": 1111.6,
+   "start": 1121.2,
+   "end": 1123.7,
    "text": "How honest does a warrant application have to be?"
   },
   {
-   "start": 1111.6,
-   "end": 1114.9,
+   "start": 1123.7,
+   "end": 1127.1,
    "text": "When is a confession from a sick man in an isolation cell his own?"
   },
   {
-   "start": 1114.9,
-   "end": 1118.1,
+   "start": 1127.1,
+   "end": 1130.2,
    "text": "How much room does a defendant get to point at somebody else?"
   },
   {
-   "start": 1118.1,
-   "end": 1120.6,
+   "start": 1130.2,
+   "end": 1132.7,
    "text": "Courts take those seriously, and they should."
   },
   {
-   "start": 1121.1,
-   "end": 1123.6,
+   "start": 1133.3,
+   "end": 1135.8,
    "text": "But none of them is the question the jury answered."
   },
   {
-   "start": 1123.6,
-   "end": 1130.4,
+   "start": 1135.8,
+   "end": 1142.9,
    "text": "Twelve people sat through seventeen days of testimony, heard that voice on the phone calls, watched that video, and said guilty four times."
   },
   {
-   "start": 1130.4,
-   "end": 1135.6,
+   "start": 1142.9,
+   "end": 1148.4,
    "text": "An appeals court asking whether the trial was fair is not the same as an appeals court saying he did not do it."
   },
   {
-   "start": 1135.6,
-   "end": 1140.3,
-   "text": "If you see a headline on Monday that treats it that way, in either direction, be careful with it."
+   "start": 1148.4,
+   "end": 1153.9,
+   "text": "When the ruling comes, if you see a headline that treats it that way, in either direction, be careful with it."
   },
   {
-   "start": 1140.8,
-   "end": 1143.2,
+   "start": 1154.5,
+   "end": 1156.8,
    "text": "Whatever the court decides, I will come back to it."
   },
   {
-   "start": 1143.7,
-   "end": 1146.5,
+   "start": 1157.4,
+   "end": 1160.2,
    "text": "I want to end where this case should always end, with the two of them."
   },
   {
-   "start": 1147.1,
-   "end": 1154.6,
+   "start": 1160.8,
+   "end": 1168.3,
    "text": "In 2017, Libby's mother asked people to put orange lights on their porches, for the girls, and as a reminder that whoever did this was still out there."
   },
   {
-   "start": 1154.6,
-   "end": 1156.8,
+   "start": 1168.3,
+   "end": 1170.5,
    "text": "Homeowners across central Indiana did it."
   },
   {
-   "start": 1156.8,
-   "end": 1161.1,
+   "start": 1170.5,
+   "end": 1174.7,
    "text": "That same year, the families announced they would build a park in the girls' memory."
   },
   {
-   "start": 1161.1,
-   "end": 1164.5,
+   "start": 1174.7,
+   "end": 1178.2,
    "text": "Today there is an Abby and Libby Memorial Park a mile north of Delphi."
   },
   {
-   "start": 1164.5,
-   "end": 1170.3,
+   "start": 1178.2,
+   "end": 1184,
    "text": "The library at Delphi Community Middle School, where both girls went, is now the Abby and Libby Memorial Library."
   },
   {
-   "start": 1170.8,
-   "end": 1177.8,
+   "start": 1184.5,
+   "end": 1191.5,
    "text": "At sentencing, Libby's mother said her daughter would be twenty-two now, and that the family has stopped celebrating her birthday because it is too hard."
   },
   {
-   "start": 1177.8,
-   "end": 1181.4,
+   "start": 1191.5,
+   "end": 1195.1,
    "text": "Abby's grandmother said she has watched Abby's friends graduate from college."
   },
   {
-   "start": 1182,
-   "end": 1184.7,
+   "start": 1195.6,
+   "end": 1198.4,
    "text": "And the prosecutor said the thing I keep coming back to."
   },
   {
-   "start": 1184.7,
-   "end": 1188.7,
+   "start": 1198.4,
+   "end": 1202.3,
    "text": "Libby had the wherewithal to pull out her phone, to know something wasn't right."
   },
   {
-   "start": 1188.7,
-   "end": 1192.3,
+   "start": 1202.3,
+   "end": 1206,
    "text": "He called that recording arguably the biggest piece of evidence they had."
   },
   {
-   "start": 1192.3,
-   "end": 1195.4,
+   "start": 1206,
+   "end": 1209.1,
    "text": "A fourteen-year-old did that, in the last minutes of her life."
   },
   {
-   "start": 1195.9,
-   "end": 1198.5,
+   "start": 1209.6,
+   "end": 1212.1,
    "text": "The briefs, the rulings and the trial videos are public."
   },
   {
-   "start": 1198.5,
-   "end": 1199.1,
+   "start": 1212.1,
+   "end": 1212.8,
    "text": "Read the file."
   },
   {
-   "start": 1199.1,
-   "end": 1200.3,
+   "start": 1212.8,
+   "end": 1214,
    "text": "Form your own conclusion."
   },
   {
-   "start": 1200.3,
-   "end": 1201.3,
+   "start": 1214,
+   "end": 1215,
    "text": "That's it for this one."
   },
   {
-   "start": 1201.3,
-   "end": 1202.7,
+   "start": 1215,
+   "end": 1216.4,
    "text": "Thanks for hanging out with me."
   },
   {
-   "start": 1202.7,
-   "end": 1205.5,
+   "start": 1216.4,
+   "end": 1219.1,
    "text": "This has been CrimeTimeSnacks, and I'll catch you next time."
   }
  ]
