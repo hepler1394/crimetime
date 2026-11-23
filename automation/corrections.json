@@ -2,6 +2,13 @@
   "_README": "The public corrections log, rendered to /corrections.html by build-corrections.mjs. Newest first. Every entry is dated and says what was wrong, where, and what changed. Add one whenever a published episode, transcript, post or page is corrected; do not edit the record quietly.",
   "corrections": [
     {
+      "date": "2026-11-22",
+      "where": "Episode: Delphi: The Appeal",
+      "url": "/episodes/delphi-update-the-richard-allen-appeal.html",
+      "wrong": "The episode described the September 21, 2026 Court of Appeals argument as still to come after it had taken place, and said our 2022 Delphi episode ended with no arrest. That episode reported Richard Allen's arrest, his not-guilty plea and the sealing of the charging document.",
+      "fixed": "The affected passages were re-voiced. The episode now says the argument was heard on September 21, ran about an hour and fifteen minutes, and that the court had not ruled as of early October 2026, and it describes the 2022 episode accurately."
+    },
+    {
       "date": "2026-11-21",
       "where": "Episode: The BTK Floppy Disk",
       "url": "/episodes/the-btk-floppy-disk.html",
