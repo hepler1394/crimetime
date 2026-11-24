@@ -44,6 +44,10 @@ export const ELISION = new Map(Object.entries({
   "kind of": ["kinda"],
   "sort of": ["sorta"],
   "out of": ["outta"],
+  // Not a reduction but the same thing on the page: a transcriber writes a case name the way a
+  // lawyer does. "Wolf versus Ramsey" came back "Wolf vs. Ramsey" and "Brady versus Maryland"
+  // came back "Brady v. Maryland", and each held a finished episode on 2026-11-23.
+  versus: ["vs", "v"],
 }));
 
 // Every way a word could reasonably come out, as a consonant key. Forks where English does
@@ -58,7 +62,9 @@ export function soundKeys(word) {
   const push = (opts) => { const next = []; for (const o of outs) for (const c of opts) next.push(o + c); outs = next.slice(0, 32); };
   for (let i = 0; i < w.length; ) {
     const two = w.slice(i, i + 2), three = w.slice(i, i + 3), ch = w[i], nxt = w[i + 1] || "";
-    if (three === "sch") { push(["sk"]); i += 3; continue; }
+    // "school" is sk; a name is as often sh ("Pasch", "Bosch", "Schmidt"). 2026-11-23: a finished
+    // JonBenet episode was held on "Elizabeth Pasch Ramsey" written "Pash" by the transcriber.
+    if (three === "sch") { push(["sk", "X"]); i += 3; continue; }
     if (two === "ph") { push(["f"]); i += 2; continue; }
     if (two === "gh") { push(i > 0 && /[aeiou]/.test(w[i - 1]) ? ["", "f"] : ["k"]); i += 2; continue; }
     if (two === "ch") { push(["X", "k"]); i += 2; continue; }

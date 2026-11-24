@@ -146,6 +146,17 @@ test("JonBenet written as John Benet by the transcriber is not a finding", () =>
   assert.deepEqual(kinds("the night JonBenet was found in the basement of the house", "the night John Benet was found in the basement of the house"), []);
   assert.deepEqual(kinds("investigators on the JonBenet Ramsey case said that Smit was wrong", "investigators on the John Benet Ramsey case said that Smit was wrong"), []);
 });
+// 2026-11-23: both re-voiced episodes rendered clean and were held on these, confirmed on the
+// second listen because the transcriber writes them the same way every time.
+test("a case name written the lawyer's way is not a finding", () => {
+  assert.deepEqual(kinds("In a defamation lawsuit called Wolf versus Ramsey, Judge Julie Carnes wrote that", "In a defamation lawsuit called Wolf vs Ramsey, Judge Julie Carnes wrote that"), []);
+  assert.deepEqual(kinds("The motion relied on a Supreme Court case, Brady versus Maryland. Under Brady", "The motion relied on a Supreme Court case, Brady v Maryland. Under Brady"), []);
+  assert.deepEqual(kinds("The motion relied on a Supreme Court case, Brady versus Maryland. Under Brady", "The motion relied on a Supreme Court case, Brady murder Maryland. Under Brady"), ["MISHEARD"]);
+});
+test("sch in a name can be sh: Pasch heard as Pash is not a finding, Pasch heard as Patch is", () => {
+  assert.deepEqual(kinds("She was interred beside her half-sister, Elizabeth Pasch Ramsey, who had died", "She was interred beside her half-sister, Elizabeth Pash Ramsey, who had died"), []);
+  assert.deepEqual(kinds("She was interred beside her half-sister, Elizabeth Pasch Ramsey, who had died", "She was interred beside her half-sister, Elizabeth Park Ramsey, who had died"), ["MISHEARD"]);
+});
 test("half of JonBenet going missing is still caught", () => {
   assert.deepEqual(kinds("it had no effect on the JonBenet investigation. The State Bureau took over", "it had no effect on the Jon The State Bureau took over"), ["MISHEARD"]);
 });
