@@ -6,7 +6,15 @@
     <atom:link href="https://www.crimetimesnacks.com/blog-feed.xml" rel="self" type="application/rss+xml"/>
     <description>True crime case updates, analysis, and the stories behind the headlines.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Nov 2026 10:03:56 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 15:03:34 GMT</lastBuildDate>
+    <item>
+      <title>The Gilgo Beach Murders: The Case Against Rex Heuermann</title>
+      <link>https://www.crimetimesnacks.com/blog-posts/the-gilgo-beach-murders-the-case-against-rex-heuermann.html</link>
+      <guid isPermaLink="true">https://www.crimetimesnacks.com/blog-posts/the-gilgo-beach-murders-the-case-against-rex-heuermann.html</guid>
+      <category>Investigation</category>
+      <pubDate>Tue, 24 Nov 2026 12:00:00 GMT</pubDate>
+      <description>Rex Heuermann pleaded guilty in April 2026 to 7 Gilgo Beach murders, admitted an 8th, and was sentenced to life without parole in June 2026.</description>
+    </item>
     <item>
       <title>The evolution of crime scene photography</title>
       <link>https://www.crimetimesnacks.com/blog-posts/the-evolution-of-crime-scene-photography.html</link>
@@ -238,14 +246,6 @@
       <category>Investigation</category>
       <pubDate>Sat, 20 Sep 2025 12:00:00 GMT</pubDate>
       <description>A car on camera, a phone that went quiet for two hours and DNA on a knife sheath: how investigators tied Bryan Kohberger to the Moscow killings.</description>
-    </item>
-    <item>
-      <title>The Menendez Brothers: Murders, Trials, Resentencing and Parole</title>
-      <link>https://www.crimetimesnacks.com/blog-posts/menendez-brothers-resentencing-explained.html</link>
-      <guid isPermaLink="true">https://www.crimetimesnacks.com/blog-posts/menendez-brothers-resentencing-explained.html</guid>
-      <category>Court</category>
-      <pubDate>Sun, 02 Mar 2025 12:00:00 GMT</pubDate>
-      <description>How the 1989 Beverly Hills killings led to two trials, a 1996 life sentence, a 2025 resentencing, a parole denial and a March 2027 hearing.</description>
     </item>
   </channel>
 </rss>

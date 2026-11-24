@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-11-20T15:02:58.548Z"
+    "updated": "2026-11-24T15:03:28.032Z"
   },
   "quizzes": [
+    {
+      "slug": "perugia-the-kercher-case-file",
+      "title": "Perugia: The Kercher Case File",
+      "tag": "Episode Case",
+      "description": "Convictions, an acquittal, a reversal, then a final ruling. Test what the case file actually shows about Perugia.",
+      "created": "2026-11-24",
+      "sourceTopic": "Amanda Knox and the Murder of Meredith Kercher",
+      "questions": [
+        {
+          "q": "Meredith Kercher was in Perugia, Italy in 2007 as an exchange student from which UK university?",
+          "options": [
+            "University of Leeds",
+            "University of Manchester",
+            "University of Edinburgh",
+            "University of Bristol"
+          ],
+          "answer": 0,
+          "explain": "Meredith was 21 and on a year abroad, living in a shared house on Via della Pergola. I always start here because the case gets so tangled in headlines that people forget she was a student in the middle of her studies."
+        },
+        {
+          "q": "Which person was convicted of Meredith Kercher's murder in a separate fast-track trial, apart from Amanda Knox and Raffaele Sollecito?",
+          "options": [
+            "Patrick Lumumba",
+            "Rudy Guede",
+            "Raffaele Sollecito's brother",
+            "Giuliano Mignini"
+          ],
+          "answer": 1,
+          "explain": "Rudy Guede chose a fast-track trial, so his case ran on its own track. His conviction was upheld and his sentence was reduced on appeal. Knox and Sollecito were tried together, which is why people often blur the two proceedings."
+        },
+        {
+          "q": "Amanda Knox's slander conviction relates to her accusing which man?",
+          "options": [
+            "A neighbor in the downstairs flat",
+            "Rudy Guede",
+            "Patrick Lumumba",
+            "Her Italian landlord"
+          ],
+          "answer": 2,
+          "explain": "Patrick Lumumba owned Le Chic, the bar where Knox worked part-time. She named him in a statement during questioning in November 2007. He was later released. That slander conviction was never overturned, even after the murder conviction was."
+        },
+        {
+          "q": "In what year did Italy's highest court finally clear Knox and Sollecito of Meredith Kercher's murder?",
+          "options": [
+            "2009",
+            "2011",
+            "2013",
+            "2015"
+          ],
+          "answer": 3,
+          "explain": "The path ran like this: convicted in 2009, acquitted on appeal in 2011, that acquittal annulled in 2013, convicted again in Florence in 2014, then the final exoneration in March 2015. Many people remember only the 2011 headline."
+        },
+        {
+          "q": "In its 2019 ruling on Knox's case, what did the European Court of Human Rights find?",
+          "options": [
+            "Italy had to retry the murder case",
+            "Italy failed to give her a lawyer and a proper interpreter during questioning",
+            "Her slander conviction was struck down",
+            "The crime scene had been contaminated"
+          ],
+          "answer": 1,
+          "explain": "The ruling was about how she was questioned in November 2007. It did not decide who killed Meredith. It addressed the process: no lawyer and an inadequate interpreter. Read the file. Form your own conclusion."
+        }
+      ]
+    },
     {
       "slug": "maura-murray-what-the-record-shows",
       "title": "Maura Murray: What the Record Shows",

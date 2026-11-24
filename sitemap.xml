@@ -138,6 +138,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.crimetimesnacks.com/blog-posts/the-gilgo-beach-murders-the-case-against-rex-heuermann.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.crimetimesnacks.com/blog-posts/the-golden-state-killer-how-dna-caught-joseph-deangelo.html</loc>
     <lastmod>2026-11-17</lastmod>
     <changefreq>monthly</changefreq>
@@ -205,7 +211,7 @@
   </url>
   <url>
     <loc>https://www.crimetimesnacks.com/blog.html</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -530,7 +536,7 @@
   </url>
   <url>
     <loc>https://www.crimetimesnacks.com/quiz.html</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
