@@ -252,11 +252,11 @@
       "slug": "the-murdaugh-family-murders",
       "date": "2026-09-24",
       "pubDate": "Thu, 24 Sep 2026 05:44:46 GMT",
-      "duration": "00:28:22",
-      "description": "On a June night in 2021, Maggie and Paul Murdaugh were found dead near the dog kennels of the family's hunting lodge in the South Carolina Lowcountry. Alex Murdaugh told investigators he had been napping at the house and then left to visit his mother, but a video Paul recorded at the kennels, with Alex's voice in the background, told a different story. The episode walks through the timeline, the botched crime scene, the 2023 trial, and the 2026 ruling that threw out the murder convictions; Alex Murdaugh is awaiting a new trial, set for April 2027, and is presumed innocent of the murders.",
-      "audio": "/audio/the-murdaugh-family-murders.mp3",
+      "duration": "00:29:32",
+      "description": "Hey everyone, Cory here. Today we are looking at a case that completely consumed the South Carolina Lowcountry. The Murdaugh family was a legal dynasty, but everything started to unravel on a June night in 2021 when Maggie and Paul Murdaugh were found dead near the dog kennels of their hunting lodge.\n\nAlex Murdaugh told investigators he had been napping at the house and then left to visit his mother, who had dementia. But a video Paul recorded at the kennels, with Alex's voice in the background, told a different story. We are walking through the timeline, the botched crime scene, the 2023 trial, and the 2026 ruling that threw out the murder convictions. Alex Murdaugh is awaiting a new trial, set for April 2027, and is presumed innocent of the murders.",
+      "audio": "/audio/the-murdaugh-family-murders-r2.mp3",
       "audioType": "audio/mpeg",
-      "audioBytes": 27234793,
+      "audioBytes": 28355342,
       "image": "/images/episodes/the-murdaugh-family-murders.jpg",
       "link": "",
       "explicit": false,
@@ -268,7 +268,8 @@
         "South Carolina Lowcountry",
         "Islandton hunting lodge",
         "Murdaugh trial"
-      ]
+      ],
+      "caseSlug": "alex-murdaugh"
     },
     {
       "guid": "cts-studio-elisa-lam-and-the-cecil-hotel",
