@@ -150,7 +150,11 @@ function distinctive(claim) {
     if (opensSentence && !/\s/.test(m[1])) continue;
     outSet.add(m[1]);
   }
-  for (const m of claim.matchAll(/"([^"]{4,60})"/g)) outSet.add(m[1]);
+  // The quoted words, not the sentence's punctuation. American style puts the full stop inside
+  // the closing mark, and until 2026-11-23 that stop was looked for in the notes with the words:
+  // 'described herself as "tremendously relieved and grateful."' was held against notes that
+  // quote exactly those four words, and held the Amanda Knox episode with it.
+  for (const m of claim.matchAll(/"([^"]{4,60})"/g)) { const q = m[1].replace(/^[\s.,;:!?]+|[\s.,;:!?]+$/g, ""); if (q.length >= 4) outSet.add(q); }
   // Also off the collapsed claim: "forty thousand" must not leave a bare "40" behind,
   // demanding a token the notes were never going to carry.
   for (const m of figures.toLowerCase().matchAll(/\b([a-z-]+)\b/g)) if (NUM[m[1]]) outSet.add(String(NUM[m[1]]));

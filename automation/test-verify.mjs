@@ -193,6 +193,16 @@ accumulated 3 million views and 40,000 comments in its first 10 days. A later fi
 settlement at 250,000 dollars and the building's capacity at two hundred guests.
 `;
 
+// 2026-11-23: the Amanda Knox episode was held on two quotations the notes carry word for word,
+// because the claim ended its sentence inside the closing quotation mark.
+test("a quotation is looked up without the sentence's full stop, and a wrong one still holds", async () => {
+  const notes = NOTES + "\nKnox released a statement describing herself as “tremendously relieved and grateful” for the outcome. Her lawyer said it \"couldn't be better than this\".\n";
+  const ok = await runVerify(['Knox released a statement in which she described herself as "tremendously relieved and grateful."', 'Her lawyer said the outcome "couldn\'t be better than this."'], [], notes);
+  assert.equal(ok.held, 0, `held: ${JSON.stringify(ok.heldClaims?.map((h) => h.reason))}`);
+  const wrong = await runVerify(['Knox released a statement in which she described herself as "completely vindicated and furious."'], [], notes);
+  assert.equal(wrong.held, 1, "a quotation the notes do not carry must not pass");
+});
+
 test("ticks a spelled-out number joined to a scale word", async () => {
   const r = await runVerify(
     ["In its first ten days on Youku, the clip accumulated three million views and forty thousand comments."],
