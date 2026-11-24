@@ -2,6 +2,20 @@
   "_README": "The public corrections log, rendered to /corrections.html by build-corrections.mjs. Newest first. Every entry is dated and says what was wrong, where, and what changed. Add one whenever a published episode, transcript, post or page is corrected; do not edit the record quietly.",
   "corrections": [
     {
+      "date": "2026-11-24",
+      "where": "Episode: The Disappearance of Laci Peterson",
+      "url": "/episodes/the-disappearance-of-laci-peterson.html",
+      "wrong": "The episode said the Los Angeles Innocence Project had recently taken up Scott Peterson's claim and that the appeals process was still moving, without saying what the courts had since decided. It also lost the sentence that states his new sentence, so the re-sentencing was described without saying what it was.",
+      "fixed": "The passages were re-voiced. The episode now says he was re-sentenced on December 8, 2021 to life in prison without the possibility of parole for the first-degree murder of Laci, with a concurrent fifteen years to life for the second-degree murder of Conner, and that his third habeas corpus petition was denied in April 2026 with all fourteen claims rejected."
+    },
+    {
+      "date": "2026-11-24",
+      "where": "Episode: The Doomsday Mom",
+      "url": "/episodes/the-doomsday-mom.html",
+      "wrong": "The episode, published November 1, 2026, said Chad Daybell faces death for providing the religious justification for the murders, and that the appeals were expected to stretch well into 2026.",
+      "fixed": "Both passages were re-voiced. The episode now says a jury convicted Chad Daybell of the murders of Tammy Daybell, J.J. Vallow and Tylee Ryan, as well as conspiracy charges, and that he was sentenced to death; and that he and Lori Vallow Daybell have each filed appeals."
+    },
+    {
       "date": "2026-11-23",
       "where": "Episode: Ted Bundy and the Murder of Kimberly Leach",
       "url": "/episodes/ted-bundy-and-the-murder-of-kimberly-leach.html",
