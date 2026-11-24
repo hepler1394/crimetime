@@ -18,6 +18,31 @@
   },
   "episodes": [
     {
+      "guid": "cts-studio-the-touch-dna-of-jonbenet",
+      "title": "The Touch DNA of JonBenet",
+      "slug": "the-touch-dna-of-jonbenet",
+      "date": "2026-11-24",
+      "pubDate": "Tue, 24 Nov 2026 02:22:57 GMT",
+      "duration": "00:25:30",
+      "description": "In 1996, six-year-old JonBenet Ramsey was found dead in the basement of her family's home in Boulder, Colorado. The initial police work was heavily criticized, and early suspicion fell on her parents. Years later, trace DNA found on her clothing pointed to an unidentified male, and in 2008 the district attorney sent the family a letter clearing them.\n\nThe episode walks through the timeline of that morning, the grand jury that voted to indict the parents, and the DNA evidence that changed the official account of the case.",
+      "audio": "/audio/the-touch-dna-of-jonbenet.mp3",
+      "audioType": "audio/mpeg",
+      "audioBytes": 24485455,
+      "image": "/images/episodes/the-touch-dna-of-jonbenet.jpg",
+      "link": "",
+      "explicit": false,
+      "source": "studio",
+      "keywords": [
+        "JonBenet Ramsey",
+        "Boulder Colorado",
+        "Mary Lacy",
+        "trace DNA",
+        "ransom note",
+        "unsolved homicide"
+      ],
+      "caseSlug": "jonbenet-ramsey-dna"
+    },
+    {
       "guid": "cts-studio-ted-bundy-and-the-murder-of-kimberly-leach",
       "title": "Ted Bundy and the Murder of Kimberly Leach",
       "slug": "ted-bundy-and-the-murder-of-kimberly-leach",
