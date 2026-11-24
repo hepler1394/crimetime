@@ -2,6 +2,13 @@
   "_README": "The public corrections log, rendered to /corrections.html by build-corrections.mjs. Newest first. Every entry is dated and says what was wrong, where, and what changed. Add one whenever a published episode, transcript, post or page is corrected; do not edit the record quietly.",
   "corrections": [
     {
+      "date": "2026-11-23",
+      "where": "Episode: Ted Bundy and the Murder of Kimberly Leach",
+      "url": "/episodes/ted-bundy-and-the-murder-of-kimberly-leach.html",
+      "wrong": "The episode named the Florida governor who signed Bundy's final death warrant as Rob Martinez, and called James Dobson a reverend. The error was in the notes the script was written from, so the fact check passed it.",
+      "fixed": "The passage was re-voiced. The governor was Bob Martinez, and James Dobson was a psychologist and religious broadcaster, not a clergyman."
+    },
+    {
       "date": "2026-11-22",
       "where": "Episode: Delphi: The Appeal",
       "url": "/episodes/delphi-update-the-richard-allen-appeal.html",
