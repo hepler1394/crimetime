@@ -632,3 +632,4 @@ with an [auto] tag — the counter on Mission Control reads this file.
 566. [auto 2026-11-22] Published podcast episode from the studio: "Hunting the Golden State Killer" (00:24:37)
 567. [auto 2026-11-23] Published podcast episode from the studio: "Delphi: The Appeal" (00:20:24)
 568. [auto 2026-11-24] Published podcast episode from the studio: "The Touch DNA of JonBenet" (00:25:30)
+569. [auto 2026-11-24] Published podcast episode from the studio: "The Trial and Appeals of Adnan Syed" (00:23:32)

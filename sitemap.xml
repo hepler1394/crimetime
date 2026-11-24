@@ -216,6 +216,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.crimetimesnacks.com/cases/adnan-syed.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.crimetimesnacks.com/cases/courtney-clenney-and-the-killing-of-christian-obumseli-in-mi.html</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>monthly</changefreq>
@@ -468,6 +474,12 @@
   </url>
   <url>
     <loc>https://www.crimetimesnacks.com/episodes/the-touch-dna-of-jonbenet.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.crimetimesnacks.com/episodes/the-trial-and-appeals-of-adnan-syed.html</loc>
     <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

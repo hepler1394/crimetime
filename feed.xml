@@ -8,7 +8,7 @@
     <title>CrimeTimeSnacks • A True Crime Podcast</title>
     <link>https://www.crimetimesnacks.com/</link>
     <atom:link href="https://www.crimetimesnacks.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 24 Nov 2026 02:22:59 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 02:25:05 GMT</lastBuildDate>
     <language>en</language>
     <copyright>&#169; 2026 Cory</copyright>
     <description>CrimeTimeSnacks is a true crime podcast about the cases people argue about, built from the public record: court filings, released case files and years of reporting. Each episode lays out the facts, the theories and the evidence, says what is still unknown, and leaves the conclusion to you.</description>
@@ -24,6 +24,30 @@
     <itunes:category text="True Crime" />
     <itunes:explicit>false</itunes:explicit>
     <podcast:guid>ff05e4d8-e162-5acf-a76f-16c2984325d9</podcast:guid>
+    <item>
+      <title>The Trial and Appeals of Adnan Syed</title>
+      <link>https://www.crimetimesnacks.com/episodes/the-trial-and-appeals-of-adnan-syed.html</link>
+      <guid isPermaLink="false">cts-studio-the-trial-and-appeals-of-adnan-syed</guid>
+      <pubDate>Tue, 24 Nov 2026 02:25:04 GMT</pubDate>
+      <description>In 1999, high school student Hae Min Lee vanished in Baltimore County and was found dead weeks later in Leakin Park. The investigation centered on her ex-boyfriend, Adnan Syed, and the trial that followed went on to hold the country&apos;s attention.
+
+The episode walks through the disappearance, the cell tower evidence, and the testimony that sent Syed to prison, then the appeals, the vacated conviction, and its reinstatement, which have kept the case in the courts for more than twenty years.</description>
+      <content:encoded><![CDATA[<p>In 1999, high school student Hae Min Lee vanished in Baltimore County and was found dead weeks later in Leakin Park. The investigation centered on her ex-boyfriend, Adnan Syed, and the trial that followed went on to hold the country's attention.</p>
+<p>The episode walks through the disappearance, the cell tower evidence, and the testimony that sent Syed to prison, then the appeals, the vacated conviction, and its reinstatement, which have kept the case in the courts for more than twenty years.</p>
+<p><a href="https://www.crimetimesnacks.com/episodes/the-trial-and-appeals-of-adnan-syed.html">Read the full transcript of this episode</a></p>
+<p><a href="https://www.crimetimesnacks.com/cases/adnan-syed.html">Follow this case by email</a>: court dates, rulings and arrests, each checked against the article that reports it.</p>]]></content:encoded>
+      <itunes:summary>In 1999, high school student Hae Min Lee vanished in Baltimore County and was found dead weeks later in Leakin Park. The investigation centered on her ex-boyfriend, Adnan Syed, and the trial that followed went on to hold the country&apos;s attention.
+
+The episode walks through the disappearance, the cell tower evidence, and the testimony that sent Syed to prison, then the appeals, the vacated conviction, and its reinstatement, which have kept the case in the courts for more than twenty years.</itunes:summary>
+      <itunes:author>Cory</itunes:author>
+      <itunes:duration>00:23:32</itunes:duration>
+      <itunes:episode>25</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://op3.dev/e/www.crimetimesnacks.com/audio/the-trial-and-appeals-of-adnan-syed.mp3" length="22591692" type="audio/mpeg" />
+      <itunes:image href="https://www.crimetimesnacks.com/images/episodes/the-trial-and-appeals-of-adnan-syed.jpg" />
+      <podcast:transcript url="https://www.crimetimesnacks.com/transcripts/the-trial-and-appeals-of-adnan-syed.vtt" type="text/vtt" language="en" />
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>The Touch DNA of JonBenet</title>
       <link>https://www.crimetimesnacks.com/episodes/the-touch-dna-of-jonbenet.html</link>

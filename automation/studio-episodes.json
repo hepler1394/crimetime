@@ -447,6 +447,32 @@
         "unsolved homicide"
       ],
       "caseSlug": "jonbenet-ramsey-dna"
+    },
+    {
+      "guid": "cts-studio-the-trial-and-appeals-of-adnan-syed",
+      "title": "The Trial and Appeals of Adnan Syed",
+      "slug": "the-trial-and-appeals-of-adnan-syed",
+      "date": "2026-11-24",
+      "pubDate": "Tue, 24 Nov 2026 02:25:04 GMT",
+      "duration": "00:23:32",
+      "description": "In 1999, high school student Hae Min Lee vanished in Baltimore County and was found dead weeks later in Leakin Park. The investigation centered on her ex-boyfriend, Adnan Syed, and the trial that followed went on to hold the country's attention.\n\nThe episode walks through the disappearance, the cell tower evidence, and the testimony that sent Syed to prison, then the appeals, the vacated conviction, and its reinstatement, which have kept the case in the courts for more than twenty years.",
+      "audio": "/audio/the-trial-and-appeals-of-adnan-syed.mp3",
+      "audioType": "audio/mpeg",
+      "audioBytes": 22591692,
+      "image": "/images/episodes/the-trial-and-appeals-of-adnan-syed.jpg",
+      "link": "",
+      "explicit": false,
+      "source": "studio",
+      "keywords": [
+        "Adnan Syed",
+        "Hae Min Lee",
+        "Baltimore County",
+        "Leakin Park",
+        "Jay Wilds",
+        "Serial podcast",
+        "cell tower evidence"
+      ],
+      "caseSlug": "adnan-syed"
     }
   ]
 }

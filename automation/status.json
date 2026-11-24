@@ -1,6 +1,6 @@
 {
-  "generated": "2026-11-24T02:23:07.875Z",
-  "improvementsShipped": 567,
+  "generated": "2026-11-24T02:25:14.677Z",
+  "improvementsShipped": 568,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
     "content": [
@@ -10,7 +10,7 @@
     "sync": "Every 6 hours"
   },
   "counts": {
-    "episodes": 24,
+    "episodes": 25,
     "posts": 32,
     "merchDesigns": 34,
     "merchCollection": 0,
@@ -23,7 +23,7 @@
   },
   "latest": {
     "episode": {
-      "title": "The Touch DNA of JonBenet",
+      "title": "The Trial and Appeals of Adnan Syed",
       "date": "2026-11-24"
     },
     "post": {
@@ -36,7 +36,7 @@
     }
   },
   "freshness": {
-    "episodesJson": "2026-11-24T02:22:57.995Z",
+    "episodesJson": "2026-11-24T02:25:04.627Z",
     "blogJson": "2026-11-20T15:02:35.804Z",
     "merchJson": "2026-09-22T14:02:22.646Z",
     "quizzesJson": "2026-11-20T15:02:58.548Z",
