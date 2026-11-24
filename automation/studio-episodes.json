@@ -307,11 +307,11 @@
       "slug": "the-doomsday-mom",
       "date": "2026-11-01",
       "pubDate": "Sun, 01 Nov 2026 04:41:20 GMT",
-      "duration": "00:28:54",
-      "description": "The case of Lori Vallow Daybell and Chad Daybell began with the disappearance of two children in Rexburg, Idaho. The episode traces how a religious fiction author and a mother of three crossed paths and formed a small apocalyptic group, the suspicious deaths around them, and the flight to Hawaii. It runs from the initial police inquiries to the discovery of the crime scene, and looks at the documented evidence of how doomsday beliefs and financial motives merged.",
-      "audio": "/audio/the-doomsday-mom.mp3",
+      "duration": "00:28:44",
+      "description": "I'm Cory, and today on CrimeTimeSnacks we are looking into the deeply disturbing case of Lori Vallow Daybell and Chad Daybell. What began with the disappearance of two children in Rexburg, Idaho, quickly unraveled into a complex web of extreme fringe beliefs, suspicious deaths, and a sudden flight to Hawaii.\n\nWe will trace the timeline of how a religious fiction author and a mother of three crossed paths, forming a small apocalyptic group. From the initial police inquiries to the discovery of a tragic crime scene, we will explore the documented evidence of how doomsday ideologies and financial motives merged into a series of unthinkable acts.",
+      "audio": "/audio/the-doomsday-mom-r2.mp3",
       "audioType": "audio/mpeg",
-      "audioBytes": 27749708,
+      "audioBytes": 27582106,
       "image": "/images/episodes/the-doomsday-mom.jpg",
       "link": "",
       "explicit": false,
@@ -323,7 +323,8 @@
         "Doomsday Mom",
         "Tylee Ryan",
         "JJ Vallow"
-      ]
+      ],
+      "caseSlug": "lori-vallow"
     },
     {
       "guid": "cts-studio-the-disappearance-of-maura-murray",
