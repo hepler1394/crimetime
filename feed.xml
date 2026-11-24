@@ -8,7 +8,7 @@
     <title>CrimeTimeSnacks • A True Crime Podcast</title>
     <link>https://www.crimetimesnacks.com/</link>
     <atom:link href="https://www.crimetimesnacks.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 24 Nov 2026 08:08:34 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 08:40:39 GMT</lastBuildDate>
     <language>en</language>
     <copyright>&#169; 2026 Cory</copyright>
     <description>CrimeTimeSnacks is a true crime podcast about the cases people argue about, built from the public record: court filings, released case files and years of reporting. Each episode lays out the facts, the theories and the evidence, says what is still unknown, and leaves the conclusion to you.</description>
@@ -317,10 +317,10 @@ But after going completely silent for thirteen years, the killer made a fatal mi
 <p><a href="https://www.crimetimesnacks.com/cases/gilgo-beach-eight-names.html">Follow this case by email</a>: court dates, rulings and arrests, each checked against the article that reports it.</p>]]></content:encoded>
       <itunes:summary>In April 2026, Rex Heuermann was asked how he killed eight women. He gave the same one-word answer each time. Hey everyone, it&apos;s Cory. This time on CrimeTimeSnacks: the Gilgo Beach murders from the 911 call that started the search to the guilty plea that ended it. Who the women were, why the case stalled for a decade, the truck and the pizza crust that broke it, and what is still unanswered: Shannan Gilbert, the victim known as Asian Doe, and a mother and daughter whose case turned out to be something else.</itunes:summary>
       <itunes:author>Cory</itunes:author>
-      <itunes:duration>00:20:53</itunes:duration>
+      <itunes:duration>00:21:01</itunes:duration>
       <itunes:episode>13</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <enclosure url="https://op3.dev/e/www.crimetimesnacks.com/audio/gilgo-beach-eight-names.mp3" length="20053415" type="audio/mpeg" />
+      <enclosure url="https://op3.dev/e/www.crimetimesnacks.com/audio/gilgo-beach-eight-names-r2.mp3" length="20182147" type="audio/mpeg" />
       <itunes:image href="https://www.crimetimesnacks.com/images/episodes/gilgo-beach-eight-names.jpg" />
       <podcast:transcript url="https://www.crimetimesnacks.com/transcripts/gilgo-beach-eight-names.vtt" type="text/vtt" language="en" />
       <itunes:explicit>false</itunes:explicit>
