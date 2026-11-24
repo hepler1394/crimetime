@@ -476,6 +476,33 @@
         "cell tower evidence"
       ],
       "caseSlug": "adnan-syed"
+    },
+    {
+      "guid": "cts-studio-amanda-knox-and-the-murder-of-meredith-kercher",
+      "title": "Amanda Knox and the Murder of Meredith Kercher",
+      "slug": "amanda-knox-and-the-murder-of-meredith-kercher",
+      "date": "2026-11-24",
+      "pubDate": "Tue, 24 Nov 2026 08:08:32 GMT",
+      "duration": "00:24:27",
+      "description": "Meredith Kercher, a British exchange student, was stabbed to death in November 2007 in the Perugia, Italy apartment she shared with American student Amanda Knox. The episode follows Knox from Seattle to Via della Pergola 7, through the weeks before the killing and the morning Kercher's body was found. It then traces the court rulings that convicted Knox in 2009, overturned that conviction in 2011 and convicted her again in 2014, leading to the final decision in 2015.",
+      "audio": "/audio/amanda-knox-and-the-murder-of-meredith-kercher.mp3",
+      "audioType": "audio/mpeg",
+      "audioBytes": 23475269,
+      "image": "/images/episodes/amanda-knox-and-the-murder-of-meredith-kercher.jpg",
+      "link": "",
+      "explicit": false,
+      "source": "studio",
+      "keywords": [
+        "Amanda Knox",
+        "Meredith Kercher",
+        "Perugia murder",
+        "Raffaele Sollecito",
+        "Via della Pergola 7",
+        "Amanda Knox trial",
+        "Italian Supreme Court of Cassation",
+        "Amanda Knox Cartwheel"
+      ],
+      "caseSlug": "amanda-knox"
     }
   ]
 }

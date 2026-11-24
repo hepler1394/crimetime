@@ -8,7 +8,7 @@
     <title>CrimeTimeSnacks • A True Crime Podcast</title>
     <link>https://www.crimetimesnacks.com/</link>
     <atom:link href="https://www.crimetimesnacks.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 24 Nov 2026 06:29:13 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 08:08:34 GMT</lastBuildDate>
     <language>en</language>
     <copyright>&#169; 2026 Cory</copyright>
     <description>CrimeTimeSnacks is a true crime podcast about the cases people argue about, built from the public record: court filings, released case files and years of reporting. Each episode lays out the facts, the theories and the evidence, says what is still unknown, and leaves the conclusion to you.</description>
@@ -24,6 +24,25 @@
     <itunes:category text="True Crime" />
     <itunes:explicit>false</itunes:explicit>
     <podcast:guid>ff05e4d8-e162-5acf-a76f-16c2984325d9</podcast:guid>
+    <item>
+      <title>Amanda Knox and the Murder of Meredith Kercher</title>
+      <link>https://www.crimetimesnacks.com/episodes/amanda-knox-and-the-murder-of-meredith-kercher.html</link>
+      <guid isPermaLink="false">cts-studio-amanda-knox-and-the-murder-of-meredith-kercher</guid>
+      <pubDate>Tue, 24 Nov 2026 08:08:32 GMT</pubDate>
+      <description>Meredith Kercher, a British exchange student, was stabbed to death in November 2007 in the Perugia, Italy apartment she shared with American student Amanda Knox. The episode follows Knox from Seattle to Via della Pergola 7, through the weeks before the killing and the morning Kercher&apos;s body was found. It then traces the court rulings that convicted Knox in 2009, overturned that conviction in 2011 and convicted her again in 2014, leading to the final decision in 2015.</description>
+      <content:encoded><![CDATA[<p>Meredith Kercher, a British exchange student, was stabbed to death in November 2007 in the Perugia, Italy apartment she shared with American student Amanda Knox. The episode follows Knox from Seattle to Via della Pergola 7, through the weeks before the killing and the morning Kercher's body was found. It then traces the court rulings that convicted Knox in 2009, overturned that conviction in 2011 and convicted her again in 2014, leading to the final decision in 2015.</p>
+<p><a href="https://www.crimetimesnacks.com/episodes/amanda-knox-and-the-murder-of-meredith-kercher.html">Read the full transcript of this episode</a></p>
+<p><a href="https://www.crimetimesnacks.com/cases/amanda-knox.html">Follow this case by email</a>: court dates, rulings and arrests, each checked against the article that reports it.</p>]]></content:encoded>
+      <itunes:summary>Meredith Kercher, a British exchange student, was stabbed to death in November 2007 in the Perugia, Italy apartment she shared with American student Amanda Knox. The episode follows Knox from Seattle to Via della Pergola 7, through the weeks before the killing and the morning Kercher&apos;s body was found. It then traces the court rulings that convicted Knox in 2009, overturned that conviction in 2011 and convicted her again in 2014, leading to the final decision in 2015.</itunes:summary>
+      <itunes:author>Cory</itunes:author>
+      <itunes:duration>00:24:27</itunes:duration>
+      <itunes:episode>26</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <enclosure url="https://op3.dev/e/www.crimetimesnacks.com/audio/amanda-knox-and-the-murder-of-meredith-kercher.mp3" length="23475269" type="audio/mpeg" />
+      <itunes:image href="https://www.crimetimesnacks.com/images/episodes/amanda-knox-and-the-murder-of-meredith-kercher.jpg" />
+      <podcast:transcript url="https://www.crimetimesnacks.com/transcripts/amanda-knox-and-the-murder-of-meredith-kercher.vtt" type="text/vtt" language="en" />
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>The Trial and Appeals of Adnan Syed</title>
       <link>https://www.crimetimesnacks.com/episodes/the-trial-and-appeals-of-adnan-syed.html</link>
