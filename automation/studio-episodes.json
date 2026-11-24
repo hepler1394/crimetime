@@ -404,11 +404,11 @@
       "slug": "ted-bundy-and-the-murder-of-kimberly-leach",
       "date": "2026-11-06",
       "pubDate": "Fri, 06 Nov 2026 08:36:47 GMT",
-      "duration": "00:28:08",
-      "description": "Ted Bundy's crimes ran from his early murders in Washington and Utah, through his escape from a Colorado jail, to Florida in 1978, where twelve-year-old Kimberly Leach disappeared from her school. He used a fake arm sling and a charming demeanor to lure young women to his Volkswagen Beetle. The episode walks through the timeline, the escapes, and the stolen car in Pensacola that ended his run across the country.",
-      "audio": "/audio/ted-bundy-and-the-murder-of-kimberly-leach.mp3",
+      "duration": "00:28:13",
+      "description": "I'm Cory, and this week on CrimeTimeSnacks, we are looking at the devastating timeline of Ted Bundy's crimes and his eventual capture in Florida.\n\nFrom his early murders in Washington and Utah to his brazen escape from a Colorado jail, Bundy left a trail of terror across the country. He used a fake arm sling and a charming demeanor to lure young women to his Volkswagen Beetle, vanishing them into the night.\n\nBut his arrival in Florida in 1978 brought a new level of horror when a twelve-year-old girl disappeared from her school. We'll walk through the timeline, the escapes, and the stolen car in Pensacola that finally brought his cross-country reign to a halt.",
+      "audio": "/audio/ted-bundy-and-the-murder-of-kimberly-leach-r2.mp3",
       "audioType": "audio/mpeg",
-      "audioBytes": 27007856,
+      "audioBytes": 27081835,
       "image": "/images/episodes/ted-bundy-and-the-murder-of-kimberly-leach.jpg",
       "link": "",
       "explicit": false,
@@ -421,7 +421,8 @@
         "Florida murders",
         "Aspen escape",
         "true crime"
-      ]
+      ],
+      "caseSlug": "ted-bundy-escape"
     },
     {
       "guid": "cts-studio-the-touch-dna-of-jonbenet",

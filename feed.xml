@@ -8,7 +8,7 @@
     <title>CrimeTimeSnacks • A True Crime Podcast</title>
     <link>https://www.crimetimesnacks.com/</link>
     <atom:link href="https://www.crimetimesnacks.com/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 24 Nov 2026 02:25:05 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 03:20:45 GMT</lastBuildDate>
     <language>en</language>
     <copyright>&#169; 2026 Cory</copyright>
     <description>CrimeTimeSnacks is a true crime podcast about the cases people argue about, built from the public record: court filings, released case files and years of reporting. Each episode lays out the facts, the theories and the evidence, says what is still unknown, and leaves the conclusion to you.</description>
@@ -77,16 +77,26 @@ The episode walks through the timeline of that morning, the grand jury that vote
       <link>https://www.crimetimesnacks.com/episodes/ted-bundy-and-the-murder-of-kimberly-leach.html</link>
       <guid isPermaLink="false">cts-studio-ted-bundy-and-the-murder-of-kimberly-leach</guid>
       <pubDate>Fri, 06 Nov 2026 08:36:47 GMT</pubDate>
-      <description>Ted Bundy&apos;s crimes ran from his early murders in Washington and Utah, through his escape from a Colorado jail, to Florida in 1978, where twelve-year-old Kimberly Leach disappeared from her school. He used a fake arm sling and a charming demeanor to lure young women to his Volkswagen Beetle. The episode walks through the timeline, the escapes, and the stolen car in Pensacola that ended his run across the country.</description>
-      <content:encoded><![CDATA[<p>Ted Bundy's crimes ran from his early murders in Washington and Utah, through his escape from a Colorado jail, to Florida in 1978, where twelve-year-old Kimberly Leach disappeared from her school. He used a fake arm sling and a charming demeanor to lure young women to his Volkswagen Beetle. The episode walks through the timeline, the escapes, and the stolen car in Pensacola that ended his run across the country.</p>
+      <description>I&apos;m Cory, and this week on CrimeTimeSnacks, we are looking at the devastating timeline of Ted Bundy&apos;s crimes and his eventual capture in Florida.
+
+From his early murders in Washington and Utah to his brazen escape from a Colorado jail, Bundy left a trail of terror across the country. He used a fake arm sling and a charming demeanor to lure young women to his Volkswagen Beetle, vanishing them into the night.
+
+But his arrival in Florida in 1978 brought a new level of horror when a twelve-year-old girl disappeared from her school. We&apos;ll walk through the timeline, the escapes, and the stolen car in Pensacola that finally brought his cross-country reign to a halt.</description>
+      <content:encoded><![CDATA[<p>I'm Cory, and this week on CrimeTimeSnacks, we are looking at the devastating timeline of Ted Bundy's crimes and his eventual capture in Florida.</p>
+<p>From his early murders in Washington and Utah to his brazen escape from a Colorado jail, Bundy left a trail of terror across the country. He used a fake arm sling and a charming demeanor to lure young women to his Volkswagen Beetle, vanishing them into the night.</p>
+<p>But his arrival in Florida in 1978 brought a new level of horror when a twelve-year-old girl disappeared from her school. We'll walk through the timeline, the escapes, and the stolen car in Pensacola that finally brought his cross-country reign to a halt.</p>
 <p><a href="https://www.crimetimesnacks.com/episodes/ted-bundy-and-the-murder-of-kimberly-leach.html">Read the full transcript of this episode</a></p>
 <p><a href="https://www.crimetimesnacks.com/cases/ted-bundy-and-the-murder-of-kimberly-leach.html">Follow this case by email</a>: court dates, rulings and arrests, each checked against the article that reports it.</p>]]></content:encoded>
-      <itunes:summary>Ted Bundy&apos;s crimes ran from his early murders in Washington and Utah, through his escape from a Colorado jail, to Florida in 1978, where twelve-year-old Kimberly Leach disappeared from her school. He used a fake arm sling and a charming demeanor to lure young women to his Volkswagen Beetle. The episode walks through the timeline, the escapes, and the stolen car in Pensacola that ended his run across the country.</itunes:summary>
+      <itunes:summary>I&apos;m Cory, and this week on CrimeTimeSnacks, we are looking at the devastating timeline of Ted Bundy&apos;s crimes and his eventual capture in Florida.
+
+From his early murders in Washington and Utah to his brazen escape from a Colorado jail, Bundy left a trail of terror across the country. He used a fake arm sling and a charming demeanor to lure young women to his Volkswagen Beetle, vanishing them into the night.
+
+But his arrival in Florida in 1978 brought a new level of horror when a twelve-year-old girl disappeared from her school. We&apos;ll walk through the timeline, the escapes, and the stolen car in Pensacola that finally brought his cross-country reign to a halt.</itunes:summary>
       <itunes:author>Cory</itunes:author>
-      <itunes:duration>00:28:08</itunes:duration>
+      <itunes:duration>00:28:13</itunes:duration>
       <itunes:episode>23</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <enclosure url="https://op3.dev/e/www.crimetimesnacks.com/audio/ted-bundy-and-the-murder-of-kimberly-leach.mp3" length="27007856" type="audio/mpeg" />
+      <enclosure url="https://op3.dev/e/www.crimetimesnacks.com/audio/ted-bundy-and-the-murder-of-kimberly-leach-r2.mp3" length="27081835" type="audio/mpeg" />
       <itunes:image href="https://www.crimetimesnacks.com/images/episodes/ted-bundy-and-the-murder-of-kimberly-leach.jpg" />
       <podcast:transcript url="https://www.crimetimesnacks.com/transcripts/ted-bundy-and-the-murder-of-kimberly-leach.vtt" type="text/vtt" language="en" />
       <itunes:explicit>false</itunes:explicit>
