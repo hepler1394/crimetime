@@ -3,9 +3,41 @@
     "source": "FBI Wanted API (api.fbi.gov) — public data",
     "totalOnFile": 1283,
     "baked": 150,
-    "updated": "2026-11-24T22:34:29.635Z"
+    "updated": "2026-11-25T08:48:28.699Z"
   },
   "items": [
+    {
+      "uid": "a2e45434e25048c789c3a4d76070c3d7",
+      "title": "MATTHEW LEROY GRANT",
+      "kind": "victim",
+      "image": "https://www.fbi.gov/wanted/seeking-info/matthew-leroy-grant/@@images/image/large",
+      "office": "Billings",
+      "reward": "Reward up to $25,000 for information that leads to an arrest in the investigation of the murder of Matthew Leroy Grant.",
+      "url": "https://www.fbi.gov/wanted/seeking-info/matthew-leroy-grant",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Seeking Information",
+        "Indian Country"
+      ],
+      "publication": "2017-11-20T09:06:00"
+    },
+    {
+      "uid": "978230978230435d9d9ef81516606ce6",
+      "title": "ASHLEY LORING HEAVYRUNNER",
+      "kind": "missing",
+      "image": "https://www.fbi.gov/wanted/kidnap/ashley-loring-heavyrunner/@@images/image/large",
+      "office": "Billings",
+      "reward": "Reward up to $25,000 for information on the disappearance of Ashley Loring Heavyrunner.",
+      "url": "https://www.fbi.gov/wanted/kidnap/ashley-loring-heavyrunner",
+      "status": "na",
+      "warning": "",
+      "subjects": [
+        "Kidnappings and Missing Persons",
+        "Indian Country"
+      ],
+      "publication": "2022-04-29T12:22:00"
+    },
     {
       "uid": "56f0ce374e374620a90a585810fade85",
       "title": "ALEXANDRIA JOY  LOWITZER - SPRING, TEXAS",
@@ -727,36 +759,6 @@
         "Criminal Enterprise Investigations"
       ],
       "publication": "2026-06-09T15:51:00"
-    },
-    {
-      "uid": "797da62e52c24d1e98fe200ec175ff79",
-      "title": "ROGELIO GUERRA VASQUEZ",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/murders/rogelio-guerra-vasquez/@@images/image/large",
-      "office": "Houston",
-      "reward": "Reward up to $10,000 for information leading to the arrest and conviction of Rogelio Guerra Vasquez.",
-      "url": "https://www.fbi.gov/wanted/murders/rogelio-guerra-vasquez",
-      "status": "captured",
-      "warning": "SHOULD BE CONSIDERED ARMED AND DANGEROUS AND AN ESCAPE RISK",
-      "subjects": [
-        "Violent Crime - Murders"
-      ],
-      "publication": "2022-08-02T09:00:00"
-    },
-    {
-      "uid": "0186b0d7648846c0b3454bf3037403ee",
-      "title": "IMER GOMEZ",
-      "kind": "wanted",
-      "image": "https://www.fbi.gov/wanted/most-wanted-fraudsters/imer-gomez/@@images/image/large",
-      "office": "San Antonio",
-      "reward": "Reward up to $150,000 for information leading to the arrest and conviction of Imer Gomez.",
-      "url": "https://www.fbi.gov/wanted/most-wanted-fraudsters/imer-gomez",
-      "status": "na",
-      "warning": "",
-      "subjects": [
-        "Most Wanted Fraudster"
-      ],
-      "publication": "2026-10-05T08:01:00"
     },
     {
       "uid": "797da62e52c24d1e98fe200ec175ff79",
