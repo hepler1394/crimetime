@@ -6,7 +6,15 @@
     <atom:link href="https://www.crimetimesnacks.com/blog-feed.xml" rel="self" type="application/rss+xml"/>
     <description>True crime case updates, analysis, and the stories behind the headlines.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Nov 2026 08:53:06 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 15:03:21 GMT</lastBuildDate>
+    <item>
+      <title>How Podcasts Have Helped Reopen Cold Cases</title>
+      <link>https://www.crimetimesnacks.com/blog-posts/how-podcasts-have-helped-reopen-cold-cases.html</link>
+      <guid isPermaLink="true">https://www.crimetimesnacks.com/blog-posts/how-podcasts-have-helped-reopen-cold-cases.html</guid>
+      <category>Analysis</category>
+      <pubDate>Fri, 27 Nov 2026 12:00:00 GMT</pubDate>
+      <description>From a 1964 Klan killing to Kristin Smart's disappearance, what true crime podcasts have and have not done for cold cases.</description>
+    </item>
     <item>
       <title>The Gilgo Beach Murders: The Case Against Rex Heuermann</title>
       <link>https://www.crimetimesnacks.com/blog-posts/the-gilgo-beach-murders-the-case-against-rex-heuermann.html</link>
@@ -238,14 +246,6 @@
       <category>Court</category>
       <pubDate>Thu, 02 Oct 2025 12:00:00 GMT</pubDate>
       <description>Courtney Clenney pleaded guilty to manslaughter in the 2022 death of Christian Obumseli in Miami and was sentenced to six years. Here is the record.</description>
-    </item>
-    <item>
-      <title>How Investigators Tied Bryan Kohberger to the Moscow Murders</title>
-      <link>https://www.crimetimesnacks.com/blog-posts/bryan-kohberger-from-arrest-to-courtroom.html</link>
-      <guid isPermaLink="true">https://www.crimetimesnacks.com/blog-posts/bryan-kohberger-from-arrest-to-courtroom.html</guid>
-      <category>Investigation</category>
-      <pubDate>Sat, 20 Sep 2025 12:00:00 GMT</pubDate>
-      <description>A car on camera, a phone that went quiet for two hours and DNA on a knife sheath: how investigators tied Bryan Kohberger to the Moscow killings.</description>
     </item>
   </channel>
 </rss>

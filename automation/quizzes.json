@@ -1,9 +1,74 @@
 {
   "meta": {
     "intro": "Built from the cases covered on the show — timelines, evidence, and the details most people miss. New quizzes drop automatically.",
-    "updated": "2026-11-24T15:03:28.032Z"
+    "updated": "2026-11-27T15:03:14.095Z"
   },
   "quizzes": [
+    {
+      "slug": "crime-scene-photography-then-and-now",
+      "title": "Crime Scene Photography: Then and Now",
+      "tag": "Detective Skills",
+      "description": "From Paris police files to digital evidence logs, here's how the camera became a witness. Five snack-sized questions.",
+      "created": "2026-11-27",
+      "sourceTopic": "The evolution of crime scene photography",
+      "questions": [
+        {
+          "q": "Which French police official standardized the mug shot, pairing front and profile photos with body measurements, in the 1880s?",
+          "options": [
+            "Alphonse Bertillon",
+            "Eugène François Vidocq",
+            "Edmond Locard",
+            "Hans Gross"
+          ],
+          "answer": 0,
+          "explain": "Bertillon's real innovation was consistency. Every subject got the same poses and the same framing, so records could be compared across files. The photo was a data point, not a portrait."
+        },
+        {
+          "q": "Bertillon also pioneered a crime scene technique that put the camera in an unusual spot. Where was it placed?",
+          "options": [
+            "Directly overhead, pointed down at the scene",
+            "Low to the floor, aimed across the room",
+            "Outside the building, shooting through a window",
+            "In the doorway, at eye level"
+          ],
+          "answer": 0,
+          "explain": "The overhead view flattens a scene into something like a map. I find this the most underrated idea in the history of the field, because it treats a photograph as a way to record where things were."
+        },
+        {
+          "q": "Why do investigators place a ruler or scale next to a piece of evidence before photographing it?",
+          "options": [
+            "To show the item's true size",
+            "To timestamp the photo",
+            "To prevent anyone from moving the item",
+            "To correct the camera's color"
+          ],
+          "answer": 0,
+          "explain": "A photo with no scale can't tell you how big a mark or object was. The ruler turns a picture into a measurement. It's a small detail, but a lot of the value in a photo log comes from it."
+        },
+        {
+          "q": "Standard practice is to photograph a scene in a set sequence. Which one is it?",
+          "options": [
+            "Close-ups first, then the whole scene",
+            "Mid-range first, then close-ups, then overall",
+            "Overall, then mid-range, then close-ups",
+            "Whatever the lead detective wants first"
+          ],
+          "answer": 2,
+          "explain": "Wide shots first, then tighter ones. The overall frames show context, the mid-range shots show how items relate to each other, and the close-ups capture detail. Photographers work this way so that nothing is disturbed before it's recorded."
+        },
+        {
+          "q": "Which New York press photographer, known for stark flash pictures, kept a police radio in his car to reach scenes fast?",
+          "options": [
+            "Robert Capa",
+            "Diane Arbus",
+            "Weegee (Arthur Fellig)",
+            "Walker Evans"
+          ],
+          "answer": 2,
+          "explain": "Weegee was a newspaper photographer, not a police employee. His work, collected in the 1945 book Naked City, was made for the press. That makes it a different thing from evidence photography, even when the subject looks the same. Read the file. Form your own conclusion."
+        }
+      ]
+    },
     {
       "slug": "perugia-the-kercher-case-file",
       "title": "Perugia: The Kercher Case File",

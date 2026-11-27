@@ -1,6 +1,6 @@
 {
-  "generated": "2026-11-27T08:53:07.562Z",
-  "improvementsShipped": 577,
+  "generated": "2026-11-27T15:03:22.859Z",
+  "improvementsShipped": 579,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
     "content": [
@@ -11,14 +11,14 @@
   },
   "counts": {
     "episodes": 26,
-    "posts": 33,
+    "posts": 34,
     "merchDesigns": 34,
     "merchCollection": 0,
-    "quizzes": 29,
-    "quizQuestions": 145,
+    "quizzes": 30,
+    "quizQuestions": 150,
     "fbiCases": 150,
     "videos": 1,
-    "topicsQueued": 110,
+    "topicsQueued": 109,
     "topicsTotal": 126
   },
   "latest": {
@@ -27,28 +27,28 @@
       "date": "2026-11-24"
     },
     "post": {
-      "title": "The Gilgo Beach Murders: The Case Against Rex Heuermann",
-      "date": "2026-11-24"
+      "title": "How Podcasts Have Helped Reopen Cold Cases",
+      "date": "2026-11-27"
     },
     "quiz": {
-      "title": "Perugia: The Kercher Case File",
-      "created": "2026-11-24"
+      "title": "Crime Scene Photography: Then and Now",
+      "created": "2026-11-27"
     }
   },
   "freshness": {
-    "episodesJson": "2026-11-27T08:46:19.068Z",
-    "blogJson": "2026-11-27T08:46:14.754Z",
+    "episodesJson": "2026-11-27T15:00:14.753Z",
+    "blogJson": "2026-11-27T15:02:42.076Z",
     "merchJson": "2026-09-22T14:02:22.646Z",
-    "quizzesJson": "2026-11-24T15:03:28.032Z",
-    "fbiJson": "2026-11-27T08:46:19.482Z",
-    "css": "2026-11-27T08:46:14.845Z"
+    "quizzesJson": "2026-11-27T15:03:14.095Z",
+    "fbiJson": "2026-11-27T15:00:15.711Z",
+    "css": "2026-11-22T05:00:45.623Z"
   },
   "nextTopics": [
-    "How podcasts have helped reopen cold cases",
     "Bloodstain pattern analysis, explained",
     "How true crime fans can help cases responsibly",
     "What a medical examiner determines and what they don't",
     "How polygraph results are used and why courts distrust them",
-    "The role of a grand jury, explained"
+    "The role of a grand jury, explained",
+    "How investigators reconstruct a timeline of events"
   ]
 }
