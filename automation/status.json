@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-27T15:03:22.859Z",
+  "generated": "2026-11-27T21:27:25.750Z",
   "improvementsShipped": 579,
   "schedule": {
     "cadence": "Twice a week — Tuesday & Friday (content run), feed sync every 6 hours",
@@ -36,12 +36,12 @@
     }
   },
   "freshness": {
-    "episodesJson": "2026-11-27T15:00:14.753Z",
-    "blogJson": "2026-11-27T15:02:42.076Z",
+    "episodesJson": "2026-11-27T21:27:03.287Z",
+    "blogJson": "2026-11-27T21:26:59.148Z",
     "merchJson": "2026-09-22T14:02:22.646Z",
     "quizzesJson": "2026-11-27T15:03:14.095Z",
-    "fbiJson": "2026-11-27T15:00:15.711Z",
-    "css": "2026-11-22T05:00:45.623Z"
+    "fbiJson": "2026-11-27T21:27:03.775Z",
+    "css": "2026-11-27T21:26:59.233Z"
   },
   "nextTopics": [
     "Bloodstain pattern analysis, explained",
